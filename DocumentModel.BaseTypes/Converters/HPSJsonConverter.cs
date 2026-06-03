@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="HPS"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="HPS"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
-/// and writes half-points values as strings Ifor compatibility with Office Open XML conventions.
+/// This converter handles both string and numeric JSON tokens for deserialization,
+/// and writes half-points values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
 public class HPSJsonConverter : JsonConverter<HPS>
 {
@@ -20,7 +20,7 @@ public class HPSJsonConverter : JsonConverter<HPS>
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or Iin).</description></item>
+  /// <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
   /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
@@ -39,7 +39,7 @@ public class HPSJsonConverter : JsonConverter<HPS>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor HalfPoints, but got null");
+        throw new JsonException($"Expected string value for HalfPoints, but got null");
 
       try
       {
@@ -48,7 +48,7 @@ public class HPSJsonConverter : JsonConverter<HPS>
       catch (FormatException ex)
       {
         throw new JsonException($"Invalid HalfPoints string '{value}'. " +
-          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or Iin). Error: {ex.Message}", ex);
+          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
 
@@ -61,15 +61,15 @@ public class HPSJsonConverter : JsonConverter<HPS>
           return new HPS(longValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor HalfPoints");
+        throw new JsonException($"Invalid numeric value for HalfPoints");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor HalfPoints. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for HalfPoints. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor HalfPoints, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for HalfPoints, but got {reader.TokenType}");
   }
 
   /// <summary>

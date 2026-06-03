@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Connection enumeration.
-/// Used Iin types such as ConnectionShapeLocks, ConnectionSite, ConnectionSiteList.
+/// Used in types such as ConnectionShapeLocks, ConnectionSite, ConnectionSiteList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConnectionValues))]

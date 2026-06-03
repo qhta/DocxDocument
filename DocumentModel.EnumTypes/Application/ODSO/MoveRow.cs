@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// This enumeration has been deprecated and should not be used.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomoverow?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomoverow?view=office-pia` for Office interop details.
 /// </remarks>
 public enum MoveRow
 {

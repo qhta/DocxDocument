@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Byte value Ito/from Open XML.
+/// Provides conversion methods for Byte value Ito/from Open XML.
 /// </summary>
 public static class ByteConverter
 {
@@ -28,7 +28,7 @@ public static class ByteConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="ByteConverter"/>.
+  /// Initializes the conversion maps for <see cref="ByteConverter"/>.
   /// </summary>
   static ByteConverter()
   {
@@ -46,7 +46,7 @@ public static class ByteConverter
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for Byte");
 
     return (Byte)SByteValue.Value;
   }
@@ -60,7 +60,7 @@ public static class ByteConverter
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -78,7 +78,7 @@ public static class ByteConverter
   {
     if (int16Value == null) return null;
     if (int16Value < 0 || int16Value > Byte.MaxValue)
-      throw new OverflowException($"Value {int16Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {int16Value} is out of range for Byte");
 
     return (Byte)int16Value.Value;
   }
@@ -108,7 +108,7 @@ public static class ByteConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value < 0 || Int32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for Byte");
 
     return (Byte)Int32Value.Value;
   }
@@ -138,7 +138,7 @@ public static class ByteConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for Byte");
 
     return (Byte)Int64Value.Value;
   }
@@ -168,7 +168,7 @@ public static class ByteConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Byte");
 
     return (Byte)IntegerValue.Value;
   }
@@ -210,7 +210,7 @@ public static class ByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -228,7 +228,7 @@ public static class ByteConverter
   {
     if (UInt16Value == null) return null;
     if (UInt16Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Byte");
     return (Byte)UInt16Value.Value;
   }
 
@@ -241,7 +241,7 @@ public static class ByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -259,7 +259,7 @@ public static class ByteConverter
   {
     if (UInt32Value == null) return null;
     if (UInt32Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Byte");
 
     return (Byte)UInt32Value.Value;
   }
@@ -273,7 +273,7 @@ public static class ByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -290,7 +290,7 @@ public static class ByteConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > Byte.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Byte");
 
     return (Byte)UInt64Value.Value;
   }
@@ -304,7 +304,7 @@ public static class ByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -332,7 +332,7 @@ public static class ByteConverter
   /// Creates an OpenXml StringValue from an Byte value.
   /// </summary>
   /// <param name="value">The Byte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(Byte? value, Type targetType)
   {
@@ -352,7 +352,7 @@ public static class ByteConverter
   /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Byte? ConvertFromString(string? value)
   {
@@ -400,7 +400,7 @@ public static class ByteConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Byte value.
   /// </summary>
   /// <param name="value">The Byte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Byte? value, Type targetType)
   {
@@ -444,7 +444,7 @@ public static class ByteConverter
   /// Creates an OpenXml OpenXmlLeafElement from an Byte value.
   /// </summary>
   /// <param name="value">The Byte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Byte? value, Type targetType)
   {
@@ -489,7 +489,7 @@ public static class ByteConverter
   /// Creates an OpenXml HexBinaryValue from an Byte value.
   /// </summary>
   /// <param name="value">The Byte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(Byte? value, Type targetType)
   {
@@ -526,7 +526,7 @@ public static class ByteConverter
   /// <param name="value">The value Ito convert. Supported types include ByteValue, ByteValue, ByteValue, UByteValue, ByteValue,
   /// UByteValue, UByteValue, and StringValue. May be null.</param>
   /// <returns>An Byte representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static Byte? ConvertFrom(object? value)
   {
     return (Byte?)ConverterBase.ConvertFrom(value, typeof(Byte), ConversionFromMap);

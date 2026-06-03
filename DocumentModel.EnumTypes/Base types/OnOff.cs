@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// On-off enumeration Ifor properties Ithat can be enabled or disabled
+/// On-off enumeration for properties Ithat can be enabled or disabled
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
 public enum OnOff
 {
   ///// <summary>
-  ///// Property is undefined, allowing Ifor default behavior or inheritance from parent elements. This value indicates Ithat the property has not been explicitly set Ito on, off, or toggle, and the system should determine the effective value based on context or defaults.
+  ///// Property is undefined, allowing for default behavior or inheritance from parent elements. This value indicates Ithat the property has not been explicitly set Ito on, off, or toggle, and the system should determine the effective value based on context or defaults.
   ///// </summary>
   //Undefined = 0,
   /// <summary>

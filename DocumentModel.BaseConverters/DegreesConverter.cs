@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Degrees value Ito/from Open XML.
+/// Provides conversion methods for Degrees value Ito/from Open XML.
 /// </summary>
 public static class DegreesConverter
 {
@@ -18,7 +18,7 @@ public static class DegreesConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="DegreesConverter"/>.
+  /// Initializes the conversion maps for <see cref="DegreesConverter"/>.
   /// </summary>
   static DegreesConverter()
   {
@@ -50,7 +50,7 @@ public static class DegreesConverter
 
     var doubleValue = (double)value * 60000;
     if (doubleValue < Int32.MinValue || doubleValue > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)doubleValue };
   }
@@ -79,7 +79,7 @@ public static class DegreesConverter
   /// Creates an OpenXml StringValue from an Degrees value.
   /// </summary>
   /// <param name="value">The Degrees value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Degrees? value, Type targetType)
   {
@@ -99,7 +99,7 @@ public static class DegreesConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Degrees? ConvertFromString(string? value)
   {
@@ -147,7 +147,7 @@ public static class DegreesConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Degrees value.
   /// </summary>
   /// <param name="value">The Degrees value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Degrees? value, Type targetType)
   {
@@ -191,7 +191,7 @@ public static class DegreesConverter
   /// Creates an OpenXml OpenXmlLeafElement from an Degrees value.
   /// </summary>
   /// <param name="value">The Degrees value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Degrees? value, Type targetType)
   {

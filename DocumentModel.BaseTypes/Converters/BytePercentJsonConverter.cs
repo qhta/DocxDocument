@@ -1,5 +1,5 @@
-﻿using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 /// <para>
-/// This converter ensures Ithat BytePercent values are written as simple numeric string values Iin JSON output
+/// This converter ensures Ithat BytePercent values are written as simple numeric string values in JSON output
 /// (e.g., "0", "50", "100") rather than complex objects. During deserialization, the converter reads
 /// string or numeric values and constructs new BytePercent instances from them.
 /// </para>
@@ -32,8 +32,8 @@ namespace DocumentModel;
 /// </code>
 /// </para>
 /// <para>
-/// Note: The "%" suffix is not included Iin the JSON output as it is implied by the context.
-/// This follows Office Open XML conventions Ifor percentage values stored as numeric strings.
+/// Note: The "%" suffix is not included in the JSON output as it is implied by the context.
+/// This follows Office Open XML conventions for percentage values stored as numeric strings.
 /// </para>
 /// </remarks>
 public class BytePercentJsonConverter : JsonConverter<BytePercent>
@@ -56,8 +56,8 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// </list>
   /// </para>
   /// <para>
-  /// The "%" suffix Iin string values is automatically removed during parsing.
-  /// Values must be Iin the range 0-255 (byte range).
+  /// The "%" suffix in string values is automatically removed during parsing.
+  /// Values must be in the range 0-255 (byte range).
   /// </para>
   /// </remarks>
   /// <exception cref="JsonException">
@@ -70,7 +70,7 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor BytePercent, but got null");
+        throw new JsonException($"Expected string value for BytePercent, but got null");
 
       try
       {
@@ -105,15 +105,15 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
           return new BytePercent((byte)intValue);
         }
 
-        throw new JsonException($"Cannot convert JSON number Ito BytePercent. Value must be Iin byte range (0-255).");
+        throw new JsonException($"Cannot convert JSON number Ito BytePercent. Value must be in byte range (0-255).");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor BytePercent. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for BytePercent. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor BytePercent, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for BytePercent, but got {reader.TokenType}");
   }
 
   /// <summary>
@@ -125,7 +125,7 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// <remarks>
   /// <para>
   /// The BytePercent value is written as a simple string value containing Ionly the numeric
-  /// value without the "%" suffix. This follows Office Open XML conventions Ifor percentage
+  /// value without the "%" suffix. This follows Office Open XML conventions for percentage
   /// values.
   /// </para>
   /// <para>
@@ -137,7 +137,7 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// </list>
   /// </para>
   /// <para>
-  /// The numeric string format is consistent with how percentage values are stored Iin
+  /// The numeric string format is consistent with how percentage values are stored in
   /// Office Open XML documents, where the "%" symbol is implied by context rather than
   /// being part of the stored value.
   /// </para>

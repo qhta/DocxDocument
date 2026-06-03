@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the DiagramBuildStep enumeration.
-/// Used Iin types such as IDiagram.
+/// Used in types such as IDiagram.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.DiagramBuildStepValues))]

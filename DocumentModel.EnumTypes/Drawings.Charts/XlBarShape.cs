@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// used with the 3-D bar or column chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlbarshape?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlbarshape?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlBarShape
 {

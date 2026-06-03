@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the DisplayBlanksAs enumeration.
-/// Used Iin types such as IChart, ChartConverter.
+/// Used in types such as IChart, ChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.DisplayBlanksAsValues))]

@@ -1,16 +1,16 @@
-﻿using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="VClipboardData"/> struct.
+/// Provides JSON serialization and deserialization support for the <see cref="VClipboardData"/> struct.
 /// </summary>
 /// <remarks>
 /// <para>
 /// This converter handles JSON representation of clipboard data with format identifier and binary content.
-/// The binary data is encoded as Base64 Ifor JSON compatibility, following standard practices Ifor
-/// binary data Iin JSON.
+/// The binary data is encoded as Base64 for JSON compatibility, following standard practices for
+/// binary data in JSON.
 /// </para>
 /// <para>
 /// The JSON format includes metadata (format, size) and the Base64-encoded binary content:
@@ -58,12 +58,12 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
   /// The JSON object must have the following properties:
   /// <list type="bullet">
   /// <item><description><c>format</c>: An integer representing the clipboard format identifier</description></item>
-  /// <item><description><c>size</c>: (Optional) An integer representing the data size Iin bytes</description></item>
+  /// <item><description><c>size</c>: (Optional) An integer representing the data size in bytes</description></item>
   /// <item><description><c>data</c>: A Base64-encoded string containing the binary data</description></item>
   /// </list>
   /// </para>
   /// <para>
-  /// The size property, if provided, is used Ifor validation but is also computed from the data length.
+  /// The size property, if provided, is used for validation but is also computed from the data length.
   /// </para>
   /// </remarks>
   public override VClipboardData Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -75,7 +75,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
 
     if (reader.TokenType != JsonTokenType.StartObject)
     {
-      throw new JsonException($"Expected StartObject token Ifor VClipboardData, but got {reader.TokenType}");
+      throw new JsonException($"Expected StartObject token for VClipboardData, but got {reader.TokenType}");
     }
 
     int? format = null;
@@ -103,7 +103,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
             }
             else
             {
-              throw new JsonException($"Invalid format value Ifor VClipboardData");
+              throw new JsonException($"Invalid format value for VClipboardData");
             }
             break;
 
@@ -126,7 +126,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
                 }
                 catch (FormatException ex)
                 {
-                  throw new JsonException($"Invalid Base64 data Iin VClipboardData: {ex.Message}", ex);
+                  throw new JsonException($"Invalid Base64 data in VClipboardData: {ex.Message}", ex);
                 }
               }
               else
@@ -170,7 +170,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
   /// <param name="value">The <see cref="VClipboardData"/> value Ito serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// <para>Writes the VClipboardData value Iin the following JSON format:</para>
+  /// <para>Writes the VClipboardData value in the following JSON format:</para>
   /// <code>
   /// {
   ///   "format": 1,
@@ -182,7 +182,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
   /// The JSON object includes:
   /// <list type="bullet">
   /// <item><description><c>format</c>: The clipboard format identifier as a number</description></item>
-  /// <item><description><c>size</c>: The data size Iin bytes as a number</description></item>
+  /// <item><description><c>size</c>: The data size in bytes as a number</description></item>
   /// <item><description><c>data</c>: The binary data encoded as a Base64 string</description></item>
   /// </list>
   /// </para>

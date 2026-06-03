@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ParentLabelLayoutVal enumeration.
-/// Used Iin types such as ParentLabelLayout, ParentLabelLayoutVal, ParentLabelLayoutConverter.
+/// Used in types such as ParentLabelLayout, ParentLabelLayoutVal, ParentLabelLayoutConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ParentLabelLayoutVal

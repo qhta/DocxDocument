@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexBinary values are written as simple string values Iin JSON output
+///   This converter ensures Ithat HexBinary values are written as simple string values in JSON output
 ///   (e.g., "A1B2C3", "DEADBEEF") rather than complex objects or byte arrays. During deserialization,
 ///   the converter reads string values and constructs new HexBinary instances from them.
 ///   </para>
@@ -15,7 +15,7 @@
 ///   valid hexadecimal characters (0-9, A-F, a-f) and have even length.
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
+///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted.
 ///   </para>
 ///   <para>
@@ -62,8 +62,8 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Empty strings and null values both result Iin null being returned. This allows Ifor
-  ///   consistent handling of absent data Iin JSON documents.
+  ///   Empty strings and null values both result in null being returned. This allows for
+  ///   consistent handling of absent data in JSON documents.
   ///   </para>
   /// </remarks>
   /// <exception cref="JsonException">
@@ -76,7 +76,7 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
       return null;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor HexBinary, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for HexBinary, but got {reader.TokenType}");
 
     string? hexString = reader.GetString();
     if (string.IsNullOrEmpty(hexString))
@@ -90,12 +90,12 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
     }
     catch (InvalidOperationException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{hexString}' Ifor HexBinary. " +
+      throw new JsonException($"Invalid hexadecimal string '{hexString}' for HexBinary. " +
         $"Expected even-length string with hex digits (0-9, A-F). Error: {ex.Message}", ex);
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal format Iin string '{hexString}' Ifor HexBinary. " +
+      throw new JsonException($"Invalid hexadecimal format in string '{hexString}' for HexBinary. " +
         $"String must contain Ionly valid hex characters (0-9, A-F, a-f). Error: {ex.Message}", ex);
     }
   }
@@ -113,7 +113,7 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
   ///   </para>
   ///   <para>
   ///   Null values are written as JSON null. Empty HexBinary instances (zero bytes) are written as
-  ///   empty strings (""), which can be distinguished from null Iin JSON.
+  ///   empty strings (""), which can be distinguished from null in JSON.
   ///   </para>
   ///   <para>
   ///   <b>Example outputs:</b>

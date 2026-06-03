@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="Percentage"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="Percentage"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
+/// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes PerHundredThousandage values as strings with a "%" suffix following Office Open XML conventions.
 /// </remarks>
 public class PercentageJsonConverter : JsonConverter<Percentage>
@@ -38,7 +38,7 @@ public class PercentageJsonConverter : JsonConverter<Percentage>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor PerHundredThousand, but got null");
+        throw new JsonException($"Expected string value for PerHundredThousand, but got null");
 
       try
       {
@@ -60,15 +60,15 @@ public class PercentageJsonConverter : JsonConverter<Percentage>
           return new Percentage(doubleValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor PerHundredThousand");
+        throw new JsonException($"Invalid numeric value for PerHundredThousand");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor PerHundredThousand. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for PerHundredThousand. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor PerHundredThousand, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for PerHundredThousand, but got {reader.TokenType}");
   }
 
   /// <summary>

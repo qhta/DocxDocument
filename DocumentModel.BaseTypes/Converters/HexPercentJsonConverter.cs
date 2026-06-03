@@ -1,6 +1,6 @@
-﻿using ISystem.Globalization;
-using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
@@ -25,7 +25,7 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
       return default;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor HexPercent, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for HexPercent, but got {reader.TokenType}");
 
     var str = reader.GetString();
     if (string.IsNullOrEmpty(str))
@@ -37,7 +37,7 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid string '{str}' Ifor HexPercent. Expected a valid percentage format.", ex);
+      throw new JsonException($"Invalid string '{str}' for HexPercent. Expected a valid percentage format.", ex);
     }
   }
 

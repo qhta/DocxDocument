@@ -17083,7 +17083,7 @@
             </remarks>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
         </member>
-        <member name="T:DocumentModel.Wordprocessing.IField">
+        <member name="T:DocumentModel.Wordprocessing.Field">
             <summary>
             Represents a field. The Field object is a member of the Fields collection. The Fields collection represents the fields in a selection, range, or document.
             </summary>
@@ -17093,85 +17093,85 @@
             </remarks>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Code">
+        <member name="P:DocumentModel.Wordprocessing.Field.Code">
             <summary>
             Gets or sets the field code.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.code?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Type">
+        <member name="P:DocumentModel.Wordprocessing.Field.Type">
             <summary>
             Gets the field type.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.type?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Locked">
+        <member name="P:DocumentModel.Wordprocessing.Field.Locked">
             <summary>
             Gets or sets a value indicating whether the field is locked.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.locked?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Kind">
+        <member name="P:DocumentModel.Wordprocessing.Field.Kind">
             <summary>
             Gets the field kind.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.kind?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Result">
+        <member name="P:DocumentModel.Wordprocessing.Field.Result">
             <summary>
             Gets or sets the result displayed for the field.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.result?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Data">
+        <member name="P:DocumentModel.Wordprocessing.Field.Data">
             <summary>
             Gets or sets data associated with the field.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.data?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Next">
+        <member name="P:DocumentModel.Wordprocessing.Field.Next">
             <summary>
             Gets the next field in the `Fields` collection.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Previous">
+        <member name="P:DocumentModel.Wordprocessing.Field.Previous">
             <summary>
             Gets the previous field in the `Fields` collection.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.Index">
+        <member name="P:DocumentModel.Wordprocessing.Field.Index">
             <summary>
             Gets the index number of the field in the `Fields` collection.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.index?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.ShowCodes">
+        <member name="P:DocumentModel.Wordprocessing.Field.ShowCodes">
             <summary>
             Gets or sets a value indicating whether field codes are displayed instead of field results.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.showcodes?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.LinkFormat">
+        <member name="P:DocumentModel.Wordprocessing.Field.LinkFormat">
             <summary>
             Gets the link formatting for a linked field.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.OLEFormat">
+        <member name="P:DocumentModel.Wordprocessing.Field.OLEFormat">
             <summary>
             Gets the OLE formatting for an OLE field.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IField.InlineShape">
+        <member name="P:DocumentModel.Wordprocessing.Field.InlineShape">
             <summary>
             Gets the inline shape associated with the field.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Wordprocessing.IField.Select">
+        <member name="M:DocumentModel.Wordprocessing.Field.Select">
             <summary>
             Selects the specified object.
             </summary>

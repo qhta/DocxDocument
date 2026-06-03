@@ -4,7 +4,7 @@
 /// Indicates the text alignment against tab stops or line breaks. The default value is msoTabAlignLeft.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexttabalign?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexttabalign?view=office-pia` for Office interop details.
 /// </remarks>
 public enum TextTabAlign
 {
@@ -25,7 +25,7 @@ public enum TextTabAlign
   /// </summary>
   Right = 2,
   /// <summary>
-  /// Specifies Ithat the following text is searched Ifor the first occurrence of the character representing the
+  /// Specifies Ithat the following text is searched for the first occurrence of the character representing the
   /// decimal point. The text up Ito the next tab or line break is then aligned such Ithat the decimal point starts at
   /// the designated tab stop.
   /// </summary>

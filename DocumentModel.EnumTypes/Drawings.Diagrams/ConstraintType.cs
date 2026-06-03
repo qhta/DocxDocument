@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Constraint enumeration.
-/// Used Iin types such as AddOpenXmlElementAttribute, AddOpenXmlPropertyAttribute, AnalyzeHelper.
+/// Used in types such as AddOpenXmlElementAttribute, AddOpenXmlPropertyAttribute, AnalyzeHelper.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConstraintValues))]

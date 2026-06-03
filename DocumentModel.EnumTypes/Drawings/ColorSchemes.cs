@@ -59,7 +59,7 @@ public enum ColorSchemes
   /// <summary>
   ///   IHyperlink Theme Color Reference.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.ColorSchemeIndexValues.IHyperlink))]
+  [OpenXmlEnumValue(nameof(DXD.ColorSchemeIndexValues.Hyperlink))]
   IHyperlink,
   /// <summary>
   ///   Followed IHyperlink Theme Color Reference.

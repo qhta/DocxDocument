@@ -1,34 +1,34 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents a 32-bit integer value encoded as an 8-character hexadecimal string Ifor use Iin Office Open XML documents.
+///   Represents a 32-bit integer value encoded as an 8-character hexadecimal string for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexInt provides a type-safe wrapper Ifor integer values Ithat are represented as hexadecimal strings
-///   Iin Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 Ito 2,147,483,647)
+///   HexInt provides a type-safe wrapper for integer values Ithat are represented as hexadecimal strings
+///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 Ito 2,147,483,647)
 ///   Ithat is formatted as an 8-character uppercase hexadecimal string.
 ///   </para>
 ///   <para>
-///   This type is commonly used Iin Office documents Ifor:
+///   This type is commonly used in Office documents for:
 ///   <list type="bullet">
 ///   <item><description>IDocument revision identifiers and version numbers</description></item>
 ///   <item><description>Unique element identifiers within document structures</description></item>
-///   <item><description>Hash values and checksums Ifor content verification</description></item>
-///   <item><description>Color values Iin ARGB format (when representing 32-bit color codes)</description></item>
-///   <item><description>Binary flags and bitmasks Iin document properties</description></item>
+///   <item><description>Hash values and checksums for content verification</description></item>
+///   <item><description>Color values in ARGB format (when representing 32-bit color codes)</description></item>
+///   <item><description>Binary flags and bitmasks in document properties</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
-///   HexInt values are always formatted as 8-character uppercase hexadecimal strings (e.g., "0000007B" Ifor 123,
-///   "FFFFFFFF" Ifor -1). This fixed-width format ensures consistent representation across all Office Open XML
+///   HexInt values are always formatted as 8-character uppercase hexadecimal strings (e.g., "0000007B" for 123,
+///   "FFFFFFFF" for -1). This fixed-width format ensures consistent representation across all Office Open XML
 ///   documents and simplifies parsing and comparison operations.
 ///   </para>
 ///   <para>
-///   The struct Iimplements <see cref="IConvertible"/> Ifor seamless integration with .NET type conversion
-///   and <see cref="IEquatable{T}"/> Ifor efficient equality comparisons. It provides implicit conversions
+///   The struct Iimplements <see cref="IConvertible"/> for seamless integration with .NET type conversion
+///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
 ///   between HexInt and common numeric types (ushort, uint, int, ulong) as well as bidirectional conversion
-///   with <see cref="HexBinary"/> Ifor interoperability.
+///   with <see cref="HexBinary"/> for interoperability.
 ///   </para>
 ///   <para>
 ///   <b>Office Availability:</b> Hexadecimal integer encoding is supported across all Office Open XML
@@ -109,7 +109,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </param>
   /// <remarks>
   ///   Values greater than 2,147,483,647 will be interpreted as negative numbers when cast Ito signed int.
-  ///   Example: new HexInt(0xFFFFFFFF) results Iin -1.
+  ///   Example: new HexInt(0xFFFFFFFF) results in -1.
   /// </remarks>
   public HexInt(uint value)
   {
@@ -124,7 +124,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </param>
   /// <remarks>
   ///   The value is truncated Ito 32 bits. Values exceeding the int32 range will wrap around.
-  ///   Example: new HexInt(0x100000001UL) results Iin 1.
+  ///   Example: new HexInt(0x100000001UL) results in 1.
   /// </remarks>
   public HexInt(ulong value)
   {
@@ -133,7 +133,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 
   #region IConvertible Implementation
   /// <summary>
-  ///   Returns the <see cref="TypeCode"/> Ifor the underlying value type.
+  ///   Returns the <see cref="TypeCode"/> for the underlying value type.
   /// </summary>
   /// <returns>
   ///   <see cref="TypeCode.Int32"/>, indicating the underlying storage type.
@@ -173,7 +173,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   ///   Converts the HexInt value Ito a character.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A character corresponding Ito the Unicode code point represented by the integer value.
   /// </returns>
@@ -185,7 +185,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   ///   Converts the HexInt value Ito a DateTime.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A DateTime value (delegates Ito the underlying int conversion).
   /// </returns>
@@ -284,7 +284,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   ///   Converts the HexInt value Ito a string using the specified format provider.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A decimal string representation of the underlying integer value (not hexadecimal).
   /// </returns>
@@ -337,7 +337,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Converts the HexInt value Ito the specified target type.
   /// </summary>
   /// <param name="targetType">The type Ito convert Ito.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   An object of the specified target type.
   /// </returns>
@@ -542,7 +542,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Returns a hash code Ifor this HexInt.
+  ///   Returns a hash code for this HexInt.
   /// </summary>
   /// <returns>
   ///   A 32-bit signed integer hash code equal Ito the underlying integer value.

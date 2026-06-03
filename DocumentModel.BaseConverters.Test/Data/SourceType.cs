@@ -8,11 +8,11 @@ public enum SourceType
 {
   /// <summary>Book</summary>
   Book,
-  /// <summary>ISection Iin a book</summary>
+  /// <summary>ISection in a book</summary>
   BookSection,
   /// <summary>Journal article</summary>
   JournalArticle,
-  /// <summary>Article Iin a periodical</summary>
+  /// <summary>Article in a periodical</summary>
   ArticleInAPeriodical,
   /// <summary>Conference proceedings</summary>
   ConferenceProceedings,

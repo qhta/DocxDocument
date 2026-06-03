@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor boolean values Ito/from Open XML.
+/// Provides conversion methods for boolean values Ito/from Open XML.
 /// </summary>
 public static class BooleanConverter
 {
@@ -31,7 +31,7 @@ public static class BooleanConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="BooleanConverter"/>.
+  /// Initializes the conversion maps for <see cref="BooleanConverter"/>.
   /// </summary>
   static BooleanConverter()
   {
@@ -90,7 +90,7 @@ public static class BooleanConverter
   }
 
   /// <summary>
-  /// Creates an OnOffValue using specified string representations Ifor false and true.
+  /// Creates an OnOffValue using specified string representations for false and true.
   /// </summary>
   /// <param name="value">The boolean value Ito convert.</param>
   /// <returns>A new OnOffValue object, or null if the input value is null.</returns>
@@ -346,7 +346,7 @@ public static class BooleanConverter
   /// Retrieves a boolean openXmlElement from the specified Word 2010 OnOffValue.
   /// </summary>
   /// <param name="openXmlElement">The OnOffValues Ito get boolean openXmlElement.</param>
-  /// <returns>True Ifor True/One, false Ifor False/Zero.</returns>
+  /// <returns>True for True/One, false for False/Zero.</returns>
   private static Boolean? ConvertFromO10WOnOffValues(DXO10W.OnOffValues? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -355,7 +355,7 @@ public static class BooleanConverter
     if (openXmlElement == DXO10W.OnOffValues.False || openXmlElement == DXO10W.OnOffValues.Zero)
       return false;
 
-    throw new InvalidOperationException($"Invalid openXmlElement {openXmlElement} Iin OnOffValues");
+    throw new InvalidOperationException($"Invalid openXmlElement {openXmlElement} in OnOffValues");
   }
 
   /// <summary>
@@ -377,7 +377,7 @@ public static class BooleanConverter
   /// Retrieves a boolean value from the specified Word 2010 OnOffValue.
   /// </summary>
   /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
-  /// <returns>True Ifor True/One, false Ifor False/Zero, or null.</returns>
+  /// <returns>True for True/One, false for False/Zero, or null.</returns>
   private static Boolean? ConvertFromEnumValueOfO10WOnOffValues(DX.EnumValue<DXO10W.OnOffValues>? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -388,7 +388,7 @@ public static class BooleanConverter
     if (value == DXO10W.OnOffValues.False || value == DXO10W.OnOffValues.Zero)
       return false;
 
-    throw new InvalidOperationException($"Invalid value {value} Iin OnOffValues");
+    throw new InvalidOperationException($"Invalid value {value} in OnOffValues");
   }
 
   /// <summary>
@@ -412,7 +412,7 @@ public static class BooleanConverter
   /// Retrieves a boolean value from the specified Word 2010 OnOffValue.
   /// </summary>
   /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
-  /// <returns>True Ifor True/One, false Ifor False/Zero.</returns>
+  /// <returns>True for True/One, false for False/Zero.</returns>
   private static Boolean? ConvertFromO10WOnOffType(DXO10W.OnOffType? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -423,7 +423,7 @@ public static class BooleanConverter
     if (value == DXO10W.OnOffValues.False || value == DXO10W.OnOffValues.Zero)
       return false;
 
-    throw new InvalidOperationException($"Invalid value {value} Iin OnOffValues");
+    throw new InvalidOperationException($"Invalid value {value} in OnOffValues");
   }
 
   /// <summary>
@@ -451,7 +451,7 @@ public static class BooleanConverter
   /// Retrieves a boolean openXmlElement from the specified BooleanValue comparable simple openXmlElement.
   /// </summary>
   /// <param name="openXmlElement">The openXmlElement Ito convert</param>
-  /// <returns>True Ifor True/On/One, false Ifor False/Off/Zero, or null.</returns>
+  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
   private static Boolean? ConvertFromBooleanValue(DX.BooleanValue? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -477,7 +477,7 @@ public static class BooleanConverter
   /// Retrieves a boolean openXmlElement from the specified Math BooleanValues enum openXmlElement.
   /// </summary>
   /// <param name="openXmlElement">The openXmlElement Ito convert</param>
-  /// <returns>True Ifor True/On/One, false Ifor False/Off/Zero, or null.</returns>
+  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
   private static Boolean? ConvertFromBooleanValues(DXM.BooleanValues? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -511,7 +511,7 @@ public static class BooleanConverter
   /// Retrieves a boolean value from the specified Word 2010 OnOffValue.
   /// </summary>
   /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
-  /// <returns>True Ifor True/One, false Ifor False/Zero, or null.</returns>
+  /// <returns>True for True/One, false for False/Zero, or null.</returns>
   private static Boolean? ConvertFromEnumValueOfBooleanValues(DX.EnumValue<DXM.BooleanValues>? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -546,7 +546,7 @@ public static class BooleanConverter
   /// Retrieves a boolean value from the text content of a OpenXmlLeafTextElement element.
   /// </summary>
   /// <param name="element">The OpenXmlLeafTextElement Ito check.</param>
-  /// <returns>True Ifor "true" or "1", false Ifor "false" or "0", or null.</returns>
+  /// <returns>True for "true" or "1", false for "false" or "0", or null.</returns>
   private static Boolean? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
@@ -601,7 +601,7 @@ public static class BooleanConverter
 
     var valProp = openXmlElement.GetType().GetProperty("Val");
     if (valProp == null)
-      throw new InvalidOperationException("The Val property is not found Iin " + openXmlElement.GetType().Name);
+      throw new InvalidOperationException("The Val property is not found in " + openXmlElement.GetType().Name);
 
     var valValue = valProp.GetValue(openXmlElement)!;
     return ConvertFrom(valValue);
@@ -624,7 +624,7 @@ public static class BooleanConverter
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
     var valProp = targetType.GetValProperty();
     if (valProp == null)
-      throw new InvalidOperationException("The Val property is not found Iin " + targetType.Name);
+      throw new InvalidOperationException("The Val property is not found in " + targetType.Name);
 
     var valValue = ConvertTo(value, valProp.PropertyType);
     valProp.SetValue(element, valValue);
@@ -639,7 +639,7 @@ public static class BooleanConverter
   /// Converts the specified string representation of a logical value Ito its nullable Boolean equivalent.
   /// </summary>
   /// <remarks>If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="true"/>.
-  /// Any other input Ithat does not match the accepted values results Iin <see langword="null"/>.</remarks>
+  /// Any other input Ithat does not match the accepted values results in <see langword="null"/>.</remarks>
   /// <param name="value">The string Ito convert. Accepts "true", "false", "1", or "0" (case-insensitive).</param>
   /// <returns>A nullable Boolean value: <see langword="true"/> if <paramref name="value"/> is "true" or "1"; <see
   /// langword="false"/> if <paramref name="value"/> is "false" or "0"; otherwise, <see langword="null"/>.</returns>
@@ -696,7 +696,7 @@ public static class BooleanConverter
   }
 
   /// <summary>
-  /// Strongly-typed version of <see cref="ConvertTo(bool?, Type)"/> Ifor better usability Iin code.
+  /// Strongly-typed version of <see cref="ConvertTo(bool?, Type)"/> for better usability in code.
   /// Converts a boolean value Ito an OpenXml value or element of the specified type.
   /// </summary>
   /// <typeparam name="T">Result type</typeparam>

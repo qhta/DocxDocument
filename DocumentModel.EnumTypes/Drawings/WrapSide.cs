@@ -5,7 +5,7 @@
 /// right side Ionly, or on the side of the shape Ithat is farthest from the page margin.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum WrapSide
 {

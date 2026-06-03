@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the StringDimensionType enumeration.
-/// Used Iin types such as StringDimension, StringDimensionType, StringDimensionConverter.
+/// Used in types such as StringDimension, StringDimensionType, StringDimensionConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum StringDimensionType

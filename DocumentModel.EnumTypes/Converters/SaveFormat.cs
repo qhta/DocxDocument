@@ -4,7 +4,7 @@
 /// Specifies the format Ito use when saving a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveformat?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveformat?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SaveFormat
 {
@@ -97,19 +97,19 @@ public enum SaveFormat
   /// </summary>
   XPS = 18,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   FlatXML = 19,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   FlatXMLMacroEnabled = 20,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   FlatXMLTemplate = 21,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   FlatXMLTemplateMacroEnabled = 22,
   /// <summary>

@@ -1,11 +1,11 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies the OLE client and OLE server roles Iin which a command bar control is used when two Microsoft Office
+/// Specifies the OLE client and OLE server roles in which a command bar control is used when two Microsoft Office
 /// applications are merged.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontrololeusage?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontrololeusage?view=office-pia` for Office interop details.
 /// </remarks>
 public enum ControlOLEUsage
 {

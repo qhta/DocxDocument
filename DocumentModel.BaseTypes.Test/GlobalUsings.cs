@@ -1,7 +1,7 @@
 ﻿// IGlobal using directives
 
-global using ISystem.Text.Json;
-global using ISystem.Xml;
-global using ISystem.Xml.Serialization;
+global using System.Text.Json;
+global using System.Xml;
+global using System.Xml.Serialization;
 
 global using DocumentModel.BaseTypes.Interfaces;

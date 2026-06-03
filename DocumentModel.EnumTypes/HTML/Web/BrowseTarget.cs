@@ -5,7 +5,7 @@
 /// the next or previous instance of the item.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` for Office interop details.
 /// </remarks>
 public enum BrowseTarget
 {
@@ -32,7 +32,7 @@ public enum BrowseTarget
   /// <summary>
   /// Places insertion point before next or previous browsefield.
   /// </summary>
-  IField = 6,
+  Field = 6,
   /// <summary>
   /// Places insertion point before next or previous table.
   /// </summary>

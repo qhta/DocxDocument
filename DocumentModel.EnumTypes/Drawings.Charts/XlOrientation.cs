@@ -4,7 +4,7 @@
 /// Specifies the text orientation.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlorientation?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlorientation?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlOrientation
 {
@@ -17,7 +17,7 @@ public enum XlOrientation
   /// </summary>
   Downward = -4170,
   /// <summary>
-  /// Text runs downward and is centered Iin the cell.
+  /// Text runs downward and is centered in the cell.
   /// </summary>
   Vertical = -4166,
   /// <summary>

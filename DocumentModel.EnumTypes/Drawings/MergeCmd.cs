@@ -4,7 +4,7 @@
 /// Specifies the output of a merge shapes operation.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomergecmd?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomergecmd?view=office-pia` for Office interop details.
 /// </remarks>
 public enum MergeCmd
 {

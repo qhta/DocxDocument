@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the LayoutTarget enumeration.
-/// Used Iin types such as ManualLayout, ManualLayoutConverter.
+/// Used in types such as ManualLayout, ManualLayoutConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.LayoutTargetValues))]

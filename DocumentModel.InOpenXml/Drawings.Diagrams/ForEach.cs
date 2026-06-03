@@ -24,43 +24,43 @@ public partial class ForEach : ModelElement<DXDD.ForEach>
  ///   Axis
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.Axis))]
- public ListOf<AxisType>? Axis { get => _Axis; set => UpdateField(ref _Axis, value, nameof(Axis)); }
- private ListOf<AxisType>? _Axis;
+ public List<AxisType>? Axis { get => _Axis; set => UpdateField(ref _Axis, value, nameof(Axis)); }
+ private List<AxisType>? _Axis;
 
  /// <summary>
  ///   Data Point Type
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.PointType))]
- public ListOf<ElementType>? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
- private ListOf<ElementType>? _PointType;
+ public List<ElementType>? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
+ private List<ElementType>? _PointType;
 
  /// <summary>
  ///   Hide Last Transition
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.HideLastTrans))]
- public ListOf<Boolean>? HideLastTrans { get => _HideLastTrans; set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans)); }
- private ListOf<Boolean>? _HideLastTrans;
+ public List<Boolean>? HideLastTrans { get => _HideLastTrans; set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans)); }
+ private List<Boolean>? _HideLastTrans;
 
  /// <summary>
  ///   Start
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.Start))]
- public ListOf<Int32>? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
- private ListOf<Int32>? _Start;
+ public List<Int32>? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
+ private List<Int32>? _Start;
 
  /// <summary>
  ///   Count
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.Count))]
- public ListOf<UInt32>? Count { get => _Count; set => UpdateField(ref _Count, value, nameof(Count)); }
- private ListOf<UInt32>? _Count;
+ public List<UInt32>? Count { get => _Count; set => UpdateField(ref _Count, value, nameof(Count)); }
+ private List<UInt32>? _Count;
 
  /// <summary>
  ///   Step
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.ForEach.Step))]
- public ListOf<Int32>? Step { get => _Step; set => UpdateField(ref _Step, value, nameof(Step)); }
- private ListOf<Int32>? _Step;
+ public List<Int32>? Step { get => _Step; set => UpdateField(ref _Step, value, nameof(Step)); }
+ private List<Int32>? _Step;
 
  /// <summary>
  /// Algorithm.

@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies the way certain alerts and messages are handled while a macro is running.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalertlevel?view=word-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalertlevel?view=word-pia` for Office interop details.
 /// </remarks>
 public enum AlertLevel
 {

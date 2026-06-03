@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the TickMark enumeration.
-/// Used Iin types such as AxisType.
+/// Used in types such as AxisType.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.TickMarkValues))]

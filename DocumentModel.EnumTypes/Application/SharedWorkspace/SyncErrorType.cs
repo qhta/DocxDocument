@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies a document synchronization error.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SyncErrorType
 {
@@ -33,7 +33,7 @@ public enum SyncErrorType
   /// </summary>
   FileTooLarge,
   /// <summary>
-  /// Destination file Iin use.
+  /// Destination file in use.
   /// </summary>
   FileInUse,
   /// <summary>

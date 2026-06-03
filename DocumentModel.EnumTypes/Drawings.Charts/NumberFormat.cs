@@ -62,7 +62,7 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.IdeographDigital))]
   IdeographDigital,
   /// <summary>
-  ///   Japanese Counting ISystem.
+  ///   Japanese Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.JapaneseCounting))]
   JapaneseCounting,
@@ -92,12 +92,12 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.JapaneseLegal))]
   JapaneseLegal,
   /// <summary>
-  ///   Japanese Digital Ten Thousand Counting ISystem.
+  ///   Japanese Digital Ten Thousand Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.JapaneseDigitalTenThousand))]
   JapaneseDigitalTenThousand,
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.DecimalEnclosedCircle))]
   DecimalEnclosedCircle,
@@ -142,17 +142,17 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.DecimalEnclosedFullstop))]
   DecimalEnclosedFullstop,
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin Parenthesis.
+  ///   Decimal Numbers Enclosed in Parenthesis.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.DecimalEnclosedParen))]
   DecimalEnclosedParen,
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.DecimalEnclosedCircleChinese))]
   DecimalEnclosedCircleChinese,
   /// <summary>
-  ///   Ideographs Enclosed Iin a Circle.
+  ///   Ideographs Enclosed in a Circle.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.IdeographEnclosedCircle))]
   IdeographEnclosedCircle,
@@ -172,7 +172,7 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.IdeographZodiacTraditional))]
   IdeographZodiacTraditional,
   /// <summary>
-  ///   Taiwanese Counting ISystem.
+  ///   Taiwanese Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.TaiwaneseCounting))]
   TaiwaneseCounting,
@@ -182,17 +182,17 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.IdeographLegalTraditional))]
   IdeographLegalTraditional,
   /// <summary>
-  ///   Taiwanese Counting Thousand ISystem.
+  ///   Taiwanese Counting Thousand System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.TaiwaneseCountingThousand))]
   TaiwaneseCountingThousand,
   /// <summary>
-  ///   Taiwanese Digital Counting ISystem.
+  ///   Taiwanese Digital Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.TaiwaneseDigital))]
   TaiwaneseDigital,
   /// <summary>
-  ///   Chinese Counting ISystem.
+  ///   Chinese Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.ChineseCounting))]
   ChineseCounting,
@@ -202,17 +202,17 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.ChineseLegalSimplified))]
   ChineseLegalSimplified,
   /// <summary>
-  ///   Chinese Counting Thousand ISystem.
+  ///   Chinese Counting Thousand System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.ChineseCountingThousand))]
   ChineseCountingThousand,
   /// <summary>
-  ///   Korean Digital Counting ISystem.
+  ///   Korean Digital Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.KoreanDigital))]
   KoreanDigital,
   /// <summary>
-  ///   Korean Counting ISystem.
+  ///   Korean Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.KoreanCounting))]
   KoreanCounting,
@@ -222,7 +222,7 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.KoreanLegal))]
   KoreanLegal,
   /// <summary>
-  ///   Korean Digital Counting ISystem Alternate.
+  ///   Korean Digital Counting System Alternate.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.KoreanDigital2))]
   KoreanDigital2,
@@ -287,7 +287,7 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.HindiNumbers))]
   HindiNumbers,
   /// <summary>
-  ///   Hindi Counting ISystem.
+  ///   Hindi Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.HindiCounting))]
   HindiCounting,
@@ -302,7 +302,7 @@ public enum NumberFormat
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.ThaiNumbers))]
   ThaiNumbers,
   /// <summary>
-  ///   Thai Counting ISystem.
+  ///   Thai Counting System.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.NumberFormatValues.ThaiCounting))]
   ThaiCounting,

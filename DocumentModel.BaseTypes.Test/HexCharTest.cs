@@ -3,7 +3,7 @@
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor HexChar type serialization Iin both XML and JSON formats.
+/// Test suite for HexChar type serialization in both XML and JSON formats.
 /// </summary>
 public static class HexCharTest
 {
@@ -29,7 +29,7 @@ public static class HexCharTest
   static bool TestHexCharBasicOperations()
   {
     Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string Ito HexChar conversion (ASCII)
-    HexChar hexChar1 = "41"; // 'A' Iin hex
+    HexChar hexChar1 = "41"; // 'A' in hex
     Console.WriteLine(
       $"\n✓ String Ito HexChar (ASCII): {hexChar1} = {(char)hexChar1.ToUInt16(null)} ({hexChar1.ToUInt16(null)})");
 
@@ -84,7 +84,7 @@ public static class HexCharTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -253,8 +253,8 @@ public static class HexCharTest
     const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       HexChar hex = new HexChar("41");
     }
@@ -263,7 +263,7 @@ public static class HexCharTest
 
     // Test construction from ushort
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       HexChar hex = new HexChar((ushort)65);
     }
@@ -273,7 +273,7 @@ public static class HexCharTest
     // Test ToString performance
     HexChar testChar = new HexChar("41");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testChar.ToString();
     }
@@ -289,7 +289,7 @@ public static class HexCharTest
       MaxValue = "FFFF"
     };
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++) // Fewer iterations Ifor serialization
+    for (int i = 0; i < iterations / 10; i++) // Fewer iterations for serialization
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -299,7 +299,7 @@ public static class HexCharTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexCharTestData>(jsonData);
     }
@@ -310,7 +310,7 @@ public static class HexCharTest
     HexChar hex1 = new HexChar("41");
     HexChar hex2 = new HexChar("41");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool equal = hex1.Equals(hex2);
     }
@@ -319,7 +319,7 @@ public static class HexCharTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       ushort value = hex1;
     }
@@ -340,7 +340,7 @@ public static class HexCharTest
 public class HexCharTestData
 {
   [XmlElement("LetterA")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexChar LetterA { get; set; }
 
   [XmlElement("Space")]

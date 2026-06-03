@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Expand enumeration.
-/// Used Iin types such as BackstageCheckBox, BackstageComboBox, BackstageDropDown.
+/// Used in types such as BackstageCheckBox, BackstageComboBox, BackstageDropDown.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.ExpandValues))]

@@ -1,20 +1,20 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement Iin eighth-points (one-eighth of a typographic point).
-/// An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision Ifor typography.
+/// Represents a measurement in eighth-points (one-eighth of a typographic point).
+/// An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision for typography.
 /// Supports conversions Ito/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
-/// Eighth-points provide the finest precision among point-based measurements Ifor typographic adjustments.
+/// Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
 /// This supports implicit conversions Ito/from various integer types and string representations with unit suffixes.
-/// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points Iin 1 point.
+/// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
 [JsonConverter(typeof(EPSJsonConverter))]
 public partial class EPS : UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of eighth-points Iin one inch.
+  /// Defines the number of eighth-points in one inch.
   /// </summary>
   protected override double UnitsPerInch => 72*8;
 
@@ -30,7 +30,7 @@ public partial class EPS : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EPS"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "Iin" (inches).</param>
+  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
@@ -40,7 +40,7 @@ public partial class EPS : UniversalMeasure
   /// <item><description>"12pt" - points (will be converted Ito 24 half-points)</description></item>
   /// <item><description>"1in" - inches (will be converted Ito 144 half-points)</description></item>
   /// </list>
-  /// <para>Commas Iin the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
   /// </remarks>
   public EPS(string str)
   {
@@ -50,7 +50,7 @@ public partial class EPS : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value Iin EPS.</param>
+  /// <param name="value">The value in EPS.</param>
   public EPS(Int64 value)
   {
     Init(value);
@@ -58,7 +58,7 @@ public partial class EPS : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EPS"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value Iin EPS.</param>
+  /// <param name="value">The value in EPS.</param>
   public EPS(UInt64 value)
   {
     Init(value);
@@ -67,7 +67,7 @@ public partial class EPS : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EPS"/> from a 64-bit floating-point value.
   /// </summary>
-  /// <param name="value">The value Iin half-points.</param>
+  /// <param name="value">The value in half-points.</param>
   public EPS(Double value)
   {
     Init(value);
@@ -79,37 +79,37 @@ public partial class EPS : UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value Iin twips.
+  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value in twips.
   /// </summary>
   public static EPS FromTwips(double twips) => new EPS($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value Iin points.
+  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value in points.
   /// </summary>
   public static EPS FromPT(double points) => new EPS($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat represents a length specified Iin millimeters.
+  /// Creates a new instance of an object Ithat represents a length specified in millimeters.
   /// </summary>
   public static EPS FromMM(double millimeters) => new EPS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static EPS FromCM(double centimeters) => new EPS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin inches.
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static EPS FromInch(double inches) => new EPS($"{inches}Iin");
+  public static EPS FromInch(double inches) => new EPS($"{inches}in");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
   /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be Iin a format recognized by the parser.</param>
+  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static EPS Parse(string value) => new EPS(value);
 
@@ -124,7 +124,7 @@ public partial class EPS : UniversalMeasure
   public static EPS ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
-    LengthUnit.IPoints => FromPT(value),
+    LengthUnit.Points => FromPT(value),
     LengthUnit.Millimeters => FromMM(value),
     LengthUnit.Centimeters => FromCM(value),
     LengthUnit.Inches => FromInch(value),
@@ -206,9 +206,9 @@ public partial class EPS : UniversalMeasure
   /// <summary>
   /// Implicitly converts a double-precision floating-point number Ito a EPS instance.
   /// </summary>
-  /// <remarks>This conversion allows Ifor seamless integration of double values into contexts where EPS are
-  /// required, facilitating operations Ithat involve measurements Iin EPS.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement Iin EPS.</param>
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where EPS are
+  /// required, facilitating operations Ithat involve measurements in EPS.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement in EPS.</param>
   public static implicit operator EPS(Double value)
   {
     return new EPS(value);

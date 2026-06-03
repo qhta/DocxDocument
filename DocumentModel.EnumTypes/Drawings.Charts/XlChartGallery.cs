@@ -4,12 +4,12 @@
 /// Specifies a chart gallery.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartgallery?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartgallery?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlChartGallery
 {
   /// <summary>
-  /// The built-Iin gallery.
+  /// The built-in gallery.
   /// </summary>
   BuiltIn = 21,
   /// <summary>

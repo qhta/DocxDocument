@@ -1,17 +1,26 @@
-﻿namespace DocumentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Text.Json.Serialization;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Represents a generic list of values Ithat Iimplements XSD list semantics.
 /// </summary>
-/// <typeparam name="T">The type of elements Iin the list. Must implement <see cref="IConvertible"/>.</typeparam>
+/// <typeparam name="T">The type of elements in the list. Must implement <see cref="IConvertible"/>.</typeparam>
 /// <remarks>
-/// <para>This class provides a list implementation Ithat can be serialized Ito and from text using space-separated values (or comma/semicolon Ifor strings).</para>
+/// <para>This class provides a list implementation Ithat can be serialized Ito and from text using space-separated values (or comma/semicolon for strings).</para>
 /// <para>The class supports:</para>
 /// <list type="bullet">
-/// <item><description>Parsing from text with appropriate separators (space Ifor numeric types, comma/semicolon Ifor strings)</description></item>
+/// <item><description>Parsing from text with appropriate separators (space for numeric types, comma/semicolon for strings)</description></item>
 /// <item><description>Converting Ito text representation with space separators</description></item>
-/// <item><description>Observable collection pattern Ifor change notifications</description></item>
-/// <item><description>Implicit conversions between string and ListOf&lt;T&gt;</description></item>
+/// <item><description>Observable collection pattern for change notifications</description></item>
+/// <item><description>Implicit conversions between string and List&lt;T&gt;</description></item>
 /// </list>
 /// </remarks>
 [DebuggerDisplay("{InnerText}")]
@@ -23,7 +32,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   private string? TextValue;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ListOf{T}"/> class.
+  /// Initializes a new instance of the <see cref="List{T}"/> class.
   /// </summary>
   /// <remarks>
   /// For string types, the list separator is set Ito comma (,) and semicolon (;).
@@ -36,7 +45,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ListOf{T}"/> class using the supplied list of values.
+  /// Initializes a new instance of the <see cref="List{T}"/> class using the supplied list of values.
   /// </summary>
   /// <param name="list">The enumerable collection of values Ito initialize the list with.</param>
   /// <remarks>
@@ -44,25 +53,25 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// </remarks>
   public ListOf(IEnumerable<T> list) : this()
   {
-    foreach (var obj Iin list)
+    foreach (var obj in list)
       Add(obj);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ListOf{T}"/> class by deep copying the supplied <see cref="ListOf{T}"/> instance.
+  /// Initializes a new instance of the <see cref="List{T}"/> class by deep copying the supplied <see cref="List{T}"/> instance.
   /// </summary>
-  /// <param name="list">The source <see cref="ListOf{T}"/> instance Ito copy.</param>
+  /// <param name="list">The source <see cref="List{T}"/> instance Ito copy.</param>
   /// <remarks>
   /// Creates a new list containing all elements from the source list.
   /// </remarks>
   public ListOf(ListOf<T> list) : this()
   {
-    foreach (var obj Iin list)
+    foreach (var obj in list)
       Add(obj);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="ListOf{T}"/> class from a string representation.
+  /// Initializes a new instance of the <see cref="List{T}"/> class from a string representation.
   /// </summary>
   /// <param name="str">The string Ito parse into list items.</param>
   /// <remarks>
@@ -87,7 +96,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <value>A string containing all list items separated by spaces, or <see langword="null"/> if not set.</value>
   /// <remarks>
   /// <para>When getting, the list items are joined with space separators.</para>
-  /// <para>When setting, the string is parsed using the appropriate separators (space Ifor numeric types, comma/semicolon Ifor strings).</para>
+  /// <para>When setting, the string is parsed using the appropriate separators (space for numeric types, comma/semicolon for strings).</para>
   /// <para>Empty entries are removed during parsing.</para>
   /// </remarks>
   public string? InnerText
@@ -98,7 +107,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
       {
         var stringBuilder = new StringBuilder();
         var str = string.Empty;
-        foreach (var obj Iin this)
+        foreach (var obj in this)
         {
           stringBuilder.Append(str);
           stringBuilder.Append(obj);
@@ -131,7 +140,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   {
     if (TextValue == null || TextValue.Length == 0)
       return;
-    foreach (var str Iin TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries))
+    foreach (var str in TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries))
     {
       var obj = (T)Convert.ChangeType(str, typeof(T), CultureInfo.InvariantCulture);
       Add(obj);
@@ -157,7 +166,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
     if (TextValue == null || TextValue.Length == 0)
       return false;
     var strArray = TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
-    foreach (var str Iin strArray)
+    foreach (var str in strArray)
     {
       var obj2 = (T)Convert.ChangeType(str, typeof(T));
       Add(obj2);
@@ -166,10 +175,10 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   }
 
   /// <summary>
-  /// Implicitly converts a string Ito a <see cref="ListOf{T}"/> instance.
+  /// Implicitly converts a string Ito a <see cref="List{T}"/> instance.
   /// </summary>
   /// <param name="value">The string Ito convert, or <see langword="null"/>.</param>
-  /// <returns>A <see cref="ListOf{T}"/> instance containing the parsed items, or <see langword="null"/> if <paramref name="value"/> is null.</returns>
+  /// <returns>A <see cref="List{T}"/> instance containing the parsed items, or <see langword="null"/> if <paramref name="value"/> is null.</returns>
   /// <remarks>
   /// The string is parsed using appropriate separators based on the element type.
   /// </remarks>
@@ -181,9 +190,9 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="ListOf{T}"/> instance Ito a string.
+  /// Implicitly converts a <see cref="List{T}"/> instance Ito a string.
   /// </summary>
-  /// <param name="value">The <see cref="ListOf{T}"/> instance Ito convert, or <see langword="null"/>.</param>
+  /// <param name="value">The <see cref="List{T}"/> instance Ito convert, or <see langword="null"/>.</param>
   /// <returns>A string representation of the list with items separated by spaces, or <see langword="null"/> if <paramref name="value"/> is null.</returns>
   /// <remarks>
   /// Uses the <see cref="InnerText"/> property Ito generate the string representation.
@@ -196,11 +205,11 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Indicates whether the current object is equal Ito another object of the same type.
   /// </summary>
-  /// <param name="other">A <see cref="ListOf{T}"/> Ito compare with this object.</param>
+  /// <param name="other">A <see cref="List{T}"/> Ito compare with this object.</param>
   /// <returns><see langword="true"/> if the current object is equal Ito the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   /// <remarks>
-  /// Two <see cref="ListOf{T}"/> instances are considered equal if they contain the same elements Iin the same order.
-  /// Uses <see cref="Enumerable.SequenceEqual{TSource}(IEnumerable{TSource}, IEnumerable{TSource})"/> Ifor comparison.
+  /// Two <see cref="List{T}"/> instances are considered equal if they contain the same elements in the same order.
+  /// Uses <see cref="Enumerable.SequenceEqual{TSource}(IEnumerable{TSource}, IEnumerable{TSource})"/> for comparison.
   /// </remarks>
   public bool Equals(ListOf<T>? other)
   {
@@ -210,16 +219,16 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   /// <remarks>
-  /// The hash code is computed by combining the count with the hash codes of all items Iin the collection.
+  /// The hash code is computed by combining the count with the hash codes of all items in the collection.
   /// </remarks>
   public override int GetHashCode()
   {
     var result = Count;
-    foreach (var item Iin this)
+    foreach (var item in this)
       result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }
@@ -227,7 +236,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   #region IConvertible Implementation
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor this instance.
+  /// Returns the <see cref="TypeCode"/> for this instance.
   /// </summary>
   /// <returns><see cref="TypeCode.Object"/> as this is a collection type.</returns>
   public TypeCode GetTypeCode()
@@ -246,76 +255,76 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Byte.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Byte.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Char.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Char.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito DateTime.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito DateTime.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Decimal.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Decimal.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Double.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Double.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Int16.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Int16.");
   }
 
   /// <summary>
   /// Converts the value of this instance Ito an equivalent 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>The number of items Iin the list.</returns>
+  /// <returns>The number of items in the list.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
     return Count;
@@ -325,32 +334,32 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// Converts the value of this instance Ito an equivalent 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>The number of items Iin the list.</returns>
+  /// <returns>The number of items in the list.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
     return Count;
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito SByte.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito SByte.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito Single.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito Single.");
   }
 
   /// <summary>
@@ -372,7 +381,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// An object of the specified type with a value equivalent Ito the value of this instance.
   /// Supports conversion Ito <see cref="String"/> and <see cref="Boolean"/>.
   /// </returns>
-  /// <exception cref="InvalidCastException">This conversion is not supported Ifor the specified type.</exception>
+  /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
   {
     if (conversionType == typeof(string))
@@ -387,28 +396,28 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
     if (conversionType == typeof(long))
       return ToInt64(provider);
     
-    if (conversionType == typeof(ListOf<T>))
+    if (conversionType == typeof(List<T>))
       return this;
 
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito {conversionType.Name}.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito {conversionType.Name}.");
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor list types.
+  /// This conversion is not supported for list types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException($"Cannot convert ListOf<{typeof(T).Name}> Ito UInt16.");
+    throw new InvalidCastException($"Cannot convert List<{typeof(T).Name}> Ito UInt16.");
   }
 
   /// <summary>
   /// Converts the value of this instance Ito an equivalent 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>The number of items Iin the list as an unsigned integer.</returns>
+  /// <returns>The number of items in the list as an unsigned integer.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
     return (uint)Count;
@@ -418,7 +427,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// Converts the value of this instance Ito an equivalent 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>The number of items Iin the list as an unsigned long integer.</returns>
+  /// <returns>The number of items in the list as an unsigned long integer.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
     return (ulong)Count;

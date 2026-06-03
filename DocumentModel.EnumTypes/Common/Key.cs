@@ -2,10 +2,10 @@
 
 /// <summary>
 /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-/// values Iin a character encoding map, they share a single constant Iin this enumeration.
+/// values in a character encoding map, they share a single constant in this enumeration.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` for Office interop details.
 /// </remarks>
 public enum Key
 {

@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies alignment Ifor WordArt text.
+/// Specifies alignment for WordArt text.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexteffectalignment?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexteffectalignment?view=office-pia` for Office interop details.
 /// </remarks>
 public enum TextEffectAlignment
 {

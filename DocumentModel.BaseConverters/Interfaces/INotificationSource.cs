@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface Ifor an item Ito be used as a sender of PropertyChanged event, which needs a property name.
+/// Interface for an item Ito be used as a sender of PropertyChanged event, which needs a property name.
 /// </summary>
 public interface INotificationSource
 {

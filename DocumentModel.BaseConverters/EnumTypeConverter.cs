@@ -1,7 +1,11 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
+
+namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Enum value Ito/from Open XML.
+/// Provides conversion methods for Enum value Ito/from Open XML.
 /// </summary>
 public static partial class EnumTypeConverter
 {
@@ -25,7 +29,7 @@ public static partial class EnumTypeConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="EnumTypeConverter"/>.
+  /// Initializes the conversion maps for <see cref="EnumTypeConverter"/>.
   /// </summary>
   static EnumTypeConverter()
   {
@@ -39,7 +43,7 @@ public static partial class EnumTypeConverter
   /// Maps enum types Ito their name-value bidirectional dictionaries.
   /// The key is the model enum Type, and the value is a BiDiDictionary mapping model enum values Ito openXmlEnumValues objects.
   /// </summary>
-  private static readonly IDictionary<Type, BiDiDictionary<object, object>> mappingEnumValues = new();
+  private static readonly Dictionary<Type, BiDiDictionary<object, object>> mappingEnumValues = new();
 
 
   /// <summary>
@@ -61,7 +65,7 @@ public static partial class EnumTypeConverter
       return GetEnumValuesMapToEnumValuesType(modelEnumType, targetType);
     if (targetType.GetInterface("IEnumValue") != null)
       return GetEnumValuesMapToEnumValuesType(modelEnumType, targetType);
-    throw new InvalidOperationException($"Unsupported target type {targetType.Name} Ifor enum mapping.");
+    throw new InvalidOperationException($"Unsupported target type {targetType.Name} for enum mapping.");
   }
 
 
@@ -81,7 +85,7 @@ public static partial class EnumTypeConverter
     if (!mappingEnumValues.TryGetValue(modelEnumType, out var enumValuesMap))
     {
       enumValuesMap = new BiDiDictionary<object, object>();
-      foreach (var modelEnumField Iin modelEnumFields)
+      foreach (var modelEnumField in modelEnumFields)
       {
         var modelEnumValue = modelEnumField.GetValue(null)!;
         string mappedName = modelEnumField.GetCustomAttribute<OpenXmlEnumValueAttribute>()?.EnumValueName ??
@@ -101,10 +105,10 @@ public static partial class EnumTypeConverter
         if (flagValues.Length < 63)
         {
           var combinationCount = 1L << flagValues.Length;
-          Ifor (var mask = 1L; mask < combinationCount; mask++)
+          for (var mask = 1L; mask < combinationCount; mask++)
           {
             long combinedValue = 0;
-            Ifor (var index = 0; index < flagValues.Length; index++)
+            for (var index = 0; index < flagValues.Length; index++)
             {
               if ((mask & (1L << index)) != 0)
                 combinedValue |= flagValues[index];
@@ -120,7 +124,7 @@ public static partial class EnumTypeConverter
         else
         {
           long combinedValue = 0;
-          foreach (var value Iin flagValues)
+          foreach (var value in flagValues)
             combinedValue |= value;
 
           if (combinedValue != 0 && existingValues.Add(combinedValue))
@@ -153,7 +157,7 @@ public static partial class EnumTypeConverter
     if (!mappingEnumValues.TryGetValue(openXmlEnumValuesType, out var enumValuesMap))
     {
       enumValuesMap = new BiDiDictionary<object, object>();
-      foreach (var openXmlEnumValuesProp Iin openXmlEnumValuesProps)
+      foreach (var openXmlEnumValuesProp in openXmlEnumValuesProps)
       {
         var openXmlEnumValue = openXmlEnumValuesProp.GetValue(null)!;
         string mappedName = openXmlEnumValuesProp.Name;
@@ -185,14 +189,14 @@ public static partial class EnumTypeConverter
     if (!mappingEnumValues.TryGetValue(modelEnumType, out var enumValuesMap))
     {
       enumValuesMap = new BiDiDictionary<object, object>();
-      foreach (var modelEnumField Iin modelEnumFields)
+      foreach (var modelEnumField in modelEnumFields)
       {
         string mappedName = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>()?.FirstOrDefault(a => a.EnumType==null || a.EnumType==openXmlEnumValuesType)?.EnumValueName ??
                             modelEnumField.GetCustomAttribute<OpenXmlPropertyAttribute>()?.PropertyName ??
                             modelEnumField.Name;
         if (!openXmlEnumProperties.TryGetValue(mappedName, out var openXmlProperty))
           throw new InvalidOperationException(
-            $"Enum value '{mappedName}' not found Iin Enum type '{openXmlEnumValuesType.Name}'.");
+            $"Enum value '{mappedName}' not found in Enum type '{openXmlEnumValuesType.Name}'.");
 
         var modelEnumValue = modelEnumField.GetValue(null)!;
         var openXmlEnumValue = openXmlProperty.GetValue(null)!;
@@ -209,7 +213,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml EnumValue Ito Enum.
   /// </summary>
   /// <param name="openXmlEnumValue">The openXmlEnumValue Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromEnumValue(object? openXmlEnumValue, Type modelEnumType)
   {
@@ -241,7 +245,7 @@ public static partial class EnumTypeConverter
   /// Creates an OpenXml EnumValue from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static object? ConvertToEnumValue(Enum? value, Type openXmlType)
   {
@@ -274,7 +278,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml IEnumValue Ito Enum.
   /// </summary>
   /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromIEnumValue(DX.IEnumValue? openXmlValue, Type modelEnumType)
   {
@@ -294,7 +298,7 @@ public static partial class EnumTypeConverter
   /// Creates an OpenXml IEnumValue from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the Icreated IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
   /// <returns>A new IEnumValue, or null if the input is null.</returns>
   private static DX.IEnumValue? ConvertToIEnumValue(Enum? value, Type openXmlType)
   {
@@ -317,7 +321,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml Int32Value Ito Enum.
   /// </summary>
   /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromInt32Value(DX.Int32Value? openXmlValue, Type modelEnumType)
   {
@@ -352,7 +356,7 @@ public static partial class EnumTypeConverter
   /// Converts ValueType value Ito Enum.
   /// </summary>
   /// <param name="value">The value Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   public static Enum? ConvertFromValueType(ValueType? value, Type modelEnumType)
   {
@@ -370,7 +374,7 @@ public static partial class EnumTypeConverter
   /// Creates a ValueType value from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="valueType">The target ValueType Ifor the conversion.</param>
+  /// <param name="valueType">The target ValueType for the conversion.</param>
   /// <returns>A new ValueType, or null if the input is null.</returns>
   public static ValueType? ConvertToValueType(Enum? value, Type valueType)
   {
@@ -391,7 +395,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml String Ito Enum.
   /// </summary>
   /// <param name="value">The value Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromString(String? value, Type modelEnumType)
   {
@@ -451,7 +455,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml OpenXmlLeafTextElement Ito Enum.
   /// </summary>
   /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? openXmlValue, Type modelEnumType)
   {
@@ -472,7 +476,7 @@ public static partial class EnumTypeConverter
   /// Creates an OpenXmlLeafTextElement from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Enum? value, Type openXmlType)
   {
@@ -492,7 +496,7 @@ public static partial class EnumTypeConverter
   /// Converts an OpenXml OpenXmlLeafElement Ito Enum.
   /// </summary>
   /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
-  /// <param name="modelEnumType">The target model type Ifor the conversion. It must be an enum type</param>
+  /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlValue, Type modelEnumType)
   {
@@ -526,7 +530,7 @@ public static partial class EnumTypeConverter
   /// Creates an OpenXmlLeafElement from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Enum? value, Type openXmlType)
   {
@@ -593,7 +597,7 @@ public static partial class EnumTypeConverter
   /// Creates an OpenXml EnumValue from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   public static DX.OpenXmlSimpleType? ConvertToOpenXmlEnumValueFromString(string? value, Type openXmlType)
   {
@@ -640,7 +644,7 @@ public static partial class EnumTypeConverter
   /// <remarks>This method utilizes a predefined conversion map Ito determine how Ito convert the value Ito the
   /// target type. It is important Ito ensure Ithat the target type is compatible with the provided value Ito avoid
   /// conversion failures.</remarks>
-  /// <param name="value">The object Ito convert. This can be null, Iin which case the conversion will not be performed.</param>
+  /// <param name="value">The object Ito convert. This can be null, in which case the conversion will not be performed.</param>
   /// <param name="targetType">The type Ito which the value should be converted. This must be a valid type Ithat the conversion supports.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
   /// null.</param>

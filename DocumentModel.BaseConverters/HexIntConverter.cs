@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor HexInt value Ito/from Open XML.
+/// Provides conversion methods for HexInt value Ito/from Open XML.
 /// </summary>
 public static class HexIntConverter
 {
@@ -27,7 +27,7 @@ public static class HexIntConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="HexIntConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexIntConverter"/>.
   /// </summary>
   static HexIntConverter()
   {
@@ -46,7 +46,7 @@ public static class HexIntConverter
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for HexInt");
 
     return (HexInt)SByteValue.Value;
   }
@@ -60,7 +60,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -78,7 +78,7 @@ public static class HexIntConverter
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
-      throw new OverflowException($"Value {int16Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {int16Value} is out of range for HexInt");
 
     return (HexInt)int16Value.Value;
   }
@@ -92,7 +92,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value > Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -110,7 +110,7 @@ public static class HexIntConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value < 0)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for HexInt");
 
     return (HexInt)Int32Value.Value;
   }
@@ -124,7 +124,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -142,7 +142,7 @@ public static class HexIntConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for HexInt");
 
     return (HexInt)(UInt32)Int64Value.Value;
   }
@@ -172,7 +172,7 @@ public static class HexIntConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for HexInt");
 
     return (UInt32)IntegerValue.Value;
   }
@@ -214,7 +214,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -244,7 +244,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -274,7 +274,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {value} is out of range for HexInt");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -291,7 +291,7 @@ public static class HexIntConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor HexInt");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for HexInt");
 
     return (HexInt)UInt64Value.Value;
   }
@@ -305,7 +305,7 @@ public static class HexIntConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -333,7 +333,7 @@ public static class HexIntConverter
   /// Creates an OpenXml StringValue from an HexInt value.
   /// </summary>
   /// <param name="value">The HexInt value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexInt? value, Type targetType)
   {
@@ -369,7 +369,7 @@ public static class HexIntConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexInt value.
   /// </summary>
   /// <param name="value">The HexInt value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexInt? value, Type targetType)
   {
@@ -408,7 +408,7 @@ public static class HexIntConverter
   /// Creates an OpenXml HexBinaryValue from an HexInt value.
   /// </summary>
   /// <param name="value">The HexInt value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexInt? value, Type targetType)
   {
@@ -454,7 +454,7 @@ public static class HexIntConverter
   /// Creates an OpenXml OpenXmlLeafElement from an HexInt value.
   /// </summary>
   /// <param name="value">The HexInt value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexInt? value, Type targetType)
   {
@@ -483,7 +483,7 @@ public static class HexIntConverter
   /// Converts the specified string representation of a number Ito its HexIntequivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A HexInt integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A HexInt integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexInt? ConvertFromString(string? value)
   {

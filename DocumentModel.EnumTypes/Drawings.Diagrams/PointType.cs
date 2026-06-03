@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the PointType enumeration.
-/// Used Iin types such as Constraint, DiagramChooseIf, ForEach.
+/// Used in types such as Constraint, DiagramChooseIf, ForEach.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PointType

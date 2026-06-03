@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the results of running a IDocument Inspector module.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocinspectorstatus?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocinspectorstatus?view=office-pia` for Office interop details.
 /// </remarks>
 public enum DocInspectorStatus
 {

@@ -4,7 +4,7 @@
 /// Specifies whether and how Ito display chart elements.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum ChartElementType
 {
@@ -57,7 +57,7 @@ public enum ChartElementType
   /// </summary>
   DataLabelShow = 201,
   /// <summary>
-  /// Display data label Iin center.
+  /// Display data label in center.
   /// </summary>
   DataLabelCenter = 202,
   /// <summary>
@@ -89,7 +89,7 @@ public enum ChartElementType
   /// </summary>
   DataLabelBottom = 209,
   /// <summary>
-  /// Use best fit Ifor data label.
+  /// Use best fit for data label.
   /// </summary>
   DataLabelBestFit = 210,
   /// <summary>
@@ -313,19 +313,19 @@ public enum ChartElementType
   /// </summary>
   PrimaryValueAxisShow = 353,
   /// <summary>
-  /// Use thousands Ifor primary value axis units.
+  /// Use thousands for primary value axis units.
   /// </summary>
   PrimaryValueAxisThousands = 354,
   /// <summary>
-  /// Use millions Ifor primary value axis units.
+  /// Use millions for primary value axis units.
   /// </summary>
   PrimaryValueAxisMillions = 355,
   /// <summary>
-  /// Use billions Ifor primary value axis units.
+  /// Use billions for primary value axis units.
   /// </summary>
   PrimaryValueAxisBillions = 356,
   /// <summary>
-  /// Use log scale Ifor primary value axis.
+  /// Use log scale for primary value axis.
   /// </summary>
   PrimaryValueAxisLogScale = 357,
   /// <summary>
@@ -353,19 +353,19 @@ public enum ChartElementType
   /// </summary>
   SecondaryValueAxisShow = 363,
   /// <summary>
-  /// Use thousands Ifor secondary category axis units.
+  /// Use thousands for secondary category axis units.
   /// </summary>
   SecondaryValueAxisThousands = 364,
   /// <summary>
-  /// Use millions Ifor secondary category axis units.
+  /// Use millions for secondary category axis units.
   /// </summary>
   SecondaryValueAxisMillions = 365,
   /// <summary>
-  /// Use billions Ifor secondary value axis units.
+  /// Use billions for secondary value axis units.
   /// </summary>
   SecondaryValueAxisBillions = 366,
   /// <summary>
-  /// Use log scale Ifor secondary value axis.
+  /// Use log scale for secondary value axis.
   /// </summary>
   SecondaryValueAxisLogScale = 367,
   /// <summary>
@@ -385,35 +385,35 @@ public enum ChartElementType
   /// </summary>
   SeriesAxisReverse = 371,
   /// <summary>
-  /// Use thousands Ifor primary category axis units.
+  /// Use thousands for primary category axis units.
   /// </summary>
   PrimaryCategoryAxisThousands = 372,
   /// <summary>
-  /// Use millions Ifor primary category axis units.
+  /// Use millions for primary category axis units.
   /// </summary>
   PrimaryCategoryAxisMillions = 373,
   /// <summary>
-  /// Use billions Ifor primary category axis units.
+  /// Use billions for primary category axis units.
   /// </summary>
   PrimaryCategoryAxisBillions = 374,
   /// <summary>
-  /// Use log scale Ifor primary category axis.
+  /// Use log scale for primary category axis.
   /// </summary>
   PrimaryCategoryAxisLogScale = 375,
   /// <summary>
-  /// Use thousands Ifor secondary category axis units.
+  /// Use thousands for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisThousands = 376,
   /// <summary>
-  /// Use millions Ifor secondary category axis units.
+  /// Use millions for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisMillions = 377,
   /// <summary>
-  /// Use billions Ifor secondary category axis units.
+  /// Use billions for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisBillions = 378,
   /// <summary>
-  /// Use log scale Ifor secondary category axis.
+  /// Use log scale for secondary category axis.
   /// </summary>
   SecondaryCategoryAxisLogScale = 379,
   /// <summary>

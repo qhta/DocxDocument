@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Error enumeration.
-/// Used Iin types such as CSharpVerifierHelper, AddOpenXmlEnumTypeAttribute, AddOpenXmlPropertyAttribute.
+/// Used in types such as CSharpVerifierHelper, AddOpenXmlEnumTypeAttribute, AddOpenXmlPropertyAttribute.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ErrorValues))]

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies Ithat direct access is enabled or disabled Ifor a class or property.
+/// Specifies Ithat direct access is enabled or disabled for a class or property.
 /// </summary>
 /// <remarks>Apply this attribute Ito a class or property Ito control whether direct access is permitted. This can
 /// be used Ito restrict or allow certain behaviors at runtime or during serialization, depending on the consuming

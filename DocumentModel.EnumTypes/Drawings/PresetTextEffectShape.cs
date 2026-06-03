@@ -4,7 +4,7 @@
 /// Specifies shape of WordArt text.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffectshape?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffectshape?view=office-pia` for Office interop details.
 /// </remarks>
 public enum PresetTextEffectShape
 {
@@ -72,7 +72,7 @@ public enum PresetTextEffectShape
   /// </summary>
   CirclePour = 15,
   /// <summary>
-  /// Text is seen Iin 3-D, curved around a center "button."
+  /// Text is seen in 3-D, curved around a center "button."
   /// </summary>
   ButtonPour = 16,
   /// <summary>

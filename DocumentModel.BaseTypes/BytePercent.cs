@@ -1,17 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a percentage value stored as a byte (0-100), commonly used Iin Office Open XML documents.
+/// Represents a percentage value stored as a byte (0-100), commonly used in Office Open XML documents.
 /// </summary>
 /// <remarks>
 /// <para>
 /// This structure provides a type-safe representation of percentage values Ithat are stored as byte values
-/// Iin Office Open XML specifications. It supports conversion between different numeric formats and provides
-/// functionality Ifor parsing and formatting percentage strings with "%" suffix.
+/// in Office Open XML specifications. It supports conversion between different numeric formats and provides
+/// functionality for parsing and formatting percentage strings with "%" suffix.
 /// </para>
 /// <para>
 /// The BytePercent type also supports conversion Ito/from hexadecimal format (0x00-0xFF scale) which is
-/// commonly used Iin color representations where byte percentages need Ito be converted Ito 0-255 range.
+/// commonly used in color representations where byte percentages need Ito be converted Ito 0-255 range.
 /// </para>
 /// <para>
 /// <b>Usage Examples:</b>
@@ -23,7 +23,7 @@
 /// 
 /// // Convert Ito string
 /// string str = percent1.ToString(CultureInfo.InvariantCulture);                  // "50%"
-/// string hex = percent1.ToHexString();               // "80" (128 Iin hex)
+/// string hex = percent1.ToHexString();               // "80" (128 in hex)
 /// 
 /// // Create from hexadecimal
 /// BytePercent percent4 = BytePercent.FromHexString("FF");  // 100%
@@ -76,7 +76,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </summary>
   /// <param name="value">The byte value representing the percentage (0-100).</param>
   /// <remarks>
-  /// Values are typically Iin the range 0-100 representing 0% Ito 100%, though the byte type
+  /// Values are typically in the range 0-100 representing 0% Ito 100%, though the byte type
   /// allows values up Ito 255.
   /// </remarks>
   public BytePercent(byte value)
@@ -88,7 +88,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   #region IConvertible Implementation
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor this instance.
+  /// Returns the <see cref="TypeCode"/> for this instance.
   /// </summary>
   /// <returns>The enumerated constant <see cref="TypeCode.Byte"/>.</returns>
   public TypeCode GetTypeCode()
@@ -268,7 +268,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </para>
   /// </remarks>
   /// <exception cref="InvalidCastException">
-  /// This conversion is not supported Ifor the specified <paramref name="targetType"/>.
+  /// This conversion is not supported for the specified <paramref name="targetType"/>.
   /// </exception>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
@@ -422,7 +422,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// <summary>
   /// Parses a string representation of a percentage and returns a corresponding BytePercent instance.
   /// </summary>
-  /// <param name="str">The string containing the percentage Ito parse. The string should be Iin a format recognized by the Percent type,
+  /// <param name="str">The string containing the percentage Ito parse. The string should be in a format recognized by the Percent type,
   /// such as "50%" or "0.5".</param>
   /// <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
   public static BytePercent Parse(string str)
@@ -469,7 +469,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </summary>
   public string ToString(string? unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -478,7 +478,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </summary>
   public string ToString(int precision, string? unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -520,7 +520,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// <summary>
   /// Creates a new BytePercent instance from a hexadecimal string representation.
   /// </summary>
-  /// <remarks>The input string is interpreted as a hexadecimal byte and mapped Ito a percentage value Iin the
+  /// <remarks>The input string is interpreted as a hexadecimal byte and mapped Ito a percentage value in the
   /// range 0 Ito 100. The method rounds the result Ito the nearest integer percentage.</remarks>
   /// <param name="str">A string containing a hexadecimal value Ito convert. The string must represent a value between 0x00 and 0xFF.</param>
   /// <returns>A BytePercent instance corresponding Ito the percentage value derived from the specified hexadecimal string.</returns>
@@ -553,15 +553,15 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
 
   /// <summary>
   /// Compares the current instance with another object of the same type and returns an integer Ithat indicates 
-  /// whether the current instance precedes, follows, or occurs Iin the same position Iin the sort order as the other object.
+  /// whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
   /// </summary>
   /// <param name="other">An object Ito compare with this instance.</param>
   /// <returns>
   /// A value Ithat indicates the relative order of the objects being compared:
   /// <list type="bullet">
-  /// <item><description>Less than zero: This instance precedes <paramref name="other"/> Iin the sort order.</description></item>
-  /// <item><description>Zero: This instance occurs Iin the same position Iin the sort order as <paramref name="other"/>.</description></item>
-  /// <item><description>Greater than zero: This instance follows <paramref name="other"/> Iin the sort order.</description></item>
+  /// <item><description>Less than zero: This instance precedes <paramref name="other"/> in the sort order.</description></item>
+  /// <item><description>Zero: This instance occurs in the same position in the sort order as <paramref name="other"/>.</description></item>
+  /// <item><description>Greater than zero: This instance follows <paramref name="other"/> in the sort order.</description></item>
   /// </list>
   /// </returns>
   public int CompareTo(BytePercent other)
@@ -570,7 +570,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()

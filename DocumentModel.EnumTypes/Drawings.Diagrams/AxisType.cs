@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the AxisType enumeration.
-/// Used Iin types such as AxisList, AxisType, CategoryAxis.
+/// Used in types such as AxisList, AxisType, CategoryAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum AxisType

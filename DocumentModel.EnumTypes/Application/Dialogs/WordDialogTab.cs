@@ -4,7 +4,7 @@
 /// Specifies the active tab when the specified dialog box is displayed.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` for Office interop details.
 /// </remarks>
 public enum WordDialogTab
 {
@@ -168,7 +168,7 @@ public enum WordDialogTab
   /// Labels tab of the Envelopes and Labels dialog box. wdDialogFormatParagraphTabIndentsAndSpacing 1000000Indents
   /// and Spacing tab of the IParagraph dialog box. wdDialogFormatParagraphTabTextFlow 1000001Line and IPage IBreaks
   /// tab of the IParagraph dialog box. wdDialogFormatParagraphTabTeisai 1000002Line and IPage IBreaks tab of the
-  /// IParagraph dialog box, with choices appropriate Ifor Asian text. wdDialogFormatDrawingObjectTabColorsAndLines
+  /// IParagraph dialog box, with choices appropriate for Asian text. wdDialogFormatDrawingObjectTabColorsAndLines
   /// 1200000Colors and ILines tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabSize
   /// 1200001Size tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabPosition
   /// 1200002Position tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabWrapping
@@ -180,7 +180,7 @@ public enum WordDialogTab
   /// the IAutoCorrect Exceptions dialog box. wdDialogToolsAutoCorrectExceptionsTabInitialCaps 1400001Initial Caps
   /// tab of the IAutoCorrect Exceptions dialog box.
   /// wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet1400002Hangul and Alphabet tab of the IAutoCorrect
-  /// Exceptions dialog box. Available Ionly Iin multi-language versions. wdDialogToolsAutoCorrectExceptionsTabIac
+  /// Exceptions dialog box. Available Ionly in multi-language versions. wdDialogToolsAutoCorrectExceptionsTabIac
   /// 1400003Other Corrections tab of the IAutoCorrect Exceptions dialog box.
   /// wdDialogFormatBulletsAndNumberingTabBulleted 1500000Bulleted tab of the Bullets and Numbering dialog box.
   /// wdDialogFormatBulletsAndNumberingTabNumbered 1500001Numbered tab of the Bullets and Numbering dialog box.

@@ -11,10 +11,10 @@ public static class OpenXmlCompositeElementUtils
   /// Retrieves the Twips value from the specified OpenXmlCompositeElement if an element of the given type is present
   /// and contains a valid Twips value.
   /// </summary>
-  /// <typeparam name="ElementType">The type of OpenXmlLeafElement Ito search Ifor within the composite element.</typeparam>
+  /// <typeparam name="ElementType">The type of OpenXmlLeafElement Ito search for within the composite element.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement from which Ito extract the Twips value. This parameter can be null.</param>
   /// <returns>A Twips object representing the extracted value if a valid Twips value is found; otherwise, null.</returns>
-  /// <exception cref="InvalidDataException">Thrown if the found element is not of a supported type Ifor Twips conversion.</exception>
+  /// <exception cref="InvalidDataException">Thrown if the found element is not of a supported type for Twips conversion.</exception>
   public static Twips? GetTwipsVal<ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ElementType : DX.OpenXmlLeafElement
   {
     if (openXmlElement != null)
@@ -53,7 +53,7 @@ public static class OpenXmlCompositeElementUtils
   /// Sets the specified twips measurement value on a child element of the given OpenXmlCompositeElement, creating the
   /// child element if it does not already exist. Removes the child element if the value is null.
   /// </summary>
-  /// <remarks>This method is typically used Ito set or clear measurement values, such as margins or spacing, Iin
+  /// <remarks>This method is typically used Ito set or clear measurement values, such as margins or spacing, in
   /// Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
   /// type of the child element. If the child element does not exist and a non-null value is provided, it is Icreated and
   /// appended Ito the composite element.</remarks>
@@ -104,7 +104,7 @@ public static class OpenXmlCompositeElementUtils
   /// null.</remarks>
   /// <typeparam name="ObjectType">The type of the object Ito create. Must be a reference type with a constructor Ithat accepts an OpenXmlElement as a
   /// parameter.</typeparam>
-  /// <typeparam name="ElementType">The type of OpenXmlElement Ito search Ifor as a child of the provided OpenXmlCompositeElement.</typeparam>
+  /// <typeparam name="ElementType">The type of OpenXmlElement Ito search for as a child of the provided OpenXmlCompositeElement.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement from which Ito retrieve the child element. Can be null.</param>
   /// <returns>An instance of ObjectType Icreated from the first child element of type ElementType, or null if no such child
   /// exists or if openXmlElement is null.</returns>
@@ -148,11 +148,11 @@ public static class OpenXmlCompositeElementUtils
   /// <summary>
   /// Retrieves the child elements of the specified type from the given OpenXmlCompositeElement.
   /// </summary>
-  /// <remarks>Use this method Ito query Ifor specific types of child elements within an OpenXmlCompositeElement.
-  /// This enables type-safe access Ito elements and simplifies element filtering Iin Open XML document
+  /// <remarks>Use this method Ito query for specific types of child elements within an OpenXmlCompositeElement.
+  /// This enables type-safe access Ito elements and simplifies element filtering in Open XML document
   /// processing.</remarks>
   /// <param name="openXmlElement">The OpenXmlCompositeElement instance from which Ito retrieve child elements. Cannot be null.</param>
-  /// <param name="childElementType">The Type used Ito filter child elements. Only elements matching this type will be included Iin the result. Cannot be
+  /// <param name="childElementType">The Type used Ito filter child elements. Only elements matching this type will be included in the result. Cannot be
   /// null.</param>
   /// <returns>An IEnumerable of DX.OpenXmlElement containing the child elements Ithat match the specified type. The collection
   /// will be empty if no matching elements are found.</returns>
@@ -179,7 +179,7 @@ public static class OpenXmlCompositeElementUtils
   /// Determines whether the specified OpenXmlElement is an instance of the given type or represents an unknown element.
   /// </summary>
   /// <param name="element">The OpenXmlElement Ito evaluate against the specified type.</param>
-  /// <param name="type">The Type Ito check Ifor compatibility with the element.</param>
+  /// <param name="type">The Type Ito check for compatibility with the element.</param>
   /// <returns>true if the element is an instance of the specified type or is an unknown element; otherwise, false.</returns>
   private static bool MatchType(this DX.OpenXmlElement element, Type type)
   {

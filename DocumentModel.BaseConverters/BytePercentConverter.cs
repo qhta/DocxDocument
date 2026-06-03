@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor BytePercent value Ito/from Open XML.
+/// Provides conversion methods for BytePercent value Ito/from Open XML.
 /// </summary>
 public static class BytePercentConverter
 {
@@ -26,7 +26,7 @@ public static class BytePercentConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="BytePercentConverter"/>.
+  /// Initializes the conversion maps for <see cref="BytePercentConverter"/>.
   /// </summary>
   static BytePercentConverter()
   {
@@ -57,7 +57,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < SByte.MinValue || value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -88,7 +88,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < Int16.MinValue || value > Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -119,7 +119,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < Int32.MinValue || value > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -138,7 +138,7 @@ public static class BytePercentConverter
     if (value == null) return null;
     
     if (value < Byte.MinValue || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
     return new BytePercent((byte)value.Value);
   }
 
@@ -168,7 +168,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < Byte.MinValue || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
 
     return new BytePercent((byte)value);
   }
@@ -199,7 +199,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < Byte.MinValue || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
 
     return value.Value;
   }
@@ -230,7 +230,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < Byte.MinValue || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
 
     return value.Value;
   }
@@ -245,7 +245,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < 0 || value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -264,7 +264,7 @@ public static class BytePercentConverter
     if (value == null) return null;
     
     if (value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
 
     return (BytePercent)value.Value;
   }
@@ -279,7 +279,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UBytePercent");
+      throw new OverflowException($"Value {value} is out of range for UBytePercent");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -298,7 +298,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor byte");
+      throw new OverflowException($"Value {value} is out of range for byte");
 
     return new BytePercent((Byte)value);
   }
@@ -313,7 +313,7 @@ public static class BytePercentConverter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -342,7 +342,7 @@ public static class BytePercentConverter
   /// Creates an OpenXml StringValue from an BytePercent value.
   /// </summary>
   /// <param name="value">The BytePercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(BytePercent? value, Type targetType)
   {
@@ -362,7 +362,7 @@ public static class BytePercentConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static BytePercent? ConvertFromString(string? value)
   {
@@ -410,7 +410,7 @@ public static class BytePercentConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an BytePercent value.
   /// </summary>
   /// <param name="value">The BytePercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(BytePercent? value, Type targetType)
   {
@@ -454,7 +454,7 @@ public static class BytePercentConverter
   /// Creates an OpenXml OpenXmlLeafElement from an BytePercent value.
   /// </summary>
   /// <param name="value">The BytePercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(BytePercent? value, Type targetType)
   {

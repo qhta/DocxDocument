@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="Percent"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="Percent"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
+/// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes percentage values as strings with a "%" suffix following Office Open XML conventions.
 /// </remarks>
 public class PercentJsonConverter : JsonConverter<Percent>
@@ -38,7 +38,7 @@ public class PercentJsonConverter : JsonConverter<Percent>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor Percent, but got null");
+        throw new JsonException($"Expected string value for Percent, but got null");
 
       try
       {
@@ -60,15 +60,15 @@ public class PercentJsonConverter : JsonConverter<Percent>
           return new Percent(decimalValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor Percent");
+        throw new JsonException($"Invalid numeric value for Percent");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor Percent. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for Percent. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor Percent, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for Percent, but got {reader.TokenType}");
   }
 
   /// <summary>

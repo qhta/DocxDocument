@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ParameterId enumeration.
-/// Used Iin types such as Parameter.
+/// Used in types such as Parameter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ParameterIdValues))]

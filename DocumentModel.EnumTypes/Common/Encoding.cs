@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the document encoding (code page or character set) Ifor the Web browser Ito use when a user views a
+/// Specifies the document encoding (code page or character set) for the Web browser Ito use when a user views a
 /// saved document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoencoding?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoencoding?view=office-pia` for Office interop details.
 /// </remarks>
 public enum Encoding
 {
@@ -234,7 +234,7 @@ public enum Encoding
   /// </summary>
   MacCroatia = 10082,
   /// <summary>
-  /// EBCDIC as used Iin the United States and Canada.
+  /// EBCDIC as used in the United States and Canada.
   /// </summary>
   EBCDICUSCanada = 37,
   /// <summary>
@@ -246,7 +246,7 @@ public enum Encoding
   /// </summary>
   EBCDICMultilingualROECELatin2 = 870,
   /// <summary>
-  /// EBCDIC as used Iin the Modern Greek language.
+  /// EBCDIC as used in the Modern Greek language.
   /// </summary>
   EBCDICGreekModern = 875,
   /// <summary>
@@ -254,27 +254,27 @@ public enum Encoding
   /// </summary>
   EBCDICTurkishLatin5 = 1026,
   /// <summary>
-  /// EBCDIC as used Iin Germany.
+  /// EBCDIC as used in Germany.
   /// </summary>
   EBCDICGermany = 20273,
   /// <summary>
-  /// EBCDIC as used Iin Denmark and Norway.
+  /// EBCDIC as used in Denmark and Norway.
   /// </summary>
   EBCDICDenmarkNorway = 20277,
   /// <summary>
-  /// EBCDIC as used Iin Finland and Sweden.
+  /// EBCDIC as used in Finland and Sweden.
   /// </summary>
   EBCDICFinlandSweden = 20278,
   /// <summary>
-  /// EBCDIC as used Iin Italy.
+  /// EBCDIC as used in Italy.
   /// </summary>
   EBCDICItaly = 20280,
   /// <summary>
-  /// EBCDIC as used Iin Latin America and Spain.
+  /// EBCDIC as used in Latin America and Spain.
   /// </summary>
   EBCDICLatinAmericaSpain = 20284,
   /// <summary>
-  /// EBCDIC as used Iin the United Kingdom.
+  /// EBCDIC as used in the United Kingdom.
   /// </summary>
   EBCDICUnitedKingdom = 20285,
   /// <summary>
@@ -282,7 +282,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseKatakanaExtended = 20290,
   /// <summary>
-  /// EBCDIC as used Iin France.
+  /// EBCDIC as used in France.
   /// </summary>
   EBCDICFrance = 20297,
   /// <summary>
@@ -290,11 +290,11 @@ public enum Encoding
   /// </summary>
   EBCDICArabic = 20420,
   /// <summary>
-  /// EBCDIC as used Iin the Greek language.
+  /// EBCDIC as used in the Greek language.
   /// </summary>
   EBCDICGreek = 20423,
   /// <summary>
-  /// EBCDIC as used Iin the Hebrew language.
+  /// EBCDIC as used in the Hebrew language.
   /// </summary>
   EBCDICHebrew = 20424,
   /// <summary>
@@ -306,7 +306,7 @@ public enum Encoding
   /// </summary>
   EBCDICThai = 20838,
   /// <summary>
-  /// EBCDIC as used Iin Iceland.
+  /// EBCDIC as used in Iceland.
   /// </summary>
   EBCDICIcelandic = 20871,
   /// <summary>
@@ -326,7 +326,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseKatakanaExtendedAndJapanese = 50930,
   /// <summary>
-  /// EBCDIC as used Iin the United States and Canada, and with Japanese.
+  /// EBCDIC as used in the United States and Canada, and with Japanese.
   /// </summary>
   EBCDICUSCanadaAndJapanese = 50931,
   /// <summary>
@@ -338,7 +338,7 @@ public enum Encoding
   /// </summary>
   EBCDICSimplifiedChineseExtendedAndSimplifiedChinese = 50935,
   /// <summary>
-  /// EBCDIC as used Iin the United States and Canada, and with Traditional Chinese.
+  /// EBCDIC as used in the United States and Canada, and with Traditional Chinese.
   /// </summary>
   EBCDICUSCanadaAndTraditionalChinese = 50937,
   /// <summary>
@@ -346,7 +346,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseLatinExtendedAndJapanese = 50939,
   /// <summary>
-  /// OEM as used Iin the United States.
+  /// OEM as used in the United States.
   /// </summary>
   OEMUnitedStates = 437,
   /// <summary>
@@ -438,7 +438,7 @@ public enum Encoding
   /// </summary>
   ISCIITelugu = 57005,
   /// <summary>
-  /// Indian Script Code Ifor Information Interchange (ISCII) as used with Assamese.
+  /// Indian Script Code for Information Interchange (ISCII) as used with Assamese.
   /// </summary>
   ISCIIAssamese = 57006,
   /// <summary>

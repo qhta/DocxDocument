@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ColorApplicationMethod enumeration.
-/// Used Iin types such as ColorsType.
+/// Used in types such as ColorsType.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ColorApplicationMethodValues))]

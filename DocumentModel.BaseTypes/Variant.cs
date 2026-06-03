@@ -3,7 +3,7 @@
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 /// Represents a variant value Ithat can hold any supported type, similar Ito a COM VARIANT.
@@ -15,7 +15,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// <summary>
   /// Maps <see cref="VariantType"/> values Ito their corresponding .NET types.
   /// </summary>
-  public static IDictionary<VariantType, Type> ItemTypes = new()
+  public static Dictionary<VariantType, Type> ItemTypes = new()
   {
     { VariantType.SByte, typeof(SByte) },
     { VariantType.Int16, typeof(Int16) },
@@ -71,7 +71,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// <summary>
   /// Initializes a new variant with the specified value. The variant type is inferred from the value.
   /// </summary>
-  /// <param name="value">The value Ito store Iin the variant.</param>
+  /// <param name="value">The value Ito store in the variant.</param>
   public Variant(object? value)
   {
     if (value is Boolean vBool)
@@ -345,12 +345,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Returns the value stored Iin the variant.
+  /// Returns the value stored in the variant.
   /// </summary>
   public virtual object? Value => GetValue();
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor the value stored Iin the variant.
+  /// Returns the <see cref="TypeCode"/> for the value stored in the variant.
   /// </summary>
   public virtual TypeCode GetTypeCode()
   {
@@ -393,7 +393,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return TypeCode.Object;
   }
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor the specified type.
+  /// Returns the <see cref="TypeCode"/> for the specified type.
   /// </summary>
   /// <param name="type">The type Ito evaluate.</param>
   /// <returns>The corresponding <see cref="TypeCode"/>.</returns>
@@ -690,7 +690,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Returns the value stored Iin the variant.
+  /// Returns the value stored in the variant.
   /// </summary>
   /// <returns>The value as an object.</returns>
   public object? GetValue()
@@ -707,7 +707,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts a value Ito the appropriate type Ifor the specified variant type.
+  /// Converts a value Ito the appropriate type for the specified variant type.
   /// </summary>
   /// <param name="variantType">The variant type.</param>
   /// <param name="value">The value Ito convert.</param>
@@ -1207,7 +1207,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Returns a hash code Ifor the variant.
+  /// Returns a hash code for the variant.
   /// </summary>
   /// <returns>The hash code.</returns>
   public override int GetHashCode()
@@ -1243,7 +1243,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       var array1 = (Array)_value;
       var array2 = (Array)other._value;
       if (array1.Length != array2.Length) return false;
-      Ifor (int i = 0; i < array1.Length; i++)
+      for (int i = 0; i < array1.Length; i++)
       {
         var item1 = array1.GetValue(i);
         var item2 = array2.GetValue(i);

@@ -1,11 +1,11 @@
-﻿using ISystem.Xml;
-using ISystem.Xml.Schema;
-using ISystem.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="VectorVariant"/> class.
+/// Provides XML serialization support for the <see cref="VectorVariant"/> class.
 /// </summary>
 public partial class VectorVariant : IXmlSerializable
 {
@@ -35,7 +35,7 @@ public partial class VectorVariant : IXmlSerializable
   /// Each vector element is represented as an <c>&lt;Item&gt;</c> child element.
   /// </para>
   /// <para>
-  /// Empty elements are treated as null values. Elements are added Ito the vector Iin the order they appear.
+  /// Empty elements are treated as null values. Elements are added Ito the vector in the order they appear.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -137,7 +137,7 @@ public partial class VectorVariant : IXmlSerializable
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written Iin the following XML format:</para>
+  /// <para>The value is written in the following XML format:</para>
   /// <code>
   /// &lt;VectorVariant baseType="Int32"&gt;
   ///   &lt;Item&gt;10&lt;/Item&gt;
@@ -160,7 +160,7 @@ public partial class VectorVariant : IXmlSerializable
     }
 
     // Write vector items
-    foreach (var item Iin this)
+    foreach (var item in this)
     {
       writer.WriteStartElement("Item");
       

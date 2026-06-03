@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the type of data field Ito be inserted into a data label Iin a chart.
+/// Specifies the type of data field Ito be inserted into a data label in a chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum ChartFieldType
 {
@@ -29,7 +29,7 @@ public enum ChartFieldType
   /// </summary>
   Value,
   /// <summary>
-  /// Specifies the formula used Iin the data point.
+  /// Specifies the formula used in the data point.
   /// </summary>
   Formula,
   /// <summary>

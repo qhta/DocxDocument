@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the wrap type Ifor the specified shape.
+/// Specifies the wrap type for the specified shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum WrapType
 {
@@ -25,7 +25,7 @@ public enum WrapType
   /// </summary>
   None = 3,
   /// <summary>
-  /// Places shape Iin front of text.
+  /// Places shape in front of text.
   /// </summary>
   Front = 3,
   /// <summary>

@@ -32,7 +32,7 @@ public enum TextBoxFormField
   [OpenXmlEnumValue(nameof(DXW.TextBoxFormFieldValues.CurrentDate))]
   CurrentDate,
   /// <summary>
-  ///   IField Calculation.
+  ///   Field Calculation.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TextBoxFormFieldValues.Calculated))]
   Calculated

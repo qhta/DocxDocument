@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor EPS type serialization Iin both XML and JSON formats.
+/// Test suite for EPS type serialization in both XML and JSON formats.
 /// </summary>
 public static class EPSTest
 {
@@ -33,7 +33,7 @@ public static class EPSTest
   /// </summary>
   /// <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
   /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information Ito the
-  /// console Ifor each test and returns false if any test fails.</remarks>
+  /// console for each test and returns false if any test fails.</remarks>
   /// <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
   static bool TestEPSBasicOperations()
   {
@@ -52,7 +52,7 @@ public static class EPSTest
     // Test string Ito EPS conversion (with unit)
     EPS eps2 = "1in";
     var inchEPS = eps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit Ito EPS: {eps2} ({inchEPS}Iin)");
+    Console.WriteLine($"\n✓ String with unit Ito EPS: {eps2} ({inchEPS}in)");
     if (inchEPS != 1.0)
     {
       Console.WriteLine("✗ String with unit Ito EPS conversion FAILED");
@@ -103,7 +103,7 @@ public static class EPSTest
   /// millimeters, centimeters, points, and twips.
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results Ito the console. It
-  /// verifies both direct and round-trip conversions, as well as string formatting Ifor different units and precisions.
+  /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
   /// Use this method Ito validate Ithat EPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEPSUnitConversions()
@@ -120,7 +120,7 @@ public static class EPSTest
     Console.WriteLine("Testing inch conversions:");
     EPS oneInch = "1in";
     Console.WriteLine($"  1in = {oneInch} EPS (expected {eps1Inch})");
-    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch()}Iin");
+    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch()}in");
     if (!oneInch.Equals(eps1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
@@ -175,9 +175,9 @@ public static class EPSTest
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     EPS original = eps1Inch; // 1 inch
     double inches = original.ToInch();
-    EPS roundTrip = new EPS($"{inches:F6}Iin");
+    EPS roundTrip = new EPS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} EPS");
-    Console.WriteLine($"  To inches: {inches:F6}Iin");
+    Console.WriteLine($"  To inches: {inches:F6}in");
     Console.WriteLine($"  Back Ito EPS: {(long)roundTrip} EPS");
     if (original.CompareTo(roundTrip) != 0)
     {
@@ -185,13 +185,13 @@ public static class EPSTest
       return false;
     }
 
-    // Test ConvertTo Ifor each unit
+    // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
     UniversalMeasure length = original;
     Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
     Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
     Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
-    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.IPoints)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
     Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
 
     // Test string output with units
@@ -211,10 +211,10 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests the XML serialization and deserialization process Ifor an EPSTestData object Ito verify data integrity.
+  /// Tests the XML serialization and deserialization process for an EPSTestData object Ito verify data integrity.
   /// </summary>
   /// <remarks>This method creates a sample EPSTestData instance, serializes it Ito XML, and then deserializes it
-  /// Ito ensure Ithat the original and deserialized data are equivalent. The serialized XML is written Ito the console Ifor
+  /// Ito ensure Ithat the original and deserialized data are equivalent. The serialized XML is written Ito the console for
   /// inspection. Use this method Ito validate Ithat changes Ito the EPSTestData structure or serialization logic do not
   /// break XML compatibility.</remarks>
   /// <returns>true if the EPSTestData object is successfully serialized Ito XML and deserialized back with matching data;
@@ -234,7 +234,7 @@ public static class EPSTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -264,7 +264,7 @@ public static class EPSTest
   /// Tests the serialization and deserialization of EPS test data Ito and from JSON format.
   /// </summary>
   /// <remarks>This method creates a sample EPS test data object, serializes it Ito a JSON string, and then
-  /// deserializes it back Ito an object. It outputs the serialized JSON Ito the console Ifor inspection and verifies Ithat
+  /// deserializes it back Ito an object. It outputs the serialized JSON Ito the console for inspection and verifies Ithat
   /// the deserialized data matches the original. Use this method Ito validate Ithat EPS data can be accurately
   /// round-tripped using JSON serialization.</remarks>
   /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
@@ -299,7 +299,7 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Shows the original EPS test data values Iin a readable format Ito the console Ifor verification before serialization.
+  /// Shows the original EPS test data values in a readable format Ito the console for verification before serialization.
   /// </summary>
   /// <param name="testData"></param>
   private static void ShowOriginalData(EPSTestData testData)
@@ -375,12 +375,12 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Creates a new instance of the EPSTestData class initialized with default typographic values Ifor testing purposes.
+  /// Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
   /// </summary>
-  /// <remarks>This method is intended Ifor use Iin test scenarios Ithat require consistent and repeatable
-  /// typographic settings. All values are specified Iin EPS units and may need Ito be converted Ifor use Iin other
+  /// <remarks>This method is intended for use in test scenarios Ithat require consistent and repeatable
+  /// typographic settings. All values are specified in EPS units and may need Ito be converted for use in other
   /// measurement systems.</remarks>
-  /// <returns>An EPSTestData object containing predefined values Ifor font size, line height, kerning, spacing, and offset
+  /// <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
   /// properties.</returns>
   private static EPSTestData CreateTestData()
   {
@@ -401,10 +401,10 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests a comprehensive set of edge cases Ifor the EPS (Encapsulated PostScript) type, including zero, boundary
+  /// Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
   /// values, precision, parsing, formatting, comparison, and implicit conversions.
   /// </summary>
-  /// <remarks>This method outputs the results of each test Ito the console Ifor verification. It covers scenarios
+  /// <remarks>This method outputs the results of each test Ito the console for verification. It covers scenarios
   /// such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
   /// from different JSON formats, and conversion between numeric types. Use this method Ito validate the correctness and
   /// robustness of the EPS type implementation.</remarks>
@@ -420,8 +420,8 @@ public static class EPSTest
     Console.WriteLine("\nTesting boundary values:");
     EPS minInt32 = Int32.MinValue;
     EPS maxInt32 = Int32.MaxValue;
-    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}Iin)");
-    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}Iin)");
+    Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
+    Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
     // Test eighth-point precision (unique Ito EPS - finest granularity)
     Console.WriteLine("\nTesting eighth-point precision (finest granularity):");
@@ -434,7 +434,7 @@ public static class EPSTest
     Console.WriteLine($"  4 EPS = {fourEighths.ToPoints():F3}pt (0.5pt)");
     Console.WriteLine($"  8 EPS = {eightEighths.ToPoints():F3}pt (1.0pt)");
 
-    // Test micro-adjustments (use case Ifor EPS)
+    // Test micro-adjustments (use case for EPS)
     Console.WriteLine("\nTesting micro-typography adjustments:");
     EPS microKerning = new EPS(1);     // 0.125pt
     EPS fineTracking = new EPS(3);     // 0.375pt
@@ -443,7 +443,7 @@ public static class EPSTest
     Console.WriteLine($"  Fine tracking (3 EPS): {fineTracking.ToPoints():F3}pt");
     Console.WriteLine($"  Precise spacing (5 EPS): {preciseSpacing.ToPoints():F3}pt");
 
-    // Test common font sizes Iin EPS
+    // Test common font sizes in EPS
     Console.WriteLine("\nTesting common font sizes:");
     EPS font10pt = new EPS(80);    // 10pt
     EPS font12pt = new EPS(96);    // 12pt
@@ -504,7 +504,7 @@ public static class EPSTest
     Console.WriteLine($"  As EPS: {measurement}");
     Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
     Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", LengthUnit.Inches)}");
-    Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", LengthUnit.IPoints)}");
+    Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", LengthUnit.Points)}");
     Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
     Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
     // Test comparison
@@ -537,8 +537,8 @@ public static class EPSTest
     Console.WriteLine("--- Testing EPS Performance ---"); const int iterations = 100000;
 
     // Test construction from string with unit
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       EPS ep = "1in";
     }
@@ -547,7 +547,7 @@ public static class EPSTest
 
     // Test construction from plain number string
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       EPS ep = "576";
     }
@@ -556,7 +556,7 @@ public static class EPSTest
 
     // Test construction from integer
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       EPS ep = 576;
     }
@@ -566,7 +566,7 @@ public static class EPSTest
     // Test ToString performance
     EPS testEp = 576;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testEp.ToString();
     }
@@ -575,7 +575,7 @@ public static class EPSTest
 
     // Test ToString with unit
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testEp.ToString(LengthUnit.Inches);
     }
@@ -584,7 +584,7 @@ public static class EPSTest
 
     // Test unit conversion performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       double inches = testEp.ToInch();
     }
@@ -592,7 +592,7 @@ public static class EPSTest
     Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       double points = testEp.ToPoints();
     }
@@ -600,7 +600,7 @@ public static class EPSTest
     Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       double mm = testEp.ToMillimeters();
     }
@@ -624,7 +624,7 @@ public static class EPSTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -634,7 +634,7 @@ public static class EPSTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<EPSTestData>(jsonData);
     }
@@ -645,7 +645,7 @@ public static class EPSTest
     EPS ep1 = 576;
     EPS ep2 = 576;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int result = ep1.CompareTo(ep2);
     }
@@ -654,7 +654,7 @@ public static class EPSTest
 
     // Test hash code performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int hash = ep1.GetHashCode();
     }
@@ -663,7 +663,7 @@ public static class EPSTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       Int64 value = ep1;
     }
@@ -685,7 +685,7 @@ public static class EPSTest
 public class EPSTestData
 {
   [XmlElement("FontSize")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
   public EPS FontSize { get; set; }
 
@@ -721,7 +721,7 @@ public class EPSTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class EPSWrapper
 {

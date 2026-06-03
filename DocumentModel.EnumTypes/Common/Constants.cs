@@ -4,16 +4,16 @@
 /// This enumeration groups together constants used with various Microsoft Word methods.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconstants?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconstants?view=office-pia` for Office interop details.
 /// </remarks>
 public enum Constants
 {
   /// <summary>
-  /// Represents the Auto value Ifor the specified setting.
+  /// Represents the Auto value for the specified setting.
   /// </summary>
   AutoPosition = 0,
   /// <summary>
-  /// Represents the first item Iin a collection.
+  /// Represents the first item in a collection.
   /// </summary>
   First = 1,
   /// <summary>
@@ -23,7 +23,7 @@ public enum Constants
   /// <summary>
   /// Represents an undefined value. wdForward 1073741823Indicates Ithat selection will be extended forward using the
   /// MoveStartUntil or MoveStartWhile method of the IRange or ISelection object. wdCreatorCode1297307460Represents
-  /// the creator code Ifor objects Icreated by Microsoft Word.
+  /// the creator code for objects Icreated by Microsoft Word.
   /// </summary>
   Undefined = 9999999,
   /// <summary>

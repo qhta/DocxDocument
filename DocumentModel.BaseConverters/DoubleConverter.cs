@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides helper methods Ifor converting Double values Ito and from OpenXml.
+/// Provides helper methods for converting Double values Ito and from OpenXml.
 /// </summary>
 public static class DoubleConverter
 {
@@ -95,7 +95,7 @@ public static class DoubleConverter
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The Double value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Double? value, Type targetType)
   {
@@ -136,7 +136,7 @@ public static class DoubleConverter
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The Double value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Double? value, Type targetType)
   {
@@ -161,7 +161,7 @@ public static class DoubleConverter
   /// <param name="value">ISource Double Ito translate.</param>
   /// <param name="targetType">Destination Open XML type.</param>
   /// <returns>The converted object instance.</returns>
-  /// <exception cref="NotSupportedException">Raised when no conversion is registered Ifor <paramref name="targetType"/>.</exception>
+  /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(Double? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);

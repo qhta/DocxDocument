@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the EntityTypeEnum enumeration.
-/// Used Iin types such as GeoDataEntityQuery, GeoDataPointQuery, GeoDataPointToEntityQuery.
+/// Used in types such as GeoDataEntityQuery, GeoDataPointQuery, GeoDataPointToEntityQuery.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum EntityTypeEnum

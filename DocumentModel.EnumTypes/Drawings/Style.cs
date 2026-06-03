@@ -2,11 +2,11 @@
 
 /// <summary>
 /// Defines the IStyle enumeration.
-/// Used Iin types such as DocumentCleaner, BackstageGroup, BackstageGroupButton.
+/// Used in types such as DocumentCleaner, BackstageGroup, BackstageGroupButton.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.StyleValues))]
-public enum IStyle
+public enum Style
 {
 	/// <summary>
 	/// Specifies the normal Ioption.

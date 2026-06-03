@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor SByte value Ito/from Open XML.
+/// Provides conversion methods for SByte value Ito/from Open XML.
 /// </summary>
 public static class SByteConverter
 {
@@ -28,7 +28,7 @@ public static class SByteConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="SByteConverter"/>.
+  /// Initializes the conversion maps for <see cref="SByteConverter"/>.
   /// </summary>
   static SByteConverter()
   {
@@ -74,7 +74,7 @@ public static class SByteConverter
   {
     if (int16Value == null) return null;
     if (int16Value.Value < SByte.MinValue || int16Value.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {int16Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {int16Value.Value} is out of range for SByte");
 
     return (SByte)int16Value.Value;
   }
@@ -104,7 +104,7 @@ public static class SByteConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value < SByte.MinValue || Int32Value.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for SByte");
 
     return (SByte)Int32Value.Value;
   }
@@ -134,7 +134,7 @@ public static class SByteConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < SByte.MinValue || Int64Value.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for SByte");
 
     return (SByte)Int64Value.Value;
   }
@@ -164,7 +164,7 @@ public static class SByteConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < SByte.MinValue || IntegerValue.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for SByte");
 
     return (SByte)IntegerValue.Value;
   }
@@ -194,7 +194,7 @@ public static class SByteConverter
   {
     if (ByteValue == null) return null;
     if (ByteValue.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {ByteValue.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {ByteValue.Value} is out of range for SByte");
     return (SByte)ByteValue.Value;
   }
 
@@ -207,7 +207,7 @@ public static class SByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -225,7 +225,7 @@ public static class SByteConverter
   {
     if (UInt16Value == null) return null;
     if (UInt16Value.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for SByte");
     return (SByte)UInt16Value.Value;
   }
 
@@ -238,7 +238,7 @@ public static class SByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -256,7 +256,7 @@ public static class SByteConverter
   {
     if (UInt32Value == null) return null;
     if (UInt32Value.Value > SByte.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for SByte");
 
     return (SByte)UInt32Value.Value;
   }
@@ -270,7 +270,7 @@ public static class SByteConverter
   {
     if (value == null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -287,7 +287,7 @@ public static class SByteConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > (UInt16)SByte.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for SByte");
 
     return (SByte)UInt64Value.Value;
   }
@@ -302,7 +302,7 @@ public static class SByteConverter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -331,7 +331,7 @@ public static class SByteConverter
   /// Creates an OpenXml StringValue from an SByte value.
   /// </summary>
   /// <param name="value">The SByte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(SByte? value, Type targetType)
   {
@@ -351,7 +351,7 @@ public static class SByteConverter
   /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static SByte? ConvertFromString(string? value)
   {
@@ -399,7 +399,7 @@ public static class SByteConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an SByte value.
   /// </summary>
   /// <param name="value">The SByte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(SByte? value, Type targetType)
   {
@@ -443,7 +443,7 @@ public static class SByteConverter
   /// Creates an OpenXml OpenXmlLeafElement from an SByte value.
   /// </summary>
   /// <param name="value">The SByte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(SByte? value, Type targetType)
   {
@@ -488,7 +488,7 @@ public static class SByteConverter
   /// Creates an OpenXml HexBinaryValue from an SByte value.
   /// </summary>
   /// <param name="value">The SByte value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(SByte? value, Type targetType)
   {
@@ -525,7 +525,7 @@ public static class SByteConverter
   /// <param name="value">The value Ito convert. Supported types include SByteValue, ByteValue, SByteValue, USByteValue, SByteValue,
   /// USByteValue, USByteValue, and StringValue. May be null.</param>
   /// <returns>An SByte representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static SByte? ConvertFrom(object? value)
   {
     return (SByte?)ConverterBase.ConvertFrom(value, typeof(SByte), ConversionFromMap);

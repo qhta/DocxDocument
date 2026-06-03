@@ -35,7 +35,7 @@ public partial interface InlineShape : IModelObject
   /// Returns a field object associated with the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
-  public IField Field { get; }
+  public Field Field { get; }
 
   /// <summary>
   /// Returns an OLE format object that contains OLE properties for the inline shape.

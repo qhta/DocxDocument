@@ -8,9 +8,9 @@ public partial class ShapeDefaults
   public bool ShouldSerializeMaxShapeId() => MaxShapeId is not null;
   public bool ShouldSerializeStyle() => !String.IsNullOrEmpty(Style);
   public bool ShouldSerializeBeFilled() => BeFilled is not null;
-  public bool ShouldSerializeFillColor() => !String.IsNullOrEmpty(FillColor);
+  public bool ShouldSerializeFillColor() => !String.IsNullOrEmpty(FillColor!);
   public bool ShouldSerializeIsStroke() => IsStroke is not null;
-  public bool ShouldSerializeStrokeColor() => !String.IsNullOrEmpty(StrokeColor);
+  public bool ShouldSerializeStrokeColor() => !String.IsNullOrEmpty(StrokeColor!);
   public bool ShouldSerializeAllowInCell() => AllowInCell is not null;
   public bool ShouldSerializeAllowOverlap() => AllowOverlap is not null;
   public bool ShouldSerializeInsetMode() => InsetMode is not null;

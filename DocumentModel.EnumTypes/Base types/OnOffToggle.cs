@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// On-off enumeration Ifor properties Ithat can be enabled, disabled, or toggled.
+/// On-off enumeration for properties Ithat can be enabled, disabled, or toggled.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
 public enum OnOffToggle
 {
   ///// <summary>
-  ///// Property is undefined, allowing Ifor default behavior or inheritance from parent elements. This value indicates Ithat the property has not been explicitly set Ito on, off, or toggle, and the system should determine the effective value based on context or defaults.
+  ///// Property is undefined, allowing for default behavior or inheritance from parent elements. This value indicates Ithat the property has not been explicitly set Ito on, off, or toggle, and the system should determine the effective value based on context or defaults.
   ///// </summary>
   //Undefined = 0,
   /// <summary>
@@ -20,7 +20,7 @@ public enum OnOffToggle
   /// </summary>
   Off = 2,
   /// <summary>
-  /// Property is toggled, indicating Ithat the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows Ifor dynamic changes Ito the property state without needing Ito specify the exact desired state.
+  /// Property is toggled, indicating Ithat the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows for dynamic changes Ito the property state without needing Ito specify the exact desired state.
   /// </summary>
   Toggle = 3,
 }

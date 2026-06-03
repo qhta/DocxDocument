@@ -1,15 +1,15 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Provides information about the digital certificate.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificatedetail?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificatedetail?view=office-pia` for Office interop details.
 /// </remarks>
 public enum CertificateDetail
 {
   /// <summary>
-  /// Specifies Ithat the digital certificate is available Ifor signing.
+  /// Specifies Ithat the digital certificate is available for signing.
   /// </summary>
   Available,
   /// <summary>

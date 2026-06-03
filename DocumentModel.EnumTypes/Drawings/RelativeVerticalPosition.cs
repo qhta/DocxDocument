@@ -4,7 +4,7 @@
 /// Specifies Ito what the vertical position of a frame, a shape, or a group of rows is relative.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalposition?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalposition?view=office-pia` for Office interop details.
 /// </remarks>
 public enum RelativeVerticalPosition
 {

@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Function enumeration.
-/// Used Iin types such as ConnectionShape, GraphicFrame, Picture.
+/// Used in types such as ConnectionShape, GraphicFrame, Picture.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.FunctionValues))]

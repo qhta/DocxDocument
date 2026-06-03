@@ -13,7 +13,7 @@ public static class OpenXmlElementConverter
   /// <param name="modelValue">The model modelValue Ito convert.</param>
   /// <param name="openXmlType">The target Open XML element type.</param>
   /// <returns>The converted Open XML element instance.</returns>
-  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported Ifor the specified type.</exception>
+  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the specified type.</exception>
   public static object? ConvertTo(object? modelValue, Type openXmlType)
   {
     if (modelValue == null)
@@ -55,7 +55,7 @@ public static class OpenXmlElementConverter
   /// <param name="openXmlElement">The Open XML openXmlElement Ito convert from.</param>
   /// <param name="modelType">The target model type.</param>
   /// <returns>The converted model object.</returns>
-  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported Ifor the openXmlElement type.</exception>
+  /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the openXmlElement type.</exception>
   public static object? ConvertFrom(DX.OpenXmlElement? openXmlElement, Type modelType)
   {
     if (openXmlElement == null)

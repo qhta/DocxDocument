@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the shape type Ifor an AutoShape object.
+/// Specifies the shape type for an AutoShape object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum AutoShapeType
 {

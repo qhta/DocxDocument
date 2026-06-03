@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the FunctionOperator enumeration.
-/// Used Iin types such as DiagramChooseIf.
+/// Used in types such as DiagramChooseIf.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.FunctionOperatorValues))]

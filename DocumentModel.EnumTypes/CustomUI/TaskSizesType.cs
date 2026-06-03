@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the TaskSizesType enumeration.
-/// Used Iin types such as TaskFormGroup, TaskGroup.
+/// Used in types such as TaskFormGroup, TaskGroup.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.TaskSizesValues))]

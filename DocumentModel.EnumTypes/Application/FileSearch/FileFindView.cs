@@ -1,11 +1,11 @@
 ﻿
-namespace DocumentModel.IApplication;
+namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies view Ito use Ifor a file find process.
+/// Specifies view Ito use for a file find process.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindview?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindview?view=office-pia` for Office interop details.
 /// </remarks>
 public enum FileFindView
 {

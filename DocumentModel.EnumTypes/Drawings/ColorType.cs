@@ -4,7 +4,7 @@
 /// Specifies the color type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum ColorType
 {
@@ -24,7 +24,7 @@ public enum ColorType
   /// </summary>
   CMYK = 3,
   /// <summary>
-  /// Color Management ISystem color type.
+  /// Color Management System color type.
   /// </summary>
   CMS = 4,
   /// <summary>

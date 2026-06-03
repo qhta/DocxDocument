@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the PageSetupOrientation enumeration.
-/// Used Iin types such as IPageSetup.
+/// Used in types such as IPageSetup.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.PageSetupOrientationValues))]

@@ -9,7 +9,7 @@ public enum BlipCompression
   /// <summary>
   ///   IEmail Compression.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.IEmail))]
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.Email))]
   IEmail,
   /// <summary>
   ///   Screen Viewing Compression.

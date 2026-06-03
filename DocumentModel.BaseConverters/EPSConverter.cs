@@ -3,7 +3,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor EPS value Ito/from Open XML.
+/// Provides conversion methods for EPS value Ito/from Open XML.
 /// </summary>
 public static class EPSConverter
 {
@@ -24,7 +24,7 @@ public static class EPSConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="Int32Converter"/>.
+  /// Initializes the conversion maps for <see cref="Int32Converter"/>.
   /// </summary>
   static EPSConverter()
   {
@@ -53,7 +53,7 @@ public static class EPSConverter
   {
     if (value is null) return null;
     if ((double)value < (double)Int32.MinValue || (double)value > (double)Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -84,7 +84,7 @@ public static class EPSConverter
     if (value is null) return null;
 
     if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor EPS");
+      throw new OverflowException($"Value {value} is out of range for EPS");
 
     return new DX.Int64Value { Value = (Int64)value };
   }
@@ -114,7 +114,7 @@ public static class EPSConverter
   {
     if (value is null) return null;
     if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor EPS");
+      throw new OverflowException($"Value {value} is out of range for EPS");
 
     return new DX.IntegerValue { Value = (Int64)value };
   }
@@ -144,7 +144,7 @@ public static class EPSConverter
   {
     if (value is null) return null;
     if ((double)value < (double)UInt32.MinValue || (double)value > (double)UInt32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -175,7 +175,7 @@ public static class EPSConverter
     if (value is null) return null;
 
     if ((double)value < UInt64.MinValue || (double)value > UInt64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor EPS");
+      throw new OverflowException($"Value {value} is out of range for EPS");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -204,7 +204,7 @@ public static class EPSConverter
   /// Creates an OpenXml StringValue from an EPS value.
   /// </summary>
   /// <param name="value">The EPS value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(EPS? value, Type targetType)
   {
@@ -224,7 +224,7 @@ public static class EPSConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static EPS? ConvertFromString(string? value)
   {
@@ -272,7 +272,7 @@ public static class EPSConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an EPS value.
   /// </summary>
   /// <param name="value">The EPS value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(EPS? value, Type targetType)
   {
@@ -316,7 +316,7 @@ public static class EPSConverter
   /// Creates an OpenXml OpenXmlLeafElement from an EPS value.
   /// </summary>
   /// <param name="value">The EPS value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(EPS? value, Type targetType)
   {

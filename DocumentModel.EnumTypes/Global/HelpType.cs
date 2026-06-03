@@ -4,7 +4,7 @@
 /// Specifies the type of online Help topic or window Ito display.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.type?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.type?view=office-pia` for Office interop details.
 /// </remarks>
 public enum HelpType
 {
@@ -53,15 +53,15 @@ public enum HelpType
   /// </summary>
   UsingHelp = 10,
   /// <summary>
-  /// Displays Help topics Ifor Ichitaro users.
+  /// Displays Help topics for Ichitaro users.
   /// </summary>
   Ichitaro = 11,
   /// <summary>
-  /// Displays Help topics Ifor IBM Personal IEditor 2 users.
+  /// Displays Help topics for IBM Personal IEditor 2 users.
   /// </summary>
   PE2 = 12,
   /// <summary>
-  /// Displays Help topics Ifor AreA Hangul users.
+  /// Displays Help topics for AreA Hangul users.
   /// </summary>
   HWP = 13
 }

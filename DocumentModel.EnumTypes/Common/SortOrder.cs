@@ -2,11 +2,11 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Specifies whether files Iin a FileSearch object's FoundFiles collection should be sorted Iin ascending or
+/// Specifies whether files in a FileSearch object's FoundFiles collection should be sorted in ascending or
 /// descending order.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosortorder?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosortorder?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SortOrder
 {

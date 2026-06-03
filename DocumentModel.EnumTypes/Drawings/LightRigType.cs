@@ -8,7 +8,7 @@
 public enum LightRigType
 {
   /// <summary>
-  ///   Used Ionly Ifor detection.
+  ///   Used Ionly for detection.
   /// </summary>
   /// <summary>
   ///   Legacy Flat 1.

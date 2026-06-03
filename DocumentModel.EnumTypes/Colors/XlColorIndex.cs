@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// of a selected feature such as border, font, or fill.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcolorindex?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcolorindex?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlColorIndex
 {

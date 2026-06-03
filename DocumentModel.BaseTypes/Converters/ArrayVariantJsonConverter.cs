@@ -1,14 +1,14 @@
-﻿using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="ArrayVariant"/> class.
+/// Provides JSON serialization and deserialization support for the <see cref="ArrayVariant"/> class.
 /// </summary>
 /// <remarks>
 /// This converter handles JSON representation of array variants with their metadata (base type, bounds)
-/// and element values. The JSON format includes the array configuration and elements Ifor complete
+/// and element values. The JSON format includes the array configuration and elements for complete
 /// round-trip serialization.
 /// </remarks>
 public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
@@ -49,7 +49,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   /// </list>
   /// </para>
   /// <para>
-  /// Null values Iin the items array are preserved and set as null Iin the ArrayVariant.
+  /// Null values in the items array are preserved and set as null in the ArrayVariant.
   /// </para>
   /// </remarks>
   public override ArrayVariant? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -61,7 +61,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
 
     if (reader.TokenType != JsonTokenType.StartObject)
     {
-      throw new JsonException($"Expected StartObject token Ifor ArrayVariant, but got {reader.TokenType}");
+      throw new JsonException($"Expected StartObject token for ArrayVariant, but got {reader.TokenType}");
     }
 
     VariantType? baseType = null;
@@ -123,7 +123,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
           case "items":
             if (reader.TokenType == JsonTokenType.StartArray)
             {
-              items = new IList<object?>();
+              items = new List<object?>();
               
               while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
               {
@@ -166,7 +166,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
     if (items != null)
     {
       int index = lowerBounds.Value;
-      foreach (var item Iin items)
+      foreach (var item in items)
       {
         if (index > upperBounds.Value)
         {
@@ -194,7 +194,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   /// <param name="value">The <see cref="ArrayVariant"/> value Ito serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// <para>Writes the ArrayVariant value Iin the following JSON format:</para>
+  /// <para>Writes the ArrayVariant value in the following JSON format:</para>
   /// <code>
   /// {
   ///   "baseType": "Int32",
@@ -214,7 +214,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   /// </para>
   /// <para>
   /// If the value is null, a JSON null is written.
-  /// Null items Iin the array are written as JSON null values.
+  /// Null items in the array are written as JSON null values.
   /// </para>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, ArrayVariant? value, JsonSerializerOptions options)
@@ -238,7 +238,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
     writer.WritePropertyName("items");
     writer.WriteStartArray();
 
-    Ifor (int i = value.LowerBounds; i <= value.UpperBounds; i++)
+    for (int i = value.LowerBounds; i <= value.UpperBounds; i++)
     {
       object? item = value[i];
       WriteJsonValue(writer, item, value.BaseType);
@@ -268,7 +268,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
       JsonTokenType.Number when reader.TryGetInt64(out long longValue) => longValue,
       JsonTokenType.Number when reader.TryGetDouble(out double doubleValue) => doubleValue,
       JsonTokenType.String => reader.GetString(),
-      _ => throw new JsonException($"Unexpected token type Ifor array item: {reader.TokenType}")
+      _ => throw new JsonException($"Unexpected token type for array item: {reader.TokenType}")
     };
   }
 

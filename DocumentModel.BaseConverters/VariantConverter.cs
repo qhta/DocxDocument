@@ -3,7 +3,7 @@ namespace DocumentModel.OpenXml;
 using VTVariant = DocumentFormat.OpenXml.VariantTypes.Variant;
 
 /// <summary>
-/// Provides conversion methods Ifor Variant types Iin Open XML.
+/// Provides conversion methods for Variant types in Open XML.
 /// </summary>
 public static class VariantConverter
 {
@@ -11,7 +11,7 @@ public static class VariantConverter
   /// Retrieves the value from an OpenXml element representing a variant type.
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element Ito convert.</param>
-  /// <returns>The value contained Iin the element, converted Ito the appropriate .NET type.</returns>
+  /// <returns>The value contained in the element, converted Ito the appropriate .NET type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
   public static object? GetValue(DX.OpenXmlElement openXmlElement)
   {
@@ -108,7 +108,7 @@ public static class VariantConverter
     if (openXmlElement is DXVT.VTVStreamData vVStreamData)
       return new Variant(VariantType.VStream, new VStreamData
       (
-        new Guid(vVStreamData.IVersion?.Value ?? ""),
+        new Guid(vVStreamData.Version?.Value ?? ""),
         Convert.FromBase64String(vVStreamData.Text))
       );
 
@@ -120,16 +120,16 @@ public static class VariantConverter
       );
     if (openXmlElement is DXVT.VTVector vtVector)
       return vtVector.CreateModelElement()
-             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is DXVT.VTArray vtArray)
       return vtArray.GetValue()
-             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
         return GetVariant(vtVariant.FirstChild);
-    throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+    throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
 
   /// <summary>
@@ -232,7 +232,7 @@ public static class VariantConverter
 
     if (openXmlElement is DXVT.VTVStreamData vVStreamData)
       return new Variant(VariantType.VStream, new VStreamData(
-        vVStreamData.IVersion?.Value != null ? Guid.Parse(vVStreamData.IVersion.Value) : Guid.Empty,
+        vVStreamData.Version?.Value != null ? Guid.Parse(vVStreamData.Version.Value) : Guid.Empty,
         Convert.FromBase64String(vVStreamData.Text))
       );
 
@@ -243,18 +243,18 @@ public static class VariantConverter
       );
     if (openXmlElement is DXVT.VTVector vtVector)
       return vtVector.CreateModelElement()
-             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is DXVT.VTArray vtArray)
       return vtArray.GetValue()
-             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
         return new Variant(VariantType.Variant, GetVariant(vtVariant.FirstChild));
-    throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+    throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
-    throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
+    throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
 
   /// <summary>
@@ -345,7 +345,7 @@ public static class VariantConverter
         if (variant.Value is VStreamData vStreamData)
         {
           vStreamDataVariant.Text = Convert.ToBase64String(vStreamData.Data);
-          vStreamDataVariant.IVersion = vStreamData.IVersion != null ? XmlConvert.ToString((Guid)vStreamData.IVersion) : null;
+          vStreamDataVariant.Version = vStreamData.Version != null ? XmlConvert.ToString((Guid)vStreamData.Version) : null;
         }
         ;
         return vStreamDataVariant;

@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies the security mode an application uses when programmatically opening files.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautomationsecurity?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautomationsecurity?view=office-pia` for Office interop details.
 /// </remarks>
 public enum AutomationSecurity
 {
@@ -13,11 +13,11 @@ public enum AutomationSecurity
   /// </summary>
   Low = 1,
   /// <summary>
-  /// Uses the security setting specified Iin the Security dialog box.
+  /// Uses the security setting specified in the Security dialog box.
   /// </summary>
   ByUI,
   /// <summary>
-  /// Disables all macros Iin all files opened programmatically, without showing any security alerts.
+  /// Disables all macros in all files opened programmatically, without showing any security alerts.
   /// </summary>
   ForceDisable
 }

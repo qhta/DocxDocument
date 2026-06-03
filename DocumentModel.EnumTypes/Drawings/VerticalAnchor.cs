@@ -1,15 +1,15 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the vertical alignment of text Iin a text frame.
+/// Specifies the vertical alignment of text in a text frame.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoverticalanchor?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoverticalanchor?view=office-pia` for Office interop details.
 /// </remarks>
 public enum VerticalAnchor
 {
   /// <summary>
-  /// Specifies the vertical alignment of text Iin a text frame.
+  /// Specifies the vertical alignment of text in a text frame.
   /// </summary>
   /// <summary>
   /// Aligns text Ito top of text frame.

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Open XML EnumValue types.
+/// Provides conversion methods for Open XML EnumValue types.
 /// </summary>
 public static partial class EnumTypeConverter
 {
@@ -118,15 +118,15 @@ public static partial class EnumTypeConverter
       if (_element != null)
       {
         var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
-        Debug.Assert(valProperty != null, $"\"Val\" property Iin {typeof(OpenXmlElementType)} not found");
+        Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(OpenXmlElementType)} not found");
         var val = valProperty.GetValue(_element);
         if (val != null)
         {
           var valType = val.GetType();
           Debug.Assert(valType.Name.StartsWith("EnumValue`1"),
-            $"\"Val\" property Iin {typeof(OpenXmlElementType)} must be EnumValue<>");
+            $"\"Val\" property in {typeof(OpenXmlElementType)} must be EnumValue<>");
           var valueProperty = valType.GetProperty("Value");
-          Debug.Assert(valueProperty != null, $"\"Value\" property Iin {valType} not found");
+          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
           var value = valueProperty.GetValue(val);
           if (value != null)
           {
@@ -135,7 +135,7 @@ public static partial class EnumTypeConverter
             {
               if (value is IConvertible)
               {
-                var n = (int)ISystem.Convert.ChangeType(value, typeof(int));
+                var n = (int)System.Convert.ChangeType(value, typeof(int));
                 value = Enum.ToObject(typeof(EnumType), n);
               }
               else
@@ -185,10 +185,10 @@ public static partial class EnumTypeConverter
         openXmlElement.AppendChild(_element);
       }
       var valProperty = typeof(ElementType).GetProperty("Val");
-      Debug.Assert(valProperty != null, $"\"Val\" property Iin {typeof(ElementType)} not found");
+      Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
       var valType = valProperty.PropertyType;
       Debug.Assert(valType.Name.StartsWith("EnumValue`1"),
-        $"\"Val\" property Iin {typeof(ElementType)} must be EnumValue<>");
+        $"\"Val\" property in {typeof(ElementType)} must be EnumValue<>");
       var valueType = valType.GetGenericArguments()[0];
       var newValue = EnumValueUtils.EnumTypeToEnumValue<EnumType, OpenXmlEnumType>(value.Value);
       valProperty.SetValue(_element, newValue);
@@ -233,7 +233,7 @@ public static partial class EnumTypeConverter
     object value = element.Value;
     if (typeof(OpenXmlEnumType) != typeof(EnumType))
     {
-      var n = (int)ISystem.Convert.ChangeType(value, typeof(int));
+      var n = (int)System.Convert.ChangeType(value, typeof(int));
       value = Enum.ToObject(typeof(EnumType), n);
     }
     return (EnumType)value;
@@ -271,7 +271,7 @@ public static partial class EnumTypeConverter
   /// value.</param>
   /// <returns>An instance of the specified Open XML enum value type representing the provided enum value, or null if <paramref
   /// name="enumVal"/> is null.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the specified enum value does not correspond Ito a value Iin the target Open XML enum type, or if the type
+  /// <exception cref="InvalidOperationException">Thrown if the specified enum value does not correspond Ito a value in the target Open XML enum type, or if the type
   /// is not a supported EnumValue&lt;T&gt; type.</exception>
   public static object? CreateOpenXmlEnumValue(Enum? enumVal, Type openXmlType)
   {
@@ -284,23 +284,23 @@ public static partial class EnumTypeConverter
       var targetProp =
         paramType.GetProperty(valueName, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
       if (targetProp == null)
-        throw new InvalidOperationException($"Cannot find enum value {valueName} Iin type {paramType}");
+        throw new InvalidOperationException($"Cannot find enum value {valueName} in type {paramType}");
 
       var targetValue = targetProp.GetValue(null, []);
       var enumValueType = typeof(DX.EnumValue<>).MakeGenericType(paramType);
       var enumValueInstance = Activator.CreateInstance(enumValueType, targetValue);
       return enumValueInstance;
     }
-    throw new InvalidOperationException($"Cannot create Open XML element Ifor {enumVal} of type {enumVal.GetType()}");
+    throw new InvalidOperationException($"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
   }
 
   /// <summary>
-  /// Converts an Open XML EnumValue Ito its corresponding value Iin the specified model enum type.
+  /// Converts an Open XML EnumValue Ito its corresponding value in the specified model enum type.
   /// </summary>
   /// <param name="openXmlEnumValue">The Open XML element representing the enum value. This should be an object whose type name starts with
   /// "EnumValue`" and contains a "Value" property. Can be null.</param>
   /// <param name="modelType">The target enum type Ito which the value should be converted. Must be a valid enum type.</param>
-  /// <returns>An object representing the equivalent value Iin the specified model enum type, or null if <paramref
+  /// <returns>An object representing the equivalent value in the specified model enum type, or null if <paramref
   /// name="openXmlEnumValue"/> is null.</returns>
   /// <exception cref="InvalidOperationException">Thrown if <paramref name="openXmlEnumValue"/> is not a supported Open XML enum value or does not contain a
   /// convertible value.</exception>
@@ -322,7 +322,7 @@ public static partial class EnumTypeConverter
       var enumValueType = enumValue.GetType();
       var enumValueTypeProperties = enumValueType.GetProperties(BindingFlags.Public | BindingFlags.Static);
       var enumValues = enumValueTypeProperties.Select(prop => prop.GetValue(null)).ToArray();
-      Ifor (var i = 0; i < enumValues.Length; i++)
+      for (var i = 0; i < enumValues.Length; i++)
       {
         var ev = enumValues[i];
         if (ev != null && ev.Equals(enumValue))
@@ -334,7 +334,7 @@ public static partial class EnumTypeConverter
           return (Enum?)result;
         }
       }
-      throw new InvalidOperationException($"Cannot find matching enum value Ifor {enumValue} Iin {modelType}");
+      throw new InvalidOperationException($"Cannot find matching enum value for {enumValue} in {modelType}");
     }
     throw new InvalidOperationException(
       $"Cannot get enum openXmlEnumValue from {openXmlEnumValue} of type {openXmlEnumValue.GetType()}");
@@ -364,22 +364,22 @@ public static partial class EnumTypeConverter
     {
       var valProperty = openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value");
       if (valProperty == null)
-        throw new InvalidOperationException($"Cannot find Val/Value/Type property Iin {openXmlType}");
+        throw new InvalidOperationException($"Cannot find Val/Value/Type property in {openXmlType}");
 
       var valPropertyType = valProperty.PropertyType!;
       if (!valPropertyType.Name.StartsWith("EnumValue`"))
         throw new InvalidOperationException(
-          $"Cannot create Open XML element Ifor {enumVal} of type {enumVal.GetType()}");
+          $"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
 
       var targetValue = CreateOpenXmlEnumValue(enumVal, valPropertyType);
       if (targetValue == null)
-        throw new InvalidOperationException($"Cannot create EnumValue from {enumVal} Ifor property {valProperty.Name}");
+        throw new InvalidOperationException($"Cannot create EnumValue from {enumVal} for property {valProperty.Name}");
 
       var openXmlElement = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
       valProperty.SetValue(openXmlElement, targetValue);
       return openXmlElement;
     }
-    throw new InvalidOperationException($"Cannot create Open XML element Ifor {enumVal} of type {enumVal.GetType()}");
+    throw new InvalidOperationException($"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
   }
 
   /// <summary>
@@ -399,7 +399,7 @@ public static partial class EnumTypeConverter
     var openXmlType = openXmlElement.GetType();
     var enumValueProperty = openXmlType.GetProperty("Value") ?? openXmlType.GetProperty("Val");
     if (enumValueProperty == null)
-      throw new InvalidOperationException($"Cannot find Val/Value/Type property Iin {openXmlType}");
+      throw new InvalidOperationException($"Cannot find Val/Value/Type property in {openXmlType}");
 
     var enumValue = enumValueProperty.GetValue(openXmlElement);
     if (enumValue == null)

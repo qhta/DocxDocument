@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Indicates the text alignment scheme used Ifor an object.
+/// Indicates the text alignment scheme used for an object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextfontalign?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextfontalign?view=office-pia` for Office interop details.
 /// </remarks>
 public enum TextFontAlign
 {

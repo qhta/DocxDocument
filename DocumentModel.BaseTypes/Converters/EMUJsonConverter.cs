@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="EMU"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="EMU"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
-/// and writes EMU values as strings Ifor compatibility with Office Open XML conventions.
+/// This converter handles both string and numeric JSON tokens for deserialization,
+/// and writes EMU values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
 public class EMUJsonConverter : JsonConverter<EMU>
 {
@@ -20,7 +20,7 @@ public class EMUJsonConverter : JsonConverter<EMU>
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The string value cannot be parsed as a valid EMU measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or Iin).</description></item>
+  /// <item><description>The string value cannot be parsed as a valid EMU measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
   /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
@@ -38,7 +38,7 @@ public class EMUJsonConverter : JsonConverter<EMU>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor EMU, but got null");
+        throw new JsonException($"Expected string value for EMU, but got null");
 
       try
       {
@@ -47,7 +47,7 @@ public class EMUJsonConverter : JsonConverter<EMU>
       catch (FormatException ex)
       {
         throw new JsonException($"Invalid EMU string '{value}'. " +
-          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or Iin). Error: {ex.Message}", ex);
+          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
 
@@ -60,15 +60,15 @@ public class EMUJsonConverter : JsonConverter<EMU>
           return new EMU(longValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor EMU");
+        throw new JsonException($"Invalid numeric value for EMU");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor EMU. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for EMU. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor EMU, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for EMU, but got {reader.TokenType}");
   }
 
   /// <summary>

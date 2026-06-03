@@ -1,3 +1,4 @@
+
 namespace DocumentModel.Application;
 
 /// <summary>
@@ -16,7 +17,7 @@ public partial interface IBroadcast : IModelObject
   /// Gets the current state of the broadcast session.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.state?view=word-pia"/>
-  public App.BroadcastState State { get; }
+  public BroadcastState State { get; }
 
   /// <summary>
   /// Gets the capabilities available for the broadcast session.

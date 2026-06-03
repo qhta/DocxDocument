@@ -3,7 +3,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Twips value Ito/from Open XML.
+/// Provides conversion methods for Twips value Ito/from Open XML.
 /// </summary>
 public static class TwipsConverter
 {
@@ -26,7 +26,7 @@ public static class TwipsConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="Int32Converter"/>.
+  /// Initializes the conversion maps for <see cref="Int32Converter"/>.
   /// </summary>
   static TwipsConverter()
   {
@@ -56,7 +56,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
     if ((decimal)value < (decimal)Int16.MinValue || (decimal)value > (decimal)Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -86,7 +86,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
     if ((double)value < (double)Int32.MinValue || (double)value > (double)Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -117,7 +117,7 @@ public static class TwipsConverter
     if (value is null) return null;
 
     if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Twips");
+      throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.Int64Value { Value = (Int64)value };
   }
@@ -147,7 +147,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
     if ((double)value < Int64.MinValue || (double)value > Int64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Twips");
+      throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.IntegerValue { Value = (Int64)value };
   }
@@ -177,7 +177,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
     if ((double)value < (double)UInt16.MinValue || (double)value > (double)UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -207,7 +207,7 @@ public static class TwipsConverter
   {
     if (value is null) return null;
     if ((double)value < (double)UInt32.MinValue || (double)value > (double)UInt32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -238,7 +238,7 @@ public static class TwipsConverter
     if (value is null) return null;
 
     if ((double)value < UInt64.MinValue || (double)value > UInt64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Twips");
+      throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -267,7 +267,7 @@ public static class TwipsConverter
   /// Creates an OpenXml StringValue from an Twips value.
   /// </summary>
   /// <param name="value">The Twips value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Twips? value, Type targetType)
   {
@@ -287,7 +287,7 @@ public static class TwipsConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Twips? ConvertFromString(string? value)
   {
@@ -335,7 +335,7 @@ public static class TwipsConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Twips value.
   /// </summary>
   /// <param name="value">The Twips value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Twips? value, Type targetType)
   {
@@ -379,7 +379,7 @@ public static class TwipsConverter
   /// Creates an OpenXml OpenXmlLeafElement from an Twips value.
   /// </summary>
   /// <param name="value">The Twips value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Twips? value, Type targetType)
   {

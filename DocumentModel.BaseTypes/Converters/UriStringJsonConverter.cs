@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides custom JSON serialization and deserialization Ifor <see cref="UriString"/> values.
+/// Provides custom JSON serialization and deserialization for <see cref="UriString"/> values.
 /// </summary>
 public class UriStringJsonConverter : JsonConverter<UriString>
 {
@@ -18,7 +18,7 @@ public class UriStringJsonConverter : JsonConverter<UriString>
       return default;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor UriString, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for UriString, but got {reader.TokenType}");
 
     var value = reader.GetString();
     if (string.IsNullOrEmpty(value))

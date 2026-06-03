@@ -35,7 +35,7 @@ public partial class GeoChildEntitiesQuery : ModelElement<DXO16DCD.GeoChildEntit
   /// Specifies the geo child types.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQuery.GeoChildTypes))]
-  public ListOf<string>? GeoChildTypes { get => _GeoChildTypes; set => UpdateField(ref _GeoChildTypes, value, nameof(GeoChildTypes)); }
+  public List<string>? GeoChildTypes { get => _GeoChildTypes; set => UpdateField(ref _GeoChildTypes, value, nameof(GeoChildTypes)); }
 
-  private ListOf<string>? _GeoChildTypes;
+  private List<string>? _GeoChildTypes;
 }

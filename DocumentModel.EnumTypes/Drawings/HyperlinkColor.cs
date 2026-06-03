@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Specifies the color type Ifor a hyperlink Iin a drawing object.
+///   Specifies the color type for a hyperlink in a drawing object.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO19DHC.HyperlinkColorEnum))]

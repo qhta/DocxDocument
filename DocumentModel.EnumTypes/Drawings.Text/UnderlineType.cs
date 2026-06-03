@@ -19,7 +19,7 @@ public enum UnderlineType
   /// <summary>
   ///   Underline Non-Space ICharacters Only.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.UnderlineValues.IWords))]
+  [OpenXmlEnumValue(nameof(DXW.UnderlineValues.Words))]
   IWords,
   /// <summary>
   ///   Double Underline.

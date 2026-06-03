@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the marker style Ifor a point or series Iin a line chart, scatter chart, or radar chart.
+/// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlmarkerstyle?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlmarkerstyle?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlMarkerStyle
 {

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public abstract partial class SimpleField<T> : ModelElement<T>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent where T : DX.OpenXmlElement
 {
  /// <summary>
- /// IField codes for the simple field, as defined in the WordprocessingML schema (§17.16.5).
+ /// Field codes for the simple field, as defined in the WordprocessingML schema (§17.16.5).
  /// </summary>
  public string? Instruction { get => _Instruction; set => UpdateField(ref _Instruction, value, nameof(Instruction)); }
  private string? _Instruction;

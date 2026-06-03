@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="StrNumPair"/> structure.
+/// Provides XML serialization support for the <see cref="StrNumPair"/> structure.
 /// </summary>
 public partial struct StrNumPair : IXmlSerializable
 {
@@ -15,7 +15,7 @@ public partial struct StrNumPair : IXmlSerializable
 
   /// <summary>
   /// Deserializes the <see cref="StrNumPair"/> value from XML.
-  /// Accepts values Iin the format "(Str,Num)" or plain string values.
+  /// Accepts values in the format "(Str,Num)" or plain string values.
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
@@ -63,9 +63,9 @@ public partial struct StrNumPair : IXmlSerializable
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// The value is written Iin the format "(Str,Num)".
+  /// The value is written in the format "(Str,Num)".
   /// For example, a pair with Str="abc" and Num=123 is written as "(abc,123)".
-  /// If either component is null, it will be represented as empty Iin the format (e.g., "(,123)" or "(abc,)").
+  /// If either component is null, it will be represented as empty in the format (e.g., "(,123)" or "(abc,)").
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {

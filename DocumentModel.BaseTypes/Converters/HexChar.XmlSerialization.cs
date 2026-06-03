@@ -19,12 +19,12 @@ public partial record HexChar : IXmlSerializable
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and parses it
-  ///   into the internal ushort value. Empty elements result Iin a zero value.
+  ///   into the internal ushort value. Empty elements result in a zero value.
   ///   </para>
   ///   <para>
   ///   Since HexChar is a struct with a readonly field, this method uses unsafe code Ito update
-  ///   the field during XML deserialization. This is necessary Ifor XmlSerializer compatibility
-  ///   while maintaining immutability Ifor normal usage.
+  ///   the field during XML deserialization. This is necessary for XmlSerializer compatibility
+  ///   while maintaining immutability for normal usage.
   ///   </para>
   ///   <para>
   ///   The method properly handles three scenarios:
@@ -37,10 +37,10 @@ public partial record HexChar : IXmlSerializable
   ///   <para>
   ///   <b>Valid input examples:</b>
   ///   <list type="bullet">
-  ///   <item><description>"41" → HexChar(65) Ifor 'A'</description></item>
-  ///   <item><description>"20" → HexChar(32) Ifor space</description></item>
-  ///   <item><description>"03B1" → HexChar(945) Ifor Greek alpha α</description></item>
-  ///   <item><description>"FFFF" → HexChar(65535) Ifor maximum value</description></item>
+  ///   <item><description>"41" → HexChar(65) for 'A'</description></item>
+  ///   <item><description>"20" → HexChar(32) for space</description></item>
+  ///   <item><description>"03B1" → HexChar(945) for Greek alpha α</description></item>
+  ///   <item><description>"FFFF" → HexChar(65535) for maximum value</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
@@ -71,7 +71,7 @@ public partial record HexChar : IXmlSerializable
         ushort parsedValue = ushort.Parse(str, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef Ito update the readonly field
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
       reader.Read(); // Move past text
@@ -91,7 +91,7 @@ public partial record HexChar : IXmlSerializable
   ///   <para>
   ///   This method writes the hexadecimal string representation of the character code as
   ///   text content within the XML element. The output uses uppercase hexadecimal digits
-  ///   (0-9, A-F) Ifor consistency with Office Open XML standards.
+  ///   (0-9, A-F) for consistency with Office Open XML standards.
   ///   </para>
   ///   <para>
   ///   The format is automatically selected based on the value range:

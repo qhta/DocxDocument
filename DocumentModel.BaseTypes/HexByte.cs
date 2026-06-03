@@ -2,17 +2,17 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 /// <summary>
-///   Represents a byte value encoded as a hexadecimal string (2 hex digits) Ifor use Iin Office Open XML documents.
+///   Represents a byte value encoded as a hexadecimal string (2 hex digits) for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexByte provides a type-safe wrapper Ifor byte values Ithat are represented as hexadecimal strings
-///   Iin Office Open XML documents. It stores an 8-bit unsigned integer value (0-255) Ithat can represent
+///   HexByte provides a type-safe wrapper for byte values Ithat are represented as hexadecimal strings
+///   in Office Open XML documents. It stores an 8-bit unsigned integer value (0-255) Ithat can represent
 ///   any byte value.
 ///   </para>
 ///   <para>
-///   The struct Iimplements <see cref="IConvertible"/> Ifor seamless integration with .NET type conversion
-///   and <see cref="IEquatable{T}"/> Ifor efficient equality comparisons. It provides implicit conversions
+///   The struct Iimplements <see cref="IConvertible"/> for seamless integration with .NET type conversion
+///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
 ///   between HexByte and common numeric types (byte, ushort, uint, ulong) as well as string representations.
 ///   </para>
 ///   <para>
@@ -26,7 +26,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   private readonly byte value;
 
   /// <summary>
-  /// Default constructor needed Ifor XML deserialization. Initializes the HexByte with a default value of 0 (null byte).
+  /// Default constructor needed for XML deserialization. Initializes the HexByte with a default value of 0 (null byte).
   /// </summary>
   public HexByte()
   {
@@ -64,7 +64,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   A byte value (0-255) representing a byte code.
   /// </param>
   /// <remarks>
-  ///   This constructor is useful Ifor ASCII and extended ASCII bytes (0-255).
+  ///   This constructor is useful for ASCII and extended ASCII bytes (0-255).
   ///   Example: new HexByte(65) represents 'A'.
   /// </remarks>
   public HexByte(Byte value)
@@ -95,7 +95,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// </param>
   /// <remarks>
   ///   This is the primary constructor Ithat directly stores the byte code value.
-  ///   It can represent any Unicode byte Iin the Basic Multilingual Plane.
+  ///   It can represent any Unicode byte in the Basic Multilingual Plane.
   /// </remarks>
   public HexByte(ushort value)
   {
@@ -117,7 +117,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Returns the <see cref="TypeCode"/> Ifor the underlying value type.
+  ///   Returns the <see cref="TypeCode"/> for the underlying value type.
   /// </summary>
   /// <returns>
   ///   <see cref="TypeCode.UInt16"/>, indicating the underlying storage type.
@@ -157,9 +157,9 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <summary>
   ///   Converts the HexByte value Ito a byte.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A byte corresponding Ito the Unicode code point stored Iin this HexByte.
+  ///   A byte corresponding Ito the Unicode code point stored in this HexByte.
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
@@ -169,7 +169,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <summary>
   ///   Converts the HexByte value Ito a DateTime.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A DateTime value (delegates Ito the underlying ushort conversion).
   /// </returns>
@@ -268,7 +268,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <summary>
   ///   Converts the HexByte value Ito a string using the specified format provider.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A string representation of the underlying numeric value (not hexadecimal).
   /// </returns>
@@ -321,7 +321,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   Converts the HexByte value Ito the specified target type.
   /// </summary>
   /// <param name="targetType">The type Ito convert Ito.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   An object of the specified target type.
   /// </returns>
@@ -515,11 +515,11 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
 
 
   /// <summary>
-  ///   Converts this HexByte Ito its string representation Iin a provided format.
+  ///   Converts this HexByte Ito its string representation in a provided format.
   /// </summary>
-  /// <param name="format">format Ifor string representation (e.g., "X2" Ifor 2-digit hex).</param>
+  /// <param name="format">format for string representation (e.g., "X2" for 2-digit hex).</param>
   /// <returns>
-  ///   A string Iin provided format string.
+  ///   A string in provided format string.
   /// </returns>
   public string ToString(string format)
   {
@@ -540,7 +540,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Returns a hash code Ifor this HexByte.
+  ///   Returns a hash code for this HexByte.
   /// </summary>
   /// <returns>
   ///   A 32-bit signed integer hash code equal Ito the byte code value.

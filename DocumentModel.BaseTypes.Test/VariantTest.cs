@@ -1,11 +1,11 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor Variant type serialization Iin both XML and JSON formats.
+/// Test suite for Variant type serialization in both XML and JSON formats.
 /// </summary>
 public static class VariantTest
 {
@@ -325,7 +325,7 @@ public static class VariantTest
     if (base64 == null)
       Console.WriteLine($"  As Base64: null");
     else
-      Console.WriteLine($"  As Base64: {base64.Substring(0, ISystem.Math.Min(50, base64.Length))}...");
+      Console.WriteLine($"  As Base64: {base64.Substring(0, System.Math.Min(50, base64.Length))}...");
 
     // Test ClipboardData (if available)
     Console.WriteLine("\nTesting ClipboardData type:");
@@ -504,7 +504,7 @@ public static class VariantTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -512,7 +512,7 @@ public static class VariantTest
     }
 
     Console.WriteLine("Serialized XML (first 1000 chars):");
-    Console.WriteLine(xmlString.Substring(0, ISystem.Math.Min(1000, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, System.Math.Min(1000, xmlString.Length)));
     if (xmlString.Length > 1000)
       Console.WriteLine("...");
     Console.WriteLine();
@@ -593,7 +593,7 @@ public static class VariantTest
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 1000 chars):");
-    Console.WriteLine(jsonString.Substring(0, ISystem.Math.Min(1000, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, System.Math.Min(1000, jsonString.Length)));
     if (jsonString.Length > 1000)
       Console.WriteLine("...");
     Console.WriteLine();
@@ -731,8 +731,8 @@ public static class VariantTest
     Console.WriteLine("--- Testing Variant Performance ---"); const int iterations = 10000;
 
     // Test construction performance
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       Variant variant = new Variant(i);
     }
@@ -741,7 +741,7 @@ public static class VariantTest
 
     // Test type recognition performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       Variant variant = new Variant((object)i);
     }
@@ -751,7 +751,7 @@ public static class VariantTest
     // Test conversion performance
     Variant testVar = 42;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int value = testVar.ToInt32();
     }
@@ -759,7 +759,7 @@ public static class VariantTest
     Console.WriteLine($"ToInt32() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string? value = testVar.ToString();
     }
@@ -770,7 +770,7 @@ public static class VariantTest
     Variant var1 = 42;
     Variant var2 = 42;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool equal = var1.Equals(var2);
     }
@@ -793,7 +793,7 @@ public static class VariantTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 100; i++)
+    for (int i = 0; i < iterations / 100; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -803,7 +803,7 @@ public static class VariantTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 100; i++)
+    for (int i = 0; i < iterations / 100; i++)
     {
       var obj = JsonSerializer.Deserialize<VariantTestData>(jsonData);
     }
@@ -825,7 +825,7 @@ public static class VariantTest
 public class VariantTestData
 {
   [XmlElement("IntValue")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Variant IntValue { get; set; }
 
   [XmlElement("StringValue")]

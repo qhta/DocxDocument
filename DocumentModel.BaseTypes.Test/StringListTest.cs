@@ -1,12 +1,12 @@
-﻿using ISystem.Collections;
-using ISystem.Globalization;
+﻿using System.Collections;
+using System.Globalization;
 
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor StringList type serialization Iin both XML and JSON formats.
+/// Test suite for StringList type serialization in both XML and JSON formats.
 /// </summary>
 public static class StringListTest
 {
@@ -85,7 +85,7 @@ public static class StringListTest
     list.Add("item2");
     list.Add("item3");
     Console.Write("  Items: ");
-    foreach (var item Iin list)
+    foreach (var item in list)
     {
       Console.Write($"{item} ");
     }
@@ -366,7 +366,7 @@ public static class StringListTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -561,7 +561,7 @@ public static class StringListTest
     // Test enumeration on empty list
     Console.WriteLine("\nTesting enumeration on empty list:");
     int count = 0;
-    foreach (var item Iin emptyList)
+    foreach (var item in emptyList)
     {
       count++;
     }
@@ -579,8 +579,8 @@ public static class StringListTest
     Console.WriteLine("--- Testing StringList Performance ---"); const int iterations = 10000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       StringList list = new StringList("a,b,c,d,e");
     }
@@ -589,7 +589,7 @@ public static class StringListTest
 
     // Test default construction and Add operations
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       StringList list = new StringList();
       list.Add("a");
@@ -604,7 +604,7 @@ public static class StringListTest
     // Test ToString performance
     StringList testList = new StringList("one,two,three,four,five");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testList.ToString();
     }
@@ -613,7 +613,7 @@ public static class StringListTest
 
     // Test Contains performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool contains = testList.Contains("three");
     }
@@ -622,9 +622,9 @@ public static class StringListTest
 
     // Test enumeration performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
-      foreach (var item Iin testList)
+      foreach (var item in testList)
       {
         // Just enumerate
       }
@@ -644,7 +644,7 @@ public static class StringListTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -654,7 +654,7 @@ public static class StringListTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<StringListTestData>(jsonData);
     }
@@ -665,7 +665,7 @@ public static class StringListTest
     StringList list1 = new StringList("a,b,c,d,e");
     StringList list2 = new StringList("a,b,c,d,e");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = list1.Equals(list2);
     }
@@ -674,7 +674,7 @@ public static class StringListTest
 
     // Test GetHashCode performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int hash = list1.GetHashCode();
     }
@@ -683,7 +683,7 @@ public static class StringListTest
 
     // Test Remove performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       StringList tempList = new StringList("a,b,c,d,e");
       tempList.Remove("c");
@@ -706,7 +706,7 @@ public static class StringListTest
 public class StringListTestData
 {
   [XmlElement("EmptyList")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public StringList EmptyList { get; set; } = new StringList();
 
   [XmlElement("SingleItem")]
@@ -726,7 +726,7 @@ public class StringListTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class StringListWrapper
 {

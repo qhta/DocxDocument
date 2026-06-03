@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the CrossBetween enumeration.
-/// Used Iin types such as ValueAxis, ValueAxisConverter.
+/// Used in types such as ValueAxis, ValueAxisConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.CrossBetweenValues))]

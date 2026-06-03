@@ -1,19 +1,19 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement Iin twips (twentieth of a point).
-/// A twip is 1/1440 of an inch, commonly used Iin word processing and document formatting.
+/// Represents a measurement in twips (twentieth of a point).
+/// A twip is 1/1440 of an inch, commonly used in word processing and document formatting.
 /// Supports conversions Ito/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
-/// Twips provide a precise, integer-based unit Ifor document measurements.
+/// Twips provide a precise, integer-based unit for document measurements.
 /// This supports implicit conversions Ito/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
 public sealed partial class Twips: UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of twips Iin one inch.
+  /// Defines the number of twips in one inch.
   /// </summary>
   protected override double UnitsPerInch => 1440.0;
 
@@ -27,7 +27,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "Iin" (inches).</param>
+  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
@@ -37,7 +37,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <item><description>"12pt" - points</description></item>
   /// <item><description>"1in" - inches</description></item>
   /// </list>
-  /// <para>Commas Iin the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
   /// </remarks>
   public Twips(string str)
   {
@@ -47,7 +47,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an Int16 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(Int16 value)
   {
     Init(value);
@@ -56,7 +56,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an Int32 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(Int32 value)
   {
     Init(value);
@@ -65,7 +65,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(Int64 value)
   {
     Init(value);
@@ -74,7 +74,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an UInt16 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(UInt16 value)
   {
     Init(value);
@@ -83,7 +83,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an UInt32 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(UInt32 value)
   {
     Init(value);
@@ -92,7 +92,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(UInt64 value)
   {
     Init(value);
@@ -101,7 +101,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a Decimal value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(Decimal value)
   {
     Init(value);
@@ -110,7 +110,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a Double value.
   /// </summary>
-  /// <param name="value">The value Iin twips.</param>
+  /// <param name="value">The value in twips.</param>
   public Twips(Double value)
   {
     Init(value);
@@ -121,43 +121,43 @@ public sealed partial class Twips: UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value Iin twips.
+  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value in twips.
   /// </summary>
   public static Twips FromTwips(double twips) => new Twips($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value Iin points.
+  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value in points.
   /// </summary>
   public static Twips FromPT(double points) => new Twips($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat represents a length specified Iin millimeters.
+  /// Creates a new instance of an object Ithat represents a length specified in millimeters.
   /// </summary>
   public static Twips FromMM(double millimeters) => new Twips($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static Twips FromCM(double centimeters) => new Twips($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin inches.
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static Twips FromInch(double inches) => new Twips($"{inches}Iin");
+  public static Twips FromInch(double inches) => new Twips($"{inches}in");
 
   /// <summary>
   /// Converts a length value from the specified unit Ito a standardized length measure.
   /// </summary>
   /// <remarks>Supported units include Twips, IPoints, Millimeters, Centimeters, and Inches.</remarks>
-  /// <param name="value">The numeric length value Ito convert, expressed Iin the unit specified by the unit parameter.</param>
-  /// <param name="unit">The unit of measurement Ifor the value parameter. Must be one of the supported length units.</param>
-  /// <returns>An object Ithat Iimplements ILengthMeasure, representing the converted length value Iin a standardized format.</returns>
-  /// <exception cref="ArgumentException">Thrown when the specified unit is not supported Ifor conversion.</exception>
+  /// <param name="value">The numeric length value Ito convert, expressed in the unit specified by the unit parameter.</param>
+  /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
+  /// <returns>An object Ithat Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+  /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
   public static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
-    LengthUnit.IPoints => FromPT(value),
+    LengthUnit.Points => FromPT(value),
     LengthUnit.Millimeters => FromMM(value),
     LengthUnit.Centimeters => FromCM(value),
     LengthUnit.Inches => FromInch(value),
@@ -173,7 +173,7 @@ public sealed partial class Twips: UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be Iin a format recognized by the parser.</param>
+  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static Twips Parse(string value) => new Twips(value);
 
@@ -287,9 +287,9 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Implicitly converts a double-precision floating-point number Ito a Twips instance.
   /// </summary>
-  /// <remarks>This conversion allows Ifor seamless integration of double values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements Iin twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement Iin twips.</param>
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
+  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Double value)
   {
     return new Twips(value);
@@ -298,9 +298,9 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Implicitly converts a single-precision floating-point number Ito a Twips instance.
   /// </summary>
-  /// <remarks>This conversion allows Ifor seamless integration of single-precision values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements Iin twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement Iin twips.</param>
+  /// <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
+  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Single value)
   {
     return new Twips(value);
@@ -309,9 +309,9 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Implicitly converts a decimal number Ito a Twips instance.
   /// </summary>
-  /// <remarks>This conversion allows Ifor seamless integration of decimal values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements Iin twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement Iin twips.</param>
+  /// <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
+  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Decimal value)
   {
     return new Twips(value);

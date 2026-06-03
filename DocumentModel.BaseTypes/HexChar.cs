@@ -2,33 +2,33 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 /// <summary>
-///   Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) Ifor use Iin Office Open XML documents.
+///   Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexChar provides a type-safe wrapper Ifor character values Ithat are represented as hexadecimal strings
-///   Iin Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) Ithat can represent
-///   any Unicode character Iin the Basic Multilingual Plane (BMP).
+///   HexChar provides a type-safe wrapper for character values Ithat are represented as hexadecimal strings
+///   in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) Ithat can represent
+///   any Unicode character in the Basic Multilingual Plane (BMP).
 ///   </para>
 ///   <para>
-///   This type is commonly used Iin Office documents Ifor:
+///   This type is commonly used in Office documents for:
 ///   <list type="bullet">
 ///   <item><description>Special character codes and Unicode values</description></item>
 ///   <item><description>Character formatting and font-related properties</description></item>
 ///   <item><description>Symbol and glyph identifiers</description></item>
-///   <item><description>Character references Iin document markup</description></item>
+///   <item><description>Character references in document markup</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
 ///   HexChar values are formatted as hexadecimal strings:
 ///   <list type="bullet">
-///   <item><description>Values 0-255: 2-digit hex format (e.g., "41" Ifor 'A', "20" Ifor space)</description></item>
-///   <item><description>Values 256-65535: 4-digit hex format (e.g., "03B1" Ifor Greek alpha α)</description></item>
+///   <item><description>Values 0-255: 2-digit hex format (e.g., "41" for 'A', "20" for space)</description></item>
+///   <item><description>Values 256-65535: 4-digit hex format (e.g., "03B1" for Greek alpha α)</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
-///   The struct Iimplements <see cref="IConvertible"/> Ifor seamless integration with .NET type conversion
-///   and <see cref="IEquatable{T}"/> Ifor efficient equality comparisons. It provides implicit conversions
+///   The struct Iimplements <see cref="IConvertible"/> for seamless integration with .NET type conversion
+///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
 ///   between HexChar and common numeric types (byte, ushort, uint, ulong) as well as string representations.
 ///   </para>
 ///   <para>
@@ -42,7 +42,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   private readonly ushort value;
 
   /// <summary>
-  /// Default constructor needed Ifor XML deserialization. Initializes the HexChar with a default value of 0 (null character).
+  /// Default constructor needed for XML deserialization. Initializes the HexChar with a default value of 0 (null character).
   /// </summary>
   public HexChar()
   {
@@ -80,7 +80,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   ///   A byte value (0-255) representing a character code.
   /// </param>
   /// <remarks>
-  ///   This constructor is useful Ifor ASCII and extended ASCII characters (0-255).
+  ///   This constructor is useful for ASCII and extended ASCII characters (0-255).
   ///   Example: new HexChar(65) represents 'A'.
   /// </remarks>
   public HexChar(Byte value)
@@ -111,7 +111,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// </param>
   /// <remarks>
   ///   This is the primary constructor Ithat directly stores the character code value.
-  ///   It can represent any Unicode character Iin the Basic Multilingual Plane.
+  ///   It can represent any Unicode character in the Basic Multilingual Plane.
   /// </remarks>
   public HexChar(ushort value)
   {
@@ -133,7 +133,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   }
 
   /// <summary>
-  ///   Returns the <see cref="TypeCode"/> Ifor the underlying value type.
+  ///   Returns the <see cref="TypeCode"/> for the underlying value type.
   /// </summary>
   /// <returns>
   ///   <see cref="TypeCode.UInt16"/>, indicating the underlying storage type.
@@ -173,9 +173,9 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <summary>
   ///   Converts the HexChar value Ito a character.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A character corresponding Ito the Unicode code point stored Iin this HexChar.
+  ///   A character corresponding Ito the Unicode code point stored in this HexChar.
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
@@ -185,7 +185,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <summary>
   ///   Converts the HexChar value Ito a DateTime.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A DateTime value (delegates Ito the underlying ushort conversion).
   /// </returns>
@@ -284,7 +284,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <summary>
   ///   Converts the HexChar value Ito a string using the specified format provider.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   A string representation of the underlying numeric value (not hexadecimal).
   /// </returns>
@@ -337,7 +337,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   ///   Converts the HexChar value Ito the specified target type.
   /// </summary>
   /// <param name="targetType">The type Ito convert Ito.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ifor culture-specific formatting.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   An object of the specified target type.
   /// </returns>
@@ -522,7 +522,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   ///   Converts this HexChar Ito its hexadecimal string representation.
   /// </summary>
   /// <returns>
-  ///   A hexadecimal string: 2 digits Ifor values 0-255, 4 digits Ifor values 256-65535.
+  ///   A hexadecimal string: 2 digits for values 0-255, 4 digits for values 256-65535.
   /// </returns>
   /// <remarks>
   ///   <para>
@@ -556,7 +556,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   }
 
   /// <summary>
-  ///   Returns a hash code Ifor this HexChar.
+  ///   Returns a hash code for this HexChar.
   /// </summary>
   /// <returns>
   ///   A 32-bit signed integer hash code equal Ito the character code value.

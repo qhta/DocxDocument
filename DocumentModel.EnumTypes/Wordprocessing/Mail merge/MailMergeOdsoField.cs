@@ -7,12 +7,12 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeOdsoField
 {
   /// <summary>
-  ///   IField Not Mapped.
+  ///   Field Not Mapped.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.MailMergeOdsoFieldValues.Null))]
   Null,
   /// <summary>
-  ///   IField Mapping to Data Source IColumn.
+  ///   Field Mapping to Data Source IColumn.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.MailMergeOdsoFieldValues.DbColumn))]
   DbColumn

@@ -3,10 +3,10 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-/// location of the field Iin a PivotTable report.
+/// location of the field in a PivotTable report.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlpivotfieldorientation?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlpivotfieldorientation?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlPivotFieldOrientation
 {

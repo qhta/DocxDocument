@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the dash style Ifor a line.
+/// Specifies the dash style for a line.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinedashstyle?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinedashstyle?view=office-pia` for Office interop details.
 /// </remarks>
 public enum LineDashStyle
 {

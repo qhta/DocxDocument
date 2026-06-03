@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the OfPie enumeration.
-/// Used Iin types such as OfPieChart.
+/// Used in types such as OfPieChart.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.OfPieValues))]

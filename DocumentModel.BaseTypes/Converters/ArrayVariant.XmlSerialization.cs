@@ -1,11 +1,17 @@
-﻿using ISystem.Xml;
-using ISystem.Xml.Schema;
-using ISystem.Xml.Serialization;
+﻿using System;
+using System.Globalization;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
+
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="ArrayVariant"/> class.
+/// Provides XML serialization support for the <see cref="ArrayVariant"/> class.
 /// </summary>
 public partial class ArrayVariant : IXmlSerializable
 {
@@ -33,11 +39,11 @@ public partial class ArrayVariant : IXmlSerializable
   /// &lt;/ArrayVariant&gt;
   /// </code>
   /// <para>
-  /// The XML element must have attributes Ifor <c>baseType</c>, <c>lowerBounds</c>, and <c>upperBounds</c>.
+  /// The XML element must have attributes for <c>baseType</c>, <c>lowerBounds</c>, and <c>upperBounds</c>.
   /// Each array element is represented as an <c>&lt;Item&gt;</c> child element.
   /// </para>
   /// <para>
-  /// Empty elements are treated as null values Ifor reference types or default values Ifor value types.
+  /// Empty elements are treated as null values for reference types or default values for value types.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -144,7 +150,7 @@ public partial class ArrayVariant : IXmlSerializable
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written Iin the following XML format:</para>
+  /// <para>The value is written in the following XML format:</para>
   /// <code>
   /// &lt;ArrayVariant baseType="Int32" lowerBounds="0" upperBounds="4"&gt;
   ///   &lt;Item&gt;10&lt;/Item&gt;
@@ -169,7 +175,7 @@ public partial class ArrayVariant : IXmlSerializable
     // Write array items
     if (_items != null)
     {
-      foreach (var item Iin _items)
+      foreach (var item in _items)
       {
         writer.WriteStartElement("Item");
         

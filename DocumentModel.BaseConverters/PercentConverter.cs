@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Percent value Ito/from Open XML.
+/// Provides conversion methods for Percent value Ito/from Open XML.
 /// </summary>
 public static class PercentConverter
 {
@@ -26,7 +26,7 @@ public static class PercentConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="PercentConverter"/>.
+  /// Initializes the conversion maps for <see cref="PercentConverter"/>.
   /// </summary>
   static PercentConverter()
   {
@@ -57,7 +57,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < SByte.MinValue || value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -88,7 +88,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < Int16.MinValue || value > Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -119,7 +119,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < Int32.MinValue || value > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -150,7 +150,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < Int64.MinValue || value > Int64.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int64");
+      throw new OverflowException($"Value {value} is out of range for Int64");
 
     return new DX.Int64Value { Value = (Int64)value };
   }
@@ -209,7 +209,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -240,7 +240,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < 0 || value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -271,7 +271,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UPercent");
+      throw new OverflowException($"Value {value} is out of range for UPercent");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -302,7 +302,7 @@ public static class PercentConverter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -331,7 +331,7 @@ public static class PercentConverter
   /// Creates an OpenXml StringValue from an Percent value.
   /// </summary>
   /// <param name="value">The Percent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Percent? value, Type targetType)
   {
@@ -351,7 +351,7 @@ public static class PercentConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Percent? ConvertFromString(string? value)
   {
@@ -399,7 +399,7 @@ public static class PercentConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Percent value.
   /// </summary>
   /// <param name="value">The Percent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Percent? value, Type targetType)
   {
@@ -443,7 +443,7 @@ public static class PercentConverter
   /// Creates an OpenXml OpenXmlLeafElement from an Percent value.
   /// </summary>
   /// <param name="value">The Percent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Percent? value, Type targetType)
   {

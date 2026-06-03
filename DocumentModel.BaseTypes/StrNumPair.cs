@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 /// This struct provides a way Ito represent values Ithat may be expressed as either text or numeric form,
-/// commonly used Iin document models where formatting or content can accept multiple representations.
+/// commonly used in document models where formatting or content can accept multiple representations.
 /// </remarks>
 [JsonConverter(typeof(StrNumPairJsonConverter))]
 public partial struct StrNumPair : IEquatable<StrNumPair>
@@ -23,9 +23,9 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   /// <summary>
   /// Initializes a new instance of the <see cref="StrNumPair"/> struct with a string value.
   /// </summary>
-  /// <param name="str">The string value Iin the format "(Str,Num)" or a plain string value.</param>
+  /// <param name="str">The string value in the format "(Str,Num)" or a plain string value.</param>
   /// <remarks>
-  /// If the string is Iin the format "(Str,Num)", it will be parsed Ito extract both components.
+  /// If the string is in the format "(Str,Num)", it will be parsed Ito extract both components.
   /// Otherwise, the entire string is used as the Str component and Num is set Ito null.
   /// </remarks>
   public StrNumPair(string? str)
@@ -72,7 +72,7 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   }
 
   /// <summary>
-  /// Creates a new instance with the specified values. Used Ifor deserialization.
+  /// Creates a new instance with the specified values. Used for deserialization.
   /// </summary>
   /// <param name="str">The string value.</param>
   /// <param name="num">The numeric value.</param>
@@ -115,9 +115,9 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   #endregion
 
   /// <summary>
-  /// Converts the value Ito its string representation Iin the format "(Str,Num)".
+  /// Converts the value Ito its string representation in the format "(Str,Num)".
   /// </summary>
-  /// <returns>The string representation Iin the format "(Str,Num)".</returns>
+  /// <returns>The string representation in the format "(Str,Num)".</returns>
   public override string ToString() => $"({Str},{Num})";
 
   /// <summary>
@@ -141,7 +141,7 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()

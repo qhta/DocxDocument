@@ -4,7 +4,7 @@
 /// Specifies what text effect Ito use on a WordArt object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffect?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffect?view=office-pia` for Office interop details.
 /// </remarks>
 public enum PresetTextEffect
 {

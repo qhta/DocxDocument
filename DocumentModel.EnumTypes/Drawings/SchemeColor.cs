@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the SchemeColor enumeration.
-/// Used Iin types such as ColorType, SchemeColor, SolidColorFillProperties.
+/// Used in types such as ColorType, SchemeColor, SolidColorFillProperties.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.SchemeColorValues))]

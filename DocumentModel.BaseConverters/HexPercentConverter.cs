@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor HexPercent value Ito/from Open XML.
+/// Provides conversion methods for HexPercent value Ito/from Open XML.
 /// </summary>
 public static class HexPercentConverter
 {
@@ -19,7 +19,7 @@ public static class HexPercentConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="HexPercentConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexPercentConverter"/>.
   /// </summary>
   static HexPercentConverter()
   {
@@ -49,7 +49,7 @@ public static class HexPercentConverter
   {
     if (value is null) return null;
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -78,7 +78,7 @@ public static class HexPercentConverter
   /// Creates an OpenXml StringValue from an HexPercent value.
   /// </summary>
   /// <param name="value">The HexPercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexPercent? value, Type targetType)
   {
@@ -111,7 +111,7 @@ public static class HexPercentConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexPercent value.
   /// </summary>
   /// <param name="value">The HexPercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexPercent? value, Type targetType)
   {
@@ -147,7 +147,7 @@ public static class HexPercentConverter
   /// Creates an OpenXml HexBinaryValue from an HexPercent value.
   /// </summary>
   /// <param name="value">The HexPercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexPercent? value, Type targetType)
   {
@@ -193,7 +193,7 @@ public static class HexPercentConverter
   /// Creates an OpenXml OpenXmlLeafElement from an HexPercent value.
   /// </summary>
   /// <param name="value">The HexPercent value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexPercent? value, Type targetType)
   {
@@ -222,7 +222,7 @@ public static class HexPercentConverter
   /// Converts the specified string representation of a number Ito its HexPercentequivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A HexPercent integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A HexPercent integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexPercent? ConvertFromString(string? value)
   {

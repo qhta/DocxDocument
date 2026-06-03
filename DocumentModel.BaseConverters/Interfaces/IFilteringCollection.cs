@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface Ifor collections Ithat support filtering of items. Implementing classes should provide logic Ito determine whether an item should be accepted or rejected based on specific criteria.
+/// Interface for collections Ithat support filtering of items. Implementing classes should provide logic Ito determine whether an item should be accepted or rejected based on specific criteria.
 /// </summary>
 public interface IFilteringCollection
 {

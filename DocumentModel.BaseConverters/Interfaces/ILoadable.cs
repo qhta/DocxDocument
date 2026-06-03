@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface Ifor types Ithat can be loaded, allowing clients Ito check if the object has been Loaded and Ito set its Loaded state.
+/// Interface for types Ithat can be loaded, allowing clients Ito check if the object has been Loaded and Ito set its Loaded state.
 /// </summary>
 public interface ILoadable
 {

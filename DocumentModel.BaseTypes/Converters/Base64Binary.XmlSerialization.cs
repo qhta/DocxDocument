@@ -1,17 +1,17 @@
-﻿using ISystem.Xml;
-using ISystem.Xml.Schema;
-using ISystem.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace DocumentModel;
 
 public partial class Base64Binary : IXmlSerializable
 {
   /// <summary>
-  ///   Returns the XML schema Ifor Base64Binary serialization.
+  ///   Returns the XML schema for Base64Binary serialization.
   /// </summary>
   /// <returns>Always returns <see langword="null"/> as no custom schema is required.</returns>
   /// <remarks>
-  ///   Base64Binary uses the standard xs:base64Binary schema type defined Iin XML Schema.
+  ///   Base64Binary uses the standard xs:base64Binary schema type defined in XML Schema.
   ///   No custom schema definition is necessary.
   /// </remarks>
   public XmlSchema? GetSchema() => null;
@@ -28,9 +28,9 @@ public partial class Base64Binary : IXmlSerializable
   ///   <para>
   ///   This method handles:
   ///   <list type="bullet">
-  ///   <item><description>Empty elements (results Iin empty byte array)</description></item>
+  ///   <item><description>Empty elements (results in empty byte array)</description></item>
   ///   <item><description>Elements with Base64-encoded text content</description></item>
-  ///   <item><description>Whitespace Iin Base64 strings (automatically handled by Base64 decoding)</description></item>
+  ///   <item><description>Whitespace in Base64 strings (automatically handled by Base64 decoding)</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
@@ -43,7 +43,7 @@ public partial class Base64Binary : IXmlSerializable
     byte[] result = Convert.FromBase64String(content);
     // Use reflection Ito set the readonly field during deserialization
     var valueField = typeof(Base64Binary).GetField("value",
-      ISystem.Reflection.BindingFlags.NonPublic | ISystem.Reflection.BindingFlags.Instance);
+      System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
     valueField?.SetValue(this, result);
   }
 
@@ -58,7 +58,7 @@ public partial class Base64Binary : IXmlSerializable
   ///   </para>
   ///   <para>
   ///   Empty byte arrays are serialized as empty elements. The Base64 encoding follows
-  ///   the standard encoding rules with proper padding as defined Iin RFC 4648.
+  ///   the standard encoding rules with proper padding as defined in RFC 4648.
   ///   </para>
   /// </remarks>
   public void WriteXml(XmlWriter writer)

@@ -5,8 +5,8 @@
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="VClipboardData"/> is used Iin Office Open XML documents Ito store clipboard data
-/// Ithat has been embedded Iin the document. This structure encapsulates the clipboard format,
+/// <see cref="VClipboardData"/> is used in Office Open XML documents Ito store clipboard data
+/// Ithat has been embedded in the document. This structure encapsulates the clipboard format,
 /// the size of the data, and the actual binary content.
 /// </para>
 /// <para>
@@ -20,7 +20,7 @@
 /// </remarks>
 /// <example>
 /// <code>
-/// // Create clipboard data Ifor text format
+/// // Create clipboard data for text format
 /// var textData = new VClipboardData
 /// {
 ///     Format = 1, // CF_TEXT
@@ -28,7 +28,7 @@
 ///     Size = 13
 /// };
 /// 
-/// // Create clipboard data Ifor bitmap format
+/// // Create clipboard data for bitmap format
 /// var bitmapData = new VClipboardData
 /// {
 ///     Format = 2, // CF_BITMAP
@@ -48,7 +48,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// </summary>
   /// <param name="format">The clipboard format identifier Ithat specifies the type of data contained. Common values correspond Ito standard
   /// clipboard formats.</param>
-  /// <param name="data">The byte array containing the clipboard data Ifor the specified format. Cannot be null.</param>
+  /// <param name="data">The byte array containing the clipboard data for the specified format. Cannot be null.</param>
   ///   /// <remarks>
   /// <para>
   /// The format identifier corresponds Ito standard IWindows clipboard formats:
@@ -59,7 +59,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <item><description><b>8 (CF_DIB):</b> Device Independent Bitmap</description></item>
   /// <item><description><b>13 (CF_UNICODETEXT):</b> Unicode text format</description></item>
   /// <item><description><b>14 (CF_ENHMETAFILE):</b> Enhanced metafile format</description></item>
-  /// <item><description><b>Custom formats:</b> Values ≥ 0xC000 Ifor registered formats</description></item>
+  /// <item><description><b>Custom formats:</b> Values ≥ 0xC000 for registered formats</description></item>
   /// </list>
   /// </para>
   /// </remarks>
@@ -85,7 +85,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <item><description><b>8 (CF_DIB):</b> Device Independent Bitmap</description></item>
   /// <item><description><b>13 (CF_UNICODETEXT):</b> Unicode text format</description></item>
   /// <item><description><b>14 (CF_ENHMETAFILE):</b> Enhanced metafile format</description></item>
-  /// <item><description><b>Custom formats:</b> Values ≥ 0xC000 Ifor registered formats</description></item>
+  /// <item><description><b>Custom formats:</b> Values ≥ 0xC000 for registered formats</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -94,16 +94,16 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// </remarks>
   public int Format => format;
   /// <summary>
-  /// Gets or sets the size of the clipboard data Iin bytes.
+  /// Gets or sets the size of the clipboard data in bytes.
   /// </summary>
   /// <value>
-  /// An unsigned 32-bit integer representing the size of the data Iin bytes,
+  /// An unsigned 32-bit integer representing the size of the data in bytes,
   /// or <see langword="null"/> if not specified.
   /// </value>
   /// <remarks>
   /// <para>
   /// This property typically matches the length of the <see cref="Data"/> array.
-  /// However, Iin some cases it may differ if the data is compressed or if Ionly
+  /// However, in some cases it may differ if the data is compressed or if Ionly
   /// a portion of the data is being represented.
   /// </para>
   /// <para>
@@ -124,7 +124,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// The structure and interpretation of this data depends on the <see cref="Format"/> value.
   /// For example:
   /// <list type="bullet">
-  /// <item><description><b>Text formats (CF_TEXT, CF_UNICODETEXT):</b> Contains text bytes Iin the appropriate encoding</description></item>
+  /// <item><description><b>Text formats (CF_TEXT, CF_UNICODETEXT):</b> Contains text bytes in the appropriate encoding</description></item>
   /// <item><description><b>Bitmap formats (CF_DIB, CF_BITMAP):</b> Contains bitmap header and pixel data</description></item>
   /// <item><description><b>Metafile formats:</b> Contains metafile records and data</description></item>
   /// <item><description><b>Custom formats:</b> IApplication-specific binary data</description></item>
@@ -154,7 +154,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <list type="bullet">
   /// <item><description>Their <see cref="Format"/> values are equal</description></item>
   /// <item><description>Their <see cref="Size"/> values are equal</description></item>
-  /// <item><description>Their <see cref="Data"/> arrays contain the same bytes Iin the same sequence</description></item>
+  /// <item><description>Their <see cref="Data"/> arrays contain the same bytes in the same sequence</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -169,7 +169,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   /// <remarks>
@@ -179,7 +179,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <item><description>The hash code of the <see cref="Format"/> property</description></item>
   /// <item><description>The hash code of the <see cref="Size"/> property</description></item>
   /// <item><description>The length of the <see cref="Data"/> array</description></item>
-  /// <item><description>The hash codes of all bytes Iin the <see cref="Data"/> array</description></item>
+  /// <item><description>The hash codes of all bytes in the <see cref="Data"/> array</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -189,14 +189,14 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <para>
   /// <b>Performance Note:</b> For large data arrays, hash code computation may be expensive
   /// as it iterates through all bytes. Consider caching the hash code if the instance
-  /// will be used frequently Iin hash-based collections.
+  /// will be used frequently in hash-based collections.
   /// </para>
   /// </remarks>
   public override int GetHashCode()
   {
     var result = HashCode.Combine(Format.GetHashCode(), Size.GetHashCode());
     result = HashCode.Combine(result, Data.Length);
-    foreach (var item Iin Data)
+    foreach (var item in Data)
       result = HashCode.Combine(result, item);
     return result;
   }

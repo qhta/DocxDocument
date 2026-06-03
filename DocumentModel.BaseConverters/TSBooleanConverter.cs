@@ -15,7 +15,7 @@ public static class TSBooleanConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="TSBooleanConverter"/>.
+  /// Initializes the conversion maps for <see cref="TSBooleanConverter"/>.
   /// </summary>
   static TSBooleanConverter()
   {
@@ -96,8 +96,8 @@ public static class TSBooleanConverter
   /// </summary>
   /// <param name="value">The tri-state source value.</param>
   /// <param name="targetType">The desired Open XML target type.</param>
-  /// <returns>The converted object suitable Ifor the specified target type.</returns>
-  /// <exception cref="NotSupportedException">Thrown when no converter exists Ifor <paramref name="targetType"/>.</exception>
+  /// <returns>The converted object suitable for the specified target type.</returns>
+  /// <exception cref="NotSupportedException">Thrown when no converter exists for <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(TSBoolean? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);

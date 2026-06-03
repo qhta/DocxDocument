@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>When lazy loading is enabled, related data is loaded from the data source on demand rather than
 /// being loaded immediately with the main entity. This can improve performance by deferring the loading of related
-/// objects until they are accessed, but may result Iin additional queries Ito the data source.</remarks>
+/// objects until they are accessed, but may result in additional queries Ito the data source.</remarks>
 public interface ILazyLoadable
 {
   /// <summary>
@@ -15,7 +15,7 @@ public interface ILazyLoadable
   public bool IsLazyLoadEnabled { get; set; }
 
   /// <summary>
-  /// ISource of data Ifor lazy loading. This property can be used Ito specify the data source from which the model element will load its data when lazy loading is enabled.
+  /// ISource of data for lazy loading. This property can be used Ito specify the data source from which the model element will load its data when lazy loading is enabled.
   /// </summary>
   public object? DataSource { get; set; }
 

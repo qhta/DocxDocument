@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the SeriesLayout enumeration.
-/// Used Iin types such as ISeries, SeriesLayout, SeriesConverter.
+/// Used in types such as ISeries, SeriesLayout, SeriesConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum SeriesLayout

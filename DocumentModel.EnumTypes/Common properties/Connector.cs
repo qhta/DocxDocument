@@ -5,7 +5,7 @@ namespace DocumentModel.Properties;
 /// Specifies the connector between two similar property test values.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnector?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnector?view=office-pia` for Office interop details.
 /// </remarks>
 public enum Connector
 {

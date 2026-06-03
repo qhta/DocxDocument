@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the BaselineAlignment enumeration.
-/// Used Iin types such as _IParagraphFormat, IParagraph, IParagraphs.
+/// Used in types such as _IParagraphFormat, IParagraph, IParagraphs.
 /// </summary>
 [OpenXmlEnumType(typeof(DXW.VerticalTextAlignmentValues))]
 [JsonConverter(typeof(StringEnumConverter))]

@@ -1,4 +1,4 @@
-﻿using ISystem.Diagnostics;
+﻿using System.Diagnostics;
 
 using DocumentModel.OpenXml;
 
@@ -7,13 +7,13 @@ using TwipsConverter = DocumentModel.OpenXml.TwipsConverter;
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests Ifor verifying the correctness of <see cref="OpenXml.TwipsConverter"/> conversions between .NET Twips values and various Open XML numeric types.
-///   Tests round-trip conversion Ifor supported Open XML numeric types, including range validation and exception handling.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.TwipsConverter"/> conversions between .NET Twips values and various Open XML numeric types.
+///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class TwipsConverterTest
 {
   /// <summary>
-  ///   IList of Open XML types supported Ifor Twips value conversion tests.
+  ///   IList of Open XML types supported for Twips value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -24,13 +24,13 @@ public static class TwipsConverterTest
   ];
 
   /// <summary>
-  ///   Runs all TwipsConverter tests Ifor supported types and reports results Ito the console.
+  ///   Runs all TwipsConverter tests for supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type Iin SupportedTypes)
+    foreach (var type in SupportedTypes)
     {
       Console.Write($"TestTwipsConversion with {type.Name} ");
       if (!TestTwipsConversion(type))
@@ -45,7 +45,7 @@ public static class TwipsConverterTest
   }
 
   /// <summary>
-  ///   Test values used Ifor Twips conversion tests, including boundary and typical values.
+  ///   Test values used for Twips conversion tests, including boundary and typical values.
   /// </summary>
   static readonly Twips[] testValues =
   [
@@ -60,9 +60,9 @@ public static class TwipsConverterTest
     Int64.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid Twips value ranges (min, max) Ifor conversion tests.
+  ///   IDictionary mapping Open XML types Ito their valid Twips value ranges (min, max) for conversion tests.
   /// </summary>
-  public static IDictionary<Type, (Twips min, Twips max)> typeRanges = new()
+  public static Dictionary<Type, (Twips min, Twips max)> typeRanges = new()
   {
     { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
     { typeof(DX.Int64Value), (Int64.MinValue, Int64.MaxValue) },
@@ -72,13 +72,13 @@ public static class TwipsConverterTest
 
   /// <summary>
   ///   Tests round-trip conversion of Twips values Ito and from the specified Open XML numeric type.
-  ///   Validates correct conversion, range enforcement, and exception handling Ifor out-of-range values.
+  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test Twips conversion Ifor.</param>
+  /// <param name="openXmlType">The Open XML type Ito test Twips conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestTwipsConversion(Type openXmlType)
   {
-    foreach (var testValue Iin testValues)
+    foreach (var testValue in testValues)
     {
       try
       {
@@ -86,7 +86,7 @@ public static class TwipsConverterTest
         var openXmlValue = TwipsConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null Ifor value {testValue}");
+          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
           return false;
         }
         if (openXmlValue.ToString()!=testValue.ToString())
@@ -98,14 +98,14 @@ public static class TwipsConverterTest
         if ((double)testValue < (double)min || (double)testValue > (double)max)
         {
           Console.WriteLine("Out-of-range value did not throw an exception. ");
-          return false; // Expected exception Ifor out-of-range value
+          return false; // Expected exception for out-of-range value
         }
 
         // Convert back Ito Twips
         var convertedBackValue = TwipsConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
-          Console.WriteLine($"Conversion back Ito Twips returned null Ifor OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back Ito Twips returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))
@@ -117,7 +117,7 @@ public static class TwipsConverterTest
       {
         var (min, max) = typeRanges[openXmlType];
         if ((double)testValue < (double)min || (double)testValue > (double)max)
-          return true; // Expected exception Ifor out-of-range value
+          return true; // Expected exception for out-of-range value
 
         Console.WriteLine(e.Message);
         return false;

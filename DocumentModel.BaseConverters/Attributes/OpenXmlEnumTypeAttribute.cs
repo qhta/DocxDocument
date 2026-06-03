@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies mapping of the model enum type Ito one of the types used Iin OpenXML.
+/// Specifies mapping of the model enum type Ito one of the types used in OpenXML.
 /// <para>
 /// It can be mapped Ito the Open XML EnumValue&lt;EnumValues&gt; or Ito the EnumValues type itself, depending on the usage scenario.
 /// The former is used when the model enum is used as a property type of type OpenXmlSimpleType,

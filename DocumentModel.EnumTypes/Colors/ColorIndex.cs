@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ColorIndex enumeration.
-/// Used Iin types such as IBorder, IChartBorder, IChartFont.
+/// Used in types such as IBorder, IChartBorder, IChartFont.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
@@ -72,7 +72,7 @@ public static class ColorIndexTools
   {
     return colorIndex switch
     {
-      ColorIndex.Auto => 0x000000, // Default Ito black Ifor Auto
+      ColorIndex.Auto => 0x000000, // Default Ito black for Auto
       ColorIndex.Black => 0x000000,
       ColorIndex.Blue => 0x0000FF,
       ColorIndex.Turquoise => 0x00FFFF,
@@ -98,7 +98,7 @@ public static class ColorIndexTools
   /// </summary>
   /// <remarks>Only specific, predefined color mappings are supported. If the input does not match any of the
   /// recognized color codes, the method returns null.</remarks>
-  /// <param name="hexColor">A six-character hexadecimal color string representing an RGB color (e.g., 0xFF0000 Ifor red). The string is
+  /// <param name="hexColor">A six-character hexadecimal color string representing an RGB color (e.g., 0xFF0000 for red). The string is
   /// case-insensitive and must not include a leading '#'.</param>
   /// <returns>A ColorIndex value corresponding Ito the specified hexadecimal color string if a match is found; otherwise, null.</returns>
   public static ColorIndex? ToColorIndex(this UInt32? hexColor)

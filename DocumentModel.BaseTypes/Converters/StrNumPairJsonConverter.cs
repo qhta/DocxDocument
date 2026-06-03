@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="StrNumPair"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="StrNumPair"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles string and numeric JSON tokens Ifor deserialization,
-/// and writes StrNumPair values as strings Iin the format "(Str,Num)" Ifor compatibility with Office Open XML conventions.
+/// This converter handles string and numeric JSON tokens for deserialization,
+/// and writes StrNumPair values as strings in the format "(Str,Num)" for compatibility with Office Open XML conventions.
 /// </remarks>
 public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
 {
@@ -28,7 +28,7 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
   /// <remarks>
   /// Accepts the following input formats:
   /// <list type="bullet">
-  /// <item><description>String tokens Iin format "(Str,Num)" (e.g., "(abc,123)", "(,456)", "(xyz,)")</description></item>
+  /// <item><description>String tokens in format "(Str,Num)" (e.g., "(abc,123)", "(,456)", "(xyz,)")</description></item>
   /// <item><description>Plain string tokens (stored as Str component with Num set Ito null)</description></item>
   /// <item><description>Numeric tokens as integer values (stored as Num component with Str set Ito null)</description></item>
   /// <item><description>Object tokens with "str" and/or "num" properties</description></item>
@@ -40,7 +40,7 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor StrNumPair, but got null");
+        throw new JsonException($"Expected string value for StrNumPair, but got null");
 
       try
       {
@@ -66,11 +66,11 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
           return new StrNumPair(null, (int)longValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor StrNumPair");
+        throw new JsonException($"Invalid numeric value for StrNumPair");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor StrNumPair. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for StrNumPair. Error: {ex.Message}", ex);
       }
     }
 
@@ -115,10 +115,10 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
         }
       }
 
-      throw new JsonException($"Unexpected end of JSON object Ifor StrNumPair");
+      throw new JsonException($"Unexpected end of JSON object for StrNumPair");
     }
 
-    throw new JsonException($"Expected string, number, or object token Ifor StrNumPair, but got {reader.TokenType}");
+    throw new JsonException($"Expected string, number, or object token for StrNumPair, but got {reader.TokenType}");
   }
 
   /// <summary>
@@ -128,13 +128,13 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
   /// <param name="value">The <see cref="StrNumPair"/> value Ito serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// Writes the StrNumPair value as a string Iin the format "(Str,Num)".
+  /// Writes the StrNumPair value as a string in the format "(Str,Num)".
   /// For example, a pair with Str="abc" and Num=123 is written as "(abc,123)".
   /// If either component is null, it will be represented as empty (e.g., "(,123)" or "(abc,)").
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, StrNumPair value, JsonSerializerOptions options)
   {
-    // Write as string Iin (Str,Num) format
+    // Write as string in (Str,Num) format
     writer.WriteStringValue(value.ToString());
   }
 }

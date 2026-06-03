@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexChar values are written as hexadecimal string values Iin JSON output
+///   This converter ensures Ithat HexChar values are written as hexadecimal string values in JSON output
 ///   (e.g., "41", "03B1") rather than numeric values or complex objects. During deserialization, the converter
 ///   reads string values and constructs HexChar instances from them.
 ///   </para>
@@ -13,19 +13,19 @@
 ///   The hexadecimal string format maintains compatibility with Office Open XML specifications while
 ///   providing human-readable JSON output. The converter uses automatic formatting based on value range:
 ///   <list type="bullet">
-///   <item><description><b>ASCII range (0-255):</b> 2-digit format Ifor compact representation</description></item>
-///   <item><description><b>Extended range (256-65535):</b> 4-digit format Ifor full Unicode BMP support</description></item>
+///   <item><description><b>ASCII range (0-255):</b> 2-digit format for compact representation</description></item>
+///   <item><description><b>Extended range (256-65535):</b> 4-digit format for full Unicode BMP support</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
+///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
 ///   contain Ionly valid hexadecimal characters.
 ///   </para>
 ///   <para>
 ///   <b>Usage Context:</b> This converter is automatically applied Ito HexChar properties when the type
-///   is used Iin JSON serialization, ensuring consistent hexadecimal string representation across all
-///   JSON operations Iin Office Open XML document processing.
+///   is used in JSON serialization, ensuring consistent hexadecimal string representation across all
+///   JSON operations in Office Open XML document processing.
 ///   </para>
 /// </remarks>
 public class HexCharJsonConverter : JsonConverter<HexChar>
@@ -47,10 +47,10 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
   ///   <para>
   ///   <b>Examples of valid input:</b>
   ///   <list type="bullet">
-  ///   <item><description>"41" → HexChar(65) Ifor 'A'</description></item>
-  ///   <item><description>"20" → HexChar(32) Ifor space</description></item>
-  ///   <item><description>"03b1" or "03B1" → HexChar(945) Ifor Greek alpha</description></item>
-  ///   <item><description>"FFFF" → HexChar(65535) Ifor maximum value</description></item>
+  ///   <item><description>"41" → HexChar(65) for 'A'</description></item>
+  ///   <item><description>"20" → HexChar(32) for space</description></item>
+  ///   <item><description>"03b1" or "03B1" → HexChar(945) for Greek alpha</description></item>
+  ///   <item><description>"FFFF" → HexChar(65535) for maximum value</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
@@ -63,7 +63,7 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
       return null;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor HexChar, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for HexChar, but got {reader.TokenType}");
 
     var str = reader.GetString();
     if (string.IsNullOrEmpty(str))
@@ -75,7 +75,7 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{str}' Ifor HexChar. Expected 2 or 4 hex digits (0-9, A-F).", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexChar. Expected 2 or 4 hex digits (0-9, A-F).", ex);
     }
   }
 

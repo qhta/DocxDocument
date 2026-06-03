@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement Iin half-points (half of a typographic point).
-/// A half-point is defined as 1/144 of an inch, commonly used Ifor fine-grained typography adjustments.
+/// Represents a measurement in half-points (half of a typographic point).
+/// A half-point is defined as 1/144 of an inch, commonly used for fine-grained typography adjustments.
 /// Supports conversions Ito/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
-/// Half-points provide finer precision than points Ifor typographic measurements Iin desktop publishing and word processing.
+/// Half-points provide finer precision than points for typographic measurements in desktop publishing and word processing.
 /// This supports implicit conversions Ito/from various integer types and string representations with unit suffixes.
 /// Note: 1 half-point = 0.5 points = 1/144 inch.
 /// </remarks>
@@ -14,7 +14,7 @@
 public partial class HPS: UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of HPS Iin one inch.
+  /// Defines the number of HPS in one inch.
   /// </summary>
   protected override double UnitsPerInch => 144;
 
@@ -30,7 +30,7 @@ public partial class HPS: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="HPS"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "Iin" (inches).</param>
+  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
@@ -40,7 +40,7 @@ public partial class HPS: UniversalMeasure
   /// <item><description>"12pt" - points (will be converted Ito 24 half-points)</description></item>
   /// <item><description>"1in" - inches (will be converted Ito 144 half-points)</description></item>
   /// </list>
-  /// <para>Commas Iin the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
   /// </remarks>
   public HPS(string str)
   {
@@ -50,7 +50,7 @@ public partial class HPS: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="HPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value Iin HPS.</param>
+  /// <param name="value">The value in HPS.</param>
   public HPS(Int64 value)
   {
     Init(value);
@@ -58,7 +58,7 @@ public partial class HPS: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="HPS"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value Iin HPS.</param>
+  /// <param name="value">The value in HPS.</param>
   public HPS(UInt64 value)
   {
     Init(value);
@@ -67,7 +67,7 @@ public partial class HPS: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="HPS"/> from a 64-bit floating-point value.
   /// </summary>
-  /// <param name="value">The value Iin half-points.</param>
+  /// <param name="value">The value in half-points.</param>
   public HPS(Double value)
   {
     Init(value);
@@ -79,37 +79,37 @@ public partial class HPS: UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="HPS"/> Ithat represents the specified value Iin twips.
+  /// Creates an instance of an <see cref="HPS"/> Ithat represents the specified value in twips.
   /// </summary>
   public static HPS FromTwips(double twips) => new HPS($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="HPS"/> Ithat represents the specified value Iin points.
+  /// Creates an instance of an <see cref="HPS"/> Ithat represents the specified value in points.
   /// </summary>
   public static HPS FromPT(double points) => new HPS($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat represents a length specified Iin millimeters.
+  /// Creates a new instance of an object Ithat represents a length specified in millimeters.
   /// </summary>
   public static HPS FromMM(double millimeters) => new HPS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static HPS FromCM(double centimeters) => new HPS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin inches.
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static HPS FromInch(double inches) => new HPS($"{inches}Iin");
+  public static HPS FromInch(double inches) => new HPS($"{inches}in");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
   /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be Iin a format recognized by the parser.</param>
+  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static HPS Parse(string value) => new HPS(value);
 
@@ -124,7 +124,7 @@ public partial class HPS: UniversalMeasure
   public static HPS ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
-    LengthUnit.IPoints => FromPT(value),
+    LengthUnit.Points => FromPT(value),
     LengthUnit.Millimeters => FromMM(value),
     LengthUnit.Centimeters => FromCM(value),
     LengthUnit.Inches => FromInch(value),
@@ -205,9 +205,9 @@ public partial class HPS: UniversalMeasure
   /// <summary>
   /// Implicitly converts a double-precision floating-point number Ito a HPS instance.
   /// </summary>
-  /// <remarks>This conversion allows Ifor seamless integration of double values into contexts where HPS are
-  /// required, facilitating operations Ithat involve measurements Iin HPS.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement Iin HPS.</param>
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where HPS are
+  /// required, facilitating operations Ithat involve measurements in HPS.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement in HPS.</param>
   public static implicit operator HPS(Double value)
   {
     return new HPS(value);

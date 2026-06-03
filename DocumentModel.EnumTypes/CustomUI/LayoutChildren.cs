@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the LayoutChildren enumeration.
-/// Used Iin types such as LayoutContainer, LayoutContainerConverter.
+/// Used in types such as LayoutContainer, LayoutContainerConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.LayoutChildrenValues))]

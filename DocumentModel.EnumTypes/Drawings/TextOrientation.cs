@@ -18,7 +18,7 @@ public enum TextOrientation
   [OpenXmlEnumValue("Downward")]
   Downward,
   /// <summary>
-  /// Vertical as required Ifor Far East language support.
+  /// Vertical as required for Far East language support.
   /// </summary>
   [OpenXmlEnumValue("VerticalFarEast")]
   VerticalFarEast = 4,
@@ -28,7 +28,7 @@ public enum TextOrientation
   [OpenXmlEnumValue("Vertical")]
   Vertical = 5,
   /// <summary>
-  /// Horizontal and rotated as required Ifor Far East language support.
+  /// Horizontal and rotated as required for Far East language support.
   /// </summary>
   [OpenXmlEnumValue("HorizontalRotatedFarEast")]
   HorizontalRotatedFarEast = 6

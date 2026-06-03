@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="Degrees"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="Degrees"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
+/// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes Degrees values as strings with a "°" suffix following Office Open XML conventions.
 /// </remarks>
 public class DegreesJsonConverter : JsonConverter<Degrees>
@@ -38,7 +38,7 @@ public class DegreesJsonConverter : JsonConverter<Degrees>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor Degrees, but got null");
+        throw new JsonException($"Expected string value for Degrees, but got null");
 
       try
       {
@@ -60,15 +60,15 @@ public class DegreesJsonConverter : JsonConverter<Degrees>
           return new Degrees(doubleValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor Degrees");
+        throw new JsonException($"Invalid numeric value for Degrees");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor Degrees. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for Degrees. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor Degrees, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for Degrees, but got {reader.TokenType}");
   }
 
   /// <summary>

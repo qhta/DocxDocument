@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Comparison enumeration.
-/// Used Iin types such as AddOpenXmlElementAttribute, ArrayVariant, Base64Binary.
+/// Used in types such as AddOpenXmlElementAttribute, ArrayVariant, Base64Binary.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]

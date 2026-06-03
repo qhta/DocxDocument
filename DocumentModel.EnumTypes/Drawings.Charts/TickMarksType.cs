@@ -2,13 +2,13 @@
 
 /// <summary>
 /// Defines the TickMarksType enumeration.
-/// Used Iin types such as OpenXmlTickMarksElement, TickMarksType, OpenXmlTickMarksElementConverter.
+/// Used in types such as OpenXmlTickMarksElement, TickMarksType, OpenXmlTickMarksElementConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TickMarksType
 {
   /// <summary>
-  ///   Iin.
+  ///   in.
   /// </summary>
   [OpenXmlEnumValue("In")]
   In,

@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the type of gradient used Iin a shape's fill.
+/// Specifies the type of gradient used in a shape's fill.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msogradientcolortype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msogradientcolortype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum GradientColorType
 {
@@ -21,7 +21,7 @@ public enum GradientColorType
   /// </summary>
   TwoColors = 2,
   /// <summary>
-  /// Gradient colors set according Ito a built-Iin gradient of the set defined by the msoPresetGradientType constant.
+  /// Gradient colors set according Ito a built-in gradient of the set defined by the msoPresetGradientType constant.
   /// </summary>
   PresetColors = 3,
   /// <summary>

@@ -9,7 +9,7 @@ public enum PathShade
   /// <summary>
   ///   IShape.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.IShape))]
+  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Shape))]
   IShape,
   /// <summary>
   ///   Circle.
@@ -19,6 +19,6 @@ public enum PathShade
   /// <summary>
   ///   IRectangle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.IRectangle))]
+  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Rectangle))]
   IRectangle
 }

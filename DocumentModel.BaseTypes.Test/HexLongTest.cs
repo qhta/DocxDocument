@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor HexLong type serialization Iin both XML and JSON formats.
+/// Test suite for HexLong type serialization in both XML and JSON formats.
 /// </summary>
 public static class HexLongTest
 {
@@ -27,7 +27,7 @@ public static class HexLongTest
   static bool TestHexLongBasicOperations()
   {
     Console.WriteLine("--- Testing HexLong Basic Operations ---");      // Test string Ito HexLong conversion
-    HexLong hexInt1 = "0000007B"; // 123 Iin hex
+    HexLong hexInt1 = "0000007B"; // 123 in hex
     Console.WriteLine($"\n✓ String Ito HexLong: {hexInt1} = {hexInt1.ToInt32(null)}");
 
     // Test int Ito HexLong conversion
@@ -80,7 +80,7 @@ public static class HexLongTest
     {
       RevisionId = 123,
       DocumentHash = "DEADBEEF",
-      ColorARGB = 0xFF0000FF,  // Red Iin ARGB
+      ColorARGB = 0xFF0000FF,  // Red in ARGB
       NegativeValue = -1,
       Zero = 0,
       MaxPositive = int.MaxValue,
@@ -108,7 +108,7 @@ public static class HexLongTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -177,7 +177,7 @@ public static class HexLongTest
     {
       RevisionId = 456,
       DocumentHash = "CAFEBABE",
-      ColorARGB = 0x00FF00FF,  // Green Iin ARGB
+      ColorARGB = 0x00FF00FF,  // Green in ARGB
       NegativeValue = -42,
       Zero = 0,
       MaxPositive = int.MaxValue,
@@ -303,8 +303,8 @@ public static class HexLongTest
     Console.WriteLine("--- Testing HexLong Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       HexLong hex = new HexLong("0000007B");
     }
@@ -313,7 +313,7 @@ public static class HexLongTest
 
     // Test construction from int
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       HexLong hex = new HexLong(123);
     }
@@ -323,7 +323,7 @@ public static class HexLongTest
     // Test ToString performance
     HexLong testInt = new HexLong(123);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testInt.ToString();
     }
@@ -343,7 +343,7 @@ public static class HexLongTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++) // Fewer iterations Ifor serialization
+    for (int i = 0; i < iterations / 10; i++) // Fewer iterations for serialization
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -353,7 +353,7 @@ public static class HexLongTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexLongTestData>(jsonData);
     }
@@ -364,7 +364,7 @@ public static class HexLongTest
     HexLong hex1 = new HexLong(123);
     HexLong hex2 = new HexLong(123);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool equal = hex1.Equals(hex2);
     }
@@ -373,7 +373,7 @@ public static class HexLongTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int value = hex1;
     }
@@ -382,7 +382,7 @@ public static class HexLongTest
 
     // Test HexBinary conversion performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       HexBinary binary = (HexBinary)hex1;
     }
@@ -404,7 +404,7 @@ public static class HexLongTest
 public class HexLongTestData
 {
   [XmlElement("RevisionId")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexLong RevisionId { get; set; }
 
   [XmlElement("DocumentHash")]

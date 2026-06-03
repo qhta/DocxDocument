@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// ValueType of Red, Green, Blue compacted Ito UInt32 and written Iin hexadecimal format.
+/// ValueType of Red, Green, Blue compacted Ito UInt32 and written in hexadecimal format.
 /// </summary>
 /// <remarks>
 /// The RGB value is stored as a 32-bit unsigned integer where:
@@ -14,7 +14,7 @@
 public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
 {
   /// <summary>
-  /// The internal storage Ifor the compound RGB value.
+  /// The internal storage for the compound RGB value.
   /// </summary>
   private readonly UInt32 value;
 
@@ -70,7 +70,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   public Byte R
   {
     get => (byte)(value >> 16);
-    set => ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.value) = (this.value & 0x00FFFF) | ((UInt32)value << 16);
+    set => System.Runtime.CompilerServices.Unsafe.AsRef(in this.value) = (this.value & 0x00FFFF) | ((UInt32)value << 16);
   }
 
   /// <summary>
@@ -79,7 +79,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   public Byte G
   {
     get => (byte)(value >> 8);
-    set => ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.value) = (this.value & 0xFF00FF) | ((UInt32)value << 8);
+    set => System.Runtime.CompilerServices.Unsafe.AsRef(in this.value) = (this.value & 0xFF00FF) | ((UInt32)value << 8);
   }
 
   /// <summary>
@@ -88,7 +88,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   public Byte B
   {
     get => (byte)value;
-    set => ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.value) = (this.value & 0xFFFF00) | value;
+    set => System.Runtime.CompilerServices.Unsafe.AsRef(in this.value) = (this.value & 0xFFFF00) | value;
   }
 
   #region Implicit Conversions
@@ -156,7 +156,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the RGB value Ito its hexadecimal string representation.
   /// </summary>
-  /// <returns>A 6-character hexadecimal string Iin the format #RRGGBB.</returns>
+  /// <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
   public override string ToString()
   {
     if (value == 0xFFFFFFFF)
@@ -168,10 +168,10 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// Parses the specified string representation of a hexadecimal RGB color and outputs the corresponding <see
   /// cref="HexColor"/> object.
   /// </summary>
-  /// <remarks>If the input string is not Iin a valid hexadecimal RGB format, the behavior of this method is
+  /// <remarks>If the input string is not in a valid hexadecimal RGB format, the behavior of this method is
   /// undefined. It is recommended Ito validate the input before calling this method.</remarks>
   /// <param name="str">The string containing the hexadecimal RGB color Ito parse.
-  /// The string must be Iin a valid hex color format, such as "RRGGBB".</param>
+  /// The string must be in a valid hex color format, such as "RRGGBB".</param>
   /// <returns>A <see cref="HexColor"/> object representing the parsed RGB color.</returns>
   public static HexColor Parse(string str)
   {
@@ -186,10 +186,10 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// Attempts Ito convert the specified string representation of a hexadecimal RGB color Ito its equivalent <see
   /// cref="HexColor"/> value without throwing an exception.
   /// </summary>
-  /// <remarks>Use this method Ito safely attempt Ito parse a hexadecimal RGB color string. If the input is not Iin
+  /// <remarks>Use this method Ito safely attempt Ito parse a hexadecimal RGB color string. If the input is not in
   /// a valid format, the method returns false and does not throw an exception.</remarks>
   /// <param name="str">The string containing the hexadecimal RGB color Ito parse.
-  /// The string must be Iin a valid format, such as "RRGGBB".</param>
+  /// The string must be in a valid format, such as "RRGGBB".</param>
   /// <param name="result">When this method returns, contains the parsed <see cref="HexColor"/> value
   /// if the conversion succeeded; otherwise,  the default value of <see cref="HexColor"/>.</param>
   /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
@@ -226,7 +226,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
@@ -237,7 +237,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   #region IConvertible Implementation
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor this instance.
+  /// Returns the <see cref="TypeCode"/> for this instance.
   /// </summary>
   /// <returns><see cref="TypeCode.Object"/> as this is a color structure.</returns>
   public TypeCode GetTypeCode()
@@ -246,7 +246,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -257,7 +257,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -268,7 +268,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -279,7 +279,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -290,7 +290,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -301,7 +301,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -312,7 +312,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -343,7 +343,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -354,7 +354,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
@@ -368,7 +368,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// Converts the value of this instance Ito an equivalent string.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 6-character hexadecimal string Iin the format RRGGBB.</returns>
+  /// <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
   public string ToString(IFormatProvider? provider)
   {
     return ToString();
@@ -383,7 +383,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// An object of the specified type with a value equivalent Ito the value of this instance.
   /// Supports conversion Ito <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="HexColor"/>.
   /// </returns>
-  /// <exception cref="InvalidCastException">This conversion is not supported Ifor the specified type.</exception>
+  /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
   {
     if (conversionType == typeof(string))
@@ -411,7 +411,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// This conversion is not supported Ifor RGB color types.
+  /// This conversion is not supported for RGB color types.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>

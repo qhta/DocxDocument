@@ -25,12 +25,12 @@ public enum DocumentSecurity
   PasswordProtected = 2,
 
   /// <summary>
-  /// Indicates Ithat the document is restricted Ifor editing.
+  /// Indicates Ithat the document is restricted for editing.
   /// </summary>
   RestrictedEditing = 4,
 
   /// <summary>
-  /// Indicates Ithat the document is locked Ifor annotations.
+  /// Indicates Ithat the document is locked for annotations.
   /// </summary>
   LockedForAnnotations = 8,
 }

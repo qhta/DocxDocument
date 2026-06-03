@@ -32,7 +32,7 @@ public enum DocPartType
   [OpenXmlEnumValue(nameof(DXW.DocPartValues.Speller))]
   Speller,
   /// <summary>
-  ///   Form IField Help Text.
+  ///   Form Field Help Text.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.DocPartValues.FormField))]
   FormField,

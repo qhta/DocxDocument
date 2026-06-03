@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ChartBuildStep enumeration.
-/// Used Iin types such as ChartToAnimate.
+/// Used in types such as ChartToAnimate.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.ChartBuildStepValues))]

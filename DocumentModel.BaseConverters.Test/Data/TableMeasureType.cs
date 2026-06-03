@@ -15,13 +15,13 @@ public enum TableMeasureType
   Auto,
 
   /// <summary>
-  ///   Width Iin Twentieths of a IPoint.
+  ///   Width in Twentieths of a IPoint.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
   Absolute,
 
   /// <summary>
-  ///   Width Iin Fiftieths of a Percent.
+  ///   Width in Fiftieths of a Percent.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
   Percent,

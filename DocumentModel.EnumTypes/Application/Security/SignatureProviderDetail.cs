@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies properties of a signature provider.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SignatureProviderDetail
 {
@@ -13,7 +13,7 @@ public enum SignatureProviderDetail
   /// </summary>
   Url,
   /// <summary>
-  /// Hash algorithm used Ito hash the data Iin the file.
+  /// Hash algorithm used Ito hash the data in the file.
   /// </summary>
   HashAlgorithm,
   /// <summary>

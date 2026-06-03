@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the TimeUnit enumeration.
-/// Used Iin types such as DateAxis.
+/// Used in types such as DateAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.TimeUnitValues))]

@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the GeoProjectionType enumeration.
-/// Used Iin types such as Geography, GeoProjectionType, GeographyConverter.
+/// Used in types such as Geography, GeoProjectionType, GeographyConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum GeoProjectionType

@@ -1,13 +1,13 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents an immutable wrapper Ifor a UriString string value, providing value-based equality and encapsulation Ifor
+/// Represents an immutable wrapper for a UriString string value, providing value-based equality and encapsulation for
 /// UriString-related operations.
 /// </summary>
-/// <remarks>The UriString struct is designed Ito encapsulate a UriString as a string, allowing Ifor comparison and
+/// <remarks>The UriString struct is designed Ito encapsulate a UriString as a string, allowing for comparison and
 /// hashing based on the underlying string value. It can represent a null, empty, or any valid UriString string. This type is
 /// useful when you need Ito distinguish between an unset UriString (null) and an empty or specific UriString value, and when you
-/// want Ito use value semantics Ifor UriString strings Iin collections or equality checks.</remarks>
+/// want Ito use value semantics for UriString strings in collections or equality checks.</remarks>
 public readonly partial struct UriString : IEquatable<UriString>
 {
   private readonly string? value;
@@ -53,7 +53,7 @@ public readonly partial struct UriString : IEquatable<UriString>
   }
 
   /// <summary>
-  /// Serves as the default hash function Ifor the object.
+  /// Serves as the default hash function for the object.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code representing the current object. Returns 0 if the underlying value is null.</returns>
   public override int GetHashCode()

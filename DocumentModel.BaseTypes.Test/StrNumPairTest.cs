@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor StrNumPair type serialization Iin both XML and JSON formats.
+/// Test suite for StrNumPair type serialization in both XML and JSON formats.
 /// </summary>
 public static class StrNumPairTest
 {
@@ -122,8 +122,8 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test plain string (not Iin format)
-    Console.WriteLine("\nTesting plain string (not Iin format):");
+    // Test plain string (not in format)
+    Console.WriteLine("\nTesting plain string (not in format):");
     StrNumPair pair5 = new StrNumPair("just text");
     Console.WriteLine($"  \"just text\" → {pair5} (Str='{pair5.Str}', Num={pair5.Num})");
     if (pair5.Str != "just text" || pair5.Num != null)
@@ -162,8 +162,8 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test with non-numeric value Iin Num position
-    Console.WriteLine("\nTesting with non-numeric value Iin Num position:");
+    // Test with non-numeric value in Num position
+    Console.WriteLine("\nTesting with non-numeric value in Num position:");
     StrNumPair pair9 = new StrNumPair("(test,notnum)");
     Console.WriteLine($"  \"(test,notnum)\" → {pair9} (Str='{pair9.Str}', Num={pair9.Num})");
     if (pair9.Str != "test" || pair9.Num != null)
@@ -216,7 +216,7 @@ public static class StrNumPairTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -417,8 +417,8 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test special characters Iin string
-    Console.WriteLine("\nTesting special characters Iin string:");
+    // Test special characters in string
+    Console.WriteLine("\nTesting special characters in string:");
     StrNumPair special1 = new StrNumPair("(,)", 10);
     StrNumPair special2 = new StrNumPair("a,b,c", 20);
     StrNumPair special3 = new StrNumPair("line\nbreak", 30);
@@ -443,8 +443,8 @@ public static class StrNumPairTest
     Console.WriteLine("--- Testing StrNumPair Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       StrNumPair pair = new StrNumPair("test");
     }
@@ -453,7 +453,7 @@ public static class StrNumPairTest
 
     // Test construction from format string
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       StrNumPair pair = new StrNumPair("(test,123)");
     }
@@ -462,7 +462,7 @@ public static class StrNumPairTest
 
     // Test construction from string + number
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       StrNumPair pair = new StrNumPair("test", 123);
     }
@@ -472,7 +472,7 @@ public static class StrNumPairTest
     // Test ToString performance
     StrNumPair testPair = new StrNumPair("test", 123);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testPair.ToString();
     }
@@ -481,7 +481,7 @@ public static class StrNumPairTest
 
     // Test property access
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string? str = testPair.Str;
       int? num = testPair.Num;
@@ -503,7 +503,7 @@ public static class StrNumPairTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -513,7 +513,7 @@ public static class StrNumPairTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<StrNumPairTestData>(jsonData);
     }
@@ -524,7 +524,7 @@ public static class StrNumPairTest
     StrNumPair pair1 = new StrNumPair("test", 123);
     StrNumPair pair2 = new StrNumPair("test", 123);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = pair1.Equals(pair2);
     }
@@ -533,7 +533,7 @@ public static class StrNumPairTest
 
     // Test GetHashCode performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int hash = pair1.GetHashCode();
     }
@@ -542,7 +542,7 @@ public static class StrNumPairTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       StrNumPair fromStr = "text";
     }
@@ -550,7 +550,7 @@ public static class StrNumPairTest
     Console.WriteLine($"Implicit conversion from string x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       StrNumPair fromInt = 123;
     }
@@ -572,7 +572,7 @@ public static class StrNumPairTest
 public class StrNumPairTestData
 {
   [XmlElement("StringOnly")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public StrNumPair StringOnly { get; set; }
 
   [XmlElement("NumberOnly")]
@@ -598,7 +598,7 @@ public class StrNumPairTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class StrNumPairWrapper
 {

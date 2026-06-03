@@ -5,19 +5,19 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexByte values are written as hexadecimal string values Iin JSON output
+///   This converter ensures Ithat HexByte values are written as hexadecimal string values in JSON output
 ///   (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
 ///   reads string values and constructs HexByte instances from them.
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
+///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
 ///   contain Ionly valid hexadecimal characters.
 ///   </para>
 ///   <para>
 ///   <b>Usage Context:</b> This converter is automatically applied Ito HexByte properties when the type
-///   is used Iin JSON serialization, ensuring consistent hexadecimal string representation across all
-///   JSON operations Iin Office Open XML document processing.
+///   is used in JSON serialization, ensuring consistent hexadecimal string representation across all
+///   JSON operations in Office Open XML document processing.
 ///   </para>
 /// </remarks>
 public class HexByteJsonConverter : JsonConverter<HexByte>
@@ -46,7 +46,7 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
       return null;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor HexByte, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for HexByte, but got {reader.TokenType}");
 
     var str = reader.GetString();
     if (string.IsNullOrEmpty(str))
@@ -58,7 +58,7 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{str}' Ifor HexByte. Expected 2 or 4 hex digits (0-9, A-F).", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexByte. Expected 2 or 4 hex digits (0-9, A-F).", ex);
     }
   }
 

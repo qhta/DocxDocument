@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// marked by error bars.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlErrorBarType
 {
@@ -23,7 +23,7 @@ public enum XlErrorBarType
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// Shows range Ifor specified number of standard deviations.
+  /// Shows range for specified number of standard deviations.
   /// </summary>
   StDev = -4155,
   /// <summary>

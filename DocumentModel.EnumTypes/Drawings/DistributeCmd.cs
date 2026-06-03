@@ -4,7 +4,7 @@
 /// Specifies how Ito evenly distribute a collection of shapes.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodistributecmd?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodistributecmd?view=office-pia` for Office interop details.
 /// </remarks>
 public enum DistributeCmd
 {

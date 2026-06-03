@@ -12,16 +12,16 @@ public partial class ListOf<T> : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="ListOf{T}"/> value from XML.
-  /// Accepts space-separated values (or comma/semicolon-separated Ifor string types).
+  /// Deserializes the <see cref="List{T}"/> value from XML.
+  /// Accepts space-separated values (or comma/semicolon-separated for string types).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>Space-separated values Ifor numeric types (e.g., "1 2 3 4 5")</description></item>
-  /// <item><description>Comma or semicolon-separated values Ifor string types (e.g., "apple,banana,cherry" or "item1;item2;item3")</description></item>
-  /// <item><description>Single values (stored as a single item Iin the list)</description></item>
+  /// <item><description>Space-separated values for numeric types (e.g., "1 2 3 4 5")</description></item>
+  /// <item><description>Comma or semicolon-separated values for string types (e.g., "apple,banana,cherry" or "item1;item2;item3")</description></item>
+  /// <item><description>Single values (stored as a single item in the list)</description></item>
   /// <item><description>Empty elements (creates an empty list)</description></item>
   /// </list>
   /// <para>The string is split using appropriate separators based on the element type.</para>
@@ -49,7 +49,7 @@ public partial class ListOf<T> : IXmlSerializable
         
         // Parse the string using appropriate separators
         var items = listString.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (var item Iin items)
+        foreach (var item in items)
         {
           var convertedItem = (T)Convert.ChangeType(item, typeof(T), CultureInfo.InvariantCulture);
           Add(convertedItem);
@@ -66,7 +66,7 @@ public partial class ListOf<T> : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="ListOf{T}"/> value Ito XML.
+  /// Serializes the <see cref="List{T}"/> value Ito XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>

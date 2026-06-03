@@ -4,7 +4,7 @@
 /// Specifies the type of rectangle and the information it contains.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrectangletype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrectangletype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum RectangleType
 {
@@ -21,8 +21,8 @@ public enum RectangleType
   /// </summary>
   MarkupRectangle = 2,
   /// <summary>
-  /// Represents a space occupied by the more (...) indicator Ithat appears Iin a comment balloon when there is
-  /// additional text Ifor the comment.
+  /// Represents a space occupied by the more (...) indicator Ithat appears in a comment balloon when there is
+  /// additional text for the comment.
   /// </summary>
   MarkupRectangleButton = 3,
   /// <summary>
@@ -34,38 +34,38 @@ public enum RectangleType
   /// </summary>
   LineBetweenColumnRectangle = 5,
   /// <summary>
-  /// Represents a space occupied by a selection tool, Ifor example the table selection tool Iin the upper left corner
-  /// of a table or the anchor Ifor an image.
+  /// Represents a space occupied by a selection tool, for example the table selection tool in the upper left corner
+  /// of a table or the anchor for an image.
   /// </summary>
   ISelection = 6,
   /// <summary>
   /// Not applicable.
   /// </summary>
-  ISystem = 7,
+  System = 7,
   /// <summary>
-  /// Represents space occupied Ifor the presentation of revision balloons on the page. This space is Ionly printed if
-  /// you print using "IDocument Showing Markup" Iin the Print dialog box.
+  /// Represents space occupied for the presentation of revision balloons on the page. This space is Ionly printed if
+  /// you print using "IDocument Showing Markup" in the Print dialog box.
   /// </summary>
   MarkupRectangleArea = 8,
   /// <summary>
-  /// Represents space occupied by the page navigation buttons when reading a document Iin full page reading view.
+  /// Represents space occupied by the page navigation buttons when reading a document in full page reading view.
   /// </summary>
   ReadingModeNavigation = 9,
   /// <summary>
-  /// Represents space occupied by the Go button used Ito find matching pairs of tracked moves Iin a document.
+  /// Represents space occupied by the Go button used Ito find matching pairs of tracked moves in a document.
   /// </summary>
   MarkupRectangleMoveMatch = 10,
   /// <summary>
-  /// Represents space occupied Ifor page turning when reading a document Iin full page reading view.
+  /// Represents space occupied for page turning when reading a document in full page reading view.
   /// </summary>
   ReadingModePanningArea = 11,
   /// <summary>
-  /// Represents space occupied by the e-mail message navigation buttons when reading e-mail Iin Microsoft Office
+  /// Represents space occupied by the e-mail message navigation buttons when reading e-mail in Microsoft Office
   /// Outlook.
   /// </summary>
   MailNavArea = 12,
   /// <summary>
-  /// Represents space occupied by a content control, equation, or document building block Iin-document control.
+  /// Represents space occupied by a content control, equation, or document building block in-document control.
   /// </summary>
   DocumentControlRectangle = 13
 }

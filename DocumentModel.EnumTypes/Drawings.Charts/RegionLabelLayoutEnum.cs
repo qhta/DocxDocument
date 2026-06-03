@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the RegionLabelLayoutEnum enumeration.
-/// Used Iin types such as SeriesLayoutProperties, RegionLabelLayoutEnum, SeriesLayoutPropertiesConverter.
+/// Used in types such as SeriesLayoutProperties, RegionLabelLayoutEnum, SeriesLayoutPropertiesConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum RegionLabelLayoutEnum

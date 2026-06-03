@@ -44,7 +44,7 @@ public partial struct BytePercent : IXmlSerializable
         byte parsedValue = byte.Parse(str);
 
         // Use Unsafe.AsRef Ito update the readonly field
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
       reader.Read(); // Move past text

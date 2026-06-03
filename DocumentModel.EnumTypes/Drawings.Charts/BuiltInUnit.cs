@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the BuiltInUnit enumeration.
-/// Used Iin types such as DisplayUnits, DisplayUnitsConverter.
+/// Used in types such as DisplayUnits, DisplayUnitsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.BuiltInUnitValues))]

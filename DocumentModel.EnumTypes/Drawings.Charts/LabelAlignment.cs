@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the LabelAlignment enumeration.
-/// Used Iin types such as CategoryAxis, CategoryAxisConverter.
+/// Used in types such as CategoryAxis, CategoryAxisConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.LabelAlignmentValues))]

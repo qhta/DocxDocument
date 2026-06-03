@@ -1,29 +1,29 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies how the trendline Ithat smoothes out fluctuations Iin the data is calculated.
+/// Specifies how the trendline Ithat smoothes out fluctuations in the data is calculated.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltrendlinetype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltrendlinetype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlTrendlineType
 {
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, Ifor example, y = ax^6 + bx^5 + cx^4 + dx^3
+  /// Uses an equation Ito calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3
   /// + ex^2 + fx + g.
   /// </summary>
   Polynomial = 3,
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, Ifor example, y = ax^b.
+  /// Uses an equation Ito calculate the least squares fit through points, for example, y = ax^b.
   /// </summary>
   Power = 4,
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, Ifor example, y=ab^x .
+  /// Uses an equation Ito calculate the least squares fit through points, for example, y=ab^x .
   /// </summary>
   Exponential = 5,
   /// <summary>
   /// Uses a sequence of averages computed from parts of the data series. The number of points equals the total
-  /// number of points Iin the series less the number specified Ifor the period.
+  /// number of points in the series less the number specified for the period.
   /// </summary>
   MovingAvg = 6,
   /// <summary>

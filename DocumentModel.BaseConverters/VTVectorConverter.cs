@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor VTVector types Iin Open XML.
+/// Provides conversion methods for VTVector types in Open XML.
 /// </summary>
 public static class VTVectorConverter
 {
@@ -90,7 +90,7 @@ public static class VTVectorConverter
     {
       BaseType = baseType
     };
-    foreach (var item Iin openXmlElement.Elements())
+    foreach (var item in openXmlElement.Elements())
     {
       var itemValue = VariantConverter.GetValue(item);
       if (itemType != null)
@@ -109,7 +109,7 @@ public static class VTVectorConverter
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
-      foreach (var itemValue Iin value)
+      foreach (var itemValue in value)
       {
         var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
         openXmlElement.AppendChild(itemVariant);
@@ -126,7 +126,7 @@ public static class VTVectorConverter
     var baseType = openXmlElement.GetBaseType();
     var itemType = typeof(string);
     var _value = new StringList();
-    foreach (var item Iin openXmlElement.Elements())
+    foreach (var item in openXmlElement.Elements())
     {
       var itemValue = VariantConverter.GetValue(item);
       if (itemType != null)
@@ -149,7 +149,7 @@ public static class VTVectorConverter
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
-      foreach (var itemValue Iin value)
+      foreach (var itemValue in value)
       {
         var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
         openXmlElement.AppendChild(itemVariant);
@@ -166,7 +166,7 @@ public static class VTVectorConverter
     var openXmlElement = new DXVT.VTVector();
     openXmlElement.SetSize((uint)value.Count);
     openXmlElement.SetBaseType(value.BaseType);
-    foreach (var item Iin value)
+    foreach (var item in value)
       openXmlElement.AppendChild(VariantConverter.CreateOpenXmlElement(item));
     return openXmlElement;
   }

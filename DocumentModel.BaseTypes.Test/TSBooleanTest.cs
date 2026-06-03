@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor TSBoolean type serialization Iin both XML and JSON formats.
+/// Test suite for TSBoolean type serialization in both XML and JSON formats.
 /// </summary>
 public static class TSBooleanTest
 {
@@ -75,7 +75,7 @@ public static class TSBooleanTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -223,11 +223,11 @@ public static class TSBooleanTest
     Console.WriteLine("--- Testing TSBoolean Performance ---");
     const int iterations = 100000;
 
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    var sw = System.Diagnostics.Stopwatch.StartNew();
 
     TSBoolean testValue = TSBoolean.False;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testValue.ToString();
     }
@@ -235,7 +235,7 @@ public static class TSBooleanTest
     Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int numeric = (int)testValue;
     }
@@ -244,7 +244,7 @@ public static class TSBooleanTest
 
     var testObj = CreateTestData();
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -253,7 +253,7 @@ public static class TSBooleanTest
 
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<TSBooleanTestData>(jsonData);
     }
@@ -261,7 +261,7 @@ public static class TSBooleanTest
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = testValue == TSBoolean.False;
     }
@@ -283,7 +283,7 @@ public static class TSBooleanTest
 public class TSBooleanTestData
 {
   [XmlElement("Enabled")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public TSBoolean Enabled { get; set; }
 
   [XmlElement("Disabled")]
@@ -297,7 +297,7 @@ public class TSBooleanTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing deserialization scenarios.
+/// Simple wrapper class for testing deserialization scenarios.
 /// </summary>
 public class TSBooleanWrapper
 {

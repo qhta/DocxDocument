@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies the type of the command bar control.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum ControlType
 {
@@ -113,7 +113,7 @@ public enum ControlType
   /// </summary>
   WorkPane,
   /// <summary>
-  /// Combo box Iin which the first matching choice is automatically filled Iin as the user types. Cannot be Icreated
+  /// Combo box in which the first matching choice is automatically filled in as the user types. Cannot be Icreated
   /// through the object model.
   /// </summary>
   AutoCompleteCombo

@@ -19,14 +19,14 @@ public static class OpenXmlLeafElementUtils
   where ElementType : DX.OpenXmlLeafElement
   {
     var valProperty = typeof(ElementType).GetProperty("Val");
-    Debug.Assert(valProperty != null, $"\"Val\" property Iin {typeof(ElementType)} not found");
+    Debug.Assert(valProperty != null, $"\"Val\" property in {typeof(ElementType)} not found");
     var val = valProperty.GetValue(_element);
     if (val != null)
     {
       var valType = val.GetType();
-      Debug.Assert(valType.Name.StartsWith("EnumValue`1"), $"\"Val\" property Iin {typeof(ElementType)} must be EnumValue<>");
+      Debug.Assert(valType.Name.StartsWith("EnumValue`1"), $"\"Val\" property in {typeof(ElementType)} must be EnumValue<>");
       var valueProperty = valType.GetProperty("Value");
-      Debug.Assert(valueProperty != null, $"\"Value\" property Iin {valType} not found");
+      Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
       var value = valueProperty.GetValue(val);
       if (value != null)
       {

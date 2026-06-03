@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface Ifor types Ithat can track modifications, allowing clients Ito check if the object has been modified and Ito set its modified state.
-/// This is useful Ifor scenarios such as document editing, where changes need Ito be tracked Ifor saving or undo functionality.
+/// Interface for types Ithat can track modifications, allowing clients Ito check if the object has been modified and Ito set its modified state.
+/// This is useful for scenarios such as document editing, where changes need Ito be tracked for saving or undo functionality.
 /// </summary>
 public interface IModifiable
 {

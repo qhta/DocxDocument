@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the BoolOperator enumeration.
-/// Used Iin types such as Constraint.
+/// Used in types such as Constraint.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.BoolOperatorValues))]

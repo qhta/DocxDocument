@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Size enumeration.
-/// Used Iin types such as ArrayVariant, VClipboardData, Button.
+/// Used in types such as ArrayVariant, VClipboardData, Button.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.SizeValues))]

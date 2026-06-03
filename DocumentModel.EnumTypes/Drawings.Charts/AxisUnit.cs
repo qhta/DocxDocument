@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the AxisUnit enumeration.
-/// Used Iin types such as AxisUnits, AxisUnit, AxisUnitsConverter.
+/// Used in types such as AxisUnits, AxisUnit, AxisUnitsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum AxisUnit

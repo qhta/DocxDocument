@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Int16 value Ito/from Open XML.
+/// Provides conversion methods for Int16 value Ito/from Open XML.
 /// </summary>
 public static class Int16Converter
 {
@@ -27,7 +27,7 @@ public static class Int16Converter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="Int16Converter"/>.
+  /// Initializes the conversion maps for <see cref="Int16Converter"/>.
   /// </summary>
   static Int16Converter()
   {
@@ -58,7 +58,7 @@ public static class Int16Converter
     if (value == null) return null;
 
     if (value < SByte.MinValue || value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -105,7 +105,7 @@ public static class Int16Converter
     if (Int32Value == null) return null;
 
     if (Int32Value.Value < Int16.MinValue || Int32Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for Int16");
 
     return (Int16)Int32Value.Value;
   }
@@ -136,7 +136,7 @@ public static class Int16Converter
     if (Int64Value == null) return null;
 
     if (Int64Value.Value < Int16.MinValue || Int64Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for Int16");
 
     return (Int16)Int64Value.Value;
   }
@@ -167,7 +167,7 @@ public static class Int16Converter
     if (IntegerValue == null) return null;
 
     if (IntegerValue.Value < Int16.MinValue || IntegerValue.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Int16");
 
     return (Int16)IntegerValue.Value;
   }
@@ -210,7 +210,7 @@ public static class Int16Converter
     if (value == null) return null;
 
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -229,7 +229,7 @@ public static class Int16Converter
     if (UInt16Value == null) return null;
 
     if (UInt16Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {UInt16Value.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {UInt16Value.Value} is out of range for Int16");
 
     return (Int16)UInt16Value.Value;
   }
@@ -244,7 +244,7 @@ public static class Int16Converter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -263,7 +263,7 @@ public static class Int16Converter
     if (UInt32Value == null) return null;
 
     if (UInt32Value.Value > Int16.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int16");
 
     return (Int16)UInt32Value.Value;
   }
@@ -278,7 +278,7 @@ public static class Int16Converter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -297,7 +297,7 @@ public static class Int16Converter
     if (UInt64Value == null) return null;
 
     if (UInt64Value.Value > (UInt16)Int16.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Int16");
 
     return (Int16)UInt64Value.Value;
   }
@@ -312,7 +312,7 @@ public static class Int16Converter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -341,7 +341,7 @@ public static class Int16Converter
   /// Creates an OpenXml StringValue from an Int16 value.
   /// </summary>
   /// <param name="value">The Int16 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(Int16? value, Type targetType)
   {
@@ -361,7 +361,7 @@ public static class Int16Converter
   /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Int16? ConvertFromString(string? value)
   {
@@ -409,7 +409,7 @@ public static class Int16Converter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Int16 value.
   /// </summary>
   /// <param name="value">The Int16 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Int16? value, Type targetType)
   {
@@ -453,7 +453,7 @@ public static class Int16Converter
   /// Creates an OpenXml OpenXmlLeafElement from an Int16 value.
   /// </summary>
   /// <param name="value">The Int16 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Int16? value, Type targetType)
   {
@@ -498,7 +498,7 @@ public static class Int16Converter
   /// Creates an OpenXml HexBinaryValue from an Int16 value.
   /// </summary>
   /// <param name="value">The Int16 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(Int16? value, Type targetType)
   {
@@ -535,7 +535,7 @@ public static class Int16Converter
   /// <param name="value">The value Ito convert. Supported types include SByteValue, ByteValue, Int16Value, UInt16Value, Int16Value,
   /// UInt16Value, UInt16Value, and StringValue. May be null.</param>
   /// <returns>An Int16 representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static Int16? ConvertFrom(object? value)
   {
     return (Int16?)ConverterBase.ConvertFrom(value, typeof(Int16), ConversionFromMap);

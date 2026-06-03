@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 /// <summary>
-///   Specifies the semantic meaning of the N4H field Iin <see cref="HyperlinkInfo"/>.
-///   Indicates the type of action Ito perform on a hyperlink or hyperlink field Iin a document model.
+///   Specifies the semantic meaning of the N4H field in <see cref="HyperlinkInfo"/>.
+///   Indicates the type of action Ito perform on a hyperlink or hyperlink field in a document model.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlNotMapped]

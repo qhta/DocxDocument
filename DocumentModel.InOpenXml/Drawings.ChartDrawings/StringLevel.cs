@@ -23,7 +23,7 @@ public partial class StringLevel : ModelElement<DXO16DCD.StringLevel>
   /// <summary>
   /// Specifies the chart string values.
   /// </summary>
-  public ListOf<UInt32>? ChartStringValues { get => _ChartStringValues; set => UpdateField(ref _ChartStringValues, value, nameof(ChartStringValues)); }
+  public List<UInt32>? ChartStringValues { get => _ChartStringValues; set => UpdateField(ref _ChartStringValues, value, nameof(ChartStringValues)); }
 
-  private ListOf<UInt32>? _ChartStringValues;
+  private List<UInt32>? _ChartStringValues;
 }

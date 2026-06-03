@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the fill pattern used Iin a shape.
+/// Specifies the fill pattern used in a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopatterntype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopatterntype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum PatternType
 {
@@ -60,92 +60,92 @@ public enum PatternType
   /// </summary>
   NinetyPercent = 12,
   /// <summary>
-  /// Thick horizontal lines Iin the foreground color.
+  /// Thick horizontal lines in the foreground color.
   /// </summary>
   DarkHorizontal = 13,
   /// <summary>
-  /// Thick vertical lines Iin the foreground color.
+  /// Thick vertical lines in the foreground color.
   /// </summary>
   DarkVertical = 14,
   /// <summary>
-  /// Thick lines Iin the foreground color running from the top Ito the right-hand side of the shape.
+  /// Thick lines in the foreground color running from the top Ito the right-hand side of the shape.
   /// </summary>
   DarkDownwardDiagonal = 15,
   /// <summary>
-  /// Thick lines Iin the foreground color running from the top Ito the left-hand side of the shape.
+  /// Thick lines in the foreground color running from the top Ito the left-hand side of the shape.
   /// </summary>
   DarkUpwardDiagonal = 16,
   /// <summary>
-  /// Small squares Iin alternating foreground/background colors.
+  /// Small squares in alternating foreground/background colors.
   /// </summary>
   SmallCheckerBoard = 17,
   /// <summary>
-  /// Trellis pattern Iin the foreground color.
+  /// Trellis pattern in the foreground color.
   /// </summary>
   Trellis = 18,
   /// <summary>
-  /// Thin horizontal lines Iin the foreground color.
+  /// Thin horizontal lines in the foreground color.
   /// </summary>
   LightHorizontal = 19,
   /// <summary>
-  /// Thin vertical lines Iin the foreground color.
+  /// Thin vertical lines in the foreground color.
   /// </summary>
   LightVertical = 20,
   /// <summary>
-  /// Thin lines Iin the foreground color running from the top Ito the right-hand side of the shape.
+  /// Thin lines in the foreground color running from the top Ito the right-hand side of the shape.
   /// </summary>
   LightDownwardDiagonal = 21,
   /// <summary>
-  /// Thin lines Iin the foreground color running from the top Ito the left-hand side of the shape.
+  /// Thin lines in the foreground color running from the top Ito the left-hand side of the shape.
   /// </summary>
   LightUpwardDiagonal = 22,
   /// <summary>
-  /// Solid, closely spaced perpendicular lines Iin the foreground color running horizontally and vertically Ito form
+  /// Solid, closely spaced perpendicular lines in the foreground color running horizontally and vertically Ito form
   /// grid lines across the shape.
   /// </summary>
   SmallGrid = 23,
   /// <summary>
-  /// Dotted perpendicular lines Iin the foreground color running diagonally Ito form diamonds across the shape.
+  /// Dotted perpendicular lines in the foreground color running diagonally Ito form diamonds across the shape.
   /// </summary>
   DottedDiamond = 24,
   /// <summary>
-  /// Widely spaced lines Iin the foreground color running from the top Ito the right-hand side of the shape.
+  /// Widely spaced lines in the foreground color running from the top Ito the right-hand side of the shape.
   /// </summary>
   WideDownwardDiagonal = 25,
   /// <summary>
-  /// Widely spaced lines Iin the foreground color running from the top Ito the left-hand side of the shape.
+  /// Widely spaced lines in the foreground color running from the top Ito the left-hand side of the shape.
   /// </summary>
   WideUpwardDiagonal = 26,
   /// <summary>
-  /// Dashed lines Iin the foreground color running from the top Ito the left-hand side of the shape.
+  /// Dashed lines in the foreground color running from the top Ito the left-hand side of the shape.
   /// </summary>
   DashedUpwardDiagonal = 27,
   /// <summary>
-  /// Dashed lines Iin the foreground color running from the top Ito the right-hand side of the shape.
+  /// Dashed lines in the foreground color running from the top Ito the right-hand side of the shape.
   /// </summary>
   DashedDownwardDiagonal = 28,
   /// <summary>
-  /// Narrowly spaced vertical lines Iin the foreground color.
+  /// Narrowly spaced vertical lines in the foreground color.
   /// </summary>
   NarrowVertical = 29,
   /// <summary>
-  /// Narrowly spaced horizontal lines Iin the foreground color.
+  /// Narrowly spaced horizontal lines in the foreground color.
   /// </summary>
   NarrowHorizontal = 30,
   /// <summary>
-  /// Dashed vertical lines Iin the foreground color.
+  /// Dashed vertical lines in the foreground color.
   /// </summary>
   DashedVertical = 31,
   /// <summary>
-  /// Dashed horizontal lines Iin the foreground color.
+  /// Dashed horizontal lines in the foreground color.
   /// </summary>
   DashedHorizontal = 32,
   /// <summary>
-  /// Large dots Iin the foreground color scattered across the shape.
+  /// Large dots in the foreground color scattered across the shape.
   /// </summary>
   LargeConfetti = 33,
   /// <summary>
-  /// Solid, widely spaced perpendicular lines Iin the foreground color running horizontally and vertically Ito form
+  /// Solid, widely spaced perpendicular lines in the foreground color running horizontally and vertically Ito form
   /// grid lines across the shape.
   /// </summary>
   LargeGrid = 34,
@@ -154,11 +154,11 @@ public enum PatternType
   /// </summary>
   HorizontalBrick = 35,
   /// <summary>
-  /// Squares Iin alternating foreground/background colors.
+  /// Squares in alternating foreground/background colors.
   /// </summary>
   LargeCheckerBoard = 36,
   /// <summary>
-  /// Small dots Iin the foreground color scattered across the shape.
+  /// Small dots in the foreground color scattered across the shape.
   /// </summary>
   SmallConfetti = 37,
   /// <summary>
@@ -166,7 +166,7 @@ public enum PatternType
   /// </summary>
   ZigZag = 38,
   /// <summary>
-  /// Diamond shapes Iin alternating foreground/background colors.
+  /// Diamond shapes in alternating foreground/background colors.
   /// </summary>
   SolidDiamond = 39,
   /// <summary>
@@ -174,30 +174,30 @@ public enum PatternType
   /// </summary>
   DiagonalBrick = 40,
   /// <summary>
-  /// Solid perpendicular lines Iin the foreground color running diagonally Ito form diamonds across the shape.
+  /// Solid perpendicular lines in the foreground color running diagonally Ito form diamonds across the shape.
   /// </summary>
   OutlinedDiamond = 41,
   /// <summary>
-  /// Very thick solid lines Iin the foreground color running vertically, coupled with very thick lines and 40% of
+  /// Very thick solid lines in the foreground color running vertically, coupled with very thick lines and 40% of
   /// the foreground color running horizontally.
   /// </summary>
   Plaid = 42,
   /// <summary>
-  /// Circles Ithat use foreground and background colors Ito make them appear three-dimensional, oriented Iin rows
+  /// Circles Ithat use foreground and background colors Ito make them appear three-dimensional, oriented in rows
   /// across the shape.
   /// </summary>
   Sphere = 43,
   /// <summary>
-  /// Weave pattern Iin the foreground color running diagonally across the shape.
+  /// Weave pattern in the foreground color running diagonally across the shape.
   /// </summary>
   Weave = 44,
   /// <summary>
-  /// Dotted perpendicular lines Iin the foreground color running horizontally and vertically Ito form grid lines
+  /// Dotted perpendicular lines in the foreground color running horizontally and vertically Ito form grid lines
   /// across the shape.
   /// </summary>
   DottedGrid = 45,
   /// <summary>
-  /// Small angled shapes Iin the foreground color running Iin alternating rows down the shape.
+  /// Small angled shapes in the foreground color running in alternating rows down the shape.
   /// </summary>
   Divot = 46,
   /// <summary>
@@ -205,7 +205,7 @@ public enum PatternType
   /// </summary>
   Shingle = 47,
   /// <summary>
-  /// Wavy lines Iin the foreground color.
+  /// Wavy lines in the foreground color.
   /// </summary>
   Wave = 48,
   /// <summary>

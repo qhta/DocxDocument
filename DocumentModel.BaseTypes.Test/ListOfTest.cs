@@ -1,18 +1,18 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor ListOf&lt;T&gt; type serialization Iin both XML and JSON formats.
+/// Test suite for List&lt;T&gt; type serialization in both XML and JSON formats.
 /// </summary>
 public static class ListOfTest
 {
   /// <summary>
-  /// Runs all ListOf&lt;T&gt; serialization tests.
+  /// Runs all List&lt;T&gt; serialization tests.
   /// </summary>
   public static bool Run()
   {
-    Console.WriteLine("=== ListOf<T> Serialization Test Program ===");
+    Console.WriteLine("=== List<T> Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
@@ -30,8 +30,8 @@ public static class ListOfTest
   
   static bool TestListOfBasicOperations()
   {
-    Console.WriteLine("--- Testing ListOf<T> Basic Operations ---");      // Test with integer type
-    Console.WriteLine("Testing ListOf<int>:");
+    Console.WriteLine("--- Testing List<T> Basic Operations ---");      // Test with integer type
+    Console.WriteLine("Testing List<int>:");
     ListOf<int> intList1 = new ListOf<int>();
     Console.WriteLine($"\n✓ Default constructor: Count={intList1.Count}");
 
@@ -48,7 +48,7 @@ public static class ListOfTest
     Console.WriteLine($"\n✓ Copy constructor: {intList4.InnerText} (Count={intList4.Count})");
 
     // Test with string type
-    Console.WriteLine("\nTesting ListOf<string>:");
+    Console.WriteLine("\nTesting List<string>:");
     ListOf<string> strList1 = new ListOf<string>();
     strList1.Add("apple");
     strList1.Add("banana");
@@ -79,14 +79,14 @@ public static class ListOfTest
   
   static bool TestListOfCollectionOperations()
   {
-    Console.WriteLine("--- Testing ListOf<T> Collection Operations ---");      // Test Add and enumeration with integers
+    Console.WriteLine("--- Testing List<T> Collection Operations ---");      // Test Add and enumeration with integers
     Console.WriteLine("Testing Add and enumeration with integers:");
     ListOf<int> intList = new ListOf<int>();
     intList.Add(100);
     intList.Add(200);
     intList.Add(300);
     Console.Write("  Items: ");
-    foreach (var item Iin intList)
+    foreach (var item in intList)
     {
       Console.Write($"{item} ");
     }
@@ -139,7 +139,7 @@ public static class ListOfTest
   
   static bool TestListOfParsing()
   {
-    Console.WriteLine("--- Testing ListOf<T> Parsing ---");      // Test space-separated integers
+    Console.WriteLine("--- Testing List<T> Parsing ---");      // Test space-separated integers
     Console.WriteLine("Testing space-separated integers:");
     ListOf<int> intList1 = new ListOf<int>("1 2 3 4 5");
     Console.WriteLine($"  \"1 2 3 4 5\" → {intList1.InnerText} (Count={intList1.Count})");
@@ -239,7 +239,7 @@ public static class ListOfTest
   
   static bool TestListOfXmlSerialization()
   {
-    Console.WriteLine("--- Testing ListOf<T> XML Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing List<T> XML Serialization ---");      // Create test object
     var testData = new ListOfTestData
     {
       EmptyIntList = new ListOf<int>(),
@@ -274,7 +274,7 @@ public static class ListOfTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -340,7 +340,7 @@ public static class ListOfTest
   
   static bool TestListOfJsonSerialization()
   {
-    Console.WriteLine("--- Testing ListOf<T> JSON Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing List<T> JSON Serialization ---");      // Create test object
     var testData = CreateTestData();
 
     ShowOriginalData(testData);
@@ -374,13 +374,13 @@ public static class ListOfTest
     return new ListOfTestData
     {
       EmptyIntList = new ListOf<int>(),
-      SingleInt = new ListOf<int>("42"),
-      MultipleInts = new ListOf<int>("1 2 3 4 5"),
+      SingleInt = new ListOf<int>([42]),
+      MultipleInts = new ListOf<int>([1, 2, 3, 4, 5]),
       EmptyStringList = new ListOf<string>(),
-      SingleString = new ListOf<string>("hello"),
-      MultipleStrings = new ListOf<string>("apple,banana,cherry"),
-      DoubleList = new ListOf<double>("1.5 2.5 3.5"),
-      BoolList = new ListOf<bool>("true false true false")
+      SingleString = new ListOf<string>(["hello"]),
+      MultipleStrings = new ListOf<string>(["apple","banana","cherry"]),
+      DoubleList = new ListOf<double>([1.5, 2.5, 3.5]),
+      BoolList = new ListOf<bool>([true, false, true, false])
     };
   }
 
@@ -402,7 +402,7 @@ public static class ListOfTest
   
   static bool TestListOfEdgeCases()
   {
-    Console.WriteLine("--- Testing ListOf<T> Edge Cases ---");      // Test IConvertible methods
+    Console.WriteLine("--- Testing List<T> Edge Cases ---");      // Test IConvertible methods
     Console.WriteLine("Testing IConvertible methods:");
     ListOf<int> intList = new ListOf<int>("1 2 3");
     Console.WriteLine($"  ToBoolean (non-empty): {intList.ToBoolean(null)}");
@@ -494,11 +494,11 @@ public static class ListOfTest
   
   static bool TestListOfPerformance()
   {
-    Console.WriteLine("--- Testing ListOf<T> Performance ---"); const int iterations = 10000;
+    Console.WriteLine("--- Testing List<T> Performance ---"); const int iterations = 10000;
 
     // Test construction from string (integers)
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       ListOf<int> list = new ListOf<int>("1 2 3 4 5");
     }
@@ -507,7 +507,7 @@ public static class ListOfTest
 
     // Test construction from string (strings)
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       ListOf<string> list = new ListOf<string>("a,b,c,d,e");
     }
@@ -516,7 +516,7 @@ public static class ListOfTest
 
     // Test default construction and Add operations
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       ListOf<int> list = new ListOf<int>();
       list.Add(1);
@@ -531,7 +531,7 @@ public static class ListOfTest
     // Test InnerText performance
     ListOf<int> testList = new ListOf<int>("1 2 3 4 5");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string? text = testList.InnerText;
     }
@@ -540,7 +540,7 @@ public static class ListOfTest
 
     // Test Contains performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool contains = testList.Contains(3);
     }
@@ -549,9 +549,9 @@ public static class ListOfTest
 
     // Test enumeration performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
-      foreach (var item Iin testList)
+      foreach (var item in testList)
       {
         // Just enumerate
       }
@@ -573,7 +573,7 @@ public static class ListOfTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -583,7 +583,7 @@ public static class ListOfTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<ListOfTestData>(jsonData);
     }
@@ -594,7 +594,7 @@ public static class ListOfTest
     ListOf<int> list1 = new ListOf<int>("1 2 3 4 5");
     ListOf<int> list2 = new ListOf<int>("1 2 3 4 5");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = list1.Equals(list2);
     }
@@ -603,7 +603,7 @@ public static class ListOfTest
 
     // Test GetHashCode performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int hash = list1.GetHashCode();
     }
@@ -619,13 +619,13 @@ public static class ListOfTest
 
 
 /// <summary>
-/// Test data class containing various ListOf properties.
+/// Test data class containing various List properties.
 /// </summary>
 [XmlRoot("ListOfTestData")]
 public class ListOfTestData
 {
   [XmlElement("EmptyIntList")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public ListOf<int> EmptyIntList { get; set; } = new ListOf<int>();
 
   [XmlElement("SingleInt")]
@@ -651,7 +651,7 @@ public class ListOfTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios with integers.
+/// Simple wrapper class for testing Deserialization scenarios with integers.
 /// </summary>
 public class ListOfIntWrapper
 {
@@ -659,7 +659,7 @@ public class ListOfIntWrapper
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios with strings.
+/// Simple wrapper class for testing Deserialization scenarios with strings.
 /// </summary>
 public class ListOfStringWrapper
 {

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies paragraph alignment Ifor a text block.
+/// Specifies paragraph alignment for a text block.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
@@ -9,11 +9,11 @@ public enum ParagraphAlignment
 {
   /// <summary>
   /// Specifies Ithat the leftmost character of each line is aligned Ito the left margin, and the right edge of each line
-  /// is ragged. This is the default alignment Ifor paragraphs with left-Ito-right text direction.
+  /// is ragged. This is the default alignment for paragraphs with left-Ito-right text direction.
   /// </summary>
   /// <summary>
   /// Specifies Ithat the leftmost character of each line is aligned Ito the left margin, and the right edge of each
-  /// line is ragged. This is the default alignment Ifor paragraphs with left-Ito-right text direction.
+  /// line is ragged. This is the default alignment for paragraphs with left-Ito-right text direction.
   /// </summary>
   [OpenXmlEnumValue("Left")]
   Left,
@@ -25,7 +25,7 @@ public enum ParagraphAlignment
   Center,
   /// <summary>
   /// Specifies Ithat the rightmost character of each line is aligned Ito the right margin, and the left edge of each
-  /// line is ragged. This is the default alignment Ifor paragraphs with right-Ito-left text direction.
+  /// line is ragged. This is the default alignment for paragraphs with right-Ito-left text direction.
   /// </summary>
   [OpenXmlEnumValue("Right")]
   Right,
@@ -40,7 +40,7 @@ public enum ParagraphAlignment
   /// direction is right-Ito-left. msoAlignThaiDistribute6 Specifies Ithat the first and last characters of each line
   /// (except the last) are aligned Ito the left and right margins, and lines are filled by adding or subtracting
   /// space between (but not within) words. The last line of the paragraph is aligned Ito the left margin.
-  /// msoAlignJustifyLow7 Specifies the alignment or adjustment of kashida length Iin Arabic text. Kashida are
+  /// msoAlignJustifyLow7 Specifies the alignment or adjustment of kashida length in Arabic text. Kashida are
   /// special characters used Ito extend the joiner between two Arabic characters.
   /// </summary>
   [OpenXmlEnumValue("Justify")]

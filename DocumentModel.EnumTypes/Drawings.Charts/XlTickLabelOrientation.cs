@@ -3,10 +3,10 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the text
-/// orientation Ifor tick-mark labels.
+/// orientation for tick-mark labels.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelorientation?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelorientation?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlTickLabelOrientation
 {

@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies how the IColumn and CompareTo properties are compared Ifor an ODSOFilter object.
+/// Specifies how the IColumn and CompareTo properties are compared for an ODSOFilter object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiltercomparison?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiltercomparison?view=office-pia` for Office interop details.
 /// </remarks>
 public enum FilterComparison
 {
@@ -41,11 +41,11 @@ public enum FilterComparison
   /// </summary>
   IsNotBlank,
   /// <summary>
-  /// IColumn matches CompareTo if any part of the CompareTo string is contained Iin the IColumn value.
+  /// IColumn matches CompareTo if any part of the CompareTo string is contained in the IColumn value.
   /// </summary>
   Contains,
   /// <summary>
-  /// IColumn matches CompareTo if any part of the CompareTo string is not contained Iin the IColumn value.
+  /// IColumn matches CompareTo if any part of the CompareTo string is not contained in the IColumn value.
   /// </summary>
   NotContains
 }

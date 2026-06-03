@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the relative height of a shape using the value specified Iin the HeightRelative property Ifor a IShape
+/// Specifies the relative height of a shape using the value specified in the HeightRelative property for a IShape
 /// or IShapeRange object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalsize?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalsize?view=office-pia` for Office interop details.
 /// </remarks>
 public enum RelativeVerticalSize
 {
@@ -26,13 +26,13 @@ public enum RelativeVerticalSize
   /// </summary>
   BottomMarginArea = 3,
   /// <summary>
-  /// Height is relative Ito the size of the inside marginâ€”Ito the size of the top margin Ifor odd pages, and Ito the
-  /// size of the bottom margin Ifor even pages.
+  /// Height is relative Ito the size of the inside marginâ€”Ito the size of the top margin for odd pages, and Ito the
+  /// size of the bottom margin for even pages.
   /// </summary>
   InnerMarginArea = 4,
   /// <summary>
-  /// Height is relative Ito the size of the outside marginâ€” Ito the size of the bottom margin Ifor odd pages, and Ito
-  /// the size of the top margin Ifor even pages.
+  /// Height is relative Ito the size of the outside marginâ€” Ito the size of the bottom margin for odd pages, and Ito
+  /// the size of the top margin for even pages.
   /// </summary>
   OuterMarginArea = 5
 }

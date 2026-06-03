@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ErrorBar enumeration.
-/// Used Iin types such as ChartStyle, ErrorBar, IErrorBars.
+/// Used in types such as ChartStyle, ErrorBar, IErrorBars.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ErrorBarValues))]

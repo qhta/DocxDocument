@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor VectorVariant type serialization Iin both XML and JSON formats.
+/// Test suite for VectorVariant type serialization in both XML and JSON formats.
 /// </summary>
 public static class VectorVariantTest
 {
@@ -52,7 +52,7 @@ public static class VectorVariantTest
 
     // Test element retrieval
     Console.WriteLine("\nTesting element retrieval:");
-    Ifor (int i = 0; i < intVector.Count; i++)
+    for (int i = 0; i < intVector.Count; i++)
     {
       Console.Write($"{intVector[i]} ");
     }
@@ -71,7 +71,7 @@ public static class VectorVariantTest
     // Test enumeration
     Console.WriteLine("\nTesting enumeration:");
     int count = 0;
-    foreach (var item Iin intVector)
+    foreach (var item in intVector)
     {
       count++;
     }
@@ -213,7 +213,7 @@ public static class VectorVariantTest
     // Test dynamic growth
     Console.WriteLine("\nTesting dynamic growth:");
     VectorVariant growVector = new VectorVariant(VariantType.Int32);
-    Ifor (int i = 0; i < 100; i++)
+    for (int i = 0; i < 100; i++)
     {
       growVector.Add(i);
     }
@@ -346,7 +346,7 @@ public static class VectorVariantTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -454,7 +454,7 @@ public static class VectorVariantTest
       EmptyVector = new VectorVariant(VariantType.String)
     };
 
-    Ifor (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
       testData.IntVector.Add((i + 1) * 10);
 
     testData.StringVector.Add("Alpha");
@@ -557,7 +557,7 @@ public static class VectorVariantTest
     // Test large vector
     Console.WriteLine("\nTesting large vector:");
     VectorVariant largeVector = new VectorVariant(VariantType.Int32);
-    Ifor (int i = 0; i < 1000; i++)
+    for (int i = 0; i < 1000; i++)
     {
       largeVector.Add(i);
     }
@@ -604,8 +604,8 @@ public static class VectorVariantTest
     Console.WriteLine("--- Testing VectorVariant Performance ---"); const int iterations = 10000;
 
     // Test construction
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       VectorVariant vec = new VectorVariant(VariantType.Int32);
     }
@@ -615,7 +615,7 @@ public static class VectorVariantTest
     // Test Add operations
     VectorVariant testVector = new VectorVariant(VariantType.Int32);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       testVector.Add(i);
     }
@@ -624,7 +624,7 @@ public static class VectorVariantTest
 
     // Test element access
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       var value = testVector[i % testVector.Count];
     }
@@ -633,9 +633,9 @@ public static class VectorVariantTest
 
     // Test enumeration
     sw.Restart();
-    Ifor (int i = 0; i < 100; i++)
+    for (int i = 0; i < 100; i++)
     {
-      foreach (var item Iin testVector)
+      foreach (var item in testVector)
       {
         // Just enumerate
       }
@@ -645,7 +645,7 @@ public static class VectorVariantTest
 
     // Test Contains
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool contains = testVector.Contains(50);
     }
@@ -654,12 +654,12 @@ public static class VectorVariantTest
 
     // Test Insert
     VectorVariant insertVector = new VectorVariant(VariantType.Int32);
-    Ifor (int i = 0; i < 100; i++)
+    for (int i = 0; i < 100; i++)
     {
       insertVector.Add(i);
     }
     sw.Restart();
-    Ifor (int i = 0; i < 1000; i++)
+    for (int i = 0; i < 1000; i++)
     {
       insertVector.Insert(50, i);
     }
@@ -677,7 +677,7 @@ public static class VectorVariantTest
       EmptyVector = new VectorVariant(VariantType.String)
     };
 
-    Ifor (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
       testObj.IntVector.Add(i);
       testObj.StringVector.Add($"Item{i}");
@@ -686,7 +686,7 @@ public static class VectorVariantTest
     }
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 100; i++)
+    for (int i = 0; i < iterations / 100; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -696,7 +696,7 @@ public static class VectorVariantTest
     // Test Deserialization
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 100; i++)
+    for (int i = 0; i < iterations / 100; i++)
     {
       var obj = JsonSerializer.Deserialize<VectorVariantTestData>(jsonData);
     }
@@ -718,7 +718,7 @@ public static class VectorVariantTest
 public class VectorVariantTestData
 {
   [XmlElement("IntVector")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public VectorVariant IntVector { get; set; } = new VectorVariant();
 
   [XmlElement("StringVector")]

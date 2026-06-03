@@ -3,7 +3,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Int32 value Ito/from Open XML.
+/// Provides conversion methods for Int32 value Ito/from Open XML.
 /// </summary>
 public static class Int32Converter
 {
@@ -29,7 +29,7 @@ public static class Int32Converter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="Int32Converter"/>.
+  /// Initializes the conversion maps for <see cref="Int32Converter"/>.
   /// </summary>
   static Int32Converter()
   {
@@ -60,7 +60,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < SByte.MinValue || value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -91,7 +91,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < Int16.MinValue || value > Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -138,7 +138,7 @@ public static class Int32Converter
     if (Int64Value == null) return null;
 
     if (Int64Value.Value < Int32.MinValue || Int64Value.Value > Int32.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for Int32");
 
     return (Int32)Int64Value.Value;
   }
@@ -169,7 +169,7 @@ public static class Int32Converter
     if (IntegerValue == null) return null;
 
     if (IntegerValue.Value < Int32.MinValue || IntegerValue.Value > Int32.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for Int32");
 
     return (Int32)IntegerValue.Value;
   }
@@ -212,7 +212,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -243,7 +243,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < 0 || value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -262,7 +262,7 @@ public static class Int32Converter
     if (UInt32Value == null) return null;
 
     if (UInt32Value.Value > Int32.MaxValue)
-      throw new OverflowException($"Value {UInt32Value.Value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {UInt32Value.Value} is out of range for Int32");
 
     return (Int32)UInt32Value.Value;
   }
@@ -277,7 +277,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
 
     return new DX.UInt32Value { Value = (UInt32)value };
   }
@@ -296,7 +296,7 @@ public static class Int32Converter
     if (UInt64Value == null) return null;
 
     if (UInt64Value.Value > Int32.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for Int32");
 
     return (Int32)UInt64Value.Value;
   }
@@ -311,7 +311,7 @@ public static class Int32Converter
     if (value == null) return null;
 
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
 
     return new DX.UInt64Value { Value = (UInt64)value };
   }
@@ -340,7 +340,7 @@ public static class Int32Converter
   /// Creates an OpenXml StringValue from an Int32 value.
   /// </summary>
   /// <param name="value">The Int32 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Int32? value, Type targetType)
   {
@@ -360,7 +360,7 @@ public static class Int32Converter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Int32? ConvertFromString(string? value)
   {
@@ -408,7 +408,7 @@ public static class Int32Converter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Int32 value.
   /// </summary>
   /// <param name="value">The Int32 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Int32? value, Type targetType)
   {
@@ -452,7 +452,7 @@ public static class Int32Converter
   /// Creates an OpenXml OpenXmlLeafElement from an Int32 value.
   /// </summary>
   /// <param name="value">The Int32 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Int32? value, Type targetType)
   {
@@ -497,7 +497,7 @@ public static class Int32Converter
   /// Creates an OpenXml HexBinaryValue from an Int32 value.
   /// </summary>
   /// <param name="value">The Int32 value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(Int32? value, Type targetType)
   {

@@ -42,22 +42,22 @@ public enum PresetLineDash
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.LargeDashDotDot))]
   LargeDashDotDot,
   /// <summary>
-  ///   ISystem Dash.
+  ///   System Dash.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDash))]
   SystemDash,
   /// <summary>
-  ///   ISystem Dot.
+  ///   System Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDot))]
   SystemDot,
   /// <summary>
-  ///   ISystem Dash Dot.
+  ///   System Dash Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDot))]
   SystemDashDot,
   /// <summary>
-  ///   ISystem Dash Dot Dot.
+  ///   System Dash Dot Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDotDot))]
   SystemDashDotDot

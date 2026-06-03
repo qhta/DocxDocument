@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Entry point Ifor the base types serialization test program.
+/// Entry point for the base types serialization test program.
 /// </summary>
 class Program
 {
@@ -12,7 +12,7 @@ class Program
     // Set culture Ito invariant Ito ensure consistent formatting across tests
     CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
     // Ensure Unicode characters display correctly
-    Console.OutputEncoding = ISystem.Text.Encoding.UTF8;
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
     Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
     Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");

@@ -1,15 +1,15 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the texture type Ifor the selected fill.
+/// Specifies the texture type for the selected fill.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturetype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturetype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum TextureType
 {
   /// <summary>
-  /// Specifies the texture type Ifor the selected fill.
+  /// Specifies the texture type for the selected fill.
   /// </summary>
   /// <summary>
   /// Preset texture type.

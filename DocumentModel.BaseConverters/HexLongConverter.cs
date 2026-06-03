@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor HexLong value Ito/from Open XML.
+/// Provides conversion methods for HexLong value Ito/from Open XML.
 /// </summary>
 public static class HexLongConverter
 {
@@ -27,7 +27,7 @@ public static class HexLongConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="HexLongConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexLongConverter"/>.
   /// </summary>
   static HexLongConverter()
   {
@@ -46,7 +46,7 @@ public static class HexLongConverter
   {
     if (sByteValue == null) return null;
     if (sByteValue.Value < 0)
-      throw new OverflowException($"Value {sByteValue.Value} is out of range Ifor HexLong");
+      throw new OverflowException($"Value {sByteValue.Value} is out of range for HexLong");
 
     return (HexLong)sByteValue.Value;
   }
@@ -60,7 +60,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -78,7 +78,7 @@ public static class HexLongConverter
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
-      throw new OverflowException($"Value {int16Value} is out of range Ifor HexLong");
+      throw new OverflowException($"Value {int16Value} is out of range for HexLong");
 
     return (HexLong)int16Value.Value;
   }
@@ -92,7 +92,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if (value > (UInt64)Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -121,7 +121,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if (value > (UInt64)Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)(UInt32)value };
   }
@@ -206,7 +206,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)value };
   }
@@ -236,7 +236,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if ((UInt64)value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)value };
   }
@@ -266,7 +266,7 @@ public static class HexLongConverter
   {
     if (value == null) return null;
     if ((UInt64)value > UInt32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt32");
+      throw new OverflowException($"Value {value} is out of range for UInt32");
     return new DX.UInt32Value { Value = (UInt32)(UInt64)value };
   }
 
@@ -322,7 +322,7 @@ public static class HexLongConverter
   /// Creates an OpenXml StringValue from an HexLong value.
   /// </summary>
   /// <param name="value">The HexLong value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexLong? value, Type targetType)
   {
@@ -355,7 +355,7 @@ public static class HexLongConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexLong value.
   /// </summary>
   /// <param name="value">The HexLong value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexLong? value, Type targetType)
   {
@@ -391,7 +391,7 @@ public static class HexLongConverter
   /// Creates an OpenXml HexBinaryValue from an HexLong value.
   /// </summary>
   /// <param name="value">The HexLong value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexLong? value, Type targetType)
   {
@@ -437,7 +437,7 @@ public static class HexLongConverter
   /// Creates an OpenXml OpenXmlLeafElement from an HexLong value.
   /// </summary>
   /// <param name="value">The HexLong value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexLong? value, Type targetType)
   {
@@ -466,7 +466,7 @@ public static class HexLongConverter
   /// Converts the specified string representation of a number Ito its HexLongequivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A HexLong integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A HexLong integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexLong? ConvertFromString(string? value)
   {

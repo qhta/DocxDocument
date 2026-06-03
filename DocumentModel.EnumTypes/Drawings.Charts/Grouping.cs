@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Grouping enumeration.
-/// Used Iin types such as DocumentCleaner.TableTools, ConnectionShapeLocks, ContentPartLocks.
+/// Used in types such as DocumentCleaner.TableTools, ConnectionShapeLocks, ContentPartLocks.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.GroupingValues))]

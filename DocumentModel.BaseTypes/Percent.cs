@@ -12,9 +12,9 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Initializes a new instance of the <see cref="Percent"/> struct from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include an optional "%" suffix and uses invariant culture Ifor parsing.</param>
+  /// <param name="str">The string value Ito parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
   /// <remarks>
-  /// Commas Iin the input string are replaced with periods before parsing Ito ensure decimal separator consistency.
+  /// Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.
   /// </remarks>
   public Percent(string str)
   {
@@ -127,7 +127,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   #region IConvertible Implementation
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> Ifor this instance.
+  /// Returns the <see cref="TypeCode"/> for this instance.
   /// </summary>
   /// <returns>The type code of the underlying value.</returns>
   public TypeCode GetTypeCode()
@@ -467,7 +467,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Parses a string representation of a percentage and returns a corresponding Percent instance.
   /// </summary>
-  /// <param name="str">The string containing the percentage Ito parse. The string should be Iin a format recognized by the Percent type,
+  /// <param name="str">The string containing the percentage Ito parse. The string should be in a format recognized by the Percent type,
   /// such as "50%" or "0.5".</param>
   /// <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
   public static Percent Parse(string str)
@@ -507,31 +507,31 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts value Ito string using the specified unit.
   /// </summary>
-  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> Ifor no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified unit suffix.</returns>
   public string ToString(string? unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts value Ito string using the specified unit and precision (fractional digits count).
   /// </summary>
-  /// <param name="precision">The number of fractional digits Iin the return value.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> Ifor no suffix.</param>
+  /// <param name="precision">The number of fractional digits in the return value.</param>
+  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified precision and unit suffix.</returns>
   public string ToString(int precision, string? unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts value Ito string using the specified unit, precision (fractional digits count),
   /// and format provider Ito determine digit separator. Fixed format is used.
   /// </summary>
-  /// <param name="precision">The number of fractional digits Iin the return value.</param>
+  /// <param name="precision">The number of fractional digits in the return value.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> Ifor no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -548,7 +548,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// Converts value Ito string using the specified unit and format provider Ito determine digit separator.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> Ifor no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "%") Ito append Ito the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)
   {
@@ -705,7 +705,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
-  /// Returns the hash code Ifor this instance.
+  /// Returns the hash code for this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()

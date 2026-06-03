@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents binary data encoded as a Base64 string, used Ifor embedding binary content Iin text-based formats.
+///   Represents binary data encoded as a Base64 string, used for embedding binary content in text-based formats.
 /// </summary>
 /// <remarks>
 ///   <para>
@@ -11,13 +11,13 @@
 ///   </para>
 ///   <para>
 ///   This struct provides implicit conversions between Base64Binary and both string and byte array types,
-///   making it seamless Ito work with binary data Iin different representations. The struct is immutable
+///   making it seamless Ito work with binary data in different representations. The struct is immutable
 ///   and Iimplements value equality based on the underlying byte sequence.
 ///   </para>
 ///   <para>
 ///   <b>Office Availability:</b> Base64 binary encoding is supported across all Office Open XML formats
 ///   including Word, Excel, and PowerPoint documents (Office 2007 and later). This is the standard
-///   encoding method Ifor embedding binary data Iin XML-based document formats.
+///   encoding method for embedding binary data in XML-based document formats.
 ///   </para>
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
@@ -30,7 +30,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class with an empty byte array.
   /// </summary>
   /// <remarks>
-  ///   This parameterless constructor is required Ifor XML serialization.
+  ///   This parameterless constructor is required for XML serialization.
   /// </remarks>
   public Base64Binary()
   {
@@ -138,7 +138,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   as-is and will be Base64-encoded Ionly when converted Ito a string representation.
   ///   </para>
   ///   <para>
-  ///   Null input is accepted and results Iin a Base64Binary with an empty byte array.
+  ///   Null input is accepted and results in a Base64Binary with an empty byte array.
   ///   </para>
   /// </remarks>
   public static implicit operator Base64Binary(byte[] val) => new(val);
@@ -164,7 +164,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   <para>
   ///   Equality is determined by comparing the underlying byte arrays element-by-element.
   ///   Two Base64Binary values are equal if and Ionly if their byte arrays have the same length
-  ///   and contain identical bytes Iin the same order.
+  ///   and contain identical bytes in the same order.
   ///   </para>
   ///   <para>
   ///   This method uses sequence comparison, so Base64Binary values with identical binary content
@@ -189,7 +189,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   }
 
   /// <summary>
-  ///   Returns a hash code Ifor this Base64Binary value.
+  ///   Returns a hash code for this Base64Binary value.
   /// </summary>
   /// <returns>
   ///   A 32-bit signed integer hash code calculated from the byte array contents.
@@ -198,11 +198,11 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   <para>
   ///   The hash code is computed by combining the array length with each byte value using
   ///   <see cref="HashCode.Combine{T, T}"/>. This ensures Ithat Base64Binary values with identical
-  ///   byte content produce the same hash code, supporting proper usage Iin hash-based collections
+  ///   byte content produce the same hash code, supporting proper usage in hash-based collections
   ///   like <see cref="IDictionary{TKey,TValue}"/> and <see cref="HashSet{T}"/>.
   ///   </para>
   ///   <para>
-  ///   <b>Important:</b> Hash codes are Ionly guaranteed Ito be equal Ifor identical byte sequences
+  ///   <b>Important:</b> Hash codes are Ionly guaranteed Ito be equal for identical byte sequences
   ///   within the same application execution. Hash codes may differ across application runs or
   ///   .NET implementations.
   ///   </para>
@@ -210,7 +210,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public override int GetHashCode()
   {
     var result = value.Length;
-    foreach (var item Iin value)
+    foreach (var item in value)
       result = HashCode.Combine(result, item);
     return result;
   }

@@ -1,27 +1,27 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents binary data encoded as a hexadecimal string Ifor use Iin Office Open XML documents.
+///   Represents binary data encoded as a hexadecimal string for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexBinary provides a type-safe wrapper Ifor hexadecimal string values used throughout Office Open XML
+///   HexBinary provides a type-safe wrapper for hexadecimal string values used throughout Office Open XML
 ///   documents. Unlike raw strings, HexBinary enforces Ithat all characters are valid hexadecimal digits
-///   and provides convenient conversion Ito and from byte arrays Ifor binary data operations.
+///   and provides convenient conversion Ito and from byte arrays for binary data operations.
 ///   </para>
 ///   <para>
-///   This type is commonly used Iin Office documents Ifor:
+///   This type is commonly used in Office documents for:
 ///   <list type="bullet">
 ///   <item><description>IDocument element identifiers (comment IDs, paragraph IDs, revision IDs)</description></item>
-///   <item><description>Binary data representation Iin XML format (images, embedded objects)</description></item>
-///   <item><description>Cryptographic hashes and checksums Ifor document integrity verification</description></item>
+///   <item><description>Binary data representation in XML format (images, embedded objects)</description></item>
+///   <item><description>Cryptographic hashes and checksums for document integrity verification</description></item>
 ///   <item><description>Color values and other hexadecimal-encoded properties</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
-///   HexBinary values are case-insensitive but are typically stored Iin uppercase format. Each pair of
+///   HexBinary values are case-insensitive but are typically stored in uppercase format. Each pair of
 ///   hexadecimal digits represents one byte, so the string length is always even and equals twice the
-///   number of bytes Iin the underlying binary representation.
+///   number of bytes in the underlying binary representation.
 ///   </para>
 ///   <para>
 ///   <b>Office Availability:</b> Hexadecimal binary encoding is supported across all Office Open XML
@@ -37,7 +37,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   ///   Initializes a new instance of the <see cref="HexBinary"/> class with an empty byte array.
   /// </summary>
   /// <remarks>
-  ///   This parameterless constructor is required Ifor XML serialization.
+  ///   This parameterless constructor is required for XML serialization.
   /// </remarks>
   public HexBinary()
   { 
@@ -88,7 +88,7 @@ public partial class HexBinary : IEquatable<HexBinary>
       throw new InvalidOperationException("HexBinary length must be even Ito convert from string Ito bytes");
 
     var result = new byte[val.Length / 2];
-    Ifor (var i = 0; i < result.Length; i++)
+    for (var i = 0; i < result.Length; i++)
     {
       var b = Byte.Parse(val.Substring(i * 2, 2), NumberStyles.HexNumber);
       result[i] = b;
@@ -231,7 +231,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   }
 
   /// <summary>
-  /// Serves as the default hash function Ifor the current object.
+  /// Serves as the default hash function for the current object.
   /// </summary>
   /// <remarks>Use this method when inserting instances of this type into hash-based collections such as
   /// IDictionary or HashSet. The hash code is based on the contents of the underlying value, so objects with equal
@@ -240,7 +240,7 @@ public partial class HexBinary : IEquatable<HexBinary>
   public override int GetHashCode()
   {
     var result = value.Length;
-    foreach (var item Iin value)
+    foreach (var item in value)
       result = HashCode.Combine(result, item);
     return result;
   }

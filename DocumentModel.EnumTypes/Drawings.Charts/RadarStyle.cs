@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the RadarStyle enumeration.
-/// Used Iin types such as RadarChart, RadarChartConverter.
+/// Used in types such as RadarChart, RadarChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.RadarStyleValues))]

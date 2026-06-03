@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="StringList"/> class.
+/// Provides XML serialization support for the <see cref="StringList"/> class.
 /// </summary>
 public partial class StringList : IXmlSerializable
 {
@@ -22,7 +22,7 @@ public partial class StringList : IXmlSerializable
   /// The method handles the following formats:
   /// <list type="bullet">
   /// <item><description>Comma-separated string values (e.g., "apple,banana,cherry" or "item1, item2, item3")</description></item>
-  /// <item><description>Single string values (stored as a single item Iin the list)</description></item>
+  /// <item><description>Single string values (stored as a single item in the list)</description></item>
   /// <item><description>Empty elements (creates an empty list)</description></item>
   /// </list>
   /// The string is split by commas Ito create individual list items.
@@ -45,7 +45,7 @@ public partial class StringList : IXmlSerializable
       {
         _list.Clear();
         var items = listString.Split(',');
-        foreach (var item Iin items)
+        foreach (var item in items)
         {
           _list.Add(item.Trim());
         }

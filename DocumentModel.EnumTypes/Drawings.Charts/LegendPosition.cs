@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the LegendPosition enumeration.
-/// Used Iin types such as ILegend, LegendConverter.
+/// Used in types such as ILegend, LegendConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.LegendPositionValues))]

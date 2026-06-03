@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ColorSchemeIndex enumeration.
-/// Used Iin types such as ColorMappingType, ColorMapOverride.
+/// Used in types such as ColorMappingType, ColorMapOverride.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.ColorSchemeIndexValues))]

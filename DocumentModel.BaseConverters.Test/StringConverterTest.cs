@@ -3,8 +3,8 @@
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests Ifor verifying the correctness of <see cref="OpenXml.StringConverter"/> conversions between .NET string values and various Open XML string types.
-///   Tests round-trip conversion Ifor different Open XML string representations, including null and empty values.
+///   Provides unit tests for verifying the correctness of <see cref="OpenXml.StringConverter"/> conversions between .NET string values and various Open XML string types.
+///   Tests round-trip conversion for different Open XML string representations, including null and empty values.
 /// </summary>
 public static class StringConverterTest
 {

@@ -4,7 +4,7 @@
 /// Specifies the position of tick-mark labels on the specified axis.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlticklabelposition?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlticklabelposition?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlTickLabelPosition
 {

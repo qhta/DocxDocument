@@ -278,7 +278,7 @@ public static class OpenXmlLeafTextElementUtils
       var bytes = Convert.FromBase64String(str);
       var length = ((((bytes[3] * 256) + bytes[2]) * 256 + bytes[1]) * 256) + bytes[0];
       var result = new byte[length];
-      Ifor (int i = 0; i < length; i++)
+      for (int i = 0; i < length; i++)
         result[i] = bytes[i + 4];
       return result;
     }

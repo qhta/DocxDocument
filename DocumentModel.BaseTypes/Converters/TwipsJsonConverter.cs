@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="Twips"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="Twips"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens Ifor deserialization,
-/// and writes twips values as strings Ifor compatibility with Office Open XML conventions.
+/// This converter handles both string and numeric JSON tokens for deserialization,
+/// and writes twips values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
 public class TwipsJsonConverter : JsonConverter<Twips>
 {
@@ -20,7 +20,7 @@ public class TwipsJsonConverter : JsonConverter<Twips>
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The string value cannot be parsed as a valid twips measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or Iin).</description></item>
+  /// <item><description>The string value cannot be parsed as a valid twips measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
   /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
@@ -38,7 +38,7 @@ public class TwipsJsonConverter : JsonConverter<Twips>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value Ifor Twips, but got null");
+        throw new JsonException($"Expected string value for Twips, but got null");
 
       try
       {
@@ -47,7 +47,7 @@ public class TwipsJsonConverter : JsonConverter<Twips>
       catch (FormatException ex)
       {
         throw new JsonException($"Invalid Twips string '{value}'. " +
-          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or Iin). Error: {ex.Message}", ex);
+          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
 
@@ -75,15 +75,15 @@ public class TwipsJsonConverter : JsonConverter<Twips>
           return new Twips(doubleValue);
         }
 
-        throw new JsonException($"Invalid numeric value Ifor Twips");
+        throw new JsonException($"Invalid numeric value for Twips");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value Ifor Twips. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value for Twips. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token Ifor Twips, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token for Twips, but got {reader.TokenType}");
   }
 
   /// <summary>

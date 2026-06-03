@@ -6,16 +6,16 @@ namespace DocumentModel.Drawings.Charts;
 /// values are Ito receive error bars.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbardirection?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbardirection?view=office-pia` for Office interop details.
 /// </remarks>
 public enum XlErrorBarDirection
 {
   /// <summary>
-  /// Bars run parallel Ito the Y axis Ifor X-axis values.
+  /// Bars run parallel Ito the Y axis for X-axis values.
   /// </summary>
   X = -4168,
   /// <summary>
-  /// Bars run parallel Ito the X axis Ifor Y-axis values.
+  /// Bars run parallel Ito the X axis for Y-axis values.
   /// </summary>
   Y = 1
 }

@@ -1,4 +1,4 @@
-﻿using ISystem.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace DocumentModel.BaseTypes.Interfaces;
 
@@ -17,7 +17,7 @@ public enum LengthUnit
   /// Represents the point unit of length.
   /// </summary>
   [EnumMember(Value = "pt")]
-  IPoints,
+  Points,
 
   /// <summary>
   /// Represents the millimeter unit of length.
@@ -34,6 +34,6 @@ public enum LengthUnit
   /// <summary>
   /// Represents the inch unit of length.
   /// </summary>
-  [EnumMember(Value = "Iin")]
+  [EnumMember(Value = "in")]
   Inches
 }

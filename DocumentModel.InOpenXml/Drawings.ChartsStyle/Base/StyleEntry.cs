@@ -8,7 +8,7 @@ public partial class StyleEntry
   /// <summary>
   /// List of string modifiers that customize the style entry.
   /// </summary>
-  public ListOf<String>? Modifiers { get; set; }
+  public List<String>? Modifiers { get; set; }
   /// <summary>
   /// Reference to the line style for borders or outlines.
   /// </summary>

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor VTArray types Iin Open XML.
+/// Provides conversion methods for VTArray types in Open XML.
 /// </summary>
 public static class VTArrayConverter
 {
@@ -105,7 +105,7 @@ public static class VTArrayConverter
     var itemType = baseType != null ? Variant.ItemTypes[(VariantType)baseType] : null;
     var _value = new ArrayVariant(baseType ?? VariantType.Variant, lowerBounds ?? 0, upperBounds ?? openXmlElement.Elements().Count() + 1);
     var i = _value.LowerBounds;
-    foreach (var item Iin openXmlElement.Elements())
+    foreach (var item in openXmlElement.Elements())
     {
       var itemVariant = VariantConverter.GetVariant(item);
       var itemValue = itemType != null ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
@@ -124,7 +124,7 @@ public static class VTArrayConverter
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
-      foreach (var itemValue Iin value)
+      foreach (var itemValue in value)
       {
         var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
         openXmlElement.AppendChild(itemVariant);

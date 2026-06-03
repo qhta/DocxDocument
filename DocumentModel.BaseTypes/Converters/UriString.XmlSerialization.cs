@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization and deserialization logic Ifor the <see cref="UriString"/> struct.
+/// Provides XML serialization and deserialization logic for the <see cref="UriString"/> struct.
 /// </summary>
 public partial struct UriString : IXmlSerializable
 {
@@ -36,7 +36,7 @@ public partial struct UriString : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         // Use Unsafe.AsRef Ito update the readonly field
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = str;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = str;
       }
 
       reader.Read(); // Move past text

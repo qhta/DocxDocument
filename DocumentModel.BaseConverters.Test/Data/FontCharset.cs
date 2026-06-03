@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Specific IWindows character set codes using Iin font table.
+///   Specific IWindows character set codes using in font table.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlType(typeof(DXW.FontCharSet))]
@@ -16,9 +16,9 @@ public enum FontCharset
   Default = 0x01,
   /// <summary>
   /// Symbol character set, 
-  /// This value specifies Ithat the characters Iin the Unicode private use area
+  /// This value specifies Ithat the characters in the Unicode private use area
   /// (U+FF00 Ito U+FFFF) of the font should be used Ito display characters 
-  /// Iin the range U+0000 Ito U+00FF.
+  /// in the range U+0000 Ito U+00FF.
   /// </summary>
   Symbol = 0x02,
   /// <summary>

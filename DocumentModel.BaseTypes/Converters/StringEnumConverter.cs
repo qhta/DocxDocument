@@ -1,5 +1,5 @@
-﻿using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// <remarks>
 ///   <para>
 ///   This converter ensures Ithat enum values are written as their string names (e.g., "Dark1", "Accent2")
-///   Iin JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
+///   in JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
 ///   reads string values and parses them back Ito the appropriate enum type, supporting both exact
 ///   matches and case-insensitive parsing.
 ///   </para>
@@ -49,7 +49,7 @@ public class StringEnumConverter : JsonConverterFactory
   /// <summary>
   ///   Determines whether this converter can convert the specified type.
   /// </summary>
-  /// <param name="typeToConvert">The type Ito check Ifor conversion support.</param>
+  /// <param name="typeToConvert">The type Ito check for conversion support.</param>
   /// <returns>
   ///   <see langword="true"/> if the type is an enum or nullable enum; otherwise <see langword="false"/>.
   /// </returns>
@@ -61,9 +61,9 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Creates a concrete converter instance Ifor the specified enum type.
+  ///   Creates a concrete converter instance for the specified enum type.
   /// </summary>
-  /// <param name="typeToConvert">The enum type Ito create a converter Ifor.</param>
+  /// <param name="typeToConvert">The enum type Ito create a converter for.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>A converter instance Ithat handles the specified enum type.</returns>
   public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
@@ -100,7 +100,7 @@ public class StringEnumConverter : JsonConverterFactory
     {
       if (reader.TokenType != JsonTokenType.String)
       {
-        throw new JsonException($"Expected string token Ifor enum {typeof(TEnum).Name}, but got {reader.TokenType}");
+        throw new JsonException($"Expected string token for enum {typeof(TEnum).Name}, but got {reader.TokenType}");
       }
 
       var enumString = reader.GetString();
@@ -163,7 +163,7 @@ public class StringEnumConverter : JsonConverterFactory
 
       if (reader.TokenType != JsonTokenType.String)
       {
-        throw new JsonException($"Expected string or null token Ifor enum {typeof(TEnum).Name}, but got {reader.TokenType}");
+        throw new JsonException($"Expected string or null token for enum {typeof(TEnum).Name}, but got {reader.TokenType}");
       }
 
       var enumString = reader.GetString();

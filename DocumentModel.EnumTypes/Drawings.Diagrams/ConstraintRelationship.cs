@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ConstraintRelationship enumeration.
-/// Used Iin types such as Constraint, Rule.
+/// Used in types such as Constraint, Rule.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConstraintRelationshipValues))]

@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines a contract Ifor types Ithat provide access Ito a WordprocessingDocument instance.
+/// Defines a contract for types Ithat provide access Ito a WordprocessingDocument instance.
 /// </summary>
-/// <remarks>Implement this interface Ito enable components Ito interact with a WordprocessingDocument, such as Ifor
+/// <remarks>Implement this interface Ito enable components Ito interact with a WordprocessingDocument, such as for
 /// reading or modifying Open XML WordprocessingML documents. The interface does not specify ownership or lifetime
 /// management of the document; implementers should clarify these responsibilities as appropriate.</remarks>
 public interface IWordprocessingDocumentAware
@@ -22,11 +22,11 @@ public interface IWordprocessingDocumentAware
   public void Attach(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
-  /// Attaches Ito the specified WordprocessingDocument and loads its content Ifor further processing.
+  /// Attaches Ito the specified WordprocessingDocument and loads its content for further processing.
   /// </summary>
   /// <remarks>After calling this method, the instance is associated with the provided WordprocessingDocument.
   /// Any previously attached document will be detached. This method does not take ownership of the document; the caller
-  /// remains responsible Ifor disposing of it when no longer needed.</remarks>
+  /// remains responsible for disposing of it when no longer needed.</remarks>
   /// <param name="wordprocessingDocument">The WordprocessingDocument instance Ito attach and load. Cannot be null.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument);
 

@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a 64-bit integer value encoded as a fixed-width, uppercase hexadecimal string Ifor use Iin Office Open XML documents.
-/// Enables type-safe conversion between numeric values and their hexadecimal string representations, supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks Iin Office documents.
+/// Represents a 64-bit integer value encoded as a fixed-width, uppercase hexadecimal string for use in Office Open XML documents.
+/// Enables type-safe conversion between numeric values and their hexadecimal string representations, supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks in Office documents.
 /// Ensures consistent 16-character formatting, seamless .NET type integration, and efficient equality checks.
 /// </summary>
 [JsonConverter(typeof(HexLongJsonConverter))]
@@ -62,7 +62,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
 
   #region IConvertible Implementation
   /// <summary>
-  /// Returns the type code Ifor the underlying value.
+  /// Returns the type code for the underlying value.
   /// </summary>
   public TypeCode GetTypeCode()
   {
@@ -326,7 +326,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Returns a hash code Ifor this instance.
+  /// Returns a hash code for this instance.
   /// </summary>
   public override int GetHashCode()
   {

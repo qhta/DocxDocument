@@ -4,7 +4,7 @@
 /// Specifies the type of mail system.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailsystem?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailsystem?view=office-pia` for Office interop details.
 /// </remarks>
 public enum MailSystem
 {

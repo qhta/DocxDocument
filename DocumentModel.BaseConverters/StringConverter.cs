@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides helper methods Ifor converting string values Ito and from OpenXml.
+/// Provides helper methods for converting string values Ito and from OpenXml.
 /// </summary>
 public static class StringConverter
 {
@@ -61,7 +61,7 @@ public static class StringConverter
   /// Creates an instance of StringType and sets its Val property.
   /// </summary>
   /// <param name="value">The string value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringType instance. Must be a subclass of StringType.</param>
+  /// <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
   public static DXW.StringType? ConvertToStringType(String? value, Type targetType)
   {
@@ -92,7 +92,7 @@ public static class StringConverter
   /// Creates an instance of String255Type and sets its Val property.
   /// </summary>
   /// <param name="value">The string value Ito set</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of String255Type.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String255Type.</param>
   /// <returns>Created String255Type instance or null if value is null.</returns>
   public static DXW.String255Type? ConvertToString255Type(String? value, Type targetType)
   {
@@ -123,7 +123,7 @@ public static class StringConverter
   /// Creates an instance of String253Type and sets its Val property.
   /// </summary>
   /// <param name="value">The string value Ito set</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of String253Type.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String253Type.</param>
   /// <returns>Created String253Type instance or null if value is null.</returns>
   public static DXW.String253Type? ConvertToString253Type(String? value, Type targetType)
   {
@@ -154,7 +154,7 @@ public static class StringConverter
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(string? value, Type targetType)
   {
@@ -190,7 +190,7 @@ public static class StringConverter
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(string? value, Type targetType)
   {
@@ -230,7 +230,7 @@ public static class StringConverter
   /// Creates an OpenXml EnumValue and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value Ito set.</param>
-  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
+  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlSimpleType? ConvertToOpenXmlSimpleType(string? value, Type targetType)
   {
@@ -250,7 +250,7 @@ public static class StringConverter
   #region Uri conversion methods
 
   /// <summary>
-  /// Converts a <see cref="Uri"/> into its string representation Ifor storage Iin Open XML values.
+  /// Converts a <see cref="Uri"/> into its string representation for storage in Open XML values.
   /// </summary>
   /// <param name="uri">The URI instance Ito serialize.</param>
   /// <returns>The absolute or relative string form of <paramref name="uri"/>, or null when <paramref name="uri"/> is null.</returns>
@@ -287,7 +287,7 @@ public static class StringConverter
   /// <param name="value">ISource string Ito translate.</param>
   /// <param name="targetType">Destination Open XML type.</param>
   /// <returns>The converted object instance.</returns>
-  /// <exception cref="NotSupportedException">Raised when no conversion is registered Ifor <paramref name="targetType"/>.</exception>
+  /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(string? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);

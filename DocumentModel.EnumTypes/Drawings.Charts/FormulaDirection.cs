@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the FormulaDirection enumeration.
-/// Used Iin types such as OpenXmlFormulaElement, FormulaDirection, OpenXmlFormulaElementConverter.
+/// Used in types such as OpenXmlFormulaElement, FormulaDirection, OpenXmlFormulaElementConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum FormulaDirection

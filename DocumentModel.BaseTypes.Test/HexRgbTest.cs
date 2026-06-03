@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor HexRgb type serialization Iin both XML and JSON formats.
+/// Test suite for HexRgb type serialization in both XML and JSON formats.
 /// </summary>
 public static class HexRgbTest
 {
@@ -309,7 +309,7 @@ public static class HexRgbTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -546,8 +546,8 @@ public static class HexRgbTest
     Console.WriteLine("--- Testing HexRgb Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor("FF0000");
     }
@@ -556,7 +556,7 @@ public static class HexRgbTest
 
     // Test construction from UInt32
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor(0xFF0000U);
     }
@@ -565,7 +565,7 @@ public static class HexRgbTest
 
     // Test construction from bytes
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor(255, 0, 0);
     }
@@ -575,7 +575,7 @@ public static class HexRgbTest
     // Test ToString performance
     HexColor testColor = new HexColor(255, 128, 64);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testColor.ToString();
     }
@@ -584,7 +584,7 @@ public static class HexRgbTest
 
     // Test component access
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       byte r = testColor.R;
       byte g = testColor.G;
@@ -596,7 +596,7 @@ public static class HexRgbTest
     // Test component modification
     HexColor mutableColor = new HexColor(100, 100, 100);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       mutableColor.R = (byte)(i % 256);
       mutableColor.G = (byte)((i * 2) % 256);
@@ -620,7 +620,7 @@ public static class HexRgbTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -630,7 +630,7 @@ public static class HexRgbTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexRgbTestData>(jsonData);
     }
@@ -641,7 +641,7 @@ public static class HexRgbTest
     HexColor color1 = new HexColor(128, 128, 128);
     HexColor color2 = new HexColor(128, 128, 128);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = color1.Equals(color2);
     }
@@ -650,7 +650,7 @@ public static class HexRgbTest
 
     // Test GetHashCode performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int hash = color1.GetHashCode();
     }
@@ -659,7 +659,7 @@ public static class HexRgbTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       UInt32 value = color1;
     }
@@ -681,7 +681,7 @@ public static class HexRgbTest
 public class HexRgbTestData
 {
   [XmlElement("PrimaryRed")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public HexColor PrimaryRed { get; set; }
 
   [XmlElement("PrimaryGreen")]
@@ -710,7 +710,7 @@ public class HexRgbTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class HexRgbWrapper
 {

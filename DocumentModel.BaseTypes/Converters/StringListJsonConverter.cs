@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="StringList"/> class.
+/// Provides JSON serialization and deserialization support for the <see cref="StringList"/> class.
 /// </summary>
 /// <remarks>
-/// This converter handles string, array, and object JSON tokens Ifor deserialization,
-/// and writes StringList values as JSON arrays Ifor compatibility with standard JSON conventions.
+/// This converter handles string, array, and object JSON tokens for deserialization,
+/// and writes StringList values as JSON arrays for compatibility with standard JSON conventions.
 /// </remarks>
 public class StringListJsonConverter : JsonConverter<StringList>
 {
@@ -76,19 +76,19 @@ public class StringListJsonConverter : JsonConverter<StringList>
         }
         else if (reader.TokenType == JsonTokenType.Null)
         {
-          // Skip null values Iin array
+          // Skip null values in array
           continue;
         }
         else
         {
-          throw new JsonException($"Expected string value Iin array Ifor StringList, but got {reader.TokenType}");
+          throw new JsonException($"Expected string value in array for StringList, but got {reader.TokenType}");
         }
       }
 
-      throw new JsonException($"Unexpected end of JSON array Ifor StringList");
+      throw new JsonException($"Unexpected end of JSON array for StringList");
     }
 
-    throw new JsonException($"Expected string, array, or null token Ifor StringList, but got {reader.TokenType}");
+    throw new JsonException($"Expected string, array, or null token for StringList, but got {reader.TokenType}");
   }
 
   /// <summary>
@@ -112,7 +112,7 @@ public class StringListJsonConverter : JsonConverter<StringList>
     }
 
     writer.WriteStartArray();
-    foreach (var item Iin value)
+    foreach (var item in value)
     {
       writer.WriteStringValue(item);
     }

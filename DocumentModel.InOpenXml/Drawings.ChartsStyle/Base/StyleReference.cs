@@ -12,5 +12,5 @@ public partial class StyleReference
   /// <summary>
   /// List of string modifiers that customize the referenced style.
   /// </summary>
-  public ListOf<String>? Modifiers { get; set; }
+  public List<String>? Modifiers { get; set; }
 }

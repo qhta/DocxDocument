@@ -42,7 +42,7 @@ public partial struct HexPercent : IXmlSerializable
         var temp = new HexPercent(str);
 
         // Use Unsafe.AsRef Ito update the readonly field
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = temp.value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = temp.value;
       }
 
       reader.Read(); // Move past text

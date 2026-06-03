@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a field. The Field object is a member of the Fields collection. The Fields collection represents the fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field?view=word-pia"/>
-public partial interface IField : IModelObject
+public partial interface Field : IModelObject
 {
   /// <summary>
   /// Gets or sets the field code.
@@ -46,13 +46,13 @@ public partial interface IField : IModelObject
   /// Gets the next field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
-  public IField Next { get; }
+  public Field Next { get; }
 
   /// <summary>
   /// Gets the previous field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
-  public IField Previous { get; }
+  public Field Previous { get; }
 
   /// <summary>
   /// Gets the index number of the field in the `Fields` collection.

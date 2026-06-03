@@ -3,7 +3,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Decimal value Ito/from Open XML.
+/// Provides conversion methods for Decimal value Ito/from Open XML.
 /// </summary>
 public static class DecimalConverter
 {
@@ -20,7 +20,7 @@ public static class DecimalConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="DecimalConverter"/>.
+  /// Initializes the conversion maps for <see cref="DecimalConverter"/>.
   /// </summary>
   static DecimalConverter()
   {
@@ -77,7 +77,7 @@ public static class DecimalConverter
   /// Creates an OpenXml StringValue from an Decimal value.
   /// </summary>
   /// <param name="value">The Decimal value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Decimal? value, Type targetType)
   {
@@ -97,7 +97,7 @@ public static class DecimalConverter
   /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Decimal? ConvertFromString(string? value)
   {
@@ -145,7 +145,7 @@ public static class DecimalConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Decimal value.
   /// </summary>
   /// <param name="value">The Decimal value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Decimal? value, Type targetType)
   {
@@ -189,7 +189,7 @@ public static class DecimalConverter
   /// Creates an OpenXml OpenXmlLeafElement from an Decimal value.
   /// </summary>
   /// <param name="value">The Decimal value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Decimal? value, Type targetType)
   {

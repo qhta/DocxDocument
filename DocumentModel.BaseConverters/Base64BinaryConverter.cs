@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor Base64Binary values Ito/from Open XML.
+/// Provides conversion methods for Base64Binary values Ito/from Open XML.
 /// </summary>
 public static class Base64BinaryConverter
 {
@@ -20,7 +20,7 @@ public static class Base64BinaryConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="Base64BinaryConverter"/>.
+  /// Initializes the conversion maps for <see cref="Base64BinaryConverter"/>.
   /// </summary>
   static Base64BinaryConverter()
   {
@@ -88,7 +88,7 @@ public static class Base64BinaryConverter
   /// Creates an OpenXml StringValue from an Base64Binary value.
   /// </summary>
   /// <param name="value">The Base64Binary value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(Base64Binary? value, Type targetType)
   {
@@ -108,7 +108,7 @@ public static class Base64BinaryConverter
   /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Base64Binary? ConvertFromString(string? value)
   {
@@ -150,7 +150,7 @@ public static class Base64BinaryConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Base64Binary value.
   /// </summary>
   /// <param name="value">The Base64Binary value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Base64Binary? value, Type targetType)
   {
@@ -228,7 +228,7 @@ public static class Base64BinaryConverter
   /// <param name="value">The value Ito convert. Supported types include Base64BinaryValue, Base64BinaryValue, Base64BinaryValue, UBase64BinaryValue, Base64BinaryValue,
   /// UBase64BinaryValue, UBase64BinaryValue, and StringValue. May be null.</param>
   /// <returns>An Base64Binary representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static Base64Binary? ConvertFrom(object? value)
   {
     return (Base64Binary?)ConverterBase.ConvertFrom(value, typeof(Base64Binary), ConversionFromMap);

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor RGB value Ito/from Open XML.
+/// Provides conversion methods for RGB value Ito/from Open XML.
 /// </summary>
 public static class HexColorConverter
 {
@@ -27,7 +27,7 @@ public static class HexColorConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="HexColorConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexColorConverter"/>.
   /// </summary>
   static HexColorConverter()
   {
@@ -46,7 +46,7 @@ public static class HexColorConverter
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {SByteValue.Value} is out of range for RGB");
 
     return (HexColor)SByteValue.Value;
   }
@@ -60,7 +60,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor SByte");
+      throw new OverflowException($"Value {value} is out of range for SByte");
 
     return new DX.SByteValue { Value = (SByte)value };
   }
@@ -78,7 +78,7 @@ public static class HexColorConverter
   {
     if (int16Value == null) return null;
     if (int16Value < 0)
-      throw new OverflowException($"Value {int16Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {int16Value} is out of range for RGB");
 
     return (HexColor)int16Value.Value;
   }
@@ -92,7 +92,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value > Int16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int16");
+      throw new OverflowException($"Value {value} is out of range for Int16");
 
     return new DX.Int16Value { Value = (Int16)value };
   }
@@ -110,7 +110,7 @@ public static class HexColorConverter
   {
     if (Int32Value == null) return null;
     if (Int32Value.Value < 0)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {Int32Value.Value} is out of range for RGB");
 
     return (HexColor)Int32Value.Value;
   }
@@ -124,7 +124,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Int32");
+      throw new OverflowException($"Value {value} is out of range for Int32");
 
     return new DX.Int32Value { Value = (Int32)value };
   }
@@ -142,7 +142,7 @@ public static class HexColorConverter
   {
     if (Int64Value == null) return null;
     if (Int64Value.Value < 0 || Int64Value.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {Int64Value.Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {Int64Value.Value} is out of range for RGB");
 
     return (HexColor)(UInt32)Int64Value.Value;
   }
@@ -172,7 +172,7 @@ public static class HexColorConverter
   {
     if (IntegerValue == null) return null;
     if (IntegerValue.Value < 0 || IntegerValue.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {IntegerValue.Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {IntegerValue.Value} is out of range for RGB");
 
     return (UInt32)IntegerValue.Value;
   }
@@ -214,7 +214,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value < 0 || value > Byte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor Byte");
+      throw new OverflowException($"Value {value} is out of range for Byte");
 
     return new DX.ByteValue { Value = (Byte)(UInt32)value };
   }
@@ -244,7 +244,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value > UInt16.MaxValue)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt16");
+      throw new OverflowException($"Value {value} is out of range for UInt16");
 
     return new DX.UInt16Value { Value = (UInt16)(UInt32)value };
   }
@@ -274,7 +274,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {value} is out of range for RGB");
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
@@ -291,7 +291,7 @@ public static class HexColorConverter
   {
     if (UInt64Value == null) return null;
     if (UInt64Value.Value > UInt32.MaxValue)
-      throw new OverflowException($"Value {UInt64Value.Value} is out of range Ifor RGB");
+      throw new OverflowException($"Value {UInt64Value.Value} is out of range for RGB");
 
     return (HexColor)UInt64Value.Value;
   }
@@ -305,7 +305,7 @@ public static class HexColorConverter
   {
     if (value is null) return null;
     if (value < 0)
-      throw new OverflowException($"Value {value} is out of range Ifor UInt64");
+      throw new OverflowException($"Value {value} is out of range for UInt64");
     return new DX.UInt64Value { Value = (UInt64)value };
   }
 
@@ -333,7 +333,7 @@ public static class HexColorConverter
   /// Creates an OpenXml StringValue from an RGB value.
   /// </summary>
   /// <param name="value">The RGB value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexColor? value, Type targetType)
   {
@@ -366,7 +366,7 @@ public static class HexColorConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an RGB value.
   /// </summary>
   /// <param name="value">The RGB value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexColor? value, Type targetType)
   {
@@ -403,7 +403,7 @@ public static class HexColorConverter
   /// Creates an OpenXml HexBinaryValue from an RGB value.
   /// </summary>
   /// <param name="value">The RGB value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexColor? value, Type targetType)
   {
@@ -449,7 +449,7 @@ public static class HexColorConverter
   /// Creates an OpenXml OpenXmlLeafElement from an RGB value.
   /// </summary>
   /// <param name="value">The RGB value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexColor? value, Type targetType)
   {
@@ -478,7 +478,7 @@ public static class HexColorConverter
   /// Converts the specified string representation of a number Ito its Rgbequivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A RGB integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A RGB integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexColor? ConvertFromString(string? value)
   {

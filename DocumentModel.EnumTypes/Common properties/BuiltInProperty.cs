@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies a built-Iin document property.
+/// Specifies a built-in document property.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuiltinproperty?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuiltinproperty?view=office-pia` for Office interop details.
 /// </remarks>
 public enum BuiltInProperty
 {

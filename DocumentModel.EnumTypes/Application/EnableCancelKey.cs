@@ -4,7 +4,7 @@
 /// Specifies whether CTRL+BREAK can or cannot interrupt a macro
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenablecancelkey?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenablecancelkey?view=office-pia` for Office interop details.
 /// </remarks>
 public enum EnableCancelKey
 {

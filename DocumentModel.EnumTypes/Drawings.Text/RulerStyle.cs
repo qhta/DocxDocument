@@ -4,7 +4,7 @@
 /// Specifies the way Word adjusts the table when the left indent is changed.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrulerstyle?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrulerstyle?view=office-pia` for Office interop details.
 /// </remarks>
 public enum RulerStyle
 {
@@ -15,7 +15,7 @@ public enum RulerStyle
   None = 0,
   /// <summary>
   /// Adjusts the left edge of the first column, preserving the position of the right edge of the table by
-  /// proportionally adjusting the widths of all the cells Iin the specified row or rows.
+  /// proportionally adjusting the widths of all the cells in the specified row or rows.
   /// </summary>
   Proportional = 1,
   /// <summary>
@@ -25,7 +25,7 @@ public enum RulerStyle
   FirstColumn = 2,
   /// <summary>
   /// Adjusts the left edge of the first column, preserving the position of the right edge of the table by setting
-  /// the widths of all the cells Iin the specified row or rows Ito the same value.
+  /// the widths of all the cells in the specified row or rows Ito the same value.
   /// </summary>
   SameWidth = 3
 }

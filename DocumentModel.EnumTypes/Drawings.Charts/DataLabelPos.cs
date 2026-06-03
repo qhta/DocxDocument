@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the DataLabelPos enumeration.
-/// Used Iin types such as IDataLabel, IDataLabels, DataLabelPos.
+/// Used in types such as IDataLabel, IDataLabels, DataLabelPos.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum DataLabelPos

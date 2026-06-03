@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the Algorithm enumeration.
-/// Used Iin types such as DocumentCleaner.TableTools, Algorithm, DiagramChooseElse.
+/// Used in types such as DocumentCleaner.TableTools, Algorithm, DiagramChooseElse.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.AlgorithmValues))]

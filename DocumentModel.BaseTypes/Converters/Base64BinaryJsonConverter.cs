@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat Base64Binary values are written as simple string values Iin JSON output
+///   This converter ensures Ithat Base64Binary values are written as simple string values in JSON output
 ///   (e.g., "SGVsbG8=", "/9j/4AAQ") rather than complex objects or byte arrays. During deserialization,
 ///   the converter reads string values and constructs new Base64Binary instances from them.
 ///   </para>
@@ -15,7 +15,7 @@
 ///   valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper padding.
 ///   </para>
 ///   <para>
-///   The output follows RFC 4648 standard Base64 encoding with proper padding. Whitespace Iin input
+///   The output follows RFC 4648 standard Base64 encoding with proper padding. Whitespace in input
 ///   strings is automatically handled by the Base64 decoder.
 ///   </para>
 ///   <para>
@@ -50,7 +50,7 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   /// <remarks>
   ///   <para>
   ///   The input string must contain Ionly valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper
-  ///   padding. The method automatically handles whitespace Iin Base64 strings as per RFC 4648.
+  ///   padding. The method automatically handles whitespace in Base64 strings as per RFC 4648.
   ///   </para>
   ///   <para>
   ///   <b>Examples of valid input:</b>
@@ -61,8 +61,8 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Empty strings and null values both result Iin null being returned. This allows Ifor
-  ///   consistent handling of absent data Iin JSON documents.
+  ///   Empty strings and null values both result in null being returned. This allows for
+  ///   consistent handling of absent data in JSON documents.
   ///   </para>
   /// </remarks>
   /// <exception cref="JsonException">
@@ -75,7 +75,7 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
       return new Base64Binary();
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor Base64Binary, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for Base64Binary, but got {reader.TokenType}");
 
     string? base64String = reader.GetString();
     if (string.IsNullOrEmpty(base64String))
@@ -89,7 +89,7 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid Base64 string '{base64String}' Ifor Base64Binary. " +
+      throw new JsonException($"Invalid Base64 string '{base64String}' for Base64Binary. " +
         $"String must contain Ionly valid Base64 characters (A-Z, a-z, 0-9, +, /, =) with proper padding. Error: {ex.Message}", ex);
     }
   }
@@ -108,7 +108,7 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   ///   </para>
   ///   <para>
   ///   Null values are written as JSON null. Empty Base64Binary instances (zero bytes) are written as
-  ///   empty strings (""), which can be distinguished from null Iin JSON.
+  ///   empty strings (""), which can be distinguished from null in JSON.
   ///   </para>
   ///   <para>
   ///   <b>Example outputs:</b>

@@ -10,7 +10,7 @@ public interface IChildItem
   public object? Parent { get; }
 
   /// <summary>
-  /// Sets the parent element Ifor this item. 
+  /// Sets the parent element for this item. 
   /// </summary>
   /// <param name="parent">Object Ito set as a parent of the item.</param>
   public void SetParent(object? parent);

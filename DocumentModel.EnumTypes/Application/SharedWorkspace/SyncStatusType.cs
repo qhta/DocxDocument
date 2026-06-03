@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies the status of the synchronization of the local copy of the active document with the server copy.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncstatustype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncstatustype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SyncStatusType
 {
@@ -17,7 +17,7 @@ public enum SyncStatusType
   /// </summary>
   NotRoaming = 0,
   /// <summary>
-  /// IDocuments are already Iin sync.
+  /// IDocuments are already in sync.
   /// </summary>
   Latest = 1,
   /// <summary>

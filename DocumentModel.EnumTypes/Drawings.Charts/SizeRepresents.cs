@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the SizeRepresents enumeration.
-/// Used Iin types such as BubbleChart, IChartGroup, BubbleChartConverter.
+/// Used in types such as BubbleChart, IChartGroup, BubbleChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.SizeRepresentsValues))]

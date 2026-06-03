@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the QuartileMethod enumeration.
-/// Used Iin types such as Statistics, QuartileMethod, StatisticsConverter.
+/// Used in types such as Statistics, QuartileMethod, StatisticsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum QuartileMethod

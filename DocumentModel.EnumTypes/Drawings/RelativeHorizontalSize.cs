@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the relative width of a shape using the value specified Iin the WidthRelative property Ifor a IShape or
+/// Specifies the relative width of a shape using the value specified in the WidthRelative property for a IShape or
 /// IShapeRange object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalsize?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalsize?view=office-pia` for Office interop details.
 /// </remarks>
 public enum RelativeHorizontalSize
 {
@@ -26,13 +26,13 @@ public enum RelativeHorizontalSize
   /// </summary>
   RightMarginArea = 3,
   /// <summary>
-  /// Width is relative Ito the size of the inside marginâ€”Ito the size of the left margin Ifor odd pages, and Ito the
-  /// size of the right margin Ifor even pages.
+  /// Width is relative Ito the size of the inside marginâ€”Ito the size of the left margin for odd pages, and Ito the
+  /// size of the right margin for even pages.
   /// </summary>
   InnerMarginArea = 4,
   /// <summary>
-  /// Width is relative Ito the size of the outside marginâ€” Ito the size of the right margin Ifor odd pages, and Ito the
-  /// size of the left margin Ifor even pages.
+  /// Width is relative Ito the size of the outside marginâ€” Ito the size of the right margin for odd pages, and Ito the
+  /// size of the left margin for even pages.
   /// </summary>
   OuterMarginArea = 5
 }

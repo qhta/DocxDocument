@@ -64,8 +64,8 @@ public enum SchemeColors
   /// <summary>
   ///   IHyperlink Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.IHyperlink))]
-  IHyperlink = 11,
+  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Hyperlink))]
+  Hyperlink = 11,
   /// <summary>
   ///   Followed IHyperlink Color.
   /// </summary>

@@ -2,11 +2,11 @@
 
 /// <summary>
 /// Defines the IShape enumeration.
-/// Used Iin types such as AdjustHandleList, AdjustHandlePolar, AdjustValueList.
+/// Used in types such as AdjustHandleList, AdjustHandlePolar, AdjustValueList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ShapeValues))]
-public enum IShape
+public enum Shape
 {
   /// <summary>
   ///   Cone.

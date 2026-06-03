@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor Base64Binary type serialization Iin both XML and JSON formats.
+/// Test suite for Base64Binary type serialization in both XML and JSON formats.
 /// </summary>
 public static class Base64BinaryTest
 {
@@ -29,7 +29,7 @@ public static class Base64BinaryTest
     Console.WriteLine("--- Testing Base64Binary Basic Operations ---");
 
     // Test string Ito Base64Binary conversion
-    Base64Binary base1 = "SGVsbG8="; // "Hello" Iin Base64Binary
+    Base64Binary base1 = "SGVsbG8="; // "Hello" in Base64Binary
     Console.WriteLine($"\n✓ String Ito Base64Binary: {base1}");
 
     // Test byte array Ito Base64Binary conversion
@@ -82,7 +82,7 @@ public static class Base64BinaryTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -229,11 +229,11 @@ public static class Base64BinaryTest
     // Test large binary data
     Console.WriteLine("\nTesting large binary data:");
     byte[] largeData = new byte[1024];
-    Ifor (int i = 0; i < largeData.Length; i++)
+    for (int i = 0; i < largeData.Length; i++)
       largeData[i] = (byte)(i % 256);
     Base64Binary large = largeData;
     Console.WriteLine($"  Large data: Length = {large.Length} bytes");
-    Console.WriteLine($"  First 32 chars: {large.ToString().Substring(0, ISystem.Math.Min(32, large.ToString().Length))}...");
+    Console.WriteLine($"  First 32 chars: {large.ToString().Substring(0, System.Math.Min(32, large.ToString().Length))}...");
 
     // Test null handling
     Console.WriteLine("\nTesting null handling:");
@@ -266,12 +266,12 @@ public static class Base64BinaryTest
 
     const int iterations = 10000;
     byte[] testData = new byte[256];
-    Ifor (int i = 0; i < 256; i++)
+    for (int i = 0; i < 256; i++)
       testData[i] = (byte)i;
 
     // Test conversion performance
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       Base64Binary hex = testData;
       string str = hex;
@@ -288,7 +288,7 @@ public static class Base64BinaryTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -298,7 +298,7 @@ public static class Base64BinaryTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       var obj = JsonSerializer.Deserialize<Base64BinaryTestDataClass>(jsonData);
     }
@@ -309,7 +309,7 @@ public static class Base64BinaryTest
     Base64Binary base1 = testData;
     Base64Binary base2 = testData;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool equal = base1.Equals(base2);
     }
@@ -333,7 +333,7 @@ public class Base64BinaryTestDataClass
 {
   [XmlElement("BinaryData")]
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Base64Binary BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]
@@ -344,7 +344,7 @@ public class Base64BinaryTestDataClass
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing nullable scenarios.
+/// Simple wrapper class for testing nullable scenarios.
 /// </summary>
 public class Base64BinaryTestWrapper
 {

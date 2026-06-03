@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods Ifor HexBinary values Ito/from Open XML.
+/// Provides conversion methods for HexBinary values Ito/from Open XML.
 /// </summary>
 public static class HexBinaryConverter
 {
@@ -21,7 +21,7 @@ public static class HexBinaryConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps Ifor <see cref="HexBinaryConverter"/>.
+  /// Initializes the conversion maps for <see cref="HexBinaryConverter"/>.
   /// </summary>
   static HexBinaryConverter()
   {
@@ -88,7 +88,7 @@ public static class HexBinaryConverter
   /// Creates an OpenXml StringValue from an HexBinary value.
   /// </summary>
   /// <param name="value">The HexBinary value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexBinary? value, Type targetType)
   {
@@ -108,7 +108,7 @@ public static class HexBinaryConverter
   /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
   /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexBinary? ConvertFromString(string? value)
   {
@@ -150,7 +150,7 @@ public static class HexBinaryConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexBinary value.
   /// </summary>
   /// <param name="value">The HexBinary value Ito convert.</param>
-  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexBinary? value, Type targetType)
   {
@@ -220,7 +220,7 @@ public static class HexBinaryConverter
     if (element == null)
       return null;
 
-    IList<string> parts = new();
+    List<string> parts = new();
     if (element.UnicodeSignature0?.Value != null)
       parts.Add(element.UnicodeSignature0!.Value!);
     if (element.UnicodeSignature1?.Value != null)
@@ -290,7 +290,7 @@ public static class HexBinaryConverter
   /// <param name="value">The value Ito convert. Supported types include HexBinaryValue, HexBinaryValue, HexBinaryValue, UHexBinaryValue, HexBinaryValue,
   /// UHexBinaryValue, UHexBinaryValue, and StringValue. May be null.</param>
   /// <returns>An HexBinary representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
   public static HexBinary? ConvertFrom(object? value)
   {
     return (HexBinary?)ConverterBase.ConvertFrom(value, typeof(HexBinary), ConversionFromMap);

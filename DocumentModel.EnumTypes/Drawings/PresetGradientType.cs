@@ -4,7 +4,7 @@
 /// Specifies which predefined gradient Ito use Ito fill a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum PresetGradientType
 {

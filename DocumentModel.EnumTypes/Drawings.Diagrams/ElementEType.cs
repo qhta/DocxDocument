@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ElementType enumeration.
-/// Used Iin types such as AddOpenXmlElementAttribute, AddOpenXmlTypeAttribute, ChildElementInfoAttribute.
+/// Used in types such as AddOpenXmlElementAttribute, AddOpenXmlTypeAttribute, ChildElementInfoAttribute.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ElementType

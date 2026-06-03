@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the ItemSize enumeration.
-/// Used Iin types such as BackstageMenuGroup, Menu, MenuRegular.
+/// Used in types such as BackstageMenuGroup, Menu, MenuRegular.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.ItemSizeValues))]

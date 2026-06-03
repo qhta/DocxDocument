@@ -15,7 +15,7 @@ public enum TextUnderline
   /// <summary>
   ///   Text Underline Enum ( IWords ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.IWords))]
+  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Words))]
   IWords,
   /// <summary>
   ///   Text Underline Enum ( Single ).

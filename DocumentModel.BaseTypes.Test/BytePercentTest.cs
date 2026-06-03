@@ -1,9 +1,9 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor BytePercent type serialization Iin both XML and JSON formats.
+/// Test suite for BytePercent type serialization in both XML and JSON formats.
 /// </summary>
 public static class BytePercentTest
 {
@@ -83,7 +83,7 @@ public static class BytePercentTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -220,7 +220,7 @@ public static class BytePercentTest
     // Test values beyond typical percentage range (byte supports 0-255)
     Console.WriteLine("\nTesting extended byte range:");
     BytePercent extended = (byte)150;
-    Console.WriteLine($"  Extended value (150): '{extended}' (valid Ifor byte range)");
+    Console.WriteLine($"  Extended value (150): '{extended}' (valid for byte range)");
 
     // Test common percentage values
     Console.WriteLine("\nTesting common percentage values:");
@@ -305,8 +305,8 @@ public static class BytePercentTest
     const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       BytePercent pct = "50%";
     }
@@ -315,7 +315,7 @@ public static class BytePercentTest
 
     // Test construction from byte
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       BytePercent pct = (byte)50;
     }
@@ -325,7 +325,7 @@ public static class BytePercentTest
     // Test ToString performance
     BytePercent testPct = 50;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testPct.ToString();
     }
@@ -334,14 +334,14 @@ public static class BytePercentTest
 
     // Test hex conversion performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string hex = testPct.ToHexString();
     }
     sw.Stop();
     Console.WriteLine($"ToHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       BytePercent pct = BytePercent.FromHexString("80");
     }
@@ -360,7 +360,7 @@ public static class BytePercentTest
       //MidPercent = 50
     };
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -370,7 +370,7 @@ public static class BytePercentTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<BytePercentTestData>(jsonData);
     }
@@ -381,7 +381,7 @@ public static class BytePercentTest
     BytePercent pct1 = 50;
     BytePercent pct2 = 50;
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int result = pct1.CompareTo(pct2);
     }
@@ -390,7 +390,7 @@ public static class BytePercentTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       byte value = (byte)pct1;
     }
@@ -411,7 +411,7 @@ public static class BytePercentTest
 public class BytePercentTestData
 {
   [XmlElement("Opacity")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public BytePercent Opacity { get; set; }
 
   [XmlElement("ColorAlpha")]
@@ -431,7 +431,7 @@ public class BytePercentTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class BytePercentWrapper
 {

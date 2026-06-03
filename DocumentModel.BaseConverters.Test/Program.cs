@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Entry point Ifor the DocumentModel BaseConverters test suite. Runs all converter tests and reports results Ito the console.
+///   Entry point for the DocumentModel BaseConverters test suite. Runs all converter tests and reports results Ito the console.
 /// </summary>
 internal class Program
 {
@@ -12,7 +12,7 @@ internal class Program
   static void Main(string[] args)
   {
     // Ensure Unicode characters display correctly
-    Console.OutputEncoding = ISystem.Text.Encoding.UTF8;
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
     Console.WriteLine("╔══════════════════════════════════════════════════╗");
     Console.WriteLine("║   DocumentModel BaseConverters Test Suite        ║");
     Console.WriteLine("╚══════════════════════════════════════════════════╝");

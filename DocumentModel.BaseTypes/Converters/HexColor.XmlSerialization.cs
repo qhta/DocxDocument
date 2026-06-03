@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="HexColor"/> structure.
+/// Provides XML serialization support for the <see cref="HexColor"/> structure.
 /// </summary>
 public partial struct HexColor : IXmlSerializable
 {
@@ -21,7 +21,7 @@ public partial struct HexColor : IXmlSerializable
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>6-digit hexadecimal string (e.g., "FF0000" Ifor red, "00FF00" Ifor green, "0000FF" Ifor blue)</description></item>
+  /// <item><description>6-digit hexadecimal string (e.g., "FF0000" for red, "00FF00" for green, "0000FF" for blue)</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
   /// The format is RRGGBB where RR is the red component, GG is the green component, and BB is the blue component.
@@ -45,7 +45,7 @@ public partial struct HexColor : IXmlSerializable
         HexColor parsedValue = new HexColor(rgbString);
 
         // Use Unsafe.AsRef Ito update the readonly field
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue.value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
       }
 
       reader.Read(); // Move past text
@@ -62,7 +62,7 @@ public partial struct HexColor : IXmlSerializable
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// The value is written as a 6-digit hexadecimal string Iin the format RRGGBB.
+  /// The value is written as a 6-digit hexadecimal string in the format RRGGBB.
   /// For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)

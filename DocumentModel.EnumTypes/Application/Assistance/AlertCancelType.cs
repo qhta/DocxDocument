@@ -1,15 +1,15 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertcanceltype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertcanceltype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum AlertCancelType
 {
   /// <summary>
-  /// Default behavior Ifor canceling an alert.
+  /// Default behavior for canceling an alert.
   /// </summary>
   Default = -1,
   /// <summary>

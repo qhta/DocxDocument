@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="Twips"/> structure.
+/// Provides XML serialization support for the <see cref="Twips"/> structure.
 /// </summary>
 public sealed partial class Twips : IXmlSerializable
 {
@@ -15,7 +15,7 @@ public sealed partial class Twips : IXmlSerializable
 
   /// <summary>
   /// Deserializes the <see cref="Twips"/> value from XML.
-  /// Accepts numeric values and values with unit suffixes (mm, cm, pt, Iin).
+  /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
@@ -28,7 +28,7 @@ public sealed partial class Twips : IXmlSerializable
   /// <item><description>Values with inch suffix (e.g., "1in")</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
-  /// Commas Iin the input are automatically replaced with periods Ifor decimal separator consistency.
+  /// Commas in the input are automatically replaced with periods for decimal separator consistency.
   /// </remarks>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
@@ -48,8 +48,8 @@ public sealed partial class Twips : IXmlSerializable
       {
         Twips parsedValue = new Twips(twipsString);
 
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _value) = parsedValue._value;
-        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _unit) = parsedValue.Unit;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text

@@ -4,7 +4,7 @@
 /// Specifies the format Ito use when opening a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdopenformat?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdopenformat?view=office-pia` for Office interop details.
 /// </remarks>
 public enum OpenFormat
 {
@@ -77,19 +77,19 @@ public enum OpenFormat
   /// </summary>
   AllWordTemplates = 13,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   XMLDocumentSerialized = 14,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   XMLDocumentMacroEnabledSerialized = 15,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   XMLTemplateSerialized = 16,
   /// <summary>
-  /// Reserved Ifor internal use.
+  /// Reserved for internal use.
   /// </summary>
   XMLTemplateMacroEnabledSerialized = 17,
   /// <summary>

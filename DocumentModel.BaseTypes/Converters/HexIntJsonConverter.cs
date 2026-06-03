@@ -1,6 +1,6 @@
-﻿using ISystem.Globalization;
-using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
@@ -9,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexInt values are written as hexadecimal string values Iin JSON output
+///   This converter ensures Ithat HexInt values are written as hexadecimal string values in JSON output
 ///   (e.g., "0000007B", "FFFFFFFF") rather than numeric values or complex objects. During deserialization,
 ///   the converter reads string values and constructs HexInt instances from them.
 ///   </para>
@@ -19,7 +19,7 @@ namespace DocumentModel;
 ///   leading zeros Ito represent 32-bit integer values consistently.
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
+///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
 ///   contain Ionly valid hexadecimal characters.
 ///   </para>
@@ -44,8 +44,8 @@ namespace DocumentModel;
 ///   </para>
 ///   <para>
 ///   <b>Usage Context:</b> This converter is automatically applied Ito HexInt properties when the type
-///   is used Iin JSON serialization, ensuring consistent 8-character hexadecimal string representation
-///   across all JSON operations Iin Office Open XML document processing.
+///   is used in JSON serialization, ensuring consistent 8-character hexadecimal string representation
+///   across all JSON operations in Office Open XML document processing.
 ///   </para>
 /// </remarks>
 public class HexIntJsonConverter : JsonConverter<HexInt>
@@ -77,8 +77,8 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Null or empty JSON values result Iin a default HexInt (value 0). This allows Ifor consistent
-  ///   handling of absent data Iin JSON documents.
+  ///   Null or empty JSON values result in a default HexInt (value 0). This allows for consistent
+  ///   handling of absent data in JSON documents.
   ///   </para>
   /// </remarks>
   /// <exception cref="JsonException">
@@ -91,7 +91,7 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
       return default;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token Ifor HexInt, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token for HexInt, but got {reader.TokenType}");
 
     var str = reader.GetString();
     if (string.IsNullOrEmpty(str))
@@ -103,11 +103,11 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{str}' Ifor HexInt. Expected hex digits (0-9, A-F) representing a 32-bit integer.", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexInt. Expected hex digits (0-9, A-F) representing a 32-bit integer.", ex);
     }
     catch (OverflowException ex)
     {
-      throw new JsonException($"Hexadecimal value '{str}' is out of range Ifor HexInt. Must represent a 32-bit signed integer.", ex);
+      throw new JsonException($"Hexadecimal value '{str}' is out of range for HexInt. Must represent a 32-bit signed integer.", ex);
     }
   }
 
@@ -144,7 +144,7 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
   ///   </para>
   ///   <para>
   ///   The 8-character format is fixed and does not vary based on the value, ensuring predictable
-  ///   JSON structure and simplifying parsing operations Iin consuming applications.
+  ///   JSON structure and simplifying parsing operations in consuming applications.
   ///   </para>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, HexInt value, JsonSerializerOptions options)

@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Indicates additional information about a signature.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SignatureDetail
 {
@@ -93,7 +93,7 @@ public enum SignatureDetail
   /// </summary>
   DelSuggSignerEmail,
   /// <summary>
-  /// Indicates whether an email Ifor a suggested signer delegate has been specified.
+  /// Indicates whether an email for a suggested signer delegate has been specified.
   /// </summary>
   DelSuggSignerEmailSet
 }

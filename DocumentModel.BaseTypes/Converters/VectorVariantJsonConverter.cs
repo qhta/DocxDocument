@@ -1,14 +1,14 @@
-﻿using ISystem.Text.Json;
-using ISystem.Text.Json.Serialization;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support Ifor the <see cref="VectorVariant"/> class.
+/// Provides JSON serialization and deserialization support for the <see cref="VectorVariant"/> class.
 /// </summary>
 /// <remarks>
 /// This converter handles JSON representation of vector variants with their optional base type metadata
-/// and element values. The JSON format includes the vector configuration and elements Ifor complete
+/// and element values. The JSON format includes the vector configuration and elements for complete
 /// round-trip serialization.
 /// </remarks>
 public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
@@ -52,7 +52,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
   /// are stored as-is.
   /// </para>
   /// <para>
-  /// Null values Iin the items array are preserved and set as null Iin the VectorVariant.
+  /// Null values in the items array are preserved and set as null in the VectorVariant.
   /// </para>
   /// </remarks>
   public override VectorVariant? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -74,7 +74,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       return ReadObjectFormat(ref reader);
     }
 
-    throw new JsonException($"Expected StartObject, StartArray, or Null token Ifor VectorVariant, but got {reader.TokenType}");
+    throw new JsonException($"Expected StartObject, StartArray, or Null token for VectorVariant, but got {reader.TokenType}");
   }
 
   /// <summary>
@@ -138,7 +138,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
           case "items":
             if (reader.TokenType == JsonTokenType.StartArray)
             {
-              items = new IList<object?>();
+              items = new List<object?>();
 
               while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
               {
@@ -157,7 +157,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
     // Populate items
     if (items != null)
     {
-      foreach (var item Iin items)
+      foreach (var item in items)
       {
         try
         {
@@ -181,7 +181,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
   /// <param name="value">The <see cref="VectorVariant"/> value Ito serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// <para>Writes the VectorVariant value Iin the following JSON format:</para>
+  /// <para>Writes the VectorVariant value in the following JSON format:</para>
   /// <code>
   /// // With baseType specified
   /// {
@@ -201,7 +201,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
   /// </para>
   /// <para>
   /// If the value is null, a JSON null is written.
-  /// Null items Iin the vector are written as JSON null values.
+  /// Null items in the vector are written as JSON null values.
   /// </para>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, VectorVariant? value, JsonSerializerOptions options)
@@ -224,7 +224,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       writer.WritePropertyName("items");
       writer.WriteStartArray();
 
-      foreach (var item Iin value)
+      foreach (var item in value)
       {
         WriteJsonValue(writer, item, value.BaseType.Value);
       }
@@ -237,7 +237,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       // Write as simple array if no baseType
       writer.WriteStartArray();
 
-      foreach (var item Iin value)
+      foreach (var item in value)
       {
         WriteJsonValue(writer, item, null);
       }
@@ -264,7 +264,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       JsonTokenType.Number when reader.TryGetInt64(out long longValue) => longValue,
       JsonTokenType.Number when reader.TryGetDouble(out double doubleValue) => doubleValue,
       JsonTokenType.String => reader.GetString(),
-      _ => throw new JsonException($"Unexpected token type Ifor vector item: {reader.TokenType}")
+      _ => throw new JsonException($"Unexpected token type for vector item: {reader.TokenType}")
     };
   }
 
@@ -315,7 +315,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
       return;
     }
 
-    // If variantType is specified, use it Ifor formatting hints
+    // If variantType is specified, use it for formatting hints
     if (variantType.HasValue)
     {
       switch (variantType.Value)

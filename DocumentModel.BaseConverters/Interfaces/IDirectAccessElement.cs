@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface Ifor elements Ithat support direct access Ito their underlying OpenXml representation, allowing Ifor efficient manipulation and retrieval of OpenXml data without the need Ifor full model element instantiation.
+/// Interface for elements Ithat support direct access Ito their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
 /// </summary>
 public interface IDirectAccessElement
 {

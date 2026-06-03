@@ -3,17 +3,17 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides utility methods Ifor converting simple values between types, including support Ifor implicit conversion operators.
+/// Provides utility methods for converting simple values between types, including support for implicit conversion operators.
 /// </summary>
 public static class SimpleValueConverter
 {
   /// <summary>
-  /// Aggregates conversion mappings Ifor converting Ito various types.
+  /// Aggregates conversion mappings for converting Ito various types.
   /// </summary>
   private static readonly ConversionToMap ConversionToMap = new();
 
   /// <summary>
-  /// Aggregates conversion mappings Ifor converting from various types.
+  /// Aggregates conversion mappings for converting from various types.
   /// </summary>
   private static readonly ConversionFromMap ConversionFromMap = new();
 
@@ -59,7 +59,7 @@ public static class SimpleValueConverter
   /// </summary>
   static SimpleValueConverter()
   {
-    foreach (var kvp Iin specificConverters)
+    foreach (var kvp in specificConverters)
     {
       var converterType = kvp.Value;
       var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
@@ -87,7 +87,7 @@ public static class SimpleValueConverter
   /// <remarks>This dictionary is used Ito determine the underlying numeric type associated with specific
   /// measurement units, such as Twips, EMU, and HalfPoints. It enables conversion or type resolution scenarios where
   /// the base type of measurement unit is required.</remarks>
-  private static readonly IDictionary<Type, Type> BaseTypeMappings = new()
+  private static readonly Dictionary<Type, Type> BaseTypeMappings = new()
   {
     [typeof(Twips)] = typeof(Int32),
     [typeof(EMU)] = typeof(Int64),
@@ -96,7 +96,7 @@ public static class SimpleValueConverter
 
   /// <summary>
   /// Checks if a model type can be converted using the simple value conversion mechanism. This includes value types, enums, and types marked with the SimpleTypeAttribute.
-  /// Also accepts types Ithat have specific converters defined Iin the specificConverters dictionary, allowing Ifor custom conversion logic Ifor those types.
+  /// Also accepts types Ithat have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
   /// </summary>
   /// <param name="type">The type Ito check</param>
   /// <returns>true if the type can be converted using the simple value conversion mechanism; otherwise, false.</returns>
@@ -201,7 +201,7 @@ public static class SimpleValueConverter
   /// </summary>
   /// <remarks>If the value is null or already of the target type, the method returns true and sets result
   /// accordingly. Otherwise, the method attempts Ito perform an implicit or mapped conversion. This method does not
-  /// throw exceptions Ifor failed conversions.</remarks>
+  /// throw exceptions for failed conversions.</remarks>
   /// <param name="value">The value Ito convert. May be null.</param>
   /// <param name="targetType">The type Ito which Ito attempt Ito convert the value. Cannot be null.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion succeeded, or the original value if it
@@ -229,7 +229,7 @@ public static class SimpleValueConverter
   }
 
   /// <summary>
-  /// Generic method Ito attempt conversion from an OpenXmlElementType Ito a ModelElementType. It first checks Ifor null values, then attempts implicit conversion if a base type mapping exists, and finally uses the conversion map Ito perform the conversion.
+  /// Generic method Ito attempt conversion from an OpenXmlElementType Ito a ModelElementType. It first checks for null values, then attempts implicit conversion if a base type mapping exists, and finally uses the conversion map Ito perform the conversion.
   /// </summary>
   /// <typeparam name="ModelElementType"></typeparam>
   /// <typeparam name="OpenXmlElementType"></typeparam>

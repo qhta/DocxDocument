@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.IApplication;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies properties of a signature.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturetype?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturetype?view=office-pia` for Office interop details.
 /// </remarks>
 public enum SignatureType
 {
@@ -13,15 +13,15 @@ public enum SignatureType
   /// </summary>
   Unknown,
   /// <summary>
-  /// A signature Ithat is not visible Iin the content of the document.
+  /// A signature Ithat is not visible in the content of the document.
   /// </summary>
   NonVisible,
   /// <summary>
-  /// A signature Ithat is visible Iin the content of the document.
+  /// A signature Ithat is visible in the content of the document.
   /// </summary>
   SignatureLine,
   /// <summary>
-  /// Specifies the maximum number of the signature types available Iin the current version of Office.
+  /// Specifies the maximum number of the signature types available in the current version of Office.
   /// </summary>
   Max
 }

@@ -14,5 +14,5 @@ public partial class LatentStyle
  /// <summary>
  /// Alternate style names associated with the latent style exception.
  /// </summary>
- public ListOf<String>? Aliases { get; set; }
+ public List<String>? Aliases { get; set; }
 }

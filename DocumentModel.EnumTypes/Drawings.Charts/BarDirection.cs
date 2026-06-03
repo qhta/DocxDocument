@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the BarDirection enumeration.
-/// Used Iin types such as Bar3DChart, BarChart, Bar3DChartConverter.
+/// Used in types such as Bar3DChart, BarChart, Bar3DChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.BarDirectionValues))]

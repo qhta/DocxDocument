@@ -9,15 +9,15 @@
 public record ConversionMethodInfo(Type TargetType, string ConvertFromMethod, string ConvertToMethod);
 
 /// <summary>
-/// Represents a collection of conversion functions Ithat map a source type Ito a target type, enabling dynamic type
+/// Represents a collection of conversion functions that map a source type to a target type, enabling dynamic type
 /// conversions at runtime.
 /// </summary>
 /// <remarks>This class extends the generic IDictionary, using a tuple of source and target types as the key and a
-/// delegate Ithat performs the conversion as the value. It is useful Ifor scenarios where type conversions need Ito be
-/// registered and resolved dynamically, such as Iin serialization frameworks or custom mapping utilities. The Append
+/// delegate that performs the conversion as the value. It is useful for scenarios where type conversions need to be
+/// registered and resolved dynamically, such as in serialization frameworks or custom mapping utilities. The Append
 /// method allows merging conversion mappings from another ConversionToMap instance, facilitating
 /// extensibility.</remarks>
-public class ConversionToMap : IDictionary<(Type ISource, Type Target), Func<object, Type, object?>>
+public class ConversionToMap : Dictionary<(Type ISource, Type Target), Func<object, Type, object?>>
 {
   /// <summary>
   /// Appends map from other source.
@@ -25,7 +25,7 @@ public class ConversionToMap : IDictionary<(Type ISource, Type Target), Func<obj
   /// <param name="source"></param>
   public void Append(ConversionToMap source)
   {
-    foreach (var item Iin source)
+    foreach (var item in source)
     {
       this[(item.Key.ISource, item.Key.Target)] = item.Value;
     }
@@ -33,15 +33,15 @@ public class ConversionToMap : IDictionary<(Type ISource, Type Target), Func<obj
 }
 
 /// <summary>
-/// Represents a collection of type conversion functions Ithat map source types Ito target types, enabling dynamic
+/// Represents a collection of type conversion functions that map source types to target types, enabling dynamic
 /// conversion between types at runtime.
 /// </summary>
 /// <remarks>This class extends the generic IDictionary, using a tuple of source and target types as the key and a
-/// conversion function as the value. It is useful Ifor scenarios where type conversions need Ito be registered and
-/// retrieved dynamically, such as Iin serialization frameworks or custom type mappers. The Append method allows merging
-/// conversion mappings from another ConversionFromMap instance, overwriting existing mappings Ifor the same type
+/// conversion function as the value. It is useful for scenarios where type conversions need to be registered and
+/// retrieved dynamically, such as in serialization frameworks or custom type mappers. The Append method allows merging
+/// conversion mappings from another ConversionFromMap instance, overwriting existing mappings for the same type
 /// pairs.</remarks>
-public class ConversionFromMap : IDictionary<(Type ISource, Type Target), Func<object, Type, object?>>
+public class ConversionFromMap : Dictionary<(Type ISource, Type Target), Func<object, Type, object?>>
 {
   /// <summary>
   /// Appends map from other source.
@@ -49,7 +49,7 @@ public class ConversionFromMap : IDictionary<(Type ISource, Type Target), Func<o
   /// <param name="source"></param>
   public void Append(ConversionFromMap source)
   {
-    foreach (var item Iin source)
+    foreach (var item in source)
     {
       this[(item.Key.ISource, item.Key.Target)] = item.Value;
     }
@@ -57,7 +57,7 @@ public class ConversionFromMap : IDictionary<(Type ISource, Type Target), Func<o
 }
 
 /// <summary>
-/// Represents base functionality Ifor specific converters.
+/// Represents base functionality for specific converters.
 /// </summary>
 public static class ConverterBase
 {
@@ -67,9 +67,9 @@ public static class ConverterBase
   /// instance property if Ionly one exists.
   /// </summary>
   /// <remarks>If the specified type does not declare a property named "Val", and declares exactly one public
-  /// instance property, Ithat property is returned. If there are no public instance properties or more than one (other
+  /// instance property, that property is returned. If there are no public instance properties or more than one (other
   /// than "Val"), the method returns <see langword="null"/>.</remarks>
-  /// <param name="type">The type Ito search Ifor a public instance property named "Val" or a single declared public instance property.</param>
+  /// <param name="type">The type to search for a public instance property named "Val" or a single declared public instance property.</param>
   /// <returns>A <see cref="PropertyInfo"/> representing the "Val" property, or the single declared public instance property if
   /// Ionly one exists; otherwise, <see langword="null"/>.</returns>
   public static PropertyInfo? GetValProperty(this Type type)
@@ -86,25 +86,25 @@ public static class ConverterBase
  }
 
   /// <summary>
-  /// Registers conversion methods Ifor the specified model type using the provided converter type and supported
+  /// Registers conversion methods for the specified model type using the provided converter type and supported
   /// conversions.
   /// </summary>
   /// <remarks>This method locates and registers static conversion methods defined on the specified converter
-  /// type, updating the provided conversion maps Ito enable type conversions Ifor the model type. If a specified
+  /// type, updating the provided conversion maps to enable type conversions for the model type. If a specified
   /// conversion method is not found, it is skipped. If a conversion method throws an exception, the original exception
   /// is propagated.</remarks>
-  /// <param name="converterType">The type Ithat contains the static conversion methods Ito be registered.</param>
-  /// <param name="modelType">The model type Ifor which conversion methods are being registered.</param>
+  /// <param name="converterType">The type that contains the static conversion methods to be registered.</param>
+  /// <param name="modelType">The model type for which conversion methods are being registered.</param>
   /// <param name="supportedConversions">An array of supported conversion method information, specifying the target types and corresponding method names.</param>
-  /// <param name="conversionToMap">A dictionary Ithat maps a pair of source and target types Ito a delegate used Ifor converting from the model type Ito
+  /// <param name="conversionToMap">A dictionary that maps a pair of source and target types to a delegate used for converting from the model type to
   /// the target type. This dictionary will be updated with the registered conversion methods.</param>
-  /// <param name="conversionFromMap">A dictionary Ithat maps a pair of target and source types Ito a delegate used Ifor converting from the target type Ito
+  /// <param name="conversionFromMap">A dictionary that maps a pair of target and source types to a delegate used for converting from the target type to
   /// the model type. This dictionary will be updated with the registered conversion methods.</param>
   public static void RegisterConversionMethods
   (Type converterType, Type modelType, ConversionMethodInfo[] supportedConversions, ConversionToMap conversionToMap,
     ConversionFromMap conversionFromMap)
   {
-    foreach (var item Iin supportedConversions)
+    foreach (var item in supportedConversions)
     {
       var fromMethod = converterType.GetMethod(item.ConvertFromMethod,
         BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
@@ -146,11 +146,11 @@ public static class ConverterBase
   }
 
   /// <summary>
-  /// Converts a value Ito the specified target type using standard type conversion.
+  /// Converts a value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
-  /// <param name="targetType">The type Ito convert the value Ito.</param>
-  /// <param name="conversionToMap">Conversion map Ifor forward conversions.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
+  /// <param name="conversionToMap">Conversion map for forward conversions.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Thrown when the conversion is not supported.</exception>
   public static object? ConvertTo(object? value, Type targetType, ConversionToMap conversionToMap)
@@ -162,22 +162,22 @@ public static class ConverterBase
       return result;
 
     throw new NotSupportedException(
-      $"Conversion from {sourceType.FullName} Ito {targetType.FullName} is not supported.");
+      $"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
 
   /// <summary>
-  /// Attempts Ito convert the specified value Ito the given target type using the provided conversion map.
+  /// Attempts to convert the specified value to the given target type using the provided conversion map.
   /// </summary>
-  /// <remarks>If the value is null, the method returns true and sets the result Ito null. The method first
-  /// attempts Ito use the provided conversion map Ifor custom conversions, then falls back Ito implicit conversions or
-  /// specific handling Ifor OpenXml types. If no suitable conversion is found, the method returns false and the result
+  /// <remarks>If the value is null, the method returns true and sets the result to null. The method first
+  /// attempts to use the provided conversion map for custom conversions, then falls back to implicit conversions or
+  /// specific handling for OpenXml types. If no suitable conversion is found, the method returns false and the result
   /// is undefined.</remarks>
-  /// <param name="value">The value Ito convert. Can be null.</param>
-  /// <param name="targetType">The type Ito which the value should be converted. Cannot be null.</param>
-  /// <param name="conversionToMap">A map of source and target type pairs Ito conversion functions used Ito perform custom conversions.</param>
+  /// <param name="value">The value to convert. Can be null.</param>
+  /// <param name="targetType">The type to which the value should be converted. Cannot be null.</param>
+  /// <param name="conversionToMap">A map of source and target type pairs to conversion functions used to perform custom conversions.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion succeeded, or the original value if it
   /// was null or no conversion was necessary. This parameter is passed uninitialized.</param>
-  /// <returns>true if the value was successfully converted Ito the target type or was already of the target type; otherwise, false.</returns>
+  /// <returns>true if the value was successfully converted to the target type or was already of the target type; otherwise, false.</returns>
   public static bool TryConvertTo(object? value, Type targetType, ConversionToMap conversionToMap, out object? result)
   {
     result = value;
@@ -245,13 +245,13 @@ public static class ConverterBase
   }
 
   /// <summary>
-  /// Converts a value Ito the specified target type using standard type conversion.
+  /// Converts a value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
-  /// <param name="targetType">The type Ito convert the value Ito.</param>
-  /// <param name="conversionFromMap">Conversion map Ifor reverse conversions.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
+  /// <param name="conversionFromMap">Conversion map for reverse conversions.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
-  /// <exception cref="NotSupportedException">Thrown if a required conversion is not supported or if a necessary property Ifor conversion cannot be found on the
+  /// <exception cref="NotSupportedException">Thrown if a required conversion is not supported or if a necessary property for conversion cannot be found on the
   /// source type.</exception>
   public static object? ConvertFrom(object? value, Type targetType, ConversionFromMap conversionFromMap)
   {
@@ -262,18 +262,18 @@ public static class ConverterBase
       return result;
 
     throw new NotSupportedException(
-      $"Conversion from {sourceType.FullName} Ito {targetType.FullName} is not supported.");
+      $"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }
 
   /// <summary>
-  /// Attempts Ito convert the specified value Ito the given target type using the provided conversion map.
+  /// Attempts to convert the specified value to the given target type using the provided conversion map.
   /// </summary>
   /// <remarks>If the value is null or already of the target type, no conversion is performed. The method uses
-  /// the provided conversion map and built-Iin conversion logic Ito attempt the conversion. If the conversion cannot be
+  /// the provided conversion map and built-in conversion logic to attempt the conversion. If the conversion cannot be
   /// performed, a NotSupportedException is thrown.</remarks>
-  /// <param name="value">The value Ito convert. May be null.</param>
-  /// <param name="targetType">The type Ito which the value should be converted. Cannot be null.</param>
-  /// <param name="conversionFromMap">A map Ithat defines custom conversion functions from source types Ito target types. Cannot be null.</param>
+  /// <param name="value">The value to convert. May be null.</param>
+  /// <param name="targetType">The type to which the value should be converted. Cannot be null.</param>
+  /// <param name="conversionFromMap">A map that defines custom conversion functions from source types to target types. Cannot be null.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion succeeded, or the original value if no
   /// conversion was necessary. This parameter is passed uninitialized.</param>
   /// <returns>true if the conversion was successful or not required; otherwise, false.</returns>
@@ -338,7 +338,7 @@ public static class ConverterBase
     {
       var valProp = sourceType.GetValProperty();
       if (valProp == null)
-        throw new NotSupportedException($"Val property Iin {sourceType.FullName} not found.");
+        throw new NotSupportedException($"Val property in {sourceType.FullName} not found.");
 
       var valValue = valProp.GetValue(value);
       if (TryConvertFrom(valValue, targetType, conversionFromMap, out result))
@@ -351,10 +351,10 @@ public static class ConverterBase
   }
 
   /// <summary>
-  /// Attempts Ito convert a value Ito the specified target type using an implicit conversion operator, if available.
+  /// Attempts to convert a value to the specified target type using an implicit conversion operator, if available.
   /// </summary>
-  /// <param name="source">The source value Ito convert.</param>
-  /// <param name="targetType">The type Ito convert the value Ito.</param>
+  /// <param name="source">The source value to convert.</param>
+  /// <param name="targetType">The type to convert the value to.</param>
   /// <param name="result">The converted value if the conversion succeeds; otherwise, null.</param>
   /// <returns>True if an implicit conversion was performed; otherwise, false.</returns>
   public static bool TryImplicitConvertTo(object? source, Type targetType, out object? result)
@@ -382,10 +382,10 @@ public static class ConverterBase
   }
 
   /// <summary>
-  /// Attempts Ito convert a value from the specified target type using an implicit conversion operator, if available.
+  /// Attempts to convert a value from the specified target type using an implicit conversion operator, if available.
   /// </summary>
-  /// <param name="source">The source value Ito convert.</param>
-  /// <param name="targetType">The type Ito convert the value From.</param>
+  /// <param name="source">The source value to convert.</param>
+  /// <param name="targetType">The type to convert the value From.</param>
   /// <param name="result">The converted value if the conversion succeeds; otherwise, null.</param>
   /// <returns>True if an implicit conversion was performed; otherwise, false.</returns>
   public static bool TryImplicitConvertFrom(object? source, Type targetType, out object? result)
@@ -413,10 +413,10 @@ public static class ConverterBase
   }
 
   /// <summary>
-  /// Attempts Ito use IConvertible Ito convert the source object Ito the target type.
+  /// Attempts to use IConvertible to convert the source object to the target type.
   /// </summary>
-  /// <param name="source">ISource object Ito convert.</param>
-  /// <param name="targetType">Target type Ito convert.</param>
+  /// <param name="source">ISource object to convert.</param>
+  /// <param name="targetType">Target type to convert.</param>
   /// <param name="result">Converted result.</param>
   /// <returns></returns>
   public static bool TryUseIConvertibleInterface(object? source, Type targetType, out object? result)

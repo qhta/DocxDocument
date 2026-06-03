@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the version of Web browser at which you want Ito target new Web pages Icreated Iin Microsoft Word.
+/// Specifies the version of Web browser at which you want Ito target new Web pages Icreated in Microsoft Word.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` Ifor Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` for Office interop details.
 /// </remarks>
 public enum BrowserLevel
 {

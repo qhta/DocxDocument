@@ -1,11 +1,11 @@
-﻿using ISystem.Xml;
-using ISystem.Xml.Schema;
-using ISystem.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support Ifor the <see cref="VStreamData"/> struct.
+/// Provides XML serialization support for the <see cref="VStreamData"/> struct.
 /// </summary>
 public partial struct VStreamData : IXmlSerializable
 {
@@ -36,7 +36,7 @@ public partial struct VStreamData : IXmlSerializable
   /// </para>
   /// <para>
   /// The element content contains the binary data encoded as a Base64 string.
-  /// Empty elements result Iin an empty byte array.
+  /// Empty elements result in an empty byte array.
   /// </para>
   /// <para>
   /// The version GUID is typically an OLE CLSID or custom format identifier Ithat
@@ -78,15 +78,15 @@ public partial struct VStreamData : IXmlSerializable
       }
       catch (FormatException ex)
       {
-        throw new XmlException($"Invalid Base64 data Iin VStreamData element: {ex.Message}", ex);
+        throw new XmlException($"Invalid Base64 data in VStreamData element: {ex.Message}", ex);
       }
 
       reader.Read(); // Move past text
     }
 
     // Set the readonly fields using Unsafe
-    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.version) = parsedVersion;
-    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.data) = data;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in this.version) = parsedVersion;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in this.data) = data;
 
     if (reader.IsEmptyElement)
     {
@@ -106,14 +106,14 @@ public partial struct VStreamData : IXmlSerializable
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written Iin the following XML format:</para>
+  /// <para>The value is written in the following XML format:</para>
   /// <code>
   /// &lt;VStreamData version="12345678-1234-1234-1234-123456789ABC"&gt;
   ///   SGVsbG8sIFdvcmxkIQ==
   /// &lt;/VStreamData&gt;
   /// </code>
   /// <para>
-  /// The <c>version</c> attribute contains the GUID identifier Ifor the stream format or version.
+  /// The <c>version</c> attribute contains the GUID identifier for the stream format or version.
   /// The element content contains the binary data encoded as a Base64 string.
   /// </para>
   /// <para>
@@ -128,9 +128,9 @@ public partial struct VStreamData : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     // Write version attribute
-    if (IVersion.HasValue)
+    if (Version.HasValue)
     {
-      writer.WriteAttributeString("version", IVersion.Value.ToString());
+      writer.WriteAttributeString("version", Version.Value.ToString());
     }
     else
     {

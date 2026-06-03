@@ -1,11 +1,11 @@
-﻿using ISystem.Globalization;
+﻿using System.Globalization;
 
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite Ifor Percent type serialization Iin both XML and JSON formats.
+/// Test suite for Percent type serialization in both XML and JSON formats.
 /// </summary>
 public static class PercentTest
 {
@@ -109,7 +109,7 @@ public static class PercentTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = ISystem.Text.Encoding.UTF8
+      Encoding = System.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -343,8 +343,8 @@ public static class PercentTest
     Console.WriteLine("--- Testing Percent Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
-    Ifor (int i = 0; i < iterations; i++)
+    var sw = System.Diagnostics.Stopwatch.StartNew();
+    for (int i = 0; i < iterations; i++)
     {
       Percent pct = "50.5%";
     }
@@ -353,7 +353,7 @@ public static class PercentTest
 
     // Test construction from double
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       Percent pct = new Percent(50.5);
     }
@@ -363,7 +363,7 @@ public static class PercentTest
     // Test ToString performance
     Percent testPct = new Percent(50.5);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testPct.ToString();
     }
@@ -372,7 +372,7 @@ public static class PercentTest
 
     // Test ToString with precision
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       string str = testPct.ToString(2, "%");
     }
@@ -392,7 +392,7 @@ public static class PercentTest
     };
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -402,7 +402,7 @@ public static class PercentTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    Ifor (int i = 0; i < iterations / 10; i++)
+    for (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<PercentTestData>(jsonData);
     }
@@ -413,7 +413,7 @@ public static class PercentTest
     Percent pct1 = new Percent(50.5);
     Percent pct2 = new Percent(50.5);
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int result = pct1.CompareTo(pct2);
     }
@@ -422,7 +422,7 @@ public static class PercentTest
 
     // Test equality performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       bool result = pct1.Equals(pct2);
     }
@@ -431,7 +431,7 @@ public static class PercentTest
 
     // Test implicit conversions performance
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       double value = pct1.ToDouble(null);
     }
@@ -439,7 +439,7 @@ public static class PercentTest
     Console.WriteLine($"ToDouble() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    Ifor (int i = 0; i < iterations; i++)
+    for (int i = 0; i < iterations; i++)
     {
       int value = (int)pct1;
     }
@@ -461,7 +461,7 @@ public static class PercentTest
 public class PercentTestData
 {
   [XmlElement("CompletionRate")]
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Percent CompletionRate { get; set; }
 
   [XmlElement("SuccessRate")]
@@ -484,7 +484,7 @@ public class PercentTestData
 }
 
 /// <summary>
-/// Simple wrapper class Ifor testing Deserialization scenarios.
+/// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
 public class PercentWrapper
 {

@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the GeoMappingLevel enumeration.
-/// Used Iin types such as Geography, GeoMappingLevel, GeographyConverter.
+/// Used in types such as Geography, GeoMappingLevel, GeographyConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum GeoMappingLevel
