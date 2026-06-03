@@ -67,7 +67,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<IMailMerg
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
-  public IMailMergeField AddIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo, object trueAutoText, object trueText, object falseAutoText, object falseText);
+  public IMailMergeField AddIf(IRange range, string mergeField, MailMergeComparison comparison, object compareTo, object trueAutoText, object trueText, object falseAutoText, object falseText);
 
   /// <summary>
   /// Inserts a MERGEREC field at the specified range.
@@ -114,7 +114,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<IMailMerg
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
-  public IMailMergeField AddNextIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo);
+  public IMailMergeField AddNextIf(IRange range, string mergeField, MailMergeComparison comparison, object compareTo);
 
   /// <summary>
   /// Inserts a SET field at the specified range.
@@ -142,7 +142,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<IMailMerg
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
-  public IMailMergeField AddSkipIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo);
+  public IMailMergeField AddSkipIf(IRange range, string mergeField, MailMergeComparison comparison, object compareTo);
 
   #endregion methods
 }

@@ -67,7 +67,7 @@ public partial class MailMergeFields : InteropCollection<MailMergeField>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
-  public MailMergeField AddIf(Range range, string mergeField, WdMailMergeComparison comparison, object compareTo, object trueAutoText, object trueText, object falseAutoText, object falseText) { throw new NotImplementedException(); }
+  public MailMergeField AddIf(Range range, string mergeField, MailMergeComparison comparison, object compareTo, object trueAutoText, object trueText, object falseAutoText, object falseText) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Inserts a MERGEREC field at the specified range.
@@ -114,7 +114,7 @@ public partial class MailMergeFields : InteropCollection<MailMergeField>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
-  public MailMergeField AddNextIf(Range range, string mergeField, WdMailMergeComparison comparison, object compareTo) { throw new NotImplementedException(); }
+  public MailMergeField AddNextIf(Range range, string mergeField, MailMergeComparison comparison, object compareTo) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Inserts a SET field at the specified range.
@@ -142,7 +142,7 @@ public partial class MailMergeFields : InteropCollection<MailMergeField>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
-  public MailMergeField AddSkipIf(Range range, string mergeField, WdMailMergeComparison comparison, object compareTo) { throw new NotImplementedException(); }
+  public MailMergeField AddSkipIf(Range range, string mergeField, MailMergeComparison comparison, object compareTo) { throw new NotImplementedException(); }
 
   #endregion methods
 }

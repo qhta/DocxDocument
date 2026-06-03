@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedatasource?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMailMergeDataSource
+public enum MailMergeDataSourceType
 {
   /// <summary>
   /// From Microsoft Word.

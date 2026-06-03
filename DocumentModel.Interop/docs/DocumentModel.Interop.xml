@@ -46282,7 +46282,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addfillin?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object,System.Object,System.Object,System.Object,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object,System.Object,System.Object,System.Object,System.Object)">
             <summary>
             Inserts an IF field at the specified range.
             </summary>
@@ -46333,7 +46333,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnext?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddNextIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddNextIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object)">
             <summary>
             Inserts a NEXTIF field at the specified range.
             </summary>
@@ -46361,7 +46361,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddSkipIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.MailMergeFields.AddSkipIf(DocumentModel.Interop.Word.Range,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object)">
             <summary>
             Inserts a SKIPIF field at the specified range.
             </summary>
@@ -74688,7 +74688,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addfillin?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object,System.Object,System.Object,System.Object,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object,System.Object,System.Object,System.Object,System.Object)">
             <summary>
             Inserts an IF field at the specified range.
             </summary>
@@ -74739,7 +74739,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnext?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddNextIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddNextIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object)">
             <summary>
             Inserts a NEXTIF field at the specified range.
             </summary>
@@ -74767,7 +74767,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddSkipIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.WdMailMergeComparison,System.Object)">
+        <member name="M:DocumentModel.Interop.Word.IMailMergeFields.AddSkipIf(DocumentModel.Interop.Word.IRange,System.String,DocumentModel.Interop.Word.MailMergeComparison,System.Object)">
             <summary>
             Inserts a SKIPIF field at the specified range.
             </summary>

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedefaultrecord?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMailMergeDefaultRecord
+public enum MailMergeDefaultRecord
 {
   /// <summary>
   /// Use the first record in the result set as the default record.

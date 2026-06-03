@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemailformat?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMailMergeMailFormat
+public enum MailMergeMailFormat
 {
   /// <summary>
   /// Sends mail merge e-mail documents using plain text.

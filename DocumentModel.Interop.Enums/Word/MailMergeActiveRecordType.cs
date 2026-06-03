@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergeactiverecord?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMailMergeActiveRecord
+public enum MailMergeActiveRecordType
 {
   /// <summary>
   /// The previous record in the data source.
