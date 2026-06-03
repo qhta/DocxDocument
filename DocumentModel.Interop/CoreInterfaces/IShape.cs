@@ -156,7 +156,7 @@ public interface IShape: IInteropObject
   /// Gets the `Script` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.script?view=office-pia"/>
-  public Script Script { get; }
+  public IScript Script { get; }
   /// <summary>
   /// Gets or sets the `AlternativeText` property.
   /// </summary>
@@ -191,7 +191,7 @@ public interface IShape: IInteropObject
   /// Gets the `ParentGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.parentgroup?view=office-pia"/>
-  public Shape ParentGroup { get; }
+  public IShape ParentGroup { get; }
   /// <summary>
   /// Gets the `CanvasItems` property.
   /// </summary>
@@ -211,7 +211,7 @@ public interface IShape: IInteropObject
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe2?view=office-pia"/>
-  public TextFrame2 TextFrame2 { get; }
+  public ITextFrame2 TextFrame2 { get; }
   /// <summary>
   /// Gets the `HasChart` property.
   /// </summary>
@@ -256,7 +256,7 @@ public interface IShape: IInteropObject
   /// Gets the `SmartArt` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.smartart?view=office-pia"/>
-  public SmartArt SmartArt { get; }
+  public ISmartArt SmartArt { get; }
   /// <summary>
   /// Gets or sets the `Title` property.
   /// </summary>
@@ -281,7 +281,7 @@ public interface IShape: IInteropObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.duplicate?view=office-pia"/>
-  public Shape Duplicate();
+  public IShape Duplicate();
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
@@ -396,7 +396,7 @@ public interface IShape: IInteropObject
   /// </summary>
   /// <param name="Layout">The `Layout` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.converttexttosmartart?view=office-pia"/>
-  public void ConvertTextToSmartArt(SmartArtLayout Layout);
+  public void ConvertTextToSmartArt(ISmartArtLayout Layout);
 
   #endregion methods
 }

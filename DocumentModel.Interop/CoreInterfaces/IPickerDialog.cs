@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Provides dialog UI functionality for picking people or data.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog?view=office-pia"/>
-public interface IPickerDialog: IInteropObject
+public interface IPickerDialog : IInteropObject
 {
   /// <summary>
   /// Gets or sets the `DataHandlerId` property.
@@ -21,17 +21,17 @@ public interface IPickerDialog: IInteropObject
   /// Gets the `Properties` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.properties?view=office-pia"/>
-  public PickerProperties Properties { get; }
+  public IPickerProperties Properties { get; }
 
 
   #region methods
 
-/// <summary>
+  /// <summary>
   /// Creates an empty `PickerResults` object.
   /// </summary>
   /// <returns>The created picker results collection.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.createpickerresults?view=office-pia"/>
-  public PickerResults CreatePickerResults();
+  public IPickerResults CreatePickerResults();
   /// <summary>
   /// Displays the picker dialog with the specified options.
   /// </summary>
@@ -39,7 +39,7 @@ public interface IPickerDialog: IInteropObject
   /// <param name="ExistingResults">The `ExistingResults` parameter.</param>
   /// <returns>The selected picker results.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.show?view=office-pia"/>
-  public PickerResults Show(bool IsMultiSelect, PickerResults ExistingResults);
+  public IPickerResults Show(bool IsMultiSelect, IPickerResults ExistingResults);
   /// <summary>
   /// Resolves a token and returns matching picker results.
   /// </summary>
@@ -47,7 +47,7 @@ public interface IPickerDialog: IInteropObject
   /// <param name="duplicateDlgMode">The `duplicateDlgMode` parameter.</param>
   /// <returns>The resolved picker results.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.resolve?view=office-pia"/>
-  public PickerResults Resolve(string TokenText, int duplicateDlgMode);
+  public IPickerResults Resolve(string TokenText, int duplicateDlgMode);
 
   #endregion methods
 }

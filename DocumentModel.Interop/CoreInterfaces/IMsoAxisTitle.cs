@@ -101,7 +101,7 @@ public interface IMsoAxisTitle: IMsoChartTitle
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.format?view=office-pia"/>
-  public new MsoChartFormat Format { get; }
+  public new IMsoChartFormat Format { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>

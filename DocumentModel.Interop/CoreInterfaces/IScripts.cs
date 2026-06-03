@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of HTML script blocks in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
-public interface IScripts: IInteropCollection<Script>
+public interface IScripts: IInteropCollection<IScript>
 {
 
 
@@ -19,7 +19,7 @@ public interface IScripts: IInteropCollection<Script>
   /// <param name="Index">The script name, ID, or index.</param>
   /// <returns>The requested script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
-  public Script Item(object Index);
+  public IScript Item(object Index);
   /// <summary>
   /// Adds a script to the collection.
   /// </summary>
@@ -31,7 +31,7 @@ public interface IScripts: IInteropCollection<Script>
   /// <param name="ScriptText">The script content.</param>
   /// <returns>The added script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
-  public Script Add
+  public IScript Add
   (object Anchor, ScriptLocation Location,
     ScriptLanguage Language, string Id, string Extended,
     string ScriptText);

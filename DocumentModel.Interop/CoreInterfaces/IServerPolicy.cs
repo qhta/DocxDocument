@@ -11,7 +11,7 @@ public interface IServerPolicy: IInteropObject
   /// Gets a policy item by name or index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy.item?view=office-pia"/>
-  public PolicyItem this[object Index] { get; }
+  public IPolicyItem this[object Index] { get; }
   /// <summary>
   /// Gets the server policy ID.
   /// </summary>

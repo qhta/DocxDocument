@@ -7,18 +7,6 @@ namespace DocumentModel.Interop.Word;
 public partial class Range : InteropObject
 {
   /// <summary>
-  /// Returns or sets the text in the specified range.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.text?view=word-pia"/>
-  public string? Text { get; set; }
-
-  /// <summary>
-  /// Returns or sets a Range object that includes the formatted text in the specified range or selection.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.formattedtext?view=word-pia"/>
-  public Range FormattedText { get; set; }
-
-  /// <summary>
   /// Returns or sets the starting character position of a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.start?view=word-pia"/>
@@ -31,16 +19,37 @@ public partial class Range : InteropObject
   public int End { get; set; }
 
   /// <summary>
+  /// Returns a Range object that represents all the properties of the specified range.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.duplicate?view=word-pia"/>
+  public Range Duplicate => new Range
+  {
+    Parent = this.Parent,
+    Start = this.Start,
+    End = this.End,
+  };
+
+  /// <summary>
+  /// Returns or sets the text in the specified range.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.text?view=word-pia"/>
+  public string? Text { get; set; }
+
+  /// <summary>
+  /// Returns or sets a Range object that includes the formatted text in the specified range or selection.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.formattedtext?view=word-pia"/>
+  public Range FormattedText { get; set; }
+
+
+
+  /// <summary>
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
   public Font Font { get; set; }
 
-  /// <summary>
-  /// Returns a Range object that represents all the properties of the specified range.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.duplicate?view=word-pia"/>
-  public Range Duplicate { get; set; }
+
 
   /// <summary>
   /// Returns the story type for the specified range.
@@ -597,7 +606,7 @@ public partial class Range : InteropObject
 
   #region methods
 
-/// <summary>
+  /// <summary>
   /// Returns information about the range.
   /// </summary>
   /// <param name="Type">The type of information to retrieve.</param>

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of files in a shared workspace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia"/>
-public interface ISharedWorkspaceFiles: IInteropCollection<SharedWorkspaceFile>
+public interface ISharedWorkspaceFiles: IInteropCollection<ISharedWorkspaceFile>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
@@ -26,7 +26,7 @@ public interface ISharedWorkspaceFiles: IInteropCollection<SharedWorkspaceFile>
   /// <param name="KeepInSync">Whether to keep the file synchronized.</param>
   /// <returns>The added shared workspace file.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles.add?view=office-pia"/>
-  public SharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
+  public ISharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
 
   #endregion methods
 }

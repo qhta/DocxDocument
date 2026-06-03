@@ -17,27 +17,27 @@ public interface ISharedWorkspace: IInteropObject
   /// Gets the `Members` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.members?view=office-pia"/>
-  public SharedWorkspaceMembers Members { get; }
+  public ISharedWorkspaceMembers Members { get; }
   /// <summary>
   /// Gets the `Tasks` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.tasks?view=office-pia"/>
-  public SharedWorkspaceTasks Tasks { get; }
+  public ISharedWorkspaceTasks Tasks { get; }
   /// <summary>
   /// Gets the `Files` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.files?view=office-pia"/>
-  public SharedWorkspaceFiles Files { get; }
+  public ISharedWorkspaceFiles Files { get; }
   /// <summary>
   /// Gets the `Folders` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.folders?view=office-pia"/>
-  public SharedWorkspaceFolders Folders { get; }
+  public ISharedWorkspaceFolders Folders { get; }
   /// <summary>
   /// Gets the `Links` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.links?view=office-pia"/>
-  public SharedWorkspaceLinks Links { get; }
+  public ISharedWorkspaceLinks Links { get; }
   /// <summary>
   /// Gets the `URL` property.
   /// </summary>

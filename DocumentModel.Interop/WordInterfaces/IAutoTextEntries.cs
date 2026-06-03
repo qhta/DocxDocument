@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of AutoTextEntry objects that represent the AutoText entries in a template.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries?view=word-pia"/>
-public interface IAutoTextEntries : IInteropObject, IInteropCollection<AutoTextEntry>
+public interface IAutoTextEntries : IInteropObject, IInteropCollection<IAutoTextEntry>
 {
 
 
@@ -31,7 +31,7 @@ public interface IAutoTextEntries : IInteropObject, IInteropCollection<AutoTextE
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.appendtospike?view=word-pia"/>
-  public AutoTextEntry AppendToSpike(Range Range);
+  public IAutoTextEntry AppendToSpike(IRange Range);
 
   #endregion methods
 }

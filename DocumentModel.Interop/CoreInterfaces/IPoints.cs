@@ -17,7 +17,7 @@ public interface IPoints: IEnumerable
   /// Gets a chart point at the specified index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.points._default?view=office-pia"/>
-  public ChartPoint this[int Index] { get; }
+  public IChartPoint this[int Index] { get; }
 
 
   #region methods

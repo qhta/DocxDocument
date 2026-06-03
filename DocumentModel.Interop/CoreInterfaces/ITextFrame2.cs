@@ -81,17 +81,17 @@ public interface ITextFrame2: IInteropObject
   /// Gets the `TextRange` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.textrange?view=office-pia"/>
-  public TextRange2 TextRange { get; }
+  public ITextRange2 TextRange { get; }
   /// <summary>
   /// Gets the `Column` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.column?view=office-pia"/>
-  public TextColumn2 Column { get; }
+  public ITextColumn2 Column { get; }
   /// <summary>
   /// Gets the `Ruler` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.ruler?view=office-pia"/>
-  public Ruler2 Ruler { get; }
+  public IRuler2 Ruler { get; }
   /// <summary>
   /// Gets or sets the `NoTextRotation` property.
   /// </summary>

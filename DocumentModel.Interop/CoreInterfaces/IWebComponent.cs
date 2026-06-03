@@ -8,10 +8,10 @@ namespace DocumentModel.Interop.Core;
 public interface IWebComponent
 {
   /// <summary>
-  /// Gets the `Shape` property.
+  /// Gets the `IShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.shape?view=office-pia"/>
-  public object Shape { get; }
+  public object IShape { get; }
   /// <summary>
   /// Gets or sets the `URL` property.
   /// </summary>

@@ -56,7 +56,7 @@ public interface IPictureFormat: IInteropObject
   /// Gets the `Crop` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.crop?view=office-pia"/>
-  public Crop Crop { get; }
+  public ICrop Crop { get; }
 
 
   #region methods

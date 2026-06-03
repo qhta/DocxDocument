@@ -22,7 +22,7 @@ public interface IPictureEffect: IInteropObject
   /// Gets the `EffectParameters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.effectparameters?view=office-pia"/>
-  public EffectParameters EffectParameters { get; }
+  public IEffectParameters EffectParameters { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

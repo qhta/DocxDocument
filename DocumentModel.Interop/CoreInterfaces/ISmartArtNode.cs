@@ -21,7 +21,7 @@ public interface ISmartArtNode: IInteropObject
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.textframe2?view=office-pia"/>
-  public TextFrame2 TextFrame2 { get; }
+  public ITextFrame2 TextFrame2 { get; }
   /// <summary>
   /// Gets the `Level` property.
   /// </summary>
@@ -36,12 +36,12 @@ public interface ISmartArtNode: IInteropObject
   /// Gets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.nodes?view=office-pia"/>
-  public SmartArtNodes Nodes { get; }
+  public ISmartArtNodes Nodes { get; }
   /// <summary>
   /// Gets the `ParentNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.parentnode?view=office-pia"/>
-  public SmartArtNode ParentNode { get; }
+  public ISmartArtNode ParentNode { get; }
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>
@@ -58,7 +58,7 @@ public interface ISmartArtNode: IInteropObject
   /// <param name="Type">The `Type` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.addnode?view=office-pia"/>
-  public SmartArtNode AddNode
+  public ISmartArtNode AddNode
   (SmartArtNodePosition Position,
     SmartArtNodeType Type);
   /// <summary>

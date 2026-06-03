@@ -156,7 +156,7 @@ public interface IMsoDataLabel
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.format?view=office-pia"/>
-  public MsoChartFormat Format { get; }
+  public IMsoChartFormat Format { get; }
   /// <summary>
   /// Gets the `_Height` property.
   /// </summary>

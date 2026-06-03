@@ -11,16 +11,16 @@ public interface IOfficeTheme: IInteropObject
   /// Gets the `ThemeColorScheme` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officetheme.themecolorscheme?view=office-pia"/>
-  public ThemeColorScheme ThemeColorScheme { get; }
+  public IThemeColorScheme ThemeColorScheme { get; }
   /// <summary>
   /// Gets the `ThemeFontScheme` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officetheme.themefontscheme?view=office-pia"/>
-  public ThemeFontScheme ThemeFontScheme { get; }
+  public IThemeFontScheme ThemeFontScheme { get; }
   /// <summary>
   /// Gets the `ThemeEffectScheme` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officetheme.themeeffectscheme?view=office-pia"/>
-  public ThemeEffectScheme ThemeEffectScheme { get; }
+  public IThemeEffectScheme ThemeEffectScheme { get; }
 }
 

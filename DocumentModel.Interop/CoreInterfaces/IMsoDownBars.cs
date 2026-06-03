@@ -31,7 +31,7 @@ public interface IMsoDownBars
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.format?view=office-pia"/>
-  public MsoChartFormat Format { get; }
+  public IMsoChartFormat Format { get; }
 
 
   #region methods

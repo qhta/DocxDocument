@@ -22,7 +22,7 @@ public interface IScopeFolder: IInteropObject
   /// Gets the collection of subfolders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.scopefolders?view=office-pia"/>
-  public ScopeFolders ScopeFolders { get; }
+  public IScopeFolders ScopeFolders { get; }
 
 
   #region methods

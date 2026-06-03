@@ -19,10 +19,10 @@ public interface ITemplate : IInteropObject
   public string Path { get; }
 
   /// <summary>
-  /// Returns a AutoTextEntries collection that represents all the AutoText entries in the specified template.
+  /// Returns a IAutoTextEntries collection that represents all the AutoText entries in the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.autotextentries?view=word-pia"/>
-  public AutoTextEntries AutoTextEntries { get; }
+  public IAutoTextEntries IAutoTextEntries { get; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.

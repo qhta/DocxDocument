@@ -21,7 +21,7 @@ public interface IParagraphFormat2: IInteropObject
   /// Gets the `Bullet` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.bullet?view=office-pia"/>
-  public BulletFormat2 Bullet { get; }
+  public IBulletFormat2 Bullet { get; }
   /// <summary>
   /// Gets or sets the `FarEastLineBreakLevel` property.
   /// </summary>
@@ -86,7 +86,7 @@ public interface IParagraphFormat2: IInteropObject
   /// Gets the `TabStops` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.tabstops?view=office-pia"/>
-  public TabStops2 TabStops { get; }
+  public ITabStops2 TabStops { get; }
   /// <summary>
   /// Gets or sets the `TextDirection` property.
   /// </summary>

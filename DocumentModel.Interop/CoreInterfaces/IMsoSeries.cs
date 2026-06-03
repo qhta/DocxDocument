@@ -196,7 +196,7 @@ public interface IMsoSeries
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.format?view=office-pia"/>
-  public MsoChartFormat Format { get; }
+  public IMsoChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>

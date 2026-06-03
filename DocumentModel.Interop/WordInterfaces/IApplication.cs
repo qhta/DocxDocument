@@ -616,7 +616,7 @@ public interface IApplication : IInteropObject
   /// Returns a Bibliography object that represents the bibliography references sources stored in Microsoft Office Word. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.bibliography?view=word-pia"/>
-  public Bibliography Bibliography { get; }
+  public IBibliography Bibliography { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word shows a preview of the formatting for styles in the Styles dialog box. Read/write.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of metadata properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
-public interface IMetaProperties: IInteropCollection<MetaProperty>
+public interface IMetaProperties: IInteropCollection<IMetaProperty>
 {
   /// <summary>
   /// Gets the `ValidationError` property.
@@ -28,7 +28,7 @@ public interface IMetaProperties: IInteropCollection<MetaProperty>
   /// <param name="InternalName">The `InternalName` parameter.</param>
   /// <returns>The matching metadata property.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
-  public MetaProperty GetItemByInternalName(string InternalName);
+  public IMetaProperty GetItemByInternalName(string InternalName);
   /// <summary>
   /// Validates all metadata properties.
   /// </summary>

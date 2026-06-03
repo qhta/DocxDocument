@@ -16,7 +16,7 @@ public interface IConnectorFormat: IInteropObject
   /// Gets the `BeginConnectedShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.beginconnectedshape?view=office-pia"/>
-  public Shape BeginConnectedShape { get; }
+  public IShape BeginConnectedShape { get; }
   /// <summary>
   /// Gets the `BeginConnectionSite` property.
   /// </summary>
@@ -31,7 +31,7 @@ public interface IConnectorFormat: IInteropObject
   /// Gets the `EndConnectedShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.endconnectedshape?view=office-pia"/>
-  public Shape EndConnectedShape { get; }
+  public IShape EndConnectedShape { get; }
   /// <summary>
   /// Gets the `EndConnectionSite` property.
   /// </summary>
@@ -52,7 +52,7 @@ public interface IConnectorFormat: IInteropObject
   /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
   /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.beginconnect?view=office-pia"/>
-  public void BeginConnect(Shape ConnectedShape, int ConnectionSite);
+  public void BeginConnect(IShape ConnectedShape, int ConnectionSite);
   /// <summary>
   /// Disconnects the beginning of the connector.
   /// </summary>
@@ -64,7 +64,7 @@ public interface IConnectorFormat: IInteropObject
   /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
   /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.endconnect?view=office-pia"/>
-  public void EndConnect(Shape ConnectedShape, int ConnectionSite);
+  public void EndConnect(IShape ConnectedShape, int ConnectionSite);
   /// <summary>
   /// Disconnects the end of the connector.
   /// </summary>

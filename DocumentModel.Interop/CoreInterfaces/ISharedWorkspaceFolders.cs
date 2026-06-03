@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders?view=office-pia` for Office interop details.
 /// </remarks>
-public interface ISharedWorkspaceFolders: IInteropCollection<SharedWorkspaceFolder>
+public interface ISharedWorkspaceFolders: IInteropCollection<ISharedWorkspaceFolder>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
@@ -26,7 +26,7 @@ public interface ISharedWorkspaceFolders: IInteropCollection<SharedWorkspaceFold
   /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
-  public SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
+  public ISharedWorkspaceFolder Add(string FolderName, object ParentFolder);
 
   #endregion methods
 }

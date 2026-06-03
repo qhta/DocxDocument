@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange?view=office-pia"/>
-public interface IShapeRange: IInteropCollection<Shape>
+public interface IShapeRange: IInteropCollection<IShape>
 {
   /// <summary>
   /// Gets or sets the `Adjustments` property.
@@ -158,7 +158,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// Gets the `Script` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.script?view=office-pia"/>
-  public Script Script { get; }
+  public IScript Script { get; }
   /// <summary>
   /// Gets or sets the `AlternativeText` property.
   /// </summary>
@@ -193,7 +193,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// Gets the `ParentGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.parentgroup?view=office-pia"/>
-  public Shape ParentGroup { get; }
+  public IShape ParentGroup { get; }
   /// <summary>
   /// Gets the `CanvasItems` property.
   /// </summary>
@@ -213,7 +213,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.textframe2?view=office-pia"/>
-  public TextFrame2 TextFrame2 { get; }
+  public ITextFrame2 TextFrame2 { get; }
   /// <summary>
   /// Gets the `HasChart` property.
   /// </summary>
@@ -264,7 +264,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.item?view=office-pia"/>
-  public Shape Item(object Index);
+  public IShape Item(object Index);
   /// <summary>
   /// Invokes `Align`.
   /// </summary>
@@ -324,7 +324,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.group?view=office-pia"/>
-  public Shape Group();
+  public IShape Group();
   /// <summary>
   /// Invokes `PickUp`.
   /// </summary>
@@ -335,7 +335,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.regroup?view=office-pia"/>
-  public Shape Regroup();
+  public IShape Regroup();
   /// <summary>
   /// Invokes `RerouteConnections`.
   /// </summary>
@@ -422,7 +422,7 @@ public interface IShapeRange: IInteropCollection<Shape>
   /// <param name="MergeCmd">The `MergeCmd` parameter.</param>
   /// <param name="PrimaryShape">The `PrimaryShape` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.mergeshapes?view=office-pia"/>
-  public void MergeShapes(MergeCmd MergeCmd, Shape PrimaryShape);
+  public void MergeShapes(MergeCmd MergeCmd, IShape PrimaryShape);
 
   #endregion methods
 }

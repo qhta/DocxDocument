@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of picture effects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffects?view=office-pia"/>
-public interface IPictureEffects: IInteropCollection<PictureEffect>
+public interface IPictureEffects: IInteropCollection<IPictureEffect>
 {
 
 
@@ -19,7 +19,7 @@ public interface IPictureEffects: IInteropCollection<PictureEffect>
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The inserted picture effect.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffects.insert?view=office-pia"/>
-  public PictureEffect Insert(PictureEffectType EffectType, int Position);
+  public IPictureEffect Insert(PictureEffectType EffectType, int Position);
   /// <summary>
   /// Deletes a picture effect from the collection.
   /// </summary>

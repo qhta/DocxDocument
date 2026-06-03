@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
 /// </remarks>
-public interface ISharedWorkspaceMembers: IInteropCollection<SharedWorkspaceMember>
+public interface ISharedWorkspaceMembers: IInteropCollection<ISharedWorkspaceMember>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
@@ -28,7 +28,7 @@ public interface ISharedWorkspaceMembers: IInteropCollection<SharedWorkspaceMemb
   /// <param name="Role">The `Role` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.add?view=office-pia"/>
-  public SharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
+  public ISharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
 
   #endregion methods
 }

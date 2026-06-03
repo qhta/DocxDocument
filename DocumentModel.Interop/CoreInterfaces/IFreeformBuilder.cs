@@ -27,11 +27,11 @@ public interface IFreeformBuilder: IInteropObject
   (SegmentType SegmentType, EditingType EditingType, float X1, float Y1, float X2, float Y2,
     float X3, float Y3);
   /// <summary>
-  /// Converts the freeform builder into a Shape object.
+  /// Converts the freeform builder into a IShape object.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.converttoshape?view=office-pia"/>
-  public Shape ConvertToShape();
+  public IShape ConvertToShape();
 
   #endregion methods
 }

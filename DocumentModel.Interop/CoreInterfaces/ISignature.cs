@@ -58,7 +58,7 @@ public interface ISignature: IInteropObject
   /// Gets the `Details` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.details?view=office-pia"/>
-  public SignatureInfo Details { get; }
+  public ISignatureInfo Details { get; }
   /// <summary>
   /// Gets the `CanSetup` property.
   /// </summary>
@@ -68,7 +68,7 @@ public interface ISignature: IInteropObject
   /// Gets the `Setup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.setup?view=office-pia"/>
-  public SignatureSetup Setup { get; }
+  public ISignatureSetup Setup { get; }
   /// <summary>
   /// Gets the `IsSignatureLine` property.
   /// </summary>

@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks?view=office-pia` for Office interop details.
 /// </remarks>
-public interface ISharedWorkspaceTasks: IInteropCollection<SharedWorkspaceTask>
+public interface ISharedWorkspaceTasks: IInteropCollection<ISharedWorkspaceTask>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
@@ -30,7 +30,7 @@ public interface ISharedWorkspaceTasks: IInteropCollection<SharedWorkspaceTask>
   /// <param name="DueDate">The `DueDate` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
-  public SharedWorkspaceTask Add
+  public ISharedWorkspaceTask Add
     (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
 
   #endregion methods

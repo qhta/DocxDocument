@@ -16,7 +16,7 @@ public interface IPickerField: IInteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.type?view=office-pia"/>
-  public PickerField Type { get; }
+  public IPickerField Type { get; }
   /// <summary>
   /// Gets the `IsHidden` property.
   /// </summary>

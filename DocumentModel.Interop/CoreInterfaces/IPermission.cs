@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia"/>
-public interface IPermission: IInteropCollection<UserPermission>
+public interface IPermission: IInteropCollection<IUserPermission>
 {
   /// <summary>
   /// Gets or sets the `EnableTrustedBrowser` property.
@@ -60,7 +60,7 @@ public interface IPermission: IInteropCollection<UserPermission>
   /// <param name="ExpirationDate">The `ExpirationDate` parameter.</param>
   /// <returns>The created user permission.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission.add?view=office-pia"/>
-  public UserPermission Add(string UserId, object Permission, object ExpirationDate);
+  public IUserPermission Add(string UserId, object Permission, object ExpirationDate);
   /// <summary>
   /// Applies a permission policy to the active document.
   /// </summary>

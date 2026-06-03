@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of `PickerResult` objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults?view=office-pia"/>
-public interface IPickerResults: IInteropCollection<PickerResult>
+public interface IPickerResults: IInteropCollection<IPickerResult>
 {
 
 
@@ -23,7 +23,7 @@ public interface IPickerResults: IInteropCollection<PickerResult>
   /// <param name="SubItems">The `SubItems` parameter.</param>
   /// <returns>The added picker result.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults.add?view=office-pia"/>
-  public PickerResult Add(string Id, string DisplayName, string Type, string SIPId, object ItemData, object SubItems);
+  public IPickerResult Add(string Id, string DisplayName, string Type, string SIPId, object ItemData, object SubItems);
 
   #endregion methods
 }

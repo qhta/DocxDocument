@@ -13,27 +13,27 @@ public interface ISmartArt: IInteropObject
   /// Gets the `AllNodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.allnodes?view=office-pia"/>
-  public SmartArtNodes AllNodes { get; }
+  public ISmartArtNodes AllNodes { get; }
   /// <summary>
   /// Gets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.nodes?view=office-pia"/>
-  public SmartArtNodes Nodes { get; }
+  public ISmartArtNodes Nodes { get; }
   /// <summary>
   /// Gets or sets the `Layout` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.layout?view=office-pia"/>
-  public SmartArtLayout Layout { get; set; }
+  public ISmartArtLayout Layout { get; set; }
   /// <summary>
   /// Gets or sets the `QuickStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.quickstyle?view=office-pia"/>
-  public SmartArtQuickStyle QuickStyle { get; set; }
+  public ISmartArtQuickStyle QuickStyle { get; set; }
   /// <summary>
   /// Gets or sets the `Color` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.color?view=office-pia"/>
-  public SmartArtColor Color { get; set; }
+  public ISmartArtColor Color { get; set; }
   /// <summary>
   /// Gets or sets the `Reverse` property.
   /// </summary>

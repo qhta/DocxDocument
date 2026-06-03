@@ -7,18 +7,18 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia"/>
-public interface IShapes: IInteropCollection<Shape>
+public interface IShapes: IInteropCollection<IShape>
 {
   /// <summary>
   /// Gets the `Background` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.background?view=office-pia"/>
-  public Shape Background { get; }
+  public IShape Background { get; }
   /// <summary>
   /// Gets the `Default` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.default?view=office-pia"/>
-  public Shape Default { get; }
+  public IShape Default { get; }
 
 
   #region methods
@@ -29,7 +29,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.item?view=office-pia"/>
-  public Shape Item(object Index);
+  public IShape Item(object Index);
   /// <summary>
   /// Invokes `AddCallout`.
   /// </summary>
@@ -40,7 +40,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcallout?view=office-pia"/>
-  public Shape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
+  public IShape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddConnector`.
   /// </summary>
@@ -51,14 +51,14 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addconnector?view=office-pia"/>
-  public Shape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcurve?view=office-pia"/>
-  public Shape AddCurve(object SafeArrayOfPoints);
+  public IShape AddCurve(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddLabel`.
   /// </summary>
@@ -69,7 +69,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addlabel?view=office-pia"/>
-  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddLine`.
   /// </summary>
@@ -79,7 +79,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addline?view=office-pia"/>
-  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddPicture`.
   /// </summary>
@@ -92,7 +92,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture?view=office-pia"/>
-  public Shape AddPicture
+  public IShape AddPicture
   (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
     float Height);
   /// <summary>
@@ -101,7 +101,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpolyline?view=office-pia"/>
-  public Shape AddPolyline(object SafeArrayOfPoints);
+  public IShape AddPolyline(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddShape`.
   /// </summary>
@@ -112,7 +112,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addshape?view=office-pia"/>
-  public Shape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
+  public IShape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddTextEffect`.
   /// </summary>
@@ -126,7 +126,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Top">The `Top` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtexteffect?view=office-pia"/>
-  public Shape AddTextEffect
+  public IShape AddTextEffect
   (PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold,
     TriState FontItalic, float Left, float Top);
   /// <summary>
@@ -139,7 +139,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtextbox?view=office-pia"/>
-  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `BuildFreeform`.
   /// </summary>
@@ -171,7 +171,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.adddiagram?view=office-pia"/>
-  public Shape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height);
+  public IShape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddCanvas`.
   /// </summary>
@@ -181,7 +181,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcanvas?view=office-pia"/>
-  public Shape AddCanvas(float Left, float Top, float Width, float Height);
+  public IShape AddCanvas(float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddChart`.
   /// </summary>
@@ -192,7 +192,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart?view=office-pia"/>
-  public Shape AddChart
+  public IShape AddChart
     (ChartType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddTable`.
@@ -205,7 +205,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtable?view=office-pia"/>
-  public Shape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
+  public IShape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddSmartArt`.
   /// </summary>
@@ -216,7 +216,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addsmartart?view=office-pia"/>
-  public Shape AddSmartArt(SmartArtLayout Layout, float Left, float Top, float Width, float Height);
+  public IShape AddSmartArt(ISmartArtLayout Layout, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddChart2`.
   /// </summary>
@@ -229,7 +229,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="NewLayout">The `NewLayout` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart2?view=office-pia"/>
-  public Shape AddChart2
+  public IShape AddChart2
   (int Style, ChartType Type, float Left, float Top, float Width,
     float Height, bool NewLayout);
   /// <summary>
@@ -245,7 +245,7 @@ public interface IShapes: IInteropCollection<Shape>
   /// <param name="Compress">The `Compress` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture2?view=office-pia"/>
-  public Shape AddPicture2
+  public IShape AddPicture2
   (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
     float Height, PictureCompress Compress);
 

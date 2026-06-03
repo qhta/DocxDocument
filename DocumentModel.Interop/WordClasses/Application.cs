@@ -100,7 +100,7 @@ public partial class _Application : InteropObject
   /// Returns a Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.assistant?view=word-pia"/>
-  public Core.Assistant Assistant { get; set; }
+  public Core.IAssistant Assistant { get; set; }
 
   /// <summary>
   /// Returns a Browser object that represents the Select Browse Object tool on the vertical scroll bar.
@@ -262,7 +262,7 @@ public partial class _Application : InteropObject
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.commandbars?view=word-pia"/>
-  public Core.CommandBars CommandBars { get; set; }
+  public Core.ICommandBars CommandBars { get; set; }
 
   /// <summary>
   /// Returns a VBE object that represents the Visual Basic Editor.
@@ -436,7 +436,7 @@ public partial class _Application : InteropObject
   /// Returns a FileSearch object that can be used to search for files using either an absolute or relative path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.filesearch?view=word-pia"/>
-  public Core.FileSearch FileSearch { get; set; }
+  public Core.IFileSearch FileSearch { get; set; }
 
   /// <summary>
   /// Returns the mail system (or systems) installed on the host machine.
@@ -496,7 +496,7 @@ public partial class _Application : InteropObject
   /// Returns a reference to the COMAddIns collection that represents all the Component Object Model (COM) add-ins currently loaded in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.comaddins?view=word-pia"/>
-  public Core.COMAddIns COMAddIns { get; set; }
+  public Core.ICOMAddIns COMAddIns { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically detects the language you are using as you type. Returns True if Microsoft Word automatically detects the language you are using as you type, and False if it does not automatically detect the language.
@@ -508,7 +508,7 @@ public partial class _Application : InteropObject
   /// Returns a LanguageSettings object, which contains information about the language settings in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.languagesettings?view=word-pia"/>
-  public Core.LanguageSettings LanguageSettings { get; set; }
+  public Core.ILanguageSettings LanguageSettings { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -520,7 +520,7 @@ public partial class _Application : InteropObject
   /// Returns a AnswerWizard object that contains the files used by the online Help search engine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.answerwizard?view=word-pia"/>
-  public Core.AnswerWizard AnswerWizard { get; set; }
+  public Core.IAnswerWizard AnswerWizard { get; set; }
 
   /// <summary>
   /// Returns or sets how Microsoft Word handles calls to methods and properties that require features not yet installed.
@@ -550,7 +550,7 @@ public partial class _Application : InteropObject
   /// Returns a NewFile object that represents a document listed on the New Document task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.newdocument?view=word-pia"/>
-  public Core.NewFile NewDocument { get; set; }
+  public Core.INewFile NewDocument { get; set; }
 
   /// <summary>
   /// Determines if the Task Pane will be displayed when starting Microsoft Word.
@@ -646,9 +646,7 @@ public partial class _Application : InteropObject
   /// Returns an Microsoft.Office.Core.IAssistance object that represents the Microsoft Office Help Viewer. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.assistance?view=word-pia"/>
-  public Core.
-    Assistance Assistance
-  { get; set; }
+  public Core.IAssistance Assistance { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word opens e-mail attachments in Reading mode. Read/write.
@@ -672,19 +670,19 @@ public partial class _Application : InteropObject
   /// Gets a SmartArtLayouts object that represents the set of SmartArt layouts that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartlayouts?view=word-pia"/>
-  public Core.SmartArtLayouts SmartArtLayouts { get; set; }
+  public Core.ISmartArtLayouts SmartArtLayouts { get; set; }
 
   /// <summary>
   /// Gets a SmartArtQuickStyles object that represents the set of SmartArt styles that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartquickstyles?view=word-pia"/>
-  public Core.SmartArtQuickStyles SmartArtQuickStyles { get; set; }
+  public Core.ISmartArtQuickStyles SmartArtQuickStyles { get; set; }
 
   /// <summary>
   /// Gets a SmartArtColors object that represents the set of color styles that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartcolors?view=word-pia"/>
-  public Core.SmartArtColors SmartArtColors { get; set; }
+  public Core.ISmartArtColors SmartArtColors { get; set; }
 
   /// <summary>
   /// Gets an UndoRecord object that provides a custom entry point into the undo stack.
@@ -696,7 +694,7 @@ public partial class _Application : InteropObject
   /// Gets a PickerDialog object that provides the functionality to select people or data in a dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.pickerdialog?view=word-pia"/>
-  public Core.PickerDialog PickerDialog { get; set; }
+  public Core.IPickerDialog PickerDialog { get; set; }
 
   /// <summary>
   /// Gets a ProtectedViewWindows collection that represents all protected view windows.
@@ -781,7 +779,7 @@ public partial class _Application : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
-  public Core.FileDialog FileDialog(Core.FileDialogType FileDialogType) { throw new NotImplementedException(); }
+  public Core.IFileDialog FileDialog(Core.FileDialogType FileDialogType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.

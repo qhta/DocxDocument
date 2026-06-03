@@ -114,7 +114,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<MailMerge
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
-  public MailMergeField AddNextIf(Range Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public IMailMergeField AddNextIf(IRange Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
 
   /// <summary>
   /// Inserts a SET field at the specified range.
@@ -128,7 +128,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<MailMerge
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
-  public MailMergeField AddSet(Range Range, string Name, string ValueText, AutoTextEntry ValueAutoText);
+  public IMailMergeField AddSet(IRange Range, string Name, string ValueText, IAutoTextEntry ValueAutoText);
 
   /// <summary>
   /// Inserts a SKIPIF field at the specified range.
@@ -142,7 +142,7 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<MailMerge
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
-  public MailMergeField AddSkipIf(Range Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public IMailMergeField AddSkipIf(IRange Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
 
   #endregion methods
 }

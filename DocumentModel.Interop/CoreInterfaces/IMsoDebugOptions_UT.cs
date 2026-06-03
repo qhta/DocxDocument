@@ -27,7 +27,7 @@ public interface IMsoDebugOptions_UT: IInteropObject
   /// </summary>
   /// <returns>The unit test run result.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.run?view=office-pia"/>
-  public MsoDebugOptions_UTRunResult Run();
+  public IMsoDebugOptions_UTRunResult Run();
 
   #endregion methods
 }

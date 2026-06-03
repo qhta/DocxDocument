@@ -52,7 +52,7 @@ public interface IBookmark : IInteropObject
   #region methods
 
 /// <summary>
-  /// Selects the specified Bookmark object.
+  /// Selects the specified IBookmark object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

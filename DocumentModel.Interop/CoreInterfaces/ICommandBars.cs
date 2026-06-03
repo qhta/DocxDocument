@@ -6,18 +6,18 @@ namespace DocumentModel.Interop.Core;
 /// A collection of CommandBar objects that represent the command bars in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars?view=office-pia"/>
-public interface _ICommandBars: IInteropCollection<CommandBar>
+public interface ICommandBars: IInteropCollection<ICommandBar>
 {
   /// <summary>
   /// Gets or sets the `ActionControl` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.actioncontrol?view=office-pia"/>
-  public CommandBarControl ActionControl { get; }
+  public ICommandBarControl ActionControl { get; }
   /// <summary>
   /// Gets the `ActiveMenuBar` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.activemenubar?view=office-pia"/>
-  public CommandBar ActiveMenuBar { get; }
+  public ICommandBar ActiveMenuBar { get; }
   /// <summary>
   /// Gets or sets the `DisplayTooltips` property.
   /// </summary>
@@ -81,7 +81,7 @@ public interface _ICommandBars: IInteropCollection<CommandBar>
   /// <param name="Temporary">The `Temporary` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.add?view=office-pia"/>
-  public CommandBar Add(object Name, object Position, object MenuBar, object Temporary);
+  public ICommandBar Add(object Name, object Position, object MenuBar, object Temporary);
   /// <summary>
   /// Finds a single command bar control that matches the specified criteria.
   /// </summary>
@@ -91,7 +91,7 @@ public interface _ICommandBars: IInteropCollection<CommandBar>
   /// <param name="Visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrol?view=office-pia"/>
-  public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
+  public ICommandBarControl FindControl(object Type, object Id, object Tag, object Visible);
   /// <summary>
   /// Releases focus from the command bars user interface.
   /// </summary>
@@ -106,7 +106,7 @@ public interface _ICommandBars: IInteropCollection<CommandBar>
   /// <param name="Visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrols?view=office-pia"/>
-  public CommandBarControls FindControls(object Type, object Id, object Tag, object Visible);
+  public ICommandBarControls FindControls(object Type, object Id, object Tag, object Visible);
   /// <summary>
   /// Invokes `AddEx`.
   /// </summary>
@@ -117,7 +117,7 @@ public interface _ICommandBars: IInteropCollection<CommandBar>
   /// <param name="TbtrProtection">The `TbtrProtection` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.addex?view=office-pia"/>
-  public CommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection);
+  public ICommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection);
   /// <summary>
   /// Executes the built-in control identified by the specified `idMso` value.
   /// </summary>

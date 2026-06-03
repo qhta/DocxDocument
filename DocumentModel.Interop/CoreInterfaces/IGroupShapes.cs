@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes?view=office-pia"/>
-public interface IGroupShapes: IInteropCollection<Shape>
+public interface IGroupShapes: IInteropCollection<IShape>
 {
 
 
@@ -19,7 +19,7 @@ public interface IGroupShapes: IInteropCollection<Shape>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes.item?view=office-pia"/>
-  public Shape Item(object Index);
+  public IShape Item(object Index);
   /// <summary>
   /// Returns a shape range from the group.
   /// </summary>

@@ -22,7 +22,7 @@ public interface IAxis : IInteropObject
   /// Gets the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axistitle?view=word-pia"/>
-  public AxisTitle AxisTitle { get; }
+  public IAxisTitle AxisTitle { get; }
 
   /// <summary>
   /// Gets or sets the category names.

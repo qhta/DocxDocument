@@ -26,7 +26,7 @@ public interface IWebComponentWindowExternal
   /// Gets the `WebComponent` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal.webcomponent?view=office-pia"/>
-  public WebComponent WebComponent { get; }
+  public IWebComponent WebComponent { get; }
 
 
   #region methods

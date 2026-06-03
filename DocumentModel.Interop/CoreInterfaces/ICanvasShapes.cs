@@ -7,13 +7,13 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes?view=office-pia"/>
-public interface ICanvasShapes: IInteropCollection<Shape>
+public interface ICanvasShapes: IInteropCollection<IShape>
 {
   /// <summary>
   /// Gets the `Background` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.background?view=office-pia"/>
-  public Shape Background { get; }
+  public IShape Background { get; }
 
 
   #region methods
@@ -24,7 +24,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.item?view=office-pia"/>
-  public Shape Item(object Index);
+  public IShape Item(object Index);
   /// <summary>
   /// Invokes `AddCallout`.
   /// </summary>
@@ -35,7 +35,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addcallout?view=office-pia"/>
-  public Shape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
+  public IShape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddConnector`.
   /// </summary>
@@ -46,14 +46,14 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addconnector?view=office-pia"/>
-  public Shape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addcurve?view=office-pia"/>
-  public Shape AddCurve(object SafeArrayOfPoints);
+  public IShape AddCurve(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddLabel`.
   /// </summary>
@@ -64,7 +64,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addlabel?view=office-pia"/>
-  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddLine`.
   /// </summary>
@@ -74,7 +74,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addline?view=office-pia"/>
-  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddPicture`.
   /// </summary>
@@ -87,7 +87,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addpicture?view=office-pia"/>
-  public Shape AddPicture
+  public IShape AddPicture
   (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
     float Height);
   /// <summary>
@@ -96,7 +96,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addpolyline?view=office-pia"/>
-  public Shape AddPolyline(object SafeArrayOfPoints);
+  public IShape AddPolyline(object SafeArrayOfPoints);
   /// <summary>
   /// Invokes `AddShape`.
   /// </summary>
@@ -107,7 +107,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addshape?view=office-pia"/>
-  public Shape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
+  public IShape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddTextEffect`.
   /// </summary>
@@ -121,7 +121,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Top">The `Top` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addtexteffect?view=office-pia"/>
-  public Shape AddTextEffect
+  public IShape AddTextEffect
   (PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold,
     TriState FontItalic, float Left, float Top);
   /// <summary>
@@ -134,7 +134,7 @@ public interface ICanvasShapes: IInteropCollection<Shape>
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addtextbox?view=office-pia"/>
-  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `BuildFreeform`.
   /// </summary>

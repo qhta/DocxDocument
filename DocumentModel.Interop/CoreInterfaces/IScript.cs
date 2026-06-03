@@ -32,7 +32,7 @@ public interface IScript: IInteropObject
   /// Gets the shape associated with the script anchor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.shape?view=office-pia"/>
-  public object Shape { get; }
+  public object IShape { get; }
   /// <summary>
   /// Gets or sets the script content text.
   /// </summary>

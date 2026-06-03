@@ -13,10 +13,10 @@ public interface IDiagramNode: IInteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.children?view=office-pia"/>
   public DiagramNodeChildren Children { get; }
   /// <summary>
-  /// Gets the `Shape` property.
+  /// Gets the `IShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
-  public Shape Shape { get; }
+  public IShape IShape { get; }
   /// <summary>
   /// Gets the `Root` property.
   /// </summary>
@@ -36,7 +36,7 @@ public interface IDiagramNode: IInteropObject
   /// Gets the `TextShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.textshape?view=office-pia"/>
-  public Shape TextShape { get; }
+  public IShape TextShape { get; }
 
 
   #region methods

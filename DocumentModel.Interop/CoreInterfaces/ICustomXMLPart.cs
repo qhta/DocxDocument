@@ -12,7 +12,7 @@ public interface ICustomXMLPart: IInteropObject
   /// If the region is empty, this property returns <c>null</c>.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.documentelement?view=office-pia"/>
-  public CustomXMLNode DocumentElement { get; }
+  public ICustomXMLNode DocumentElement { get; }
 
   /// <summary>
   /// Gets a string containing the GUID assigned to the current custom XML part.
@@ -30,13 +30,13 @@ public interface ICustomXMLPart: IInteropObject
   /// Gets or sets the schema collection attached to the bound region of data.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.schemacollection?view=office-pia"/>
-  public CustomXMLSchemaCollection SchemaCollection { get; set; }
+  public ICustomXMLSchemaCollection SchemaCollection { get; set; }
 
   /// <summary>
   /// Gets the namespace prefix mappings used against the current custom XML part.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.namespacemanager?view=office-pia"/>
-  public CustomXMLPrefixMappings NamespaceManager { get; }
+  public ICustomXMLPrefixMappings NamespaceManager { get; }
 
   /// <summary>
   /// Gets the XML representation of the current custom XML part.
@@ -48,7 +48,7 @@ public interface ICustomXMLPart: IInteropObject
   /// Gets XML validation errors for the part, if any exist.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.errors?view=office-pia"/>
-  public CustomXMLValidationErrors Errors { get; }
+  public ICustomXMLValidationErrors Errors { get; }
 
   /// <summary>
   /// Gets a value indicating whether the custom XML part is built-in.
@@ -70,7 +70,7 @@ public interface ICustomXMLPart: IInteropObject
   /// <param name="NodeValue">The node value.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.addnode?view=office-pia"/>
   public void AddNode
-  (CustomXMLNode Parent, string Name, string NamespaceURI, CustomXMLNode NextSibling,
+  (ICustomXMLNode Parent, string Name, string NamespaceURI, ICustomXMLNode NextSibling,
     CustomXMLNodeType NodeType, string NodeValue);
 
   /// <summary>
@@ -104,7 +104,7 @@ public interface ICustomXMLPart: IInteropObject
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>A collection of matching nodes.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectnodes?view=office-pia"/>
-  public CustomXMLNodes SelectNodes(string XPath);
+  public ICustomXMLNodes SelectNodes(string XPath);
 
   /// <summary>
   /// Selects a single node in this custom XML part matching an XPath expression.
@@ -112,7 +112,7 @@ public interface ICustomXMLPart: IInteropObject
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>The matching node, if found.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
-  public CustomXMLNode SelectSingleNode(string XPath);
+  public ICustomXMLNode SelectSingleNode(string XPath);
 
   #endregion methods
 }

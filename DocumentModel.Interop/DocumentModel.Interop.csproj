@@ -27,14 +27,20 @@
 
   <ItemGroup>
     <Compile Remove="BaseInterfaces\**" />
+    <Compile Remove="CoreClasses\**" />
     <Compile Remove="CoreInterfaces1\**" />
     <Compile Remove="ExcelInterfaces\**" />
+    <Compile Remove="WordClasses\**" />
     <EmbeddedResource Remove="BaseInterfaces\**" />
+    <EmbeddedResource Remove="CoreClasses\**" />
     <EmbeddedResource Remove="CoreInterfaces1\**" />
     <EmbeddedResource Remove="ExcelInterfaces\**" />
+    <EmbeddedResource Remove="WordClasses\**" />
     <None Remove="BaseInterfaces\**" />
+    <None Remove="CoreClasses\**" />
     <None Remove="CoreInterfaces1\**" />
     <None Remove="ExcelInterfaces\**" />
+    <None Remove="WordClasses\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,6 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>
 

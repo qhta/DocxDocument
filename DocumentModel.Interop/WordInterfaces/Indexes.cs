@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of index objects in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
-public interface IIndexes : IInteropObject, IInteropCollection<Index>
+public interface IIndexes : IInteropObject, IInteropCollection<IIndex>
 {
   /// <summary>
   /// Returns or sets the built-in format used for the index.
@@ -29,7 +29,7 @@ public interface IIndexes : IInteropObject, IInteropCollection<Index>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.addold?view=word-pia"/>
-  public Index AddOld(Range Range, HeadingSeparator HeadingSeparator, bool RightAlignPageNumbers, IndexType Type, int NumberOfColumns, bool AccentedLetters);
+  public IIndex AddOld(IRange Range, HeadingSeparator HeadingSeparator, bool RightAlignPageNumbers, IndexType Type, int NumberOfColumns, bool AccentedLetters);
 
   #endregion methods
 }

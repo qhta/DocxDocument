@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartArtColors` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartcolors?view=office-pia"/>
-public interface ISmartArtColors: IInteropCollection<SmartArtColor>
+public interface ISmartArtColors: IInteropCollection<ISmartArtColor>
 {
 }
 

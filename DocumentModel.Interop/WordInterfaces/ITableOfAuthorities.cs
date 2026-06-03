@@ -29,7 +29,7 @@ public interface ITableOfAuthorities : IInteropObject
   /// Returns or sets the name of the bookmark from which to collect table of authorities entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.bookmark?view=word-pia"/>
-  public string Bookmark { get; set; }
+  public string IBookmark { get; set; }
 
   /// <summary>
   /// Returns or sets the characters (up to five) between the sequence number and the page number.
