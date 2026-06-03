@@ -17,7 +17,7 @@ public interface IXMLNamespace : IInteropObject
   /// files specified for use with a schema.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.xsltransforms?view=word-pia"/>
-  public IXSLTransforms IXSLTransforms { get; }
+  public IXSLTransforms XSLTransforms { get; }
 
 
   #region methods

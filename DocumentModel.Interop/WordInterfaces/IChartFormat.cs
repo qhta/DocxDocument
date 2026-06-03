@@ -25,7 +25,7 @@ public interface IChartFormat : IInteropObject
   /// Gets the picture formatting for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.pictureformat?view=word-pia"/>
-  public IPictureFormat IPictureFormat { get; }
+  public IPictureFormat PictureFormat { get; }
   /// <summary>
   /// Gets the shadow formatting for the chart element.
   /// </summary>
@@ -50,7 +50,7 @@ public interface IChartFormat : IInteropObject
   /// Gets the adjustments collection for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.adjustments?view=word-pia"/>
-  public IAdjustments IAdjustments { get; }
+  public IAdjustments Adjustments { get; }
   /// <summary>
   /// Gets or sets the AutoShape type for the chart element.
   /// </summary>

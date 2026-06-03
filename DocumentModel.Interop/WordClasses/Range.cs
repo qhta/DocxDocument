@@ -47,7 +47,7 @@ public partial class Range : InteropObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public FontFormat Font { get; set; }
 
 
 

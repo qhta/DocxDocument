@@ -75,7 +75,7 @@ public partial class Style : InteropObject
   /// Font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public FontFormat Font { get; set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.

@@ -35,7 +35,7 @@ public interface IAutoCorrect : IInteropObject
   /// Gets the first-letter exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.firstletterexceptions?view=word-pia"/>
-  public IFirstLetterExceptions IFirstLetterExceptions { get; }
+  public IFirstLetterExceptions FirstLetterExceptions { get; }
   /// <summary>
   /// Gets or sets a value indicating whether first-letter exceptions are added automatically.
   /// </summary>
@@ -45,7 +45,7 @@ public interface IAutoCorrect : IInteropObject
   /// Gets the two-initial-capitals exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.twoinitialcapsexceptions?view=word-pia"/>
-  public ITwoInitialCapsExceptions ITwoInitialCapsExceptions { get; }
+  public ITwoInitialCapsExceptions TwoInitialCapsExceptions { get; }
   /// <summary>
   /// Gets or sets a value indicating whether two-initial-capitals exceptions are added automatically.
   /// </summary>
@@ -65,7 +65,7 @@ public interface IAutoCorrect : IInteropObject
   /// Gets the Hangul-and-alphabet exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.hangulandalphabetexceptions?view=word-pia"/>
-  public IHangulAndAlphabetExceptions IHangulAndAlphabetExceptions { get; }
+  public IHangulAndAlphabetExceptions HangulAndAlphabetExceptions { get; }
   /// <summary>
   /// Gets or sets a value indicating whether Hangul-and-alphabet exceptions are added automatically.
   /// </summary>
@@ -85,7 +85,7 @@ public interface IAutoCorrect : IInteropObject
   /// Gets the other-corrections exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.othercorrectionsexceptions?view=word-pia"/>
-  public IOtherCorrectionsExceptions IOtherCorrectionsExceptions { get; }
+  public IOtherCorrectionsExceptions OtherCorrectionsExceptions { get; }
   /// <summary>
   /// Gets or sets a value indicating whether keyboard setting mismatches are corrected.
   /// </summary>

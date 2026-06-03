@@ -10,14 +10,14 @@ public interface IReplacement : IInteropObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.font?view=word-pia"/>
-  public IFont IFont { get; set; }
+  public IFontFormat FontFormat { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified replacement
   /// operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.paragraphformat?view=word-pia"/>
-  public IParagraphFormat IParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -49,7 +49,7 @@ public interface IReplacement : IInteropObject
   /// operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.frame?view=word-pia"/>
-  public IFrame IFrame { get; }
+  public IFrame Frame { get; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.

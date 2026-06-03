@@ -160,19 +160,19 @@ public interface IParagraphFormat : IInteropObject
   /// Gets or sets the tab stops.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.tabstops?view=word-pia"/>
-  public ITabStops ITabStops { get; set; }
+  public ITabStops TabStops { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the outline level.

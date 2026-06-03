@@ -16,7 +16,7 @@ public interface IDiagramNode : IInteropObject
   /// Gets the shape associated with this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.shape?view=word-pia"/>
-  public IShape IShape { get; }
+  public IShape Shape { get; }
 
   /// <summary>
   /// Gets the root node of the diagram that contains this node.
@@ -28,7 +28,7 @@ public interface IDiagramNode : IInteropObject
   /// Gets the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.diagram?view=word-pia"/>
-  public IDiagram IDiagram { get; }
+  public IDiagram Diagram { get; }
 
   /// <summary>
   /// Gets or sets the layout type for this diagram node.

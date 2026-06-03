@@ -22,7 +22,7 @@ public interface ITrendline : IInteropObject
   /// Returns a DataLabel object that represents the data label associated with the trendline. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.datalabel?view=word-pia"/>
-  public IDataLabel IDataLabel { get; }
+  public IDataLabel DataLabel { get; }
 
   /// <summary>
   /// True if the equation for the trendline is displayed on the chart (in the same data label as the R- squared

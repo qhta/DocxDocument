@@ -40,7 +40,7 @@ public interface IBuildingBlock : IInteropObject
   /// Gets the category of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.category?view=word-pia"/>
-  public ICategory ICategory { get; }
+  public ICategory Category { get; }
 
   /// <summary>
   /// Gets or sets the content of the building block.

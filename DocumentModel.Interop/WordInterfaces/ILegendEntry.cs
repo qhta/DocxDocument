@@ -22,7 +22,7 @@ public interface ILegendEntry : IInteropObject
   /// Returns a legend key object for the legend entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry.legendkey?view=word-pia"/>
-  public ILegendKey ILegendKey { get; }
+  public ILegendKey LegendKey { get; }
 
   /// <summary>
   /// Returns or sets whether the legend entry text scales automatically when the chart size changes.

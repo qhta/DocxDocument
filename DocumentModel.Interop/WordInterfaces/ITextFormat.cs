@@ -207,12 +207,12 @@ public interface IITextFormat
   /// <summary>
   /// The borders for the specified text.
   /// </summary>
-  public IBorders? IBorders { get; set; }
+  public IBorders? Borders { get; set; }
 
   /// <summary>
   /// The shading for the specified Font object.
   /// </summary>
-  public IShading? IShading { get; }
+  public IShading? Shading { get; }
 
   /// <summary>
   /// The emphasis mark type.

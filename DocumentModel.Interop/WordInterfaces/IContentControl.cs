@@ -28,7 +28,7 @@ public interface IContentControl : IInteropObject
   /// Gets the XML mapping for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.xmlmapping?view=word-pia"/>
-  public IXMLMapping IXMLMapping { get; }
+  public IXMLMapping XMLMapping { get; }
 
   /// <summary>
   /// Gets or sets the type of content control.

@@ -70,19 +70,19 @@ public interface IFormField : IInteropObject
   /// Returns a <see cref="ITextInput"/> object that represents a text form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.textinput?view=word-pia"/>
-  public ITextInput ITextInput { get; }
+  public ITextInput TextInput { get; }
 
   /// <summary>
   /// Returns a <see cref="ICheckBox"/> object that represents a check box form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.checkbox?view=word-pia"/>
-  public ICheckBox ICheckBox { get; }
+  public ICheckBox CheckBox { get; }
 
   /// <summary>
   /// Returns a <see cref="IDropDown"/> object that represents a drop-down form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.dropdown?view=word-pia"/>
-  public IDropDown IDropDown { get; }
+  public IDropDown DropDown { get; }
 
   /// <summary>
   /// Returns the next object in the collection.

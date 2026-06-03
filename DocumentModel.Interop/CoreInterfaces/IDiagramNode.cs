@@ -16,7 +16,7 @@ public interface IDiagramNode: IInteropObject
   /// Gets the `IShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
-  public IShape IShape { get; }
+  public IShape Shape { get; }
   /// <summary>
   /// Gets the `Root` property.
   /// </summary>

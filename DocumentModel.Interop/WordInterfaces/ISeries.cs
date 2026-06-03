@@ -22,7 +22,7 @@ public interface ISeries : IInteropObject
   /// Returns an ErrorBars object that represents the error bars for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.errorbars?view=word-pia"/>
-  public IErrorBars IErrorBars { get; }
+  public IErrorBars ErrorBars { get; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -75,7 +75,7 @@ public interface ISeries : IInteropObject
   /// Returns the IInterior object for the series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns the ChartFillFormat for this series.
@@ -244,7 +244,7 @@ public interface ISeries : IInteropObject
   /// Returns a LeaderLines object that represents the leader lines for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.leaderlines?view=word-pia"/>
-  public ILeaderLines ILeaderLines { get; }
+  public ILeaderLines LeaderLines { get; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.

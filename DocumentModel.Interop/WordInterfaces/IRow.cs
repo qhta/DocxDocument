@@ -76,19 +76,19 @@ public interface IRow : IInteropObject
   /// Returns a Cells collection that represents the table cells in a column, row, selection, or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.cells?view=word-pia"/>
-  public ICells ICells { get; }
+  public ICells Cells { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Returns the next object in the collection.

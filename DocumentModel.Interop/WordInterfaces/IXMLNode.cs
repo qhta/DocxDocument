@@ -123,7 +123,7 @@ public interface IXMLNode : IInteropObject
   /// Returns a SmartTag object that represents the smart tag associated with an XML element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.smarttag?view=word-pia"/>
-  public ISmartTag ISmartTag { get; }
+  public ISmartTag SmartTag { get; }
 
   /// <summary>
   /// Returns or sets a String that represents the text displayed for an element that contains no text.

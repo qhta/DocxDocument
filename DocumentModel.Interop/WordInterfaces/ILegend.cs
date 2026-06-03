@@ -46,7 +46,7 @@ public interface ILegend : IInteropObject
   /// Returns an interior object that represents the interior of the legend.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns fill formatting properties for the legend.

@@ -67,7 +67,7 @@ public interface IView : IInteropObject
   /// Returns a Zoom object that represents the magnification for the specified view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.zoom?view=word-pia"/>
-  public IZoom IZoom { get; }
+  public IZoom Zoom { get; }
 
   /// <summary>
   /// True if object anchors are displayed next to items that can be positioned in print layout view.
@@ -276,7 +276,7 @@ public interface IView : IInteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.reviewers?view=word-pia"/>
-  public IReviewers IReviewers { get; }
+  public IReviewers Reviewers { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -385,7 +385,7 @@ public interface IView : IInteropObject
   /// Returns an instance of a RevisionsFilter object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsfilter?view=word-pia"/>
-  public IRevisionsFilter IRevisionsFilter { get; }
+  public IRevisionsFilter RevisionsFilter { get; }
 
   /// <summary>
   /// Returns and sets the page color in Reading mode. Read-write PageColor.

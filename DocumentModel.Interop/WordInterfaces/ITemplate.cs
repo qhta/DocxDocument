@@ -22,7 +22,7 @@ public interface ITemplate : IInteropObject
   /// Returns a IAutoTextEntries collection that represents all the AutoText entries in the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.autotextentries?view=word-pia"/>
-  public IAutoTextEntries IAutoTextEntries { get; }
+  public IAutoTextEntries AutoTextEntries { get; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
@@ -67,7 +67,7 @@ public interface ITemplate : IInteropObject
   /// Returns a ListTemplates collection that represents all the list formats for the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.listtemplates?view=word-pia"/>
-  public IListTemplates IListTemplates { get; }
+  public IListTemplates ListTemplates { get; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
@@ -129,14 +129,14 @@ public interface ITemplate : IInteropObject
   /// template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblockentries?view=word-pia"/>
-  public IBuildingBlockEntries IBuildingBlockEntries { get; }
+  public IBuildingBlockEntries BuildingBlockEntries { get; }
 
   /// <summary>
   /// Returns a BuildingBlockTypes collection that represents the collection of building block types that are
   /// contained in a template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblocktypes?view=word-pia"/>
-  public IBuildingBlockTypes IBuildingBlockTypes { get; }
+  public IBuildingBlockTypes BuildingBlockTypes { get; }
 
 
   #region methods

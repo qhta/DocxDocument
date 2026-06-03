@@ -28,7 +28,7 @@ public interface IPlotArea : IInteropObject
   /// Returns a Font object that represents the font of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns a FillFormat object for a specified shape or a ChartFillFormat object for a specified chart that

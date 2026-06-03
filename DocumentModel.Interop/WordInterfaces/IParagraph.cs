@@ -23,19 +23,19 @@ public interface IParagraph : IInteropObject
   /// Returns or sets a TabStops collection that represents all the custom tab stops for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.tabstops?view=word-pia"/>
-  public ITabStops ITabStops { get; set; }
+  public ITabStops TabStops { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a DropCap object that represents a dropped capital letter for the specified paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.dropcap?view=word-pia"/>
-  public IDropCap IDropCap { get; }
+  public IDropCap DropCap { get; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -135,7 +135,7 @@ public interface IParagraph : IInteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.

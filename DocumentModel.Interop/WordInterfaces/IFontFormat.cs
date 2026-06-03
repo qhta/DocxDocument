@@ -1,16 +1,16 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// This is a primary class in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary class only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this class to call the method, and cast to the latest events class to connect to the event. Otherwise, use the .NET class that is derived from the COM coclass to access methods, properties, and events of the COM object. For information about the COM object, see Font.
+/// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For information about the COM object, see Font.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font?view=word-pia"/>
-public partial class Font : InteropObject
+public interface IFontFormat : IInteropObject
 {
   /// <summary>
   /// Gets a duplicate of the font formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
-  public Font Duplicate { get; set; }
+  public IFontFormat Duplicate { get; }
 
   /// <summary>
   /// True if the text is formatted as bold.
@@ -106,7 +106,7 @@ public partial class Font : InteropObject
   /// The name of the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
-  public string? Name { get; set; }
+  public string Name { get; set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it.
@@ -172,13 +172,13 @@ public partial class Font : InteropObject
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  public Shading Shading { get; set; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
@@ -196,19 +196,19 @@ public partial class Font : InteropObject
   /// The name of the font for East Asian scripts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
-  public string? NameFarEast { get; set; }
+  public string NameFarEast { get; set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
-  public string? NameAscii { get; set; }
+  public string NameAscii { get; set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
-  public string? NameOther { get; set; }
+  public string NameOther { get; set; }
 
   /// <summary>
   /// The 24-bit color for the specified Font object.
@@ -242,7 +242,7 @@ public partial class Font : InteropObject
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  public string? NameBi { get; set; }
+  public string NameBi { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
@@ -266,43 +266,43 @@ public partial class Font : InteropObject
   /// Gets or sets the glow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  public GlowFormat Glow { get; set; }
+  public IGlowFormat Glow { get; set; }
 
   /// <summary>
   /// Gets or sets the reflection formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  public ReflectionFormat Reflection { get; set; }
+  public IReflectionFormat Reflection { get; set; }
 
   /// <summary>
   /// Gets or sets the shadow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  public ShadowFormat TextShadow { get; set; }
+  public IShadowFormat TextShadow { get; set; }
 
   /// <summary>
   /// Gets or sets the fill formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  public FillFormat Fill { get; set; }
+  public IFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets or sets the line formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  public LineFormat Line { get; set; }
+  public ILineFormat Line { get; set; }
 
   /// <summary>
   /// Gets or sets the 3D formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  public ThreeDFormat ThreeD { get; set; }
+  public IThreeDFormat ThreeD { get; set; }
 
   /// <summary>
   /// Gets the text color formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  public ColorFormat TextColor { get; set; }
+  public IColorFormat TextColor { get; }
 
   /// <summary>
   /// Gets or sets the ligature setting for the font.
@@ -314,7 +314,7 @@ public partial class Font : InteropObject
   /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  public OtNumberForm NumberForm { get; set; }
+  public OtLigatures NumberForm { get; set; }
 
   /// <summary>
   /// Gets or sets the number spacing for the font.
@@ -337,7 +337,7 @@ public partial class Font : InteropObject
 
   #region methods
 
-  /// <summary>
+/// <summary>
   /// Increases the font size to the next available size. If the selection or range contains more than one font
   /// size, each size is increased to the next available setting.
   /// </summary>
@@ -345,8 +345,7 @@ public partial class Font : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.grow?view=word-pia"/>
-  public void Grow() { throw new NotImplementedException(); }
+  public void Grow();
 
   #endregion methods
 }
-

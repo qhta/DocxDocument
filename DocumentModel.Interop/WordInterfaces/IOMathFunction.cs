@@ -142,7 +142,7 @@ public interface IOMathFunction : IInteropObject
   /// Returns the parent equation object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.omath?view=word-pia"/>
-  public IOMath IOMath { get; }
+  public IOMath OMath { get; }
 
 
   #region methods

@@ -34,19 +34,19 @@ public interface IColumn : IInteropObject
   /// Gets the collection of cells in the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.cells?view=word-pia"/>
-  public ICells ICells { get; }
+  public ICells Cells { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Gets the next column in the table.

@@ -52,13 +52,13 @@ public interface ICell : IInteropObject
   /// Gets the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.column?view=word-pia"/>
-  public IColumn IColumn { get; }
+  public IColumn Column { get; }
 
   /// <summary>
   /// Gets the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.row?view=word-pia"/>
-  public IRow IRow { get; }
+  public IRow Row { get; }
 
   /// <summary>
   /// Gets the next cell in the table.
@@ -76,19 +76,19 @@ public interface ICell : IInteropObject
   /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the collection of tables nested within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.tables?view=word-pia"/>
-  public ITables ITables { get; }
+  public ITables Tables { get; }
 
   /// <summary>
   /// Gets the nesting level of the cell.

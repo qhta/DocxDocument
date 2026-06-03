@@ -42,6 +42,6 @@ public interface IRectangle : IInteropObject
   /// Returns a Lines collection that represents the lines in a specified portion of text in a page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.lines?view=word-pia"/>
-  public ILines ILines { get; }
+  public ILines Lines { get; }
 
 }

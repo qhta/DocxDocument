@@ -1205,7 +1205,7 @@ public interface IDocument : IInteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlnodes?view=word-pia"/>
-  public IXMLNodes IXMLNodes { get; }
+  public IXMLNodes XMLNodes { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -1223,7 +1223,7 @@ public interface IDocument : IInteropObject
   /// Returns an XMLSchemaReferences collection that represents the schemas attached to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlschemareferences?view=word-pia"/>
-  public IXMLSchemaReferences IXMLSchemaReferences { get; }
+  public IXMLSchemaReferences XMLSchemaReferences { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

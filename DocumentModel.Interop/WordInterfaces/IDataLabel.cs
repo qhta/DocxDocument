@@ -22,7 +22,7 @@ public interface IDataLabel : IInteropObject
   /// Gets the interior formatting of the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Gets the fill formatting of the data label.

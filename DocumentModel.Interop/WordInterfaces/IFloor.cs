@@ -22,7 +22,7 @@ public interface IFloor : IInteropObject
   /// Returns an <see cref="IInterior"/> object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns a <see cref="IChartFillFormat"/> object that contains fill formatting properties for the chart.

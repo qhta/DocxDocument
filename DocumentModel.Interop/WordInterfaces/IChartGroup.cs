@@ -22,13 +22,13 @@ public interface IChartGroup : IInteropObject
   /// Gets the down bars for a line chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.downbars?view=word-pia"/>
-  public IDownBars IDownBars { get; }
+  public IDownBars DownBars { get; }
 
   /// <summary>
   /// Gets the drop lines for the chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.droplines?view=word-pia"/>
-  public IDropLines IDropLines { get; }
+  public IDropLines DropLines { get; }
 
   /// <summary>
   /// Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees.
@@ -76,7 +76,7 @@ public interface IChartGroup : IInteropObject
   /// Gets the high-low lines for the chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.hilolines?view=word-pia"/>
-  public IHiLoLines IHiLoLines { get; }
+  public IHiLoLines HiLoLines { get; }
 
   /// <summary>
   /// Gets the index number of the chart group in the `ChartGroups` collection.
@@ -100,7 +100,7 @@ public interface IChartGroup : IInteropObject
   /// Gets the series lines for stacked bar and stacked column charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.serieslines?view=word-pia"/>
-  public ISeriesLines ISeriesLines { get; }
+  public ISeriesLines SeriesLines { get; }
 
   /// <summary>
   /// Gets or sets the chart subtype for the chart group.
@@ -118,7 +118,7 @@ public interface IChartGroup : IInteropObject
   /// Gets the up bars for a line chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.upbars?view=word-pia"/>
-  public IUpBars IUpBars { get; }
+  public IUpBars UpBars { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether each data marker has a different color.

@@ -16,7 +16,7 @@ public interface IChart : IInteropObject
   /// Gets the chart title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.charttitle?view=word-pia"/>
-  public IChartTitle IChartTitle { get; }
+  public IChartTitle ChartTitle { get; }
 
   /// <summary>
   /// Gets or sets the depth of a 3-D chart as a percentage of the chart width.
@@ -82,7 +82,7 @@ public interface IChart : IInteropObject
   /// Gets the corners object for a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.corners?view=word-pia"/>
-  public ICorners ICorners { get; }
+  public ICorners Corners { get; }
 
   /// <summary>
   /// Gets or sets the chart type.
@@ -112,25 +112,25 @@ public interface IChart : IInteropObject
   /// Gets the legend for the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.legend?view=word-pia"/>
-  public ILegend ILegend { get; }
+  public ILegend Legend { get; }
 
   /// <summary>
   /// Gets the walls of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.walls?view=word-pia"/>
-  public IWalls IWalls { get; }
+  public IWalls Walls { get; }
 
   /// <summary>
   /// Gets the floor of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.floor?view=word-pia"/>
-  public IFloor IFloor { get; }
+  public IFloor Floor { get; }
 
   /// <summary>
   /// Gets the plot area of the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.plotarea?view=word-pia"/>
-  public IPlotArea IPlotArea { get; }
+  public IPlotArea PlotArea { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether only visible cells are plotted.
@@ -142,7 +142,7 @@ public interface IChart : IInteropObject
   /// Gets the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.chartarea?view=word-pia"/>
-  public IChartArea IChartArea { get; }
+  public IChartArea ChartArea { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart scales to fit available space.
@@ -154,7 +154,7 @@ public interface IChart : IInteropObject
   /// Gets the chart data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.datatable?view=word-pia"/>
-  public IDataTable IDataTable { get; }
+  public IDataTable DataTable { get; }
 
   /// <summary>
   /// Gets or sets the shape used for bars or columns in a 3-D chart.
@@ -202,7 +202,7 @@ public interface IChart : IInteropObject
   /// Gets the chart data object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.chartdata?view=word-pia"/>
-  public IChartData IChartData { get; }
+  public IChartData ChartData { get; }
 
   /// <summary>
   /// Gets the collection of shapes associated with the chart.

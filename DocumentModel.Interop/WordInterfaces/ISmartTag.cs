@@ -40,13 +40,13 @@ public interface ISmartTag : IInteropObject
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.smarttagactions?view=word-pia"/>
-  public ISmartTagActions ISmartTagActions { get; }
+  public ISmartTagActions SmartTagActions { get; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the XML element for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.xmlnode?view=word-pia"/>
-  public IXMLNode IXMLNode { get; }
+  public IXMLNode XMLNode { get; }
 
 
   #region methods

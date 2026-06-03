@@ -18,7 +18,7 @@ public interface IPane : IInteropObject
   /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.selection?view=word-pia"/>
-  public ISelection ISelection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// True if rulers are displayed for the specified pane. Read/write Boolean.
@@ -37,7 +37,7 @@ public interface IPane : IInteropObject
   /// view, outline view or print layout view).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.zooms?view=word-pia"/>
-  public IZooms IZooms { get; }
+  public IZooms Zooms { get; }
 
   /// <summary>
   /// Returns a Long that represents the position of an item in a collection. Read-only.
@@ -49,7 +49,7 @@ public interface IPane : IInteropObject
   /// Returns a View object that represents the view for the specified pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.view?view=word-pia"/>
-  public IView IView { get; }
+  public IView View { get; }
 
   /// <summary>
   /// Returns a Pane object that represents the next document pane in the collection. Read-only.
@@ -97,13 +97,13 @@ public interface IPane : IInteropObject
   /// Returns a Frameset object that represents an entire frames page or a single frame on a frames page. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.frameset?view=word-pia"/>
-  public IFrameset IFrameset { get; }
+  public IFrameset Frameset { get; }
 
   /// <summary>
   /// Returns a Pages collection that represents the pages in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.pages?view=word-pia"/>
-  public IPages IPages { get; }
+  public IPages Pages { get; }
 
 
   #region methods

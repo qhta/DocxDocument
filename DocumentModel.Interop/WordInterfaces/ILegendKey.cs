@@ -16,7 +16,7 @@ public interface ILegendKey : IInteropObject
   /// Returns an interior object that represents the interior of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns fill formatting properties for the legend key.

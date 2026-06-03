@@ -82,13 +82,13 @@ public interface IFrame : IInteropObject
   /// Returns a <see cref="IShading"/> object that represents the shading formatting for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// Returns or sets a <see cref="IBorders"/> collection that represents the borders of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a <see cref="IRange"/> object that represents the portion of a document that's contained in the specified frame.

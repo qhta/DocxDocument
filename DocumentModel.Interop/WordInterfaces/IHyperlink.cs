@@ -34,7 +34,7 @@ public interface IHyperlink : IInteropObject
   /// Returns a shape object that represents the shape for the hyperlink.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.shape?view=word-pia"/>
-  public IShape IShape { get; }
+  public IShape Shape { get; }
 
   /// <summary>
   /// Returns the previous subaddress of the hyperlink.

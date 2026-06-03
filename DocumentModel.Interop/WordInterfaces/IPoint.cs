@@ -16,7 +16,7 @@ public interface IPoint : IInteropObject
   /// Returns a DataLabel object that represents the data label associated with the point. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.datalabel?view=word-pia"/>
-  public IDataLabel IDataLabel { get; }
+  public IDataLabel DataLabel { get; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -35,7 +35,7 @@ public interface IPoint : IInteropObject
   /// Returns an IInterior object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// True if Microsoft Word inverts the pattern in the object when it corresponds to a negative number. Read/write

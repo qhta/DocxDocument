@@ -100,7 +100,7 @@ public interface IMailMergeDataSource : IInteropObject
   /// Returns the mapped data fields collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.mappeddatafields?view=word-pia"/>
-  public IMappedDataFields IMappedDataFields { get; }
+  public IMappedDataFields MappedDataFields { get; }
 
   /// <summary>
   /// Returns the source table name for the mail merge data source.

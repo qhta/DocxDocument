@@ -16,7 +16,7 @@ public interface IList : IInteropObject
   /// Returns a list paragraphs collection that represents all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.listparagraphs?view=word-pia"/>
-  public IListParagraphs IListParagraphs { get; }
+  public IListParagraphs ListParagraphs { get; }
 
   /// <summary>
   /// Returns whether only one list template is used for all paragraphs in the list.

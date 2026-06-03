@@ -16,7 +16,7 @@ public interface IHTMLDivision : IInteropObject
   /// Returns a borders collection that represents the borders for the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.borders?view=word-pia"/>
-  public IBorders IBorders { get; }
+  public IBorders Borders { get; }
 
   /// <summary>
   /// Returns or sets the left indent value, in points, for the HTML division.
@@ -46,7 +46,7 @@ public interface IHTMLDivision : IInteropObject
   /// Returns the HTML divisions collection that contains this HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.htmldivisions?view=word-pia"/>
-  public IHTMLDivisions IHTMLDivisions { get; }
+  public IHTMLDivisions HTMLDivisions { get; }
 
 
   #region methods

@@ -26,7 +26,7 @@ public interface IMsoChartFormat
   /// Gets the `PictureFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.pictureformat?view=office-pia"/>
-  public IPictureFormat IPictureFormat { get; }
+  public IPictureFormat PictureFormat { get; }
   /// <summary>
   /// Gets the `Shadow` property.
   /// </summary>
@@ -51,7 +51,7 @@ public interface IMsoChartFormat
   /// Gets the `Adjustments` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.adjustments?view=office-pia"/>
-  public IAdjustments IAdjustments { get; }
+  public IAdjustments Adjustments { get; }
   /// <summary>
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>

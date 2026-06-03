@@ -10,6 +10,6 @@ public interface IEmailAuthor : IInteropObject
   /// Gets the style associated with the email author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailauthor.style?view=word-pia"/>
-  public IStyle IStyle { get; }
+  public IStyle Style { get; }
 
 }

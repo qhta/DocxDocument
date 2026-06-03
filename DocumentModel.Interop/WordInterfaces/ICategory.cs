@@ -20,7 +20,7 @@ public interface ICategory : IInteropObject
   /// Gets the collection of building blocks in the category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.buildingblocks?view=word-pia"/>
-  public IBuildingBlocks IBuildingBlocks { get; }
+  public IBuildingBlocks BuildingBlocks { get; }
   /// <summary>
   /// Gets the building block type that contains this category.
   /// </summary>

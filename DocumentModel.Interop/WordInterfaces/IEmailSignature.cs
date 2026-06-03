@@ -20,6 +20,6 @@ public interface IEmailSignature : IInteropObject
   /// Gets the collection of available email signature entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignature.emailsignatureentries?view=word-pia"/>
-  public IEmailSignatureEntries IEmailSignatureEntries { get; }
+  public IEmailSignatureEntries EmailSignatureEntries { get; }
 
 }

@@ -10,7 +10,7 @@ public interface IInlineShape : IInteropObject
   /// Returns or sets the borders for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a range object that represents the inline shape in the document.
@@ -22,19 +22,19 @@ public interface IInlineShape : IInteropObject
   /// Returns a link format object that contains link properties for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.linkformat?view=word-pia"/>
-  public ILinkFormat ILinkFormat { get; }
+  public ILinkFormat LinkFormat { get; }
 
   /// <summary>
   /// Returns a field object associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
-  public IField IField { get; }
+  public IField Field { get; }
 
   /// <summary>
   /// Returns an OLE format object that contains OLE properties for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.oleformat?view=word-pia"/>
-  public IOLEFormat IOLEFormat { get; }
+  public IOLEFormat OLEFormat { get; }
 
   /// <summary>
   /// Returns the type of inline shape.
@@ -46,7 +46,7 @@ public interface IInlineShape : IInteropObject
   /// Returns a hyperlink object associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hyperlink?view=word-pia"/>
-  public IHyperlink IHyperlink { get; }
+  public IHyperlink Hyperlink { get; }
 
   /// <summary>
   /// Returns or sets the height of the inline shape, in points.
@@ -94,13 +94,13 @@ public interface IInlineShape : IInteropObject
   /// Returns or sets picture formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.pictureformat?view=word-pia"/>
-  public IPictureFormat IPictureFormat { get; set; }
+  public IPictureFormat PictureFormat { get; set; }
 
   /// <summary>
   /// Returns a horizontal line format object for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.horizontallineformat?view=word-pia"/>
-  public IHorizontalLineFormat IHorizontalLineFormat { get; }
+  public IHorizontalLineFormat HorizontalLineFormat { get; }
 
   /// <summary>
   /// Returns the script associated with the inline shape.
@@ -148,7 +148,7 @@ public interface IInlineShape : IInteropObject
   /// Returns the chart associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.chart?view=word-pia"/>
-  public IChart IChart { get; }
+  public IChart Chart { get; }
 
   /// <summary>
   /// Returns soft edge formatting for the inline shape.

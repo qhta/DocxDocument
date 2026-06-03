@@ -35,7 +35,7 @@ public interface ICoAuthoring : IInteropObject
   /// Gets the collection of coauthoring conflicts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthoring.conflicts?view=word-pia"/>
-  public IConflicts IConflicts { get; }
+  public IConflicts Conflicts { get; }
   /// <summary>
   /// Gets a value indicating whether the document can be shared for coauthoring.
   /// </summary>

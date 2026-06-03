@@ -11,7 +11,7 @@ public interface IShape: IInteropObject
   /// Gets or sets the `Adjustments` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.adjustments?view=office-pia"/>
-  public IAdjustments IAdjustments { get; }
+  public IAdjustments Adjustments { get; }
   /// <summary>
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
@@ -41,7 +41,7 @@ public interface IShape: IInteropObject
   /// Gets the `ConnectorFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.connectorformat?view=office-pia"/>
-  public IConnectorFormat IConnectorFormat { get; }
+  public IConnectorFormat ConnectorFormat { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -96,7 +96,7 @@ public interface IShape: IInteropObject
   /// Gets the `PictureFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.pictureformat?view=office-pia"/>
-  public IPictureFormat IPictureFormat { get; }
+  public IPictureFormat PictureFormat { get; }
   /// <summary>
   /// Gets the `Shadow` property.
   /// </summary>
@@ -111,7 +111,7 @@ public interface IShape: IInteropObject
   /// Gets the `TextFrame` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe?view=office-pia"/>
-  public ITextFrame ITextFrame { get; }
+  public ITextFrame TextFrame { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
@@ -181,7 +181,7 @@ public interface IShape: IInteropObject
   /// Gets the `DiagramNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagramnode?view=office-pia"/>
-  public IDiagramNode IDiagramNode { get; }
+  public IDiagramNode DiagramNode { get; }
   /// <summary>
   /// Gets the `Child` property.
   /// </summary>

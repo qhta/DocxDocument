@@ -13,7 +13,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets or sets the `Adjustments` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.adjustments?view=office-pia"/>
-  public IAdjustments IAdjustments { get; }
+  public IAdjustments Adjustments { get; }
   /// <summary>
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
@@ -43,7 +43,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `ConnectorFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.connectorformat?view=office-pia"/>
-  public IConnectorFormat IConnectorFormat { get; }
+  public IConnectorFormat ConnectorFormat { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -98,7 +98,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `PictureFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.pictureformat?view=office-pia"/>
-  public IPictureFormat IPictureFormat { get; }
+  public IPictureFormat PictureFormat { get; }
   /// <summary>
   /// Gets the `Shadow` property.
   /// </summary>
@@ -113,7 +113,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `TextFrame` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.textframe?view=office-pia"/>
-  public ITextFrame ITextFrame { get; }
+  public ITextFrame TextFrame { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
@@ -183,7 +183,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `DiagramNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.diagramnode?view=office-pia"/>
-  public IDiagramNode IDiagramNode { get; }
+  public IDiagramNode DiagramNode { get; }
   /// <summary>
   /// Gets the `Child` property.
   /// </summary>

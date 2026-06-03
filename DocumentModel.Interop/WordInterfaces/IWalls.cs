@@ -23,7 +23,7 @@ public interface IWalls : IInteropObject
   /// Returns an IInterior object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns a ChartFillFormat object for a specified chart that contains fill formatting properties for the chart.

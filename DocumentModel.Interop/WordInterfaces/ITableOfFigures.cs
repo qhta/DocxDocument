@@ -71,7 +71,7 @@ public interface ITableOfFigures : IInteropObject
   /// other than the Heading 1 Ă˘â‚¬â€ś Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.headingstyles?view=word-pia"/>
-  public IHeadingStyles IHeadingStyles { get; }
+  public IHeadingStyles HeadingStyles { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of figures.

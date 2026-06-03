@@ -16,25 +16,25 @@ public interface ITable : IInteropObject
   /// Returns a Columns collection that represents all the table columns in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.columns?view=word-pia"/>
-  public IColumns IColumns { get; }
+  public IColumns Columns { get; }
 
   /// <summary>
   /// Returns a Rows collection that represents all the table rows in a table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.rows?view=word-pia"/>
-  public IRows IRows { get; }
+  public IRows Rows { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.shading?view=word-pia"/>
-  public IShading IShading { get; }
+  public IShading Shading { get; }
 
   /// <summary>
   /// True if all the rows in a table have the same number of columns.
@@ -52,7 +52,7 @@ public interface ITable : IInteropObject
   /// Returns a Tables collection that represents all the tables in the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.tables?view=word-pia"/>
-  public ITables ITables { get; }
+  public ITables Tables { get; }
 
   /// <summary>
   /// Returns the nesting level of the specified table.

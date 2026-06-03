@@ -22,13 +22,13 @@ public interface IWindow : IInteropObject
   /// Returns a Panes collection that represents all the window panes for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.panes?view=word-pia"/>
-  public IPanes IPanes { get; }
+  public IPanes Panes { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.selection?view=word-pia"/>
-  public ISelection ISelection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the horizontal position of the specified window, measured in
@@ -95,7 +95,7 @@ public interface IWindow : IInteropObject
   /// Returns a View object that represents the view for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.view?view=word-pia"/>
-  public IView IView { get; }
+  public IView View { get; }
 
   /// <summary>
   /// Returns the window type.
@@ -187,7 +187,7 @@ public interface IWindow : IInteropObject
   /// Returns or sets the default start-up mode for the Japanese Input Method Editor (IME).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.imemode?view=word-pia"/>
-  public IMEMode IMEMode { get; set; }
+  public IMEMode MEMode { get; set; }
 
   /// <summary>
   /// Returns the width (in points) of the active working area in the specified document window.

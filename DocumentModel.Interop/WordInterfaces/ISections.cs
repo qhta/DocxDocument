@@ -22,7 +22,7 @@ public interface ISections : IInteropObject, IInteropCollection<ISection>
   /// Returns a PageSetup object that's associated with the specified sections
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.pagesetup?view=word-pia"/>
-  public IPageSetup IPageSetup { get; set; }
+  public IPageSetup PageSetup { get; set; }
 
 
   #region methods

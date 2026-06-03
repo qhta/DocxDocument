@@ -40,7 +40,7 @@ public interface IChartArea : IInteropObject
   /// Gets the interior formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Gets the fill formatting of the chart area.

@@ -25,7 +25,7 @@ public interface IRevisionsFilter
   /// Returns a Reviewers object that represents the collection of reviewers of one or more documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.reviewers?view=word-pia"/>
-  public IReviewers IReviewers { get; }
+  public IReviewers Reviewers { get; }
 
 
   #region methods

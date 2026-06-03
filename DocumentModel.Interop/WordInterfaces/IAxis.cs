@@ -166,7 +166,7 @@ public interface IAxis : IInteropObject
   /// Gets the tick labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabels?view=word-pia"/>
-  public ITickLabels ITickLabels { get; }
+  public ITickLabels TickLabels { get; }
 
   /// <summary>
   /// Gets or sets the tick-label spacing.
@@ -262,7 +262,7 @@ public interface IAxis : IInteropObject
   /// Gets the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunitlabel?view=word-pia"/>
-  public IDisplayUnitLabel IDisplayUnitLabel { get; }
+  public IDisplayUnitLabel DisplayUnitLabel { get; }
 
   /// <summary>
   /// Gets the axis border.

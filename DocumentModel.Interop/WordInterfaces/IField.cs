@@ -70,19 +70,19 @@ public interface IField : IInteropObject
   /// Gets the link formatting for a linked field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
-  public ILinkFormat ILinkFormat { get; }
+  public ILinkFormat LinkFormat { get; }
 
   /// <summary>
   /// Gets the OLE formatting for an OLE field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
-  public IOLEFormat IOLEFormat { get; }
+  public IOLEFormat OLEFormat { get; }
 
   /// <summary>
   /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
-  public IInlineShape IInlineShape { get; }
+  public IInlineShape InlineShape { get; }
 
 
   #region methods

@@ -15,7 +15,7 @@ public interface ISection : IInteropObject
   /// Returns a PageSetup object that's associated with the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.pagesetup?view=word-pia"/>
-  public IPageSetup IPageSetup { get; set; }
+  public IPageSetup PageSetup { get; set; }
   /// <summary>
   /// Returns a HeadersFooters collection that represents the headers for the specified section.
   /// </summary>
@@ -41,6 +41,6 @@ public interface ISection : IInteropObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.borders?view=word-pia"/>
-  public IBorders IBorders { get; set; }
+  public IBorders Borders { get; set; }
 
 }

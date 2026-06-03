@@ -22,7 +22,7 @@ public interface IUpBars : IInteropObject
   /// Returns an IInterior object that represents the interior of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.upbars.interior?view=word-pia"/>
-  public IInterior IInterior { get; }
+  public IInterior Interior { get; }
 
   /// <summary>
   /// Returns a ChartFillFormat object for the parent chart element that contains fill formatting properties for the

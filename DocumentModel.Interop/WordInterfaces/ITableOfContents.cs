@@ -41,7 +41,7 @@ public interface ITableOfContents : IInteropObject
   /// other than the Heading 1 Ă˘â‚¬â€ś Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents.headingstyles?view=word-pia"/>
-  public IHeadingStyles IHeadingStyles { get; }
+  public IHeadingStyles HeadingStyles { get; }
 
   /// <summary>
   /// True if page numbers are aligned with the right margin in a table of contents.

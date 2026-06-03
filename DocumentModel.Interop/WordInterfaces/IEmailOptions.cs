@@ -28,7 +28,7 @@ public interface IEmailOptions : IInteropObject
   /// Gets the email signature settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.emailsignature?view=word-pia"/>
-  public IEmailSignature IEmailSignature { get; }
+  public IEmailSignature EmailSignature { get; }
 
   /// <summary>
   /// Gets the style used when composing email messages.

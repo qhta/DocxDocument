@@ -15,12 +15,12 @@ public interface ISmartTagType : IInteropObject
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagactions?view=word-pia"/>
-  public ISmartTagActions ISmartTagActions { get; }
+  public ISmartTagActions SmartTagActions { get; }
   /// <summary>
   /// Returns a SmartTagRecognizers collection for an application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagrecognizers?view=word-pia"/>
-  public ISmartTagRecognizers ISmartTagRecognizers { get; }
+  public ISmartTagRecognizers SmartTagRecognizers { get; }
   /// <summary>
   /// Returns a String that represents a friendly name for a smart tag type.
   /// </summary>

@@ -16,13 +16,13 @@ public interface IApplication : IInteropObject
   /// Returns a Documents collection that represents all the open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.documents?view=word-pia"/>
-  public IDocuments IDocuments { get; }
+  public IDocuments Documents { get; }
 
   /// <summary>
   /// Returns a Windows collection that represents all document windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.windows?view=word-pia"/>
-  public IWindows IWindows { get; }
+  public IWindows Windows { get; }
 
   /// <summary>
   /// Returns a Document object that represents the active document.
@@ -40,7 +40,7 @@ public interface IApplication : IInteropObject
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.selection?view=word-pia"/>
-  public ISelection ISelection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// Returns an automation object (Word.Basic) that includes methods for all the WordBasic statements and functions available in Microsoft Word version 6.0 and Word for Windows 95.
@@ -52,7 +52,7 @@ public interface IApplication : IInteropObject
   /// Returns a RecentFiles collection that represents the most recently accessed files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.recentfiles?view=word-pia"/>
-  public IRecentFiles IRecentFiles { get; }
+  public IRecentFiles RecentFiles { get; }
 
   /// <summary>
   /// Returns a Template object that represents the Normal template.
@@ -70,13 +70,13 @@ public interface IApplication : IInteropObject
   /// Returns a AutoCorrect object that contains the current AutoCorrect options, entries, and exceptions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.autocorrect?view=word-pia"/>
-  public IAutoCorrect IAutoCorrect { get; }
+  public IAutoCorrect AutoCorrect { get; }
 
   /// <summary>
   /// Returns a Names object that includes the names of all the available fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.fontnames?view=word-pia"/>
-  public IFontNames IFontNames { get; }
+  public IFontNames FontNames { get; }
 
   /// <summary>
   /// Returns a Names object that includes the names of all the available landscape fonts.
@@ -94,7 +94,7 @@ public interface IApplication : IInteropObject
   /// Returns a Languages collection that represents the proofing languages listed in the Language dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.languages?view=word-pia"/>
-  public ILanguages ILanguages { get; }
+  public ILanguages Languages { get; }
 
   /// <summary>
   /// Returns a Assistant object that represents the Microsoft Office Assistant.
@@ -106,43 +106,43 @@ public interface IApplication : IInteropObject
   /// Returns a Browser object that represents the Select Browse Object tool on the vertical scroll bar.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.browser?view=word-pia"/>
-  public IBrowser IBrowser { get; }
+  public IBrowser Browser { get; }
 
   /// <summary>
   /// Returns a FileConverters collection that represents all the file converters available to Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.fileconverters?view=word-pia"/>
-  public IFileConverters IFileConverters { get; }
+  public IFileConverters FileConverters { get; }
 
   /// <summary>
   /// Returns a MailingLabel object that represents a mailing label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.mailinglabel?view=word-pia"/>
-  public IMailingLabel IMailingLabel { get; }
+  public IMailingLabel MailingLabel { get; }
 
   /// <summary>
   /// Returns a Dialogs collection that represents all the built-in dialog boxes in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.dialogs?view=word-pia"/>
-  public IDialogs IDialogs { get; }
+  public IDialogs Dialogs { get; }
 
   /// <summary>
   /// Returns a CaptionLabels collection that represents all the available caption labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.captionlabels?view=word-pia"/>
-  public ICaptionLabels ICaptionLabels { get; }
+  public ICaptionLabels CaptionLabels { get; }
 
   /// <summary>
   /// Returns a AutoCaptions collection that represents the captions that are automatically added when items such as tables and pictures are inserted into a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.autocaptions?view=word-pia"/>
-  public IAutoCaptions IAutoCaptions { get; }
+  public IAutoCaptions AutoCaptions { get; }
 
   /// <summary>
   /// Returns a AddIns collection that represents all available add-ins, regardless of whether they're currently loaded.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.addins?view=word-pia"/>
-  public IAddIns IAddIns { get; }
+  public IAddIns AddIns { get; }
 
   /// <summary>
   /// Determines if the specified object is visible. This property returns True if the specified object is visible, and False if not.
@@ -172,7 +172,7 @@ public interface IApplication : IInteropObject
   /// Returns a Tasks collection that represents all the applications that are running.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.tasks?view=word-pia"/>
-  public ITasks ITasks { get; }
+  public ITasks Tasks { get; }
 
   /// <summary>
   /// Determines if the status bar is displayed.
@@ -280,7 +280,7 @@ public interface IApplication : IInteropObject
   /// Returns a ListGalleries collection that represents the three list template galleries (Bulleted, Numbered, and Outline Numbered).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.listgalleries?view=word-pia"/>
-  public IListGalleries IListGalleries { get; }
+  public IListGalleries ListGalleries { get; }
 
   /// <summary>
   /// Returns or sets the name of the active printer.
@@ -292,7 +292,7 @@ public interface IApplication : IInteropObject
   /// Returns a Templates collection that represents all the available templates Ă„â€šĂ˘â‚¬ĹľÄ‚ËĂ˘â€šÂ¬ÄąË‡Ă„â€šĂ˘â‚¬Ä…Ä‚â€šĂ‚ÂÄ‚â€žĂ˘â‚¬ĹˇÄ‚ËĂ˘â€šÂ¬ÄąË‡Ă„â€šĂ‹ÂÄ‚ËĂ˘â€šÂ¬ÄąË‡Ä‚â€šĂ‚Â¬Ä‚â€žĂ˘â‚¬ĹˇÄ‚ËĂ˘â€šÂ¬ÄąË‡Ă„â€šĂ‹ÂÄ‚ËĂ˘â‚¬ĹˇĂ‚Â¬Ă„Ä…Ă„â€ž global templates as well as those attached to open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.templates?view=word-pia"/>
-  public ITemplates ITemplates { get; }
+  public ITemplates Templates { get; }
 
   /// <summary>
   /// Returns or sets a Template or Document object that represents the template or document in which changes to menu bars, toolbars, and key bindings are stored.
@@ -304,7 +304,7 @@ public interface IApplication : IInteropObject
   /// Returns a KeyBindings collection that represents customized key assignments, which include a key code, a key category, and a command.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.keybindings?view=word-pia"/>
-  public IKeyBindings IKeyBindings { get; }
+  public IKeyBindings KeyBindings { get; }
 
   /// <summary>
   /// Returns or sets the caption text for the specified document or application window.
@@ -382,7 +382,7 @@ public interface IApplication : IInteropObject
   /// Returns an Options object that represents application settings in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.options?view=word-pia"/>
-  public IOptions IOptions { get; }
+  public IOptions Options { get; }
 
   /// <summary>
   /// Returns or sets the way certain alerts and messages are handled while a macro is running.
@@ -472,7 +472,7 @@ public interface IApplication : IInteropObject
   /// Returns a MailMessage object that represents the active e-mail message.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.mailmessage?view=word-pia"/>
-  public IMailMessage IMailMessage { get; }
+  public IMailMessage MailMessage { get; }
 
   /// <summary>
   /// Determines if the insertion point is in an e-mail header field.
@@ -484,7 +484,7 @@ public interface IApplication : IInteropObject
   /// Returns an EmailOptions object that represents the global preferences for e-mail authoring.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.emailoptions?view=word-pia"/>
-  public IEmailOptions IEmailOptions { get; }
+  public IEmailOptions EmailOptions { get; }
 
   /// <summary>
   /// Returns an LanguageID constant that represents the language selected for the Microsoft Word user interface.
@@ -568,7 +568,7 @@ public interface IApplication : IInteropObject
   /// Returns a TaskPanes object that represents the most commonly performed tasks in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.taskpanes?view=word-pia"/>
-  public ITaskPanes ITaskPanes { get; }
+  public ITaskPanes TaskPanes { get; }
 
   /// <summary>
   /// Determines if Microsoft Word will compare and merge documents using the Legal blackline option in the Compare and Merge Documents dialog box. Returns True if Word will use the option, and False if not.
@@ -580,19 +580,19 @@ public interface IApplication : IInteropObject
   /// Returns a SmartTagRecognizers collection for an application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smarttagrecognizers?view=word-pia"/>
-  public ISmartTagRecognizers ISmartTagRecognizers { get; }
+  public ISmartTagRecognizers SmartTagRecognizers { get; }
 
   /// <summary>
   /// Returns a SmartTagTypes collection that represents the smart tag types for the smart tag components installed in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smarttagtypes?view=word-pia"/>
-  public ISmartTagTypes ISmartTagTypes { get; }
+  public ISmartTagTypes SmartTagTypes { get; }
 
   /// <summary>
   /// Returns an XMLNamespaces collection that represents the XML schemas in the Schema Library.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.xmlnamespaces?view=word-pia"/>
-  public IXMLNamespaces IXMLNamespaces { get; }
+  public IXMLNamespaces XMLNamespaces { get; }
 
   /// <summary>
   /// Returns a Boolean that represents whether Microsoft Word accepts custom XML schemas. Returns True if Word accepts custom XML schemas, or False if schemas are not accepted.
@@ -634,7 +634,7 @@ public interface IApplication : IInteropObject
   /// Returns the auto correct entries for equations. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.omathautocorrect?view=word-pia"/>
-  public IOMathAutoCorrect IOMathAutoCorrect { get; }
+  public IOMathAutoCorrect OMathAutoCorrect { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether the document properties panel is displayed. Read/write.
@@ -688,7 +688,7 @@ public interface IApplication : IInteropObject
   /// Gets an UndoRecord object that provides a custom entry point into the undo stack.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.undorecord?view=word-pia"/>
-  public IUndoRecord IUndoRecord { get; }
+  public IUndoRecord UndoRecord { get; }
 
   /// <summary>
   /// Gets a PickerDialog object that provides the functionality to select people or data in a dialog box.
@@ -700,7 +700,7 @@ public interface IApplication : IInteropObject
   /// Gets a ProtectedViewWindows collection that represents all protected view windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.protectedviewwindows?view=word-pia"/>
-  public IProtectedViewWindows IProtectedViewWindows { get; }
+  public IProtectedViewWindows ProtectedViewWindows { get; }
 
   /// <summary>
   /// Gets a ProtectedViewWindow object that represents the active protected view window.

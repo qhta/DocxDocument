@@ -40,7 +40,7 @@ public interface IRevision : IInteropObject
   /// Returns a Style object that represents the style associated with the current author for revisions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.style?view=word-pia"/>
-  public IStyle IStyle { get; }
+  public IStyle Style { get; }
 
   /// <summary>
   /// Returns a String representing a description of tracked formatting changes in a revision.
@@ -60,7 +60,7 @@ public interface IRevision : IInteropObject
   /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.cells?view=word-pia"/>
-  public ICells ICells { get; }
+  public ICells Cells { get; }
 
 
   #region methods

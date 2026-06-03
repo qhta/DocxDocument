@@ -22,7 +22,7 @@ public interface IMailingLabel : IInteropObject
   /// Returns the custom labels collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.customlabels?view=word-pia"/>
-  public ICustomLabels ICustomLabels { get; }
+  public ICustomLabels CustomLabels { get; }
 
   /// <summary>
   /// Returns or sets the default mailing label name.

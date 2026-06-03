@@ -40,6 +40,6 @@ public interface ILine : IInteropObject
   /// Returns a rectangles collection that includes the rectangle objects in the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.rectangles?view=word-pia"/>
-  public IRectangles IRectangles { get; }
+  public IRectangles Rectangles { get; }
 
 }
