@@ -35,11 +35,11 @@ public interface ILine : IInteropObject
   /// Returns a range object that represents the line in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
   /// <summary>
   /// Returns a rectangles collection that includes the rectangle objects in the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.rectangles?view=word-pia"/>
-  public Rectangles Rectangles { get; }
+  public IRectangles IRectangles { get; }
 
 }

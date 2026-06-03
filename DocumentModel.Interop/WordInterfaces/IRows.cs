@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Row objects that represent the table rows in the specified selection, range, or table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows?view=word-pia"/>
-public interface IRows : IInteropObject, IInteropCollection<Row>
+public interface IRows : IInteropObject, IInteropCollection<IRow>
 {
   /// <summary>
   /// Determine if the text in a table row or rows is allowed to split across a page break.
@@ -52,25 +52,25 @@ public interface IRows : IInteropObject, IInteropCollection<Row>
   /// Returns a Row object that represents the first item in the Rows collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.first?view=word-pia"/>
-  public Row First { get; }
+  public IRow First { get; }
 
   /// <summary>
   /// Returns the last item in the Rows collection as a Row object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.last?view=word-pia"/>
-  public Row Last { get; }
+  public IRow Last { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Determines whether text should wrap around the specified rows.
@@ -153,12 +153,12 @@ public interface IRows : IInteropObject, IInteropCollection<Row>
   /// Adds a new row before the specified row.
   /// </summary>
   /// <param name="BeforeRow">The row before which the new row is inserted.</param>
-  /// <returns>The inserted <see cref="Row"/>.</returns>
+  /// <returns>The inserted <see cref="IRow"/>.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.add?view=word-pia"/>
-  public Row Add(object BeforeRow);
+  public IRow Add(object BeforeRow);
 
   #endregion methods
 }

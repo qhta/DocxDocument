@@ -12,7 +12,7 @@ public interface IShape : IInteropObject
   /// object that represents an AutoShape or WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.adjustments?view=word-pia"/>
-  public Adjustments Adjustments { get; }
+  public IAdjustments IAdjustments { get; }
 
   /// <summary>
   /// Returns or sets the shape type for the specified Shape object, which must represent an AutoShape other than a
@@ -25,7 +25,7 @@ public interface IShape : IInteropObject
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.callout?view=word-pia"/>
-  public CalloutFormat Callout { get; }
+  public ICalloutFormat Callout { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -43,19 +43,19 @@ public interface IShape : IInteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connectorformat?view=word-pia"/>
-  public ConnectorFormat ConnectorFormat { get; }
+  public IConnectorFormat IConnectorFormat { get; }
 
   /// <summary>
   /// Returns a FillFormat object that contains fill formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.fill?view=word-pia"/>
-  public FillFormat Fill { get; }
+  public IFillFormat Fill { get; }
 
   /// <summary>
   /// Returns a GroupShapes object that represents the individual shapes in the specified group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.groupitems?view=word-pia"/>
-  public GroupShapes GroupItems { get; }
+  public IGroupShapes GroupItems { get; }
 
   /// <summary>
   /// Returns or sets the height of the specified shape in points.
@@ -80,7 +80,7 @@ public interface IShape : IInteropObject
   /// Returns a LineFormat object that contains line formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.line?view=word-pia"/>
-  public LineFormat Line { get; }
+  public ILineFormat Line { get; }
 
   /// <summary>
   /// Determines if you can change the height and width of the shape independently of one another when you resize it
@@ -99,7 +99,7 @@ public interface IShape : IInteropObject
   /// Returns a ShapeNodes collection that represents the geometric description of the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.nodes?view=word-pia"/>
-  public ShapeNodes Nodes { get; }
+  public IShapeNodes Nodes { get; }
 
   /// <summary>
   /// Returns or sets the number of degrees the specified shape is rotated around the z-axis.
@@ -111,32 +111,32 @@ public interface IShape : IInteropObject
   /// Returns a PictureFormat object that contains picture formatting properties for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.pictureformat?view=word-pia"/>
-  public PictureFormat PictureFormat { get; }
+  public IPictureFormat IPictureFormat { get; }
 
   /// <summary>
   /// Returns a ShadowFormat object that represents the shadow formatting for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shadow?view=word-pia"/>
-  public ShadowFormat Shadow { get; }
+  public IShadowFormat Shadow { get; }
 
   /// <summary>
   /// Returns a TextEffectFormat object that contains text-effect formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.texteffect?view=word-pia"/>
-  public TextEffectFormat TextEffect { get; }
+  public ITextEffectFormat TextEffect { get; }
 
   /// <summary>
   /// Returns a TextFrame object that contains the text for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe?view=word-pia"/>
-  public TextFrame TextFrame { get; }
+  public ITextFrame ITextFrame { get; }
 
   /// <summary>
   /// Returns a ThreeDFormat object that contains formatting properties of the three-dimensional effect for the
   /// specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.threed?view=word-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
 
   /// <summary>
   /// Returns or sets the vertical position of the specified shape in points.
@@ -157,7 +157,7 @@ public interface IShape : IInteropObject
   public Core.TriState VerticalFlip { get; }
 
   /// <summary>
-  /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
+  /// Returns the coordinates of the specified freeform drawing's vertices (and control points for BÄ‚Â©zier curves) as
   /// a series of coordinate pairs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.vertices?view=word-pia"/>
@@ -185,7 +185,7 @@ public interface IShape : IInteropObject
   /// Returns a Hyperlink object that represents the hyperlink associated with the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hyperlink?view=word-pia"/>
-  public Hyperlink Hyperlink { get; }
+  public IHyperlink IHyperlink { get; }
 
   /// <summary>
   /// Specifies to what the horizontal position of a shape is relative.
@@ -209,26 +209,26 @@ public interface IShape : IInteropObject
   /// Returns a WrapFormat object that contains the properties for wrapping text around the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.wrapformat?view=word-pia"/>
-  public WrapFormat WrapFormat { get; }
+  public IWrapFormat IWrapFormat { get; }
 
   /// <summary>
   /// Returns a OLEFormat object that represents the OLE characteristics (other than linking) for the specified
   /// shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.oleformat?view=word-pia"/>
-  public OLEFormat OLEFormat { get; }
+  public IOLEFormat IOLEFormat { get; }
 
   /// <summary>
   /// Returns a Range object that represents the anchoring range for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.anchor?view=word-pia"/>
-  public Range Anchor { get; }
+  public IRange Anchor { get; }
 
   /// <summary>
   /// Returns a LinkFormat object that represents the link options of the specified shape that's linked to a file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.linkformat?view=word-pia"/>
-  public LinkFormat LinkFormat { get; }
+  public ILinkFormat ILinkFormat { get; }
 
   /// <summary>
   /// Returns or sets the alternative text associated with a shape in a Web page.
@@ -240,7 +240,7 @@ public interface IShape : IInteropObject
   /// Returns a Script object, which represents a block of script or code on the specified Web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.script?view=word-pia"/>
-  public Core.Script Script { get; }
+  public Core.IScript IScript { get; }
 
   /// <summary>
   /// Determines if a shape is a diagram.
@@ -264,7 +264,7 @@ public interface IShape : IInteropObject
   /// Returns a DiagramNode object that represents a node in a diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.diagramnode?view=word-pia"/>
-  public DiagramNode DiagramNode { get; }
+  public IDiagramNode IDiagramNode { get; }
 
   /// <summary>
   /// Determines if the shape is a child shape.
@@ -276,13 +276,13 @@ public interface IShape : IInteropObject
   /// Returns a Shape object that represents the common parent shape of a child shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.parentgroup?view=word-pia"/>
-  public Shape ParentGroup { get; }
+  public IShape ParentGroup { get; }
 
   /// <summary>
   /// Returns a CanvasShapes object that represents a collection of shapes in a drawing canvas.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.canvasitems?view=word-pia"/>
-  public CanvasShapes CanvasItems { get; }
+  public ICanvasShapes CanvasItems { get; }
 
   /// <summary>
   /// Returns the type for the specified object.
@@ -313,7 +313,7 @@ public interface IShape : IInteropObject
   /// Returns a Chart object that represents a chart within the collection of shapes in a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.chart?view=word-pia"/>
-  public Chart Chart { get; }
+  public IChart IChart { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents the relative left position of a shape. Read/write.
@@ -357,25 +357,25 @@ public interface IShape : IInteropObject
   /// Returns a SoftEdgeFormat object that represents the soft edge formatting for a shape. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.softedge?view=word-pia"/>
-  public SoftEdgeFormat SoftEdge { get; }
+  public ISoftEdgeFormat SoftEdge { get; }
 
   /// <summary>
   /// Returns a GlowFormat object that represents the glow formatting for a shape. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.glow?view=word-pia"/>
-  public GlowFormat Glow { get; }
+  public IGlowFormat Glow { get; }
 
   /// <summary>
   /// Returns a ReflectionFormat object that represents the reflection formatting for a shape. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.reflection?view=word-pia"/>
-  public ReflectionFormat Reflection { get; }
+  public IReflectionFormat Reflection { get; }
 
   /// <summary>
   /// Returns a TextFrame2 object that contains the text for the specified shape. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe2?view=word-pia"/>
-  public Core.TextFrame2 TextFrame2 { get; }
+  public Core.ITextFrame2 ITextFrame2 { get; }
 
   /// <summary>
   /// Gets True if there is a SmartArt diagram present on the shape.
@@ -387,7 +387,7 @@ public interface IShape : IInteropObject
   /// Gets a SmartArt object that provides a way to work with the SmartArt associated with the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.smartart?view=word-pia"/>
-  public Core.SmartArt SmartArt { get; }
+  public Core.ISmartArt ISmartArt { get; }
 
   /// <summary>
   /// Gets or sets the shape style for the specified shape.

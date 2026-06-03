@@ -71,7 +71,7 @@ public interface ITextFrame2: IInteropObject
   /// Gets the `ThreeD` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.threed?view=office-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
   /// <summary>
   /// Gets the `HasText` property.
   /// </summary>

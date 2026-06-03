@@ -10,25 +10,25 @@ public interface IWindow : IInteropObject
   /// Returns a Pane object that represents the active pane for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.activepane?view=word-pia"/>
-  public Pane ActivePane { get; }
+  public IPane ActivePane { get; }
 
   /// <summary>
   /// Returns a Document object associated with the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument document { get; }
 
   /// <summary>
   /// Returns a Panes collection that represents all the window panes for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.panes?view=word-pia"/>
-  public Panes Panes { get; }
+  public IPanes IPanes { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection ISelection { get; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the horizontal position of the specified window, measured in
@@ -95,7 +95,7 @@ public interface IWindow : IInteropObject
   /// Returns a View object that represents the view for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.view?view=word-pia"/>
-  public View View { get; }
+  public IView IView { get; }
 
   /// <summary>
   /// Returns the window type.
@@ -107,13 +107,13 @@ public interface IWindow : IInteropObject
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.next?view=word-pia"/>
-  public Window Next { get; }
+  public IWindow Next { get; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.previous?view=word-pia"/>
-  public Window Previous { get; }
+  public IWindow Previous { get; }
 
   /// <summary>
   /// Returns the window number of the document displayed in the specified window. For example, if the caption of

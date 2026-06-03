@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop;
+namespace DocumentModel.Interop;
 
 /// <summary>
 /// Defines the formatting properties for text. These properties include font name, font size, and font style. The TextFormat object is used by the Font property of the CharacterFormat object and the ParagraphFormat object to specify the formatting of text in a document.
@@ -133,7 +133,7 @@ public interface IITextFormat
   /// <summary>
   /// The color for text
   /// </summary>
-  public ColorFormat? TextColor { get; }
+  public IColorFormat? TextColor { get; }
 
   /// <summary>
   /// The underline style for the specified Font object.
@@ -207,12 +207,12 @@ public interface IITextFormat
   /// <summary>
   /// The borders for the specified text.
   /// </summary>
-  public Borders? Borders { get; set; }
+  public IBorders? IBorders { get; set; }
 
   /// <summary>
   /// The shading for the specified Font object.
   /// </summary>
-  public Shading? Shading { get; }
+  public IShading? IShading { get; }
 
   /// <summary>
   /// The emphasis mark type.
@@ -227,32 +227,32 @@ public interface IITextFormat
   /// <summary>
   /// The glow effect applied to the text.
   /// </summary>
-  public GlowFormat? Glow { get; set; }
+  public IGlowFormat? Glow { get; set; }
 
   /// <summary>
   /// The reflection effect applied to the text.
   /// </summary>
-  public ReflectionFormat? Reflection { get; set; }
+  public IReflectionFormat? Reflection { get; set; }
 
   /// <summary>
   /// The shadow effect applied to the text.
   /// </summary>
-  public ShadowFormat? TextShadow { get; set; }
+  public IShadowFormat? TextShadow { get; set; }
 
   /// <summary>
   /// The fill formatting for the text.
   /// </summary>
-  public FillFormat? Fill { get; set; }
+  public IFillFormat? Fill { get; set; }
 
   /// <summary>
   /// The line formatting for the text. 
   /// </summary>
-  public LineFormat? Line { get; set; }
+  public ILineFormat? Line { get; set; }
 
   /// <summary>
   /// The three-dimensional (3-D) formatting for the text.
   /// </summary>
-  public ThreeDFormat? ThreeD { get; set; }
+  public IThreeDFormat? ThreeD { get; set; }
 
   /// <summary>
   /// The ligature setting for the text. 

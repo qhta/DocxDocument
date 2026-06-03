@@ -26,7 +26,7 @@ public interface IGroupShapes: IInteropCollection<IShape>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes.range?view=office-pia"/>
-  public ShapeRange Range(object Index);
+  public IShapeRange Range(object Index);
 
   #endregion methods
 }

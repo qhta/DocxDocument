@@ -20,6 +20,6 @@ public interface IBuildingBlockType : IInteropObject
   /// Gets the categories collection for this building block type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblocktype.categories?view=word-pia"/>
-  public Categories Categories { get; }
+  public ICategories ICategories { get; }
 
 }

@@ -10,7 +10,7 @@ public interface IParagraphFormat : IInteropObject
   /// Gets a duplicate of the paragraph formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.duplicate?view=word-pia"/>
-  public ParagraphFormat Duplicate { get; }
+  public IParagraphFormat Duplicate { get; }
 
   /// <summary>
   /// Gets or sets the style for the paragraph format.
@@ -160,19 +160,19 @@ public interface IParagraphFormat : IInteropObject
   /// Gets or sets the tab stops.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.tabstops?view=word-pia"/>
-  public TabStops TabStops { get; set; }
+  public ITabStops ITabStops { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets or sets the outline level.

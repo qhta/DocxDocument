@@ -22,13 +22,13 @@ public interface IChartGroup : IInteropObject
   /// Gets the down bars for a line chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.downbars?view=word-pia"/>
-  public DownBars DownBars { get; }
+  public IDownBars IDownBars { get; }
 
   /// <summary>
   /// Gets the drop lines for the chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.droplines?view=word-pia"/>
-  public DropLines DropLines { get; }
+  public IDropLines IDropLines { get; }
 
   /// <summary>
   /// Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees.
@@ -76,7 +76,7 @@ public interface IChartGroup : IInteropObject
   /// Gets the high-low lines for the chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.hilolines?view=word-pia"/>
-  public HiLoLines HiLoLines { get; }
+  public IHiLoLines IHiLoLines { get; }
 
   /// <summary>
   /// Gets the index number of the chart group in the `ChartGroups` collection.
@@ -94,13 +94,13 @@ public interface IChartGroup : IInteropObject
   /// Gets the radar axis labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.radaraxislabels?view=word-pia"/>
-  public TickLabels RadarAxisLabels { get; }
+  public ITickLabels RadarAxisLabels { get; }
 
   /// <summary>
   /// Gets the series lines for stacked bar and stacked column charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.serieslines?view=word-pia"/>
-  public SeriesLines SeriesLines { get; }
+  public ISeriesLines ISeriesLines { get; }
 
   /// <summary>
   /// Gets or sets the chart subtype for the chart group.
@@ -118,7 +118,7 @@ public interface IChartGroup : IInteropObject
   /// Gets the up bars for a line chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.upbars?view=word-pia"/>
-  public UpBars UpBars { get; }
+  public IUpBars IUpBars { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether each data marker has a different color.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of SmartTagType objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtypes?view=word-pia"/>
-public interface ISmartTagTypes : IInteropObject, IInteropCollection<SmartTagType>
+public interface ISmartTagTypes : IInteropObject, IInteropCollection<ISmartTagType>
 {
 
 

@@ -7,16 +7,16 @@ namespace DocumentModel.Interop.Word;
 public interface IFillFormat : IInteropObject
 {
   /// <summary>
-  /// Returns or sets a <see cref="ColorFormat"/> object that represents the background color for the specified fill or patterned line.
+  /// Returns or sets a <see cref="IColorFormat"/> object that represents the background color for the specified fill or patterned line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.backcolor?view=word-pia"/>
-  public ColorFormat BackColor { get; }
+  public IColorFormat BackColor { get; }
 
   /// <summary>
-  /// Returns or sets a <see cref="ColorFormat"/> object that represents the foreground color for the fill.
+  /// Returns or sets a <see cref="IColorFormat"/> object that represents the foreground color for the fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.forecolor?view=word-pia"/>
-  public ColorFormat ForeColor { get; }
+  public IColorFormat ForeColor { get; }
 
   /// <summary>
   /// Returns the gradient color type for the specified fill.
@@ -91,10 +91,10 @@ public interface IFillFormat : IInteropObject
   public Core.TriState Visible { get; set; }
 
   /// <summary>
-  /// Gets the <see cref="Core.GradientStops"/> collection associated with the specified fill format.
+  /// Gets the <see cref="Core.IGradientStops"/> collection associated with the specified fill format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientstops?view=word-pia"/>
-  public Core.GradientStops GradientStops { get; }
+  public Core.IGradientStops IGradientStops { get; }
 
   /// <summary>
   /// Gets or sets a value that specifies the horizontal offset of the texture from the origin in points.
@@ -139,10 +139,10 @@ public interface IFillFormat : IInteropObject
   public Core.TriState RotateWithObject { get; set; }
 
   /// <summary>
-  /// Gets a <see cref="Core.PictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
+  /// Gets a <see cref="Core.IPictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.pictureeffects?view=word-pia"/>
-  public Core.PictureEffects PictureEffects { get; }
+  public Core.IPictureEffects IPictureEffects { get; }
 
   /// <summary>
   /// Gets or sets the angle of the gradient fill for the specified fill format.

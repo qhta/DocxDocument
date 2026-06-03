@@ -21,7 +21,7 @@ public interface IMsoDisplayUnitLabel: IMsoChartTitle
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.font?view=office-pia"/>
-  public new ChartFont Font { get; }
+  public new IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
@@ -76,7 +76,7 @@ public interface IMsoDisplayUnitLabel: IMsoChartTitle
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.fill?view=office-pia"/>
-  public new ChartFillFormat Fill { get; }
+  public new IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>

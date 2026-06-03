@@ -11,7 +11,7 @@ public interface IDiagramNode: IInteropObject
   /// Gets or sets the `Children` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.children?view=office-pia"/>
-  public DiagramNodeChildren Children { get; }
+  public IDiagramNodeChildren Children { get; }
   /// <summary>
   /// Gets the `IShape` property.
   /// </summary>
@@ -21,7 +21,7 @@ public interface IDiagramNode: IInteropObject
   /// Gets the `Root` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.root?view=office-pia"/>
-  public DiagramNode Root { get; }
+  public IDiagramNode Root { get; }
   /// <summary>
   /// Gets the `Diagram` property.
   /// </summary>
@@ -48,7 +48,7 @@ public interface IDiagramNode: IInteropObject
   /// <param name="NodeType">The `NodeType` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.addnode?view=office-pia"/>
-  public DiagramNode AddNode
+  public IDiagramNode AddNode
   (RelativeNodePosition Pos,
     DiagramNodeType NodeType);
   /// <summary>
@@ -62,20 +62,20 @@ public interface IDiagramNode: IInteropObject
   /// <param name="TargetNode">The `TargetNode` parameter.</param>
   /// <param name="Pos">The `Pos` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.movenode?view=office-pia"/>
-  public void MoveNode(DiagramNode TargetNode, RelativeNodePosition Pos);
+  public void MoveNode(IDiagramNode TargetNode, RelativeNodePosition Pos);
   /// <summary>
   /// Invokes `ReplaceNode`.
   /// </summary>
   /// <param name="TargetNode">The `TargetNode` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.replacenode?view=office-pia"/>
-  public void ReplaceNode(DiagramNode TargetNode);
+  public void ReplaceNode(IDiagramNode TargetNode);
   /// <summary>
   /// Invokes `SwapNode`.
   /// </summary>
   /// <param name="TargetNode">The `TargetNode` parameter.</param>
   /// <param name="SwapChildren">The `SwapChildren` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.swapnode?view=office-pia"/>
-  public void SwapNode(DiagramNode TargetNode, bool SwapChildren);
+  public void SwapNode(IDiagramNode TargetNode, bool SwapChildren);
   /// <summary>
   /// Invokes `CloneNode`.
   /// </summary>
@@ -84,26 +84,26 @@ public interface IDiagramNode: IInteropObject
   /// <param name="Pos">The `Pos` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.clonenode?view=office-pia"/>
-  public DiagramNode CloneNode
-    (bool CopyChildren, DiagramNode TargetNode, RelativeNodePosition Pos);
+  public IDiagramNode CloneNode
+    (bool CopyChildren, IDiagramNode TargetNode, RelativeNodePosition Pos);
   /// <summary>
   /// Invokes `TransferChildren`.
   /// </summary>
   /// <param name="ReceivingNode">The `ReceivingNode` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.transferchildren?view=office-pia"/>
-  public void TransferChildren(DiagramNode ReceivingNode);
+  public void TransferChildren(IDiagramNode ReceivingNode);
   /// <summary>
   /// Invokes `NextNode`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.nextnode?view=office-pia"/>
-  public DiagramNode NextNode();
+  public IDiagramNode NextNode();
   /// <summary>
   /// Invokes `PrevNode`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.prevnode?view=office-pia"/>
-  public DiagramNode PrevNode();
+  public IDiagramNode PrevNode();
 
   #endregion methods
 }

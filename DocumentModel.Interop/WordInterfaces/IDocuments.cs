@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the Document objects that are currently open in Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents?view=word-pia"/>
-public interface IDocuments : IInteropObject, IInteropCollection<Document>
+public interface IDocuments : IInteropObject, IInteropCollection<IDocument>
 {
 
 
@@ -32,7 +32,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addold?view=word-pia"/>
-  public Document AddOld(object Template, object NewTemplate);
+  public IDocument AddOld(object Template, object NewTemplate);
 
   /// <summary>
   /// Returns the value produced by the open old operation.
@@ -52,7 +52,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.openold?view=word-pia"/>
-  public Document OpenOld(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format);
+  public IDocument OpenOld(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format);
 
   /// <summary>
   /// Executes the save operation.
@@ -77,7 +77,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.add?view=word-pia"/>
-  public Document Add(object Template, object NewTemplate, object DocumentType, object Visible);
+  public IDocument Add(object Template, object NewTemplate, object DocumentType, object Visible);
 
   /// <summary>
   /// Returns the value produced by the open2000 operation.
@@ -99,7 +99,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2000?view=word-pia"/>
-  public Document Open2000(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible);
+  public IDocument Open2000(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible);
 
   /// <summary>
   /// Executes the check out operation.
@@ -145,7 +145,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2002?view=word-pia"/>
-  public Document Open2002(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog);
+  public IDocument Open2002(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog);
 
   /// <summary>
   /// Returns the value produced by the open operation.
@@ -171,7 +171,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open?view=word-pia"/>
-  public Document Open(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
+  public IDocument Open(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
 
   /// <summary>
   /// Returns the value produced by the open no repair dialog operation.
@@ -197,7 +197,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.opennorepairdialog?view=word-pia"/>
-  public Document OpenNoRepairDialog(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
+  public IDocument OpenNoRepairDialog(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
 
   /// <summary>
   /// Returns the value produced by the add blog document operation.
@@ -211,7 +211,7 @@ public interface IDocuments : IInteropObject, IInteropCollection<Document>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addblogdocument?view=word-pia"/>
-  public Document AddBlogDocument(string ProviderID, string PostURL, string BlogName, string PostID);
+  public IDocument AddBlogDocument(string ProviderID, string PostURL, string BlogName, string PostID);
 
   #endregion methods
 }

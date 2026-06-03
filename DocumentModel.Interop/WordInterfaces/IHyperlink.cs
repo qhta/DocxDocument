@@ -28,13 +28,13 @@ public interface IHyperlink : IInteropObject
   /// Returns a range object that represents the hyperlink range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns a shape object that represents the shape for the hyperlink.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.shape?view=word-pia"/>
-  public Shape Shape { get; }
+  public IShape IShape { get; }
 
   /// <summary>
   /// Returns the previous subaddress of the hyperlink.

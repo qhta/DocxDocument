@@ -10,12 +10,12 @@ public interface IConditionalStyle : IInteropObject
   /// Gets the shading formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
   /// <summary>
   /// Gets or sets the border formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
   /// <summary>
   /// Gets or sets the bottom cell padding, in points, for the conditional style.
   /// </summary>
@@ -40,11 +40,11 @@ public interface IConditionalStyle : IInteropObject
   /// Gets or sets the paragraph formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat IParagraphFormat { get; set; }
   /// <summary>
   /// Gets or sets the font formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont IFont { get; set; }
 
 }

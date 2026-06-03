@@ -16,7 +16,7 @@ public interface IConnectorFormat : IInteropObject
   /// Gets the shape attached to the beginning of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnectedshape?view=word-pia"/>
-  public Shape BeginConnectedShape { get; }
+  public IShape BeginConnectedShape { get; }
 
   /// <summary>
   /// Gets the connection site on the shape where the beginning of the connector is attached.
@@ -34,7 +34,7 @@ public interface IConnectorFormat : IInteropObject
   /// Gets the shape attached to the end of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnectedshape?view=word-pia"/>
-  public Shape EndConnectedShape { get; }
+  public IShape EndConnectedShape { get; }
 
   /// <summary>
   /// Gets the connection site on the shape where the end of the connector is attached.
@@ -60,7 +60,7 @@ public interface IConnectorFormat : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnect?view=word-pia"/>
-  public void BeginConnect(Shape ConnectedShape, int ConnectionSite);
+  public void BeginConnect(IShape ConnectedShape, int ConnectionSite);
 
   #endregion methods
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Template objects that represent all the templates that are currently available.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.templates?view=word-pia"/>
-public interface ITemplates : IInteropObject, IInteropCollection<Template>
+public interface ITemplates : IInteropObject, IInteropCollection<ITemplate>
 {
 
 

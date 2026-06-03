@@ -11,7 +11,7 @@ public interface IMsoTickLabels
   /// Gets or sets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>

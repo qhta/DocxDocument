@@ -16,7 +16,7 @@ public interface IDisplayUnitLabel : IInteropObject
   /// Gets the font formatting for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of the display-unit label.
@@ -76,19 +76,19 @@ public interface IDisplayUnitLabel : IInteropObject
   /// Gets the interior formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Gets the fill formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Gets the border formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Gets the name of the display-unit label object.
@@ -112,7 +112,7 @@ public interface IDisplayUnitLabel : IInteropObject
   /// Gets the chart formatting for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Gets the height of the display-unit label, in points.
@@ -158,12 +158,12 @@ public interface IDisplayUnitLabel : IInteropObject
   /// </summary>
   /// <param name="Start">The starting character position.</param>
   /// <param name="Length">The number of characters to return.</param>
-  /// <returns>The requested <see cref="ChartCharacters"/> range.</returns>
+  /// <returns>The requested <see cref="IChartCharacters"/> range.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.get_characters?view=word-pia"/>
-  public ChartCharacters Characters(object Start, object Length);
+  public IChartCharacters Characters(object Start, object Length);
 
   /// <summary>
   /// Deletes the object.

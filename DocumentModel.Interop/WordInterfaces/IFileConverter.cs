@@ -47,7 +47,7 @@ public interface IFileConverter : IInteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// Returns the file name extensions associated with the specified <see cref="FileConverter"/> object.
+  /// Returns the file name extensions associated with the specified <see cref="IFileConverter"/> object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.extensions?view=word-pia"/>
   public string Extensions { get; }

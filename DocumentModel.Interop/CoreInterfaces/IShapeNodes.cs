@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes?view=office-pia"/>
-public interface IShapeNodes: IInteropCollection<ShapeNode>
+public interface IShapeNodes: IInteropCollection<IShapeNode>
 {
 
 
@@ -19,7 +19,7 @@ public interface IShapeNodes: IInteropCollection<ShapeNode>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.item?view=office-pia"/>
-  public ShapeNode Item(object Index);
+  public IShapeNode Item(object Index);
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>

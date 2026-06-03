@@ -16,13 +16,13 @@ public interface ILegend : IInteropObject
   /// Returns a border object that represents the legend border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns a font object that represents the legend font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Returns or sets the position of the legend on the chart.
@@ -46,13 +46,13 @@ public interface ILegend : IInteropObject
   /// Returns an interior object that represents the interior of the legend.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Returns fill formatting properties for the legend.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Returns or sets the distance, in points, from the left edge of the chart area to the left edge of the legend.
@@ -88,7 +88,7 @@ public interface ILegend : IInteropObject
   /// Returns the chart format properties for the legend.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

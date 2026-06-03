@@ -76,7 +76,7 @@ public interface IListLevel : IInteropObject
   /// Returns or sets the font formatting for the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont IFont { get; set; }
 
   /// <summary>
   /// Returns or sets the higher list level that causes numbering to restart.
@@ -88,7 +88,7 @@ public interface IListLevel : IInteropObject
   /// Returns the picture bullet for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.picturebullet?view=word-pia"/>
-  public InlineShape PictureBullet { get; }
+  public IInlineShape PictureBullet { get; }
 
 
   #region methods
@@ -97,12 +97,12 @@ public interface IListLevel : IInteropObject
   /// Applies a picture bullet to the list level and returns the picture bullet shape.
   /// </summary>
   /// <param name="FileName">The file name of the picture to use as a bullet.</param>
-  /// <returns>The <see cref="InlineShape"/> created for the picture bullet.</returns>
+  /// <returns>The <see cref="IInlineShape"/> created for the picture bullet.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.applypicturebullet?view=word-pia"/>
-  public InlineShape ApplyPictureBullet(string FileName);
+  public IInlineShape ApplyPictureBullet(string FileName);
 
   #endregion methods
 }

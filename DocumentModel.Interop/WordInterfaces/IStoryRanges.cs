@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Range objects that represent stories in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.storyranges?view=word-pia"/>
-public interface IStoryRanges : IInteropObject, IInteropDictionary<StoryType, Range>
+public interface IStoryRanges : IInteropObject, IInteropDictionary<StoryType, IRange>
 {
 }

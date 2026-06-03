@@ -25,7 +25,7 @@ public interface ICoAuthor : IInteropObject
   /// Gets the collection of coauthoring locks owned by this co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.locks?view=word-pia"/>
-  public CoAuthLocks Locks { get; }
+  public ICoAuthLocks Locks { get; }
   /// <summary>
   /// Gets the email address of the co-author.
   /// </summary>

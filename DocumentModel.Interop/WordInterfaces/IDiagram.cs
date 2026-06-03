@@ -10,7 +10,7 @@ public interface IDiagram : IInteropObject
   /// Gets the collection of nodes in the diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram.nodes?view=word-pia"/>
-  public DiagramNodes Nodes { get; }
+  public IDiagramNodes Nodes { get; }
 
   /// <summary>
   /// Gets the diagram type.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Frame objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames?view=word-pia"/>
-public interface IFrames : IInteropObject, IInteropCollection<Frame>
+public interface IFrames : IInteropObject, IInteropCollection<IFrame>
 {
 
 
@@ -13,13 +13,13 @@ public interface IFrames : IInteropObject, IInteropCollection<Frame>
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames.add?view=word-pia"/>
-  public Frame Add(Range Range);
+  public IFrame Add(IRange range);
 
   /// <summary>
   /// Deletes the specified object.

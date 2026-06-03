@@ -16,13 +16,13 @@ public interface ICoAuthLock : IInteropObject
   /// Gets the coauthor who owns the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.owner?view=word-pia"/>
-  public CoAuthor Owner { get; }
+  public ICoAuthor Owner { get; }
 
   /// <summary>
   /// Gets the range in the document covered by the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.range?view=word-pia"/>
-  public IRange Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Gets a value indicating whether the lock is in a header or footer.

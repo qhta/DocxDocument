@@ -17,7 +17,7 @@ public interface ILegendEntries: IEnumerable
   /// Gets a legend entry by index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.item?view=office-pia"/>
-  public LegendEntry this[object Index] { get; }
+  public ILegendEntry this[object Index] { get; }
 
 
   #region methods

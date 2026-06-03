@@ -22,19 +22,19 @@ public interface IMailMergeField : IInteropObject
   /// Returns or sets the field code text for the mail merge field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.code?view=word-pia"/>
-  public Range Code { get; set; }
+  public IRange Code { get; set; }
 
   /// <summary>
   /// Returns the next mail merge field in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.next?view=word-pia"/>
-  public MailMergeField Next { get; }
+  public IMailMergeField Next { get; }
 
   /// <summary>
   /// Returns the previous mail merge field in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.previous?view=word-pia"/>
-  public MailMergeField Previous { get; }
+  public IMailMergeField Previous { get; }
 
 
   #region methods

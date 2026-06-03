@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the collection of math AutoCorrect entries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries?view=word-pia"/>
-public interface IOMathAutoCorrectEntries : IInteropObject, IInteropCollection<OMathAutoCorrectEntry>
+public interface IOMathAutoCorrectEntries : IInteropObject, IInteropCollection<IOMathAutoCorrectEntry>
 {
 
 
@@ -20,7 +20,7 @@ public interface IOMathAutoCorrectEntries : IInteropObject, IInteropCollection<O
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries.add?view=word-pia"/>
-  public OMathAutoCorrectEntry Add(string Name, string Value);
+  public IOMathAutoCorrectEntry Add(string Name, string Value);
 
   #endregion methods
 }

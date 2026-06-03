@@ -13,22 +13,22 @@ public interface IFloor : IInteropObject
   public string Name { get; }
 
   /// <summary>
-  /// Returns a <see cref="ChartBorder"/> object that represents the border of the object.
+  /// Returns a <see cref="IChartBorder"/> object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
-  /// Returns an <see cref="Interior"/> object that represents the interior of the specified object.
+  /// Returns an <see cref="IInterior"/> object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
-  /// Returns a <see cref="ChartFillFormat"/> object that contains fill formatting properties for the chart.
+  /// Returns a <see cref="IChartFillFormat"/> object that contains fill formatting properties for the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Returns or sets an object value that represents the way pictures are displayed on the walls and faces of a 3-D chart.
@@ -46,7 +46,7 @@ public interface IFloor : IInteropObject
   /// Returns the line, fill, and effect formatting for the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

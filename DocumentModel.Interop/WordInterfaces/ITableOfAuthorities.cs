@@ -72,7 +72,7 @@ public interface ITableOfAuthorities : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of authorities.

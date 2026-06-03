@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of XMLNamespace objects that represents the entire collection of schemas in the Schema Library.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces?view=word-pia"/>
-public interface IXMLNamespaces : IInteropObject, IInteropCollection<XMLNamespace>
+public interface IXMLNamespaces : IInteropObject, IInteropCollection<IXMLNamespace>
 {
 
 
@@ -17,12 +17,12 @@ public interface IXMLNamespaces : IInteropObject, IInteropCollection<XMLNamespac
   /// <param name="NamespaceURI">The namespace URI to associate with the schema.</param>
   /// <param name="Alias">The alias for the namespace.</param>
   /// <param name="InstallForAllUsers">true to install for all users; otherwise, false.</param>
-  /// <returns>The created <see cref="XMLNamespace"/> object.</returns>
+  /// <returns>The created <see cref="IXMLNamespace"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces.add?view=word-pia"/>
-  public XMLNamespace Add(string Path, object NamespaceURI, object Alias, bool InstallForAllUsers);
+  public IXMLNamespace Add(string Path, object NamespaceURI, object Alias, bool InstallForAllUsers);
 
   /// <summary>
   /// Installs an XML manifest at the specified path.

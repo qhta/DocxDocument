@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of DiagramNode objects that represent all the nodes in a diagram. The DiagramNodes collection contains all the diagram nodes in a specified diagram.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodes?view=word-pia"/>
-public interface IDiagramNodes : IInteropObject, IInteropCollection<DiagramNode>
+public interface IDiagramNodes : IInteropObject, IInteropCollection<IDiagramNode>
 {
 
 

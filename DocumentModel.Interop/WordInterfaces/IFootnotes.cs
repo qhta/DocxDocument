@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Footnote objects that represent all the footnotes in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes?view=word-pia"/>
-public interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
+public interface IFootnotes : IInteropObject, IInteropCollection<IFootnote>
 {
   /// <summary>
   /// Returns or sets the position of all footnotes.
@@ -31,22 +31,22 @@ public interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
   public NumberingRule NumberingRule { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote separator.
+  /// Returns a <see cref="IRange"/> object that represents the footnote separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.separator?view=word-pia"/>
-  public Range Separator { get; }
+  public IRange Separator { get; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote continuation separator.
+  /// Returns a <see cref="IRange"/> object that represents the footnote continuation separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationseparator?view=word-pia"/>
-  public Range ContinuationSeparator { get; }
+  public IRange ContinuationSeparator { get; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote continuation notice.
+  /// Returns a <see cref="IRange"/> object that represents the footnote continuation notice.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationnotice?view=word-pia"/>
-  public Range ContinuationNotice { get; }
+  public IRange ContinuationNotice { get; }
 
 
   #region methods
@@ -54,7 +54,7 @@ public interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <param name="Reference">Specifies the reference.</param>
   /// <param name="Text">Specifies the text.</param>
   /// <returns>The resulting value.</returns>
@@ -62,7 +62,7 @@ public interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.add?view=word-pia"/>
-  public Footnote Add(Range Range, object Reference, object Text);
+  public IFootnote Add(IRange range, object Reference, object Text);
 
   #endregion methods
 }

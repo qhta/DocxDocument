@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface IThreeDFormat : IInteropObject
 {
   /// <summary>
-  /// Returns or sets the depth of the shape's extrusion. Can be a value from – 600 through 9600 (positive values
+  /// Returns or sets the depth of the shape's extrusion. Can be a value from â€“ 600 through 9600 (positive values
   /// produce an extrusion whose front face is the original shape; negative values produce an extrusion whose back
   /// face is the original shape).
   /// </summary>
@@ -18,7 +18,7 @@ public interface IThreeDFormat : IInteropObject
   /// Returns a ColorFormat object that represents the color of the shape's extrusion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.extrusioncolor?view=word-pia"/>
-  public ColorFormat ExtrusionColor { get; }
+  public IColorFormat ExtrusionColor { get; }
 
   /// <summary>
   /// Returns or sets a value that indicates whether the extrusion color is based on the extruded shape's fill (the
@@ -29,8 +29,8 @@ public interface IThreeDFormat : IInteropObject
   public Core.ExtrusionColorType ExtrusionColorType { get; set; }
 
   /// <summary>
-  /// MsoTrue if the extrusion appears in perspective— that is, if the walls of the extrusion narrow toward a
-  /// vanishing point. MsoFalse if the extrusion is a parallel, or orthographic, projection— that is, if the walls
+  /// MsoTrue if the extrusion appears in perspectiveâ€” that is, if the walls of the extrusion narrow toward a
+  /// vanishing point. MsoFalse if the extrusion is a parallel, or orthographic, projectionâ€” that is, if the walls
   /// don't narrow toward a vanishing point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.perspective?view=word-pia"/>
@@ -68,14 +68,14 @@ public interface IThreeDFormat : IInteropObject
   public Core.PresetThreeDFormat PresetThreeDFormat { get; }
 
   /// <summary>
-  /// Returns or sets the rotation of the extruded shape around the x-axis in degrees. Can be a value from – 90
+  /// Returns or sets the rotation of the extruded shape around the x-axis in degrees. Can be a value from â€“ 90
   /// through 90. A positive value indicates upward rotation; a negative value indicates downward rotation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.rotationx?view=word-pia"/>
   public float RotationX { get; set; }
 
   /// <summary>
-  /// Returns or sets the rotation of the extruded shape around the y-axis, in degrees. Can be a value from – 90
+  /// Returns or sets the rotation of the extruded shape around the y-axis, in degrees. Can be a value from â€“ 90
   /// through 90. A positive value indicates rotation to the left; a negative value indicates rotation to the right.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.rotationy?view=word-pia"/>
@@ -157,7 +157,7 @@ public interface IThreeDFormat : IInteropObject
   /// Returns or sets a ColorFormat object that represents color of the contour of a shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.contourcolor?view=word-pia"/>
-  public ColorFormat ContourColor { get; }
+  public IColorFormat ContourColor { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents the amount of perspective for a shape. Read/write.

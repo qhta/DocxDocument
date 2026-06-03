@@ -10,13 +10,13 @@ public interface IList : IInteropObject
   /// Returns a range object that represents the portion of a document that's contained in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns a list paragraphs collection that represents all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.listparagraphs?view=word-pia"/>
-  public ListParagraphs ListParagraphs { get; }
+  public IListParagraphs IListParagraphs { get; }
 
   /// <summary>
   /// Returns whether only one list template is used for all paragraphs in the list.

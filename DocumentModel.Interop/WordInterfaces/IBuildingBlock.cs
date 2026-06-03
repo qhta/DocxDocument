@@ -22,7 +22,7 @@ public interface IBuildingBlock : IInteropObject
   /// Gets the building block type that contains this building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.type?view=word-pia"/>
-  public BuildingBlockType Type { get; }
+  public IBuildingBlockType Type { get; }
 
   /// <summary>
   /// Gets or sets the description of the building block.
@@ -40,7 +40,7 @@ public interface IBuildingBlock : IInteropObject
   /// Gets the category of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.category?view=word-pia"/>
-  public Category Category { get; }
+  public ICategory ICategory { get; }
 
   /// <summary>
   /// Gets or sets the content of the building block.

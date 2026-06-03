@@ -10,7 +10,7 @@ public interface IContentControl : IInteropObject
   /// Gets the range of text contained in the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control itself is locked.
@@ -28,7 +28,7 @@ public interface IContentControl : IInteropObject
   /// Gets the XML mapping for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.xmlmapping?view=word-pia"/>
-  public XMLMapping XMLMapping { get; }
+  public IXMLMapping IXMLMapping { get; }
 
   /// <summary>
   /// Gets or sets the type of content control.
@@ -40,13 +40,13 @@ public interface IContentControl : IInteropObject
   /// Gets the collection of list entries for a drop-down or combo box content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.dropdownlistentries?view=word-pia"/>
-  public ContentControlListEntries DropdownListEntries { get; }
+  public IContentControlListEntries DropdownListEntries { get; }
 
   /// <summary>
   /// Gets the placeholder text building block for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.placeholdertext?view=word-pia"/>
-  public BuildingBlock PlaceholderText { get; }
+  public IBuildingBlock PlaceholderText { get; }
 
   /// <summary>
   /// Gets or sets the title of the content control.
@@ -70,7 +70,7 @@ public interface IContentControl : IInteropObject
   /// Gets the parent content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.parentcontentcontrol?view=word-pia"/>
-  public ContentControl ParentContentControl { get; }
+  public IContentControl ParentContentControl { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control is removed after it is edited.
@@ -100,7 +100,7 @@ public interface IContentControl : IInteropObject
   /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
-  public BuildingBlockTypes BuildingBlockType { get; set; }
+  public IBuildingBlockTypes BuildingBlockType { get; set; }
 
   /// <summary>
   /// Gets or sets the building block category for a building block gallery content control.
@@ -160,7 +160,7 @@ public interface IContentControl : IInteropObject
   /// Gets the collection of repeating section items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitems?view=word-pia"/>
-  public RepeatingSectionItemColl RepeatingSectionItems { get; }
+  public IRepeatingSectionItemColl RepeatingSectionItems { get; }
 
   /// <summary>
   /// Gets or sets the title displayed for each repeating section item.

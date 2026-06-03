@@ -11,12 +11,12 @@ public interface IFillFormat: IInteropObject
   /// Gets or sets the `BackColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.backcolor?view=office-pia"/>
-  public ColorFormat BackColor { get; set; }
+  public IColorFormat BackColor { get; set; }
   /// <summary>
   /// Gets or sets the `ForeColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.forecolor?view=office-pia"/>
-  public ColorFormat ForeColor { get; set; }
+  public IColorFormat ForeColor { get; set; }
   /// <summary>
   /// Gets the `GradientColorType` property.
   /// </summary>

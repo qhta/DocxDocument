@@ -10,7 +10,7 @@ public interface IHeaderFooter : IInteropObject
   /// Returns a range object that represents the portion of a document contained in the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
   /// <summary>
   /// Returns a constant that represents the specific header or footer.
   /// </summary>
@@ -30,7 +30,7 @@ public interface IHeaderFooter : IInteropObject
   /// Returns the page numbers collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.pagenumbers?view=word-pia"/>
-  public PageNumbers PageNumbers { get; }
+  public IPageNumbers IPageNumbers { get; }
   /// <summary>
   /// Returns or sets whether the header or footer is linked to the corresponding header or footer in the previous section.
   /// </summary>
@@ -40,6 +40,6 @@ public interface IHeaderFooter : IInteropObject
   /// Returns the shapes collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.shapes?view=word-pia"/>
-  public Shapes Shapes { get; }
+  public IShapes IShapes { get; }
 
 }

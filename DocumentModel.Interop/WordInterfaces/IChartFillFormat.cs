@@ -10,13 +10,13 @@ public interface IChartFillFormat : IInteropObject
   /// Gets the background color of the fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.backcolor?view=word-pia"/>
-  public ChartColorFormat BackColor { get; }
+  public IChartColorFormat BackColor { get; }
 
   /// <summary>
   /// Gets the foreground color of the fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.forecolor?view=word-pia"/>
-  public ChartColorFormat ForeColor { get; }
+  public IChartColorFormat ForeColor { get; }
 
   /// <summary>
   /// Gets the gradient color type.

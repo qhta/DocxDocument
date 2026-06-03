@@ -4,19 +4,19 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Column objects that represent the columns in a table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns?view=word-pia"/>
-public interface IColumns : IInteropObject, IInteropCollection<Column>
+public interface IColumns : IInteropObject, IInteropCollection<IColumn>
 {
   /// <summary>
   /// Gets the first column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.first?view=word-pia"/>
-  public Column First { get; }
+  public IColumn First { get; }
 
   /// <summary>
   /// Gets the last column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.last?view=word-pia"/>
-  public Column Last { get; }
+  public IColumn Last { get; }
 
   /// <summary>
   /// Gets or sets the width of all columns in the collection, in points.
@@ -28,13 +28,13 @@ public interface IColumns : IInteropObject, IInteropCollection<Column>
   /// Gets or sets the border formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets the nesting level of the columns.
@@ -61,12 +61,12 @@ public interface IColumns : IInteropObject, IInteropCollection<Column>
   /// Adds a column to the collection before the specified column.
   /// </summary>
   /// <param name="BeforeColumn">The column before which the new column is added.</param>
-  /// <returns>The newly added <see cref="Column"/> object.</returns>
+  /// <returns>The newly added <see cref="IColumn"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.add?view=word-pia"/>
-  public Column Add(object BeforeColumn);
+  public IColumn Add(object BeforeColumn);
 
   #endregion methods
 }

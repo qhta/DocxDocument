@@ -10,19 +10,19 @@ public interface ILegendKey : IInteropObject
   /// Returns a border object that represents the border of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns an interior object that represents the interior of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Returns fill formatting properties for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Returns or sets whether the data point fill is inverted when the value is negative.
@@ -118,7 +118,7 @@ public interface ILegendKey : IInteropObject
   /// Returns the chart format properties for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Returns or sets the picture unit for modern charting behavior.

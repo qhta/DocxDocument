@@ -16,7 +16,7 @@ public interface ISmartArtNode: IInteropObject
   /// Gets the `Shapes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.shapes?view=office-pia"/>
-  public ShapeRange Shapes { get; }
+  public IShapeRange Shapes { get; }
   /// <summary>
   /// Gets the `TextFrame2` property.
   /// </summary>

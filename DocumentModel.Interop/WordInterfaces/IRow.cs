@@ -10,7 +10,7 @@ public interface IRow : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Determines if the text in a table row or rows are allowed to split across a page break.
@@ -76,31 +76,31 @@ public interface IRow : IInteropObject
   /// Returns a Cells collection that represents the table cells in a column, row, selection, or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells ICells { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.next?view=word-pia"/>
-  public Row Next { get; }
+  public IRow Next { get; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.previous?view=word-pia"/>
-  public Row Previous { get; }
+  public IRow Previous { get; }
 
   /// <summary>
   /// Returns the nesting level of the specified row.

@@ -1,7 +1,7 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents the current settings related to display of reviewers’ comments and revision marks in the document.
+/// Represents the current settings related to display of reviewersâ€™ comments and revision marks in the document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter?view=word-pia"/>
 public interface IRevisionsFilter
@@ -25,7 +25,7 @@ public interface IRevisionsFilter
   /// Returns a Reviewers object that represents the collection of reviewers of one or more documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.reviewers?view=word-pia"/>
-  public Reviewers Reviewers { get; }
+  public IReviewers IReviewers { get; }
 
 
   #region methods

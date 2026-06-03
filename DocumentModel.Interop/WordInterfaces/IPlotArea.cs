@@ -16,7 +16,7 @@ public interface IPlotArea : IInteropObject
   /// Returns a Border object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns or sets a Double value that represents the height, in points, of the object.
@@ -28,14 +28,14 @@ public interface IPlotArea : IInteropObject
   /// Returns a Font object that represents the font of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Returns a FillFormat object for a specified shape or a ChartFillFormat object for a specified chart that
   /// contains fill formatting properties for the shape or chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Returns or sets a Double value that represents the distance, in points, from the left edge of the object to
@@ -93,7 +93,7 @@ public interface IPlotArea : IInteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

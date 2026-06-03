@@ -16,7 +16,7 @@ public interface IProtectedViewWindow : IInteropObject
   /// Gets a Document object associated with the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument document { get; }
 
   /// <summary>
   /// Gets or sets a value, in points, that represents the horizontal position of the specified protected view

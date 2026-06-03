@@ -4,38 +4,38 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Paragraph objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public interface IParagraphs : IInteropObject, IInteropCollection<Paragraph>
+public interface IParagraphs : IInteropObject, IInteropCollection<IParagraph>
 {
   /// <summary>
   /// Returns a Paragraph object that represents the first item in the Paragraphs collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.first?view=word-pia"/>
-  public Paragraph First { get; }
+  public IParagraph First { get; }
 
   /// <summary>
   /// Returns the last item in the Paragraphs collection as a Paragraph object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.last?view=word-pia"/>
-  public Paragraph Last { get; }
+  public IParagraph Last { get; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
   /// paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.format?view=word-pia"/>
-  public ParagraphFormat Format { get; set; }
+  public IParagraphFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets a TabStops collection that represents all the custom tab stops for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.tabstops?view=word-pia"/>
-  public TabStops TabStops { get; set; }
+  public ITabStops ITabStops { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -134,7 +134,7 @@ public interface IParagraphs : IInteropObject, IInteropCollection<Paragraph>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.
@@ -184,7 +184,7 @@ public interface IParagraphs : IInteropObject, IInteropCollection<Paragraph>
 
   /// <summary>
   /// Determines if Microsoft Word is set to automatically adjust the right indent for the specified paragraphs if
-  /// you’ve specified a set number of characters per line.
+  /// youâ€™ve specified a set number of characters per line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.autoadjustrightindent?view=word-pia"/>
   public int AutoAdjustRightIndent { get; set; }
@@ -258,11 +258,11 @@ public interface IParagraphs : IInteropObject, IInteropCollection<Paragraph>
   /// </summary>
   /// <remarks>If the specified range is collapsed, the new paragraph is inserted at that position. If the range
   /// is not collapsed, the content of the range may be replaced by the new paragraph.</remarks>
-  /// <param name="Range">The range within the document where the new paragraph will be inserted. This can be a Range object or a location
+  /// <param name="range">The range within the document where the new paragraph will be inserted. This can be a Range object or a location
   /// that specifies the insertion point. Cannot be null.</param>
   /// <returns>A Paragraph object representing the newly added paragraph.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.add?view=word-pia"/>
-  public Paragraph Add(object Range);
+  public IParagraph Add(object range);
 
   #endregion methods
 }

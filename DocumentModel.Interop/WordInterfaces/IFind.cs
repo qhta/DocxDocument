@@ -13,10 +13,10 @@ public interface IFind : IInteropObject
   public bool Forward { get; set; }
 
   /// <summary>
-  /// Returns or sets a <see cref="Font"/> object that represents the character formatting of the specified object.
+  /// Returns or sets a <see cref="IFont"/> object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont IFont { get; set; }
 
   /// <summary>
   /// Determines if the search for the specified object has produced a match.
@@ -67,10 +67,10 @@ public interface IFind : IInteropObject
   public bool MatchByte { get; set; }
 
   /// <summary>
-  /// Returns or sets a <see cref="ParagraphFormat"/> object that represents the paragraph settings for the specified range, selection, find or replacement operation, or style.
+  /// Returns or sets a <see cref="IParagraphFormat"/> object that represents the paragraph settings for the specified range, selection, find or replacement operation, or style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat IParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -97,16 +97,16 @@ public interface IFind : IInteropObject
   public int Highlight { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Replacement"/> object that contains the criteria for a replace operation.
+  /// Returns a <see cref="IReplacement"/> object that contains the criteria for a replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.replacement?view=word-pia"/>
-  public Replacement Replacement { get; }
+  public IReplacement IReplacement { get; }
 
   /// <summary>
-  /// Returns a <see cref="Frame"/> object that represents the frame formatting for the specified style or find-and-replace operation.
+  /// Returns a <see cref="IFrame"/> object that represents the frame formatting for the specified style or find-and-replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public IFrame IFrame { get; }
 
   /// <summary>
   /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// information as you work in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizers?view=word-pia"/>
-public interface ISmartTagRecognizers : IInteropObject, IInteropCollection<SmartTagRecognizer>
+public interface ISmartTagRecognizers : IInteropObject, IInteropCollection<ISmartTagRecognizer>
 {
 
 

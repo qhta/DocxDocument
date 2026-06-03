@@ -10,19 +10,19 @@ public interface IOMathScrPre : IInteropObject
   /// Returns the subscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public IOMath Sub { get; }
 
   /// <summary>
   /// Returns the superscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public IOMath Sup { get; }
 
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
 
 
   #region methods
@@ -36,7 +36,7 @@ public interface IOMathScrPre : IInteropObject
   /// customization of the subscript and superscript values.</remarks>
   /// <returns>An instance of the OMathFunction representing the script function with subscript and superscript applied.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.toscrsubsup?view=word-pia"/>
-  public OMathFunction ToScrSubSup();
+  public IOMathFunction ToScrSubSup();
 
   #endregion methods
 }

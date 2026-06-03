@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// tab in the AutoCorrect Exceptions dialog box (AutoCorrect command, Tools menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions?view=word-pia"/>
-public interface IOtherCorrectionsExceptions : IInteropObject, IInteropCollection<OtherCorrectionsException>
+public interface IOtherCorrectionsExceptions : IInteropObject, IInteropCollection<IOtherCorrectionsException>
 {
 
 
@@ -21,7 +21,7 @@ public interface IOtherCorrectionsExceptions : IInteropObject, IInteropCollectio
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions.add?view=word-pia"/>
-  public OtherCorrectionsException Add(string Name);
+  public IOtherCorrectionsException Add(string Name);
 
   #endregion methods
 }

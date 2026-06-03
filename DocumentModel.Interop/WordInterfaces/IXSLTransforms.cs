@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// (XSLTs) for a specific XML namespace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xsltransforms?view=word-pia"/>
-public interface IXSLTransforms : IInteropObject, IInteropCollection<XSLTransform>
+public interface IXSLTransforms : IInteropObject, IInteropCollection<IXSLTransform>
 {
 }

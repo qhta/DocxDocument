@@ -10,12 +10,12 @@ public interface IOMathRad : IInteropObject
   /// Returns the degree expression of the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.deg?view=word-pia"/>
-  public OMath Deg { get; }
+  public IOMath Deg { get; }
   /// <summary>
   /// Returns the base expression under the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets whether the radical degree is hidden.
   /// </summary>

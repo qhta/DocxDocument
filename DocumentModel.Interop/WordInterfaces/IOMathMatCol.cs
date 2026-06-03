@@ -10,7 +10,7 @@ public interface IOMathMatCol : IInteropObject
   /// Returns the collection of arguments in the matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.args?view=word-pia"/>
-  public OMathArgs Args { get; }
+  public IOMathArgs Args { get; }
 
   /// <summary>
   /// Returns the index number of the matrix column.

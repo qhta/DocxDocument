@@ -16,13 +16,13 @@ public interface IChartArea : IInteropObject
   /// Gets the border formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Gets the font formatting used in the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart area has a shadow.
@@ -40,13 +40,13 @@ public interface IChartArea : IInteropObject
   /// Gets the interior formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Gets the fill formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge of the chart area to the left edge of the object.
@@ -76,7 +76,7 @@ public interface IChartArea : IInteropObject
   /// Gets the chart formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of FirstLetterException objects that represent the abbreviations excluded from automatic correction.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.firstletterexceptions?view=word-pia"/>
-public interface IFirstLetterExceptions : IInteropObject, IInteropCollection<FirstLetterException>
+public interface IFirstLetterExceptions : IInteropObject, IInteropCollection<IFirstLetterException>
 {
 
 
@@ -19,7 +19,7 @@ public interface IFirstLetterExceptions : IInteropObject, IInteropCollection<Fir
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.firstletterexceptions.add?view=word-pia"/>
-  public FirstLetterException Add(string Name);
+  public IFirstLetterException Add(string Name);
 
   #endregion methods
 }

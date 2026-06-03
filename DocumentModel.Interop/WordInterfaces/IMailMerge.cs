@@ -28,13 +28,13 @@ public interface IMailMerge : IInteropObject
   /// Returns the active data source for the mail merge operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.datasource?view=word-pia"/>
-  public MailMergeDataSource DataSource { get; }
+  public IMailMergeDataSource DataSource { get; }
 
   /// <summary>
   /// Returns the mail merge fields collection in the main document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.fields?view=word-pia"/>
-  public MailMergeFields Fields { get; }
+  public IMailMergeFields Fields { get; }
 
   /// <summary>
   /// Returns or sets whether mail merge field codes are shown.

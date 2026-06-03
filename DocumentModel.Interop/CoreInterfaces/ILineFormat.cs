@@ -11,7 +11,7 @@ public interface ILineFormat: IInteropObject
   /// Gets or sets the `BackColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.backcolor?view=office-pia"/>
-  public ColorFormat BackColor { get; set; }
+  public IColorFormat BackColor { get; set; }
   /// <summary>
   /// Gets or sets the `BeginArrowheadLength` property.
   /// </summary>
@@ -51,7 +51,7 @@ public interface ILineFormat: IInteropObject
   /// Gets or sets the `ForeColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.forecolor?view=office-pia"/>
-  public ColorFormat ForeColor { get; set; }
+  public IColorFormat ForeColor { get; set; }
   /// <summary>
   /// Gets or sets the `Pattern` property.
   /// </summary>

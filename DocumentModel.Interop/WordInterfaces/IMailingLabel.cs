@@ -22,7 +22,7 @@ public interface IMailingLabel : IInteropObject
   /// Returns the custom labels collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.customlabels?view=word-pia"/>
-  public CustomLabels CustomLabels { get; }
+  public ICustomLabels ICustomLabels { get; }
 
   /// <summary>
   /// Returns or sets the default mailing label name.
@@ -52,7 +52,7 @@ public interface IMailingLabel : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.createnewdocument2000?view=word-pia"/>
-  public Document CreateNewDocument2000(string Name, string Address, string AutoText, bool ExtractAddress, int LaserTray);
+  public IDocument CreateNewDocument2000(string Name, string Address, string AutoText, bool ExtractAddress, int LaserTray);
 
   #endregion methods
 }

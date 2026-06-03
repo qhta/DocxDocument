@@ -55,33 +55,33 @@ public interface IStyle : IInteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified style.
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat IParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns or sets a Font object that represents the character formatting of the specified object. Read/write
   /// Font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont IFont { get; set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public IFrame IFrame { get; }
 
   /// <summary>
   /// Returns or sets the language for the specified object. Read/write.
@@ -100,7 +100,7 @@ public interface IStyle : IInteropObject
   /// Returns a ListTemplate object that represents the list formatting for the specified Style object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public IListTemplate ListTemplate { get; }
 
   /// <summary>
   /// Returns the list level for the specified style. Read-only Integer.
@@ -148,7 +148,7 @@ public interface IStyle : IInteropObject
   /// Returns a TableStyle object representing properties that can be applied to a table using a table style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.table?view=word-pia"/>
-  public TableStyle Table { get; }
+  public ITableStyle Table { get; }
 
   /// <summary>
   /// True if the specified style is locked.

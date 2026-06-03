@@ -34,31 +34,31 @@ public interface IColumn : IInteropObject
   /// Gets the collection of cells in the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells ICells { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets the next column in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.next?view=word-pia"/>
-  public Column Next { get; }
+  public IColumn Next { get; }
 
   /// <summary>
   /// Gets the previous column in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.previous?view=word-pia"/>
-  public Column Previous { get; }
+  public IColumn Previous { get; }
 
   /// <summary>
   /// Gets the nesting level of the column.

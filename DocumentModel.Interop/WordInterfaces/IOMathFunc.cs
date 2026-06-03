@@ -10,11 +10,11 @@ public interface IOMathFunc : IInteropObject
   /// Returns the function name expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.fname?view=word-pia"/>
-  public OMath FName { get; }
+  public IOMath FName { get; }
   /// <summary>
   /// Returns the function argument expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
 
 }

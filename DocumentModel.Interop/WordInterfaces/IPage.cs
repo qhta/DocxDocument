@@ -37,14 +37,14 @@ public interface IPage : IInteropObject
   /// Returns a Rectangles collection that represents a portion of text or graphics in a page in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.rectangles?view=word-pia"/>
-  public Rectangles Rectangles { get; }
+  public IRectangles IRectangles { get; }
 
   /// <summary>
   /// Returns a Breaks collection that represents the breaks on a page. The Breaks collection includes page, column,
   /// and section breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.breaks?view=word-pia"/>
-  public Breaks Breaks { get; }
+  public IBreaks IBreaks { get; }
 
   /// <summary>
   /// Returns a Object that represents a picture representation of how a page of text appears. Read- only.

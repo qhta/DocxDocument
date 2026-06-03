@@ -64,7 +64,7 @@ public interface IAxis : IInteropObject
   /// Gets the major gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorgridlines?view=word-pia"/>
-  public Gridlines MajorGridlines { get; }
+  public IGridlines MajorGridlines { get; }
 
   /// <summary>
   /// Gets or sets the major tick mark type.
@@ -124,7 +124,7 @@ public interface IAxis : IInteropObject
   /// Gets the minor gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorgridlines?view=word-pia"/>
-  public Gridlines MinorGridlines { get; }
+  public IGridlines MinorGridlines { get; }
 
   /// <summary>
   /// Gets or sets the minor tick mark type.
@@ -166,7 +166,7 @@ public interface IAxis : IInteropObject
   /// Gets the tick labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabels?view=word-pia"/>
-  public TickLabels TickLabels { get; }
+  public ITickLabels ITickLabels { get; }
 
   /// <summary>
   /// Gets or sets the tick-label spacing.
@@ -262,19 +262,19 @@ public interface IAxis : IInteropObject
   /// Gets the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunitlabel?view=word-pia"/>
-  public DisplayUnitLabel DisplayUnitLabel { get; }
+  public IDisplayUnitLabel IDisplayUnitLabel { get; }
 
   /// <summary>
   /// Gets the axis border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Gets the chart formatting for the axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

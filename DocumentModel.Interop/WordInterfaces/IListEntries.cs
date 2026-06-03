@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents all list entry objects in a drop-down form field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentries?view=word-pia"/>
-public interface IListEntries : IInteropObject, IInteropCollection<ListEntry>
+public interface IListEntries : IInteropObject, IInteropCollection<IListEntry>
 {
 
 
@@ -20,7 +20,7 @@ public interface IListEntries : IInteropObject, IInteropCollection<ListEntry>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentries.add?view=word-pia"/>
-  public ListEntry Add(string Name, object Index);
+  public IListEntry Add(string Name, object Index);
 
   #endregion methods
 }

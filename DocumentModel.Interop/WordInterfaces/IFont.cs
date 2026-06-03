@@ -10,7 +10,7 @@ public interface IFont : IInteropObject
   /// Gets a duplicate of the font formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
-  public Font Duplicate { get; }
+  public IFont Duplicate { get; }
 
   /// <summary>
   /// True if the text is formatted as bold.
@@ -172,13 +172,13 @@ public interface IFont : IInteropObject
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
@@ -266,43 +266,43 @@ public interface IFont : IInteropObject
   /// Gets or sets the glow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  public GlowFormat Glow { get; set; }
+  public IGlowFormat Glow { get; set; }
 
   /// <summary>
   /// Gets or sets the reflection formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  public ReflectionFormat Reflection { get; set; }
+  public IReflectionFormat Reflection { get; set; }
 
   /// <summary>
   /// Gets or sets the shadow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  public ShadowFormat TextShadow { get; set; }
+  public IShadowFormat TextShadow { get; set; }
 
   /// <summary>
   /// Gets or sets the fill formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  public FillFormat Fill { get; set; }
+  public IFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets or sets the line formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  public LineFormat Line { get; set; }
+  public ILineFormat Line { get; set; }
 
   /// <summary>
   /// Gets or sets the 3D formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  public ThreeDFormat ThreeD { get; set; }
+  public IThreeDFormat ThreeD { get; set; }
 
   /// <summary>
   /// Gets the text color formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  public ColorFormat TextColor { get; }
+  public IColorFormat TextColor { get; }
 
   /// <summary>
   /// Gets or sets the ligature setting for the font.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the list template objects in the Bullets and Numbering dialog box galleries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplates?view=word-pia"/>
-public interface IListTemplates : IInteropObject, IInteropCollection<ListTemplate>
+public interface IListTemplates : IInteropObject, IInteropCollection<IListTemplate>
 {
 
 
@@ -20,7 +20,7 @@ public interface IListTemplates : IInteropObject, IInteropCollection<ListTemplat
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplates.add?view=word-pia"/>
-  public ListTemplate Add(object OutlineNumbered, object Name);
+  public IListTemplate Add(object OutlineNumbered, object Name);
 
   #endregion methods
 }

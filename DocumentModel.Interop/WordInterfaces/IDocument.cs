@@ -29,13 +29,13 @@ public interface IDocument : IInteropObject
   /// Returns a Window object that represents the active window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activewindow?view=word-pia"/>
-  public Window ActiveWindow { get; }
+  public IWindow ActiveWindow { get; }
 
   /// <summary>
   /// Returns a Template object that represents the template attached to the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.attachedtemplate?view=word-pia"/>
-  public Template AttachedTemplate { get; set; }
+  public ITemplate AttachedTemplate { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether automatic formatting options override formatting restrictions in a document where formatting restrictions are in effect.
@@ -242,7 +242,7 @@ public interface IDocument : IInteropObject
   public bool DoNotEmbedSystemFonts { get; set; }
 
   /// <summary>
-  /// Returns an Email object that contains all the e-mail � related properties of the current document.
+  /// Returns an Email object that contains all the e-mail ÄŹĹĽËť related properties of the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.email?view=word-pia"/>
   public IEmail Email { get; }
@@ -506,7 +506,7 @@ public interface IDocument : IInteropObject
   public IIndexes Indexes { get; }
 
   /// <summary>
-  /// Returns an InlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
+  /// Returns an InlineShapes collection that represents all the IInlineShape objects in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.inlineshapes?view=word-pia"/>
   public IInlineShapes InlineShapes { get; }
@@ -644,7 +644,7 @@ public interface IDocument : IInteropObject
   public bool OMathIntSubSupLim { get; set; }
 
   /// <summary>
-  /// Returns or sets the default justification�left, right, centered, or centered as a group�of a group of equations. Read/write.
+  /// Returns or sets the default justificationÄŹĹĽËťleft, right, centered, or centered as a groupÄŹĹĽËťof a group of equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathjc?view=word-pia"/>
   public OMathJc OMathJc { get; set; }
@@ -1205,7 +1205,7 @@ public interface IDocument : IInteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlnodes?view=word-pia"/>
-  public XMLNodes XMLNodes { get; }
+  public IXMLNodes IXMLNodes { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -1223,13 +1223,13 @@ public interface IDocument : IInteropObject
   /// Returns an XMLSchemaReferences collection that represents the schemas attached to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlschemareferences?view=word-pia"/>
-  public XMLSchemaReferences XMLSchemaReferences { get; }
+  public IXMLSchemaReferences IXMLSchemaReferences { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlschemaviolations?view=word-pia"/>
-  public XMLNodes XMLSchemaViolations { get; }
+  public IXMLNodes XMLSchemaViolations { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether error message text is generated from the built-in Microsoft Word error messages or from the Microsoft XML Core Services (MSXML) 5.0 component included with Office.
@@ -1404,7 +1404,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.autosummarize?view=word-pia"/>
-  public Range AutoSummarize(SummaryLength length, SummaryMode mode, object updateProperties);
+  public IRange AutoSummarize(SummaryLength length, SummaryMode mode, object updateProperties);
 
   /// <summary>
   /// Determines if Microsoft Word can check in a specified document to a server.
@@ -1660,7 +1660,7 @@ public interface IDocument : IInteropObject
   /// <param name="SenderGender">The gender of the sender.</param>
   /// <param name="SenderReference">The reference for the sender.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.createlettercontent?view=word-pia"/>
-  public LetterContent CreateLetterContent
+  public ILetterContent CreateLetterContent
   (string DateFormat, bool IncludeHeaderFooter, string PageDesign, LetterStyle LetterStyle, bool Letterhead,
     LetterheadLocation LetterheadLocation, float LetterheadSize, string RecipientName, string RecipientAddress,
     string Salutation, SalutationType SalutationType, string RecipientReference, string MailingInstructions,
@@ -1801,7 +1801,7 @@ public interface IDocument : IInteropObject
   /// <param name="ExportFormat">The format to export the document to.</param>
   /// <param name="OpenAfterExport">Whether to open the document after export.</param>
   /// <param name="OptimizeFor">The optimization setting for the export.</param>
-  /// <param name="Range">The range of pages to export.</param>
+  /// <param name="range">The range of pages to export.</param>
   /// <param name="From">The starting page number for the export.</param>
   /// <param name="To">The ending page number for the export.</param>
   /// <param name="Item">The item to export.</param>
@@ -1818,7 +1818,7 @@ public interface IDocument : IInteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.exportasfixedformat?view=word-pia"/>
   public void ExportAsFixedFormat
   (string OutputFileName, ExportFormat ExportFormat, bool OpenAfterExport, ExportOptimizeFor OptimizeFor,
-    ExportRange Range, int From, int To, ExportItem Item, bool IncludeDocProps, bool KeepIRM,
+    ExportRange range, int From, int To, ExportItem Item, bool IncludeDocProps, bool KeepIRM,
     ExportCreateBookmarks CreateBookmarks, bool DocStructureTags, bool BitmapMissingFonts, bool UseISO19005_1,
     object FixedFormatExtClassPtr);
 
@@ -1882,7 +1882,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getlettercontent?view=word-pia"/>
-  public LetterContent GetLetterContent();
+  public ILetterContent GetLetterContent();
 
   /// <summary>
   /// Returns the workflow tasks assigned to a document.
@@ -1891,7 +1891,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtasks?view=word-pia"/>
-  public Core.WorkflowTasks GetWorkflowTasks();
+  public Core.IWorkflowTasks GetWorkflowTasks();
 
   /// <summary>
   /// Returns the workflow templates attached to a document.
@@ -1900,7 +1900,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtemplates?view=word-pia"/>
-  public Core.WorkflowTemplates GetWorkflowTemplates();
+  public Core.IWorkflowTemplates GetWorkflowTemplates();
 
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
@@ -1913,7 +1913,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.goto?view=word-pia"/>
-  public Range GoTo(GoToItem What, GoToDirection Which, int Count, string Name);
+  public IRange GoTo(GoToItem What, GoToDirection Which, int Count, string Name);
 
   /// <summary>
   /// Locks the file on the server preventing anyone else from editing it.
@@ -1990,7 +1990,7 @@ public interface IDocument : IInteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
+  /// <param name="range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
@@ -2008,7 +2008,7 @@ public interface IDocument : IInteropObject
   /// <param name="PrintZoomPaperHeight">The height of the paper to use when printing in zoom mode.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.printout?view=word-pia"/>
   public void PrintOut
-  (bool Background, bool Append, PrintOutRange Range, string OutputFileName, int From, int To, PrintOutItem Item,
+  (bool Background, bool Append, PrintOutRange range, string OutputFileName, int From, int To, PrintOutItem Item,
     int Copies, string Pages, PrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
     bool ManualDuplexPrint, int PrintZoomColumn, int PrintZoomRow, int PrintZoomPaperWidth,
     int PrintZoomPaperHeight);
@@ -2018,7 +2018,7 @@ public interface IDocument : IInteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
+  /// <param name="range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
@@ -2036,7 +2036,7 @@ public interface IDocument : IInteropObject
   /// <param name="PrintZoomPaperHeight">The height of the paper to use when printing in zoom mode.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.printout2000?view=word-pia"/>
   public void PrintOut2000
-  (bool Background, bool Append, PrintOutRange Range, string OutputFileName, int From, int To, PrintOutItem Item,
+  (bool Background, bool Append, PrintOutRange range, string OutputFileName, int From, int To, PrintOutItem Item,
     int Copies, string Pages, PrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
     bool ManualDuplexPrint, int PrintZoomColumn, int PrintZoomRow, int PrintZoomPaperWidth,
     int PrintZoomPaperHeight);
@@ -2046,7 +2046,7 @@ public interface IDocument : IInteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
+  /// <param name="range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
@@ -2060,7 +2060,7 @@ public interface IDocument : IInteropObject
   /// <param name="ManualDuplexPrint">Whether to print manually on both sides of the paper. Can be True or False.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.printoutold?view=word-pia"/>
   public void PrintOutOld
-  (object Background, object Append, object Range, object OutputFileName, object From, object To, object Item,
+  (object Background, object Append, object range, object OutputFileName, object From, object To, object Item,
     object Copies, object Pages, object PageType, object PrintToFile, object Collate, object ActivePrinterMacGX,
     object ManualDuplexPrint);
 
@@ -2106,7 +2106,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.range?view=word-pia"/>
-  public Range Range(object Start, object End);
+  public IRange range(object Start, object End);
 
   /// <summary>
   /// Removes smart tags recognized by the grammar checker and rechecks the document content against all smart tag
@@ -2466,7 +2466,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytag?view=word-pia"/>
-  public ContentControls SelectContentControlsByTag(string Tag);
+  public IContentControls SelectContentControlsByTag(string Tag);
 
   /// <summary>
   /// Returns a ContentControls collection that represents all the content controls in a document with the title specified in the Title parameter. Read-only.
@@ -2476,7 +2476,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytitle?view=word-pia"/>
-  public ContentControls SelectContentControlsByTitle(string Title);
+  public IContentControls SelectContentControlsByTitle(string Title);
 
   /// <summary>
   /// Returns a ContentControls collection that represents all content controls in a document that are linked to the specific custom XML node in the document's XML data store as specified by the Node parameter. Read-only.
@@ -2486,7 +2486,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectLinkedControls(Core.CustomXMLNode Node);
+  public IContentControls SelectLinkedControls(Core.ICustomXMLNode Node);
 
   /// <summary>
   /// Returns an XMLNodes collection that represents all the specified nodes in the order in which they appear in the document.
@@ -2498,7 +2498,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectnodes?view=word-pia"/>
-  public XMLNodes SelectNodes(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
+  public IXMLNodes SelectNodes(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 
   /// <summary>
   /// Returns an XMLNode object that represents a node in the specified document.
@@ -2510,7 +2510,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectsinglenode?view=word-pia"/>
-  public XMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
+  public IXMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 
   /// <summary>
   /// Returns all of the content controls in a document that are not linked to an XML node in the document's XML data store. Read-only.
@@ -2520,7 +2520,7 @@ public interface IDocument : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectunlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectUnlinkedControls(Core.CustomXMLPart Stream);
+  public IContentControls SelectUnlinkedControls(Core.ICustomXMLPart Stream);
 
   /// <summary>
   /// Sends the specified document as a fax, without any user interaction.

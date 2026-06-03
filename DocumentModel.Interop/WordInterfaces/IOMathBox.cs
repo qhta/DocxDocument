@@ -10,7 +10,7 @@ public interface IOMathBox : IInteropObject
   /// Returns the equation contained in the box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets whether the box acts as an operator emulator.
   /// </summary>

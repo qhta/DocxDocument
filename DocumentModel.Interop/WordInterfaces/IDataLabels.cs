@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the DataLabel objects for the specified series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels?view=word-pia"/>
-public interface IDataLabels : IInteropObject, IInteropCollection<DataLabel>
+public interface IDataLabels : IInteropObject, IInteropCollection<IDataLabel>
 {
   /// <summary>
   /// Gets the name of the `DataLabels` object.
@@ -16,25 +16,25 @@ public interface IDataLabels : IInteropObject, IInteropCollection<DataLabel>
   /// Gets the border formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Gets the interior formatting of the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Gets the fill formatting of the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// Gets the font formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of the data labels.
@@ -154,7 +154,7 @@ public interface IDataLabels : IInteropObject, IInteropCollection<DataLabel>
   /// Gets the chart formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the cell range is displayed in the data labels.

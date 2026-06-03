@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Window objects that represent all the available windows.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows?view=word-pia"/>
-public interface IWindows : IInteropObject, IInteropCollection<Window>
+public interface IWindows : IInteropObject, IInteropCollection<IWindow>
 {
   /// <summary>
   /// True enables scrolling of the contents of windows at the same time. False disables scrolling of windows at the
@@ -19,13 +19,13 @@ public interface IWindows : IInteropObject, IInteropCollection<Window>
 /// <summary>
   /// Adds a new window to the collection.
   /// </summary>
-  /// <param name="Window">The window to add to the collection.</param>
-  /// <returns>The created <see cref="Window"/> object.</returns>
+  /// <param name="window">The window to add to the collection.</param>
+  /// <returns>The created <see cref="IWindow"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows.add?view=word-pia"/>
-  public Window Add(object Window);
+  public IWindow Add(object window);
 
   #endregion methods
 }

@@ -34,7 +34,7 @@ public interface IIndex : IInteropObject
   /// Returns a range object that represents the portion of the document included in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns or sets the tab leader character between entries and page numbers in the index.

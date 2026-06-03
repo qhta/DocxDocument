@@ -10,7 +10,7 @@ public interface IListGallery : IInteropObject
   /// Returns the list templates in the specified list gallery.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listgallery.listtemplates?view=word-pia"/>
-  public ListTemplates ListTemplates { get; }
+  public IListTemplates IListTemplates { get; }
 
 
   #region methods

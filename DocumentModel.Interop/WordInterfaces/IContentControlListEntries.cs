@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// The ContentControlListEntries collection contains ContentControlListEntry objects that represent the items in a drop-down list or combo box content control.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentries?view=word-pia"/>
-public interface IContentControlListEntries : IInteropObject, IInteropCollection<ContentControlListEntry>
+public interface IContentControlListEntries : IInteropObject, IInteropCollection<IContentControlListEntry>
 {
 
 
@@ -16,12 +16,12 @@ public interface IContentControlListEntries : IInteropObject, IInteropCollection
   /// <param name="Text">The display text for the list entry.</param>
   /// <param name="Value">The underlying value for the list entry.</param>
   /// <param name="Index">The position at which to insert the entry.</param>
-  /// <returns>The created <see cref="ContentControlListEntry"/> object.</returns>
+  /// <returns>The created <see cref="IContentControlListEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentries.add?view=word-pia"/>
-  public ContentControlListEntry Add(string Text, string Value, int Index);
+  public IContentControlListEntry Add(string Text, string Value, int Index);
 
   #endregion methods
 }

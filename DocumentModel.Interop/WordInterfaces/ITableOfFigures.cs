@@ -52,7 +52,7 @@ public interface ITableOfFigures : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// True if Table of Contents Entry (TC) fields are used to create a table of figures.
@@ -68,10 +68,10 @@ public interface ITableOfFigures : IInteropObject
 
   /// <summary>
   /// Returns a HeadingStyles object that represents additional styles used to compile a table of figures (styles
-  /// other than the Heading 1 – Heading 9 styles).
+  /// other than the Heading 1 Ă˘â‚¬â€ś Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.headingstyles?view=word-pia"/>
-  public HeadingStyles HeadingStyles { get; }
+  public IHeadingStyles IHeadingStyles { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of figures.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of HTML division objects in a web document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions?view=word-pia"/>
-public interface IHTMLDivisions : IInteropObject, IInteropCollection<HTMLDivision>
+public interface IHTMLDivisions : IInteropObject, IInteropCollection<IHTMLDivision>
 {
   /// <summary>
   /// Returns the nesting level of the HTML divisions collection.
@@ -18,13 +18,13 @@ public interface IHTMLDivisions : IInteropObject, IInteropCollection<HTMLDivisio
 /// <summary>
   /// Adds a new HTMLDivision to the collection.
   /// </summary>
-  /// <param name="Range">The Range object that represents the range of the new HTMLDivision.</param>
-  /// <returns>The newly created <see cref="HTMLDivision"/> object.</returns>
+  /// <param name="range">The Range object that represents the range of the new HTMLDivision.</param>
+  /// <returns>The newly created <see cref="IHTMLDivision"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.add?view=word-pia"/>
-  public HTMLDivision Add(object Range);
+  public IHTMLDivision Add(object range);
 
   #endregion methods
 }

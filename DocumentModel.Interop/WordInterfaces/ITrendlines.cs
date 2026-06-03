@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the Trendline objects for the specified series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines?view=word-pia"/>
-public interface ITrendlines : IInteropObject, IInteropCollection<Trendline>
+public interface ITrendlines : IInteropObject, IInteropCollection<ITrendline>
 {
 
 
@@ -22,12 +22,12 @@ public interface ITrendlines : IInteropObject, IInteropCollection<Trendline>
   /// <param name="DisplayEquation">true to display the trendline equation on the chart; otherwise, false.</param>
   /// <param name="DisplayRSquared">true to display the R-squared value on the chart; otherwise, false.</param>
   /// <param name="Name">The name of the trendline.</param>
-  /// <returns>The created <see cref="Trendline"/> object.</returns>
+  /// <returns>The created <see cref="ITrendline"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines.add?view=word-pia"/>
-  public Trendline Add(TrendlineType Type, object Order, int Period, int Forward, int Backward, 
+  public ITrendline Add(TrendlineType Type, object Order, int Period, int Forward, int Backward, 
     object Intercept, bool DisplayEquation, bool DisplayRSquared, string Name);
 
   #endregion methods

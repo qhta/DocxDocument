@@ -10,13 +10,13 @@ public interface IOMathLimUpp : IInteropObject
   /// Returns the base expression for the upper-limit construct.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
 
   /// <summary>
   /// Returns the upper limit expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.lim?view=word-pia"/>
-  public OMath Lim { get; }
+  public IOMath Lim { get; }
 
 
   #region methods
@@ -29,7 +29,7 @@ public interface IOMathLimUpp : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.tolimlow?view=word-pia"/>
-  public OMathFunction ToLimLow();
+  public IOMathFunction ToLimLow();
 
   #endregion methods
 }

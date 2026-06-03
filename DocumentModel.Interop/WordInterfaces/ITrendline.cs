@@ -16,13 +16,13 @@ public interface ITrendline : IInteropObject
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns a DataLabel object that represents the data label associated with the trendline. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.datalabel?view=word-pia"/>
-  public DataLabel DataLabel { get; }
+  public IDataLabel IDataLabel { get; }
 
   /// <summary>
   /// True if the equation for the trendline is displayed on the chart (in the same data label as the R- squared
@@ -77,7 +77,7 @@ public interface ITrendline : IInteropObject
 
   /// <summary>
   /// Returns or sets a Integer value that represents the trendline order (an integer greater than 1) when the
-  /// trendline’s Type is xlPolynomial.
+  /// trendlineâ€™s Type is xlPolynomial.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.order?view=word-pia"/>
   public int Order { get; set; }
@@ -99,7 +99,7 @@ public interface ITrendline : IInteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.

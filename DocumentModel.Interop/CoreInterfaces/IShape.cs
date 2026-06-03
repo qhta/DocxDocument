@@ -11,7 +11,7 @@ public interface IShape: IInteropObject
   /// Gets or sets the `Adjustments` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.adjustments?view=office-pia"/>
-  public Adjustments Adjustments { get; }
+  public IAdjustments IAdjustments { get; }
   /// <summary>
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
@@ -26,7 +26,7 @@ public interface IShape: IInteropObject
   /// Gets the `Callout` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.callout?view=office-pia"/>
-  public CalloutFormat Callout { get; }
+  public ICalloutFormat Callout { get; }
   /// <summary>
   /// Gets the `ConnectionSiteCount` property.
   /// </summary>
@@ -41,17 +41,17 @@ public interface IShape: IInteropObject
   /// Gets the `ConnectorFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.connectorformat?view=office-pia"/>
-  public ConnectorFormat ConnectorFormat { get; }
+  public IConnectorFormat IConnectorFormat { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.fill?view=office-pia"/>
-  public FillFormat Fill { get; }
+  public IFillFormat Fill { get; }
   /// <summary>
   /// Gets the `GroupItems` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.groupitems?view=office-pia"/>
-  public GroupShapes GroupItems { get; }
+  public IGroupShapes GroupItems { get; }
   /// <summary>
   /// Gets or sets the `Height` property.
   /// </summary>
@@ -71,7 +71,7 @@ public interface IShape: IInteropObject
   /// Gets the `Line` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.line?view=office-pia"/>
-  public LineFormat Line { get; }
+  public ILineFormat Line { get; }
   /// <summary>
   /// Gets or sets the `LockAspectRatio` property.
   /// </summary>
@@ -86,7 +86,7 @@ public interface IShape: IInteropObject
   /// Gets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.nodes?view=office-pia"/>
-  public ShapeNodes Nodes { get; }
+  public IShapeNodes Nodes { get; }
   /// <summary>
   /// Gets or sets the `Rotation` property.
   /// </summary>
@@ -96,27 +96,27 @@ public interface IShape: IInteropObject
   /// Gets the `PictureFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.pictureformat?view=office-pia"/>
-  public PictureFormat PictureFormat { get; }
+  public IPictureFormat IPictureFormat { get; }
   /// <summary>
   /// Gets the `Shadow` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.shadow?view=office-pia"/>
-  public ShadowFormat Shadow { get; }
+  public IShadowFormat Shadow { get; }
   /// <summary>
   /// Gets the `TextEffect` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.texteffect?view=office-pia"/>
-  public TextEffectFormat TextEffect { get; }
+  public ITextEffectFormat TextEffect { get; }
   /// <summary>
   /// Gets the `TextFrame` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe?view=office-pia"/>
-  public TextFrame TextFrame { get; }
+  public ITextFrame ITextFrame { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.threed?view=office-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
@@ -181,7 +181,7 @@ public interface IShape: IInteropObject
   /// Gets the `DiagramNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagramnode?view=office-pia"/>
-  public DiagramNode DiagramNode { get; }
+  public IDiagramNode IDiagramNode { get; }
   /// <summary>
   /// Gets the `Child` property.
   /// </summary>
@@ -196,7 +196,7 @@ public interface IShape: IInteropObject
   /// Gets the `CanvasItems` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvasitems?view=office-pia"/>
-  public CanvasShapes CanvasItems { get; }
+  public ICanvasShapes CanvasItems { get; }
   /// <summary>
   /// Gets the `Id` property.
   /// </summary>
@@ -236,17 +236,17 @@ public interface IShape: IInteropObject
   /// Gets the `SoftEdge` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.softedge?view=office-pia"/>
-  public SoftEdgeFormat SoftEdge { get; }
+  public ISoftEdgeFormat SoftEdge { get; }
   /// <summary>
   /// Gets the `Glow` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.glow?view=office-pia"/>
-  public GlowFormat Glow { get; }
+  public IGlowFormat Glow { get; }
   /// <summary>
   /// Gets the `Reflection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.reflection?view=office-pia"/>
-  public ReflectionFormat Reflection { get; }
+  public IReflectionFormat Reflection { get; }
   /// <summary>
   /// Gets the `HasSmartArt` property.
   /// </summary>
@@ -350,7 +350,7 @@ public interface IShape: IInteropObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.ungroup?view=office-pia"/>
-  public ShapeRange Ungroup();
+  public IShapeRange Ungroup();
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>

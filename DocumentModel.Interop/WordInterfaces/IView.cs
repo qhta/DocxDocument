@@ -67,7 +67,7 @@ public interface IView : IInteropObject
   /// Returns a Zoom object that represents the magnification for the specified view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.zoom?view=word-pia"/>
-  public Zoom Zoom { get; }
+  public IZoom IZoom { get; }
 
   /// <summary>
   /// True if object anchors are displayed next to items that can be positioned in print layout view.
@@ -276,7 +276,7 @@ public interface IView : IInteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.reviewers?view=word-pia"/>
-  public Reviewers Reviewers { get; }
+  public IReviewers IReviewers { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -385,7 +385,7 @@ public interface IView : IInteropObject
   /// Returns an instance of a RevisionsFilter object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsfilter?view=word-pia"/>
-  public RevisionsFilter RevisionsFilter { get; }
+  public IRevisionsFilter IRevisionsFilter { get; }
 
   /// <summary>
   /// Returns and sets the page color in Reading mode. Read-write PageColor.
@@ -405,12 +405,12 @@ public interface IView : IInteropObject
 /// <summary>
   /// Collapses the outline at the specified range.
   /// </summary>
-  /// <param name="Range">The range where the outline should be collapsed.</param>
+  /// <param name="range">The range where the outline should be collapsed.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.collapseoutline?view=word-pia"/>
-  public void CollapseOutline(object Range);
+  public void CollapseOutline(object range);
 
   #endregion methods
 }

@@ -11,7 +11,7 @@ public interface IShadowFormat: IInteropObject
   /// Gets or sets the `ForeColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.forecolor?view=office-pia"/>
-  public ColorFormat ForeColor { get; set; }
+  public IColorFormat ForeColor { get; set; }
   /// <summary>
   /// Gets or sets the `Obscured` property.
   /// </summary>

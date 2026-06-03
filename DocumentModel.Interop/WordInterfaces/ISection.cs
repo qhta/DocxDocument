@@ -10,22 +10,22 @@ public interface ISection : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.pagesetup?view=word-pia"/>
-  public PageSetup PageSetup { get; set; }
+  public IPageSetup IPageSetup { get; set; }
   /// <summary>
   /// Returns a HeadersFooters collection that represents the headers for the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.headers?view=word-pia"/>
-  public HeadersFooters Headers { get; }
+  public IHeadersFooters Headers { get; }
   /// <summary>
   /// Returns a HeadersFooters collection that represents the footers in the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.footers?view=word-pia"/>
-  public HeadersFooters Footers { get; }
+  public IHeadersFooters Footers { get; }
   /// <summary>
   /// True if the specified section is protected for forms. When a section is protected for forms, you can select
   /// and modify text only in form fields.
@@ -41,6 +41,6 @@ public interface ISection : IInteropObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
 }

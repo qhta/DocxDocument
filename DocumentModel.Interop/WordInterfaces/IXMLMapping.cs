@@ -10,7 +10,7 @@ public interface IXMLMapping : IInteropObject
 {
   /// <summary>
   /// Returns a Boolean that represents whether the content control in the document is mapped to an XML node in the
-  /// document’s XML data store. Read-only.
+  /// documentâ€™s XML data store. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.ismapped?view=word-pia"/>
   public bool IsMapped { get; }
@@ -20,14 +20,14 @@ public interface IXMLMapping : IInteropObject
   /// document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlpart?view=word-pia"/>
-  public Core.CustomXMLPart CustomXMLPart { get; }
+  public Core.ICustomXMLPart ICustomXMLPart { get; }
 
   /// <summary>
   /// Returns a CustomXMLNode object that represents the custom XML node in the data store to which the content
   /// control in the document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlnode?view=word-pia"/>
-  public Core.CustomXMLNode CustomXMLNode { get; }
+  public Core.ICustomXMLNode ICustomXMLNode { get; }
 
   /// <summary>
   /// Returns a String that represents the XPath for the XML mapping, which evaluates to the currently mapped XML
@@ -57,7 +57,7 @@ public interface IXMLMapping : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.setmapping?view=word-pia"/>
-  public bool SetMapping(string XPath, string PrefixMapping, Core.CustomXMLPart Source);
+  public bool SetMapping(string XPath, string PrefixMapping, Core.ICustomXMLPart Source);
 
   #endregion methods
 }

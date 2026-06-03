@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// collection and related objects and properties for programmatically defining page layout in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangles?view=word-pia"/>
-public interface IRectangles : IInteropObject, IInteropCollection<Rectangle>
+public interface IRectangles : IInteropObject, IInteropCollection<IRectangle>
 {
 }

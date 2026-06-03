@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences?view=word-pia"/>
-public interface IXMLSchemaReferences : IInteropObject, IInteropCollection<XMLSchemaReference>
+public interface IXMLSchemaReferences : IInteropObject, IInteropCollection<IXMLSchemaReference>
 {
   /// <summary>
   /// Returns a Application object that represents the Microsoft Word application.

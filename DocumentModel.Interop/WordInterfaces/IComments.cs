@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Comment objects that represent the comments in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments?view=word-pia"/>
-public interface IComments : IInteropObject, IInteropCollection<Comment>
+public interface IComments : IInteropObject, IInteropCollection<IComment>
 {
   /// <summary>
   /// Gets or sets the reviewer name whose comments are displayed.
@@ -18,14 +18,14 @@ public interface IComments : IInteropObject, IInteropCollection<Comment>
 /// <summary>
   /// Adds a comment to the specified range.
   /// </summary>
-  /// <param name="Range">The range to which the comment is attached.</param>
+  /// <param name="range">The range to which the comment is attached.</param>
   /// <param name="Text">The comment text.</param>
-  /// <returns>The created <see cref="Comment"/> object.</returns>
+  /// <returns>The created <see cref="IComment"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments.add?view=word-pia"/>
-  public Comment Add(IRange Range, object Text);
+  public IComment Add(IRange range, object Text);
 
   #endregion methods
 }

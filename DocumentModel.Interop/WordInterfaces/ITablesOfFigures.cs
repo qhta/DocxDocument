@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of TableOfFigures objects that represent the tables of figures in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
-public interface ITablesOfFigures : IInteropObject, IInteropCollection<TableOfFigures>
+public interface ITablesOfFigures : IInteropObject, IInteropCollection<ITableOfFigures>
 {
   /// <summary>
   /// Returns or sets the formatting for the tables of figures in the specified document.
@@ -18,7 +18,7 @@ public interface ITablesOfFigures : IInteropObject, IInteropCollection<TableOfFi
 /// <summary>
   /// Adds a table of figures to the document using legacy options.
   /// </summary>
-  /// <param name="Range">The range where the table of figures is added.</param>
+  /// <param name="range">The range where the table of figures is added.</param>
   /// <param name="Caption">The caption label to include in the table.</param>
   /// <param name="IncludeLabel">true to include the label; otherwise, false.</param>
   /// <param name="UseHeadingStyles">true to use heading styles; otherwise, false.</param>
@@ -29,12 +29,12 @@ public interface ITablesOfFigures : IInteropObject, IInteropCollection<TableOfFi
   /// <param name="RightAlignPageNumbers">true to right-align page numbers; otherwise, false.</param>
   /// <param name="IncludePageNumbers">true to include page numbers; otherwise, false.</param>
   /// <param name="AddedStyles">Additional styles to include in the table of figures.</param>
-  /// <returns>The created <see cref="TableOfFigures"/> object.</returns>
+  /// <returns>The created <see cref="ITableOfFigures"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.addold?view=word-pia"/>
-  public TableOfFigures AddOld(Range Range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
+  public ITableOfFigures AddOld(IRange range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
     int UpperHeadingLevel, int LowerHeadingLevel, bool UseFields, string TableID, 
     bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 

@@ -16,7 +16,7 @@ public interface ITableStyle : IInteropObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Returns or sets the amount of space (in points) to add below the contents of a single cell or all the cells in
@@ -80,7 +80,7 @@ public interface ITableStyle : IInteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the number of rows to include in the banding when a style specifies
@@ -103,12 +103,12 @@ public interface ITableStyle : IInteropObject
   /// Returns the conditional style for the specified table condition code.
   /// </summary>
   /// <param name="ConditionCode">The condition code for which to retrieve the style.</param>
-  /// <returns>The <see cref="ConditionalStyle"/> for the specified condition.</returns>
+  /// <returns>The <see cref="IConditionalStyle"/> for the specified condition.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.condition?view=word-pia"/>
-  public ConditionalStyle Condition(ConditionCode ConditionCode);
+  public IConditionalStyle Condition(ConditionCode ConditionCode);
 
   #endregion methods
 }

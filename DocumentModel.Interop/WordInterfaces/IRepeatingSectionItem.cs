@@ -10,7 +10,7 @@ public interface IRepeatingSectionItem : IInteropObject
   /// Returns the range of the specified repeating section item, excluding the start and end tags. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
 
   #region methods
@@ -27,12 +27,12 @@ public interface IRepeatingSectionItem : IInteropObject
   /// <summary>
   /// Inserts a new repeating section item after the current item.
   /// </summary>
-  /// <returns>The newly inserted <see cref="RepeatingSectionItem"/>.</returns>
+  /// <returns>The newly inserted <see cref="IRepeatingSectionItem"/>.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.insertitemafter?view=word-pia"/>
-  public RepeatingSectionItem InsertItemAfter();
+  public IRepeatingSectionItem InsertItemAfter();
 
   #endregion methods
 }

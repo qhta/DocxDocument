@@ -10,25 +10,25 @@ public interface IDiagramNode : IInteropObject
   /// Gets the collection of child nodes for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.children?view=word-pia"/>
-  public DiagramNodeChildren Children { get; }
+  public IDiagramNodeChildren Children { get; }
 
   /// <summary>
   /// Gets the shape associated with this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.shape?view=word-pia"/>
-  public Shape Shape { get; }
+  public IShape IShape { get; }
 
   /// <summary>
   /// Gets the root node of the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.root?view=word-pia"/>
-  public DiagramNode Root { get; }
+  public IDiagramNode Root { get; }
 
   /// <summary>
   /// Gets the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.diagram?view=word-pia"/>
-  public Diagram Diagram { get; }
+  public IDiagram IDiagram { get; }
 
   /// <summary>
   /// Gets or sets the layout type for this diagram node.
@@ -40,7 +40,7 @@ public interface IDiagramNode : IInteropObject
   /// Gets the shape that contains text for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.textshape?view=word-pia"/>
-  public Shape TextShape { get; }
+  public IShape TextShape { get; }
 
 
   #region methods
@@ -50,12 +50,12 @@ public interface IDiagramNode : IInteropObject
   /// </summary>
   /// <param name="Pos">The relative position where the new node is inserted.</param>
   /// <param name="NodeType">The type of node to add.</param>
-  /// <returns>The newly added <see cref="DiagramNode"/> object.</returns>
+  /// <returns>The newly added <see cref="IDiagramNode"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.addnode?view=word-pia"/>
-  public DiagramNode AddNode(Core.RelativeNodePosition Pos, Core.DiagramNodeType NodeType);
+  public IDiagramNode AddNode(Core.RelativeNodePosition Pos, Core.DiagramNodeType NodeType);
 
   #endregion methods
 }

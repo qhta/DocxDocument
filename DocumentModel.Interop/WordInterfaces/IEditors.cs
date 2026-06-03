@@ -24,7 +24,7 @@ public interface IEditors : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
-  public Editor Item(object Index);
+  public IEditor Item(object Index);
 
   #endregion methods
 }

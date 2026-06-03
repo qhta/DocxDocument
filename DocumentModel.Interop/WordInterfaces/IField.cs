@@ -10,7 +10,7 @@ public interface IField : IInteropObject
   /// Gets or sets the field code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.code?view=word-pia"/>
-  public Range Code { get; set; }
+  public IRange Code { get; set; }
 
   /// <summary>
   /// Gets the field type.
@@ -34,7 +34,7 @@ public interface IField : IInteropObject
   /// Gets or sets the result displayed for the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.result?view=word-pia"/>
-  public Range Result { get; set; }
+  public IRange Result { get; set; }
 
   /// <summary>
   /// Gets or sets data associated with the field.
@@ -46,13 +46,13 @@ public interface IField : IInteropObject
   /// Gets the next field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
-  public Field Next { get; }
+  public IField Next { get; }
 
   /// <summary>
   /// Gets the previous field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
-  public Field Previous { get; }
+  public IField Previous { get; }
 
   /// <summary>
   /// Gets the index number of the field in the `Fields` collection.
@@ -70,19 +70,19 @@ public interface IField : IInteropObject
   /// Gets the link formatting for a linked field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
-  public LinkFormat LinkFormat { get; }
+  public ILinkFormat ILinkFormat { get; }
 
   /// <summary>
   /// Gets the OLE formatting for an OLE field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
-  public OLEFormat OLEFormat { get; }
+  public IOLEFormat IOLEFormat { get; }
 
   /// <summary>
   /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
-  public InlineShape InlineShape { get; }
+  public IInlineShape IInlineShape { get; }
 
 
   #region methods

@@ -34,13 +34,13 @@ public interface ITabStop : IInteropObject
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.next?view=word-pia"/>
-  public TabStop Next { get; }
+  public ITabStop Next { get; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.previous?view=word-pia"/>
-  public TabStop Previous { get; }
+  public ITabStop Previous { get; }
 
 
   #region methods

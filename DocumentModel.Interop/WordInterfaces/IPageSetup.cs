@@ -125,13 +125,13 @@ public interface IPageSetup : IInteropObject
   /// Returns or sets the LineNumbering object that represents the line numbers for the specified PageSetup object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.linenumbering?view=word-pia"/>
-  public LineNumbering LineNumbering { get; set; }
+  public ILineNumbering ILineNumbering { get; set; }
 
   /// <summary>
   /// Returns a TextColumns collection that represents the set of text columns for the specified PageSetup object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.textcolumns?view=word-pia"/>
-  public TextColumns TextColumns { get; set; }
+  public ITextColumns ITextColumns { get; set; }
 
   /// <summary>
   /// Returns or sets the paper size.

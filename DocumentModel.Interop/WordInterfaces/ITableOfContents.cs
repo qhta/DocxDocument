@@ -38,10 +38,10 @@ public interface ITableOfContents : IInteropObject
 
   /// <summary>
   /// Returns a HeadingStyles object that represents additional styles used to compile a table of contents (styles
-  /// other than the Heading 1 – Heading 9 styles).
+  /// other than the Heading 1 Ă˘â‚¬â€ś Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents.headingstyles?view=word-pia"/>
-  public HeadingStyles HeadingStyles { get; }
+  public IHeadingStyles IHeadingStyles { get; }
 
   /// <summary>
   /// True if page numbers are aligned with the right margin in a table of contents.
@@ -59,7 +59,7 @@ public interface ITableOfContents : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of contents.

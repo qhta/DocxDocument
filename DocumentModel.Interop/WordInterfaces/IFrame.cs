@@ -79,22 +79,22 @@ public interface IFrame : IInteropObject
   public bool TextWrap { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Shading"/> object that represents the shading formatting for the specified frame.
+  /// Returns a <see cref="IShading"/> object that represents the shading formatting for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
-  /// Returns or sets a <see cref="Borders"/> collection that represents the borders of the specified frame.
+  /// Returns or sets a <see cref="IBorders"/> collection that represents the borders of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified frame.
+  /// Returns a <see cref="IRange"/> object that represents the portion of a document that's contained in the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
 
   #region methods

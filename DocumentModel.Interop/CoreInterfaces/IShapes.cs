@@ -148,14 +148,14 @@ public interface IShapes: IInteropCollection<IShape>
   /// <param name="Y1">The `Y1` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.buildfreeform?view=office-pia"/>
-  public FreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1);
+  public IFreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1);
   /// <summary>
   /// Invokes `Range`.
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.range?view=office-pia"/>
-  public ShapeRange Range(object Index);
+  public IShapeRange Range(object Index);
   /// <summary>
   /// Invokes `SelectAll`.
   /// </summary>

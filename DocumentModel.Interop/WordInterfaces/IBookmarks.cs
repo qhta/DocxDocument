@@ -25,13 +25,13 @@ public interface IBookmarks : IInteropObject, IInteropCollection<IBookmark>
   /// Adds a bookmark to a range.
   /// </summary>
   /// <param name="Name">The bookmark name.</param>
-  /// <param name="Range">The range to mark with the bookmark.</param>
+  /// <param name="range">The range to mark with the bookmark.</param>
   /// <returns>The created <see cref="IBookmark"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks.add?view=word-pia"/>
-  public IBookmark Add(string Name, object Range);
+  public IBookmark Add(string Name, object range);
 
   #endregion methods
 }

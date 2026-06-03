@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of KeyBinding objects that represent the custom key assignments in the current context. Custom key assignments are made in the Customize Keyboard dialog box.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings?view=word-pia"/>
-public interface IKeyBindings : IInteropObject, IInteropCollection<KeyBinding>
+public interface IKeyBindings : IInteropObject, IInteropCollection<IKeyBinding>
 {
   /// <summary>
   /// Returns an object that represents the storage location of the specified key binding.
@@ -24,12 +24,12 @@ public interface IKeyBindings : IInteropObject, IInteropCollection<KeyBinding>
   /// <param name="KeyCode">The primary key code for the key binding.</param>
   /// <param name="KeyCode2">An optional secondary key code for the key binding.</param>
   /// <param name="CommandParameter">An optional parameter for the command.</param>
-  /// <returns>The created <see cref="KeyBinding"/> object.</returns>
+  /// <returns>The created <see cref="IKeyBinding"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.add?view=word-pia"/>
-  public KeyBinding Add(KeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
+  public IKeyBinding Add(KeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
 
   #endregion methods
 }

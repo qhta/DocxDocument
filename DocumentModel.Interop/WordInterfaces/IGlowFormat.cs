@@ -15,7 +15,7 @@ public interface IGlowFormat : IInteropObject
   /// Returns the color of the glow effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat.color?view=word-pia"/>
-  public ColorFormat Color { get; }
+  public IColorFormat Color { get; }
   /// <summary>
   /// Returns or sets the transparency of the glow effect.
   /// </summary>

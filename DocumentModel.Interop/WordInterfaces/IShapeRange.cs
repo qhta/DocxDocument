@@ -4,14 +4,14 @@ namespace DocumentModel.Interop.Word;
 /// Represents a shape range, which is a set of shapes on a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange?view=word-pia"/>
-public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
+public interface IShapeRange : IInteropObject, IInteropCollection<IShape>
 {
   /// <summary>
   /// Returns a Adjustments object that contains adjustment values for all the adjustments in the specified
   /// ShapeRange object that represents an AutoShape or WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.adjustments?view=word-pia"/>
-  public Adjustments Adjustments { get; }
+  public IAdjustments IAdjustments { get; }
 
   /// <summary>
   /// Returns or sets the shape type for the specified ShapeRange object, which must represent an AutoShape other
@@ -25,7 +25,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// that represents callouts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.callout?view=word-pia"/>
-  public CalloutFormat Callout { get; }
+  public ICalloutFormat Callout { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -43,20 +43,20 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.connectorformat?view=word-pia"/>
-  public ConnectorFormat ConnectorFormat { get; }
+  public IConnectorFormat IConnectorFormat { get; }
 
   /// <summary>
   /// Returns a FillFormat object that contains fill formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.fill?view=word-pia"/>
-  public FillFormat Fill { get; }
+  public IFillFormat Fill { get; }
 
   /// <summary>
   /// Returns a GroupShapes object that represents the individual shapes in the specified ShapeRange object that
   /// represents grouped shapes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.groupitems?view=word-pia"/>
-  public GroupShapes GroupItems { get; }
+  public IGroupShapes GroupItems { get; }
 
   /// <summary>
   /// Returns or sets the height of the specified object in points.
@@ -81,7 +81,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a LineFormat object that contains line formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.line?view=word-pia"/>
-  public LineFormat Line { get; }
+  public ILineFormat Line { get; }
 
   /// <summary>
   /// MsoTrue if the specified shape retains its original proportions when you resize it. MsoFalse if you can change
@@ -100,7 +100,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a ShapeNodes collection that represents the geometric description of the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.nodes?view=word-pia"/>
-  public ShapeNodes Nodes { get; }
+  public IShapeNodes Nodes { get; }
 
   /// <summary>
   /// Returns or sets the number of degrees the specified shape is rotated around the z-axis. A positive value
@@ -114,32 +114,32 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// that represents a picture or OLE object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.pictureformat?view=word-pia"/>
-  public PictureFormat PictureFormat { get; }
+  public IPictureFormat IPictureFormat { get; }
 
   /// <summary>
   /// Returns a ShadowFormat object that represents the shadow formatting for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.shadow?view=word-pia"/>
-  public ShadowFormat Shadow { get; }
+  public IShadowFormat Shadow { get; }
 
   /// <summary>
   /// Returns a TextEffectFormat object that contains text-effect formatting properties for the specified ShapeRange
   /// object that represents WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.texteffect?view=word-pia"/>
-  public TextEffectFormat TextEffect { get; }
+  public ITextEffectFormat TextEffect { get; }
 
   /// <summary>
   /// Returns a TextFrame object that contains the text for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.textframe?view=word-pia"/>
-  public TextFrame TextFrame { get; }
+  public ITextFrame ITextFrame { get; }
 
   /// <summary>
-  /// Returns a ThreeDFormat object that contains 3-D – effect formatting properties for the specified shape.
+  /// Returns a ThreeDFormat object that contains 3-D Ă˘â‚¬â€ś effect formatting properties for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.threed?view=word-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
 
   /// <summary>
   /// Returns or sets the vertical position of the specified shape range in points.
@@ -160,7 +160,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   public Core.TriState VerticalFlip { get; }
 
   /// <summary>
-  /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
+  /// Returns the coordinates of the specified freeform drawing's vertices (and control points for BÄ‚Â©zier curves) as
   /// a series of coordinate pairs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.vertices?view=word-pia"/>
@@ -189,7 +189,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.hyperlink?view=word-pia"/>
-  public Hyperlink Hyperlink { get; }
+  public IHyperlink IHyperlink { get; }
 
   /// <summary>
   /// Specifies to what the horizontal position of a shape range is relative.
@@ -213,13 +213,13 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a WrapFormat object that contains the properties for wrapping text around the specified shape range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.wrapformat?view=word-pia"/>
-  public WrapFormat WrapFormat { get; }
+  public IWrapFormat IWrapFormat { get; }
 
   /// <summary>
   /// Returns a Range object that represents the anchoring range for the specified shape range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.anchor?view=word-pia"/>
-  public Range Anchor { get; }
+  public IRange Anchor { get; }
 
   /// <summary>
   /// Returns or sets the alternative text associated with a shape in a Web page.
@@ -249,7 +249,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a DiagramNode object that represents a node in a diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.diagramnode?view=word-pia"/>
-  public DiagramNode DiagramNode { get; }
+  public IDiagramNode IDiagramNode { get; }
 
   /// <summary>
   /// True if all shapes in a shape range are child shapes of the same parent.
@@ -261,13 +261,13 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a Shape object that represents the common parent shape of a range of child shapes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.parentgroup?view=word-pia"/>
-  public Shape ParentGroup { get; }
+  public IShape ParentGroup { get; }
 
   /// <summary>
   /// Returns a CanvasShapes object that represents a collection of shapes in a drawing canvas.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.canvasitems?view=word-pia"/>
-  public CanvasShapes CanvasItems { get; }
+  public ICanvasShapes CanvasItems { get; }
 
   /// <summary>
   /// Returns the type for the specified object.
@@ -332,25 +332,25 @@ public interface IShapeRange : IInteropObject, IInteropCollection<Shape>
   /// Returns a SoftEdgeFormat object that represents the soft edge formatting for a range of shapes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.softedge?view=word-pia"/>
-  public SoftEdgeFormat SoftEdge { get; }
+  public ISoftEdgeFormat SoftEdge { get; }
 
   /// <summary>
   /// Returns a GlowFormat object that represents the glow formatting for a range of shapes. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.glow?view=word-pia"/>
-  public GlowFormat Glow { get; }
+  public IGlowFormat Glow { get; }
 
   /// <summary>
   /// Returns a ReflectionFormat object that represents the reflection formatting for a range of shapes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.reflection?view=word-pia"/>
-  public ReflectionFormat Reflection { get; }
+  public IReflectionFormat Reflection { get; }
 
   /// <summary>
   /// Returns a TextFrame2 object that contains the text for the specified range of shapes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.textframe2?view=word-pia"/>
-  public Core.TextFrame2 TextFrame2 { get; }
+  public Core.ITextFrame2 ITextFrame2 { get; }
 
   /// <summary>
   /// Gets or sets the shape style for the shapes in the specified shape range.

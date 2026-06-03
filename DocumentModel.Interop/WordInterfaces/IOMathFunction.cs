@@ -16,133 +16,133 @@ public interface IOMathFunction : IInteropObject
   /// Returns the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns the collection of arguments for the equation function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.args?view=word-pia"/>
-  public OMathArgs Args { get; }
+  public IOMathArgs Args { get; }
 
   /// <summary>
   /// Returns the accent function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.acc?view=word-pia"/>
-  public OMathAcc Acc { get; }
+  public IOMathAcc Acc { get; }
 
   /// <summary>
   /// Returns the bar function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.bar?view=word-pia"/>
-  public OMathBar Bar { get; }
+  public IOMathBar Bar { get; }
 
   /// <summary>
   /// Returns the box function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.box?view=word-pia"/>
-  public OMathBox Box { get; }
+  public IOMathBox Box { get; }
 
   /// <summary>
   /// Returns the border box function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.borderbox?view=word-pia"/>
-  public OMathBorderBox BorderBox { get; }
+  public IOMathBorderBox BorderBox { get; }
 
   /// <summary>
   /// Returns the delimiter function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.delim?view=word-pia"/>
-  public OMathDelim Delim { get; }
+  public IOMathDelim Delim { get; }
 
   /// <summary>
   /// Returns the equation array function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.eqarray?view=word-pia"/>
-  public OMathEqArray EqArray { get; }
+  public IOMathEqArray EqArray { get; }
 
   /// <summary>
   /// Returns the fraction function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.frac?view=word-pia"/>
-  public OMathFrac Frac { get; }
+  public IOMathFrac Frac { get; }
 
   /// <summary>
   /// Returns the function-application function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.func?view=word-pia"/>
-  public OMathFunc Func { get; }
+  public IOMathFunc Func { get; }
 
   /// <summary>
   /// Returns the group character function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.groupchar?view=word-pia"/>
-  public OMathGroupChar GroupChar { get; }
+  public IOMathGroupChar GroupChar { get; }
 
   /// <summary>
   /// Returns the lower-limit function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.limlow?view=word-pia"/>
-  public OMathLimLow LimLow { get; }
+  public IOMathLimLow LimLow { get; }
 
   /// <summary>
   /// Returns the upper-limit function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.limupp?view=word-pia"/>
-  public OMathLimUpp LimUpp { get; }
+  public IOMathLimUpp LimUpp { get; }
 
   /// <summary>
   /// Returns the matrix function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.mat?view=word-pia"/>
-  public OMathMat Mat { get; }
+  public IOMathMat Mat { get; }
 
   /// <summary>
   /// Returns the n-ary operator function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.nary?view=word-pia"/>
-  public OMathNary Nary { get; }
+  public IOMathNary Nary { get; }
 
   /// <summary>
   /// Returns the phantom function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.phantom?view=word-pia"/>
-  public OMathPhantom Phantom { get; }
+  public IOMathPhantom Phantom { get; }
 
   /// <summary>
   /// Returns the pre-sub/superscript function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrpre?view=word-pia"/>
-  public OMathScrPre ScrPre { get; }
+  public IOMathScrPre ScrPre { get; }
 
   /// <summary>
   /// Returns the radical function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.rad?view=word-pia"/>
-  public OMathRad Rad { get; }
+  public IOMathRad Rad { get; }
 
   /// <summary>
   /// Returns the subscript function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsub?view=word-pia"/>
-  public OMathScrSub ScrSub { get; }
+  public IOMathScrSub ScrSub { get; }
 
   /// <summary>
   /// Returns the subscript-superscript function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsubsup?view=word-pia"/>
-  public OMathScrSubSup ScrSubSup { get; }
+  public IOMathScrSubSup ScrSubSup { get; }
 
   /// <summary>
   /// Returns the superscript function object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.scrsup?view=word-pia"/>
-  public OMathScrSup ScrSup { get; }
+  public IOMathScrSup ScrSup { get; }
 
   /// <summary>
   /// Returns the parent equation object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.omath?view=word-pia"/>
-  public OMath OMath { get; }
+  public IOMath IOMath { get; }
 
 
   #region methods
@@ -155,7 +155,7 @@ public interface IOMathFunction : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.remove?view=word-pia"/>
-  public OMathFunction Remove();
+  public IOMathFunction Remove();
 
   #endregion methods
 }

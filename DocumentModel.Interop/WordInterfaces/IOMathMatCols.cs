@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the collection of matrix columns.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcols?view=word-pia"/>
-public interface IOMathMatCols : IInteropObject, IInteropCollection<OMathMatCol>
+public interface IOMathMatCols : IInteropObject, IInteropCollection<IOMathMatCol>
 {
 
 
@@ -19,7 +19,7 @@ public interface IOMathMatCols : IInteropObject, IInteropCollection<OMathMatCol>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcols.add?view=word-pia"/>
-  public OMathMatCol Add(object BeforeCol);
+  public IOMathMatCol Add(object BeforeCol);
 
   #endregion methods
 }

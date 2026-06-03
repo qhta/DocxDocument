@@ -16,7 +16,7 @@ public interface IThreeDFormat: IInteropObject
   /// Gets the `ExtrusionColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.extrusioncolor?view=office-pia"/>
-  public ColorFormat ExtrusionColor { get; }
+  public IColorFormat ExtrusionColor { get; }
   /// <summary>
   /// Gets or sets the `ExtrusionColorType` property.
   /// </summary>
@@ -126,7 +126,7 @@ public interface IThreeDFormat: IInteropObject
   /// Gets the `ContourColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.contourcolor?view=office-pia"/>
-  public ColorFormat ContourColor { get; }
+  public IColorFormat ContourColor { get; }
   /// <summary>
   /// Gets or sets the `FieldOfView` property.
   /// </summary>

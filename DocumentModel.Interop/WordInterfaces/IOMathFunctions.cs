@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the collection of equation function objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions?view=word-pia"/>
-public interface IOMathFunctions : IInteropObject, IInteropCollection<OMathFunction>
+public interface IOMathFunctions : IInteropObject, IInteropCollection<IOMathFunction>
 {
 
 
@@ -13,7 +13,7 @@ public interface IOMathFunctions : IInteropObject, IInteropCollection<OMathFunct
 /// <summary>
   /// Adds an equation function to the collection.
   /// </summary>
-  /// <param name="Range">Specifies the range where the function is inserted.</param>
+  /// <param name="range">Specifies the range where the function is inserted.</param>
   /// <param name="Type">Specifies the equation function type.</param>
   /// <param name="NumArgs">Specifies the number of arguments.</param>
   /// <param name="NumCols">Specifies the number of columns, when applicable.</param>
@@ -22,7 +22,7 @@ public interface IOMathFunctions : IInteropObject, IInteropCollection<OMathFunct
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions.add?view=word-pia"/>
-  public OMathFunction Add(Range Range, OMathFunctionType Type, object NumArgs, object NumCols);
+  public IOMathFunction Add(IRange range, OMathFunctionType Type, object NumArgs, object NumCols);
 
   #endregion methods
 }

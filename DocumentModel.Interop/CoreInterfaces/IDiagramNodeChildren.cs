@@ -7,18 +7,18 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren?view=office-pia"/>
-public interface IDiagramNodeChildren: IInteropCollection<DiagramNode>
+public interface IDiagramNodeChildren: IInteropCollection<IDiagramNode>
 {
   /// <summary>
   /// Gets the `FirstChild` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.firstchild?view=office-pia"/>
-  public DiagramNode FirstChild { get; }
+  public IDiagramNode FirstChild { get; }
   /// <summary>
   /// Gets the `LastChild` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.lastchild?view=office-pia"/>
-  public DiagramNode LastChild { get; }
+  public IDiagramNode LastChild { get; }
 
 
   #region methods
@@ -29,7 +29,7 @@ public interface IDiagramNodeChildren: IInteropCollection<DiagramNode>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.item?view=office-pia"/>
-  public DiagramNode Item(object Index);
+  public IDiagramNode Item(object Index);
   /// <summary>
   /// Adds a child node to the diagram node children collection.
   /// </summary>
@@ -37,7 +37,7 @@ public interface IDiagramNodeChildren: IInteropCollection<DiagramNode>
   /// <param name="NodeType">The `NodeType` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.addnode?view=office-pia"/>
-  public DiagramNode AddNode(object Index, DiagramNodeType NodeType);
+  public IDiagramNode AddNode(object Index, DiagramNodeType NodeType);
   /// <summary>
   /// Selects all child diagram nodes.
   /// </summary>

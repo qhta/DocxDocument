@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Dictionary objects that includes the active custom spelling dictionaries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries?view=word-pia"/>
-public interface IDictionaries : IInteropObject, IInteropCollection<Dictionary>
+public interface IDictionaries : IInteropObject, IInteropCollection<Word.IDictionary>
 {
   /// <summary>
   /// Gets the maximum number of custom dictionaries that can be active.
@@ -16,7 +16,7 @@ public interface IDictionaries : IInteropObject, IInteropCollection<Dictionary>
   /// Gets or sets the active custom spelling dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries.activecustomdictionary?view=word-pia"/>
-  public Dictionary ActiveCustomDictionary { get; set; }
+  public Word.IDictionary ActiveCustomDictionary { get; set; }
 
 
   #region methods
@@ -25,12 +25,12 @@ public interface IDictionaries : IInteropObject, IInteropCollection<Dictionary>
   /// Adds a custom dictionary to the collection.
   /// </summary>
   /// <param name="FileName">The full path and file name of the custom dictionary.</param>
-  /// <returns>The created <see cref="Dictionary"/> object.</returns>
+  /// <returns>The created <see cref="Word.IDictionary"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries.add?view=word-pia"/>
-  public Dictionary Add(string FileName);
+  public Word.IDictionary Add(string FileName);
 
   #endregion methods
 }

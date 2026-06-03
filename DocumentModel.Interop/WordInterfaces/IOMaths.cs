@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of equations. Use the OMaths object to access individual members of the collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths?view=word-pia"/>
-public interface IOMaths : IInteropObject, IInteropCollection<OMath>
+public interface IOMaths : IInteropObject, IInteropCollection<IOMath>
 {
 
 
@@ -33,10 +33,10 @@ public interface IOMaths : IInteropObject, IInteropCollection<OMath>
   /// </summary>
   /// <remarks>The resulting range may not be contiguous if the specified range does not overlap or is not
   /// adjacent to the current range. This method does not modify the current instance.</remarks>
-  /// <param name="Range">The range to add to the current range. Must not be null.</param>
+  /// <param name="range">The range to add to the current range. Must not be null.</param>
   /// <returns>A new Range instance representing the combined range of the current and specified ranges.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.add?view=word-pia"/>
-  public Range Add(Range Range);
+  public IRange Add(IRange range);
 
   #endregion methods
 }

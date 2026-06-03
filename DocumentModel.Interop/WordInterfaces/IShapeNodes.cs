@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the ShapeNode objects in the specified freeform.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes?view=word-pia"/>
-public interface IShapeNodes : IInteropObject, IInteropCollection<ShapeNode>
+public interface IShapeNodes : IInteropObject, IInteropCollection<IShapeNode>
 {
 
 

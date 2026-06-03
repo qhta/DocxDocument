@@ -22,7 +22,7 @@ public interface ISmartTag : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns a String that represents the URL address for a smart tag.
@@ -34,19 +34,19 @@ public interface ISmartTag : IInteropObject
   /// Returns a CustomProperties object that represents the properties of a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.properties?view=word-pia"/>
-  public CustomProperties Properties { get; }
+  public ICustomProperties Properties { get; }
 
   /// <summary>
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.smarttagactions?view=word-pia"/>
-  public SmartTagActions SmartTagActions { get; }
+  public ISmartTagActions ISmartTagActions { get; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the XML element for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.xmlnode?view=word-pia"/>
-  public XMLNode XMLNode { get; }
+  public IXMLNode IXMLNode { get; }
 
 
   #region methods

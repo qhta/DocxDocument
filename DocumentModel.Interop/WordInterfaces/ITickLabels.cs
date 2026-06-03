@@ -10,7 +10,7 @@ public interface ITickLabels : IInteropObject
   /// Returns a ChartFont object that represents the font of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Returns a String value that represents the name of the object.
@@ -86,7 +86,7 @@ public interface ITickLabels : IInteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

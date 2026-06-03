@@ -22,7 +22,7 @@ public interface IChartCharacters : IInteropObject
   /// Gets the font formatting for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Gets or sets the text of the chart characters.

@@ -64,13 +64,13 @@ public interface IMailMergeDataSource : IInteropObject
   /// Returns the mail merge field names collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.fieldnames?view=word-pia"/>
-  public MailMergeFieldNames FieldNames { get; }
+  public IMailMergeFieldNames FieldNames { get; }
 
   /// <summary>
   /// Returns the mail merge data fields collection for the active record.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.datafields?view=word-pia"/>
-  public MailMergeDataFields DataFields { get; }
+  public IMailMergeDataFields DataFields { get; }
 
   /// <summary>
   /// Returns the number of records in the data source.
@@ -100,7 +100,7 @@ public interface IMailMergeDataSource : IInteropObject
   /// Returns the mapped data fields collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.mappeddatafields?view=word-pia"/>
-  public MappedDataFields MappedDataFields { get; }
+  public IMappedDataFields IMappedDataFields { get; }
 
   /// <summary>
   /// Returns the source table name for the mail merge data source.

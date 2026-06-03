@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of EmailSignatureEntry objects that represents all the e-mail signature entries available to Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries?view=word-pia"/>
-public interface IEmailSignatureEntries : IInteropObject, IInteropCollection<EmailSignatureEntry>
+public interface IEmailSignatureEntries : IInteropObject, IInteropCollection<IEmailSignatureEntry>
 {
 
 
@@ -14,13 +14,13 @@ public interface IEmailSignatureEntries : IInteropObject, IInteropCollection<Ema
   /// Returns the value produced by the add operation.
   /// </summary>
   /// <param name="Name">Specifies the name.</param>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries.add?view=word-pia"/>
-  public EmailSignatureEntry Add(string Name, Range Range);
+  public IEmailSignatureEntry Add(string Name, IRange range);
 
   #endregion methods
 }

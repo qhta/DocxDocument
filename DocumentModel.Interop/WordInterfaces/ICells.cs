@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Cell objects in a table column, table row, selection, or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public interface ICells : IInteropObject, IInteropCollection<Cell>
+public interface ICells : IInteropObject, IInteropCollection<ICell>
 {
   /// <summary>
   /// Gets or sets the width of the cells, in points.
@@ -34,13 +34,13 @@ public interface ICells : IInteropObject, IInteropCollection<Cell>
   /// Gets or sets the border formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets the nesting level of the cells.
@@ -67,12 +67,12 @@ public interface ICells : IInteropObject, IInteropCollection<Cell>
   /// Adds a cell to the collection before the specified cell.
   /// </summary>
   /// <param name="BeforeCell">The cell before which the new cell is added.</param>
-  /// <returns>The newly added <see cref="Cell"/> object.</returns>
+  /// <returns>The newly added <see cref="ICell"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.add?view=word-pia"/>
-  public Cell Add(object BeforeCell);
+  public ICell Add(object BeforeCell);
 
   #endregion methods
 }

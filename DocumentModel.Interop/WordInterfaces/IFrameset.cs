@@ -4,13 +4,13 @@ namespace DocumentModel.Interop.Word;
 /// Represents an entire frames page or a single frame on a frames page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public interface IFrameset : IInteropObject, IInteropCollection<Frameset>
+public interface IFrameset : IInteropObject, IInteropCollection<IFrameset>
 {
   /// <summary>
   /// Returns the parent frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.parentframeset?view=word-pia"/>
-  public Frameset ParentFrameset { get; }
+  public IFrameset ParentFrameset { get; }
 
   /// <summary>
   /// Returns the type of the specified frameset.
@@ -108,7 +108,7 @@ public interface IFrameset : IInteropObject, IInteropCollection<Frameset>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.get_childframesetitem?view=word-pia"/>
-  public Frameset ChildFramesetItem(int Index);
+  public IFrameset ChildFramesetItem(int Index);
 
   /// <summary>
   /// Returns the value produced by the add new frame operation.
@@ -119,7 +119,7 @@ public interface IFrameset : IInteropObject, IInteropCollection<Frameset>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.addnewframe?view=word-pia"/>
-  public Frameset AddNewFrame(FramesetNewFrameLocation Where);
+  public IFrameset AddNewFrame(FramesetNewFrameLocation Where);
 
   #endregion methods
 }

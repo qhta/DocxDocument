@@ -45,26 +45,26 @@ public interface ITextFrame : IInteropObject
   /// Returns a Range object that represents the text in the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.textrange?view=word-pia"/>
-  public Range TextRange { get; }
+  public IRange TextRange { get; }
 
   /// <summary>
   /// Returns a Range object that represents the entire story in a series of shapes with linked text frames that the
   /// specified text frame belongs to.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.containingrange?view=word-pia"/>
-  public Range ContainingRange { get; }
+  public IRange ContainingRange { get; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.next?view=word-pia"/>
-  public TextFrame Next { get; set; }
+  public ITextFrame Next { get; set; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.previous?view=word-pia"/>
-  public TextFrame Previous { get; set; }
+  public ITextFrame Previous { get; set; }
 
   /// <summary>
   /// True if the text inside the specified text frame doesn't all fit within the frame.
@@ -119,13 +119,13 @@ public interface ITextFrame : IInteropObject
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.column?view=word-pia"/>
-  public Core.TextColumn2 Column { get; }
+  public Core.ITextColumn2 Column { get; }
 
   /// <summary>
   /// Gets a ThreeDFormat object that contains 3-D effect formatting properties for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.threed?view=word-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
 
   /// <summary>
   /// Gets or sets whether the text in the text frame should not rotate when the shape is rotated.

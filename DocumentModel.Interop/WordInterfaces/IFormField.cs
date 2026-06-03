@@ -61,40 +61,40 @@ public interface IFormField : IInteropObject
   public bool Enabled { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified object.
+  /// Returns a <see cref="IRange"/> object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.result?view=word-pia"/>
   public string Result { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="TextInput"/> object that represents a text form field.
+  /// Returns a <see cref="ITextInput"/> object that represents a text form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.textinput?view=word-pia"/>
-  public TextInput TextInput { get; }
+  public ITextInput ITextInput { get; }
 
   /// <summary>
-  /// Returns a <see cref="CheckBox"/> object that represents a check box form field.
+  /// Returns a <see cref="ICheckBox"/> object that represents a check box form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.checkbox?view=word-pia"/>
-  public CheckBox CheckBox { get; }
+  public ICheckBox ICheckBox { get; }
 
   /// <summary>
-  /// Returns a <see cref="DropDown"/> object that represents a drop-down form field.
+  /// Returns a <see cref="IDropDown"/> object that represents a drop-down form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.dropdown?view=word-pia"/>
-  public DropDown DropDown { get; }
+  public IDropDown IDropDown { get; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.next?view=word-pia"/>
-  public FormField Next { get; }
+  public IFormField Next { get; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.previous?view=word-pia"/>
-  public FormField Previous { get; }
+  public IFormField Previous { get; }
 
   /// <summary>
   /// Determines if references to the specified form field are automatically updated whenever the field is exited.
@@ -103,10 +103,10 @@ public interface IFormField : IInteropObject
   public bool CalculateOnExit { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified object.
+  /// Returns a <see cref="IRange"/> object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
 
   #region methods

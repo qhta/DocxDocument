@@ -22,7 +22,7 @@ public interface IListTemplate : IInteropObject
   /// Returns the list levels collection for the list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.listlevels?view=word-pia"/>
-  public ListLevels ListLevels { get; }
+  public IListLevels IListLevels { get; }
 
 
   #region methods
@@ -36,7 +36,7 @@ public interface IListTemplate : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.convert?view=word-pia"/>
-  public ListTemplate Convert(object Level);
+  public IListTemplate Convert(object Level);
 
   #endregion methods
 }

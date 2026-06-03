@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of HangulAndAlphabetException objects that represents all Hangul and alphabet AutoCorrect exceptions. This list corresponds to the list of AutoCorrect exceptions on the Korean tab in the AutoCorrect Exceptions dialog box (AutoCorrect command, Tools menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexceptions?view=word-pia"/>
-public interface IHangulAndAlphabetExceptions : IInteropObject, IInteropCollection<HangulAndAlphabetException>
+public interface IHangulAndAlphabetExceptions : IInteropObject, IInteropCollection<IHangulAndAlphabetException>
 {
 
 
@@ -19,7 +19,7 @@ public interface IHangulAndAlphabetExceptions : IInteropObject, IInteropCollecti
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexceptions.add?view=word-pia"/>
-  public HangulAndAlphabetException Add(string Name);
+  public IHangulAndAlphabetException Add(string Name);
 
   #endregion methods
 }

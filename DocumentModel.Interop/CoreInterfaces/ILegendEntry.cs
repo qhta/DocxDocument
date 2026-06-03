@@ -11,7 +11,7 @@ public interface ILegendEntry
   /// Gets or sets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets the `Index` property.
   /// </summary>

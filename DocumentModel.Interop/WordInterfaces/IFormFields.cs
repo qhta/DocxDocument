@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of FormField objects that represent all the form fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields?view=word-pia"/>
-public interface IFormFields : IInteropObject, IInteropCollection<FormField>
+public interface IFormFields : IInteropObject, IInteropCollection<IFormField>
 {
   /// <summary>
   /// Determines if shading is applied to form fields.
@@ -18,14 +18,14 @@ public interface IFormFields : IInteropObject, IInteropCollection<FormField>
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <param name="Type">Specifies the type.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.add?view=word-pia"/>
-  public FormField Add(Range Range, FieldType Type);
+  public IFormField Add(IRange range, FieldType Type);
 
   #endregion methods
 }

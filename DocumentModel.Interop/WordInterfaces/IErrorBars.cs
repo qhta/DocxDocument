@@ -16,7 +16,7 @@ public interface IErrorBars : IInteropObject
   /// Gets the border formatting for the error bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Gets or sets the cap style for the ends of the error bars.
@@ -28,7 +28,7 @@ public interface IErrorBars : IInteropObject
   /// Gets the chart formatting for the error bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
 
   #region methods

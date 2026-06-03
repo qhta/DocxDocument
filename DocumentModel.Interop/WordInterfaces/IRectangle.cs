@@ -37,11 +37,11 @@ public interface IRectangle : IInteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
   /// <summary>
   /// Returns a Lines collection that represents the lines in a specified portion of text in a page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.lines?view=word-pia"/>
-  public Lines Lines { get; }
+  public ILines ILines { get; }
 
 }

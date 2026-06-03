@@ -10,7 +10,7 @@ public interface IBibliography : IInteropObject
   /// Gets the collection of sources in the bibliography.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography.sources?view=word-pia"/>
-  public Sources Sources { get; }
+  public ISources ISources { get; }
 
   /// <summary>
   /// Gets or sets the bibliography style name.

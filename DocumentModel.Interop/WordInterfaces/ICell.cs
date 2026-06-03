@@ -10,7 +10,7 @@ public interface ICell : IInteropObject
   /// Gets the range that represents the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Gets the index number of the row that contains the cell.
@@ -52,43 +52,43 @@ public interface ICell : IInteropObject
   /// Gets the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.column?view=word-pia"/>
-  public Column Column { get; }
+  public IColumn IColumn { get; }
 
   /// <summary>
   /// Gets the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.row?view=word-pia"/>
-  public Row Row { get; }
+  public IRow IRow { get; }
 
   /// <summary>
   /// Gets the next cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.next?view=word-pia"/>
-  public Cell Next { get; }
+  public ICell Next { get; }
 
   /// <summary>
   /// Gets the previous cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.previous?view=word-pia"/>
-  public Cell Previous { get; }
+  public ICell Previous { get; }
 
   /// <summary>
   /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public IShading IShading { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders IBorders { get; set; }
 
   /// <summary>
   /// Gets the collection of tables nested within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public ITables ITables { get; }
 
   /// <summary>
   /// Gets the nesting level of the cell.

@@ -28,19 +28,19 @@ public interface IEmailOptions : IInteropObject
   /// Gets the email signature settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.emailsignature?view=word-pia"/>
-  public EmailSignature EmailSignature { get; }
+  public IEmailSignature IEmailSignature { get; }
 
   /// <summary>
   /// Gets the style used when composing email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.composestyle?view=word-pia"/>
-  public Style ComposeStyle { get; }
+  public IStyle ComposeStyle { get; }
 
   /// <summary>
   /// Gets the style used when replying to email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.replystyle?view=word-pia"/>
-  public Style ReplyStyle { get; }
+  public IStyle ReplyStyle { get; }
 
   /// <summary>
   /// Gets or sets the theme name used for email messages.
@@ -70,7 +70,7 @@ public interface IEmailOptions : IInteropObject
   /// Gets the style used for plain-text email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.plaintextstyle?view=word-pia"/>
-  public Style PlainTextStyle { get; }
+  public IStyle PlainTextStyle { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether theme styles are used for replies.

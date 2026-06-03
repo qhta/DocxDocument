@@ -16,13 +16,13 @@ public interface IListFormat : IInteropObject
   /// Returns the first valid list that is applied to the paragraphs in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.list?view=word-pia"/>
-  public List List { get; }
+  public Word.IList List { get; }
 
   /// <summary>
   /// Returns the list template associated with the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public Word.IListTemplate ListTemplate { get; }
 
   /// <summary>
   /// Returns the numeric value of the first paragraph in the range.
@@ -58,7 +58,7 @@ public interface IListFormat : IInteropObject
   /// Returns the picture bullet inline shape for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listpicturebullet?view=word-pia"/>
-  public InlineShape ListPictureBullet { get; }
+  public IInlineShape ListPictureBullet { get; }
 
 
   #region methods
@@ -72,7 +72,7 @@ public interface IListFormat : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.cancontinuepreviouslist?view=word-pia"/>
-  public Continue CanContinuePreviousList(ListTemplate ListTemplate);
+  public Continue CanContinuePreviousList(IListTemplate ListTemplate);
 
   #endregion methods
 }

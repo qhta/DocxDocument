@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of CustomProperty objects that represents the properties related to a smart tag.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties?view=word-pia"/>
-public interface ICustomProperties : IInteropObject, IInteropCollection<CustomProperty>
+public interface ICustomProperties : IInteropObject, IInteropCollection<ICustomProperty>
 {
 
 
@@ -15,12 +15,12 @@ public interface ICustomProperties : IInteropObject, IInteropCollection<CustomPr
   /// </summary>
   /// <param name="Name">The name of the custom property.</param>
   /// <param name="Value">The value of the custom property.</param>
-  /// <returns>The created <see cref="CustomProperty"/> object.</returns>
+  /// <returns>The created <see cref="ICustomProperty"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties.add?view=word-pia"/>
-  public CustomProperty Add(string Name, string Value);
+  public ICustomProperty Add(string Name, string Value);
 
   #endregion methods
 }

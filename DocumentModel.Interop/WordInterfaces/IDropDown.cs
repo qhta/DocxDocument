@@ -25,6 +25,6 @@ public interface IDropDown : IInteropObject
   /// Gets the collection of list entries in the drop-down form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.listentries?view=word-pia"/>
-  public ListEntries ListEntries { get; }
+  public IListEntries IListEntries { get; }
 
 }

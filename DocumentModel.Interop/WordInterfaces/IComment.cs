@@ -10,7 +10,7 @@ public interface IComment : IInteropObject
   /// Gets the range that contains the comment text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.range?view=word-pia"/>
-  public IRange Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Gets the range marked by the comment reference mark.
@@ -70,19 +70,19 @@ public interface IComment : IInteropObject
   /// Gets the parent comment for a reply.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.ancestor?view=word-pia"/>
-  public Comment Ancestor { get; }
+  public IComment Ancestor { get; }
 
   /// <summary>
   /// Gets the co-author associated with the comment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.contact?view=word-pia"/>
-  public CoAuthor Contact { get; }
+  public ICoAuthor Contact { get; }
 
   /// <summary>
   /// Gets the collection of replies to the comment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.replies?view=word-pia"/>
-  public Comments Replies { get; }
+  public IComments Replies { get; }
 
 
   #region methods

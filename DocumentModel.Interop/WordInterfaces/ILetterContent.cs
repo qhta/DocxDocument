@@ -10,7 +10,7 @@ public interface ILetterContent : IInteropObject
   /// Gets a duplicate of the letter content.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.duplicate?view=word-pia"/>
-  public LetterContent Duplicate { get; }
+  public ILetterContent Duplicate { get; }
   /// <summary>
   /// Gets or sets the date format for the letter.
   /// </summary>

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// RecentFiles collection are displayed at the bottom of the File menu.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles?view=word-pia"/>
-public interface IRecentFiles : IInteropObject, IInteropCollection<RecentFile>
+public interface IRecentFiles : IInteropObject, IInteropCollection<IRecentFile>
 {
   /// <summary>
   /// Returns or sets the maximum number of recently used files that can appear on the File menu. Can be a number
@@ -20,15 +20,15 @@ public interface IRecentFiles : IInteropObject, IInteropCollection<RecentFile>
 /// <summary>
  /// Adds a document to the list of recent files.
  /// </summary>
- /// <param name="Document">The document to add to the recent files list. Cannot be null.</param>
+ /// <param name="document">The document to add to the recent files list. Cannot be null.</param>
  /// <param name="ReadOnly">A value indicating whether the document should be opened in read-only mode. Set to <see langword="true"/> to open
  /// as read-only; otherwise, <see langword="false"/>.</param>
- /// <returns>A <see cref="RecentFile"/> object representing the added document in the recent files list.</returns>
+ /// <returns>A <see cref="IRecentFile"/> object representing the added document in the recent files list.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles.add?view=word-pia"/>
-  public RecentFile Add(Document Document, bool ReadOnly);
+  public IRecentFile Add(IDocument document, bool ReadOnly);
 
   #endregion methods
 }

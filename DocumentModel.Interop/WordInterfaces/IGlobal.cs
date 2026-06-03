@@ -16,31 +16,31 @@ public interface IGlobal: IInteropObject
   /// Returns a Documents collection that represents all the open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.documents?view=word-pia"/>
-  public Documents Documents { get; }
+  public IDocuments IDocuments { get; }
 
   /// <summary>
   /// Returns a Windows collection that represents all document windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.windows?view=word-pia"/>
-  public Windows Windows { get; }
+  public IWindows IWindows { get; }
 
   /// <summary>
   /// Returns a Document object that represents the active document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activedocument?view=word-pia"/>
-  public Document ActiveDocument { get; }
+  public IDocument ActiveDocument { get; }
 
   /// <summary>
   /// Returns a Window object that represents the active window (the window with the focus).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activewindow?view=word-pia"/>
-  public Window ActiveWindow { get; }
+  public IWindow ActiveWindow { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection ISelection { get; }
 
   /// <summary>
   /// Returns an Automation object (Word.Basic) that includes methods for all WordBasic statements and functions.
@@ -58,91 +58,91 @@ public interface IGlobal: IInteropObject
   /// Returns a RecentFiles collection that represents the most recently accessed files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.recentfiles?view=word-pia"/>
-  public RecentFiles RecentFiles { get; }
+  public IRecentFiles IRecentFiles { get; }
 
   /// <summary>
   /// Returns a Template object that represents the Normal template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.normaltemplate?view=word-pia"/>
-  public Template NormalTemplate { get; }
+  public ITemplate NormalTemplate { get; }
 
   /// <summary>
   /// Returns a System object that can be used to return system-related information and perform system-related tasks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.system?view=word-pia"/>
-  public System System { get; }
+  public ISystem System { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that contains the current AutoCorrect options, entries, and exceptions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocorrect?view=word-pia"/>
-  public AutoCorrect AutoCorrect { get; }
+  public IAutoCorrect IAutoCorrect { get; }
 
   /// <summary>
   /// Returns a Names object that includes the names of all available fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fontnames?view=word-pia"/>
-  public FontNames FontNames { get; }
+  public IFontNames IFontNames { get; }
 
   /// <summary>
   /// Returns a Names object that includes the names of all available landscape fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.landscapefontnames?view=word-pia"/>
-  public FontNames LandscapeFontNames { get; }
+  public IFontNames LandscapeFontNames { get; }
 
   /// <summary>
   /// Returns a Names object that includes the names of all available portrait fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.portraitfontnames?view=word-pia"/>
-  public FontNames PortraitFontNames { get; }
+  public IFontNames PortraitFontNames { get; }
 
   /// <summary>
   /// Returns a Languages collection that represents the proofing languages listed in the Language dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.languages?view=word-pia"/>
-  public Languages Languages { get; }
+  public ILanguages ILanguages { get; }
 
   /// <summary>
   /// Returns an Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.assistant?view=word-pia"/>
-  public Core.Assistant Assistant { get; }
+  public Core.IAssistant IAssistant { get; }
 
   /// <summary>
   /// Returns a FileConverters collection that represents all file converters available to Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fileconverters?view=word-pia"/>
-  public FileConverters FileConverters { get; }
+  public IFileConverters IFileConverters { get; }
 
   /// <summary>
   /// Returns a Dialogs collection that represents all built-in dialog boxes in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dialogs?view=word-pia"/>
-  public Dialogs Dialogs { get; }
+  public IDialogs IDialogs { get; }
 
   /// <summary>
   /// Returns a CaptionLabels collection that represents all available caption labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.captionlabels?view=word-pia"/>
-  public CaptionLabels CaptionLabels { get; }
+  public ICaptionLabels ICaptionLabels { get; }
 
   /// <summary>
   /// Returns an AutoCaptions collection that represents captions automatically added for inserted items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocaptions?view=word-pia"/>
-  public AutoCaptions AutoCaptions { get; }
+  public IAutoCaptions IAutoCaptions { get; }
 
   /// <summary>
   /// Returns an AddIns collection that represents all available add-ins.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.addins?view=word-pia"/>
-  public AddIns AddIns { get; }
+  public IAddIns IAddIns { get; }
 
   /// <summary>
   /// Returns a Tasks collection that represents all applications that are running.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.tasks?view=word-pia"/>
-  public Tasks Tasks { get; }
+  public ITasks ITasks { get; }
 
   /// <summary>
   /// Returns a Template or Document object in which the module containing the running procedure is stored.
@@ -166,7 +166,7 @@ public interface IGlobal: IInteropObject
   /// Returns a ListGalleries collection that represents the Bulleted, Numbered, and Outline Numbered galleries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.listgalleries?view=word-pia"/>
-  public ListGalleries ListGalleries { get; }
+  public IListGalleries IListGalleries { get; }
 
   /// <summary>
   /// Returns or sets the name of the active printer.
@@ -178,7 +178,7 @@ public interface IGlobal: IInteropObject
   /// Returns a Templates collection that represents all available templates.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.templates?view=word-pia"/>
-  public Templates Templates { get; }
+  public ITemplates ITemplates { get; }
 
   /// <summary>
   /// Returns or sets the Template or Document in which changes to menu bars, toolbars, and key bindings are stored.
@@ -190,19 +190,19 @@ public interface IGlobal: IInteropObject
   /// Returns a KeyBindings collection that represents customized key assignments.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keybindings?view=word-pia"/>
-  public KeyBindings KeyBindings { get; }
+  public IKeyBindings IKeyBindings { get; }
 
   /// <summary>
   /// Returns an Options object that represents application settings in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.options?view=word-pia"/>
-  public Options Options { get; }
+  public IOptions IOptions { get; }
 
   /// <summary>
   /// Returns a Dictionaries object that represents the collection of active custom dictionaries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.customdictionaries?view=word-pia"/>
-  public Dictionaries CustomDictionaries { get; }
+  public IDictionaries CustomDictionaries { get; }
 
   /// <summary>
   /// Sets the StatusBar.
@@ -220,37 +220,37 @@ public interface IGlobal: IInteropObject
   /// Returns a HangulHanjaConversionDictionaries collection that represents active custom conversion dictionaries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.hangulhanjadictionaries?view=word-pia"/>
-  public HangulHanjaConversionDictionaries HangulHanjaDictionaries { get; }
+  public IHangulHanjaConversionDictionaries HangulHanjaDictionaries { get; }
 
   /// <summary>
   /// Returns a LanguageSettings object that contains language setting information in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.languagesettings?view=word-pia"/>
-  public Core.LanguageSettings LanguageSettings { get; }
+  public Core.ILanguageSettings ILanguageSettings { get; }
 
   /// <summary>
   /// Returns an AnswerWizard object that contains files used by the online Help search engine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.answerwizard?view=word-pia"/>
-  public Core.AnswerWizard AnswerWizard { get; }
+  public Core.IAnswerWizard IAnswerWizard { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that represents automatic corrections made to e-mail messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocorrectemail?view=word-pia"/>
-  public AutoCorrect AutoCorrectEmail { get; }
+  public IAutoCorrect AutoCorrectEmail { get; }
 
   /// <summary>
   /// Returns a ProtectedViewWindows object that represents open protected view windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.protectedviewwindows?view=word-pia"/>
-  public ProtectedViewWindows ProtectedViewWindows { get; }
+  public IProtectedViewWindows IProtectedViewWindows { get; }
 
   /// <summary>
   /// Returns a ProtectedViewWindow object that represents the active protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activeprotectedviewwindow?view=word-pia"/>
-  public ProtectedViewWindow ActiveProtectedViewWindow { get; }
+  public IProtectedViewWindow ActiveProtectedViewWindow { get; }
 
   /// <summary>
   /// Gets whether the application window is a protected view window.
@@ -271,7 +271,7 @@ public interface IGlobal: IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
-  public SynonymInfo SynonymInfo(string Word, object LanguageID);
+  public ISynonymInfo ISynonymInfo(string Word, object LanguageID);
   /// <summary>
   /// Returns a KeysBoundTo object that represents all key combinations assigned to the specified item.
   /// </summary>
@@ -282,7 +282,7 @@ public interface IGlobal: IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
+  public IKeysBoundTo IKeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
   /// </summary>
@@ -292,7 +292,7 @@ public interface IGlobal: IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
-  public KeyBinding FindKey(int KeyCode, object KeyCode2);
+  public IKeyBinding FindKey(int KeyCode, object KeyCode2);
   /// <summary>
   /// Determines whether a variable that references an object is valid.
   /// </summary>
@@ -433,7 +433,7 @@ public interface IGlobal: IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.getspellingsuggestions?view=word-pia"/>
-  public SpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
+  public ISpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
   /// <summary>
   /// Displays online Help information.
   /// </summary>
@@ -450,7 +450,7 @@ public interface IGlobal: IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.newwindow?view=word-pia"/>
-  public Window NewWindow();
+  public IWindow NewWindow();
   /// <summary>
   /// Removes nonprinting and special Word characters from the specified string or changes them to spaces.
   /// </summary>

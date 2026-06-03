@@ -16,13 +16,13 @@ public interface ISeries : IInteropObject
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns an ErrorBars object that represents the error bars for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.errorbars?view=word-pia"/>
-  public ErrorBars ErrorBars { get; }
+  public IErrorBars IErrorBars { get; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -66,22 +66,22 @@ public interface ISeries : IInteropObject
   public bool HasDataLabels { get; set; }
 
   /// <summary>
-  /// True if the series has error bars. This property isn’t available for 3-D charts. Read/write Boolean.
+  /// True if the series has error bars. This property isnâ€™t available for 3-D charts. Read/write Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.haserrorbars?view=word-pia"/>
   public bool HasErrorBars { get; set; }
 
   /// <summary>
-  /// Returns the Interior object for the series.
+  /// Returns the IInterior object for the series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public IInterior IInterior { get; }
 
   /// <summary>
   /// Returns the ChartFillFormat for this series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// True if Microsoft Word inverts the pattern in the object when it corresponds to a negative number. Read/write
@@ -244,13 +244,13 @@ public interface ISeries : IInteropObject
   /// Returns a LeaderLines object that represents the leader lines for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.leaderlines?view=word-pia"/>
-  public LeaderLines LeaderLines { get; }
+  public ILeaderLines ILeaderLines { get; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if

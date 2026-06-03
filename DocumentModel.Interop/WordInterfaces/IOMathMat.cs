@@ -10,13 +10,13 @@ public interface IOMathMat : IInteropObject
   /// Returns the collection of matrix rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.rows?view=word-pia"/>
-  public OMathMatRows Rows { get; }
+  public IOMathMatRows Rows { get; }
 
   /// <summary>
   /// Returns the collection of matrix columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.cols?view=word-pia"/>
-  public OMathMatCols Cols { get; }
+  public IOMathMatCols Cols { get; }
 
   /// <summary>
   /// Returns or sets the vertical alignment of the matrix.
@@ -73,7 +73,7 @@ public interface IOMathMat : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.get_cell?view=word-pia"/>
-  public OMath Cell(int Row, int Col);
+  public IOMath Cell(int Row, int Col);
 
   #endregion methods
 }

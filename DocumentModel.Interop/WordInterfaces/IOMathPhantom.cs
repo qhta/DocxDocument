@@ -10,7 +10,7 @@ public interface IOMathPhantom : IInteropObject
   /// Returns the base expression for the phantom.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets whether the phantom expression is shown.
   /// </summary>

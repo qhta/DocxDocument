@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestions?view=word-pia"/>
-public interface IXMLChildNodeSuggestions : IInteropObject, IInteropCollection<XMLChildNodeSuggestion>
+public interface IXMLChildNodeSuggestions : IInteropObject, IInteropCollection<IXMLChildNodeSuggestion>
 {
 }

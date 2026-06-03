@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the Series objects in the specified chart or chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.seriescollection?view=word-pia"/>
-public interface ISeriesCollection : IInteropObject, IInteropCollection<Series>
+public interface ISeriesCollection : IInteropObject, IInteropCollection<ISeries>
 {
 
 
@@ -18,12 +18,12 @@ public interface ISeriesCollection : IInteropObject, IInteropCollection<Series>
   /// <param name="SeriesLabels">Indicates if the first row or column contains series labels.</param>
   /// <param name="CategoryLabels">Indicates if the first row or column contains category labels.</param>
   /// <param name="Replace">true to replace existing data; otherwise, false.</param>
-  /// <returns>The created <see cref="Series"/> object.</returns>
+  /// <returns>The created <see cref="ISeries"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.seriescollection.add?view=word-pia"/>
-  public Series Add(object Source, RowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
+  public ISeries Add(object Source, RowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
 
   /// <summary>
   /// Extends the series collection with additional data.
@@ -41,12 +41,12 @@ public interface ISeriesCollection : IInteropObject, IInteropCollection<Series>
   /// <summary>
   /// Creates a new series in the collection.
   /// </summary>
-  /// <returns>The created <see cref="Series"/> object.</returns>
+  /// <returns>The created <see cref="ISeries"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.seriescollection.newseries?view=word-pia"/>
-  public Series NewSeries();
+  public ISeries NewSeries();
 
   #endregion methods
 }

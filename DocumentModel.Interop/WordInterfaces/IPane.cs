@@ -11,14 +11,14 @@ public interface IPane : IInteropObject
   /// Returns a Document object associated with the specified pane. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument document { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selection or the insertion point within a document pane.
   /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection ISelection { get; }
 
   /// <summary>
   /// True if rulers are displayed for the specified pane. Read/write Boolean.
@@ -37,7 +37,7 @@ public interface IPane : IInteropObject
   /// view, outline view or print layout view).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.zooms?view=word-pia"/>
-  public Zooms Zooms { get; }
+  public IZooms IZooms { get; }
 
   /// <summary>
   /// Returns a Long that represents the position of an item in a collection. Read-only.
@@ -49,19 +49,19 @@ public interface IPane : IInteropObject
   /// Returns a View object that represents the view for the specified pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.view?view=word-pia"/>
-  public View View { get; }
+  public IView IView { get; }
 
   /// <summary>
   /// Returns a Pane object that represents the next document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.next?view=word-pia"/>
-  public Pane Next { get; }
+  public IPane Next { get; }
 
   /// <summary>
   /// Returns a Pane object that represents the previous document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.previous?view=word-pia"/>
-  public Pane Previous { get; }
+  public IPane Previous { get; }
 
   /// <summary>
   /// Returns or sets the horizontal scroll position as a percentage of the document width. Read/write Long.
@@ -97,13 +97,13 @@ public interface IPane : IInteropObject
   /// Returns a Frameset object that represents an entire frames page or a single frame on a frames page. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.frameset?view=word-pia"/>
-  public Frameset Frameset { get; }
+  public IFrameset IFrameset { get; }
 
   /// <summary>
   /// Returns a Pages collection that represents the pages in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.pages?view=word-pia"/>
-  public Pages Pages { get; }
+  public IPages IPages { get; }
 
 
   #region methods

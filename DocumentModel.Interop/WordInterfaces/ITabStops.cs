@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// paragraphs.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstops?view=word-pia"/>
-public interface ITabStops : IInteropObject, IInteropCollection<TabStop>
+public interface ITabStops : IInteropObject, IInteropCollection<ITabStop>
 {
 }

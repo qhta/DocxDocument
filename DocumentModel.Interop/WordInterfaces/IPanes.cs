@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Pane objects that represent the window panes for a single window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes?view=word-pia"/>
-public interface IPanes : IInteropObject, IInteropCollection<Pane>
+public interface IPanes : IInteropObject, IInteropCollection<IPane>
 {
 
 
@@ -17,9 +17,9 @@ public interface IPanes : IInteropObject, IInteropCollection<Pane>
   /// method creates a new pane adjacent to the current one based on the specified split direction.</remarks>
   /// <param name="SplitVertical">A value indicating whether to split the pane vertically. Pass <see langword="true"/> to split vertically; <see
   /// langword="false"/> to split horizontally.</param>
-  /// <returns>A <see cref="Pane"/> object representing the newly added pane.</returns>
+  /// <returns>A <see cref="IPane"/> object representing the newly added pane.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes.add?view=word-pia"/>
-  public Pane Add(bool SplitVertical);
+  public IPane Add(bool SplitVertical);
 
   #endregion methods
 }

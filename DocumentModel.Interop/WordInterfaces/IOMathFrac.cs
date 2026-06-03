@@ -10,12 +10,12 @@ public interface IOMathFrac : IInteropObject
   /// Returns the numerator expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.num?view=word-pia"/>
-  public OMath Num { get; }
+  public IOMath Num { get; }
   /// <summary>
   /// Returns the denominator expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.den?view=word-pia"/>
-  public OMath Den { get; }
+  public IOMath Den { get; }
   /// <summary>
   /// Returns or sets the fraction type.
   /// </summary>

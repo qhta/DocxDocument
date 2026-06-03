@@ -16,7 +16,7 @@ public interface IGlowFormat: IInteropObject
   /// Gets the `Color` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat.color?view=office-pia"/>
-  public ColorFormat Color { get; }
+  public IColorFormat Color { get; }
   /// <summary>
   /// Gets or sets the `Transparency` property.
   /// </summary>

@@ -69,7 +69,7 @@ public interface IPictureFormat : IInteropObject
   /// Gets or sets a Crop object that represents an image cropping.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.crop?view=word-pia"/>
-  public Core.Crop Crop { get; set; }
+  public Core.ICrop ICrop { get; set; }
 
 
   #region methods

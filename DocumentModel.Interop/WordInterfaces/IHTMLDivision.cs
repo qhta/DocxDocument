@@ -10,13 +10,13 @@ public interface IHTMLDivision : IInteropObject
   /// Returns a range object that represents the contents of the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange range { get; }
 
   /// <summary>
   /// Returns a borders collection that represents the borders for the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.borders?view=word-pia"/>
-  public Borders Borders { get; }
+  public IBorders IBorders { get; }
 
   /// <summary>
   /// Returns or sets the left indent value, in points, for the HTML division.
@@ -46,7 +46,7 @@ public interface IHTMLDivision : IInteropObject
   /// Returns the HTML divisions collection that contains this HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.htmldivisions?view=word-pia"/>
-  public HTMLDivisions HTMLDivisions { get; }
+  public IHTMLDivisions IHTMLDivisions { get; }
 
 
   #region methods
@@ -55,12 +55,12 @@ public interface IHTMLDivision : IInteropObject
   /// Returns a parent HTML division for the current HTML division.
   /// </summary>
   /// <param name="LevelsUp">The number of levels to move up in the HTML division hierarchy.</param>
-  /// <returns>The parent <see cref="HTMLDivision"/> object.</returns>
+  /// <returns>The parent <see cref="IHTMLDivision"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.htmldivisionparent?view=word-pia"/>
-  public HTMLDivision HTMLDivisionParent(int LevelsUp);
+  public IHTMLDivision HTMLDivisionParent(int LevelsUp);
 
   #endregion methods
 }

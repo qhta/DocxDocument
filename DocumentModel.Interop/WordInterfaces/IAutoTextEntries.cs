@@ -14,24 +14,24 @@ public interface IAutoTextEntries : IInteropObject, IInteropCollection<IAutoText
   /// Creates a new AutoText entry from the specified range.
   /// </summary>
   /// <param name="Name">The name of the AutoText entry.</param>
-  /// <param name="Range">The range whose contents are stored in the AutoText entry.</param>
-  /// <returns>The created <see cref="AutoTextEntry"/> object.</returns>
+  /// <param name="range">The range whose contents are stored in the AutoText entry.</param>
+  /// <returns>The created <see cref="IAutoTextEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.add?view=word-pia"/>
-  public AutoTextEntry Add(string Name, Range Range);
+  public IAutoTextEntry Add(string Name, IRange range);
 
   /// <summary>
   /// Appends the specified range to the Spike AutoText entry.
   /// </summary>
-  /// <param name="Range">The range to append to the Spike entry.</param>
-  /// <returns>The Spike <see cref="AutoTextEntry"/> object.</returns>
+  /// <param name="range">The range to append to the Spike entry.</param>
+  /// <returns>The Spike <see cref="IAutoTextEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.appendtospike?view=word-pia"/>
-  public IAutoTextEntry AppendToSpike(IRange Range);
+  public IAutoTextEntry AppendToSpike(IRange range);
 
   #endregion methods
 }
