@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Microsoft.Office.Core.</param>
 [AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = true)]
-public class CoreInteropEnumTypeAttribute(Type targetType) : Attribute
+public class OfficeInteropEnumTypeAttribute(Type targetType) : Attribute
 {
 
   /// <summary>
