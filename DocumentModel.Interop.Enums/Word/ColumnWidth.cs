@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcolumnwidth?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdColumnWidth")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdColumnWidth")]
 public enum ColumnWidth
 {
   /// <summary>
   /// Narrow column width.
   /// </summary>
-  [WordInteropEnumValue("wdColumnWidthNarrow")]
+  [InteropEnumValue("wdColumnWidthNarrow")]
   Narrow = 1,
   /// <summary>
   /// Default column width.
   /// </summary>
-  [WordInteropEnumValue("wdColumnWidthDefault")]
+  [InteropEnumValue("wdColumnWidthDefault")]
   Default = 2,
   /// <summary>
   /// Wide column width.
   /// </summary>
-  [WordInteropEnumValue("wdColumnWidthWide")]
+  [InteropEnumValue("wdColumnWidthWide")]
   Wide = 3
 }

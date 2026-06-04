@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbordertypehid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdBorderTypeHID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdBorderTypeHID")]
 public enum BorderTypeHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("emptyenum")]
+  [InteropEnumValue("emptyenum")]
   emptyenum = 0
 }

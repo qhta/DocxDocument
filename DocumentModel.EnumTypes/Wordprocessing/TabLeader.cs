@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as Index, TableOfAuthorities, TableOfContents.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum TabLeader
 {
   /// <summary>No leader</summary>

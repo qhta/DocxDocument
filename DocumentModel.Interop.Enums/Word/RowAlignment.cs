@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrowalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRowAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRowAlignment")]
 public enum RowAlignment
 {
   /// <summary>
   /// Left aligned. default.
   /// </summary>
-  [WordInteropEnumValue("wdAlignRowLeft")]
+  [InteropEnumValue("wdAlignRowLeft")]
   Left = 0,
   /// <summary>
   /// Centered.
   /// </summary>
-  [WordInteropEnumValue("wdAlignRowCenter")]
+  [InteropEnumValue("wdAlignRowCenter")]
   Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignRowRight")]
+  [InteropEnumValue("wdAlignRowRight")]
   Right = 2
 }

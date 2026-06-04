@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used of OpenType font features, such as stylistic sets, character variants, and swashes.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum StylisticSet
 {
 

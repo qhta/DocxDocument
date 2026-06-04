@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoFileDialogType")]
+[InteropEnumType("Microsoft.Office.Core.MsoFileDialogType")]
 public enum FileDialogType
 {
   /// <summary>
   /// Open dialog box.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogOpen")]
+  [InteropEnumValue("msoFileDialogOpen")]
   Open = 1,
   /// <summary>
   /// Save As dialog box.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogSaveAs")]
+  [InteropEnumValue("msoFileDialogSaveAs")]
   SaveAs,
   /// <summary>
   /// File picker dialog box.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogFilePicker")]
+  [InteropEnumValue("msoFileDialogFilePicker")]
   FilePicker,
   /// <summary>
   /// Folder picker dialog box.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogFolderPicker")]
+  [InteropEnumValue("msoFileDialogFolderPicker")]
   FolderPicker
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveoptions?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSaveOptions")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSaveOptions")]
 public enum SaveOptions
 {
   /// <summary>
   /// Do not save pending changes.
   /// </summary>
-  [WordInteropEnumValue("wdDoNotSaveChanges")]
+  [InteropEnumValue("wdDoNotSaveChanges")]
   DoNotSaveChanges = 0,
   /// <summary>
   /// Prompt the user to save pending changes.
   /// </summary>
-  [WordInteropEnumValue("wdPromptToSaveChanges")]
+  [InteropEnumValue("wdPromptToSaveChanges")]
   PromptToSaveChanges = -2,
   /// <summary>
   /// Save pending changes automatically without prompting the user.
   /// </summary>
-  [WordInteropEnumValue("wdSaveChanges")]
+  [InteropEnumValue("wdSaveChanges")]
   SaveChanges = -1
 }

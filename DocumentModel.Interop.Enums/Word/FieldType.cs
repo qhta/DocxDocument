@@ -6,495 +6,495 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFieldType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFieldType")]
 public enum FieldType
 {
   /// <summary>
   /// Ref field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldRef")]
+  [InteropEnumValue("wdFieldRef")]
   Ref = 3,
   /// <summary>
   /// XE (Index Entry) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldIndexEntry")]
+  [InteropEnumValue("wdFieldIndexEntry")]
   IndexEntry = 4,
   /// <summary>
   /// FootnoteRef field. Not available through the Field dialog box. Inserted programmatically or interactively.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFootnoteRef")]
+  [InteropEnumValue("wdFieldFootnoteRef")]
   FootnoteRef = 5,
   /// <summary>
   /// Set field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSet")]
+  [InteropEnumValue("wdFieldSet")]
   Set = 6,
   /// <summary>
   /// If field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldIf")]
+  [InteropEnumValue("wdFieldIf")]
   If = 7,
   /// <summary>
   /// Index field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldIndex")]
+  [InteropEnumValue("wdFieldIndex")]
   Index = 8,
   /// <summary>
   /// TOC (Table of Contents Entry) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTOCEntry")]
+  [InteropEnumValue("wdFieldTOCEntry")]
   TOCEntry = 9,
   /// <summary>
   /// StyleRef field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldStyleRef")]
+  [InteropEnumValue("wdFieldStyleRef")]
   StyleRef = 10,
   /// <summary>
   /// RD (Reference Document) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldRefDoc")]
+  [InteropEnumValue("wdFieldRefDoc")]
   RefDoc = 11,
   /// <summary>
   /// Seq (Sequence) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSequence")]
+  [InteropEnumValue("wdFieldSequence")]
   Sequence = 12,
   /// <summary>
   /// TOC (Table of Contents) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTOC")]
+  [InteropEnumValue("wdFieldTOC")]
   TOC = 13,
   /// <summary>
   /// Info field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldInfo")]
+  [InteropEnumValue("wdFieldInfo")]
   Info = 14,
   /// <summary>
   /// Title field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTitle")]
+  [InteropEnumValue("wdFieldTitle")]
   Title = 15,
   /// <summary>
   /// Subject field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSubject")]
+  [InteropEnumValue("wdFieldSubject")]
   Subject = 16,
   /// <summary>
   /// Author field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAuthor")]
+  [InteropEnumValue("wdFieldAuthor")]
   Author = 17,
   /// <summary>
   /// Keywords field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldKeyWord")]
+  [InteropEnumValue("wdFieldKeyWord")]
   KeyWord = 18,
   /// <summary>
   /// Comments field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldComments")]
+  [InteropEnumValue("wdFieldComments")]
   Comments = 19,
   /// <summary>
   /// LastSavedBy field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldLastSavedBy")]
+  [InteropEnumValue("wdFieldLastSavedBy")]
   LastSavedBy = 20,
   /// <summary>
   /// CreateDate field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldCreateDate")]
+  [InteropEnumValue("wdFieldCreateDate")]
   CreateDate = 21,
   /// <summary>
   /// SaveDate field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSaveDate")]
+  [InteropEnumValue("wdFieldSaveDate")]
   SaveDate = 22,
   /// <summary>
   /// PrintDate field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldPrintDate")]
+  [InteropEnumValue("wdFieldPrintDate")]
   PrintDate = 23,
   /// <summary>
   /// RevNum field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldRevisionNum")]
+  [InteropEnumValue("wdFieldRevisionNum")]
   RevisionNum = 24,
   /// <summary>
   /// EditTime field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldEditTime")]
+  [InteropEnumValue("wdFieldEditTime")]
   EditTime = 25,
   /// <summary>
   /// NumPages field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNumPages")]
+  [InteropEnumValue("wdFieldNumPages")]
   NumPages = 26,
   /// <summary>
   /// NumWords field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNumWords")]
+  [InteropEnumValue("wdFieldNumWords")]
   NumWords = 27,
   /// <summary>
   /// NumChars field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNumChars")]
+  [InteropEnumValue("wdFieldNumChars")]
   NumChars = 28,
   /// <summary>
   /// FileName field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFileName")]
+  [InteropEnumValue("wdFieldFileName")]
   FileName = 29,
   /// <summary>
   /// Template field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTemplate")]
+  [InteropEnumValue("wdFieldTemplate")]
   Template = 30,
   /// <summary>
   /// Date field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDate")]
+  [InteropEnumValue("wdFieldDate")]
   Date = 31,
   /// <summary>
   /// Time field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTime")]
+  [InteropEnumValue("wdFieldTime")]
   Time = 32,
   /// <summary>
   /// Page field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldPage")]
+  [InteropEnumValue("wdFieldPage")]
   Page = 33,
   /// <summary>
   /// = (Formula) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldExpression")]
+  [InteropEnumValue("wdFieldExpression")]
   Expression = 34,
   /// <summary>
   /// Quote field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldQuote")]
+  [InteropEnumValue("wdFieldQuote")]
   Quote = 35,
   /// <summary>
   /// Include field. Cannot be added through the Field dialog box, but can be added interactively or through code.
   /// </summary>
-  [WordInteropEnumValue("wdFieldInclude")]
+  [InteropEnumValue("wdFieldInclude")]
   Include = 36,
   /// <summary>
   /// PageRef field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldPageRef")]
+  [InteropEnumValue("wdFieldPageRef")]
   PageRef = 37,
   /// <summary>
   /// Ask field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAsk")]
+  [InteropEnumValue("wdFieldAsk")]
   Ask = 38,
   /// <summary>
   /// Fill-In field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFillIn")]
+  [InteropEnumValue("wdFieldFillIn")]
   FillIn = 39,
   /// <summary>
   /// Data field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldData")]
+  [InteropEnumValue("wdFieldData")]
   Data = 40,
   /// <summary>
   /// Next field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNext")]
+  [InteropEnumValue("wdFieldNext")]
   Next = 41,
   /// <summary>
   /// NextIf field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNextIf")]
+  [InteropEnumValue("wdFieldNextIf")]
   NextIf = 42,
   /// <summary>
   /// SkipIf field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSkipIf")]
+  [InteropEnumValue("wdFieldSkipIf")]
   SkipIf = 43,
   /// <summary>
   /// MergeRec field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldMergeRec")]
+  [InteropEnumValue("wdFieldMergeRec")]
   MergeRec = 44,
   /// <summary>
   /// DDE field. No longer available through the Field dialog box, but supported for documents created in earlier
   /// versions of Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDDE")]
+  [InteropEnumValue("wdFieldDDE")]
   DDE = 45,
   /// <summary>
   /// DDEAuto field. No longer available through the Field dialog box, but supported for documents created in
   /// earlier versions of Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDDEAuto")]
+  [InteropEnumValue("wdFieldDDEAuto")]
   DDEAuto = 46,
   /// <summary>
   /// Glossary field. No longer supported in Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue("wdFieldGlossary")]
+  [InteropEnumValue("wdFieldGlossary")]
   Glossary = 47,
   /// <summary>
   /// Print field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldPrint")]
+  [InteropEnumValue("wdFieldPrint")]
   Print = 48,
   /// <summary>
   /// EQ (Equation) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFormula")]
+  [InteropEnumValue("wdFieldFormula")]
   Formula = 49,
   /// <summary>
   /// GoToButton field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldGoToButton")]
+  [InteropEnumValue("wdFieldGoToButton")]
   GoToButton = 50,
   /// <summary>
   /// MacroButton field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldMacroButton")]
+  [InteropEnumValue("wdFieldMacroButton")]
   MacroButton = 51,
   /// <summary>
   /// AutoNumOut field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAutoNumOutline")]
+  [InteropEnumValue("wdFieldAutoNumOutline")]
   AutoNumOutline = 52,
   /// <summary>
   /// AutoNumLgl field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAutoNumLegal")]
+  [InteropEnumValue("wdFieldAutoNumLegal")]
   AutoNumLegal = 53,
   /// <summary>
   /// AutoNum field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAutoNum")]
+  [InteropEnumValue("wdFieldAutoNum")]
   AutoNum = 54,
   /// <summary>
   /// Import field. Cannot be added through the Field dialog box, but can be added interactively or through code.
   /// </summary>
-  [WordInteropEnumValue("wdFieldImport")]
+  [InteropEnumValue("wdFieldImport")]
   Import = 55,
   /// <summary>
   /// Link field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldLink")]
+  [InteropEnumValue("wdFieldLink")]
   Link = 56,
   /// <summary>
   /// Symbol field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSymbol")]
+  [InteropEnumValue("wdFieldSymbol")]
   Symbol = 57,
   /// <summary>
   /// Embedded field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldEmbed")]
+  [InteropEnumValue("wdFieldEmbed")]
   Embed = 58,
   /// <summary>
   /// MergeField field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldMergeField")]
+  [InteropEnumValue("wdFieldMergeField")]
   MergeField = 59,
   /// <summary>
   /// UserName field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldUserName")]
+  [InteropEnumValue("wdFieldUserName")]
   UserName = 60,
   /// <summary>
   /// UserInitials field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldUserInitials")]
+  [InteropEnumValue("wdFieldUserInitials")]
   UserInitials = 61,
   /// <summary>
   /// UserAddress field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldUserAddress")]
+  [InteropEnumValue("wdFieldUserAddress")]
   UserAddress = 62,
   /// <summary>
   /// BarCode field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldBarCode")]
+  [InteropEnumValue("wdFieldBarCode")]
   BarCode = 63,
   /// <summary>
   /// DocVariable field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDocVariable")]
+  [InteropEnumValue("wdFieldDocVariable")]
   DocVariable = 64,
   /// <summary>
   /// Section field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSection")]
+  [InteropEnumValue("wdFieldSection")]
   Section = 65,
   /// <summary>
   /// SectionPages field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSectionPages")]
+  [InteropEnumValue("wdFieldSectionPages")]
   SectionPages = 66,
   /// <summary>
   /// IncludePicture field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldIncludePicture")]
+  [InteropEnumValue("wdFieldIncludePicture")]
   IncludePicture = 67,
   /// <summary>
   /// IncludeText field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldIncludeText")]
+  [InteropEnumValue("wdFieldIncludeText")]
   IncludeText = 68,
   /// <summary>
   /// FileSize field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFileSize")]
+  [InteropEnumValue("wdFieldFileSize")]
   FileSize = 69,
   /// <summary>
   /// FormText field. Inserted with the Text Form Field button on the Forms toolbar rather than through the Fields
   /// dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFormTextInput")]
+  [InteropEnumValue("wdFieldFormTextInput")]
   FormTextInput = 70,
   /// <summary>
   /// FormCheckBox field. Inserted with the Check Box Form Field button on the Forms toolbar rather than through the
   /// Field dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFormCheckBox")]
+  [InteropEnumValue("wdFieldFormCheckBox")]
   FormCheckBox = 71,
   /// <summary>
   /// NoteRef field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldNoteRef")]
+  [InteropEnumValue("wdFieldNoteRef")]
   NoteRef = 72,
   /// <summary>
   /// TOA (Table of Authorities) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTOA")]
+  [InteropEnumValue("wdFieldTOA")]
   TOA = 73,
   /// <summary>
   /// TOA (Table of Authorities Entry) field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldTOAEntry")]
+  [InteropEnumValue("wdFieldTOAEntry")]
   TOAEntry = 74,
   /// <summary>
   /// MergeSeq field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldMergeSeq")]
+  [InteropEnumValue("wdFieldMergeSeq")]
   MergeSeq = 75,
   /// <summary>
   /// Private field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldPrivate")]
+  [InteropEnumValue("wdFieldPrivate")]
   Private = 77,
   /// <summary>
   /// Database field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDatabase")]
+  [InteropEnumValue("wdFieldDatabase")]
   Database = 78,
   /// <summary>
   /// AutoText field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAutoText")]
+  [InteropEnumValue("wdFieldAutoText")]
   AutoText = 79,
   /// <summary>
   /// Compare field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldCompare")]
+  [InteropEnumValue("wdFieldCompare")]
   Compare = 80,
   /// <summary>
   /// Add-in field. Not available through the Field dialog box. Used to store data that is hidden from the user
   /// interface.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAddin")]
+  [InteropEnumValue("wdFieldAddin")]
   Addin = 81,
   /// <summary>
   /// Subscriber field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldSubscriber")]
+  [InteropEnumValue("wdFieldSubscriber")]
   Subscriber = 82,
   /// <summary>
   /// FormDropDown field. Inserted with the Drop-Down Form Field button on the Forms toolbar rather than through the
   /// Field dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue("wdFieldFormDropDown")]
+  [InteropEnumValue("wdFieldFormDropDown")]
   FormDropDown = 83,
   /// <summary>
   /// Advance field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAdvance")]
+  [InteropEnumValue("wdFieldAdvance")]
   Advance = 84,
   /// <summary>
   /// DocProperty field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDocProperty")]
+  [InteropEnumValue("wdFieldDocProperty")]
   DocProperty = 85,
   /// <summary>
   /// OCX field. Cannot be added through the Field dialog box, but can be added through code by using the
   /// AddOLEControl method of the FormFields collection.
   /// </summary>
-  [WordInteropEnumValue("wdFieldOCX")]
+  [InteropEnumValue("wdFieldOCX")]
   OCX = 87,
   /// <summary>
   /// Hyperlink field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldHyperlink")]
+  [InteropEnumValue("wdFieldHyperlink")]
   Hyperlink = 88,
   /// <summary>
   /// AutoTextList field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAutoTextList")]
+  [InteropEnumValue("wdFieldAutoTextList")]
   AutoTextList = 89,
   /// <summary>
   /// ListNum field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldListNum")]
+  [InteropEnumValue("wdFieldListNum")]
   ListNum = 90,
   /// <summary>
   /// HTMLActiveX field. Not currently supported.
   /// </summary>
-  [WordInteropEnumValue("wdFieldHTMLActiveX")]
+  [InteropEnumValue("wdFieldHTMLActiveX")]
   HTMLActiveX = 91,
   /// <summary>
   /// BidiOutline field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldBidiOutline")]
+  [InteropEnumValue("wdFieldBidiOutline")]
   BidiOutline = 92,
   /// <summary>
   /// AddressBlock field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldAddressBlock")]
+  [InteropEnumValue("wdFieldAddressBlock")]
   AddressBlock = 93,
   /// <summary>
   /// GreetingLine field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldGreetingLine")]
+  [InteropEnumValue("wdFieldGreetingLine")]
   GreetingLine = 94,
   /// <summary>
   /// Shape field. Automatically created for any drawn picture.
   /// </summary>
-  [WordInteropEnumValue("wdFieldShape")]
+  [InteropEnumValue("wdFieldShape")]
   Shape = 95,
   /// <summary>
   /// Citation field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldCitation")]
+  [InteropEnumValue("wdFieldCitation")]
   Citation = 96,
   /// <summary>
   /// Bibliography field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldBibliography")]
+  [InteropEnumValue("wdFieldBibliography")]
   Bibliography = 97,
   /// <summary>
   /// MergeBarcode field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldMergeBarcode")]
+  [InteropEnumValue("wdFieldMergeBarcode")]
   MergeBarcode = 98,
   /// <summary>
   /// DisplayBarcode field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldDisplayBarcode")]
+  [InteropEnumValue("wdFieldDisplayBarcode")]
   DisplayBarcode = 99,
   /// <summary>
   /// Empty field. Acts as a placeholder for field content that has not yet been added. A field added by pressing
   /// Ctrl+F9 in the user interface is an Empty field.
   /// </summary>
-  [WordInteropEnumValue("wdFieldEmpty")]
+  [InteropEnumValue("wdFieldEmpty")]
   Empty = -1
 }

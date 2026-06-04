@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LineSpacingRuleValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.LineSpacingRuleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues))]
 public enum LineSpacingRule
 {
   /// <summary>
   ///   Automatically Determined Line Height.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LineSpacingRuleValues.Auto))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues.Auto))]
   Auto,
   /// <summary>
   ///   Exact Line Height.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LineSpacingRuleValues.Exact))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues.Exact))]
   Exact,
   /// <summary>
   ///   Minimum Line Height.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LineSpacingRuleValues.AtLeast))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues.AtLeast))]
   AtLeast
 }

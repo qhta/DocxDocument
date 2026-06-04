@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlvalign?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlVAlign")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlVAlign")]
 public enum VAlign
 {
   /// <summary>
   /// Top
   /// </summary>
-  [WordInteropEnumValue("xlVAlignTop")]
+  [InteropEnumValue("xlVAlignTop")]
   Top = -4160,
   /// <summary>
   /// Justify
   /// </summary>
-  [WordInteropEnumValue("xlVAlignJustify")]
+  [InteropEnumValue("xlVAlignJustify")]
   Justify = -4130,
   /// <summary>
   /// Distributed
   /// </summary>
-  [WordInteropEnumValue("xlVAlignDistributed")]
+  [InteropEnumValue("xlVAlignDistributed")]
   Distributed = -4117,
   /// <summary>
   /// Center
   /// </summary>
-  [WordInteropEnumValue("xlVAlignCenter")]
+  [InteropEnumValue("xlVAlignCenter")]
   Center = -4108,
   /// <summary>
   /// Bottom
   /// </summary>
-  [WordInteropEnumValue("xlVAlignBottom")]
+  [InteropEnumValue("xlVAlignBottom")]
   Bottom = -4107
 }

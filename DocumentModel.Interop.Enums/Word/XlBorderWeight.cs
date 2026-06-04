@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlborderweight?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlBorderWeight")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlBorderWeight")]
 public enum BorderWeight
 {
   /// <summary>
   /// Hairline (thinnest border).
   /// </summary>
-  [WordInteropEnumValue("xlHairline")]
+  [InteropEnumValue("xlHairline")]
   Hairline = 1,
   /// <summary>
   /// Thin.
   /// </summary>
-  [WordInteropEnumValue("xlThin")]
+  [InteropEnumValue("xlThin")]
   Thin = 2,
   /// <summary>
   /// Thick (widest border).
   /// </summary>
-  [WordInteropEnumValue("xlThick")]
+  [InteropEnumValue("xlThick")]
   Thick = 4,
   /// <summary>
   /// Medium.
   /// </summary>
-  [WordInteropEnumValue("xlMedium")]
+  [InteropEnumValue("xlMedium")]
   Medium = -4138
 }

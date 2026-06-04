@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnectortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoConnectorType")]
+[InteropEnumType("Microsoft.Office.Core.MsoConnectorType")]
 public enum ConnectorType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue("msoConnectorTypeMixed")]
+  [InteropEnumValue("msoConnectorTypeMixed")]
   TypeMixed = -2,
   /// <summary>
   /// Straight line connector.
   /// </summary>
-  [OfficeInteropEnumValue("msoConnectorStraight")]
+  [InteropEnumValue("msoConnectorStraight")]
   Straight = 1,
   /// <summary>
   /// Elbow connector.
   /// </summary>
-  [OfficeInteropEnumValue("msoConnectorElbow")]
+  [InteropEnumValue("msoConnectorElbow")]
   Elbow = 2,
   /// <summary>
   /// Curved connector.
   /// </summary>
-  [OfficeInteropEnumValue("msoConnectorCurve")]
+  [InteropEnumValue("msoConnectorCurve")]
   Curve = 3
 }

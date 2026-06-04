@@ -437,7 +437,7 @@ public static partial class EnumTypeConverter
     if (value == null) return null;
 
     var modelEnumType = value.GetType()!;
-    if (modelEnumType.GetCustomAttribute<OpenXmlEnumTypeAttribute>()?.TargetType == typeof(Int32))
+    if (modelEnumType.GetCustomAttribute<OpenXmlEnumTypeAttribute>()?.TargetTypeName == typeof(Int32).FullName)
     {
       var intValue = Convert.ToInt32(value);
       return intValue.ToString();

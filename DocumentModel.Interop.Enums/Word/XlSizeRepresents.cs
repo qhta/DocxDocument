@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlsizerepresents?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlSizeRepresents")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlSizeRepresents")]
 public enum SizeRepresents
 {
   /// <summary>
   /// Area of the bubble.
   /// </summary>
-  [WordInteropEnumValue("xlSizeIsArea")]
+  [InteropEnumValue("xlSizeIsArea")]
   Area = 1,
   /// <summary>
   /// Width of the bubble.
   /// </summary>
-  [WordInteropEnumValue("xlSizeIsWidth")]
+  [InteropEnumValue("xlSizeIsWidth")]
   Width = 2
 }

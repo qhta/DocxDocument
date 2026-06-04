@@ -6,152 +6,152 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpagenumberstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPageNumberStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPageNumberStyle")]
 public enum PageNumberStyle
 {
   /// <summary>
   /// Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleArabic")]
+  [InteropEnumValue("wdPageNumberStyleArabic")]
   Arabic = 0,
   /// <summary>
   /// Uppercase Roman style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleUppercaseRoman")]
+  [InteropEnumValue("wdPageNumberStyleUppercaseRoman")]
   UppercaseRoman = 1,
   /// <summary>
   /// Lowercase Roman style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleLowercaseRoman")]
+  [InteropEnumValue("wdPageNumberStyleLowercaseRoman")]
   LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleUppercaseLetter")]
+  [InteropEnumValue("wdPageNumberStyleUppercaseLetter")]
   UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleLowercaseLetter")]
+  [InteropEnumValue("wdPageNumberStyleLowercaseLetter")]
   LowercaseLetter = 4,
   /// <summary>
   /// Kanji style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleKanji")]
+  [InteropEnumValue("wdPageNumberStyleKanji")]
   Kanji = 10,
   /// <summary>
   /// Kanji Digit style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleKanjiDigit")]
+  [InteropEnumValue("wdPageNumberStyleKanjiDigit")]
   KanjiDigit = 11,
   /// <summary>
   /// Arabic full width style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleArabicFullWidth")]
+  [InteropEnumValue("wdPageNumberStyleArabicFullWidth")]
   ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleKanjiTraditional")]
+  [InteropEnumValue("wdPageNumberStyleKanjiTraditional")]
   KanjiTraditional = 16,
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleNumberInCircle")]
+  [InteropEnumValue("wdPageNumberStyleNumberInCircle")]
   NumberInCircle = 18,
   /// <summary>
   /// Traditional Chinese number 1 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleTradChinNum1")]
+  [InteropEnumValue("wdPageNumberStyleTradChinNum1")]
   TradChinNum1 = 33,
   /// <summary>
   /// Traditional Chinese number 2 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleTradChinNum2")]
+  [InteropEnumValue("wdPageNumberStyleTradChinNum2")]
   TradChinNum2 = 34,
   /// <summary>
   /// Simplified Chinese number 1 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleSimpChinNum1")]
+  [InteropEnumValue("wdPageNumberStyleSimpChinNum1")]
   SimpChinNum1 = 37,
   /// <summary>
   /// Simplified Chinese number 2 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleSimpChinNum2")]
+  [InteropEnumValue("wdPageNumberStyleSimpChinNum2")]
   SimpChinNum2 = 38,
   /// <summary>
   /// Hanja Read style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHanjaRead")]
+  [InteropEnumValue("wdPageNumberStyleHanjaRead")]
   HanjaRead = 41,
   /// <summary>
   /// Hanja Read Digit style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHanjaReadDigit")]
+  [InteropEnumValue("wdPageNumberStyleHanjaReadDigit")]
   HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew letter 1 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHebrewLetter1")]
+  [InteropEnumValue("wdPageNumberStyleHebrewLetter1")]
   HebrewLetter1 = 45,
   /// <summary>
   /// Arabic letter 1 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleArabicLetter1")]
+  [InteropEnumValue("wdPageNumberStyleArabicLetter1")]
   ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew letter 2 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHebrewLetter2")]
+  [InteropEnumValue("wdPageNumberStyleHebrewLetter2")]
   HebrewLetter2 = 47,
   /// <summary>
   /// Arabic letter 2 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleArabicLetter2")]
+  [InteropEnumValue("wdPageNumberStyleArabicLetter2")]
   ArabicLetter2 = 48,
   /// <summary>
   /// Hindi letter 1 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHindiLetter1")]
+  [InteropEnumValue("wdPageNumberStyleHindiLetter1")]
   HindiLetter1 = 49,
   /// <summary>
   /// Hindi letter 2 style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHindiLetter2")]
+  [InteropEnumValue("wdPageNumberStyleHindiLetter2")]
   HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHindiArabic")]
+  [InteropEnumValue("wdPageNumberStyleHindiArabic")]
   HindiArabic = 51,
   /// <summary>
   /// Hindi Cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleHindiCardinalText")]
+  [InteropEnumValue("wdPageNumberStyleHindiCardinalText")]
   HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleThaiLetter")]
+  [InteropEnumValue("wdPageNumberStyleThaiLetter")]
   ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleThaiArabic")]
+  [InteropEnumValue("wdPageNumberStyleThaiArabic")]
   ThaiArabic = 54,
   /// <summary>
   /// Thai Cardinal Text style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleThaiCardinalText")]
+  [InteropEnumValue("wdPageNumberStyleThaiCardinalText")]
   ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese Cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleVietCardinalText")]
+  [InteropEnumValue("wdPageNumberStyleVietCardinalText")]
   VietCardinalText = 56,
   /// <summary>
   /// Number in dash style.
   /// </summary>
-  [WordInteropEnumValue("wdPageNumberStyleNumberInDash")]
+  [InteropEnumValue("wdPageNumberStyleNumberInDash")]
   NumberInDash = 57
 }

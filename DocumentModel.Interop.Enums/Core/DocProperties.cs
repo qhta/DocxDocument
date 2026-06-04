@@ -7,32 +7,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.docproperties?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("DocProperties")]
+[InteropEnumType("Microsoft.Office.Core.DocProperties")]
 public enum DocProperties
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("offPropertyTypeNumber")]
+  [InteropEnumValue("offPropertyTypeNumber")]
   Number = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("offPropertyTypeBoolean")]
+  [InteropEnumValue("offPropertyTypeBoolean")]
   Boolean,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("offPropertyTypeDate")]
+  [InteropEnumValue("offPropertyTypeDate")]
   Date,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("offPropertyTypeString")]
+  [InteropEnumValue("offPropertyTypeString")]
   String,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("offPropertyTypeFloat")]
+  [InteropEnumValue("offPropertyTypeFloat")]
   Float
 }

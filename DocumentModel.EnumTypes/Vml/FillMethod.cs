@@ -2,33 +2,33 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Gradient Fill Computation Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXV.FillMethodValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.FillMethodValues))]
 public enum FillMethod
 {
   /// <summary>
   ///   No Gradient Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.FillMethodValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.FillMethodValues.None))]
   None,
   /// <summary>
   ///   Linear Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Linear))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.FillMethodValues.Linear))]
   Linear,
   /// <summary>
   ///   Sigma Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Sigma))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.FillMethodValues.Sigma))]
   Sigma,
   /// <summary>
   ///   Application Default Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Any))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.FillMethodValues.Any))]
   Any,
   /// <summary>
   ///   Linear Sigma Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Linearsigma))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.FillMethodValues.Linearsigma))]
   LinearSigma
 }

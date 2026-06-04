@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the Office Interop Enum type value name to associate with an Enum field for mapping purposes.
@@ -8,7 +6,7 @@ namespace DocumentModel.OpenXml;
 /// <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in an Office Interop Enum type.
 /// This is typically used for conversion to/from Office Interop Enum values.</remarks>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
-public class OfficeInteropEnumValueAttribute: Attribute
+public class InteropEnumValueAttribute: Attribute
 {
   /// <summary>
   /// Specifies the Word Interop Enum type value name to associate with an Enum field for mapping purposes.
@@ -17,7 +15,7 @@ public class OfficeInteropEnumValueAttribute: Attribute
   /// This is typically used for conversion to/from Word Interop Enum values.</remarks>
   /// <param name="enumValueName">The name of the Word Interop Enum type value to be associated with the target Enum field.
   /// Cannot be null or empty.</param>
-  public OfficeInteropEnumValueAttribute(string enumValueName)
+  public InteropEnumValueAttribute(string enumValueName)
   {
     EnumValueName = enumValueName;
   }
@@ -27,7 +25,7 @@ public class OfficeInteropEnumValueAttribute: Attribute
   /// </summary>
   /// <param name="enumType">The Word Interop Enum type to be associated with the target Enum field.</param>
   /// <param name="enumValueName">The name of the Word Interop Enum type value to be associated with the target Enum field.</param>
-  public OfficeInteropEnumValueAttribute(Type enumType, string enumValueName)
+  public InteropEnumValueAttribute(Type enumType, string enumValueName)
   {
     EnumType = enumType;
     EnumValueName = enumValueName;

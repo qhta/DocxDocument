@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as AllDocumentProperties, DocumentProperties, PropertiesAndSettings.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Statistic
 {
   /// <summary>Character count</summary>

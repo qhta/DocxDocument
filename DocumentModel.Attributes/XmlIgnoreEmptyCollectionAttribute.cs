@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Attach this attribute to a class or struct to indicate Ithat during XML serialization,

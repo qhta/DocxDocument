@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdportuguesereform?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPortugueseReform")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPortugueseReform")]
 public enum PortugueseReform
 {
   /// <summary>
   /// Use the pre-reform spelling rules.
   /// </summary>
-  [WordInteropEnumValue("wdPortuguesePreReform")]
+  [InteropEnumValue("wdPortuguesePreReform")]
   PreReform = 1,
   /// <summary>
   /// Use the post-reform spelling rules.
   /// </summary>
-  [WordInteropEnumValue("wdPortuguesePostReform")]
+  [InteropEnumValue("wdPortuguesePostReform")]
   PostReform = 2,
   /// <summary>
   /// Use both the pre-reform and post-reform spelling rules.
   /// </summary>
-  [WordInteropEnumValue("wdPortugueseBoth")]
+  [InteropEnumValue("wdPortugueseBoth")]
   Both = 3
 }

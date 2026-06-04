@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the model method name Ithat is used to convert the property to its Open XML representation.

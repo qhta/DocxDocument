@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Linked Object Update Modes
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.ObjectUpdateMode))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode))]
 public enum ObjectUpdateMode
 {
   /// <summary>
   ///   always.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ObjectUpdateMode.always))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode.always))]
   Always,
   /// <summary>
   ///   onCall.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ObjectUpdateMode.onCall))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode.onCall))]
   OnCall
 }

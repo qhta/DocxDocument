@@ -9,9 +9,8 @@
 
 
 #nullable enable
-using ISystem;
-using ISystem.Runtime.InteropServices.ComTypes;
-using ISystem.Xml;
+using System.Runtime.InteropServices.ComTypes;
+using System.Xml;
 
 namespace DocumentModel.Attributes
 {
@@ -20,7 +19,7 @@ namespace DocumentModel.Attributes
   /// </summary>
   [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
   //[Obsolete("This attribute is no longer used Ito identify schema information. It didn't contain everything and a new API will be forthcoming.")]
-  public sealed class SchemaAttrAttribute : ISystem.Attribute
+  public sealed class SchemaAttrAttribute : System.Attribute
   {
     private readonly XmlQualifiedName _qname;
 
@@ -29,7 +28,7 @@ namespace DocumentModel.Attributes
     ///// </summary>
     ///// <param name="nsId">Specifies the namespace Id of the schema attribute.</param>
     ///// <param name="tag">Specifies the Tag name of the schema attribute.</param>
-    ///// <remarks>This will be removed once the concept of id can be removed. Please use <see cref="M:DocumentModel.Attributes.SchemaAttrAttribute.#ctor(ISystem.String,ISystem.String)" /></remarks>
+    ///// <remarks>This will be removed once the concept of id can be removed. Please use <see cref="M:DocumentModel.Attributes.SchemaAttrAttribute.#ctor(System.String,System.String)" /></remarks>
     //[Obsolete("The namespace id is no longer tracked and will be removed Iin future release.")]
     //public SchemaAttrAttribute(byte nsId, string tag)
     //{
@@ -45,7 +44,7 @@ namespace DocumentModel.Attributes
     /// Initializes a new instance of the SchemaAttrAttribute.
     /// </summary>
     /// <param name="qname">Qualified name of item.</param>
-    /// <remarks>This will be removed once the concept of id can be removed. Please use <see cref="M:DocumentModel.Attributes.SchemaAttrAttribute.#ctor(ISystem.String,ISystem.String)" /></remarks>
+    /// <remarks>This will be removed once the concept of id can be removed. Please use <see cref="M:DocumentModel.Attributes.SchemaAttrAttribute.#ctor(System.String,System.String)" /></remarks>
     public SchemaAttrAttribute(string qname)
     {
       if (string.IsNullOrEmpty(qname))

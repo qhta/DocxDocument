@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecolortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoPictureColorType")]
+[InteropEnumType("Microsoft.Office.Core.MsoPictureColorType")]
 public enum PictureColorType
 {
   /// <summary>
   /// Mixed transformation.
   /// </summary>
-  [OfficeInteropEnumValue("msoPictureMixed")]
+  [InteropEnumValue("msoPictureMixed")]
   Mixed = -2,
   /// <summary>
   /// Default color transformation.
   /// </summary>
-  [OfficeInteropEnumValue("msoPictureAutomatic")]
+  [InteropEnumValue("msoPictureAutomatic")]
   Automatic = 1,
   /// <summary>
   /// Grayscale transformation.
   /// </summary>
-  [OfficeInteropEnumValue("msoPictureGrayscale")]
+  [InteropEnumValue("msoPictureGrayscale")]
   Grayscale = 2,
   /// <summary>
   /// Black-and-white transformation.
   /// </summary>
-  [OfficeInteropEnumValue("msoPictureBlackAndWhite")]
+  [InteropEnumValue("msoPictureBlackAndWhite")]
   BlackAndWhite = 3,
   /// <summary>
   /// Watermark transformation.
   /// </summary>
-  [OfficeInteropEnumValue("msoPictureWatermark")]
+  [InteropEnumValue("msoPictureWatermark")]
   Watermark = 4
 }

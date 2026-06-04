@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpartofspeech?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPartOfSpeech")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPartOfSpeech")]
 public enum PartOfSpeech
 {
   /// <summary>
   /// An adjective.
   /// </summary>
-  [WordInteropEnumValue("wdAdjective")]
+  [InteropEnumValue("wdAdjective")]
   Adjective = 0,
   /// <summary>
   /// A noun.
   /// </summary>
-  [WordInteropEnumValue("wdNoun")]
+  [InteropEnumValue("wdNoun")]
   Noun = 1,
   /// <summary>
   /// An adverb.
   /// </summary>
-  [WordInteropEnumValue("wdAdverb")]
+  [InteropEnumValue("wdAdverb")]
   Adverb = 2,
   /// <summary>
   /// A verb.
   /// </summary>
-  [WordInteropEnumValue("wdVerb")]
+  [InteropEnumValue("wdVerb")]
   Verb = 3,
   /// <summary>
   /// A pronoun.
   /// </summary>
-  [WordInteropEnumValue("wdPronoun")]
+  [InteropEnumValue("wdPronoun")]
   Pronoun = 4,
   /// <summary>
   /// A conjunction.
   /// </summary>
-  [WordInteropEnumValue("wdConjunction")]
+  [InteropEnumValue("wdConjunction")]
   Conjunction = 5,
   /// <summary>
   /// A preposition.
   /// </summary>
-  [WordInteropEnumValue("wdPreposition")]
+  [InteropEnumValue("wdPreposition")]
   Preposition = 6,
   /// <summary>
   /// An interjection.
   /// </summary>
-  [WordInteropEnumValue("wdInterjection")]
+  [InteropEnumValue("wdInterjection")]
   Interjection = 7,
   /// <summary>
   /// An idiom.
   /// </summary>
-  [WordInteropEnumValue("wdIdiom")]
+  [InteropEnumValue("wdIdiom")]
   Idiom = 8,
   /// <summary>
   /// Some other part of speech.
   /// </summary>
-  [WordInteropEnumValue("wdOther")]
+  [InteropEnumValue("wdOther")]
   Other = 9
 }

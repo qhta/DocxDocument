@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinlineshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdInlineShapeType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdInlineShapeType")]
 public enum InlineShapeType
 {
   /// <summary>
   /// Embedded OLE object.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeEmbeddedOLEObject")]
+  [InteropEnumValue("wdInlineShapeEmbeddedOLEObject")]
   EmbeddedOLEObject = 1,
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeLinkedOLEObject")]
+  [InteropEnumValue("wdInlineShapeLinkedOLEObject")]
   LinkedOLEObject = 2,
   /// <summary>
   /// Picture.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapePicture")]
+  [InteropEnumValue("wdInlineShapePicture")]
   Picture = 3,
   /// <summary>
   /// Linked picture.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeLinkedPicture")]
+  [InteropEnumValue("wdInlineShapeLinkedPicture")]
   LinkedPicture = 4,
   /// <summary>
   /// OLE control object.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeOLEControlObject")]
+  [InteropEnumValue("wdInlineShapeOLEControlObject")]
   OLEControlObject = 5,
   /// <summary>
   /// Horizontal line.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeHorizontalLine")]
+  [InteropEnumValue("wdInlineShapeHorizontalLine")]
   HorizontalLine = 6,
   /// <summary>
   /// Picture with horizontal line.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapePictureHorizontalLine")]
+  [InteropEnumValue("wdInlineShapePictureHorizontalLine")]
   PictureHorizontalLine = 7,
   /// <summary>
   /// Linked picture with horizontal line.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeLinkedPictureHorizontalLine")]
+  [InteropEnumValue("wdInlineShapeLinkedPictureHorizontalLine")]
   LinkedPictureHorizontalLine = 8,
   /// <summary>
   /// Picture used as a bullet.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapePictureBullet")]
+  [InteropEnumValue("wdInlineShapePictureBullet")]
   PictureBullet = 9,
   /// <summary>
   /// Script anchor. Refers to anchor location for block of script stored with a document.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeScriptAnchor")]
+  [InteropEnumValue("wdInlineShapeScriptAnchor")]
   ScriptAnchor = 10,
   /// <summary>
   /// OWS anchor.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeOWSAnchor")]
+  [InteropEnumValue("wdInlineShapeOWSAnchor")]
   OWSAnchor = 11,
   /// <summary>
   /// Inline chart.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeChart")]
+  [InteropEnumValue("wdInlineShapeChart")]
   Chart = 12,
   /// <summary>
   /// Inline diagram.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeDiagram")]
+  [InteropEnumValue("wdInlineShapeDiagram")]
   Diagram = 13,
   /// <summary>
   /// Locked inline shape canvas.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeLockedCanvas")]
+  [InteropEnumValue("wdInlineShapeLockedCanvas")]
   LockedCanvas = 14,
   /// <summary>
   /// Smart art.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeSmartArt")]
+  [InteropEnumValue("wdInlineShapeSmartArt")]
   SmartArt = 15,
   /// <summary>
   /// A picture acting as a poster frame for a web video.
   /// </summary>
-  [WordInteropEnumValue("wdInlineShapeWebVideo")]
+  [InteropEnumValue("wdInlineShapeWebVideo")]
   WebVideo = 16
 }

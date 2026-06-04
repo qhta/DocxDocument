@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlbackground?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlBackground")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlBackground")]
 public enum XlBackground
 {
   /// <summary>
   /// Transparent background.
   /// </summary>
-  [WordInteropEnumValue("xlBackgroundTransparent")]
+  [InteropEnumValue("xlBackgroundTransparent")]
   Transparent = 2,
   /// <summary>
   /// Opaque background.
   /// </summary>
-  [WordInteropEnumValue("xlBackgroundOpaque")]
+  [InteropEnumValue("xlBackgroundOpaque")]
   Opaque = 3,
   /// <summary>
   /// Word controls the background.
   /// </summary>
-  [WordInteropEnumValue("xlBackgroundAutomatic")]
+  [InteropEnumValue("xlBackgroundAutomatic")]
   Automatic = -4105
 }

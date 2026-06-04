@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsummarymode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSummaryMode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSummaryMode")]
 public enum SummaryMode
 {
   /// <summary>
   /// Highlights the key points in the specified document and displays the AutoSummarize toolbar.
   /// </summary>
-  [WordInteropEnumValue("wdSummaryModeHighlight")]
+  [InteropEnumValue("wdSummaryModeHighlight")]
   Highlight = 0,
   /// <summary>
   /// Hides everything except the specified summary and displays the AutoSummarize toolbar.
   /// </summary>
-  [WordInteropEnumValue("wdSummaryModeHideAllButSummary")]
+  [InteropEnumValue("wdSummaryModeHideAllButSummary")]
   HideAllButSummary = 1,
   /// <summary>
   /// Inserts a summary at the beginning of the specified document.
   /// </summary>
-  [WordInteropEnumValue("wdSummaryModeInsert")]
+  [InteropEnumValue("wdSummaryModeInsert")]
   Insert = 2,
   /// <summary>
   /// Creates a new document and inserts the specified summary.
   /// </summary>
-  [WordInteropEnumValue("wdSummaryModeCreateNew")]
+  [InteropEnumValue("wdSummaryModeCreateNew")]
   CreateNew = 3
 }

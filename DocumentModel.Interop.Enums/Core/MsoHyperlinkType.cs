@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohyperlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoHyperlinkType")]
+[InteropEnumType("Microsoft.Office.Core.MsoHyperlinkType")]
 public enum HyperlinkType
 {
   /// <summary>
   /// Hyperlink applies to a Range object.
   /// </summary>
-  [OfficeInteropEnumValue("msoHyperlinkRange")]
+  [InteropEnumValue("msoHyperlinkRange")]
   Range,
   /// <summary>
   /// Hyperlink applies to a Shape object.
   /// </summary>
-  [OfficeInteropEnumValue("msoHyperlinkShape")]
+  [InteropEnumValue("msoHyperlinkShape")]
   Shape,
   /// <summary>
   /// Hyperlink applies to an inline shape. Used only with Microsoft Word.
   /// </summary>
-  [OfficeInteropEnumValue("msoHyperlinkInlineShape")]
+  [InteropEnumValue("msoHyperlinkInlineShape")]
   InlineShape
 }

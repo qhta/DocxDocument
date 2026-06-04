@@ -4,8 +4,8 @@
 /// Defines the AnimateOneByOne enumeration.
 /// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.AnimateOneByOneValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues))]
 public enum AnimateOneByOne
 {
   /// <summary>

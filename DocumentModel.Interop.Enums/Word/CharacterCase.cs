@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcharactercase?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCharacterCase")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCharacterCase")]
 public enum CharacterCase
 {
   /// <summary>
   /// Lower case.
   /// </summary>
-  [WordInteropEnumValue("wdLowerCase")]
+  [InteropEnumValue("wdLowerCase")]
   LowerCase = 0,
   /// <summary>
   /// Upper case.
   /// </summary>
-  [WordInteropEnumValue("wdUpperCase")]
+  [InteropEnumValue("wdUpperCase")]
   UpperCase = 1,
   /// <summary>
   /// Title word case.
   /// </summary>
-  [WordInteropEnumValue("wdTitleWord")]
+  [InteropEnumValue("wdTitleWord")]
   TitleWord = 2,
   /// <summary>
   /// Sentence case.
   /// </summary>
-  [WordInteropEnumValue("wdTitleSentence")]
+  [InteropEnumValue("wdTitleSentence")]
   TitleSentence = 4,
   /// <summary>
   /// Toggles upper case characters to lower, and lower case characters to upper.
   /// </summary>
-  [WordInteropEnumValue("wdToggleCase")]
+  [InteropEnumValue("wdToggleCase")]
   ToggleCase = 5,
   /// <summary>
   /// Half-width. Used for Japanese characters.
   /// </summary>
-  [WordInteropEnumValue("wdHalfWidth")]
+  [InteropEnumValue("wdHalfWidth")]
   HalfWidth = 6,
   /// <summary>
   /// Full-width. Used for Japanese characters.
   /// </summary>
-  [WordInteropEnumValue("wdFullWidth")]
+  [InteropEnumValue("wdFullWidth")]
   FullWidth = 7,
   /// <summary>
   /// Katakana characters. Used with Japanese text.
   /// </summary>
-  [WordInteropEnumValue("wdKatakana")]
+  [InteropEnumValue("wdKatakana")]
   Katakana = 8,
   /// <summary>
   /// Hiragana characters. Used with Japanese text.
   /// </summary>
-  [WordInteropEnumValue("wdHiragana")]
+  [InteropEnumValue("wdHiragana")]
   Hiragana = 9,
   /// <summary>
   /// Toggles between upper, lower, and sentence case.
   /// </summary>
-  [WordInteropEnumValue("wdNextCase")]
+  [InteropEnumValue("wdNextCase")]
   NextCase = -1
 }

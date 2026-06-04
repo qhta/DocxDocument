@@ -4,7 +4,7 @@
 /// Defines the DataLabelPos enumeration.
 /// Used in types such as IDataLabel, IDataLabels, DataLabelPos.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum DataLabelPos
 {
   /// <summary>

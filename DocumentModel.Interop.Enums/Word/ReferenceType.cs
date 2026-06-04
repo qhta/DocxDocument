@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreferencetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdReferenceType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdReferenceType")]
 public enum ReferenceType
 {
   /// <summary>
   /// Numbered item.
   /// </summary>
-  [WordInteropEnumValue("wdRefTypeNumberedItem")]
+  [InteropEnumValue("wdRefTypeNumberedItem")]
   NumberedItem = 0,
   /// <summary>
   /// Heading.
   /// </summary>
-  [WordInteropEnumValue("wdRefTypeHeading")]
+  [InteropEnumValue("wdRefTypeHeading")]
   Heading = 1,
   /// <summary>
   /// Bookmark.
   /// </summary>
-  [WordInteropEnumValue("wdRefTypeBookmark")]
+  [InteropEnumValue("wdRefTypeBookmark")]
   Bookmark = 2,
   /// <summary>
   /// Footnote.
   /// </summary>
-  [WordInteropEnumValue("wdRefTypeFootnote")]
+  [InteropEnumValue("wdRefTypeFootnote")]
   Footnote = 3,
   /// <summary>
   /// Endnote.
   /// </summary>
-  [WordInteropEnumValue("wdRefTypeEndnote")]
+  [InteropEnumValue("wdRefTypeEndnote")]
   Endnote = 4
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgranularity?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdGranularity")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdGranularity")]
 public enum Granularity
 {
   /// <summary>
   /// Tracks character-level changes.
   /// </summary>
-  [WordInteropEnumValue("wdGranularityCharLevel")]
+  [InteropEnumValue("wdGranularityCharLevel")]
   CharLevel = 0,
   /// <summary>
   /// Tracks word-level changes.
   /// </summary>
-  [WordInteropEnumValue("wdGranularityWordLevel")]
+  [InteropEnumValue("wdGranularityWordLevel")]
   WordLevel = 1
 }

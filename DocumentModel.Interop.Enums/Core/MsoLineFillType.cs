@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinefilltype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoLineFillType")]
+[InteropEnumType("Microsoft.Office.Core.MsoLineFillType")]
 public enum LineFillType
 {
   /// <summary>
   /// Specifies a mixture of line fill types.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillMixed")]
+  [InteropEnumValue("msoLineFillMixed")]
   Mixed = -2,
   /// <summary>
   /// No line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillNone")]
+  [InteropEnumValue("msoLineFillNone")]
   None = 0,
   /// <summary>
   /// Specifies a solid color line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillSolid")]
+  [InteropEnumValue("msoLineFillSolid")]
   Solid = 1,
   /// <summary>
   /// Specifies a pattern line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillPatterned")]
+  [InteropEnumValue("msoLineFillPatterned")]
   Patterned = 2,
   /// <summary>
   /// Specifies a gradient line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillGradient")]
+  [InteropEnumValue("msoLineFillGradient")]
   Gradient = 3,
   /// <summary>
   /// Specifies a textured line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillTextured")]
+  [InteropEnumValue("msoLineFillTextured")]
   Textured = 4,
   /// <summary>
   /// Specifies the same fill as the background.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillBackground")]
+  [InteropEnumValue("msoLineFillBackground")]
   Background = 5,
   /// <summary>
   /// Specifies a picture line fill.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineFillPicture")]
+  [InteropEnumValue("msoLineFillPicture")]
   Picture = 6
 }

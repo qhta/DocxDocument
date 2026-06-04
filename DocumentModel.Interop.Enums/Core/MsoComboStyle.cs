@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocombostyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoComboStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoComboStyle")]
 public enum ComboStyle
 {
   /// <summary>
   /// Combo box does not include a label.
   /// </summary>
-  [OfficeInteropEnumValue("msoComboNormal")]
+  [InteropEnumValue("msoComboNormal")]
   Normal,
   /// <summary>
   /// Combo box includes a label, specified by the Caption property of the combo box.
   /// </summary>
-  [OfficeInteropEnumValue("msoComboLabel")]
+  [InteropEnumValue("msoComboLabel")]
   Label
 }

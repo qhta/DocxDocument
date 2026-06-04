@@ -4,8 +4,8 @@
 /// Defines the Size enumeration.
 /// Used in types such as ArrayVariant, VClipboardData, Button.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.SizeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues))]
 public enum Size
 {
   /// <summary>

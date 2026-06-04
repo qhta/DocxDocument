@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscalefrom?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoScaleFrom")]
+[InteropEnumType("Microsoft.Office.Core.MsoScaleFrom")]
 public enum ScaleFrom
 {
   /// <summary>
   /// Shape's top left corner retains its position.
   /// </summary>
-  [OfficeInteropEnumValue("msoScaleFromTopLeft")]
+  [InteropEnumValue("msoScaleFromTopLeft")]
   TopLeft,
   /// <summary>
   /// Shape's midpoint retains its position.
   /// </summary>
-  [OfficeInteropEnumValue("msoScaleFromMiddle")]
+  [InteropEnumValue("msoScaleFromMiddle")]
   Middle,
   /// <summary>
   /// Shape's bottom right corner retains its position.
   /// </summary>
-  [OfficeInteropEnumValue("msoScaleFromBottomRight")]
+  [InteropEnumValue("msoScaleFromBottomRight")]
   BottomRight
 }

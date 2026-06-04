@@ -6,23 +6,23 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathbreakbin?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOMathBreakBin")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOMathBreakBin")]
 public enum OMathBreakBin
 {
   /// <summary>
   /// Places the operator before a line break, at the end of the line.
   /// </summary>
-  [WordInteropEnumValue("wdOMathBreakBinBefore")]
+  [InteropEnumValue("wdOMathBreakBinBefore")]
   Before = 0,
   /// <summary>
   /// Places the operator after a line break, at the beginning of the following line.
   /// </summary>
-  [WordInteropEnumValue("wdOMathBreakBinAfter")]
+  [InteropEnumValue("wdOMathBreakBinAfter")]
   After = 1,
   /// <summary>
   /// Repeats the operator before a line break at the end of the line and after a line break at the beginning of the
   /// following line.
   /// </summary>
-  [WordInteropEnumValue("wdOMathBreakBinRepeat")]
+  [InteropEnumValue("wdOMathBreakBinRepeat")]
   Repeat = 2
 }

@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoaligncmd?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoAlignCmd")]
+[InteropEnumType("Microsoft.Office.Core.MsoAlignCmd")]
 public enum AlignCmd
 {
   /// <summary>
   /// Align left sides of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignLefts")]
+  [InteropEnumValue("msoAlignLefts")]
   Lefts,
   /// <summary>
   /// Align centers of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignCenters")]
+  [InteropEnumValue("msoAlignCenters")]
   Centers,
   /// <summary>
   /// Align right sides of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignRights")]
+  [InteropEnumValue("msoAlignRights")]
   Rights,
   /// <summary>
   /// Align tops of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignTops")]
+  [InteropEnumValue("msoAlignTops")]
   Tops,
   /// <summary>
   /// Align middles of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignMiddles")]
+  [InteropEnumValue("msoAlignMiddles")]
   Middles,
   /// <summary>
   /// Align bottoms of specified objects.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlignBottoms")]
+  [InteropEnumValue("msoAlignBottoms")]
   Bottoms
 }

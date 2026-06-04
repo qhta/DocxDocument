@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Indicates a property or collection Ithat is lazily loaded from the underlying OpenXml element. When applied, the property will not be initialized until it is first accessed, allowing for deferred loading of data and improved performance when working with large documents or complex structures.

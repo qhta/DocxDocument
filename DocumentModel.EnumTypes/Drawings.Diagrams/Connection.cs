@@ -4,8 +4,8 @@
 /// Defines the Connection enumeration.
 /// Used in types such as ConnectionShapeLocks, ConnectionSite, ConnectionSiteList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ConnectionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues))]
 public enum ConnectionType
 {
   /// <summary>

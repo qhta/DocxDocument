@@ -4,8 +4,8 @@
 /// Defines the RadarStyle enumeration.
 /// Used in types such as RadarChart, RadarChartConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.RadarStyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues))]
 public enum RadarStyle
 {
   /// <summary>

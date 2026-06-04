@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberspacing?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNumberSpacing")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNumberSpacing")]
 public enum WdNumberSpacing
 {
   /// <summary>
   /// Applies the default number spacing for the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberSpacingDefault")]
+  [InteropEnumValue("wdNumberSpacingDefault")]
   Default = 0,
   /// <summary>
   /// Applies proportional number spacing to the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberSpacingProportional")]
+  [InteropEnumValue("wdNumberSpacingProportional")]
   Proportional = 1,
   /// <summary>
   /// Applies tabular number spacing to the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberSpacingTabular")]
+  [InteropEnumValue("wdNumberSpacingTabular")]
   Tabular = 2
 }

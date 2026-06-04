@@ -4,8 +4,8 @@
 /// Defines the TaskSizesType enumeration.
 /// Used in types such as TaskFormGroup, TaskGroup.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.TaskSizesValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues))]
 public enum TaskSizesType
 {
 	/// <summary>

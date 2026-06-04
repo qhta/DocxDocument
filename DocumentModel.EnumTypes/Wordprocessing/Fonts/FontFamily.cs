@@ -2,38 +2,38 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontFamilyValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.FontFamilyValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues))]
 public enum FontFamily
 {
   /// <summary>
   ///   Novelty Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Decorative))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Decorative))]
   Decorative,
   /// <summary>
   ///   Monospace Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Modern))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Modern))]
   Modern,
   /// <summary>
   ///   Proportional Font With Serifs.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Roman))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Roman))]
   Roman,
   /// <summary>
   ///   Script Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Script))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Script))]
   Script,
   /// <summary>
   ///   Proportional Font Without Serifs.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Swiss))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Swiss))]
   Swiss,
   /// <summary>
   ///   No Font Family.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FontFamilyValues.Auto))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Auto))]
   Auto
 }

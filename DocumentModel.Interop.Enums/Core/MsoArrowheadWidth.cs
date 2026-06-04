@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadwidth?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoArrowheadWidth")]
+[InteropEnumType("Microsoft.Office.Core.MsoArrowheadWidth")]
 public enum ArrowheadWidth
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadWidthMixed")]
+  [InteropEnumValue("msoArrowheadWidthMixed")]
   WidthMixed = -2,
   /// <summary>
   /// Narrow.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadNarrow")]
+  [InteropEnumValue("msoArrowheadNarrow")]
   Narrow = 1,
   /// <summary>
   /// Medium.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadWidthMedium")]
+  [InteropEnumValue("msoArrowheadWidthMedium")]
   WidthMedium = 2,
   /// <summary>
   /// Wide.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadWide")]
+  [InteropEnumValue("msoArrowheadWide")]
   Wide = 3
 }

@@ -4,7 +4,7 @@
 /// Defines the SeriesLayout enumeration.
 /// Used in types such as ISeries, SeriesLayout, SeriesConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum SeriesLayout
 {
   /// <summary>

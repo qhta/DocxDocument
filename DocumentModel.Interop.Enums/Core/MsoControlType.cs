@@ -6,143 +6,143 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoControlType")]
+[InteropEnumType("Microsoft.Office.Core.MsoControlType")]
 public enum ControlType
 {
   /// <summary>
   /// Custom control. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlCustom")]
+  [InteropEnumValue("msoControlCustom")]
   Custom,
   /// <summary>
   /// Command button.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlButton")]
+  [InteropEnumValue("msoControlButton")]
   Button,
   /// <summary>
   /// Text box.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlEdit")]
+  [InteropEnumValue("msoControlEdit")]
   Edit,
   /// <summary>
   /// Drop-down list.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlDropdown")]
+  [InteropEnumValue("msoControlDropdown")]
   Dropdown,
   /// <summary>
   /// Combo box.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlComboBox")]
+  [InteropEnumValue("msoControlComboBox")]
   ComboBox,
   /// <summary>
   /// Drop-down button. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlButtonDropdown")]
+  [InteropEnumValue("msoControlButtonDropdown")]
   ButtonDropdown,
   /// <summary>
   /// Split drop-down list. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlSplitDropdown")]
+  [InteropEnumValue("msoControlSplitDropdown")]
   SplitDropdown,
   /// <summary>
   /// OCX drop-down list. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlOCXDropdown")]
+  [InteropEnumValue("msoControlOCXDropdown")]
   OCXDropdown,
   /// <summary>
   /// Generic drop-down list. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGenericDropdown")]
+  [InteropEnumValue("msoControlGenericDropdown")]
   GenericDropdown,
   /// <summary>
   /// Graphic drop-down list. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGraphicDropdown")]
+  [InteropEnumValue("msoControlGraphicDropdown")]
   GraphicDropdown,
   /// <summary>
   /// Pop-up.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlPopup")]
+  [InteropEnumValue("msoControlPopup")]
   Popup,
   /// <summary>
   /// Graphic pop-up menu. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGraphicPopup")]
+  [InteropEnumValue("msoControlGraphicPopup")]
   GraphicPopup,
   /// <summary>
   /// Pop-up button. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlButtonPopup")]
+  [InteropEnumValue("msoControlButtonPopup")]
   ButtonPopup,
   /// <summary>
   /// Split button pop-up. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlSplitButtonPopup")]
+  [InteropEnumValue("msoControlSplitButtonPopup")]
   SplitButtonPopup,
   /// <summary>
   /// Most Recently Used (MRU) pop-up. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlSplitButtonMRUPopup")]
+  [InteropEnumValue("msoControlSplitButtonMRUPopup")]
   SplitButtonMRUPopup,
   /// <summary>
   /// Label. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlLabel")]
+  [InteropEnumValue("msoControlLabel")]
   Label,
   /// <summary>
   /// Expanding grid. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlExpandingGrid")]
+  [InteropEnumValue("msoControlExpandingGrid")]
   ExpandingGrid,
   /// <summary>
   /// Split expanding grid. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlSplitExpandingGrid")]
+  [InteropEnumValue("msoControlSplitExpandingGrid")]
   SplitExpandingGrid,
   /// <summary>
   /// Grid. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGrid")]
+  [InteropEnumValue("msoControlGrid")]
   Grid,
   /// <summary>
   /// Gauge control. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGauge")]
+  [InteropEnumValue("msoControlGauge")]
   Gauge,
   /// <summary>
   /// Graphic combo box. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlGraphicCombo")]
+  [InteropEnumValue("msoControlGraphicCombo")]
   GraphicCombo,
   /// <summary>
   /// Pane. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlPane")]
+  [InteropEnumValue("msoControlPane")]
   Pane,
   /// <summary>
   /// ActiveX control.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlActiveX")]
+  [InteropEnumValue("msoControlActiveX")]
   ActiveX,
   /// <summary>
   /// Spinner. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlSpinner")]
+  [InteropEnumValue("msoControlSpinner")]
   Spinner,
   /// <summary>
   /// Extended label. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlLabelEx")]
+  [InteropEnumValue("msoControlLabelEx")]
   LabelEx,
   /// <summary>
   /// Work pane. Cannot be created through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlWorkPane")]
+  [InteropEnumValue("msoControlWorkPane")]
   WorkPane,
   /// <summary>
   /// Combo box in which the first matching choice is automatically filled in as the user types. Cannot be created
   /// through the object model.
   /// </summary>
-  [OfficeInteropEnumValue("msoControlAutoCompleteCombo")]
+  [InteropEnumValue("msoControlAutoCompleteCombo")]
   AutoCompleteCombo
 }

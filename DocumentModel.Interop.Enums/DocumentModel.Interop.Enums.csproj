@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="tools\" />
     <Folder Include="Word\AutoCorrect\" />
     <Folder Include="Word\Bibliography\" />
@@ -64,7 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicrosoftOfficeCore" Version="15.0.0" />
+    <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
   </ItemGroup>
 
 </Project>

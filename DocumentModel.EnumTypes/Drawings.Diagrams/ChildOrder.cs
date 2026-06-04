@@ -4,8 +4,8 @@
 /// Defines the ChildOrder enumeration.
 /// Used in types such as LayoutNode, LayoutNodeConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ChildOrderValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues))]
 public enum ChildOrder
 {
   /// <summary>

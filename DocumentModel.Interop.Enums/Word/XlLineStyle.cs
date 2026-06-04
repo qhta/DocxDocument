@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xllinestyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlLineStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlLineStyle")]
 public enum XlLineStyle
 {
   /// <summary>
   /// Continuous line.
   /// </summary>
-  [WordInteropEnumValue("xlContinuous")]
+  [InteropEnumValue("xlContinuous")]
   Continuous = 1,
   /// <summary>
   /// Alternating dashes and dots.
   /// </summary>
-  [WordInteropEnumValue("xlDashDot")]
+  [InteropEnumValue("xlDashDot")]
   DashDot = 4,
   /// <summary>
   /// Dash followed by two dots.
   /// </summary>
-  [WordInteropEnumValue("xlDashDotDot")]
+  [InteropEnumValue("xlDashDotDot")]
   DashDotDot = 5,
   /// <summary>
   /// Slanted dashes.
   /// </summary>
-  [WordInteropEnumValue("xlSlantDashDot")]
+  [InteropEnumValue("xlSlantDashDot")]
   SlantDashDot = 13,
   /// <summary>
   /// No line.
   /// </summary>
-  [WordInteropEnumValue("xlLineStyleNone")]
+  [InteropEnumValue("xlLineStyleNone")]
   LineStyleNone = -4142,
   /// <summary>
   /// Double line.
   /// </summary>
-  [WordInteropEnumValue("xlDouble")]
+  [InteropEnumValue("xlDouble")]
   Double = -4119,
   /// <summary>
   /// Dotted line.
   /// </summary>
-  [WordInteropEnumValue("xlDot")]
+  [InteropEnumValue("xlDot")]
   Dot = -4118,
   /// <summary>
   /// Dashed line.
   /// </summary>
-  [WordInteropEnumValue("xlDash")]
+  [InteropEnumValue("xlDash")]
   Dash = -4115
 }

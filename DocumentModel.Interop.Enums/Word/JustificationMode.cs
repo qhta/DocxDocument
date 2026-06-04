@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdjustificationmode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdJustificationMode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdJustificationMode")]
 public enum JustificationMode
 {
   /// <summary>
   /// Expand.
   /// </summary>
-  [WordInteropEnumValue("wdJustificationModeExpand")]
+  [InteropEnumValue("wdJustificationModeExpand")]
   Expand = 0,
   /// <summary>
   /// Compress.
   /// </summary>
-  [WordInteropEnumValue("wdJustificationModeCompress")]
+  [InteropEnumValue("wdJustificationModeCompress")]
   Compress = 1,
   /// <summary>
   /// Compress, using rules of the kana syllabaries, Hiragana and Katakana.
   /// </summary>
-  [WordInteropEnumValue("wdJustificationModeCompressKana")]
+  [InteropEnumValue("wdJustificationModeCompressKana")]
   CompressKana = 2
 }

@@ -4,8 +4,8 @@
 /// Defines the IPictureFormat enumeration.
 /// Used in types such as PictureOptions, IChartFormat, IInlineShape.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.PictureFormatValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues))]
 public enum PictureFormat
 {
   /// <summary>

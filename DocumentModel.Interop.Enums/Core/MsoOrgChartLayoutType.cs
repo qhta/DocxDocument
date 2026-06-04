@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorgchartlayouttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoOrgChartLayoutType")]
+[InteropEnumType("Microsoft.Office.Core.MsoOrgChartLayoutType")]
 public enum OrgChartLayoutType
 {
   /// <summary>
   /// Return value for a parent node that has children formatted using more than one OrgChartLayoutType.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutMixed")]
+  [InteropEnumValue("msoOrgChartLayoutMixed")]
   Mixed = -2,
   /// <summary>
   /// Places child nodes horizontally below the parent node.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutStandard")]
+  [InteropEnumValue("msoOrgChartLayoutStandard")]
   Standard = 1,
   /// <summary>
   /// Places child nodes vertically below the parent node on both the left and the right side.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutBothHanging")]
+  [InteropEnumValue("msoOrgChartLayoutBothHanging")]
   BothHanging = 2,
   /// <summary>
   /// Places child nodes vertically below the parent node on the left side.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutLeftHanging")]
+  [InteropEnumValue("msoOrgChartLayoutLeftHanging")]
   LeftHanging = 3,
   /// <summary>
   /// Places child nodes vertically below the parent node on the right side.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutRightHanging")]
+  [InteropEnumValue("msoOrgChartLayoutRightHanging")]
   RightHanging = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrgChartLayoutDefault")]
+  [InteropEnumValue("msoOrgChartLayoutDefault")]
   Default = 5
 }

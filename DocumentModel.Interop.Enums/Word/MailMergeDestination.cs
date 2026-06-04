@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedestination?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMailMergeDestination")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMailMergeDestination")]
 public enum MailMergeDestination
 {
   /// <summary>
   /// Send results to a new Word document.
   /// </summary>
-  [WordInteropEnumValue("wdSendToNewDocument")]
+  [InteropEnumValue("wdSendToNewDocument")]
   NewDocument = 0,
   /// <summary>
   /// Send results to a printer.
   /// </summary>
-  [WordInteropEnumValue("wdSendToPrinter")]
+  [InteropEnumValue("wdSendToPrinter")]
   Printer = 1,
   /// <summary>
   /// Send results to e-mail recipient.
   /// </summary>
-  [WordInteropEnumValue("wdSendToEmail")]
+  [InteropEnumValue("wdSendToEmail")]
   Email = 2,
   /// <summary>
   /// Send results to fax recipient.
   /// </summary>
-  [WordInteropEnumValue("wdSendToFax")]
+  [InteropEnumValue("wdSendToFax")]
   Fax = 3
 }

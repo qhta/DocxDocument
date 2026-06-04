@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoShadowStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoShadowStyle")]
 public enum ShadowStyle
 {
   /// <summary>
   /// Specifies a combination of inner and outer shadow effects.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadowStyleMixed")]
+  [InteropEnumValue("msoShadowStyleMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies the inner shadow effect.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadowStyleInnerShadow")]
+  [InteropEnumValue("msoShadowStyleInnerShadow")]
   InnerShadow = 1,
   /// <summary>
   /// Specifies the outer shadow effect.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadowStyleOuterShadow")]
+  [InteropEnumValue("msoShadowStyleOuterShadow")]
   OuterShadow = 2
 }

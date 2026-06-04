@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorderDisplayValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.PageBorderDisplayValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues))]
 public enum PageBorderDisplay
 {
   /// <summary>
   ///   Display Page Border on All Pages.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderDisplayValues.AllPages))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues.AllPages))]
   AllPages,
   /// <summary>
   ///   Display Page Border on First Page.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderDisplayValues.FirstPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues.FirstPage))]
   FirstPage,
   /// <summary>
   ///   Display Page Border on All Pages Except First.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderDisplayValues.NotFirstPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues.NotFirstPage))]
   NotFirstPage
 }

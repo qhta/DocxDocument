@@ -3,17 +3,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosmartartnodetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSmartArtNodeType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSmartArtNodeType")]
 public enum SmartArtNodeType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeTypeDefault")]
+  [InteropEnumValue("msoSmartArtNodeTypeDefault")]
   Default = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeTypeAssistant")]
+  [InteropEnumValue("msoSmartArtNodeTypeAssistant")]
   Assistant
 }

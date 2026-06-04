@@ -4,8 +4,8 @@
 /// Defines the Grouping enumeration.
 /// Used in types such as DocumentCleaner.TableTools, ConnectionShapeLocks, ContentPartLocks.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.GroupingValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.GroupingValues))]
 public enum Grouping
 {
   /// <summary>

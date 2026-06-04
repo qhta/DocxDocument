@@ -4,8 +4,8 @@
 /// Defines the ScatterStyle enumeration.
 /// Used in types such as ScatterChart, ScatterChartConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.ScatterStyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues))]
 public enum ScatterStyle
 {
   /// <summary>

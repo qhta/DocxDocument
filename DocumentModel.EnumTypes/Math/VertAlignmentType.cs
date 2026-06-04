@@ -2,24 +2,24 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the VerticalAlignmentValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXM.VerticalAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues))]
 public enum VertAlignmentType
 {
   /// <summary>
   ///   Top.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Top))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Top))]
   Top,
   /// <summary>
   ///   Center (Function).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   bottom.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Bottom))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Bottom))]
   Bottom,
 
 }

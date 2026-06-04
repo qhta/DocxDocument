@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskstatus?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSharedWorkspaceTaskStatus")]
+[InteropEnumType("Microsoft.Office.Core.MsoSharedWorkspaceTaskStatus")]
 public enum SharedWorkspaceTaskStatus
 {
   /// <summary>
   /// Not started.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskStatusNotStarted")]
+  [InteropEnumValue("msoSharedWorkspaceTaskStatusNotStarted")]
   NotStarted = 1,
   /// <summary>
   /// In progress.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskStatusInProgress")]
+  [InteropEnumValue("msoSharedWorkspaceTaskStatusInProgress")]
   InProgress,
   /// <summary>
   /// Completed.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskStatusCompleted")]
+  [InteropEnumValue("msoSharedWorkspaceTaskStatusCompleted")]
   Completed,
   /// <summary>
   /// Deferred.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskStatusDeferred")]
+  [InteropEnumValue("msoSharedWorkspaceTaskStatusDeferred")]
   Deferred,
   /// <summary>
   /// Waiting.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskStatusWaiting")]
+  [InteropEnumValue("msoSharedWorkspaceTaskStatusWaiting")]
   Waiting
 }

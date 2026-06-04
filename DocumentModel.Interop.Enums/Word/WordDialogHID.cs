@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialoghid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdWordDialogHID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWordDialogHID")]
 public enum WordDialogHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("emptyenum")]
+  [InteropEnumValue("emptyenum")]
   emptyenum = 0
 }

@@ -2,8 +2,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TextWrappingValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.TextWrappingValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.TextWrappingValues))]
 public enum TextWrapping
 {
   /// <summary>
@@ -29,6 +29,6 @@ public enum TextWrapping
   /// <summary>
   ///   No Text Wrapping Around Frame.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextWrappingValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextWrappingValues.None))]
   None
 }

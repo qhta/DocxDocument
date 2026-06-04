@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistlevelalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdListLevelAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdListLevelAlignment")]
 public enum ListLevelAlignment
 {
   /// <summary>
   /// Left aligned.
   /// </summary>
-  [WordInteropEnumValue("wdListLevelAlignLeft")]
+  [InteropEnumValue("wdListLevelAlignLeft")]
   Left = 0,
   /// <summary>
   /// Center aligned.
   /// </summary>
-  [WordInteropEnumValue("wdListLevelAlignCenter")]
+  [InteropEnumValue("wdListLevelAlignCenter")]
   Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  [WordInteropEnumValue("wdListLevelAlignRight")]
+  [InteropEnumValue("wdListLevelAlignRight")]
   Right = 2
 }

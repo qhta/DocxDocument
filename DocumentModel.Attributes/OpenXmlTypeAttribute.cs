@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the OpenXml type associated with a property or class for metadata or tooling purposes.

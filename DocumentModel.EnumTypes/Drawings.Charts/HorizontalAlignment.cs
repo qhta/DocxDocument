@@ -2,23 +2,23 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the HorizontalAlignmentValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXM.HorizontalAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Math.HorizontalAlignmentValues))]
 public enum HorizontalAlignment
 {
   /// <summary>
   ///   Left Justification.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.HorizontalAlignmentValues.Left))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.HorizontalAlignmentValues.Left))]
   Left,
   /// <summary>
   ///   Center.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.HorizontalAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.HorizontalAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   Right.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.HorizontalAlignmentValues.Right))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.HorizontalAlignmentValues.Right))]
   Right
 }

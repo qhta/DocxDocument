@@ -2,8 +2,8 @@
 /// <summary>
 ///   Preset IShape Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.ShapeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.ShapeValues))]
 public enum BuiltInShapeType
 {
   /// <summary>

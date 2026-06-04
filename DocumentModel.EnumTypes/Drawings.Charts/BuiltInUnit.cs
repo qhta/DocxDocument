@@ -4,8 +4,8 @@
 /// Defines the BuiltInUnit enumeration.
 /// Used in types such as DisplayUnits, DisplayUnitsConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.BuiltInUnitValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues))]
 public enum BuiltInUnit
 {
   /// <summary>

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentdirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDocumentDirection")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDocumentDirection")]
 public enum DocumentDirection
 {
   /// <summary>
   /// Left to right.
   /// </summary>
-  [WordInteropEnumValue("wdLeftToRight")]
+  [InteropEnumValue("wdLeftToRight")]
   LeftToRight = 0,
   /// <summary>
   /// Right to left.
   /// </summary>
-  [WordInteropEnumValue("wdRightToLeft")]
+  [InteropEnumValue("wdRightToLeft")]
   RightToLeft = 1
 }

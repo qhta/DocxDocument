@@ -4,8 +4,8 @@ namespace DocumentModel.Drawings.Charts;
 /// Defines the Split enumeration.
 /// Used in types such as DocumentCleaner, DocumentCleaner.GraphicTools, DocumentCleaner.TableTools.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.SplitValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.SplitValues))]
 public enum Split
 {
   /// <summary>

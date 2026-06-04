@@ -4,8 +4,8 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Defines the Direction enumeration.
 /// Used in types such as InnerShadow, LightRig, OuterShadow.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.DirectionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues))]
 public enum Direction
 {
   /// <summary>

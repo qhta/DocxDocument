@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlaxisgroup?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlAxisGroup")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlAxisGroup")]
 public enum AxisGroup
 {
   /// <summary>
   /// Primary axis group.
   /// </summary>
-  [WordInteropEnumValue("xlPrimary")]
+  [InteropEnumValue("xlPrimary")]
   Primary = 1,
   /// <summary>
   /// Secondary axis group.
   /// </summary>
-  [WordInteropEnumValue("xlSecondary")]
+  [InteropEnumValue("xlSecondary")]
   Secondary = 2
 }

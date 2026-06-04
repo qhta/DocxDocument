@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLinkType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLinkType")]
 public enum LinkType
 {
   /// <summary>
   /// OLE object.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeOLE")]
+  [InteropEnumValue("wdLinkTypeOLE")]
   OLE = 0,
   /// <summary>
   /// Picture.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypePicture")]
+  [InteropEnumValue("wdLinkTypePicture")]
   Picture = 1,
   /// <summary>
   /// Text.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeText")]
+  [InteropEnumValue("wdLinkTypeText")]
   Text = 2,
   /// <summary>
   /// Reference library.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeReference")]
+  [InteropEnumValue("wdLinkTypeReference")]
   Reference = 3,
   /// <summary>
   /// Include file.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeInclude")]
+  [InteropEnumValue("wdLinkTypeInclude")]
   Include = 4,
   /// <summary>
   /// Import file.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeImport")]
+  [InteropEnumValue("wdLinkTypeImport")]
   Import = 5,
   /// <summary>
   /// Dynamic Data Exchange.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeDDE")]
+  [InteropEnumValue("wdLinkTypeDDE")]
   DDE = 6,
   /// <summary>
   /// DDE automatic.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeDDEAuto")]
+  [InteropEnumValue("wdLinkTypeDDEAuto")]
   DDEAuto = 7,
   /// <summary>
   /// Microsoft Excel chart.
   /// </summary>
-  [WordInteropEnumValue("wdLinkTypeChart")]
+  [InteropEnumValue("wdLinkTypeChart")]
   Chart = 8
 }

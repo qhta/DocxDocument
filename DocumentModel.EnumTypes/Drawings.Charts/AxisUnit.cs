@@ -4,7 +4,7 @@
 /// Defines the AxisUnit enumeration.
 /// Used in types such as AxisUnits, AxisUnit, AxisUnitsConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum AxisUnit
 {
   /// <summary>

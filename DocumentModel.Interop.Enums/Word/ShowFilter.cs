@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdshowfilter?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdShowFilter")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdShowFilter")]
 public enum ShowFilter
 {
   /// <summary>
   /// All styles available.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterStylesAvailable")]
+  [InteropEnumValue("wdShowFilterStylesAvailable")]
   StylesAvailable = 0,
   /// <summary>
   /// All styles in use.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterStylesInUse")]
+  [InteropEnumValue("wdShowFilterStylesInUse")]
   StylesInUse = 1,
   /// <summary>
   /// All styles.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterStylesAll")]
+  [InteropEnumValue("wdShowFilterStylesAll")]
   StylesAll = 2,
   /// <summary>
   /// All formatting in use.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterFormattingInUse")]
+  [InteropEnumValue("wdShowFilterFormattingInUse")]
   FormattingInUse = 3,
   /// <summary>
   /// All formatting available.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterFormattingAvailable")]
+  [InteropEnumValue("wdShowFilterFormattingAvailable")]
   FormattingAvailable = 4,
   /// <summary>
   /// Only recommended styles.
   /// </summary>
-  [WordInteropEnumValue("wdShowFilterFormattingRecommended")]
+  [InteropEnumValue("wdShowFilterFormattingRecommended")]
   FormattingRecommended = 5
 }

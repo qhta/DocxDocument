@@ -6,117 +6,117 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpattern?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlPattern")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlPattern")]
 public enum XlPattern
 {
   /// <summary>
   /// Solid color.
   /// </summary>
-  [WordInteropEnumValue("xlPatternSolid")]
+  [InteropEnumValue("xlPatternSolid")]
   Solid = 1,
   /// <summary>
   /// Checkerboard.
   /// </summary>
-  [WordInteropEnumValue("xlPatternChecker")]
+  [InteropEnumValue("xlPatternChecker")]
   Checker = 9,
   /// <summary>
   /// 75% dark moirĂ©.
   /// </summary>
-  [WordInteropEnumValue("xlPatternSemiGray75")]
+  [InteropEnumValue("xlPatternSemiGray75")]
   SemiGray75 = 10,
   /// <summary>
   /// Light horizontal lines. public enum XlPattern
   /// </summary>
-  [WordInteropEnumValue("xlPatternLightHorizontal")]
+  [InteropEnumValue("xlPatternLightHorizontal")]
   LightHorizontal = 11,
   /// <summary>
   /// Light vertical bars.
   /// </summary>
-  [WordInteropEnumValue("xlPatternLightVertical")]
+  [InteropEnumValue("xlPatternLightVertical")]
   LightVertical = 12,
   /// <summary>
   /// Light diagonal lines running from the upper left to the lower right.
   /// </summary>
-  [WordInteropEnumValue("xlPatternLightDown")]
+  [InteropEnumValue("xlPatternLightDown")]
   LightDown = 13,
   /// <summary>
   /// Light diagonal lines running from the lower left to the upper right.
   /// </summary>
-  [WordInteropEnumValue("xlPatternLightUp")]
+  [InteropEnumValue("xlPatternLightUp")]
   LightUp = 14,
   /// <summary>
   /// Grid.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGrid")]
+  [InteropEnumValue("xlPatternGrid")]
   Grid = 15,
   /// <summary>
   /// Criss-cross lines.
   /// </summary>
-  [WordInteropEnumValue("xlPatternCrissCross")]
+  [InteropEnumValue("xlPatternCrissCross")]
   CrissCross = 16,
   /// <summary>
   /// 16% gray.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGray16")]
+  [InteropEnumValue("xlPatternGray16")]
   Gray16 = 17,
   /// <summary>
   /// 8% gray.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGray8")]
+  [InteropEnumValue("xlPatternGray8")]
   Gray8 = 18,
   /// <summary>
   /// Linear gradient.
   /// </summary>
-  [WordInteropEnumValue("xlPatternLinearGradient")]
+  [InteropEnumValue("xlPatternLinearGradient")]
   LinearGradient = 4000,
   /// <summary>
   /// Rectangular gradient.
   /// </summary>
-  [WordInteropEnumValue("xlPatternRectangularGradient")]
+  [InteropEnumValue("xlPatternRectangularGradient")]
   RectangularGradient = 4001,
   /// <summary>
   /// Dark vertical bars.
   /// </summary>
-  [WordInteropEnumValue("xlPatternVertical")]
+  [InteropEnumValue("xlPatternVertical")]
   Vertical = -4166,
   /// <summary>
   /// Dark diagonal lines running from the lower left to the upper right.
   /// </summary>
-  [WordInteropEnumValue("xlPatternUp")]
+  [InteropEnumValue("xlPatternUp")]
   Up = -4162,
   /// <summary>
   /// No pattern.
   /// </summary>
-  [WordInteropEnumValue("xlPatternNone")]
+  [InteropEnumValue("xlPatternNone")]
   None = -4142,
   /// <summary>
   /// Dark horizontal lines.
   /// </summary>
-  [WordInteropEnumValue("xlPatternHorizontal")]
+  [InteropEnumValue("xlPatternHorizontal")]
   Horizontal = -4128,
   /// <summary>
   /// 75% gray.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGray75")]
+  [InteropEnumValue("xlPatternGray75")]
   Gray75 = -4126,
   /// <summary>
   /// 50% gray.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGray50")]
+  [InteropEnumValue("xlPatternGray50")]
   Gray50 = -4125,
   /// <summary>
   /// 25% gray.
   /// </summary>
-  [WordInteropEnumValue("xlPatternGray25")]
+  [InteropEnumValue("xlPatternGray25")]
   Gray25 = -4124,
   /// <summary>
   /// Dark diagonal lines running from the upper left to the lower right.
   /// </summary>
-  [WordInteropEnumValue("xlPatternDown")]
+  [InteropEnumValue("xlPatternDown")]
   Down = -4121,
   /// <summary>
   /// Word controls the pattern.
   /// </summary>
-  [WordInteropEnumValue("xlPatternAutomatic")]
+  [InteropEnumValue("xlPatternAutomatic")]
   Automatic = -4105
 }

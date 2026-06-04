@@ -8,22 +8,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcategorylabellevel?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlCategoryLabelLevel")]
+[InteropEnumType("Microsoft.Office.Core.XlCategoryLabelLevel")]
 public enum CategoryLabelLevel
 {
   /// <summary>
   /// Set no category labels in the chart. Defaults to automatic indexed labels.
   /// </summary>
-  [OfficeInteropEnumValue("xlCategoryLabelLevelNone")]
+  [InteropEnumValue("xlCategoryLabelLevelNone")]
   None = -3,
   /// <summary>
   /// Indicates literal data in the category labels.
   /// </summary>
-  [OfficeInteropEnumValue("xlCategoryLabelLevelCustom")]
+  [InteropEnumValue("xlCategoryLabelLevelCustom")]
   Custom,
   /// <summary>
   /// Set category labels to all category label levels w/in range on the chart.
   /// </summary>
-  [OfficeInteropEnumValue("xlCategoryLabelLevelAll")]
+  [InteropEnumValue("xlCategoryLabelLevelAll")]
   All
 }

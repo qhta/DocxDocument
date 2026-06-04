@@ -2,38 +2,38 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Path Fill Mode
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.PathFillModeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PathFillModeValues))]
 public enum PathFillMode
 {
   /// <summary>
   ///   No Path Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.None))]
   None,
   /// <summary>
   ///   Normal Path Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.Norm))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.Norm))]
   Norm,
   /// <summary>
   ///   Lighten Path Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.Lighten))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.Lighten))]
   Lighten,
   /// <summary>
   ///   Lighten Path Fill Less.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.LightenLess))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.LightenLess))]
   LightenLess,
   /// <summary>
   ///   Darken Path Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.Darken))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.Darken))]
   Darken,
   /// <summary>
   ///   Darken Path Fill Less.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathFillModeValues.DarkenLess))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathFillModeValues.DarkenLess))]
   DarkenLess
 }

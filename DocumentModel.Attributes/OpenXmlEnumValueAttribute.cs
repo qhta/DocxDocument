@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the Open XML EnumValues static property name to associate with an Enum field for mapping purposes.

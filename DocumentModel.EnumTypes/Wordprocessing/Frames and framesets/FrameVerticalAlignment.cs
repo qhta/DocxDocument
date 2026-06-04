@@ -2,8 +2,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the VerticalAlignmentValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.VerticalAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues))]
 public enum FrameVerticalAlignment
 {
   /// <summary>
@@ -13,17 +13,17 @@ public enum FrameVerticalAlignment
   /// <summary>
   ///   Top.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Top))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Top))]
   Top,
   /// <summary>
   ///   Centered Vertically.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   Bottom.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Bottom))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.VerticalAlignmentValues.Bottom))]
   Bottom,
   /// <summary>
   ///   Inside Anchor Extents.

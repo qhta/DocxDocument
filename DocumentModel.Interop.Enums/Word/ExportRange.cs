@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportrange?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdExportRange")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdExportRange")]
 public enum ExportRange
 {
   /// <summary>
   /// Exports the entire document.
   /// </summary>
-  [WordInteropEnumValue("wdExportAllDocument")]
+  [InteropEnumValue("wdExportAllDocument")]
   AllDocument = 0,
   /// <summary>
   /// Exports the contents of the current selection.
   /// </summary>
-  [WordInteropEnumValue("wdExportSelection")]
+  [InteropEnumValue("wdExportSelection")]
   Selection = 1,
   /// <summary>
   /// Exports the current page.
   /// </summary>
-  [WordInteropEnumValue("wdExportCurrentPage")]
+  [InteropEnumValue("wdExportCurrentPage")]
   CurrentPage = 2,
   /// <summary>
   /// Exports the contents of a range using the starting and ending positions.
   /// </summary>
-  [WordInteropEnumValue("wdExportFromTo")]
+  [InteropEnumValue("wdExportFromTo")]
   FromTo = 3
 }

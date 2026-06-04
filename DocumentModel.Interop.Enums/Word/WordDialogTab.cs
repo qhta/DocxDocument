@@ -6,203 +6,203 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdWordDialogTab")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWordDialogTab")]
 public enum WordDialogTab
 {
   /// <summary>
   /// General tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabGeneral")]
+  [InteropEnumValue("wdDialogToolsOptionsTabGeneral")]
   ToolsOptionsTabGeneral = 203,
   /// <summary>
   /// View tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabView")]
+  [InteropEnumValue("wdDialogToolsOptionsTabView")]
   ToolsOptionsTabView = 204,
   /// <summary>
   /// Print tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabPrint")]
+  [InteropEnumValue("wdDialogToolsOptionsTabPrint")]
   ToolsOptionsTabPrint = 208,
   /// <summary>
   /// Save tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabSave")]
+  [InteropEnumValue("wdDialogToolsOptionsTabSave")]
   ToolsOptionsTabSave = 209,
   /// <summary>
   /// Spelling and Grammar tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabProofread")]
+  [InteropEnumValue("wdDialogToolsOptionsTabProofread")]
   ToolsOptionsTabProofread = 211,
   /// <summary>
   /// User Information tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabUserInfo")]
+  [InteropEnumValue("wdDialogToolsOptionsTabUserInfo")]
   ToolsOptionsTabUserInfo = 213,
   /// <summary>
   /// Edit tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabEdit")]
+  [InteropEnumValue("wdDialogToolsOptionsTabEdit")]
   ToolsOptionsTabEdit = 224,
   /// <summary>
   /// File Locations tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabFileLocations")]
+  [InteropEnumValue("wdDialogToolsOptionsTabFileLocations")]
   ToolsOptionsTabFileLocations = 225,
   /// <summary>
   /// Track Changes tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabTrackChanges")]
+  [InteropEnumValue("wdDialogToolsOptionsTabTrackChanges")]
   ToolsOptionsTabTrackChanges = 386,
   /// <summary>
   /// Compatibility tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabCompatibility")]
+  [InteropEnumValue("wdDialogToolsOptionsTabCompatibility")]
   ToolsOptionsTabCompatibility = 525,
   /// <summary>
   /// Asian Typography tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabTypography")]
+  [InteropEnumValue("wdDialogToolsOptionsTabTypography")]
   ToolsOptionsTabTypography = 739,
   /// <summary>
   /// Hangul Hanja Conversion tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabHangulHanjaConversion")]
+  [InteropEnumValue("wdDialogToolsOptionsTabHangulHanjaConversion")]
   ToolsOptionsTabHangulHanjaConversion = 786,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabFuzzy")]
+  [InteropEnumValue("wdDialogToolsOptionsTabFuzzy")]
   ToolsOptionsTabFuzzy = 790,
   /// <summary>
   /// Complex Scripts tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabBidi")]
+  [InteropEnumValue("wdDialogToolsOptionsTabBidi")]
   ToolsOptionsTabBidi = 1029,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabAcetate")]
+  [InteropEnumValue("wdDialogToolsOptionsTabAcetate")]
   ToolsOptionsTabAcetate = 1266,
   /// <summary>
   /// Security tab of the Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTabSecurity")]
+  [InteropEnumValue("wdDialogToolsOptionsTabSecurity")]
   ToolsOptionsTabSecurity = 1361,
   /// <summary>
   /// Margins tab of the Page Setup dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePageSetupTabMargins")]
+  [InteropEnumValue("wdDialogFilePageSetupTabMargins")]
   FilePageSetupTabMargins = 150000,
   /// <summary>
   /// Paper tab of the Page Setup dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePageSetupTabPaper")]
+  [InteropEnumValue("wdDialogFilePageSetupTabPaper")]
   FilePageSetupTabPaper = 150001,
   /// <summary>
   /// Layout tab of the Page Setup dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePageSetupTabLayout")]
+  [InteropEnumValue("wdDialogFilePageSetupTabLayout")]
   FilePageSetupTabLayout = 150003,
   /// <summary>
   /// Margins tab of the Page Setup dialog box, with Apply To drop-down list active.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePageSetupTabCharsLines")]
+  [InteropEnumValue("wdDialogFilePageSetupTabCharsLines")]
   FilePageSetupTabCharsLines = 150004,
   /// <summary>
   /// Symbols tab of the Symbol dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertSymbolTabSymbols")]
+  [InteropEnumValue("wdDialogInsertSymbolTabSymbols")]
   InsertSymbolTabSymbols = 200000,
   /// <summary>
   /// Special Characters tab of the Symbol dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertSymbolTabSpecialCharacters")]
+  [InteropEnumValue("wdDialogInsertSymbolTabSpecialCharacters")]
   InsertSymbolTabSpecialCharacters = 200001,
   /// <summary>
   /// All Footnotes tab of the Note Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogNoteOptionsTabAllFootnotes")]
+  [InteropEnumValue("wdDialogNoteOptionsTabAllFootnotes")]
   NoteOptionsTabAllFootnotes = 300000,
   /// <summary>
   /// All Endnotes tab of the Note Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogNoteOptionsTabAllEndnotes")]
+  [InteropEnumValue("wdDialogNoteOptionsTabAllEndnotes")]
   NoteOptionsTabAllEndnotes = 300001,
   /// <summary>
   /// Index tab of the Index and Tables dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndexAndTablesTabIndex")]
+  [InteropEnumValue("wdDialogInsertIndexAndTablesTabIndex")]
   InsertIndexAndTablesTabIndex = 400000,
   /// <summary>
   /// Table of Contents tab of the Index and Tables dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfContents")]
+  [InteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfContents")]
   InsertIndexAndTablesTabTableOfContents = 400001,
   /// <summary>
   /// Table of Figures tab of the Index and Tables dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfFigures")]
+  [InteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfFigures")]
   InsertIndexAndTablesTabTableOfFigures = 400002,
   /// <summary>
   /// Table of Authorities tab of the Index and Tables dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfAuthorities")]
+  [InteropEnumValue("wdDialogInsertIndexAndTablesTabTableOfAuthorities")]
   InsertIndexAndTablesTabTableOfAuthorities = 400003,
   /// <summary>
   /// Styles tab of the Organizer dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOrganizerTabStyles")]
+  [InteropEnumValue("wdDialogOrganizerTabStyles")]
   OrganizerTabStyles = 500000,
   /// <summary>
   /// AutoText tab of the Organizer dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOrganizerTabAutoText")]
+  [InteropEnumValue("wdDialogOrganizerTabAutoText")]
   OrganizerTabAutoText = 500001,
   /// <summary>
   /// Command Bars tab of the Organizer dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOrganizerTabCommandBars")]
+  [InteropEnumValue("wdDialogOrganizerTabCommandBars")]
   OrganizerTabCommandBars = 500002,
   /// <summary>
   /// Macros tab of the Organizer dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOrganizerTabMacros")]
+  [InteropEnumValue("wdDialogOrganizerTabMacros")]
   OrganizerTabMacros = 500003,
   /// <summary>
   /// Font tab of the Font dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatFontTabFont")]
+  [InteropEnumValue("wdDialogFormatFontTabFont")]
   FormatFontTabFont = 600000,
   /// <summary>
   /// Character Spacing tab of the Font dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatFontTabCharacterSpacing")]
+  [InteropEnumValue("wdDialogFormatFontTabCharacterSpacing")]
   FormatFontTabCharacterSpacing = 600001,
   /// <summary>
   /// Animation tab of the Font dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatFontTabAnimation")]
+  [InteropEnumValue("wdDialogFormatFontTabAnimation")]
   FormatFontTabAnimation = 600002,
   /// <summary>
   /// Borders tab of the Borders dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBordersAndShadingTabBorders")]
+  [InteropEnumValue("wdDialogFormatBordersAndShadingTabBorders")]
   FormatBordersAndShadingTabBorders = 700000,
   /// <summary>
   /// Page Border tab of the Borders dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBordersAndShadingTabPageBorder")]
+  [InteropEnumValue("wdDialogFormatBordersAndShadingTabPageBorder")]
   FormatBordersAndShadingTabPageBorder = 700001,
   /// <summary>
   /// Shading tab of the Borders dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBordersAndShadingTabShading")]
+  [InteropEnumValue("wdDialogFormatBordersAndShadingTabShading")]
   FormatBordersAndShadingTabShading = 700002,
   /// <summary>
   /// Envelopes tab of the Envelopes and Labels dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsEnvelopesAndLabelsTabEnvelopes")]
+  [InteropEnumValue("wdDialogToolsEnvelopesAndLabelsTabEnvelopes")]
   ToolsEnvelopesAndLabelsTabEnvelopes = 800000,
   /// <summary>
   /// Labels tab of the Envelopes and Labels dialog box. wdDialogFormatParagraphTabIndentsAndSpacing 1000000Indents
@@ -241,241 +241,241 @@ public enum WordDialogTab
   /// wdDialogEmailOptionsTabSignature 1900000E-mail Signature tab of the E- mail Options dialog box.
   /// wdDialogEmailOptionsTabStationary 1900001Personal Stationary tab of the E-mail Options dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsEnvelopesAndLabelsTabLabels")]
+  [InteropEnumValue("wdDialogToolsEnvelopesAndLabelsTabLabels")]
   ToolsEnvelopesAndLabelsTabLabels = 800001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatParagraphTabIndentsAndSpacing")]
+  [InteropEnumValue("wdDialogFormatParagraphTabIndentsAndSpacing")]
   FormatParagraphTabIndentsAndSpacing = 1000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatParagraphTabTextFlow")]
+  [InteropEnumValue("wdDialogFormatParagraphTabTextFlow")]
   FormatParagraphTabTextFlow = 1000001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatParagraphTabTeisai")]
+  [InteropEnumValue("wdDialogFormatParagraphTabTeisai")]
   FormatParagraphTabTeisai = 1000002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabColorsAndLines")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabColorsAndLines")]
   FormatDrawingObjectTabColorsAndLines = 1200000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabSize")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabSize")]
   FormatDrawingObjectTabSize = 1200001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabPosition")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabPosition")]
   FormatDrawingObjectTabPosition = 1200002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabWrapping")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabWrapping")]
   FormatDrawingObjectTabWrapping = 1200003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabPicture")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabPicture")]
   FormatDrawingObjectTabPicture = 1200004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabTextbox")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabTextbox")]
   FormatDrawingObjectTabTextbox = 1200005,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabWeb")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabWeb")]
   FormatDrawingObjectTabWeb = 1200006,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObjectTabHR")]
+  [InteropEnumValue("wdDialogFormatDrawingObjectTabHR")]
   FormatDrawingObjectTabHR = 1200007,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabFirstLetter")]
+  [InteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabFirstLetter")]
   ToolsAutoCorrectExceptionsTabFirstLetter = 1400000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabInitialCaps")]
+  [InteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabInitialCaps")]
   ToolsAutoCorrectExceptionsTabInitialCaps = 1400001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet")]
+  [InteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet")]
   ToolsAutoCorrectExceptionsTabHangulAndAlphabet = 1400002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabIac")]
+  [InteropEnumValue("wdDialogToolsAutoCorrectExceptionsTabIac")]
   ToolsAutoCorrectExceptionsTabIac = 1400003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBulletsAndNumberingTabBulleted")]
+  [InteropEnumValue("wdDialogFormatBulletsAndNumberingTabBulleted")]
   FormatBulletsAndNumberingTabBulleted = 1500000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBulletsAndNumberingTabNumbered")]
+  [InteropEnumValue("wdDialogFormatBulletsAndNumberingTabNumbered")]
   FormatBulletsAndNumberingTabNumbered = 1500001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBulletsAndNumberingTabOutlineNumbered")]
+  [InteropEnumValue("wdDialogFormatBulletsAndNumberingTabOutlineNumbered")]
   FormatBulletsAndNumberingTabOutlineNumbered = 1500002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLetterWizardTabLetterFormat")]
+  [InteropEnumValue("wdDialogLetterWizardTabLetterFormat")]
   LetterWizardTabLetterFormat = 1600000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLetterWizardTabRecipientInfo")]
+  [InteropEnumValue("wdDialogLetterWizardTabRecipientInfo")]
   LetterWizardTabRecipientInfo = 1600001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLetterWizardTabOtherElements")]
+  [InteropEnumValue("wdDialogLetterWizardTabOtherElements")]
   LetterWizardTabOtherElements = 1600002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLetterWizardTabSenderInfo")]
+  [InteropEnumValue("wdDialogLetterWizardTabSenderInfo")]
   LetterWizardTabSenderInfo = 1600003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManagerTabAutoCorrect")]
+  [InteropEnumValue("wdDialogToolsAutoManagerTabAutoCorrect")]
   ToolsAutoManagerTabAutoCorrect = 1700000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManagerTabAutoFormatAsYouType")]
+  [InteropEnumValue("wdDialogToolsAutoManagerTabAutoFormatAsYouType")]
   ToolsAutoManagerTabAutoFormatAsYouType = 1700001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManagerTabAutoText")]
+  [InteropEnumValue("wdDialogToolsAutoManagerTabAutoText")]
   ToolsAutoManagerTabAutoText = 1700002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManagerTabAutoFormat")]
+  [InteropEnumValue("wdDialogToolsAutoManagerTabAutoFormat")]
   ToolsAutoManagerTabAutoFormat = 1700003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManagerTabSmartTags")]
+  [InteropEnumValue("wdDialogToolsAutoManagerTabSmartTags")]
   ToolsAutoManagerTabSmartTags = 1700004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTablePropertiesTabTable")]
+  [InteropEnumValue("wdDialogTablePropertiesTabTable")]
   TablePropertiesTabTable = 1800000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTablePropertiesTabRow")]
+  [InteropEnumValue("wdDialogTablePropertiesTabRow")]
   TablePropertiesTabRow = 1800001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTablePropertiesTabColumn")]
+  [InteropEnumValue("wdDialogTablePropertiesTabColumn")]
   TablePropertiesTabColumn = 1800002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTablePropertiesTabCell")]
+  [InteropEnumValue("wdDialogTablePropertiesTabCell")]
   TablePropertiesTabCell = 1800003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEmailOptionsTabSignature")]
+  [InteropEnumValue("wdDialogEmailOptionsTabSignature")]
   EmailOptionsTabSignature = 1900000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEmailOptionsTabStationary")]
+  [InteropEnumValue("wdDialogEmailOptionsTabStationary")]
   EmailOptionsTabStationary = 1900001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEmailOptionsTabQuoting")]
+  [InteropEnumValue("wdDialogEmailOptionsTabQuoting")]
   EmailOptionsTabQuoting = 1900002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsGeneral")]
+  [InteropEnumValue("wdDialogWebOptionsGeneral")]
   WebOptionsGeneral = 2000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsBrowsers")]
+  [InteropEnumValue("wdDialogWebOptionsBrowsers")]
   WebOptionsBrowsers = 2000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsFiles")]
+  [InteropEnumValue("wdDialogWebOptionsFiles")]
   WebOptionsFiles = 2000001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsPictures")]
+  [InteropEnumValue("wdDialogWebOptionsPictures")]
   WebOptionsPictures = 2000002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsEncoding")]
+  [InteropEnumValue("wdDialogWebOptionsEncoding")]
   WebOptionsEncoding = 2000003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptionsFonts")]
+  [InteropEnumValue("wdDialogWebOptionsFonts")]
   WebOptionsFonts = 2000004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTemplates")]
+  [InteropEnumValue("wdDialogTemplates")]
   Templates = 2100000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTemplatesXMLSchema")]
+  [InteropEnumValue("wdDialogTemplatesXMLSchema")]
   TemplatesXMLSchema = 2100001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTemplatesXMLExpansionPacks")]
+  [InteropEnumValue("wdDialogTemplatesXMLExpansionPacks")]
   TemplatesXMLExpansionPacks = 2100002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTemplatesLinkedCSS")]
+  [InteropEnumValue("wdDialogTemplatesLinkedCSS")]
   TemplatesLinkedCSS = 2100003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogStyleManagementTabEdit")]
+  [InteropEnumValue("wdDialogStyleManagementTabEdit")]
   StyleManagementTabEdit = 2200000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogStyleManagementTabRecommend")]
+  [InteropEnumValue("wdDialogStyleManagementTabRecommend")]
   StyleManagementTabRecommend = 2200001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  [WordInteropEnumValue("wdDialogStyleManagementTabRestrict")]
+  [InteropEnumValue("wdDialogStyleManagementTabRestrict")]
   StyleManagementTabRestrict = 2200002
 }

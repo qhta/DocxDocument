@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogview?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoFileDialogView")]
+[InteropEnumType("Microsoft.Office.Core.MsoFileDialogView")]
 public enum FileDialogView
 {
   /// <summary>
   /// Files displayed in a list without details.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewList")]
+  [InteropEnumValue("msoFileDialogViewList")]
   List = 1,
   /// <summary>
   /// Files displayed in a list with detail information.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewDetails")]
+  [InteropEnumValue("msoFileDialogViewDetails")]
   Details,
   /// <summary>
   /// Files displayed in a list with a pane showing the selected file's properties.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewProperties")]
+  [InteropEnumValue("msoFileDialogViewProperties")]
   Properties,
   /// <summary>
   /// Files displayed in a list with a preview pane showing the selected file.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewPreview")]
+  [InteropEnumValue("msoFileDialogViewPreview")]
   Preview,
   /// <summary>
   /// Files displayed as thumbnails.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewThumbnail")]
+  [InteropEnumValue("msoFileDialogViewThumbnail")]
   Thumbnail,
   /// <summary>
   /// Files displayed as large icons.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewLargeIcons")]
+  [InteropEnumValue("msoFileDialogViewLargeIcons")]
   LargeIcons,
   /// <summary>
   /// Files displayed as small icons.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewSmallIcons")]
+  [InteropEnumValue("msoFileDialogViewSmallIcons")]
   SmallIcons,
   /// <summary>
   /// Files displayed in Web view.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewWebView")]
+  [InteropEnumValue("msoFileDialogViewWebView")]
   WebView,
   /// <summary>
   /// Files displayed as tiled icons.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileDialogViewTiles")]
+  [InteropEnumValue("msoFileDialogViewTiles")]
   Tiles
 }

@@ -8,22 +8,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartpicturetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlChartPictureType")]
+[InteropEnumType("Microsoft.Office.Core.XlChartPictureType")]
 public enum ChartPictureType
 {
   /// <summary>
   /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
-  [OfficeInteropEnumValue("xlStackScale")]
+  [InteropEnumValue("xlStackScale")]
   ackScale = 3,
   /// <summary>
   /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
-  [OfficeInteropEnumValue("xlStack")]
+  [InteropEnumValue("xlStack")]
   ack = 2,
   /// <summary>
   /// Picture is stretched the full length of stacked bar.
   /// </summary>
-  [OfficeInteropEnumValue("xlStretch")]
+  [InteropEnumValue("xlStretch")]
   retch = 1
 }

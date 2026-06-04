@@ -2,23 +2,23 @@
 /// <summary>
 ///   IFont Collection IIndex
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.FontCollectionIndexValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues))]
 public enum FontCollectionIndex
 {
   /// <summary>
   ///   Major IFont.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.FontCollectionIndexValues.Major))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues.Major))]
   Major,
   /// <summary>
   ///   Minor IFont.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.FontCollectionIndexValues.Minor))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues.Minor))]
   Minor,
   /// <summary>
   ///   None.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.FontCollectionIndexValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues.None))]
   None
 }

@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergecomparison?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMailMergeComparison")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMailMergeComparison")]
 public enum MailMergeComparison
 {
   /// <summary>
   /// A value is output if the mail merge field is equal to a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfEqual")]
+  [InteropEnumValue("wdMergeIfEqual")]
   Equal = 0,
   /// <summary>
   /// A value is output if the mail merge field is not equal to a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfNotEqual")]
+  [InteropEnumValue("wdMergeIfNotEqual")]
   NotEqual = 1,
   /// <summary>
   /// A value is output if the mail merge field is less than a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfLessThan")]
+  [InteropEnumValue("wdMergeIfLessThan")]
   LessThan = 2,
   /// <summary>
   /// A value is output if the mail merge field is greater than a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfGreaterThan")]
+  [InteropEnumValue("wdMergeIfGreaterThan")]
   GreaterThan = 3,
   /// <summary>
   /// A value is output if the mail merge field is less than or equal to a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfLessThanOrEqual")]
+  [InteropEnumValue("wdMergeIfLessThanOrEqual")]
   LessThanOrEqual = 4,
   /// <summary>
   /// A value is output if the mail merge field is greater than or equal to a value.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfGreaterThanOrEqual")]
+  [InteropEnumValue("wdMergeIfGreaterThanOrEqual")]
   GreaterThanOrEqual = 5,
   /// <summary>
   /// A value is output if the mail merge field is blank.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfIsBlank")]
+  [InteropEnumValue("wdMergeIfIsBlank")]
   IsBlank = 6,
   /// <summary>
   /// A value is output if the mail merge field is not blank.
   /// </summary>
-  [WordInteropEnumValue("wdMergeIfIsNotBlank")]
+  [InteropEnumValue("wdMergeIfIsNotBlank")]
   IsNotBlank = 7
 }

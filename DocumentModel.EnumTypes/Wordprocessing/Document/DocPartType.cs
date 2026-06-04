@@ -2,43 +2,43 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocPartValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.DocPartValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues))]
 public enum DocPartType
 {
   /// <summary>
   ///   No Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.None))]
   None,
   /// <summary>
   ///   Normal.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.Normal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.Normal))]
   Normal,
   /// <summary>
   ///   Automatically Replace Name With Content.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.AutoExp))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.AutoExp))]
   AutoExp,
   /// <summary>
   ///   AutoText User Interface Entry.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.Toolbar))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.Toolbar))]
   Toolbar,
   /// <summary>
   ///   AutoCorrect Entry.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.Speller))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.Speller))]
   Speller,
   /// <summary>
   ///   Form Field Help Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.FormField))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.FormField))]
   FormField,
   /// <summary>
   ///   Structured Document Tag Placeholder Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocPartValues.SdtPlaceholder))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocPartValues.SdtPlaceholder))]
   SdtPlaceholder
 }

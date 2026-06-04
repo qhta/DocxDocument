@@ -3,7 +3,7 @@
 ///   Specifies the semantic meaning of the N4H field in <see cref="HyperlinkInfo"/>.
 ///   Indicates the type of action to perform on a hyperlink or hyperlink field in a document model.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlNotMapped]
 public enum HyperlinkAction
 {

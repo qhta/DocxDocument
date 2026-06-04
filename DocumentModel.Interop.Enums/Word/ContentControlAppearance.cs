@@ -7,22 +7,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontrolappearance?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdContentControlAppearance")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdContentControlAppearance")]
 public enum ContentControlAppearance
 {
   /// <summary>
   /// Represents a content control shown as a shaded rectangle or bounding box (with optional title).
   /// </summary>
-  [WordInteropEnumValue("wdContentControlBoundingBox")]
+  [InteropEnumValue("wdContentControlBoundingBox")]
   BoundingBox = 0,
   /// <summary>
   /// Represents a content control that is not shown.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlTags")]
+  [InteropEnumValue("wdContentControlTags")]
   Tags = 1,
   /// <summary>
   /// Represents a content control shown as start and end markers.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlHidden")]
+  [InteropEnumValue("wdContentControlHidden")]
   Hidden = 2
 }

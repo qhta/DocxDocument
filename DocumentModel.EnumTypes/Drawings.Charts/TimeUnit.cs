@@ -4,8 +4,8 @@
 /// Defines the TimeUnit enumeration.
 /// Used in types such as DateAxis.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.TimeUnitValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues))]
 public enum TimeUnit
 {
   /// <summary>

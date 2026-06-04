@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcharacterwidth?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCharacterWidth")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCharacterWidth")]
 public enum CharacterWidth
 {
   /// <summary>
   /// Characters are displayed in half the character width.
   /// </summary>
-  [WordInteropEnumValue("wdWidthHalfWidth")]
+  [InteropEnumValue("wdWidthHalfWidth")]
   HalfWidth = 6,
   /// <summary>
   /// Characters are displayed in full character width.
   /// </summary>
-  [WordInteropEnumValue("wdWidthFullWidth")]
+  [InteropEnumValue("wdWidthFullWidth")]
   FullWidth = 7
 }

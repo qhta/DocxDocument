@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdlanguageid2000?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLanguageID2000")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLanguageID2000")]
 public enum LanguageID2000
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdChineseHongKong")]
+  [InteropEnumValue("wdChineseHongKong")]
   ChineseHongKong = 3076,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdChineseMacao")]
+  [InteropEnumValue("wdChineseMacao")]
   ChineseMacao = 5124,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishTrinidad")]
+  [InteropEnumValue("wdEnglishTrinidad")]
   EnglishTrinidad = 11273
 }

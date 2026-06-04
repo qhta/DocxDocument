@@ -4,7 +4,7 @@
 /// Defines the PosAlign enumeration.
 /// Used in types such as IChartTitle, ILegend, PosAlign.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum PosAlign
 {
   /// <summary>

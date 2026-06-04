@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstylehid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCaptionNumberStyleHID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCaptionNumberStyleHID")]
 public enum CaptionNumberStyleHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("emptyenum")]
+  [InteropEnumValue("emptyenum")]
   emptyenum = 0
 }

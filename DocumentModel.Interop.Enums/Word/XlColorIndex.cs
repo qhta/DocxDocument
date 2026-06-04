@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlColorIndex")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlColorIndex")]
 public enum XlColorIndex
 {
   /// <summary>
   /// No color.
   /// </summary>
-  [WordInteropEnumValue("xlColorIndexNone")]
+  [InteropEnumValue("xlColorIndexNone")]
   None = -4142,
   /// <summary>
   /// Automatic color.
   /// </summary>
-  [WordInteropEnumValue("xlColorIndexAutomatic")]
+  [InteropEnumValue("xlColorIndexAutomatic")]
   Automatic = -4105
 }

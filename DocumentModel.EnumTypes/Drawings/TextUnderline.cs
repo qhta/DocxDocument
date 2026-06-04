@@ -2,99 +2,99 @@
 /// <summary>
 ///   Text Underline Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.TextUnderlineValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues))]
 public enum TextUnderline
 {
   /// <summary>
   ///   Text Underline Enum ( None ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.None))]
   None = 1,
 
   /// <summary>
   ///   Text Underline Enum ( IWords ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Words))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Words))]
   IWords,
   /// <summary>
   ///   Text Underline Enum ( Single ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Single))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Single))]
   Single,
   /// <summary>
   ///   Text Underline Enum ( Double ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Double))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Double))]
   Double,
   /// <summary>
   ///   Text Underline Enum ( Heavy ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Heavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Heavy))]
   Heavy,
   /// <summary>
   ///   Text Underline Enum ( Dotted ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Dotted))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Dotted))]
   Dotted,
   /// <summary>
   ///   Text Underline Enum ( Heavy Dotted  ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.HeavyDotted))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.HeavyDotted))]
   HeavyDotted,
   /// <summary>
   ///   Text Underline Enum ( Dashed ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Dash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Dash))]
   Dash,
   /// <summary>
   ///   Text Underline Enum ( Heavy Dashed ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DashHeavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DashHeavy))]
   DashHeavy,
   /// <summary>
   ///   Text Underline Enum ( Long Dashed ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DashLong))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DashLong))]
   DashLong,
   /// <summary>
   ///   Text Underline Enum ( Heavy Long Dashed ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DashLongHeavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DashLongHeavy))]
   DashLongHeavy,
   /// <summary>
   ///   Text Underline Enum ( Dot Dash ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DotDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DotDash))]
   DotDash,
   /// <summary>
   ///   Text Underline Enum ( Heavy Dot Dash ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DotDashHeavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DotDashHeavy))]
   DotDashHeavy,
   /// <summary>
   ///   Text Underline Enum ( Dot Dot Dash ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DotDotDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DotDotDash))]
   DotDotDash,
   /// <summary>
   ///   Text Underline Enum ( Heavy Dot Dot Dash ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.DotDotDashHeavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.DotDotDashHeavy))]
   DotDotDashHeavy,
   /// <summary>
   ///   Text Underline Enum ( Wavy ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Wavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Wavy))]
   Wavy,
   /// <summary>
   ///   Text Underline Enum ( Heavy Wavy ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.WavyHeavy))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.WavyHeavy))]
   WavyHeavy,
   /// <summary>
   ///   Text Underline Enum ( Double Wavy ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.WavyDouble))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.WavyDouble))]
   WavyDouble
 }

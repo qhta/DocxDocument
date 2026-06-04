@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylesheetlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdStyleSheetLinkType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdStyleSheetLinkType")]
 public enum StyleSheetLinkType
 {
   /// <summary>
   /// Linked external style sheet.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSheetLinkTypeLinked")]
+  [InteropEnumValue("wdStyleSheetLinkTypeLinked")]
   Linked = 0,
   /// <summary>
   /// Imported internal style sheet.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSheetLinkTypeImported")]
+  [InteropEnumValue("wdStyleSheetLinkTypeImported")]
   Imported = 1
 }

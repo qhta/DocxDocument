@@ -2,23 +2,23 @@
 /// <summary>
 ///   Path Shade Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.PathShadeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PathShadeValues))]
 public enum PathShade
 {
   /// <summary>
   ///   IShape.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Shape))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathShadeValues.Shape))]
   IShape,
   /// <summary>
   ///   Circle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Circle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathShadeValues.Circle))]
   Circle,
   /// <summary>
   ///   IRectangle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Rectangle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PathShadeValues.Rectangle))]
   IRectangle
 }

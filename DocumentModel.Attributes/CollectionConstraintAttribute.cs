@@ -1,9 +1,8 @@
-﻿using ISystem;
-using ISystem.Collections.Generic;
-using ISystem.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace DocumentModel.Attributes;
-[AttributeUsage(AttributeTargets.IField | AttributeTargets.Property)]
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class CollectionConstraintAttribute: Attribute
 {
   public int? MinCount { get; set; }

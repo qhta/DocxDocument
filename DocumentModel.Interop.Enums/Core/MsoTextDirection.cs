@@ -3,22 +3,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextdirection?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoTextDirection")]
+[InteropEnumType("Microsoft.Office.Core.MsoTextDirection")]
 public enum TextDirection
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextDirectionMixed")]
+  [InteropEnumValue("msoTextDirectionMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextDirectionLeftToRight")]
+  [InteropEnumValue("msoTextDirectionLeftToRight")]
   LeftToRight = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextDirectionRightToLeft")]
+  [InteropEnumValue("msoTextDirectionRightToLeft")]
   RightToLeft = 2
 }

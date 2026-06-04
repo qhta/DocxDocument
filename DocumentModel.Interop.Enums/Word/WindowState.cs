@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwindowstate?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdWindowState")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWindowState")]
 public enum WindowState
 {
   /// <summary>
   /// Normal.
   /// </summary>
-  [WordInteropEnumValue("wdWindowStateNormal")]
+  [InteropEnumValue("wdWindowStateNormal")]
   Normal = 0,
   /// <summary>
   /// Maximized.
   /// </summary>
-  [WordInteropEnumValue("wdWindowStateMaximize")]
+  [InteropEnumValue("wdWindowStateMaximize")]
   Maximize = 1,
   /// <summary>
   /// Minimized.
   /// </summary>
-  [WordInteropEnumValue("wdWindowStateMinimize")]
+  [InteropEnumValue("wdWindowStateMinimize")]
   Minimize = 2
 }

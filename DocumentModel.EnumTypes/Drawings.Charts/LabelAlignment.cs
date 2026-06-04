@@ -4,8 +4,8 @@
 /// Defines the LabelAlignment enumeration.
 /// Used in types such as CategoryAxis, CategoryAxisConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.LabelAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues))]
 public enum LabelAlignment
 {
   /// <summary>

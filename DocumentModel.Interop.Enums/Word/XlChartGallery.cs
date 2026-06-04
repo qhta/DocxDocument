@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartgallery?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlChartGallery")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlChartGallery")]
 public enum XlChartGallery
 {
   /// <summary>
   /// The built-in gallery.
   /// </summary>
-  [WordInteropEnumValue("xlBuiltIn")]
+  [InteropEnumValue("xlBuiltIn")]
   BuiltIn = 21,
   /// <summary>
   /// The user-defined gallery.
   /// </summary>
-  [WordInteropEnumValue("xlUserDefined")]
+  [InteropEnumValue("xlUserDefined")]
   UserDefined = 22,
   /// <summary>
   /// Either of the galleries.
   /// </summary>
-  [WordInteropEnumValue("xlAnyGallery")]
+  [InteropEnumValue("xlAnyGallery")]
   AnyGallery = 23
 }

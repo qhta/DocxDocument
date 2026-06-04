@@ -7,22 +7,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.mailformat?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MailFormat")]
+[InteropEnumType("Microsoft.Office.Core.MailFormat")]
 public enum MailFormat
 {
   /// <summary>
   /// Plain text.
   /// </summary>
-  [OfficeInteropEnumValue("mfPlainText")]
+  [InteropEnumValue("mfPlainText")]
   PlainText = 1,
   /// <summary>
   /// Hypertext Markup Language (HTML) formatting.
   /// </summary>
-  [OfficeInteropEnumValue("mfHTML")]
+  [InteropEnumValue("mfHTML")]
   HTML,
   /// <summary>
   /// Rich Text Format (RTF) formatting.
   /// </summary>
-  [OfficeInteropEnumValue("mfRTF")]
+  [InteropEnumValue("mfRTF")]
   RTF
 }

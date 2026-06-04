@@ -4,8 +4,8 @@
 /// Defines the Error enumeration.
 /// Used in types such as CSharpVerifierHelper, AddOpenXmlEnumTypeAttribute, AddOpenXmlPropertyAttribute.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.ErrorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.ErrorValues))]
 public enum ErrorType
 {
   /// <summary>

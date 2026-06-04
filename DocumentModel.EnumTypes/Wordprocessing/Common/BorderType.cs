@@ -2,143 +2,143 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Border Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.BorderValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.BorderValues))]
 public enum BorderType
 {
   /// <summary>
   ///   No Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.None))]
   None,
   /// <summary>
   ///   Single Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Single))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Single))]
   Single,
   /// <summary>
   ///   Thick Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Thick))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Thick))]
   Thick,
   /// <summary>
   ///   Double Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Double))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Double))]
   Double,
   /// <summary>
   ///   Hairline Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Nil))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Nil))]
   Hairline,
   /// <summary>
   ///   Dotted Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Dotted))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Dotted))]
   Dotted,
   /// <summary>
   ///   Specifies a line border consisting of a dashed line around the parent object.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Dashed))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Dashed))]
   Dashed,
   /// <summary>
   ///   Dot Dash Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.DotDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.DotDash))]
   DotDash,
   /// <summary>
   ///   Dash Dot Dot Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.DotDotDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.DotDotDash))]
   DotDotDash,
   /// <summary>
   ///   Triple Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Triple))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Triple))]
   Triple,
   /// <summary>
   ///   Thin Thick Small Gap Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickSmallGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickSmallGap))]
   ThinThickSmallGap,
   /// <summary>
   ///   Small thick-thin lines border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThickThinSmallGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThickThinSmallGap))]
   ThickThinSmallGap,
   /// <summary>
   ///   Small thin-thick-thin Lines Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickThinSmallGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickThinSmallGap))]
   ThinThickThinSmallGap,
   /// <summary>
   ///   Thin Thick Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickMediumGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickMediumGap))]
   ThinThickMediumGap,
   /// <summary>
   ///   Thick Thin Line Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThickThinMediumGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThickThinMediumGap))]
   ThickThinMediumGap,
   /// <summary>
   ///   Thin-thick-thin Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickThinMediumGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickThinMediumGap))]
   ThinThickThinMediumGap,
   /// <summary>
   ///   Thin Thick Large Gap Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickLargeGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickLargeGap))]
   ThinThickLargeGap,
   /// <summary>
   ///   Thick Thin Large Gap Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThickThinLargeGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThickThinLargeGap))]
   ThickThinLargeGap,
   /// <summary>
   ///   Large thin-thick-thin Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThinThickThinLargeGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThinThickThinLargeGap))]
   ThinThickThinLargeGap,
   /// <summary>
   ///   Wavy Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Wave))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Wave))]
   Wave,
   /// <summary>
   ///   Double Wavy Lines Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.DoubleWave))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.DoubleWave))]
   DoubleWave,
   /// <summary>
   ///   Small Dash Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.DashSmallGap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.DashSmallGap))]
   DashSmallGap,
   /// <summary>
   ///   Stroked Dash Dot Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.DashDotStroked))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.DashDotStroked))]
   DashDotStroked,
   /// <summary>
   ///   3D Embossed Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThreeDEmboss))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThreeDEmboss))]
   ThreeDEmboss,
   /// <summary>
   ///   3D Engraved Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.ThreeDEngrave))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.ThreeDEngrave))]
   ThreeDEngrave,
   /// <summary>
   ///   Outset Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Outset))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Outset))]
   Outset,
   /// <summary>
   ///   Inset Border.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.BorderValues.Inset))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.BorderValues.Inset))]
   Inset,
 }

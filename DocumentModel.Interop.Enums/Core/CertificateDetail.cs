@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificatedetail?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("CertificateDetail")]
+[InteropEnumType("Microsoft.Office.Core.CertificateDetail")]
 public enum CertificateDetail
 {
   /// <summary>
   /// Specifies that the digital certificate is available for signing.
   /// </summary>
-  [OfficeInteropEnumValue("certdetAvailable")]
+  [InteropEnumValue("certdetAvailable")]
   Available,
   /// <summary>
   /// The holder of a Private Key corresponding to a Public Key.
   /// </summary>
-  [OfficeInteropEnumValue("certdetSubject")]
+  [InteropEnumValue("certdetSubject")]
   Subject,
   /// <summary>
   /// The issuing authority of the certification.
   /// </summary>
-  [OfficeInteropEnumValue("certdetIssuer")]
+  [InteropEnumValue("certdetIssuer")]
   Issuer,
   /// <summary>
   /// The expiration date of the certificate.
   /// </summary>
-  [OfficeInteropEnumValue("certdetExpirationDate")]
+  [InteropEnumValue("certdetExpirationDate")]
   ExpirationDate,
   /// <summary>
   /// A hash of the certificate's complete contents.
   /// </summary>
-  [OfficeInteropEnumValue("certdetThumbprint")]
+  [InteropEnumValue("certdetThumbprint")]
   Thumbprint
 }

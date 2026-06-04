@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskpriority?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSharedWorkspaceTaskPriority")]
+[InteropEnumType("Microsoft.Office.Core.MsoSharedWorkspaceTaskPriority")]
 public enum SharedWorkspaceTaskPriority
 {
   /// <summary>
   /// High priority.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskPriorityHigh")]
+  [InteropEnumValue("msoSharedWorkspaceTaskPriorityHigh")]
   High = 1,
   /// <summary>
   /// Normal priority.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskPriorityNormal")]
+  [InteropEnumValue("msoSharedWorkspaceTaskPriorityNormal")]
   Normal,
   /// <summary>
   /// Low priority.
   /// </summary>
-  [OfficeInteropEnumValue("msoSharedWorkspaceTaskPriorityLow")]
+  [InteropEnumValue("msoSharedWorkspaceTaskPriorityLow")]
   Low
 }

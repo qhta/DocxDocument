@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.backstagegroupstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("BackstageGroupStyle")]
+[InteropEnumType("Microsoft.Office.Core.BackstageGroupStyle")]
 public enum BackstageGroupStyle
 {
   /// <summary>
   /// Normal style.
   /// </summary>
-  [OfficeInteropEnumValue("BackstageGroupStyleNormal")]
+  [InteropEnumValue("BackstageGroupStyleNormal")]
   Normal,
   /// <summary>
   /// Warning style.
   /// </summary>
-  [OfficeInteropEnumValue("BackstageGroupStyleWarning")]
+  [InteropEnumValue("BackstageGroupStyleWarning")]
   Warning,
   /// <summary>
   /// Error style.
   /// </summary>
-  [OfficeInteropEnumValue("BackstageGroupStyleError")]
+  [InteropEnumValue("BackstageGroupStyleError")]
   Error
 }

@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnewdocumenttype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNewDocumentType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNewDocumentType")]
 public enum NewDocumentType
 {
   /// <summary>
   /// Blank document.
   /// </summary>
-  [WordInteropEnumValue("wdNewBlankDocument")]
+  [InteropEnumValue("wdNewBlankDocument")]
   BlankDocument = 0,
   /// <summary>
   /// Web page.
   /// </summary>
-  [WordInteropEnumValue("wdNewWebPage")]
+  [InteropEnumValue("wdNewWebPage")]
   WebPage = 1,
   /// <summary>
   /// E-mail message.
   /// </summary>
-  [WordInteropEnumValue("wdNewEmailMessage")]
+  [InteropEnumValue("wdNewEmailMessage")]
   EmailMessage = 2,
   /// <summary>
   /// Frameset.
   /// </summary>
-  [WordInteropEnumValue("wdNewFrameset")]
+  [InteropEnumValue("wdNewFrameset")]
   Frameset = 3,
   /// <summary>
   /// XML document.
   /// </summary>
-  [WordInteropEnumValue("wdNewXMLDocument")]
+  [InteropEnumValue("wdNewXMLDocument")]
   XMLDocument = 4
 }

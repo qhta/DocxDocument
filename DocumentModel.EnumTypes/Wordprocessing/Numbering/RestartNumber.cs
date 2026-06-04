@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RestartNumberValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.RestartNumberValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues))]
 public enum RestartNumber
 {
   /// <summary>
   ///   Continue Numbering From Previous ISection.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.RestartNumberValues.Continuous))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues.Continuous))]
   Continuous,
   /// <summary>
   ///   Restart Numbering For Each ISection.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.RestartNumberValues.EachSection))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues.EachSection))]
   EachSection,
   /// <summary>
   ///   Restart Numbering On Each Page.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.RestartNumberValues.EachPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues.EachPage))]
   EachPage
 }

@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmergesubtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMergeSubType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMergeSubType")]
 public enum MergeSubType
 {
   /// <summary>
   /// Other type of data source.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeOther")]
+  [InteropEnumValue("wdMergeSubTypeOther")]
   Other = 0,
   /// <summary>
   /// Microsoft Access.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeAccess")]
+  [InteropEnumValue("wdMergeSubTypeAccess")]
   Access = 1,
   /// <summary>
   /// Office Address List.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeOAL")]
+  [InteropEnumValue("wdMergeSubTypeOAL")]
   OAL = 2,
   /// <summary>
   /// OLE database.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeOLEDBWord")]
+  [InteropEnumValue("wdMergeSubTypeOLEDBWord")]
   OLEDBWord = 3,
   /// <summary>
   /// Microsoft Works.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeWorks")]
+  [InteropEnumValue("wdMergeSubTypeWorks")]
   Works = 4,
   /// <summary>
   /// OLE database.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeOLEDBText")]
+  [InteropEnumValue("wdMergeSubTypeOLEDBText")]
   OLEDBText = 5,
   /// <summary>
   /// Microsoft Outlook.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeOutlook")]
+  [InteropEnumValue("wdMergeSubTypeOutlook")]
   Outlook = 6,
   /// <summary>
   /// Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeWord")]
+  [InteropEnumValue("wdMergeSubTypeWord")]
   Word = 7,
   /// <summary>
   /// Microsoft Word 2000.
   /// </summary>
-  [WordInteropEnumValue("wdMergeSubTypeWord2000")]
+  [InteropEnumValue("wdMergeSubTypeWord2000")]
   Word2000 = 8
 }

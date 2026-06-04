@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadlength?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoArrowheadLength")]
+[InteropEnumType("Microsoft.Office.Core.MsoArrowheadLength")]
 public enum ArrowheadLength
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states in the specified shape range.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadLengthMixed")]
+  [InteropEnumValue("msoArrowheadLengthMixed")]
   LengthMixed = -2,
   /// <summary>
   /// Short.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadShort")]
+  [InteropEnumValue("msoArrowheadShort")]
   Short = 1,
   /// <summary>
   /// Medium.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadLengthMedium")]
+  [InteropEnumValue("msoArrowheadLengthMedium")]
   LengthMedium = 2,
   /// <summary>
   /// Long.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadLong")]
+  [InteropEnumValue("msoArrowheadLong")]
   Long = 3
 }

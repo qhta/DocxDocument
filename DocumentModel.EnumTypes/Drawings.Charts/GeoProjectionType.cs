@@ -4,7 +4,7 @@
 /// Defines the GeoProjectionType enumeration.
 /// Used in types such as Geography, GeoProjectionType, GeographyConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum GeoProjectionType
 {
   /// <summary>

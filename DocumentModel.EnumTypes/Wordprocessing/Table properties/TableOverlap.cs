@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableOverlapValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.TableOverlapValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues))]
 public enum TableOverlap
 {
   /// <summary>
   ///   Floating Table Cannot Overlap.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TableOverlapValues.Never))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues.Never))]
   Never,
   /// <summary>
   ///   Floating Table Can Overlap.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TableOverlapValues.Overlap))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues.Overlap))]
   Overlap
 }

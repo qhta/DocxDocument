@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosynccomparetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSyncCompareType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSyncCompareType")]
 public enum SyncCompareType
 {
   /// <summary>
   /// Compare and merge versions.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncCompareAndMerge")]
+  [InteropEnumValue("msoSyncCompareAndMerge")]
   AndMerge,
   /// <summary>
   /// Compare versions side-by-side.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncCompareSideBySide")]
+  [InteropEnumValue("msoSyncCompareSideBySide")]
   SideBySide
 }

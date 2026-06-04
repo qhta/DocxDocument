@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdorganizerobject?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOrganizerObject")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOrganizerObject")]
 public enum OrganizerObject
 {
   /// <summary>
   /// A style item.
   /// </summary>
-  [WordInteropEnumValue("wdOrganizerObjectStyles")]
+  [InteropEnumValue("wdOrganizerObjectStyles")]
   Styles = 0,
   /// <summary>
   /// An AutoText item.
   /// </summary>
-  [WordInteropEnumValue("wdOrganizerObjectAutoText")]
+  [InteropEnumValue("wdOrganizerObjectAutoText")]
   AutoText = 1,
   /// <summary>
   /// A command bar item.
   /// </summary>
-  [WordInteropEnumValue("wdOrganizerObjectCommandBars")]
+  [InteropEnumValue("wdOrganizerObjectCommandBars")]
   CommandBars = 2,
   /// <summary>
   /// A project item.
   /// </summary>
-  [WordInteropEnumValue("wdOrganizerObjectProjectItems")]
+  [InteropEnumValue("wdOrganizerObjectProjectItems")]
   ProjectItems = 3
 }

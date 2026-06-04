@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdanimation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdAnimation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdAnimation")]
 public enum WdAnimation
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationNone")]
+  [InteropEnumValue("wdAnimationNone")]
   None = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationLasVegasLights")]
+  [InteropEnumValue("wdAnimationLasVegasLights")]
   LasVegasLights = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationBlinkingBackground")]
+  [InteropEnumValue("wdAnimationBlinkingBackground")]
   BlinkingBackground = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationSparkleText")]
+  [InteropEnumValue("wdAnimationSparkleText")]
   SparkleText = 3,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationMarchingBlackAnts")]
+  [InteropEnumValue("wdAnimationMarchingBlackAnts")]
   MarchingBlackAnts = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationMarchingRedAnts")]
+  [InteropEnumValue("wdAnimationMarchingRedAnts")]
   MarchingRedAnts = 5,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdAnimationShimmer")]
+  [InteropEnumValue("wdAnimationShimmer")]
   Shimmer = 6
 }

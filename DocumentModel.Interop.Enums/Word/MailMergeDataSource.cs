@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedatasource?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMailMergeDataSource")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMailMergeDataSource")]
 public enum MailMergeDataSourceType
 {
   /// <summary>
   /// From Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromWord")]
+  [InteropEnumValue("wdMergeInfoFromWord")]
   MergeInfoFromWord = 0,
   /// <summary>
   /// From Microsoft Access using Dynamic Data Exchange (DDE).
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromAccessDDE")]
+  [InteropEnumValue("wdMergeInfoFromAccessDDE")]
   MergeInfoFromAccessDDE = 1,
   /// <summary>
   /// From Microsoft Excel using DDE.
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromExcelDDE")]
+  [InteropEnumValue("wdMergeInfoFromExcelDDE")]
   MergeInfoFromExcelDDE = 2,
   /// <summary>
   /// From MSQuery using DDE.
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromMSQueryDDE")]
+  [InteropEnumValue("wdMergeInfoFromMSQueryDDE")]
   MergeInfoFromMSQueryDDE = 3,
   /// <summary>
   /// From an Open Database Connectivity (ODBC) connection.
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromODBC")]
+  [InteropEnumValue("wdMergeInfoFromODBC")]
   MergeInfoFromODBC = 4,
   /// <summary>
   /// From an Office Data Source Object (ODSO).
   /// </summary>
-  [WordInteropEnumValue("wdMergeInfoFromODSO")]
+  [InteropEnumValue("wdMergeInfoFromODSO")]
   MergeInfoFromODSO = 5,
   /// <summary>
   /// No merge information provided.
   /// </summary>
-  [WordInteropEnumValue("wdNoMergeInfo")]
+  [InteropEnumValue("wdNoMergeInfo")]
   NoMergeInfo = -1
 }

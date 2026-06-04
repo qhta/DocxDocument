@@ -1,6 +1,4 @@
-﻿using ISystem;
-
-namespace DocumentModel.Attributes
+﻿namespace DocumentModel.Attributes
 {
   /// <summary>
   /// Defines the Office Open XML file format version.

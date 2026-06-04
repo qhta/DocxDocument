@@ -4,8 +4,8 @@
 /// Defines the TickLabelPosition enumeration.
 /// Used in types such as CategoryAxis, DateAxis, SeriesAxis.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.TickLabelPositionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues))]
 public enum TickLabelPosition
 {
   /// <summary>

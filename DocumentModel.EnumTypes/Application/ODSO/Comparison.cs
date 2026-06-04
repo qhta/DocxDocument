@@ -5,7 +5,7 @@
 /// Used in types such as AddOpenXmlElementAttribute, ArrayVariant, Base64Binary.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Comparison
 {
   /// <summary>IRange is before the other range</summary>

@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinecapstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoLineCapStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoLineCapStyle")]
 public enum LineCapStyle
 {
   /// <summary>
   /// Specifies a mixture of line caps.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineCapMixed")]
+  [InteropEnumValue("msoLineCapMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies a squared-off line cap.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineCapSquare")]
+  [InteropEnumValue("msoLineCapSquare")]
   Square = 1,
   /// <summary>
   /// Specifies a rounded line cap.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineCapRound")]
+  [InteropEnumValue("msoLineCapRound")]
   Round = 2,
   /// <summary>
   /// Specifies a flat line cap.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineCapFlat")]
+  [InteropEnumValue("msoLineCapFlat")]
   Flat = 3
 }

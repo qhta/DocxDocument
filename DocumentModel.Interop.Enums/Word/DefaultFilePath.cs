@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddefaultfilepath?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDefaultFilePath")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDefaultFilePath")]
 public enum DefaultFilePath
 {
   /// <summary>
   /// Documents path.
   /// </summary>
-  [WordInteropEnumValue("wdDocumentsPath")]
+  [InteropEnumValue("wdDocumentsPath")]
   DocumentsPath = 0,
   /// <summary>
   /// Pictures path.
   /// </summary>
-  [WordInteropEnumValue("wdPicturesPath")]
+  [InteropEnumValue("wdPicturesPath")]
   PicturesPath = 1,
   /// <summary>
   /// User templates path.
   /// </summary>
-  [WordInteropEnumValue("wdUserTemplatesPath")]
+  [InteropEnumValue("wdUserTemplatesPath")]
   UserTemplatesPath = 2,
   /// <summary>
   /// Workgroup templates path.
   /// </summary>
-  [WordInteropEnumValue("wdWorkgroupTemplatesPath")]
+  [InteropEnumValue("wdWorkgroupTemplatesPath")]
   WorkgroupTemplatesPath = 3,
   /// <summary>
   /// User Options path.
   /// </summary>
-  [WordInteropEnumValue("wdUserOptionsPath")]
+  [InteropEnumValue("wdUserOptionsPath")]
   UserOptionsPath = 4,
   /// <summary>
   /// Path for Auto Recover files.
   /// </summary>
-  [WordInteropEnumValue("wdAutoRecoverPath")]
+  [InteropEnumValue("wdAutoRecoverPath")]
   AutoRecoverPath = 5,
   /// <summary>
   /// Tools path.
   /// </summary>
-  [WordInteropEnumValue("wdToolsPath")]
+  [InteropEnumValue("wdToolsPath")]
   ToolsPath = 6,
   /// <summary>
   /// Tutorial path.
   /// </summary>
-  [WordInteropEnumValue("wdTutorialPath")]
+  [InteropEnumValue("wdTutorialPath")]
   TutorialPath = 7,
   /// <summary>
   /// Startup path.
   /// </summary>
-  [WordInteropEnumValue("wdStartupPath")]
+  [InteropEnumValue("wdStartupPath")]
   StartupPath = 8,
   /// <summary>
   /// Program path.
   /// </summary>
-  [WordInteropEnumValue("wdProgramPath")]
+  [InteropEnumValue("wdProgramPath")]
   ProgramPath = 9,
   /// <summary>
   /// Graphics filters path.
   /// </summary>
-  [WordInteropEnumValue("wdGraphicsFiltersPath")]
+  [InteropEnumValue("wdGraphicsFiltersPath")]
   GraphicsFiltersPath = 10,
   /// <summary>
   /// Text converters path.
   /// </summary>
-  [WordInteropEnumValue("wdTextConvertersPath")]
+  [InteropEnumValue("wdTextConvertersPath")]
   TextConvertersPath = 11,
   /// <summary>
   /// Proofing tools path.
   /// </summary>
-  [WordInteropEnumValue("wdProofingToolsPath")]
+  [InteropEnumValue("wdProofingToolsPath")]
   ProofingToolsPath = 12,
   /// <summary>
   /// Temp file path.
   /// </summary>
-  [WordInteropEnumValue("wdTempFilePath")]
+  [InteropEnumValue("wdTempFilePath")]
   TempFilePath = 13,
   /// <summary>
   /// Current folder path.
   /// </summary>
-  [WordInteropEnumValue("wdCurrentFolderPath")]
+  [InteropEnumValue("wdCurrentFolderPath")]
   CurrentFolderPath = 14,
   /// <summary>
   /// Style Gallery path.
   /// </summary>
-  [WordInteropEnumValue("wdStyleGalleryPath")]
+  [InteropEnumValue("wdStyleGalleryPath")]
   StyleGalleryPath = 15,
   /// <summary>
   /// Border art path.
   /// </summary>
-  [WordInteropEnumValue("wdBorderArtPath")]
+  [InteropEnumValue("wdBorderArtPath")]
   BorderArtPath = 19
 }

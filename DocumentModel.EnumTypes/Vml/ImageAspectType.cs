@@ -2,23 +2,23 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Image Scaling Behavior
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXV.ImageAspectValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.ImageAspectValues))]
 public enum ImageAspectType
 {
   /// <summary>
   ///   Ignore Aspect Ratio.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.ImageAspectValues.Ignore))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.ImageAspectValues.Ignore))]
   Ignore,
   /// <summary>
   ///   At Most.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.ImageAspectValues.AtMost))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.ImageAspectValues.AtMost))]
   AtMost,
   /// <summary>
   ///   At Least.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.ImageAspectValues.AtLeast))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.ImageAspectValues.AtLeast))]
   AtLeast
 }

@@ -8,67 +8,67 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlmarkerstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlMarkerStyle")]
+[InteropEnumType("Microsoft.Office.Core.XlMarkerStyle")]
 public enum MarkerStyle
 {
   /// <summary>
   /// Automatic markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleAutomatic")]
+  [InteropEnumValue("xlMarkerStyleAutomatic")]
   Automatic = -4105,
   /// <summary>
   /// Circular markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleCircle")]
+  [InteropEnumValue("xlMarkerStyleCircle")]
   Circle = 8,
   /// <summary>
   /// Long bar markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleDash")]
+  [InteropEnumValue("xlMarkerStyleDash")]
   Dash = -4115,
   /// <summary>
   /// Diamond-shaped markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleDiamond")]
+  [InteropEnumValue("xlMarkerStyleDiamond")]
   Diamond = 2,
   /// <summary>
   /// Short bar markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleDot")]
+  [InteropEnumValue("xlMarkerStyleDot")]
   Dot = -4118,
   /// <summary>
   /// No markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleNone")]
+  [InteropEnumValue("xlMarkerStyleNone")]
   None = -4142,
   /// <summary>
   /// Picture markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStylePicture")]
+  [InteropEnumValue("xlMarkerStylePicture")]
   Picture = -4147,
   /// <summary>
   /// Square markers with a plus sign.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStylePlus")]
+  [InteropEnumValue("xlMarkerStylePlus")]
   Plus = 9,
   /// <summary>
   /// Square markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleSquare")]
+  [InteropEnumValue("xlMarkerStyleSquare")]
   Square = 1,
   /// <summary>
   /// Square markers with an asterisk.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleStar")]
+  [InteropEnumValue("xlMarkerStyleStar")]
   Star = 5,
   /// <summary>
   /// Triangular markers.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleTriangle")]
+  [InteropEnumValue("xlMarkerStyleTriangle")]
   Triangle = 3,
   /// <summary>
   /// Square markers with an X.
   /// </summary>
-  [OfficeInteropEnumValue("xlMarkerStyleX")]
+  [InteropEnumValue("xlMarkerStyleX")]
   X = -4168
 }

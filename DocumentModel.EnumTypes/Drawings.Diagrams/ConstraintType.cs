@@ -4,8 +4,8 @@
 /// Defines the Constraint enumeration.
 /// Used in types such as AddOpenXmlElementAttribute, AddOpenXmlPropertyAttribute, AnalyzeHelper.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ConstraintValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues))]
 public enum ConstraintType
 {
   /// <summary>

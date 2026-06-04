@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturelineimage?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("SignatureLineImage")]
+[InteropEnumType("Microsoft.Office.Core.SignatureLineImage")]
 public enum SignatureLineImage
 {
   /// <summary>
   /// The SoftwareRequired image.
   /// </summary>
-  [OfficeInteropEnumValue("siglnimgSoftwareRequired")]
+  [InteropEnumValue("siglnimgSoftwareRequired")]
   SoftwareRequired,
   /// <summary>
   /// The Unsigned image.
   /// </summary>
-  [OfficeInteropEnumValue("siglnimgUnsigned")]
+  [InteropEnumValue("siglnimgUnsigned")]
   Unsigned,
   /// <summary>
   /// The SignedValid image.
   /// </summary>
-  [OfficeInteropEnumValue("siglnimgSignedValid")]
+  [InteropEnumValue("siglnimgSignedValid")]
   SignedValid,
   /// <summary>
   /// The SignedInvalid image.
   /// </summary>
-  [OfficeInteropEnumValue("siglnimgSignedInvalid")]
+  [InteropEnumValue("siglnimgSignedInvalid")]
   SignedInvalid,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("siglnimgSigned")]
+  [InteropEnumValue("siglnimgSigned")]
   Signed
 }

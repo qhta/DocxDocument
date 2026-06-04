@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoArrowheadStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoArrowheadStyle")]
 public enum ArrowheadStyle
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadStyleMixed")]
+  [InteropEnumValue("msoArrowheadStyleMixed")]
   StyleMixed = -2,
   /// <summary>
   /// No arrowhead.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadNone")]
+  [InteropEnumValue("msoArrowheadNone")]
   None = 1,
   /// <summary>
   /// Triangular.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadTriangle")]
+  [InteropEnumValue("msoArrowheadTriangle")]
   Triangle = 2,
   /// <summary>
   /// Open.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadOpen")]
+  [InteropEnumValue("msoArrowheadOpen")]
   Open = 3,
   /// <summary>
   /// Stealth-shaped.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadStealth")]
+  [InteropEnumValue("msoArrowheadStealth")]
   Stealth = 4,
   /// <summary>
   /// Diamond-shaped.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadDiamond")]
+  [InteropEnumValue("msoArrowheadDiamond")]
   Diamond = 5,
   /// <summary>
   /// Oval-shaped.
   /// </summary>
-  [OfficeInteropEnumValue("msoArrowheadOval")]
+  [InteropEnumValue("msoArrowheadOval")]
   Oval = 6
 }

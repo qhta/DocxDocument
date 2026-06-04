@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltimeunit?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlTimeUnit")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlTimeUnit")]
 public enum TimeUnit
 {
   /// <summary>
   /// Days
   /// </summary>
-  [WordInteropEnumValue("xlDays")]
+  [InteropEnumValue("xlDays")]
   Days = 0,
   /// <summary>
   /// Months
   /// </summary>
-  [WordInteropEnumValue("xlMonths")]
+  [InteropEnumValue("xlMonths")]
   Months = 1,
   /// <summary>
   /// Years
   /// </summary>
-  [WordInteropEnumValue("xlYears")]
+  [InteropEnumValue("xlYears")]
   Years = 2
 }

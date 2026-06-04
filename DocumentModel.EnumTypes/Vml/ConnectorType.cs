@@ -2,28 +2,28 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Connector Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.ConnectorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.ConnectorValues))]
 public enum ConnectorType
 {
   /// <summary>
   ///   No Connector.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ConnectorValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ConnectorValues.None))]
   None,
   /// <summary>
   ///   Straight Connector.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ConnectorValues.Straight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ConnectorValues.Straight))]
   Straight,
   /// <summary>
   ///   Elbow Connector.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ConnectorValues.Elbow))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ConnectorValues.Elbow))]
   Elbow,
   /// <summary>
   ///   Curved Connector.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ConnectorValues.Curved))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ConnectorValues.Curved))]
   Curved
 }

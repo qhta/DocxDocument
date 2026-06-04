@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.encryptionproviderdetail?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("EncryptionProviderDetail")]
+[InteropEnumType("Microsoft.Office.Core.EncryptionProviderDetail")]
 public enum EncryptionProviderDetail
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("encprovdetUrl")]
+  [InteropEnumValue("encprovdetUrl")]
   Url,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("encprovdetAlgorithm")]
+  [InteropEnumValue("encprovdetAlgorithm")]
   Algorithm,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("encprovdetBlockCipher")]
+  [InteropEnumValue("encprovdetBlockCipher")]
   BlockCipher,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("encprovdetCipherBlockSize")]
+  [InteropEnumValue("encprovdetCipherBlockSize")]
   CipherBlockSize,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("encprovdetCipherMode")]
+  [InteropEnumValue("encprovdetCipherMode")]
   CipherMode
 }

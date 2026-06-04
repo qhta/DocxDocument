@@ -6,127 +6,127 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtaskpanes?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTaskPanes")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTaskPanes")]
 public enum WdTaskPanes
 {
   /// <summary>
   /// Formatting pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneFormatting")]
+  [InteropEnumValue("wdTaskPaneFormatting")]
   Formatting = 0,
   /// <summary>
   /// Reveal formatting codes pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneRevealFormatting")]
+  [InteropEnumValue("wdTaskPaneRevealFormatting")]
   RevealFormatting = 1,
   /// <summary>
   /// Mail merge pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneMailMerge")]
+  [InteropEnumValue("wdTaskPaneMailMerge")]
   MailMerge = 2,
   /// <summary>
   /// Translate pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneTranslate")]
+  [InteropEnumValue("wdTaskPaneTranslate")]
   Translate = 3,
   /// <summary>
   /// Search pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneSearch")]
+  [InteropEnumValue("wdTaskPaneSearch")]
   Search = 4,
   /// <summary>
   /// XML structure pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneXMLStructure")]
+  [InteropEnumValue("wdTaskPaneXMLStructure")]
   XMLStructure = 5,
   /// <summary>
   /// Document protection pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneDocumentProtection")]
+  [InteropEnumValue("wdTaskPaneDocumentProtection")]
   DocumentProtection = 6,
   /// <summary>
   /// Document actions pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneDocumentActions")]
+  [InteropEnumValue("wdTaskPaneDocumentActions")]
   DocumentActions = 7,
   /// <summary>
   /// Shared workspace pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneSharedWorkspace")]
+  [InteropEnumValue("wdTaskPaneSharedWorkspace")]
   SharedWorkspace = 8,
   /// <summary>
   /// Help pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneHelp")]
+  [InteropEnumValue("wdTaskPaneHelp")]
   Help = 9,
   /// <summary>
   /// Research pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneResearch")]
+  [InteropEnumValue("wdTaskPaneResearch")]
   Research = 10,
   /// <summary>
   /// Fax service pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneFaxService")]
+  [InteropEnumValue("wdTaskPaneFaxService")]
   FaxService = 11,
   /// <summary>
   /// XML document pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneXMLDocument")]
+  [InteropEnumValue("wdTaskPaneXMLDocument")]
   XMLDocument = 12,
   /// <summary>
   /// Document updates pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneDocumentUpdates")]
+  [InteropEnumValue("wdTaskPaneDocumentUpdates")]
   DocumentUpdates = 13,
   /// <summary>
   /// Signature pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneSignature")]
+  [InteropEnumValue("wdTaskPaneSignature")]
   Signature = 14,
   /// <summary>
   /// Style inspector pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneStyleInspector")]
+  [InteropEnumValue("wdTaskPaneStyleInspector")]
   StyleInspector = 15,
   /// <summary>
   /// Document management task pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneDocumentManagement")]
+  [InteropEnumValue("wdTaskPaneDocumentManagement")]
   DocumentManagement = 16,
   /// <summary>
   /// Apply styles pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneApplyStyles")]
+  [InteropEnumValue("wdTaskPaneApplyStyles")]
   ApplyStyles = 17,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneNav")]
+  [InteropEnumValue("wdTaskPaneNav")]
   Nav = 18,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneSelection")]
+  [InteropEnumValue("wdTaskPaneSelection")]
   Selection = 19,
   /// <summary>
   /// Proofing pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneProofing")]
+  [InteropEnumValue("wdTaskPaneProofing")]
   Proofing = 20,
   /// <summary>
   /// XML mapping pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneXMLMapping")]
+  [InteropEnumValue("wdTaskPaneXMLMapping")]
   XMLMapping = 21,
   /// <summary>
   /// Revisions pane flex pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneRevPaneFlex")]
+  [InteropEnumValue("wdTaskPaneRevPaneFlex")]
   RevPaneFlex = 22,
   /// <summary>
   /// Thesaurus pane.
   /// </summary>
-  [WordInteropEnumValue("wdTaskPaneThesaurus")]
+  [InteropEnumValue("wdTaskPaneThesaurus")]
   Thesaurus = 23
 }

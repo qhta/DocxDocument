@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRelativeVerticalPosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRelativeVerticalPosition")]
 public enum RelativeVerticalPosition
 {
   /// <summary>
   /// Relative to margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionMargin")]
+  [InteropEnumValue("wdRelativeVerticalPositionMargin")]
   Margin = 0,
   /// <summary>
   /// Relative to page.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionPage")]
+  [InteropEnumValue("wdRelativeVerticalPositionPage")]
   Page = 1,
   /// <summary>
   /// Relative to paragraph.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionParagraph")]
+  [InteropEnumValue("wdRelativeVerticalPositionParagraph")]
   Paragraph = 2,
   /// <summary>
   /// Relative to line.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionLine")]
+  [InteropEnumValue("wdRelativeVerticalPositionLine")]
   Line = 3,
   /// <summary>
   /// Relative to top margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionTopMarginArea")]
+  [InteropEnumValue("wdRelativeVerticalPositionTopMarginArea")]
   TopMarginArea = 4,
   /// <summary>
   /// Relative to bottom margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionBottomMarginArea")]
+  [InteropEnumValue("wdRelativeVerticalPositionBottomMarginArea")]
   BottomMarginArea = 5,
   /// <summary>
   /// Relative to inner margin area.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionInnerMarginArea")]
+  [InteropEnumValue("wdRelativeVerticalPositionInnerMarginArea")]
   InnerMarginArea = 6,
   /// <summary>
   /// Relative to outer margin area.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeVerticalPositionOuterMarginArea")]
+  [InteropEnumValue("wdRelativeVerticalPositionOuterMarginArea")]
   OuterMarginArea = 7
 }

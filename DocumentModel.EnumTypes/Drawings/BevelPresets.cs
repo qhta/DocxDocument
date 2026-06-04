@@ -2,68 +2,68 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Bevel Presets
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.BevelPresetValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.BevelPresetValues))]
 public enum BevelPresets
 {
   /// <summary>
   ///   Relaxed Inset.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.RelaxedInset))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.RelaxedInset))]
   RelaxedInset,
   /// <summary>
   ///   Circle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Circle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Circle))]
   Circle,
   /// <summary>
   ///   Slope.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Slope))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Slope))]
   Slope,
   /// <summary>
   ///   Cross.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Cross))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Cross))]
   Cross,
   /// <summary>
   ///   Angle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Angle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Angle))]
   Angle,
   /// <summary>
   ///   Soft Round.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.SoftRound))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.SoftRound))]
   SoftRound,
   /// <summary>
   ///   Convex.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Convex))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Convex))]
   Convex,
   /// <summary>
   ///   Cool Slant.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.CoolSlant))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.CoolSlant))]
   CoolSlant,
   /// <summary>
   ///   Divot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Divot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Divot))]
   Divot,
   /// <summary>
   ///   Riblet.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.Riblet))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.Riblet))]
   Riblet,
   /// <summary>
   ///   Hard Edge.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.HardEdge))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.HardEdge))]
   HardEdge,
   /// <summary>
   ///   Art Deco.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BevelPresetValues.ArtDeco))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BevelPresetValues.ArtDeco))]
   ArtDeco
 }

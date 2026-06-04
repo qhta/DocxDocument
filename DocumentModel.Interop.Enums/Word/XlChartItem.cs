@@ -6,167 +6,167 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartitem?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlChartItem")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlChartItem")]
 public enum ChartItem
 {
   /// <summary>
   /// Data label.
   /// </summary>
-  [WordInteropEnumValue("xlDataLabel")]
+  [InteropEnumValue("xlDataLabel")]
   DataLabel = 0,
   /// <summary>
   /// Chart area.
   /// </summary>
-  [WordInteropEnumValue("xlChartArea")]
+  [InteropEnumValue("xlChartArea")]
   ChartArea = 2,
   /// <summary>
   /// Series.
   /// </summary>
-  [WordInteropEnumValue("xlSeries")]
+  [InteropEnumValue("xlSeries")]
   Series = 3,
   /// <summary>
   /// Chart title.
   /// </summary>
-  [WordInteropEnumValue("xlChartTitle")]
+  [InteropEnumValue("xlChartTitle")]
   ChartTitle = 4,
   /// <summary>
   /// Walls.
   /// </summary>
-  [WordInteropEnumValue("xlWalls")]
+  [InteropEnumValue("xlWalls")]
   Walls = 5,
   /// <summary>
   /// Corners.
   /// </summary>
-  [WordInteropEnumValue("xlCorners")]
+  [InteropEnumValue("xlCorners")]
   Corners = 6,
   /// <summary>
   /// Data table.
   /// </summary>
-  [WordInteropEnumValue("xlDataTable")]
+  [InteropEnumValue("xlDataTable")]
   DataTable = 7,
   /// <summary>
   /// Trend line.
   /// </summary>
-  [WordInteropEnumValue("xlTrendline")]
+  [InteropEnumValue("xlTrendline")]
   Trendline = 8,
   /// <summary>
   /// Error bars.
   /// </summary>
-  [WordInteropEnumValue("xlErrorBars")]
+  [InteropEnumValue("xlErrorBars")]
   ErrorBars = 9,
   /// <summary>
   /// X error bars.
   /// </summary>
-  [WordInteropEnumValue("xlXErrorBars")]
+  [InteropEnumValue("xlXErrorBars")]
   XErrorBars = 10,
   /// <summary>
   /// Y error bars.
   /// </summary>
-  [WordInteropEnumValue("xlYErrorBars")]
+  [InteropEnumValue("xlYErrorBars")]
   YErrorBars = 11,
   /// <summary>
   /// Legend entry.
   /// </summary>
-  [WordInteropEnumValue("xlLegendEntry")]
+  [InteropEnumValue("xlLegendEntry")]
   LegendEntry = 12,
   /// <summary>
   /// Legend key. public enum ChartItem
   /// </summary>
-  [WordInteropEnumValue("xlLegendKey")]
+  [InteropEnumValue("xlLegendKey")]
   LegendKey = 13,
   /// <summary>
   /// Shape.
   /// </summary>
-  [WordInteropEnumValue("xlShape")]
+  [InteropEnumValue("xlShape")]
   Shape = 14,
   /// <summary>
   /// Major gridlines.
   /// </summary>
-  [WordInteropEnumValue("xlMajorGridlines")]
+  [InteropEnumValue("xlMajorGridlines")]
   MajorGridlines = 15,
   /// <summary>
   /// Minor gridlines.
   /// </summary>
-  [WordInteropEnumValue("xlMinorGridlines")]
+  [InteropEnumValue("xlMinorGridlines")]
   MinorGridlines = 16,
   /// <summary>
   /// Axis title.
   /// </summary>
-  [WordInteropEnumValue("xlAxisTitle")]
+  [InteropEnumValue("xlAxisTitle")]
   AxisTitle = 17,
   /// <summary>
   /// Up bars.
   /// </summary>
-  [WordInteropEnumValue("xlUpBars")]
+  [InteropEnumValue("xlUpBars")]
   UpBars = 18,
   /// <summary>
   /// Plot area.
   /// </summary>
-  [WordInteropEnumValue("xlPlotArea")]
+  [InteropEnumValue("xlPlotArea")]
   PlotArea = 19,
   /// <summary>
   /// Down bars.
   /// </summary>
-  [WordInteropEnumValue("xlDownBars")]
+  [InteropEnumValue("xlDownBars")]
   DownBars = 20,
   /// <summary>
   /// Axis title.
   /// </summary>
-  [WordInteropEnumValue("xlAxis")]
+  [InteropEnumValue("xlAxis")]
   Axis = 21,
   /// <summary>
   /// Series lines.
   /// </summary>
-  [WordInteropEnumValue("xlSeriesLines")]
+  [InteropEnumValue("xlSeriesLines")]
   SeriesLines = 22,
   /// <summary>
   /// Floor.
   /// </summary>
-  [WordInteropEnumValue("xlFloor")]
+  [InteropEnumValue("xlFloor")]
   Floor = 23,
   /// <summary>
   /// Legend entry.
   /// </summary>
-  [WordInteropEnumValue("xlLegend")]
+  [InteropEnumValue("xlLegend")]
   Legend = 24,
   /// <summary>
   /// HiLo lines.
   /// </summary>
-  [WordInteropEnumValue("xlHiLoLines")]
+  [InteropEnumValue("xlHiLoLines")]
   HiLoLines = 25,
   /// <summary>
   /// Drop lines.
   /// </summary>
-  [WordInteropEnumValue("xlDropLines")]
+  [InteropEnumValue("xlDropLines")]
   DropLines = 26,
   /// <summary>
   /// Radar axis labels.
   /// </summary>
-  [WordInteropEnumValue("xlRadarAxisLabels")]
+  [InteropEnumValue("xlRadarAxisLabels")]
   RadarAxisLabels = 27,
   /// <summary>
   /// Nothing.
   /// </summary>
-  [WordInteropEnumValue("xlNothing")]
+  [InteropEnumValue("xlNothing")]
   Nothing = 28,
   /// <summary>
   /// Leader lines.
   /// </summary>
-  [WordInteropEnumValue("xlLeaderLines")]
+  [InteropEnumValue("xlLeaderLines")]
   LeaderLines = 29,
   /// <summary>
   /// Display unit label.
   /// </summary>
-  [WordInteropEnumValue("xlDisplayUnitLabel")]
+  [InteropEnumValue("xlDisplayUnitLabel")]
   DisplayUnitLabel = 30,
   /// <summary>
   /// PivotChart field button.
   /// </summary>
-  [WordInteropEnumValue("xlPivotChartFieldButton")]
+  [InteropEnumValue("xlPivotChartFieldButton")]
   PivotChartFieldButton = 31,
   /// <summary>
   /// PivotChart drop zone.
   /// </summary>
-  [WordInteropEnumValue("xlPivotChartDropZone")]
+  [InteropEnumValue("xlPivotChartDropZone")]
   PivotChartDropZone = 32
 }

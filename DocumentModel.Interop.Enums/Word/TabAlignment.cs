@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtabalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTabAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTabAlignment")]
 public enum TabAlignment
 {
   /// <summary>
   /// Left aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabLeft")]
+  [InteropEnumValue("wdAlignTabLeft")]
   Left = 0,
   /// <summary>
   /// Center aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabCenter")]
+  [InteropEnumValue("wdAlignTabCenter")]
   Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabRight")]
+  [InteropEnumValue("wdAlignTabRight")]
   Right = 2,
   /// <summary>
   /// Decimal aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabDecimal")]
+  [InteropEnumValue("wdAlignTabDecimal")]
   Decimal = 3,
   /// <summary>
   /// Bar aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabBar")]
+  [InteropEnumValue("wdAlignTabBar")]
   Bar = 4,
   /// <summary>
   /// List aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignTabList")]
+  [InteropEnumValue("wdAlignTabList")]
   List = 6
 }

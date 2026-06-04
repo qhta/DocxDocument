@@ -6,28 +6,28 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextcaps?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoTextCaps")]
+[InteropEnumType("Microsoft.Office.Core.MsoTextCaps")]
 public enum TextCaps
 {
   /// <summary>
   /// Display the text as mixed uppercase and lowercase letters.
   /// </summary>
-  [OfficeInteropEnumValue("msoCapsMixed")]
+  [InteropEnumValue("msoCapsMixed")]
   Mixed = -2,
   /// <summary>
   /// Display the text with no uppercase letters.
   /// </summary>
-  [OfficeInteropEnumValue("msoNoCaps")]
+  [InteropEnumValue("msoNoCaps")]
   NoCaps = 0,
   /// <summary>
   /// Display the text with any lowercase letters displayed as uppercase that are the same height as lowercase for
   /// the current font and size.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmallCaps")]
+  [InteropEnumValue("msoSmallCaps")]
   SmallCaps = 1,
   /// <summary>
   /// Display the text as all uppercase letters.
   /// </summary>
-  [OfficeInteropEnumValue("msoAllCaps")]
+  [InteropEnumValue("msoAllCaps")]
   AllCaps = 2
 }

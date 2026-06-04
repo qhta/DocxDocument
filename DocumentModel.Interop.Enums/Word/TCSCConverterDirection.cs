@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtcscconverterdirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTCSCConverterDirection")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTCSCConverterDirection")]
 public enum TCSCConverterDirection
 {
   /// <summary>
   /// Convert from Simplified Chinese to Traditional Chinese.
   /// </summary>
-  [WordInteropEnumValue("wdTCSCConverterDirectionSCTC")]
+  [InteropEnumValue("wdTCSCConverterDirectionSCTC")]
   SCTC = 0,
   /// <summary>
   /// Convert from Simplified Chinese to Traditional Chinese.
   /// </summary>
-  [WordInteropEnumValue("wdTCSCConverterDirectionTCSC")]
+  [InteropEnumValue("wdTCSCConverterDirectionTCSC")]
   TCSC = 1,
   /// <summary>
   /// Convert in the appropriate direction based on the detected language of the specified range.
   /// </summary>
-  [WordInteropEnumValue("wdTCSCConverterDirectionAuto")]
+  [InteropEnumValue("wdTCSCConverterDirectionAuto")]
   Auto = 2
 }

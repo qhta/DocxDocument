@@ -1,6 +1,4 @@
-﻿using ISystem;
-
-namespace DocumentModel.Attributes
+﻿namespace DocumentModel.Attributes
 {
   [AttributeUsage(AttributeTargets.Class |AttributeTargets.Interface, AllowMultiple = true)]
   public sealed class PartConstraintAttribute : Attribute, IConstraintAttribute

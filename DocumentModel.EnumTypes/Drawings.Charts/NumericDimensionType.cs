@@ -4,7 +4,7 @@
 /// Defines the NumericDimensionType enumeration.
 /// Used in types such as NumericDimension, NumericDimensionType, NumericDimensionConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum NumericDimensionType
 {
   /// <summary>

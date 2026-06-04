@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohorizontalanchor?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoHorizontalAnchor")]
+[InteropEnumType("Microsoft.Office.Core.MsoHorizontalAnchor")]
 public enum HorizontalAnchor
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue("msoHorizontalAnchorMixed")]
+  [InteropEnumValue("msoHorizontalAnchorMixed")]
   HorizontalAnchorMixed = -2,
   /// <summary>
   /// No alignment.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnchorNone")]
+  [InteropEnumValue("msoAnchorNone")]
   AnchorNone = 1,
   /// <summary>
   /// Text is centered horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnchorCenter")]
+  [InteropEnumValue("msoAnchorCenter")]
   AnchorCenter = 2
 }

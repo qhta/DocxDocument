@@ -6,167 +6,167 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCaptionNumberStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCaptionNumberStyle")]
 public enum CaptionNumberStyle
 {
   /// <summary>
   /// Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleArabic")]
+  [InteropEnumValue("wdCaptionNumberStyleArabic")]
   Arabic = 0,
   /// <summary>
   /// Uppercase roman style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleUppercaseRoman")]
+  [InteropEnumValue("wdCaptionNumberStyleUppercaseRoman")]
   UppercaseRoman = 1,
   /// <summary>
   /// Lowercase roman style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleLowercaseRoman")]
+  [InteropEnumValue("wdCaptionNumberStyleLowercaseRoman")]
   LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleUppercaseLetter")]
+  [InteropEnumValue("wdCaptionNumberStyleUppercaseLetter")]
   UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleLowercaseLetter")]
+  [InteropEnumValue("wdCaptionNumberStyleLowercaseLetter")]
   LowercaseLetter = 4,
   /// <summary>
   /// Kanji style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleKanji")]
+  [InteropEnumValue("wdCaptionNumberStyleKanji")]
   Kanji = 10,
   /// <summary>
   /// Kanji digit style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleKanjiDigit")]
+  [InteropEnumValue("wdCaptionNumberStyleKanjiDigit")]
   KanjiDigit = 11,
   /// <summary>
   /// Full-width Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleArabicFullWidth")]
+  [InteropEnumValue("wdCaptionNumberStyleArabicFullWidth")]
   ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleKanjiTraditional")]
+  [InteropEnumValue("wdCaptionNumberStyleKanjiTraditional")]
   KanjiTraditional = 16,
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleNumberInCircle")]
+  [InteropEnumValue("wdCaptionNumberStyleNumberInCircle")]
   NumberInCircle = 18,
   /// <summary>
   /// Ganada style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleGanada")]
+  [InteropEnumValue("wdCaptionNumberStyleGanada")]
   Ganada = 24,
   /// <summary>
   /// Chosung style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleChosung")]
+  [InteropEnumValue("wdCaptionNumberStyleChosung")]
   Chosung = 25,
   /// <summary>
   /// Zodiac style 1.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleZodiac1")]
+  [InteropEnumValue("wdCaptionNumberStyleZodiac1")]
   Zodiac1 = 30,
   /// <summary>
   /// Zodiac style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleZodiac2")]
+  [InteropEnumValue("wdCaptionNumberStyleZodiac2")]
   Zodiac2 = 31,
   /// <summary>
   /// Traditional Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleTradChinNum2")]
+  [InteropEnumValue("wdCaptionNumberStyleTradChinNum2")]
   TradChinNum2 = 34,
   /// <summary>
   /// Traditional Chinese number style 3.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleTradChinNum3")]
+  [InteropEnumValue("wdCaptionNumberStyleTradChinNum3")]
   TradChinNum3 = 35,
   /// <summary>
   /// Simplified Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleSimpChinNum2")]
+  [InteropEnumValue("wdCaptionNumberStyleSimpChinNum2")]
   SimpChinNum2 = 38,
   /// <summary>
   /// Simplified Chinese number style 3.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleSimpChinNum3")]
+  [InteropEnumValue("wdCaptionNumberStyleSimpChinNum3")]
   SimpChinNum3 = 39,
   /// <summary>
   /// Hanja read style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHanjaRead")]
+  [InteropEnumValue("wdCaptionNumberStyleHanjaRead")]
   HanjaRead = 41,
   /// <summary>
   /// Hanja read digit style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHanjaReadDigit")]
+  [InteropEnumValue("wdCaptionNumberStyleHanjaReadDigit")]
   HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHebrewLetter1")]
+  [InteropEnumValue("wdCaptionNumberStyleHebrewLetter1")]
   HebrewLetter1 = 45,
   /// <summary>
   /// Arabic letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleArabicLetter1")]
+  [InteropEnumValue("wdCaptionNumberStyleArabicLetter1")]
   ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHebrewLetter2")]
+  [InteropEnumValue("wdCaptionNumberStyleHebrewLetter2")]
   HebrewLetter2 = 47,
   /// <summary>
   /// Arabic letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleArabicLetter2")]
+  [InteropEnumValue("wdCaptionNumberStyleArabicLetter2")]
   ArabicLetter2 = 48,
   /// <summary>
   /// Hindi letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHindiLetter1")]
+  [InteropEnumValue("wdCaptionNumberStyleHindiLetter1")]
   HindiLetter1 = 49,
   /// <summary>
   /// Hindi letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHindiLetter2")]
+  [InteropEnumValue("wdCaptionNumberStyleHindiLetter2")]
   HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHindiArabic")]
+  [InteropEnumValue("wdCaptionNumberStyleHindiArabic")]
   HindiArabic = 51,
   /// <summary>
   /// Hindi cardinal style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleHindiCardinalText")]
+  [InteropEnumValue("wdCaptionNumberStyleHindiCardinalText")]
   HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleThaiLetter")]
+  [InteropEnumValue("wdCaptionNumberStyleThaiLetter")]
   ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleThaiArabic")]
+  [InteropEnumValue("wdCaptionNumberStyleThaiArabic")]
   ThaiArabic = 54,
   /// <summary>
   /// Thai cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleThaiCardinalText")]
+  [InteropEnumValue("wdCaptionNumberStyleThaiCardinalText")]
   ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionNumberStyleVietCardinalText")]
+  [InteropEnumValue("wdCaptionNumberStyleVietCardinalText")]
   VietCardinalText = 56
 }

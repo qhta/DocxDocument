@@ -6,102 +6,102 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdColorIndex")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdColorIndex")]
 public enum ColorIndex
 {
   /// <summary>
   /// Automatic color. Default; usually black.
   /// </summary>
-  [WordInteropEnumValue("wdAuto")]
+  [InteropEnumValue("wdAuto")]
   Auto = 0,
   /// <summary>
   /// Removes highlighting that has been applied.
   /// </summary>
-  [WordInteropEnumValue("wdNoHighlight")]
+  [InteropEnumValue("wdNoHighlight")]
   NoHighlight = 0,
   /// <summary>
   /// Black color.
   /// </summary>
-  [WordInteropEnumValue("wdBlack")]
+  [InteropEnumValue("wdBlack")]
   Black = 1,
   /// <summary>
   /// Blue color.
   /// </summary>
-  [WordInteropEnumValue("wdBlue")]
+  [InteropEnumValue("wdBlue")]
   Blue = 2,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  [WordInteropEnumValue("wdTurquoise")]
+  [InteropEnumValue("wdTurquoise")]
   Turquoise = 3,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  [WordInteropEnumValue("wdBrightGreen")]
+  [InteropEnumValue("wdBrightGreen")]
   BrightGreen = 4,
   /// <summary>
   /// Pink color.
   /// </summary>
-  [WordInteropEnumValue("wdPink")]
+  [InteropEnumValue("wdPink")]
   Pink = 5,
   /// <summary>
   /// Red color.
   /// </summary>
-  [WordInteropEnumValue("wdRed")]
+  [InteropEnumValue("wdRed")]
   Red = 6,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  [WordInteropEnumValue("wdYellow")]
+  [InteropEnumValue("wdYellow")]
   Yellow = 7,
   /// <summary>
   /// White color.
   /// </summary>
-  [WordInteropEnumValue("wdWhite")]
+  [InteropEnumValue("wdWhite")]
   White = 8,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  [WordInteropEnumValue("wdDarkBlue")]
+  [InteropEnumValue("wdDarkBlue")]
   DarkBlue = 9,
   /// <summary>
   /// Teal color.
   /// </summary>
-  [WordInteropEnumValue("wdTeal")]
+  [InteropEnumValue("wdTeal")]
   Teal = 10,
   /// <summary>
   /// Green color.
   /// </summary>
-  [WordInteropEnumValue("wdGreen")]
+  [InteropEnumValue("wdGreen")]
   Green = 11,
   /// <summary>
   /// Violet color.
   /// </summary>
-  [WordInteropEnumValue("wdViolet")]
+  [InteropEnumValue("wdViolet")]
   Violet = 12,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  [WordInteropEnumValue("wdDarkRed")]
+  [InteropEnumValue("wdDarkRed")]
   DarkRed = 13,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  [WordInteropEnumValue("wdDarkYellow")]
+  [InteropEnumValue("wdDarkYellow")]
   DarkYellow = 14,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  [WordInteropEnumValue("wdGray50")]
+  [InteropEnumValue("wdGray50")]
   Gray50 = 15,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  [WordInteropEnumValue("wdGray25")]
+  [InteropEnumValue("wdGray25")]
   Gray25 = 16,
   /// <summary>
   /// Color defined by document author.
   /// </summary>
-  [WordInteropEnumValue("wdByAuthor")]
+  [InteropEnumValue("wdByAuthor")]
   ByAuthor = -1
 }

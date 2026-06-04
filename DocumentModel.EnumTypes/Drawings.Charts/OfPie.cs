@@ -4,8 +4,8 @@
 /// Defines the OfPie enumeration.
 /// Used in types such as OfPieChart.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.OfPieValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.OfPieValues))]
 public enum OfPie
 {
   /// <summary>

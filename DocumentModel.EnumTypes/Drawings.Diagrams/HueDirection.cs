@@ -4,8 +4,8 @@
 /// Defines the HueDirection enumeration.
 /// Used in types such as ColorsType, ColorsTypeConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.HueDirectionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues))]
 public enum HueDirection
 {
   /// <summary>

@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdkeycategory?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdKeyCategory")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdKeyCategory")]
 public enum KeyCategory
 {
   /// <summary>
   /// Key is disabled.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryDisable")]
+  [InteropEnumValue("wdKeyCategoryDisable")]
   Disable = 0,
   /// <summary>
   /// Key is assigned to a command
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryCommand")]
+  [InteropEnumValue("wdKeyCategoryCommand")]
   Command = 1,
   /// <summary>
   /// Key is assigned to a
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryMacro")]
+  [InteropEnumValue("wdKeyCategoryMacro")]
   Macro = 2,
   /// <summary>
   /// Key is assigned to a font.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryFont")]
+  [InteropEnumValue("wdKeyCategoryFont")]
   Font = 3,
   /// <summary>
   /// Key is assigned to autotext.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryAutoText")]
+  [InteropEnumValue("wdKeyCategoryAutoText")]
   AutoText = 4,
   /// <summary>
   /// Key is assigned to a style.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryStyle")]
+  [InteropEnumValue("wdKeyCategoryStyle")]
   Style = 5,
   /// <summary>
   /// Key is assigned to a symbol.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategorySymbol")]
+  [InteropEnumValue("wdKeyCategorySymbol")]
   Symbol = 6,
   /// <summary>
   /// Key is assigned to a prefix.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryPrefix")]
+  [InteropEnumValue("wdKeyCategoryPrefix")]
   Prefix = 7,
   /// <summary>
   /// Key is not assigned.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCategoryNil")]
+  [InteropEnumValue("wdKeyCategoryNil")]
   Nil = -1
 }

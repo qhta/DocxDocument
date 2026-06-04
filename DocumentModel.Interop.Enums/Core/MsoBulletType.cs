@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobullettype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBulletType")]
+[InteropEnumType("Microsoft.Office.Core.MsoBulletType")]
 public enum BulletType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletMixed")]
+  [InteropEnumValue("msoBulletMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletNone")]
+  [InteropEnumValue("msoBulletNone")]
   None = 0,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletUnnumbered")]
+  [InteropEnumValue("msoBulletUnnumbered")]
   Unnumbered = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletNumbered")]
+  [InteropEnumValue("msoBulletNumbered")]
   Numbered = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletPicture")]
+  [InteropEnumValue("msoBulletPicture")]
   Picture = 3
 }

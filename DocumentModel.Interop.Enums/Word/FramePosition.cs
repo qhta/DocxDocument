@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframeposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFramePosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFramePosition")]
 public enum FramePosition
 {
   /// <summary>
   /// Top margin.
   /// </summary>
-  [WordInteropEnumValue("wdFrameTop")]
+  [InteropEnumValue("wdFrameTop")]
   Top = -999999,
   /// <summary>
   /// Left margin.
   /// </summary>
-  [WordInteropEnumValue("wdFrameLeft")]
+  [InteropEnumValue("wdFrameLeft")]
   Left = -999998,
   /// <summary>
   /// Bottom margin.
   /// </summary>
-  [WordInteropEnumValue("wdFrameBottom")]
+  [InteropEnumValue("wdFrameBottom")]
   Bottom = -999997,
   /// <summary>
   /// Right margin.
   /// </summary>
-  [WordInteropEnumValue("wdFrameRight")]
+  [InteropEnumValue("wdFrameRight")]
   Right = -999996,
   /// <summary>
   /// Center of document.
   /// </summary>
-  [WordInteropEnumValue("wdFrameCenter")]
+  [InteropEnumValue("wdFrameCenter")]
   Center = -999995,
   /// <summary>
   /// Content on inside of frame.
   /// </summary>
-  [WordInteropEnumValue("wdFrameInside")]
+  [InteropEnumValue("wdFrameInside")]
   Inside = -999994,
   /// <summary>
   /// Content on outside of frame.
   /// </summary>
-  [WordInteropEnumValue("wdFrameOutside")]
+  [InteropEnumValue("wdFrameOutside")]
   Outside = -999993
 }

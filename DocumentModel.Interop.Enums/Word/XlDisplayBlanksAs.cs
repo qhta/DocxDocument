@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xldisplayblanksas?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlDisplayBlanksAs")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlDisplayBlanksAs")]
 public enum DisplayBlanksAs
 {
   /// <summary>
   /// Blank cells are not plotted.
   /// </summary>
-  [WordInteropEnumValue("xlNotPlotted")]
+  [InteropEnumValue("xlNotPlotted")]
   NotPlotted = 1,
   /// <summary>
   /// Blanks are plotted as zero.
   /// </summary>
-  [WordInteropEnumValue("xlZero")]
+  [InteropEnumValue("xlZero")]
   Zero = 2,
   /// <summary>
   /// Values are interpolated into the chart.
   /// </summary>
-  [WordInteropEnumValue("xlInterpolated")]
+  [InteropEnumValue("xlInterpolated")]
   Interpolated = 3
 }

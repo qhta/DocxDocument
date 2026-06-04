@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the StylePaneSortMethods enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlEnumType(typeof(string))]
 public enum StylePaneSortMethods
 {

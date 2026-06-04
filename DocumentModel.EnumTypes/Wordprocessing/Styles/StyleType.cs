@@ -2,8 +2,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the StyleValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXM.StyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Math.StyleValues))]
 public enum StyleType
 {
   /// <summary>

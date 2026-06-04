@@ -6,29 +6,29 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdchevronconvertrule?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdChevronConvertRule")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdChevronConvertRule")]
 public enum ChevronConvertRule
 {
   /// <summary>
   /// The converter passes the text through without attempting any interpretation.
   /// </summary>
-  [WordInteropEnumValue("wdNeverConvert")]
+  [InteropEnumValue("wdNeverConvert")]
   NeverConvert = 0,
   /// <summary>
   /// The converter attempts to convert text enclosed in chevrons (Â« Â») to mail merge fields.
   /// </summary>
-  [WordInteropEnumValue("wdAlwaysConvert")]
+  [InteropEnumValue("wdAlwaysConvert")]
   AlwaysConvert = 1,
   /// <summary>
   /// The converter prompts the user to convert or not convert chevrons when a Word for the Macintosh document is
   /// opened.
   /// </summary>
-  [WordInteropEnumValue("wdAskToNotConvert")]
+  [InteropEnumValue("wdAskToNotConvert")]
   AskToNotConvert = 2,
   /// <summary>
   /// The converter prompts the user to convert or not convert chevrons when a Word for the Macintosh document is
   /// opened.
   /// </summary>
-  [WordInteropEnumValue("wdAskToConvert")]
+  [InteropEnumValue("wdAskToConvert")]
   AskToConvert = 3
 }

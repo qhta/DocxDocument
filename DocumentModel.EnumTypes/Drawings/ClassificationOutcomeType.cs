@@ -2,28 +2,28 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ClassificationOutcomeType enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO19P.ClassificationOutcomeType))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType))]
 public enum ClassificationOutcomeType
 {
   /// <summary>
   ///   none.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO19P.ClassificationOutcomeType.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType.None))]
   None,
   /// <summary>
   ///   hdr.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO19P.ClassificationOutcomeType.Hdr))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType.Hdr))]
   Hdr,
   /// <summary>
   ///   ftr.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO19P.ClassificationOutcomeType.Ftr))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType.Ftr))]
   Ftr,
   /// <summary>
   ///   watermark.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO19P.ClassificationOutcomeType.Watermark))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType.Watermark))]
   Watermark
 }

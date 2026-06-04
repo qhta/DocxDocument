@@ -3,8 +3,8 @@
 /// Defines the SchemeColor enumeration.
 /// Used in types such as ColorType, SchemeColor, SolidColorFillProperties.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.SchemeColorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues))]
 public enum SchemeColor
 {
   /// <summary>

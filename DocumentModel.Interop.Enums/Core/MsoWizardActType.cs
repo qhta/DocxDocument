@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowizardacttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoWizardActType")]
+[InteropEnumType("Microsoft.Office.Core.MsoWizardActType")]
 public enum WizardActType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoWizardActInactive")]
+  [InteropEnumValue("msoWizardActInactive")]
   Inactive,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoWizardActActive")]
+  [InteropEnumValue("msoWizardActActive")]
   Active,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoWizardActSuspend")]
+  [InteropEnumValue("msoWizardActSuspend")]
   Suspend,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoWizardActResume")]
+  [InteropEnumValue("msoWizardActResume")]
   Resume
 }

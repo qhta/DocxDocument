@@ -6,22 +6,22 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathhorizaligntype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOMathHorizAlignType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOMathHorizAlignType")]
 public enum OMathHorizAlignType
 {
   /// <summary>
   /// Centered.
   /// </summary>
-  [WordInteropEnumValue("wdOMathHorizAlignCenter")]
+  [InteropEnumValue("wdOMathHorizAlignCenter")]
   Center = 0,
   /// <summary>
   /// Left alignment.
   /// </summary>
-  [WordInteropEnumValue("wdOMathHorizAlignLeft")]
+  [InteropEnumValue("wdOMathHorizAlignLeft")]
   Left = 1,
   /// <summary>
   /// Right alignment.
   /// </summary>
-  [WordInteropEnumValue("wdOMathHorizAlignRight")]
+  [InteropEnumValue("wdOMathHorizAlignRight")]
   Right = 2
 }

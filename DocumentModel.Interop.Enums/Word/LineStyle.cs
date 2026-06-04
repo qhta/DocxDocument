@@ -6,135 +6,135 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlinestyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLineStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLineStyle")]
 public enum LineStyle
 {
   /// <summary>
   /// No border.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleNone")]
+  [InteropEnumValue("wdLineStyleNone")]
   None = 0,
   /// <summary>
   /// A single solid line.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleSingle")]
+  [InteropEnumValue("wdLineStyleSingle")]
   Single = 1,
   /// <summary>
   /// Dots.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDot")]
+  [InteropEnumValue("wdLineStyleDot")]
   Dot = 2,
   /// <summary>
   /// A dash followed by a small gap.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDashSmallGap")]
+  [InteropEnumValue("wdLineStyleDashSmallGap")]
   DashSmallGap = 3,
   /// <summary>
   /// A dash followed by a large gap.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDashLargeGap")]
+  [InteropEnumValue("wdLineStyleDashLargeGap")]
   DashLargeGap = 4,
   /// <summary>
   /// A dash followed by a dot.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDashDot")]
+  [InteropEnumValue("wdLineStyleDashDot")]
   DashDot = 5,
   /// <summary>
   /// A dash followed by two dots.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDashDotDot")]
+  [InteropEnumValue("wdLineStyleDashDotDot")]
   DashDotDot = 6,
   /// <summary>
   /// Double solid lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDouble")]
+  [InteropEnumValue("wdLineStyleDouble")]
   Double = 7,
   /// <summary>
   /// Three solid thin lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleTriple")]
+  [InteropEnumValue("wdLineStyleTriple")]
   Triple = 8,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line with a small gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickSmallGap")]
+  [InteropEnumValue("wdLineStyleThinThickSmallGap")]
   ThinThickSmallGap = 9,
   /// <summary>
   /// An internal single thick solid line surrounded by a single thin solid line with a small gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThickThinSmallGap")]
+  [InteropEnumValue("wdLineStyleThickThinSmallGap")]
   ThickThinSmallGap = 10,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
   /// line with a small gap between all lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickThinSmallGap")]
+  [InteropEnumValue("wdLineStyleThinThickThinSmallGap")]
   ThinThickThinSmallGap = 11,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line with a medium gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickMedGap")]
+  [InteropEnumValue("wdLineStyleThinThickMedGap")]
   ThinThickMedGap = 12,
   /// <summary>
   /// An internal single thick solid line surrounded by a single thin solid line with a medium gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThickThinMedGap")]
+  [InteropEnumValue("wdLineStyleThickThinMedGap")]
   ThickThinMedGap = 13,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
   /// line with a medium gap between all lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickThinMedGap")]
+  [InteropEnumValue("wdLineStyleThinThickThinMedGap")]
   ThinThickThinMedGap = 14,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line with a large gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickLargeGap")]
+  [InteropEnumValue("wdLineStyleThinThickLargeGap")]
   ThinThickLargeGap = 15,
   /// <summary>
   /// An internal single thick solid line surrounded by a single thin solid line with a large gap between them.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThickThinLargeGap")]
+  [InteropEnumValue("wdLineStyleThickThinLargeGap")]
   ThickThinLargeGap = 16,
   /// <summary>
   /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
   /// line with a large gap between all lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleThinThickThinLargeGap")]
+  [InteropEnumValue("wdLineStyleThinThickThinLargeGap")]
   ThinThickThinLargeGap = 17,
   /// <summary>
   /// A single wavy solid line.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleSingleWavy")]
+  [InteropEnumValue("wdLineStyleSingleWavy")]
   SingleWavy = 18,
   /// <summary>
   /// Double wavy solid lines.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDoubleWavy")]
+  [InteropEnumValue("wdLineStyleDoubleWavy")]
   DoubleWavy = 19,
   /// <summary>
   /// A dash followed by a dot stroke, thus rendering a border similar to a barber pole.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleDashDotStroked")]
+  [InteropEnumValue("wdLineStyleDashDotStroked")]
   DashDotStroked = 20,
   /// <summary>
   /// The border appears to have a 3-D embossed look.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleEmboss3D")]
+  [InteropEnumValue("wdLineStyleEmboss3D")]
   Emboss3D = 21,
   /// <summary>
   /// The border appears to have a 3-D engraved look.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleEngrave3D")]
+  [InteropEnumValue("wdLineStyleEngrave3D")]
   Engrave3D = 22,
   /// <summary>
   /// The border appears to be outset.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleOutset")]
+  [InteropEnumValue("wdLineStyleOutset")]
   Outset = 23,
   /// <summary>
   /// The border appears to be inset.
   /// </summary>
-  [WordInteropEnumValue("wdLineStyleInset")]
+  [InteropEnumValue("wdLineStyleInset")]
   Inset = 24
 }

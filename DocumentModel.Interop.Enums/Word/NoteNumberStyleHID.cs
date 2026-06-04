@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnotenumberstylehid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNoteNumberStyleHID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNoteNumberStyleHID")]
 public enum NoteNumberStyleHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("emptyenum")]
+  [InteropEnumValue("emptyenum")]
   emptyenum = 0
 }

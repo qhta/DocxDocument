@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsummarylength?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSummaryLength")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSummaryLength")]
 public enum SummaryLength
 {
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd75Percent")]
+  [InteropEnumValue("wd75Percent")]
   SummaryLength75Percent = -9,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd50Percent")]
+  [InteropEnumValue("wd50Percent")]
   SummaryLength50Percent = -8,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd25Percent")]
+  [InteropEnumValue("wd25Percent")]
   SummaryLength25Percent = -7,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd10Percent")]
+  [InteropEnumValue("wd10Percent")]
   SummaryLength10Percent = -6,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd500Words")]
+  [InteropEnumValue("wd500Words")]
   SummaryLength500Words = -5,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd100Words")]
+  [InteropEnumValue("wd100Words")]
   SummaryLength100Words = -4,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd20Sentences")]
+  [InteropEnumValue("wd20Sentences")]
   SummaryLength20Sentences = -3,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  [WordInteropEnumValue("wd10Sentences")]
+  [InteropEnumValue("wd10Sentences")]
   SummaryLength10Sentences = -2
 }

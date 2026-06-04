@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtoaformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdToaFormat")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdToaFormat")]
 public enum ToaFormat
 {
   /// <summary>
   /// Template formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOATemplate")]
+  [InteropEnumValue("wdTOATemplate")]
   Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOAClassic")]
+  [InteropEnumValue("wdTOAClassic")]
   Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOADistinctive")]
+  [InteropEnumValue("wdTOADistinctive")]
   Distinctive = 2,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOAFormal")]
+  [InteropEnumValue("wdTOAFormal")]
   Formal = 3,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOASimple")]
+  [InteropEnumValue("wdTOASimple")]
   Simple = 4
 }

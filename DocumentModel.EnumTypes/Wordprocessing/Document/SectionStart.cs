@@ -2,33 +2,33 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SectionMarkValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.SectionMarkValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues))]
 public enum SectionStart
 {
   /// <summary>
   ///   Next Page ISection Break.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.NextPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues.NextPage))]
   NextPage,
   /// <summary>
   ///   Column Section Break.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.NextColumn))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues.NextColumn))]
   NextColumn,
   /// <summary>
   ///   Continuous ISection Break.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.Continuous))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues.Continuous))]
   Continuous,
   /// <summary>
   ///   Even Page ISection Break.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.EvenPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues.EvenPage))]
   EvenPage,
   /// <summary>
   ///   Odd Page ISection Break.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.OddPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues.OddPage))]
   OddPage
 }

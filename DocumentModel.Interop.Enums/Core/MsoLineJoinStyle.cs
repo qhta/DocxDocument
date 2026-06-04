@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinejoinstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoLineJoinStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoLineJoinStyle")]
 public enum LineJoinStyle
 {
   /// <summary>
   /// Specifies a mixture of join types.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineJoinMixed")]
+  [InteropEnumValue("msoLineJoinMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies a rounded join.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineJoinRound")]
+  [InteropEnumValue("msoLineJoinRound")]
   Round = 1,
   /// <summary>
   /// Specifies a beveled join.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineJoinBevel")]
+  [InteropEnumValue("msoLineJoinBevel")]
   Bevel = 2,
   /// <summary>
   /// Specifies a mitered join.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineJoinMiter")]
+  [InteropEnumValue("msoLineJoinMiter")]
   Miter = 3
 }

@@ -7,497 +7,497 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdKey")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdKey")]
 public enum Key
 {
   /// <summary>
   /// The BACKSPACE key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyBackspace")]
+  [InteropEnumValue("wdKeyBackspace")]
   KeyBackspace = 8,
   /// <summary>
   /// The TAB key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyTab")]
+  [InteropEnumValue("wdKeyTab")]
   KeyTab = 9,
   /// <summary>
   /// The numeric 5 special key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric5Special")]
+  [InteropEnumValue("wdKeyNumeric5Special")]
   KeyNumeric5Special = 12,
   /// <summary>
   /// The ENTER or RETURN key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyReturn")]
+  [InteropEnumValue("wdKeyReturn")]
   KeyReturn = 13,
   /// <summary>
   /// The PAUSE key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyPause")]
+  [InteropEnumValue("wdKeyPause")]
   KeyPause = 19,
   /// <summary>
   /// The ESC key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyEsc")]
+  [InteropEnumValue("wdKeyEsc")]
   KeyEsc = 27,
   /// <summary>
   /// The SPACEBAR key.
   /// </summary>
-  [WordInteropEnumValue("wdKeySpacebar")]
+  [InteropEnumValue("wdKeySpacebar")]
   KeySpacebar = 32,
   /// <summary>
   /// The PAGE UP key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyPageUp")]
+  [InteropEnumValue("wdKeyPageUp")]
   KeyPageUp = 33,
   /// <summary>
   /// The PAGE DOWN key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyPageDown")]
+  [InteropEnumValue("wdKeyPageDown")]
   KeyPageDown = 34,
   /// <summary>
   /// The END key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyEnd")]
+  [InteropEnumValue("wdKeyEnd")]
   KeyEnd = 35,
   /// <summary>
   /// The HOME key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyHome")]
+  [InteropEnumValue("wdKeyHome")]
   KeyHome = 36,
   /// <summary>
   /// The INSERT key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyInsert")]
+  [InteropEnumValue("wdKeyInsert")]
   KeyInsert = 45,
   /// <summary>
   /// The DELETE key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyDelete")]
+  [InteropEnumValue("wdKeyDelete")]
   KeyDelete = 46,
   /// <summary>
   /// The 0 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey0")]
+  [InteropEnumValue("wdKey0")]
   Key0 = 48,
   /// <summary>
   /// The 1 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey1")]
+  [InteropEnumValue("wdKey1")]
   Key1 = 49,
   /// <summary>
   /// The 2 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey2")]
+  [InteropEnumValue("wdKey2")]
   Key2 = 50,
   /// <summary>
   /// The 3 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey3")]
+  [InteropEnumValue("wdKey3")]
   Key3 = 51,
   /// <summary>
   /// The 4 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey4")]
+  [InteropEnumValue("wdKey4")]
   Key4 = 52,
   /// <summary>
   /// The 5 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey5")]
+  [InteropEnumValue("wdKey5")]
   Key5 = 53,
   /// <summary>
   /// The 6 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey6")]
+  [InteropEnumValue("wdKey6")]
   Key6 = 54,
   /// <summary>
   /// The 7 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey7")]
+  [InteropEnumValue("wdKey7")]
   Key7 = 55,
   /// <summary>
   /// The 8 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey8")]
+  [InteropEnumValue("wdKey8")]
   Key8 = 56,
   /// <summary>
   /// The 9 key.
   /// </summary>
-  [WordInteropEnumValue("wdKey9")]
+  [InteropEnumValue("wdKey9")]
   Key9 = 57,
   /// <summary>
   /// The A key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyA")]
+  [InteropEnumValue("wdKeyA")]
   KeyA = 65,
   /// <summary>
   /// The B key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyB")]
+  [InteropEnumValue("wdKeyB")]
   KeyB = 66,
   /// <summary>
   /// The C key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyC")]
+  [InteropEnumValue("wdKeyC")]
   KeyC = 67,
   /// <summary>
   /// The D key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyD")]
+  [InteropEnumValue("wdKeyD")]
   KeyD = 68,
   /// <summary>
   /// The E key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyE")]
+  [InteropEnumValue("wdKeyE")]
   KeyE = 69,
   /// <summary>
   /// The F key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF")]
+  [InteropEnumValue("wdKeyF")]
   KeyF = 70,
   /// <summary>
   /// The G key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyG")]
+  [InteropEnumValue("wdKeyG")]
   KeyG = 71,
   /// <summary>
   /// The H key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyH")]
+  [InteropEnumValue("wdKeyH")]
   KeyH = 72,
   /// <summary>
   /// The I key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyI")]
+  [InteropEnumValue("wdKeyI")]
   KeyI = 73,
   /// <summary>
   /// The J key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyJ")]
+  [InteropEnumValue("wdKeyJ")]
   KeyJ = 74,
   /// <summary>
   /// The K key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyK")]
+  [InteropEnumValue("wdKeyK")]
   KeyK = 75,
   /// <summary>
   /// The L key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyL")]
+  [InteropEnumValue("wdKeyL")]
   KeyL = 76,
   /// <summary>
   /// The M key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyM")]
+  [InteropEnumValue("wdKeyM")]
   KeyM = 77,
   /// <summary>
   /// The N key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyN")]
+  [InteropEnumValue("wdKeyN")]
   KeyN = 78,
   /// <summary>
   /// The O key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyO")]
+  [InteropEnumValue("wdKeyO")]
   KeyO = 79,
   /// <summary>
   /// The P key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyP")]
+  [InteropEnumValue("wdKeyP")]
   KeyP = 80,
   /// <summary>
   /// The Q key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyQ")]
+  [InteropEnumValue("wdKeyQ")]
   KeyQ = 81,
   /// <summary>
   /// The R key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyR")]
+  [InteropEnumValue("wdKeyR")]
   KeyR = 82,
   /// <summary>
   /// The S key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyS")]
+  [InteropEnumValue("wdKeyS")]
   KeyS = 83,
   /// <summary>
   /// The T key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyT")]
+  [InteropEnumValue("wdKeyT")]
   KeyT = 84,
   /// <summary>
   /// The U key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyU")]
+  [InteropEnumValue("wdKeyU")]
   KeyU = 85,
   /// <summary>
   /// The V key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyV")]
+  [InteropEnumValue("wdKeyV")]
   KeyV = 86,
   /// <summary>
   /// The W key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyW")]
+  [InteropEnumValue("wdKeyW")]
   KeyW = 87,
   /// <summary>
   /// The X key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyX")]
+  [InteropEnumValue("wdKeyX")]
   KeyX = 88,
   /// <summary>
   /// The Y key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyY")]
+  [InteropEnumValue("wdKeyY")]
   KeyY = 89,
   /// <summary>
   /// The Z key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyZ")]
+  [InteropEnumValue("wdKeyZ")]
   KeyZ = 90,
   /// <summary>
   /// The 0 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric0")]
+  [InteropEnumValue("wdKeyNumeric0")]
   KeyNumeric0 = 96,
   /// <summary>
   /// The 1 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric1")]
+  [InteropEnumValue("wdKeyNumeric1")]
   KeyNumeric1 = 97,
   /// <summary>
   /// The 2 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric2")]
+  [InteropEnumValue("wdKeyNumeric2")]
   KeyNumeric2 = 98,
   /// <summary>
   /// The 3 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric3")]
+  [InteropEnumValue("wdKeyNumeric3")]
   KeyNumeric3 = 99,
   /// <summary>
   /// The 4 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric4")]
+  [InteropEnumValue("wdKeyNumeric4")]
   KeyNumeric4 = 100,
   /// <summary>
   /// The 5 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric5")]
+  [InteropEnumValue("wdKeyNumeric5")]
   KeyNumeric5 = 101,
   /// <summary>
   /// The 6 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric6")]
+  [InteropEnumValue("wdKeyNumeric6")]
   KeyNumeric6 = 102,
   /// <summary>
   /// The 7 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric7")]
+  [InteropEnumValue("wdKeyNumeric7")]
   KeyNumeric7 = 103,
   /// <summary>
   /// The 8 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric8")]
+  [InteropEnumValue("wdKeyNumeric8")]
   KeyNumeric8 = 104,
   /// <summary>
   /// The 9 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumeric9")]
+  [InteropEnumValue("wdKeyNumeric9")]
   KeyNumeric9 = 105,
   /// <summary>
   /// The * key on the numeric keypad.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumericMultiply")]
+  [InteropEnumValue("wdKeyNumericMultiply")]
   KeyNumericMultiply = 106,
   /// <summary>
   /// The + key on the numeric keypad.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumericAdd")]
+  [InteropEnumValue("wdKeyNumericAdd")]
   KeyNumericAdd = 107,
   /// <summary>
   /// The - key on the numeric keypad.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumericSubtract")]
+  [InteropEnumValue("wdKeyNumericSubtract")]
   KeyNumericSubtract = 109,
   /// <summary>
   /// The . key on the numeric keypad.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumericDecimal")]
+  [InteropEnumValue("wdKeyNumericDecimal")]
   KeyNumericDecimal = 110,
   /// <summary>
   /// The / key on the numeric keypad.
   /// </summary>
-  [WordInteropEnumValue("wdKeyNumericDivide")]
+  [InteropEnumValue("wdKeyNumericDivide")]
   KeyNumericDivide = 111,
   /// <summary>
   /// The F1 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF1")]
+  [InteropEnumValue("wdKeyF1")]
   KeyF1 = 112,
   /// <summary>
   /// The F2 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF2")]
+  [InteropEnumValue("wdKeyF2")]
   KeyF2 = 113,
   /// <summary>
   /// The F3 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF3")]
+  [InteropEnumValue("wdKeyF3")]
   KeyF3 = 114,
   /// <summary>
   /// The F4 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF4")]
+  [InteropEnumValue("wdKeyF4")]
   KeyF4 = 115,
   /// <summary>
   /// The F5 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF5")]
+  [InteropEnumValue("wdKeyF5")]
   KeyF5 = 116,
   /// <summary>
   /// The F6 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF6")]
+  [InteropEnumValue("wdKeyF6")]
   KeyF6 = 117,
   /// <summary>
   /// The F7 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF7")]
+  [InteropEnumValue("wdKeyF7")]
   KeyF7 = 118,
   /// <summary>
   /// The F8 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF8")]
+  [InteropEnumValue("wdKeyF8")]
   KeyF8 = 119,
   /// <summary>
   /// The F9 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF9")]
+  [InteropEnumValue("wdKeyF9")]
   KeyF9 = 120,
   /// <summary>
   /// The F10 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF10")]
+  [InteropEnumValue("wdKeyF10")]
   KeyF10 = 121,
   /// <summary>
   /// The F11 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF11")]
+  [InteropEnumValue("wdKeyF11")]
   KeyF11 = 122,
   /// <summary>
   /// The F12 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF12")]
+  [InteropEnumValue("wdKeyF12")]
   KeyF12 = 123,
   /// <summary>
   /// The F13 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF13")]
+  [InteropEnumValue("wdKeyF13")]
   KeyF13 = 124,
   /// <summary>
   /// The F14 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF14")]
+  [InteropEnumValue("wdKeyF14")]
   KeyF14 = 125,
   /// <summary>
   /// The F15 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF15")]
+  [InteropEnumValue("wdKeyF15")]
   KeyF15 = 126,
   /// <summary>
   /// The F16 key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyF16")]
+  [InteropEnumValue("wdKeyF16")]
   KeyF16 = 127,
   /// <summary>
   /// The SCROLL LOCK key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyScrollLock")]
+  [InteropEnumValue("wdKeyScrollLock")]
   KeyScrollLock = 145,
   /// <summary>
   /// The ; key.
   /// </summary>
-  [WordInteropEnumValue("wdKeySemiColon")]
+  [InteropEnumValue("wdKeySemiColon")]
   KeySemiColon = 186,
   /// <summary>
   /// The = key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyEquals")]
+  [InteropEnumValue("wdKeyEquals")]
   KeyEquals = 187,
   /// <summary>
   /// The , key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyComma")]
+  [InteropEnumValue("wdKeyComma")]
   KeyComma = 188,
   /// <summary>
   /// The - key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyHyphen")]
+  [InteropEnumValue("wdKeyHyphen")]
   KeyHyphen = 189,
   /// <summary>
   /// The . key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyPeriod")]
+  [InteropEnumValue("wdKeyPeriod")]
   KeyPeriod = 190,
   /// <summary>
   /// The / key.
   /// </summary>
-  [WordInteropEnumValue("wdKeySlash")]
+  [InteropEnumValue("wdKeySlash")]
   KeySlash = 191,
   /// <summary>
   /// The ` key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyBackSingleQuote")]
+  [InteropEnumValue("wdKeyBackSingleQuote")]
   KeyBackSingleQuote = 192,
   /// <summary>
   /// The [ key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyOpenSquareBrace")]
+  [InteropEnumValue("wdKeyOpenSquareBrace")]
   KeyOpenSquareBrace = 219,
   /// <summary>
   /// The \ key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyBackSlash")]
+  [InteropEnumValue("wdKeyBackSlash")]
   KeyBackSlash = 220,
   /// <summary>
   /// The ] key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCloseSquareBrace")]
+  [InteropEnumValue("wdKeyCloseSquareBrace")]
   KeyCloseSquareBrace = 221,
   /// <summary>
   /// The ' key.
   /// </summary>
-  [WordInteropEnumValue("wdKeySingleQuote")]
+  [InteropEnumValue("wdKeySingleQuote")]
   KeySingleQuote = 222,
   /// <summary>
   /// No key.
   /// </summary>
-  [WordInteropEnumValue("wdNoKey")]
+  [InteropEnumValue("wdNoKey")]
   NoKey = 255,
   /// <summary>
   /// The SHIFT key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyShift")]
+  [InteropEnumValue("wdKeyShift")]
   KeyShift = 256,
   /// <summary>
   /// The CTRL key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyControl")]
+  [InteropEnumValue("wdKeyControl")]
   KeyControl = 512,
   /// <summary>
   /// The Windows command key or Macintosh COMMAND key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyCommand")]
+  [InteropEnumValue("wdKeyCommand")]
   KeyCommand = 512,
   /// <summary>
   /// The mouse option key or Macintosh OPTION key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyOption")]
+  [InteropEnumValue("wdKeyOption")]
   KeyOption = 1024,
   /// <summary>
   /// The ALT key.
   /// </summary>
-  [WordInteropEnumValue("wdKeyAlt")]
+  [InteropEnumValue("wdKeyAlt")]
   KeyAlt = 1024
 }

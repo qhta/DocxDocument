@@ -6,29 +6,29 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdlayoutmode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLayoutMode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLayoutMode")]
 public enum LayoutMode
 {
   /// <summary>
   /// No grid is used to lay out text.
   /// </summary>
-  [WordInteropEnumValue("wdLayoutModeDefault")]
+  [InteropEnumValue("wdLayoutModeDefault")]
   Default = 0,
   /// <summary>
   /// Text is laid out on a grid; the user specifies the number of lines and the number of characters per line. As
   /// the user types, Microsoft Word doesn't automatically align characters with gridlines.
   /// </summary>
-  [WordInteropEnumValue("wdLayoutModeGrid")]
+  [InteropEnumValue("wdLayoutModeGrid")]
   Grid = 1,
   /// <summary>
   /// Text is laid out on a grid; the user specifies the number of lines, but not the number of characters per line.
   /// </summary>
-  [WordInteropEnumValue("wdLayoutModeLineGrid")]
+  [InteropEnumValue("wdLayoutModeLineGrid")]
   LineGrid = 2,
   /// <summary>
   /// Text is laid out on a grid; the user specifies the number of lines and the number of characters per line. As
   /// the user types, Microsoft Word automatically aligns characters with gridlines.
   /// </summary>
-  [WordInteropEnumValue("wdLayoutModeGenko")]
+  [InteropEnumValue("wdLayoutModeGenko")]
   Genko = 3
 }

@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xldatalabelseparator?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlDataLabelSeparator")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlDataLabelSeparator")]
 public enum XlDataLabelSeparator
 {
   /// <summary>
   /// Word selects the separator.
   /// </summary>
-  [WordInteropEnumValue("xlDataLabelSeparatorDefault")]
+  [InteropEnumValue("xlDataLabelSeparatorDefault")]
   xlDataLabelSeparatorDefault = 1
 }

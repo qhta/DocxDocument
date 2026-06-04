@@ -4,8 +4,8 @@
 /// Defines the Algorithm enumeration.
 /// Used in types such as DocumentCleaner.TableTools, Algorithm, DiagramChooseElse.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.AlgorithmValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues))]
 public enum AlgorithmType
 {
   /// <summary>

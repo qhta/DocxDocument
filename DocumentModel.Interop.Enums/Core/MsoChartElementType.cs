@@ -6,642 +6,642 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoChartElementType")]
+[InteropEnumType("Microsoft.Office.Core.MsoChartElementType")]
 public enum ChartElementType
 {
   /// <summary>
   /// Do not display chart floor.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartTitleNone")]
+  [InteropEnumValue("msoElementChartTitleNone")]
   ChartTitleNone = 0,
   /// <summary>
   /// Display title as centered overlay.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartTitleCenteredOverlay")]
+  [InteropEnumValue("msoElementChartTitleCenteredOverlay")]
   ChartTitleCenteredOverlay = 1,
   /// <summary>
   /// Display title above chart.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartTitleAboveChart")]
+  [InteropEnumValue("msoElementChartTitleAboveChart")]
   ChartTitleAboveChart = 2,
   /// <summary>
   /// Do not display legend.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendNone")]
+  [InteropEnumValue("msoElementLegendNone")]
   LegendNone = 100,
   /// <summary>
   /// Display legend at the right.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendRight")]
+  [InteropEnumValue("msoElementLegendRight")]
   LegendRight = 101,
   /// <summary>
   /// Display legend at the top.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendTop")]
+  [InteropEnumValue("msoElementLegendTop")]
   LegendTop = 102,
   /// <summary>
   /// Display legend on the left.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendLeft")]
+  [InteropEnumValue("msoElementLegendLeft")]
   LegendLeft = 103,
   /// <summary>
   /// Display legend at the bottom.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendBottom")]
+  [InteropEnumValue("msoElementLegendBottom")]
   LegendBottom = 104,
   /// <summary>
   /// Overlay legend at the right.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendRightOverlay")]
+  [InteropEnumValue("msoElementLegendRightOverlay")]
   LegendRightOverlay = 105,
   /// <summary>
   /// Overlay legend at the left.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLegendLeftOverlay")]
+  [InteropEnumValue("msoElementLegendLeftOverlay")]
   LegendLeftOverlay = 106,
   /// <summary>
   /// Do not display data label.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelNone")]
+  [InteropEnumValue("msoElementDataLabelNone")]
   DataLabelNone = 200,
   /// <summary>
   /// Display data label.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelShow")]
+  [InteropEnumValue("msoElementDataLabelShow")]
   DataLabelShow = 201,
   /// <summary>
   /// Display data label in center.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelCenter")]
+  [InteropEnumValue("msoElementDataLabelCenter")]
   DataLabelCenter = 202,
   /// <summary>
   /// Display data label inside at the end.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelInsideEnd")]
+  [InteropEnumValue("msoElementDataLabelInsideEnd")]
   DataLabelInsideEnd = 203,
   /// <summary>
   /// Display data label inside at the base.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelInsideBase")]
+  [InteropEnumValue("msoElementDataLabelInsideBase")]
   DataLabelInsideBase = 204,
   /// <summary>
   /// Display data label outside at the end.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelOutSideEnd")]
+  [InteropEnumValue("msoElementDataLabelOutSideEnd")]
   DataLabelOutSideEnd = 205,
   /// <summary>
   /// Display data label to the left.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelLeft")]
+  [InteropEnumValue("msoElementDataLabelLeft")]
   DataLabelLeft = 206,
   /// <summary>
   /// Display data label to the right.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelRight")]
+  [InteropEnumValue("msoElementDataLabelRight")]
   DataLabelRight = 207,
   /// <summary>
   /// Display data label at the top.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelTop")]
+  [InteropEnumValue("msoElementDataLabelTop")]
   DataLabelTop = 208,
   /// <summary>
   /// Display data label at bottom.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelBottom")]
+  [InteropEnumValue("msoElementDataLabelBottom")]
   DataLabelBottom = 209,
   /// <summary>
   /// Use best fit for data label.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelBestFit")]
+  [InteropEnumValue("msoElementDataLabelBestFit")]
   DataLabelBestFit = 210,
   /// <summary>
   /// Display data label as a callout.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataLabelCallout")]
+  [InteropEnumValue("msoElementDataLabelCallout")]
   DataLabelCallout = 211,
   /// <summary>
   /// Do not display primary category axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleNone")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleNone")]
   PrimaryCategoryAxisTitleNone = 300,
   /// <summary>
   /// Display primary category axis title adjacent to the axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleAdjacentToAxis")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleAdjacentToAxis")]
   PrimaryCategoryAxisTitleAdjacentToAxis = 301,
   /// <summary>
   /// Display primary category axis title below the axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleBelowAxis")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleBelowAxis")]
   PrimaryCategoryAxisTitleBelowAxis = 302,
   /// <summary>
   /// Rotate primary category axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleRotated")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleRotated")]
   PrimaryCategoryAxisTitleRotated = 303,
   /// <summary>
   /// Display primary category axis title vertically.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleVertical")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleVertical")]
   PrimaryCategoryAxisTitleVertical = 304,
   /// <summary>
   /// Display primary category axis title horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisTitleHorizontal")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisTitleHorizontal")]
   PrimaryCategoryAxisTitleHorizontal = 305,
   /// <summary>
   /// Do not display primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleNone")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleNone")]
   PrimaryValueAxisTitleNone = 306,
   /// <summary>
   /// Place primary value axis title adjacent to the axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleAdjacentToAxis")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleAdjacentToAxis")]
   PrimaryValueAxisTitleAdjacentToAxis = 306,
   /// <summary>
   /// Place primary value axis title below the axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleBelowAxis")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleBelowAxis")]
   PrimaryValueAxisTitleBelowAxis = 308,
   /// <summary>
   /// Rotate primary value axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleRotated")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleRotated")]
   PrimaryValueAxisTitleRotated = 309,
   /// <summary>
   /// Display primary value axis title vertically.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleVertical")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleVertical")]
   PrimaryValueAxisTitleVertical = 310,
   /// <summary>
   /// Display primary value axis title horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisTitleHorizontal")]
+  [InteropEnumValue("msoElementPrimaryValueAxisTitleHorizontal")]
   PrimaryValueAxisTitleHorizontal = 311,
   /// <summary>
   /// Do not display secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleNone")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleNone")]
   SecondaryCategoryAxisTitleNone = 312,
   /// <summary>
   /// Display secondary category axis title adjacent to axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleAdjacentToAxis")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleAdjacentToAxis")]
   SecondaryCategoryAxisTitleAdjacentToAxis = 313,
   /// <summary>
   /// Display secondary category axis title below axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleBelowAxis")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleBelowAxis")]
   SecondaryCategoryAxisTitleBelowAxis = 314,
   /// <summary>
   /// Rotate secondary category axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleRotated")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleRotated")]
   SecondaryCategoryAxisTitleRotated = 315,
   /// <summary>
   /// Display secondary category axis title vertically.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleVertical")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleVertical")]
   SecondaryCategoryAxisTitleVertical = 316,
   /// <summary>
   /// Display secondary category axis title horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisTitleHorizontal")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisTitleHorizontal")]
   SecondaryCategoryAxisTitleHorizontal = 317,
   /// <summary>
   /// Do not display secondary category axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleNone")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleNone")]
   SecondaryValueAxisTitleNone = 318,
   /// <summary>
   /// Display secondary category axis title adjacent to axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleAdjacentToAxis")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleAdjacentToAxis")]
   SecondaryValueAxisTitleAdjacentToAxis = 319,
   /// <summary>
   /// Display secondary category axis title below axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleBelowAxis")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleBelowAxis")]
   SecondaryValueAxisTitleBelowAxis = 320,
   /// <summary>
   /// Rotate secondary category axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleRotated")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleRotated")]
   SecondaryValueAxisTitleRotated = 321,
   /// <summary>
   /// Display secondary category axis title vertically.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleVertical")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleVertical")]
   SecondaryValueAxisTitleVertical = 322,
   /// <summary>
   /// Display secondary category axis title horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisTitleHorizontal")]
+  [InteropEnumValue("msoElementSecondaryValueAxisTitleHorizontal")]
   SecondaryValueAxisTitleHorizontal = 323,
   /// <summary>
   /// Do not display series axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisTitleNone")]
+  [InteropEnumValue("msoElementSeriesAxisTitleNone")]
   SeriesAxisTitleNone = 324,
   /// <summary>
   /// Rotate series axis title.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisTitleRotated")]
+  [InteropEnumValue("msoElementSeriesAxisTitleRotated")]
   SeriesAxisTitleRotated = 325,
   /// <summary>
   /// Display series axis title vertically.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisTitleVertical")]
+  [InteropEnumValue("msoElementSeriesAxisTitleVertical")]
   SeriesAxisTitleVertical = 326,
   /// <summary>
   /// Display series axis title horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisTitleHorizontal")]
+  [InteropEnumValue("msoElementSeriesAxisTitleHorizontal")]
   SeriesAxisTitleHorizontal = 327,
   /// <summary>
   /// Do not display grid lines along primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueGridLinesNone")]
+  [InteropEnumValue("msoElementPrimaryValueGridLinesNone")]
   PrimaryValueGridLinesNone = 328,
   /// <summary>
   /// Display minor gridlines along primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueGridLinesMinor")]
+  [InteropEnumValue("msoElementPrimaryValueGridLinesMinor")]
   PrimaryValueGridLinesMinor = 329,
   /// <summary>
   /// Display major gridlines along primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueGridLinesMajor")]
+  [InteropEnumValue("msoElementPrimaryValueGridLinesMajor")]
   PrimaryValueGridLinesMajor = 330,
   /// <summary>
   /// Display both major and minor gridlines along primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueGridLinesMinorMajor")]
+  [InteropEnumValue("msoElementPrimaryValueGridLinesMinorMajor")]
   PrimaryValueGridLinesMinorMajor = 331,
   /// <summary>
   /// Do not display grid lines along primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryGridLinesNone")]
+  [InteropEnumValue("msoElementPrimaryCategoryGridLinesNone")]
   PrimaryCategoryGridLinesNone = 332,
   /// <summary>
   /// Display minor gridlines along primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryGridLinesMinor")]
+  [InteropEnumValue("msoElementPrimaryCategoryGridLinesMinor")]
   PrimaryCategoryGridLinesMinor = 333,
   /// <summary>
   /// Display major gridlines along primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryGridLinesMajor")]
+  [InteropEnumValue("msoElementPrimaryCategoryGridLinesMajor")]
   PrimaryCategoryGridLinesMajor = 334,
   /// <summary>
   /// Display both major and minor gridlines along primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryGridLinesMinorMajor")]
+  [InteropEnumValue("msoElementPrimaryCategoryGridLinesMinorMajor")]
   PrimaryCategoryGridLinesMinorMajor = 335,
   /// <summary>
   /// Do not display gridlines along secondary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueGridLinesNone")]
+  [InteropEnumValue("msoElementSecondaryValueGridLinesNone")]
   SecondaryValueGridLinesNone = 336,
   /// <summary>
   /// Display minor gridlines along secondary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueGridLinesMinor")]
+  [InteropEnumValue("msoElementSecondaryValueGridLinesMinor")]
   SecondaryValueGridLinesMinor = 337,
   /// <summary>
   /// Display major gridlines along secondary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueGridLinesMajor")]
+  [InteropEnumValue("msoElementSecondaryValueGridLinesMajor")]
   SecondaryValueGridLinesMajor = 338,
   /// <summary>
   /// Display both major and minor gridlines along secondary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueGridLinesMinorMajor")]
+  [InteropEnumValue("msoElementSecondaryValueGridLinesMinorMajor")]
   SecondaryValueGridLinesMinorMajor = 339,
   /// <summary>
   /// Do not display grid lines along secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryGridLinesNone")]
+  [InteropEnumValue("msoElementSecondaryCategoryGridLinesNone")]
   SecondaryCategoryGridLinesNone = 340,
   /// <summary>
   /// Display minor gridlines along secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryGridLinesMinor")]
+  [InteropEnumValue("msoElementSecondaryCategoryGridLinesMinor")]
   SecondaryCategoryGridLinesMinor = 341,
   /// <summary>
   /// Display major gridlines along secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryGridLinesMajor")]
+  [InteropEnumValue("msoElementSecondaryCategoryGridLinesMajor")]
   SecondaryCategoryGridLinesMajor = 342,
   /// <summary>
   /// Display both major and minor gridlines along secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryGridLinesMinorMajor")]
+  [InteropEnumValue("msoElementSecondaryCategoryGridLinesMinorMajor")]
   SecondaryCategoryGridLinesMinorMajor = 343,
   /// <summary>
   /// Do not display gridlines along series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisGridLinesNone")]
+  [InteropEnumValue("msoElementSeriesAxisGridLinesNone")]
   SeriesAxisGridLinesNone = 344,
   /// <summary>
   /// Display minor gridlines along series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisGridLinesMinor")]
+  [InteropEnumValue("msoElementSeriesAxisGridLinesMinor")]
   SeriesAxisGridLinesMinor = 345,
   /// <summary>
   /// Display major gridlines along series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisGridLinesMajor")]
+  [InteropEnumValue("msoElementSeriesAxisGridLinesMajor")]
   SeriesAxisGridLinesMajor = 346,
   /// <summary>
   /// Display both major and minor gridlines along series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisGridLinesMinorMajor")]
+  [InteropEnumValue("msoElementSeriesAxisGridLinesMinorMajor")]
   SeriesAxisGridLinesMinorMajor = 347,
   /// <summary>
   /// Do not display primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisNone")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisNone")]
   PrimaryCategoryAxisNone = 348,
   /// <summary>
   /// Show primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisShow")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisShow")]
   PrimaryCategoryAxisShow = 349,
   /// <summary>
   /// Display primary category axis without labels.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisWithoutLabels")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisWithoutLabels")]
   PrimaryCategoryAxisWithoutLabels = 350,
   /// <summary>
   /// Reverse primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisReverse")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisReverse")]
   PrimaryCategoryAxisReverse = 351,
   /// <summary>
   /// Do not display primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisNone")]
+  [InteropEnumValue("msoElementPrimaryValueAxisNone")]
   PrimaryValueAxisNone = 352,
   /// <summary>
   /// Show primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisShow")]
+  [InteropEnumValue("msoElementPrimaryValueAxisShow")]
   PrimaryValueAxisShow = 353,
   /// <summary>
   /// Use thousands for primary value axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisThousands")]
+  [InteropEnumValue("msoElementPrimaryValueAxisThousands")]
   PrimaryValueAxisThousands = 354,
   /// <summary>
   /// Use millions for primary value axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisMillions")]
+  [InteropEnumValue("msoElementPrimaryValueAxisMillions")]
   PrimaryValueAxisMillions = 355,
   /// <summary>
   /// Use billions for primary value axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisBillions")]
+  [InteropEnumValue("msoElementPrimaryValueAxisBillions")]
   PrimaryValueAxisBillions = 356,
   /// <summary>
   /// Use log scale for primary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryValueAxisLogScale")]
+  [InteropEnumValue("msoElementPrimaryValueAxisLogScale")]
   PrimaryValueAxisLogScale = 357,
   /// <summary>
   /// Do not display secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisNone")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisNone")]
   SecondaryCategoryAxisNone = 358,
   /// <summary>
   /// Display secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisShow")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisShow")]
   SecondaryCategoryAxisShow = 359,
   /// <summary>
   /// Display secondary category axis without labels.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisWithoutLabels")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisWithoutLabels")]
   SecondaryCategoryAxisWithoutLabels = 360,
   /// <summary>
   /// Reverse secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisReverse")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisReverse")]
   SecondaryCategoryAxisReverse = 361,
   /// <summary>
   /// Do not display secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisNone")]
+  [InteropEnumValue("msoElementSecondaryValueAxisNone")]
   SecondaryValueAxisNone = 362,
   /// <summary>
   /// Display secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisShow")]
+  [InteropEnumValue("msoElementSecondaryValueAxisShow")]
   SecondaryValueAxisShow = 363,
   /// <summary>
   /// Use thousands for secondary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisThousands")]
+  [InteropEnumValue("msoElementSecondaryValueAxisThousands")]
   SecondaryValueAxisThousands = 364,
   /// <summary>
   /// Use millions for secondary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisMillions")]
+  [InteropEnumValue("msoElementSecondaryValueAxisMillions")]
   SecondaryValueAxisMillions = 365,
   /// <summary>
   /// Use billions for secondary value axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisBillions")]
+  [InteropEnumValue("msoElementSecondaryValueAxisBillions")]
   SecondaryValueAxisBillions = 366,
   /// <summary>
   /// Use log scale for secondary value axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryValueAxisLogScale")]
+  [InteropEnumValue("msoElementSecondaryValueAxisLogScale")]
   SecondaryValueAxisLogScale = 367,
   /// <summary>
   /// Do not display series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisNone")]
+  [InteropEnumValue("msoElementSeriesAxisNone")]
   SeriesAxisNone = 368,
   /// <summary>
   /// Display series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisShow")]
+  [InteropEnumValue("msoElementSeriesAxisShow")]
   SeriesAxisShow = 369,
   /// <summary>
   /// Display series axis title without labeling.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisWithoutLabeling")]
+  [InteropEnumValue("msoElementSeriesAxisWithoutLabeling")]
   SeriesAxisWithoutLabeling = 370,
   /// <summary>
   /// Reverse series axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSeriesAxisReverse")]
+  [InteropEnumValue("msoElementSeriesAxisReverse")]
   SeriesAxisReverse = 371,
   /// <summary>
   /// Use thousands for primary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisThousands")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisThousands")]
   PrimaryCategoryAxisThousands = 372,
   /// <summary>
   /// Use millions for primary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisMillions")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisMillions")]
   PrimaryCategoryAxisMillions = 373,
   /// <summary>
   /// Use billions for primary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisBillions")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisBillions")]
   PrimaryCategoryAxisBillions = 374,
   /// <summary>
   /// Use log scale for primary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPrimaryCategoryAxisLogScale")]
+  [InteropEnumValue("msoElementPrimaryCategoryAxisLogScale")]
   PrimaryCategoryAxisLogScale = 375,
   /// <summary>
   /// Use thousands for secondary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisThousands")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisThousands")]
   SecondaryCategoryAxisThousands = 376,
   /// <summary>
   /// Use millions for secondary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisMillions")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisMillions")]
   SecondaryCategoryAxisMillions = 377,
   /// <summary>
   /// Use billions for secondary category axis units.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisBillions")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisBillions")]
   SecondaryCategoryAxisBillions = 378,
   /// <summary>
   /// Use log scale for secondary category axis.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementSecondaryCategoryAxisLogScale")]
+  [InteropEnumValue("msoElementSecondaryCategoryAxisLogScale")]
   SecondaryCategoryAxisLogScale = 379,
   /// <summary>
   /// Do not display data table.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataTableNone")]
+  [InteropEnumValue("msoElementDataTableNone")]
   DataTableNone = 500,
   /// <summary>
   /// Display data table.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataTableShow")]
+  [InteropEnumValue("msoElementDataTableShow")]
   DataTableShow = 501,
   /// <summary>
   /// Display data table with legend keys.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementDataTableWithLegendKeys")]
+  [InteropEnumValue("msoElementDataTableWithLegendKeys")]
   DataTableWithLegendKeys = 502,
   /// <summary>
   /// Do not display trendline.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementTrendlineNone")]
+  [InteropEnumValue("msoElementTrendlineNone")]
   TrendlineNone = 600,
   /// <summary>
   /// Add a linear trendline.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementTrendlineAddLinear")]
+  [InteropEnumValue("msoElementTrendlineAddLinear")]
   TrendlineAddLinear = 601,
   /// <summary>
   /// Add an exponential trendline.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementTrendlineAddExponential")]
+  [InteropEnumValue("msoElementTrendlineAddExponential")]
   TrendlineAddExponential = 602,
   /// <summary>
   /// Add a linear forecast.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementTrendlineAddLinearForecast")]
+  [InteropEnumValue("msoElementTrendlineAddLinearForecast")]
   TrendlineAddLinearForecast = 603,
   /// <summary>
   /// Add a two-period moving average.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementTrendlineAddTwoPeriodMovingAverage")]
+  [InteropEnumValue("msoElementTrendlineAddTwoPeriodMovingAverage")]
   TrendlineAddTwoPeriodMovingAverage = 604,
   /// <summary>
   /// Do not display error bar.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementErrorBarNone")]
+  [InteropEnumValue("msoElementErrorBarNone")]
   ErrorBarNone = 700,
   /// <summary>
   /// Display standard error bar.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementErrorBarStandardError")]
+  [InteropEnumValue("msoElementErrorBarStandardError")]
   ErrorBarStandardError = 701,
   /// <summary>
   /// Display percentage error bar.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementErrorBarPercentage")]
+  [InteropEnumValue("msoElementErrorBarPercentage")]
   ErrorBarPercentage = 702,
   /// <summary>
   /// Display standard deviation error bar.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementErrorBarStandardDeviation")]
+  [InteropEnumValue("msoElementErrorBarStandardDeviation")]
   ErrorBarStandardDeviation = 703,
   /// <summary>
   /// Do not display line.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLineNone")]
+  [InteropEnumValue("msoElementLineNone")]
   LineNone = 800,
   /// <summary>
   /// Display drop line.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLineDropLine")]
+  [InteropEnumValue("msoElementLineDropLine")]
   LineDropLine = 801,
   /// <summary>
   /// Display high/low line.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLineHiLoLine")]
+  [InteropEnumValue("msoElementLineHiLoLine")]
   LineHiLoLine = 802,
   /// <summary>
   /// Display series line.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLineSeriesLine")]
+  [InteropEnumValue("msoElementLineSeriesLine")]
   LineSeriesLine = 803,
   /// <summary>
   /// Display drop high/low line.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementLineDropHiLoLine")]
+  [InteropEnumValue("msoElementLineDropHiLoLine")]
   LineDropHiLoLine = 804,
   /// <summary>
   /// Do not display up/down bars.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementUpDownBarsNone")]
+  [InteropEnumValue("msoElementUpDownBarsNone")]
   UpDownBarsNone = 900,
   /// <summary>
   /// Display up/down bars.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementUpDownBarsShow")]
+  [InteropEnumValue("msoElementUpDownBarsShow")]
   UpDownBarsShow = 901,
   /// <summary>
   /// Do not display plot area.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPlotAreaNone")]
+  [InteropEnumValue("msoElementPlotAreaNone")]
   PlotAreaNone = 1000,
   /// <summary>
   /// Display plot area.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementPlotAreaShow")]
+  [InteropEnumValue("msoElementPlotAreaShow")]
   PlotAreaShow = 1001,
   /// <summary>
   /// Do not display chart wall.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartWallNone")]
+  [InteropEnumValue("msoElementChartWallNone")]
   ChartWallNone = 1100,
   /// <summary>
   /// Display chart wall.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartWallShow")]
+  [InteropEnumValue("msoElementChartWallShow")]
   ChartWallShow = 1101,
   /// <summary>
   /// Do not display chart floor.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartFloorNone")]
+  [InteropEnumValue("msoElementChartFloorNone")]
   ChartFloorNone = 1200,
   /// <summary>
   /// Display chart floor.
   /// </summary>
-  [OfficeInteropEnumValue("msoElementChartFloorShow")]
+  [InteropEnumValue("msoElementChartFloorShow")]
   ChartFloorShow = 1201
 }

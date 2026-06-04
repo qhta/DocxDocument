@@ -6,127 +6,127 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcountry?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCountry")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCountry")]
 public enum Country
 {
   /// <summary>
   /// United States
   /// </summary>
-  [WordInteropEnumValue("wdUS")]
+  [InteropEnumValue("wdUS")]
   US = 1,
   /// <summary>
   /// Canada
   /// </summary>
-  [WordInteropEnumValue("wdCanada")]
+  [InteropEnumValue("wdCanada")]
   Canada = 2,
   /// <summary>
   /// Latin America
   /// </summary>
-  [WordInteropEnumValue("wdLatinAmerica")]
+  [InteropEnumValue("wdLatinAmerica")]
   LatinAmerica = 3,
   /// <summary>
   /// Netherlands
   /// </summary>
-  [WordInteropEnumValue("wdNetherlands")]
+  [InteropEnumValue("wdNetherlands")]
   Netherlands = 31,
   /// <summary>
   /// France
   /// </summary>
-  [WordInteropEnumValue("wdFrance")]
+  [InteropEnumValue("wdFrance")]
   France = 33,
   /// <summary>
   /// Spain
   /// </summary>
-  [WordInteropEnumValue("wdSpain")]
+  [InteropEnumValue("wdSpain")]
   Spain = 34,
   /// <summary>
   /// Italy
   /// </summary>
-  [WordInteropEnumValue("wdItaly")]
+  [InteropEnumValue("wdItaly")]
   Italy = 39,
   /// <summary>
   /// United Kingdom
   /// </summary>
-  [WordInteropEnumValue("wdUK")]
+  [InteropEnumValue("wdUK")]
   UK = 44,
   /// <summary>
   /// Denmark
   /// </summary>
-  [WordInteropEnumValue("wdDenmark")]
+  [InteropEnumValue("wdDenmark")]
   Denmark = 45,
   /// <summary>
   /// Sweden
   /// </summary>
-  [WordInteropEnumValue("wdSweden")]
+  [InteropEnumValue("wdSweden")]
   Sweden = 46,
   /// <summary>
   /// Norway
   /// </summary>
-  [WordInteropEnumValue("wdNorway")]
+  [InteropEnumValue("wdNorway")]
   Norway = 47,
   /// <summary>
   /// Germany
   /// </summary>
-  [WordInteropEnumValue("wdGermany")]
+  [InteropEnumValue("wdGermany")]
   Germany = 49,
   /// <summary>
   /// Peru
   /// </summary>
-  [WordInteropEnumValue("wdPeru")]
+  [InteropEnumValue("wdPeru")]
   Peru = 51,
   /// <summary>
   /// Mexico
   /// </summary>
-  [WordInteropEnumValue("wdMexico")]
+  [InteropEnumValue("wdMexico")]
   Mexico = 52,
   /// <summary>
   /// Argentina
   /// </summary>
-  [WordInteropEnumValue("wdArgentina")]
+  [InteropEnumValue("wdArgentina")]
   Argentina = 54,
   /// <summary>
   /// Brazil
   /// </summary>
-  [WordInteropEnumValue("wdBrazil")]
+  [InteropEnumValue("wdBrazil")]
   Brazil = 55,
   /// <summary>
   /// Chile
   /// </summary>
-  [WordInteropEnumValue("wdChile")]
+  [InteropEnumValue("wdChile")]
   Chile = 56,
   /// <summary>
   /// Venezuela
   /// </summary>
-  [WordInteropEnumValue("wdVenezuela")]
+  [InteropEnumValue("wdVenezuela")]
   Venezuela = 58,
   /// <summary>
   /// Japan
   /// </summary>
-  [WordInteropEnumValue("wdJapan")]
+  [InteropEnumValue("wdJapan")]
   Japan = 81,
   /// <summary>
   /// Korea
   /// </summary>
-  [WordInteropEnumValue("wdKorea")]
+  [InteropEnumValue("wdKorea")]
   Korea = 82,
   /// <summary>
   /// China
   /// </summary>
-  [WordInteropEnumValue("wdChina")]
+  [InteropEnumValue("wdChina")]
   China = 86,
   /// <summary>
   /// Iceland
   /// </summary>
-  [WordInteropEnumValue("wdIceland")]
+  [InteropEnumValue("wdIceland")]
   Iceland = 354,
   /// <summary>
   /// Finland
   /// </summary>
-  [WordInteropEnumValue("wdFinland")]
+  [InteropEnumValue("wdFinland")]
   Finland = 358,
   /// <summary>
   /// Taiwan
   /// </summary>
-  [WordInteropEnumValue("wdTaiwan")]
+  [InteropEnumValue("wdTaiwan")]
   Taiwan = 886
 }

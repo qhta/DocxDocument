@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdBrowserLevel")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdBrowserLevel")]
 public enum BrowserLevel
 {
   /// <summary>
   /// Microsoft Internet Explorer 4.
   /// </summary>
-  [WordInteropEnumValue("wdBrowserLevelV4")]
+  [InteropEnumValue("wdBrowserLevelV4")]
   V4 = 0,
   /// <summary>
   /// Microsoft Internet Explorer 5.
   /// </summary>
-  [WordInteropEnumValue("wdBrowserLevelMicrosoftInternetExplorer5")]
+  [InteropEnumValue("wdBrowserLevelMicrosoftInternetExplorer5")]
   MicrosoftInternetExplorer5 = 1,
   /// <summary>
   /// Microsoft Internet Explorer 6.
   /// </summary>
-  [WordInteropEnumValue("wdBrowserLevelMicrosoftInternetExplorer6")]
+  [InteropEnumValue("wdBrowserLevelMicrosoftInternetExplorer6")]
   MicrosoftInternetExplorer6 = 2
 }

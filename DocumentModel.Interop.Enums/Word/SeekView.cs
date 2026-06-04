@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdseekview?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSeekView")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSeekView")]
 public enum SeekView
 {
   /// <summary>
   /// The main document.
   /// </summary>
-  [WordInteropEnumValue("wdSeekMainDocument")]
+  [InteropEnumValue("wdSeekMainDocument")]
   MainDocument = 0,
   /// <summary>
   /// The primary header.
   /// </summary>
-  [WordInteropEnumValue("wdSeekPrimaryHeader")]
+  [InteropEnumValue("wdSeekPrimaryHeader")]
   PrimaryHeader = 1,
   /// <summary>
   /// The first page header.
   /// </summary>
-  [WordInteropEnumValue("wdSeekFirstPageHeader")]
+  [InteropEnumValue("wdSeekFirstPageHeader")]
   FirstPageHeader = 2,
   /// <summary>
   /// The even pages header.
   /// </summary>
-  [WordInteropEnumValue("wdSeekEvenPagesHeader")]
+  [InteropEnumValue("wdSeekEvenPagesHeader")]
   EvenPagesHeader = 3,
   /// <summary>
   /// The primary footer.
   /// </summary>
-  [WordInteropEnumValue("wdSeekPrimaryFooter")]
+  [InteropEnumValue("wdSeekPrimaryFooter")]
   PrimaryFooter = 4,
   /// <summary>
   /// The first page footer.
   /// </summary>
-  [WordInteropEnumValue("wdSeekFirstPageFooter")]
+  [InteropEnumValue("wdSeekFirstPageFooter")]
   FirstPageFooter = 5,
   /// <summary>
   /// The even pages footer.
   /// </summary>
-  [WordInteropEnumValue("wdSeekEvenPagesFooter")]
+  [InteropEnumValue("wdSeekEvenPagesFooter")]
   EvenPagesFooter = 6,
   /// <summary>
   /// Footnotes.
   /// </summary>
-  [WordInteropEnumValue("wdSeekFootnotes")]
+  [InteropEnumValue("wdSeekFootnotes")]
   Footnotes = 7,
   /// <summary>
   /// Endnotes.
   /// </summary>
-  [WordInteropEnumValue("wdSeekEndnotes")]
+  [InteropEnumValue("wdSeekEndnotes")]
   Endnotes = 8,
   /// <summary>
   /// The current page header.
   /// </summary>
-  [WordInteropEnumValue("wdSeekCurrentPageHeader")]
+  [InteropEnumValue("wdSeekCurrentPageHeader")]
   CurrentPageHeader = 9,
   /// <summary>
   /// The current page footer.
   /// </summary>
-  [WordInteropEnumValue("wdSeekCurrentPageFooter")]
+  [InteropEnumValue("wdSeekCurrentPageFooter")]
   CurrentPageFooter = 10
 }

@@ -6,182 +6,182 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoanimationtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoAnimationType")]
+[InteropEnumType("Microsoft.Office.Core.MsoAnimationType")]
 public enum AnimationType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationIdle")]
+  [InteropEnumValue("msoAnimationIdle")]
   Idle = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGreeting")]
+  [InteropEnumValue("msoAnimationGreeting")]
   Greeting = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGoodbye")]
+  [InteropEnumValue("msoAnimationGoodbye")]
   Goodbye = 3,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationBeginSpeaking")]
+  [InteropEnumValue("msoAnimationBeginSpeaking")]
   BeginSpeaking = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationRestPose")]
+  [InteropEnumValue("msoAnimationRestPose")]
   RestPose = 5,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationCharacterSuccessMajor")]
+  [InteropEnumValue("msoAnimationCharacterSuccessMajor")]
   CharacterSuccessMajor = 6,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGetAttentionMajor")]
+  [InteropEnumValue("msoAnimationGetAttentionMajor")]
   GetAttentionMajor = 11,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGetAttentionMinor")]
+  [InteropEnumValue("msoAnimationGetAttentionMinor")]
   GetAttentionMinor = 12,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationSearching")]
+  [InteropEnumValue("msoAnimationSearching")]
   Searching = 13,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationPrinting")]
+  [InteropEnumValue("msoAnimationPrinting")]
   Printing = 18,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGestureRight")]
+  [InteropEnumValue("msoAnimationGestureRight")]
   GestureRight = 19,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationWritingNotingSomething")]
+  [InteropEnumValue("msoAnimationWritingNotingSomething")]
   WritingNotingSomething = 22,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationWorkingAtSomething")]
+  [InteropEnumValue("msoAnimationWorkingAtSomething")]
   WorkingAtSomething = 23,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationThinking")]
+  [InteropEnumValue("msoAnimationThinking")]
   Thinking = 24,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationSendingMail")]
+  [InteropEnumValue("msoAnimationSendingMail")]
   SendingMail = 25,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationListensToComputer")]
+  [InteropEnumValue("msoAnimationListensToComputer")]
   ListensToComputer = 26,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationDisappear")]
+  [InteropEnumValue("msoAnimationDisappear")]
   Disappear = 31,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationAppear")]
+  [InteropEnumValue("msoAnimationAppear")]
   Appear = 32,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGetArtsy")]
+  [InteropEnumValue("msoAnimationGetArtsy")]
   GetArtsy = 100,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGetTechy")]
+  [InteropEnumValue("msoAnimationGetTechy")]
   GetTechy = 101,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGetWizardy")]
+  [InteropEnumValue("msoAnimationGetWizardy")]
   GetWizardy = 102,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationCheckingSomething")]
+  [InteropEnumValue("msoAnimationCheckingSomething")]
   CheckingSomething = 103,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookDown")]
+  [InteropEnumValue("msoAnimationLookDown")]
   LookDown = 104,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookDownLeft")]
+  [InteropEnumValue("msoAnimationLookDownLeft")]
   LookDownLeft = 105,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookDownRight")]
+  [InteropEnumValue("msoAnimationLookDownRight")]
   LookDownRight = 106,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookLeft")]
+  [InteropEnumValue("msoAnimationLookLeft")]
   LookLeft = 107,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookRight")]
+  [InteropEnumValue("msoAnimationLookRight")]
   LookRight = 108,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookUp")]
+  [InteropEnumValue("msoAnimationLookUp")]
   LookUp = 109,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookUpLeft")]
+  [InteropEnumValue("msoAnimationLookUpLeft")]
   LookUpLeft = 110,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationLookUpRight")]
+  [InteropEnumValue("msoAnimationLookUpRight")]
   LookUpRight = 111,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationSaving")]
+  [InteropEnumValue("msoAnimationSaving")]
   Saving = 112,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGestureDown")]
+  [InteropEnumValue("msoAnimationGestureDown")]
   GestureDown = 113,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGestureLeft")]
+  [InteropEnumValue("msoAnimationGestureLeft")]
   GestureLeft = 114,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationGestureUp")]
+  [InteropEnumValue("msoAnimationGestureUp")]
   GestureUp = 115,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAnimationEmptyTrash")]
+  [InteropEnumValue("msoAnimationEmptyTrash")]
   EmptyTrash = 116
 }

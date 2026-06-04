@@ -3,217 +3,217 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msonumberedbulletstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoNumberedBulletStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoNumberedBulletStyle")]
 public enum NumberedBulletStyle
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletStyleMixed")]
+  [InteropEnumValue("msoBulletStyleMixed")]
   StyleMixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaLCPeriod")]
+  [InteropEnumValue("msoBulletAlphaLCPeriod")]
   AlphaLCPeriod = 0,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaUCPeriod")]
+  [InteropEnumValue("msoBulletAlphaUCPeriod")]
   AlphaUCPeriod = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicParenRight")]
+  [InteropEnumValue("msoBulletArabicParenRight")]
   ArabicParenRight = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicPeriod")]
+  [InteropEnumValue("msoBulletArabicPeriod")]
   ArabicPeriod = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanLCParenBoth")]
+  [InteropEnumValue("msoBulletRomanLCParenBoth")]
   RomanLCParenBoth = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanLCParenRight")]
+  [InteropEnumValue("msoBulletRomanLCParenRight")]
   RomanLCParenRight = 5,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanLCPeriod")]
+  [InteropEnumValue("msoBulletRomanLCPeriod")]
   RomanLCPeriod = 6,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanUCPeriod")]
+  [InteropEnumValue("msoBulletRomanUCPeriod")]
   RomanUCPeriod = 7,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaLCParenBoth")]
+  [InteropEnumValue("msoBulletAlphaLCParenBoth")]
   AlphaLCParenBoth = 8,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaLCParenRight")]
+  [InteropEnumValue("msoBulletAlphaLCParenRight")]
   AlphaLCParenRight = 9,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaUCParenBoth")]
+  [InteropEnumValue("msoBulletAlphaUCParenBoth")]
   AlphaUCParenBoth = 10,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletAlphaUCParenRight")]
+  [InteropEnumValue("msoBulletAlphaUCParenRight")]
   AlphaUCParenRight = 11,
   /// <summary>
   /// public enum class NumberedBulletStyle
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicParenBoth")]
+  [InteropEnumValue("msoBulletArabicParenBoth")]
   ArabicParenBoth = 12,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicPlain")]
+  [InteropEnumValue("msoBulletArabicPlain")]
   ArabicPlain = 13,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanUCParenBoth")]
+  [InteropEnumValue("msoBulletRomanUCParenBoth")]
   RomanUCParenBoth = 14,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletRomanUCParenRight")]
+  [InteropEnumValue("msoBulletRomanUCParenRight")]
   RomanUCParenRight = 15,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletSimpChinPlain")]
+  [InteropEnumValue("msoBulletSimpChinPlain")]
   SimpChinPlain = 16,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletSimpChinPeriod")]
+  [InteropEnumValue("msoBulletSimpChinPeriod")]
   SimpChinPeriod = 17,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletCircleNumDBPlain")]
+  [InteropEnumValue("msoBulletCircleNumDBPlain")]
   CircleNumDBPlain = 18,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletCircleNumWDWhitePlain")]
+  [InteropEnumValue("msoBulletCircleNumWDWhitePlain")]
   CircleNumWDWhitePlain = 19,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletCircleNumWDBlackPlain")]
+  [InteropEnumValue("msoBulletCircleNumWDBlackPlain")]
   CircleNumWDBlackPlain = 20,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletTradChinPlain")]
+  [InteropEnumValue("msoBulletTradChinPlain")]
   TradChinPlain = 21,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletTradChinPeriod")]
+  [InteropEnumValue("msoBulletTradChinPeriod")]
   TradChinPeriod = 22,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicAlphaDash")]
+  [InteropEnumValue("msoBulletArabicAlphaDash")]
   ArabicAlphaDash = 23,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicAbjadDash")]
+  [InteropEnumValue("msoBulletArabicAbjadDash")]
   ArabicAbjadDash = 24,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletHebrewAlphaDash")]
+  [InteropEnumValue("msoBulletHebrewAlphaDash")]
   HebrewAlphaDash = 25,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletKanjiKoreanPlain")]
+  [InteropEnumValue("msoBulletKanjiKoreanPlain")]
   KanjiKoreanPlain = 26,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletKanjiKoreanPeriod")]
+  [InteropEnumValue("msoBulletKanjiKoreanPeriod")]
   KanjiKoreanPeriod = 27,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicDBPlain")]
+  [InteropEnumValue("msoBulletArabicDBPlain")]
   ArabicDBPlain = 28,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletArabicDBPeriod")]
+  [InteropEnumValue("msoBulletArabicDBPeriod")]
   ArabicDBPeriod = 29,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiAlphaPeriod")]
+  [InteropEnumValue("msoBulletThaiAlphaPeriod")]
   ThaiAlphaPeriod = 30,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiAlphaParenRight")]
+  [InteropEnumValue("msoBulletThaiAlphaParenRight")]
   ThaiAlphaParenRight = 31,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiAlphaParenBoth")]
+  [InteropEnumValue("msoBulletThaiAlphaParenBoth")]
   ThaiAlphaParenBoth = 32,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiNumPeriod")]
+  [InteropEnumValue("msoBulletThaiNumPeriod")]
   ThaiNumPeriod = 33,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiNumParenRight")]
+  [InteropEnumValue("msoBulletThaiNumParenRight")]
   ThaiNumParenRight = 34,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletThaiNumParenBoth")]
+  [InteropEnumValue("msoBulletThaiNumParenBoth")]
   ThaiNumParenBoth = 35,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletHindiAlphaPeriod")]
+  [InteropEnumValue("msoBulletHindiAlphaPeriod")]
   HindiAlphaPeriod = 36,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletHindiNumPeriod")]
+  [InteropEnumValue("msoBulletHindiNumPeriod")]
   HindiNumPeriod = 37,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletKanjiSimpChinDBPeriod")]
+  [InteropEnumValue("msoBulletKanjiSimpChinDBPeriod")]
   KanjiSimpChinDBPeriod = 38,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletHindiNumParenRight")]
+  [InteropEnumValue("msoBulletHindiNumParenRight")]
   HindiNumParenRight = 39,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBulletHindiAlpha1Period")]
+  [InteropEnumValue("msoBulletHindiAlpha1Period")]
   HindiAlpha1Period = 40
 }

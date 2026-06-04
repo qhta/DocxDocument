@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSyncErrorType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSyncErrorType")]
 public enum SyncErrorType
 {
   /// <summary>
   /// No error.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorNone")]
+  [InteropEnumValue("msoSyncErrorNone")]
   None,
   /// <summary>
   /// Unauthorized user.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorUnauthorizedUser")]
+  [InteropEnumValue("msoSyncErrorUnauthorizedUser")]
   UnauthorizedUser,
   /// <summary>
   /// Could not connect.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorCouldNotConnect")]
+  [InteropEnumValue("msoSyncErrorCouldNotConnect")]
   CouldNotConnect,
   /// <summary>
   /// Out of space.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorOutOfSpace")]
+  [InteropEnumValue("msoSyncErrorOutOfSpace")]
   OutOfSpace,
   /// <summary>
   /// Destination file not found.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorFileNotFound")]
+  [InteropEnumValue("msoSyncErrorFileNotFound")]
   FileNotFound,
   /// <summary>
   /// File too large to synchronize.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorFileTooLarge")]
+  [InteropEnumValue("msoSyncErrorFileTooLarge")]
   FileTooLarge,
   /// <summary>
   /// Destination file in use.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorFileInUse")]
+  [InteropEnumValue("msoSyncErrorFileInUse")]
   FileInUse,
   /// <summary>
   /// Virus uploaded.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorVirusUpload")]
+  [InteropEnumValue("msoSyncErrorVirusUpload")]
   VirusUpload,
   /// <summary>
   /// Virus downloaded.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorVirusDownload")]
+  [InteropEnumValue("msoSyncErrorVirusDownload")]
   VirusDownload,
   /// <summary>
   /// Upload error.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorUnknownUpload")]
+  [InteropEnumValue("msoSyncErrorUnknownUpload")]
   UnknownUpload,
   /// <summary>
   /// Download error.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorUnknownDownload")]
+  [InteropEnumValue("msoSyncErrorUnknownDownload")]
   UnknownDownload,
   /// <summary>
   /// Could not open file.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorCouldNotOpen")]
+  [InteropEnumValue("msoSyncErrorCouldNotOpen")]
   CouldNotOpen,
   /// <summary>
   /// Could not update destination file.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorCouldNotUpdate")]
+  [InteropEnumValue("msoSyncErrorCouldNotUpdate")]
   CouldNotUpdate,
   /// <summary>
   /// Source and destination files could not be compared.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorCouldNotCompare")]
+  [InteropEnumValue("msoSyncErrorCouldNotCompare")]
   CouldNotCompare,
   /// <summary>
   /// Could not resolve files.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorCouldNotResolve")]
+  [InteropEnumValue("msoSyncErrorCouldNotResolve")]
   CouldNotResolve,
   /// <summary>
   /// No network available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorNoNetwork")]
+  [InteropEnumValue("msoSyncErrorNoNetwork")]
   NoNetwork,
   /// <summary>
   /// Unknown error.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncErrorUnknown")]
+  [InteropEnumValue("msoSyncErrorUnknown")]
   Unknown
 }

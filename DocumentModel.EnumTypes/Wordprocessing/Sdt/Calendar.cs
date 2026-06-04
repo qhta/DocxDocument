@@ -2,83 +2,83 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CalendarValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.CalendarValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues))]
 public enum Calendar
 {
   /// <summary>
   ///   Gregorian.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Gregorian))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Gregorian))]
   Gregorian,
   /// <summary>
   ///   Hijri.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Hijri))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Hijri))]
   Hijri,
   /// <summary>
   ///   umalqura.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Umalqura))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Umalqura))]
   Umalqura,
   /// <summary>
   ///   Hebrew.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Hebrew))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Hebrew))]
   Hebrew,
   /// <summary>
   ///   Taiwan.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Taiwan))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Taiwan))]
   Taiwan,
   /// <summary>
   ///   Japanese Emperor Era.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Japan))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Japan))]
   Japan,
   /// <summary>
   ///   Thai.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Thai))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Thai))]
   Thai,
   /// <summary>
   ///   Korean Tangun Era.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Korea))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Korea))]
   Korea,
   /// <summary>
   ///   Saka Era.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.Saka))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.Saka))]
   Saka,
   /// <summary>
   ///   Gregorian transliterated English.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.GregorianTransliteratedEnglish))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.GregorianTransliteratedEnglish))]
   GregorianTransliteratedEnglish,
   /// <summary>
   ///   Gregorian transliterated French.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.GregorianTransliteratedFrench))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.GregorianTransliteratedFrench))]
   GregorianTransliteratedFrench,
   /// <summary>
   ///   gregorianUs.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.GregorianUs))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.GregorianUs))]
   GregorianUs,
   /// <summary>
   ///   gregorianMeFrench.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.GregorianMeFrench))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.GregorianMeFrench))]
   GregorianMeFrench,
   /// <summary>
   ///   gregorianArabic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.GregorianArabic))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.GregorianArabic))]
   GregorianArabic,
   /// <summary>
   ///   none.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CalendarValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CalendarValues.None))]
   None
 }

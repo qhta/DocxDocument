@@ -7,58 +7,58 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetextrusiondirection?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoPresetExtrusionDirection")]
+[InteropEnumType("Microsoft.Office.Core.MsoPresetExtrusionDirection")]
 public enum PresetExtrusionDirection
 {
   /// <summary>
   /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
   /// the extrusion).
   /// </summary>
-  [OfficeInteropEnumValue("msoPresetExtrusionDirectionMixed")]
+  [InteropEnumValue("msoPresetExtrusionDirectionMixed")]
   Mixed = -2,
   /// <summary>
   /// Bottom right.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionBottomRight")]
+  [InteropEnumValue("msoExtrusionBottomRight")]
   BottomRight = 1,
   /// <summary>
   /// Bottom.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionBottom")]
+  [InteropEnumValue("msoExtrusionBottom")]
   Bottom = 2,
   /// <summary>
   /// Bottom left.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionBottomLeft")]
+  [InteropEnumValue("msoExtrusionBottomLeft")]
   BottomLeft = 3,
   /// <summary>
   /// Right.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionRight")]
+  [InteropEnumValue("msoExtrusionRight")]
   Right = 4,
   /// <summary>
   /// No extrusion.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionNone")]
+  [InteropEnumValue("msoExtrusionNone")]
   None = 5,
   /// <summary>
   /// Left.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionLeft")]
+  [InteropEnumValue("msoExtrusionLeft")]
   Left = 6,
   /// <summary>
   /// Top right.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionTopRight")]
+  [InteropEnumValue("msoExtrusionTopRight")]
   TopRight = 7,
   /// <summary>
   /// Top.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionTop")]
+  [InteropEnumValue("msoExtrusionTop")]
   Top = 8,
   /// <summary>
   /// Top left.
   /// </summary>
-  [OfficeInteropEnumValue("msoExtrusionTopLeft")]
+  [InteropEnumValue("msoExtrusionTopLeft")]
   TopLeft = 9
 }

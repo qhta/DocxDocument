@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreadingorder?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdReadingOrder")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdReadingOrder")]
 public enum ReadingOrder
 {
   /// <summary>
   /// Right-to-left reading order.
   /// </summary>
-  [WordInteropEnumValue("wdReadingOrderRtl")]
+  [InteropEnumValue("wdReadingOrderRtl")]
   Rtl = 0,
   /// <summary>
   /// Left-to-right reading order.
   /// </summary>
-  [WordInteropEnumValue("wdReadingOrderLtr")]
+  [InteropEnumValue("wdReadingOrderLtr")]
   Ltr = 1
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdeditiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEditionType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEditionType")]
 public enum EditionType
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdPublisher")]
+  [InteropEnumValue("wdPublisher")]
   Publisher = 0,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdSubscriber")]
+  [InteropEnumValue("wdSubscriber")]
   Subscriber = 1
 }

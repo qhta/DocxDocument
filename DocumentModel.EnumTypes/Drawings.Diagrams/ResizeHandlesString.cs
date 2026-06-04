@@ -4,8 +4,8 @@
 /// Defines the ResizeHandlesString enumeration.
 /// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ResizeHandlesStringValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues))]
 public enum ResizeHandlesString
 {
   /// <summary>

@@ -4,8 +4,8 @@
 /// Defines the DiagramBuildStep enumeration.
 /// Used in types such as IDiagram.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.DiagramBuildStepValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues))]
 public enum DiagramBuildStep
 {
   /// <summary>

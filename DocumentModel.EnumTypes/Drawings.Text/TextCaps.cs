@@ -2,23 +2,23 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Cap Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.TextCapsValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.TextCapsValues))]
 public enum TextCaps
 {
   /// <summary>
   ///   Text Caps Enum ( None ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextCapsValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextCapsValues.None))]
   None = 1,
   /// <summary>
   ///   Text Caps Enum ( Small ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextCapsValues.Small))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextCapsValues.Small))]
   Small,
   /// <summary>
   ///   Text Caps Enum ( All ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextCapsValues.All))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextCapsValues.All))]
   All
 }

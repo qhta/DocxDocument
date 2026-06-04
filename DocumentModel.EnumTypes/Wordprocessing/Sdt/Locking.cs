@@ -2,28 +2,28 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LockingValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.LockingValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.LockingValues))]
 public enum Locking
 {
   /// <summary>
   ///   SDT Cannot Be Deleted.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LockingValues.SdtLocked))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LockingValues.SdtLocked))]
   SdtLocked,
   /// <summary>
   ///   Contents Cannot Be Edited At Runtime.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LockingValues.ContentLocked))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LockingValues.ContentLocked))]
   ContentLocked,
   /// <summary>
   ///   No Locking.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LockingValues.Unlocked))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LockingValues.Unlocked))]
   Unlocked,
   /// <summary>
   ///   Contents Cannot Be Edited At Runtime And SDT Cannot Be Deleted.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.LockingValues.SdtContentLocked))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.LockingValues.SdtContentLocked))]
   SdtContentLocked
 }

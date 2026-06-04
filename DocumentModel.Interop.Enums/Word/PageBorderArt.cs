@@ -6,827 +6,827 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpageborderart?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPageBorderArt")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPageBorderArt")]
 public enum PageBorderArt
 {
   /// <summary>
   /// An apple border.
   /// </summary>
-  [WordInteropEnumValue("wdArtApples")]
+  [InteropEnumValue("wdArtApples")]
   Apples = 1,
   /// <summary>
   /// A maple muffins border.
   /// </summary>
-  [WordInteropEnumValue("wdArtMapleMuffins")]
+  [InteropEnumValue("wdArtMapleMuffins")]
   MapleMuffins = 2,
   /// <summary>
   /// A cake slice border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCakeSlice")]
+  [InteropEnumValue("wdArtCakeSlice")]
   CakeSlice = 3,
   /// <summary>
   /// A candy corn border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCandyCorn")]
+  [InteropEnumValue("wdArtCandyCorn")]
   CandyCorn = 4,
   /// <summary>
   /// An ice cream cones border.
   /// </summary>
-  [WordInteropEnumValue("wdArtIceCreamCones")]
+  [InteropEnumValue("wdArtIceCreamCones")]
   IceCreamCones = 5,
   /// <summary>
   /// A champagne bottle border.
   /// </summary>
-  [WordInteropEnumValue("wdArtChampagneBottle")]
+  [InteropEnumValue("wdArtChampagneBottle")]
   ChampagneBottle = 6,
   /// <summary>
   /// A party glass border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPartyGlass")]
+  [InteropEnumValue("wdArtPartyGlass")]
   PartyGlass = 7,
   /// <summary>
   /// A Christmas tree border.
   /// </summary>
-  [WordInteropEnumValue("wdArtChristmasTree")]
+  [InteropEnumValue("wdArtChristmasTree")]
   ChristmasTree = 8,
   /// <summary>
   /// A trees border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTrees")]
+  [InteropEnumValue("wdArtTrees")]
   Trees = 9,
   /// <summary>
   /// A colored palms border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPalmsColor")]
+  [InteropEnumValue("wdArtPalmsColor")]
   PalmsColor = 10,
   /// <summary>
   /// Balloons in three colors as the border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBalloons3Colors")]
+  [InteropEnumValue("wdArtBalloons3Colors")]
   Balloons3Colors = 11,
   /// <summary>
   /// A hot air balloon border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBalloonsHotAir")]
+  [InteropEnumValue("wdArtBalloonsHotAir")]
   BalloonsHotAir = 12,
   /// <summary>
   /// A party favor border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPartyFavor")]
+  [InteropEnumValue("wdArtPartyFavor")]
   PartyFavor = 13,
   /// <summary>
   /// A confetti streamers border.
   /// </summary>
-  [WordInteropEnumValue("wdArtConfettiStreamers")]
+  [InteropEnumValue("wdArtConfettiStreamers")]
   ConfettiStreamers = 14,
   /// <summary>
   /// A hearts border.
   /// </summary>
-  [WordInteropEnumValue("wdArtHearts")]
+  [InteropEnumValue("wdArtHearts")]
   Hearts = 15,
   /// <summary>
   /// A heart balloon border.
   /// </summary>
-  [WordInteropEnumValue("wdArtHeartBalloon")]
+  [InteropEnumValue("wdArtHeartBalloon")]
   HeartBalloon = 16,
   /// <summary>
   /// A 3-D stars border.
   /// </summary>
-  [WordInteropEnumValue("wdArtStars3D")]
+  [InteropEnumValue("wdArtStars3D")]
   Stars3D = 17,
   /// <summary>
   /// A shadowed stars border.
   /// </summary>
-  [WordInteropEnumValue("wdArtStarsShadowed")]
+  [InteropEnumValue("wdArtStarsShadowed")]
   StarsShadowed = 18,
   /// <summary>
   /// A stars border.
   /// </summary>
-  [WordInteropEnumValue("wdArtStars")]
+  [InteropEnumValue("wdArtStars")]
   Stars = 19,
   /// <summary>
   /// A sun border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSun")]
+  [InteropEnumValue("wdArtSun")]
   Sun = 20,
   /// <summary>
   /// An earth number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtEarth2")]
+  [InteropEnumValue("wdArtEarth2")]
   Earth2 = 21,
   /// <summary>
   /// An earth number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtEarth1")]
+  [InteropEnumValue("wdArtEarth1")]
   Earth1 = 22,
   /// <summary>
   /// A people wearing hats border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPeopleHats")]
+  [InteropEnumValue("wdArtPeopleHats")]
   PeopleHats = 23,
   /// <summary>
   /// A sombrero border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSombrero")]
+  [InteropEnumValue("wdArtSombrero")]
   Sombrero = 24,
   /// <summary>
   /// A pencils border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPencils")]
+  [InteropEnumValue("wdArtPencils")]
   Pencils = 25,
   /// <summary>
   /// A packages border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPackages")]
+  [InteropEnumValue("wdArtPackages")]
   Packages = 26,
   /// <summary>
   /// A clocks border.
   /// </summary>
-  [WordInteropEnumValue("wdArtClocks")]
+  [InteropEnumValue("wdArtClocks")]
   Clocks = 27,
   /// <summary>
   /// A fire crackers border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFirecrackers")]
+  [InteropEnumValue("wdArtFirecrackers")]
   Firecrackers = 28,
   /// <summary>
   /// A rings border.
   /// </summary>
-  [WordInteropEnumValue("wdArtRings")]
+  [InteropEnumValue("wdArtRings")]
   Rings = 29,
   /// <summary>
   /// A map pins border.
   /// </summary>
-  [WordInteropEnumValue("wdArtMapPins")]
+  [InteropEnumValue("wdArtMapPins")]
   MapPins = 30,
   /// <summary>
   /// A confetti border.
   /// </summary>
-  [WordInteropEnumValue("wdArtConfetti")]
+  [InteropEnumValue("wdArtConfetti")]
   Confetti = 31,
   /// <summary>
   /// A butterfly border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCreaturesButterfly")]
+  [InteropEnumValue("wdArtCreaturesButterfly")]
   CreaturesButterfly = 32,
   /// <summary>
   /// A ladybug border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCreaturesLadyBug")]
+  [InteropEnumValue("wdArtCreaturesLadyBug")]
   CreaturesLadyBug = 33,
   /// <summary>
   /// A fish border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCreaturesFish")]
+  [InteropEnumValue("wdArtCreaturesFish")]
   CreaturesFish = 34,
   /// <summary>
   /// A birds in flight border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBirdsFlight")]
+  [InteropEnumValue("wdArtBirdsFlight")]
   BirdsFlight = 35,
   /// <summary>
   /// A scared cat border.
   /// </summary>
-  [WordInteropEnumValue("wdArtScaredCat")]
+  [InteropEnumValue("wdArtScaredCat")]
   ScaredCat = 36,
   /// <summary>
   /// A bats border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBats")]
+  [InteropEnumValue("wdArtBats")]
   Bats = 37,
   /// <summary>
   /// A rose border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersRoses")]
+  [InteropEnumValue("wdArtFlowersRoses")]
   FlowersRoses = 38,
   /// <summary>
   /// A red rose border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersRedRose")]
+  [InteropEnumValue("wdArtFlowersRedRose")]
   FlowersRedRose = 39,
   /// <summary>
   /// A poinsettias border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPoinsettias")]
+  [InteropEnumValue("wdArtPoinsettias")]
   Poinsettias = 40,
   /// <summary>
   /// A holly border.
   /// </summary>
-  [WordInteropEnumValue("wdArtHolly")]
+  [InteropEnumValue("wdArtHolly")]
   Holly = 41,
   /// <summary>
   /// A tiny flower border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersTiny")]
+  [InteropEnumValue("wdArtFlowersTiny")]
   FlowersTiny = 42,
   /// <summary>
   /// A pansy border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersPansy")]
+  [InteropEnumValue("wdArtFlowersPansy")]
   FlowersPansy = 43,
   /// <summary>
   /// A modern flowers number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersModern2")]
+  [InteropEnumValue("wdArtFlowersModern2")]
   FlowersModern2 = 44,
   /// <summary>
   /// A modern flowers number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersModern1")]
+  [InteropEnumValue("wdArtFlowersModern1")]
   FlowersModern1 = 45,
   /// <summary>
   /// A white flower border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWhiteFlowers")]
+  [InteropEnumValue("wdArtWhiteFlowers")]
   WhiteFlowers = 46,
   /// <summary>
   /// A vine border.
   /// </summary>
-  [WordInteropEnumValue("wdArtVine")]
+  [InteropEnumValue("wdArtVine")]
   Vine = 47,
   /// <summary>
   /// A daisies border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersDaisies")]
+  [InteropEnumValue("wdArtFlowersDaisies")]
   FlowersDaisies = 48,
   /// <summary>
   /// A block flowers print border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersBlockPrint")]
+  [InteropEnumValue("wdArtFlowersBlockPrint")]
   FlowersBlockPrint = 49,
   /// <summary>
   /// A deco arch colored border.
   /// </summary>
-  [WordInteropEnumValue("wdArtDecoArchColor")]
+  [InteropEnumValue("wdArtDecoArchColor")]
   DecoArchColor = 50,
   /// <summary>
   /// A fans border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFans")]
+  [InteropEnumValue("wdArtFans")]
   Fans = 51,
   /// <summary>
   /// A film border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFilm")]
+  [InteropEnumValue("wdArtFilm")]
   Film = 52,
   /// <summary>
   /// A lightning number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtLightning1")]
+  [InteropEnumValue("wdArtLightning1")]
   Lightning1 = 53,
   /// <summary>
   /// A compass border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCompass")]
+  [InteropEnumValue("wdArtCompass")]
   Compass = 54,
   /// <summary>
   /// A double-D border.
   /// </summary>
-  [WordInteropEnumValue("wdArtDoubleD")]
+  [InteropEnumValue("wdArtDoubleD")]
   DoubleD = 55,
   /// <summary>
   /// A classical wave border.
   /// </summary>
-  [WordInteropEnumValue("wdArtClassicalWave")]
+  [InteropEnumValue("wdArtClassicalWave")]
   ClassicalWave = 56,
   /// <summary>
   /// A shadowed squared border.
   /// </summary>
-  [WordInteropEnumValue("wdArtShadowedSquares")]
+  [InteropEnumValue("wdArtShadowedSquares")]
   ShadowedSquares = 57,
   /// <summary>
   /// A twisted lines number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTwistedLines1")]
+  [InteropEnumValue("wdArtTwistedLines1")]
   TwistedLines1 = 58,
   /// <summary>
   /// A wave line border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWaveline")]
+  [InteropEnumValue("wdArtWaveline")]
   Waveline = 59,
   /// <summary>
   /// A quadrants border.
   /// </summary>
-  [WordInteropEnumValue("wdArtQuadrants")]
+  [InteropEnumValue("wdArtQuadrants")]
   Quadrants = 60,
   /// <summary>
   /// A checked-bar colored border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCheckedBarColor")]
+  [InteropEnumValue("wdArtCheckedBarColor")]
   CheckedBarColor = 61,
   /// <summary>
   /// A swirling border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSwirligig")]
+  [InteropEnumValue("wdArtSwirligig")]
   Swirligig = 62,
   /// <summary>
   /// A pushpin note number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPushPinNote1")]
+  [InteropEnumValue("wdArtPushPinNote1")]
   PushPinNote1 = 63,
   /// <summary>
   /// A pushpin note number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPushPinNote2")]
+  [InteropEnumValue("wdArtPushPinNote2")]
   PushPinNote2 = 64,
   /// <summary>
   /// A pumpkin number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPumpkin1")]
+  [InteropEnumValue("wdArtPumpkin1")]
   Pumpkin1 = 65,
   /// <summary>
   /// A black eggs border.
   /// </summary>
-  [WordInteropEnumValue("wdArtEggsBlack")]
+  [InteropEnumValue("wdArtEggsBlack")]
   EggsBlack = 66,
   /// <summary>
   /// A cup border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCup")]
+  [InteropEnumValue("wdArtCup")]
   Cup = 67,
   /// <summary>
   /// A heart border in shades of gray.
   /// </summary>
-  [WordInteropEnumValue("wdArtHeartGray")]
+  [InteropEnumValue("wdArtHeartGray")]
   HeartGray = 68,
   /// <summary>
   /// A gingerbread man border.
   /// </summary>
-  [WordInteropEnumValue("wdArtGingerbreadMan")]
+  [InteropEnumValue("wdArtGingerbreadMan")]
   GingerbreadMan = 69,
   /// <summary>
   /// A baby pacifier border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBabyPacifier")]
+  [InteropEnumValue("wdArtBabyPacifier")]
   BabyPacifier = 70,
   /// <summary>
   /// A baby rattle border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBabyRattle")]
+  [InteropEnumValue("wdArtBabyRattle")]
   BabyRattle = 71,
   /// <summary>
   /// A cabins border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCabins")]
+  [InteropEnumValue("wdArtCabins")]
   Cabins = 72,
   /// <summary>
   /// A funky house border.
   /// </summary>
-  [WordInteropEnumValue("wdArtHouseFunky")]
+  [InteropEnumValue("wdArtHouseFunky")]
   HouseFunky = 73,
   /// <summary>
   /// A black stars border.
   /// </summary>
-  [WordInteropEnumValue("wdArtStarsBlack")]
+  [InteropEnumValue("wdArtStarsBlack")]
   StarsBlack = 74,
   /// <summary>
   /// A snowflake border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSnowflakes")]
+  [InteropEnumValue("wdArtSnowflakes")]
   Snowflakes = 75,
   /// <summary>
   /// A fancy snowflake border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSnowflakeFancy")]
+  [InteropEnumValue("wdArtSnowflakeFancy")]
   SnowflakeFancy = 76,
   /// <summary>
   /// A sky rocket border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSkyrocket")]
+  [InteropEnumValue("wdArtSkyrocket")]
   Skyrocket = 77,
   /// <summary>
   /// A Seattle border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSeattle")]
+  [InteropEnumValue("wdArtSeattle")]
   Seattle = 78,
   /// <summary>
   /// A music notes border.
   /// </summary>
-  [WordInteropEnumValue("wdArtMusicNotes")]
+  [InteropEnumValue("wdArtMusicNotes")]
   MusicNotes = 79,
   /// <summary>
   /// A black palms border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPalmsBlack")]
+  [InteropEnumValue("wdArtPalmsBlack")]
   PalmsBlack = 80,
   /// <summary>
   /// A maple leaf border.
   /// </summary>
-  [WordInteropEnumValue("wdArtMapleLeaf")]
+  [InteropEnumValue("wdArtMapleLeaf")]
   MapleLeaf = 81,
   /// <summary>
   /// A paper clips border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPaperClips")]
+  [InteropEnumValue("wdArtPaperClips")]
   PaperClips = 82,
   /// <summary>
   /// A shorebird tracks border.
   /// </summary>
-  [WordInteropEnumValue("wdArtShorebirdTracks")]
+  [InteropEnumValue("wdArtShorebirdTracks")]
   ShorebirdTracks = 83,
   /// <summary>
   /// A people border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPeople")]
+  [InteropEnumValue("wdArtPeople")]
   People = 84,
   /// <summary>
   /// A people waving border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPeopleWaving")]
+  [InteropEnumValue("wdArtPeopleWaving")]
   PeopleWaving = 85,
   /// <summary>
   /// An eclipsing squares number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtEclipsingSquares2")]
+  [InteropEnumValue("wdArtEclipsingSquares2")]
   EclipsingSquares2 = 86,
   /// <summary>
   /// A hypnotic border.
   /// </summary>
-  [WordInteropEnumValue("wdArtHypnotic")]
+  [InteropEnumValue("wdArtHypnotic")]
   Hypnotic = 87,
   /// <summary>
   /// A diamond border using shades of gray.
   /// </summary>
-  [WordInteropEnumValue("wdArtDiamondsGray")]
+  [InteropEnumValue("wdArtDiamondsGray")]
   DiamondsGray = 88,
   /// <summary>
   /// A deco arch border.
   /// </summary>
-  [WordInteropEnumValue("wdArtDecoArch")]
+  [InteropEnumValue("wdArtDecoArch")]
   DecoArch = 89,
   /// <summary>
   /// A deco blocks border.
   /// </summary>
-  [WordInteropEnumValue("wdArtDecoBlocks")]
+  [InteropEnumValue("wdArtDecoBlocks")]
   DecoBlocks = 90,
   /// <summary>
   /// A circles and lines border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCirclesLines")]
+  [InteropEnumValue("wdArtCirclesLines")]
   CirclesLines = 91,
   /// <summary>
   /// A papyrus border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPapyrus")]
+  [InteropEnumValue("wdArtPapyrus")]
   Papyrus = 92,
   /// <summary>
   /// A woodwork border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWoodwork")]
+  [InteropEnumValue("wdArtWoodwork")]
   Woodwork = 93,
   /// <summary>
   /// A weaving braid border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWeavingBraid")]
+  [InteropEnumValue("wdArtWeavingBraid")]
   WeavingBraid = 94,
   /// <summary>
   /// A weaving ribbon border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWeavingRibbon")]
+  [InteropEnumValue("wdArtWeavingRibbon")]
   WeavingRibbon = 95,
   /// <summary>
   /// A weaving angle border.
   /// </summary>
-  [WordInteropEnumValue("wdArtWeavingAngles")]
+  [InteropEnumValue("wdArtWeavingAngles")]
   WeavingAngles = 96,
   /// <summary>
   /// An arched scalloped border.
   /// </summary>
-  [WordInteropEnumValue("wdArtArchedScallops")]
+  [InteropEnumValue("wdArtArchedScallops")]
   ArchedScallops = 97,
   /// <summary>
   /// A safari border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSafari")]
+  [InteropEnumValue("wdArtSafari")]
   Safari = 98,
   /// <summary>
   /// A Celtic knot work border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCelticKnotwork")]
+  [InteropEnumValue("wdArtCelticKnotwork")]
   CelticKnotwork = 99,
   /// <summary>
   /// A crazy maze border.
   /// </summary>
-  [WordInteropEnumValue("wdArtCrazyMaze")]
+  [InteropEnumValue("wdArtCrazyMaze")]
   CrazyMaze = 100,
   /// <summary>
   /// An eclipsing squares number 1 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtEclipsingSquares1")]
+  [InteropEnumValue("wdArtEclipsingSquares1")]
   EclipsingSquares1 = 101,
   /// <summary>
   /// A birds border.
   /// </summary>
-  [WordInteropEnumValue("wdArtBirds")]
+  [InteropEnumValue("wdArtBirds")]
   Birds = 102,
   /// <summary>
   /// A teacup border.
   /// </summary>
-  [WordInteropEnumValue("wdArtFlowersTeacup")]
+  [InteropEnumValue("wdArtFlowersTeacup")]
   FlowersTeacup = 103,
   /// <summary>
   /// A northwest border.
   /// </summary>
-  [WordInteropEnumValue("wdArtNorthwest")]
+  [InteropEnumValue("wdArtNorthwest")]
   Northwest = 104,
   /// <summary>
   /// A southwest border.
   /// </summary>
-  [WordInteropEnumValue("wdArtSouthwest")]
+  [InteropEnumValue("wdArtSouthwest")]
   Southwest = 105,
   /// <summary>
   /// A tribal number 6 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal6")]
+  [InteropEnumValue("wdArtTribal6")]
   Tribal6 = 106,
   /// <summary>
   /// A tribal number 4 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal4")]
+  [InteropEnumValue("wdArtTribal4")]
   Tribal4 = 107,
   /// <summary>
   /// A tribal number 3 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal3")]
+  [InteropEnumValue("wdArtTribal3")]
   Tribal3 = 108,
   /// <summary>
   /// A tribal number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal2")]
+  [InteropEnumValue("wdArtTribal2")]
   Tribal2 = 109,
   /// <summary>
   /// A tribal number 5 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal5")]
+  [InteropEnumValue("wdArtTribal5")]
   Tribal5 = 110,
   /// <summary>
   /// An X illusion border.
   /// </summary>
-  [WordInteropEnumValue("wdArtXIllusions")]
+  [InteropEnumValue("wdArtXIllusions")]
   XIllusions = 111,
   /// <summary>
   /// A zany triangle border.
   /// </summary>
-  [WordInteropEnumValue("wdArtZanyTriangles")]
+  [InteropEnumValue("wdArtZanyTriangles")]
   ZanyTriangles = 112,
   /// <summary>
   /// A pyramids border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPyramids")]
+  [InteropEnumValue("wdArtPyramids")]
   Pyramids = 113,
   /// <summary>
   /// An external pyramids border.
   /// </summary>
-  [WordInteropEnumValue("wdArtPyramidsAbove")]
+  [InteropEnumValue("wdArtPyramidsAbove")]
   PyramidsAbove = 114,
   /// <summary>
   /// A confetti border using shades of gray.
   /// </summary>
-  [WordInteropEnumValue("wdArtConfettiGrays")]
+  [InteropEnumValue("wdArtConfettiGrays")]
   ConfettiGrays = 115,
   /// <summary>
   /// A confetti outline border.
   /// </summary>
-  [WordInteropEnumValue("wdArtConfettiOutline")]
+  [InteropEnumValue("wdArtConfettiOutline")]
   ConfettiOutline = 116,
   /// <summary>
   /// A confetti white border.
   /// </summary>
-  [WordInteropEnumValue("wdArtConfettiWhite")]
+  [InteropEnumValue("wdArtConfettiWhite")]
   ConfettiWhite = 117,
   /// <summary>
   /// A mosaic border.
   /// </summary>
-  [WordInteropEnumValue("wdArtMosaic")]
+  [InteropEnumValue("wdArtMosaic")]
   Mosaic = 118,
   /// <summary>
   /// A lightning number 2 border.
   /// </summary>
-  [WordInteropEnumValue("wdArtLightning2")]
+  [InteropEnumValue("wdArtLightning2")]
   Lightning2 = 119,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtHeebieJeebies")]
+  [InteropEnumValue("wdArtHeebieJeebies")]
   HeebieJeebies = 120,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtLightBulb")]
+  [InteropEnumValue("wdArtLightBulb")]
   LightBulb = 121,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtGradient")]
+  [InteropEnumValue("wdArtGradient")]
   Gradient = 122,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTriangleParty")]
+  [InteropEnumValue("wdArtTriangleParty")]
   TriangleParty = 123,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTwistedLines2")]
+  [InteropEnumValue("wdArtTwistedLines2")]
   TwistedLines2 = 124,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtMoons")]
+  [InteropEnumValue("wdArtMoons")]
   Moons = 125,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtOvals")]
+  [InteropEnumValue("wdArtOvals")]
   Ovals = 126,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtDoubleDiamonds")]
+  [InteropEnumValue("wdArtDoubleDiamonds")]
   DoubleDiamonds = 127,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtChainLink")]
+  [InteropEnumValue("wdArtChainLink")]
   ChainLink = 128,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTriangles")]
+  [InteropEnumValue("wdArtTriangles")]
   Triangles = 129,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTribal1")]
+  [InteropEnumValue("wdArtTribal1")]
   Tribal1 = 130,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtMarqueeToothed")]
+  [InteropEnumValue("wdArtMarqueeToothed")]
   MarqueeToothed = 131,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtSharksTeeth")]
+  [InteropEnumValue("wdArtSharksTeeth")]
   SharksTeeth = 132,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtSawtooth")]
+  [InteropEnumValue("wdArtSawtooth")]
   Sawtooth = 133,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtSawtoothGray")]
+  [InteropEnumValue("wdArtSawtoothGray")]
   SawtoothGray = 134,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtPostageStamp")]
+  [InteropEnumValue("wdArtPostageStamp")]
   PostageStamp = 135,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtWeavingStrips")]
+  [InteropEnumValue("wdArtWeavingStrips")]
   WeavingStrips = 136,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtZigZag")]
+  [InteropEnumValue("wdArtZigZag")]
   ZigZag = 137,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCrossStitch")]
+  [InteropEnumValue("wdArtCrossStitch")]
   CrossStitch = 138,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtGems")]
+  [InteropEnumValue("wdArtGems")]
   Gems = 139,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCirclesRectangles")]
+  [InteropEnumValue("wdArtCirclesRectangles")]
   CirclesRectangles = 140,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCornerTriangles")]
+  [InteropEnumValue("wdArtCornerTriangles")]
   CornerTriangles = 141,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCreaturesInsects")]
+  [InteropEnumValue("wdArtCreaturesInsects")]
   CreaturesInsects = 142,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtZigZagStitch")]
+  [InteropEnumValue("wdArtZigZagStitch")]
   ZigZagStitch = 143,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCheckered")]
+  [InteropEnumValue("wdArtCheckered")]
   Checkered = 144,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCheckedBarBlack")]
+  [InteropEnumValue("wdArtCheckedBarBlack")]
   CheckedBarBlack = 145,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtMarquee")]
+  [InteropEnumValue("wdArtMarquee")]
   Marquee = 146,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWhiteDots")]
+  [InteropEnumValue("wdArtBasicWhiteDots")]
   BasicWhiteDots = 147,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWideMidline")]
+  [InteropEnumValue("wdArtBasicWideMidline")]
   BasicWideMidline = 148,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWideOutline")]
+  [InteropEnumValue("wdArtBasicWideOutline")]
   BasicWideOutline = 149,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWideInline")]
+  [InteropEnumValue("wdArtBasicWideInline")]
   BasicWideInline = 150,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicThinLines")]
+  [InteropEnumValue("wdArtBasicThinLines")]
   BasicThinLines = 151,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWhiteDashes")]
+  [InteropEnumValue("wdArtBasicWhiteDashes")]
   BasicWhiteDashes = 152,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicWhiteSquares")]
+  [InteropEnumValue("wdArtBasicWhiteSquares")]
   BasicWhiteSquares = 153,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicBlackSquares")]
+  [InteropEnumValue("wdArtBasicBlackSquares")]
   BasicBlackSquares = 154,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicBlackDashes")]
+  [InteropEnumValue("wdArtBasicBlackDashes")]
   BasicBlackDashes = 155,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtBasicBlackDots")]
+  [InteropEnumValue("wdArtBasicBlackDots")]
   BasicBlackDots = 156,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtStarsTop")]
+  [InteropEnumValue("wdArtStarsTop")]
   StarsTop = 157,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCertificateBanner")]
+  [InteropEnumValue("wdArtCertificateBanner")]
   CertificateBanner = 158,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtHandmade1")]
+  [InteropEnumValue("wdArtHandmade1")]
   Handmade1 = 159,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtHandmade2")]
+  [InteropEnumValue("wdArtHandmade2")]
   Handmade2 = 160,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTornPaper")]
+  [InteropEnumValue("wdArtTornPaper")]
   TornPaper = 161,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtTornPaperBlack")]
+  [InteropEnumValue("wdArtTornPaperBlack")]
   TornPaperBlack = 162,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCouponCutoutDashes")]
+  [InteropEnumValue("wdArtCouponCutoutDashes")]
   CouponCutoutDashes = 163,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue("wdArtCouponCutoutDots")]
+  [InteropEnumValue("wdArtCouponCutoutDots")]
   CouponCutoutDots = 164
 }

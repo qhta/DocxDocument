@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlhalign?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlHAlign")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlHAlign")]
 public enum HAlign
 {
   /// <summary>
   /// Align according to data type.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignGeneral")]
+  [InteropEnumValue("xlHAlignGeneral")]
   General = 1,
   /// <summary>
   /// Fill.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignFill")]
+  [InteropEnumValue("xlHAlignFill")]
   Fill = 5,
   /// <summary>
   /// Center across selection.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignCenterAcrossSelection")]
+  [InteropEnumValue("xlHAlignCenterAcrossSelection")]
   CenterAcrossSelection = 7,
   /// <summary>
   /// Right.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignRight")]
+  [InteropEnumValue("xlHAlignRight")]
   Right = -4152,
   /// <summary>
   /// Left.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignLeft")]
+  [InteropEnumValue("xlHAlignLeft")]
   Left = -4131,
   /// <summary>
   /// Justify.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignJustify")]
+  [InteropEnumValue("xlHAlignJustify")]
   Justify = -4130,
   /// <summary>
   /// Distribute.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignDistributed")]
+  [InteropEnumValue("xlHAlignDistributed")]
   Distributed = -4117,
   /// <summary>
   /// Center.
   /// </summary>
-  [WordInteropEnumValue("xlHAlignCenter")]
+  [InteropEnumValue("xlHAlignCenter")]
   Center = -4108
 }

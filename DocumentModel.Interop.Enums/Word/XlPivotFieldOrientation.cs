@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpivotfieldorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlPivotFieldOrientation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlPivotFieldOrientation")]
 public enum PivotFieldOrientation
 {
   /// <summary>
   /// Hidden
   /// </summary>
-  [WordInteropEnumValue("xlHidden")]
+  [InteropEnumValue("xlHidden")]
   Hidden = 0,
   /// <summary>
   /// Row
   /// </summary>
-  [WordInteropEnumValue("xlRowField")]
+  [InteropEnumValue("xlRowField")]
   RowField = 1,
   /// <summary>
   /// Column
   /// </summary>
-  [WordInteropEnumValue("xlColumnField")]
+  [InteropEnumValue("xlColumnField")]
   ColumnField = 2,
   /// <summary>
   /// Page
   /// </summary>
-  [WordInteropEnumValue("xlPageField")]
+  [InteropEnumValue("xlPageField")]
   PageField = 3,
   /// <summary>
   /// Data
   /// </summary>
-  [WordInteropEnumValue("xlDataField")]
+  [InteropEnumValue("xlDataField")]
   DataField = 4
 }

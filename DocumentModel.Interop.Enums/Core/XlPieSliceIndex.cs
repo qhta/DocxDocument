@@ -7,52 +7,52 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlpiesliceindex?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlPieSliceIndex")]
+[InteropEnumType("Microsoft.Office.Core.XlPieSliceIndex")]
 public enum PieSliceIndex
 {
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlOuterCounterClockwisePoint")]
+  [InteropEnumValue("xlOuterCounterClockwisePoint")]
   OuterCounterClockwisePoint = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlOuterCenterPoint")]
+  [InteropEnumValue("xlOuterCenterPoint")]
   OuterCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlOuterClockwisePoint")]
+  [InteropEnumValue("xlOuterClockwisePoint")]
   OuterClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlMidClockwiseRadiusPoint")]
+  [InteropEnumValue("xlMidClockwiseRadiusPoint")]
   MidClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlCenterPoint")]
+  [InteropEnumValue("xlCenterPoint")]
   CenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlMidCounterClockwiseRadiusPoint")]
+  [InteropEnumValue("xlMidCounterClockwiseRadiusPoint")]
   MidCounterClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlInnerClockwisePoint")]
+  [InteropEnumValue("xlInnerClockwisePoint")]
   InnerClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlInnerCenterPoint")]
+  [InteropEnumValue("xlInnerCenterPoint")]
   InnerCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlInnerCounterClockwisePoint")]
+  [InteropEnumValue("xlInnerCounterClockwisePoint")]
   InnerCounterClockwisePoint
 }

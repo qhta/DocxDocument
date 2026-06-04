@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcellverticalalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCellVerticalAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCellVerticalAlignment")]
 public enum CellVerticalAlignment
 {
   /// <summary>
   /// Text is aligned to the top border of the cell.
   /// </summary>
-  [WordInteropEnumValue("wdCellAlignVerticalTop")]
+  [InteropEnumValue("wdCellAlignVerticalTop")]
   Top = 0,
   /// <summary>
   /// Text is aligned to the center of the cell.
   /// </summary>
-  [WordInteropEnumValue("wdCellAlignVerticalCenter")]
+  [InteropEnumValue("wdCellAlignVerticalCenter")]
   Center = 1,
   /// <summary>
   /// Text is aligned to the bottom border of the cell.
   /// </summary>
-  [WordInteropEnumValue("wdCellAlignVerticalBottom")]
+  [InteropEnumValue("wdCellAlignVerticalBottom")]
   Bottom = 3
 }

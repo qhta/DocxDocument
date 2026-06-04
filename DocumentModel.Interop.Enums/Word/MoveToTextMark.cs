@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovetotextmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMoveToTextMark")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMoveToTextMark")]
 public enum MoveToTextMark
 {
   /// <summary>
   /// No special formatting for moved text.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkNone")]
+  [InteropEnumValue("wdMoveToTextMarkNone")]
   None = 0,
   /// <summary>
   /// Marks moved text with bold formatting.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkBold")]
+  [InteropEnumValue("wdMoveToTextMarkBold")]
   Bold = 1,
   /// <summary>
   /// Marks moved text with italic formatting.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkItalic")]
+  [InteropEnumValue("wdMoveToTextMarkItalic")]
   Italic = 2,
   /// <summary>
   /// Underlines moved text.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkUnderline")]
+  [InteropEnumValue("wdMoveToTextMarkUnderline")]
   Underline = 3,
   /// <summary>
   /// Moved text is marked with a double underline.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkDoubleUnderline")]
+  [InteropEnumValue("wdMoveToTextMarkDoubleUnderline")]
   DoubleUnderline = 4,
   /// <summary>
   /// Marks moved text with color only. Use the MoveToTextColor property to set the color of moved text.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkColorOnly")]
+  [InteropEnumValue("wdMoveToTextMarkColorOnly")]
   ColorOnly = 5,
   /// <summary>
   /// Moved text is marked with a strikethrough.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkStrikeThrough")]
+  [InteropEnumValue("wdMoveToTextMarkStrikeThrough")]
   StrikeThrough = 6,
   /// <summary>
   /// Moved text is marked with a double strikethrough.
   /// </summary>
-  [WordInteropEnumValue("wdMoveToTextMarkDoubleStrikeThrough")]
+  [InteropEnumValue("wdMoveToTextMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 7
 }

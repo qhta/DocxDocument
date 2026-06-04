@@ -2,44 +2,44 @@
 /// <summary>
 ///   Defines the TextEffectValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.TextEffectValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues))]
 public enum TextEffect
 {
   /// <summary>
   ///   Blinking Background Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.BlinkBackground))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.BlinkBackground))]
   BlinkBackground = 1,
 
   /// <summary>
   ///   Colored Lights Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.Lights))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.Lights))]
   Lights,
   /// <summary>
   ///   Black Dashed ILine Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.AntsBlack))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.AntsBlack))]
   AntsBlack,
   /// <summary>
   ///   Marching Red Ants.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.AntsRed))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.AntsRed))]
   AntsRed,
   /// <summary>
   ///   Shimmer Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.Shimmer))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.Shimmer))]
   Shimmer,
   /// <summary>
   ///   Sparkling Lights Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.Sparkle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.Sparkle))]
   Sparkle,
   /// <summary>
   ///   No Animation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextEffectValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextEffectValues.None))]
   None
 }

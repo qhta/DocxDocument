@@ -6,117 +6,117 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("SignatureDetail")]
+[InteropEnumType("Microsoft.Office.Core.SignatureDetail")]
 public enum SignatureDetail
 {
   /// <summary>
   /// Specifies the local signing time.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetLocalSigningTime")]
+  [InteropEnumValue("sigdetLocalSigningTime")]
   LocalSigningTime,
   /// <summary>
   /// Specifies the application name.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetApplicationName")]
+  [InteropEnumValue("sigdetApplicationName")]
   ApplicationName,
   /// <summary>
   /// Specifies the application version.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetApplicationVersion")]
+  [InteropEnumValue("sigdetApplicationVersion")]
   ApplicationVersion,
   /// <summary>
   /// Specifies the Office version.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetOfficeVersion")]
+  [InteropEnumValue("sigdetOfficeVersion")]
   OfficeVersion,
   /// <summary>
   /// Specifies the Windows version.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetWindowsVersion")]
+  [InteropEnumValue("sigdetWindowsVersion")]
   WindowsVersion,
   /// <summary>
   /// Specifies the number of monitors
   /// </summary>
-  [OfficeInteropEnumValue("sigdetNumberOfMonitors")]
+  [InteropEnumValue("sigdetNumberOfMonitors")]
   NumberOfMonitors,
   /// <summary>
   /// Specifies the horizontal resolution.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetHorizResolution")]
+  [InteropEnumValue("sigdetHorizResolution")]
   HorizResolution,
   /// <summary>
   /// Specifies the vertical resolution.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetVertResolution")]
+  [InteropEnumValue("sigdetVertResolution")]
   VertResolution,
   /// <summary>
   /// Specifies the color depth.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetColorDepth")]
+  [InteropEnumValue("sigdetColorDepth")]
   ColorDepth,
   /// <summary>
   /// Specifies the signed data.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetSignedData")]
+  [InteropEnumValue("sigdetSignedData")]
   SignedData,
   /// <summary>
   /// Specifies the document preview image.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDocPreviewImg")]
+  [InteropEnumValue("sigdetDocPreviewImg")]
   DocPreviewImg,
   /// <summary>
   /// Specifies the IP form hash.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetIPFormHash")]
+  [InteropEnumValue("sigdetIPFormHash")]
   IPFormHash,
   /// <summary>
   /// Specifies the IP current view.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetIPCurrentView")]
+  [InteropEnumValue("sigdetIPCurrentView")]
   IPCurrentView,
   /// <summary>
   /// Specifies the signature type.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetSignatureType")]
+  [InteropEnumValue("sigdetSignatureType")]
   SignatureType,
   /// <summary>
   /// Specifies the hash algorithm.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetHashAlgorithm")]
+  [InteropEnumValue("sigdetHashAlgorithm")]
   HashAlgorithm,
   /// <summary>
   /// Specifies the Should Show View Warning setting.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetShouldShowViewWarning")]
+  [InteropEnumValue("sigdetShouldShowViewWarning")]
   ShouldShowViewWarning,
   /// <summary>
   /// Specifies the suggested signer delegate.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSigner")]
+  [InteropEnumValue("sigdetDelSuggSigner")]
   DelSuggSigner,
   /// <summary>
   /// Specifies the set of suggested signer's delegates.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSignerSet")]
+  [InteropEnumValue("sigdetDelSuggSignerSet")]
   DelSuggSignerSet,
   /// <summary>
   /// Indicates additional information about a signature.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSignerLine2")]
+  [InteropEnumValue("sigdetDelSuggSignerLine2")]
   DelSuggSignerLine2,
   /// <summary>
   /// Specifies the set of suggested signer's delegate's signature lines.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSignerLine2Set")]
+  [InteropEnumValue("sigdetDelSuggSignerLine2Set")]
   DelSuggSignerLine2Set,
   /// <summary>
   /// Specifies the suggested signer's delegate's e-mail.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSignerEmail")]
+  [InteropEnumValue("sigdetDelSuggSignerEmail")]
   DelSuggSignerEmail,
   /// <summary>
   /// Indicates whether an email for a suggested signer delegate has been specified.
   /// </summary>
-  [OfficeInteropEnumValue("sigdetDelSuggSignerEmailSet")]
+  [InteropEnumValue("sigdetDelSuggSignerEmailSet")]
   DelSuggSignerEmailSet
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcaststate?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBroadcastState")]
+[InteropEnumType("Microsoft.Office.Core.MsoBroadcastState")]
 public enum BroadcastState
 {
   /// <summary>
   /// The file is not being broadcasted.
   /// </summary>
-  [OfficeInteropEnumValue("NoBroadcast")]
+  [InteropEnumValue("NoBroadcast")]
   NoBroadcast,
   /// <summary>
   /// The broadcast has been started.
   /// </summary>
-  [OfficeInteropEnumValue("BroadcastStarted")]
+  [InteropEnumValue("BroadcastStarted")]
   BroadcastStarted,
   /// <summary>
   /// The broadcast is paused.
   /// </summary>
-  [OfficeInteropEnumValue("BroadcastPaused")]
+  [InteropEnumValue("BroadcastPaused")]
   BroadcastPaused
 }

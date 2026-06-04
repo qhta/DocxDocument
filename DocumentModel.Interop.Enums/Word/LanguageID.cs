@@ -6,1028 +6,1028 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLanguageID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLanguageID")]
 public enum LanguageID
 {
   /// <summary>
   /// No specified language.
   /// </summary>
-  [WordInteropEnumValue("wdLanguageNone")]
+  [InteropEnumValue("wdLanguageNone")]
   LanguageNone = 0,
   /// <summary>
   /// Disables proofing if the language ID identifies a language in which an object is grammatically validated using
   /// the Word proofing tools.
   /// </summary>
-  [WordInteropEnumValue("wdNoProofing")]
+  [InteropEnumValue("wdNoProofing")]
   NoProofing = 1024,
   /// <summary>
   /// Arabic language.
   /// </summary>
-  [WordInteropEnumValue("wdArabic")]
+  [InteropEnumValue("wdArabic")]
   Arabic = 1025,
   /// <summary>
   /// Bulgarian language.
   /// </summary>
-  [WordInteropEnumValue("wdBulgarian")]
+  [InteropEnumValue("wdBulgarian")]
   Bulgarian = 1026,
   /// <summary>
   /// Catalan language.
   /// </summary>
-  [WordInteropEnumValue("wdCatalan")]
+  [InteropEnumValue("wdCatalan")]
   Catalan = 1027,
   /// <summary>
   /// Traditional Chinese language.
   /// </summary>
-  [WordInteropEnumValue("wdTraditionalChinese")]
+  [InteropEnumValue("wdTraditionalChinese")]
   TraditionalChinese = 1028,
   /// <summary>
   /// Czech language.
   /// </summary>
-  [WordInteropEnumValue("wdCzech")]
+  [InteropEnumValue("wdCzech")]
   Czech = 1029,
   /// <summary>
   /// Danish language.
   /// </summary>
-  [WordInteropEnumValue("wdDanish")]
+  [InteropEnumValue("wdDanish")]
   Danish = 1030,
   /// <summary>
   /// German language.
   /// </summary>
-  [WordInteropEnumValue("wdGerman")]
+  [InteropEnumValue("wdGerman")]
   German = 1031,
   /// <summary>
   /// Greek language.
   /// </summary>
-  [WordInteropEnumValue("wdGreek")]
+  [InteropEnumValue("wdGreek")]
   Greek = 1032,
   /// <summary>
   /// United States English language.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishUS")]
+  [InteropEnumValue("wdEnglishUS")]
   EnglishUS = 1033,
   /// <summary>
   /// Spanish language.
   /// </summary>
-  [WordInteropEnumValue("wdSpanish")]
+  [InteropEnumValue("wdSpanish")]
   Spanish = 1034,
   /// <summary>
   /// Finnish language.
   /// </summary>
-  [WordInteropEnumValue("wdFinnish")]
+  [InteropEnumValue("wdFinnish")]
   Finnish = 1035,
   /// <summary>
   /// French language.
   /// </summary>
-  [WordInteropEnumValue("wdFrench")]
+  [InteropEnumValue("wdFrench")]
   French = 1036,
   /// <summary>
   /// Hebrew language.
   /// </summary>
-  [WordInteropEnumValue("wdHebrew")]
+  [InteropEnumValue("wdHebrew")]
   Hebrew = 1037,
   /// <summary>
   /// Hungarian language.
   /// </summary>
-  [WordInteropEnumValue("wdHungarian")]
+  [InteropEnumValue("wdHungarian")]
   Hungarian = 1038,
   /// <summary>
   /// Icelandic language.
   /// </summary>
-  [WordInteropEnumValue("wdIcelandic")]
+  [InteropEnumValue("wdIcelandic")]
   Icelandic = 1039,
   /// <summary>
   /// Italian language.
   /// </summary>
-  [WordInteropEnumValue("wdItalian")]
+  [InteropEnumValue("wdItalian")]
   Italian = 1040,
   /// <summary>
   /// Japanese language.
   /// </summary>
-  [WordInteropEnumValue("wdJapanese")]
+  [InteropEnumValue("wdJapanese")]
   Japanese = 1041,
   /// <summary>
   /// Korean language.
   /// </summary>
-  [WordInteropEnumValue("wdKorean")]
+  [InteropEnumValue("wdKorean")]
   Korean = 1042,
   /// <summary>
   /// Dutch language.
   /// </summary>
-  [WordInteropEnumValue("wdDutch")]
+  [InteropEnumValue("wdDutch")]
   Dutch = 1043,
   /// <summary>
   /// Norwegian Bokmol language.
   /// </summary>
-  [WordInteropEnumValue("wdNorwegianBokmol")]
+  [InteropEnumValue("wdNorwegianBokmol")]
   NorwegianBokmol = 1044,
   /// <summary>
   /// Polish language.
   /// </summary>
-  [WordInteropEnumValue("wdPolish")]
+  [InteropEnumValue("wdPolish")]
   Polish = 1045,
   /// <summary>
   /// Portuguese (Brazil) language.
   /// </summary>
-  [WordInteropEnumValue("wdPortugueseBrazil")]
+  [InteropEnumValue("wdPortugueseBrazil")]
   PortugueseBrazil = 1046,
   /// <summary>
   /// Rhaeto Romanic language.
   /// </summary>
-  [WordInteropEnumValue("wdRhaetoRomanic")]
+  [InteropEnumValue("wdRhaetoRomanic")]
   RhaetoRomanic = 1047,
   /// <summary>
   /// Romanian language.
   /// </summary>
-  [WordInteropEnumValue("wdRomanian")]
+  [InteropEnumValue("wdRomanian")]
   Romanian = 1048,
   /// <summary>
   /// Russian language.
   /// </summary>
-  [WordInteropEnumValue("wdRussian")]
+  [InteropEnumValue("wdRussian")]
   Russian = 1049,
   /// <summary>
   /// Croatian language.
   /// </summary>
-  [WordInteropEnumValue("wdCroatian")]
+  [InteropEnumValue("wdCroatian")]
   Croatian = 1050,
   /// <summary>
   /// Slovakian language.
   /// </summary>
-  [WordInteropEnumValue("wdSlovak")]
+  [InteropEnumValue("wdSlovak")]
   Slovak = 1051,
   /// <summary>
   /// Albanian language.
   /// </summary>
-  [WordInteropEnumValue("wdAlbanian")]
+  [InteropEnumValue("wdAlbanian")]
   Albanian = 1052,
   /// <summary>
   /// Swedish language.
   /// </summary>
-  [WordInteropEnumValue("wdSwedish")]
+  [InteropEnumValue("wdSwedish")]
   Swedish = 1053,
   /// <summary>
   /// Thai language.
   /// </summary>
-  [WordInteropEnumValue("wdThai")]
+  [InteropEnumValue("wdThai")]
   Thai = 1054,
   /// <summary>
   /// Turkish language.
   /// </summary>
-  [WordInteropEnumValue("wdTurkish")]
+  [InteropEnumValue("wdTurkish")]
   Turkish = 1055,
   /// <summary>
   /// Urdu language.
   /// </summary>
-  [WordInteropEnumValue("wdUrdu")]
+  [InteropEnumValue("wdUrdu")]
   Urdu = 1056,
   /// <summary>
   /// Indonesian language.
   /// </summary>
-  [WordInteropEnumValue("wdIndonesian")]
+  [InteropEnumValue("wdIndonesian")]
   Indonesian = 1057,
   /// <summary>
   /// Ukrainian language.
   /// </summary>
-  [WordInteropEnumValue("wdUkrainian")]
+  [InteropEnumValue("wdUkrainian")]
   Ukrainian = 1058,
   /// <summary>
   /// Belarusian language.
   /// </summary>
-  [WordInteropEnumValue("wdByelorussian")]
+  [InteropEnumValue("wdByelorussian")]
   Byelorussian = 1059,
   /// <summary>
   /// Slovenian language.
   /// </summary>
-  [WordInteropEnumValue("wdSlovenian")]
+  [InteropEnumValue("wdSlovenian")]
   Slovenian = 1060,
   /// <summary>
   /// Estonian language.
   /// </summary>
-  [WordInteropEnumValue("wdEstonian")]
+  [InteropEnumValue("wdEstonian")]
   Estonian = 1061,
   /// <summary>
   /// Latvian language.
   /// </summary>
-  [WordInteropEnumValue("wdLatvian")]
+  [InteropEnumValue("wdLatvian")]
   Latvian = 1062,
   /// <summary>
   /// Lithuanian language.
   /// </summary>
-  [WordInteropEnumValue("wdLithuanian")]
+  [InteropEnumValue("wdLithuanian")]
   Lithuanian = 1063,
   /// <summary>
   /// Tajik language.
   /// </summary>
-  [WordInteropEnumValue("wdTajik")]
+  [InteropEnumValue("wdTajik")]
   Tajik = 1064,
   /// <summary>
   /// Persian language.
   /// </summary>
-  [WordInteropEnumValue("wdPersian")]
+  [InteropEnumValue("wdPersian")]
   Persian = 1065,
   /// <summary>
   /// Vietnamese language.
   /// </summary>
-  [WordInteropEnumValue("wdVietnamese")]
+  [InteropEnumValue("wdVietnamese")]
   Vietnamese = 1066,
   /// <summary>
   /// Armenian language.
   /// </summary>
-  [WordInteropEnumValue("wdArmenian")]
+  [InteropEnumValue("wdArmenian")]
   Armenian = 1067,
   /// <summary>
   /// Azeri Latin language.
   /// </summary>
-  [WordInteropEnumValue("wdAzeriLatin")]
+  [InteropEnumValue("wdAzeriLatin")]
   AzeriLatin = 1068,
   /// <summary>
   /// Basque language.
   /// </summary>
-  [WordInteropEnumValue("wdBasque")]
+  [InteropEnumValue("wdBasque")]
   Basque = 1069,
   /// <summary>
   /// Sorbian language.
   /// </summary>
-  [WordInteropEnumValue("wdSorbian")]
+  [InteropEnumValue("wdSorbian")]
   Sorbian = 1070,
   /// <summary>
   /// Macedonian (FYROM) language.
   /// </summary>
-  [WordInteropEnumValue("wdMacedonianFYROM")]
+  [InteropEnumValue("wdMacedonianFYROM")]
   MacedonianFYROM = 1071,
   /// <summary>
   /// Sutu language.
   /// </summary>
-  [WordInteropEnumValue("wdSutu")]
+  [InteropEnumValue("wdSutu")]
   Sutu = 1072,
   /// <summary>
   /// Sesotho language.
   /// </summary>
-  [WordInteropEnumValue("wdSesotho")]
+  [InteropEnumValue("wdSesotho")]
   Sesotho = 1072,
   /// <summary>
   /// Tsonga language.
   /// </summary>
-  [WordInteropEnumValue("wdTsonga")]
+  [InteropEnumValue("wdTsonga")]
   Tsonga = 1073,
   /// <summary>
   /// Tswana language.
   /// </summary>
-  [WordInteropEnumValue("wdTswana")]
+  [InteropEnumValue("wdTswana")]
   Tswana = 1074,
   /// <summary>
   /// Venda language.
   /// </summary>
-  [WordInteropEnumValue("wdVenda")]
+  [InteropEnumValue("wdVenda")]
   Venda = 1075,
   /// <summary>
   /// Xhosa language.
   /// </summary>
-  [WordInteropEnumValue("wdXhosa")]
+  [InteropEnumValue("wdXhosa")]
   Xhosa = 1076,
   /// <summary>
   /// Zulu language.
   /// </summary>
-  [WordInteropEnumValue("wdZulu")]
+  [InteropEnumValue("wdZulu")]
   Zulu = 1077,
   /// <summary>
   /// African language.
   /// </summary>
-  [WordInteropEnumValue("wdAfrikaans")]
+  [InteropEnumValue("wdAfrikaans")]
   Afrikaans = 1078,
   /// <summary>
   /// Georgian language.
   /// </summary>
-  [WordInteropEnumValue("wdGeorgian")]
+  [InteropEnumValue("wdGeorgian")]
   Georgian = 1079,
   /// <summary>
   /// Faeroese language.
   /// </summary>
-  [WordInteropEnumValue("wdFaeroese")]
+  [InteropEnumValue("wdFaeroese")]
   Faeroese = 1080,
   /// <summary>
   /// Hindi language.
   /// </summary>
-  [WordInteropEnumValue("wdHindi")]
+  [InteropEnumValue("wdHindi")]
   Hindi = 1081,
   /// <summary>
   /// Maltese language.
   /// </summary>
-  [WordInteropEnumValue("wdMaltese")]
+  [InteropEnumValue("wdMaltese")]
   Maltese = 1082,
   /// <summary>
   /// Sami Lappish language.
   /// </summary>
-  [WordInteropEnumValue("wdSamiLappish")]
+  [InteropEnumValue("wdSamiLappish")]
   SamiLappish = 1083,
   /// <summary>
   /// Gaelic Scottish language.
   /// </summary>
-  [WordInteropEnumValue("wdGaelicScotland")]
+  [InteropEnumValue("wdGaelicScotland")]
   GaelicScotland = 1084,
   /// <summary>
   /// Yiddish language.
   /// </summary>
-  [WordInteropEnumValue("wdYiddish")]
+  [InteropEnumValue("wdYiddish")]
   Yiddish = 1085,
   /// <summary>
   /// Malaysian language.
   /// </summary>
-  [WordInteropEnumValue("wdMalaysian")]
+  [InteropEnumValue("wdMalaysian")]
   Malaysian = 1086,
   /// <summary>
   /// Kazakh language.
   /// </summary>
-  [WordInteropEnumValue("wdKazakh")]
+  [InteropEnumValue("wdKazakh")]
   Kazakh = 1087,
   /// <summary>
   /// Kyrgyz language.
   /// </summary>
-  [WordInteropEnumValue("wdKyrgyz")]
+  [InteropEnumValue("wdKyrgyz")]
   Kyrgyz = 1088,
   /// <summary>
   /// Kirghiz language.
   /// </summary>
-  [WordInteropEnumValue("wdKirghiz")]
+  [InteropEnumValue("wdKirghiz")]
   Kirghiz = 1088,
   /// <summary>
   /// Swahili language.
   /// </summary>
-  [WordInteropEnumValue("wdSwahili")]
+  [InteropEnumValue("wdSwahili")]
   Swahili = 1089,
   /// <summary>
   /// Turkmen language.
   /// </summary>
-  [WordInteropEnumValue("wdTurkmen")]
+  [InteropEnumValue("wdTurkmen")]
   Turkmen = 1090,
   /// <summary>
   /// Uzbek Latin language.
   /// </summary>
-  [WordInteropEnumValue("wdUzbekLatin")]
+  [InteropEnumValue("wdUzbekLatin")]
   UzbekLatin = 1091,
   /// <summary>
   /// Tatar language.
   /// </summary>
-  [WordInteropEnumValue("wdTatar")]
+  [InteropEnumValue("wdTatar")]
   Tatar = 1092,
   /// <summary>
   /// Bengali language.
   /// </summary>
-  [WordInteropEnumValue("wdBengali")]
+  [InteropEnumValue("wdBengali")]
   Bengali = 1093,
   /// <summary>
   /// Punjabi language.
   /// </summary>
-  [WordInteropEnumValue("wdPunjabi")]
+  [InteropEnumValue("wdPunjabi")]
   Punjabi = 1094,
   /// <summary>
   /// Gujarati language.
   /// </summary>
-  [WordInteropEnumValue("wdGujarati")]
+  [InteropEnumValue("wdGujarati")]
   Gujarati = 1095,
   /// <summary>
   /// Oriya language.
   /// </summary>
-  [WordInteropEnumValue("wdOriya")]
+  [InteropEnumValue("wdOriya")]
   Oriya = 1096,
   /// <summary>
   /// Tamil language.
   /// </summary>
-  [WordInteropEnumValue("wdTamil")]
+  [InteropEnumValue("wdTamil")]
   Tamil = 1097,
   /// <summary>
   /// Telugu language.
   /// </summary>
-  [WordInteropEnumValue("wdTelugu")]
+  [InteropEnumValue("wdTelugu")]
   Telugu = 1098,
   /// <summary>
   /// Kannada language.
   /// </summary>
-  [WordInteropEnumValue("wdKannada")]
+  [InteropEnumValue("wdKannada")]
   Kannada = 1099,
   /// <summary>
   /// Malayalam language.
   /// </summary>
-  [WordInteropEnumValue("wdMalayalam")]
+  [InteropEnumValue("wdMalayalam")]
   Malayalam = 1100,
   /// <summary>
   /// Assamese language.
   /// </summary>
-  [WordInteropEnumValue("wdAssamese")]
+  [InteropEnumValue("wdAssamese")]
   Assamese = 1101,
   /// <summary>
   /// Marathi language.
   /// </summary>
-  [WordInteropEnumValue("wdMarathi")]
+  [InteropEnumValue("wdMarathi")]
   Marathi = 1102,
   /// <summary>
   /// Sanskrit language.
   /// </summary>
-  [WordInteropEnumValue("wdSanskrit")]
+  [InteropEnumValue("wdSanskrit")]
   Sanskrit = 1103,
   /// <summary>
   /// Mongolian language.
   /// </summary>
-  [WordInteropEnumValue("wdMongolian")]
+  [InteropEnumValue("wdMongolian")]
   Mongolian = 1104,
   /// <summary>
   /// Tibetan language.
   /// </summary>
-  [WordInteropEnumValue("wdTibetan")]
+  [InteropEnumValue("wdTibetan")]
   Tibetan = 1105,
   /// <summary>
   /// Welsh language.
   /// </summary>
-  [WordInteropEnumValue("wdWelsh")]
+  [InteropEnumValue("wdWelsh")]
   Welsh = 1106,
   /// <summary>
   /// Khmer language.
   /// </summary>
-  [WordInteropEnumValue("wdKhmer")]
+  [InteropEnumValue("wdKhmer")]
   Khmer = 1107,
   /// <summary>
   /// Lao language.
   /// </summary>
-  [WordInteropEnumValue("wdLao")]
+  [InteropEnumValue("wdLao")]
   Lao = 1108,
   /// <summary>
   /// Burmese language.
   /// </summary>
-  [WordInteropEnumValue("wdBurmese")]
+  [InteropEnumValue("wdBurmese")]
   Burmese = 1109,
   /// <summary>
   /// Galician language.
   /// </summary>
-  [WordInteropEnumValue("wdGalician")]
+  [InteropEnumValue("wdGalician")]
   Galician = 1110,
   /// <summary>
   /// Konkani language.
   /// </summary>
-  [WordInteropEnumValue("wdKonkani")]
+  [InteropEnumValue("wdKonkani")]
   Konkani = 1111,
   /// <summary>
   /// Manipuri language.
   /// </summary>
-  [WordInteropEnumValue("wdManipuri")]
+  [InteropEnumValue("wdManipuri")]
   Manipuri = 1112,
   /// <summary>
   /// Sindhi language.
   /// </summary>
-  [WordInteropEnumValue("wdSindhi")]
+  [InteropEnumValue("wdSindhi")]
   Sindhi = 1113,
   /// <summary>
   /// Syriac language.
   /// </summary>
-  [WordInteropEnumValue("wdSyriac")]
+  [InteropEnumValue("wdSyriac")]
   Syriac = 1114,
   /// <summary>
   /// Sinhalese language.
   /// </summary>
-  [WordInteropEnumValue("wdSinhalese")]
+  [InteropEnumValue("wdSinhalese")]
   Sinhalese = 1115,
   /// <summary>
   /// Cherokee language.
   /// </summary>
-  [WordInteropEnumValue("wdCherokee")]
+  [InteropEnumValue("wdCherokee")]
   Cherokee = 1116,
   /// <summary>
   /// Inuktitut language.
   /// </summary>
-  [WordInteropEnumValue("wdInuktitut")]
+  [InteropEnumValue("wdInuktitut")]
   Inuktitut = 1117,
   /// <summary>
   /// Amharic language.
   /// </summary>
-  [WordInteropEnumValue("wdAmharic")]
+  [InteropEnumValue("wdAmharic")]
   Amharic = 1118,
   /// <summary>
   /// Tamazight language.
   /// </summary>
-  [WordInteropEnumValue("wdTamazight")]
+  [InteropEnumValue("wdTamazight")]
   Tamazight = 1119,
   /// <summary>
   /// Kashmiri language.
   /// </summary>
-  [WordInteropEnumValue("wdKashmiri")]
+  [InteropEnumValue("wdKashmiri")]
   Kashmiri = 1120,
   /// <summary>
   /// Nepali language.
   /// </summary>
-  [WordInteropEnumValue("wdNepali")]
+  [InteropEnumValue("wdNepali")]
   Nepali = 1121,
   /// <summary>
   /// Frisian Netherlands language.
   /// </summary>
-  [WordInteropEnumValue("wdFrisianNetherlands")]
+  [InteropEnumValue("wdFrisianNetherlands")]
   FrisianNetherlands = 1122,
   /// <summary>
   /// Pashto language.
   /// </summary>
-  [WordInteropEnumValue("wdPashto")]
+  [InteropEnumValue("wdPashto")]
   Pashto = 1123,
   /// <summary>
   /// Filipino language.
   /// </summary>
-  [WordInteropEnumValue("wdFilipino")]
+  [InteropEnumValue("wdFilipino")]
   Filipino = 1124,
   /// <summary>
   /// Divehi language.
   /// </summary>
-  [WordInteropEnumValue("wdDivehi")]
+  [InteropEnumValue("wdDivehi")]
   Divehi = 1125,
   /// <summary>
   /// Edo language.
   /// </summary>
-  [WordInteropEnumValue("wdEdo")]
+  [InteropEnumValue("wdEdo")]
   Edo = 1126,
   /// <summary>
   /// Fulfulde language.
   /// </summary>
-  [WordInteropEnumValue("wdFulfulde")]
+  [InteropEnumValue("wdFulfulde")]
   Fulfulde = 1127,
   /// <summary>
   /// Hausa language.
   /// </summary>
-  [WordInteropEnumValue("wdHausa")]
+  [InteropEnumValue("wdHausa")]
   Hausa = 1128,
   /// <summary>
   /// Ibibio language.
   /// </summary>
-  [WordInteropEnumValue("wdIbibio")]
+  [InteropEnumValue("wdIbibio")]
   Ibibio = 1129,
   /// <summary>
   /// Yoruba language.
   /// </summary>
-  [WordInteropEnumValue("wdYoruba")]
+  [InteropEnumValue("wdYoruba")]
   Yoruba = 1130,
   /// <summary>
   /// Igbo language.
   /// </summary>
-  [WordInteropEnumValue("wdIgbo")]
+  [InteropEnumValue("wdIgbo")]
   Igbo = 1136,
   /// <summary>
   /// Kanuri language.
   /// </summary>
-  [WordInteropEnumValue("wdKanuri")]
+  [InteropEnumValue("wdKanuri")]
   Kanuri = 1137,
   /// <summary>
   /// Oromo language.
   /// </summary>
-  [WordInteropEnumValue("wdOromo")]
+  [InteropEnumValue("wdOromo")]
   Oromo = 1138,
   /// <summary>
   /// Tigrigna Ethiopic language.
   /// </summary>
-  [WordInteropEnumValue("wdTigrignaEthiopic")]
+  [InteropEnumValue("wdTigrignaEthiopic")]
   TigrignaEthiopic = 1139,
   /// <summary>
   /// Guarani language.
   /// </summary>
-  [WordInteropEnumValue("wdGuarani")]
+  [InteropEnumValue("wdGuarani")]
   Guarani = 1140,
   /// <summary>
   /// Hawaiian language.
   /// </summary>
-  [WordInteropEnumValue("wdHawaiian")]
+  [InteropEnumValue("wdHawaiian")]
   Hawaiian = 1141,
   /// <summary>
   /// Latin language.
   /// </summary>
-  [WordInteropEnumValue("wdLatin")]
+  [InteropEnumValue("wdLatin")]
   Latin = 1142,
   /// <summary>
   /// Somali language.
   /// </summary>
-  [WordInteropEnumValue("wdSomali")]
+  [InteropEnumValue("wdSomali")]
   Somali = 1143,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdYi")]
+  [InteropEnumValue("wdYi")]
   Yi = 1144,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicIraq")]
+  [InteropEnumValue("wdArabicIraq")]
   ArabicIraq = 2049,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSimplifiedChinese")]
+  [InteropEnumValue("wdSimplifiedChinese")]
   SimplifiedChinese = 2052,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSwissGerman")]
+  [InteropEnumValue("wdSwissGerman")]
   SwissGerman = 2055,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishUK")]
+  [InteropEnumValue("wdEnglishUK")]
   EnglishUK = 2057,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdMexicanSpanish")]
+  [InteropEnumValue("wdMexicanSpanish")]
   MexicanSpanish = 2058,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdBelgianFrench")]
+  [InteropEnumValue("wdBelgianFrench")]
   BelgianFrench = 2060,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSwissItalian")]
+  [InteropEnumValue("wdSwissItalian")]
   SwissItalian = 2064,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdBelgianDutch")]
+  [InteropEnumValue("wdBelgianDutch")]
   BelgianDutch = 2067,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdNorwegianNynorsk")]
+  [InteropEnumValue("wdNorwegianNynorsk")]
   NorwegianNynorsk = 2068,
   /// <summary>
   /// Portuguese (Brazil) language.
   /// </summary>
-  [WordInteropEnumValue("wdPortuguese")]
+  [InteropEnumValue("wdPortuguese")]
   Portuguese = 2070,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdRomanianMoldova")]
+  [InteropEnumValue("wdRomanianMoldova")]
   RomanianMoldova = 2072,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdRussianMoldova")]
+  [InteropEnumValue("wdRussianMoldova")]
   RussianMoldova = 2073,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSerbianLatin")]
+  [InteropEnumValue("wdSerbianLatin")]
   SerbianLatin = 2074,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSwedishFinland")]
+  [InteropEnumValue("wdSwedishFinland")]
   SwedishFinland = 2077,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdAzeriCyrillic")]
+  [InteropEnumValue("wdAzeriCyrillic")]
   AzeriCyrillic = 2092,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdGaelicIreland")]
+  [InteropEnumValue("wdGaelicIreland")]
   GaelicIreland = 2108,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdMalayBruneiDarussalam")]
+  [InteropEnumValue("wdMalayBruneiDarussalam")]
   MalayBruneiDarussalam = 2110,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdUzbekCyrillic")]
+  [InteropEnumValue("wdUzbekCyrillic")]
   UzbekCyrillic = 2115,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSindhiPakistan")]
+  [InteropEnumValue("wdSindhiPakistan")]
   SindhiPakistan = 2137,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdTamazightLatin")]
+  [InteropEnumValue("wdTamazightLatin")]
   TamazightLatin = 2143,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdTigrignaEritrea")]
+  [InteropEnumValue("wdTigrignaEritrea")]
   TigrignaEritrea = 2163,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicEgypt")]
+  [InteropEnumValue("wdArabicEgypt")]
   ArabicEgypt = 3073,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdChineseHongKongSAR")]
+  [InteropEnumValue("wdChineseHongKongSAR")]
   ChineseHongKongSAR = 3076,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdGermanAustria")]
+  [InteropEnumValue("wdGermanAustria")]
   GermanAustria = 3079,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishAUS")]
+  [InteropEnumValue("wdEnglishAUS")]
   EnglishAUS = 3081,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishModernSort")]
+  [InteropEnumValue("wdSpanishModernSort")]
   SpanishModernSort = 3082,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchCanadian")]
+  [InteropEnumValue("wdFrenchCanadian")]
   FrenchCanadian = 3084,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSerbianCyrillic")]
+  [InteropEnumValue("wdSerbianCyrillic")]
   SerbianCyrillic = 3098,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicLibya")]
+  [InteropEnumValue("wdArabicLibya")]
   ArabicLibya = 4097,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdChineseSingapore")]
+  [InteropEnumValue("wdChineseSingapore")]
   ChineseSingapore = 4100,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdGermanLuxembourg")]
+  [InteropEnumValue("wdGermanLuxembourg")]
   GermanLuxembourg = 4103,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishCanadian")]
+  [InteropEnumValue("wdEnglishCanadian")]
   EnglishCanadian = 4105,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishGuatemala")]
+  [InteropEnumValue("wdSpanishGuatemala")]
   SpanishGuatemala = 4106,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSwissFrench")]
+  [InteropEnumValue("wdSwissFrench")]
   SwissFrench = 4108,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicAlgeria")]
+  [InteropEnumValue("wdArabicAlgeria")]
   ArabicAlgeria = 5121,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdChineseMacaoSAR")]
+  [InteropEnumValue("wdChineseMacaoSAR")]
   ChineseMacaoSAR = 5124,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdGermanLiechtenstein")]
+  [InteropEnumValue("wdGermanLiechtenstein")]
   GermanLiechtenstein = 5127,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishNewZealand")]
+  [InteropEnumValue("wdEnglishNewZealand")]
   EnglishNewZealand = 5129,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishCostaRica")]
+  [InteropEnumValue("wdSpanishCostaRica")]
   SpanishCostaRica = 5130,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchLuxembourg")]
+  [InteropEnumValue("wdFrenchLuxembourg")]
   FrenchLuxembourg = 5132,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicMorocco")]
+  [InteropEnumValue("wdArabicMorocco")]
   ArabicMorocco = 6145,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishIreland")]
+  [InteropEnumValue("wdEnglishIreland")]
   EnglishIreland = 6153,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishPanama")]
+  [InteropEnumValue("wdSpanishPanama")]
   SpanishPanama = 6154,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchMonaco")]
+  [InteropEnumValue("wdFrenchMonaco")]
   FrenchMonaco = 6156,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicTunisia")]
+  [InteropEnumValue("wdArabicTunisia")]
   ArabicTunisia = 7169,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishSouthAfrica")]
+  [InteropEnumValue("wdEnglishSouthAfrica")]
   EnglishSouthAfrica = 7177,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishDominicanRepublic")]
+  [InteropEnumValue("wdSpanishDominicanRepublic")]
   SpanishDominicanRepublic = 7178,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchWestIndies")]
+  [InteropEnumValue("wdFrenchWestIndies")]
   FrenchWestIndies = 7180,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicOman")]
+  [InteropEnumValue("wdArabicOman")]
   ArabicOman = 8193,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishJamaica")]
+  [InteropEnumValue("wdEnglishJamaica")]
   EnglishJamaica = 8201,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishVenezuela")]
+  [InteropEnumValue("wdSpanishVenezuela")]
   SpanishVenezuela = 8202,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchReunion")]
+  [InteropEnumValue("wdFrenchReunion")]
   FrenchReunion = 8204,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicYemen")]
+  [InteropEnumValue("wdArabicYemen")]
   ArabicYemen = 9217,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishCaribbean")]
+  [InteropEnumValue("wdEnglishCaribbean")]
   EnglishCaribbean = 9225,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishColombia")]
+  [InteropEnumValue("wdSpanishColombia")]
   SpanishColombia = 9226,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchCongoDRC")]
+  [InteropEnumValue("wdFrenchCongoDRC")]
   FrenchCongoDRC = 9228,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicSyria")]
+  [InteropEnumValue("wdArabicSyria")]
   ArabicSyria = 10241,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishBelize")]
+  [InteropEnumValue("wdEnglishBelize")]
   EnglishBelize = 10249,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishPeru")]
+  [InteropEnumValue("wdSpanishPeru")]
   SpanishPeru = 10250,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchSenegal")]
+  [InteropEnumValue("wdFrenchSenegal")]
   FrenchSenegal = 10252,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicJordan")]
+  [InteropEnumValue("wdArabicJordan")]
   ArabicJordan = 11265,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishTrinidadTobago")]
+  [InteropEnumValue("wdEnglishTrinidadTobago")]
   EnglishTrinidadTobago = 11273,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishArgentina")]
+  [InteropEnumValue("wdSpanishArgentina")]
   SpanishArgentina = 11274,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchCameroon")]
+  [InteropEnumValue("wdFrenchCameroon")]
   FrenchCameroon = 11276,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicLebanon")]
+  [InteropEnumValue("wdArabicLebanon")]
   ArabicLebanon = 12289,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishZimbabwe")]
+  [InteropEnumValue("wdEnglishZimbabwe")]
   EnglishZimbabwe = 12297,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishEcuador")]
+  [InteropEnumValue("wdSpanishEcuador")]
   SpanishEcuador = 12298,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchCotedIvoire")]
+  [InteropEnumValue("wdFrenchCotedIvoire")]
   FrenchCotedIvoire = 12300,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicKuwait")]
+  [InteropEnumValue("wdArabicKuwait")]
   ArabicKuwait = 13313,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishPhilippines")]
+  [InteropEnumValue("wdEnglishPhilippines")]
   EnglishPhilippines = 13321,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishChile")]
+  [InteropEnumValue("wdSpanishChile")]
   SpanishChile = 13322,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchMali")]
+  [InteropEnumValue("wdFrenchMali")]
   FrenchMali = 13324,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicUAE")]
+  [InteropEnumValue("wdArabicUAE")]
   ArabicUAE = 14337,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdEnglishIndonesia")]
+  [InteropEnumValue("wdEnglishIndonesia")]
   EnglishIndonesia = 14345,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishUruguay")]
+  [InteropEnumValue("wdSpanishUruguay")]
   SpanishUruguay = 14346,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchMorocco")]
+  [InteropEnumValue("wdFrenchMorocco")]
   FrenchMorocco = 14348,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicBahrain")]
+  [InteropEnumValue("wdArabicBahrain")]
   ArabicBahrain = 15361,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishParaguay")]
+  [InteropEnumValue("wdSpanishParaguay")]
   SpanishParaguay = 15370,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdFrenchHaiti")]
+  [InteropEnumValue("wdFrenchHaiti")]
   FrenchHaiti = 15372,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdArabicQatar")]
+  [InteropEnumValue("wdArabicQatar")]
   ArabicQatar = 16385,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishBolivia")]
+  [InteropEnumValue("wdSpanishBolivia")]
   SpanishBolivia = 16394,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishElSalvador")]
+  [InteropEnumValue("wdSpanishElSalvador")]
   SpanishElSalvador = 17418,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishHonduras")]
+  [InteropEnumValue("wdSpanishHonduras")]
   SpanishHonduras = 18442,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishNicaragua")]
+  [InteropEnumValue("wdSpanishNicaragua")]
   SpanishNicaragua = 19466,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue("wdSpanishPuertoRico")]
+  [InteropEnumValue("wdSpanishPuertoRico")]
   SpanishPuertoRico = 20490
 }

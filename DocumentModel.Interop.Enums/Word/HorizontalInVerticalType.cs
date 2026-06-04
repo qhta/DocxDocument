@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhorizontalinverticaltype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdHorizontalInVerticalType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdHorizontalInVerticalType")]
 public enum HorizontalInVerticalType
 {
   /// <summary>
   /// No formatting is applied to the horizontal text.
   /// </summary>
-  [WordInteropEnumValue("wdHorizontalInVerticalNone")]
+  [InteropEnumValue("wdHorizontalInVerticalNone")]
   None = 0,
   /// <summary>
   /// The horizontal text is sized to fit in the line of vertical text.
   /// </summary>
-  [WordInteropEnumValue("wdHorizontalInVerticalFitInLine")]
+  [InteropEnumValue("wdHorizontalInVerticalFitInLine")]
   FitInLine = 1,
   /// <summary>
   /// The line of vertical text is sized to accommodate the horizontal text.
   /// </summary>
-  [WordInteropEnumValue("wdHorizontalInVerticalResizeLine")]
+  [InteropEnumValue("wdHorizontalInVerticalResizeLine")]
   ResizeLine = 2
 }

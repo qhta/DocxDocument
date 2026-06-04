@@ -4,8 +4,8 @@
 /// Defines the CrossBetween enumeration.
 /// Used in types such as ValueAxis, ValueAxisConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.CrossBetweenValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues))]
 public enum CrossBetween
 {
   /// <summary>

@@ -4,7 +4,7 @@
 /// Defines the STorageType enumeration.
 /// Used in types such as NumberDiagramInfo, STorageType, NumberDiagramInfoConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum StorageType
 {
   /// <summary>

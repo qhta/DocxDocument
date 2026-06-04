@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoZOrderCmd")]
+[InteropEnumType("Microsoft.Office.Core.MsoZOrderCmd")]
 public enum ZOrderCmd
 {
   /// <summary>
   /// Bring shape to the front.
   /// </summary>
-  [OfficeInteropEnumValue("msoBringToFront")]
+  [InteropEnumValue("msoBringToFront")]
   BringToFront,
   /// <summary>
   /// Send shape to the back.
   /// </summary>
-  [OfficeInteropEnumValue("msoSendToBack")]
+  [InteropEnumValue("msoSendToBack")]
   SendToBack,
   /// <summary>
   /// Bring shape forward.
   /// </summary>
-  [OfficeInteropEnumValue("msoBringForward")]
+  [InteropEnumValue("msoBringForward")]
   BringForward,
   /// <summary>
   /// Send shape backward.
   /// </summary>
-  [OfficeInteropEnumValue("msoSendBackward")]
+  [InteropEnumValue("msoSendBackward")]
   SendBackward,
   /// <summary>
   /// Bring shape in front of text.
   /// </summary>
-  [OfficeInteropEnumValue("msoBringInFrontOfText")]
+  [InteropEnumValue("msoBringInFrontOfText")]
   BringInFrontOfText,
   /// <summary>
   /// Send shape behind text.
   /// </summary>
-  [OfficeInteropEnumValue("msoSendBehindText")]
+  [InteropEnumValue("msoSendBehindText")]
   SendBehindText
 }

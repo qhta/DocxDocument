@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wduseformattingfrom?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdUseFormattingFrom")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdUseFormattingFrom")]
 public enum UseFormattingFrom
 {
   /// <summary>
   /// Copy source formatting from the current item.
   /// </summary>
-  [WordInteropEnumValue("wdFormattingFromCurrent")]
+  [InteropEnumValue("wdFormattingFromCurrent")]
   Current = 0,
   /// <summary>
   /// Copy source formatting from the current selection.
   /// </summary>
-  [WordInteropEnumValue("wdFormattingFromSelected")]
+  [InteropEnumValue("wdFormattingFromSelected")]
   Selected = 1,
   /// <summary>
   /// Prompt the user for formatting to use.
   /// </summary>
-  [WordInteropEnumValue("wdFormattingFromPrompt")]
+  [InteropEnumValue("wdFormattingFromPrompt")]
   Prompt = 2
 }

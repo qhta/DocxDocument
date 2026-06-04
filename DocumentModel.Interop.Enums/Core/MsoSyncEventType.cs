@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosynceventtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSyncEventType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSyncEventType")]
 public enum SyncEventType
 {
   /// <summary>
   /// Download initiated.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventDownloadInitiated")]
+  [InteropEnumValue("msoSyncEventDownloadInitiated")]
   DownloadInitiated,
   /// <summary>
   /// Download succeeded.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventDownloadSucceeded")]
+  [InteropEnumValue("msoSyncEventDownloadSucceeded")]
   DownloadSucceeded,
   /// <summary>
   /// Download failed.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventDownloadFailed")]
+  [InteropEnumValue("msoSyncEventDownloadFailed")]
   DownloadFailed,
   /// <summary>
   /// Upload initiated.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventUploadInitiated")]
+  [InteropEnumValue("msoSyncEventUploadInitiated")]
   UploadInitiated,
   /// <summary>
   /// Upload succeeded.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventUploadSucceeded")]
+  [InteropEnumValue("msoSyncEventUploadSucceeded")]
   UploadSucceeded,
   /// <summary>
   /// Upload failed.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventUploadFailed")]
+  [InteropEnumValue("msoSyncEventUploadFailed")]
   UploadFailed,
   /// <summary>
   /// No change detected.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventDownloadNoChange")]
+  [InteropEnumValue("msoSyncEventDownloadNoChange")]
   DownloadNoChange,
   /// <summary>
   /// Offline.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncEventOffline")]
+  [InteropEnumValue("msoSyncEventOffline")]
   Offline
 }

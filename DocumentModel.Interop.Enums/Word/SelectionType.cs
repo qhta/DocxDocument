@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdselectiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSelectionType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSelectionType")]
 public enum SelectionType
 {
   /// <summary>
   /// No selection.
   /// </summary>
-  [WordInteropEnumValue("wdNoSelection")]
+  [InteropEnumValue("wdNoSelection")]
   NoSelection = 0,
   /// <summary>
   /// An inline paragraph selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionIP")]
+  [InteropEnumValue("wdSelectionIP")]
   SelectionIP = 1,
   /// <summary>
   /// A normal or user-defined selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionNormal")]
+  [InteropEnumValue("wdSelectionNormal")]
   SelectionNormal = 2,
   /// <summary>
   /// A frame selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionFrame")]
+  [InteropEnumValue("wdSelectionFrame")]
   SelectionFrame = 3,
   /// <summary>
   /// A column selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionColumn")]
+  [InteropEnumValue("wdSelectionColumn")]
   SelectionColumn = 4,
   /// <summary>
   /// A row selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionRow")]
+  [InteropEnumValue("wdSelectionRow")]
   SelectionRow = 5,
   /// <summary>
   /// A block selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionBlock")]
+  [InteropEnumValue("wdSelectionBlock")]
   SelectionBlock = 6,
   /// <summary>
   /// An inline shape selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionInlineShape")]
+  [InteropEnumValue("wdSelectionInlineShape")]
   SelectionInlineShape = 7,
   /// <summary>
   /// A shape selection.
   /// </summary>
-  [WordInteropEnumValue("wdSelectionShape")]
+  [InteropEnumValue("wdSelectionShape")]
   SelectionShape = 8
 }

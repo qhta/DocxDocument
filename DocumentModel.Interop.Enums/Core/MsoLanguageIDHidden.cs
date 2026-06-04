@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolanguageidhidden?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoLanguageIDHidden")]
+[InteropEnumType("Microsoft.Office.Core.MsoLanguageIDHidden")]
 public enum LanguageIDHidden
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLanguageIDChineseHongKong")]
+  [InteropEnumValue("msoLanguageIDChineseHongKong")]
   ChineseHongKong = 3076,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLanguageIDChineseMacao")]
+  [InteropEnumValue("msoLanguageIDChineseMacao")]
   ChineseMacao = 5124,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLanguageIDEnglishTrinidad")]
+  [InteropEnumValue("msoLanguageIDEnglishTrinidad")]
   EnglishTrinidad = 11273
 }

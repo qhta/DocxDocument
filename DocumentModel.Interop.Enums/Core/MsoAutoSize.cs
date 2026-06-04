@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautosize?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoAutoSize")]
+[InteropEnumType("Microsoft.Office.Core.MsoAutoSize")]
 public enum AutoSize
 {
   /// <summary>
   /// A combination of automatic sizing schemes are used.
   /// </summary>
-  [OfficeInteropEnumValue("msoAutoSizeMixed")]
+  [InteropEnumValue("msoAutoSizeMixed")]
   Mixed = -2,
   /// <summary>
   /// No autosizing.
   /// </summary>
-  [OfficeInteropEnumValue("msoAutoSizeNone")]
+  [InteropEnumValue("msoAutoSizeNone")]
   None = 0,
   /// <summary>
   /// The shape is adjusted to fit the text.
   /// </summary>
-  [OfficeInteropEnumValue("msoAutoSizeShapeToFitText")]
+  [InteropEnumValue("msoAutoSizeShapeToFitText")]
   ShapeToFitText = 1,
   /// <summary>
   /// The text is adjusted to fit the shape.
   /// </summary>
-  [OfficeInteropEnumValue("msoAutoSizeTextToFitShape")]
+  [InteropEnumValue("msoAutoSizeTextToFitShape")]
   TextToFitShape = 2
 }

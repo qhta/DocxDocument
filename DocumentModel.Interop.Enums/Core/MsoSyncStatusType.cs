@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncstatustype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSyncStatusType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSyncStatusType")]
 public enum SyncStatusType
 {
   /// <summary>
   /// No shared workspace.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusNoSharedWorkspace")]
+  [InteropEnumValue("msoSyncStatusNoSharedWorkspace")]
   NoSharedWorkspace = 0,
   /// <summary>
   /// No syncronization is needed.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusNotRoaming")]
+  [InteropEnumValue("msoSyncStatusNotRoaming")]
   NotRoaming = 0,
   /// <summary>
   /// Documents are already in sync.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusLatest")]
+  [InteropEnumValue("msoSyncStatusLatest")]
   Latest = 1,
   /// <summary>
   /// Only server copy has changes.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusNewerAvailable")]
+  [InteropEnumValue("msoSyncStatusNewerAvailable")]
   NewerAvailable = 2,
   /// <summary>
   /// Only local copy has changes.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusLocalChanges")]
+  [InteropEnumValue("msoSyncStatusLocalChanges")]
   LocalChanges = 3,
   /// <summary>
   /// Both the local and the server copies have changes.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusConflict")]
+  [InteropEnumValue("msoSyncStatusConflict")]
   Conflict = 4,
   /// <summary>
   /// Synchronization was suspended. You can use the Unsuspend method of the Sync object to resume synchronization.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusSuspended")]
+  [InteropEnumValue("msoSyncStatusSuspended")]
   Suspended = 5,
   /// <summary>
   /// An error occurred. Use ErrorType property of Sync object to determine exact error.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncStatusError")]
+  [InteropEnumValue("msoSyncStatusError")]
   Error = 6
 }

@@ -1,7 +1,4 @@
-﻿using ISystem;
-
-
-#nullable enable
+﻿#nullable enable
 namespace DocumentModel.Attributes
 {
   [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = true)]

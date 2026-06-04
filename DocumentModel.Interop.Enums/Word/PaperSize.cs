@@ -6,217 +6,217 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpapersize?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPaperSize")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPaperSize")]
 public enum PaperSize
 {
   /// <summary>
   /// Specifies a paper size.
   /// </summary>
-  [WordInteropEnumValue("wdPaper10x14")]
+  [InteropEnumValue("wdPaper10x14")]
   Size10x14 = 0,
   /// <summary>
   /// Specifies a paper size.
   /// </summary>
-  [WordInteropEnumValue("wdPaper11x17")]
+  [InteropEnumValue("wdPaper11x17")]
   Size11x17 = 1,
   /// <summary>
   /// Letter dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperLetter")]
+  [InteropEnumValue("wdPaperLetter")]
   Letter = 2,
   /// <summary>
   /// Small letter dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperLetterSmall")]
+  [InteropEnumValue("wdPaperLetterSmall")]
   LetterSmall = 3,
   /// <summary>
   /// Legal dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperLegal")]
+  [InteropEnumValue("wdPaperLegal")]
   Legal = 4,
   /// <summary>
   /// Executive dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperExecutive")]
+  [InteropEnumValue("wdPaperExecutive")]
   Executive = 5,
   /// <summary>
   /// A3 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperA3")]
+  [InteropEnumValue("wdPaperA3")]
   A3 = 6,
   /// <summary>
   /// A4 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperA4")]
+  [InteropEnumValue("wdPaperA4")]
   A4 = 7,
   /// <summary>
   /// Small A4 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperA4Small")]
+  [InteropEnumValue("wdPaperA4Small")]
   A4Small = 8,
   /// <summary>
   /// A5 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperA5")]
+  [InteropEnumValue("wdPaperA5")]
   A5 = 9,
   /// <summary>
   /// B4 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperB4")]
+  [InteropEnumValue("wdPaperB4")]
   B4 = 10,
   /// <summary>
   /// B5 dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperB5")]
+  [InteropEnumValue("wdPaperB5")]
   B5 = 11,
   /// <summary>
   /// C sheet dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperCSheet")]
+  [InteropEnumValue("wdPaperCSheet")]
   CSheet = 12,
   /// <summary>
   /// D sheet dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperDSheet")]
+  [InteropEnumValue("wdPaperDSheet")]
   DSheet = 13,
   /// <summary>
   /// E sheet dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperESheet")]
+  [InteropEnumValue("wdPaperESheet")]
   ESheet = 14,
   /// <summary>
   /// German legal fanfold dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperFanfoldLegalGerman")]
+  [InteropEnumValue("wdPaperFanfoldLegalGerman")]
   FanfoldLegalGerman = 15,
   /// <summary>
   /// German standard fanfold dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperFanfoldStdGerman")]
+  [InteropEnumValue("wdPaperFanfoldStdGerman")]
   FanfoldStdGerman = 16,
   /// <summary>
   /// United States fanfold dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperFanfoldUS")]
+  [InteropEnumValue("wdPaperFanfoldUS")]
   FanfoldUS = 17,
   /// <summary>
   /// Folio dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperFolio")]
+  [InteropEnumValue("wdPaperFolio")]
   Folio = 18,
   /// <summary>
   /// Ledger dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperLedger")]
+  [InteropEnumValue("wdPaperLedger")]
   Ledger = 19,
   /// <summary>
   /// Note dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperNote")]
+  [InteropEnumValue("wdPaperNote")]
   Note = 20,
   /// <summary>
   /// Quarto dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperQuarto")]
+  [InteropEnumValue("wdPaperQuarto")]
   Quarto = 21,
   /// <summary>
   /// Statement dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperStatement")]
+  [InteropEnumValue("wdPaperStatement")]
   Statement = 22,
   /// <summary>
   /// Tabloid dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdPaperTabloid")]
+  [InteropEnumValue("wdPaperTabloid")]
   Tabloid = 23,
   /// <summary>
   /// Envelope, size 9.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelope9")]
+  [InteropEnumValue("wdPaperEnvelope9")]
   Envelope9 = 24,
   /// <summary>
   /// Legal envelope, size 10.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelope10")]
+  [InteropEnumValue("wdPaperEnvelope10")]
   Envelope10 = 25,
   /// <summary>
   /// Envelope, size 11.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelope11")]
+  [InteropEnumValue("wdPaperEnvelope11")]
   Envelope11 = 26,
   /// <summary>
   /// Envelope, size 12.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelope12")]
+  [InteropEnumValue("wdPaperEnvelope12")]
   Envelope12 = 27,
   /// <summary>
   /// Envelope, size 14.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelope14")]
+  [InteropEnumValue("wdPaperEnvelope14")]
   Envelope14 = 28,
   /// <summary>
   /// B4 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeB4")]
+  [InteropEnumValue("wdPaperEnvelopeB4")]
   EnvelopeB4 = 29,
   /// <summary>
   /// B5 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeB5")]
+  [InteropEnumValue("wdPaperEnvelopeB5")]
   EnvelopeB5 = 30,
   /// <summary>
   /// B6 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeB6")]
+  [InteropEnumValue("wdPaperEnvelopeB6")]
   EnvelopeB6 = 31,
   /// <summary>
   /// C3 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeC3")]
+  [InteropEnumValue("wdPaperEnvelopeC3")]
   EnvelopeC3 = 32,
   /// <summary>
   /// C4 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeC4")]
+  [InteropEnumValue("wdPaperEnvelopeC4")]
   EnvelopeC4 = 33,
   /// <summary>
   /// C5 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeC5")]
+  [InteropEnumValue("wdPaperEnvelopeC5")]
   EnvelopeC5 = 34,
   /// <summary>
   /// C6 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeC6")]
+  [InteropEnumValue("wdPaperEnvelopeC6")]
   EnvelopeC6 = 35,
   /// <summary>
   /// C65 envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeC65")]
+  [InteropEnumValue("wdPaperEnvelopeC65")]
   EnvelopeC65 = 36,
   /// <summary>
   /// DL envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeDL")]
+  [InteropEnumValue("wdPaperEnvelopeDL")]
   EnvelopeDL = 37,
   /// <summary>
   /// Italian envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeItaly")]
+  [InteropEnumValue("wdPaperEnvelopeItaly")]
   EnvelopeItaly = 38,
   /// <summary>
   /// Monarch envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopeMonarch")]
+  [InteropEnumValue("wdPaperEnvelopeMonarch")]
   EnvelopeMonarch = 39,
   /// <summary>
   /// Personal envelope.
   /// </summary>
-  [WordInteropEnumValue("wdPaperEnvelopePersonal")]
+  [InteropEnumValue("wdPaperEnvelopePersonal")]
   EnvelopePersonal = 40,
   /// <summary>
   /// Custom paper size.
   /// </summary>
-  [WordInteropEnumValue("wdPaperCustom")]
+  [InteropEnumValue("wdPaperCustom")]
   Custom = 41
 }

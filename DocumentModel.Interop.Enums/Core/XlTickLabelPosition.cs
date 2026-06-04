@@ -8,27 +8,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlTickLabelPosition")]
+[InteropEnumType("Microsoft.Office.Core.XlTickLabelPosition")]
 public enum TickLabelPosition
 {
   /// <summary>
   /// Top or right side of the chart.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelPositionHigh")]
+  [InteropEnumValue("xlTickLabelPositionHigh")]
   High = -4127,
   /// <summary>
   /// Bottom or left side of the chart.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelPositionLow")]
+  [InteropEnumValue("xlTickLabelPositionLow")]
   Low = -4134,
   /// <summary>
   /// Next to axis (where axis is not at either side of the chart).
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelPositionNextToAxis")]
+  [InteropEnumValue("xlTickLabelPositionNextToAxis")]
   NextToAxis = 4,
   /// <summary>
   /// No tick marks.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelPositionNone")]
+  [InteropEnumValue("xlTickLabelPositionNone")]
   None = -4142
 }

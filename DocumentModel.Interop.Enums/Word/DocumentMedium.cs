@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentmedium?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDocumentMedium")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDocumentMedium")]
 public enum DocumentMedium
 {
   /// <summary>
   /// E-mail message.
   /// </summary>
-  [WordInteropEnumValue("wdEmailMessage")]
+  [InteropEnumValue("wdEmailMessage")]
   EmailMessage = 0,
   /// <summary>
   /// Document.
   /// </summary>
-  [WordInteropEnumValue("wdDocument")]
+  [InteropEnumValue("wdDocument")]
   Document = 1,
   /// <summary>
   /// Web page.
   /// </summary>
-  [WordInteropEnumValue("wdWebPage")]
+  [InteropEnumValue("wdWebPage")]
   WebPage = 2
 }

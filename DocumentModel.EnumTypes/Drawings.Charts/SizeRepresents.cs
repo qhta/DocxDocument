@@ -4,8 +4,8 @@
 /// Defines the SizeRepresents enumeration.
 /// Used in types such as BubbleChart, IChartGroup, BubbleChartConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.SizeRepresentsValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues))]
 public enum SizeRepresents
 {
   /// <summary>

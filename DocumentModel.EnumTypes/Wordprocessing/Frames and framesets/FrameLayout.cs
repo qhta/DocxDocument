@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FrameLayoutValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.FrameLayoutValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues))]
 public enum FrameLayout
 {
   /// <summary>
   ///   Stack Frames Vertically.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameLayoutValues.Rows))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues.Rows))]
   Rows,
   /// <summary>
   ///   Stack Frames Horizontally.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameLayoutValues.Columns))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues.Columns))]
   Columns,
   /// <summary>
   ///   Do Not Stack Frames.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameLayoutValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues.None))]
   None
 }

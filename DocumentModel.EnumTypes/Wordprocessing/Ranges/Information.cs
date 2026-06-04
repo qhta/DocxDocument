@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as ShouldSerializeCodeFixProvider, AssemblyInfo, ShapeKind.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Information
 {
   /// <summary>

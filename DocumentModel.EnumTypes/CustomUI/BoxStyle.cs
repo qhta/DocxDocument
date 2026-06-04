@@ -4,8 +4,8 @@
 /// Defines the BoxStyle enumeration.
 /// Used in types such as Box, BoxConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.BoxStyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.BoxStyleValues))]
 public enum BoxStyle
 {
   /// <summary>

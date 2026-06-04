@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoChartFieldType")]
+[InteropEnumType("Microsoft.Office.Core.MsoChartFieldType")]
 public enum ChartFieldType
 {
   /// <summary>
   /// Specifies the Bubble size of the data point.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldBubbleSize")]
+  [InteropEnumValue("msoChartFieldBubbleSize")]
   BubbleSize = 1,
   /// <summary>
   /// Specifies the category name size of the data point.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldCategoryName")]
+  [InteropEnumValue("msoChartFieldCategoryName")]
   CategoryName,
   /// <summary>
   /// Specifies a percentage of the values.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldPercentage")]
+  [InteropEnumValue("msoChartFieldPercentage")]
   Percentage,
   /// <summary>
   /// Specifies the data series name.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldSeriesName")]
+  [InteropEnumValue("msoChartFieldSeriesName")]
   SeriesName,
   /// <summary>
   /// Specifies the value of the data field.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldValue")]
+  [InteropEnumValue("msoChartFieldValue")]
   Value,
   /// <summary>
   /// Specifies the formula used in the data point.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldFormula")]
+  [InteropEnumValue("msoChartFieldFormula")]
   Formula,
   /// <summary>
   /// Specifies the value of a range of data.
   /// </summary>
-  [OfficeInteropEnumValue("msoChartFieldRange")]
+  [InteropEnumValue("msoChartFieldRange")]
   Range
 }

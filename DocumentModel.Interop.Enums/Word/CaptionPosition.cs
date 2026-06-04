@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCaptionPosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCaptionPosition")]
 public enum CaptionPosition
 {
   /// <summary>
   /// The caption label is added above.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionPositionAbove")]
+  [InteropEnumValue("wdCaptionPositionAbove")]
   Above = 0,
   /// <summary>
   /// The caption label is added below.
   /// </summary>
-  [WordInteropEnumValue("wdCaptionPositionBelow")]
+  [InteropEnumValue("wdCaptionPositionBelow")]
   Below = 1
 }

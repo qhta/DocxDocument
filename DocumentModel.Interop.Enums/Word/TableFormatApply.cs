@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableformatapply?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTableFormatApply")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTableFormatApply")]
 public enum TableFormatApply
 {
   /// <summary>
   /// Borders.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyBorders")]
+  [InteropEnumValue("wdTableFormatApplyBorders")]
   Borders = 1,
   /// <summary>
   /// Shading.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyShading")]
+  [InteropEnumValue("wdTableFormatApplyShading")]
   Shading = 2,
   /// <summary>
   /// Font.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyFont")]
+  [InteropEnumValue("wdTableFormatApplyFont")]
   Font = 4,
   /// <summary>
   /// Color.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyColor")]
+  [InteropEnumValue("wdTableFormatApplyColor")]
   Color = 8,
   /// <summary>
   /// AutoFit.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyAutoFit")]
+  [InteropEnumValue("wdTableFormatApplyAutoFit")]
   AutoFit = 16,
   /// <summary>
   /// Apply AutoFormat to heading rows.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyHeadingRows")]
+  [InteropEnumValue("wdTableFormatApplyHeadingRows")]
   HeadingRows = 32,
   /// <summary>
   /// Apply AutoFormat to last row.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyLastRow")]
+  [InteropEnumValue("wdTableFormatApplyLastRow")]
   LastRow = 64,
   /// <summary>
   /// Apply AutoFormat to first column.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyFirstColumn")]
+  [InteropEnumValue("wdTableFormatApplyFirstColumn")]
   FirstColumn = 128,
   /// <summary>
   /// Apply AutoFormat to last column.
   /// </summary>
-  [WordInteropEnumValue("wdTableFormatApplyLastColumn")]
+  [InteropEnumValue("wdTableFormatApplyLastColumn")]
   LastColumn = 256
 }

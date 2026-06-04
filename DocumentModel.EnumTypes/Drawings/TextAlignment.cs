@@ -2,24 +2,24 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Alignment Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.TextAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.TextAlignmentValues))]
 public enum TextAlignment
 {
   /// <summary>
   ///   Text Alignment Enum ( Left ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Left))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Diagrams.TextAlignmentValues.Left))]
   Left,
   /// <summary>
   ///   Text Alignment Enum ( Center ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Diagrams.TextAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   Text Alignment Enum ( Right ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDD.TextAlignmentValues.Right))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Diagrams.TextAlignmentValues.Right))]
   Right,
   /// <summary>
   ///   Text Alignment Enum ( Justified ).

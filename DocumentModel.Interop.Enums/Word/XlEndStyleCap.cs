@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlendstylecap?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlEndStyleCap")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlEndStyleCap")]
 public enum EndStyleCap
 {
   /// <summary>
   /// Caps applied.
   /// </summary>
-  [WordInteropEnumValue("xlCap")]
+  [InteropEnumValue("xlCap")]
   Cap = 1,
   /// <summary>
   /// No caps applied.
   /// </summary>
-  [WordInteropEnumValue("xlNoCap")]
+  [InteropEnumValue("xlNoCap")]
   NoCap = 2
 }

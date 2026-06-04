@@ -5,7 +5,7 @@
 /// Used to represent Open XML mapped options.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum TextOrientation
 {
   /// <summary>Horizontal text</summary>

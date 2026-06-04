@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ObjectDrawAspect enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.ObjectDrawAspect))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect))]
 public enum ObjectDrawAspect
 {
   /// <summary>
   ///   content.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ObjectDrawAspect.content))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect.content))]
   Content,
   /// <summary>
   ///   icon.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ObjectDrawAspect.icon))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect.icon))]
   Icon
 }

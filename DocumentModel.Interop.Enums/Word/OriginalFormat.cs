@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoriginalformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOriginalFormat")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOriginalFormat")]
 public enum OriginalFormat
 {
   /// <summary>
   /// Microsoft Word document format.
   /// </summary>
-  [WordInteropEnumValue("wdWordDocument")]
+  [InteropEnumValue("wdWordDocument")]
   WordDocument = 0,
   /// <summary>
   /// Original document format.
   /// </summary>
-  [WordInteropEnumValue("wdOriginalDocumentFormat")]
+  [InteropEnumValue("wdOriginalDocumentFormat")]
   OriginalDocumentFormat = 1,
   /// <summary>
   /// Prompt user to select a document format.
   /// </summary>
-  [WordInteropEnumValue("wdPromptUser")]
+  [InteropEnumValue("wdPromptUser")]
   PromptUser = 2
 }

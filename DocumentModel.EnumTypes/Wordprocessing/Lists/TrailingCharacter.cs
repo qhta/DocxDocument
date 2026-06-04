@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as ListLevel.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum TrailingCharacter
 {
   /// <summary>Tab character</summary>

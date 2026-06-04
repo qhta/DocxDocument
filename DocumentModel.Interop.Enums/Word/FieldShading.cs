@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldshading?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFieldShading")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFieldShading")]
 public enum FieldShading
 {
   /// <summary>
   /// Never apply.
   /// </summary>
-  [WordInteropEnumValue("wdFieldShadingNever")]
+  [InteropEnumValue("wdFieldShadingNever")]
   Never = 0,
   /// <summary>
   /// Always apply.
   /// </summary>
-  [WordInteropEnumValue("wdFieldShadingAlways")]
+  [InteropEnumValue("wdFieldShadingAlways")]
   Always = 1,
   /// <summary>
   /// Apply only when form field is selected.
   /// </summary>
-  [WordInteropEnumValue("wdFieldShadingWhenSelected")]
+  [InteropEnumValue("wdFieldShadingWhenSelected")]
   WhenSelected = 2
 }

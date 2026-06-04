@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableader?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTabLeader")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTabLeader")]
 public enum TabLeader
 {
   /// <summary>
   /// Spaces. default.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderSpaces")]
+  [InteropEnumValue("wdTabLeaderSpaces")]
   Spaces = 0,
   /// <summary>
   /// Dots.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderDots")]
+  [InteropEnumValue("wdTabLeaderDots")]
   Dots = 1,
   /// <summary>
   /// Dashes.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderDashes")]
+  [InteropEnumValue("wdTabLeaderDashes")]
   Dashes = 2,
   /// <summary>
   /// Double lines.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderLines")]
+  [InteropEnumValue("wdTabLeaderLines")]
   Lines = 3,
   /// <summary>
   /// A heavy line.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderHeavy")]
+  [InteropEnumValue("wdTabLeaderHeavy")]
   Heavy = 4,
   /// <summary>
   /// A middle dot.
   /// </summary>
-  [WordInteropEnumValue("wdTabLeaderMiddleDot")]
+  [InteropEnumValue("wdTabLeaderMiddleDot")]
   MiddleDot = 5
 }

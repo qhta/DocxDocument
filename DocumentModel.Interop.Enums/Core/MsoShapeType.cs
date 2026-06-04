@@ -6,142 +6,142 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoShapeType")]
+[InteropEnumType("Microsoft.Office.Core.MsoShapeType")]
 public enum ShapeType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue("msoShapeTypeMixed")]
+  [InteropEnumValue("msoShapeTypeMixed")]
   ShapeTypeMixed = -2,
   /// <summary>
   /// AutoShape.
   /// </summary>
-  [OfficeInteropEnumValue("msoAutoShape")]
+  [InteropEnumValue("msoAutoShape")]
   AutoShape = 1,
   /// <summary>
   /// Callout.
   /// </summary>
-  [OfficeInteropEnumValue("msoCallout")]
+  [InteropEnumValue("msoCallout")]
   Callout = 2,
   /// <summary>
   /// Chart.
   /// </summary>
-  [OfficeInteropEnumValue("msoChart")]
+  [InteropEnumValue("msoChart")]
   Chart = 3,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue("msoComment")]
+  [InteropEnumValue("msoComment")]
   Comment = 4,
   /// <summary>
   /// Freeform.
   /// </summary>
-  [OfficeInteropEnumValue("msoFreeform")]
+  [InteropEnumValue("msoFreeform")]
   Freeform = 5,
   /// <summary>
   /// Group.
   /// </summary>
-  [OfficeInteropEnumValue("msoGroup")]
+  [InteropEnumValue("msoGroup")]
   Group = 6,
   /// <summary>
   /// Embedded OLE object.
   /// </summary>
-  [OfficeInteropEnumValue("msoEmbeddedOLEObject")]
+  [InteropEnumValue("msoEmbeddedOLEObject")]
   EmbeddedOLEObject = 7,
   /// <summary>
   /// Form control.
   /// </summary>
-  [OfficeInteropEnumValue("msoFormControl")]
+  [InteropEnumValue("msoFormControl")]
   FormControl = 8,
   /// <summary>
   /// Line.
   /// </summary>
-  [OfficeInteropEnumValue("msoLine")]
+  [InteropEnumValue("msoLine")]
   Line = 9,
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  [OfficeInteropEnumValue("msoLinkedOLEObject")]
+  [InteropEnumValue("msoLinkedOLEObject")]
   LinkedOLEObject = 10,
   /// <summary>
   /// Linked picture.
   /// </summary>
-  [OfficeInteropEnumValue("msoLinkedPicture")]
+  [InteropEnumValue("msoLinkedPicture")]
   LinkedPicture = 11,
   /// <summary>
   /// OLE control object.
   /// </summary>
-  [OfficeInteropEnumValue("msoOLEControlObject")]
+  [InteropEnumValue("msoOLEControlObject")]
   OLEControlObject = 12,
   /// <summary>
   /// Picture.
   /// </summary>
-  [OfficeInteropEnumValue("msoPicture")]
+  [InteropEnumValue("msoPicture")]
   Picture = 13,
   /// <summary>
   /// Placeholder.
   /// </summary>
-  [OfficeInteropEnumValue("msoPlaceholder")]
+  [InteropEnumValue("msoPlaceholder")]
   Placeholder = 14,
   /// <summary>
   /// Text effect.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextEffect")]
+  [InteropEnumValue("msoTextEffect")]
   TextEffect = 15,
   /// <summary>
   /// Media.
   /// </summary>
-  [OfficeInteropEnumValue("msoMedia")]
+  [InteropEnumValue("msoMedia")]
   Media = 16,
   /// <summary>
   /// Text box.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextBox")]
+  [InteropEnumValue("msoTextBox")]
   TextBox = 17,
   /// <summary>
   /// Script anchor.
   /// </summary>
-  [OfficeInteropEnumValue("msoScriptAnchor")]
+  [InteropEnumValue("msoScriptAnchor")]
   ScriptAnchor = 18,
   /// <summary>
   /// Table.
   /// </summary>
-  [OfficeInteropEnumValue("msoTable")]
+  [InteropEnumValue("msoTable")]
   Table = 19,
   /// <summary>
   /// Canvas.
   /// </summary>
-  [OfficeInteropEnumValue("msoCanvas")]
+  [InteropEnumValue("msoCanvas")]
   Canvas = 20,
   /// <summary>
   /// Diagram.
   /// </summary>
-  [OfficeInteropEnumValue("msoDiagram")]
+  [InteropEnumValue("msoDiagram")]
   Diagram = 21,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue("msoInk")]
+  [InteropEnumValue("msoInk")]
   Ink = 22,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue("msoInkComment")]
+  [InteropEnumValue("msoInkComment")]
   InkComment = 23,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArt")]
+  [InteropEnumValue("msoSmartArt")]
   SmartArt = 24,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSlicer")]
+  [InteropEnumValue("msoSlicer")]
   Slicer = 25,
   /// <summary>
   /// Web video.
   /// </summary>
-  [OfficeInteropEnumValue("msoWebVideo")]
+  [InteropEnumValue("msoWebVideo")]
   WebVideo = 26
 }

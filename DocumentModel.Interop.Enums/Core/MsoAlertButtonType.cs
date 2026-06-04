@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertbuttontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoAlertButtonType")]
+[InteropEnumType("Microsoft.Office.Core.MsoAlertButtonType")]
 public enum AlertButtonType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonOK")]
+  [InteropEnumValue("msoAlertButtonOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonOKCancel")]
+  [InteropEnumValue("msoAlertButtonOKCancel")]
   OKCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonAbortRetryIgnore")]
+  [InteropEnumValue("msoAlertButtonAbortRetryIgnore")]
   AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonYesNoCancel")]
+  [InteropEnumValue("msoAlertButtonYesNoCancel")]
   YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonYesNo")]
+  [InteropEnumValue("msoAlertButtonYesNo")]
   YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonRetryCancel")]
+  [InteropEnumValue("msoAlertButtonRetryCancel")]
   RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertButtonYesAllNoCancel")]
+  [InteropEnumValue("msoAlertButtonYesAllNoCancel")]
   YesAllNoCancel
 }

@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the InfoTextValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.InfoTextValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.InfoTextValues))]
 public enum InfoTextType
 {
   /// <summary>
   ///   Literal Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.InfoTextValues.Text))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.InfoTextValues.Text))]
   Text,
   /// <summary>
   ///   Glossary Document Entry.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.InfoTextValues.AutoText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.InfoTextValues.AutoText))]
   AutoText
 }

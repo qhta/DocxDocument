@@ -3,57 +3,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturealignment?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoTextureAlignment")]
+[InteropEnumType("Microsoft.Office.Core.MsoTextureAlignment")]
 public enum TextureAlignment
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureAlignmentMixed")]
+  [InteropEnumValue("msoTextureAlignmentMixed")]
   AlignmentMixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureTopLeft")]
+  [InteropEnumValue("msoTextureTopLeft")]
   TopLeft = 0,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureTop")]
+  [InteropEnumValue("msoTextureTop")]
   Top = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureTopRight")]
+  [InteropEnumValue("msoTextureTopRight")]
   TopRight = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureLeft")]
+  [InteropEnumValue("msoTextureLeft")]
   Left = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureCenter")]
+  [InteropEnumValue("msoTextureCenter")]
   Center = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureRight")]
+  [InteropEnumValue("msoTextureRight")]
   Right = 5,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureBottomLeft")]
+  [InteropEnumValue("msoTextureBottomLeft")]
   BottomLeft = 6,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureBottom")]
+  [InteropEnumValue("msoTextureBottom")]
   Bottom = 7,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextureBottomRight")]
+  [InteropEnumValue("msoTextureBottomRight")]
   BottomRight = 8
 }

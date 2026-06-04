@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisedpropertiesmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRevisedPropertiesMark")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRevisedPropertiesMark")]
 public enum RevisedPropertiesMark
 {
   /// <summary>
   /// Using a special character.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkNone")]
+  [InteropEnumValue("wdRevisedPropertiesMarkNone")]
   None = 0,
   /// <summary>
   /// In bold.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkBold")]
+  [InteropEnumValue("wdRevisedPropertiesMarkBold")]
   Bold = 1,
   /// <summary>
   /// In italics.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkItalic")]
+  [InteropEnumValue("wdRevisedPropertiesMarkItalic")]
   Italic = 2,
   /// <summary>
   /// With underline characters.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkUnderline")]
+  [InteropEnumValue("wdRevisedPropertiesMarkUnderline")]
   Underline = 3,
   /// <summary>
   /// With double underline characters.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkDoubleUnderline")]
+  [InteropEnumValue("wdRevisedPropertiesMarkDoubleUnderline")]
   DoubleUnderline = 4,
   /// <summary>
   /// In the designated color.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkColorOnly")]
+  [InteropEnumValue("wdRevisedPropertiesMarkColorOnly")]
   ColorOnly = 5,
   /// <summary>
   /// Using strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkStrikeThrough")]
+  [InteropEnumValue("wdRevisedPropertiesMarkStrikeThrough")]
   StrikeThrough = 6,
   /// <summary>
   /// Using double-strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue("wdRevisedPropertiesMarkDoubleStrikeThrough")]
+  [InteropEnumValue("wdRevisedPropertiesMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 7
 }

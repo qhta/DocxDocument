@@ -4,8 +4,8 @@
 /// Defines the ParameterId enumeration.
 /// Used in types such as Parameter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ParameterIdValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues))]
 public enum ParameterId
 {
   /// <summary>

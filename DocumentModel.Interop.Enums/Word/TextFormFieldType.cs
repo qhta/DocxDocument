@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextformfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTextFormFieldType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTextFormFieldType")]
 public enum TextFormFieldType
 {
   /// <summary>
   /// Regular text field.
   /// </summary>
-  [WordInteropEnumValue("wdRegularText")]
+  [InteropEnumValue("wdRegularText")]
   RegularText = 0,
   /// <summary>
   /// Number text field.
   /// </summary>
-  [WordInteropEnumValue("wdNumberText")]
+  [InteropEnumValue("wdNumberText")]
   NumberText = 1,
   /// <summary>
   /// Date text field.
   /// </summary>
-  [WordInteropEnumValue("wdDateText")]
+  [InteropEnumValue("wdDateText")]
   DateText = 2,
   /// <summary>
   /// Current date text field.
   /// </summary>
-  [WordInteropEnumValue("wdCurrentDateText")]
+  [InteropEnumValue("wdCurrentDateText")]
   CurrentDateText = 3,
   /// <summary>
   /// Current time text field.
   /// </summary>
-  [WordInteropEnumValue("wdCurrentTimeText")]
+  [InteropEnumValue("wdCurrentTimeText")]
   CurrentTimeText = 4,
   /// <summary>
   /// Calculation text field.
   /// </summary>
-  [WordInteropEnumValue("wdCalculationText")]
+  [InteropEnumValue("wdCalculationText")]
   CalculationText = 5
 }

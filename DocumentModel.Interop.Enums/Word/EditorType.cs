@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdeditortype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEditorType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEditorType")]
 public enum EditorType
 {
   /// <summary>
   /// Represents the current user of the document.
   /// </summary>
-  [WordInteropEnumValue("wdEditorCurrent")]
+  [InteropEnumValue("wdEditorCurrent")]
   Current = -6,
   /// <summary>
   /// Represents the Editors group for documents that use Information Rights Management.
   /// </summary>
-  [WordInteropEnumValue("wdEditorEditors")]
+  [InteropEnumValue("wdEditorEditors")]
   Editors = -5,
   /// <summary>
   /// Represents the Owners group for documents that use Information Rights Management.
   /// </summary>
-  [WordInteropEnumValue("wdEditorOwners")]
+  [InteropEnumValue("wdEditorOwners")]
   Owners = -4,
   /// <summary>
   /// Represents all users who open a document.
   /// </summary>
-  [WordInteropEnumValue("wdEditorEveryone")]
+  [InteropEnumValue("wdEditorEveryone")]
   Everyone = -1
 }

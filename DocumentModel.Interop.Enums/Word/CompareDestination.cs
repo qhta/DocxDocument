@@ -7,23 +7,23 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcomparedestination?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCompareDestination")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCompareDestination")]
 public enum CompareDestination
 {
   /// <summary>
   /// Tracks the differences between the two files using tracked changes in the original document.
   /// </summary>
-  [WordInteropEnumValue("wdCompareDestinationOriginal")]
+  [InteropEnumValue("wdCompareDestinationOriginal")]
   Original = 0,
   /// <summary>
   /// Tracks the differences between the two files using tracked changes in the revised document.
   /// </summary>
-  [WordInteropEnumValue("wdCompareDestinationRevised")]
+  [InteropEnumValue("wdCompareDestinationRevised")]
   Revised = 1,
   /// <summary>
   /// Creates a new file and tracks the diferences between the original document and the revised document using
   /// tracked changes.
   /// </summary>
-  [WordInteropEnumValue("wdCompareDestinationNew")]
+  [InteropEnumValue("wdCompareDestinationNew")]
   New = 2
 }

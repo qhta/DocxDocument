@@ -8,32 +8,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlvalign?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlVAlign")]
+[InteropEnumType("Microsoft.Office.Core.XlVAlign")]
 public enum VAlign
 {
   /// <summary>
   /// Bottom
   /// </summary>
-  [OfficeInteropEnumValue("xlVAlignBottom")]
+  [InteropEnumValue("xlVAlignBottom")]
   Bottom = -4107,
   /// <summary>
   /// Center
   /// </summary>
-  [OfficeInteropEnumValue("xlVAlignCenter")]
+  [InteropEnumValue("xlVAlignCenter")]
   Center = -4108,
   /// <summary>
   /// Distributed
   /// </summary>
-  [OfficeInteropEnumValue("xlVAlignDistributed")]
+  [InteropEnumValue("xlVAlignDistributed")]
   Distributed = -4117,
   /// <summary>
   /// Justify
   /// </summary>
-  [OfficeInteropEnumValue("xlVAlignJustify")]
+  [InteropEnumValue("xlVAlignJustify")]
   Justify = -4130,
   /// <summary>
   /// Top
   /// </summary>
-  [OfficeInteropEnumValue("xlVAlignTop")]
+  [InteropEnumValue("xlVAlignTop")]
   Top = -4160
 }

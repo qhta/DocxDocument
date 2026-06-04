@@ -4,7 +4,7 @@
 /// Specifies paragraph alignment for a text block.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum ParagraphAlignment
 {
   /// <summary>

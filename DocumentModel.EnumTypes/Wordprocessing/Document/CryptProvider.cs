@@ -2,8 +2,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CryptProviderValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXP.CryptProviderValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Presentation.CryptProviderValues))]
 public enum CryptProvider
 {
   /// <summary>
@@ -13,10 +13,11 @@ public enum CryptProvider
   /// <summary>
   ///   Any Provider.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXP.CryptProviderValues.RsaFull))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Presentation.CryptProviderValues.RsaFull))]
   RsaFull,
   /// <summary>
   ///   custom.
   /// </summary>
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Presentation.CryptProviderValues.Invalid))]
   Custom
 }

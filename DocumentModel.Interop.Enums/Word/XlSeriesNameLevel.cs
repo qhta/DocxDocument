@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlseriesnamelevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlSeriesNameLevel")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlSeriesNameLevel")]
 public enum SeriesNameLevel
 {
   /// <summary>
   /// Sets no series names in the chart.
   /// </summary>
-  [WordInteropEnumValue("xlSeriesNameLevelNone")]
+  [InteropEnumValue("xlSeriesNameLevelNone")]
   None = -3,
   /// <summary>
   /// Indicates literal data in the series names.
   /// </summary>
-  [WordInteropEnumValue("xlSeriesNameLevelCustom")]
+  [InteropEnumValue("xlSeriesNameLevelCustom")]
   Custom = -2,
   /// <summary>
   /// Sets series names to all series name levels within range on the chart. The default.
   /// </summary>
-  [WordInteropEnumValue("xlSeriesNameLevelAll")]
+  [InteropEnumValue("xlSeriesNameLevelAll")]
   All = -1
 }

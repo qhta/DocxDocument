@@ -4,113 +4,113 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Vector Base Type Simple Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVT.VectorBaseValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues))]
 public enum VectorBaseType
 {
   /// <summary>
   ///   Variant Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Variant))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Variant))]
   Variant,
   /// <summary>
   ///   Vector Base Type Enumeration Value.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.OneByteSignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.OneByteSignedInteger))]
   OneByteSignedInteger,
   /// <summary>
   ///   2-Byte Signed Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.TwoBytesSignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.TwoBytesSignedInteger))]
   TwoBytesSignedInteger,
   /// <summary>
   ///   4-Byte Signed Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.FourBytesSignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.FourBytesSignedInteger))]
   FourBytesSignedInteger,
   /// <summary>
   ///   8-Byte Signed Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.EightBytesSignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.EightBytesSignedInteger))]
   EightBytesSignedInteger,
   /// <summary>
   ///   1-Byte Unsigned Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.OneByteUnsignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.OneByteUnsignedInteger))]
   OneByteUnsignedInteger,
   /// <summary>
   ///   2-Byte Unsigned Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.TwoBytesUnsignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.TwoBytesUnsignedInteger))]
   TwoBytesUnsignedInteger,
   /// <summary>
   ///   4-Byte Unsigned Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.FourBytesUnsignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.FourBytesUnsignedInteger))]
   FourBytesUnsignedInteger,
   /// <summary>
   ///   8-Byte Unsigned Integer Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.EightBytesUnsignedInteger))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.EightBytesUnsignedInteger))]
   EightBytesUnsignedInteger,
   /// <summary>
   ///   4-Byte Real Number Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.FourBytesReal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.FourBytesReal))]
   FourBytesReal,
   /// <summary>
   ///   8-Byte Real Number Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.EightBytesReal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.EightBytesReal))]
   EightBytesReal,
   /// <summary>
   ///   LPSTR Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Lpstr))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Lpstr))]
   Lpstr,
   /// <summary>
   ///   LPWSTR Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Lpwstr))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Lpwstr))]
   Lpwstr,
   /// <summary>
   ///   Basic String Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Bstr))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Bstr))]
   Bstr,
   /// <summary>
   ///   Date and Time Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Date))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Date))]
   Date,
   /// <summary>
   ///   File Time Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Filetime))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Filetime))]
   Filetime,
   /// <summary>
   ///   Boolean Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Bool))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Bool))]
   Bool,
   /// <summary>
   ///   Currency Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Currency))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Currency))]
   Currency,
   /// <summary>
   ///   Error Status Code Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.Error))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.Error))]
   Error,
   /// <summary>
   ///   Class ID Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.ClassId))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.ClassId))]
   ClassId,
   /// <summary>
   ///   Clipboard Data Base Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVT.VectorBaseValues.ClipboardData))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.VariantTypes.VectorBaseValues.ClipboardData))]
   ClipboardData
 }

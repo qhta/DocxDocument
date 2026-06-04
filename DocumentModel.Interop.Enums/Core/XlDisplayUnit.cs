@@ -8,62 +8,62 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldisplayunit?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlDisplayUnit")]
+[InteropEnumType("Microsoft.Office.Core.XlDisplayUnit")]
 public enum DisplayUnit
 {
   /// <summary>
   /// Specifies units of hundreds.
   /// </summary>
-  [OfficeInteropEnumValue("xlHundreds")]
+  [InteropEnumValue("xlHundreds")]
   Hundreds = -2,
   /// <summary>
   /// Specifies units of thousands.
   /// </summary>
-  [OfficeInteropEnumValue("xlThousands")]
+  [InteropEnumValue("xlThousands")]
   Thousands = -3,
   /// <summary>
   /// Specifies units of tens of thousands.
   /// </summary>
-  [OfficeInteropEnumValue("xlTenThousands")]
+  [InteropEnumValue("xlTenThousands")]
   TenThousands = -4,
   /// <summary>
   /// Specifies units of hundreds of thousands.
   /// </summary>
-  [OfficeInteropEnumValue("xlHundredThousands")]
+  [InteropEnumValue("xlHundredThousands")]
   HundredThousands = -5,
   /// <summary>
   /// Specifies units of millions.
   /// </summary>
-  [OfficeInteropEnumValue("xlMillions")]
+  [InteropEnumValue("xlMillions")]
   Millions = -6,
   /// <summary>
   /// Specifies units of tens of millions.
   /// </summary>
-  [OfficeInteropEnumValue("xlTenMillions")]
+  [InteropEnumValue("xlTenMillions")]
   TenMillions = -7,
   /// <summary>
   /// Specifies units of hundreds of millions.
   /// </summary>
-  [OfficeInteropEnumValue("xlHundredMillions")]
+  [InteropEnumValue("xlHundredMillions")]
   HundredMillions = -8,
   /// <summary>
   /// Specifies units of thousands of millions.
   /// </summary>
-  [OfficeInteropEnumValue("xlThousandMillions")]
+  [InteropEnumValue("xlThousandMillions")]
   ThousandMillions = -9,
   /// <summary>
   /// Specifies units of millions of millions.
   /// </summary>
-  [OfficeInteropEnumValue("xlMillionMillions")]
+  [InteropEnumValue("xlMillionMillions")]
   MillionMillions = -10,
   /// <summary>
   /// Specifies custom units.
   /// </summary>
-  [OfficeInteropEnumValue("xlDisplayUnitCustom")]
+  [InteropEnumValue("xlDisplayUnitCustom")]
   DisplayUnitCustom = -4114,
   /// <summary>
   /// No units are displayed.
   /// </summary>
-  [OfficeInteropEnumValue("xlDisplayUnitNone")]
+  [InteropEnumValue("xlDisplayUnitNone")]
   DisplayUnitNone = -4142
 }

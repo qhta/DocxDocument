@@ -4,8 +4,8 @@
 /// Defines the AnimationLevelString enumeration.
 /// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.AnimationLevelStringValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues))]
 public enum AnimationLevelString
 {
   /// <summary>

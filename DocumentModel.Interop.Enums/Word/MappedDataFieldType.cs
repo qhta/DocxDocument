@@ -6,157 +6,157 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmappeddatafields?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMappedDataFields")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMappedDataFields")]
 public enum MappedDataFieldType
 {
   /// <summary>
   /// Unique identifier field.
   /// </summary>
-  [WordInteropEnumValue("wdUniqueIdentifier")]
+  [InteropEnumValue("wdUniqueIdentifier")]
   UniqueIdentifier = 1,
   /// <summary>
   /// Courtesy title field.
   /// </summary>
-  [WordInteropEnumValue("wdCourtesyTitle")]
+  [InteropEnumValue("wdCourtesyTitle")]
   CourtesyTitle = 2,
   /// <summary>
   /// First name field.
   /// </summary>
-  [WordInteropEnumValue("wdFirstName")]
+  [InteropEnumValue("wdFirstName")]
   FirstName = 3,
   /// <summary>
   /// Middle name field.
   /// </summary>
-  [WordInteropEnumValue("wdMiddleName")]
+  [InteropEnumValue("wdMiddleName")]
   MiddleName = 4,
   /// <summary>
   /// Last name field.
   /// </summary>
-  [WordInteropEnumValue("wdLastName")]
+  [InteropEnumValue("wdLastName")]
   LastName = 5,
   /// <summary>
   /// Suffix field.
   /// </summary>
-  [WordInteropEnumValue("wdSuffix")]
+  [InteropEnumValue("wdSuffix")]
   Suffix = 6,
   /// <summary>
   /// Nickname field.
   /// </summary>
-  [WordInteropEnumValue("wdNickname")]
+  [InteropEnumValue("wdNickname")]
   Nickname = 7,
   /// <summary>
   /// Job title field.
   /// </summary>
-  [WordInteropEnumValue("wdJobTitle")]
+  [InteropEnumValue("wdJobTitle")]
   JobTitle = 8,
   /// <summary>
   /// Company field.
   /// </summary>
-  [WordInteropEnumValue("wdCompany")]
+  [InteropEnumValue("wdCompany")]
   Company = 9,
   /// <summary>
   /// Address 1 field.
   /// </summary>
-  [WordInteropEnumValue("wdAddress1")]
+  [InteropEnumValue("wdAddress1")]
   Address1 = 10,
   /// <summary>
   /// Address 2 field.
   /// </summary>
-  [WordInteropEnumValue("wdAddress2")]
+  [InteropEnumValue("wdAddress2")]
   Address2 = 11,
   /// <summary>
   /// City field.
   /// </summary>
-  [WordInteropEnumValue("wdCity")]
+  [InteropEnumValue("wdCity")]
   City = 12,
   /// <summary>
   /// State field.
   /// </summary>
-  [WordInteropEnumValue("wdState")]
+  [InteropEnumValue("wdState")]
   State = 13,
   /// <summary>
   /// Postal code field.
   /// </summary>
-  [WordInteropEnumValue("wdPostalCode")]
+  [InteropEnumValue("wdPostalCode")]
   PostalCode = 14,
   /// <summary>
   /// Country/region field.
   /// </summary>
-  [WordInteropEnumValue("wdCountryRegion")]
+  [InteropEnumValue("wdCountryRegion")]
   CountryRegion = 15,
   /// <summary>
   /// Business phone field.
   /// </summary>
-  [WordInteropEnumValue("wdBusinessPhone")]
+  [InteropEnumValue("wdBusinessPhone")]
   BusinessPhone = 16,
   /// <summary>
   /// Business fax field.
   /// </summary>
-  [WordInteropEnumValue("wdBusinessFax")]
+  [InteropEnumValue("wdBusinessFax")]
   BusinessFax = 17,
   /// <summary>
   /// Home phone field.
   /// </summary>
-  [WordInteropEnumValue("wdHomePhone")]
+  [InteropEnumValue("wdHomePhone")]
   HomePhone = 18,
   /// <summary>
   /// Home fax field.
   /// </summary>
-  [WordInteropEnumValue("wdHomeFax")]
+  [InteropEnumValue("wdHomeFax")]
   HomeFax = 19,
   /// <summary>
   /// E-mail address field.
   /// </summary>
-  [WordInteropEnumValue("wdEmailAddress")]
+  [InteropEnumValue("wdEmailAddress")]
   EmailAddress = 20,
   /// <summary>
   /// Web page unique resource identifier (URL) field.
   /// </summary>
-  [WordInteropEnumValue("wdWebPageURL")]
+  [InteropEnumValue("wdWebPageURL")]
   WebPageURL = 21,
   /// <summary>
   /// Spouse courtesy title field.
   /// </summary>
-  [WordInteropEnumValue("wdSpouseCourtesyTitle")]
+  [InteropEnumValue("wdSpouseCourtesyTitle")]
   SpouseCourtesyTitle = 22,
   /// <summary>
   /// Spouse first name field.
   /// </summary>
-  [WordInteropEnumValue("wdSpouseFirstName")]
+  [InteropEnumValue("wdSpouseFirstName")]
   SpouseFirstName = 23,
   /// <summary>
   /// Spouse middle name field.
   /// </summary>
-  [WordInteropEnumValue("wdSpouseMiddleName")]
+  [InteropEnumValue("wdSpouseMiddleName")]
   SpouseMiddleName = 24,
   /// <summary>
   /// Spouse last name field.
   /// </summary>
-  [WordInteropEnumValue("wdSpouseLastName")]
+  [InteropEnumValue("wdSpouseLastName")]
   SpouseLastName = 25,
   /// <summary>
   /// Spouse nickname field.
   /// </summary>
-  [WordInteropEnumValue("wdSpouseNickname")]
+  [InteropEnumValue("wdSpouseNickname")]
   SpouseNickname = 26,
   /// <summary>
   /// Ruby first name field.
   /// </summary>
-  [WordInteropEnumValue("wdRubyFirstName")]
+  [InteropEnumValue("wdRubyFirstName")]
   RubyFirstName = 27,
   /// <summary>
   /// Ruby last name field.
   /// </summary>
-  [WordInteropEnumValue("wdRubyLastName")]
+  [InteropEnumValue("wdRubyLastName")]
   RubyLastName = 28,
   /// <summary>
   /// Address 3 field.
   /// </summary>
-  [WordInteropEnumValue("wdAddress3")]
+  [InteropEnumValue("wdAddress3")]
   Address3 = 29,
   /// <summary>
   /// Department field.
   /// </summary>
-  [WordInteropEnumValue("wdDepartment")]
+  [InteropEnumValue("wdDepartment")]
   Department = 30
 }

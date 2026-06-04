@@ -5,7 +5,7 @@
 /// Used in types such as IBorder, IChartBorder, IChartFont.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum ColorIndex
 {
   /// <summary>Automatic color</summary>

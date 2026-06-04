@@ -2,84 +2,84 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Material Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.PresetMaterialTypeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues))]
 public enum PresetMaterial
 {
   /// <summary>
   ///   Legacy Matte.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.LegacyMatte))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.LegacyMatte))]
   LegacyMatte = 1,
 
   /// <summary>
   ///   Legacy Plastic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.LegacyPlastic))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.LegacyPlastic))]
   LegacyPlastic,
   /// <summary>
   ///   Legacy Metal.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.LegacyMetal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.LegacyMetal))]
   LegacyMetal,
   /// <summary>
   ///   Legacy Wireframe.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.LegacyWireframe))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.LegacyWireframe))]
   LegacyWireframe,
   /// <summary>
   ///   Matte.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Matte))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Matte))]
   Matte,
   /// <summary>
   ///   Plastic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Plastic))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Plastic))]
   Plastic,
   /// <summary>
   ///   Metal.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Metal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Metal))]
   Metal,
   /// <summary>
   ///   Warm Matte.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.WarmMatte))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.WarmMatte))]
   WarmMatte,
   /// <summary>
   ///   Translucent Powder.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.TranslucentPowder))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.TranslucentPowder))]
   TranslucentPowder,
   /// <summary>
   ///   Powder.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Powder))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Powder))]
   Powder,
   /// <summary>
   ///   Dark Edge.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.DarkEdge))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.DarkEdge))]
   DarkEdge,
   /// <summary>
   ///   Soft Edge.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.SoftEdge))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.SoftEdge))]
   SoftEdge,
   /// <summary>
   ///   Clear.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Clear))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Clear))]
   Clear,
   /// <summary>
   ///   Flat.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.Flat))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.Flat))]
   Flat,
   /// <summary>
   ///   Soft Metal.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.SoftMetal))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues.SoftMetal))]
   SoftMetal
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdkana?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdKana")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdKana")]
 public enum Kana
 {
   /// <summary>
   /// The text is formatted as Katakana.
   /// </summary>
-  [WordInteropEnumValue("wdKanaKatakana")]
+  [InteropEnumValue("wdKanaKatakana")]
   Katakana = 8,
   /// <summary>
   /// The text is formatted as Hiragana.
   /// </summary>
-  [WordInteropEnumValue("wdKanaHiragana")]
+  [InteropEnumValue("wdKanaHiragana")]
   Hiragana = 9
 }

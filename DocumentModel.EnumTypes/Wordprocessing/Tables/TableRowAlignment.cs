@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableRowAlignmentValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.TableRowAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues))]
 public enum TableRowAlignment
 {
   /// <summary>
   ///   left.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TableRowAlignmentValues.Left))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues.Left))]
   Left,
   /// <summary>
   ///   center.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TableRowAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   right.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TableRowAlignmentValues.Right))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues.Right))]
   Right
 }

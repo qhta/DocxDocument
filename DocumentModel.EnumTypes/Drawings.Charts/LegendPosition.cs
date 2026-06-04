@@ -4,8 +4,8 @@
 /// Defines the LegendPosition enumeration.
 /// Used in types such as ILegend, LegendConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.LegendPositionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues))]
 public enum LegendPosition
 {
   /// <summary>

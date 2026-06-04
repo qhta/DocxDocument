@@ -1,6 +1,4 @@
-﻿using ISystem;
-
-namespace DocumentModel.Attributes
+﻿namespace DocumentModel.Attributes
 {
   internal interface IConstraintAttribute
   {

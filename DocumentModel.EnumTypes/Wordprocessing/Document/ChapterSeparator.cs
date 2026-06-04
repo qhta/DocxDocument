@@ -2,33 +2,33 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ChapterSeparatorValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.ChapterSeparatorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues))]
 public enum ChapterSeparator
 {
   /// <summary>
   ///   Hyphen Chapter Separator.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ChapterSeparatorValues.Hyphen))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues.Hyphen))]
   Hyphen,
   /// <summary>
   ///   Period Chapter Separator.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ChapterSeparatorValues.Period))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues.Period))]
   Period,
   /// <summary>
   ///   Colon Chapter Separator.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ChapterSeparatorValues.Colon))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues.Colon))]
   Colon,
   /// <summary>
   ///   Em Dash Chapter Separator.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ChapterSeparatorValues.EmDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues.EmDash))]
   EmDash,
   /// <summary>
   ///   En Dash Chapter Separator.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ChapterSeparatorValues.EnDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues.EnDash))]
   EnDash
 }

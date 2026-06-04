@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdxmlnodetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdXMLNodeType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdXMLNodeType")]
 public enum XMLNodeType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdXMLNodeElement")]
+  [InteropEnumValue("wdXMLNodeElement")]
   Element = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue("wdXMLNodeAttribute")]
+  [InteropEnumValue("wdXMLNodeAttribute")]
   Attribute = 2
 }

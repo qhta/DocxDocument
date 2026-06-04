@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the type of bibliographic source.
 /// </summary>
-[OpenXmlType(typeof(DXB.SourceType))]
+[OpenXmlType(typeof(DocumentFormat.OpenXml.Bibliography.SourceType))]
 public enum SourceType
 {
   /// <summary>Book</summary>

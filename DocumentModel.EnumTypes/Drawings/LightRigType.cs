@@ -2,9 +2,9 @@
 /// <summary>
 ///   Light Rig Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.LightRigValues))]
-[OpenXmlEnumType(typeof(DXO10W.LightRigTypeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.LightRigValues))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues))]
 public enum LightRigType
 {
   /// <summary>
@@ -73,8 +73,8 @@ public enum LightRigType
   /// <summary>
   ///   Three IPoint.
   /// </summary>
-  [OpenXmlEnumValue(typeof(DXD.LightRigValues), "ThreePoints")]
-  [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues),"ThreePoint")]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Drawing.LightRigValues), "ThreePoints")]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues),"ThreePoint")]
   ThreePoints,
   /// <summary>
   ///   Light Rig Enum ( Balanced ).
@@ -134,8 +134,8 @@ public enum LightRigType
   /// <summary>
   ///   Two IPoint.
   /// </summary>
-  [OpenXmlEnumValue(typeof(DXD.LightRigValues), "TwoPoints")]
-  [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues), "TwoPoint")]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Drawing.LightRigValues), "TwoPoints")]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues), "TwoPoint")]
   TwoPoints,
   /// <summary>
   ///   Glow.

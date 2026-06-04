@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocumentTypeValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.DocumentTypeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues))]
 public enum DocumentType
 {
   /// <summary>
   ///   Default Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocumentTypeValues.NotSpecified))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues.NotSpecified))]
   NotSpecified,
   /// <summary>
   ///   Letter.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocumentTypeValues.Letter))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues.Letter))]
   Letter,
   /// <summary>
   ///   E-Mail Message.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.DocumentTypeValues.Email))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues.Email))]
   Email
 }

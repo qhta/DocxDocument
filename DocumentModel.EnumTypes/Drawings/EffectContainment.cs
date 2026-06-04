@@ -2,19 +2,19 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect Container Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.EffectContainerValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.EffectContainerValues))]
 public enum EffectContainment
 {
   /// <summary>
   ///   Sibling.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.EffectContainerValues.Sibling))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.EffectContainerValues.Sibling))]
   Sibling = 1,
 
   /// <summary>
   ///   Tree.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.EffectContainerValues.Tree))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.EffectContainerValues.Tree))]
   Tree
 }

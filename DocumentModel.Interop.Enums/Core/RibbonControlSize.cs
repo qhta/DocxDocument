@@ -3,17 +3,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ribboncontrolsize?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("RibbonControlSize")]
+[InteropEnumType("Microsoft.Office.Core.RibbonControlSize")]
 public enum RibbonControlSize
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("RibbonControlSizeRegular")]
+  [InteropEnumValue("RibbonControlSizeRegular")]
   Regular,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("RibbonControlSizeLarge")]
+  [InteropEnumValue("RibbonControlSizeLarge")]
   Large
 }

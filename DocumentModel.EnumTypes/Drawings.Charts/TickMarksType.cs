@@ -4,7 +4,7 @@
 /// Defines the TickMarksType enumeration.
 /// Used in types such as OpenXmlTickMarksElement, TickMarksType, OpenXmlTickMarksElementConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum TickMarksType
 {
   /// <summary>

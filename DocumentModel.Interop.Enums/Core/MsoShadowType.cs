@@ -6,227 +6,227 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoShadowType")]
+[InteropEnumType("Microsoft.Office.Core.MsoShadowType")]
 public enum ShadowType
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadowMixed")]
+  [InteropEnumValue("msoShadowMixed")]
   Mixed = -2,
   /// <summary>
   /// First shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow1")]
+  [InteropEnumValue("msoShadow1")]
   Type1 = 1,
   /// <summary>
   /// Second shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow2")]
+  [InteropEnumValue("msoShadow2")]
   Type2 = 2,
   /// <summary>
   /// Third shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow3")]
+  [InteropEnumValue("msoShadow3")]
   Type3 = 3,
   /// <summary>
   /// Fourth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow4")]
+  [InteropEnumValue("msoShadow4")]
   Type4 = 4,
   /// <summary>
   /// Fifth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow5")]
+  [InteropEnumValue("msoShadow5")]
   Type5 = 5,
   /// <summary>
   /// Sixth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow6")]
+  [InteropEnumValue("msoShadow6")]
   Type6 = 6,
   /// <summary>
   /// Seventh shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow7")]
+  [InteropEnumValue("msoShadow7")]
   Type7 = 7,
   /// <summary>
   /// Eighth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow8")]
+  [InteropEnumValue("msoShadow8")]
   Type8 = 8,
   /// <summary>
   /// Ninth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow9")]
+  [InteropEnumValue("msoShadow9")]
   Type9 = 9,
   /// <summary>
   /// Tenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow10")]
+  [InteropEnumValue("msoShadow10")]
   Type10 = 10,
   /// <summary>
   /// Eleventh shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow11")]
+  [InteropEnumValue("msoShadow11")]
   Type11 = 11,
   /// <summary>
   /// Twelfth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow12")]
+  [InteropEnumValue("msoShadow12")]
   Type12 = 12,
   /// <summary>
   /// Thirteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow13")]
+  [InteropEnumValue("msoShadow13")]
   Type13 = 13,
   /// <summary>
   /// Fourteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow14")]
+  [InteropEnumValue("msoShadow14")]
   Type14 = 14,
   /// <summary>
   /// Fifteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow15")]
+  [InteropEnumValue("msoShadow15")]
   Type15 = 15,
   /// <summary>
   /// Sixteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow16")]
+  [InteropEnumValue("msoShadow16")]
   Type16 = 16,
   /// <summary>
   /// Seventeenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow17")]
+  [InteropEnumValue("msoShadow17")]
   Type17 = 17,
   /// <summary>
   /// Eighteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow18")]
+  [InteropEnumValue("msoShadow18")]
   Type18 = 18,
   /// <summary>
   /// Nineteenth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow19")]
+  [InteropEnumValue("msoShadow19")]
   Type19 = 19,
   /// <summary>
   /// Twentieth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow20")]
+  [InteropEnumValue("msoShadow20")]
   Type20 = 20,
   /// <summary>
   /// Twenty first shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow21")]
+  [InteropEnumValue("msoShadow21")]
   Type21 = 21,
   /// <summary>
   /// Twenty second shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow22")]
+  [InteropEnumValue("msoShadow22")]
   Type22 = 22,
   /// <summary>
   /// Twenty third shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow23")]
+  [InteropEnumValue("msoShadow23")]
   Type23 = 23,
   /// <summary>
   /// Twenty forth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow24")]
+  [InteropEnumValue("msoShadow24")]
   Type24 = 24,
   /// <summary>
   /// Twenty fifth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow25")]
+  [InteropEnumValue("msoShadow25")]
   Type25 = 25,
   /// <summary>
   /// Twenty sixth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow26")]
+  [InteropEnumValue("msoShadow26")]
   Type26 = 26,
   /// <summary>
   /// Twenty seventh shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow27")]
+  [InteropEnumValue("msoShadow27")]
   Type27 = 27,
   /// <summary>
   /// Twenty eighth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow28")]
+  [InteropEnumValue("msoShadow28")]
   Type28 = 28,
   /// <summary>
   /// Twenty ninth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow29")]
+  [InteropEnumValue("msoShadow29")]
   Type29 = 29,
   /// <summary>
   /// Thirtieth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow30")]
+  [InteropEnumValue("msoShadow30")]
   Type30 = 30,
   /// <summary>
   /// Thirty first shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow31")]
+  [InteropEnumValue("msoShadow31")]
   Type31 = 31,
   /// <summary>
   /// Thirty second shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow32")]
+  [InteropEnumValue("msoShadow32")]
   Type32 = 32,
   /// <summary>
   /// Thirty third shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow33")]
+  [InteropEnumValue("msoShadow33")]
   Type33 = 33,
   /// <summary>
   /// Thirty forth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow34")]
+  [InteropEnumValue("msoShadow34")]
   Type34 = 34,
   /// <summary>
   /// Thirty fifth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow35")]
+  [InteropEnumValue("msoShadow35")]
   Type35 = 35,
   /// <summary>
   /// Thirty sixth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow36")]
+  [InteropEnumValue("msoShadow36")]
   Type36 = 36,
   /// <summary>
   /// Thirty seventh shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow37")]
+  [InteropEnumValue("msoShadow37")]
   Type37 = 37,
   /// <summary>
   /// Thirty eighth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow38")]
+  [InteropEnumValue("msoShadow38")]
   Type38 = 38,
   /// <summary>
   /// Thirty ninth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow39")]
+  [InteropEnumValue("msoShadow39")]
   Type39 = 39,
   /// <summary>
   /// Fortieth shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow40")]
+  [InteropEnumValue("msoShadow40")]
   Type40 = 40,
   /// <summary>
   /// Forty first shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow41")]
+  [InteropEnumValue("msoShadow41")]
   Type41 = 41,
   /// <summary>
   /// Forty second shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow42")]
+  [InteropEnumValue("msoShadow42")]
   Type42 = 42,
   /// <summary>
   /// Forty third shadow type.
   /// </summary>
-  [OfficeInteropEnumValue("msoShadow43")]
+  [InteropEnumValue("msoShadow43")]
   Type43 = 43
 }

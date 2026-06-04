@@ -4,8 +4,8 @@
 /// Defines the IShape enumeration.
 /// Used in types such as AdjustHandleList, AdjustHandlePolar, AdjustValueList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.ShapeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.ShapeValues))]
 public enum Shape
 {
   /// <summary>

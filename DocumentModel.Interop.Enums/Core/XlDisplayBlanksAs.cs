@@ -8,22 +8,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldisplayblanksas?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlDisplayBlanksAs")]
+[InteropEnumType("Microsoft.Office.Core.XlDisplayBlanksAs")]
 public enum DisplayBlanksAs
 {
   /// <summary>
   /// Values are interpolated into the chart.
   /// </summary>
-  [OfficeInteropEnumValue("xlInterpolated")]
+  [InteropEnumValue("xlInterpolated")]
   Interpolated = 3,
   /// <summary>
   /// Blank cells are not plotted.
   /// </summary>
-  [OfficeInteropEnumValue("xlNotPlotted")]
+  [InteropEnumValue("xlNotPlotted")]
   NotPlotted = 1,
   /// <summary>
   /// Blanks are plotted as zero.
   /// </summary>
-  [OfficeInteropEnumValue("xlZero")]
+  [InteropEnumValue("xlZero")]
   Zero = 2
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcopypictureformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlCopyPictureFormat")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlCopyPictureFormat")]
 public enum XlCopyPictureFormat
 {
   /// <summary>
   /// Bitmap (.bmp, .jpg, .gif).
   /// </summary>
-  [WordInteropEnumValue("xlBitmap")]
+  [InteropEnumValue("xlBitmap")]
   Bitmap = 2,
   /// <summary>
   /// Drawn picture (.png, .wmf, .mix).
   /// </summary>
-  [WordInteropEnumValue("xlPicture")]
+  [InteropEnumValue("xlPicture")]
   Picture = -4147
 }

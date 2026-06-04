@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlsizerepresents?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlSizeRepresents")]
+[InteropEnumType("Microsoft.Office.Core.XlSizeRepresents")]
 public enum SizeRepresents
 {
   /// <summary>
   /// The size measure is for the width.
   /// </summary>
-  [OfficeInteropEnumValue("xlSizeIsWidth")]
+  [InteropEnumValue("xlSizeIsWidth")]
   Width = 2,
   /// <summary>
   /// The size measure is for the area.
   /// </summary>
-  [OfficeInteropEnumValue("xlSizeIsArea")]
+  [InteropEnumValue("xlSizeIsArea")]
   Area = 1
 }

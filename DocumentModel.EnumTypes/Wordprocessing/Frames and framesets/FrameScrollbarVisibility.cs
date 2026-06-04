@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FrameScrollbarVisibilityValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.FrameScrollbarVisibilityValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues))]
 public enum FrameScrollbarVisibility
 {
   /// <summary>
   ///   Always Show Scrollbar.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameScrollbarVisibilityValues.On))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues.On))]
   On,
   /// <summary>
   ///   Never Show Scrollbar.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameScrollbarVisibilityValues.Off))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues.Off))]
   Off,
   /// <summary>
   ///   Automatically Show Scrollbar As Needed.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.FrameScrollbarVisibilityValues.Auto))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues.Auto))]
   Auto
 }

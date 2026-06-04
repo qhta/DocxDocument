@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfareastlinebreaklanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFarEastLineBreakLanguageID")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFarEastLineBreakLanguageID")]
 public enum FarEastLineBreakLanguageID
 {
   /// <summary>
   /// Traditional Chinese.
   /// </summary>
-  [WordInteropEnumValue("wdLineBreakTraditionalChinese")]
+  [InteropEnumValue("wdLineBreakTraditionalChinese")]
   TraditionalChinese = 1028,
   /// <summary>
   /// Japanese.
   /// </summary>
-  [WordInteropEnumValue("wdLineBreakJapanese")]
+  [InteropEnumValue("wdLineBreakJapanese")]
   Japanese = 1041,
   /// <summary>
   /// Korean.
   /// </summary>
-  [WordInteropEnumValue("wdLineBreakKorean")]
+  [InteropEnumValue("wdLineBreakKorean")]
   Korean = 1042,
   /// <summary>
   /// Simplified Chinese.
   /// </summary>
-  [WordInteropEnumValue("wdLineBreakSimplifiedChinese")]
+  [InteropEnumValue("wdLineBreakSimplifiedChinese")]
   SimplifiedChinese = 2052
 }

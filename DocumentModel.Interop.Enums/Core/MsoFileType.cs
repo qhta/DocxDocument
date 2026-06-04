@@ -7,123 +7,123 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiletype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoFileType")]
+[InteropEnumType("Microsoft.Office.Core.MsoFileType")]
 public enum FileType
 {
   /// <summary>
   /// All files.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeAllFiles")]
+  [InteropEnumValue("msoFileTypeAllFiles")]
   AllFiles = 1,
   /// <summary>
   /// Files with any of the following extensions: *.doc, *.xls, *.ppt, *.pps, *.obd, *.mdb, *.mpd, *.dot, *.xlt,
   /// *.pot, *.obt, *.htm, or *.html.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeOfficeFiles")]
+  [InteropEnumValue("msoFileTypeOfficeFiles")]
   OfficeFiles,
   /// <summary>
   /// Microsoft Word document file (*.doc).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeWordDocuments")]
+  [InteropEnumValue("msoFileTypeWordDocuments")]
   WordDocuments,
   /// <summary>
   /// Microsoft Excel workbook (*.wbk).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeExcelWorkbooks")]
+  [InteropEnumValue("msoFileTypeExcelWorkbooks")]
   ExcelWorkbooks,
   /// <summary>
   /// PowerPoint presentation file (.ppt), PowerPoint template file (.pot), or PowerPoint slide show file (*.pps).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypePowerPointPresentations")]
+  [InteropEnumValue("msoFileTypePowerPointPresentations")]
   PowerPointPresentations,
   /// <summary>
   /// Microsoft Binder file (*.obd).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeBinders")]
+  [InteropEnumValue("msoFileTypeBinders")]
   Binders,
   /// <summary>
   /// Database file (*.mdb).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeDatabases")]
+  [InteropEnumValue("msoFileTypeDatabases")]
   Databases,
   /// <summary>
   /// Microsoft PowerPoint template (.pot), Word template (.dot), Excel template (*.xlt).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeTemplates")]
+  [InteropEnumValue("msoFileTypeTemplates")]
   Templates,
   /// <summary>
   /// Any Microsoft Outlook item file.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeOutlookItems")]
+  [InteropEnumValue("msoFileTypeOutlookItems")]
   OutlookItems,
   /// <summary>
   /// Mail item file (*.msg).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeMailItem")]
+  [InteropEnumValue("msoFileTypeMailItem")]
   MailItem,
   /// <summary>
   /// Calendar item file (*.ics or *.vsc).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeCalendarItem")]
+  [InteropEnumValue("msoFileTypeCalendarItem")]
   CalendarItem,
   /// <summary>
   /// Contact item file (*.vcf).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeContactItem")]
+  [InteropEnumValue("msoFileTypeContactItem")]
   ContactItem,
   /// <summary>
   /// Microsoft Outlook Note item.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeNoteItem")]
+  [InteropEnumValue("msoFileTypeNoteItem")]
   NoteItem,
   /// <summary>
   /// Microsoft Outlook Journal item
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeJournalItem")]
+  [InteropEnumValue("msoFileTypeJournalItem")]
   JournalItem,
   /// <summary>
   /// Microsoft Outlook task item.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeTaskItem")]
+  [InteropEnumValue("msoFileTypeTaskItem")]
   TaskItem,
   /// <summary>
   /// PhotoDraw item file (*.mix).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypePhotoDrawFiles")]
+  [InteropEnumValue("msoFileTypePhotoDrawFiles")]
   PhotoDrawFiles,
   /// <summary>
   /// Data connection file (*.mdf).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeDataConnectionFiles")]
+  [InteropEnumValue("msoFileTypeDataConnectionFiles")]
   DataConnectionFiles,
   /// <summary>
   /// Microsoft Publisher file (*.pub)
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypePublisherFiles")]
+  [InteropEnumValue("msoFileTypePublisherFiles")]
   PublisherFiles,
   /// <summary>
   /// Project file (*.mpd).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeProjectFiles")]
+  [InteropEnumValue("msoFileTypeProjectFiles")]
   ProjectFiles,
   /// <summary>
   /// Microsoft Document Imaging file (*.mdi).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeDocumentImagingFiles")]
+  [InteropEnumValue("msoFileTypeDocumentImagingFiles")]
   DocumentImagingFiles,
   /// <summary>
   /// Microsoft Visio file (*.vsd).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeVisioFiles")]
+  [InteropEnumValue("msoFileTypeVisioFiles")]
   VisioFiles,
   /// <summary>
   /// Visual Basic Active Designer file (*.dsr).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeDesignerFiles")]
+  [InteropEnumValue("msoFileTypeDesignerFiles")]
   DesignerFiles,
   /// <summary>
   /// HTML file (*.htm or *.html).
   /// </summary>
-  [OfficeInteropEnumValue("msoFileTypeWebPages")]
+  [InteropEnumValue("msoFileTypeWebPages")]
   WebPages
 }

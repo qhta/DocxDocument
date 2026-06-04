@@ -2,48 +2,48 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CompatSettingNameValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.CompatSettingNameValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues))]
 public enum CompatSettingName
 {
   /// <summary>
   ///   compatibilityMode.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.CompatibilityMode))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.CompatibilityMode))]
   CompatibilityMode,
   /// <summary>
   ///   overrideTableStyleFontSizeAndJustification.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.OverrideTableStyleFontSizeAndJustification))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.OverrideTableStyleFontSizeAndJustification))]
   OverrideTableStyleFontSizeAndJustification,
   /// <summary>
   ///   enableOpenTypeFeatures.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.EnableOpenTypeFeatures))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.EnableOpenTypeFeatures))]
   EnableOpenTypeFeatures,
   /// <summary>
   ///   doNotFlipMirrorIndents.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.DoNotFlipMirrorIndents))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.DoNotFlipMirrorIndents))]
   DoNotFlipMirrorIndents,
   /// <summary>
   ///   differentiateMultirowTableHeaders.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.DifferentiateMultirowTableHeaders))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.DifferentiateMultirowTableHeaders))]
   DifferentiateMultirowTableHeaders,
   /// <summary>
   ///   useWord2013TrackBottomHyphenation.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.UseWord2013TrackBottomHyphenation))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.UseWord2013TrackBottomHyphenation))]
   UseWord2013TrackBottomHyphenation,
   /// <summary>
   ///   allowHyphenationAtTrackBottom.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.AllowHyphenationAtTrackBottom))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.AllowHyphenationAtTrackBottom))]
   AllowHyphenationAtTrackBottom,
   /// <summary>
   ///   allowTextAfterFloatingTableBreak.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.CompatSettingNameValues.AllowTextAfterFloatingTableBreak))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues.AllowTextAfterFloatingTableBreak))]
   AllowTextAfterFloatingTableBreak
 }

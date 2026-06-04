@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsortfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSortFieldType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSortFieldType")]
 public enum SortFieldType
 {
   /// <summary>
   /// Alphanumeric order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldAlphanumeric")]
+  [InteropEnumValue("wdSortFieldAlphanumeric")]
   Alphanumeric = 0,
   /// <summary>
   /// Numeric order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldNumeric")]
+  [InteropEnumValue("wdSortFieldNumeric")]
   Numeric = 1,
   /// <summary>
   /// Date order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldDate")]
+  [InteropEnumValue("wdSortFieldDate")]
   Date = 2,
   /// <summary>
   /// Syllable order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldSyllable")]
+  [InteropEnumValue("wdSortFieldSyllable")]
   Syllable = 3,
   /// <summary>
   /// Japanese JIS order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldJapanJIS")]
+  [InteropEnumValue("wdSortFieldJapanJIS")]
   JapanJIS = 4,
   /// <summary>
   /// Stroke order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldStroke")]
+  [InteropEnumValue("wdSortFieldStroke")]
   Stroke = 5,
   /// <summary>
   /// Korean KS order.
   /// </summary>
-  [WordInteropEnumValue("wdSortFieldKoreaKS")]
+  [InteropEnumValue("wdSortFieldKoreaKS")]
   KoreaKS = 6
 }

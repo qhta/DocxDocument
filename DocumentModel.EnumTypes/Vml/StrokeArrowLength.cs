@@ -2,23 +2,23 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Stroke Arrowhead Length
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXV.StrokeArrowLengthValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues))]
 public enum StrokeArrowLength
 {
   /// <summary>
   ///   Short Arrowhead.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.StrokeArrowLengthValues.Short))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues.Short))]
   Short,
   /// <summary>
   ///   Medium Arrowhead.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.StrokeArrowLengthValues.Medium))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues.Medium))]
   Medium,
   /// <summary>
   ///   Long Arrowhead.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXV.StrokeArrowLengthValues.Long))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues.Long))]
   Long
 }

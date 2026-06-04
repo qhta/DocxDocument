@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NumberSpacingValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10W.NumberSpacingValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues))]
 public enum NumberSpacing
 {
   /// <summary>
   ///   default.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Default))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues.Default))]
   Default,
   /// <summary>
   ///   proportional.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Proportional))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues.Proportional))]
   Proportional,
   /// <summary>
   ///   tabular.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Tabular))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues.Tabular))]
   Tabular
 }

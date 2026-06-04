@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenclosestyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEncloseStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEncloseStyle")]
 public enum EncloseStyle
 {
   /// <summary>
   /// The enclosure assumes the default size.
   /// </summary>
-  [WordInteropEnumValue("wdEncloseStyleNone")]
+  [InteropEnumValue("wdEncloseStyleNone")]
   None = 0,
   /// <summary>
   /// The enclosure is smaller.
   /// </summary>
-  [WordInteropEnumValue("wdEncloseStyleSmall")]
+  [InteropEnumValue("wdEncloseStyleSmall")]
   Small = 1,
   /// <summary>
   /// The enclosure is larger.
   /// </summary>
-  [WordInteropEnumValue("wdEncloseStyleLarge")]
+  [InteropEnumValue("wdEncloseStyleLarge")]
   Large = 2
 }

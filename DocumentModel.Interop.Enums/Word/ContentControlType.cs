@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontroltype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdContentControlType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdContentControlType")]
 public enum ContentControlType
 {
   /// <summary>
   /// Specifies a rich-text content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlRichText")]
+  [InteropEnumValue("wdContentControlRichText")]
   RichText = 0,
   /// <summary>
   /// Specifies a text content control
   /// </summary>
-  [WordInteropEnumValue("wdContentControlText")]
+  [InteropEnumValue("wdContentControlText")]
   Text = 1,
   /// <summary>
   /// Specifies a picture content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlPicture")]
+  [InteropEnumValue("wdContentControlPicture")]
   Picture = 2,
   /// <summary>
   /// Specifies a combo box content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlComboBox")]
+  [InteropEnumValue("wdContentControlComboBox")]
   ComboBox = 3,
   /// <summary>
   /// Specifies a drop-down list content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlDropdownList")]
+  [InteropEnumValue("wdContentControlDropdownList")]
   DropdownList = 4,
   /// <summary>
   /// Specifies a building block gallery content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlBuildingBlockGallery")]
+  [InteropEnumValue("wdContentControlBuildingBlockGallery")]
   BuildingBlockGallery = 5,
   /// <summary>
   /// Specifies a date content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlDate")]
+  [InteropEnumValue("wdContentControlDate")]
   Date = 6,
   /// <summary>
   /// Specifies a group content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlGroup")]
+  [InteropEnumValue("wdContentControlGroup")]
   Group = 7,
   /// <summary>
   /// Specifies a checkbox content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlCheckBox")]
+  [InteropEnumValue("wdContentControlCheckBox")]
   CheckBox = 8,
   /// <summary>
   /// Specifies a repeating section content control.
   /// </summary>
-  [WordInteropEnumValue("wdContentControlRepeatingSection")]
+  [InteropEnumValue("wdContentControlRepeatingSection")]
   RepeatingSection = 9
 }

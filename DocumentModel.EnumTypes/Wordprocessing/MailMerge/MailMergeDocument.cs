@@ -2,38 +2,38 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MailMergeDocumentValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.MailMergeDocumentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues))]
 public enum MailMergeDocument
 {
   /// <summary>
   ///   Catalog Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.Catalog))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.Catalog))]
   Catalog,
   /// <summary>
   ///   Envelope Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.Envelope))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.Envelope))]
   Envelope,
   /// <summary>
   ///   Mailing Label Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.MailingLabel))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.MailingLabel))]
   MailingLabel,
   /// <summary>
   ///   Form Letter Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.FormLetter))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.FormLetter))]
   FormLetter,
   /// <summary>
   ///   E-Mail Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.Email))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.Email))]
   Email,
   /// <summary>
   ///   Fax Source Document.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.MailMergeDocumentValues.Fax))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues.Fax))]
   Fax
 }

@@ -4,7 +4,7 @@
 /// Defines the SidePos enumeration.
 /// Used in types such as IChartTitle, ILegend, SidePos.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum SidePos
 {
   /// <summary>

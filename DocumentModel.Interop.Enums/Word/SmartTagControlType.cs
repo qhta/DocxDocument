@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsmarttagcontroltype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSmartTagControlType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSmartTagControlType")]
 public enum SmartTagControlType
 {
   /// <summary>
   /// Smart tag.
   /// </summary>
-  [WordInteropEnumValue("wdControlSmartTag")]
+  [InteropEnumValue("wdControlSmartTag")]
   SmartTag = 1,
   /// <summary>
   /// Link.
   /// </summary>
-  [WordInteropEnumValue("wdControlLink")]
+  [InteropEnumValue("wdControlLink")]
   Link = 2,
   /// <summary>
   /// Help.
   /// </summary>
-  [WordInteropEnumValue("wdControlHelp")]
+  [InteropEnumValue("wdControlHelp")]
   Help = 3,
   /// <summary>
   /// Help URL.
   /// </summary>
-  [WordInteropEnumValue("wdControlHelpURL")]
+  [InteropEnumValue("wdControlHelpURL")]
   HelpURL = 4,
   /// <summary>
   /// Separator.
   /// </summary>
-  [WordInteropEnumValue("wdControlSeparator")]
+  [InteropEnumValue("wdControlSeparator")]
   Separator = 5,
   /// <summary>
   /// Button.
   /// </summary>
-  [WordInteropEnumValue("wdControlButton")]
+  [InteropEnumValue("wdControlButton")]
   Button = 6,
   /// <summary>
   /// Label.
   /// </summary>
-  [WordInteropEnumValue("wdControlLabel")]
+  [InteropEnumValue("wdControlLabel")]
   Label = 7,
   /// <summary>
   /// Image.
   /// </summary>
-  [WordInteropEnumValue("wdControlImage")]
+  [InteropEnumValue("wdControlImage")]
   Image = 8,
   /// <summary>
   /// Check box.
   /// </summary>
-  [WordInteropEnumValue("wdControlCheckbox")]
+  [InteropEnumValue("wdControlCheckbox")]
   Checkbox = 9,
   /// <summary>
   /// Text box.
   /// </summary>
-  [WordInteropEnumValue("wdControlTextbox")]
+  [InteropEnumValue("wdControlTextbox")]
   Textbox = 10,
   /// <summary>
   /// List box.
   /// </summary>
-  [WordInteropEnumValue("wdControlListbox")]
+  [InteropEnumValue("wdControlListbox")]
   Listbox = 11,
   /// <summary>
   /// Combo box.
   /// </summary>
-  [WordInteropEnumValue("wdControlCombo")]
+  [InteropEnumValue("wdControlCombo")]
   Combo = 12,
   /// <summary>
   /// ActiveX control.
   /// </summary>
-  [WordInteropEnumValue("wdControlActiveX")]
+  [InteropEnumValue("wdControlActiveX")]
   ActiveX = 13,
   /// <summary>
   /// Document fragment.
   /// </summary>
-  [WordInteropEnumValue("wdControlDocumentFragment")]
+  [InteropEnumValue("wdControlDocumentFragment")]
   DocumentFragment = 14,
   /// <summary>
   /// Document fragment URL.
   /// </summary>
-  [WordInteropEnumValue("wdControlDocumentFragmentURL")]
+  [InteropEnumValue("wdControlDocumentFragmentURL")]
   DocumentFragmentURL = 15,
   /// <summary>
   /// Radio group.
   /// </summary>
-  [WordInteropEnumValue("wdControlRadioGroup")]
+  [InteropEnumValue("wdControlRadioGroup")]
   RadioGroup = 16
 }

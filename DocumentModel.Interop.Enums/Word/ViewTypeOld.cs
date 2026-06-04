@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdviewtypeold?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdViewTypeOld")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdViewTypeOld")]
 public enum ViewTypeOld
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdPageView")]
+  [InteropEnumValue("wdPageView")]
   PageView = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdOnlineView")]
+  [InteropEnumValue("wdOnlineView")]
   OnlineView = 6
 }

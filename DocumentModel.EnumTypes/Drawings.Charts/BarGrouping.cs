@@ -4,8 +4,8 @@
 /// Defines the BarGrouping enumeration.
 /// Used in types such as Bar3DChart, BarChart, Bar3DChartConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.BarGroupingValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues))]
 public enum BarGrouping
 {
   /// <summary>

@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoclipboardformat?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoClipboardFormat")]
+[InteropEnumType("Microsoft.Office.Core.MsoClipboardFormat")]
 public enum ClipboardFormat
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoClipboardFormatMixed")]
+  [InteropEnumValue("msoClipboardFormatMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoClipboardFormatNative")]
+  [InteropEnumValue("msoClipboardFormatNative")]
   Native = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoClipboardFormatHTML")]
+  [InteropEnumValue("msoClipboardFormatHTML")]
   HTML = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoClipboardFormatRTF")]
+  [InteropEnumValue("msoClipboardFormatRTF")]
   RTF = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoClipboardFormatPlainText")]
+  [InteropEnumValue("msoClipboardFormatPlainText")]
   PlainText = 4
 }

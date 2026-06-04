@@ -4,8 +4,8 @@
 /// Defines the LayoutTarget enumeration.
 /// Used in types such as ManualLayout, ManualLayoutConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.LayoutTargetValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues))]
 public enum LayoutTarget
 {
   /// <summary>

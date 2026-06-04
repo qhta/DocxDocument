@@ -2,158 +2,158 @@
 /// <summary>
 ///   System Color Value
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.SystemColorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.SystemColorValues))]
 public enum SystemColors
 {
   /// <summary>
   ///   Scroll Bar System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ScrollBar))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ScrollBar))]
   ScrollBar,
   /// <summary>
   ///   Background System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.Background))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.Background))]
   Background,
   /// <summary>
   ///   Active Caption System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ActiveCaption))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ActiveCaption))]
   ActiveCaption,
   /// <summary>
   ///   Inactive Caption System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.InactiveCaption))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InactiveCaption))]
   InactiveCaption,
   /// <summary>
   ///   Menu System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.Menu))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.Menu))]
   Menu,
   /// <summary>
   ///   IWindow System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.Window))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.Window))]
   Window,
   /// <summary>
   ///   IWindow IFrame System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.WindowFrame))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.WindowFrame))]
   WindowFrame,
   /// <summary>
   ///   Menu Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.MenuText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.MenuText))]
   MenuText,
   /// <summary>
   ///   IWindow Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.WindowText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.WindowText))]
   WindowText,
   /// <summary>
   ///   Caption Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.CaptionText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.CaptionText))]
   CaptionText,
   /// <summary>
   ///   Active IBorder System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ActiveBorder))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ActiveBorder))]
   ActiveBorder,
   /// <summary>
   ///   Inactive IBorder System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.InactiveBorder))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InactiveBorder))]
   InactiveBorder,
   /// <summary>
   ///   IApplication Workspace System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ApplicationWorkspace))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ApplicationWorkspace))]
   ApplicationWorkspace,
   /// <summary>
   ///   Highlight System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.Highlight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.Highlight))]
   Highlight,
   /// <summary>
   ///   Highlight Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.HighlightText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.HighlightText))]
   HighlightText,
   /// <summary>
   ///   Button Face System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ButtonFace))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ButtonFace))]
   ButtonFace,
   /// <summary>
   ///   Button Shadow System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ButtonShadow))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ButtonShadow))]
   ButtonShadow,
   /// <summary>
   ///   Gray Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.GrayText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.GrayText))]
   GrayText,
   /// <summary>
   ///   Button Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ButtonText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ButtonText))]
   ButtonText,
   /// <summary>
   ///   Inactive Caption Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.InactiveCaptionText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InactiveCaptionText))]
   InactiveCaptionText,
   /// <summary>
   ///   Button Highlight System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ButtonHighlight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ButtonHighlight))]
   ButtonHighlight,
   /// <summary>
   ///   3D Dark System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ThreeDDarkShadow))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ThreeDDarkShadow))]
   ThreeDDarkShadow,
   /// <summary>
   ///   3D Light System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.ThreeDLight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ThreeDLight))]
   ThreeDLight,
   /// <summary>
   ///   Info Text System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.InfoText))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InfoText))]
   InfoText,
   /// <summary>
   ///   Info Back System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.InfoBack))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InfoBack))]
   InfoBack,
   /// <summary>
   ///   Hot Light System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.HotLight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.HotLight))]
   HotLight,
   /// <summary>
   ///   Gradient Active Caption System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.GradientActiveCaption))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.GradientActiveCaption))]
   GradientActiveCaption,
   /// <summary>
   ///   Gradient Inactive Caption System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.GradientInactiveCaption))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.GradientInactiveCaption))]
   GradientInactiveCaption,
   /// <summary>
   ///   Menu Highlight System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.MenuHighlight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.MenuHighlight))]
   MenuHighlight,
   /// <summary>
   ///   Menu Bar System Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SystemColorValues.MenuBar))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.MenuBar))]
   MenuBar
 }

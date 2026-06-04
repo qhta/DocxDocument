@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdletterstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLetterStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLetterStyle")]
 public enum LetterStyle
 {
   /// <summary>
   /// Full block.
   /// </summary>
-  [WordInteropEnumValue("wdFullBlock")]
+  [InteropEnumValue("wdFullBlock")]
   FullBlock = 0,
   /// <summary>
   /// Modified block.
   /// </summary>
-  [WordInteropEnumValue("wdModifiedBlock")]
+  [InteropEnumValue("wdModifiedBlock")]
   ModifiedBlock = 1,
   /// <summary>
   /// Semi-block.
   /// </summary>
-  [WordInteropEnumValue("wdSemiBlock")]
+  [InteropEnumValue("wdSemiBlock")]
   SemiBlock = 2
 }

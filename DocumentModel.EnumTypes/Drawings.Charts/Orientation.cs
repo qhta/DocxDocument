@@ -4,8 +4,8 @@
 /// Defines the Orientation enumeration.
 /// Used in types such as IPageSetup, Scaling, OrientationKind.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.OrientationValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.OrientationValues))]
 public enum Orientation
 {
   /// <summary>

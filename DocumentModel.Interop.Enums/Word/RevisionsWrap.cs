@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionswrap?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRevisionsWrap")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRevisionsWrap")]
 public enum RevisionsWrap
 {
   /// <summary>
   /// Never wrap revisions.
   /// </summary>
-  [WordInteropEnumValue("wdWrapNever")]
+  [InteropEnumValue("wdWrapNever")]
   Never = 0,
   /// <summary>
   /// Revisions are wrapped.
   /// </summary>
-  [WordInteropEnumValue("wdWrapAlways")]
+  [InteropEnumValue("wdWrapAlways")]
   Always = 1,
   /// <summary>
   /// Ask the user if revisions should be wrapped.
   /// </summary>
-  [WordInteropEnumValue("wdWrapAsk")]
+  [InteropEnumValue("wdWrapAsk")]
   Ask = 2
 }

@@ -4,8 +4,8 @@
 /// Defines the ColorSchemeIndex enumeration.
 /// Used in types such as ColorMappingType, ColorMapOverride.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.ColorSchemeIndexValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues))]
 public enum ColorSchemeIndex
 {
   /// <summary>

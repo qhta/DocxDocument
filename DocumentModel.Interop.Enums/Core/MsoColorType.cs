@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoColorType")]
+[InteropEnumType("Microsoft.Office.Core.MsoColorType")]
 public enum ColorType
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeMixed")]
+  [InteropEnumValue("msoColorTypeMixed")]
   Mixed = -2,
   /// <summary>
   /// Color is determined by values of red, green, and blue.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeRGB")]
+  [InteropEnumValue("msoColorTypeRGB")]
   RGB = 1,
   /// <summary>
   /// Color is defined by an application-specific scheme.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeScheme")]
+  [InteropEnumValue("msoColorTypeScheme")]
   Scheme = 2,
   /// <summary>
   /// Color is determined by values of cyan, magenta, yellow, and black.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeCMYK")]
+  [InteropEnumValue("msoColorTypeCMYK")]
   CMYK = 3,
   /// <summary>
   /// Color Management System color type.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeCMS")]
+  [InteropEnumValue("msoColorTypeCMS")]
   CMS = 4,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue("msoColorTypeInk")]
+  [InteropEnumValue("msoColorTypeInk")]
   Ink = 5
 }

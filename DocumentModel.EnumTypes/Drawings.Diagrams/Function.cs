@@ -4,8 +4,8 @@
 /// Defines the Function enumeration.
 /// Used in types such as ConnectionShape, GraphicFrame, Picture.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.FunctionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues))]
 public enum Function
 {
   /// <summary>

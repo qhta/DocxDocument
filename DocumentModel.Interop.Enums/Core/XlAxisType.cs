@@ -8,22 +8,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxistype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlAxisType")]
+[InteropEnumType("Microsoft.Office.Core.XlAxisType")]
 public enum AxisType
 {
   /// <summary>
   /// Axis displays categories.
   /// </summary>
-  [OfficeInteropEnumValue("xlCategory")]
+  [InteropEnumValue("xlCategory")]
   Category = 1,
   /// <summary>
   /// Axis displays data series.
   /// </summary>
-  [OfficeInteropEnumValue("xlSeriesAxis")]
+  [InteropEnumValue("xlSeriesAxis")]
   SeriesAxis = 3,
   /// <summary>
   /// Axis displays values.
   /// </summary>
-  [OfficeInteropEnumValue("xlValue")]
+  [InteropEnumValue("xlValue")]
   Value = 2
 }

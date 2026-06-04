@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbookmarksortby?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdBookmarkSortBy")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdBookmarkSortBy")]
 public enum BookmarkSortBy
 {
   /// <summary>
   /// Sorted by bookmark name.
   /// </summary>
-  [WordInteropEnumValue("wdSortByName")]
+  [InteropEnumValue("wdSortByName")]
   Name = 0,
   /// <summary>
   /// Sorted by location in document.
   /// </summary>
-  [WordInteropEnumValue("wdSortByLocation")]
+  [InteropEnumValue("wdSortByLocation")]
   Location = 1
 }

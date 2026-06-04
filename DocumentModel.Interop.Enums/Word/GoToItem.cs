@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgotoitem?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdGoToItem")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdGoToItem")]
 public enum GoToItem
 {
   /// <summary>
   /// A section.
   /// </summary>
-  [WordInteropEnumValue("wdGoToSection")]
+  [InteropEnumValue("wdGoToSection")]
   Section = 0,
   /// <summary>
   /// A page.
   /// </summary>
-  [WordInteropEnumValue("wdGoToPage")]
+  [InteropEnumValue("wdGoToPage")]
   Page = 1,
   /// <summary>
   /// A table.
   /// </summary>
-  [WordInteropEnumValue("wdGoToTable")]
+  [InteropEnumValue("wdGoToTable")]
   Table = 2,
   /// <summary>
   /// A line.
   /// </summary>
-  [WordInteropEnumValue("wdGoToLine")]
+  [InteropEnumValue("wdGoToLine")]
   Line = 3,
   /// <summary>
   /// A footnote.
   /// </summary>
-  [WordInteropEnumValue("wdGoToFootnote")]
+  [InteropEnumValue("wdGoToFootnote")]
   Footnote = 4,
   /// <summary>
   /// An endnote.
   /// </summary>
-  [WordInteropEnumValue("wdGoToEndnote")]
+  [InteropEnumValue("wdGoToEndnote")]
   Endnote = 5,
   /// <summary>
   /// A comment.
   /// </summary>
-  [WordInteropEnumValue("wdGoToComment")]
+  [InteropEnumValue("wdGoToComment")]
   Comment = 6,
   /// <summary>
   /// A field.
   /// </summary>
-  [WordInteropEnumValue("wdGoToField")]
+  [InteropEnumValue("wdGoToField")]
   Field = 7,
   /// <summary>
   /// A graphic.
   /// </summary>
-  [WordInteropEnumValue("wdGoToGraphic")]
+  [InteropEnumValue("wdGoToGraphic")]
   Graphic = 8,
   /// <summary>
   /// An object.
   /// </summary>
-  [WordInteropEnumValue("wdGoToObject")]
+  [InteropEnumValue("wdGoToObject")]
   Object = 9,
   /// <summary>
   /// An equation.
   /// </summary>
-  [WordInteropEnumValue("wdGoToEquation")]
+  [InteropEnumValue("wdGoToEquation")]
   Equation = 10,
   /// <summary>
   /// A heading.
   /// </summary>
-  [WordInteropEnumValue("wdGoToHeading")]
+  [InteropEnumValue("wdGoToHeading")]
   Heading = 11,
   /// <summary>
   /// A percent.
   /// </summary>
-  [WordInteropEnumValue("wdGoToPercent")]
+  [InteropEnumValue("wdGoToPercent")]
   Percent = 12,
   /// <summary>
   /// A spelling error.
   /// </summary>
-  [WordInteropEnumValue("wdGoToSpellingError")]
+  [InteropEnumValue("wdGoToSpellingError")]
   SpellingError = 13,
   /// <summary>
   /// A grammatical error.
   /// </summary>
-  [WordInteropEnumValue("wdGoToGrammaticalError")]
+  [InteropEnumValue("wdGoToGrammaticalError")]
   GrammaticalError = 14,
   /// <summary>
   /// A proofreading error.
   /// </summary>
-  [WordInteropEnumValue("wdGoToProofreadingError")]
+  [InteropEnumValue("wdGoToProofreadingError")]
   ProofreadingError = 15,
   /// <summary>
   /// A bookmark.
   /// </summary>
-  [WordInteropEnumValue("wdGoToBookmark")]
+  [InteropEnumValue("wdGoToBookmark")]
   Bookmark = -1
 }

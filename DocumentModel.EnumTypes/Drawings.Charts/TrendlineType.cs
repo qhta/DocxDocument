@@ -4,8 +4,8 @@
 /// Defines the ITrendline enumeration.
 /// Used in types such as AreaChartSeries, AreaChartSeries3, BarChartSeries.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.TrendlineValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues))]
 public enum TrendlineType
 {
 

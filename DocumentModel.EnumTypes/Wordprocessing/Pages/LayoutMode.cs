@@ -4,8 +4,8 @@ namespace DocumentModel.Drawings.Charts;
 /// Defines the LayoutMode enumeration.
 /// Used in types such as ManualLayout, LayoutMode, PageSetup.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.LayoutModeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues))]
 public enum LayoutMode
 {
   /// <summary>

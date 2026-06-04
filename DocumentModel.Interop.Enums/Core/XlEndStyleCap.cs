@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlendstylecap?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlEndStyleCap")]
+[InteropEnumType("Microsoft.Office.Core.XlEndStyleCap")]
 public enum EndStyleCap
 {
   /// <summary>
   /// No caps applied.
   /// </summary>
-  [OfficeInteropEnumValue("xlCap")]
+  [InteropEnumValue("xlCap")]
   Cap = 1,
   /// <summary>
   /// No caps applied.
   /// </summary>
-  [OfficeInteropEnumValue("xlNoCap")]
+  [InteropEnumValue("xlNoCap")]
   NoCap
 }

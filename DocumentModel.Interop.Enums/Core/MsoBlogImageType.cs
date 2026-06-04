@@ -3,22 +3,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblogimagetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBlogImageType")]
+[InteropEnumType("Microsoft.Office.Core.MsoBlogImageType")]
 public enum BlogImageType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoblogImageTypeJPEG")]
+  [InteropEnumValue("msoblogImageTypeJPEG")]
   JPEG = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoblogImageTypeGIF")]
+  [InteropEnumValue("msoblogImageTypeGIF")]
   GIF,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoblogImageTypePNG")]
+  [InteropEnumValue("msoblogImageTypePNG")]
   PNG
 }

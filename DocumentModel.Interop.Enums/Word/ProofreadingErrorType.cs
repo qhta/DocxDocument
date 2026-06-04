@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdproofreadingerrortype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdProofreadingErrorType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdProofreadingErrorType")]
 public enum ProofreadingErrorType
 {
   /// <summary>
   /// Spelling error.
   /// </summary>
-  [WordInteropEnumValue("wdSpellingError")]
+  [InteropEnumValue("wdSpellingError")]
   SpellingError = 0,
   /// <summary>
   /// Grammatical error.
   /// </summary>
-  [WordInteropEnumValue("wdGrammaticalError")]
+  [InteropEnumValue("wdGrammaticalError")]
   GrammaticalError = 1
 }

@@ -7,17 +7,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpieslicelocation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlPieSliceLocation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlPieSliceLocation")]
 public enum PieSliceLocation
 {
   /// <summary>
   /// The horizontal coordinate (x).
   /// </summary>
-  [WordInteropEnumValue("xlHorizontalCoordinate")]
+  [InteropEnumValue("xlHorizontalCoordinate")]
   HorizontalCoordinate = 1,
   /// <summary>
   /// The vertical coordinate (y).
   /// </summary>
-  [WordInteropEnumValue("xlVerticalCoordinate")]
+  [InteropEnumValue("xlVerticalCoordinate")]
   VerticalCoordinate = 2
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumenttype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDocumentType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDocumentType")]
 public enum DocumentType
 {
   /// <summary>
   /// Document.
   /// </summary>
-  [WordInteropEnumValue("wdTypeDocument")]
+  [InteropEnumValue("wdTypeDocument")]
   Document = 0,
   /// <summary>
   /// Template.
   /// </summary>
-  [WordInteropEnumValue("wdTypeTemplate")]
+  [InteropEnumValue("wdTypeTemplate")]
   Template = 1,
   /// <summary>
   /// Frameset.
   /// </summary>
-  [WordInteropEnumValue("wdTypeFrameset")]
+  [InteropEnumValue("wdTypeFrameset")]
   Frameset = 2
 }

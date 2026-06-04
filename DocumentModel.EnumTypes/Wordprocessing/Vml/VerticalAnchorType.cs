@@ -2,24 +2,24 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Vertical Anchor Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVW.VerticalAnchorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues))]
 public enum VerticalAnchorType
 {
   /// <summary>
   ///   Margin.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.VerticalAnchorValues.Margin))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues.Margin))]
   Margin = 1,
 
   /// <summary>
   ///   Page.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.VerticalAnchorValues.Page))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues.Page))]
   Page,
   /// <summary>
   ///   Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.VerticalAnchorValues.Text))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues.Text))]
   Text
 }

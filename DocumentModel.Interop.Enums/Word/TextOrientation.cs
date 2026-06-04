@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTextOrientation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTextOrientation")]
 public enum TextOrientation
 {
   /// <summary>
   /// Text flows horizontally. default.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationHorizontal")]
+  [InteropEnumValue("wdTextOrientationHorizontal")]
   Horizontal = 0,
   /// <summary>
   /// Text flows vertically and reads downward from the top.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationVerticalFarEast")]
+  [InteropEnumValue("wdTextOrientationVerticalFarEast")]
   VerticalFarEast = 1,
   /// <summary>
   /// Text flows upward on a slope.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationUpward")]
+  [InteropEnumValue("wdTextOrientationUpward")]
   Upward = 2,
   /// <summary>
   /// Text flows downward on a slope.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationDownward")]
+  [InteropEnumValue("wdTextOrientationDownward")]
   Downward = 3,
   /// <summary>
   /// Text flows horizontally but from right to left to accommodate Far East languages.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationHorizontalRotatedFarEast")]
+  [InteropEnumValue("wdTextOrientationHorizontalRotatedFarEast")]
   HorizontalRotatedFarEast = 4,
   /// <summary>
   /// Text flows vertically and reads downward from the top, left to right.
   /// </summary>
-  [WordInteropEnumValue("wdTextOrientationVertical")]
+  [InteropEnumValue("wdTextOrientationVertical")]
   Vertical = 5
 }

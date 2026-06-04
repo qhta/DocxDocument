@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Horizontal Anchor Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVW.HorizontalAnchorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues))]
 public enum HorizontalAnchorType
 {
   /// <summary>
   ///   Margin.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.HorizontalAnchorValues.Margin))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues.Margin))]
   Margin,
   /// <summary>
   ///   Page.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.HorizontalAnchorValues.Page))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues.Page))]
   Page,
   /// <summary>
   ///   Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVW.HorizontalAnchorValues.Text))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues.Text))]
   Text
 }

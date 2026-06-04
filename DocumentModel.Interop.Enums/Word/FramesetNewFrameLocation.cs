@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesetnewframelocation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFramesetNewFrameLocation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFramesetNewFrameLocation")]
 public enum FramesetNewFrameLocation
 {
   /// <summary>
   /// Above existing frame.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetNewFrameAbove")]
+  [InteropEnumValue("wdFramesetNewFrameAbove")]
   Above = 0,
   /// <summary>
   /// Below existing frame.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetNewFrameBelow")]
+  [InteropEnumValue("wdFramesetNewFrameBelow")]
   Below = 1,
   /// <summary>
   /// To the right of existing frame.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetNewFrameRight")]
+  [InteropEnumValue("wdFramesetNewFrameRight")]
   Right = 2,
   /// <summary>
   /// To the left of existing frame.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetNewFrameLeft")]
+  [InteropEnumValue("wdFramesetNewFrameLeft")]
   Left = 3
 }

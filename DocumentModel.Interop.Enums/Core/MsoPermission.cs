@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopermission?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoPermission")]
+[InteropEnumType("Microsoft.Office.Core.MsoPermission")]
 public enum MsoPermission
 {
   /// <summary>
   /// Permission to view.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionView")]
+  [InteropEnumValue("msoPermissionView")]
   View = 1,
   /// <summary>
   /// Permission to read.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionRead")]
+  [InteropEnumValue("msoPermissionRead")]
   Read = 1,
   /// <summary>
   /// Permission to edit.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionEdit")]
+  [InteropEnumValue("msoPermissionEdit")]
   Edit = 2,
   /// <summary>
   /// Permission to save.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionSave")]
+  [InteropEnumValue("msoPermissionSave")]
   Save = 4,
   /// <summary>
   /// Permission to extract.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionExtract")]
+  [InteropEnumValue("msoPermissionExtract")]
   Extract = 8,
   /// <summary>
   /// Permission to change.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionChange")]
+  [InteropEnumValue("msoPermissionChange")]
   Change = 15,
   /// <summary>
   /// Permission to print.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionPrint")]
+  [InteropEnumValue("msoPermissionPrint")]
   Print = 16,
   /// <summary>
   /// Permission to access the object model programmatically.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionObjModel")]
+  [InteropEnumValue("msoPermissionObjModel")]
   ObjModel = 32,
   /// <summary>
   /// Full control permissions.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionFullControl")]
+  [InteropEnumValue("msoPermissionFullControl")]
   FullControl = 64,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPermissionAllCommon")]
+  [InteropEnumValue("msoPermissionAllCommon")]
   AllCommon = 127
 }

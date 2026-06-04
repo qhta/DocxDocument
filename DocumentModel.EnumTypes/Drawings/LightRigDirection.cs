@@ -2,49 +2,49 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Light Rig Direction
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.LightRigDirectionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues))]
 public enum LightRigDirection
 {
   /// <summary>
   ///   Top Left.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.TopLeft))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.TopLeft))]
   TopLeft = 1,
 
   /// <summary>
   ///   Top.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.Top))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.Top))]
   Top,
   /// <summary>
   ///   Top Right.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.TopRight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.TopRight))]
   TopRight,
   /// <summary>
   ///   Left.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.Left))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.Left))]
   Left,
   /// <summary>
   ///   Right.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.Right))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.Right))]
   Right,
   /// <summary>
   ///   Bottom Left.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.BottomLeft))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.BottomLeft))]
   BottomLeft,
   /// <summary>
   ///   Bottom.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.Bottom))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.Bottom))]
   Bottom,
   /// <summary>
   ///   Bottom Right.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.BottomRight))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LightRigDirectionValues.BottomRight))]
   BottomRight
 }

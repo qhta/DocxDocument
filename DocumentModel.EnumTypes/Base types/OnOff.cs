@@ -4,7 +4,7 @@
 /// On-off enumeration for properties Ithat can be enabled or disabled
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum OnOff
 {
   ///// <summary>

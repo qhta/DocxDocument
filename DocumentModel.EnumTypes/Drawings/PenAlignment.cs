@@ -2,18 +2,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Alignment Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.PenAlignmentValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PenAlignmentValues))]
 public enum PenAlignment
 {
   /// <summary>
   ///   Center Alignment.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PenAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PenAlignmentValues.Center))]
   Center,
   /// <summary>
   ///   Inset Alignment.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PenAlignmentValues.Insert))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PenAlignmentValues.Insert))]
   Insert
 }

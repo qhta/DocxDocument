@@ -7,27 +7,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdWrapSideType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWrapSideType")]
 public enum WrapSideType
 {
   /// <summary>
   /// Both sides of the specified shape.
   /// </summary>
-  [WordInteropEnumValue("wdWrapBoth")]
+  [InteropEnumValue("wdWrapBoth")]
   Both = 0,
   /// <summary>
   /// Left side of shape only.
   /// </summary>
-  [WordInteropEnumValue("wdWrapLeft")]
+  [InteropEnumValue("wdWrapLeft")]
   Left = 1,
   /// <summary>
   /// Right side of shape only.
   /// </summary>
-  [WordInteropEnumValue("wdWrapRight")]
+  [InteropEnumValue("wdWrapRight")]
   Right = 2,
   /// <summary>
   /// Side of the shape that is farthest from the page margin.
   /// </summary>
-  [WordInteropEnumValue("wdWrapLargest")]
+  [InteropEnumValue("wdWrapLargest")]
   Largest = 3
 }

@@ -4,8 +4,8 @@
 /// Defines the ItemSize enumeration.
 /// Used in types such as BackstageMenuGroup, Menu, MenuRegular.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.ItemSizeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues))]
 public enum ItemSize
 {
   /// <summary>

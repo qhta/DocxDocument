@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlisttype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdListType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdListType")]
 public enum ListType
 {
   /// <summary>
   /// List with no bullets, numbering, or outlining.
   /// </summary>
-  [WordInteropEnumValue("wdListNoNumbering")]
+  [InteropEnumValue("wdListNoNumbering")]
   NoNumbering = 0,
   /// <summary>
   /// ListNum fields that can be used in the body of a paragraph.
   /// </summary>
-  [WordInteropEnumValue("wdListListNumOnly")]
+  [InteropEnumValue("wdListListNumOnly")]
   ListNumOnly = 1,
   /// <summary>
   /// Bulleted list.
   /// </summary>
-  [WordInteropEnumValue("wdListBullet")]
+  [InteropEnumValue("wdListBullet")]
   Bullet = 2,
   /// <summary>
   /// Simple numeric list.
   /// </summary>
-  [WordInteropEnumValue("wdListSimpleNumbering")]
+  [InteropEnumValue("wdListSimpleNumbering")]
   SimpleNumbering = 3,
   /// <summary>
   /// Outlined list.
   /// </summary>
-  [WordInteropEnumValue("wdListOutlineNumbering")]
+  [InteropEnumValue("wdListOutlineNumbering")]
   OutlineNumbering = 4,
   /// <summary>
   /// Mixed numeric list.
   /// </summary>
-  [WordInteropEnumValue("wdListMixedNumbering")]
+  [InteropEnumValue("wdListMixedNumbering")]
   MixedNumbering = 5,
   /// <summary>
   /// Picture bulleted list.
   /// </summary>
-  [WordInteropEnumValue("wdListPictureBullet")]
+  [InteropEnumValue("wdListPictureBullet")]
   PictureBullet = 6
 }

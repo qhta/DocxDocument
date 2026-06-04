@@ -4,7 +4,7 @@
 /// Defines the RegionLabelLayoutEnum enumeration.
 /// Used in types such as SeriesLayoutProperties, RegionLabelLayoutEnum, SeriesLayoutPropertiesConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum RegionLabelLayoutEnum
 {
   /// <summary>

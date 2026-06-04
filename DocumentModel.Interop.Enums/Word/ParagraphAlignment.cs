@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdparagraphalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdParagraphAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdParagraphAlignment")]
 public enum ParagraphAlignment
 {
   /// <summary>
   /// Left-aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphLeft")]
+  [InteropEnumValue("wdAlignParagraphLeft")]
   Left = 0,
   /// <summary>
   /// Center-aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphCenter")]
+  [InteropEnumValue("wdAlignParagraphCenter")]
   Center = 1,
   /// <summary>
   /// Right-aligned.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphRight")]
+  [InteropEnumValue("wdAlignParagraphRight")]
   Right = 2,
   /// <summary>
   /// Fully justified.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphJustify")]
+  [InteropEnumValue("wdAlignParagraphJustify")]
   Justify = 3,
   /// <summary>
   /// Paragraph characters are distributed to fill the entire width of the paragraph.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphDistribute")]
+  [InteropEnumValue("wdAlignParagraphDistribute")]
   Distribute = 4,
   /// <summary>
   /// Justified with a medium character compression ratio.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphJustifyMed")]
+  [InteropEnumValue("wdAlignParagraphJustifyMed")]
   JustifyMed = 5,
   /// <summary>
   /// Justified with a high character compression ratio.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphJustifyHi")]
+  [InteropEnumValue("wdAlignParagraphJustifyHi")]
   JustifyHi = 7,
   /// <summary>
   /// Justified with a low character compression ratio.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphJustifyLow")]
+  [InteropEnumValue("wdAlignParagraphJustifyLow")]
   JustifyLow = 8,
   /// <summary>
   /// Justified according to Thai formatting layout.
   /// </summary>
-  [WordInteropEnumValue("wdAlignParagraphThaiJustify")]
+  [InteropEnumValue("wdAlignParagraphThaiJustify")]
   ThaiJustify = 9
 }

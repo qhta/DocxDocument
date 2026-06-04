@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergeactiverecord?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMailMergeActiveRecord")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMailMergeActiveRecord")]
 public enum MailMergeActiveRecordType
 {
   /// <summary>
   /// The previous record in the data source.
   /// </summary>
-  [WordInteropEnumValue("wdPreviousDataSourceRecord")]
+  [InteropEnumValue("wdPreviousDataSourceRecord")]
   PreviousDataSourceRecord = -9,
   /// <summary>
   /// The next record in the data source.
   /// </summary>
-  [WordInteropEnumValue("wdNextDataSourceRecord")]
+  [InteropEnumValue("wdNextDataSourceRecord")]
   NextDataSourceRecord = -8,
   /// <summary>
   /// The last record in the data source.
   /// </summary>
-  [WordInteropEnumValue("wdLastDataSourceRecord")]
+  [InteropEnumValue("wdLastDataSourceRecord")]
   LastDataSourceRecord = -7,
   /// <summary>
   /// The first record in the data source.
   /// </summary>
-  [WordInteropEnumValue("wdFirstDataSourceRecord")]
+  [InteropEnumValue("wdFirstDataSourceRecord")]
   FirstDataSourceRecord = -6,
   /// <summary>
   /// The last record in the result set.
   /// </summary>
-  [WordInteropEnumValue("wdLastRecord")]
+  [InteropEnumValue("wdLastRecord")]
   LastRecord = -5,
   /// <summary>
   /// The first record in the result set.
   /// </summary>
-  [WordInteropEnumValue("wdFirstRecord")]
+  [InteropEnumValue("wdFirstRecord")]
   FirstRecord = -4,
   /// <summary>
   /// The previous record in the result set.
   /// </summary>
-  [WordInteropEnumValue("wdPreviousRecord")]
+  [InteropEnumValue("wdPreviousRecord")]
   PreviousRecord = -3,
   /// <summary>
   /// The next record in the result set.
   /// </summary>
-  [WordInteropEnumValue("wdNextRecord")]
+  [InteropEnumValue("wdNextRecord")]
   NextRecord = -2,
   /// <summary>
   /// No active record.
   /// </summary>
-  [WordInteropEnumValue("wdNoActiveRecord")]
+  [InteropEnumValue("wdNoActiveRecord")]
   NoActiveRecord = -1
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Defines the Hyphen enumeration.
 /// Used in types such as AbsolutePositionTabLeaderCharKind, ChapterSeparatorKind, HyphenKind.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlNotMapped]
 public enum Hyphen
 {

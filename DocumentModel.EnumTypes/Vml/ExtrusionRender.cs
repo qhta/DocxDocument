@@ -2,23 +2,23 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Extrusion Rendering Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.ExtrusionRenderValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues))]
 public enum ExtrusionRender
 {
   /// <summary>
   ///   Solid.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ExtrusionRenderValues.Solid))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues.Solid))]
   Solid,
   /// <summary>
   ///   Wireframe.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ExtrusionRenderValues.WireFrame))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues.WireFrame))]
   WireFrame,
   /// <summary>
   ///   Bounding Cube.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.ExtrusionRenderValues.BoundingCube))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues.BoundingCube))]
   BoundingCube
 }

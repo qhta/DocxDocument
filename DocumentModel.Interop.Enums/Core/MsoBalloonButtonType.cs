@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoballoonbuttontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBalloonButtonType")]
+[InteropEnumType("Microsoft.Office.Core.MsoBalloonButtonType")]
 public enum BalloonButtonType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonYesToAll")]
+  [InteropEnumValue("msoBalloonButtonYesToAll")]
   YesToAll = -15,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonOptions")]
+  [InteropEnumValue("msoBalloonButtonOptions")]
   Options,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonTips")]
+  [InteropEnumValue("msoBalloonButtonTips")]
   Tips,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonClose")]
+  [InteropEnumValue("msoBalloonButtonClose")]
   Close,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonSnooze")]
+  [InteropEnumValue("msoBalloonButtonSnooze")]
   Snooze,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonSearch")]
+  [InteropEnumValue("msoBalloonButtonSearch")]
   Search,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonIgnore")]
+  [InteropEnumValue("msoBalloonButtonIgnore")]
   Ignore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonAbort")]
+  [InteropEnumValue("msoBalloonButtonAbort")]
   Abort,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonRetry")]
+  [InteropEnumValue("msoBalloonButtonRetry")]
   Retry,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonNext")]
+  [InteropEnumValue("msoBalloonButtonNext")]
   Next,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonBack")]
+  [InteropEnumValue("msoBalloonButtonBack")]
   Back,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonNo")]
+  [InteropEnumValue("msoBalloonButtonNo")]
   No,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonYes")]
+  [InteropEnumValue("msoBalloonButtonYes")]
   Yes,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonCancel")]
+  [InteropEnumValue("msoBalloonButtonCancel")]
   Cancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonOK")]
+  [InteropEnumValue("msoBalloonButtonOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoBalloonButtonNull")]
+  [InteropEnumValue("msoBalloonButtonNull")]
   Null
 }

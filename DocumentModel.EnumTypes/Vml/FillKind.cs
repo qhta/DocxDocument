@@ -4,53 +4,53 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Fill Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.FillValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.FillValues))]
 public enum FillKind
 {
   /// <summary>
   ///   Centered Radial Gradient.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.GradientCenter))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.GradientCenter))]
   GradientCenter,
   /// <summary>
   ///   Solid Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Solid))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Solid))]
   Solid,
   /// <summary>
   ///   Image Pattern.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Pattern))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Pattern))]
   Pattern,
   /// <summary>
   ///   Tiled Image.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Tile))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Tile))]
   Tile,
   /// <summary>
   ///   Stretch Image to Fit.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Frame))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Frame))]
   Frame,
   /// <summary>
   ///   Unscaled Gradient.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.GradientUnscaled))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.GradientUnscaled))]
   GradientUnscaled,
   /// <summary>
   ///   Radial Gradient.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.GradientRadial))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.GradientRadial))]
   GradientRadial,
   /// <summary>
   ///   Linear Gradient.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Gradient))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Gradient))]
   Gradient,
   /// <summary>
   ///   Use Background Fill.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.FillValues.Background))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.FillValues.Background))]
   Background
 }

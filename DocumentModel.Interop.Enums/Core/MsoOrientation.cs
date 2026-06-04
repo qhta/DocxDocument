@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoOrientation")]
+[InteropEnumType("Microsoft.Office.Core.MsoOrientation")]
 public enum Orientation
 {
   /// <summary>
   /// Mixed orientation.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrientationMixed")]
+  [InteropEnumValue("msoOrientationMixed")]
   Mixed = -2,
   /// <summary>
   /// Horizontal (landscape) orientation.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrientationHorizontal")]
+  [InteropEnumValue("msoOrientationHorizontal")]
   Horizontal = 1,
   /// <summary>
   /// Vertical (portrait) orientation.
   /// </summary>
-  [OfficeInteropEnumValue("msoOrientationVertical")]
+  [InteropEnumValue("msoOrientationVertical")]
   Vertical = 2
 }

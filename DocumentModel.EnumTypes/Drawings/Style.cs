@@ -4,8 +4,8 @@
 /// Defines the IStyle enumeration.
 /// Used in types such as DocumentCleaner, BackstageGroup, BackstageGroupButton.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.StyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues))]
 public enum Style
 {
 	/// <summary>

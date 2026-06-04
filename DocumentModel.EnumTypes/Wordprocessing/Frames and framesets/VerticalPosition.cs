@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the VerticalPositionValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.VerticalPositionValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues))]
 public enum VerticalPosition
 {
   /// <summary>
   ///   Regular Vertical Positioning.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.VerticalPositionValues.Baseline))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues.Baseline))]
   Baseline,
   /// <summary>
   ///   Superscript.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.VerticalPositionValues.Superscript))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues.Superscript))]
   Superscript,
   /// <summary>
   ///   Subscript.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.VerticalPositionValues.Subscript))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues.Subscript))]
   Subscript
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpreferredwidthtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPreferredWidthType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPreferredWidthType")]
 public enum PreferredWidthType
 {
   /// <summary>
   /// Automatically select the unit of measure to use based on the current selection.
   /// </summary>
-  [WordInteropEnumValue("wdPreferredWidthAuto")]
+  [InteropEnumValue("wdPreferredWidthAuto")]
   Auto = 1,
   /// <summary>
   /// Measure the current item width using a specified percentage.
   /// </summary>
-  [WordInteropEnumValue("wdPreferredWidthPercent")]
+  [InteropEnumValue("wdPreferredWidthPercent")]
   Percent = 2,
   /// <summary>
   /// Measure the current item width using a specified number of points.
   /// </summary>
-  [WordInteropEnumValue("wdPreferredWidthPoints")]
+  [InteropEnumValue("wdPreferredWidthPoints")]
   Points = 3
 }

@@ -4,37 +4,37 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopickerfield?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoPickerField")]
+[InteropEnumType("Microsoft.Office.Core.MsoPickerField")]
 public enum MsoPickerField
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldUnknown")]
+  [InteropEnumValue("msoPickerFieldUnknown")]
   Unknown,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldDateTime")]
+  [InteropEnumValue("msoPickerFieldDateTime")]
   DateTime,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldNumber")]
+  [InteropEnumValue("msoPickerFieldNumber")]
   Number,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldText")]
+  [InteropEnumValue("msoPickerFieldText")]
   Text,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldUser")]
+  [InteropEnumValue("msoPickerFieldUser")]
   User,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoPickerFieldMax")]
+  [InteropEnumValue("msoPickerFieldMax")]
   Max
 }

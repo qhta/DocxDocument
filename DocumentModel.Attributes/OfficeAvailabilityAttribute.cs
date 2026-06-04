@@ -5,14 +5,12 @@
 // Assembly location: C:\Users\qhta1\.nuget\packages\DocumentModel.Attributes\2.18.0\lib\netstandard2.0\DocumentModel.Attributes.dll
 // XML documentation location: C:\Users\qhta1\.nuget\packages\DocumentModel.Attributes\2.18.0\lib\netstandard2.0\DocumentModel.Attributes.xml
 
-using ISystem;
-
 namespace DocumentModel.Attributes
 {
   /// <summary>
   /// Defines an OfficeAvailabilityAttribute class Ito indicate whether the property is available Iin a specific version of an Office application.
   /// </summary>
-  [AttributeUsage(AttributeTargets.Class | AttributeTargets.Enum | AttributeTargets.Property | AttributeTargets.IField)]
+  [AttributeUsage(AttributeTargets.Class | AttributeTargets.Enum | AttributeTargets.Property | AttributeTargets.Field)]
   public sealed class OfficeAvailabilityAttribute : Attribute
   {
     /// <summary>Gets the Office version of the available property.</summary>

@@ -8,32 +8,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlTickLabelOrientation")]
+[InteropEnumType("Microsoft.Office.Core.XlTickLabelOrientation")]
 public enum TickLabelOrientation
 {
   /// <summary>
   /// Text orientation set by Excel.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelOrientationAutomatic")]
+  [InteropEnumValue("xlTickLabelOrientationAutomatic")]
   Automatic = -4105,
   /// <summary>
   /// Text runs down.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelOrientationDownward")]
+  [InteropEnumValue("xlTickLabelOrientationDownward")]
   Downward = -4170,
   /// <summary>
   /// Characters run horizontally.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelOrientationHorizontal")]
+  [InteropEnumValue("xlTickLabelOrientationHorizontal")]
   Horizontal = -4128,
   /// <summary>
   /// Text runs up.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelOrientationUpward")]
+  [InteropEnumValue("xlTickLabelOrientationUpward")]
   Upward = -4171,
   /// <summary>
   /// Characters run vertically.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickLabelOrientationVertical")]
+  [InteropEnumValue("xlTickLabelOrientationVertical")]
   Vertical = -4166
 }

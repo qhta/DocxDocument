@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdthemecolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdThemeColorIndex")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdThemeColorIndex")]
 public enum ThemeColorIndex
 {
   /// <summary>
   /// Dark main color 1.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorMainDark1")]
+  [InteropEnumValue("wdThemeColorMainDark1")]
   ThemeColorMainDark1 = 0,
   /// <summary>
   /// Light main color 1.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorMainLight1")]
+  [InteropEnumValue("wdThemeColorMainLight1")]
   ThemeColorMainLight1 = 1,
   /// <summary>
   /// Dark main color 2.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorMainDark2")]
+  [InteropEnumValue("wdThemeColorMainDark2")]
   ThemeColorMainDark2 = 2,
   /// <summary>
   /// Light main color 2.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorMainLight2")]
+  [InteropEnumValue("wdThemeColorMainLight2")]
   ThemeColorMainLight2 = 3,
   /// <summary>
   /// Accent color 1.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent1")]
+  [InteropEnumValue("wdThemeColorAccent1")]
   ThemeColorAccent1 = 4,
   /// <summary>
   /// Accent color 2.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent2")]
+  [InteropEnumValue("wdThemeColorAccent2")]
   ThemeColorAccent2 = 5,
   /// <summary>
   /// Accent color 3.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent3")]
+  [InteropEnumValue("wdThemeColorAccent3")]
   ThemeColorAccent3 = 6,
   /// <summary>
   /// Accent color 4.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent4")]
+  [InteropEnumValue("wdThemeColorAccent4")]
   ThemeColorAccent4 = 7,
   /// <summary>
   /// Accent color 5.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent5")]
+  [InteropEnumValue("wdThemeColorAccent5")]
   ThemeColorAccent5 = 8,
   /// <summary>
   /// Accent color 6.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorAccent6")]
+  [InteropEnumValue("wdThemeColorAccent6")]
   ThemeColorAccent6 = 9,
   /// <summary>
   /// Hyperlink color.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorHyperlink")]
+  [InteropEnumValue("wdThemeColorHyperlink")]
   ThemeColorHyperlink = 10,
   /// <summary>
   /// Followed hyperlink color.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorHyperlinkFollowed")]
+  [InteropEnumValue("wdThemeColorHyperlinkFollowed")]
   ThemeColorHyperlinkFollowed = 11,
   /// <summary>
   /// Background color 1.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorBackground1")]
+  [InteropEnumValue("wdThemeColorBackground1")]
   ThemeColorBackground1 = 12,
   /// <summary>
   /// Text color 1.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorText1")]
+  [InteropEnumValue("wdThemeColorText1")]
   ThemeColorText1 = 13,
   /// <summary>
   /// Background color 2.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorBackground2")]
+  [InteropEnumValue("wdThemeColorBackground2")]
   ThemeColorBackground2 = 14,
   /// <summary>
   /// Text color 2.
   /// </summary>
-  [WordInteropEnumValue("wdThemeColorText2")]
+  [InteropEnumValue("wdThemeColorText2")]
   ThemeColorText2 = 15,
   /// <summary>
   /// No color.
   /// </summary>
-  [WordInteropEnumValue("wdNotThemeColor")]
+  [InteropEnumValue("wdNotThemeColor")]
   NotThemeColor = -1
 }

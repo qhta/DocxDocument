@@ -2,18 +2,18 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   OLE Connection Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.OleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.OleValues))]
 public enum OleType
 {
   /// <summary>
   ///   Embedded Object.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.OleValues.Embed))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.OleValues.Embed))]
   Embed,
   /// <summary>
   ///   Linked Object.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.OleValues.Link))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.OleValues.Link))]
   Link
 }

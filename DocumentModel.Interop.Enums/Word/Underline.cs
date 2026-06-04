@@ -6,97 +6,97 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdunderline?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdUnderline")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdUnderline")]
 public enum Underline
 {
   /// <summary>
   /// No underline.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineNone")]
+  [InteropEnumValue("wdUnderlineNone")]
   None = 0,
   /// <summary>
   /// A single line. default.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineSingle")]
+  [InteropEnumValue("wdUnderlineSingle")]
   Single = 1,
   /// <summary>
   /// Underline individual words only.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineWords")]
+  [InteropEnumValue("wdUnderlineWords")]
   Words = 2,
   /// <summary>
   /// A double line.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDouble")]
+  [InteropEnumValue("wdUnderlineDouble")]
   Double = 3,
   /// <summary>
   /// Dots.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDotted")]
+  [InteropEnumValue("wdUnderlineDotted")]
   Dotted = 4,
   /// <summary>
   /// A single thick line.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineThick")]
+  [InteropEnumValue("wdUnderlineThick")]
   Thick = 6,
   /// <summary>
   /// Dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDash")]
+  [InteropEnumValue("wdUnderlineDash")]
   Dash = 7,
   /// <summary>
   /// Alternating dots and dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDotDash")]
+  [InteropEnumValue("wdUnderlineDotDash")]
   DotDash = 9,
   /// <summary>
   /// An alternating dot-dot-dash pattern.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDotDotDash")]
+  [InteropEnumValue("wdUnderlineDotDotDash")]
   DotDotDash = 10,
   /// <summary>
   /// A single wavy line.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineWavy")]
+  [InteropEnumValue("wdUnderlineWavy")]
   Wavy = 11,
   /// <summary>
   /// Heavy dots.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDottedHeavy")]
+  [InteropEnumValue("wdUnderlineDottedHeavy")]
   DottedHeavy = 20,
   /// <summary>
   /// Heavy dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDashHeavy")]
+  [InteropEnumValue("wdUnderlineDashHeavy")]
   DashHeavy = 23,
   /// <summary>
   /// Alternating heavy dots and heavy dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDotDashHeavy")]
+  [InteropEnumValue("wdUnderlineDotDashHeavy")]
   DotDashHeavy = 25,
   /// <summary>
   /// An alternating heavy dot-dot-dash pattern.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDotDotDashHeavy")]
+  [InteropEnumValue("wdUnderlineDotDotDashHeavy")]
   DotDotDashHeavy = 26,
   /// <summary>
   /// A heavy wavy line.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineWavyHeavy")]
+  [InteropEnumValue("wdUnderlineWavyHeavy")]
   WavyHeavy = 27,
   /// <summary>
   /// Long dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDashLong")]
+  [InteropEnumValue("wdUnderlineDashLong")]
   DashLong = 39,
   /// <summary>
   /// A double wavy line.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineWavyDouble")]
+  [InteropEnumValue("wdUnderlineWavyDouble")]
   WavyDouble = 43,
   /// <summary>
   /// Long heavy dashes.
   /// </summary>
-  [WordInteropEnumValue("wdUnderlineDashLongHeavy")]
+  [InteropEnumValue("wdUnderlineDashLongHeavy")]
   DashLongHeavy = 55
 }

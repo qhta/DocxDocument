@@ -6,82 +6,82 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonsettype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoButtonSetType")]
+[InteropEnumType("Microsoft.Office.Core.MsoButtonSetType")]
 public enum ButtonSetType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetNone")]
+  [InteropEnumValue("msoButtonSetNone")]
   None,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetOK")]
+  [InteropEnumValue("msoButtonSetOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetCancel")]
+  [InteropEnumValue("msoButtonSetCancel")]
   Cancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetOkCancel")]
+  [InteropEnumValue("msoButtonSetOkCancel")]
   OkCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetYesNo")]
+  [InteropEnumValue("msoButtonSetYesNo")]
   YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetYesNoCancel")]
+  [InteropEnumValue("msoButtonSetYesNoCancel")]
   YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetBackClose")]
+  [InteropEnumValue("msoButtonSetBackClose")]
   BackClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetNextClose")]
+  [InteropEnumValue("msoButtonSetNextClose")]
   NextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetBackNextClose")]
+  [InteropEnumValue("msoButtonSetBackNextClose")]
   BackNextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetRetryCancel")]
+  [InteropEnumValue("msoButtonSetRetryCancel")]
   RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetAbortRetryIgnore")]
+  [InteropEnumValue("msoButtonSetAbortRetryIgnore")]
   AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetSearchClose")]
+  [InteropEnumValue("msoButtonSetSearchClose")]
   SearchClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetBackNextSnooze")]
+  [InteropEnumValue("msoButtonSetBackNextSnooze")]
   BackNextSnooze,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetTipsOptionsClose")]
+  [InteropEnumValue("msoButtonSetTipsOptionsClose")]
   TipsOptionsClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoButtonSetYesAllNoCancel")]
+  [InteropEnumValue("msoButtonSetYesAllNoCancel")]
   YesAllNoCancel
 }

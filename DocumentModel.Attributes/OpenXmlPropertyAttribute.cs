@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the Open XML EnumValues property name to associate with a class or property for serialization or mapping purposes.

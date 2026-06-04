@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddefaulttablebehavior?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDefaultTableBehavior")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDefaultTableBehavior")]
 public enum DefaultTableBehavior
 {
   /// <summary>
   /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
-  [WordInteropEnumValue("wdWord8TableBehavior")]
+  [InteropEnumValue("wdWord8TableBehavior")]
   Word8 = 0,
   /// <summary>
   /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
-  [WordInteropEnumValue("wdWord9TableBehavior")]
+  [InteropEnumValue("wdWord9TableBehavior")]
   Word9 = 1
 }

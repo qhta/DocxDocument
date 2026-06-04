@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmergetarget?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMergeTarget")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMergeTarget")]
 public enum MergeTarget
 {
   /// <summary>
   /// Merge into selected document.
   /// </summary>
-  [WordInteropEnumValue("wdMergeTargetSelected")]
+  [InteropEnumValue("wdMergeTargetSelected")]
   Selected = 0,
   /// <summary>
   /// Merge into current document.
   /// </summary>
-  [WordInteropEnumValue("wdMergeTargetCurrent")]
+  [InteropEnumValue("wdMergeTargetCurrent")]
   Current = 1,
   /// <summary>
   /// Merge into new document.
   /// </summary>
-  [WordInteropEnumValue("wdMergeTargetNew")]
+  [InteropEnumValue("wdMergeTargetNew")]
   New = 2
 }

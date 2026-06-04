@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdeditionoption?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEditionOption")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEditionOption")]
 public enum EditionOption
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdCancelPublisher")]
+  [InteropEnumValue("wdCancelPublisher")]
   CancelPublisher = 0,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdSendPublisher")]
+  [InteropEnumValue("wdSendPublisher")]
   SendPublisher = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdSelectPublisher")]
+  [InteropEnumValue("wdSelectPublisher")]
   SelectPublisher = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdAutomaticUpdate")]
+  [InteropEnumValue("wdAutomaticUpdate")]
   AutomaticUpdate = 3,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdManualUpdate")]
+  [InteropEnumValue("wdManualUpdate")]
   ManualUpdate = 4,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdChangeAttributes")]
+  [InteropEnumValue("wdChangeAttributes")]
   ChangeAttributes = 5,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdUpdateSubscriber")]
+  [InteropEnumValue("wdUpdateSubscriber")]
   UpdateSubscriber = 6,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdOpenSource")]
+  [InteropEnumValue("wdOpenSource")]
   OpenSource = 7
 }

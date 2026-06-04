@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberform?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNumberForm")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNumberForm")]
 public enum OtNumberForm
 {
   /// <summary>
   /// Applies the default number form for the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberFormDefault")]
+  [InteropEnumValue("wdNumberFormDefault")]
   Default = 0,
   /// <summary>
   /// Applies the lining number form to the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberFormLining")]
+  [InteropEnumValue("wdNumberFormLining")]
   Lining = 1,
   /// <summary>
   /// Applies the "old-style" number form to the font.
   /// </summary>
-  [WordInteropEnumValue("wdNumberFormOldStyle")]
+  [InteropEnumValue("wdNumberFormOldStyle")]
   OldStyle = 2
 }

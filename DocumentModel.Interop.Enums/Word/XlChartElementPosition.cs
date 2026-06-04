@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartelementposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlChartElementPosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlChartElementPosition")]
 public enum ChartElementPosition
 {
   /// <summary>
   /// Specifies a specific position for the chart element.
   /// </summary>
-  [WordInteropEnumValue("xlChartElementPositionCustom")]
+  [InteropEnumValue("xlChartElementPositionCustom")]
   Custom = -4114,
   /// <summary>
   /// Automatically sets the position of the chart element.
   /// </summary>
-  [WordInteropEnumValue("xlChartElementPositionAutomatic")]
+  [InteropEnumValue("xlChartElementPositionAutomatic")]
   Automatic = -4105
 }

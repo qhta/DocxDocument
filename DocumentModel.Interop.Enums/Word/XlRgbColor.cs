@@ -6,727 +6,727 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlrgbcolor?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlRgbColor")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlRgbColor")]
 public enum XlRgbColor
 {
   /// <summary>
   /// Black
   /// </summary>
-  [WordInteropEnumValue("xlBlack")]
+  [InteropEnumValue("xlBlack")]
   Black = 0,
   /// <summary>
   /// Maroon
   /// </summary>
-  [WordInteropEnumValue("xlMaroon")]
+  [InteropEnumValue("xlMaroon")]
   Maroon = 128,
   /// <summary>
   /// Dark Red
   /// </summary>
-  [WordInteropEnumValue("xlDarkRed")]
+  [InteropEnumValue("xlDarkRed")]
   DarkRed = 139,
   /// <summary>
   /// Red
   /// </summary>
-  [WordInteropEnumValue("xlRed")]
+  [InteropEnumValue("xlRed")]
   Red = 255,
   /// <summary>
   /// Orange Red
   /// </summary>
-  [WordInteropEnumValue("xlOrangeRed")]
+  [InteropEnumValue("xlOrangeRed")]
   OrangeRed = 17919,
   /// <summary>
   /// Dark Green
   /// </summary>
-  [WordInteropEnumValue("xlDarkGreen")]
+  [InteropEnumValue("xlDarkGreen")]
   DarkGreen = 25600,
   /// <summary>
   /// Green
   /// </summary>
-  [WordInteropEnumValue("xlGreen")]
+  [InteropEnumValue("xlGreen")]
   Green = 32768,
   /// <summary>
   /// Olive
   /// </summary>
-  [WordInteropEnumValue("xlOlive")]
+  [InteropEnumValue("xlOlive")]
   Olive = 32896,
   /// <summary>
   /// Dark Orange
   /// </summary>
-  [WordInteropEnumValue("xlDarkOrange")]
+  [InteropEnumValue("xlDarkOrange")]
   DarkOrange = 36095,
   /// <summary>
   /// Orange Red
   /// </summary>
-  [WordInteropEnumValue("xlOrange")]
+  [InteropEnumValue("xlOrange")]
   Orange = 42495,
   /// <summary>
   /// Gold
   /// </summary>
-  [WordInteropEnumValue("xlGold")]
+  [InteropEnumValue("xlGold")]
   Gold = 55295,
   /// <summary>
   /// Lawn Green
   /// </summary>
-  [WordInteropEnumValue("xlLawnGreen")]
+  [InteropEnumValue("xlLawnGreen")]
   LawnGreen = 64636,
   /// <summary>
   /// Lime public enum XlRgbColor
   /// </summary>
-  [WordInteropEnumValue("xlLime")]
+  [InteropEnumValue("xlLime")]
   Lime = 65280,
   /// <summary>
   /// Chartreuse
   /// </summary>
-  [WordInteropEnumValue("xlChartreuse")]
+  [InteropEnumValue("xlChartreuse")]
   Chartreuse = 65407,
   /// <summary>
   /// Yellow
   /// </summary>
-  [WordInteropEnumValue("xlYellow")]
+  [InteropEnumValue("xlYellow")]
   Yellow = 65535,
   /// <summary>
   /// Dark Goldenrod
   /// </summary>
-  [WordInteropEnumValue("xlDarkGoldenrod")]
+  [InteropEnumValue("xlDarkGoldenrod")]
   DarkGoldenrod = 755384,
   /// <summary>
   /// Goldenrod
   /// </summary>
-  [WordInteropEnumValue("xlGoldenrod")]
+  [InteropEnumValue("xlGoldenrod")]
   Goldenrod = 2139610,
   /// <summary>
   /// Fire Brick
   /// </summary>
-  [WordInteropEnumValue("xlFireBrick")]
+  [InteropEnumValue("xlFireBrick")]
   FireBrick = 2237106,
   /// <summary>
   /// Forest Green
   /// </summary>
-  [WordInteropEnumValue("xlForestGreen")]
+  [InteropEnumValue("xlForestGreen")]
   ForestGreen = 2263842,
   /// <summary>
   /// Olive Drab
   /// </summary>
-  [WordInteropEnumValue("xlOliveDrab")]
+  [InteropEnumValue("xlOliveDrab")]
   OliveDrab = 2330219,
   /// <summary>
   /// Brown
   /// </summary>
-  [WordInteropEnumValue("xlBrown")]
+  [InteropEnumValue("xlBrown")]
   Brown = 2763429,
   /// <summary>
   /// Sienna
   /// </summary>
-  [WordInteropEnumValue("xlSienna")]
+  [InteropEnumValue("xlSienna")]
   Sienna = 2970272,
   /// <summary>
   /// Dark Olive Green
   /// </summary>
-  [WordInteropEnumValue("xlDarkOliveGreen")]
+  [InteropEnumValue("xlDarkOliveGreen")]
   DarkOliveGreen = 3107669,
   /// <summary>
   /// Green Yellow
   /// </summary>
-  [WordInteropEnumValue("xlGreenYellow")]
+  [InteropEnumValue("xlGreenYellow")]
   GreenYellow = 3145645,
   /// <summary>
   /// Lime Green
   /// </summary>
-  [WordInteropEnumValue("xlLimeGreen")]
+  [InteropEnumValue("xlLimeGreen")]
   LimeGreen = 3329330,
   /// <summary>
   /// Yellow Green
   /// </summary>
-  [WordInteropEnumValue("xlYellowGreen")]
+  [InteropEnumValue("xlYellowGreen")]
   YellowGreen = 3329434,
   /// <summary>
   /// Crimson
   /// </summary>
-  [WordInteropEnumValue("xlCrimson")]
+  [InteropEnumValue("xlCrimson")]
   Crimson = 3937500,
   /// <summary>
   /// Peru
   /// </summary>
-  [WordInteropEnumValue("xlPeru")]
+  [InteropEnumValue("xlPeru")]
   Peru = 4163021,
   /// <summary>
   /// Tomato
   /// </summary>
-  [WordInteropEnumValue("xlTomato")]
+  [InteropEnumValue("xlTomato")]
   Tomato = 4678655,
   /// <summary>
   /// Dark Slate Grey
   /// </summary>
-  [WordInteropEnumValue("xlDarkSlateGrey")]
+  [InteropEnumValue("xlDarkSlateGrey")]
   DarkSlateGrey = 5197615,
   /// <summary>
   /// Dark Slate Gray
   /// </summary>
-  [WordInteropEnumValue("xlDarkSlateGray")]
+  [InteropEnumValue("xlDarkSlateGray")]
   DarkSlateGray = 5197615,
   /// <summary>
   /// Coral
   /// </summary>
-  [WordInteropEnumValue("xlCoral")]
+  [InteropEnumValue("xlCoral")]
   Coral = 5275647,
   /// <summary>
   /// Sea Green
   /// </summary>
-  [WordInteropEnumValue("xlSeaGreen")]
+  [InteropEnumValue("xlSeaGreen")]
   SeaGreen = 5737262,
   /// <summary>
   /// Indian Red
   /// </summary>
-  [WordInteropEnumValue("xlIndianRed")]
+  [InteropEnumValue("xlIndianRed")]
   IndianRed = 6053069,
   /// <summary>
   /// Sandy Brown
   /// </summary>
-  [WordInteropEnumValue("xlSandyBrown")]
+  [InteropEnumValue("xlSandyBrown")]
   SandyBrown = 6333684,
   /// <summary>
   /// Dim Grey
   /// </summary>
-  [WordInteropEnumValue("xlDimGrey")]
+  [InteropEnumValue("xlDimGrey")]
   DimGrey = 6908265,
   /// <summary>
   /// Dim Gray
   /// </summary>
-  [WordInteropEnumValue("xlDimGray")]
+  [InteropEnumValue("xlDimGray")]
   DimGray = 6908265,
   /// <summary>
   /// Dark Khaki
   /// </summary>
-  [WordInteropEnumValue("xlDarkKhaki")]
+  [InteropEnumValue("xlDarkKhaki")]
   DarkKhaki = 7059389,
   /// <summary>
   /// Pale Goldenrod
   /// </summary>
-  [WordInteropEnumValue("xlPaleGoldenrod")]
+  [InteropEnumValue("xlPaleGoldenrod")]
   PaleGoldenrod = 7071982,
   /// <summary>
   /// Midnight Blue
   /// </summary>
-  [WordInteropEnumValue("xlMidnightBlue")]
+  [InteropEnumValue("xlMidnightBlue")]
   MidnightBlue = 7346457,
   /// <summary>
   /// Medium Sea Green
   /// </summary>
-  [WordInteropEnumValue("xlMediumSeaGreen")]
+  [InteropEnumValue("xlMediumSeaGreen")]
   MediumSeaGreen = 7451452,
   /// <summary>
   /// Salmon
   /// </summary>
-  [WordInteropEnumValue("xlSalmon")]
+  [InteropEnumValue("xlSalmon")]
   Salmon = 7504122,
   /// <summary>
   /// Dark Salmon
   /// </summary>
-  [WordInteropEnumValue("xlDarkSalmon")]
+  [InteropEnumValue("xlDarkSalmon")]
   DarkSalmon = 8034025,
   /// <summary>
   /// Light Salmon
   /// </summary>
-  [WordInteropEnumValue("xlLightSalmon")]
+  [InteropEnumValue("xlLightSalmon")]
   LightSalmon = 8036607,
   /// <summary>
   /// Spring Green
   /// </summary>
-  [WordInteropEnumValue("xlSpringGreen")]
+  [InteropEnumValue("xlSpringGreen")]
   SpringGreen = 8388352,
   /// <summary>
   /// Navy Blue
   /// </summary>
-  [WordInteropEnumValue("xlNavyBlue")]
+  [InteropEnumValue("xlNavyBlue")]
   NavyBlue = 8388608,
   /// <summary>
   /// Navy
   /// </summary>
-  [WordInteropEnumValue("xlNavy")]
+  [InteropEnumValue("xlNavy")]
   Navy = 8388608,
   /// <summary>
   /// Purple
   /// </summary>
-  [WordInteropEnumValue("xlPurple")]
+  [InteropEnumValue("xlPurple")]
   Purple = 8388736,
   /// <summary>
   /// Teal
   /// </summary>
-  [WordInteropEnumValue("xlTeal")]
+  [InteropEnumValue("xlTeal")]
   Teal = 8421376,
   /// <summary>
   /// Grey
   /// </summary>
-  [WordInteropEnumValue("xlGrey")]
+  [InteropEnumValue("xlGrey")]
   Grey = 8421504,
   /// <summary>
   /// Gray
   /// </summary>
-  [WordInteropEnumValue("xlGray")]
+  [InteropEnumValue("xlGray")]
   Gray = 8421504,
   /// <summary>
   /// Light Coral
   /// </summary>
-  [WordInteropEnumValue("xlLightCoral")]
+  [InteropEnumValue("xlLightCoral")]
   LightCoral = 8421616,
   /// <summary>
   /// Indigo
   /// </summary>
-  [WordInteropEnumValue("xlIndigo")]
+  [InteropEnumValue("xlIndigo")]
   Indigo = 8519755,
   /// <summary>
   /// Medium Violet Red
   /// </summary>
-  [WordInteropEnumValue("xlMediumVioletRed")]
+  [InteropEnumValue("xlMediumVioletRed")]
   MediumVioletRed = 8721863,
   /// <summary>
   /// Burly Wood
   /// </summary>
-  [WordInteropEnumValue("xlBurlyWood")]
+  [InteropEnumValue("xlBurlyWood")]
   BurlyWood = 8894686,
   /// <summary>
   /// Dark Blue
   /// </summary>
-  [WordInteropEnumValue("xlDarkBlue")]
+  [InteropEnumValue("xlDarkBlue")]
   DarkBlue = 9109504,
   /// <summary>
   /// Dark Magenta
   /// </summary>
-  [WordInteropEnumValue("xlDarkMagenta")]
+  [InteropEnumValue("xlDarkMagenta")]
   DarkMagenta = 9109643,
   /// <summary>
   /// Dark Slate Blue
   /// </summary>
-  [WordInteropEnumValue("xlDarkSlateBlue")]
+  [InteropEnumValue("xlDarkSlateBlue")]
   DarkSlateBlue = 9125192,
   /// <summary>
   /// Light Cyan
   /// </summary>
-  [WordInteropEnumValue("xlLightCyan")]
+  [InteropEnumValue("xlLightCyan")]
   LightCyan = 9145088,
   /// <summary>
   /// Dark Cyan
   /// </summary>
-  [WordInteropEnumValue("xlDarkCyan")]
+  [InteropEnumValue("xlDarkCyan")]
   DarkCyan = 9145088,
   /// <summary>
   /// Tan
   /// </summary>
-  [WordInteropEnumValue("xlTan")]
+  [InteropEnumValue("xlTan")]
   Tan = 9221330,
   /// <summary>
   /// Khaki
   /// </summary>
-  [WordInteropEnumValue("xlKhaki")]
+  [InteropEnumValue("xlKhaki")]
   Khaki = 9234160,
   /// <summary>
   /// Rosy Brown
   /// </summary>
-  [WordInteropEnumValue("xlRosyBrown")]
+  [InteropEnumValue("xlRosyBrown")]
   RosyBrown = 9408444,
   /// <summary>
   /// Dark Sea Green
   /// </summary>
-  [WordInteropEnumValue("xlDarkSeaGreen")]
+  [InteropEnumValue("xlDarkSeaGreen")]
   DarkSeaGreen = 9419919,
   /// <summary>
   /// Slate Gray
   /// </summary>
-  [WordInteropEnumValue("xlSlateGray")]
+  [InteropEnumValue("xlSlateGray")]
   SlateGray = 9470064,
   /// <summary>
   /// Slate Grey
   /// </summary>
-  [WordInteropEnumValue("xlSlateGrey")]
+  [InteropEnumValue("xlSlateGrey")]
   SlateGrey = 9470064,
   /// <summary>
   /// Light Green
   /// </summary>
-  [WordInteropEnumValue("xlLightGreen")]
+  [InteropEnumValue("xlLightGreen")]
   LightGreen = 9498256,
   /// <summary>
   /// Deep Pink
   /// </summary>
-  [WordInteropEnumValue("xlDeepPink")]
+  [InteropEnumValue("xlDeepPink")]
   DeepPink = 9639167,
   /// <summary>
   /// Pale Violet Red
   /// </summary>
-  [WordInteropEnumValue("xlPaleVioletRed")]
+  [InteropEnumValue("xlPaleVioletRed")]
   PaleVioletRed = 9662683,
   /// <summary>
   /// Pale Green
   /// </summary>
-  [WordInteropEnumValue("xlPaleGreen")]
+  [InteropEnumValue("xlPaleGreen")]
   PaleGreen = 10025880,
   /// <summary>
   /// Light Slate Grey
   /// </summary>
-  [WordInteropEnumValue("xlLightSlateGrey")]
+  [InteropEnumValue("xlLightSlateGrey")]
   LightSlateGrey = 10061943,
   /// <summary>
   /// Light Slate Gray
   /// </summary>
-  [WordInteropEnumValue("xlLightSlateGray")]
+  [InteropEnumValue("xlLightSlateGray")]
   LightSlateGray = 10061943,
   /// <summary>
   /// Medium Spring Green
   /// </summary>
-  [WordInteropEnumValue("xlMediumSpringGreen")]
+  [InteropEnumValue("xlMediumSpringGreen")]
   MediumSpringGreen = 10156544,
   /// <summary>
   /// Cadet Blue
   /// </summary>
-  [WordInteropEnumValue("xlCadetBlue")]
+  [InteropEnumValue("xlCadetBlue")]
   CadetBlue = 10526303,
   /// <summary>
   /// Dark Grey
   /// </summary>
-  [WordInteropEnumValue("xlDarkGrey")]
+  [InteropEnumValue("xlDarkGrey")]
   DarkGrey = 11119017,
   /// <summary>
   /// Dark Gray
   /// </summary>
-  [WordInteropEnumValue("xlDarkGray")]
+  [InteropEnumValue("xlDarkGray")]
   DarkGray = 11119017,
   /// <summary>
   /// Light Sea Green
   /// </summary>
-  [WordInteropEnumValue("xlLightSeaGreen")]
+  [InteropEnumValue("xlLightSeaGreen")]
   LightSeaGreen = 11186720,
   /// <summary>
   /// Medium Aquamarine
   /// </summary>
-  [WordInteropEnumValue("xlMediumAquamarine")]
+  [InteropEnumValue("xlMediumAquamarine")]
   MediumAquamarine = 11206502,
   /// <summary>
   /// Navajo White
   /// </summary>
-  [WordInteropEnumValue("xlNavajoWhite")]
+  [InteropEnumValue("xlNavajoWhite")]
   NavajoWhite = 11394815,
   /// <summary>
   /// Wheat
   /// </summary>
-  [WordInteropEnumValue("xlWheat")]
+  [InteropEnumValue("xlWheat")]
   Wheat = 11788021,
   /// <summary>
   /// Hot Pink
   /// </summary>
-  [WordInteropEnumValue("xlHotPink")]
+  [InteropEnumValue("xlHotPink")]
   HotPink = 11823615,
   /// <summary>
   /// Steel Blue
   /// </summary>
-  [WordInteropEnumValue("xlSteelBlue")]
+  [InteropEnumValue("xlSteelBlue")]
   SteelBlue = 11829830,
   /// <summary>
   /// Moccasin
   /// </summary>
-  [WordInteropEnumValue("xlMoccasin")]
+  [InteropEnumValue("xlMoccasin")]
   Moccasin = 11920639,
   /// <summary>
   /// Peach Puff
   /// </summary>
-  [WordInteropEnumValue("xlPeachPuff")]
+  [InteropEnumValue("xlPeachPuff")]
   PeachPuff = 12180223,
   /// <summary>
   /// Silver
   /// </summary>
-  [WordInteropEnumValue("xlSilver")]
+  [InteropEnumValue("xlSilver")]
   Silver = 12632256,
   /// <summary>
   /// Light Pink
   /// </summary>
-  [WordInteropEnumValue("xlLightPink")]
+  [InteropEnumValue("xlLightPink")]
   LightPink = 12695295,
   /// <summary>
   /// Bisque
   /// </summary>
-  [WordInteropEnumValue("xlBisque")]
+  [InteropEnumValue("xlBisque")]
   Bisque = 12903679,
   /// <summary>
   /// Pink
   /// </summary>
-  [WordInteropEnumValue("xlPink")]
+  [InteropEnumValue("xlPink")]
   Pink = 13353215,
   /// <summary>
   /// Dark Orchid
   /// </summary>
-  [WordInteropEnumValue("xlDarkOrchid")]
+  [InteropEnumValue("xlDarkOrchid")]
   DarkOrchid = 13382297,
   /// <summary>
   /// Medium Turquoise
   /// </summary>
-  [WordInteropEnumValue("xlMediumTurquoise")]
+  [InteropEnumValue("xlMediumTurquoise")]
   MediumTurquoise = 13422920,
   /// <summary>
   /// Medium Blue
   /// </summary>
-  [WordInteropEnumValue("xlMediumBlue")]
+  [InteropEnumValue("xlMediumBlue")]
   MediumBlue = 13434880,
   /// <summary>
   /// Slate Blue
   /// </summary>
-  [WordInteropEnumValue("xlSlateBlue")]
+  [InteropEnumValue("xlSlateBlue")]
   SlateBlue = 13458026,
   /// <summary>
   /// Blanched Almond
   /// </summary>
-  [WordInteropEnumValue("xlBlanchedAlmond")]
+  [InteropEnumValue("xlBlanchedAlmond")]
   BlanchedAlmond = 13495295,
   /// <summary>
   /// Lemon Chiffon
   /// </summary>
-  [WordInteropEnumValue("xlLemonChiffon")]
+  [InteropEnumValue("xlLemonChiffon")]
   LemonChiffon = 13499135,
   /// <summary>
   /// Turquoise
   /// </summary>
-  [WordInteropEnumValue("xlTurquoise")]
+  [InteropEnumValue("xlTurquoise")]
   Turquoise = 13688896,
   /// <summary>
   /// Dark Turquoise
   /// </summary>
-  [WordInteropEnumValue("xlDarkTurquoise")]
+  [InteropEnumValue("xlDarkTurquoise")]
   DarkTurquoise = 13749760,
   /// <summary>
   /// LightGoldenrodYellow
   /// </summary>
-  [WordInteropEnumValue("xlLightGoldenrodYellow")]
+  [InteropEnumValue("xlLightGoldenrodYellow")]
   LightGoldenrodYellow = 13826810,
   /// <summary>
   /// Dark Violet
   /// </summary>
-  [WordInteropEnumValue("xlDarkViolet")]
+  [InteropEnumValue("xlDarkViolet")]
   DarkViolet = 13828244,
   /// <summary>
   /// Medium Orchid
   /// </summary>
-  [WordInteropEnumValue("xlMediumOrchid")]
+  [InteropEnumValue("xlMediumOrchid")]
   MediumOrchid = 13850042,
   /// <summary>
   /// Light Grey
   /// </summary>
-  [WordInteropEnumValue("xlLightGrey")]
+  [InteropEnumValue("xlLightGrey")]
   LightGrey = 13882323,
   /// <summary>
   /// Light Gray
   /// </summary>
-  [WordInteropEnumValue("xlLightGray")]
+  [InteropEnumValue("xlLightGray")]
   LightGray = 13882323,
   /// <summary>
   /// Aquamarine
   /// </summary>
-  [WordInteropEnumValue("xlAquamarine")]
+  [InteropEnumValue("xlAquamarine")]
   Aquamarine = 13959039,
   /// <summary>
   /// Papaya Whip
   /// </summary>
-  [WordInteropEnumValue("xlPapayaWhip")]
+  [InteropEnumValue("xlPapayaWhip")]
   PapayaWhip = 14020607,
   /// <summary>
   /// Orchid
   /// </summary>
-  [WordInteropEnumValue("xlOrchid")]
+  [InteropEnumValue("xlOrchid")]
   Orchid = 14053594,
   /// <summary>
   /// Antique White
   /// </summary>
-  [WordInteropEnumValue("xlAntiqueWhite")]
+  [InteropEnumValue("xlAntiqueWhite")]
   AntiqueWhite = 14150650,
   /// <summary>
   /// Thistle
   /// </summary>
-  [WordInteropEnumValue("xlThistle")]
+  [InteropEnumValue("xlThistle")]
   Thistle = 14204888,
   /// <summary>
   /// Medium Purple
   /// </summary>
-  [WordInteropEnumValue("xlMediumPurple")]
+  [InteropEnumValue("xlMediumPurple")]
   MediumPurple = 14381203,
   /// <summary>
   /// Gainsboro
   /// </summary>
-  [WordInteropEnumValue("xlGainsboro")]
+  [InteropEnumValue("xlGainsboro")]
   Gainsboro = 14474460,
   /// <summary>
   /// Beige
   /// </summary>
-  [WordInteropEnumValue("xlBeige")]
+  [InteropEnumValue("xlBeige")]
   Beige = 14480885,
   /// <summary>
   /// Cornsilk
   /// </summary>
-  [WordInteropEnumValue("xlCornsilk")]
+  [InteropEnumValue("xlCornsilk")]
   Cornsilk = 14481663,
   /// <summary>
   /// Plum
   /// </summary>
-  [WordInteropEnumValue("xlPlum")]
+  [InteropEnumValue("xlPlum")]
   Plum = 14524637,
   /// <summary>
   /// Light Steel Blue
   /// </summary>
-  [WordInteropEnumValue("xlLightSteelBlue")]
+  [InteropEnumValue("xlLightSteelBlue")]
   LightSteelBlue = 14599344,
   /// <summary>
   /// Light Yellow
   /// </summary>
-  [WordInteropEnumValue("xlLightYellow")]
+  [InteropEnumValue("xlLightYellow")]
   LightYellow = 14745599,
   /// <summary>
   /// Royal Blue
   /// </summary>
-  [WordInteropEnumValue("xlRoyalBlue")]
+  [InteropEnumValue("xlRoyalBlue")]
   RoyalBlue = 14772545,
   /// <summary>
   /// Misty Rose
   /// </summary>
-  [WordInteropEnumValue("xlMistyRose")]
+  [InteropEnumValue("xlMistyRose")]
   MistyRose = 14804223,
   /// <summary>
   /// Blue Violet
   /// </summary>
-  [WordInteropEnumValue("xlBlueViolet")]
+  [InteropEnumValue("xlBlueViolet")]
   BlueViolet = 14822282,
   /// <summary>
   /// Light Blue
   /// </summary>
-  [WordInteropEnumValue("xlLightBlue")]
+  [InteropEnumValue("xlLightBlue")]
   LightBlue = 15128749,
   /// <summary>
   /// Powder Blue
   /// </summary>
-  [WordInteropEnumValue("xlPowderBlue")]
+  [InteropEnumValue("xlPowderBlue")]
   PowderBlue = 15130800,
   /// <summary>
   /// Linen
   /// </summary>
-  [WordInteropEnumValue("xlLinen")]
+  [InteropEnumValue("xlLinen")]
   Linen = 15134970,
   /// <summary>
   /// Old Lace
   /// </summary>
-  [WordInteropEnumValue("xlOldLace")]
+  [InteropEnumValue("xlOldLace")]
   OldLace = 15136253,
   /// <summary>
   /// Sky Blue
   /// </summary>
-  [WordInteropEnumValue("xlSkyBlue")]
+  [InteropEnumValue("xlSkyBlue")]
   SkyBlue = 15453831,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlCornflowerBlue")]
+  [InteropEnumValue("xlCornflowerBlue")]
   CornflowerBlue = 15570276,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlMediumSlateBlue")]
+  [InteropEnumValue("xlMediumSlateBlue")]
   MediumSlateBlue = 15624315,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlViolet")]
+  [InteropEnumValue("xlViolet")]
   Violet = 15631086,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlPaleTurquoise")]
+  [InteropEnumValue("xlPaleTurquoise")]
   PaleTurquoise = 15658671,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlSeashell")]
+  [InteropEnumValue("xlSeashell")]
   Seashell = 15660543,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlFloralWhite")]
+  [InteropEnumValue("xlFloralWhite")]
   FloralWhite = 15792895,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlHoneydew")]
+  [InteropEnumValue("xlHoneydew")]
   Honeydew = 15794160,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlIvory")]
+  [InteropEnumValue("xlIvory")]
   Ivory = 15794175,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlLavenderBlush")]
+  [InteropEnumValue("xlLavenderBlush")]
   LavenderBlush = 16118015,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlWhiteSmoke")]
+  [InteropEnumValue("xlWhiteSmoke")]
   WhiteSmoke = 16119285,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlLightSkyBlue")]
+  [InteropEnumValue("xlLightSkyBlue")]
   LightSkyBlue = 16436871,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlLavender")]
+  [InteropEnumValue("xlLavender")]
   Lavender = 16443110,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlSnow")]
+  [InteropEnumValue("xlSnow")]
   Snow = 16448255,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlMintCream")]
+  [InteropEnumValue("xlMintCream")]
   MintCream = 16449525,
   /// <summary>
   /// Blue Violet
   /// </summary>
-  [WordInteropEnumValue("xlBlue")]
+  [InteropEnumValue("xlBlue")]
   Blue = 16711680,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlFuchsia")]
+  [InteropEnumValue("xlFuchsia")]
   Fuchsia = 16711935,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlDodgerBlue")]
+  [InteropEnumValue("xlDodgerBlue")]
   DodgerBlue = 16748574,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlDeepSkyBlue")]
+  [InteropEnumValue("xlDeepSkyBlue")]
   DeepSkyBlue = 16760576,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlAliceBlue")]
+  [InteropEnumValue("xlAliceBlue")]
   AliceBlue = 16775408,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlGhostWhite")]
+  [InteropEnumValue("xlGhostWhite")]
   GhostWhite = 16775416,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlAqua")]
+  [InteropEnumValue("xlAqua")]
   Aqua = 16776960,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlAzure")]
+  [InteropEnumValue("xlAzure")]
   Azure = 16777200,
   /// <summary>
   /// Specifies the RGB color.
   /// </summary>
-  [WordInteropEnumValue("xlWhite")]
+  [InteropEnumValue("xlWhite")]
   White = 16777215
 }

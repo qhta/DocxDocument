@@ -2,63 +2,63 @@
 /// <summary>
 ///   Preset ILine Dash Value
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.PresetLineDashValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues))]
 public enum PresetLineDash
 {
   /// <summary>
   ///   Solid.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.Solid))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.Solid))]
   Solid,
   /// <summary>
   ///   Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.Dot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.Dot))]
   Dot,
   /// <summary>
   ///   Dash.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.Dash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.Dash))]
   Dash,
   /// <summary>
   ///   Large Dash.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.LargeDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.LargeDash))]
   LargeDash,
   /// <summary>
   ///   Dash Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.DashDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.DashDot))]
   DashDot,
   /// <summary>
   ///   Large Dash Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.LargeDashDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.LargeDashDot))]
   LargeDashDot,
   /// <summary>
   ///   Large Dash Dot Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.LargeDashDotDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.LargeDashDotDot))]
   LargeDashDotDot,
   /// <summary>
   ///   System Dash.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDash))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.SystemDash))]
   SystemDash,
   /// <summary>
   ///   System Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.SystemDot))]
   SystemDot,
   /// <summary>
   ///   System Dash Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.SystemDashDot))]
   SystemDashDot,
   /// <summary>
   ///   System Dash Dot Dot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDotDot))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.PresetLineDashValues.SystemDashDotDot))]
   SystemDashDotDot
 }

@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsalutationtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdSalutationType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdSalutationType")]
 public enum SalutationType
 {
   /// <summary>
   /// Informal salutation.
   /// </summary>
-  [WordInteropEnumValue("wdSalutationInformal")]
+  [InteropEnumValue("wdSalutationInformal")]
   Informal = 0,
   /// <summary>
   /// Format salutation.
   /// </summary>
-  [WordInteropEnumValue("wdSalutationFormal")]
+  [InteropEnumValue("wdSalutationFormal")]
   Formal = 1,
   /// <summary>
   /// Business salutation
   /// </summary>
-  [WordInteropEnumValue("wdSalutationBusiness")]
+  [InteropEnumValue("wdSalutationBusiness")]
   Business = 2,
   /// <summary>
   /// Custom salutation.
   /// </summary>
-  [WordInteropEnumValue("wdSalutationOther")]
+  [InteropEnumValue("wdSalutationOther")]
   Other = 3
 }

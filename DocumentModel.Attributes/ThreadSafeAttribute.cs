@@ -5,9 +5,6 @@
 // Assembly location: C:\Users\qhta1\.nuget\packages\DocumentModel.Attributes\2.18.0\lib\netstandard2.0\DocumentModel.Attributes.dll
 // XML documentation location: C:\Users\qhta1\.nuget\packages\DocumentModel.Attributes\2.18.0\lib\netstandard2.0\DocumentModel.Attributes.xml
 
-using ISystem;
-using ISystem.Diagnostics;
-
 namespace DocumentModel.Attributes
 {
   [Conditional("OPENXMLGENERATOR")]

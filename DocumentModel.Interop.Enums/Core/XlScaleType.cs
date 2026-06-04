@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlscaletype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlScaleType")]
+[InteropEnumType("Microsoft.Office.Core.XlScaleType")]
 public enum ScaleType
 {
   /// <summary>
   /// Linear.
   /// </summary>
-  [OfficeInteropEnumValue("xlScaleLinear")]
+  [InteropEnumValue("xlScaleLinear")]
   Linear = -4132,
   /// <summary>
   /// Logarithmic.
   /// </summary>
-  [OfficeInteropEnumValue("xlScaleLogarithmic")]
+  [InteropEnumValue("xlScaleLogarithmic")]
   Logarithmic = -4133
 }

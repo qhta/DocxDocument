@@ -6,32 +6,32 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathjc?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOMathJc")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOMathJc")]
 public enum OMathJc
 {
   /// <summary>
   /// Center as a group.
   /// </summary>
-  [WordInteropEnumValue("wdOMathJcCenterGroup")]
+  [InteropEnumValue("wdOMathJcCenterGroup")]
   CenterGroup = 1,
   /// <summary>
   /// Center.
   /// </summary>
-  [WordInteropEnumValue("wdOMathJcCenter")]
+  [InteropEnumValue("wdOMathJcCenter")]
   Center = 2,
   /// <summary>
   /// Left.
   /// </summary>
-  [WordInteropEnumValue("wdOMathJcLeft")]
+  [InteropEnumValue("wdOMathJcLeft")]
   Left = 3,
   /// <summary>
   /// Right.
   /// </summary>
-  [WordInteropEnumValue("wdOMathJcRight")]    
+  [InteropEnumValue("wdOMathJcRight")]    
   Right = 4,
   /// <summary>
   /// Inline.
   /// </summary>
-  [WordInteropEnumValue("wdOMathJcInline")]
+  [InteropEnumValue("wdOMathJcInline")]
   Inline = 7
 }

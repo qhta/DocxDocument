@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpasteoptions?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPasteOptions")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPasteOptions")]
 public enum PasteOptions
 {
   /// <summary>
   /// Keeps formatting from the source document.
   /// </summary>
-  [WordInteropEnumValue("wdKeepSourceFormatting")]
+  [InteropEnumValue("wdKeepSourceFormatting")]
   KeepSourceFormatting = 0,
   /// <summary>
   /// Matches formatting to the destination document.
   /// </summary>
-  [WordInteropEnumValue("wdMatchDestinationFormatting")]
+  [InteropEnumValue("wdMatchDestinationFormatting")]
   MatchDestinationFormatting = 1,
   /// <summary>
   /// Keeps text only, without formatting.
   /// </summary>
-  [WordInteropEnumValue("wdKeepTextOnly")]
+  [InteropEnumValue("wdKeepTextOnly")]
   KeepTextOnly = 2,
   /// <summary>
   /// Matches formatting to the destination document using styles for formatting.
   /// </summary>
-  [WordInteropEnumValue("wdUseDestinationStyles")]
+  [InteropEnumValue("wdUseDestinationStyles")]
   UseDestinationStyles = 3
 }

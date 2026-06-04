@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcalendartype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCalendarType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCalendarType")]
 public enum CalendarType
 {
   /// <summary>
   /// Western.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarWestern")]
+  [InteropEnumValue("wdCalendarWestern")]
   Western = 0,
   /// <summary>
   /// Arabic.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarArabic")]
+  [InteropEnumValue("wdCalendarArabic")]
   Arabic = 1,
   /// <summary>
   /// Hebrew.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarHebrew")]
+  [InteropEnumValue("wdCalendarHebrew")]
   Hebrew = 2,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarTaiwan")]
+  [InteropEnumValue("wdCalendarTaiwan")]
   Taiwan = 3,
   /// <summary>
   /// Japanese.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarJapan")]
+  [InteropEnumValue("wdCalendarJapan")]
   Japan = 4,
   /// <summary>
   /// Thai.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarThai")]
+  [InteropEnumValue("wdCalendarThai")]
   Thai = 5,
   /// <summary>
   /// Korean.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarKorean")]
+  [InteropEnumValue("wdCalendarKorean")]
   Korean = 6,
   /// <summary>
   /// Saka Era.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarSakaEra")]
+  [InteropEnumValue("wdCalendarSakaEra")]
   SakaEra = 7,
   /// <summary>
   /// English.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarTranslitEnglish")]
+  [InteropEnumValue("wdCalendarTranslitEnglish")]
   TranslitEnglish = 8,
   /// <summary>
   /// French.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarTranslitFrench")]
+  [InteropEnumValue("wdCalendarTranslitFrench")]
   TranslitFrench = 9,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue("wdCalendarUmalqura")]
+  [InteropEnumValue("wdCalendarUmalqura")]
   Umalqura = 13
 }

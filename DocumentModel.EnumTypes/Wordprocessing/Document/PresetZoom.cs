@@ -2,28 +2,28 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PresetZoomValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.PresetZoomValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues))]
 public enum PresetZoom
 {
   /// <summary>
   ///   No Preset Magnification.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PresetZoomValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues.None))]
   None,
   /// <summary>
   ///   Display One Full Page.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PresetZoomValues.FullPage))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues.FullPage))]
   FullPage,
   /// <summary>
   ///   Display Page Width.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PresetZoomValues.BestFit))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues.BestFit))]
   BestFit,
   /// <summary>
   ///   Display Text Width.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PresetZoomValues.TextFit))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues.TextFit))]
   TextFit
 }

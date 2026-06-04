@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorderZOrderValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.PageBorderZOrderValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues))]
 public enum PageBorderZOrder
 {
   /// <summary>
   ///   Page Border Ahead of Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderZOrderValues.Front))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues.Front))]
   Front,
   /// <summary>
   ///   Page Border Behind Text.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderZOrderValues.Back))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues.Back))]
   Back
 }

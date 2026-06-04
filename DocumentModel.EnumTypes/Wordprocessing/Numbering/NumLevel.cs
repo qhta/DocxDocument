@@ -3,7 +3,7 @@
 /// <summary>
 /// Numbering level enumeration for numbering in WordprocessingML documents.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum NumLevel
 {
   /// <summary>

@@ -7,84 +7,84 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdworddialog?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdWordDialog")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWordDialog")]
 public enum WordDialog
 {
   /// <summary>
   /// APPNAME, APPCOPYRIGHT, APPUSERNAME, APPORGANIZATION, APPSERIALNUMBER
   /// </summary>
-  [WordInteropEnumValue("wdDialogHelpAbout")]
+  [InteropEnumValue("wdDialogHelpAbout")]
   HelpAbout = 9,
   /// <summary>
   /// WPCommand, HelpText, DemoGuidance
   /// </summary>
-  [WordInteropEnumValue("wdDialogHelpWordPerfectHelp")]
+  [InteropEnumValue("wdDialogHelpWordPerfectHelp")]
   HelpWordPerfectHelp = 10,
   /// <summary>
   /// FileName, Directory, Template, Title, Created, LastSaved, LastSavedBy, Revision, Time, Printed, Pages, Words,
   /// Characters, Paragraphs, Lines,
   /// </summary>
-  [WordInteropEnumValue("wdDialogDocumentStatistics")]
+  [InteropEnumValue("wdDialogDocumentStatistics")]
   DocumentStatistics = 78,
   /// <summary>
   /// Template, NewTemplate, DocumentType, Visible
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileNew")]
+  [InteropEnumValue("wdDialogFileNew")]
   FileNew = 79,
   /// <summary>
   /// Name, ConfirmConversions, ReadOnly, LinkToSource, AddToMru, PasswordDoc, PasswordDot, Revert,
   /// WritePasswordDoc, WritePasswordDot, Connection, SQLStatement, SQLStatement1, Format, Encoding, Visible,
   /// OpenExclusive, OpenAndRepair, SubType,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileOpen")]
+  [InteropEnumValue("wdDialogFileOpen")]
   FileOpen = 80,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeOpenDataSource")]
+  [InteropEnumValue("wdDialogMailMergeOpenDataSource")]
   MailMergeOpenDataSource = 81,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeOpenHeaderSource")]
+  [InteropEnumValue("wdDialogMailMergeOpenHeaderSource")]
   MailMergeOpenHeaderSource = 82,
   /// <summary>
   /// Name, Format, LockAnnot, Password, AddToMru, WritePassword, RecommendReadOnly, EmbedFonts,
   /// NativePictureFormat, FormsData, SaveAsAOCELetter, WriteVersion, VersionDesc, InsertLineBreaks,
   /// AllowSubstitutions, LineEnding,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileSaveAs")]
+  [InteropEnumValue("wdDialogFileSaveAs")]
   FileSaveAs = 84,
   /// <summary>
   /// Title, Subject, Author, Keywords, Comments, FileName, Directory, Template, CreateDate, LastSavedDate,
   /// LastSavedBy, RevisionNumber, EditTime, LastPrintedDate, NumPages, NumWords, NumChars, NumParas, NumLines,
   /// Update, FileSize
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileSummaryInfo")]
+  [InteropEnumValue("wdDialogFileSummaryInfo")]
   FileSummaryInfo = 86,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsTemplates")]
+  [InteropEnumValue("wdDialogToolsTemplates")]
   ToolsTemplates = 87,
   /// <summary>
   /// Background, AppendPrFile, Range, PrToFileName, From, To, Type, NumCopies, Pages, Order, PrintToFile, Collate,
   /// FileName, Printer, OutputPrinter, DuplexPrint, PrintZoomColumn, PrintZoomRow, PrintZoomPaperWidth,
   /// PrintZoomPaperHeight, ZoomPaper
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePrint")]
+  [InteropEnumValue("wdDialogFilePrint")]
   FilePrint = 88,
   /// <summary>
   /// Printer, Options, Network, DoNotSetAsSysDefault
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePrintSetup")]
+  [InteropEnumValue("wdDialogFilePrintSetup")]
   FilePrintSetup = 97,
   /// <summary>
   /// SearchName, SearchPath, Name, SubDir, Title, Author, Keywords, Subject, Options, MatchCase, Text,
   /// PatternMatch, DateSavedFrom, DateSavedTo, SavedBy, DateCreatedFrom, DateCreatedTo, View, SortBy, ListBy,
   /// SelectedFile, Add, Delete, ShowFolders, MatchByte
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileFind")]
+  [InteropEnumValue("wdDialogFileFind")]
   FileFind = 99,
   /// <summary>
   /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
@@ -92,160 +92,160 @@ public enum WordDialog
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
   /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatAddrFonts")]
+  [InteropEnumValue("wdDialogFormatAddrFonts")]
   FormatAddrFonts = 103,
   /// <summary>
   /// IconNumber, Link, DisplayIcon, Class, DataType, IconFileName, Caption, Floating
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditPasteSpecial")]
+  [InteropEnumValue("wdDialogEditPasteSpecial")]
   EditPasteSpecial = 111,
   /// <summary>
   /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
   /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
   /// MatchAlefHamza,
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditFind")]
+  [InteropEnumValue("wdDialogEditFind")]
   EditFind = 112,
   /// <summary>
   /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
   /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
   /// MatchAlefHamza,
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditReplace")]
+  [InteropEnumValue("wdDialogEditReplace")]
   EditReplace = 117,
   /// <summary>
   /// (none)
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditStyle")]
+  [InteropEnumValue("wdDialogEditStyle")]
   EditStyle = 120,
   /// <summary>
   /// UpdateMode, Locked, SavePictureInDoc, UpdateNow, OpenSource, KillLink, Link, Application, Item, FileName,
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditLinks")]
+  [InteropEnumValue("wdDialogEditLinks")]
   EditLinks = 124,
   /// <summary>
   /// Verb
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditObject")]
+  [InteropEnumValue("wdDialogEditObject")]
   EditObject = 125,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTextToTable")]
+  [InteropEnumValue("wdDialogTextToTable")]
   TextToTable = 127,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableToText")]
+  [InteropEnumValue("wdDialogTableToText")]
   TableToText = 128,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableInsertTable")]
+  [InteropEnumValue("wdDialogTableInsertTable")]
   TableInsertTable = 129,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableInsertCells")]
+  [InteropEnumValue("wdDialogTableInsertCells")]
   TableInsertCells = 130,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableInsertRow")]
+  [InteropEnumValue("wdDialogTableInsertRow")]
   TableInsertRow = 131,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableDeleteCells")]
+  [InteropEnumValue("wdDialogTableDeleteCells")]
   TableDeleteCells = 133,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableSplitCells")]
+  [InteropEnumValue("wdDialogTableSplitCells")]
   TableSplitCells = 137,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableRowHeight")]
+  [InteropEnumValue("wdDialogTableRowHeight")]
   TableRowHeight = 142,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableColumnWidth")]
+  [InteropEnumValue("wdDialogTableColumnWidth")]
   TableColumnWidth = 143,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCustomize")]
+  [InteropEnumValue("wdDialogToolsCustomize")]
   ToolsCustomize = 152,
   /// <summary>
   /// Type
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertBreak")]
+  [InteropEnumValue("wdDialogInsertBreak")]
   InsertBreak = 159,
   /// <summary>
   /// Font, Tab, CharNum, CharNumLow, Unicode, Hint
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertSymbol")]
+  [InteropEnumValue("wdDialogInsertSymbol")]
   InsertSymbol = 162,
   /// <summary>
   /// Name, LinkToFile, New, FloatOverText
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertPicture")]
+  [InteropEnumValue("wdDialogInsertPicture")]
   InsertPicture = 163,
   /// <summary>
   /// Name, Range, ConfirmConversions, Link,
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertFile")]
+  [InteropEnumValue("wdDialogInsertFile")]
   InsertFile = 164,
   /// <summary>
   /// DateTimePic, InsertAsField, DbCharField, DateLanguage, CalendarType
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertDateTime")]
+  [InteropEnumValue("wdDialogInsertDateTime")]
   InsertDateTime = 165,
   /// <summary>
   /// Field
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertField")]
+  [InteropEnumValue("wdDialogInsertField")]
   InsertField = 166,
   /// <summary>
   /// MergeField, WordField
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertMergeField")]
+  [InteropEnumValue("wdDialogInsertMergeField")]
   InsertMergeField = 167,
   /// <summary>
   /// Name, SortBy, Add, Delete, Goto, Hidden
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertBookmark")]
+  [InteropEnumValue("wdDialogInsertBookmark")]
   InsertBookmark = 168,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMarkIndexEntry")]
+  [InteropEnumValue("wdDialogMarkIndexEntry")]
   MarkIndexEntry = 169,
   /// <summary>
   /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
   /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
   /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage,
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndex")]
+  [InteropEnumValue("wdDialogInsertIndex")]
   InsertIndex = 170,
   /// <summary>
   /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
   /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
   /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage,
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertTableOfContents")]
+  [InteropEnumValue("wdDialogInsertTableOfContents")]
   InsertTableOfContents = 171,
   /// <summary>
   /// IconNumber, FileName, Link, DisplayIcon, Tab, Class, IconFileName, Caption, Floating
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertObject")]
+  [InteropEnumValue("wdDialogInsertObject")]
   InsertObject = 172,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCreateEnvelope")]
+  [InteropEnumValue("wdDialogToolsCreateEnvelope")]
   ToolsCreateEnvelope = 173,
   /// <summary>
   /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
@@ -253,7 +253,7 @@ public enum WordDialog
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
   /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatFont")]
+  [InteropEnumValue("wdDialogFormatFont")]
   FormatFont = 174,
   /// <summary>
   /// LeftIndent, RightIndent, Before, After, LineSpacingRule, LineSpacing, Alignment, WidowControl, KeepWithNext,
@@ -262,17 +262,17 @@ public enum WordDialog
   /// AdjustRight, CharacterUnitFirstIndent, CharacterUnitRightIndent, LineUnitBefore, LineUnitAfter,
   /// NoSpaceBetweenParagraphsOfSameStyle,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatParagraph")]
+  [InteropEnumValue("wdDialogFormatParagraph")]
   FormatParagraph = 175,
   /// <summary>
   /// SectionStart, VertAlign, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatSectionLayout")]
+  [InteropEnumValue("wdDialogFormatSectionLayout")]
   FormatSectionLayout = 176,
   /// <summary>
   /// Columns, ColumnNo, ColumnWidth, ColumnSpacing, EvenlySpaced, ApplyColsTo, ColLine, StartNewCol, FlowColumnsRtl
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatColumns")]
+  [InteropEnumValue("wdDialogFormatColumns")]
   FormatColumns = 177,
   /// <summary>
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
@@ -281,7 +281,7 @@ public enum WordDialog
   /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment, FolioPrint
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePageSetup")]
+  [InteropEnumValue("wdDialogFilePageSetup")]
   FilePageSetup = 178,
   /// <summary>
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
@@ -290,1139 +290,1139 @@ public enum WordDialog
   /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileDocumentLayout")]
+  [InteropEnumValue("wdDialogFileDocumentLayout")]
   FileDocumentLayout = 178,
   /// <summary>
   /// Position, DefTabs, Align, Leader, Set, Clear,
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatTabs")]
+  [InteropEnumValue("wdDialogFormatTabs")]
   FormatTabs = 179,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatStyle")]
+  [InteropEnumValue("wdDialogFormatStyle")]
   FormatStyle = 180,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStyleFont")]
+  [InteropEnumValue("wdDialogFormatDefineStyleFont")]
   FormatDefineStyleFont = 181,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStylePara")]
+  [InteropEnumValue("wdDialogFormatDefineStylePara")]
   FormatDefineStylePara = 182,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStyleTabs")]
+  [InteropEnumValue("wdDialogFormatDefineStyleTabs")]
   FormatDefineStyleTabs = 183,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStyleFrame")]
+  [InteropEnumValue("wdDialogFormatDefineStyleFrame")]
   FormatDefineStyleFrame = 184,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStyleBorders")]
+  [InteropEnumValue("wdDialogFormatDefineStyleBorders")]
   FormatDefineStyleBorders = 185,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDefineStyleLang")]
+  [InteropEnumValue("wdDialogFormatDefineStyleLang")]
   FormatDefineStyleLang = 186,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatPicture")]
+  [InteropEnumValue("wdDialogFormatPicture")]
   FormatPicture = 187,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsLanguage")]
+  [InteropEnumValue("wdDialogToolsLanguage")]
   ToolsLanguage = 188,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBordersAndShading")]
+  [InteropEnumValue("wdDialogFormatBordersAndShading")]
   FormatBordersAndShading = 189,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatFrame")]
+  [InteropEnumValue("wdDialogFormatFrame")]
   FormatFrame = 190,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsThesaurus")]
+  [InteropEnumValue("wdDialogToolsThesaurus")]
   ToolsThesaurus = 194,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsHyphenation")]
+  [InteropEnumValue("wdDialogToolsHyphenation")]
   ToolsHyphenation = 195,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsBulletsNumbers")]
+  [InteropEnumValue("wdDialogToolsBulletsNumbers")]
   ToolsBulletsNumbers = 196,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsRevisions")]
+  [InteropEnumValue("wdDialogToolsRevisions")]
   ToolsRevisions = 197,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsHighlightChanges")]
+  [InteropEnumValue("wdDialogToolsHighlightChanges")]
   ToolsHighlightChanges = 197,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCompareDocuments")]
+  [InteropEnumValue("wdDialogToolsCompareDocuments")]
   ToolsCompareDocuments = 198,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableSort")]
+  [InteropEnumValue("wdDialogTableSort")]
   TableSort = 199,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsGeneral")]
+  [InteropEnumValue("wdDialogToolsOptionsGeneral")]
   ToolsOptionsGeneral = 203,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsView")]
+  [InteropEnumValue("wdDialogToolsOptionsView")]
   ToolsOptionsView = 204,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAdvancedSettings")]
+  [InteropEnumValue("wdDialogToolsAdvancedSettings")]
   ToolsAdvancedSettings = 206,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsPrint")]
+  [InteropEnumValue("wdDialogToolsOptionsPrint")]
   ToolsOptionsPrint = 208,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsSave")]
+  [InteropEnumValue("wdDialogToolsOptionsSave")]
   ToolsOptionsSave = 209,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsSpellingAndGrammar")]
+  [InteropEnumValue("wdDialogToolsOptionsSpellingAndGrammar")]
   ToolsOptionsSpellingAndGrammar = 211,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsUserInfo")]
+  [InteropEnumValue("wdDialogToolsOptionsUserInfo")]
   ToolsOptionsUserInfo = 213,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsMacroRecord")]
+  [InteropEnumValue("wdDialogToolsMacroRecord")]
   ToolsMacroRecord = 214,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsMacro")]
+  [InteropEnumValue("wdDialogToolsMacro")]
   ToolsMacro = 215,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWindowActivate")]
+  [InteropEnumValue("wdDialogWindowActivate")]
   WindowActivate = 220,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatRetAddrFonts")]
+  [InteropEnumValue("wdDialogFormatRetAddrFonts")]
   FormatRetAddrFonts = 221,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOrganizer")]
+  [InteropEnumValue("wdDialogOrganizer")]
   Organizer = 222,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsEdit")]
+  [InteropEnumValue("wdDialogToolsOptionsEdit")]
   ToolsOptionsEdit = 224,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsFileLocations")]
+  [InteropEnumValue("wdDialogToolsOptionsFileLocations")]
   ToolsOptionsFileLocations = 225,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsWordCount")]
+  [InteropEnumValue("wdDialogToolsWordCount")]
   ToolsWordCount = 228,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogControlRun")]
+  [InteropEnumValue("wdDialogControlRun")]
   ControlRun = 235,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertPageNumbers")]
+  [InteropEnumValue("wdDialogInsertPageNumbers")]
   InsertPageNumbers = 294,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatPageNumber")]
+  [InteropEnumValue("wdDialogFormatPageNumber")]
   FormatPageNumber = 298,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogCopyFile")]
+  [InteropEnumValue("wdDialogCopyFile")]
   CopyFile = 300,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatChangeCase")]
+  [InteropEnumValue("wdDialogFormatChangeCase")]
   FormatChangeCase = 322,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogUpdateTOC")]
+  [InteropEnumValue("wdDialogUpdateTOC")]
   UpdateTOC = 331,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertDatabase")]
+  [InteropEnumValue("wdDialogInsertDatabase")]
   InsertDatabase = 341,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableFormula")]
+  [InteropEnumValue("wdDialogTableFormula")]
   TableFormula = 348,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormFieldOptions")]
+  [InteropEnumValue("wdDialogFormFieldOptions")]
   FormFieldOptions = 353,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertCaption")]
+  [InteropEnumValue("wdDialogInsertCaption")]
   InsertCaption = 357,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertCaptionNumbering")]
+  [InteropEnumValue("wdDialogInsertCaptionNumbering")]
   InsertCaptionNumbering = 358,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertAutoCaption")]
+  [InteropEnumValue("wdDialogInsertAutoCaption")]
   InsertAutoCaption = 359,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormFieldHelp")]
+  [InteropEnumValue("wdDialogFormFieldHelp")]
   FormFieldHelp = 361,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertCrossReference")]
+  [InteropEnumValue("wdDialogInsertCrossReference")]
   InsertCrossReference = 367,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertFootnote")]
+  [InteropEnumValue("wdDialogInsertFootnote")]
   InsertFootnote = 370,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogNoteOptions")]
+  [InteropEnumValue("wdDialogNoteOptions")]
   NoteOptions = 373,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrect")]
+  [InteropEnumValue("wdDialogToolsAutoCorrect")]
   ToolsAutoCorrect = 378,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTrackChanges")]
+  [InteropEnumValue("wdDialogToolsOptionsTrackChanges")]
   ToolsOptionsTrackChanges = 386,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogConvertObject")]
+  [InteropEnumValue("wdDialogConvertObject")]
   ConvertObject = 392,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertAddCaption")]
+  [InteropEnumValue("wdDialogInsertAddCaption")]
   InsertAddCaption = 402,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogConnect")]
+  [InteropEnumValue("wdDialogConnect")]
   Connect = 420,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCustomizeKeyboard")]
+  [InteropEnumValue("wdDialogToolsCustomizeKeyboard")]
   ToolsCustomizeKeyboard = 432,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCustomizeMenus")]
+  [InteropEnumValue("wdDialogToolsCustomizeMenus")]
   ToolsCustomizeMenus = 433,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsMergeDocuments")]
+  [InteropEnumValue("wdDialogToolsMergeDocuments")]
   ToolsMergeDocuments = 435,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMarkTableOfContentsEntry")]
+  [InteropEnumValue("wdDialogMarkTableOfContentsEntry")]
   MarkTableOfContentsEntry = 442,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileMacPageSetupGX")]
+  [InteropEnumValue("wdDialogFileMacPageSetupGX")]
   FileMacPageSetupGX = 444,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFilePrintOneCopy")]
+  [InteropEnumValue("wdDialogFilePrintOneCopy")]
   FilePrintOneCopy = 445,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditFrame")]
+  [InteropEnumValue("wdDialogEditFrame")]
   EditFrame = 458,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMarkCitation")]
+  [InteropEnumValue("wdDialogMarkCitation")]
   MarkCitation = 463,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableOfContentsOptions")]
+  [InteropEnumValue("wdDialogTableOfContentsOptions")]
   TableOfContentsOptions = 470,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertTableOfAuthorities")]
+  [InteropEnumValue("wdDialogInsertTableOfAuthorities")]
   InsertTableOfAuthorities = 471,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertTableOfFigures")]
+  [InteropEnumValue("wdDialogInsertTableOfFigures")]
   InsertTableOfFigures = 472,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertIndexAndTables")]
+  [InteropEnumValue("wdDialogInsertIndexAndTables")]
   InsertIndexAndTables = 473,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertFormField")]
+  [InteropEnumValue("wdDialogInsertFormField")]
   InsertFormField = 483,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDropCap")]
+  [InteropEnumValue("wdDialogFormatDropCap")]
   FormatDropCap = 488,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCreateLabels")]
+  [InteropEnumValue("wdDialogToolsCreateLabels")]
   ToolsCreateLabels = 489,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsProtectDocument")]
+  [InteropEnumValue("wdDialogToolsProtectDocument")]
   ToolsProtectDocument = 503,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatStyleGallery")]
+  [InteropEnumValue("wdDialogFormatStyleGallery")]
   FormatStyleGallery = 505,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAcceptRejectChanges")]
+  [InteropEnumValue("wdDialogToolsAcceptRejectChanges")]
   ToolsAcceptRejectChanges = 506,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogHelpWordPerfectHelpOptions")]
+  [InteropEnumValue("wdDialogHelpWordPerfectHelpOptions")]
   HelpWordPerfectHelpOptions = 511,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsUnprotectDocument")]
+  [InteropEnumValue("wdDialogToolsUnprotectDocument")]
   ToolsUnprotectDocument = 521,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsCompatibility")]
+  [InteropEnumValue("wdDialogToolsOptionsCompatibility")]
   ToolsOptionsCompatibility = 525,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableOfCaptionsOptions")]
+  [InteropEnumValue("wdDialogTableOfCaptionsOptions")]
   TableOfCaptionsOptions = 551,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableAutoFormat")]
+  [InteropEnumValue("wdDialogTableAutoFormat")]
   TableAutoFormat = 563,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeFindRecord")]
+  [InteropEnumValue("wdDialogMailMergeFindRecord")]
   MailMergeFindRecord = 569,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogReviewAfmtRevisions")]
+  [InteropEnumValue("wdDialogReviewAfmtRevisions")]
   ReviewAfmtRevisions = 570,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogViewZoom")]
+  [InteropEnumValue("wdDialogViewZoom")]
   ViewZoom = 577,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsProtectSection")]
+  [InteropEnumValue("wdDialogToolsProtectSection")]
   ToolsProtectSection = 578,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFontSubstitution")]
+  [InteropEnumValue("wdDialogFontSubstitution")]
   FontSubstitution = 581,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertSubdocument")]
+  [InteropEnumValue("wdDialogInsertSubdocument")]
   InsertSubdocument = 583,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogNewToolbar")]
+  [InteropEnumValue("wdDialogNewToolbar")]
   NewToolbar = 586,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsEnvelopesAndLabels")]
+  [InteropEnumValue("wdDialogToolsEnvelopesAndLabels")]
   ToolsEnvelopesAndLabels = 607,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatCallout")]
+  [InteropEnumValue("wdDialogFormatCallout")]
   FormatCallout = 610,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableFormatCell")]
+  [InteropEnumValue("wdDialogTableFormatCell")]
   TableFormatCell = 612,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCustomizeMenuBar")]
+  [InteropEnumValue("wdDialogToolsCustomizeMenuBar")]
   ToolsCustomizeMenuBar = 615,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileRoutingSlip")]
+  [InteropEnumValue("wdDialogFileRoutingSlip")]
   FileRoutingSlip = 624,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditTOACategory")]
+  [InteropEnumValue("wdDialogEditTOACategory")]
   EditTOACategory = 625,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsManageFields")]
+  [InteropEnumValue("wdDialogToolsManageFields")]
   ToolsManageFields = 631,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogDrawSnapToGrid")]
+  [InteropEnumValue("wdDialogDrawSnapToGrid")]
   DrawSnapToGrid = 633,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogDrawAlign")]
+  [InteropEnumValue("wdDialogDrawAlign")]
   DrawAlign = 634,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeCreateDataSource")]
+  [InteropEnumValue("wdDialogMailMergeCreateDataSource")]
   MailMergeCreateDataSource = 642,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeCreateHeaderSource")]
+  [InteropEnumValue("wdDialogMailMergeCreateHeaderSource")]
   MailMergeCreateHeaderSource = 643,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMerge")]
+  [InteropEnumValue("wdDialogMailMerge")]
   MailMerge = 676,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeCheck")]
+  [InteropEnumValue("wdDialogMailMergeCheck")]
   MailMergeCheck = 677,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeHelper")]
+  [InteropEnumValue("wdDialogMailMergeHelper")]
   MailMergeHelper = 680,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeQueryOptions")]
+  [InteropEnumValue("wdDialogMailMergeQueryOptions")]
   MailMergeQueryOptions = 681,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileMacPageSetup")]
+  [InteropEnumValue("wdDialogFileMacPageSetup")]
   FileMacPageSetup = 685,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogListCommands")]
+  [InteropEnumValue("wdDialogListCommands")]
   ListCommands = 723,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditCreatePublisher")]
+  [InteropEnumValue("wdDialogEditCreatePublisher")]
   EditCreatePublisher = 732,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditSubscribeTo")]
+  [InteropEnumValue("wdDialogEditSubscribeTo")]
   EditSubscribeTo = 733,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditPublishOptions")]
+  [InteropEnumValue("wdDialogEditPublishOptions")]
   EditPublishOptions = 735,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditSubscribeOptions")]
+  [InteropEnumValue("wdDialogEditSubscribeOptions")]
   EditSubscribeOptions = 736,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileMacCustomPageSetupGX")]
+  [InteropEnumValue("wdDialogFileMacCustomPageSetupGX")]
   FileMacCustomPageSetupGX = 737,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsTypography")]
+  [InteropEnumValue("wdDialogToolsOptionsTypography")]
   ToolsOptionsTypography = 739,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoCorrectExceptions")]
+  [InteropEnumValue("wdDialogToolsAutoCorrectExceptions")]
   ToolsAutoCorrectExceptions = 762,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsAutoFormatAsYouType")]
+  [InteropEnumValue("wdDialogToolsOptionsAutoFormatAsYouType")]
   ToolsOptionsAutoFormatAsYouType = 778,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeUseAddressBook")]
+  [InteropEnumValue("wdDialogMailMergeUseAddressBook")]
   MailMergeUseAddressBook = 779,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsHangulHanjaConversion")]
+  [InteropEnumValue("wdDialogToolsHangulHanjaConversion")]
   ToolsHangulHanjaConversion = 784,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsFuzzy")]
+  [InteropEnumValue("wdDialogToolsOptionsFuzzy")]
   ToolsOptionsFuzzy = 790,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditGoToOld")]
+  [InteropEnumValue("wdDialogEditGoToOld")]
   EditGoToOld = 811,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertNumber")]
+  [InteropEnumValue("wdDialogInsertNumber")]
   InsertNumber = 812,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLetterWizard")]
+  [InteropEnumValue("wdDialogLetterWizard")]
   LetterWizard = 821,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatBulletsAndNumbering")]
+  [InteropEnumValue("wdDialogFormatBulletsAndNumbering")]
   FormatBulletsAndNumbering = 824,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsSpellingAndGrammar")]
+  [InteropEnumValue("wdDialogToolsSpellingAndGrammar")]
   ToolsSpellingAndGrammar = 828,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsCreateDirectory")]
+  [InteropEnumValue("wdDialogToolsCreateDirectory")]
   ToolsCreateDirectory = 833,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableWrapping")]
+  [InteropEnumValue("wdDialogTableWrapping")]
   TableWrapping = 854,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatTheme")]
+  [InteropEnumValue("wdDialogFormatTheme")]
   FormatTheme = 855,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableProperties")]
+  [InteropEnumValue("wdDialogTableProperties")]
   TableProperties = 861,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEmailOptions")]
+  [InteropEnumValue("wdDialogEmailOptions")]
   EmailOptions = 863,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogCreateAutoText")]
+  [InteropEnumValue("wdDialogCreateAutoText")]
   CreateAutoText = 872,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoSummarize")]
+  [InteropEnumValue("wdDialogToolsAutoSummarize")]
   ToolsAutoSummarize = 874,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsGrammarSettings")]
+  [InteropEnumValue("wdDialogToolsGrammarSettings")]
   ToolsGrammarSettings = 885,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditGoTo")]
+  [InteropEnumValue("wdDialogEditGoTo")]
   EditGoTo = 896,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogWebOptions")]
+  [InteropEnumValue("wdDialogWebOptions")]
   WebOptions = 898,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsAutoManager")]
+  [InteropEnumValue("wdDialogToolsAutoManager")]
   ToolsAutoManager = 915,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertHyperlink")]
+  [InteropEnumValue("wdDialogInsertHyperlink")]
   InsertHyperlink = 925,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileVersions")]
+  [InteropEnumValue("wdDialogFileVersions")]
   FileVersions = 945,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsAutoFormat")]
+  [InteropEnumValue("wdDialogToolsOptionsAutoFormat")]
   ToolsOptionsAutoFormat = 959,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatDrawingObject")]
+  [InteropEnumValue("wdDialogFormatDrawingObject")]
   FormatDrawingObject = 960,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptions")]
+  [InteropEnumValue("wdDialogToolsOptions")]
   ToolsOptions = 974,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFitText")]
+  [InteropEnumValue("wdDialogFitText")]
   FitText = 983,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogEditAutoText")]
+  [InteropEnumValue("wdDialogEditAutoText")]
   EditAutoText = 985,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogPhoneticGuide")]
+  [InteropEnumValue("wdDialogPhoneticGuide")]
   PhoneticGuide = 986,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsDictionary")]
+  [InteropEnumValue("wdDialogToolsDictionary")]
   ToolsDictionary = 989,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileSaveVersion")]
+  [InteropEnumValue("wdDialogFileSaveVersion")]
   FileSaveVersion = 1007,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsBidi")]
+  [InteropEnumValue("wdDialogToolsOptionsBidi")]
   ToolsOptionsBidi = 1029,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFrameSetProperties")]
+  [InteropEnumValue("wdDialogFrameSetProperties")]
   FrameSetProperties = 1074,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableTableOptions")]
+  [InteropEnumValue("wdDialogTableTableOptions")]
   TableTableOptions = 1080,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTableCellOptions")]
+  [InteropEnumValue("wdDialogTableCellOptions")]
   TableCellOptions = 1081,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogIMESetDefault")]
+  [InteropEnumValue("wdDialogIMESetDefault")]
   IMESetDefault = 1094,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFileNew2007")]
+  [InteropEnumValue("wdDialogFileNew2007")]
   FileNew2007 = 1116,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogConsistencyChecker")]
+  [InteropEnumValue("wdDialogConsistencyChecker")]
   ConsistencyChecker = 1121,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTCSCTranslator")]
+  [InteropEnumValue("wdDialogTCSCTranslator")]
   TCSCTranslator = 1156,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogHorizontalInVertical")]
+  [InteropEnumValue("wdDialogHorizontalInVertical")]
   HorizontalInVertical = 1160,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogTwoLinesInOne")]
+  [InteropEnumValue("wdDialogTwoLinesInOne")]
   TwoLinesInOne = 1161,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatEncloseCharacters")]
+  [InteropEnumValue("wdDialogFormatEncloseCharacters")]
   FormatEncloseCharacters = 1162,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormatStylesCustom")]
+  [InteropEnumValue("wdDialogFormatStylesCustom")]
   FormatStylesCustom = 1248,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogCSSLinks")]
+  [InteropEnumValue("wdDialogCSSLinks")]
   CSSLinks = 1261,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeFieldMapping")]
+  [InteropEnumValue("wdDialogMailMergeFieldMapping")]
   MailMergeFieldMapping = 1304,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertAddressBlock")]
+  [InteropEnumValue("wdDialogMailMergeInsertAddressBlock")]
   MailMergeInsertAddressBlock = 1305,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertGreetingLine")]
+  [InteropEnumValue("wdDialogMailMergeInsertGreetingLine")]
   MailMergeInsertGreetingLine = 1306,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertFields")]
+  [InteropEnumValue("wdDialogMailMergeInsertFields")]
   MailMergeInsertFields = 1307,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeRecipients")]
+  [InteropEnumValue("wdDialogMailMergeRecipients")]
   MailMergeRecipients = 1308,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertWebComponent")]
+  [InteropEnumValue("wdDialogInsertWebComponent")]
   InsertWebComponent = 1324,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeFindRecipient")]
+  [InteropEnumValue("wdDialogMailMergeFindRecipient")]
   MailMergeFindRecipient = 1326,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeSetDocumentType")]
+  [InteropEnumValue("wdDialogMailMergeSetDocumentType")]
   MailMergeSetDocumentType = 1339,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsEditCopyPaste")]
+  [InteropEnumValue("wdDialogToolsOptionsEditCopyPaste")]
   ToolsOptionsEditCopyPaste = 1356,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsSecurity")]
+  [InteropEnumValue("wdDialogToolsOptionsSecurity")]
   ToolsOptionsSecurity = 1361,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogSearch")]
+  [InteropEnumValue("wdDialogSearch")]
   Search = 1363,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogLabelOptions")]
+  [InteropEnumValue("wdDialogLabelOptions")]
   LabelOptions = 1367,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogShowRepairs")]
+  [InteropEnumValue("wdDialogShowRepairs")]
   ShowRepairs = 1381,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogToolsOptionsSmartTag")]
+  [InteropEnumValue("wdDialogToolsOptionsSmartTag")]
   ToolsOptionsSmartTag = 1395,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogSchemaLibrary")]
+  [InteropEnumValue("wdDialogSchemaLibrary")]
   SchemaLibrary = 1417,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogXMLOptions")]
+  [InteropEnumValue("wdDialogXMLOptions")]
   XMLOptions = 1425,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogFormattingRestrictions")]
+  [InteropEnumValue("wdDialogFormattingRestrictions")]
   FormattingRestrictions = 1427,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMyPermission")]
+  [InteropEnumValue("wdDialogMyPermission")]
   MyPermission = 1437,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogXMLElementAttributes")]
+  [InteropEnumValue("wdDialogXMLElementAttributes")]
   XMLElementAttributes = 1460,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogPermission")]
+  [InteropEnumValue("wdDialogPermission")]
   Permission = 1469,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogDocumentInspector")]
+  [InteropEnumValue("wdDialogDocumentInspector")]
   DocumentInspector = 1482,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogSourceManager")]
+  [InteropEnumValue("wdDialogSourceManager")]
   SourceManager = 1920,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogCreateSource")]
+  [InteropEnumValue("wdDialogCreateSource")]
   CreateSource = 1922,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogStyleManagement")]
+  [InteropEnumValue("wdDialogStyleManagement")]
   StyleManagement = 1948,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogBuildingBlockOrganizer")]
+  [InteropEnumValue("wdDialogBuildingBlockOrganizer")]
   BuildingBlockOrganizer = 2067,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertSource")]
+  [InteropEnumValue("wdDialogInsertSource")]
   InsertSource = 2120,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogOMathRecognizedFunctions")]
+  [InteropEnumValue("wdDialogOMathRecognizedFunctions")]
   OMathRecognizedFunctions = 2165,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogInsertPlaceholder")]
+  [InteropEnumValue("wdDialogInsertPlaceholder")]
   InsertPlaceholder = 2348,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogExportAsFixedFormat")]
+  [InteropEnumValue("wdDialogExportAsFixedFormat")]
   ExportAsFixedFormat = 2349,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogContentControlProperties")]
+  [InteropEnumValue("wdDialogContentControlProperties")]
   ContentControlProperties = 2394,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogCompatibilityChecker")]
+  [InteropEnumValue("wdDialogCompatibilityChecker")]
   CompatibilityChecker = 2439,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertAsk")]
+  [InteropEnumValue("wdDialogMailMergeInsertAsk")]
   MailMergeInsertAsk = 4047,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertFillIn")]
+  [InteropEnumValue("wdDialogMailMergeInsertFillIn")]
   MailMergeInsertFillIn = 4048,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertIf")]
+  [InteropEnumValue("wdDialogMailMergeInsertIf")]
   MailMergeInsertIf = 4049,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertNextIf")]
+  [InteropEnumValue("wdDialogMailMergeInsertNextIf")]
   MailMergeInsertNextIf = 4053,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertSet")]
+  [InteropEnumValue("wdDialogMailMergeInsertSet")]
   MailMergeInsertSet = 4054,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [WordInteropEnumValue("wdDialogMailMergeInsertSkipIf")]
+  [InteropEnumValue("wdDialogMailMergeInsertSkipIf")]
   MailMergeInsertSkipIf = 4055
 }

@@ -2,19 +2,19 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageOrientationValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.PageOrientationValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues))]
 public enum PageOrientation
 {
   /// <summary>
   ///   Portrait Mode.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageOrientationValues.Portrait))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues.Portrait))]
   Portrait = 1,
 
   /// <summary>
   ///   Landscape Mode.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageOrientationValues.Landscape))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues.Landscape))]
   Landscape
 }

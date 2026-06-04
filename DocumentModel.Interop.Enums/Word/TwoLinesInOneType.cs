@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdtwolinesinonetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTwoLinesInOneType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTwoLinesInOneType")]
 public enum TwoLinesInOneType
 {
   /// <summary>
   /// Restore the two lines of text written into one to two separate lines.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneNone")]
+  [InteropEnumValue("wdTwoLinesInOneNone")]
   None = 0,
   /// <summary>
   /// Use no enclosing character.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneNoBrackets")]
+  [InteropEnumValue("wdTwoLinesInOneNoBrackets")]
   NoBrackets = 1,
   /// <summary>
   /// Enclose the lines using parentheses.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneParentheses")]
+  [InteropEnumValue("wdTwoLinesInOneParentheses")]
   Parentheses = 2,
   /// <summary>
   /// Enclose the lines using square brackets.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneSquareBrackets")]
+  [InteropEnumValue("wdTwoLinesInOneSquareBrackets")]
   SquareBrackets = 3,
   /// <summary>
   /// Enclose the lines using angle brackets.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneAngleBrackets")]
+  [InteropEnumValue("wdTwoLinesInOneAngleBrackets")]
   AngleBrackets = 4,
   /// <summary>
   /// Enclose the lines using curly brackets.
   /// </summary>
-  [WordInteropEnumValue("wdTwoLinesInOneCurlyBrackets")]
+  [InteropEnumValue("wdTwoLinesInOneCurlyBrackets")]
   CurlyBrackets = 5
 }

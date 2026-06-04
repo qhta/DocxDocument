@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcastcapabilities?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBroadcastCapabilities")]
+[InteropEnumType("Microsoft.Office.Core.MsoBroadcastCapabilities")]
 public enum BroadcastCapabilities
 {
   /// <summary>
   /// The size of the file being broadcasted is limited.
   /// </summary>
-  [OfficeInteropEnumValue("BroadcastCapFileSizeLimited")]
+  [InteropEnumValue("BroadcastCapFileSizeLimited")]
   FileSizeLimited = 1,
   /// <summary>
   /// The presenters and attendees can take shared notes.
   /// </summary>
-  [OfficeInteropEnumValue("BroadcastCapSupportsMeetingNotes")]
+  [InteropEnumValue("BroadcastCapSupportsMeetingNotes")]
   SupportsMeetingNotes = 2,
   /// <summary>
   /// The presenters and attendees can make updates to the file during the broadcast.
   /// </summary>
-  [OfficeInteropEnumValue("BroadcastCapSupportsUpdateDoc")]
+  [InteropEnumValue("BroadcastCapSupportsUpdateDoc")]
   SupportsUpdateDoc = 4
 }

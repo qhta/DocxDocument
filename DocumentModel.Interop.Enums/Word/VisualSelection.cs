@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdvisualselection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdVisualSelection")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdVisualSelection")]
 public enum VisualSelection
 {
   /// <summary>
   /// All selected lines are the same width.
   /// </summary>
-  [WordInteropEnumValue("wdVisualSelectionBlock")]
+  [InteropEnumValue("wdVisualSelectionBlock")]
   Block = 0,
   /// <summary>
   /// The selection wraps from line to line.
   /// </summary>
-  [WordInteropEnumValue("wdVisualSelectionContinuous")]
+  [InteropEnumValue("wdVisualSelectionContinuous")]
   Continuous = 1
 }

@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylesort?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdStyleSort")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdStyleSort")]
 public enum StyleSort
 {
   /// <summary>
   /// Sorts styles alphabetically based on the name of the style.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSortByName")]
+  [InteropEnumValue("wdStyleSortByName")]
   ByName = 0,
   /// <summary>
   /// Sorts styles based on whether they are recommended for use.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSortRecommended")]
+  [InteropEnumValue("wdStyleSortRecommended")]
   Recommended = 1,
   /// <summary>
   /// Sorts styles based on the name of the font used.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSortByFont")]
+  [InteropEnumValue("wdStyleSortByFont")]
   ByFont = 2,
   /// <summary>
   /// Sorts styles based on the item indicated in the Sort Styles Based On option.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSortByBasedOn")]
+  [InteropEnumValue("wdStyleSortByBasedOn")]
   ByBasedOn = 3,
   /// <summary>
   /// Sorts styles based on whether the style is a paragraph style or character style.
   /// </summary>
-  [WordInteropEnumValue("wdStyleSortByType")]
+  [InteropEnumValue("wdStyleSortByType")]
   ByType = 4
 }

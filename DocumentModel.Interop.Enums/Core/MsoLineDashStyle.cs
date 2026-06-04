@@ -6,72 +6,72 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinedashstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoLineDashStyle")]
+[InteropEnumType("Microsoft.Office.Core.MsoLineDashStyle")]
 public enum LineDashStyle
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineDashStyleMixed")]
+  [InteropEnumValue("msoLineDashStyleMixed")]
   DashStyleMixed = -2,
   /// <summary>
   /// Line is solid.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineSolid")]
+  [InteropEnumValue("msoLineSolid")]
   Solid = 1,
   /// <summary>
   /// Line is made up of square dots.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineSquareDot")]
+  [InteropEnumValue("msoLineSquareDot")]
   SquareDot = 2,
   /// <summary>
   /// Line is made up of round dots.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineRoundDot")]
+  [InteropEnumValue("msoLineRoundDot")]
   RoundDot = 3,
   /// <summary>
   /// Line consists of dashes only.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineDash")]
+  [InteropEnumValue("msoLineDash")]
   Dash = 4,
   /// <summary>
   /// Line is a dash-dot pattern.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineDashDot")]
+  [InteropEnumValue("msoLineDashDot")]
   DashDot = 5,
   /// <summary>
   /// Line is a dash-dot-dot pattern.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineDashDotDot")]
+  [InteropEnumValue("msoLineDashDotDot")]
   DashDotDot = 6,
   /// <summary>
   /// Line consists of long dashes.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineLongDash")]
+  [InteropEnumValue("msoLineLongDash")]
   LongDash = 7,
   /// <summary>
   /// Line is a long dash-dot pattern.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineLongDashDot")]
+  [InteropEnumValue("msoLineLongDashDot")]
   LongDashDot = 8,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineLongDashDotDot")]
+  [InteropEnumValue("msoLineLongDashDotDot")]
   LongDashDotDot = 9,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineSysDash")]
+  [InteropEnumValue("msoLineSysDash")]
   SysDash = 10,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoLineSysDot")]
+  [InteropEnumValue("msoLineSysDot")]
   SysDot = 11,
   /// <summary>
   /// public enum class LineDashStyle
   /// </summary>
-  [OfficeInteropEnumValue("msoLineSysDashDot")]
+  [InteropEnumValue("msoLineSysDashDot")]
   SysDashDot = 12
 }

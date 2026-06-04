@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpastedatatype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPasteDataType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPasteDataType")]
 public enum PasteDataType
 {
   /// <summary>
   /// OLE object.
   /// </summary>
-  [WordInteropEnumValue("wdPasteOLEObject")]
+  [InteropEnumValue("wdPasteOLEObject")]
   OLEObject = 0,
   /// <summary>
   /// Rich Text Format (RTF).
   /// </summary>
-  [WordInteropEnumValue("wdPasteRTF")]
+  [InteropEnumValue("wdPasteRTF")]
   RTF = 1,
   /// <summary>
   /// Text.
   /// </summary>
-  [WordInteropEnumValue("wdPasteText")]
+  [InteropEnumValue("wdPasteText")]
   Text = 2,
   /// <summary>
   /// Metafile picture.
   /// </summary>
-  [WordInteropEnumValue("wdPasteMetafilePicture")]
+  [InteropEnumValue("wdPasteMetafilePicture")]
   MetafilePicture = 3,
   /// <summary>
   /// Bitmap.
   /// </summary>
-  [WordInteropEnumValue("wdPasteBitmap")]
+  [InteropEnumValue("wdPasteBitmap")]
   Bitmap = 4,
   /// <summary>
   /// Device-independent bitmap.
   /// </summary>
-  [WordInteropEnumValue("wdPasteDeviceIndependentBitmap")]
+  [InteropEnumValue("wdPasteDeviceIndependentBitmap")]
   DeviceIndependentBitmap = 5,
   /// <summary>
   /// Hyperlink.
   /// </summary>
-  [WordInteropEnumValue("wdPasteHyperlink")]
+  [InteropEnumValue("wdPasteHyperlink")]
   Hyperlink = 7,
   /// <summary>
   /// Shape.
   /// </summary>
-  [WordInteropEnumValue("wdPasteShape")]
+  [InteropEnumValue("wdPasteShape")]
   Shape = 8,
   /// <summary>
   /// Enhanced metafile.
   /// </summary>
-  [WordInteropEnumValue("wdPasteEnhancedMetafile")]
+  [InteropEnumValue("wdPasteEnhancedMetafile")]
   EnhancedMetafile = 9,
   /// <summary>
   /// HTML.
   /// </summary>
-  [WordInteropEnumValue("wdPasteHTML")]
+  [InteropEnumValue("wdPasteHTML")]
   HTML = 10
 }

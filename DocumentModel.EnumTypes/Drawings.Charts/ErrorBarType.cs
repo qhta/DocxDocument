@@ -4,8 +4,8 @@
 /// Defines the ErrorBar enumeration.
 /// Used in types such as ChartStyle, ErrorBar, IErrorBars.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.ErrorBarValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues))]
 public enum ErrorPlusMinus
 {
   /// <summary>

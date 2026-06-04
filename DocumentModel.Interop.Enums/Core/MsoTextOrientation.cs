@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoTextOrientation")]
+[InteropEnumType("Microsoft.Office.Core.MsoTextOrientation")]
 public enum TextOrientation
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationMixed")]
+  [InteropEnumValue("msoTextOrientationMixed")]
   Mixed = -2,
   /// <summary>
   /// Horizontal.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationHorizontal")]
+  [InteropEnumValue("msoTextOrientationHorizontal")]
   Horizontal = 1,
   /// <summary>
   /// Upward.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationUpward")]
+  [InteropEnumValue("msoTextOrientationUpward")]
   Upward = 2,
   /// <summary>
   /// Downward.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationDownward")]
+  [InteropEnumValue("msoTextOrientationDownward")]
   Downward = 3,
   /// <summary>
   /// Vertical as required for Far East language support.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationVerticalFarEast")]
+  [InteropEnumValue("msoTextOrientationVerticalFarEast")]
   VerticalFarEast = 4,
   /// <summary>
   /// Vertical.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationVertical")]
+  [InteropEnumValue("msoTextOrientationVertical")]
   Vertical = 5,
   /// <summary>
   /// Horizontal and rotated as required for Far East language support.
   /// </summary>
-  [OfficeInteropEnumValue("msoTextOrientationHorizontalRotatedFarEast")]
+  [InteropEnumValue("msoTextOrientationHorizontalRotatedFarEast")]
   HorizontalRotatedFarEast = 6
 }

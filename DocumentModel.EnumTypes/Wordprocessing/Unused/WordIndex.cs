@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as DocumentCleaner.TableTools, Program, ArrayVariant.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum WordIndex
 {
   /// <summary>Standard index</summary>

@@ -4,8 +4,8 @@
 /// Defines the DisplayBlanksAs enumeration.
 /// Used in types such as IChart, ChartConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.DisplayBlanksAsValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues))]
 public enum DisplayBlanksAs
 {
   /// <summary>

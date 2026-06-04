@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprotectiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdProtectionType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdProtectionType")]
 public enum ProtectionType
 {
   /// <summary>
   /// Allow only revisions to be made to existing content.
   /// </summary>
-  [WordInteropEnumValue("wdAllowOnlyRevisions")]
+  [InteropEnumValue("wdAllowOnlyRevisions")]
   AllowOnlyRevisions = 0,
   /// <summary>
   /// Allow only comments to be added to the document.
   /// </summary>
-  [WordInteropEnumValue("wdAllowOnlyComments")]
+  [InteropEnumValue("wdAllowOnlyComments")]
   AllowOnlyComments = 1,
   /// <summary>
   /// Allow content to be added to the document only through form fields.
   /// </summary>
-  [WordInteropEnumValue("wdAllowOnlyFormFields")]
+  [InteropEnumValue("wdAllowOnlyFormFields")]
   AllowOnlyFormFields = 2,
   /// <summary>
   /// Allow read-only access to the document.
   /// </summary>
-  [WordInteropEnumValue("wdAllowOnlyReading")]
+  [InteropEnumValue("wdAllowOnlyReading")]
   AllowOnlyReading = 3,
   /// <summary>
   /// Do not apply protection to the document.
   /// </summary>
-  [WordInteropEnumValue("wdNoProtection")]
+  [InteropEnumValue("wdNoProtection")]
   NoProtection = -1
 }

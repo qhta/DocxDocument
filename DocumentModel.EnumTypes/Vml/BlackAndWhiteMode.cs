@@ -2,64 +2,64 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Black And White Modes
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.BlackAndWhiteModeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues))]
 public enum BlackAndWhiteMode
 {
   /// <summary>
   ///   Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Color))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.Color))]
   Color = 1,
 
   /// <summary>
   ///   Automatic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Auto))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.Auto))]
   Auto,
   /// <summary>
   ///   Grayscale.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.GrayScale))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.GrayScale))]
   GrayScale,
   /// <summary>
   ///   Light grayscale.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.LightGrayScale))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.LightGrayScale))]
   LightGrayScale,
   /// <summary>
   ///   Inverse Grayscale.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.InverseGray))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.InverseGray))]
   InverseGray,
   /// <summary>
   ///   Gray Outlines.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.GrayOutline))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.GrayOutline))]
   GrayOutline,
   /// <summary>
   ///   Black And White.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.HighContrast))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.HighContrast))]
   HighContrast,
   /// <summary>
   ///   Black.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Black))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.Black))]
   Black,
   /// <summary>
   ///   White.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.White))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.White))]
   White,
   /// <summary>
   ///   Do Not Show.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Undrawn))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.Undrawn))]
   Undrawn,
   /// <summary>
   ///   Black Text And Lines.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.BlackTextAndLines))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues.BlackTextAndLines))]
   BlackTextAndLines
 }

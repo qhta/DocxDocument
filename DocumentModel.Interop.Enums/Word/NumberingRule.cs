@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberingrule?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNumberingRule")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNumberingRule")]
 public enum NumberingRule
 {
   /// <summary>
   /// Numbers are assigned continuously.
   /// </summary>
-  [WordInteropEnumValue("wdRestartContinuous")]
+  [InteropEnumValue("wdRestartContinuous")]
   Continuous = 0,
   /// <summary>
   /// Numbers are reset for each section.
   /// </summary>
-  [WordInteropEnumValue("wdRestartSection")]
+  [InteropEnumValue("wdRestartSection")]
   Section = 1,
   /// <summary>
   /// Numbers are reset for each page.
   /// </summary>
-  [WordInteropEnumValue("wdRestartPage")]
+  [InteropEnumValue("wdRestartPage")]
   Page = 2
 }

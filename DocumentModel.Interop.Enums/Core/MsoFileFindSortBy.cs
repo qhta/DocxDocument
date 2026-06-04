@@ -7,42 +7,42 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindsortby?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoFileFindSortBy")]
+[InteropEnumType("Microsoft.Office.Core.MsoFileFindSortBy")]
 public enum FileFindSortBy
 {
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyAuthor")]
+  [InteropEnumValue("msoFileFindSortbyAuthor")]
   Author = 1,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyDateCreated")]
+  [InteropEnumValue("msoFileFindSortbyDateCreated")]
   DateCreated,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyLastSavedBy")]
+  [InteropEnumValue("msoFileFindSortbyLastSavedBy")]
   LastSavedBy,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyDateSaved")]
+  [InteropEnumValue("msoFileFindSortbyDateSaved")]
   DateSaved,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyFileName")]
+  [InteropEnumValue("msoFileFindSortbyFileName")]
   FileName,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbySize")]
+  [InteropEnumValue("msoFileFindSortbySize")]
   Size,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue("msoFileFindSortbyTitle")]
+  [InteropEnumValue("msoFileFindSortbyTitle")]
   Title
 }

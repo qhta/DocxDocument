@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdemphasismark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEmphasisMark")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEmphasisMark")]
 public enum WdEmphasisMark
 {
   /// <summary>
   /// No emphasis mark.
   /// </summary>
-  [WordInteropEnumValue("wdEmphasisMarkNone")]
+  [InteropEnumValue("wdEmphasisMarkNone")]
   None = 0,
   /// <summary>
   /// A solid black circle.
   /// </summary>
-  [WordInteropEnumValue("wdEmphasisMarkOverSolidCircle")]
+  [InteropEnumValue("wdEmphasisMarkOverSolidCircle")]
   OverSolidCircle = 1,
   /// <summary>
   /// A comma.
   /// </summary>
-  [WordInteropEnumValue("wdEmphasisMarkOverComma")]
+  [InteropEnumValue("wdEmphasisMarkOverComma")]
   OverComma = 2,
   /// <summary>
   /// An empty white circle.
   /// </summary>
-  [WordInteropEnumValue("wdEmphasisMarkOverWhiteCircle")]
+  [InteropEnumValue("wdEmphasisMarkOverWhiteCircle")]
   OverWhiteCircle = 3,
   /// <summary>
   /// A solid black circle.
   /// </summary>
-  [WordInteropEnumValue("wdEmphasisMarkUnderSolidCircle")]
+  [InteropEnumValue("wdEmphasisMarkUnderSolidCircle")]
   UnderSolidCircle = 4
 }

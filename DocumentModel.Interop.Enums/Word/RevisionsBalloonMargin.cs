@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsballoonmargin?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRevisionsBalloonMargin")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRevisionsBalloonMargin")]
 public enum RevisionsBalloonMargin
 {
   /// <summary>
   /// Left margin.
   /// </summary>
-  [WordInteropEnumValue("wdLeftMargin")]
+  [InteropEnumValue("wdLeftMargin")]
   LeftMargin = 0,
   /// <summary>
   /// Right margin. default.
   /// </summary>
-  [WordInteropEnumValue("wdRightMargin")]
+  [InteropEnumValue("wdRightMargin")]
   RightMargin = 1
 }

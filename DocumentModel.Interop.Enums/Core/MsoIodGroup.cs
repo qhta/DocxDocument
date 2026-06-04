@@ -4,22 +4,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoiodgroup?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoIodGroup")]
+[InteropEnumType("Microsoft.Office.Core.MsoIodGroup")]
 public enum IodGroup
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoIodGroupPIAs")]
+  [InteropEnumValue("msoIodGroupPIAs")]
   PIAs,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoIodGroupVSTOR35Mgd")]
+  [InteropEnumValue("msoIodGroupVSTOR35Mgd")]
   VSTOR35Mgd,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoIodGroupVSTOR40Mgd")]
+  [InteropEnumValue("msoIodGroupVSTOR40Mgd")]
   VSTOR40Mgd
 }

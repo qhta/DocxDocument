@@ -4,8 +4,8 @@
 /// Defines the ColorApplicationMethod enumeration.
 /// Used in types such as ColorsType.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ColorApplicationMethodValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues))]
 public enum ColorApplicationMethod
 {
   /// <summary>

@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xllegendposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlLegendPosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlLegendPosition")]
 public enum LegendPosition
 {
   /// <summary>
   /// In the upper right-hand corner of the chart border.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionCorner")]
+  [InteropEnumValue("xlLegendPositionCorner")]
   Corner = 2,
   /// <summary>
   /// A custom position.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionCustom")]
+  [InteropEnumValue("xlLegendPositionCustom")]
   Custom = -4161,
   /// <summary>
   /// Above the chart.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionTop")]
+  [InteropEnumValue("xlLegendPositionTop")]
   Top = -4160,
   /// <summary>
   /// Right of the chart.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionRight")]
+  [InteropEnumValue("xlLegendPositionRight")]
   Right = -4152,
   /// <summary>
   /// Left of the chart.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionLeft")]
+  [InteropEnumValue("xlLegendPositionLeft")]
   Left = -4131,
   /// <summary>
   /// Below the chart.
   /// </summary>
-  [WordInteropEnumValue("xlLegendPositionBottom")]
+  [InteropEnumValue("xlLegendPositionBottom")]
   Bottom = -4107
 }

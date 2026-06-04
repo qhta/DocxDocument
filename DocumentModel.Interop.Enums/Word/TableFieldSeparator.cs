@@ -7,27 +7,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtablefieldseparator?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTableFieldSeparator")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTableFieldSeparator")]
 public enum TableFieldSeparator
 {
   /// <summary>
   /// Paragraph markers.
   /// </summary>
-  [WordInteropEnumValue("wdSeparateByParagraphs")]
+  [InteropEnumValue("wdSeparateByParagraphs")]
   Paragraphs = 0,
   /// <summary>
   /// A tab.
   /// </summary>
-  [WordInteropEnumValue("wdSeparateByTabs")]
+  [InteropEnumValue("wdSeparateByTabs")]
   Tabs = 1,
   /// <summary>
   /// A comma.
   /// </summary>
-  [WordInteropEnumValue("wdSeparateByCommas")]
+  [InteropEnumValue("wdSeparateByCommas")]
   Commas = 2,
   /// <summary>
   /// The default list separator.
   /// </summary>
-  [WordInteropEnumValue("wdSeparateByDefaultListSeparator")]
+  [InteropEnumValue("wdSeparateByDefaultListSeparator")]
   DefaultListSeparator = 3
 }

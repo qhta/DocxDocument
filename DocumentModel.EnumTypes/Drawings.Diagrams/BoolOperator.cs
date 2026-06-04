@@ -4,8 +4,8 @@
 /// Defines the BoolOperator enumeration.
 /// Used in types such as Constraint.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.BoolOperatorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues))]
 public enum BoolOperator
 {
   /// <summary>

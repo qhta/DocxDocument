@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertdefaulttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoAlertDefaultType")]
+[InteropEnumType("Microsoft.Office.Core.MsoAlertDefaultType")]
 public enum AlertDefaultType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertDefaultFirst")]
+  [InteropEnumValue("msoAlertDefaultFirst")]
   First,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertDefaultSecond")]
+  [InteropEnumValue("msoAlertDefaultSecond")]
   Second,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertDefaultThird")]
+  [InteropEnumValue("msoAlertDefaultThird")]
   Third,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertDefaultFourth")]
+  [InteropEnumValue("msoAlertDefaultFourth")]
   Fourth,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue("msoAlertDefaultFifth")]
+  [InteropEnumValue("msoAlertDefaultFifth")]
   Fifth
 }

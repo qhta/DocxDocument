@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdshowsourcedocuments?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdShowSourceDocuments")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdShowSourceDocuments")]
 public enum ShowSourceDocuments
 {
   /// <summary>
   /// Shows neither the original nor the revised documents for the source document used in a Compare function.
   /// </summary>
-  [WordInteropEnumValue("wdShowSourceDocumentsNone")]
+  [InteropEnumValue("wdShowSourceDocumentsNone")]
   None = 0,
   /// <summary>
   /// Shows the original document only.
   /// </summary>
-  [WordInteropEnumValue("wdShowSourceDocumentsOriginal")]
+  [InteropEnumValue("wdShowSourceDocumentsOriginal")]
   Original = 1,
   /// <summary>
   /// Shows the revised document only.
   /// </summary>
-  [WordInteropEnumValue("wdShowSourceDocumentsRevised")]
+  [InteropEnumValue("wdShowSourceDocumentsRevised")]
   Revised = 2,
   /// <summary>
   /// Shows both original and revised documents.
   /// </summary>
-  [WordInteropEnumValue("wdShowSourceDocumentsBoth")]
+  [InteropEnumValue("wdShowSourceDocumentsBoth")]
   Both = 3
 }

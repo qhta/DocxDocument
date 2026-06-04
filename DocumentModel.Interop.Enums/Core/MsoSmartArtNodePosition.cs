@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosmartartnodeposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSmartArtNodePosition")]
+[InteropEnumType("Microsoft.Office.Core.MsoSmartArtNodePosition")]
 public enum SmartArtNodePosition
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeDefault")]
+  [InteropEnumValue("msoSmartArtNodeDefault")]
   Default = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeAfter")]
+  [InteropEnumValue("msoSmartArtNodeAfter")]
   After,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeBefore")]
+  [InteropEnumValue("msoSmartArtNodeBefore")]
   Before,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeAbove")]
+  [InteropEnumValue("msoSmartArtNodeAbove")]
   Above,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoSmartArtNodeBelow")]
+  [InteropEnumValue("msoSmartArtNodeBelow")]
   Below
 }

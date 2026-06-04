@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprintoutrange?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPrintOutRange")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPrintOutRange")]
 public enum PrintOutRange
 {
   /// <summary>
   /// The entire document.
   /// </summary>
-  [WordInteropEnumValue("wdPrintAllDocument")]
+  [InteropEnumValue("wdPrintAllDocument")]
   AllDocument = 0,
   /// <summary>
   /// The current selection.
   /// </summary>
-  [WordInteropEnumValue("wdPrintSelection")]
+  [InteropEnumValue("wdPrintSelection")]
   Selection = 1,
   /// <summary>
   /// The current page.
   /// </summary>
-  [WordInteropEnumValue("wdPrintCurrentPage")]
+  [InteropEnumValue("wdPrintCurrentPage")]
   CurrentPage = 2,
   /// <summary>
   /// A specified range.
   /// </summary>
-  [WordInteropEnumValue("wdPrintFromTo")]
+  [InteropEnumValue("wdPrintFromTo")]
   FromTo = 3,
   /// <summary>
   /// A specified range of pages.
   /// </summary>
-  [WordInteropEnumValue("wdPrintRangeOfPages")]
+  [InteropEnumValue("wdPrintRangeOfPages")]
   RangeOfPages = 4
 }

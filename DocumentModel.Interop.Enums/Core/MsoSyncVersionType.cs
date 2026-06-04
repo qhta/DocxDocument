@@ -6,18 +6,18 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncversiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoSyncVersionType")]
+[InteropEnumType("Microsoft.Office.Core.MsoSyncVersionType")]
 public enum SyncVersionType
 {
   /// <summary>
   /// Opens the copy of the document that is created whenever the user overwrites the local copy with the server
   /// copy.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncVersionLastViewed")]
+  [InteropEnumValue("msoSyncVersionLastViewed")]
   LastViewed,
   /// <summary>
   /// Opens the server version.
   /// </summary>
-  [OfficeInteropEnumValue("msoSyncVersionServer")]
+  [InteropEnumValue("msoSyncVersionServer")]
   Server
 }

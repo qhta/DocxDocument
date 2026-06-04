@@ -6,67 +6,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlmarkerstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlMarkerStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlMarkerStyle")]
 public enum MarkerStyle
 {
   /// <summary>
   /// Square markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleSquare")]
+  [InteropEnumValue("xlMarkerStyleSquare")]
   Square = 1,
   /// <summary>
   /// Diamond-shaped markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleDiamond")]
+  [InteropEnumValue("xlMarkerStyleDiamond")]
   Diamond = 2,
   /// <summary>
   /// Triangular markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleTriangle")]
+  [InteropEnumValue("xlMarkerStyleTriangle")]
   Triangle = 3,
   /// <summary>
   /// Square markers with an asterisk
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleStar")]
+  [InteropEnumValue("xlMarkerStyleStar")]
   Star = 5,
   /// <summary>
   /// Circular markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleCircle")]
+  [InteropEnumValue("xlMarkerStyleCircle")]
   Circle = 8,
   /// <summary>
   /// Square markers with a plus sign public enum MarkerStyle
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStylePlus")]
+  [InteropEnumValue("xlMarkerStylePlus")]
   Plus = 9,
   /// <summary>
   /// Square markers with an X
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleX")]
+  [InteropEnumValue("xlMarkerStyleX")]
   X = -4168,
   /// <summary>
   /// Picture markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStylePicture")]
+  [InteropEnumValue("xlMarkerStylePicture")]
   Picture = -4147,
   /// <summary>
   /// No markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleNone")]
+  [InteropEnumValue("xlMarkerStyleNone")]
   None = -4142,
   /// <summary>
   /// Short bar markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleDot")]
+  [InteropEnumValue("xlMarkerStyleDot")]
   Dot = -4118,
   /// <summary>
   /// Long bar markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleDash")]
+  [InteropEnumValue("xlMarkerStyleDash")]
   Dash = -4115,
   /// <summary>
   /// Automatic markers
   /// </summary>
-  [WordInteropEnumValue("xlMarkerStyleAutomatic")]
+  [InteropEnumValue("xlMarkerStyleAutomatic")]
   Automatic = -4105
 }

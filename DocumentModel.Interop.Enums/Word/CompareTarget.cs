@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcomparetarget?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdCompareTarget")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdCompareTarget")]
 public enum CompareTarget
 {
   /// <summary>
   /// Places comparison differences in the target document.
   /// </summary>
-  [WordInteropEnumValue("wdCompareTargetSelected")]
+  [InteropEnumValue("wdCompareTargetSelected")]
   Selected = 0,
   /// <summary>
   /// Places comparison differences in the current document. Default.
   /// </summary>
-  [WordInteropEnumValue("wdCompareTargetCurrent")]
+  [InteropEnumValue("wdCompareTargetCurrent")]
   Current = 1,
   /// <summary>
   /// Places comparison differences in a new document.
   /// </summary>
-  [WordInteropEnumValue("wdCompareTargetNew")]
+  [InteropEnumValue("wdCompareTargetNew")]
   New = 2
 }

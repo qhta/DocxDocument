@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgutterstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdGutterStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdGutterStyle")]
 public enum GutterStyle
 {
   /// <summary>
   /// On the left side.
   /// </summary>
-  [WordInteropEnumValue("wdGutterPosLeft")]
+  [InteropEnumValue("wdGutterPosLeft")]
   Left = 0,
   /// <summary>
   /// At the top.
   /// </summary>
-  [WordInteropEnumValue("wdGutterPosTop")]
+  [InteropEnumValue("wdGutterPosTop")]
   Top = 1,
   /// <summary>
   /// On the right side.
   /// </summary>
-  [WordInteropEnumValue("wdGutterPosRight")]
+  [InteropEnumValue("wdGutterPosRight")]
   Right = 2
 }

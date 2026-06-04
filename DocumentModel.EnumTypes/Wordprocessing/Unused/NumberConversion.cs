@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used to represent Open XML mapped options.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum NumberConversion
 {
   /// <summary>Convert to Arabic numerals</summary>

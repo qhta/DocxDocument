@@ -8,27 +8,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xltickmark?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlTickMark")]
+[InteropEnumType("Microsoft.Office.Core.XlTickMark")]
 public enum TickMark
 {
   /// <summary>
   /// Crosses the axis.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickMarkCross")]
+  [InteropEnumValue("xlTickMarkCross")]
   Cross = 4,
   /// <summary>
   /// Inside the axis.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickMarkInside")]
+  [InteropEnumValue("xlTickMarkInside")]
   Inside = 2,
   /// <summary>
   /// No mark.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickMarkNone")]
+  [InteropEnumValue("xlTickMarkNone")]
   None = -4142,
   /// <summary>
   /// Outside the axis.
   /// </summary>
-  [OfficeInteropEnumValue("xlTickMarkOutside")]
+  [InteropEnumValue("xlTickMarkOutside")]
   Outside = 3
 }

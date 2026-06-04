@@ -8,62 +8,62 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlDataLabelPosition")]
+[InteropEnumType("Microsoft.Office.Core.XlDataLabelPosition")]
 public enum DataLabelPosition
 {
   /// <summary>
   /// Data label centered on data point or inside bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionCenter")]
+  [InteropEnumValue("xlLabelPositionCenter")]
   Center = -4108,
   /// <summary>
   /// Data label positioned above point.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionAbove")]
+  [InteropEnumValue("xlLabelPositionAbove")]
   Above = 0,
   /// <summary>
   /// Data label positioned below point.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionBelow")]
+  [InteropEnumValue("xlLabelPositionBelow")]
   Below = 1,
   /// <summary>
   /// Data label positioned at bottom of bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionLeft")]
+  [InteropEnumValue("xlLabelPositionLeft")]
   Left = -4131,
   /// <summary>
   /// Data label positioned at top of bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionRight")]
+  [InteropEnumValue("xlLabelPositionRight")]
   Right = -4152,
   /// <summary>
   /// Data label positioned at top of bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionOutsideEnd")]
+  [InteropEnumValue("xlLabelPositionOutsideEnd")]
   OutsideEnd = 2,
   /// <summary>
   /// Data label positioned arbitrarily.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionInsideEnd")]
+  [InteropEnumValue("xlLabelPositionInsideEnd")]
   InsideEnd = 3,
   /// <summary>
   /// Data label positioned arbitrarily.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionInsideBase")]
+  [InteropEnumValue("xlLabelPositionInsideBase")]
   InsideBase = 4,
   /// <summary>
   /// Office application controls position of data label.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionBestFit")]
+  [InteropEnumValue("xlLabelPositionBestFit")]
   BestFit = 5,
   /// <summary>
   /// Data label positioned at bottom of bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionMixed")]
+  [InteropEnumValue("xlLabelPositionMixed")]
   Mixed = 6,
   /// <summary>
   /// Data label centered on data point or inside bar or pie.
   /// </summary>
-  [OfficeInteropEnumValue("xlLabelPositionCustom")]
+  [InteropEnumValue("xlLabelPositionCustom")]
   Custom = 7
 }

@@ -4,7 +4,7 @@
 /// Defines the FormulaDirection enumeration.
 /// Used in types such as OpenXmlFormulaElement, FormulaDirection, OpenXmlFormulaElementConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum FormulaDirection
 {
   /// <summary>

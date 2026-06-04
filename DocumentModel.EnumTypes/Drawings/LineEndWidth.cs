@@ -2,23 +2,23 @@
 /// <summary>
 ///   ILine End Width
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.LineEndWidthValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.LineEndWidthValues))]
 public enum LineEndWidth
 {
   /// <summary>
   ///   Small.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndWidthValues.Small))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndWidthValues.Small))]
   Small,
   /// <summary>
   ///   Medium.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndWidthValues.Medium))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndWidthValues.Medium))]
   Medium,
   /// <summary>
   ///   Large.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndWidthValues.Large))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndWidthValues.Large))]
   Large
 }

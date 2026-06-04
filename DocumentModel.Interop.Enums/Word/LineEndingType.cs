@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlineendingtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdLineEndingType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdLineEndingType")]
 public enum LineEndingType
 {
   /// <summary>
   /// Carriage return plus line feed.
   /// </summary>
-  [WordInteropEnumValue("wdCRLF")]
+  [InteropEnumValue("wdCRLF")]
   CRLF = 0,
   /// <summary>
   /// Carriage return only.
   /// </summary>
-  [WordInteropEnumValue("wdCROnly")]
+  [InteropEnumValue("wdCROnly")]
   CROnly = 1,
   /// <summary>
   /// Line feed only.
   /// </summary>
-  [WordInteropEnumValue("wdLFOnly")]
+  [InteropEnumValue("wdLFOnly")]
   LFOnly = 2,
   /// <summary>
   /// Line feed plus carriage return.
   /// </summary>
-  [WordInteropEnumValue("wdLFCR")]
+  [InteropEnumValue("wdLFCR")]
   LFCR = 3,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdLSPS")]
+  [InteropEnumValue("wdLSPS")]
   LSPS = 4
 }

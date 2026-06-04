@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenablecancelkey?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEnableCancelKey")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEnableCancelKey")]
 public enum EnableCancelKey
 {
   /// <summary>
   /// Prevents CTRL+BREAK from interrupting a macro.
   /// </summary>
-  [WordInteropEnumValue("wdCancelDisabled")]
+  [InteropEnumValue("wdCancelDisabled")]
   Disabled = 0,
   /// <summary>
   /// Allows a macro to be interrupted by CTRL+BREAK.
   /// </summary>
-  [WordInteropEnumValue("wdCancelInterrupt")]
+  [InteropEnumValue("wdCancelInterrupt")]
   Interrupt = 1
 }

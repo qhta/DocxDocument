@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdAlignmentTabAlignment")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdAlignmentTabAlignment")]
 public enum AlignmentTabAlignment
 {
   /// <summary>
   /// Left-aligned tab.
   /// </summary>
-  [WordInteropEnumValue("wdLeft")]
+  [InteropEnumValue("wdLeft")]
   Left = 0,
   /// <summary>
   /// Centered tab.
   /// </summary>
-  [WordInteropEnumValue("wdCenter")]
+  [InteropEnumValue("wdCenter")]
   Center = 1,
   /// <summary>
   /// Right-aligned tab.
   /// </summary>
-  [WordInteropEnumValue("wdRight")]
+  [InteropEnumValue("wdRight")]
   Right = 2
 }

@@ -7,22 +7,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcategorylabellevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlCategoryLabelLevel")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlCategoryLabelLevel")]
 public enum CategoryLabelLevel
 {
   /// <summary>
   /// Use no category labels in the chart. Defaults to automatic indexed labels.
   /// </summary>
-  [WordInteropEnumValue("xlCategoryLabelLevelNone")]
+  [InteropEnumValue("xlCategoryLabelLevelNone")]
   None = -3,
   /// <summary>
   /// Indicates literal data in the category labels.
   /// </summary>
-  [WordInteropEnumValue("xlCategoryLabelLevelCustom")]
+  [InteropEnumValue("xlCategoryLabelLevelCustom")]
   Custom = -2,
   /// <summary>
   /// Use all category label levels within range on the chart. The default.
   /// </summary>
-  [WordInteropEnumValue("xlCategoryLabelLevelAll")]
+  [InteropEnumValue("xlCategoryLabelLevelAll")]
   All = -1
 }

@@ -2,18 +2,18 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Horizontal Overflow Types
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.TextHorizontalOverflowValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues))]
 public enum TextHorizontalOverflow
 {
   /// <summary>
   ///   Text Horizontal Overflow Enum ( Overflow ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextHorizontalOverflowValues.Overflow))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues.Overflow))]
   Overflow,
   /// <summary>
   ///   Text Horizontal Overflow Enum ( Clip ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextHorizontalOverflowValues.Clip))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues.Clip))]
   Clip
 }

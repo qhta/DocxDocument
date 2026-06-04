@@ -4,7 +4,7 @@
 /// Defines the EntityTypeEnum enumeration.
 /// Used in types such as GeoDataEntityQuery, GeoDataPointQuery, GeoDataPointToEntityQuery.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum EntityTypeEnum
 {
   /// <summary>

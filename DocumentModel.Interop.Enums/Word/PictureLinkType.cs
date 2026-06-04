@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpicturelinktype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdPictureLinkType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdPictureLinkType")]
 public enum PictureLinkType
 {
   /// <summary>
   /// Do not link to or embed the picture in the document.
   /// </summary>
-  [WordInteropEnumValue("wdLinkNone")]
+  [InteropEnumValue("wdLinkNone")]
   None = 0,
   /// <summary>
   /// Embed the picture in the document.
   /// </summary>
-  [WordInteropEnumValue("wdLinkDataInDoc")]
+  [InteropEnumValue("wdLinkDataInDoc")]
   DataInDoc = 1,
   /// <summary>
   /// Link the picture to the document.
   /// </summary>
-  [WordInteropEnumValue("wdLinkDataOnDisk")]
+  [InteropEnumValue("wdLinkDataOnDisk")]
   DataOnDisk = 2
 }

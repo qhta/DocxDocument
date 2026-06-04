@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstatistic?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdStatistic")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdStatistic")]
 public enum Statistic
 {
   /// <summary>
   /// Count of words.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticWords")]
+  [InteropEnumValue("wdStatisticWords")]
   Words = 0,
   /// <summary>
   /// Count of lines.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticLines")]
+  [InteropEnumValue("wdStatisticLines")]
   Lines = 1,
   /// <summary>
   /// Count of pages.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticPages")]
+  [InteropEnumValue("wdStatisticPages")]
   Pages = 2,
   /// <summary>
   /// Count of characters.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticCharacters")]
+  [InteropEnumValue("wdStatisticCharacters")]
   Characters = 3,
   /// <summary>
   /// Count of paragraphs.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticParagraphs")]
+  [InteropEnumValue("wdStatisticParagraphs")]
   Paragraphs = 4,
   /// <summary>
   /// Count of characters including spaces.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticCharactersWithSpaces")]
+  [InteropEnumValue("wdStatisticCharactersWithSpaces")]
   CharactersWithSpaces = 5,
   /// <summary>
   /// Count of Far East characters.
   /// </summary>
-  [WordInteropEnumValue("wdStatisticFarEastCharacters")]
+  [InteropEnumValue("wdStatisticFarEastCharacters")]
   FarEastCharacters = 6
 }

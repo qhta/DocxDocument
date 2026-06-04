@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlbarshape?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlBarShape")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlBarShape")]
 public enum BarShape
 {
   /// <summary>
   /// Box.
   /// </summary>
-  [WordInteropEnumValue("xlBox")]
+  [InteropEnumValue("xlBox")]
   Box = 0,
   /// <summary>
   /// Pyramid, coming to point at value.
   /// </summary>
-  [WordInteropEnumValue("xlPyramidToPoint")]
+  [InteropEnumValue("xlPyramidToPoint")]
   PyramidToPoint = 1,
   /// <summary>
   /// Pyramid, truncated at value.
   /// </summary>
-  [WordInteropEnumValue("xlPyramidToMax")]
+  [InteropEnumValue("xlPyramidToMax")]
   PyramidToMax = 2,
   /// <summary>
   /// Cylinder.
   /// </summary>
-  [WordInteropEnumValue("xlCylinder")]
+  [InteropEnumValue("xlCylinder")]
   Cylinder = 3,
   /// <summary>
   /// Cone, coming to point at value.
   /// </summary>
-  [WordInteropEnumValue("xlConeToPoint")]
+  [InteropEnumValue("xlConeToPoint")]
   ConeToPoint = 4,
   /// <summary>
   /// Cone, truncated at value.
   /// </summary>
-  [WordInteropEnumValue("xlConeToMax")]
+  [InteropEnumValue("xlConeToMax")]
   ConeToMax = 5
 }

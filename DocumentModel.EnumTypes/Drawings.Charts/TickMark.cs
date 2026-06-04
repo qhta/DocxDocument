@@ -4,8 +4,8 @@
 /// Defines the TickMark enumeration.
 /// Used in types such as AxisType.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDC.TickMarkValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues))]
 public enum TickMark
 {
   /// <summary>

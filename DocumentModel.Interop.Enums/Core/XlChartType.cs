@@ -8,402 +8,402 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcharttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("XlChartType")]
+[InteropEnumType("Microsoft.Office.Core.XlChartType")]
 public enum ChartType
 {
   /// <summary>
   /// 3D Clustered Column
   /// </summary>
-  [OfficeInteropEnumValue("xlColumnClustered")]
+  [InteropEnumValue("xlColumnClustered")]
   ColumnClustered = 51,
   /// <summary>
   /// 100% Stacked Column
   /// </summary>
-  [OfficeInteropEnumValue("xlColumnStacked")]
+  [InteropEnumValue("xlColumnStacked")]
   ColumnStacked = 52,
   /// <summary>
   /// 100% Stacked Column
   /// </summary>
-  [OfficeInteropEnumValue("xlColumnStacked100")]
+  [InteropEnumValue("xlColumnStacked100")]
   ColumnStacked100 = 53,
   /// <summary>
   /// 3D Clustered Column
   /// </summary>
-  [OfficeInteropEnumValue("xl3DColumnClustered")]
+  [InteropEnumValue("xl3DColumnClustered")]
   ThreeDColumnClustered = 54,
   /// <summary>
   /// 3D Stacked Column
   /// </summary>
-  [OfficeInteropEnumValue("xl3DColumnStacked")]
+  [InteropEnumValue("xl3DColumnStacked")]
   ThreeDColumnStacked = 55,
   /// <summary>
   /// 3D 100% Stacked Bar
   /// </summary>
-  [OfficeInteropEnumValue("xl3DColumnStacked100")]
+  [InteropEnumValue("xl3DColumnStacked100")]
   ThreeDColumnStacked100 = 56,
   /// <summary>
   /// Clustered Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlBarClustered")]
+  [InteropEnumValue("xlBarClustered")]
   BarClustered = 57,
   /// <summary>
   /// Stacked Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlBarStacked")]
+  [InteropEnumValue("xlBarStacked")]
   BarStacked = 58,
   /// <summary>
   /// 100% Stacked Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlBarStacked100")]
+  [InteropEnumValue("xlBarStacked100")]
   BarStacked100 = 59,
   /// <summary>
   /// 3D Clustered Bar
   /// </summary>
-  [OfficeInteropEnumValue("xl3DBarClustered")]
+  [InteropEnumValue("xl3DBarClustered")]
   ThreeDBarClustered = 60,
   /// <summary>
   /// 3D Stacked Bar
   /// </summary>
-  [OfficeInteropEnumValue("xl3DBarStacked")]
+  [InteropEnumValue("xl3DBarStacked")]
   ThreeDBarStacked = 61,
   /// <summary>
   /// 3D 100% Stacked Bar
   /// </summary>
-  [OfficeInteropEnumValue("xl3DBarStacked100")]
+  [InteropEnumValue("xl3DBarStacked100")]
   ThreeDBarStacked100 = 62,
   /// <summary>
   /// 100% Stacked Line
   /// </summary>
-  [OfficeInteropEnumValue("xlLineStacked")]
+  [InteropEnumValue("xlLineStacked")]
   LineStacked = 63,
   /// <summary>
   /// 100% Stacked Line
   /// </summary>
-  [OfficeInteropEnumValue("xlLineStacked100")]
+  [InteropEnumValue("xlLineStacked100")]
   LineStacked100 = 64,
   /// <summary>
   /// 100% Stacked Line with Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlLineMarkers")]
+  [InteropEnumValue("xlLineMarkers")]
   LineMarkers = 65,
   /// <summary>
   /// 100% Stacked Line with Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlLineMarkersStacked")]
+  [InteropEnumValue("xlLineMarkersStacked")]
   LineMarkersStacked = 66,
   /// <summary>
   /// 100% Stacked Line with Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlLineMarkersStacked100")]
+  [InteropEnumValue("xlLineMarkersStacked100")]
   LineMarkersStacked100 = 67,
   /// <summary>
   /// Pie of
   /// </summary>
-  [OfficeInteropEnumValue("xlPieOfPie")]
+  [InteropEnumValue("xlPieOfPie")]
   PieOfPie = 68,
   /// <summary>
   /// Exploded Pie
   /// </summary>
-  [OfficeInteropEnumValue("xlPieExploded")]
+  [InteropEnumValue("xlPieExploded")]
   PieExploded = 69,
   /// <summary>
   /// Exploded 3D Pie
   /// </summary>
-  [OfficeInteropEnumValue("xl3DPieExploded")]
+  [InteropEnumValue("xl3DPieExploded")]
   ThreeDPieExploded = 70,
   /// <summary>
   /// Bar of
   /// </summary>
-  [OfficeInteropEnumValue("xlBarOfPie")]
+  [InteropEnumValue("xlBarOfPie")]
   BarOfPie = 71,
   /// <summary>
   /// Scatter with Smoothed Lines and No Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlXYScatterSmooth")]
+  [InteropEnumValue("xlXYScatterSmooth")]
   XYScatterSmooth = 72,
   /// <summary>
   /// Scatter with Smoothed Lines and No Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlXYScatterSmoothNoMarkers")]
+  [InteropEnumValue("xlXYScatterSmoothNoMarkers")]
   XYScatterSmoothNoMarkers = 73,
   /// <summary>
   /// Scatter with Lines and No Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlXYScatterLines")]
+  [InteropEnumValue("xlXYScatterLines")]
   XYScatterLines = 74,
   /// <summary>
   /// Scatter with Lines and No Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlXYScatterLinesNoMarkers")]
+  [InteropEnumValue("xlXYScatterLinesNoMarkers")]
   XYScatterLinesNoMarkers = 75,
   /// <summary>
   /// 100% Stacked Area
   /// </summary>
-  [OfficeInteropEnumValue("xlAreaStacked")]
+  [InteropEnumValue("xlAreaStacked")]
   AreaStacked = 76,
   /// <summary>
   /// 100% Stacked Area
   /// </summary>
-  [OfficeInteropEnumValue("xlAreaStacked100")]
+  [InteropEnumValue("xlAreaStacked100")]
   AreaStacked100 = 77,
   /// <summary>
   /// 3D Stacked Area
   /// </summary>
-  [OfficeInteropEnumValue("xl3DAreaStacked")]
+  [InteropEnumValue("xl3DAreaStacked")]
   ThreeDAreaStacked = 78,
   /// <summary>
   /// 100% Stacked Area
   /// </summary>
-  [OfficeInteropEnumValue("xl3DAreaStacked100")]
+  [InteropEnumValue("xl3DAreaStacked100")]
   ThreeDAreaStacked100 = 79,
   /// <summary>
   /// Exploded Doughnut
   /// </summary>
-  [OfficeInteropEnumValue("xlDoughnutExploded")]
+  [InteropEnumValue("xlDoughnutExploded")]
   DoughnutExploded = 80,
   /// <summary>
   /// Radar with Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlRadarMarkers")]
+  [InteropEnumValue("xlRadarMarkers")]
   RadarMarkers = 81,
   /// <summary>
   /// Filled
   /// </summary>
-  [OfficeInteropEnumValue("xlRadarFilled")]
+  [InteropEnumValue("xlRadarFilled")]
   RadarFilled = 82,
   /// <summary>
   /// Surface (Top View wireframe)
   /// </summary>
-  [OfficeInteropEnumValue("xlSurface")]
+  [InteropEnumValue("xlSurface")]
   Surface = 83,
   /// <summary>
   /// 3D Surface (wireframe)
   /// </summary>
-  [OfficeInteropEnumValue("xlSurfaceWireframe")]
+  [InteropEnumValue("xlSurfaceWireframe")]
   SurfaceWireframe = 84,
   /// <summary>
   /// Surface (Top View wireframe)
   /// </summary>
-  [OfficeInteropEnumValue("xlSurfaceTopView")]
+  [InteropEnumValue("xlSurfaceTopView")]
   SurfaceTopView = 85,
   /// <summary>
   /// Surface (Top View wireframe)
   /// </summary>
-  [OfficeInteropEnumValue("xlSurfaceTopViewWireframe")]
+  [InteropEnumValue("xlSurfaceTopViewWireframe")]
   SurfaceTopViewWireframe = 86,
   /// <summary>
   /// Bubble with 3D effects
   /// </summary>
-  [OfficeInteropEnumValue("xlBubble")]
+  [InteropEnumValue("xlBubble")]
   Bubble = 15,
   /// <summary>
   /// Bubble with 3D effects
   /// </summary>
-  [OfficeInteropEnumValue("xlBubble3DEffect")]
+  [InteropEnumValue("xlBubble3DEffect")]
   Bubble3DEffect = 87,
   /// <summary>
   /// High- Low-Close
   /// </summary>
-  [OfficeInteropEnumValue("xlStockHLC")]
+  [InteropEnumValue("xlStockHLC")]
   StockHLC = 88,
   /// <summary>
   /// Open- High-Low-Close
   /// </summary>
-  [OfficeInteropEnumValue("xlStockOHLC")]
+  [InteropEnumValue("xlStockOHLC")]
   StockOHLC = 89,
   /// <summary>
   /// Volume- High-Low-Close
   /// </summary>
-  [OfficeInteropEnumValue("xlStockVHLC")]
+  [InteropEnumValue("xlStockVHLC")]
   StockVHLC = 90,
   /// <summary>
   /// Volume- Open-High-Low-Close
   /// </summary>
-  [OfficeInteropEnumValue("xlStockVOHLC")]
+  [InteropEnumValue("xlStockVOHLC")]
   StockVOHLC = 91,
   /// <summary>
   /// Clustered Cone Column
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderColClustered")]
+  [InteropEnumValue("xlCylinderColClustered")]
   CylinderColClustered = 92,
   /// <summary>
   /// 100% Stacked Cylinder Column
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderColStacked")]
+  [InteropEnumValue("xlCylinderColStacked")]
   CylinderColStacked = 93,
   /// <summary>
   /// 100% Stacked Cylinder Column
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderColStacked100")]
+  [InteropEnumValue("xlCylinderColStacked100")]
   CylinderColStacked100 = 94,
   /// <summary>
   /// Clustered Cylinder Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderBarClustered")]
+  [InteropEnumValue("xlCylinderBarClustered")]
   CylinderBarClustered = 95,
   /// <summary>
   /// 100% Stacked Cylinder Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderBarStacked")]
+  [InteropEnumValue("xlCylinderBarStacked")]
   CylinderBarStacked = 96,
   /// <summary>
   /// 100% Stacked Cylinder Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderBarStacked100")]
+  [InteropEnumValue("xlCylinderBarStacked100")]
   CylinderBarStacked100 = 97,
   /// <summary>
   /// 3D Cylinder Column
   /// </summary>
-  [OfficeInteropEnumValue("xlCylinderCol")]
+  [InteropEnumValue("xlCylinderCol")]
   CylinderCol = 98,
   /// <summary>
   /// Clustered Cone Column
   /// </summary>
-  [OfficeInteropEnumValue("xlConeColClustered")]
+  [InteropEnumValue("xlConeColClustered")]
   ConeColClustered = 99,
   /// <summary>
   /// 100% Stacked Cone Column
   /// </summary>
-  [OfficeInteropEnumValue("xlConeColStacked")]
+  [InteropEnumValue("xlConeColStacked")]
   ConeColStacked = 100,
   /// <summary>
   /// 100% Stacked Cone Column
   /// </summary>
-  [OfficeInteropEnumValue("xlConeColStacked100")]
+  [InteropEnumValue("xlConeColStacked100")]
   ConeColStacked100 = 101,
   /// <summary>
   /// Clustered Cone Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlConeBarClustered")]
+  [InteropEnumValue("xlConeBarClustered")]
   ConeBarClustered = 102,
   /// <summary>
   /// 100% Stacked Cone Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlConeBarStacked")]
+  [InteropEnumValue("xlConeBarStacked")]
   ConeBarStacked = 103,
   /// <summary>
   /// 100% Stacked Cone Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlConeBarStacked100")]
+  [InteropEnumValue("xlConeBarStacked100")]
   ConeBarStacked100 = 104,
   /// <summary>
   /// 3D Cone
   /// </summary>
-  [OfficeInteropEnumValue("xlConeCol")]
+  [InteropEnumValue("xlConeCol")]
   ConeCol = 105,
   /// <summary>
   /// Clustered Pyramid Column
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidColClustered")]
+  [InteropEnumValue("xlPyramidColClustered")]
   PyramidColClustered = 106,
   /// <summary>
   /// 100% Stacked Pyramid Column
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidColStacked")]
+  [InteropEnumValue("xlPyramidColStacked")]
   PyramidColStacked = 107,
   /// <summary>
   /// 100% Stacked Pyramid Column
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidColStacked100")]
+  [InteropEnumValue("xlPyramidColStacked100")]
   PyramidColStacked100 = 108,
   /// <summary>
   /// Clustered Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidBarClustered")]
+  [InteropEnumValue("xlPyramidBarClustered")]
   PyramidBarClustered = 109,
   /// <summary>
   /// 100% Stacked Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidBarStacked")]
+  [InteropEnumValue("xlPyramidBarStacked")]
   PyramidBarStacked = 110,
   /// <summary>
   /// 100% Stacked Pyramid Bar
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidBarStacked100")]
+  [InteropEnumValue("xlPyramidBarStacked100")]
   PyramidBarStacked100 = 111,
   /// <summary>
   /// 3D Pyramid Column
   /// </summary>
-  [OfficeInteropEnumValue("xlPyramidCol")]
+  [InteropEnumValue("xlPyramidCol")]
   PyramidCol = 112,
   /// <summary>
   /// 3D
   /// </summary>
-  [OfficeInteropEnumValue("xl3DColumn")]
+  [InteropEnumValue("xl3DColumn")]
   ThreeDColumn = -4100,
   /// <summary>
   /// 100% Stacked Line with Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlLine")]
+  [InteropEnumValue("xlLine")]
   Line = 4,
   /// <summary>
   /// 3D Line
   /// </summary>
-  [OfficeInteropEnumValue("xl3DLine")]
+  [InteropEnumValue("xl3DLine")]
   ThreeDLine = -4101,
   /// <summary>
   /// 3D Pie
   /// </summary>
-  [OfficeInteropEnumValue("xl3DPie")]
+  [InteropEnumValue("xl3DPie")]
   ThreeDPie = -4102,
   /// <summary>
   /// Exploded Pie
   /// </summary>
-  [OfficeInteropEnumValue("xlPie")]
+  [InteropEnumValue("xlPie")]
   Pie = 5,
   /// <summary>
   /// Scatter with Lines and No Data Markers
   /// </summary>
-  [OfficeInteropEnumValue("xlXYScatter")]
+  [InteropEnumValue("xlXYScatter")]
   XYScatter = -4169,
   /// <summary>
   /// 3D Area
   /// </summary>
-  [OfficeInteropEnumValue("xl3DArea")]
+  [InteropEnumValue("xl3DArea")]
   ThreeDArea = -4098,
   /// <summary>
   /// 100% Stacked Area
   /// </summary>
-  [OfficeInteropEnumValue("xlArea")]
+  [InteropEnumValue("xlArea")]
   Area = 1,
   /// <summary>
   /// Exploded Doughnut
   /// </summary>
-  [OfficeInteropEnumValue("xlDoughnut")]
+  [InteropEnumValue("xlDoughnut")]
   Doughnut = -4120,
   /// <summary>
   /// Filled
   /// </summary>
-  [OfficeInteropEnumValue("xlRadar")]
+  [InteropEnumValue("xlRadar")]
   Radar = -4151,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlCombo")]
+  [InteropEnumValue("xlCombo")]
   Combo = -4152,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlComboColumnClusteredLine")]
+  [InteropEnumValue("xlComboColumnClusteredLine")]
   ComboColumnClusteredLine = 113,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlComboColumnClusteredLineSecondaryAxis")]
+  [InteropEnumValue("xlComboColumnClusteredLineSecondaryAxis")]
   ComboColumnClusteredLineSecondaryAxis = 114,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlComboAreaStackedColumnClustered")]
+  [InteropEnumValue("xlComboAreaStackedColumnClustered")]
   ComboAreaStackedColumnClustered = 115,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlOtherCombinations")]
+  [InteropEnumValue("xlOtherCombinations")]
   OtherCombinations = 116,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue("xlSuggestedChart")]
+  [InteropEnumValue("xlSuggestedChart")]
   SuggestedChart = -2
 }

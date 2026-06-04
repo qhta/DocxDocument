@@ -4,8 +4,8 @@
 /// Defines the ChartBuildStep enumeration.
 /// Used in types such as ChartToAnimate.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.ChartBuildStepValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.ChartBuildStepValues))]
 public enum ChartBuildStep
 {
   /// <summary>

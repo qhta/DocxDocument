@@ -4,8 +4,8 @@
 /// Defines the LayoutChildren enumeration.
 /// Used in types such as LayoutContainer, LayoutContainerConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10CUI.LayoutChildrenValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues))]
 public enum LayoutChildren
 {
   /// <summary>

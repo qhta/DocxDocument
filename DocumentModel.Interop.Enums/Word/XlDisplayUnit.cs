@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xldisplayunit?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("XlDisplayUnit")]
+[InteropEnumType("Microsoft.Office.Interop.Word.XlDisplayUnit")]
 public enum DisplayUnit
 {
   /// <summary>
   /// Millions of millions.
   /// </summary>
-  [WordInteropEnumValue("xlMillionMillions")]
+  [InteropEnumValue("xlMillionMillions")]
   MillionMillions = -10,
   /// <summary>
   /// Thousands of millions.
   /// </summary>
-  [WordInteropEnumValue("xlThousandMillions")]
+  [InteropEnumValue("xlThousandMillions")]
   ThousandMillions = -9,
   /// <summary>
   /// Hundreds of millions.
   /// </summary>
-  [WordInteropEnumValue("xlHundredMillions")]
+  [InteropEnumValue("xlHundredMillions")]
   HundredMillions = -8,
   /// <summary>
   /// Tens of millions.
   /// </summary>
-  [WordInteropEnumValue("xlTenMillions")]
+  [InteropEnumValue("xlTenMillions")]
   TenMillions = -7,
   /// <summary>
   /// Millions.
   /// </summary>
-  [WordInteropEnumValue("xlMillions")]
+  [InteropEnumValue("xlMillions")]
   Millions = -6,
   /// <summary>
   /// Hundreds of thousands.
   /// </summary>
-  [WordInteropEnumValue("xlHundredThousands")]
+  [InteropEnumValue("xlHundredThousands")]
   HundredThousands = -5,
   /// <summary>
   /// Tens of thousands.
   /// </summary>
-  [WordInteropEnumValue("xlTenThousands")]
+  [InteropEnumValue("xlTenThousands")]
   TenThousands = -4,
   /// <summary>
   /// Thousands.
   /// </summary>
-  [WordInteropEnumValue("xlThousands")]
+  [InteropEnumValue("xlThousands")]
   Thousands = -3,
   /// <summary>
   /// Hundreds.
   /// </summary>
-  [WordInteropEnumValue("xlHundreds")]
+  [InteropEnumValue("xlHundreds")]
   Hundreds = -2
 }

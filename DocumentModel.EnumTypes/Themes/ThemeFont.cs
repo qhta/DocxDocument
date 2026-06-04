@@ -2,48 +2,48 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ThemeFontValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.ThemeFontValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues))]
 public enum ThemeFont
 {
   /// <summary>
   ///   Major East Asian Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MajorEastAsia))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorEastAsia))]
   MajorEastAsia,
   /// <summary>
   ///   Major Complex Script Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MajorBidi))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorBidi))]
   MajorBidi,
   /// <summary>
   ///   Major ASCII Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MajorAscii))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorAscii))]
   MajorAscii,
   /// <summary>
   ///   Major High ANSI Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MajorHighAnsi))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorHighAnsi))]
   MajorHighAnsi,
   /// <summary>
   ///   Minor East Asian Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MinorEastAsia))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorEastAsia))]
   MinorEastAsia,
   /// <summary>
   ///   Minor Complex Script Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MinorBidi))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorBidi))]
   MinorBidi,
   /// <summary>
   ///   Minor ASCII Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MinorAscii))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorAscii))]
   MinorAscii,
   /// <summary>
   ///   Minor High ANSI Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeFontValues.MinorHighAnsi))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorHighAnsi))]
   MinorHighAnsi
 }

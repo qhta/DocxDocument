@@ -6,23 +6,23 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsmode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRevisionsMode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRevisionsMode")]
 public enum RevisionsMode
 {
   /// <summary>
   /// Displays revisions in balloons in the left or right margin.
   /// </summary>
-  [WordInteropEnumValue("wdBalloonRevisions")]
+  [InteropEnumValue("wdBalloonRevisions")]
   BalloonRevisions = 0,
   /// <summary>
   /// Displays revisions within the text using strikethrough for deletions and underlining for insertions. This is
   /// the default setting for prior versions of Word.
   /// </summary>
-  [WordInteropEnumValue("wdInLineRevisions")]
+  [InteropEnumValue("wdInLineRevisions")]
   InLineRevisions = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue("wdMixedRevisions")]
+  [InteropEnumValue("wdMixedRevisions")]
   MixedRevisions = 2
 }

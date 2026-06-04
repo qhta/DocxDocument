@@ -6,112 +6,112 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetthreedformat?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoPresetThreeDFormat")]
+[InteropEnumType("Microsoft.Office.Core.MsoPresetThreeDFormat")]
 public enum PresetThreeDFormat
 {
   /// <summary>
   /// Specifies an extrusion (three-dimensional) format.
   /// </summary>
-  [OfficeInteropEnumValue("msoPresetThreeDFormatMixed")]
+  [InteropEnumValue("msoPresetThreeDFormatMixed")]
   Mixed = -2,
   /// <summary>
   /// First 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD1")]
+  [InteropEnumValue("msoThreeD1")]
   ThreeD1 = 1,
   /// <summary>
   /// Second 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD2")]
+  [InteropEnumValue("msoThreeD2")]
   ThreeD2 = 2,
   /// <summary>
   /// Third 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD3")]
+  [InteropEnumValue("msoThreeD3")]
   ThreeD3 = 3,
   /// <summary>
   /// Fourth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD4")]
+  [InteropEnumValue("msoThreeD4")]
   ThreeD4 = 4,
   /// <summary>
   /// Fifth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD5")]
+  [InteropEnumValue("msoThreeD5")]
   ThreeD5 = 5,
   /// <summary>
   /// Sixth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD6")]
+  [InteropEnumValue("msoThreeD6")]
   ThreeD6 = 6,
   /// <summary>
   /// Seventh 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD7")]
+  [InteropEnumValue("msoThreeD7")]
   ThreeD7 = 7,
   /// <summary>
   /// Eighth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD8")]
+  [InteropEnumValue("msoThreeD8")]
   ThreeD8 = 8,
   /// <summary>
   /// Ninth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD9")]
+  [InteropEnumValue("msoThreeD9")]
   ThreeD9 = 9,
   /// <summary>
   /// Tenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD10")]
+  [InteropEnumValue("msoThreeD10")]
   ThreeD10 = 10,
   /// <summary>
   /// Eleventh 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD11")]
+  [InteropEnumValue("msoThreeD11")]
   ThreeD11 = 11,
   /// <summary>
   /// Twelfth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD12")]
+  [InteropEnumValue("msoThreeD12")]
   ThreeD12 = 12,
   /// <summary>
   /// Thirteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD13")]
+  [InteropEnumValue("msoThreeD13")]
   ThreeD13 = 13,
   /// <summary>
   /// Fourteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD14")]
+  [InteropEnumValue("msoThreeD14")]
   ThreeD14 = 14,
   /// <summary>
   /// Fifteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD15")]
+  [InteropEnumValue("msoThreeD15")]
   ThreeD15 = 15,
   /// <summary>
   /// Sixteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD16")]
+  [InteropEnumValue("msoThreeD16")]
   ThreeD16 = 16,
   /// <summary>
   /// Seventeenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD17")]
+  [InteropEnumValue("msoThreeD17")]
   ThreeD17 = 17,
   /// <summary>
   /// Eighteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD18")]
+  [InteropEnumValue("msoThreeD18")]
   ThreeD18 = 18,
   /// <summary>
   /// Nineteenth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD19")]
+  [InteropEnumValue("msoThreeD19")]
   ThreeD19 = 19,
   /// <summary>
   /// Twentieth 3-D format.
   /// </summary>
-  [OfficeInteropEnumValue("msoThreeD20")]
+  [InteropEnumValue("msoThreeD20")]
   ThreeD20 = 20
 }

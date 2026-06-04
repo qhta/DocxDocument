@@ -4,7 +4,7 @@
 /// Defines the StringDimensionType enumeration.
 /// Used in types such as StringDimension, StringDimensionType, StringDimensionConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum StringDimensionType
 {
   /// <summary>

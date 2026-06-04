@@ -3,37 +3,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobaselinealignment?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoBaselineAlignment")]
+[InteropEnumType("Microsoft.Office.Core.MsoBaselineAlignment")]
 public enum BaselineAlignment
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignMixed")]
+  [InteropEnumValue("msoBaselineAlignMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignBaseline")]
+  [InteropEnumValue("msoBaselineAlignBaseline")]
   Baseline = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignTop")]
+  [InteropEnumValue("msoBaselineAlignTop")]
   Top = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignCenter")]
+  [InteropEnumValue("msoBaselineAlignCenter")]
   Center = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignFarEast50")]
+  [InteropEnumValue("msoBaselineAlignFarEast50")]
   FarEast50 = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoBaselineAlignAuto")]
+  [InteropEnumValue("msoBaselineAlignAuto")]
   Auto = 5
 }

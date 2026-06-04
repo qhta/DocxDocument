@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdRelativeHorizontalPosition")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdRelativeHorizontalPosition")]
 public enum RelativeHorizontalPosition
 {
   /// <summary>
   /// Relative to margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionMargin")]
+  [InteropEnumValue("wdRelativeHorizontalPositionMargin")]
   Margin = 0,
   /// <summary>
   /// Relative to page.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionPage")]
+  [InteropEnumValue("wdRelativeHorizontalPositionPage")]
   Page = 1,
   /// <summary>
   /// Relative to column.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionColumn")]
+  [InteropEnumValue("wdRelativeHorizontalPositionColumn")]
   Column = 2,
   /// <summary>
   /// Relative to character.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionCharacter")]
+  [InteropEnumValue("wdRelativeHorizontalPositionCharacter")]
   Character = 3,
   /// <summary>
   /// Relative to left margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionLeftMarginArea")]
+  [InteropEnumValue("wdRelativeHorizontalPositionLeftMarginArea")]
   LeftMarginArea = 4,
   /// <summary>
   /// Relative to right margin.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionRightMarginArea")]
+  [InteropEnumValue("wdRelativeHorizontalPositionRightMarginArea")]
   RightMarginArea = 5,
   /// <summary>
   /// Relative to inner margin area.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionInnerMarginArea")]
+  [InteropEnumValue("wdRelativeHorizontalPositionInnerMarginArea")]
   InnerMarginArea = 6,
   /// <summary>
   /// Relative to outer margin area.
   /// </summary>
-  [WordInteropEnumValue("wdRelativeHorizontalPositionOuterMarginArea")]
+  [InteropEnumValue("wdRelativeHorizontalPositionOuterMarginArea")]
   OuterMarginArea = 7
 }

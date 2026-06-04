@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmultiplewordconversionsmode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMultipleWordConversionsMode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMultipleWordConversionsMode")]
 public enum MultipleWordConversionsMode
 {
   /// <summary>
   /// Hangul to Hanja.
   /// </summary>
-  [WordInteropEnumValue("wdHangulToHanja")]
+  [InteropEnumValue("wdHangulToHanja")]
   HangulToHanja = 0,
   /// <summary>
   /// Hanja to Hangul.
   /// </summary>
-  [WordInteropEnumValue("wdHanjaToHangul")]
+  [InteropEnumValue("wdHanjaToHangul")]
   HanjaToHangul = 1
 }

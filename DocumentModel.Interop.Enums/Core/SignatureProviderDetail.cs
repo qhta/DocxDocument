@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("SignatureProviderDetail")]
+[InteropEnumType("Microsoft.Office.Core.SignatureProviderDetail")]
 public enum SignatureProviderDetail
 {
   /// <summary>
   /// The URL of the signature provider.
   /// </summary>
-  [OfficeInteropEnumValue("sigprovdetUrl")]
+  [InteropEnumValue("sigprovdetUrl")]
   Url,
   /// <summary>
   /// Hash algorithm used to hash the data in the file.
   /// </summary>
-  [OfficeInteropEnumValue("sigprovdetHashAlgorithm")]
+  [InteropEnumValue("sigprovdetHashAlgorithm")]
   HashAlgorithm,
   /// <summary>
   /// Indicates that the signature provider only uses a custom user interface.
   /// </summary>
-  [OfficeInteropEnumValue("sigprovdetUIOnly")]
+  [InteropEnumValue("sigprovdetUIOnly")]
   UIOnly,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("sigprovdetUseOfficeUI")]
+  [InteropEnumValue("sigprovdetUseOfficeUI")]
   UseOfficeUI,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("sigprovdetUseOfficeStampUI")]
+  [InteropEnumValue("sigprovdetUseOfficeStampUI")]
   UseOfficeStampUI
 }

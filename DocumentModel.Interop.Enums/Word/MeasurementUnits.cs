@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmeasurementunits?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMeasurementUnits")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMeasurementUnits")]
 public enum MeasurementUnits
 {
   /// <summary>
   /// Inches.
   /// </summary>
-  [WordInteropEnumValue("wdInches")]
+  [InteropEnumValue("wdInches")]
   Inches = 0,
   /// <summary>
   /// Centimeters.
   /// </summary>
-  [WordInteropEnumValue("wdCentimeters")]
+  [InteropEnumValue("wdCentimeters")]
   Centimeters = 1,
   /// <summary>
   /// Millimeters.
   /// </summary>
-  [WordInteropEnumValue("wdMillimeters")]
+  [InteropEnumValue("wdMillimeters")]
   Millimeters = 2,
   /// <summary>
   /// Points.
   /// </summary>
-  [WordInteropEnumValue("wdPoints")]
+  [InteropEnumValue("wdPoints")]
   Points = 3,
   /// <summary>
   /// Picas (commonly used in traditional typewriter font spacing).
   /// </summary>
-  [WordInteropEnumValue("wdPicas")]
+  [InteropEnumValue("wdPicas")]
   Picas = 4
 }

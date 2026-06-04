@@ -4,8 +4,8 @@
 /// Defines the HierarchyBranchStyle enumeration.
 /// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.HierarchyBranchStyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues))]
 public enum HierarchyBranchStyle
 {
   /// <summary>

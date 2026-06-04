@@ -17,14 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\..\..\Scripts\ListEnumTypesUsage.py" Link="Scripts\ListEnumTypesUsage.py" />
   </ItemGroup>
 
@@ -34,7 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.5.1" />
     <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.Attributes\DocumentModel.Attributes.csproj" />
   </ItemGroup>
 
 </Project>

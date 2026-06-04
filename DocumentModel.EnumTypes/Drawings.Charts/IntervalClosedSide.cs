@@ -4,7 +4,7 @@
 /// Defines the IntervalClosedSide enumeration.
 /// Used in types such as Binning, IntervalClosedSide, BinningConverter.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum IntervalClosedSide
 {
   /// <summary>

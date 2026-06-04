@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdflowdirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFlowDirection")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFlowDirection")]
 public enum FlowDirection
 {
   /// <summary>
   /// Text in columns flows from left to right.
   /// </summary>
-  [WordInteropEnumValue("wdFlowLtr")]
+  [InteropEnumValue("wdFlowLtr")]
   Ltr = 0,
   /// <summary>
   /// Text in columns flows from right to left.
   /// </summary>
-  [WordInteropEnumValue("wdFlowRtl")]
+  [InteropEnumValue("wdFlowRtl")]
   Rtl = 1
 }

@@ -4,32 +4,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoContactCardType")]
+[InteropEnumType("Microsoft.Office.Core.MsoContactCardType")]
 public enum ContactCardType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoContactCardTypeEnterpriseContact")]
+  [InteropEnumValue("msoContactCardTypeEnterpriseContact")]
   EnterpriseContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoContactCardTypePersonalContact")]
+  [InteropEnumValue("msoContactCardTypePersonalContact")]
   PersonalContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoContactCardTypeUnknownContact")]
+  [InteropEnumValue("msoContactCardTypeUnknownContact")]
   UnknownContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoContactCardTypeEnterpriseGroup")]
+  [InteropEnumValue("msoContactCardTypeEnterpriseGroup")]
   EnterpriseGroup,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue("msoContactCardTypePersonalDistributionList")]
+  [InteropEnumValue("msoContactCardTypePersonalDistributionList")]
   PersonalDistributionList
 }

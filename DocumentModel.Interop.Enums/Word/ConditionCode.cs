@@ -6,67 +6,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconditioncode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdConditionCode")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdConditionCode")]
 public enum ConditionCode
 {
   /// <summary>
   /// Applies formatting to the first row in a table.
   /// </summary>
-  [WordInteropEnumValue("wdFirstRow")]
+  [InteropEnumValue("wdFirstRow")]
   FirstRow = 0,
   /// <summary>
   /// Applies formatting to the last row in a table.
   /// </summary>
-  [WordInteropEnumValue("wdLastRow")]
+  [InteropEnumValue("wdLastRow")]
   LastRow = 1,
   /// <summary>
   /// Applies formatting to odd-numbered rows.
   /// </summary>
-  [WordInteropEnumValue("wdOddRowBanding")]
+  [InteropEnumValue("wdOddRowBanding")]
   OddRowBanding = 2,
   /// <summary>
   /// Applies formatting to even-numbered rows.
   /// </summary>
-  [WordInteropEnumValue("wdEvenRowBanding")]
+  [InteropEnumValue("wdEvenRowBanding")]
   EvenRowBanding = 3,
   /// <summary>
   /// Applies formatting to the first column in a table.
   /// </summary>
-  [WordInteropEnumValue("wdFirstColumn")]
+  [InteropEnumValue("wdFirstColumn")]
   FirstColumn = 4,
   /// <summary>
   /// Applies formatting to the last column in a table.
   /// </summary>
-  [WordInteropEnumValue("wdLastColumn")]
+  [InteropEnumValue("wdLastColumn")]
   LastColumn = 5,
   /// <summary>
   /// Applies formatting to odd-numbered columns.
   /// </summary>
-  [WordInteropEnumValue("wdOddColumnBanding")]
+  [InteropEnumValue("wdOddColumnBanding")]
   OddColumnBanding = 6,
   /// <summary>
   /// Applies formatting to even-numbered columns.
   /// </summary>
-  [WordInteropEnumValue("wdEvenColumnBanding")]
+  [InteropEnumValue("wdEvenColumnBanding")]
   EvenColumnBanding = 7,
   /// <summary>
   /// Applies formatting to the last cell in the first row.
   /// </summary>
-  [WordInteropEnumValue("wdNECell")]
+  [InteropEnumValue("wdNECell")]
   NECell = 8,
   /// <summary>
   /// Applies formatting to the first cell in the first row.
   /// </summary>
-  [WordInteropEnumValue("wdNWCell")]
+  [InteropEnumValue("wdNWCell")]
   NWCell = 9,
   /// <summary>
   /// Applies formatting to the last cell in the table.
   /// </summary>
-  [WordInteropEnumValue("wdSECell")]
+  [InteropEnumValue("wdSECell")]
   SECell = 10,
   /// <summary>
   /// Applies formatting to first cell in the last row of the table.
   /// </summary>
-  [WordInteropEnumValue("wdSWCell")]
+  [InteropEnumValue("wdSWCell")]
   SWCell = 11
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddatelanguage?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdDateLanguage")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdDateLanguage")]
 public enum DateLanguage
 {
   /// <summary>
   /// Bidirectional date/time format.
   /// </summary>
-  [WordInteropEnumValue("wdDateLanguageBidi")]
+  [InteropEnumValue("wdDateLanguageBidi")]
   Bidi = 10,
   /// <summary>
   /// Latin date/time format.
   /// </summary>
-  [WordInteropEnumValue("wdDateLanguageLatin")]
+  [InteropEnumValue("wdDateLanguageLatin")]
   Latin = 1033
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdendnotelocation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEndnoteLocation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEndnoteLocation")]
 public enum EndnoteLocation
 {
   /// <summary>
   /// At end of current section.
   /// </summary>
-  [WordInteropEnumValue("wdEndOfSection")]
+  [InteropEnumValue("wdEndOfSection")]
   Section = 0,
   /// <summary>
   /// At end of active document.
   /// </summary>
-  [WordInteropEnumValue("wdEndOfDocument")]
+  [InteropEnumValue("wdEndOfDocument")]
   Document = 1
 }

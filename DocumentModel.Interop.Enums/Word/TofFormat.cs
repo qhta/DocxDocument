@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtofformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdTofFormat")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdTofFormat")]
 public enum TofFormat
 {
   /// <summary>
   /// Template formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFTemplate")]
+  [InteropEnumValue("wdTOFTemplate")]
   Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFClassic")]
+  [InteropEnumValue("wdTOFClassic")]
   Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFDistinctive")]
+  [InteropEnumValue("wdTOFDistinctive")]
   Distinctive = 2,
   /// <summary>
   /// Centered formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFCentered")]
+  [InteropEnumValue("wdTOFCentered")]
   Centered = 3,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFFormal")]
+  [InteropEnumValue("wdTOFFormal")]
   Formal = 4,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  [WordInteropEnumValue("wdTOFSimple")]
+  [InteropEnumValue("wdTOFSimple")]
   Simple = 5
 }

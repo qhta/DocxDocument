@@ -2,28 +2,28 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the StyleValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXM.StyleValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Math.StyleValues))]
 public enum RunStyle
 {
   /// <summary>
   ///   Plain.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.StyleValues.Plain))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.StyleValues.Plain))]
   Plain,
   /// <summary>
   ///   Bold.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.StyleValues.Bold))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.StyleValues.Bold))]
   Bold,
   /// <summary>
   ///   Italic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.StyleValues.Italic))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.StyleValues.Italic))]
   Italic,
   /// <summary>
   ///   Bold-Italic.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.StyleValues.BoldItalic))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Math.StyleValues.BoldItalic))]
   BoldItalic
 }

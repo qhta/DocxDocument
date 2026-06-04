@@ -6,152 +6,152 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnotenumberstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdNoteNumberStyle")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdNoteNumberStyle")]
 public enum NoteNumberStyle
 {
   /// <summary>
   /// Arabic number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleArabic")]
+  [InteropEnumValue("wdNoteNumberStyleArabic")]
   Arabic = 0,
   /// <summary>
   /// Uppercase Roman number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleUppercaseRoman")]
+  [InteropEnumValue("wdNoteNumberStyleUppercaseRoman")]
   UppercaseRoman = 1,
   /// <summary>
   /// Lowercase Roman number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleLowercaseRoman")]
+  [InteropEnumValue("wdNoteNumberStyleLowercaseRoman")]
   LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleUppercaseLetter")]
+  [InteropEnumValue("wdNoteNumberStyleUppercaseLetter")]
   UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleLowercaseLetter")]
+  [InteropEnumValue("wdNoteNumberStyleLowercaseLetter")]
   LowercaseLetter = 4,
   /// <summary>
   /// Symbol number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleSymbol")]
+  [InteropEnumValue("wdNoteNumberStyleSymbol")]
   Symbol = 9,
   /// <summary>
   /// Kanji number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleKanji")]
+  [InteropEnumValue("wdNoteNumberStyleKanji")]
   Kanji = 10,
   /// <summary>
   /// Kanji digit number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleKanjiDigit")]
+  [InteropEnumValue("wdNoteNumberStyleKanjiDigit")]
   KanjiDigit = 11,
   /// <summary>
   /// Arabic full-width number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleArabicFullWidth")]
+  [InteropEnumValue("wdNoteNumberStyleArabicFullWidth")]
   ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleKanjiTraditional")]
+  [InteropEnumValue("wdNoteNumberStyleKanjiTraditional")]
   KanjiTraditional = 16,
   /// <summary>
   /// Number in circle number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleNumberInCircle")]
+  [InteropEnumValue("wdNoteNumberStyleNumberInCircle")]
   NumberInCircle = 18,
   /// <summary>
   /// Traditional Chinese number style 1.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleTradChinNum1")]
+  [InteropEnumValue("wdNoteNumberStyleTradChinNum1")]
   TradChinNum1 = 33,
   /// <summary>
   /// Traditional Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleTradChinNum2")]
+  [InteropEnumValue("wdNoteNumberStyleTradChinNum2")]
   TradChinNum2 = 34,
   /// <summary>
   /// Simplified Chinese number style 1.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleSimpChinNum1")]
+  [InteropEnumValue("wdNoteNumberStyleSimpChinNum1")]
   SimpChinNum1 = 37,
   /// <summary>
   /// Simplified Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleSimpChinNum2")]
+  [InteropEnumValue("wdNoteNumberStyleSimpChinNum2")]
   SimpChinNum2 = 38,
   /// <summary>
   /// Hanja read number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHanjaRead")]
+  [InteropEnumValue("wdNoteNumberStyleHanjaRead")]
   HanjaRead = 41,
   /// <summary>
   /// Hanja read digit number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHanjaReadDigit")]
+  [InteropEnumValue("wdNoteNumberStyleHanjaReadDigit")]
   HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHebrewLetter1")]
+  [InteropEnumValue("wdNoteNumberStyleHebrewLetter1")]
   HebrewLetter1 = 45,
   /// <summary>
   /// Arabic letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleArabicLetter1")]
+  [InteropEnumValue("wdNoteNumberStyleArabicLetter1")]
   ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHebrewLetter2")]
+  [InteropEnumValue("wdNoteNumberStyleHebrewLetter2")]
   HebrewLetter2 = 47,
   /// <summary>
   /// Arabic letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleArabicLetter2")]
+  [InteropEnumValue("wdNoteNumberStyleArabicLetter2")]
   ArabicLetter2 = 48,
   /// <summary>
   /// Hindi letter style 1.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHindiLetter1")]
+  [InteropEnumValue("wdNoteNumberStyleHindiLetter1")]
   HindiLetter1 = 49,
   /// <summary>
   /// Hindi letter style 2.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHindiLetter2")]
+  [InteropEnumValue("wdNoteNumberStyleHindiLetter2")]
   HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHindiArabic")]
+  [InteropEnumValue("wdNoteNumberStyleHindiArabic")]
   HindiArabic = 51,
   /// <summary>
   /// Hindi Cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleHindiCardinalText")]
+  [InteropEnumValue("wdNoteNumberStyleHindiCardinalText")]
   HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleThaiLetter")]
+  [InteropEnumValue("wdNoteNumberStyleThaiLetter")]
   ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic number style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleThaiArabic")]
+  [InteropEnumValue("wdNoteNumberStyleThaiArabic")]
   ThaiArabic = 54,
   /// <summary>
   /// Thai Cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleThaiCardinalText")]
+  [InteropEnumValue("wdNoteNumberStyleThaiCardinalText")]
   ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese Cardinal text style.
   /// </summary>
-  [WordInteropEnumValue("wdNoteNumberStyleVietCardinalText")]
+  [InteropEnumValue("wdNoteNumberStyleVietCardinalText")]
   VietCardinalText = 56
 }

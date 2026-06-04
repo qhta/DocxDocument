@@ -3,33 +3,33 @@
 /// <summary>
 /// Specifies the type of vertical alignment to apply.
 /// </summary>
-[OpenXmlEnumType(typeof(DXDW.VerticalAlignmentValues))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues))]
 public enum VerticalAlignment
 {
   /// <summary>
   /// Top vertical alignment.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Top))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues.Top))]
   Top = 1,
   /// <summary>
   /// Center vertical alignment.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Center))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues.Center))]
   Center,
   /// <summary>
   /// Bottom vertical alignment.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Bottom))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues.Bottom))]
   Bottom,
   /// <summary>
   /// Indicates Ithat the element is located inside the specified boundary or region.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Inside))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues.Inside))]
   Inside,
   /// <summary>
   /// Indicates Ithat the element is positioned outside the defined area or boundary.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Outside))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalAlignmentValues.Outside))]
   Outside,
 }
 

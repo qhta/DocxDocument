@@ -2,18 +2,18 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorderOffsetValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.PageBorderOffsetValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues))]
 public enum PageBorderOffset
 {
   /// <summary>
   ///   Page Border Is Positioned Relative to Page Edges.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderOffsetValues.Page))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues.Page))]
   Page,
   /// <summary>
   ///   Page Border Is Positioned Relative to Text Extents.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.PageBorderOffsetValues.Text))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues.Text))]
   Text
 }

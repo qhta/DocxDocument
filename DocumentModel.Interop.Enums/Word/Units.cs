@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdunits?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdUnits")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdUnits")]
 public enum Units
 {
   /// <summary>
   /// A character.
   /// </summary>
-  [WordInteropEnumValue("wdCharacter")]
+  [InteropEnumValue("wdCharacter")]
   Character = 1,
   /// <summary>
   /// A word.
   /// </summary>
-  [WordInteropEnumValue("wdWord")]
+  [InteropEnumValue("wdWord")]
   Word = 2,
   /// <summary>
   /// A sentence.
   /// </summary>
-  [WordInteropEnumValue("wdSentence")]
+  [InteropEnumValue("wdSentence")]
   Sentence = 3,
   /// <summary>
   /// A paragraph.
   /// </summary>
-  [WordInteropEnumValue("wdParagraph")]
+  [InteropEnumValue("wdParagraph")]
   Paragraph = 4,
   /// <summary>
   /// A line.
   /// </summary>
-  [WordInteropEnumValue("wdLine")]
+  [InteropEnumValue("wdLine")]
   Line = 5,
   /// <summary>
   /// A story.
   /// </summary>
-  [WordInteropEnumValue("wdStory")]
+  [InteropEnumValue("wdStory")]
   Story = 6,
   /// <summary>
   /// The screen dimensions.
   /// </summary>
-  [WordInteropEnumValue("wdScreen")]
+  [InteropEnumValue("wdScreen")]
   Screen = 7,
   /// <summary>
   /// A section.
   /// </summary>
-  [WordInteropEnumValue("wdSection")]
+  [InteropEnumValue("wdSection")]
   Section = 8,
   /// <summary>
   /// A column.
   /// </summary>
-  [WordInteropEnumValue("wdColumn")]
+  [InteropEnumValue("wdColumn")]
   Column = 9,
   /// <summary>
   /// A row.
   /// </summary>
-  [WordInteropEnumValue("wdRow")]
+  [InteropEnumValue("wdRow")]
   Row = 10,
   /// <summary>
   /// A window.
   /// </summary>
-  [WordInteropEnumValue("wdWindow")]
+  [InteropEnumValue("wdWindow")]
   Window = 11,
   /// <summary>
   /// A cell.
   /// </summary>
-  [WordInteropEnumValue("wdCell")]
+  [InteropEnumValue("wdCell")]
   Cell = 12,
   /// <summary>
   /// Character formatting.
   /// </summary>
-  [WordInteropEnumValue("wdCharacterFormatting")]
+  [InteropEnumValue("wdCharacterFormatting")]
   CharacterFormatting = 13,
   /// <summary>
   /// Paragraph formatting.
   /// </summary>
-  [WordInteropEnumValue("wdParagraphFormatting")]
+  [InteropEnumValue("wdParagraphFormatting")]
   ParagraphFormatting = 14,
   /// <summary>
   /// A table.
   /// </summary>
-  [WordInteropEnumValue("wdTable")]
+  [InteropEnumValue("wdTable")]
   Table = 15,
   /// <summary>
   /// The selected item.
   /// </summary>
-  [WordInteropEnumValue("wdItem")]
+  [InteropEnumValue("wdItem")]
   Item = 16
 }

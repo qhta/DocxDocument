@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenvelopeorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdEnvelopeOrientation")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdEnvelopeOrientation")]
 public enum EnvelopeOrientation
 {
   /// <summary>
   /// Left portrait orientation.
   /// </summary>
-  [WordInteropEnumValue("wdLeftPortrait")]
+  [InteropEnumValue("wdLeftPortrait")]
   LeftPortrait = 0,
   /// <summary>
   /// Center portrait orientation.
   /// </summary>
-  [WordInteropEnumValue("wdCenterPortrait")]
+  [InteropEnumValue("wdCenterPortrait")]
   CenterPortrait = 1,
   /// <summary>
   /// Right portrait orientation.
   /// </summary>
-  [WordInteropEnumValue("wdRightPortrait")]
+  [InteropEnumValue("wdRightPortrait")]
   RightPortrait = 2,
   /// <summary>
   /// Left landscape orientation.
   /// </summary>
-  [WordInteropEnumValue("wdLeftLandscape")]
+  [InteropEnumValue("wdLeftLandscape")]
   LeftLandscape = 3,
   /// <summary>
   /// Center landscape orientation.
   /// </summary>
-  [WordInteropEnumValue("wdCenterLandscape")]
+  [InteropEnumValue("wdCenterLandscape")]
   CenterLandscape = 4,
   /// <summary>
   /// Right landscape orientation.
   /// </summary>
-  [WordInteropEnumValue("wdRightLandscape")]
+  [InteropEnumValue("wdRightLandscape")]
   RightLandscape = 5,
   /// <summary>
   /// Left clockwise orientation.
   /// </summary>
-  [WordInteropEnumValue("wdLeftClockwise")]
+  [InteropEnumValue("wdLeftClockwise")]
   LeftClockwise = 6,
   /// <summary>
   /// Center clockwise orientation.
   /// </summary>
-  [WordInteropEnumValue("wdCenterClockwise")]
+  [InteropEnumValue("wdCenterClockwise")]
   CenterClockwise = 7,
   /// <summary>
   /// Right clockwise orientation.
   /// </summary>
-  [WordInteropEnumValue("wdRightClockwise")]
+  [InteropEnumValue("wdRightClockwise")]
   RightClockwise = 8
 }

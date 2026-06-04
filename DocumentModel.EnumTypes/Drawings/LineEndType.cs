@@ -2,38 +2,38 @@
 /// <summary>
 ///   ILine End Type
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.LineEndValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.LineEndValues))]
 public enum LineEndType
 {
   /// <summary>
   ///   None.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.None))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.None))]
   None,
   /// <summary>
   ///   Triangle Arrow Head.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.Triangle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.Triangle))]
   Triangle,
   /// <summary>
   ///   Stealth Arrow.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.Stealth))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.Stealth))]
   Stealth,
   /// <summary>
   ///   Diamond.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.Diamond))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.Diamond))]
   Diamond,
   /// <summary>
   ///   Oval.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.Oval))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.Oval))]
   Oval,
   /// <summary>
   ///   Arrow Head.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LineEndValues.Arrow))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.LineEndValues.Arrow))]
   Arrow
 }

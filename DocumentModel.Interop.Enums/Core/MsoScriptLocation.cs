@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscriptlocation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoScriptLocation")]
+[InteropEnumType("Microsoft.Office.Core.MsoScriptLocation")]
 public enum ScriptLocation
 {
   /// <summary>
   /// Script anchor is in the head of the document.
   /// </summary>
-  [OfficeInteropEnumValue("msoScriptLocationInHead")]
+  [InteropEnumValue("msoScriptLocationInHead")]
   Head = 1,
   /// <summary>
   /// Script anchor is in the body of the document.
   /// </summary>
-  [OfficeInteropEnumValue("msoScriptLocationInBody")]
+  [InteropEnumValue("msoScriptLocationInBody")]
   Body
 }

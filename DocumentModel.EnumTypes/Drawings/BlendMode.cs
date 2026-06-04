@@ -2,33 +2,33 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Blend Mode
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.BlendModeValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.BlendModeValues))]
 public enum BlendMode
 {
   /// <summary>
   ///   Overlay.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlendModeValues.Overlay))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BlendModeValues.Overlay))]
   Overlay,
   /// <summary>
   ///   Multiply.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlendModeValues.Multiply))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BlendModeValues.Multiply))]
   Multiply,
   /// <summary>
   ///   Screen.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlendModeValues.Screen))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BlendModeValues.Screen))]
   Screen,
   /// <summary>
   ///   Darken.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlendModeValues.Darken))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BlendModeValues.Darken))]
   Darken,
   /// <summary>
   ///   Lighten.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlendModeValues.Lighten))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.BlendModeValues.Lighten))]
   Lighten
 }

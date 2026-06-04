@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesettype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdFramesetType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdFramesetType")]
 public enum FramesetType
 {
   /// <summary>
   /// A frameset.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetTypeFrameset")]
+  [InteropEnumValue("wdFramesetTypeFrameset")]
   wdFramesetTypeFrameset = 0,
   /// <summary>
   /// A single frame.
   /// </summary>
-  [WordInteropEnumValue("wdFramesetTypeFrame")]
+  [InteropEnumValue("wdFramesetTypeFrame")]
   wdFramesetTypeFrame = 1
 }

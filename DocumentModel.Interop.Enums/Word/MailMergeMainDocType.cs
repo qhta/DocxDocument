@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemaindoctype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdMailMergeMainDocType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdMailMergeMainDocType")]
 public enum MailMergeMainDocType
 {
   /// <summary>
   /// Form letter.
   /// </summary>
-  [WordInteropEnumValue("wdFormLetters")]
+  [InteropEnumValue("wdFormLetters")]
   FormLetters = 0,
   /// <summary>
   /// Mailing label.
   /// </summary>
-  [WordInteropEnumValue("wdMailingLabels")]
+  [InteropEnumValue("wdMailingLabels")]
   MailingLabels = 1,
   /// <summary>
   /// Envelope.
   /// </summary>
-  [WordInteropEnumValue("wdEnvelopes")]
+  [InteropEnumValue("wdEnvelopes")]
   Envelopes = 2,
   /// <summary>
   /// Directory.
   /// </summary>
-  [WordInteropEnumValue("wdDirectory")]
+  [InteropEnumValue("wdDirectory")]
   Directory = 3,
   /// <summary>
   /// Catalog.
   /// </summary>
-  [WordInteropEnumValue("wdCatalog")]
+  [InteropEnumValue("wdCatalog")]
   Catalog = 3,
   /// <summary>
   /// E-mail message.
   /// </summary>
-  [WordInteropEnumValue("wdEMail")]
+  [InteropEnumValue("wdEMail")]
   EMail = 4,
   /// <summary>
   /// Fax.
   /// </summary>
-  [WordInteropEnumValue("wdFax")]
+  [InteropEnumValue("wdFax")]
   Fax = 5,
   /// <summary>
   /// Not a merge document.
   /// </summary>
-  [WordInteropEnumValue("wdNotAMergeDocument")]
+  [InteropEnumValue("wdNotAMergeDocument")]
   NotAMergeDocument = -1
 }

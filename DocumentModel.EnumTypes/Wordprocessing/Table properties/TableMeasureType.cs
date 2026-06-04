@@ -3,33 +3,33 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableWidthUnitValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlType(typeof(DXW.TableWidthUnitValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlType(typeof(DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues))]
 public enum TableMeasureType
 {
 
   /// <summary>
   ///   No Width.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Nil))]
+  [OpenXmlProperty(nameof(DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues.Nil))]
   Nil,
 
   /// <summary>
   ///   Automatically Determined Width.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Auto))]
+  [OpenXmlProperty(nameof(DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues.Auto))]
   Auto,
 
   /// <summary>
   ///   Width in Fiftieths of a Percent.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
+  [OpenXmlProperty(nameof(DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues.Pct))]
   Relative,
 
   /// <summary>
   ///   Width in Twentieths of a Point.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
+  [OpenXmlProperty(nameof(DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues.Dxa))]
   Absolute,
 
 

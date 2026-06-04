@@ -6,117 +6,117 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathfunctiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType("WdOMathFunctionType")]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdOMathFunctionType")]
 public enum OMathFunctionType
 {
   /// <summary>
   /// Equation accent mark.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionAcc")]
+  [InteropEnumValue("wdOMathFunctionAcc")]
   Acc = 1,
   /// <summary>
   /// Equation fraction bar.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionBar")]
+  [InteropEnumValue("wdOMathFunctionBar")]
   Bar = 2,
   /// <summary>
   /// Box.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionBox")]
+  [InteropEnumValue("wdOMathFunctionBox")]
   Box = 3,
   /// <summary>
   /// Border box.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionBorderBox")]
+  [InteropEnumValue("wdOMathFunctionBorderBox")]
   BorderBox = 4,
   /// <summary>
   /// Equation delimiters.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionDelim")]
+  [InteropEnumValue("wdOMathFunctionDelim")]
   Delim = 5,
   /// <summary>
   /// Equation array.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionEqArray")]
+  [InteropEnumValue("wdOMathFunctionEqArray")]
   EqArray = 6,
   /// <summary>
   /// Equation fraction.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionFrac")]
+  [InteropEnumValue("wdOMathFunctionFrac")]
   Frac = 7,
   /// <summary>
   /// Equation function.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionFunc")]
+  [InteropEnumValue("wdOMathFunctionFunc")]
   Func = 8,
   /// <summary>
   /// Group character.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionGroupChar")]
+  [InteropEnumValue("wdOMathFunctionGroupChar")]
   GroupChar = 9,
   /// <summary>
   /// Equation lower limit.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionLimLow")]
+  [InteropEnumValue("wdOMathFunctionLimLow")]
   LimLow = 10,
   /// <summary>
   /// Equation upper limit.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionLimUpp")]
+  [InteropEnumValue("wdOMathFunctionLimUpp")]
   LimUpp = 11,
   /// <summary>
   /// Equation matrix.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionMat")]
+  [InteropEnumValue("wdOMathFunctionMat")]
   Mat = 12,
   /// <summary>
   /// Equation N-ary operator.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionNary")]
+  [InteropEnumValue("wdOMathFunctionNary")]
   Nary = 13,
   /// <summary>
   /// Equation phantom.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionPhantom")]
+  [InteropEnumValue("wdOMathFunctionPhantom")]
   Phantom = 14,
   /// <summary>
   /// Scr pre.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionScrPre")]
+  [InteropEnumValue("wdOMathFunctionScrPre")]
   ScrPre = 15,
   /// <summary>
   /// Equation base expression.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionRad")]
+  [InteropEnumValue("wdOMathFunctionRad")]
   Rad = 16,
   /// <summary>
   /// Scr. sub.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionScrSub")]
+  [InteropEnumValue("wdOMathFunctionScrSub")]
   ScrSub = 17,
   /// <summary>
   /// Scr. sub sup.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionScrSubSup")]
+  [InteropEnumValue("wdOMathFunctionScrSubSup")]
   ScrSubSup = 18,
   /// <summary>
   /// Scr sup.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionScrSup")]
+  [InteropEnumValue("wdOMathFunctionScrSup")]
   ScrSup = 19,
   /// <summary>
   /// Equation text.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionText")]
+  [InteropEnumValue("wdOMathFunctionText")]
   Text = 20,
   /// <summary>
   /// Equation normal text.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionNormalText")] 
+  [InteropEnumValue("wdOMathFunctionNormalText")] 
   NormalText = 21,
   /// <summary>
   /// Equation literal text.
   /// </summary>
-  [WordInteropEnumValue("wdOMathFunctionLiteralText")]
+  [InteropEnumValue("wdOMathFunctionLiteralText")]
   LiteralText = 22
 }

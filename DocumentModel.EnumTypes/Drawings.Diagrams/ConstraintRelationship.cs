@@ -4,8 +4,8 @@
 /// Defines the ConstraintRelationship enumeration.
 /// Used in types such as Constraint, Rule.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXDD.ConstraintRelationshipValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues))]
 public enum ConstraintRelationship
 {
   /// <summary>

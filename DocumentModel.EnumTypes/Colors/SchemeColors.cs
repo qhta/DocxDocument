@@ -2,94 +2,94 @@
 /// <summary>
 ///   Scheme Color
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXD.SchemeColorValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues))]
 public enum SchemeColors
 {
   /// <summary>
   ///   IStyle Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.PhColor))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.PhColor))]
   PhColor = 0,
   /// <summary>
   ///   Dark Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Dark1))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Dark1))]
   Dark1 = 1,
   /// <summary>
   ///   Light Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Light1))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Light1))]
   Light1 = 2,
   /// <summary>
   ///   Dark Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Dark2))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Dark2))]
   Dark2 = 3,
   /// <summary>
   ///   Light Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Light2))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Light2))]
   Light2 = 4,
   /// <summary>
   ///   Accent Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent1))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent1))]
   Accent1 = 5,
   /// <summary>
   ///   Accent Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent2))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent2))]
   Accent2 = 6,
   /// <summary>
   ///   Accent Color 3.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent3))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent3))]
   Accent3 = 7,
   /// <summary>
   ///   Accent Color 4.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent4))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent4))]
   Accent4 = 8,
   /// <summary>
   ///   Accent Color 5.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent5))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent5))]
   Accent5 = 9,
   /// <summary>
   ///   Accent Color 6.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Accent6))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent6))]
   Accent6 = 10,
   /// <summary>
   ///   IHyperlink Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Hyperlink))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Hyperlink))]
   Hyperlink = 11,
   /// <summary>
   ///   Followed IHyperlink Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.FollowedHyperlink))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.FollowedHyperlink))]
   FollowedHyperlink = 12,
   /// <summary>
   ///   Text Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Text1))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Text1))]
   Text1 = 17,
   /// <summary>
   ///   Background Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Background1))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Background1))]
   Background1 = 18,
   /// <summary>
   ///   Text Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Text2))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Text2))]
   Text2 = 19,
   /// <summary>
   ///   Background Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Background2))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Background2))]
   Background2 = 20,
 
 }

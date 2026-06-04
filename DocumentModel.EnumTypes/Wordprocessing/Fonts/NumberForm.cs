@@ -2,23 +2,23 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NumberFormValues enumeration.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXO10W.NumberFormValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.Word.NumberFormValues))]
 public enum NumberForm
 {
   /// <summary>
   ///   default.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.Default))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberFormValues.Default))]
   Default,
   /// <summary>
   ///   lining.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.Lining))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberFormValues.Lining))]
   Lining,
   /// <summary>
   ///   oldStyle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.OldStyle))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Office2010.Word.NumberFormValues.OldStyle))]
   OldStyle
 }

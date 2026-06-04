@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomenuanimation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoMenuAnimation")]
+[InteropEnumType("Microsoft.Office.Core.MsoMenuAnimation")]
 public enum MenuAnimation
 {
   /// <summary>
   /// No animation.
   /// </summary>
-  [OfficeInteropEnumValue("msoMenuAnimationNone")]
+  [InteropEnumValue("msoMenuAnimationNone")]
   None,
   /// <summary>
   /// Random animation.
   /// </summary>
-  [OfficeInteropEnumValue("msoMenuAnimationRandom")]
+  [InteropEnumValue("msoMenuAnimationRandom")]
   Random,
   /// <summary>
   /// Menus unfold into view.
   /// </summary>
-  [OfficeInteropEnumValue("msoMenuAnimationUnfold")]
+  [InteropEnumValue("msoMenuAnimationUnfold")]
   Unfold,
   /// <summary>
   /// Menus slide into view.
   /// </summary>
-  [OfficeInteropEnumValue("msoMenuAnimationSlide")]
+  [InteropEnumValue("msoMenuAnimationSlide")]
   Slide
 }

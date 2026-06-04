@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextstrike?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoTextStrike")]
+[InteropEnumType("Microsoft.Office.Core.MsoTextStrike")]
 public enum TextStrike
 {
   /// <summary>
   /// Specifies that the text can contain a combination of double-strike and single- strike characters.
   /// </summary>
-  [OfficeInteropEnumValue("msoStrikeMixed")]
+  [InteropEnumValue("msoStrikeMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies that the character is not printed.
   /// </summary>
-  [OfficeInteropEnumValue("msoNoStrike")]
+  [InteropEnumValue("msoNoStrike")]
   NoStrike = 0,
   /// <summary>
   /// Specifies that the character is printed once.
   /// </summary>
-  [OfficeInteropEnumValue("msoSingleStrike")]
+  [InteropEnumValue("msoSingleStrike")]
   SingleStrike = 1,
   /// <summary>
   /// Specifies that the character is printed twice.
   /// </summary>
-  [OfficeInteropEnumValue("msoDoubleStrike")]
+  [InteropEnumValue("msoDoubleStrike")]
   DoubleStrike = 2
 }

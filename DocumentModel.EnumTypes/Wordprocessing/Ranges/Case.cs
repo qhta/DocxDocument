@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Used in types such as AddOpenXmlElementAttribute, GenerateShouldSerializeFunctions, Variant.
 /// </summary>
 [OpenXmlNotMapped]
-[JsonConverter(typeof(StringEnumConverter))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Case
 {
   /// <summary>Uppercase</summary>

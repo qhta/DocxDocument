@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramnodetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType("MsoDiagramNodeType")]
+[InteropEnumType("Microsoft.Office.Core.MsoDiagramNodeType")]
 public enum DiagramNodeType
 {
   /// <summary>
   /// Diagram node is a subordinate of its parent.
   /// </summary>
-  [OfficeInteropEnumValue("msoDiagramNode")]
+  [InteropEnumValue("msoDiagramNode")]
   Node = 1,
   /// <summary>
   /// Diagram node is an assistant to its parent.
   /// </summary>
-  [OfficeInteropEnumValue("msoDiagramAssistant")]
+  [InteropEnumValue("msoDiagramAssistant")]
   Assistant
 }

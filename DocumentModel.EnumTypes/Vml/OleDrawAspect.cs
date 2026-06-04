@@ -2,18 +2,18 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   OLE Object Representations
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXVO.OleDrawAspectValues))]
+[JsonConverter(typeof(JsonStringEnumConverter))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues))]
 public enum OleDrawAspect
 {
   /// <summary>
   ///   Snapshot.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.OleDrawAspectValues.Content))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues.Content))]
   Content,
   /// <summary>
   ///   Icon.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXVO.OleDrawAspectValues.Icon))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues.Icon))]
   Icon
 }
