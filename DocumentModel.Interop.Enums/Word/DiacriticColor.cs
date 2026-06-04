@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies whether to apply a different color to diacritics in bi-directional or Latin style languages.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddiacriticcolor?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDiacriticColor))]
 public enum DiacriticColor
 {
   /// <summary>
   /// Bi-directional language (Arabic, Hebrew, and so forth).
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDiacriticColor.wdDiacriticColorBidi))]
   Bidi = 0,
   /// <summary>
   /// Latin style languages.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDiacriticColor.wdDiacriticColorLatin))]
   Latin = 1
 }

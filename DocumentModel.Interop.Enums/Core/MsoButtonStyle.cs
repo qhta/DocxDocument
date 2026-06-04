@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+﻿namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the style of a command bar button.
@@ -6,38 +6,47 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstyle?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoButtonStyle))]
 public enum ButtonStyle
 {
   /// <summary>
   /// Default behavior.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonAutomatic))]
   Automatic = 0,
   /// <summary>
   /// Image only.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonIcon))]
   Icon = 1,
   /// <summary>
   /// Text only.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonCaption))]
   Caption = 2,
   /// <summary>
   /// Image and text, with text to the right of image.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonIconAndCaption))]
   IconAndCaption = 3,
   /// <summary>
   /// Image with text wrapped and to the right of the image.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonIconAndWrapCaption))]
   IconAndWrapCaption = 7,
   /// <summary>
   /// Image with text below.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonIconAndCaptionBelow))]
   IconAndCaptionBelow = 11,
   /// <summary>
   /// Text only, centered and wrapped.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonWrapCaption))]
   WrapCaption = 14,
   /// <summary>
   /// Image with text wrapped below image.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonStyle.msoButtonIconAndWrapCaptionBelow))]
   IconAndWrapCaptionBelow = 15
 }

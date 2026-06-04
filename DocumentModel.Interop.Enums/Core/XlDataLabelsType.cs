@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -8,30 +8,37 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelstype?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlDataLabelsType))]
 public enum DataLabelsType
 {
   /// <summary>
   /// No data labels.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowNone))]
   None = -4142,
   /// <summary>
   /// Value for the point (assumed if this argument isn't specified).
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowValue))]
   Value = 2,
   /// <summary>
   /// Percentage of the total. Available only for pie charts and doughnut charts.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowPercent))]
   Percent = 3,
   /// <summary>
   /// Category for the point.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowLabel))]
   Label = 4,
   /// <summary>
   /// Percentage of the total, and category for the point. Available only for pie charts and doughnut charts.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowLabelAndPercent))]
   LabelAndPercent = 5,
   /// <summary>
   /// Show the size of the bubble in reference to the absolute value.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDataLabelsType.xlDataLabelsShowBubbleSizes))]
   BubbleSizes = 6
 }

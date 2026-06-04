@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -8,14 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlrowcol?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlRowCol))]
 public enum RowCol
 {
   /// <summary>
   /// Data series is in a column.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlRowCol.xlColumns))]
   Columns = 2,
   /// <summary>
   /// Data series is in a row.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlRowCol.xlRows))]
   Rows = 1
 }

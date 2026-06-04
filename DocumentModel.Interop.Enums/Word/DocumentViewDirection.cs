@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the alignment and reading order for the entire document.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentviewdirection?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDocumentViewDirection))]
 public enum DocumentViewDirection
 {
   /// <summary>
   /// Displays the document with right alignment and right-to-left reading order.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentViewDirection.wdDocumentViewRtl))]
   Rtl = 0,
   /// <summary>
   /// Displays the document with left alignment and left-to-right reading order.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentViewDirection.wdDocumentViewLtr))]
   Ltr = 1
 }

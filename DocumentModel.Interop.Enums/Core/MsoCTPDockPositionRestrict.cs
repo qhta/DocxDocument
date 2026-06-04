@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+﻿namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies retrictions on the docking behavior of the custom task pane.
@@ -6,22 +6,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockpositionrestrict?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoCTPDockPositionRestrict))]
 public enum CTPDockPositionRestrict
 {
   /// <summary>
   /// No restrictions on docking the task pane.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNone))]
   None,
   /// <summary>
   /// There is no change from the current restriction setting for the task pane.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoChange))]
   Change,
   /// <summary>
   /// Task pane can't be docked to either the right or the left side of the document window.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoHorizontal))]
   Horizontal,
   /// <summary>
   /// Task pane can't be docked to either the top or the bottom of the document window.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoVertical))]
   Vertical
 }

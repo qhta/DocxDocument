@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
@@ -7,14 +7,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsview?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisionsView))]
 public enum RevisionsView
 {
   /// <summary>
   /// Displays the document with formatting and content changes applied.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsView.wdRevisionsViewFinal))]
   Final = 0,
   /// <summary>
   /// Displays the document before changes were made.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsView.wdRevisionsViewOriginal))]
   Original = 1
 }

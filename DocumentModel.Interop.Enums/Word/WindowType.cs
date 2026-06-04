@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the type of window.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdwindowtype?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdWindowType))]
 public enum WindowType
 {
   /// <summary>
   /// A document window.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWindowType.wdWindowDocument))]
   Document = 0,
   /// <summary>
   /// A template window.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWindowType.wdWindowTemplate))]
   Template = 1
 }

@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="OMath\OMathSpacingRule.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
   </ItemGroup>
 

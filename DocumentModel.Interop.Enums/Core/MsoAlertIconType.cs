@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+﻿namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies which icon, if any, to display with an alert.
@@ -6,26 +6,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoAlertIconType))]
 public enum AlertIconType
 {
   /// <summary>
   /// Displays no icon with the alert message.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconNoIcon))]
   NoIcon,
   /// <summary>
   /// Displays the Critical icon.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconCritical))]
   Critical,
   /// <summary>
   /// Displays the Query icon.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconQuery))]
   Query,
   /// <summary>
   /// Displays the Warning icon.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconWarning))]
   Warning,
   /// <summary>
   /// Displays the Info icon.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconInfo))]
   Info
 }

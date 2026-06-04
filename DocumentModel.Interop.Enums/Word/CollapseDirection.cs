@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the direction in which to collapse a range or selection.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcollapsedirection?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCollapseDirection))]
 public enum CollapseDirection
 {
   /// <summary>
   /// Collapse the range to the ending point.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCollapseDirection.wdCollapseEnd))]
   End = 0,
   /// <summary>
   /// Collapse the range to the starting point.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCollapseDirection.wdCollapseStart))]
   Start = 1
 }

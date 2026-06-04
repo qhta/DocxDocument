@@ -4,23 +4,6 @@
         <name>DocumentModel.BaseConverters</name>
     </assembly>
     <members>
-        <member name="T:DocumentModel.OpenXml.CoreInteropEnumTypeAttribute">
-            <summary>
-            Specifies mapping of the model enum type to one of the types used in Microsoft.Office.Core.
-            </summary>
-            <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Microsoft.Office.Core.</param>
-        </member>
-        <member name="M:DocumentModel.OpenXml.CoreInteropEnumTypeAttribute.#ctor(System.Type)">
-            <summary>
-            Specifies mapping of the model enum type to one of the types used in Microsoft.Office.Core.
-            </summary>
-            <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Microsoft.Office.Core.</param>
-        </member>
-        <member name="P:DocumentModel.OpenXml.CoreInteropEnumTypeAttribute.TargetType">
-            <summary>
-            The Microsoft.Office.Interop.Word type associated with the decorated enum.
-            </summary>
-        </member>
         <member name="T:DocumentModel.OpenXml.DirectAccessAttribute">
             <summary>
             Specifies Ithat direct access is enabled or disabled for a class or property.
@@ -57,6 +40,56 @@
         <member name="P:DocumentModel.OpenXml.LazyLoadAttribute.IsEnabled">
             <summary>
             Can be enabled or disabled.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.OpenXml.OfficeInteropEnumTypeAttribute">
+            <summary>
+            Specifies mapping of the model enum type to one of the types used in Microsoft.Office.Core.
+            </summary>
+            <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Microsoft.Office.Core.</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OfficeInteropEnumTypeAttribute.#ctor(System.Type)">
+            <summary>
+            Specifies mapping of the model enum type to one of the types used in Microsoft.Office.Core.
+            </summary>
+            <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Microsoft.Office.Core.</param>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OfficeInteropEnumTypeAttribute.TargetType">
+            <summary>
+            The Microsoft.Office.Interop.Word type associated with the decorated enum.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.OpenXml.OfficeInteropEnumValueAttribute">
+            <summary>
+            Specifies the Office Interop Enum type value name to associate with an Enum field for mapping purposes.
+            </summary>
+            <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in an Office Interop Enum type.
+            This is typically used for conversion to/from Office Interop Enum values.</remarks>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OfficeInteropEnumValueAttribute.#ctor(System.String)">
+            <summary>
+            Specifies the Word Interop Enum type value name to associate with an Enum field for mapping purposes.
+            </summary>
+            <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in a Word Interop Enum type.
+            This is typically used for conversion to/from Word Interop Enum values.</remarks>
+            <param name="enumValueName">The name of the Word Interop Enum type value to be associated with the target Enum field.
+            Cannot be null or empty.</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OfficeInteropEnumValueAttribute.#ctor(System.Type,System.String)">
+            <summary>
+            Specifies the Word Interop Enum type and value name to associate with an Enum field for mapping purposes.
+            </summary>
+            <param name="enumType">The Word Interop Enum type to be associated with the target Enum field.</param>
+            <param name="enumValueName">The name of the Word Interop Enum type value to be associated with the target Enum field.</param>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OfficeInteropEnumValueAttribute.EnumType">
+            <summary>
+            The Word Interop Enum Type associated with the decorated member.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OfficeInteropEnumValueAttribute.EnumValueName">
+            <summary>
+            The Open XML property name associated with the decorated member.
             </summary>
         </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlConvertFromAttribute">
@@ -206,6 +239,21 @@
             <param name="enumType">The Open XML Enum type to be associated with the target Enum field.</param>
             <param name="enumValueName">The name of the Open XML EnumValues static property to be associated with the target Enum field.</param>
         </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlEnumValueAttribute.#ctor(System.Int32)">
+            <summary>
+            Specifies the Open XML Enum integer value to associate with an Enum field for mapping purposes.
+            </summary>
+            <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in an Open  XML EnumValues type.
+            This is typically used for conversion to/from OpenXml EnumValue&lt;EnumValues&gt;.</remarks>
+            <param name="enumValue">The Open XML Enum integer value to be associated with the target Enum field.</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlEnumValueAttribute.#ctor(System.Type,System.Int32)">
+            <summary>
+            Specifies the Open XML Enum integer value to associate with an Enum field for mapping purposes.
+            </summary>
+            <param name="enumType">The Open XML Enum type to be associated with the target Enum field.</param>
+            <param name="enumValue">The Open XML Enum integer value to be associated with the target Enum field.</param>
+        </member>
         <member name="P:DocumentModel.OpenXml.OpenXmlEnumValueAttribute.EnumType">
             <summary>
             The Open XML Enum Type associated with the decorated member.
@@ -214,6 +262,11 @@
         <member name="P:DocumentModel.OpenXml.OpenXmlEnumValueAttribute.EnumValueName">
             <summary>
             The Open XML property name associated with the decorated member.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OpenXmlEnumValueAttribute.EnumValue">
+            <summary>
+            The Open XML Enum integer value associated with the decorated member.
             </summary>
         </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlFormatAttribute">

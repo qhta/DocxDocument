@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -8,18 +8,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlseriesnamelevel?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlSeriesNameLevel))]
 public enum SeriesNameLevel
 {
   /// <summary>
   /// Set no category labels in the chart; instead default to automatic indexed labels.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlSeriesNameLevel.xlSeriesNameLevelNone))]
   None = -3,
   /// <summary>
   /// Indicates literal data in the series names.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlSeriesNameLevel.xlSeriesNameLevelCustom))]
   Custom,
   /// <summary>
   /// Set series names to all series name levels w/in range on the chart.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlSeriesNameLevel.xlSeriesNameLevelAll))]
   All
 }

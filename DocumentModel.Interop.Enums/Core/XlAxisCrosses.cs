@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -8,22 +8,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxiscrosses?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlAxisCrosses))]
 public enum AxisCrosses
 {
   /// <summary>
   /// Microsoft Excel sets the axis crossing point.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisCrosses.xlAxisCrossesAutomatic))]
   Automatic = -4105,
   /// <summary>
   /// The CrossesAt property specifies the axis crossing point.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisCrosses.xlAxisCrossesCustom))]
   Custom = -4114,
   /// <summary>
   /// The axis crosses at the maximum value.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisCrosses.xlAxisCrossesMaximum))]
   Maximum = 2,
   /// <summary>
   /// The axis crosses at the minimum value.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisCrosses.xlAxisCrossesMinimum))]
   Minimum = 4
 }

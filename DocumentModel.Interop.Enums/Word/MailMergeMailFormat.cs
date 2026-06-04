@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the format to use when the mail merge destination is an e-mail message.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemailformat?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat))]
 public enum MailMergeMailFormat
 {
   /// <summary>
   /// Sends mail merge e-mail documents using plain text.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat.wdMailFormatPlainText))]
   PlainText = 0,
   /// <summary>
   /// Sends mail merge e-mail documents using HTML format.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat.wdMailFormatHTML))]
   HTML = 1
 }

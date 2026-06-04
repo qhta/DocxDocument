@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the direction for conversion between Hangul and Hanja.
@@ -6,14 +6,17 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmultiplewordconversionsmode?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMultipleWordConversionsMode))]
 public enum MultipleWordConversionsMode
 {
   /// <summary>
   /// Hangul to Hanja.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMultipleWordConversionsMode.wdHangulToHanja))]
   HangulToHanja = 0,
   /// <summary>
   /// Hanja to Hangul.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMultipleWordConversionsMode.wdHanjaToHangul))]
   HanjaToHangul = 1
 }

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// When comparing two files for differences, specifies whether to create a new file or mark the differences
@@ -7,19 +7,23 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcomparedestination?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCompareDestination))]
 public enum CompareDestination
 {
   /// <summary>
   /// Tracks the differences between the two files using tracked changes in the original document.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCompareDestination.wdCompareDestinationOriginal))]
   Original = 0,
   /// <summary>
   /// Tracks the differences between the two files using tracked changes in the revised document.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCompareDestination.wdCompareDestinationRevised))]
   Revised = 1,
   /// <summary>
   /// Creates a new file and tracks the diferences between the original document and the revised document using
   /// tracked changes.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCompareDestination.wdCompareDestinationNew))]
   New = 2
 }

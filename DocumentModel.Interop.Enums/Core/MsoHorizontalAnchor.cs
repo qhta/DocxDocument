@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+﻿namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the horizontal alignment of text in a text frame.
@@ -6,18 +6,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohorizontalanchor?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoHorizontalAnchor))]
 public enum HorizontalAnchor
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoHorizontalAnchor.msoHorizontalAnchorMixed))]
   HorizontalAnchorMixed = -2,
   /// <summary>
   /// No alignment.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoHorizontalAnchor.msoAnchorNone))]
   AnchorNone = 1,
   /// <summary>
   /// Text is centered horizontally.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoHorizontalAnchor.msoAnchorCenter))]
   AnchorCenter = 2
 }

@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -8,14 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcolorindex?view=office-pia` for Office interop details.
 /// </remarks>
+[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlColorIndex))]
 public enum ColorIndex
 {
   /// <summary>
   /// Automatic color.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlColorIndex.xlColorIndexAutomatic))]
   Automatic = -4105,
   /// <summary>
   /// No color.
   /// </summary>
+  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlColorIndex.xlColorIndexNone))]
   None = -4142
 }

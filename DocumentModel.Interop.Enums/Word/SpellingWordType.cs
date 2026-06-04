@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Specifies the way Microsoft Word makes spelling suggestions.
@@ -6,18 +6,22 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspellingwordtype?view=office-pia` for Office interop details.
 /// </remarks>
+[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSpellingWordType))]
 public enum SpellingWordType
 {
   /// <summary>
   /// Spellword searching.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdSpellword))]
   Spellword = 0,
   /// <summary>
   /// Wildcard searching.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdWildcard))]
   Wildcard = 1,
   /// <summary>
   /// Anagram searching.
   /// </summary>
+  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdAnagram))]
   Anagram = 2
 }

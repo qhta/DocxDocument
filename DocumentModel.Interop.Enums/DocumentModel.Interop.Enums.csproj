@@ -7,4 +7,64 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="tools\" />
+    <Folder Include="Word\AutoCorrect\" />
+    <Folder Include="Word\Bibliography\" />
+    <Folder Include="Word\Bookmarks\" />
+    <Folder Include="Word\Borders\" />
+    <Folder Include="Word\Breaks\" />
+    <Folder Include="Word\BuildingBlocks\" />
+    <Folder Include="Word\Captions\" />
+    <Folder Include="Word\CoAuthoring\" />
+    <Folder Include="Word\Common\" />
+    <Folder Include="Word\ContentControls\" />
+    <Folder Include="Word\CustomXml\" />
+    <Folder Include="Word\Dictionaries\" />
+    <Folder Include="Word\Documents\" />
+    <Folder Include="Word\Document\" />
+    <Folder Include="Word\Drawings\" />
+    <Folder Include="Word\Editors\" />
+    <Folder Include="Word\Fields\" />
+    <Folder Include="Word\Find and replace\" />
+    <Folder Include="Word\Fonts\" />
+    <Folder Include="Word\Footnotes and endnotes\" />
+    <Folder Include="Word\FormFields\" />
+    <Folder Include="Word\Frames and framesets\" />
+    <Folder Include="Word\Headers and footers\" />
+    <Folder Include="Word\Indexes\" />
+    <Folder Include="Word\Info\" />
+    <Folder Include="Word\InlineShapes\" />
+    <Folder Include="Word\KeyBindings\" />
+    <Folder Include="Word\Lists\" />
+    <Folder Include="Word\MailMerge\" />
+    <Folder Include="Word\Numbering\" />
+    <Folder Include="Word\Pages\" />
+    <Folder Include="Word\Paragraph properties\" />
+    <Folder Include="Word\Ranges\" />
+    <Folder Include="Word\Revisions\" />
+    <Folder Include="Word\Ruby\" />
+    <Folder Include="Word\Run content\" />
+    <Folder Include="Word\Run properties\" />
+    <Folder Include="Word\Sdt\" />
+    <Folder Include="Word\Settings\" />
+    <Folder Include="Word\SmartTags\" />
+    <Folder Include="Word\Table properties\" />
+    <Folder Include="Word\TableOf\" />
+    <Folder Include="Word\Tables\" />
+    <Folder Include="Word\Unused\" />
+    <Folder Include="Word\Versioning\" />
+    <Folder Include="Word\Views\" />
+    <Folder Include="Word\Vml\" />
+    <Folder Include="Word\Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MicrosoftOfficeCore" Version="15.0.0" />
+  </ItemGroup>
+
 </Project>
