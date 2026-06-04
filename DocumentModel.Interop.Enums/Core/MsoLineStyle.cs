@@ -6,39 +6,39 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinestyle?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoLineStyle))]
+[OfficeInteropEnumType("MsoLineStyle")]
 public enum LineStyle
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineStyleMixed))]
+  [OfficeInteropEnumValue("msoLineStyleMixed")]
   StyleMixed = -2,
   /// <summary>
   /// Single line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineSingle))]
+  [OfficeInteropEnumValue("msoLineSingle")]
   Single = 1,
   /// <summary>
   /// Two thin lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineThinThin))]
+  [OfficeInteropEnumValue("msoLineThinThin")]
   ThinThin = 2,
   /// <summary>
   /// Thick line next to thin line. For horizontal lines, thick line is below thin line. For vertical lines, thick
   /// line is to the right of the thin line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineThinThick))]
+  [OfficeInteropEnumValue("msoLineThinThick")]
   ThinThick = 3,
   /// <summary>
   /// Thick line next to thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
   /// line is to the left of the thin line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineThickThin))]
+  [OfficeInteropEnumValue("msoLineThickThin")]
   ThickThin = 4,
   /// <summary>
   /// Thick line with a thin line on each side.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineStyle.msoLineThickBetweenThin))]
+  [OfficeInteropEnumValue("msoLineThickBetweenThin")]
   ThickBetweenThin = 5
 }

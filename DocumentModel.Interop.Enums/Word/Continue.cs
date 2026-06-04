@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontinue?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdContinue))]
+[WordInteropEnumType("WdContinue")]
 public enum Continue
 {
   /// <summary>
   /// Formatting cannot continue from the previous list.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContinue.wdContinueDisabled))]
+  [WordInteropEnumValue("wdContinueDisabled")]
   ContinueDisabled = 0,
   /// <summary>
   /// Numbering can be restarted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContinue.wdResetList))]
+  [WordInteropEnumValue("wdResetList")]
   ResetList = 1,
   /// <summary>
   /// Formatting can continue from the previous list.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContinue.wdContinueList))]
+  [WordInteropEnumValue("wdContinueList")]
   ContinueList = 2
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomixedtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoMixedType))]
+[OfficeInteropEnumType("MsoMixedType")]
 public enum MixedType
 {
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMixedType.msoIntegerMixed))]
+  [OfficeInteropEnumValue("msoIntegerMixed")]
   IntegerMixed = 32768,
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMixedType.msoSingleMixed))]
+  [OfficeInteropEnumValue("msoSingleMixed")]
   SingleMixed = int.MinValue
 }

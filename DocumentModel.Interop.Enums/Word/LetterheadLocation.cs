@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdletterheadlocation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdLetterheadLocation))]
+[WordInteropEnumType("WdLetterheadLocation")]
 public enum LetterheadLocation
 {
   /// <summary>
   /// At the top of the letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLetterheadLocation.wdLetterTop))]
+  [WordInteropEnumValue("wdLetterTop")]
   Top = 0,
   /// <summary>
   /// At the bottom of the letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLetterheadLocation.wdLetterBottom))]
+  [WordInteropEnumValue("wdLetterBottom")]
   Bottom = 1,
   /// <summary>
   /// To the left of the letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLetterheadLocation.wdLetterLeft))]
+  [WordInteropEnumValue("wdLetterLeft")]
   Left = 2,
   /// <summary>
   /// To the right of the letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLetterheadLocation.wdLetterRight))]
+  [WordInteropEnumValue("wdLetterRight")]
   Right = 3
 }

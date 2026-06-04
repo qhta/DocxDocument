@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemaindoctype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType))]
+[WordInteropEnumType("WdMailMergeMainDocType")]
 public enum MailMergeMainDocType
 {
   /// <summary>
   /// Form letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdFormLetters))]
+  [WordInteropEnumValue("wdFormLetters")]
   FormLetters = 0,
   /// <summary>
   /// Mailing label.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdMailingLabels))]
+  [WordInteropEnumValue("wdMailingLabels")]
   MailingLabels = 1,
   /// <summary>
   /// Envelope.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdEnvelopes))]
+  [WordInteropEnumValue("wdEnvelopes")]
   Envelopes = 2,
   /// <summary>
   /// Directory.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdDirectory))]
+  [WordInteropEnumValue("wdDirectory")]
   Directory = 3,
   /// <summary>
   /// Catalog.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdCatalog))]
+  [WordInteropEnumValue("wdCatalog")]
   Catalog = 3,
   /// <summary>
   /// E-mail message.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdEMail))]
+  [WordInteropEnumValue("wdEMail")]
   EMail = 4,
   /// <summary>
   /// Fax.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdFax))]
+  [WordInteropEnumValue("wdFax")]
   Fax = 5,
   /// <summary>
   /// Not a merge document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMainDocType.wdNotAMergeDocument))]
+  [WordInteropEnumValue("wdNotAMergeDocument")]
   NotAMergeDocument = -1
 }

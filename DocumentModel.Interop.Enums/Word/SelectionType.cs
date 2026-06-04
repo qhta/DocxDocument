@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdselectiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSelectionType))]
+[WordInteropEnumType("WdSelectionType")]
 public enum SelectionType
 {
   /// <summary>
   /// No selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdNoSelection))]
+  [WordInteropEnumValue("wdNoSelection")]
   NoSelection = 0,
   /// <summary>
   /// An inline paragraph selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionIP))]
+  [WordInteropEnumValue("wdSelectionIP")]
   SelectionIP = 1,
   /// <summary>
   /// A normal or user-defined selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionNormal))]
+  [WordInteropEnumValue("wdSelectionNormal")]
   SelectionNormal = 2,
   /// <summary>
   /// A frame selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionFrame))]
+  [WordInteropEnumValue("wdSelectionFrame")]
   SelectionFrame = 3,
   /// <summary>
   /// A column selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionColumn))]
+  [WordInteropEnumValue("wdSelectionColumn")]
   SelectionColumn = 4,
   /// <summary>
   /// A row selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionRow))]
+  [WordInteropEnumValue("wdSelectionRow")]
   SelectionRow = 5,
   /// <summary>
   /// A block selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionBlock))]
+  [WordInteropEnumValue("wdSelectionBlock")]
   SelectionBlock = 6,
   /// <summary>
   /// An inline shape selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionInlineShape))]
+  [WordInteropEnumValue("wdSelectionInlineShape")]
   SelectionInlineShape = 7,
   /// <summary>
   /// A shape selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSelectionType.wdSelectionShape))]
+  [WordInteropEnumValue("wdSelectionShape")]
   SelectionShape = 8
 }

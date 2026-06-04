@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoflipcmd?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFlipCmd))]
+[OfficeInteropEnumType("MsoFlipCmd")]
 public enum FlipCmd
 {
   /// <summary>
   /// Flip horizontally.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFlipCmd.msoFlipHorizontal))]
+  [OfficeInteropEnumValue("msoFlipHorizontal")]
   Horizontal,
   /// <summary>
   /// Flip vertically.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFlipCmd.msoFlipVertical))]
+  [OfficeInteropEnumValue("msoFlipVertical")]
   Vertical
 }

@@ -6,122 +6,122 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msometapropertytype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoMetaPropertyType))]
+[OfficeInteropEnumType("MsoMetaPropertyType")]
 public enum MetaPropertyType
 {
   /// <summary>
   /// Represents an unknown value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeUnknown))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeUnknown")]
   Unknown,
   /// <summary>
   /// Represents a Boolean value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeBoolean))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeBoolean")]
   Boolean,
   /// <summary>
   /// Represents a value from one or more choices.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeChoice))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeChoice")]
   Choice,
   /// <summary>
   /// Represents a calculated value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeCalculated))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeCalculated")]
   Calculated,
   /// <summary>
   /// Represents a computed value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeComputed))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeComputed")]
   Computed,
   /// <summary>
   /// Represents a Currency value
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeCurrency))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeCurrency")]
   Currency,
   /// <summary>
   /// Represents a DateTime value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeDateTime))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeDateTime")]
   DateTime,
   /// <summary>
   /// Represents a value from two or more choices that is written-in by the user.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeFillInChoice))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeFillInChoice")]
   FillInChoice,
   /// <summary>
   /// Represents a GUID value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeGuid))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeGuid")]
   Guid,
   /// <summary>
   /// Represents an Integer value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeInteger))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeInteger")]
   Integer,
   /// <summary>
   /// Represents a value used to lookup another value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeLookup))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeLookup")]
   Lookup,
   /// <summary>
   /// Represents a collection of choices used to lookup another value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeMultiChoiceLookup))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeMultiChoiceLookup")]
   MultiChoiceLookup,
   /// <summary>
   /// Represents a collection of choices.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeMultiChoice))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeMultiChoice")]
   MultiChoice,
   /// <summary>
   /// Represents a collection of choices that require the user to write-in a value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeMultiChoiceFillIn))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeMultiChoiceFillIn")]
   MultiChoiceFillIn,
   /// <summary>
   /// Represents a value of one or more sentences.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeNote))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeNote")]
   Note,
   /// <summary>
   /// Represents a generic number data type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeNumber))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeNumber")]
   Number,
   /// <summary>
   /// Represents a Text value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeText))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeText")]
   Text,
   /// <summary>
   /// Represents a URL.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeUrl))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeUrl")]
   Url,
   /// <summary>
   /// Represents a category of user.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeUser))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeUser")]
   User,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeUserMulti))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeUserMulti")]
   UserMulti,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeBusinessData))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeBusinessData")]
   BusinessData,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeBusinessDataSecondary))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeBusinessDataSecondary")]
   BusinessDataSecondary,
   /// <summary>
   /// Represents the maximum value for a range.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMetaPropertyType.msoMetaPropertyTypeMax))]
+  [OfficeInteropEnumValue("msoMetaPropertyTypeMax")]
   Max
 }

@@ -7,27 +7,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlChartOrientation))]
+[OfficeInteropEnumType("XlChartOrientation")]
 public enum ChartOrientation
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartOrientation.xlDownward))]
+  [OfficeInteropEnumValue("xlDownward")]
   Downward = -4170,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartOrientation.xlHorizontal))]
+  [OfficeInteropEnumValue("xlHorizontal")]
   Horizontal = -4128,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartOrientation.xlUpward))]
+  [OfficeInteropEnumValue("xlUpward")]
   Upward = -4171,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartOrientation.xlVertical))]
+  [OfficeInteropEnumValue("xlVertical")]
   Vertical = -4166
 }

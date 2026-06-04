@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartpicturetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlChartPictureType))]
+[WordInteropEnumType("XlChartPictureType")]
 public enum ChartPictureType
 {
   /// <summary>
   /// Picture is stretched the full length of the stacked bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPictureType.xlStretch))]
+  [WordInteropEnumValue("xlStretch")]
   retch = 1,
   /// <summary>
   /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPictureType.xlStack))]
+  [WordInteropEnumValue("xlStack")]
   ack = 2,
   /// <summary>
   /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPictureType.xlStackScale))]
+  [WordInteropEnumValue("xlStackScale")]
   ackScale = 3
 }

@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtofformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTofFormat))]
+[WordInteropEnumType("WdTofFormat")]
 public enum TofFormat
 {
   /// <summary>
   /// Template formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFTemplate))]
+  [WordInteropEnumValue("wdTOFTemplate")]
   Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFClassic))]
+  [WordInteropEnumValue("wdTOFClassic")]
   Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFDistinctive))]
+  [WordInteropEnumValue("wdTOFDistinctive")]
   Distinctive = 2,
   /// <summary>
   /// Centered formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFCentered))]
+  [WordInteropEnumValue("wdTOFCentered")]
   Centered = 3,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFFormal))]
+  [WordInteropEnumValue("wdTOFFormal")]
   Formal = 4,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTofFormat.wdTOFSimple))]
+  [WordInteropEnumValue("wdTOFSimple")]
   Simple = 5
 }

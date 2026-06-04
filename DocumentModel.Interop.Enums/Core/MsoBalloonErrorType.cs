@@ -6,67 +6,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoballoonerrortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBalloonErrorType))]
+[OfficeInteropEnumType("MsoBalloonErrorType")]
 public enum BalloonErrorType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorNone))]
+  [OfficeInteropEnumValue("msoBalloonErrorNone")]
   None,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorOther))]
+  [OfficeInteropEnumValue("msoBalloonErrorOther")]
   Other,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorTooBig))]
+  [OfficeInteropEnumValue("msoBalloonErrorTooBig")]
   TooBig,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorOutOfMemory))]
+  [OfficeInteropEnumValue("msoBalloonErrorOutOfMemory")]
   OutOfMemory,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorBadPictureRef))]
+  [OfficeInteropEnumValue("msoBalloonErrorBadPictureRef")]
   BadPictureRef,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorBadReference))]
+  [OfficeInteropEnumValue("msoBalloonErrorBadReference")]
   BadReference,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorButtonlessModal))]
+  [OfficeInteropEnumValue("msoBalloonErrorButtonlessModal")]
   ButtonlessModal,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorButtonModeless))]
+  [OfficeInteropEnumValue("msoBalloonErrorButtonModeless")]
   ButtonModeless,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorBadCharacter))]
+  [OfficeInteropEnumValue("msoBalloonErrorBadCharacter")]
   BadCharacter,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorCOMFailure))]
+  [OfficeInteropEnumValue("msoBalloonErrorCOMFailure")]
   COMFailure,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorCharNotTopmostForModal))]
+  [OfficeInteropEnumValue("msoBalloonErrorCharNotTopmostForModal")]
   CharNotTopmostForModal,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonErrorType.msoBalloonErrorTooManyControls))]
+  [OfficeInteropEnumValue("msoBalloonErrorTooManyControls")]
   TooManyControls
 }

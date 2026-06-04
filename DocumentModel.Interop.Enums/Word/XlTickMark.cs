@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltickmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlTickMark))]
+[WordInteropEnumType("XlTickMark")]
 public enum TickMark
 {
   /// <summary>
   /// Inside the axis
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlTickMark.xlTickMarkInside))]
+  [WordInteropEnumValue("xlTickMarkInside")]
   Inside = 2,
   /// <summary>
   /// No mark
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlTickMark.xlTickMarkOutside))]
+  [WordInteropEnumValue("xlTickMarkOutside")]
   Outside = 3,
   /// <summary>
   /// Crosses the axis
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlTickMark.xlTickMarkCross))]
+  [WordInteropEnumValue("xlTickMarkCross")]
   Cross = 4,
   /// <summary>
   /// No mark.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlTickMark.xlTickMarkNone))]
+  [WordInteropEnumValue("xlTickMarkNone")]
   None = -4142
 }

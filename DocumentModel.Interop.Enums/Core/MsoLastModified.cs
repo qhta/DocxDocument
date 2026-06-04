@@ -8,42 +8,42 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolastmodified?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoLastModified))]
+[OfficeInteropEnumType("MsoLastModified")]
 public enum LastModified
 {
   /// <summary>
   /// File last modified yesterday.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedYesterday))]
+  [OfficeInteropEnumValue("msoLastModifiedYesterday")]
   Yesterday = 1,
   /// <summary>
   /// File last modified today.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedToday))]
+  [OfficeInteropEnumValue("msoLastModifiedToday")]
   Today,
   /// <summary>
   /// File last modified last week.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedLastWeek))]
+  [OfficeInteropEnumValue("msoLastModifiedLastWeek")]
   LastWeek,
   /// <summary>
   /// File last modified this week.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedThisWeek))]
+  [OfficeInteropEnumValue("msoLastModifiedThisWeek")]
   ThisWeek,
   /// <summary>
   /// File last modified last month.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedLastMonth))]
+  [OfficeInteropEnumValue("msoLastModifiedLastMonth")]
   LastMonth,
   /// <summary>
   /// File last modified this month.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedThisMonth))]
+  [OfficeInteropEnumValue("msoLastModifiedThisMonth")]
   ThisMonth,
   /// <summary>
   /// File last modified any time.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLastModified.msoLastModifiedAnyTime))]
+  [OfficeInteropEnumValue("msoLastModifiedAnyTime")]
   AnyTime
 }

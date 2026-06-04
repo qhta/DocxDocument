@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisedpropertiesmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark))]
+[WordInteropEnumType("WdRevisedPropertiesMark")]
 public enum RevisedPropertiesMark
 {
   /// <summary>
   /// Using a special character.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkNone))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkNone")]
   None = 0,
   /// <summary>
   /// In bold.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkBold))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkBold")]
   Bold = 1,
   /// <summary>
   /// In italics.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkItalic))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkItalic")]
   Italic = 2,
   /// <summary>
   /// With underline characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkUnderline))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkUnderline")]
   Underline = 3,
   /// <summary>
   /// With double underline characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkDoubleUnderline))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkDoubleUnderline")]
   DoubleUnderline = 4,
   /// <summary>
   /// In the designated color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkColorOnly))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkColorOnly")]
   ColorOnly = 5,
   /// <summary>
   /// Using strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkStrikeThrough))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkStrikeThrough")]
   StrikeThrough = 6,
   /// <summary>
   /// Using double-strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedPropertiesMark.wdRevisedPropertiesMarkDoubleStrikeThrough))]
+  [WordInteropEnumValue("wdRevisedPropertiesMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 7
 }

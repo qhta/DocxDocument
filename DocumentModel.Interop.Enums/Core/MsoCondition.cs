@@ -7,396 +7,396 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocondition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoCondition))]
+[OfficeInteropEnumType("MsoCondition")]
 public enum Condition
 {
   /// <summary>
   /// File can be any type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeAllFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeAllFiles")]
   FileTypeAllFiles = 1,
   /// <summary>
   /// File can be any Office file type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeOfficeFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeOfficeFiles")]
   FileTypeOfficeFiles,
   /// <summary>
   /// Word document.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeWordDocuments))]
+  [OfficeInteropEnumValue("msoConditionFileTypeWordDocuments")]
   FileTypeWordDocuments,
   /// <summary>
   /// Excel workbook.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeExcelWorkbooks))]
+  [OfficeInteropEnumValue("msoConditionFileTypeExcelWorkbooks")]
   FileTypeExcelWorkbooks,
   /// <summary>
   /// PowerPoint presentation.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypePowerPointPresentations))]
+  [OfficeInteropEnumValue("msoConditionFileTypePowerPointPresentations")]
   FileTypePowerPointPresentations,
   /// <summary>
   /// Binder file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeBinders))]
+  [OfficeInteropEnumValue("msoConditionFileTypeBinders")]
   FileTypeBinders,
   /// <summary>
   /// Database.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeDatabases))]
+  [OfficeInteropEnumValue("msoConditionFileTypeDatabases")]
   FileTypeDatabases,
   /// <summary>
   /// Template.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeTemplates))]
+  [OfficeInteropEnumValue("msoConditionFileTypeTemplates")]
   FileTypeTemplates,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the value specified
   /// in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIncludes))]
+  [OfficeInteropEnumValue("msoConditionIncludes")]
   Includes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
   /// in the value specified in
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIncludesPhrase))]
+  [OfficeInteropEnumValue("msoConditionIncludesPhrase")]
   IncludesPhrase,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object begins with the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionBeginsWith))]
+  [OfficeInteropEnumValue("msoConditionBeginsWith")]
   BeginsWith,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object ends with the value specified
   /// in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEndsWith))]
+  [OfficeInteropEnumValue("msoConditionEndsWith")]
   EndsWith,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object and the value specified in
   /// the Value property of the PropertyTest object are near each other.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIncludesNearEachOther))]
+  [OfficeInteropEnumValue("msoConditionIncludesNearEachOther")]
   IncludesNearEachOther,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is exactly the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIsExactly))]
+  [OfficeInteropEnumValue("msoConditionIsExactly")]
   IsExactly,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is not the value specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIsNot))]
+  [OfficeInteropEnumValue("msoConditionIsNot")]
   IsNot,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is yesterday.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionYesterday))]
+  [OfficeInteropEnumValue("msoConditionYesterday")]
   Yesterday,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is today.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionToday))]
+  [OfficeInteropEnumValue("msoConditionToday")]
   Today,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is tomorrow.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionTomorrow))]
+  [OfficeInteropEnumValue("msoConditionTomorrow")]
   Tomorrow,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last week.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionLastWeek))]
+  [OfficeInteropEnumValue("msoConditionLastWeek")]
   LastWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is this week.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionThisWeek))]
+  [OfficeInteropEnumValue("msoConditionThisWeek")]
   ThisWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is next week.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNextWeek))]
+  [OfficeInteropEnumValue("msoConditionNextWeek")]
   NextWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last month.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionLastMonth))]
+  [OfficeInteropEnumValue("msoConditionLastMonth")]
   LastMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is this month.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionThisMonth))]
+  [OfficeInteropEnumValue("msoConditionThisMonth")]
   ThisMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is next month.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNextMonth))]
+  [OfficeInteropEnumValue("msoConditionNextMonth")]
   NextMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object can be any time.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionAnytime))]
+  [OfficeInteropEnumValue("msoConditionAnytime")]
   Anytime,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is between the dates specified with the Value
   /// and SecondValue properties of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionAnytimeBetween))]
+  [OfficeInteropEnumValue("msoConditionAnytimeBetween")]
   AnytimeBetween,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is the same as the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionOn))]
+  [OfficeInteropEnumValue("msoConditionOn")]
   On,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is on or after the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionOnOrAfter))]
+  [OfficeInteropEnumValue("msoConditionOnOrAfter")]
   OnOrAfter,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is on or before the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionOnOrBefore))]
+  [OfficeInteropEnumValue("msoConditionOnOrBefore")]
   OnOrBefore,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the next time interval specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionInTheNext))]
+  [OfficeInteropEnumValue("msoConditionInTheNext")]
   InTheNext,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last time interval specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionInTheLast))]
+  [OfficeInteropEnumValue("msoConditionInTheLast")]
   InTheLast,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object equals the value specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEquals))]
+  [OfficeInteropEnumValue("msoConditionEquals")]
   Equals,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object does not equal the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionDoesNotEqual))]
+  [OfficeInteropEnumValue("msoConditionDoesNotEqual")]
   DoesNotEqual,
   /// <summary>
   /// Any number between values specified with the Value and SecondValue properties of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionAnyNumberBetween))]
+  [OfficeInteropEnumValue("msoConditionAnyNumberBetween")]
   AnyNumberBetween,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is at most the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionAtMost))]
+  [OfficeInteropEnumValue("msoConditionAtMost")]
   AtMost,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is at least the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionAtLeast))]
+  [OfficeInteropEnumValue("msoConditionAtLeast")]
   AtLeast,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is more than the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionMoreThan))]
+  [OfficeInteropEnumValue("msoConditionMoreThan")]
   MoreThan,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is less than the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionLessThan))]
+  [OfficeInteropEnumValue("msoConditionLessThan")]
   LessThan,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is "True".
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIsYes))]
+  [OfficeInteropEnumValue("msoConditionIsYes")]
   IsYes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is "False".
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIsNo))]
+  [OfficeInteropEnumValue("msoConditionIsNo")]
   IsNo,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes forms of the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionIncludesFormsOf))]
+  [OfficeInteropEnumValue("msoConditionIncludesFormsOf")]
   IncludesFormsOf,
   /// <summary>
   /// Value of the file property specified in the Name property of the PropertyTest object matches the value
   /// specified in the Value property of the PropertyTest object when a FreeText search is used.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFreeText))]
+  [OfficeInteropEnumValue("msoConditionFreeText")]
   FreeText,
   /// <summary>
   /// Outlook item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeOutlookItems))]
+  [OfficeInteropEnumValue("msoConditionFileTypeOutlookItems")]
   FileTypeOutlookItems,
   /// <summary>
   /// Mail item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeMailItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeMailItem")]
   FileTypeMailItem,
   /// <summary>
   /// Calendar item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeCalendarItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeCalendarItem")]
   FileTypeCalendarItem,
   /// <summary>
   /// Contact item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeContactItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeContactItem")]
   FileTypeContactItem,
   /// <summary>
   /// Note item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeNoteItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeNoteItem")]
   FileTypeNoteItem,
   /// <summary>
   /// Journal item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeJournalItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeJournalItem")]
   FileTypeJournalItem,
   /// <summary>
   /// Task item.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeTaskItem))]
+  [OfficeInteropEnumValue("msoConditionFileTypeTaskItem")]
   FileTypeTaskItem,
   /// <summary>
   /// PhotoDraw file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypePhotoDrawFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypePhotoDrawFiles")]
   FileTypePhotoDrawFiles,
   /// <summary>
   /// Data connection file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeDataConnectionFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeDataConnectionFiles")]
   FileTypeDataConnectionFiles,
   /// <summary>
   /// Publisher file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypePublisherFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypePublisherFiles")]
   FileTypePublisherFiles,
   /// <summary>
   /// Project file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeProjectFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeProjectFiles")]
   FileTypeProjectFiles,
   /// <summary>
   /// Document imaging file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeDocumentImagingFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeDocumentImagingFiles")]
   FileTypeDocumentImagingFiles,
   /// <summary>
   /// Visio file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeVisioFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeVisioFiles")]
   FileTypeVisioFiles,
   /// <summary>
   /// Designer file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeDesignerFiles))]
+  [OfficeInteropEnumValue("msoConditionFileTypeDesignerFiles")]
   FileTypeDesignerFiles,
   /// <summary>
   /// Web page.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionFileTypeWebPages))]
+  [OfficeInteropEnumValue("msoConditionFileTypeWebPages")]
   FileTypeWebPages,
   /// <summary>
   /// Priority equals "Low". Value of the Name property must be Priority.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsLow))]
+  [OfficeInteropEnumValue("msoConditionEqualsLow")]
   EqualsLow,
   /// <summary>
   /// Priority equals "Normal". Value of the Name property must be Priority.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsNormal))]
+  [OfficeInteropEnumValue("msoConditionEqualsNormal")]
   EqualsNormal,
   /// <summary>
   /// Priority equals "High". Value of the Name property must be Priority.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsHigh))]
+  [OfficeInteropEnumValue("msoConditionEqualsHigh")]
   EqualsHigh,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "Low". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToLow))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToLow")]
   NotEqualToLow,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "Normal".
   /// Value of the Name property must be Priority or Importance.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToNormal))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToNormal")]
   NotEqualToNormal,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "High". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToHigh))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToHigh")]
   NotEqualToHigh,
   /// <summary>
   /// Status equals "Not Started". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsNotStarted))]
+  [OfficeInteropEnumValue("msoConditionEqualsNotStarted")]
   EqualsNotStarted,
   /// <summary>
   /// Status equals "In Progress". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsInProgress))]
+  [OfficeInteropEnumValue("msoConditionEqualsInProgress")]
   EqualsInProgress,
   /// <summary>
   /// Status equals "Completed". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsCompleted))]
+  [OfficeInteropEnumValue("msoConditionEqualsCompleted")]
   EqualsCompleted,
   /// <summary>
   /// Status equals "Waiting for Someone Else". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsWaitingForSomeoneElse))]
+  [OfficeInteropEnumValue("msoConditionEqualsWaitingForSomeoneElse")]
   EqualsWaitingForSomeoneElse,
   /// <summary>
   /// Status equals "Deferred". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionEqualsDeferred))]
+  [OfficeInteropEnumValue("msoConditionEqualsDeferred")]
   EqualsDeferred,
   /// <summary>
   /// Status does not equal "Not Started". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToNotStarted))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToNotStarted")]
   NotEqualToNotStarted,
   /// <summary>
   /// Status does not equal "In Progress". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToInProgress))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToInProgress")]
   NotEqualToInProgress,
   /// <summary>
   /// Status does not equal "Completed". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToCompleted))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToCompleted")]
   NotEqualToCompleted,
   /// <summary>
   /// Status does not equal "Waiting for Someone Else". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToWaitingForSomeoneElse))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToWaitingForSomeoneElse")]
   NotEqualToWaitingForSomeoneElse,
   /// <summary>
   /// Status does not equal "Deferred". Value of the Name property must be Status.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCondition.msoConditionNotEqualToDeferred))]
+  [OfficeInteropEnumValue("msoConditionNotEqualToDeferred")]
   NotEqualToDeferred
 }

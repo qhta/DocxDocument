@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilltype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFillType))]
+[OfficeInteropEnumType("MsoFillType")]
 public enum FillType
 {
   /// <summary>
   /// Mixed fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillMixed))]
+  [OfficeInteropEnumValue("msoFillMixed")]
   Mixed = -2,
   /// <summary>
   /// Solid fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillSolid))]
+  [OfficeInteropEnumValue("msoFillSolid")]
   Solid = 1,
   /// <summary>
   /// Patterned fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillPatterned))]
+  [OfficeInteropEnumValue("msoFillPatterned")]
   Patterned = 2,
   /// <summary>
   /// Gradient fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillGradient))]
+  [OfficeInteropEnumValue("msoFillGradient")]
   Gradient = 3,
   /// <summary>
   /// Textured fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillTextured))]
+  [OfficeInteropEnumValue("msoFillTextured")]
   Textured = 4,
   /// <summary>
   /// Fill is the same as the background.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillBackground))]
+  [OfficeInteropEnumValue("msoFillBackground")]
   Background = 5,
   /// <summary>
   /// Picture fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFillType.msoFillPicture))]
+  [OfficeInteropEnumValue("msoFillPicture")]
   Picture = 6
 }

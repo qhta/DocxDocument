@@ -6,17 +6,17 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOMathType))]
+[WordInteropEnumType("WdOMathType")]
 public enum OMathType
 {
   /// <summary>
   /// Professional format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathType.wdOMathDisplay))]
+  [WordInteropEnumValue("wdOMathDisplay")]
   Display = 0,
   /// <summary>
   /// Inline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathType.wdOMathInline))]
+  [WordInteropEnumValue("wdOMathInline")]
   Inline = 1
 }

@@ -7,52 +7,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcellcolor?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCellColor))]
+[WordInteropEnumType("WdCellColor")]
 public enum CellColor
 {
   /// <summary>
   /// No highlighting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorNoHighlight))]
+  [WordInteropEnumValue("wdCellColorNoHighlight")]
   NoHighlight = 0,
   /// <summary>
   /// Pink.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorPink))]
+  [WordInteropEnumValue("wdCellColorPink")]
   Pink = 1,
   /// <summary>
   /// Light blue.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightBlue))]
+  [WordInteropEnumValue("wdCellColorLightBlue")]
   LightBlue = 2,
   /// <summary>
   /// Light yellow.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightYellow))]
+  [WordInteropEnumValue("wdCellColorLightYellow")]
   LightYellow = 3,
   /// <summary>
   /// Light purple.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightPurple))]
+  [WordInteropEnumValue("wdCellColorLightPurple")]
   LightPurple = 4,
   /// <summary>
   /// Light orange.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightOrange))]
+  [WordInteropEnumValue("wdCellColorLightOrange")]
   LightOrange = 5,
   /// <summary>
   /// Light green.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightGreen))]
+  [WordInteropEnumValue("wdCellColorLightGreen")]
   LightGreen = 6,
   /// <summary>
   /// Light gray.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorLightGray))]
+  [WordInteropEnumValue("wdCellColorLightGray")]
   LightGray = 7,
   /// <summary>
   /// Highlighting color determined by reviewer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCellColor.wdCellColorByAuthor))]
+  [WordInteropEnumValue("wdCellColorByAuthor")]
   ByAuthor = -1
 }

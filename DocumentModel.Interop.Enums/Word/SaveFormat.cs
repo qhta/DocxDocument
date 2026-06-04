@@ -6,147 +6,147 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSaveFormat))]
+[WordInteropEnumType("WdSaveFormat")]
 public enum SaveFormat
 {
   /// <summary>
   /// Microsoft Word format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocument))]
+  [WordInteropEnumValue("wdFormatDocument")]
   Document = 0,
   /// <summary>
   /// Microsoft Word 97 document format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocument97))]
+  [WordInteropEnumValue("wdFormatDocument97")]
   Document97 = 0,
   /// <summary>
   /// Microsoft Word template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatTemplate))]
+  [WordInteropEnumValue("wdFormatTemplate")]
   Template = 1,
   /// <summary>
   /// Word 97 template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatTemplate97))]
+  [WordInteropEnumValue("wdFormatTemplate97")]
   Template97 = 1,
   /// <summary>
   /// Microsoft Windows text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatText))]
+  [WordInteropEnumValue("wdFormatText")]
   Text = 2,
   /// <summary>
   /// Microsoft Windows text format with line breaks preserved.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatTextLineBreaks))]
+  [WordInteropEnumValue("wdFormatTextLineBreaks")]
   TextLineBreaks = 3,
   /// <summary>
   /// Microsoft DOS text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDOSText))]
+  [WordInteropEnumValue("wdFormatDOSText")]
   DOSText = 4,
   /// <summary>
   /// Microsoft DOS text with line breaks preserved.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDOSTextLineBreaks))]
+  [WordInteropEnumValue("wdFormatDOSTextLineBreaks")]
   DOSTextLineBreaks = 5,
   /// <summary>
   /// Rich text format (RTF).
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatRTF))]
+  [WordInteropEnumValue("wdFormatRTF")]
   RTF = 6,
   /// <summary>
   /// Unicode text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatUnicodeText))]
+  [WordInteropEnumValue("wdFormatUnicodeText")]
   UnicodeText = 7,
   /// <summary>
   /// Encoded text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatEncodedText))]
+  [WordInteropEnumValue("wdFormatEncodedText")]
   EncodedText = 7,
   /// <summary>
   /// Standard HTML format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatHTML))]
+  [WordInteropEnumValue("wdFormatHTML")]
   HTML = 8,
   /// <summary>
   /// Web archive format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatWebArchive))]
+  [WordInteropEnumValue("wdFormatWebArchive")]
   WebArchive = 9,
   /// <summary>
   /// Filtered HTML format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatFilteredHTML))]
+  [WordInteropEnumValue("wdFormatFilteredHTML")]
   FilteredHTML = 10,
   /// <summary>
   /// Extensible Markup Language (XML) format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXML))]
+  [WordInteropEnumValue("wdFormatXML")]
   XML = 11,
   /// <summary>
   /// XML document format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLDocument))]
+  [WordInteropEnumValue("wdFormatXMLDocument")]
   XMLDocument = 12,
   /// <summary>
   /// XML template format with macros enabled.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLDocumentMacroEnabled))]
+  [WordInteropEnumValue("wdFormatXMLDocumentMacroEnabled")]
   XMLDocumentMacroEnabled = 13,
   /// <summary>
   /// XML template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLTemplate))]
+  [WordInteropEnumValue("wdFormatXMLTemplate")]
   XMLTemplate = 14,
   /// <summary>
   /// XML template format with macros enabled.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXMLTemplateMacroEnabled))]
+  [WordInteropEnumValue("wdFormatXMLTemplateMacroEnabled")]
   XMLTemplateMacroEnabled = 15,
   /// <summary>
   /// Word default document file format. For Microsoft Office Word 2007, this is the DOCX format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocumentDefault))]
+  [WordInteropEnumValue("wdFormatDocumentDefault")]
   DocumentDefault = 16,
   /// <summary>
   /// PDF format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatPDF))]
+  [WordInteropEnumValue("wdFormatPDF")]
   PDF = 17,
   /// <summary>
   /// XPS format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatXPS))]
+  [WordInteropEnumValue("wdFormatXPS")]
   XPS = 18,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatFlatXML))]
+  [WordInteropEnumValue("wdFormatFlatXML")]
   FlatXML = 19,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatFlatXMLMacroEnabled))]
+  [WordInteropEnumValue("wdFormatFlatXMLMacroEnabled")]
   FlatXMLMacroEnabled = 20,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatFlatXMLTemplate))]
+  [WordInteropEnumValue("wdFormatFlatXMLTemplate")]
   FlatXMLTemplate = 21,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatFlatXMLTemplateMacroEnabled))]
+  [WordInteropEnumValue("wdFormatFlatXMLTemplateMacroEnabled")]
   FlatXMLTemplateMacroEnabled = 22,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatOpenDocumentText))]
+  [WordInteropEnumValue("wdFormatOpenDocumentText")]
   OpenDocumentText = 23,
   /// <summary>
   /// Strict Open XML document format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatStrictOpenXMLDocument))]
+  [WordInteropEnumValue("wdFormatStrictOpenXMLDocument")]
   StrictOpenXMLDocument = 24
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprintoutpages?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPrintOutPages))]
+[WordInteropEnumType("WdPrintOutPages")]
 public enum PrintOutPages
 {
   /// <summary>
   /// All pages.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutPages.wdPrintAllPages))]
+  [WordInteropEnumValue("wdPrintAllPages")]
   AllPages = 0,
   /// <summary>
   /// Odd-numbered pages only.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutPages.wdPrintOddPagesOnly))]
+  [WordInteropEnumValue("wdPrintOddPagesOnly")]
   OddPagesOnly = 1,
   /// <summary>
   /// Even-numbered pages only.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutPages.wdPrintEvenPagesOnly))]
+  [WordInteropEnumValue("wdPrintEvenPagesOnly")]
   EvenPagesOnly = 2
 }

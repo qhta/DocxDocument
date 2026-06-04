@@ -7,27 +7,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylesheetprecedence?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdStyleSheetPrecedence))]
+[WordInteropEnumType("WdStyleSheetPrecedence")]
 public enum StyleSheetPrecedence
 {
   /// <summary>
   /// Lowest precedence.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleSheetPrecedence.wdStyleSheetPrecedenceLowest))]
+  [WordInteropEnumValue("wdStyleSheetPrecedenceLowest")]
   Lowest = 0,
   /// <summary>
   /// Highest precedence.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleSheetPrecedence.wdStyleSheetPrecedenceHighest))]
+  [WordInteropEnumValue("wdStyleSheetPrecedenceHighest")]
   Highest = 1,
   /// <summary>
   /// Lower precedence.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleSheetPrecedence.wdStyleSheetPrecedenceLower))]
+  [WordInteropEnumValue("wdStyleSheetPrecedenceLower")]
   Lower = -2,
   /// <summary>
   /// Raise precedence.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleSheetPrecedence.wdStyleSheetPrecedenceHigher))]
+  [WordInteropEnumValue("wdStyleSheetPrecedenceHigher")]
   Higher = -1
 }

@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoicontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoIconType))]
+[OfficeInteropEnumType("MsoIconType")]
 public enum IconType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconNone))]
+  [OfficeInteropEnumValue("msoIconNone")]
   None = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconAlert))]
+  [OfficeInteropEnumValue("msoIconAlert")]
   Alert = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconTip))]
+  [OfficeInteropEnumValue("msoIconTip")]
   Tip = 3,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconAlertInfo))]
+  [OfficeInteropEnumValue("msoIconAlertInfo")]
   AlertInfo = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconAlertWarning))]
+  [OfficeInteropEnumValue("msoIconAlertWarning")]
   AlertWarning = 5,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconAlertQuery))]
+  [OfficeInteropEnumValue("msoIconAlertQuery")]
   AlertQuery = 6,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoIconType.msoIconAlertCritical))]
+  [OfficeInteropEnumValue("msoIconAlertCritical")]
   AlertCritical = 7
 }

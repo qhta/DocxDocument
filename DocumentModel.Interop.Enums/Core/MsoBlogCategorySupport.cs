@@ -3,22 +3,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblogcategorysupport?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBlogCategorySupport))]
+[OfficeInteropEnumType("MsoBlogCategorySupport")]
 public enum BlogCategorySupport
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBlogCategorySupport.msoBlogNoCategories))]
+  [OfficeInteropEnumValue("msoBlogNoCategories")]
   NoCategories,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBlogCategorySupport.msoBlogOneCategory))]
+  [OfficeInteropEnumValue("msoBlogOneCategory")]
   OneCategory,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBlogCategorySupport.msoBlogMultipleCategories))]
+  [OfficeInteropEnumValue("msoBlogMultipleCategories")]
   MultipleCategories
 }

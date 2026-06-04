@@ -7,1102 +7,1102 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoLanguageID))]
+[OfficeInteropEnumType("MsoLanguageID")]
 public enum LanguageID
 {
   /// <summary>
   /// Mixed languages.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMixed))]
+  [OfficeInteropEnumValue("msoLanguageIDMixed")]
   Mixed = -2,
   /// <summary>
   /// No language specified.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDNone))]
+  [OfficeInteropEnumValue("msoLanguageIDNone")]
   None = 0,
   /// <summary>
   /// No proofing requested.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDNoProofing))]
+  [OfficeInteropEnumValue("msoLanguageIDNoProofing")]
   NoProofing = 1024,
   /// <summary>
   /// Afrikaans.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAfrikaans))]
+  [OfficeInteropEnumValue("msoLanguageIDAfrikaans")]
   Afrikaans = 1078,
   /// <summary>
   /// Albanian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAlbanian))]
+  [OfficeInteropEnumValue("msoLanguageIDAlbanian")]
   Albanian = 1052,
   /// <summary>
   /// Amharic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAmharic))]
+  [OfficeInteropEnumValue("msoLanguageIDAmharic")]
   Amharic = 1118,
   /// <summary>
   /// Arabic as spoken in Algeria.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicAlgeria))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicAlgeria")]
   ArabicAlgeria = 5121,
   /// <summary>
   /// Arabic as spoken in Bahrain.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicBahrain))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicBahrain")]
   ArabicBahrain = 15361,
   /// <summary>
   /// Arabic as spoken in Egypt.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicEgypt))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicEgypt")]
   ArabicEgypt = 3073,
   /// <summary>
   /// Arabic as spoken in Iraq.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicIraq))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicIraq")]
   ArabicIraq = 2049,
   /// <summary>
   /// Arabic as spoken in Jordan.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicJordan))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicJordan")]
   ArabicJordan = 11265,
   /// <summary>
   /// Arabic as spoken in Kuwait.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicKuwait))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicKuwait")]
   ArabicKuwait = 13313,
   /// <summary>
   /// Arabic as spoken in Lebanon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicLebanon))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicLebanon")]
   ArabicLebanon = 12289,
   /// <summary>
   /// Arabic as spoken in Libya.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicLibya))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicLibya")]
   ArabicLibya = 4097,
   /// <summary>
   /// Arabic as spoken in Morocco.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicMorocco))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicMorocco")]
   ArabicMorocco = 6145,
   /// <summary>
   /// Arabic as spoken in Oman.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicOman))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicOman")]
   ArabicOman = 8193,
   /// <summary>
   /// Arabic as spoken in Qatar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicQatar))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicQatar")]
   ArabicQatar = 16385,
   /// <summary>
   /// Arabic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabic))]
+  [OfficeInteropEnumValue("msoLanguageIDArabic")]
   Arabic = 1025,
   /// <summary>
   /// Arabic as spoken in Syria.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicSyria))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicSyria")]
   ArabicSyria = 10241,
   /// <summary>
   /// Arabic as spoken in Tunisia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicTunisia))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicTunisia")]
   ArabicTunisia = 7169,
   /// <summary>
   /// Arabic as spoken in the United Arab Emirates.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicUAE))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicUAE")]
   ArabicUAE = 14337,
   /// <summary>
   /// Arabic as spoken in Yemen.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArabicYemen))]
+  [OfficeInteropEnumValue("msoLanguageIDArabicYemen")]
   ArabicYemen = 9217,
   /// <summary>
   /// Armenian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDArmenian))]
+  [OfficeInteropEnumValue("msoLanguageIDArmenian")]
   Armenian = 1067,
   /// <summary>
   /// Assamese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAssamese))]
+  [OfficeInteropEnumValue("msoLanguageIDAssamese")]
   Assamese = 1101,
   /// <summary>
   /// Azeri-Cyrillic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAzeriCyrillic))]
+  [OfficeInteropEnumValue("msoLanguageIDAzeriCyrillic")]
   AzeriCyrillic = 2092,
   /// <summary>
   /// Azeri-Latin.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDAzeriLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDAzeriLatin")]
   AzeriLatin = 1068,
   /// <summary>
   /// Basque.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBasque))]
+  [OfficeInteropEnumValue("msoLanguageIDBasque")]
   Basque = 1069,
   /// <summary>
   /// Belarusian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDByelorussian))]
+  [OfficeInteropEnumValue("msoLanguageIDByelorussian")]
   Byelorussian = 1059,
   /// <summary>
   /// Bengali.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBengali))]
+  [OfficeInteropEnumValue("msoLanguageIDBengali")]
   Bengali = 1093,
   /// <summary>
   /// Bosnian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBosnian))]
+  [OfficeInteropEnumValue("msoLanguageIDBosnian")]
   Bosnian = 4122,
   /// <summary>
   /// The Bosnian Bosnia Herzegovina Cyrillic language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBosnianBosniaHerzegovinaCyrillic))]
+  [OfficeInteropEnumValue("msoLanguageIDBosnianBosniaHerzegovinaCyrillic")]
   BosnianBosniaHerzegovinaCyrillic = 8218,
   /// <summary>
   /// The Bosnian Bosnia Herzegovina Latin language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBosnianBosniaHerzegovinaLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDBosnianBosniaHerzegovinaLatin")]
   BosnianBosniaHerzegovinaLatin = 5146,
   /// <summary>
   /// Bulgarian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBulgarian))]
+  [OfficeInteropEnumValue("msoLanguageIDBulgarian")]
   Bulgarian = 1026,
   /// <summary>
   /// Burmese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBurmese))]
+  [OfficeInteropEnumValue("msoLanguageIDBurmese")]
   Burmese = 1109,
   /// <summary>
   /// Catalan.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDCatalan))]
+  [OfficeInteropEnumValue("msoLanguageIDCatalan")]
   Catalan = 1027,
   /// <summary>
   /// Chinese as spoken in Hong Kong SAR.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDChineseHongKongSAR))]
+  [OfficeInteropEnumValue("msoLanguageIDChineseHongKongSAR")]
   ChineseHongKongSAR = 3076,
   /// <summary>
   /// Chinese as spoken in Macao SAR.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDChineseMacaoSAR))]
+  [OfficeInteropEnumValue("msoLanguageIDChineseMacaoSAR")]
   ChineseMacaoSAR = 5124,
   /// <summary>
   /// Simplified Chinese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSimplifiedChinese))]
+  [OfficeInteropEnumValue("msoLanguageIDSimplifiedChinese")]
   SimplifiedChinese = 2052,
   /// <summary>
   /// Chinese as spoken in Singapore.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDChineseSingapore))]
+  [OfficeInteropEnumValue("msoLanguageIDChineseSingapore")]
   ChineseSingapore = 4100,
   /// <summary>
   /// Traditional Chinese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTraditionalChinese))]
+  [OfficeInteropEnumValue("msoLanguageIDTraditionalChinese")]
   TraditionalChinese = 1028,
   /// <summary>
   /// Cherokee.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDCherokee))]
+  [OfficeInteropEnumValue("msoLanguageIDCherokee")]
   Cherokee = 1116,
   /// <summary>
   /// Croatian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDCroatian))]
+  [OfficeInteropEnumValue("msoLanguageIDCroatian")]
   Croatian = 1050,
   /// <summary>
   /// Czech.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDCzech))]
+  [OfficeInteropEnumValue("msoLanguageIDCzech")]
   Czech = 1029,
   /// <summary>
   /// Danish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDDanish))]
+  [OfficeInteropEnumValue("msoLanguageIDDanish")]
   Danish = 1030,
   /// <summary>
   /// Divehi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDDivehi))]
+  [OfficeInteropEnumValue("msoLanguageIDDivehi")]
   Divehi = 1125,
   /// <summary>
   /// Belgian Dutch.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBelgianDutch))]
+  [OfficeInteropEnumValue("msoLanguageIDBelgianDutch")]
   BelgianDutch = 2067,
   /// <summary>
   /// Dutch.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDDutch))]
+  [OfficeInteropEnumValue("msoLanguageIDDutch")]
   Dutch = 1043,
   /// <summary>
   /// Dzongkha as spoken in Bhutan.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDDzongkhaBhutan))]
+  [OfficeInteropEnumValue("msoLanguageIDDzongkhaBhutan")]
   DzongkhaBhutan = 2129,
   /// <summary>
   /// Edo.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEdo))]
+  [OfficeInteropEnumValue("msoLanguageIDEdo")]
   Edo = 1126,
   /// <summary>
   /// English as spoken in Australia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishAUS))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishAUS")]
   EnglishAUS = 3081,
   /// <summary>
   /// English as spoken in Belize.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishBelize))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishBelize")]
   EnglishBelize = 10249,
   /// <summary>
   /// English as spoken in Canada.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishCanadian))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishCanadian")]
   EnglishCanadian = 4105,
   /// <summary>
   /// English as spoken in the Caribbean.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishCaribbean))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishCaribbean")]
   EnglishCaribbean = 9225,
   /// <summary>
   /// English as spoken in Indonesia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishIndonesia))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishIndonesia")]
   EnglishIndonesia = 14345,
   /// <summary>
   /// English as spoken in Ireland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishIreland))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishIreland")]
   EnglishIreland = 6153,
   /// <summary>
   /// English as spoken in Jamaica.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishJamaica))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishJamaica")]
   EnglishJamaica = 8201,
   /// <summary>
   /// English as spoken in New Zealand.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishNewZealand))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishNewZealand")]
   EnglishNewZealand = 5129,
   /// <summary>
   /// English as spoken in the Philippines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishPhilippines))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishPhilippines")]
   EnglishPhilippines = 13321,
   /// <summary>
   /// English as spoken in South Africa.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishSouthAfrica))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishSouthAfrica")]
   EnglishSouthAfrica = 7177,
   /// <summary>
   /// English as spoken in Trinidad and Tobago.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishTrinidadTobago))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishTrinidadTobago")]
   EnglishTrinidadTobago = 11273,
   /// <summary>
   /// English as spoken in the United Kingdom.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishUK))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishUK")]
   EnglishUK = 2057,
   /// <summary>
   /// English as spoken in the United States.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishUS))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishUS")]
   EnglishUS = 1033,
   /// <summary>
   /// English as spoken in Zimbabwe.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEnglishZimbabwe))]
+  [OfficeInteropEnumValue("msoLanguageIDEnglishZimbabwe")]
   EnglishZimbabwe = 12297,
   /// <summary>
   /// Estonian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDEstonian))]
+  [OfficeInteropEnumValue("msoLanguageIDEstonian")]
   Estonian = 1061,
   /// <summary>
   /// Faeroese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFaeroese))]
+  [OfficeInteropEnumValue("msoLanguageIDFaeroese")]
   Faeroese = 1080,
   /// <summary>
   /// Farsi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFarsi))]
+  [OfficeInteropEnumValue("msoLanguageIDFarsi")]
   Farsi = 1065,
   /// <summary>
   /// Filipina.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFilipino))]
+  [OfficeInteropEnumValue("msoLanguageIDFilipino")]
   Filipino = 1124,
   /// <summary>
   /// Finnish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFinnish))]
+  [OfficeInteropEnumValue("msoLanguageIDFinnish")]
   Finnish = 1035,
   /// <summary>
   /// Belgian French.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBelgianFrench))]
+  [OfficeInteropEnumValue("msoLanguageIDBelgianFrench")]
   BelgianFrench = 2060,
   /// <summary>
   /// French as spoken in Cameroon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchCameroon))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchCameroon")]
   FrenchCameroon = 11276,
   /// <summary>
   /// French as spoken in Canada.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchCanadian))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchCanadian")]
   FrenchCanadian = 3084,
   /// <summary>
   /// French as spoken in Cote d'Ivoire.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchCotedIvoire))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchCotedIvoire")]
   FrenchCotedIvoire = 12300,
   /// <summary>
   /// French.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrench))]
+  [OfficeInteropEnumValue("msoLanguageIDFrench")]
   French = 1036,
   /// <summary>
   /// French as spoken in Haiti.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchHaiti))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchHaiti")]
   FrenchHaiti = 15372,
   /// <summary>
   /// French as spoken in Luxembourg.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchLuxembourg))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchLuxembourg")]
   FrenchLuxembourg = 5132,
   /// <summary>
   /// French as spoken in Mali.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchMali))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchMali")]
   FrenchMali = 13324,
   /// <summary>
   /// French as spoken in Monaco.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchMonaco))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchMonaco")]
   FrenchMonaco = 6156,
   /// <summary>
   /// French as spoken in Morocco.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchMorocco))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchMorocco")]
   FrenchMorocco = 14348,
   /// <summary>
   /// French as spoken in French Reunion Island.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchReunion))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchReunion")]
   FrenchReunion = 8204,
   /// <summary>
   /// French as spoken in Senegal.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchSenegal))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchSenegal")]
   FrenchSenegal = 10252,
   /// <summary>
   /// French as spoken in Switzerland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwissFrench))]
+  [OfficeInteropEnumValue("msoLanguageIDSwissFrench")]
   SwissFrench = 4108,
   /// <summary>
   /// French as spoken in the West Indies.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchWestIndies))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchWestIndies")]
   FrenchWestIndies = 7180,
   /// <summary>
   /// French as spoken in Zaire.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchZaire))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchZaire")]
   FrenchZaire = 9228,
   /// <summary>
   /// The French Congo DRC language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrenchCongoDRC))]
+  [OfficeInteropEnumValue("msoLanguageIDFrenchCongoDRC")]
   FrenchCongoDRC = 9228,
   /// <summary>
   /// Frisian as spoken in the Netherlands.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFrisianNetherlands))]
+  [OfficeInteropEnumValue("msoLanguageIDFrisianNetherlands")]
   FrisianNetherlands = 1122,
   /// <summary>
   /// Fulfulde.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDFulfulde))]
+  [OfficeInteropEnumValue("msoLanguageIDFulfulde")]
   Fulfulde = 1127,
   /// <summary>
   /// Gaelic as spoken in Ireland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGaelicIreland))]
+  [OfficeInteropEnumValue("msoLanguageIDGaelicIreland")]
   GaelicIreland = 2108,
   /// <summary>
   /// Gaelic as spoken in Scotland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGaelicScotland))]
+  [OfficeInteropEnumValue("msoLanguageIDGaelicScotland")]
   GaelicScotland = 1084,
   /// <summary>
   /// Galician.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGalician))]
+  [OfficeInteropEnumValue("msoLanguageIDGalician")]
   Galician = 1110,
   /// <summary>
   /// Georgian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGeorgian))]
+  [OfficeInteropEnumValue("msoLanguageIDGeorgian")]
   Georgian = 1079,
   /// <summary>
   /// German as spoken in Austria.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGermanAustria))]
+  [OfficeInteropEnumValue("msoLanguageIDGermanAustria")]
   GermanAustria = 3079,
   /// <summary>
   /// German.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGerman))]
+  [OfficeInteropEnumValue("msoLanguageIDGerman")]
   German = 1031,
   /// <summary>
   /// German as spoken in Liechtenstein.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGermanLiechtenstein))]
+  [OfficeInteropEnumValue("msoLanguageIDGermanLiechtenstein")]
   GermanLiechtenstein = 5127,
   /// <summary>
   /// German as spoken in Luxembourg.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGermanLuxembourg))]
+  [OfficeInteropEnumValue("msoLanguageIDGermanLuxembourg")]
   GermanLuxembourg = 4103,
   /// <summary>
   /// German as spoken in Switzerland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwissGerman))]
+  [OfficeInteropEnumValue("msoLanguageIDSwissGerman")]
   SwissGerman = 2055,
   /// <summary>
   /// Greek.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGreek))]
+  [OfficeInteropEnumValue("msoLanguageIDGreek")]
   Greek = 1032,
   /// <summary>
   /// Guarani.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGuarani))]
+  [OfficeInteropEnumValue("msoLanguageIDGuarani")]
   Guarani = 1140,
   /// <summary>
   /// Gujarati.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDGujarati))]
+  [OfficeInteropEnumValue("msoLanguageIDGujarati")]
   Gujarati = 1095,
   /// <summary>
   /// Hausa.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDHausa))]
+  [OfficeInteropEnumValue("msoLanguageIDHausa")]
   Hausa = 1128,
   /// <summary>
   /// Hawaiian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDHawaiian))]
+  [OfficeInteropEnumValue("msoLanguageIDHawaiian")]
   Hawaiian = 1141,
   /// <summary>
   /// Hebrew.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDHebrew))]
+  [OfficeInteropEnumValue("msoLanguageIDHebrew")]
   Hebrew = 1037,
   /// <summary>
   /// Hindi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDHindi))]
+  [OfficeInteropEnumValue("msoLanguageIDHindi")]
   Hindi = 1081,
   /// <summary>
   /// Hungarian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDHungarian))]
+  [OfficeInteropEnumValue("msoLanguageIDHungarian")]
   Hungarian = 1038,
   /// <summary>
   /// Ibibio.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDIbibio))]
+  [OfficeInteropEnumValue("msoLanguageIDIbibio")]
   Ibibio = 1129,
   /// <summary>
   /// Icelandic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDIcelandic))]
+  [OfficeInteropEnumValue("msoLanguageIDIcelandic")]
   Icelandic = 1039,
   /// <summary>
   /// Igbo.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDIgbo))]
+  [OfficeInteropEnumValue("msoLanguageIDIgbo")]
   Igbo = 1136,
   /// <summary>
   /// Indonesian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDIndonesian))]
+  [OfficeInteropEnumValue("msoLanguageIDIndonesian")]
   Indonesian = 1057,
   /// <summary>
   /// Inuktitut.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDInuktitut))]
+  [OfficeInteropEnumValue("msoLanguageIDInuktitut")]
   Inuktitut = 1117,
   /// <summary>
   /// Italian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDItalian))]
+  [OfficeInteropEnumValue("msoLanguageIDItalian")]
   Italian = 1040,
   /// <summary>
   /// Italian as spoken in Switzerland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwissItalian))]
+  [OfficeInteropEnumValue("msoLanguageIDSwissItalian")]
   SwissItalian = 2064,
   /// <summary>
   /// Japanese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDJapanese))]
+  [OfficeInteropEnumValue("msoLanguageIDJapanese")]
   Japanese = 1041,
   /// <summary>
   /// Kannada.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKannada))]
+  [OfficeInteropEnumValue("msoLanguageIDKannada")]
   Kannada = 1099,
   /// <summary>
   /// Kanuri.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKanuri))]
+  [OfficeInteropEnumValue("msoLanguageIDKanuri")]
   Kanuri = 1137,
   /// <summary>
   /// Kashmiri.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKashmiri))]
+  [OfficeInteropEnumValue("msoLanguageIDKashmiri")]
   Kashmiri = 1120,
   /// <summary>
   /// Kashmiri in Devanagari script.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKashmiriDevanagari))]
+  [OfficeInteropEnumValue("msoLanguageIDKashmiriDevanagari")]
   KashmiriDevanagari = 2144,
   /// <summary>
   /// Kazakh.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKazakh))]
+  [OfficeInteropEnumValue("msoLanguageIDKazakh")]
   Kazakh = 1087,
   /// <summary>
   /// Khmer.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKhmer))]
+  [OfficeInteropEnumValue("msoLanguageIDKhmer")]
   Khmer = 1107,
   /// <summary>
   /// Kirghiz.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKirghiz))]
+  [OfficeInteropEnumValue("msoLanguageIDKirghiz")]
   Kirghiz = 1088,
   /// <summary>
   /// Konkani.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKonkani))]
+  [OfficeInteropEnumValue("msoLanguageIDKonkani")]
   Konkani = 1111,
   /// <summary>
   /// Korean.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKorean))]
+  [OfficeInteropEnumValue("msoLanguageIDKorean")]
   Korean = 1042,
   /// <summary>
   /// Kyrgyz.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDKyrgyz))]
+  [OfficeInteropEnumValue("msoLanguageIDKyrgyz")]
   Kyrgyz = 1088,
   /// <summary>
   /// Latin.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDLatin")]
   Latin = 1142,
   /// <summary>
   /// Lao.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDLao))]
+  [OfficeInteropEnumValue("msoLanguageIDLao")]
   Lao = 1108,
   /// <summary>
   /// Latvian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDLatvian))]
+  [OfficeInteropEnumValue("msoLanguageIDLatvian")]
   Latvian = 1062,
   /// <summary>
   /// Lithuanian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDLithuanian))]
+  [OfficeInteropEnumValue("msoLanguageIDLithuanian")]
   Lithuanian = 1063,
   /// <summary>
   /// Macedonian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMacedonian))]
+  [OfficeInteropEnumValue("msoLanguageIDMacedonian")]
   Macedonian = 1071,
   /// <summary>
   /// Macedonian FYROM language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMacedonianFYROM))]
+  [OfficeInteropEnumValue("msoLanguageIDMacedonianFYROM")]
   MacedonianFYROM = 1071,
   /// <summary>
   /// Malaysian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMalaysian))]
+  [OfficeInteropEnumValue("msoLanguageIDMalaysian")]
   Malaysian = 1086,
   /// <summary>
   /// Malay as spoken in Brunei Darussalam.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMalayBruneiDarussalam))]
+  [OfficeInteropEnumValue("msoLanguageIDMalayBruneiDarussalam")]
   MalayBruneiDarussalam = 2110,
   /// <summary>
   /// Malayalam.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMalayalam))]
+  [OfficeInteropEnumValue("msoLanguageIDMalayalam")]
   Malayalam = 1100,
   /// <summary>
   /// Maltese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMaltese))]
+  [OfficeInteropEnumValue("msoLanguageIDMaltese")]
   Maltese = 1082,
   /// <summary>
   /// Manipuri.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDManipuri))]
+  [OfficeInteropEnumValue("msoLanguageIDManipuri")]
   Manipuri = 1112,
   /// <summary>
   /// Maori.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMaori))]
+  [OfficeInteropEnumValue("msoLanguageIDMaori")]
   Maori = 1153,
   /// <summary>
   /// Marathi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMarathi))]
+  [OfficeInteropEnumValue("msoLanguageIDMarathi")]
   Marathi = 1102,
   /// <summary>
   /// Mongolian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMongolian))]
+  [OfficeInteropEnumValue("msoLanguageIDMongolian")]
   Mongolian = 1104,
   /// <summary>
   /// Nepali.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDNepali))]
+  [OfficeInteropEnumValue("msoLanguageIDNepali")]
   Nepali = 1121,
   /// <summary>
   /// Bokmol as spoken in Norway.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDNorwegianBokmol))]
+  [OfficeInteropEnumValue("msoLanguageIDNorwegianBokmol")]
   NorwegianBokmol = 1044,
   /// <summary>
   /// Nynorsk as spoken in Norway.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDNorwegianNynorsk))]
+  [OfficeInteropEnumValue("msoLanguageIDNorwegianNynorsk")]
   NorwegianNynorsk = 2068,
   /// <summary>
   /// Oriya.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDOriya))]
+  [OfficeInteropEnumValue("msoLanguageIDOriya")]
   Oriya = 1096,
   /// <summary>
   /// Oromo.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDOromo))]
+  [OfficeInteropEnumValue("msoLanguageIDOromo")]
   Oromo = 1138,
   /// <summary>
   /// Pashto.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDPashto))]
+  [OfficeInteropEnumValue("msoLanguageIDPashto")]
   Pashto = 1123,
   /// <summary>
   /// Polish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDPolish))]
+  [OfficeInteropEnumValue("msoLanguageIDPolish")]
   Polish = 1045,
   /// <summary>
   /// Brazilian Portuguese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDBrazilianPortuguese))]
+  [OfficeInteropEnumValue("msoLanguageIDBrazilianPortuguese")]
   BrazilianPortuguese = 1046,
   /// <summary>
   /// Portuguese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDPortuguese))]
+  [OfficeInteropEnumValue("msoLanguageIDPortuguese")]
   Portuguese = 2070,
   /// <summary>
   /// Punjabi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDPunjabi))]
+  [OfficeInteropEnumValue("msoLanguageIDPunjabi")]
   Punjabi = 1094,
   /// <summary>
   /// Quechua as spoken in Bolivia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDQuechuaBolivia))]
+  [OfficeInteropEnumValue("msoLanguageIDQuechuaBolivia")]
   QuechuaBolivia = 1131,
   /// <summary>
   /// Quechua as spoken in Ecuador.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDQuechuaEcuador))]
+  [OfficeInteropEnumValue("msoLanguageIDQuechuaEcuador")]
   QuechuaEcuador = 2155,
   /// <summary>
   /// Quechua as spoken in Peru.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDQuechuaPeru))]
+  [OfficeInteropEnumValue("msoLanguageIDQuechuaPeru")]
   QuechuaPeru = 3179,
   /// <summary>
   /// Rhaeto-Romanic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDRhaetoRomanic))]
+  [OfficeInteropEnumValue("msoLanguageIDRhaetoRomanic")]
   RhaetoRomanic = 1047,
   /// <summary>
   /// Romanian as spoken in Moldova.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDRomanianMoldova))]
+  [OfficeInteropEnumValue("msoLanguageIDRomanianMoldova")]
   RomanianMoldova = 2072,
   /// <summary>
   /// Romanian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDRomanian))]
+  [OfficeInteropEnumValue("msoLanguageIDRomanian")]
   Romanian = 1048,
   /// <summary>
   /// Russian as spoken in Moldova.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDRussianMoldova))]
+  [OfficeInteropEnumValue("msoLanguageIDRussianMoldova")]
   RussianMoldova = 2073,
   /// <summary>
   /// Russian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDRussian))]
+  [OfficeInteropEnumValue("msoLanguageIDRussian")]
   Russian = 1049,
   /// <summary>
   /// Sami/Lappish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSamiLappish))]
+  [OfficeInteropEnumValue("msoLanguageIDSamiLappish")]
   SamiLappish = 1083,
   /// <summary>
   /// Sanskrit.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSanskrit))]
+  [OfficeInteropEnumValue("msoLanguageIDSanskrit")]
   Sanskrit = 1103,
   /// <summary>
   /// Sepedi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSepedi))]
+  [OfficeInteropEnumValue("msoLanguageIDSepedi")]
   Sepedi = 1132,
   /// <summary>
   /// The Serbian Bosnia Herzegovina Cyrillic language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSerbianBosniaHerzegovinaCyrillic))]
+  [OfficeInteropEnumValue("msoLanguageIDSerbianBosniaHerzegovinaCyrillic")]
   SerbianBosniaHerzegovinaCyrillic = 7194,
   /// <summary>
   /// The Serbian Bosnia Herzegovina Latin language.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSerbianBosniaHerzegovinaLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDSerbianBosniaHerzegovinaLatin")]
   SerbianBosniaHerzegovinaLatin = 6170,
   /// <summary>
   /// Serbian/Cyrillic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSerbianCyrillic))]
+  [OfficeInteropEnumValue("msoLanguageIDSerbianCyrillic")]
   SerbianCyrillic = 3098,
   /// <summary>
   /// Serbian/Latin.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSerbianLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDSerbianLatin")]
   SerbianLatin = 2074,
   /// <summary>
   /// Sesotho.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSesotho))]
+  [OfficeInteropEnumValue("msoLanguageIDSesotho")]
   Sesotho = 1072,
   /// <summary>
   /// Sindhi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSindhi))]
+  [OfficeInteropEnumValue("msoLanguageIDSindhi")]
   Sindhi = 1113,
   /// <summary>
   /// Sindhi as spoken in Pakistan.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSindhiPakistan))]
+  [OfficeInteropEnumValue("msoLanguageIDSindhiPakistan")]
   SindhiPakistan = 2137,
   /// <summary>
   /// Sinhalese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSinhalese))]
+  [OfficeInteropEnumValue("msoLanguageIDSinhalese")]
   Sinhalese = 1115,
   /// <summary>
   /// Slovak.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSlovak))]
+  [OfficeInteropEnumValue("msoLanguageIDSlovak")]
   Slovak = 1051,
   /// <summary>
   /// Slovenian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSlovenian))]
+  [OfficeInteropEnumValue("msoLanguageIDSlovenian")]
   Slovenian = 1060,
   /// <summary>
   /// Somali.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSomali))]
+  [OfficeInteropEnumValue("msoLanguageIDSomali")]
   Somali = 1143,
   /// <summary>
   /// Sorbian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSorbian))]
+  [OfficeInteropEnumValue("msoLanguageIDSorbian")]
   Sorbian = 1070,
   /// <summary>
   /// Spanish as spoken in Argentina.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishArgentina))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishArgentina")]
   SpanishArgentina = 11274,
   /// <summary>
   /// Spanish as spoken in Bolivia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishBolivia))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishBolivia")]
   SpanishBolivia = 16394,
   /// <summary>
   /// Spanish as spoken in Chile.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishChile))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishChile")]
   SpanishChile = 13322,
   /// <summary>
   /// Spanish as spoken in Colombia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishColombia))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishColombia")]
   SpanishColombia = 9226,
   /// <summary>
   /// Spanish as spoken in Costa Rica.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishCostaRica))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishCostaRica")]
   SpanishCostaRica = 5130,
   /// <summary>
   /// Spanish as spoken in the Dominican Republic.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishDominicanRepublic))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishDominicanRepublic")]
   SpanishDominicanRepublic = 7178,
   /// <summary>
   /// Spanish as spoken in Ecuador.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishEcuador))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishEcuador")]
   SpanishEcuador = 12298,
   /// <summary>
   /// Spanish as spoken in El Salvador.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishElSalvador))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishElSalvador")]
   SpanishElSalvador = 17418,
   /// <summary>
   /// Spanish as spoken in Guatemala.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishGuatemala))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishGuatemala")]
   SpanishGuatemala = 4106,
   /// <summary>
   /// Spanish as spoken in Honduras.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishHonduras))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishHonduras")]
   SpanishHonduras = 18442,
   /// <summary>
   /// Spanish as spoken in Mexico.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDMexicanSpanish))]
+  [OfficeInteropEnumValue("msoLanguageIDMexicanSpanish")]
   MexicanSpanish = 2058,
   /// <summary>
   /// Spanish as spoken in Nicaragua.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishNicaragua))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishNicaragua")]
   SpanishNicaragua = 19466,
   /// <summary>
   /// Spanish as spoken in Panama.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishPanama))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishPanama")]
   SpanishPanama = 6154,
   /// <summary>
   /// Spanish as spoken in Paraguay.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishParaguay))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishParaguay")]
   SpanishParaguay = 15370,
   /// <summary>
   /// Spanish as spoken in Peru.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishPeru))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishPeru")]
   SpanishPeru = 10250,
   /// <summary>
   /// Spanish as spoken in Puerto Rico.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishPuertoRico))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishPuertoRico")]
   SpanishPuertoRico = 20490,
   /// <summary>
   /// Spanish (Modern Sort).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishModernSort))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishModernSort")]
   SpanishModernSort = 3082,
   /// <summary>
   /// Spanish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanish))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanish")]
   Spanish = 1034,
   /// <summary>
   /// Spanish as spoken in Uruguay.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishUruguay))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishUruguay")]
   SpanishUruguay = 14346,
   /// <summary>
   /// Spanish as spoken in Venezuela.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSpanishVenezuela))]
+  [OfficeInteropEnumValue("msoLanguageIDSpanishVenezuela")]
   SpanishVenezuela = 8202,
   /// <summary>
   /// Sutu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSutu))]
+  [OfficeInteropEnumValue("msoLanguageIDSutu")]
   Sutu = 1072,
   /// <summary>
   /// Swahili.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwahili))]
+  [OfficeInteropEnumValue("msoLanguageIDSwahili")]
   Swahili = 1089,
   /// <summary>
   /// Swedish as spoken in Finland.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwedishFinland))]
+  [OfficeInteropEnumValue("msoLanguageIDSwedishFinland")]
   SwedishFinland = 2077,
   /// <summary>
   /// Swedish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSwedish))]
+  [OfficeInteropEnumValue("msoLanguageIDSwedish")]
   Swedish = 1053,
   /// <summary>
   /// Syriac.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDSyriac))]
+  [OfficeInteropEnumValue("msoLanguageIDSyriac")]
   Syriac = 1114,
   /// <summary>
   /// Tajik.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTajik))]
+  [OfficeInteropEnumValue("msoLanguageIDTajik")]
   Tajik = 1064,
   /// <summary>
   /// Tamil.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTamil))]
+  [OfficeInteropEnumValue("msoLanguageIDTamil")]
   Tamil = 1097,
   /// <summary>
   /// Tamazight.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTamazight))]
+  [OfficeInteropEnumValue("msoLanguageIDTamazight")]
   Tamazight = 1119,
   /// <summary>
   /// Tamazight (Latin).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTamazightLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDTamazightLatin")]
   TamazightLatin = 2143,
   /// <summary>
   /// Tatar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTatar))]
+  [OfficeInteropEnumValue("msoLanguageIDTatar")]
   Tatar = 1092,
   /// <summary>
   /// Telugu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTelugu))]
+  [OfficeInteropEnumValue("msoLanguageIDTelugu")]
   Telugu = 1098,
   /// <summary>
   /// Thai.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDThai))]
+  [OfficeInteropEnumValue("msoLanguageIDThai")]
   Thai = 1054,
   /// <summary>
   /// Tibetan.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTibetan))]
+  [OfficeInteropEnumValue("msoLanguageIDTibetan")]
   Tibetan = 1105,
   /// <summary>
   /// Tigrigna as spoken in Ethiopia.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTigrignaEthiopic))]
+  [OfficeInteropEnumValue("msoLanguageIDTigrignaEthiopic")]
   TigrignaEthiopic = 1139,
   /// <summary>
   /// Tigrigna as spoken in Eritrea.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTigrignaEritrea))]
+  [OfficeInteropEnumValue("msoLanguageIDTigrignaEritrea")]
   TigrignaEritrea = 2163,
   /// <summary>
   /// Tsonga.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTsonga))]
+  [OfficeInteropEnumValue("msoLanguageIDTsonga")]
   Tsonga = 1073,
   /// <summary>
   /// Tswana.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTswana))]
+  [OfficeInteropEnumValue("msoLanguageIDTswana")]
   Tswana = 1074,
   /// <summary>
   /// Turkish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTurkish))]
+  [OfficeInteropEnumValue("msoLanguageIDTurkish")]
   Turkish = 1055,
   /// <summary>
   /// Turkmen.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDTurkmen))]
+  [OfficeInteropEnumValue("msoLanguageIDTurkmen")]
   Turkmen = 1090,
   /// <summary>
   /// Ukrainian.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDUkrainian))]
+  [OfficeInteropEnumValue("msoLanguageIDUkrainian")]
   Ukrainian = 1058,
   /// <summary>
   /// Urdu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDUrdu))]
+  [OfficeInteropEnumValue("msoLanguageIDUrdu")]
   Urdu = 1056,
   /// <summary>
   /// Uzbek (Cyrillic).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDUzbekCyrillic))]
+  [OfficeInteropEnumValue("msoLanguageIDUzbekCyrillic")]
   UzbekCyrillic = 2115,
   /// <summary>
   /// Uzbek (Latin).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDUzbekLatin))]
+  [OfficeInteropEnumValue("msoLanguageIDUzbekLatin")]
   UzbekLatin = 1091,
   /// <summary>
   /// Venda.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDVenda))]
+  [OfficeInteropEnumValue("msoLanguageIDVenda")]
   Venda = 1075,
   /// <summary>
   /// Vietnamese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDVietnamese))]
+  [OfficeInteropEnumValue("msoLanguageIDVietnamese")]
   Vietnamese = 1066,
   /// <summary>
   /// Welsh.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDWelsh))]
+  [OfficeInteropEnumValue("msoLanguageIDWelsh")]
   Welsh = 1106,
   /// <summary>
   /// Xhosa.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDXhosa))]
+  [OfficeInteropEnumValue("msoLanguageIDXhosa")]
   Xhosa = 1076,
   /// <summary>
   /// Yi.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDYi))]
+  [OfficeInteropEnumValue("msoLanguageIDYi")]
   Yi = 1144,
   /// <summary>
   /// Yiddish.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDYiddish))]
+  [OfficeInteropEnumValue("msoLanguageIDYiddish")]
   Yiddish = 1085,
   /// <summary>
   /// Yoruba.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDYoruba))]
+  [OfficeInteropEnumValue("msoLanguageIDYoruba")]
   Yoruba = 1130,
   /// <summary>
   /// Zulu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLanguageID.msoLanguageIDZulu))]
+  [OfficeInteropEnumValue("msoLanguageIDZulu")]
   Zulu = 1077
 }

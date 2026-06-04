@@ -6,495 +6,495 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFieldType))]
+[WordInteropEnumType("WdFieldType")]
 public enum FieldType
 {
   /// <summary>
   /// Ref field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldRef))]
+  [WordInteropEnumValue("wdFieldRef")]
   Ref = 3,
   /// <summary>
   /// XE (Index Entry) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldIndexEntry))]
+  [WordInteropEnumValue("wdFieldIndexEntry")]
   IndexEntry = 4,
   /// <summary>
   /// FootnoteRef field. Not available through the Field dialog box. Inserted programmatically or interactively.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFootnoteRef))]
+  [WordInteropEnumValue("wdFieldFootnoteRef")]
   FootnoteRef = 5,
   /// <summary>
   /// Set field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSet))]
+  [WordInteropEnumValue("wdFieldSet")]
   Set = 6,
   /// <summary>
   /// If field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldIf))]
+  [WordInteropEnumValue("wdFieldIf")]
   If = 7,
   /// <summary>
   /// Index field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldIndex))]
+  [WordInteropEnumValue("wdFieldIndex")]
   Index = 8,
   /// <summary>
   /// TOC (Table of Contents Entry) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTOCEntry))]
+  [WordInteropEnumValue("wdFieldTOCEntry")]
   TOCEntry = 9,
   /// <summary>
   /// StyleRef field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldStyleRef))]
+  [WordInteropEnumValue("wdFieldStyleRef")]
   StyleRef = 10,
   /// <summary>
   /// RD (Reference Document) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldRefDoc))]
+  [WordInteropEnumValue("wdFieldRefDoc")]
   RefDoc = 11,
   /// <summary>
   /// Seq (Sequence) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSequence))]
+  [WordInteropEnumValue("wdFieldSequence")]
   Sequence = 12,
   /// <summary>
   /// TOC (Table of Contents) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTOC))]
+  [WordInteropEnumValue("wdFieldTOC")]
   TOC = 13,
   /// <summary>
   /// Info field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldInfo))]
+  [WordInteropEnumValue("wdFieldInfo")]
   Info = 14,
   /// <summary>
   /// Title field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTitle))]
+  [WordInteropEnumValue("wdFieldTitle")]
   Title = 15,
   /// <summary>
   /// Subject field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSubject))]
+  [WordInteropEnumValue("wdFieldSubject")]
   Subject = 16,
   /// <summary>
   /// Author field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAuthor))]
+  [WordInteropEnumValue("wdFieldAuthor")]
   Author = 17,
   /// <summary>
   /// Keywords field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldKeyWord))]
+  [WordInteropEnumValue("wdFieldKeyWord")]
   KeyWord = 18,
   /// <summary>
   /// Comments field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldComments))]
+  [WordInteropEnumValue("wdFieldComments")]
   Comments = 19,
   /// <summary>
   /// LastSavedBy field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldLastSavedBy))]
+  [WordInteropEnumValue("wdFieldLastSavedBy")]
   LastSavedBy = 20,
   /// <summary>
   /// CreateDate field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldCreateDate))]
+  [WordInteropEnumValue("wdFieldCreateDate")]
   CreateDate = 21,
   /// <summary>
   /// SaveDate field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSaveDate))]
+  [WordInteropEnumValue("wdFieldSaveDate")]
   SaveDate = 22,
   /// <summary>
   /// PrintDate field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldPrintDate))]
+  [WordInteropEnumValue("wdFieldPrintDate")]
   PrintDate = 23,
   /// <summary>
   /// RevNum field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldRevisionNum))]
+  [WordInteropEnumValue("wdFieldRevisionNum")]
   RevisionNum = 24,
   /// <summary>
   /// EditTime field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldEditTime))]
+  [WordInteropEnumValue("wdFieldEditTime")]
   EditTime = 25,
   /// <summary>
   /// NumPages field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNumPages))]
+  [WordInteropEnumValue("wdFieldNumPages")]
   NumPages = 26,
   /// <summary>
   /// NumWords field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNumWords))]
+  [WordInteropEnumValue("wdFieldNumWords")]
   NumWords = 27,
   /// <summary>
   /// NumChars field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNumChars))]
+  [WordInteropEnumValue("wdFieldNumChars")]
   NumChars = 28,
   /// <summary>
   /// FileName field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFileName))]
+  [WordInteropEnumValue("wdFieldFileName")]
   FileName = 29,
   /// <summary>
   /// Template field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTemplate))]
+  [WordInteropEnumValue("wdFieldTemplate")]
   Template = 30,
   /// <summary>
   /// Date field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDate))]
+  [WordInteropEnumValue("wdFieldDate")]
   Date = 31,
   /// <summary>
   /// Time field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTime))]
+  [WordInteropEnumValue("wdFieldTime")]
   Time = 32,
   /// <summary>
   /// Page field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldPage))]
+  [WordInteropEnumValue("wdFieldPage")]
   Page = 33,
   /// <summary>
   /// = (Formula) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldExpression))]
+  [WordInteropEnumValue("wdFieldExpression")]
   Expression = 34,
   /// <summary>
   /// Quote field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldQuote))]
+  [WordInteropEnumValue("wdFieldQuote")]
   Quote = 35,
   /// <summary>
   /// Include field. Cannot be added through the Field dialog box, but can be added interactively or through code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldInclude))]
+  [WordInteropEnumValue("wdFieldInclude")]
   Include = 36,
   /// <summary>
   /// PageRef field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldPageRef))]
+  [WordInteropEnumValue("wdFieldPageRef")]
   PageRef = 37,
   /// <summary>
   /// Ask field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAsk))]
+  [WordInteropEnumValue("wdFieldAsk")]
   Ask = 38,
   /// <summary>
   /// Fill-In field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFillIn))]
+  [WordInteropEnumValue("wdFieldFillIn")]
   FillIn = 39,
   /// <summary>
   /// Data field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldData))]
+  [WordInteropEnumValue("wdFieldData")]
   Data = 40,
   /// <summary>
   /// Next field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNext))]
+  [WordInteropEnumValue("wdFieldNext")]
   Next = 41,
   /// <summary>
   /// NextIf field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNextIf))]
+  [WordInteropEnumValue("wdFieldNextIf")]
   NextIf = 42,
   /// <summary>
   /// SkipIf field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSkipIf))]
+  [WordInteropEnumValue("wdFieldSkipIf")]
   SkipIf = 43,
   /// <summary>
   /// MergeRec field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldMergeRec))]
+  [WordInteropEnumValue("wdFieldMergeRec")]
   MergeRec = 44,
   /// <summary>
   /// DDE field. No longer available through the Field dialog box, but supported for documents created in earlier
   /// versions of Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDDE))]
+  [WordInteropEnumValue("wdFieldDDE")]
   DDE = 45,
   /// <summary>
   /// DDEAuto field. No longer available through the Field dialog box, but supported for documents created in
   /// earlier versions of Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDDEAuto))]
+  [WordInteropEnumValue("wdFieldDDEAuto")]
   DDEAuto = 46,
   /// <summary>
   /// Glossary field. No longer supported in Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldGlossary))]
+  [WordInteropEnumValue("wdFieldGlossary")]
   Glossary = 47,
   /// <summary>
   /// Print field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldPrint))]
+  [WordInteropEnumValue("wdFieldPrint")]
   Print = 48,
   /// <summary>
   /// EQ (Equation) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFormula))]
+  [WordInteropEnumValue("wdFieldFormula")]
   Formula = 49,
   /// <summary>
   /// GoToButton field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldGoToButton))]
+  [WordInteropEnumValue("wdFieldGoToButton")]
   GoToButton = 50,
   /// <summary>
   /// MacroButton field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldMacroButton))]
+  [WordInteropEnumValue("wdFieldMacroButton")]
   MacroButton = 51,
   /// <summary>
   /// AutoNumOut field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAutoNumOutline))]
+  [WordInteropEnumValue("wdFieldAutoNumOutline")]
   AutoNumOutline = 52,
   /// <summary>
   /// AutoNumLgl field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAutoNumLegal))]
+  [WordInteropEnumValue("wdFieldAutoNumLegal")]
   AutoNumLegal = 53,
   /// <summary>
   /// AutoNum field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAutoNum))]
+  [WordInteropEnumValue("wdFieldAutoNum")]
   AutoNum = 54,
   /// <summary>
   /// Import field. Cannot be added through the Field dialog box, but can be added interactively or through code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldImport))]
+  [WordInteropEnumValue("wdFieldImport")]
   Import = 55,
   /// <summary>
   /// Link field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldLink))]
+  [WordInteropEnumValue("wdFieldLink")]
   Link = 56,
   /// <summary>
   /// Symbol field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSymbol))]
+  [WordInteropEnumValue("wdFieldSymbol")]
   Symbol = 57,
   /// <summary>
   /// Embedded field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldEmbed))]
+  [WordInteropEnumValue("wdFieldEmbed")]
   Embed = 58,
   /// <summary>
   /// MergeField field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldMergeField))]
+  [WordInteropEnumValue("wdFieldMergeField")]
   MergeField = 59,
   /// <summary>
   /// UserName field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldUserName))]
+  [WordInteropEnumValue("wdFieldUserName")]
   UserName = 60,
   /// <summary>
   /// UserInitials field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldUserInitials))]
+  [WordInteropEnumValue("wdFieldUserInitials")]
   UserInitials = 61,
   /// <summary>
   /// UserAddress field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldUserAddress))]
+  [WordInteropEnumValue("wdFieldUserAddress")]
   UserAddress = 62,
   /// <summary>
   /// BarCode field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldBarCode))]
+  [WordInteropEnumValue("wdFieldBarCode")]
   BarCode = 63,
   /// <summary>
   /// DocVariable field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDocVariable))]
+  [WordInteropEnumValue("wdFieldDocVariable")]
   DocVariable = 64,
   /// <summary>
   /// Section field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSection))]
+  [WordInteropEnumValue("wdFieldSection")]
   Section = 65,
   /// <summary>
   /// SectionPages field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSectionPages))]
+  [WordInteropEnumValue("wdFieldSectionPages")]
   SectionPages = 66,
   /// <summary>
   /// IncludePicture field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldIncludePicture))]
+  [WordInteropEnumValue("wdFieldIncludePicture")]
   IncludePicture = 67,
   /// <summary>
   /// IncludeText field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldIncludeText))]
+  [WordInteropEnumValue("wdFieldIncludeText")]
   IncludeText = 68,
   /// <summary>
   /// FileSize field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFileSize))]
+  [WordInteropEnumValue("wdFieldFileSize")]
   FileSize = 69,
   /// <summary>
   /// FormText field. Inserted with the Text Form Field button on the Forms toolbar rather than through the Fields
   /// dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFormTextInput))]
+  [WordInteropEnumValue("wdFieldFormTextInput")]
   FormTextInput = 70,
   /// <summary>
   /// FormCheckBox field. Inserted with the Check Box Form Field button on the Forms toolbar rather than through the
   /// Field dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFormCheckBox))]
+  [WordInteropEnumValue("wdFieldFormCheckBox")]
   FormCheckBox = 71,
   /// <summary>
   /// NoteRef field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldNoteRef))]
+  [WordInteropEnumValue("wdFieldNoteRef")]
   NoteRef = 72,
   /// <summary>
   /// TOA (Table of Authorities) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTOA))]
+  [WordInteropEnumValue("wdFieldTOA")]
   TOA = 73,
   /// <summary>
   /// TOA (Table of Authorities Entry) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldTOAEntry))]
+  [WordInteropEnumValue("wdFieldTOAEntry")]
   TOAEntry = 74,
   /// <summary>
   /// MergeSeq field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldMergeSeq))]
+  [WordInteropEnumValue("wdFieldMergeSeq")]
   MergeSeq = 75,
   /// <summary>
   /// Private field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldPrivate))]
+  [WordInteropEnumValue("wdFieldPrivate")]
   Private = 77,
   /// <summary>
   /// Database field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDatabase))]
+  [WordInteropEnumValue("wdFieldDatabase")]
   Database = 78,
   /// <summary>
   /// AutoText field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAutoText))]
+  [WordInteropEnumValue("wdFieldAutoText")]
   AutoText = 79,
   /// <summary>
   /// Compare field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldCompare))]
+  [WordInteropEnumValue("wdFieldCompare")]
   Compare = 80,
   /// <summary>
   /// Add-in field. Not available through the Field dialog box. Used to store data that is hidden from the user
   /// interface.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAddin))]
+  [WordInteropEnumValue("wdFieldAddin")]
   Addin = 81,
   /// <summary>
   /// Subscriber field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldSubscriber))]
+  [WordInteropEnumValue("wdFieldSubscriber")]
   Subscriber = 82,
   /// <summary>
   /// FormDropDown field. Inserted with the Drop-Down Form Field button on the Forms toolbar rather than through the
   /// Field dialog box or through code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldFormDropDown))]
+  [WordInteropEnumValue("wdFieldFormDropDown")]
   FormDropDown = 83,
   /// <summary>
   /// Advance field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAdvance))]
+  [WordInteropEnumValue("wdFieldAdvance")]
   Advance = 84,
   /// <summary>
   /// DocProperty field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDocProperty))]
+  [WordInteropEnumValue("wdFieldDocProperty")]
   DocProperty = 85,
   /// <summary>
   /// OCX field. Cannot be added through the Field dialog box, but can be added through code by using the
   /// AddOLEControl method of the FormFields collection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldOCX))]
+  [WordInteropEnumValue("wdFieldOCX")]
   OCX = 87,
   /// <summary>
   /// Hyperlink field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldHyperlink))]
+  [WordInteropEnumValue("wdFieldHyperlink")]
   Hyperlink = 88,
   /// <summary>
   /// AutoTextList field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAutoTextList))]
+  [WordInteropEnumValue("wdFieldAutoTextList")]
   AutoTextList = 89,
   /// <summary>
   /// ListNum field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldListNum))]
+  [WordInteropEnumValue("wdFieldListNum")]
   ListNum = 90,
   /// <summary>
   /// HTMLActiveX field. Not currently supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldHTMLActiveX))]
+  [WordInteropEnumValue("wdFieldHTMLActiveX")]
   HTMLActiveX = 91,
   /// <summary>
   /// BidiOutline field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldBidiOutline))]
+  [WordInteropEnumValue("wdFieldBidiOutline")]
   BidiOutline = 92,
   /// <summary>
   /// AddressBlock field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldAddressBlock))]
+  [WordInteropEnumValue("wdFieldAddressBlock")]
   AddressBlock = 93,
   /// <summary>
   /// GreetingLine field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldGreetingLine))]
+  [WordInteropEnumValue("wdFieldGreetingLine")]
   GreetingLine = 94,
   /// <summary>
   /// Shape field. Automatically created for any drawn picture.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldShape))]
+  [WordInteropEnumValue("wdFieldShape")]
   Shape = 95,
   /// <summary>
   /// Citation field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldCitation))]
+  [WordInteropEnumValue("wdFieldCitation")]
   Citation = 96,
   /// <summary>
   /// Bibliography field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldBibliography))]
+  [WordInteropEnumValue("wdFieldBibliography")]
   Bibliography = 97,
   /// <summary>
   /// MergeBarcode field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldMergeBarcode))]
+  [WordInteropEnumValue("wdFieldMergeBarcode")]
   MergeBarcode = 98,
   /// <summary>
   /// DisplayBarcode field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldDisplayBarcode))]
+  [WordInteropEnumValue("wdFieldDisplayBarcode")]
   DisplayBarcode = 99,
   /// <summary>
   /// Empty field. Acts as a placeholder for field content that has not yet been added. A field added by pressing
   /// Ctrl+F9 in the user interface is an Empty field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFieldType.wdFieldEmpty))]
+  [WordInteropEnumValue("wdFieldEmpty")]
   Empty = -1
 }

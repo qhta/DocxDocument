@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsectionstart?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSectionStart))]
+[WordInteropEnumType("WdSectionStart")]
 public enum SectionStart
 {
   /// <summary>
   /// Continuous section break.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionStart.wdSectionContinuous))]
+  [WordInteropEnumValue("wdSectionContinuous")]
   Continuous = 0,
   /// <summary>
   /// New column section break.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionStart.wdSectionNewColumn))]
+  [WordInteropEnumValue("wdSectionNewColumn")]
   NewColumn = 1,
   /// <summary>
   /// New page section break.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionStart.wdSectionNewPage))]
+  [WordInteropEnumValue("wdSectionNewPage")]
   NewPage = 2,
   /// <summary>
   /// Even pages section break.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionStart.wdSectionEvenPage))]
+  [WordInteropEnumValue("wdSectionEvenPage")]
   EvenPage = 3,
   /// <summary>
   /// Odd pages section break.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionStart.wdSectionOddPage))]
+  [WordInteropEnumValue("wdSectionOddPage")]
   OddPage = 4
 }

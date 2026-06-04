@@ -6,82 +6,82 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpapertray?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPaperTray))]
+[WordInteropEnumType("WdPaperTray")]
 public enum PaperTray
 {
   /// <summary>
   /// Default bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterDefaultBin))]
+  [WordInteropEnumValue("wdPrinterDefaultBin")]
   DefaultBin = 0,
   /// <summary>
   /// Upper bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterUpperBin))]
+  [WordInteropEnumValue("wdPrinterUpperBin")]
   UpperBin = 1,
   /// <summary>
   /// Printer's only bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterOnlyBin))]
+  [WordInteropEnumValue("wdPrinterOnlyBin")]
   OnlyBin = 1,
   /// <summary>
   /// Lower bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterLowerBin))]
+  [WordInteropEnumValue("wdPrinterLowerBin")]
   LowerBin = 2,
   /// <summary>
   /// Middle bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterMiddleBin))]
+  [WordInteropEnumValue("wdPrinterMiddleBin")]
   MiddleBin = 3,
   /// <summary>
   /// Manual feed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterManualFeed))]
+  [WordInteropEnumValue("wdPrinterManualFeed")]
   ManualFeed = 4,
   /// <summary>
   /// Envelope feed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterEnvelopeFeed))]
+  [WordInteropEnumValue("wdPrinterEnvelopeFeed")]
   EnvelopeFeed = 5,
   /// <summary>
   /// Manual envelope feed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterManualEnvelopeFeed))]
+  [WordInteropEnumValue("wdPrinterManualEnvelopeFeed")]
   ManualEnvelopeFeed = 6,
   /// <summary>
   /// Automatic sheet feed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterAutomaticSheetFeed))]
+  [WordInteropEnumValue("wdPrinterAutomaticSheetFeed")]
   AutomaticSheetFeed = 7,
   /// <summary>
   /// Tractor feed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterTractorFeed))]
+  [WordInteropEnumValue("wdPrinterTractorFeed")]
   TractorFeed = 8,
   /// <summary>
   /// Small-format bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterSmallFormatBin))]
+  [WordInteropEnumValue("wdPrinterSmallFormatBin")]
   SmallFormatBin = 9,
   /// <summary>
   /// Large-format bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterLargeFormatBin))]
+  [WordInteropEnumValue("wdPrinterLargeFormatBin")]
   LargeFormatBin = 10,
   /// <summary>
   /// Large-capacity bin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterLargeCapacityBin))]
+  [WordInteropEnumValue("wdPrinterLargeCapacityBin")]
   LargeCapacityBin = 11,
   /// <summary>
   /// Paper cassette.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterPaperCassette))]
+  [WordInteropEnumValue("wdPrinterPaperCassette")]
   PaperCassette = 14,
   /// <summary>
   /// Form source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPaperTray.wdPrinterFormSource))]
+  [WordInteropEnumValue("wdPrinterFormSource")]
   FormSource = 15
 }

@@ -8,27 +8,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlTickLabelPosition))]
+[OfficeInteropEnumType("XlTickLabelPosition")]
 public enum TickLabelPosition
 {
   /// <summary>
   /// Top or right side of the chart.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlTickLabelPosition.xlTickLabelPositionHigh))]
+  [OfficeInteropEnumValue("xlTickLabelPositionHigh")]
   High = -4127,
   /// <summary>
   /// Bottom or left side of the chart.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlTickLabelPosition.xlTickLabelPositionLow))]
+  [OfficeInteropEnumValue("xlTickLabelPositionLow")]
   Low = -4134,
   /// <summary>
   /// Next to axis (where axis is not at either side of the chart).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlTickLabelPosition.xlTickLabelPositionNextToAxis))]
+  [OfficeInteropEnumValue("xlTickLabelPositionNextToAxis")]
   NextToAxis = 4,
   /// <summary>
   /// No tick marks.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlTickLabelPosition.xlTickLabelPositionNone))]
+  [OfficeInteropEnumValue("xlTickLabelPositionNone")]
   None = -4142
 }

@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlerrorbartype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlErrorBarType))]
+[WordInteropEnumType("XlErrorBarType")]
 public enum ErrorBarType
 {
   /// <summary>
   /// Fixed-length error bars.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlErrorBarType.xlErrorBarTypeFixedValue))]
+  [WordInteropEnumValue("xlErrorBarTypeFixedValue")]
   FixedValue = 1,
   /// <summary>
   /// Percentage of range to be covered by the error bars.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlErrorBarType.xlErrorBarTypePercent))]
+  [WordInteropEnumValue("xlErrorBarTypePercent")]
   Percent = 2,
   /// <summary>
   /// Shows standard error range.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlErrorBarType.xlErrorBarTypeStError))]
+  [WordInteropEnumValue("xlErrorBarTypeStError")]
   StError = 4,
   /// <summary>
   /// Shows range for specified number of standard deviations.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlErrorBarType.xlErrorBarTypeStDev))]
+  [WordInteropEnumValue("xlErrorBarTypeStDev")]
   StDev = -4155,
   /// <summary>
   /// Range is set by fixed values or cell values.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlErrorBarType.xlErrorBarTypeCustom))]
+  [WordInteropEnumValue("xlErrorBarTypeCustom")]
   Custom = -4114
 }

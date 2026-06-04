@@ -6,117 +6,117 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisionType))]
+[WordInteropEnumType("WdRevisionType")]
 public enum RevisionType
 {
   /// <summary>
   /// No revision.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdNoRevision))]
+  [WordInteropEnumValue("wdNoRevision")]
   NoRevision = 0,
   /// <summary>
   /// Insertion.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionInsert))]
+  [WordInteropEnumValue("wdRevisionInsert")]
   RevisionInsert = 1,
   /// <summary>
   /// Deletion.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionDelete))]
+  [WordInteropEnumValue("wdRevisionDelete")]
   RevisionDelete = 2,
   /// <summary>
   /// Property changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionProperty))]
+  [WordInteropEnumValue("wdRevisionProperty")]
   RevisionProperty = 3,
   /// <summary>
   /// Paragraph number changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionParagraphNumber))]
+  [WordInteropEnumValue("wdRevisionParagraphNumber")]
   RevisionParagraphNumber = 4,
   /// <summary>
   /// Field display changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionDisplayField))]
+  [WordInteropEnumValue("wdRevisionDisplayField")]
   RevisionDisplayField = 5,
   /// <summary>
   /// Revision marked as reconciled conflict.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionReconcile))]
+  [WordInteropEnumValue("wdRevisionReconcile")]
   RevisionReconcile = 6,
   /// <summary>
   /// Revision marked as a conflict.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionConflict))]
+  [WordInteropEnumValue("wdRevisionConflict")]
   RevisionConflict = 7,
   /// <summary>
   /// Style changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionStyle))]
+  [WordInteropEnumValue("wdRevisionStyle")]
   RevisionStyle = 8,
   /// <summary>
   /// Replaced.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionReplace))]
+  [WordInteropEnumValue("wdRevisionReplace")]
   RevisionReplace = 9,
   /// <summary>
   /// Paragraph property changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionParagraphProperty))]
+  [WordInteropEnumValue("wdRevisionParagraphProperty")]
   RevisionParagraphProperty = 10,
   /// <summary>
   /// Table property changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionTableProperty))]
+  [WordInteropEnumValue("wdRevisionTableProperty")]
   RevisionTableProperty = 11,
   /// <summary>
   /// Section property changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionSectionProperty))]
+  [WordInteropEnumValue("wdRevisionSectionProperty")]
   RevisionSectionProperty = 12,
   /// <summary>
   /// Style definition changed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionStyleDefinition))]
+  [WordInteropEnumValue("wdRevisionStyleDefinition")]
   RevisionStyleDefinition = 13,
   /// <summary>
   /// Content moved from.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionMovedFrom))]
+  [WordInteropEnumValue("wdRevisionMovedFrom")]
   RevisionMovedFrom = 14,
   /// <summary>
   /// Content moved to.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionMovedTo))]
+  [WordInteropEnumValue("wdRevisionMovedTo")]
   RevisionMovedTo = 15,
   /// <summary>
   /// Table cell inserted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionCellInsertion))]
+  [WordInteropEnumValue("wdRevisionCellInsertion")]
   RevisionCellInsertion = 16,
   /// <summary>
   /// Table cell deleted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionCellDeletion))]
+  [WordInteropEnumValue("wdRevisionCellDeletion")]
   RevisionCellDeletion = 17,
   /// <summary>
   /// Table cells merged.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionCellMerge))]
+  [WordInteropEnumValue("wdRevisionCellMerge")]
   RevisionCellMerge = 18,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionCellSplit))]
+  [WordInteropEnumValue("wdRevisionCellSplit")]
   RevisionCellSplit = 19,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionConflictInsert))]
+  [WordInteropEnumValue("wdRevisionConflictInsert")]
   RevisionConflictInsert = 20,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionType.wdRevisionConflictDelete))]
+  [WordInteropEnumValue("wdRevisionConflictDelete")]
   RevisionConflictDelete = 21
 }

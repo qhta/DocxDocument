@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdWrapType))]
+[WordInteropEnumType("WdWrapType")]
 public enum WrapType
 {
   /// <summary>
   /// Wraps text around the shape. Line continuation is on the opposite side of the shape.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapSquare))]
+  [WordInteropEnumValue("wdWrapSquare")]
   Square = 0,
   /// <summary>
   /// Tight.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapTight))]
+  [WordInteropEnumValue("wdWrapTight")]
   Tight = 1,
   /// <summary>
   /// Through.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapThrough))]
+  [WordInteropEnumValue("wdWrapThrough")]
   Through = 2,
   /// <summary>
   /// Behind text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapNone))]
+  [WordInteropEnumValue("wdWrapNone")]
   None = 3,
   /// <summary>
   /// Places shape in front of text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapFront))]
+  [WordInteropEnumValue("wdWrapFront")]
   Front = 3,
   /// <summary>
   /// Top and bottom.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapTopBottom))]
+  [WordInteropEnumValue("wdWrapTopBottom")]
   TopBottom = 4,
   /// <summary>
   /// Places shape behind text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapBehind))]
+  [WordInteropEnumValue("wdWrapBehind")]
   Behind = 5,
   /// <summary>
   /// In line with text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapType.wdWrapInline))]
+  [WordInteropEnumValue("wdWrapInline")]
   Inline = 7
 }

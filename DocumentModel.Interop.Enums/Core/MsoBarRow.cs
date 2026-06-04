@@ -7,17 +7,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarrow?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBarRow))]
+[OfficeInteropEnumType("MsoBarRow")]
 public enum BarRow
 {
   /// <summary>
   /// First row of docking area.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBarRow.msoBarRowFirst))]
+  [OfficeInteropEnumValue("msoBarRowFirst")]
   First = 0,
   /// <summary>
   /// Last row of docking area.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBarRow.msoBarRowLast))]
+  [OfficeInteropEnumValue("msoBarRowLast")]
   Last = -1
 }

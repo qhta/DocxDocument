@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohtmlprojectopen?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoHTMLProjectOpen))]
+[OfficeInteropEnumType("MsoHTMLProjectOpen")]
 public enum HTMLProjectOpen
 {
   /// <summary>
   /// Open project in source view.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoHTMLProjectOpen.msoHTMLProjectOpenSourceView))]
+  [OfficeInteropEnumValue("msoHTMLProjectOpenSourceView")]
   SourceView = 1,
   /// <summary>
   /// Open project in text view.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoHTMLProjectOpen.msoHTMLProjectOpenTextView))]
+  [OfficeInteropEnumValue("msoHTMLProjectOpenTextView")]
   TextView
 }

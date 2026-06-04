@@ -6,44 +6,44 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconstants?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdConstants))]
+[WordInteropEnumType("WdConstants")]
 public enum Constants
 {
   /// <summary>
   /// Represents the Auto value for the specified setting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdAutoPosition))]
+  [WordInteropEnumValue("wdAutoPosition")]
   AutoPosition = 0,
   /// <summary>
   /// Represents the first item in a collection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdFirst))]
+  [WordInteropEnumValue("wdFirst")]
   First = 1,
   /// <summary>
   /// Toggles a property's value.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdToggle))]
+  [WordInteropEnumValue("wdToggle")]
   Toggle = 9999998,
   /// <summary>
   /// Represents an undefined value. wdForward 1073741823Indicates that selection will be extended forward using the
   /// MoveStartUntil or MoveStartWhile method of the Range or Selection object. wdCreatorCode1297307460Represents
   /// the creator code for objects created by Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdUndefined))]
+  [WordInteropEnumValue("wdUndefined")]
   Undefined = 9999999,
   /// <summary>
   /// This enumeration groups together constants used with various Microsoft Word methods.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdForward))]
+  [WordInteropEnumValue("wdForward")]
   Forward = 1073741823,
   /// <summary>
   /// This enumeration groups together constants used with various Microsoft Word methods.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdCreatorCode))]
+  [WordInteropEnumValue("wdCreatorCode")]
   CreatorCode = 1297307460,
   /// <summary>
   /// This enumeration groups together constants used with various Microsoft Word methods.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConstants.wdBackward))]
+  [WordInteropEnumValue("wdBackward")]
   Backward = -1073741823
 }

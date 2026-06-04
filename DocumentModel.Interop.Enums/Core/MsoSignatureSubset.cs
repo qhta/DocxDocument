@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosignaturesubset?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoSignatureSubset))]
+[OfficeInteropEnumType("MsoSignatureSubset")]
 public enum SignatureSubset
 {
   /// <summary>
   /// All non-visible signatures plus all signed signature lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetSignaturesAllSigs))]
+  [OfficeInteropEnumValue("msoSignatureSubsetSignaturesAllSigs")]
   SignaturesAllSigs,
   /// <summary>
   /// All non-visible signatures.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetSignaturesNonVisible))]
+  [OfficeInteropEnumValue("msoSignatureSubsetSignaturesNonVisible")]
   SignaturesNonVisible,
   /// <summary>
   /// All signature lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetSignatureLines))]
+  [OfficeInteropEnumValue("msoSignatureSubsetSignatureLines")]
   SignatureLines,
   /// <summary>
   /// Signature lines that have been signed.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetSignatureLinesSigned))]
+  [OfficeInteropEnumValue("msoSignatureSubsetSignatureLinesSigned")]
   SignatureLinesSigned,
   /// <summary>
   /// Signature lines that have not been signed.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetSignatureLinesUnsigned))]
+  [OfficeInteropEnumValue("msoSignatureSubsetSignatureLinesUnsigned")]
   SignatureLinesUnsigned,
   /// <summary>
   /// All non-visible signatures plus all signature lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSignatureSubset.msoSignatureSubsetAll))]
+  [OfficeInteropEnumValue("msoSignatureSubsetAll")]
   All
 }

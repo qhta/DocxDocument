@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertbuttontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoAlertButtonType))]
+[OfficeInteropEnumType("MsoAlertButtonType")]
 public enum AlertButtonType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonOK))]
+  [OfficeInteropEnumValue("msoAlertButtonOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonOKCancel))]
+  [OfficeInteropEnumValue("msoAlertButtonOKCancel")]
   OKCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonAbortRetryIgnore))]
+  [OfficeInteropEnumValue("msoAlertButtonAbortRetryIgnore")]
   AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonYesNoCancel))]
+  [OfficeInteropEnumValue("msoAlertButtonYesNoCancel")]
   YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonYesNo))]
+  [OfficeInteropEnumValue("msoAlertButtonYesNo")]
   YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonRetryCancel))]
+  [OfficeInteropEnumValue("msoAlertButtonRetryCancel")]
   RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertButtonType.msoAlertButtonYesAllNoCancel))]
+  [OfficeInteropEnumValue("msoAlertButtonYesAllNoCancel")]
   YesAllNoCancel
 }

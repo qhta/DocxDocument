@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportoptimizefor?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdExportOptimizeFor))]
+[WordInteropEnumType("WdExportOptimizeFor")]
 public enum ExportOptimizeFor
 {
   /// <summary>
   /// Export for print, which is higher quailty and results in a larger file size.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdExportOptimizeFor.wdExportOptimizeForPrint))]
+  [WordInteropEnumValue("wdExportOptimizeForPrint")]
   Print = 0,
   /// <summary>
   /// Export for screen, which is a lower quality and results in a smaller file size.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdExportOptimizeFor.wdExportOptimizeForOnScreen))]
+  [WordInteropEnumValue("wdExportOptimizeForOnScreen")]
   OnScreen = 1
 }

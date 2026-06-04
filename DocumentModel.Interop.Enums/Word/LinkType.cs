@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdLinkType))]
+[WordInteropEnumType("WdLinkType")]
 public enum LinkType
 {
   /// <summary>
   /// OLE object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeOLE))]
+  [WordInteropEnumValue("wdLinkTypeOLE")]
   OLE = 0,
   /// <summary>
   /// Picture.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypePicture))]
+  [WordInteropEnumValue("wdLinkTypePicture")]
   Picture = 1,
   /// <summary>
   /// Text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeText))]
+  [WordInteropEnumValue("wdLinkTypeText")]
   Text = 2,
   /// <summary>
   /// Reference library.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeReference))]
+  [WordInteropEnumValue("wdLinkTypeReference")]
   Reference = 3,
   /// <summary>
   /// Include file.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeInclude))]
+  [WordInteropEnumValue("wdLinkTypeInclude")]
   Include = 4,
   /// <summary>
   /// Import file.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeImport))]
+  [WordInteropEnumValue("wdLinkTypeImport")]
   Import = 5,
   /// <summary>
   /// Dynamic Data Exchange.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeDDE))]
+  [WordInteropEnumValue("wdLinkTypeDDE")]
   DDE = 6,
   /// <summary>
   /// DDE automatic.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeDDEAuto))]
+  [WordInteropEnumValue("wdLinkTypeDDEAuto")]
   DDEAuto = 7,
   /// <summary>
   /// Microsoft Excel chart.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLinkType.wdLinkTypeChart))]
+  [WordInteropEnumValue("wdLinkTypeChart")]
   Chart = 8
 }

@@ -6,67 +6,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconditioncode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdConditionCode))]
+[WordInteropEnumType("WdConditionCode")]
 public enum ConditionCode
 {
   /// <summary>
   /// Applies formatting to the first row in a table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdFirstRow))]
+  [WordInteropEnumValue("wdFirstRow")]
   FirstRow = 0,
   /// <summary>
   /// Applies formatting to the last row in a table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdLastRow))]
+  [WordInteropEnumValue("wdLastRow")]
   LastRow = 1,
   /// <summary>
   /// Applies formatting to odd-numbered rows.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdOddRowBanding))]
+  [WordInteropEnumValue("wdOddRowBanding")]
   OddRowBanding = 2,
   /// <summary>
   /// Applies formatting to even-numbered rows.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdEvenRowBanding))]
+  [WordInteropEnumValue("wdEvenRowBanding")]
   EvenRowBanding = 3,
   /// <summary>
   /// Applies formatting to the first column in a table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdFirstColumn))]
+  [WordInteropEnumValue("wdFirstColumn")]
   FirstColumn = 4,
   /// <summary>
   /// Applies formatting to the last column in a table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdLastColumn))]
+  [WordInteropEnumValue("wdLastColumn")]
   LastColumn = 5,
   /// <summary>
   /// Applies formatting to odd-numbered columns.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdOddColumnBanding))]
+  [WordInteropEnumValue("wdOddColumnBanding")]
   OddColumnBanding = 6,
   /// <summary>
   /// Applies formatting to even-numbered columns.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdEvenColumnBanding))]
+  [WordInteropEnumValue("wdEvenColumnBanding")]
   EvenColumnBanding = 7,
   /// <summary>
   /// Applies formatting to the last cell in the first row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdNECell))]
+  [WordInteropEnumValue("wdNECell")]
   NECell = 8,
   /// <summary>
   /// Applies formatting to the first cell in the first row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdNWCell))]
+  [WordInteropEnumValue("wdNWCell")]
   NWCell = 9,
   /// <summary>
   /// Applies formatting to the last cell in the table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdSECell))]
+  [WordInteropEnumValue("wdSECell")]
   SECell = 10,
   /// <summary>
   /// Applies formatting to first cell in the last row of the table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdConditionCode.wdSWCell))]
+  [WordInteropEnumValue("wdSWCell")]
   SWCell = 11
 }

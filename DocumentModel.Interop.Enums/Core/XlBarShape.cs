@@ -8,37 +8,37 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlbarshape?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlBarShape))]
+[OfficeInteropEnumType("XlBarShape")]
 public enum BarShape
 {
   /// <summary>
   /// Box.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlBox))]
+  [OfficeInteropEnumValue("xlBox")]
   Box,
   /// <summary>
   /// Pyramid, coming to point at value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlPyramidToPoint))]
+  [OfficeInteropEnumValue("xlPyramidToPoint")]
   PyramidToPoint,
   /// <summary>
   /// Pyramid, truncated at value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlPyramidToMax))]
+  [OfficeInteropEnumValue("xlPyramidToMax")]
   PyramidToMax,
   /// <summary>
   /// Cylinder.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlCylinder))]
+  [OfficeInteropEnumValue("xlCylinder")]
   Cylinder,
   /// <summary>
   /// Cone, coming to point at value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlConeToPoint))]
+  [OfficeInteropEnumValue("xlConeToPoint")]
   ConeToPoint,
   /// <summary>
   /// Cone, truncated at value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlBarShape.xlConeToMax))]
+  [OfficeInteropEnumValue("xlConeToMax")]
   ConeToMax
 }

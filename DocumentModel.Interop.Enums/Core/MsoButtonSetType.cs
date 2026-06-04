@@ -6,82 +6,82 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonsettype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoButtonSetType))]
+[OfficeInteropEnumType("MsoButtonSetType")]
 public enum ButtonSetType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetNone))]
+  [OfficeInteropEnumValue("msoButtonSetNone")]
   None,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetOK))]
+  [OfficeInteropEnumValue("msoButtonSetOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetCancel))]
+  [OfficeInteropEnumValue("msoButtonSetCancel")]
   Cancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetOkCancel))]
+  [OfficeInteropEnumValue("msoButtonSetOkCancel")]
   OkCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetYesNo))]
+  [OfficeInteropEnumValue("msoButtonSetYesNo")]
   YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetYesNoCancel))]
+  [OfficeInteropEnumValue("msoButtonSetYesNoCancel")]
   YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetBackClose))]
+  [OfficeInteropEnumValue("msoButtonSetBackClose")]
   BackClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetNextClose))]
+  [OfficeInteropEnumValue("msoButtonSetNextClose")]
   NextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetBackNextClose))]
+  [OfficeInteropEnumValue("msoButtonSetBackNextClose")]
   BackNextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetRetryCancel))]
+  [OfficeInteropEnumValue("msoButtonSetRetryCancel")]
   RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetAbortRetryIgnore))]
+  [OfficeInteropEnumValue("msoButtonSetAbortRetryIgnore")]
   AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetSearchClose))]
+  [OfficeInteropEnumValue("msoButtonSetSearchClose")]
   SearchClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetBackNextSnooze))]
+  [OfficeInteropEnumValue("msoButtonSetBackNextSnooze")]
   BackNextSnooze,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetTipsOptionsClose))]
+  [OfficeInteropEnumValue("msoButtonSetTipsOptionsClose")]
   TipsOptionsClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonSetType.msoButtonSetYesAllNoCancel))]
+  [OfficeInteropEnumValue("msoButtonSetYesAllNoCancel")]
   YesAllNoCancel
 }

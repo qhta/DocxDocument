@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlrowcol?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlRowCol))]
+[WordInteropEnumType("XlRowCol")]
 public enum RowCol
 {
   /// <summary>
   /// Data series is in a column.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlRowCol.xlRows))]
+  [WordInteropEnumValue("xlRows")]
   Rows = 1,
   /// <summary>
   /// Data series is in a row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlRowCol.xlColumns))]
+  [WordInteropEnumValue("xlColumns")]
   Columns = 2
 }

@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdindexfilter?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdIndexFilter))]
+[WordInteropEnumType("WdIndexFilter")]
 public enum IndexFilter
 {
   /// <summary>
   /// No special filtering.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterNone))]
+  [WordInteropEnumValue("wdIndexFilterNone")]
   None = 0,
   /// <summary>
   /// Japanese words use the AIUEO method of alphabetizing.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterAiueo))]
+  [WordInteropEnumValue("wdIndexFilterAiueo")]
   Aiueo = 1,
   /// <summary>
   /// Japanese words use Akasatana.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterAkasatana))]
+  [WordInteropEnumValue("wdIndexFilterAkasatana")]
   Akasatana = 2,
   /// <summary>
   /// Korean words use Chosung.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterChosung))]
+  [WordInteropEnumValue("wdIndexFilterChosung")]
   Chosung = 3,
   /// <summary>
   /// Japanese words use Akasatana.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterLow))]
+  [WordInteropEnumValue("wdIndexFilterLow")]
   Low = 4,
   /// <summary>
   /// Japanese words use the AIUEO method of alphabetizing.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterMedium))]
+  [WordInteropEnumValue("wdIndexFilterMedium")]
   Medium = 5,
   /// <summary>
   /// Korean words use Chosung.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFilter.wdIndexFilterFull))]
+  [WordInteropEnumValue("wdIndexFilterFull")]
   Full = 6
 }

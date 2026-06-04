@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprintoutitem?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPrintOutItem))]
+[WordInteropEnumType("WdPrintOutItem")]
 public enum PrintOutItem
 {
   /// <summary>
   /// Current document content.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintDocumentContent))]
+  [WordInteropEnumValue("wdPrintDocumentContent")]
   DocumentContent = 0,
   /// <summary>
   /// Properties in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintProperties))]
+  [WordInteropEnumValue("wdPrintProperties")]
   Properties = 1,
   /// <summary>
   /// Comments in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintComments))]
+  [WordInteropEnumValue("wdPrintComments")]
   Comments = 2,
   /// <summary>
   /// Markup in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintMarkup))]
+  [WordInteropEnumValue("wdPrintMarkup")]
   Markup = 2,
   /// <summary>
   /// Styles in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintStyles))]
+  [WordInteropEnumValue("wdPrintStyles")]
   Styles = 3,
   /// <summary>
   /// Autotext entries in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintAutoTextEntries))]
+  [WordInteropEnumValue("wdPrintAutoTextEntries")]
   AutoTextEntries = 4,
   /// <summary>
   /// Key assignments in the current document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintKeyAssignments))]
+  [WordInteropEnumValue("wdPrintKeyAssignments")]
   KeyAssignments = 5,
   /// <summary>
   /// An envelope.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintEnvelope))]
+  [WordInteropEnumValue("wdPrintEnvelope")]
   Envelope = 6,
   /// <summary>
   /// Current document content including markup.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPrintOutItem.wdPrintDocumentWithMarkup))]
+  [WordInteropEnumValue("wdPrintDocumentWithMarkup")]
   DocumentWithMarkup = 7
 }

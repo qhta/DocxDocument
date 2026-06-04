@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbordertype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdBorderType))]
+[WordInteropEnumType("WdBorderType")]
 public enum BorderType
 {
   /// <summary>
   /// A diagonal border starting in the bottom left corner.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderDiagonalUp))]
+  [WordInteropEnumValue("wdBorderDiagonalUp")]
   DiagonalUp = -8,
   /// <summary>
   /// A diagonal border starting in the top left corner.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderDiagonalDown))]
+  [WordInteropEnumValue("wdBorderDiagonalDown")]
   DiagonalDown = -7,
   /// <summary>
   /// Vertical borders.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderVertical))]
+  [WordInteropEnumValue("wdBorderVertical")]
   Vertical = -6,
   /// <summary>
   /// Horizontal borders.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderHorizontal))]
+  [WordInteropEnumValue("wdBorderHorizontal")]
   Horizontal = -5,
   /// <summary>
   /// A right border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderRight))]
+  [WordInteropEnumValue("wdBorderRight")]
   Right = -4,
   /// <summary>
   /// A bottom border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderBottom))]
+  [WordInteropEnumValue("wdBorderBottom")]
   Bottom = -3,
   /// <summary>
   /// A left border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderLeft))]
+  [WordInteropEnumValue("wdBorderLeft")]
   Left = -2,
   /// <summary>
   /// A top border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderType.wdBorderTop))]
+  [WordInteropEnumValue("wdBorderTop")]
   Top = -1
 }

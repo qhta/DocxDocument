@@ -6,927 +6,927 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoAutoShapeType))]
+[OfficeInteropEnumType("MsoAutoShapeType")]
 public enum AutoShapeType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMixed))]
+  [OfficeInteropEnumValue("msoShapeMixed")]
   Mixed = -2,
   /// <summary>
   /// Rectangle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRectangle))]
+  [OfficeInteropEnumValue("msoShapeRectangle")]
   Rectangle = 1,
   /// <summary>
   /// Parallelogram.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeParallelogram))]
+  [OfficeInteropEnumValue("msoShapeParallelogram")]
   Parallelogram = 2,
   /// <summary>
   /// Trapezoid.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeTrapezoid))]
+  [OfficeInteropEnumValue("msoShapeTrapezoid")]
   Trapezoid = 3,
   /// <summary>
   /// Diamond.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDiamond))]
+  [OfficeInteropEnumValue("msoShapeDiamond")]
   Diamond = 4,
   /// <summary>
   /// Rounded rectangle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRoundedRectangle))]
+  [OfficeInteropEnumValue("msoShapeRoundedRectangle")]
   RoundedRectangle = 5,
   /// <summary>
   /// Octagon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeOctagon))]
+  [OfficeInteropEnumValue("msoShapeOctagon")]
   Octagon = 6,
   /// <summary>
   /// Isosceles triangle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeIsoscelesTriangle))]
+  [OfficeInteropEnumValue("msoShapeIsoscelesTriangle")]
   IsoscelesTriangle = 7,
   /// <summary>
   /// Right triangle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRightTriangle))]
+  [OfficeInteropEnumValue("msoShapeRightTriangle")]
   RightTriangle = 8,
   /// <summary>
   /// Oval.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeOval))]
+  [OfficeInteropEnumValue("msoShapeOval")]
   Oval = 9,
   /// <summary>
   /// Hexagon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeHexagon))]
+  [OfficeInteropEnumValue("msoShapeHexagon")]
   Hexagon = 10,
   /// <summary>
   /// Cross.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCross))]
+  [OfficeInteropEnumValue("msoShapeCross")]
   Cross = 11,
   /// <summary>
   /// Pentagon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRegularPentagon))]
+  [OfficeInteropEnumValue("msoShapeRegularPentagon")]
   RegularPentagon = 12,
   /// <summary>
   /// Can.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCan))]
+  [OfficeInteropEnumValue("msoShapeCan")]
   Can = 13,
   /// <summary>
   /// Cube.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCube))]
+  [OfficeInteropEnumValue("msoShapeCube")]
   Cube = 14,
   /// <summary>
   /// Bevel.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeBevel))]
+  [OfficeInteropEnumValue("msoShapeBevel")]
   Bevel = 15,
   /// <summary>
   /// Folded corner.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFoldedCorner))]
+  [OfficeInteropEnumValue("msoShapeFoldedCorner")]
   FoldedCorner = 16,
   /// <summary>
   /// Smiley face.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSmileyFace))]
+  [OfficeInteropEnumValue("msoShapeSmileyFace")]
   SmileyFace = 17,
   /// <summary>
   /// Donut.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDonut))]
+  [OfficeInteropEnumValue("msoShapeDonut")]
   Donut = 18,
   /// <summary>
   /// "No" symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeNoSymbol))]
+  [OfficeInteropEnumValue("msoShapeNoSymbol")]
   NoSymbol = 19,
   /// <summary>
   /// Block arc.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeBlockArc))]
+  [OfficeInteropEnumValue("msoShapeBlockArc")]
   BlockArc = 20,
   /// <summary>
   /// Heart.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeHeart))]
+  [OfficeInteropEnumValue("msoShapeHeart")]
   Heart = 21,
   /// <summary>
   /// Lightning bolt.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLightningBolt))]
+  [OfficeInteropEnumValue("msoShapeLightningBolt")]
   LightningBolt = 22,
   /// <summary>
   /// Sun.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSun))]
+  [OfficeInteropEnumValue("msoShapeSun")]
   Sun = 23,
   /// <summary>
   /// Moon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMoon))]
+  [OfficeInteropEnumValue("msoShapeMoon")]
   Moon = 24,
   /// <summary>
   /// Arc.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeArc))]
+  [OfficeInteropEnumValue("msoShapeArc")]
   Arc = 25,
   /// <summary>
   /// Double bracket.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDoubleBracket))]
+  [OfficeInteropEnumValue("msoShapeDoubleBracket")]
   DoubleBracket = 26,
   /// <summary>
   /// Double brace.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDoubleBrace))]
+  [OfficeInteropEnumValue("msoShapeDoubleBrace")]
   DoubleBrace = 27,
   /// <summary>
   /// Plaque.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapePlaque))]
+  [OfficeInteropEnumValue("msoShapePlaque")]
   Plaque = 28,
   /// <summary>
   /// Left bracket.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftBracket))]
+  [OfficeInteropEnumValue("msoShapeLeftBracket")]
   LeftBracket = 29,
   /// <summary>
   /// Right bracket.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRightBracket))]
+  [OfficeInteropEnumValue("msoShapeRightBracket")]
   RightBracket = 30,
   /// <summary>
   /// Left brace.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftBrace))]
+  [OfficeInteropEnumValue("msoShapeLeftBrace")]
   LeftBrace = 31,
   /// <summary>
   /// Right brace.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRightBrace))]
+  [OfficeInteropEnumValue("msoShapeRightBrace")]
   RightBrace = 32,
   /// <summary>
   /// Block arrow that points right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRightArrow))]
+  [OfficeInteropEnumValue("msoShapeRightArrow")]
   RightArrow = 33,
   /// <summary>
   /// Block arrow that points left.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftArrow")]
   LeftArrow = 34,
   /// <summary>
   /// Block arrow that points up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUpArrow))]
+  [OfficeInteropEnumValue("msoShapeUpArrow")]
   UpArrow = 35,
   /// <summary>
   /// Block arrow that points down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDownArrow))]
+  [OfficeInteropEnumValue("msoShapeDownArrow")]
   DownArrow = 36,
   /// <summary>
   /// Block arrow with arrowheads that point both left and right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftRightArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftRightArrow")]
   LeftRightArrow = 37,
   /// <summary>
   /// Block arrow that points up and down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUpDownArrow))]
+  [OfficeInteropEnumValue("msoShapeUpDownArrow")]
   UpDownArrow = 38,
   /// <summary>
   /// Block arrows that point up, down, left, and right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeQuadArrow))]
+  [OfficeInteropEnumValue("msoShapeQuadArrow")]
   QuadArrow = 39,
   /// <summary>
   /// Block arrow with arrowheads that point left, right, and up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftRightUpArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftRightUpArrow")]
   LeftRightUpArrow = 40,
   /// <summary>
   /// Block arrow that follows a curved 90-degree angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeBentArrow))]
+  [OfficeInteropEnumValue("msoShapeBentArrow")]
   BentArrow = 41,
   /// <summary>
   /// Block arrow forming a U shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUTurnArrow))]
+  [OfficeInteropEnumValue("msoShapeUTurnArrow")]
   UTurnArrow = 42,
   /// <summary>
   /// Block arrow with arrowheads that point left and up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftUpArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftUpArrow")]
   LeftUpArrow = 43,
   /// <summary>
   /// Block arrow that follows a sharp 90-degree angle. Points up by default.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeBentUpArrow))]
+  [OfficeInteropEnumValue("msoShapeBentUpArrow")]
   BentUpArrow = 44,
   /// <summary>
   /// Block arrow that curves right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedRightArrow))]
+  [OfficeInteropEnumValue("msoShapeCurvedRightArrow")]
   CurvedRightArrow = 45,
   /// <summary>
   /// Block arrow that curves left.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedLeftArrow))]
+  [OfficeInteropEnumValue("msoShapeCurvedLeftArrow")]
   CurvedLeftArrow = 46,
   /// <summary>
   /// Block arrow that curves up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedUpArrow))]
+  [OfficeInteropEnumValue("msoShapeCurvedUpArrow")]
   CurvedUpArrow = 47,
   /// <summary>
   /// Block arrow that curves down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedDownArrow))]
+  [OfficeInteropEnumValue("msoShapeCurvedDownArrow")]
   CurvedDownArrow = 48,
   /// <summary>
   /// Block arrow that points right with stripes at the tail.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeStripedRightArrow))]
+  [OfficeInteropEnumValue("msoShapeStripedRightArrow")]
   StripedRightArrow = 49,
   /// <summary>
   /// Notched block arrow that points right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeNotchedRightArrow))]
+  [OfficeInteropEnumValue("msoShapeNotchedRightArrow")]
   NotchedRightArrow = 50,
   /// <summary>
   /// Pentagon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapePentagon))]
+  [OfficeInteropEnumValue("msoShapePentagon")]
   Pentagon = 51,
   /// <summary>
   /// Chevron.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeChevron))]
+  [OfficeInteropEnumValue("msoShapeChevron")]
   Chevron = 52,
   /// <summary>
   /// Callout with arrow that points right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRightArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeRightArrowCallout")]
   RightArrowCallout = 53,
   /// <summary>
   /// Callout with arrow that points left.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeLeftArrowCallout")]
   LeftArrowCallout = 54,
   /// <summary>
   /// Callout with arrow that points up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUpArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeUpArrowCallout")]
   UpArrowCallout = 55,
   /// <summary>
   /// Callout with arrow that points down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDownArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeDownArrowCallout")]
   DownArrowCallout = 56,
   /// <summary>
   /// Callout with arrowheads that point both left and right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftRightArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeLeftRightArrowCallout")]
   LeftRightArrowCallout = 57,
   /// <summary>
   /// Callout with arrows that point up and down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUpDownArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeUpDownArrowCallout")]
   UpDownArrowCallout = 58,
   /// <summary>
   /// Callout with arrows that point up, down, left, and right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeQuadArrowCallout))]
+  [OfficeInteropEnumValue("msoShapeQuadArrowCallout")]
   QuadArrowCallout = 59,
   /// <summary>
   /// Block arrow that follows a curved 180-degree angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCircularArrow))]
+  [OfficeInteropEnumValue("msoShapeCircularArrow")]
   CircularArrow = 60,
   /// <summary>
   /// Process flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartProcess))]
+  [OfficeInteropEnumValue("msoShapeFlowchartProcess")]
   FlowchartProcess = 61,
   /// <summary>
   /// Alternate process flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartAlternateProcess))]
+  [OfficeInteropEnumValue("msoShapeFlowchartAlternateProcess")]
   FlowchartAlternateProcess = 62,
   /// <summary>
   /// Decision flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartDecision))]
+  [OfficeInteropEnumValue("msoShapeFlowchartDecision")]
   FlowchartDecision = 63,
   /// <summary>
   /// Data flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartData))]
+  [OfficeInteropEnumValue("msoShapeFlowchartData")]
   FlowchartData = 64,
   /// <summary>
   /// Predefined process flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartPredefinedProcess))]
+  [OfficeInteropEnumValue("msoShapeFlowchartPredefinedProcess")]
   FlowchartPredefinedProcess = 65,
   /// <summary>
   /// Internal storage flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartInternalStorage))]
+  [OfficeInteropEnumValue("msoShapeFlowchartInternalStorage")]
   FlowchartInternalStorage = 66,
   /// <summary>
   /// Document flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartDocument))]
+  [OfficeInteropEnumValue("msoShapeFlowchartDocument")]
   FlowchartDocument = 67,
   /// <summary>
   /// Multi-document flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartMultidocument))]
+  [OfficeInteropEnumValue("msoShapeFlowchartMultidocument")]
   FlowchartMultidocument = 68,
   /// <summary>
   /// Terminator flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartTerminator))]
+  [OfficeInteropEnumValue("msoShapeFlowchartTerminator")]
   FlowchartTerminator = 69,
   /// <summary>
   /// Preparation flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartPreparation))]
+  [OfficeInteropEnumValue("msoShapeFlowchartPreparation")]
   FlowchartPreparation = 70,
   /// <summary>
   /// Manual input flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartManualInput))]
+  [OfficeInteropEnumValue("msoShapeFlowchartManualInput")]
   FlowchartManualInput = 71,
   /// <summary>
   /// Manual operation flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartManualOperation))]
+  [OfficeInteropEnumValue("msoShapeFlowchartManualOperation")]
   FlowchartManualOperation = 72,
   /// <summary>
   /// Connector flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartConnector))]
+  [OfficeInteropEnumValue("msoShapeFlowchartConnector")]
   FlowchartConnector = 73,
   /// <summary>
   /// Off-page connector flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartOffpageConnector))]
+  [OfficeInteropEnumValue("msoShapeFlowchartOffpageConnector")]
   FlowchartOffpageConnector = 74,
   /// <summary>
   /// Card flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartCard))]
+  [OfficeInteropEnumValue("msoShapeFlowchartCard")]
   FlowchartCard = 75,
   /// <summary>
   /// Punched tape flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartPunchedTape))]
+  [OfficeInteropEnumValue("msoShapeFlowchartPunchedTape")]
   FlowchartPunchedTape = 76,
   /// <summary>
   /// Summing junction flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartSummingJunction))]
+  [OfficeInteropEnumValue("msoShapeFlowchartSummingJunction")]
   FlowchartSummingJunction = 77,
   /// <summary>
   /// "Or" flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartOr))]
+  [OfficeInteropEnumValue("msoShapeFlowchartOr")]
   FlowchartOr = 78,
   /// <summary>
   /// Collate flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartCollate))]
+  [OfficeInteropEnumValue("msoShapeFlowchartCollate")]
   FlowchartCollate = 79,
   /// <summary>
   /// Sort flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartSort))]
+  [OfficeInteropEnumValue("msoShapeFlowchartSort")]
   FlowchartSort = 80,
   /// <summary>
   /// Extract flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartExtract))]
+  [OfficeInteropEnumValue("msoShapeFlowchartExtract")]
   FlowchartExtract = 81,
   /// <summary>
   /// Merge flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartMerge))]
+  [OfficeInteropEnumValue("msoShapeFlowchartMerge")]
   FlowchartMerge = 82,
   /// <summary>
   /// Stored data flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartStoredData))]
+  [OfficeInteropEnumValue("msoShapeFlowchartStoredData")]
   FlowchartStoredData = 83,
   /// <summary>
   /// Delay flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartDelay))]
+  [OfficeInteropEnumValue("msoShapeFlowchartDelay")]
   FlowchartDelay = 84,
   /// <summary>
   /// Sequential access storage flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartSequentialAccessStorage))]
+  [OfficeInteropEnumValue("msoShapeFlowchartSequentialAccessStorage")]
   FlowchartSequentialAccessStorage = 85,
   /// <summary>
   /// Magnetic disk flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartMagneticDisk))]
+  [OfficeInteropEnumValue("msoShapeFlowchartMagneticDisk")]
   FlowchartMagneticDisk = 86,
   /// <summary>
   /// Direct access storage flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartDirectAccessStorage))]
+  [OfficeInteropEnumValue("msoShapeFlowchartDirectAccessStorage")]
   FlowchartDirectAccessStorage = 87,
   /// <summary>
   /// Display flowchart symbol.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartDisplay))]
+  [OfficeInteropEnumValue("msoShapeFlowchartDisplay")]
   FlowchartDisplay = 88,
   /// <summary>
   /// Explosion.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeExplosion1))]
+  [OfficeInteropEnumValue("msoShapeExplosion1")]
   Explosion1 = 89,
   /// <summary>
   /// Explosion.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeExplosion2))]
+  [OfficeInteropEnumValue("msoShapeExplosion2")]
   Explosion2 = 90,
   /// <summary>
   /// 4-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape4pointStar))]
+  [OfficeInteropEnumValue("msoShape4pointStar")]
   FourPointStar = 91,
   /// <summary>
   /// 5-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape5pointStar))]
+  [OfficeInteropEnumValue("msoShape5pointStar")]
   FivePointStar = 92,
   /// <summary>
   /// 8-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape8pointStar))]
+  [OfficeInteropEnumValue("msoShape8pointStar")]
   EightPointStar = 93,
   /// <summary>
   /// 16-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape16pointStar))]
+  [OfficeInteropEnumValue("msoShape16pointStar")]
   SixteenPointStar = 94,
   /// <summary>
   /// 24-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape24pointStar))]
+  [OfficeInteropEnumValue("msoShape24pointStar")]
   TwentyFourPointStar = 95,
   /// <summary>
   /// 32-point star.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape32pointStar))]
+  [OfficeInteropEnumValue("msoShape32pointStar")]
   ThirtyTwoPointStar = 96,
   /// <summary>
   /// Ribbon banner with center area above ribbon ends.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeUpRibbon))]
+  [OfficeInteropEnumValue("msoShapeUpRibbon")]
   UpRibbon = 97,
   /// <summary>
   /// Ribbon banner with center area below ribbon ends.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDownRibbon))]
+  [OfficeInteropEnumValue("msoShapeDownRibbon")]
   DownRibbon = 98,
   /// <summary>
   /// Ribbon banner that curves up.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedUpRibbon))]
+  [OfficeInteropEnumValue("msoShapeCurvedUpRibbon")]
   CurvedUpRibbon = 99,
   /// <summary>
   /// Ribbon banner that curves down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCurvedDownRibbon))]
+  [OfficeInteropEnumValue("msoShapeCurvedDownRibbon")]
   CurvedDownRibbon = 100,
   /// <summary>
   /// Vertical scroll.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeVerticalScroll))]
+  [OfficeInteropEnumValue("msoShapeVerticalScroll")]
   VerticalScroll = 101,
   /// <summary>
   /// Horizontal scroll.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeHorizontalScroll))]
+  [OfficeInteropEnumValue("msoShapeHorizontalScroll")]
   HorizontalScroll = 102,
   /// <summary>
   /// Wave.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeWave))]
+  [OfficeInteropEnumValue("msoShapeWave")]
   Wave = 103,
   /// <summary>
   /// Double wave.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDoubleWave))]
+  [OfficeInteropEnumValue("msoShapeDoubleWave")]
   DoubleWave = 104,
   /// <summary>
   /// Rectangular callout.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRectangularCallout))]
+  [OfficeInteropEnumValue("msoShapeRectangularCallout")]
   RectangularCallout = 105,
   /// <summary>
   /// Rounded rectangle-shaped callout.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRoundedRectangularCallout))]
+  [OfficeInteropEnumValue("msoShapeRoundedRectangularCallout")]
   RoundedRectangularCallout = 106,
   /// <summary>
   /// Oval-shaped callout.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeOvalCallout))]
+  [OfficeInteropEnumValue("msoShapeOvalCallout")]
   OvalCallout = 107,
   /// <summary>
   /// Cloud callout.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCloudCallout))]
+  [OfficeInteropEnumValue("msoShapeCloudCallout")]
   CloudCallout = 108,
   /// <summary>
   /// Callout with border and horizontal callout line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout1))]
+  [OfficeInteropEnumValue("msoShapeLineCallout1")]
   LineCallout1 = 109,
   /// <summary>
   /// Callout with diagonal straight line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout2))]
+  [OfficeInteropEnumValue("msoShapeLineCallout2")]
   LineCallout2 = 110,
   /// <summary>
   /// Callout with angled line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout3))]
+  [OfficeInteropEnumValue("msoShapeLineCallout3")]
   LineCallout3 = 111,
   /// <summary>
   /// Callout with callout line segments forming a U- shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout4))]
+  [OfficeInteropEnumValue("msoShapeLineCallout4")]
   LineCallout4 = 112,
   /// <summary>
   /// Callout with horizontal accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout1AccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout1AccentBar")]
   LineCallout1AccentBar = 113,
   /// <summary>
   /// Callout with diagonal callout line and accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout2AccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout2AccentBar")]
   LineCallout2AccentBar = 114,
   /// <summary>
   /// Callout with angled callout line and accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout3AccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout3AccentBar")]
   LineCallout3AccentBar = 115,
   /// <summary>
   /// Callout with accent bar and callout line segments forming a U-shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout4AccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout4AccentBar")]
   LineCallout4AccentBar = 116,
   /// <summary>
   /// Callout with horizontal line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout1NoBorder))]
+  [OfficeInteropEnumValue("msoShapeLineCallout1NoBorder")]
   LineCallout1NoBorder = 117,
   /// <summary>
   /// Callout with no border and diagonal callout line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout2NoBorder))]
+  [OfficeInteropEnumValue("msoShapeLineCallout2NoBorder")]
   LineCallout2NoBorder = 118,
   /// <summary>
   /// Callout with no border and angled callout line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout3NoBorder))]
+  [OfficeInteropEnumValue("msoShapeLineCallout3NoBorder")]
   LineCallout3NoBorder = 119,
   /// <summary>
   /// Callout with no border and callout line segments forming a U-shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout4NoBorder))]
+  [OfficeInteropEnumValue("msoShapeLineCallout4NoBorder")]
   LineCallout4NoBorder = 120,
   /// <summary>
   /// Callout with border and horizontal accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout1BorderandAccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout1BorderandAccentBar")]
   LineCallout1BorderandAccentBar = 121,
   /// <summary>
   /// Callout with border, diagonal straight line, and accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout2BorderandAccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout2BorderandAccentBar")]
   LineCallout2BorderandAccentBar = 122,
   /// <summary>
   /// Callout with border, angled callout line, and accent bar.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout3BorderandAccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout3BorderandAccentBar")]
   LineCallout3BorderandAccentBar = 123,
   /// <summary>
   /// Callout with border, accent bar, and callout line segments forming a U-shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineCallout4BorderandAccentBar))]
+  [OfficeInteropEnumValue("msoShapeLineCallout4BorderandAccentBar")]
   LineCallout4BorderandAccentBar = 124,
   /// <summary>
   /// Button with no default picture or text. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonCustom))]
+  [OfficeInteropEnumValue("msoShapeActionButtonCustom")]
   ActionButtonCustom = 125,
   /// <summary>
   /// Home button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonHome))]
+  [OfficeInteropEnumValue("msoShapeActionButtonHome")]
   ActionButtonHome = 126,
   /// <summary>
   /// Help button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonHelp))]
+  [OfficeInteropEnumValue("msoShapeActionButtonHelp")]
   ActionButtonHelp = 127,
   /// <summary>
   /// Information button. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonInformation))]
+  [OfficeInteropEnumValue("msoShapeActionButtonInformation")]
   ActionButtonInformation = 128,
   /// <summary>
   /// Back or Previous button. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonBackorPrevious))]
+  [OfficeInteropEnumValue("msoShapeActionButtonBackorPrevious")]
   ActionButtonBackorPrevious = 129,
   /// <summary>
   /// Forward or Next button. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonForwardorNext))]
+  [OfficeInteropEnumValue("msoShapeActionButtonForwardorNext")]
   ActionButtonForwardorNext = 130,
   /// <summary>
   /// Beginning button. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonBeginning))]
+  [OfficeInteropEnumValue("msoShapeActionButtonBeginning")]
   ActionButtonBeginning = 131,
   /// <summary>
   /// End button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonEnd))]
+  [OfficeInteropEnumValue("msoShapeActionButtonEnd")]
   ActionButtonEnd = 132,
   /// <summary>
   /// Return button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonReturn))]
+  [OfficeInteropEnumValue("msoShapeActionButtonReturn")]
   ActionButtonReturn = 133,
   /// <summary>
   /// Document button. Supports mouse-click and mouse-over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonDocument))]
+  [OfficeInteropEnumValue("msoShapeActionButtonDocument")]
   ActionButtonDocument = 134,
   /// <summary>
   /// Sound button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonSound))]
+  [OfficeInteropEnumValue("msoShapeActionButtonSound")]
   ActionButtonSound = 135,
   /// <summary>
   /// Movie button. Supports mouse-click and mouse- over actions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeActionButtonMovie))]
+  [OfficeInteropEnumValue("msoShapeActionButtonMovie")]
   ActionButtonMovie = 136,
   /// <summary>
   /// Balloon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeBalloon))]
+  [OfficeInteropEnumValue("msoShapeBalloon")]
   Balloon = 137,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeNotPrimitive))]
+  [OfficeInteropEnumValue("msoShapeNotPrimitive")]
   NotPrimitive = 138,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFlowchartOfflineStorage))]
+  [OfficeInteropEnumValue("msoShapeFlowchartOfflineStorage")]
   FlowchartOfflineStorage = 139,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftRightRibbon))]
+  [OfficeInteropEnumValue("msoShapeLeftRightRibbon")]
   LeftRightRibbon = 140,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDiagonalStripe))]
+  [OfficeInteropEnumValue("msoShapeDiagonalStripe")]
   DiagonalStripe = 141,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapePie))]
+  [OfficeInteropEnumValue("msoShapePie")]
   Pie = 142,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeNonIsoscelesTrapezoid))]
+  [OfficeInteropEnumValue("msoShapeNonIsoscelesTrapezoid")]
   NonIsoscelesTrapezoid = 143,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDecagon))]
+  [OfficeInteropEnumValue("msoShapeDecagon")]
   Decagon = 144,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeHeptagon))]
+  [OfficeInteropEnumValue("msoShapeHeptagon")]
   Heptagon = 145,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeDodecagon))]
+  [OfficeInteropEnumValue("msoShapeDodecagon")]
   Dodecagon = 146,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape6pointStar))]
+  [OfficeInteropEnumValue("msoShape6pointStar")]
   SixPointStar = 147,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape7pointStar))]
+  [OfficeInteropEnumValue("msoShape7pointStar")]
   SevenPointStar = 148,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape10pointStar))]
+  [OfficeInteropEnumValue("msoShape10pointStar")]
   TenPointStar = 149,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShape12pointStar))]
+  [OfficeInteropEnumValue("msoShape12pointStar")]
   TwelvePointStar = 150,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRound1Rectangle))]
+  [OfficeInteropEnumValue("msoShapeRound1Rectangle")]
   Round1Rectangle = 151,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRound2SameRectangle))]
+  [OfficeInteropEnumValue("msoShapeRound2SameRectangle")]
   Round2SameRectangle = 152,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRound2DiagRectangle))]
+  [OfficeInteropEnumValue("msoShapeRound2DiagRectangle")]
   Round2DiagRectangle = 153,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSnipRoundRectangle))]
+  [OfficeInteropEnumValue("msoShapeSnipRoundRectangle")]
   SnipRoundRectangle = 154,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSnip1Rectangle))]
+  [OfficeInteropEnumValue("msoShapeSnip1Rectangle")]
   Snip1Rectangle = 155,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSnip2SameRectangle))]
+  [OfficeInteropEnumValue("msoShapeSnip2SameRectangle")]
   Snip2SameRectangle = 156,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSnip2DiagRectangle))]
+  [OfficeInteropEnumValue("msoShapeSnip2DiagRectangle")]
   Snip2DiagRectangle = 157,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFrame))]
+  [OfficeInteropEnumValue("msoShapeFrame")]
   Frame = 158,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeHalfFrame))]
+  [OfficeInteropEnumValue("msoShapeHalfFrame")]
   HalfFrame = 159,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeTear))]
+  [OfficeInteropEnumValue("msoShapeTear")]
   Tear = 160,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeChord))]
+  [OfficeInteropEnumValue("msoShapeChord")]
   Chord = 161,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCorner))]
+  [OfficeInteropEnumValue("msoShapeCorner")]
   Corner = 162,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathPlus))]
+  [OfficeInteropEnumValue("msoShapeMathPlus")]
   MathPlus = 163,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathMinus))]
+  [OfficeInteropEnumValue("msoShapeMathMinus")]
   MathMinus = 164,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathMultiply))]
+  [OfficeInteropEnumValue("msoShapeMathMultiply")]
   MathMultiply = 165,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathDivide))]
+  [OfficeInteropEnumValue("msoShapeMathDivide")]
   MathDivide = 166,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathEqual))]
+  [OfficeInteropEnumValue("msoShapeMathEqual")]
   MathEqual = 167,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeMathNotEqual))]
+  [OfficeInteropEnumValue("msoShapeMathNotEqual")]
   MathNotEqual = 168,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCornerTabs))]
+  [OfficeInteropEnumValue("msoShapeCornerTabs")]
   CornerTabs = 169,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSquareTabs))]
+  [OfficeInteropEnumValue("msoShapeSquareTabs")]
   SquareTabs = 170,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapePlaqueTabs))]
+  [OfficeInteropEnumValue("msoShapePlaqueTabs")]
   PlaqueTabs = 171,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeGear6))]
+  [OfficeInteropEnumValue("msoShapeGear6")]
   Gear6 = 172,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeGear9))]
+  [OfficeInteropEnumValue("msoShapeGear9")]
   Gear9 = 173,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeFunnel))]
+  [OfficeInteropEnumValue("msoShapeFunnel")]
   Funnel = 174,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapePieWedge))]
+  [OfficeInteropEnumValue("msoShapePieWedge")]
   PieWedge = 175,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftCircularArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftCircularArrow")]
   LeftCircularArrow = 176,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLeftRightCircularArrow))]
+  [OfficeInteropEnumValue("msoShapeLeftRightCircularArrow")]
   LeftRightCircularArrow = 177,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeSwooshArrow))]
+  [OfficeInteropEnumValue("msoShapeSwooshArrow")]
   SwooshArrow = 178,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeCloud))]
+  [OfficeInteropEnumValue("msoShapeCloud")]
   Cloud = 179,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeChartX))]
+  [OfficeInteropEnumValue("msoShapeChartX")]
   ChartX = 180,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeChartStar))]
+  [OfficeInteropEnumValue("msoShapeChartStar")]
   ChartStar = 181,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeChartPlus))]
+  [OfficeInteropEnumValue("msoShapeChartPlus")]
   ChartPlus = 182,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAutoShapeType.msoShapeLineInverse))]
+  [OfficeInteropEnumValue("msoShapeLineInverse")]
   LineInverse = 183
 }

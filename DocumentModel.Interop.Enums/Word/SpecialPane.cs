@@ -6,112 +6,112 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspecialpane?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSpecialPane))]
+[WordInteropEnumType("WdSpecialPane")]
 public enum SpecialPane
 {
   /// <summary>
   /// No display.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneNone))]
+  [WordInteropEnumValue("wdPaneNone")]
   None = 0,
   /// <summary>
   /// The pane primary header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPanePrimaryHeader))]
+  [WordInteropEnumValue("wdPanePrimaryHeader")]
   PrimaryHeader = 1,
   /// <summary>
   /// The first page header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFirstPageHeader))]
+  [WordInteropEnumValue("wdPaneFirstPageHeader")]
   FirstPageHeader = 2,
   /// <summary>
   /// The even pages header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEvenPagesHeader))]
+  [WordInteropEnumValue("wdPaneEvenPagesHeader")]
   EvenPagesHeader = 3,
   /// <summary>
   /// The pane primary footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPanePrimaryFooter))]
+  [WordInteropEnumValue("wdPanePrimaryFooter")]
   PrimaryFooter = 4,
   /// <summary>
   /// The first page footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFirstPageFooter))]
+  [WordInteropEnumValue("wdPaneFirstPageFooter")]
   FirstPageFooter = 5,
   /// <summary>
   /// The even pages footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEvenPagesFooter))]
+  [WordInteropEnumValue("wdPaneEvenPagesFooter")]
   EvenPagesFooter = 6,
   /// <summary>
   /// Footnotes.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFootnotes))]
+  [WordInteropEnumValue("wdPaneFootnotes")]
   Footnotes = 7,
   /// <summary>
   /// Endnotes.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEndnotes))]
+  [WordInteropEnumValue("wdPaneEndnotes")]
   Endnotes = 8,
   /// <summary>
   /// The footnote continuation notice.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFootnoteContinuationNotice))]
+  [WordInteropEnumValue("wdPaneFootnoteContinuationNotice")]
   FootnoteContinuationNotice = 9,
   /// <summary>
   /// The footnote continuation separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFootnoteContinuationSeparator))]
+  [WordInteropEnumValue("wdPaneFootnoteContinuationSeparator")]
   FootnoteContinuationSeparator = 10,
   /// <summary>
   /// The footnote separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneFootnoteSeparator))]
+  [WordInteropEnumValue("wdPaneFootnoteSeparator")]
   FootnoteSeparator = 11,
   /// <summary>
   /// The endnote continuation notice.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEndnoteContinuationNotice))]
+  [WordInteropEnumValue("wdPaneEndnoteContinuationNotice")]
   EndnoteContinuationNotice = 12,
   /// <summary>
   /// The endnote continuation separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEndnoteContinuationSeparator))]
+  [WordInteropEnumValue("wdPaneEndnoteContinuationSeparator")]
   EndnoteContinuationSeparator = 13,
   /// <summary>
   /// The endnote separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneEndnoteSeparator))]
+  [WordInteropEnumValue("wdPaneEndnoteSeparator")]
   EndnoteSeparator = 14,
   /// <summary>
   /// Selected comments.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneComments))]
+  [WordInteropEnumValue("wdPaneComments")]
   Comments = 15,
   /// <summary>
   /// The page header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneCurrentPageHeader))]
+  [WordInteropEnumValue("wdPaneCurrentPageHeader")]
   CurrentPageHeader = 16,
   /// <summary>
   /// The page footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneCurrentPageFooter))]
+  [WordInteropEnumValue("wdPaneCurrentPageFooter")]
   CurrentPageFooter = 17,
   /// <summary>
   /// The pane revisions.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneRevisions))]
+  [WordInteropEnumValue("wdPaneRevisions")]
   Revisions = 18,
   /// <summary>
   /// The revisions pane displays along the bottom of the document window.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneRevisionsHoriz))]
+  [WordInteropEnumValue("wdPaneRevisionsHoriz")]
   RevisionsHoriz = 19,
   /// <summary>
   /// The revisions pane displays along the left side of the document window.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpecialPane.wdPaneRevisionsVert))]
+  [WordInteropEnumValue("wdPaneRevisionsVert")]
   RevisionsVert = 20
 }

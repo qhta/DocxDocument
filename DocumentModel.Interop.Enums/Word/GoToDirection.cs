@@ -7,37 +7,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgotodirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdGoToDirection))]
+[WordInteropEnumType("WdGoToDirection")]
 public enum GoToDirection
 {
   /// <summary>
   /// An absolute position.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToAbsolute))]
+  [WordInteropEnumValue("wdGoToAbsolute")]
   Absolute = 1,
   /// <summary>
   /// The first instance of the specified object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToFirst))]
+  [WordInteropEnumValue("wdGoToFirst")]
   First = 1,
   /// <summary>
   /// The next instance of the specified object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToNext))]
+  [WordInteropEnumValue("wdGoToNext")]
   Next = 2,
   /// <summary>
   /// A position relative to the current position.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToRelative))]
+  [WordInteropEnumValue("wdGoToRelative")]
   Relative = 2,
   /// <summary>
   /// The previous instance of the specified object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToPrevious))]
+  [WordInteropEnumValue("wdGoToPrevious")]
   Previous = 3,
   /// <summary>
   /// The last instance of the specified object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToLast))]
+  [WordInteropEnumValue("wdGoToLast")]
   Last = -1
 }

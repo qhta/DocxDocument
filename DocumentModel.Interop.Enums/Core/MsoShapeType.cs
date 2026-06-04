@@ -6,142 +6,142 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoShapeType))]
+[OfficeInteropEnumType("MsoShapeType")]
 public enum ShapeType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoShapeTypeMixed))]
+  [OfficeInteropEnumValue("msoShapeTypeMixed")]
   ShapeTypeMixed = -2,
   /// <summary>
   /// AutoShape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoAutoShape))]
+  [OfficeInteropEnumValue("msoAutoShape")]
   AutoShape = 1,
   /// <summary>
   /// Callout.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoCallout))]
+  [OfficeInteropEnumValue("msoCallout")]
   Callout = 2,
   /// <summary>
   /// Chart.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoChart))]
+  [OfficeInteropEnumValue("msoChart")]
   Chart = 3,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoComment))]
+  [OfficeInteropEnumValue("msoComment")]
   Comment = 4,
   /// <summary>
   /// Freeform.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoFreeform))]
+  [OfficeInteropEnumValue("msoFreeform")]
   Freeform = 5,
   /// <summary>
   /// Group.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoGroup))]
+  [OfficeInteropEnumValue("msoGroup")]
   Group = 6,
   /// <summary>
   /// Embedded OLE object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoEmbeddedOLEObject))]
+  [OfficeInteropEnumValue("msoEmbeddedOLEObject")]
   EmbeddedOLEObject = 7,
   /// <summary>
   /// Form control.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoFormControl))]
+  [OfficeInteropEnumValue("msoFormControl")]
   FormControl = 8,
   /// <summary>
   /// Line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoLine))]
+  [OfficeInteropEnumValue("msoLine")]
   Line = 9,
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoLinkedOLEObject))]
+  [OfficeInteropEnumValue("msoLinkedOLEObject")]
   LinkedOLEObject = 10,
   /// <summary>
   /// Linked picture.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoLinkedPicture))]
+  [OfficeInteropEnumValue("msoLinkedPicture")]
   LinkedPicture = 11,
   /// <summary>
   /// OLE control object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoOLEControlObject))]
+  [OfficeInteropEnumValue("msoOLEControlObject")]
   OLEControlObject = 12,
   /// <summary>
   /// Picture.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoPicture))]
+  [OfficeInteropEnumValue("msoPicture")]
   Picture = 13,
   /// <summary>
   /// Placeholder.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoPlaceholder))]
+  [OfficeInteropEnumValue("msoPlaceholder")]
   Placeholder = 14,
   /// <summary>
   /// Text effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoTextEffect))]
+  [OfficeInteropEnumValue("msoTextEffect")]
   TextEffect = 15,
   /// <summary>
   /// Media.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoMedia))]
+  [OfficeInteropEnumValue("msoMedia")]
   Media = 16,
   /// <summary>
   /// Text box.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoTextBox))]
+  [OfficeInteropEnumValue("msoTextBox")]
   TextBox = 17,
   /// <summary>
   /// Script anchor.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoScriptAnchor))]
+  [OfficeInteropEnumValue("msoScriptAnchor")]
   ScriptAnchor = 18,
   /// <summary>
   /// Table.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoTable))]
+  [OfficeInteropEnumValue("msoTable")]
   Table = 19,
   /// <summary>
   /// Canvas.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoCanvas))]
+  [OfficeInteropEnumValue("msoCanvas")]
   Canvas = 20,
   /// <summary>
   /// Diagram.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoDiagram))]
+  [OfficeInteropEnumValue("msoDiagram")]
   Diagram = 21,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoInk))]
+  [OfficeInteropEnumValue("msoInk")]
   Ink = 22,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoInkComment))]
+  [OfficeInteropEnumValue("msoInkComment")]
   InkComment = 23,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoSmartArt))]
+  [OfficeInteropEnumValue("msoSmartArt")]
   SmartArt = 24,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoSlicer))]
+  [OfficeInteropEnumValue("msoSlicer")]
   Slicer = 25,
   /// <summary>
   /// Web video.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoShapeType.msoWebVideo))]
+  [OfficeInteropEnumValue("msoWebVideo")]
   WebVideo = 26
 }

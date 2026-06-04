@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsectiondirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSectionDirection))]
+[WordInteropEnumType("WdSectionDirection")]
 public enum SectionDirection
 {
   /// <summary>
   /// Displays the section with right alignment and right-to-left reading order.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionDirection.wdSectionDirectionRtl))]
+  [WordInteropEnumValue("wdSectionDirectionRtl")]
   Rtl = 0,
   /// <summary>
   /// Displays the section with left alignment and left-to-right reading order.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSectionDirection.wdSectionDirectionLtr))]
+  [WordInteropEnumValue("wdSectionDirectionLtr")]
   Ltr = 1
 }

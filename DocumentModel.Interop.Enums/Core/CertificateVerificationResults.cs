@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificateverificationresults?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.CertificateVerificationResults))]
+[OfficeInteropEnumType("CertificateVerificationResults")]
 public enum CertificateVerificationResults
 {
   /// <summary>
   /// The verification resulted in an error.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresError))]
+  [OfficeInteropEnumValue("certverresError")]
   Error,
   /// <summary>
   /// The certificate is currently being verified.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresVerifying))]
+  [OfficeInteropEnumValue("certverresVerifying")]
   Verifying,
   /// <summary>
   /// The certification is currently unverified.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresUnverified))]
+  [OfficeInteropEnumValue("certverresUnverified")]
   Unverified,
   /// <summary>
   /// The certification is valid.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresValid))]
+  [OfficeInteropEnumValue("certverresValid")]
   Valid,
   /// <summary>
   /// The certification is invalid.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresInvalid))]
+  [OfficeInteropEnumValue("certverresInvalid")]
   Invalid,
   /// <summary>
   /// The certification has expired.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresExpired))]
+  [OfficeInteropEnumValue("certverresExpired")]
   Expired,
   /// <summary>
   /// The certification has been revoked.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresRevoked))]
+  [OfficeInteropEnumValue("certverresRevoked")]
   Revoked,
   /// <summary>
   /// The certification is from an untrusted source.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.CertificateVerificationResults.certverresUntrusted))]
+  [OfficeInteropEnumValue("certverresUntrusted")]
   Untrusted
 }

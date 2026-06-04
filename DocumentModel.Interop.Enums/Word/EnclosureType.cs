@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenclosuretype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdEnclosureType))]
+[WordInteropEnumType("WdEnclosureType")]
 public enum EnclosureType
 {
   /// <summary>
   /// A circle.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEnclosureType.wdEnclosureCircle))]
+  [WordInteropEnumValue("wdEnclosureCircle")]
   Circle = 0,
   /// <summary>
   /// A square.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEnclosureType.wdEnclosureSquare))]
+  [WordInteropEnumValue("wdEnclosureSquare")]
   Square = 1,
   /// <summary>
   /// A triangle.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEnclosureType.wdEnclosureTriangle))]
+  [WordInteropEnumValue("wdEnclosureTriangle")]
   Triangle = 2,
   /// <summary>
   /// A diamond.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEnclosureType.wdEnclosureDiamond))]
+  [WordInteropEnumValue("wdEnclosureDiamond")]
   Diamond = 3
 }

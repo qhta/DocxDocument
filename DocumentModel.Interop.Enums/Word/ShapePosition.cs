@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdshapeposition?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdShapePosition))]
+[WordInteropEnumType("WdShapePosition")]
 public enum ShapePosition
 {
   /// <summary>
   /// At the top.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeTop))]
+  [WordInteropEnumValue("wdShapeTop")]
   Top = -999999,
   /// <summary>
   /// On the left.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeLeft))]
+  [WordInteropEnumValue("wdShapeLeft")]
   Left = -999998,
   /// <summary>
   /// At the bottom.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeBottom))]
+  [WordInteropEnumValue("wdShapeBottom")]
   Bottom = -999997,
   /// <summary>
   /// On the right.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeRight))]
+  [WordInteropEnumValue("wdShapeRight")]
   Right = -999996,
   /// <summary>
   /// In the center.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeCenter))]
+  [WordInteropEnumValue("wdShapeCenter")]
   Center = -999995,
   /// <summary>
   /// Inside the selected range.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeInside))]
+  [WordInteropEnumValue("wdShapeInside")]
   Inside = -999994,
   /// <summary>
   /// Outside the selected range.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdShapePosition.wdShapeOutside))]
+  [WordInteropEnumValue("wdShapeOutside")]
   Outside = -999993
 }

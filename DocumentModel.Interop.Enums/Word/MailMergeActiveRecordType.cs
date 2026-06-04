@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergeactiverecord?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord))]
+[WordInteropEnumType("WdMailMergeActiveRecord")]
 public enum MailMergeActiveRecordType
 {
   /// <summary>
   /// The previous record in the data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdPreviousDataSourceRecord))]
+  [WordInteropEnumValue("wdPreviousDataSourceRecord")]
   PreviousDataSourceRecord = -9,
   /// <summary>
   /// The next record in the data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdNextDataSourceRecord))]
+  [WordInteropEnumValue("wdNextDataSourceRecord")]
   NextDataSourceRecord = -8,
   /// <summary>
   /// The last record in the data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdLastDataSourceRecord))]
+  [WordInteropEnumValue("wdLastDataSourceRecord")]
   LastDataSourceRecord = -7,
   /// <summary>
   /// The first record in the data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdFirstDataSourceRecord))]
+  [WordInteropEnumValue("wdFirstDataSourceRecord")]
   FirstDataSourceRecord = -6,
   /// <summary>
   /// The last record in the result set.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdLastRecord))]
+  [WordInteropEnumValue("wdLastRecord")]
   LastRecord = -5,
   /// <summary>
   /// The first record in the result set.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdFirstRecord))]
+  [WordInteropEnumValue("wdFirstRecord")]
   FirstRecord = -4,
   /// <summary>
   /// The previous record in the result set.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdPreviousRecord))]
+  [WordInteropEnumValue("wdPreviousRecord")]
   PreviousRecord = -3,
   /// <summary>
   /// The next record in the result set.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdNextRecord))]
+  [WordInteropEnumValue("wdNextRecord")]
   NextRecord = -2,
   /// <summary>
   /// No active record.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeActiveRecord.wdNoActiveRecord))]
+  [WordInteropEnumValue("wdNoActiveRecord")]
   NoActiveRecord = -1
 }

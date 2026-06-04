@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistgallerytype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdListGalleryType))]
+[WordInteropEnumType("WdListGalleryType")]
 public enum ListGalleryType
 {
   /// <summary>
   /// Bulleted list.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdListGalleryType.wdBulletGallery))]
+  [WordInteropEnumValue("wdBulletGallery")]
   BulletGallery = 1,
   /// <summary>
   /// Numbered list.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdListGalleryType.wdNumberGallery))]
+  [WordInteropEnumValue("wdNumberGallery")]
   NumberGallery = 2,
   /// <summary>
   /// Outline numbered list.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdListGalleryType.wdOutlineNumberGallery))]
+  [WordInteropEnumValue("wdOutlineNumberGallery")]
   OutlineNumberGallery = 3
 }

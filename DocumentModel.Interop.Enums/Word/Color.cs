@@ -6,307 +6,307 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcolor?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdColor))]
+[WordInteropEnumType("WdColor")]
 public enum PresetColors
 {
   /// <summary>
   /// Black color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorBlack))]
+  [WordInteropEnumValue("wdColorBlack")]
   Black = 0,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorDarkRed))]
+  [WordInteropEnumValue("wdColorDarkRed")]
   DarkRed = 128,
   /// <summary>
   /// Red color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorRed))]
+  [WordInteropEnumValue("wdColorRed")]
   Red = 255,
   /// <summary>
   /// Dark green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorDarkGreen))]
+  [WordInteropEnumValue("wdColorDarkGreen")]
   DarkGreen = 13056,
   /// <summary>
   /// Olive green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorOliveGreen))]
+  [WordInteropEnumValue("wdColorOliveGreen")]
   OliveGreen = 13107,
   /// <summary>
   /// Brown color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorBrown))]
+  [WordInteropEnumValue("wdColorBrown")]
   Brown = 13209,
   /// <summary>
   /// Orange color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorOrange))]
+  [WordInteropEnumValue("wdColorOrange")]
   Orange = 26367,
   /// <summary>
   /// Green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGreen))]
+  [WordInteropEnumValue("wdColorGreen")]
   Green = 32768,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorDarkYellow))]
+  [WordInteropEnumValue("wdColorDarkYellow")]
   DarkYellow = 32896,
   /// <summary>
   /// Light orange color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLightOrange))]
+  [WordInteropEnumValue("wdColorLightOrange")]
   LightOrange = 39423,
   /// <summary>
   /// Lime color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLime))]
+  [WordInteropEnumValue("wdColorLime")]
   Lime = 52377,
   /// <summary>
   /// Gold color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGold))]
+  [WordInteropEnumValue("wdColorGold")]
   Gold = 52479,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorBrightGreen))]
+  [WordInteropEnumValue("wdColorBrightGreen")]
   BrightGreen = 65280,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorYellow))]
+  [WordInteropEnumValue("wdColorYellow")]
   Yellow = 65535,
   /// <summary>
   /// Shade 95 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray95))]
+  [WordInteropEnumValue("wdColorGray95")]
   Gray95 = 789516,
   /// <summary>
   /// Shade 90 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray90))]
+  [WordInteropEnumValue("wdColorGray90")]
   Gray90 = 1644825,
   /// <summary>
   /// Shade 875 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray875))]
+  [WordInteropEnumValue("wdColorGray875")]
   Gray875 = 2105376,
   /// <summary>
   /// Shade 85 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray85))]
+  [WordInteropEnumValue("wdColorGray85")]
   Gray85 = 2500134,
   /// <summary>
   /// Shade 80 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray80))]
+  [WordInteropEnumValue("wdColorGray80")]
   Gray80 = 3355443,
   /// <summary>
   /// Shade 75 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray75))]
+  [WordInteropEnumValue("wdColorGray75")]
   Gray75 = 4210752,
   /// <summary>
   /// Shade 70 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray70))]
+  [WordInteropEnumValue("wdColorGray70")]
   Gray70 = 5000268,
   /// <summary>
   /// Shade 65 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray65))]
+  [WordInteropEnumValue("wdColorGray65")]
   Gray65 = 5855577,
   /// <summary>
   /// Shade 625 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray625))]
+  [WordInteropEnumValue("wdColorGray625")]
   Gray625 = 6316128,
   /// <summary>
   /// Dark teal color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorDarkTeal))]
+  [WordInteropEnumValue("wdColorDarkTeal")]
   DarkTeal = 6697728,
   /// <summary>
   /// Plum color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorPlum))]
+  [WordInteropEnumValue("wdColorPlum")]
   Plum = 6697881,
   /// <summary>
   /// Shade 60 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray60))]
+  [WordInteropEnumValue("wdColorGray60")]
   Gray60 = 6710886,
   /// <summary>
   /// Sea green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorSeaGreen))]
+  [WordInteropEnumValue("wdColorSeaGreen")]
   SeaGreen = 6723891,
   /// <summary>
   /// Shade 55 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray55))]
+  [WordInteropEnumValue("wdColorGray55")]
   Gray55 = 7566195,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorDarkBlue))]
+  [WordInteropEnumValue("wdColorDarkBlue")]
   DarkBlue = 8388608,
   /// <summary>
   /// Violet color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorViolet))]
+  [WordInteropEnumValue("wdColorViolet")]
   Violet = 8388736,
   /// <summary>
   /// Teal color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorTeal))]
+  [WordInteropEnumValue("wdColorTeal")]
   Teal = 8421376,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray50))]
+  [WordInteropEnumValue("wdColorGray50")]
   Gray50 = 8421504,
   /// <summary>
   /// Shade 45 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray45))]
+  [WordInteropEnumValue("wdColorGray45")]
   Gray45 = 9211020,
   /// <summary>
   /// Indigo color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorIndigo))]
+  [WordInteropEnumValue("wdColorIndigo")]
   Indigo = 10040115,
   /// <summary>
   /// Blue-gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorBlueGray))]
+  [WordInteropEnumValue("wdColorBlueGray")]
   BlueGray = 10053222,
   /// <summary>
   /// Shade 40 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray40))]
+  [WordInteropEnumValue("wdColorGray40")]
   Gray40 = 10066329,
   /// <summary>
   /// Tan color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorTan))]
+  [WordInteropEnumValue("wdColorTan")]
   Tan = 10079487,
   /// <summary>
   /// Light yellow color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLightYellow))]
+  [WordInteropEnumValue("wdColorLightYellow")]
   LightYellow = 10092543,
   /// <summary>
   /// Shade 375 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray375))]
+  [WordInteropEnumValue("wdColorGray375")]
   Gray375 = 10526880,
   /// <summary>
   /// Shade 35 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray35))]
+  [WordInteropEnumValue("wdColorGray35")]
   Gray35 = 10921638,
   /// <summary>
   /// Shade 30 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray30))]
+  [WordInteropEnumValue("wdColorGray30")]
   Gray30 = 11776947,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray25))]
+  [WordInteropEnumValue("wdColorGray25")]
   Gray25 = 12632256,
   /// <summary>
   /// Rose color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorRose))]
+  [WordInteropEnumValue("wdColorRose")]
   Rose = 13408767,
   /// <summary>
   /// Aqua color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorAqua))]
+  [WordInteropEnumValue("wdColorAqua")]
   Aqua = 13421619,
   /// <summary>
   /// Shade 20 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray20))]
+  [WordInteropEnumValue("wdColorGray20")]
   Gray20 = 13421772,
   /// <summary>
   /// Light green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLightGreen))]
+  [WordInteropEnumValue("wdColorLightGreen")]
   LightGreen = 13434828,
   /// <summary>
   /// Shade 15 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray15))]
+  [WordInteropEnumValue("wdColorGray15")]
   Gray15 = 14277081,
   /// <summary>
   /// Shade 125 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray125))]
+  [WordInteropEnumValue("wdColorGray125")]
   Gray125 = 14737632,
   /// <summary>
   /// Shade 10 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray10))]
+  [WordInteropEnumValue("wdColorGray10")]
   Gray10 = 15132390,
   /// <summary>
   /// Shade 05 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorGray05))]
+  [WordInteropEnumValue("wdColorGray05")]
   Gray05 = 15987699,
   /// <summary>
   /// Blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorBlue))]
+  [WordInteropEnumValue("wdColorBlue")]
   Blue = 16711680,
   /// <summary>
   /// Pink color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorPink))]
+  [WordInteropEnumValue("wdColorPink")]
   Pink = 16711935,
   /// <summary>
   /// Light blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLightBlue))]
+  [WordInteropEnumValue("wdColorLightBlue")]
   LightBlue = 16737843,
   /// <summary>
   /// Lavender color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLavender))]
+  [WordInteropEnumValue("wdColorLavender")]
   Lavender = 16751052,
   /// <summary>
   /// Sky blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorSkyBlue))]
+  [WordInteropEnumValue("wdColorSkyBlue")]
   SkyBlue = 16763904,
   /// <summary>
   /// Pale blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorPaleBlue))]
+  [WordInteropEnumValue("wdColorPaleBlue")]
   PaleBlue = 16764057,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorTurquoise))]
+  [WordInteropEnumValue("wdColorTurquoise")]
   Turquoise = 16776960,
   /// <summary>
   /// Light turquoise color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorLightTurquoise))]
+  [WordInteropEnumValue("wdColorLightTurquoise")]
   LightTurquoise = 16777164,
   /// <summary>
   /// White color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorWhite))]
+  [WordInteropEnumValue("wdColorWhite")]
   White = 16777215,
   /// <summary>
   /// Automatic color. Default; usually black.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColor.wdColorAutomatic))]
+  [WordInteropEnumValue("wdColorAutomatic")]
   Automatic = -16777216
 }

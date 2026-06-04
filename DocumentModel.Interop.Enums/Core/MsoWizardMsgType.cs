@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowizardmsgtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoWizardMsgType))]
+[OfficeInteropEnumType("MsoWizardMsgType")]
 public enum WizardMsgType
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardMsgType.msoWizardMsgLocalStateOn))]
+  [OfficeInteropEnumValue("msoWizardMsgLocalStateOn")]
   LocalStateOn = 1,
   /// <summary>
   /// User clicked the right button in the decision or branch balloon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardMsgType.msoWizardMsgLocalStateOff))]
+  [OfficeInteropEnumValue("msoWizardMsgLocalStateOff")]
   LocalStateOff,
   /// <summary>
   /// User clicked the left button in the decision or branch balloon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardMsgType.msoWizardMsgShowHelp))]
+  [OfficeInteropEnumValue("msoWizardMsgShowHelp")]
   ShowHelp,
   /// <summary>
   /// Passed to the ActivateWizard method if msoWizardActSuspend is specified for the Act argument.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardMsgType.msoWizardMsgSuspending))]
+  [OfficeInteropEnumValue("msoWizardMsgSuspending")]
   Suspending,
   /// <summary>
   /// Passed to the ActivateWizard method if msoWizardActResume is specified for the Act argument.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardMsgType.msoWizardMsgResuming))]
+  [OfficeInteropEnumValue("msoWizardMsgResuming")]
   Resuming
 }

@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinsertedtextmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdInsertedTextMark))]
+[WordInteropEnumType("WdInsertedTextMark")]
 public enum InsertedTextMark
 {
   /// <summary>
   /// Inserted text is not marked up.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkNone))]
+  [WordInteropEnumValue("wdInsertedTextMarkNone")]
   None = 0,
   /// <summary>
   /// Inserted text is displayed in bold.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkBold))]
+  [WordInteropEnumValue("wdInsertedTextMarkBold")]
   Bold = 1,
   /// <summary>
   /// Inserted text is displayed in italics.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkItalic))]
+  [WordInteropEnumValue("wdInsertedTextMarkItalic")]
   Italic = 2,
   /// <summary>
   /// Inserted text is underlined.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkUnderline))]
+  [WordInteropEnumValue("wdInsertedTextMarkUnderline")]
   Underline = 3,
   /// <summary>
   /// Inserted text is marked up by using double-underline characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkDoubleUnderline))]
+  [WordInteropEnumValue("wdInsertedTextMarkDoubleUnderline")]
   DoubleUnderline = 4,
   /// <summary>
   /// Inserted text is displayed in a specified color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkColorOnly))]
+  [WordInteropEnumValue("wdInsertedTextMarkColorOnly")]
   ColorOnly = 5,
   /// <summary>
   /// Inserted text is marked up by using strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkStrikeThrough))]
+  [WordInteropEnumValue("wdInsertedTextMarkStrikeThrough")]
   StrikeThrough = 6,
   /// <summary>
   /// Inserted text is marked up by using double- strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdInsertedTextMark.wdInsertedTextMarkDoubleStrikeThrough))]
+  [WordInteropEnumValue("wdInsertedTextMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 7
 }

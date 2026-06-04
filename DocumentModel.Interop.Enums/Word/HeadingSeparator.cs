@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdheadingseparator?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdHeadingSeparator))]
+[WordInteropEnumType("WdHeadingSeparator")]
 public enum HeadingSeparator
 {
   /// <summary>
   /// No separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdHeadingSeparator.wdHeadingSeparatorNone))]
+  [WordInteropEnumValue("wdHeadingSeparatorNone")]
   None = 0,
   /// <summary>
   /// A blank line.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdHeadingSeparator.wdHeadingSeparatorBlankLine))]
+  [WordInteropEnumValue("wdHeadingSeparatorBlankLine")]
   BlankLine = 1,
   /// <summary>
   /// A designated letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdHeadingSeparator.wdHeadingSeparatorLetter))]
+  [WordInteropEnumValue("wdHeadingSeparatorLetter")]
   Letter = 2,
   /// <summary>
   /// A designated lowercase letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdHeadingSeparator.wdHeadingSeparatorLetterLow))]
+  [WordInteropEnumValue("wdHeadingSeparatorLetterLow")]
   LetterLow = 3,
   /// <summary>
   /// A designated uppercase letter.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdHeadingSeparator.wdHeadingSeparatorLetterFull))]
+  [WordInteropEnumValue("wdHeadingSeparatorLetterFull")]
   LetterFull = 4
 }

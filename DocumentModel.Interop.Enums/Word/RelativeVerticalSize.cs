@@ -7,39 +7,39 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalsize?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize))]
+[WordInteropEnumType("WdRelativeVerticalSize")]
 public enum RelativeVerticalSize
 {
   /// <summary>
   /// Height is relative to the space between the left margin and the right margin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizeMargin))]
+  [WordInteropEnumValue("wdRelativeVerticalSizeMargin")]
   Margin = 0,
   /// <summary>
   /// Height is relative to the height of the page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizePage))]
+  [WordInteropEnumValue("wdRelativeVerticalSizePage")]
   Page = 1,
   /// <summary>
   /// Height is relative to the size of the top margin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizeTopMarginArea))]
+  [WordInteropEnumValue("wdRelativeVerticalSizeTopMarginArea")]
   TopMarginArea = 2,
   /// <summary>
   /// Height is relative to the size of the bottom margin.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizeBottomMarginArea))]
+  [WordInteropEnumValue("wdRelativeVerticalSizeBottomMarginArea")]
   BottomMarginArea = 3,
   /// <summary>
   /// Height is relative to the size of the inside marginâ€”to the size of the top margin for odd pages, and to the
   /// size of the bottom margin for even pages.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizeInnerMarginArea))]
+  [WordInteropEnumValue("wdRelativeVerticalSizeInnerMarginArea")]
   InnerMarginArea = 4,
   /// <summary>
   /// Height is relative to the size of the outside marginâ€” to the size of the bottom margin for odd pages, and to
   /// the size of the top margin for even pages.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelativeVerticalSize.wdRelativeVerticalSizeOuterMarginArea))]
+  [WordInteropEnumValue("wdRelativeVerticalSizeOuterMarginArea")]
   OuterMarginArea = 5
 }

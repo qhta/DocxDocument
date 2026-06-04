@@ -3,57 +3,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturealignment?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoTextureAlignment))]
+[OfficeInteropEnumType("MsoTextureAlignment")]
 public enum TextureAlignment
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureAlignmentMixed))]
+  [OfficeInteropEnumValue("msoTextureAlignmentMixed")]
   AlignmentMixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureTopLeft))]
+  [OfficeInteropEnumValue("msoTextureTopLeft")]
   TopLeft = 0,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureTop))]
+  [OfficeInteropEnumValue("msoTextureTop")]
   Top = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureTopRight))]
+  [OfficeInteropEnumValue("msoTextureTopRight")]
   TopRight = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureLeft))]
+  [OfficeInteropEnumValue("msoTextureLeft")]
   Left = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureCenter))]
+  [OfficeInteropEnumValue("msoTextureCenter")]
   Center = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureRight))]
+  [OfficeInteropEnumValue("msoTextureRight")]
   Right = 5,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureBottomLeft))]
+  [OfficeInteropEnumValue("msoTextureBottomLeft")]
   BottomLeft = 6,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureBottom))]
+  [OfficeInteropEnumValue("msoTextureBottom")]
   Bottom = 7,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureAlignment.msoTextureBottomRight))]
+  [OfficeInteropEnumValue("msoTextureBottomRight")]
   BottomRight = 8
 }

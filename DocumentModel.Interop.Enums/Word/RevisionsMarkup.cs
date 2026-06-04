@@ -7,22 +7,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsmarkup?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisionsMarkup))]
+[WordInteropEnumType("WdRevisionsMarkup")]
 public enum RevisionsMarkup
 {
   /// <summary>
   /// Displays the final document with no markup visible.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsMarkup.wdRevisionsMarkupNone))]
+  [WordInteropEnumValue("wdRevisionsMarkupNone")]
   None = 0,
   /// <summary>
   /// Displays the final document in simple markup: with revisions incorporated, but with no markup visible.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsMarkup.wdRevisionsMarkupSimple))]
+  [WordInteropEnumValue("wdRevisionsMarkupSimple")]
   Simple = 1,
   /// <summary>
   /// Displays the final document with all markup visible.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsMarkup.wdRevisionsMarkupAll))]
+  [WordInteropEnumValue("wdRevisionsMarkupAll")]
   All = 2
 }

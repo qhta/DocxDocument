@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstyletype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdStyleType))]
+[WordInteropEnumType("WdStyleType")]
 public enum StyleType
 {
   /// <summary>
   /// Paragraph style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeParagraph))]
+  [WordInteropEnumValue("wdStyleTypeParagraph")]
   Paragraph = 1,
   /// <summary>
   /// Body character style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeCharacter))]
+  [WordInteropEnumValue("wdStyleTypeCharacter")]
   Character = 2,
   /// <summary>
   /// Table style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeTable))]
+  [WordInteropEnumValue("wdStyleTypeTable")]
   Table = 3,
   /// <summary>
   /// List style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeList))]
+  [WordInteropEnumValue("wdStyleTypeList")]
   List = 4,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeParagraphOnly))]
+  [WordInteropEnumValue("wdStyleTypeParagraphOnly")]
   ParagraphOnly = 5,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStyleType.wdStyleTypeLinked))]
+  [WordInteropEnumValue("wdStyleTypeLinked")]
   Linked = 6
 }

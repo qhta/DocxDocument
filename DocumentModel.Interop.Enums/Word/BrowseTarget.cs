@@ -7,67 +7,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdBrowseTarget))]
+[WordInteropEnumType("WdBrowseTarget")]
 public enum BrowseTarget
 {
   /// <summary>
   /// Places insertion point before next or previous page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowsePage))]
+  [WordInteropEnumValue("wdBrowsePage")]
   Page = 1,
   /// <summary>
   /// Places insertion point before next or previous section.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseSection))]
+  [WordInteropEnumValue("wdBrowseSection")]
   Section = 2,
   /// <summary>
   /// Places insertion point before next or previous comment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseComment))]
+  [WordInteropEnumValue("wdBrowseComment")]
   Comment = 3,
   /// <summary>
   /// Places insertion point before next or previous footnote.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseFootnote))]
+  [WordInteropEnumValue("wdBrowseFootnote")]
   Footnote = 4,
   /// <summary>
   /// Places insertion point before next or previous endnote.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseEndnote))]
+  [WordInteropEnumValue("wdBrowseEndnote")]
   Endnote = 5,
   /// <summary>
   /// Places insertion point before next or previous browsefield.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseField))]
+  [WordInteropEnumValue("wdBrowseField")]
   Field = 6,
   /// <summary>
   /// Places insertion point before next or previous table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseTable))]
+  [WordInteropEnumValue("wdBrowseTable")]
   Table = 7,
   /// <summary>
   /// Places insertion point before next or previous graphic.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseGraphic))]
+  [WordInteropEnumValue("wdBrowseGraphic")]
   Graphic = 8,
   /// <summary>
   /// Places insertion point before next or previous heading.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseHeading))]
+  [WordInteropEnumValue("wdBrowseHeading")]
   Heading = 9,
   /// <summary>
   /// Places insertion point before next or previous edit.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseEdit))]
+  [WordInteropEnumValue("wdBrowseEdit")]
   Edit = 10,
   /// <summary>
   /// Places insertion point before next or previous browsefind.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseFind))]
+  [WordInteropEnumValue("wdBrowseFind")]
   Find = 11,
   /// <summary>
   /// Places insertion point before next or previous GoTo item.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBrowseTarget.wdBrowseGoTo))]
+  [WordInteropEnumValue("wdBrowseGoTo")]
   GoTo = 12
 }

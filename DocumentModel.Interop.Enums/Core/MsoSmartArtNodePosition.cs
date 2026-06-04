@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosmartartnodeposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoSmartArtNodePosition))]
+[OfficeInteropEnumType("MsoSmartArtNodePosition")]
 public enum SmartArtNodePosition
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSmartArtNodePosition.msoSmartArtNodeDefault))]
+  [OfficeInteropEnumValue("msoSmartArtNodeDefault")]
   Default = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSmartArtNodePosition.msoSmartArtNodeAfter))]
+  [OfficeInteropEnumValue("msoSmartArtNodeAfter")]
   After,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSmartArtNodePosition.msoSmartArtNodeBefore))]
+  [OfficeInteropEnumValue("msoSmartArtNodeBefore")]
   Before,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSmartArtNodePosition.msoSmartArtNodeAbove))]
+  [OfficeInteropEnumValue("msoSmartArtNodeAbove")]
   Above,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSmartArtNodePosition.msoSmartArtNodeBelow))]
+  [OfficeInteropEnumValue("msoSmartArtNodeBelow")]
   Below
 }

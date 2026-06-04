@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtabalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTabAlignment))]
+[WordInteropEnumType("WdTabAlignment")]
 public enum TabAlignment
 {
   /// <summary>
   /// Left aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabLeft))]
+  [WordInteropEnumValue("wdAlignTabLeft")]
   Left = 0,
   /// <summary>
   /// Center aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabCenter))]
+  [WordInteropEnumValue("wdAlignTabCenter")]
   Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabRight))]
+  [WordInteropEnumValue("wdAlignTabRight")]
   Right = 2,
   /// <summary>
   /// Decimal aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabDecimal))]
+  [WordInteropEnumValue("wdAlignTabDecimal")]
   Decimal = 3,
   /// <summary>
   /// Bar aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabBar))]
+  [WordInteropEnumValue("wdAlignTabBar")]
   Bar = 4,
   /// <summary>
   /// List aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTabAlignment.wdAlignTabList))]
+  [WordInteropEnumValue("wdAlignTabList")]
   List = 6
 }

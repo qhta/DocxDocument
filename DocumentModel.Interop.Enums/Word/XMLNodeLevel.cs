@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdxmlnodelevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdXMLNodeLevel))]
+[WordInteropEnumType("WdXMLNodeLevel")]
 public enum XMLNodeLevel
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdXMLNodeLevel.wdXMLNodeLevelInline))]
+  [WordInteropEnumValue("wdXMLNodeLevelInline")]
   Inline = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdXMLNodeLevel.wdXMLNodeLevelParagraph))]
+  [WordInteropEnumValue("wdXMLNodeLevelParagraph")]
   Paragraph = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdXMLNodeLevel.wdXMLNodeLevelRow))]
+  [WordInteropEnumValue("wdXMLNodeLevelRow")]
   Row = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdXMLNodeLevel.wdXMLNodeLevelCell))]
+  [WordInteropEnumValue("wdXMLNodeLevelCell")]
   Cell = 3
 }

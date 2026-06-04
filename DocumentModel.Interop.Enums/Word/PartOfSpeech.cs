@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpartofspeech?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPartOfSpeech))]
+[WordInteropEnumType("WdPartOfSpeech")]
 public enum PartOfSpeech
 {
   /// <summary>
   /// An adjective.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdAdjective))]
+  [WordInteropEnumValue("wdAdjective")]
   Adjective = 0,
   /// <summary>
   /// A noun.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdNoun))]
+  [WordInteropEnumValue("wdNoun")]
   Noun = 1,
   /// <summary>
   /// An adverb.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdAdverb))]
+  [WordInteropEnumValue("wdAdverb")]
   Adverb = 2,
   /// <summary>
   /// A verb.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdVerb))]
+  [WordInteropEnumValue("wdVerb")]
   Verb = 3,
   /// <summary>
   /// A pronoun.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdPronoun))]
+  [WordInteropEnumValue("wdPronoun")]
   Pronoun = 4,
   /// <summary>
   /// A conjunction.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdConjunction))]
+  [WordInteropEnumValue("wdConjunction")]
   Conjunction = 5,
   /// <summary>
   /// A preposition.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdPreposition))]
+  [WordInteropEnumValue("wdPreposition")]
   Preposition = 6,
   /// <summary>
   /// An interjection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdInterjection))]
+  [WordInteropEnumValue("wdInterjection")]
   Interjection = 7,
   /// <summary>
   /// An idiom.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdIdiom))]
+  [WordInteropEnumValue("wdIdiom")]
   Idiom = 8,
   /// <summary>
   /// Some other part of speech.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPartOfSpeech.wdOther))]
+  [WordInteropEnumValue("wdOther")]
   Other = 9
 }

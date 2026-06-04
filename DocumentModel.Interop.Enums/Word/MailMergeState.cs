@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergestate?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeState))]
+[WordInteropEnumType("WdMailMergeState")]
 public enum MailMergeState
 {
   /// <summary>
   /// Document is not involved in a mail merge operation.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdNormalDocument))]
+  [WordInteropEnumValue("wdNormalDocument")]
   NormalDocument = 0,
   /// <summary>
   /// A main document with no data attached.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdMainDocumentOnly))]
+  [WordInteropEnumValue("wdMainDocumentOnly")]
   MainDocumentOnly = 1,
   /// <summary>
   /// A main document with an attached data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdMainAndDataSource))]
+  [WordInteropEnumValue("wdMainAndDataSource")]
   MainAndDataSource = 2,
   /// <summary>
   /// A main document with an attached header source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdMainAndHeader))]
+  [WordInteropEnumValue("wdMainAndHeader")]
   MainAndHeader = 3,
   /// <summary>
   /// A main document with attached data source and header source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdMainAndSourceAndHeader))]
+  [WordInteropEnumValue("wdMainAndSourceAndHeader")]
   MainAndSourceAndHeader = 4,
   /// <summary>
   /// A data source with no main document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeState.wdDataSource))]
+  [WordInteropEnumValue("wdDataSource")]
   DataSource = 5
 }

@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableformatapply?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTableFormatApply))]
+[WordInteropEnumType("WdTableFormatApply")]
 public enum TableFormatApply
 {
   /// <summary>
   /// Borders.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyBorders))]
+  [WordInteropEnumValue("wdTableFormatApplyBorders")]
   Borders = 1,
   /// <summary>
   /// Shading.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyShading))]
+  [WordInteropEnumValue("wdTableFormatApplyShading")]
   Shading = 2,
   /// <summary>
   /// Font.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyFont))]
+  [WordInteropEnumValue("wdTableFormatApplyFont")]
   Font = 4,
   /// <summary>
   /// Color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyColor))]
+  [WordInteropEnumValue("wdTableFormatApplyColor")]
   Color = 8,
   /// <summary>
   /// AutoFit.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyAutoFit))]
+  [WordInteropEnumValue("wdTableFormatApplyAutoFit")]
   AutoFit = 16,
   /// <summary>
   /// Apply AutoFormat to heading rows.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyHeadingRows))]
+  [WordInteropEnumValue("wdTableFormatApplyHeadingRows")]
   HeadingRows = 32,
   /// <summary>
   /// Apply AutoFormat to last row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyLastRow))]
+  [WordInteropEnumValue("wdTableFormatApplyLastRow")]
   LastRow = 64,
   /// <summary>
   /// Apply AutoFormat to first column.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyFirstColumn))]
+  [WordInteropEnumValue("wdTableFormatApplyFirstColumn")]
   FirstColumn = 128,
   /// <summary>
   /// Apply AutoFormat to last column.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableFormatApply.wdTableFormatApplyLastColumn))]
+  [WordInteropEnumValue("wdTableFormatApplyLastColumn")]
   LastColumn = 256
 }

@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoeditingtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoEditingType))]
+[OfficeInteropEnumType("MsoEditingType")]
 public enum EditingType
 {
   /// <summary>
   /// Editing type is appropriate to the segments being connected.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoEditingType.msoEditingAuto))]
+  [OfficeInteropEnumValue("msoEditingAuto")]
   Auto,
   /// <summary>
   /// Corner node.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoEditingType.msoEditingCorner))]
+  [OfficeInteropEnumValue("msoEditingCorner")]
   Corner,
   /// <summary>
   /// Smooth node.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoEditingType.msoEditingSmooth))]
+  [OfficeInteropEnumValue("msoEditingSmooth")]
   Smooth,
   /// <summary>
   /// Symmetric node.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoEditingType.msoEditingSymmetric))]
+  [OfficeInteropEnumValue("msoEditingSymmetric")]
   Symmetric
 }

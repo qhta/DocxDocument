@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstate?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoButtonState))]
+[OfficeInteropEnumType("MsoButtonState")]
 public enum ButtonState
 {
   /// <summary>
   /// Button is not pressed down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonState.msoButtonUp))]
+  [OfficeInteropEnumValue("msoButtonUp")]
   Up = 0,
   /// <summary>
   /// Button is pressed down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonState.msoButtonDown))]
+  [OfficeInteropEnumValue("msoButtonDown")]
   Down = -1,
   /// <summary>
   /// Button is pressed down.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoButtonState.msoButtonMixed))]
+  [OfficeInteropEnumValue("msoButtonMixed")]
   Mixed = 2
 }

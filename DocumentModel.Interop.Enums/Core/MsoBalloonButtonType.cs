@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoballoonbuttontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBalloonButtonType))]
+[OfficeInteropEnumType("MsoBalloonButtonType")]
 public enum BalloonButtonType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonYesToAll))]
+  [OfficeInteropEnumValue("msoBalloonButtonYesToAll")]
   YesToAll = -15,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonOptions))]
+  [OfficeInteropEnumValue("msoBalloonButtonOptions")]
   Options,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonTips))]
+  [OfficeInteropEnumValue("msoBalloonButtonTips")]
   Tips,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonClose))]
+  [OfficeInteropEnumValue("msoBalloonButtonClose")]
   Close,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonSnooze))]
+  [OfficeInteropEnumValue("msoBalloonButtonSnooze")]
   Snooze,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonSearch))]
+  [OfficeInteropEnumValue("msoBalloonButtonSearch")]
   Search,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonIgnore))]
+  [OfficeInteropEnumValue("msoBalloonButtonIgnore")]
   Ignore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonAbort))]
+  [OfficeInteropEnumValue("msoBalloonButtonAbort")]
   Abort,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonRetry))]
+  [OfficeInteropEnumValue("msoBalloonButtonRetry")]
   Retry,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonNext))]
+  [OfficeInteropEnumValue("msoBalloonButtonNext")]
   Next,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonBack))]
+  [OfficeInteropEnumValue("msoBalloonButtonBack")]
   Back,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonNo))]
+  [OfficeInteropEnumValue("msoBalloonButtonNo")]
   No,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonYes))]
+  [OfficeInteropEnumValue("msoBalloonButtonYes")]
   Yes,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonCancel))]
+  [OfficeInteropEnumValue("msoBalloonButtonCancel")]
   Cancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonOK))]
+  [OfficeInteropEnumValue("msoBalloonButtonOK")]
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBalloonButtonType.msoBalloonButtonNull))]
+  [OfficeInteropEnumValue("msoBalloonButtonNull")]
   Null
 }

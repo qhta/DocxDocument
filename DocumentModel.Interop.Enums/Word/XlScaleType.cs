@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlscaletype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlScaleType))]
+[WordInteropEnumType("XlScaleType")]
 public enum ScaleType
 {
   /// <summary>
   /// Logarithmic
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlScaleType.xlScaleLogarithmic))]
+  [WordInteropEnumValue("xlScaleLogarithmic")]
   Logarithmic = -4133,
   /// <summary>
   /// Linear
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlScaleType.xlScaleLinear))]
+  [WordInteropEnumValue("xlScaleLinear")]
   Linear = -4132
 }

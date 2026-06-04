@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddictionarytypehid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDictionaryTypeHID))]
+[WordInteropEnumType("WdDictionaryTypeHID")]
 public enum DictionaryTypeHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDictionaryTypeHID.emptyenum))]
+  [WordInteropEnumValue("emptyenum")]
   emptyenum = 0
 }

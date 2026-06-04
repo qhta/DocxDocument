@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlreadingorder?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlReadingOrder))]
+[OfficeInteropEnumType("XlReadingOrder")]
 public enum ReadingOrder
 {
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlReadingOrder.xlContext))]
+  [OfficeInteropEnumValue("xlContext")]
   Context = -5002,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlReadingOrder.xlLTR))]
+  [OfficeInteropEnumValue("xlLTR")]
   LTR = -5003,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlReadingOrder.xlRTL))]
+  [OfficeInteropEnumValue("xlRTL")]
   RTL = -5004
 }

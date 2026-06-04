@@ -3,32 +3,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotabstoptype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoTabStopType))]
+[OfficeInteropEnumType("MsoTabStopType")]
 public enum TabStopType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTabStopType.msoTabStopMixed))]
+  [OfficeInteropEnumValue("msoTabStopMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTabStopType.msoTabStopLeft))]
+  [OfficeInteropEnumValue("msoTabStopLeft")]
   Left = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTabStopType.msoTabStopCenter))]
+  [OfficeInteropEnumValue("msoTabStopCenter")]
   Center = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTabStopType.msoTabStopRight))]
+  [OfficeInteropEnumValue("msoTabStopRight")]
   Right = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTabStopType.msoTabStopDecimal))]
+  [OfficeInteropEnumValue("msoTabStopDecimal")]
   Decimal = 4
 }

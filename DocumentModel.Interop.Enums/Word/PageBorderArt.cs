@@ -6,827 +6,827 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpageborderart?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPageBorderArt))]
+[WordInteropEnumType("WdPageBorderArt")]
 public enum PageBorderArt
 {
   /// <summary>
   /// An apple border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtApples))]
+  [WordInteropEnumValue("wdArtApples")]
   Apples = 1,
   /// <summary>
   /// A maple muffins border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMapleMuffins))]
+  [WordInteropEnumValue("wdArtMapleMuffins")]
   MapleMuffins = 2,
   /// <summary>
   /// A cake slice border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCakeSlice))]
+  [WordInteropEnumValue("wdArtCakeSlice")]
   CakeSlice = 3,
   /// <summary>
   /// A candy corn border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCandyCorn))]
+  [WordInteropEnumValue("wdArtCandyCorn")]
   CandyCorn = 4,
   /// <summary>
   /// An ice cream cones border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtIceCreamCones))]
+  [WordInteropEnumValue("wdArtIceCreamCones")]
   IceCreamCones = 5,
   /// <summary>
   /// A champagne bottle border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtChampagneBottle))]
+  [WordInteropEnumValue("wdArtChampagneBottle")]
   ChampagneBottle = 6,
   /// <summary>
   /// A party glass border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPartyGlass))]
+  [WordInteropEnumValue("wdArtPartyGlass")]
   PartyGlass = 7,
   /// <summary>
   /// A Christmas tree border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtChristmasTree))]
+  [WordInteropEnumValue("wdArtChristmasTree")]
   ChristmasTree = 8,
   /// <summary>
   /// A trees border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTrees))]
+  [WordInteropEnumValue("wdArtTrees")]
   Trees = 9,
   /// <summary>
   /// A colored palms border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPalmsColor))]
+  [WordInteropEnumValue("wdArtPalmsColor")]
   PalmsColor = 10,
   /// <summary>
   /// Balloons in three colors as the border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBalloons3Colors))]
+  [WordInteropEnumValue("wdArtBalloons3Colors")]
   Balloons3Colors = 11,
   /// <summary>
   /// A hot air balloon border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBalloonsHotAir))]
+  [WordInteropEnumValue("wdArtBalloonsHotAir")]
   BalloonsHotAir = 12,
   /// <summary>
   /// A party favor border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPartyFavor))]
+  [WordInteropEnumValue("wdArtPartyFavor")]
   PartyFavor = 13,
   /// <summary>
   /// A confetti streamers border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtConfettiStreamers))]
+  [WordInteropEnumValue("wdArtConfettiStreamers")]
   ConfettiStreamers = 14,
   /// <summary>
   /// A hearts border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHearts))]
+  [WordInteropEnumValue("wdArtHearts")]
   Hearts = 15,
   /// <summary>
   /// A heart balloon border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHeartBalloon))]
+  [WordInteropEnumValue("wdArtHeartBalloon")]
   HeartBalloon = 16,
   /// <summary>
   /// A 3-D stars border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtStars3D))]
+  [WordInteropEnumValue("wdArtStars3D")]
   Stars3D = 17,
   /// <summary>
   /// A shadowed stars border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtStarsShadowed))]
+  [WordInteropEnumValue("wdArtStarsShadowed")]
   StarsShadowed = 18,
   /// <summary>
   /// A stars border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtStars))]
+  [WordInteropEnumValue("wdArtStars")]
   Stars = 19,
   /// <summary>
   /// A sun border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSun))]
+  [WordInteropEnumValue("wdArtSun")]
   Sun = 20,
   /// <summary>
   /// An earth number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtEarth2))]
+  [WordInteropEnumValue("wdArtEarth2")]
   Earth2 = 21,
   /// <summary>
   /// An earth number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtEarth1))]
+  [WordInteropEnumValue("wdArtEarth1")]
   Earth1 = 22,
   /// <summary>
   /// A people wearing hats border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPeopleHats))]
+  [WordInteropEnumValue("wdArtPeopleHats")]
   PeopleHats = 23,
   /// <summary>
   /// A sombrero border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSombrero))]
+  [WordInteropEnumValue("wdArtSombrero")]
   Sombrero = 24,
   /// <summary>
   /// A pencils border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPencils))]
+  [WordInteropEnumValue("wdArtPencils")]
   Pencils = 25,
   /// <summary>
   /// A packages border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPackages))]
+  [WordInteropEnumValue("wdArtPackages")]
   Packages = 26,
   /// <summary>
   /// A clocks border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtClocks))]
+  [WordInteropEnumValue("wdArtClocks")]
   Clocks = 27,
   /// <summary>
   /// A fire crackers border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFirecrackers))]
+  [WordInteropEnumValue("wdArtFirecrackers")]
   Firecrackers = 28,
   /// <summary>
   /// A rings border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtRings))]
+  [WordInteropEnumValue("wdArtRings")]
   Rings = 29,
   /// <summary>
   /// A map pins border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMapPins))]
+  [WordInteropEnumValue("wdArtMapPins")]
   MapPins = 30,
   /// <summary>
   /// A confetti border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtConfetti))]
+  [WordInteropEnumValue("wdArtConfetti")]
   Confetti = 31,
   /// <summary>
   /// A butterfly border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCreaturesButterfly))]
+  [WordInteropEnumValue("wdArtCreaturesButterfly")]
   CreaturesButterfly = 32,
   /// <summary>
   /// A ladybug border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCreaturesLadyBug))]
+  [WordInteropEnumValue("wdArtCreaturesLadyBug")]
   CreaturesLadyBug = 33,
   /// <summary>
   /// A fish border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCreaturesFish))]
+  [WordInteropEnumValue("wdArtCreaturesFish")]
   CreaturesFish = 34,
   /// <summary>
   /// A birds in flight border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBirdsFlight))]
+  [WordInteropEnumValue("wdArtBirdsFlight")]
   BirdsFlight = 35,
   /// <summary>
   /// A scared cat border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtScaredCat))]
+  [WordInteropEnumValue("wdArtScaredCat")]
   ScaredCat = 36,
   /// <summary>
   /// A bats border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBats))]
+  [WordInteropEnumValue("wdArtBats")]
   Bats = 37,
   /// <summary>
   /// A rose border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersRoses))]
+  [WordInteropEnumValue("wdArtFlowersRoses")]
   FlowersRoses = 38,
   /// <summary>
   /// A red rose border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersRedRose))]
+  [WordInteropEnumValue("wdArtFlowersRedRose")]
   FlowersRedRose = 39,
   /// <summary>
   /// A poinsettias border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPoinsettias))]
+  [WordInteropEnumValue("wdArtPoinsettias")]
   Poinsettias = 40,
   /// <summary>
   /// A holly border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHolly))]
+  [WordInteropEnumValue("wdArtHolly")]
   Holly = 41,
   /// <summary>
   /// A tiny flower border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersTiny))]
+  [WordInteropEnumValue("wdArtFlowersTiny")]
   FlowersTiny = 42,
   /// <summary>
   /// A pansy border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersPansy))]
+  [WordInteropEnumValue("wdArtFlowersPansy")]
   FlowersPansy = 43,
   /// <summary>
   /// A modern flowers number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersModern2))]
+  [WordInteropEnumValue("wdArtFlowersModern2")]
   FlowersModern2 = 44,
   /// <summary>
   /// A modern flowers number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersModern1))]
+  [WordInteropEnumValue("wdArtFlowersModern1")]
   FlowersModern1 = 45,
   /// <summary>
   /// A white flower border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWhiteFlowers))]
+  [WordInteropEnumValue("wdArtWhiteFlowers")]
   WhiteFlowers = 46,
   /// <summary>
   /// A vine border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtVine))]
+  [WordInteropEnumValue("wdArtVine")]
   Vine = 47,
   /// <summary>
   /// A daisies border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersDaisies))]
+  [WordInteropEnumValue("wdArtFlowersDaisies")]
   FlowersDaisies = 48,
   /// <summary>
   /// A block flowers print border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersBlockPrint))]
+  [WordInteropEnumValue("wdArtFlowersBlockPrint")]
   FlowersBlockPrint = 49,
   /// <summary>
   /// A deco arch colored border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDecoArchColor))]
+  [WordInteropEnumValue("wdArtDecoArchColor")]
   DecoArchColor = 50,
   /// <summary>
   /// A fans border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFans))]
+  [WordInteropEnumValue("wdArtFans")]
   Fans = 51,
   /// <summary>
   /// A film border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFilm))]
+  [WordInteropEnumValue("wdArtFilm")]
   Film = 52,
   /// <summary>
   /// A lightning number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtLightning1))]
+  [WordInteropEnumValue("wdArtLightning1")]
   Lightning1 = 53,
   /// <summary>
   /// A compass border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCompass))]
+  [WordInteropEnumValue("wdArtCompass")]
   Compass = 54,
   /// <summary>
   /// A double-D border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDoubleD))]
+  [WordInteropEnumValue("wdArtDoubleD")]
   DoubleD = 55,
   /// <summary>
   /// A classical wave border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtClassicalWave))]
+  [WordInteropEnumValue("wdArtClassicalWave")]
   ClassicalWave = 56,
   /// <summary>
   /// A shadowed squared border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtShadowedSquares))]
+  [WordInteropEnumValue("wdArtShadowedSquares")]
   ShadowedSquares = 57,
   /// <summary>
   /// A twisted lines number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTwistedLines1))]
+  [WordInteropEnumValue("wdArtTwistedLines1")]
   TwistedLines1 = 58,
   /// <summary>
   /// A wave line border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWaveline))]
+  [WordInteropEnumValue("wdArtWaveline")]
   Waveline = 59,
   /// <summary>
   /// A quadrants border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtQuadrants))]
+  [WordInteropEnumValue("wdArtQuadrants")]
   Quadrants = 60,
   /// <summary>
   /// A checked-bar colored border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCheckedBarColor))]
+  [WordInteropEnumValue("wdArtCheckedBarColor")]
   CheckedBarColor = 61,
   /// <summary>
   /// A swirling border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSwirligig))]
+  [WordInteropEnumValue("wdArtSwirligig")]
   Swirligig = 62,
   /// <summary>
   /// A pushpin note number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPushPinNote1))]
+  [WordInteropEnumValue("wdArtPushPinNote1")]
   PushPinNote1 = 63,
   /// <summary>
   /// A pushpin note number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPushPinNote2))]
+  [WordInteropEnumValue("wdArtPushPinNote2")]
   PushPinNote2 = 64,
   /// <summary>
   /// A pumpkin number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPumpkin1))]
+  [WordInteropEnumValue("wdArtPumpkin1")]
   Pumpkin1 = 65,
   /// <summary>
   /// A black eggs border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtEggsBlack))]
+  [WordInteropEnumValue("wdArtEggsBlack")]
   EggsBlack = 66,
   /// <summary>
   /// A cup border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCup))]
+  [WordInteropEnumValue("wdArtCup")]
   Cup = 67,
   /// <summary>
   /// A heart border in shades of gray.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHeartGray))]
+  [WordInteropEnumValue("wdArtHeartGray")]
   HeartGray = 68,
   /// <summary>
   /// A gingerbread man border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtGingerbreadMan))]
+  [WordInteropEnumValue("wdArtGingerbreadMan")]
   GingerbreadMan = 69,
   /// <summary>
   /// A baby pacifier border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBabyPacifier))]
+  [WordInteropEnumValue("wdArtBabyPacifier")]
   BabyPacifier = 70,
   /// <summary>
   /// A baby rattle border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBabyRattle))]
+  [WordInteropEnumValue("wdArtBabyRattle")]
   BabyRattle = 71,
   /// <summary>
   /// A cabins border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCabins))]
+  [WordInteropEnumValue("wdArtCabins")]
   Cabins = 72,
   /// <summary>
   /// A funky house border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHouseFunky))]
+  [WordInteropEnumValue("wdArtHouseFunky")]
   HouseFunky = 73,
   /// <summary>
   /// A black stars border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtStarsBlack))]
+  [WordInteropEnumValue("wdArtStarsBlack")]
   StarsBlack = 74,
   /// <summary>
   /// A snowflake border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSnowflakes))]
+  [WordInteropEnumValue("wdArtSnowflakes")]
   Snowflakes = 75,
   /// <summary>
   /// A fancy snowflake border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSnowflakeFancy))]
+  [WordInteropEnumValue("wdArtSnowflakeFancy")]
   SnowflakeFancy = 76,
   /// <summary>
   /// A sky rocket border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSkyrocket))]
+  [WordInteropEnumValue("wdArtSkyrocket")]
   Skyrocket = 77,
   /// <summary>
   /// A Seattle border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSeattle))]
+  [WordInteropEnumValue("wdArtSeattle")]
   Seattle = 78,
   /// <summary>
   /// A music notes border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMusicNotes))]
+  [WordInteropEnumValue("wdArtMusicNotes")]
   MusicNotes = 79,
   /// <summary>
   /// A black palms border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPalmsBlack))]
+  [WordInteropEnumValue("wdArtPalmsBlack")]
   PalmsBlack = 80,
   /// <summary>
   /// A maple leaf border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMapleLeaf))]
+  [WordInteropEnumValue("wdArtMapleLeaf")]
   MapleLeaf = 81,
   /// <summary>
   /// A paper clips border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPaperClips))]
+  [WordInteropEnumValue("wdArtPaperClips")]
   PaperClips = 82,
   /// <summary>
   /// A shorebird tracks border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtShorebirdTracks))]
+  [WordInteropEnumValue("wdArtShorebirdTracks")]
   ShorebirdTracks = 83,
   /// <summary>
   /// A people border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPeople))]
+  [WordInteropEnumValue("wdArtPeople")]
   People = 84,
   /// <summary>
   /// A people waving border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPeopleWaving))]
+  [WordInteropEnumValue("wdArtPeopleWaving")]
   PeopleWaving = 85,
   /// <summary>
   /// An eclipsing squares number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtEclipsingSquares2))]
+  [WordInteropEnumValue("wdArtEclipsingSquares2")]
   EclipsingSquares2 = 86,
   /// <summary>
   /// A hypnotic border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHypnotic))]
+  [WordInteropEnumValue("wdArtHypnotic")]
   Hypnotic = 87,
   /// <summary>
   /// A diamond border using shades of gray.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDiamondsGray))]
+  [WordInteropEnumValue("wdArtDiamondsGray")]
   DiamondsGray = 88,
   /// <summary>
   /// A deco arch border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDecoArch))]
+  [WordInteropEnumValue("wdArtDecoArch")]
   DecoArch = 89,
   /// <summary>
   /// A deco blocks border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDecoBlocks))]
+  [WordInteropEnumValue("wdArtDecoBlocks")]
   DecoBlocks = 90,
   /// <summary>
   /// A circles and lines border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCirclesLines))]
+  [WordInteropEnumValue("wdArtCirclesLines")]
   CirclesLines = 91,
   /// <summary>
   /// A papyrus border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPapyrus))]
+  [WordInteropEnumValue("wdArtPapyrus")]
   Papyrus = 92,
   /// <summary>
   /// A woodwork border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWoodwork))]
+  [WordInteropEnumValue("wdArtWoodwork")]
   Woodwork = 93,
   /// <summary>
   /// A weaving braid border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWeavingBraid))]
+  [WordInteropEnumValue("wdArtWeavingBraid")]
   WeavingBraid = 94,
   /// <summary>
   /// A weaving ribbon border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWeavingRibbon))]
+  [WordInteropEnumValue("wdArtWeavingRibbon")]
   WeavingRibbon = 95,
   /// <summary>
   /// A weaving angle border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWeavingAngles))]
+  [WordInteropEnumValue("wdArtWeavingAngles")]
   WeavingAngles = 96,
   /// <summary>
   /// An arched scalloped border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtArchedScallops))]
+  [WordInteropEnumValue("wdArtArchedScallops")]
   ArchedScallops = 97,
   /// <summary>
   /// A safari border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSafari))]
+  [WordInteropEnumValue("wdArtSafari")]
   Safari = 98,
   /// <summary>
   /// A Celtic knot work border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCelticKnotwork))]
+  [WordInteropEnumValue("wdArtCelticKnotwork")]
   CelticKnotwork = 99,
   /// <summary>
   /// A crazy maze border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCrazyMaze))]
+  [WordInteropEnumValue("wdArtCrazyMaze")]
   CrazyMaze = 100,
   /// <summary>
   /// An eclipsing squares number 1 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtEclipsingSquares1))]
+  [WordInteropEnumValue("wdArtEclipsingSquares1")]
   EclipsingSquares1 = 101,
   /// <summary>
   /// A birds border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBirds))]
+  [WordInteropEnumValue("wdArtBirds")]
   Birds = 102,
   /// <summary>
   /// A teacup border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtFlowersTeacup))]
+  [WordInteropEnumValue("wdArtFlowersTeacup")]
   FlowersTeacup = 103,
   /// <summary>
   /// A northwest border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtNorthwest))]
+  [WordInteropEnumValue("wdArtNorthwest")]
   Northwest = 104,
   /// <summary>
   /// A southwest border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSouthwest))]
+  [WordInteropEnumValue("wdArtSouthwest")]
   Southwest = 105,
   /// <summary>
   /// A tribal number 6 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal6))]
+  [WordInteropEnumValue("wdArtTribal6")]
   Tribal6 = 106,
   /// <summary>
   /// A tribal number 4 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal4))]
+  [WordInteropEnumValue("wdArtTribal4")]
   Tribal4 = 107,
   /// <summary>
   /// A tribal number 3 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal3))]
+  [WordInteropEnumValue("wdArtTribal3")]
   Tribal3 = 108,
   /// <summary>
   /// A tribal number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal2))]
+  [WordInteropEnumValue("wdArtTribal2")]
   Tribal2 = 109,
   /// <summary>
   /// A tribal number 5 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal5))]
+  [WordInteropEnumValue("wdArtTribal5")]
   Tribal5 = 110,
   /// <summary>
   /// An X illusion border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtXIllusions))]
+  [WordInteropEnumValue("wdArtXIllusions")]
   XIllusions = 111,
   /// <summary>
   /// A zany triangle border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtZanyTriangles))]
+  [WordInteropEnumValue("wdArtZanyTriangles")]
   ZanyTriangles = 112,
   /// <summary>
   /// A pyramids border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPyramids))]
+  [WordInteropEnumValue("wdArtPyramids")]
   Pyramids = 113,
   /// <summary>
   /// An external pyramids border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPyramidsAbove))]
+  [WordInteropEnumValue("wdArtPyramidsAbove")]
   PyramidsAbove = 114,
   /// <summary>
   /// A confetti border using shades of gray.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtConfettiGrays))]
+  [WordInteropEnumValue("wdArtConfettiGrays")]
   ConfettiGrays = 115,
   /// <summary>
   /// A confetti outline border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtConfettiOutline))]
+  [WordInteropEnumValue("wdArtConfettiOutline")]
   ConfettiOutline = 116,
   /// <summary>
   /// A confetti white border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtConfettiWhite))]
+  [WordInteropEnumValue("wdArtConfettiWhite")]
   ConfettiWhite = 117,
   /// <summary>
   /// A mosaic border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMosaic))]
+  [WordInteropEnumValue("wdArtMosaic")]
   Mosaic = 118,
   /// <summary>
   /// A lightning number 2 border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtLightning2))]
+  [WordInteropEnumValue("wdArtLightning2")]
   Lightning2 = 119,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHeebieJeebies))]
+  [WordInteropEnumValue("wdArtHeebieJeebies")]
   HeebieJeebies = 120,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtLightBulb))]
+  [WordInteropEnumValue("wdArtLightBulb")]
   LightBulb = 121,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtGradient))]
+  [WordInteropEnumValue("wdArtGradient")]
   Gradient = 122,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTriangleParty))]
+  [WordInteropEnumValue("wdArtTriangleParty")]
   TriangleParty = 123,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTwistedLines2))]
+  [WordInteropEnumValue("wdArtTwistedLines2")]
   TwistedLines2 = 124,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMoons))]
+  [WordInteropEnumValue("wdArtMoons")]
   Moons = 125,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtOvals))]
+  [WordInteropEnumValue("wdArtOvals")]
   Ovals = 126,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtDoubleDiamonds))]
+  [WordInteropEnumValue("wdArtDoubleDiamonds")]
   DoubleDiamonds = 127,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtChainLink))]
+  [WordInteropEnumValue("wdArtChainLink")]
   ChainLink = 128,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTriangles))]
+  [WordInteropEnumValue("wdArtTriangles")]
   Triangles = 129,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTribal1))]
+  [WordInteropEnumValue("wdArtTribal1")]
   Tribal1 = 130,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMarqueeToothed))]
+  [WordInteropEnumValue("wdArtMarqueeToothed")]
   MarqueeToothed = 131,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSharksTeeth))]
+  [WordInteropEnumValue("wdArtSharksTeeth")]
   SharksTeeth = 132,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSawtooth))]
+  [WordInteropEnumValue("wdArtSawtooth")]
   Sawtooth = 133,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtSawtoothGray))]
+  [WordInteropEnumValue("wdArtSawtoothGray")]
   SawtoothGray = 134,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtPostageStamp))]
+  [WordInteropEnumValue("wdArtPostageStamp")]
   PostageStamp = 135,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtWeavingStrips))]
+  [WordInteropEnumValue("wdArtWeavingStrips")]
   WeavingStrips = 136,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtZigZag))]
+  [WordInteropEnumValue("wdArtZigZag")]
   ZigZag = 137,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCrossStitch))]
+  [WordInteropEnumValue("wdArtCrossStitch")]
   CrossStitch = 138,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtGems))]
+  [WordInteropEnumValue("wdArtGems")]
   Gems = 139,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCirclesRectangles))]
+  [WordInteropEnumValue("wdArtCirclesRectangles")]
   CirclesRectangles = 140,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCornerTriangles))]
+  [WordInteropEnumValue("wdArtCornerTriangles")]
   CornerTriangles = 141,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCreaturesInsects))]
+  [WordInteropEnumValue("wdArtCreaturesInsects")]
   CreaturesInsects = 142,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtZigZagStitch))]
+  [WordInteropEnumValue("wdArtZigZagStitch")]
   ZigZagStitch = 143,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCheckered))]
+  [WordInteropEnumValue("wdArtCheckered")]
   Checkered = 144,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCheckedBarBlack))]
+  [WordInteropEnumValue("wdArtCheckedBarBlack")]
   CheckedBarBlack = 145,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtMarquee))]
+  [WordInteropEnumValue("wdArtMarquee")]
   Marquee = 146,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWhiteDots))]
+  [WordInteropEnumValue("wdArtBasicWhiteDots")]
   BasicWhiteDots = 147,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWideMidline))]
+  [WordInteropEnumValue("wdArtBasicWideMidline")]
   BasicWideMidline = 148,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWideOutline))]
+  [WordInteropEnumValue("wdArtBasicWideOutline")]
   BasicWideOutline = 149,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWideInline))]
+  [WordInteropEnumValue("wdArtBasicWideInline")]
   BasicWideInline = 150,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicThinLines))]
+  [WordInteropEnumValue("wdArtBasicThinLines")]
   BasicThinLines = 151,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWhiteDashes))]
+  [WordInteropEnumValue("wdArtBasicWhiteDashes")]
   BasicWhiteDashes = 152,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicWhiteSquares))]
+  [WordInteropEnumValue("wdArtBasicWhiteSquares")]
   BasicWhiteSquares = 153,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicBlackSquares))]
+  [WordInteropEnumValue("wdArtBasicBlackSquares")]
   BasicBlackSquares = 154,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicBlackDashes))]
+  [WordInteropEnumValue("wdArtBasicBlackDashes")]
   BasicBlackDashes = 155,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtBasicBlackDots))]
+  [WordInteropEnumValue("wdArtBasicBlackDots")]
   BasicBlackDots = 156,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtStarsTop))]
+  [WordInteropEnumValue("wdArtStarsTop")]
   StarsTop = 157,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCertificateBanner))]
+  [WordInteropEnumValue("wdArtCertificateBanner")]
   CertificateBanner = 158,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHandmade1))]
+  [WordInteropEnumValue("wdArtHandmade1")]
   Handmade1 = 159,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtHandmade2))]
+  [WordInteropEnumValue("wdArtHandmade2")]
   Handmade2 = 160,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTornPaper))]
+  [WordInteropEnumValue("wdArtTornPaper")]
   TornPaper = 161,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtTornPaperBlack))]
+  [WordInteropEnumValue("wdArtTornPaperBlack")]
   TornPaperBlack = 162,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCouponCutoutDashes))]
+  [WordInteropEnumValue("wdArtCouponCutoutDashes")]
   CouponCutoutDashes = 163,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageBorderArt.wdArtCouponCutoutDots))]
+  [WordInteropEnumValue("wdArtCouponCutoutDots")]
   CouponCutoutDots = 164
 }

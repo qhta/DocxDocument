@@ -6,157 +6,157 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmappeddatafields?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMappedDataFields))]
+[WordInteropEnumType("WdMappedDataFields")]
 public enum MappedDataFieldType
 {
   /// <summary>
   /// Unique identifier field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdUniqueIdentifier))]
+  [WordInteropEnumValue("wdUniqueIdentifier")]
   UniqueIdentifier = 1,
   /// <summary>
   /// Courtesy title field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdCourtesyTitle))]
+  [WordInteropEnumValue("wdCourtesyTitle")]
   CourtesyTitle = 2,
   /// <summary>
   /// First name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdFirstName))]
+  [WordInteropEnumValue("wdFirstName")]
   FirstName = 3,
   /// <summary>
   /// Middle name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdMiddleName))]
+  [WordInteropEnumValue("wdMiddleName")]
   MiddleName = 4,
   /// <summary>
   /// Last name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdLastName))]
+  [WordInteropEnumValue("wdLastName")]
   LastName = 5,
   /// <summary>
   /// Suffix field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSuffix))]
+  [WordInteropEnumValue("wdSuffix")]
   Suffix = 6,
   /// <summary>
   /// Nickname field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdNickname))]
+  [WordInteropEnumValue("wdNickname")]
   Nickname = 7,
   /// <summary>
   /// Job title field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdJobTitle))]
+  [WordInteropEnumValue("wdJobTitle")]
   JobTitle = 8,
   /// <summary>
   /// Company field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdCompany))]
+  [WordInteropEnumValue("wdCompany")]
   Company = 9,
   /// <summary>
   /// Address 1 field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdAddress1))]
+  [WordInteropEnumValue("wdAddress1")]
   Address1 = 10,
   /// <summary>
   /// Address 2 field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdAddress2))]
+  [WordInteropEnumValue("wdAddress2")]
   Address2 = 11,
   /// <summary>
   /// City field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdCity))]
+  [WordInteropEnumValue("wdCity")]
   City = 12,
   /// <summary>
   /// State field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdState))]
+  [WordInteropEnumValue("wdState")]
   State = 13,
   /// <summary>
   /// Postal code field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdPostalCode))]
+  [WordInteropEnumValue("wdPostalCode")]
   PostalCode = 14,
   /// <summary>
   /// Country/region field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdCountryRegion))]
+  [WordInteropEnumValue("wdCountryRegion")]
   CountryRegion = 15,
   /// <summary>
   /// Business phone field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdBusinessPhone))]
+  [WordInteropEnumValue("wdBusinessPhone")]
   BusinessPhone = 16,
   /// <summary>
   /// Business fax field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdBusinessFax))]
+  [WordInteropEnumValue("wdBusinessFax")]
   BusinessFax = 17,
   /// <summary>
   /// Home phone field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdHomePhone))]
+  [WordInteropEnumValue("wdHomePhone")]
   HomePhone = 18,
   /// <summary>
   /// Home fax field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdHomeFax))]
+  [WordInteropEnumValue("wdHomeFax")]
   HomeFax = 19,
   /// <summary>
   /// E-mail address field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdEmailAddress))]
+  [WordInteropEnumValue("wdEmailAddress")]
   EmailAddress = 20,
   /// <summary>
   /// Web page unique resource identifier (URL) field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdWebPageURL))]
+  [WordInteropEnumValue("wdWebPageURL")]
   WebPageURL = 21,
   /// <summary>
   /// Spouse courtesy title field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSpouseCourtesyTitle))]
+  [WordInteropEnumValue("wdSpouseCourtesyTitle")]
   SpouseCourtesyTitle = 22,
   /// <summary>
   /// Spouse first name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSpouseFirstName))]
+  [WordInteropEnumValue("wdSpouseFirstName")]
   SpouseFirstName = 23,
   /// <summary>
   /// Spouse middle name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSpouseMiddleName))]
+  [WordInteropEnumValue("wdSpouseMiddleName")]
   SpouseMiddleName = 24,
   /// <summary>
   /// Spouse last name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSpouseLastName))]
+  [WordInteropEnumValue("wdSpouseLastName")]
   SpouseLastName = 25,
   /// <summary>
   /// Spouse nickname field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdSpouseNickname))]
+  [WordInteropEnumValue("wdSpouseNickname")]
   SpouseNickname = 26,
   /// <summary>
   /// Ruby first name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdRubyFirstName))]
+  [WordInteropEnumValue("wdRubyFirstName")]
   RubyFirstName = 27,
   /// <summary>
   /// Ruby last name field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdRubyLastName))]
+  [WordInteropEnumValue("wdRubyLastName")]
   RubyLastName = 28,
   /// <summary>
   /// Address 3 field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdAddress3))]
+  [WordInteropEnumValue("wdAddress3")]
   Address3 = 29,
   /// <summary>
   /// Department field.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMappedDataFields.wdDepartment))]
+  [WordInteropEnumValue("wdDepartment")]
   Department = 30
 }

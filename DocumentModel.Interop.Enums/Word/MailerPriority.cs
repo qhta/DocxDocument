@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailerpriority?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailerPriority))]
+[WordInteropEnumType("WdMailerPriority")]
 public enum MailerPriority
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailerPriority.wdPriorityNormal))]
+  [WordInteropEnumValue("wdPriorityNormal")]
   Normal = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailerPriority.wdPriorityLow))]
+  [WordInteropEnumValue("wdPriorityLow")]
   Low = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailerPriority.wdPriorityHigh))]
+  [WordInteropEnumValue("wdPriorityHigh")]
   High = 3
 }

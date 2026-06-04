@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewsection?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFileNewSection))]
+[OfficeInteropEnumType("MsoFileNewSection")]
 public enum FileNewSection
 {
   /// <summary>
   /// Open Document section.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewSection.msoOpenDocument))]
+  [OfficeInteropEnumValue("msoOpenDocument")]
   OpenDocument,
   /// <summary>
   /// New section.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewSection.msoNew))]
+  [OfficeInteropEnumValue("msoNew")]
   New,
   /// <summary>
   /// New from Existing File section.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewSection.msoNewfromExistingFile))]
+  [OfficeInteropEnumValue("msoNewfromExistingFile")]
   NewfromExistingFile,
   /// <summary>
   /// New from Template section.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewSection.msoNewfromTemplate))]
+  [OfficeInteropEnumValue("msoNewfromTemplate")]
   NewfromTemplate,
   /// <summary>
   /// Bottom section.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewSection.msoBottomSection))]
+  [OfficeInteropEnumValue("msoBottomSection")]
   BottomSection
 }

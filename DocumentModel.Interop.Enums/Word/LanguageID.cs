@@ -6,1028 +6,1028 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdLanguageID))]
+[WordInteropEnumType("WdLanguageID")]
 public enum LanguageID
 {
   /// <summary>
   /// No specified language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdLanguageNone))]
+  [WordInteropEnumValue("wdLanguageNone")]
   LanguageNone = 0,
   /// <summary>
   /// Disables proofing if the language ID identifies a language in which an object is grammatically validated using
   /// the Word proofing tools.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdNoProofing))]
+  [WordInteropEnumValue("wdNoProofing")]
   NoProofing = 1024,
   /// <summary>
   /// Arabic language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabic))]
+  [WordInteropEnumValue("wdArabic")]
   Arabic = 1025,
   /// <summary>
   /// Bulgarian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBulgarian))]
+  [WordInteropEnumValue("wdBulgarian")]
   Bulgarian = 1026,
   /// <summary>
   /// Catalan language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdCatalan))]
+  [WordInteropEnumValue("wdCatalan")]
   Catalan = 1027,
   /// <summary>
   /// Traditional Chinese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTraditionalChinese))]
+  [WordInteropEnumValue("wdTraditionalChinese")]
   TraditionalChinese = 1028,
   /// <summary>
   /// Czech language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdCzech))]
+  [WordInteropEnumValue("wdCzech")]
   Czech = 1029,
   /// <summary>
   /// Danish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdDanish))]
+  [WordInteropEnumValue("wdDanish")]
   Danish = 1030,
   /// <summary>
   /// German language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGerman))]
+  [WordInteropEnumValue("wdGerman")]
   German = 1031,
   /// <summary>
   /// Greek language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGreek))]
+  [WordInteropEnumValue("wdGreek")]
   Greek = 1032,
   /// <summary>
   /// United States English language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishUS))]
+  [WordInteropEnumValue("wdEnglishUS")]
   EnglishUS = 1033,
   /// <summary>
   /// Spanish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanish))]
+  [WordInteropEnumValue("wdSpanish")]
   Spanish = 1034,
   /// <summary>
   /// Finnish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFinnish))]
+  [WordInteropEnumValue("wdFinnish")]
   Finnish = 1035,
   /// <summary>
   /// French language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrench))]
+  [WordInteropEnumValue("wdFrench")]
   French = 1036,
   /// <summary>
   /// Hebrew language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdHebrew))]
+  [WordInteropEnumValue("wdHebrew")]
   Hebrew = 1037,
   /// <summary>
   /// Hungarian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdHungarian))]
+  [WordInteropEnumValue("wdHungarian")]
   Hungarian = 1038,
   /// <summary>
   /// Icelandic language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdIcelandic))]
+  [WordInteropEnumValue("wdIcelandic")]
   Icelandic = 1039,
   /// <summary>
   /// Italian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdItalian))]
+  [WordInteropEnumValue("wdItalian")]
   Italian = 1040,
   /// <summary>
   /// Japanese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdJapanese))]
+  [WordInteropEnumValue("wdJapanese")]
   Japanese = 1041,
   /// <summary>
   /// Korean language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKorean))]
+  [WordInteropEnumValue("wdKorean")]
   Korean = 1042,
   /// <summary>
   /// Dutch language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdDutch))]
+  [WordInteropEnumValue("wdDutch")]
   Dutch = 1043,
   /// <summary>
   /// Norwegian Bokmol language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdNorwegianBokmol))]
+  [WordInteropEnumValue("wdNorwegianBokmol")]
   NorwegianBokmol = 1044,
   /// <summary>
   /// Polish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPolish))]
+  [WordInteropEnumValue("wdPolish")]
   Polish = 1045,
   /// <summary>
   /// Portuguese (Brazil) language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPortugueseBrazil))]
+  [WordInteropEnumValue("wdPortugueseBrazil")]
   PortugueseBrazil = 1046,
   /// <summary>
   /// Rhaeto Romanic language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdRhaetoRomanic))]
+  [WordInteropEnumValue("wdRhaetoRomanic")]
   RhaetoRomanic = 1047,
   /// <summary>
   /// Romanian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdRomanian))]
+  [WordInteropEnumValue("wdRomanian")]
   Romanian = 1048,
   /// <summary>
   /// Russian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdRussian))]
+  [WordInteropEnumValue("wdRussian")]
   Russian = 1049,
   /// <summary>
   /// Croatian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdCroatian))]
+  [WordInteropEnumValue("wdCroatian")]
   Croatian = 1050,
   /// <summary>
   /// Slovakian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSlovak))]
+  [WordInteropEnumValue("wdSlovak")]
   Slovak = 1051,
   /// <summary>
   /// Albanian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAlbanian))]
+  [WordInteropEnumValue("wdAlbanian")]
   Albanian = 1052,
   /// <summary>
   /// Swedish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwedish))]
+  [WordInteropEnumValue("wdSwedish")]
   Swedish = 1053,
   /// <summary>
   /// Thai language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdThai))]
+  [WordInteropEnumValue("wdThai")]
   Thai = 1054,
   /// <summary>
   /// Turkish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTurkish))]
+  [WordInteropEnumValue("wdTurkish")]
   Turkish = 1055,
   /// <summary>
   /// Urdu language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdUrdu))]
+  [WordInteropEnumValue("wdUrdu")]
   Urdu = 1056,
   /// <summary>
   /// Indonesian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdIndonesian))]
+  [WordInteropEnumValue("wdIndonesian")]
   Indonesian = 1057,
   /// <summary>
   /// Ukrainian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdUkrainian))]
+  [WordInteropEnumValue("wdUkrainian")]
   Ukrainian = 1058,
   /// <summary>
   /// Belarusian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdByelorussian))]
+  [WordInteropEnumValue("wdByelorussian")]
   Byelorussian = 1059,
   /// <summary>
   /// Slovenian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSlovenian))]
+  [WordInteropEnumValue("wdSlovenian")]
   Slovenian = 1060,
   /// <summary>
   /// Estonian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEstonian))]
+  [WordInteropEnumValue("wdEstonian")]
   Estonian = 1061,
   /// <summary>
   /// Latvian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdLatvian))]
+  [WordInteropEnumValue("wdLatvian")]
   Latvian = 1062,
   /// <summary>
   /// Lithuanian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdLithuanian))]
+  [WordInteropEnumValue("wdLithuanian")]
   Lithuanian = 1063,
   /// <summary>
   /// Tajik language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTajik))]
+  [WordInteropEnumValue("wdTajik")]
   Tajik = 1064,
   /// <summary>
   /// Persian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPersian))]
+  [WordInteropEnumValue("wdPersian")]
   Persian = 1065,
   /// <summary>
   /// Vietnamese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdVietnamese))]
+  [WordInteropEnumValue("wdVietnamese")]
   Vietnamese = 1066,
   /// <summary>
   /// Armenian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArmenian))]
+  [WordInteropEnumValue("wdArmenian")]
   Armenian = 1067,
   /// <summary>
   /// Azeri Latin language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAzeriLatin))]
+  [WordInteropEnumValue("wdAzeriLatin")]
   AzeriLatin = 1068,
   /// <summary>
   /// Basque language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBasque))]
+  [WordInteropEnumValue("wdBasque")]
   Basque = 1069,
   /// <summary>
   /// Sorbian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSorbian))]
+  [WordInteropEnumValue("wdSorbian")]
   Sorbian = 1070,
   /// <summary>
   /// Macedonian (FYROM) language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMacedonianFYROM))]
+  [WordInteropEnumValue("wdMacedonianFYROM")]
   MacedonianFYROM = 1071,
   /// <summary>
   /// Sutu language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSutu))]
+  [WordInteropEnumValue("wdSutu")]
   Sutu = 1072,
   /// <summary>
   /// Sesotho language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSesotho))]
+  [WordInteropEnumValue("wdSesotho")]
   Sesotho = 1072,
   /// <summary>
   /// Tsonga language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTsonga))]
+  [WordInteropEnumValue("wdTsonga")]
   Tsonga = 1073,
   /// <summary>
   /// Tswana language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTswana))]
+  [WordInteropEnumValue("wdTswana")]
   Tswana = 1074,
   /// <summary>
   /// Venda language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdVenda))]
+  [WordInteropEnumValue("wdVenda")]
   Venda = 1075,
   /// <summary>
   /// Xhosa language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdXhosa))]
+  [WordInteropEnumValue("wdXhosa")]
   Xhosa = 1076,
   /// <summary>
   /// Zulu language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdZulu))]
+  [WordInteropEnumValue("wdZulu")]
   Zulu = 1077,
   /// <summary>
   /// African language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAfrikaans))]
+  [WordInteropEnumValue("wdAfrikaans")]
   Afrikaans = 1078,
   /// <summary>
   /// Georgian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGeorgian))]
+  [WordInteropEnumValue("wdGeorgian")]
   Georgian = 1079,
   /// <summary>
   /// Faeroese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFaeroese))]
+  [WordInteropEnumValue("wdFaeroese")]
   Faeroese = 1080,
   /// <summary>
   /// Hindi language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdHindi))]
+  [WordInteropEnumValue("wdHindi")]
   Hindi = 1081,
   /// <summary>
   /// Maltese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMaltese))]
+  [WordInteropEnumValue("wdMaltese")]
   Maltese = 1082,
   /// <summary>
   /// Sami Lappish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSamiLappish))]
+  [WordInteropEnumValue("wdSamiLappish")]
   SamiLappish = 1083,
   /// <summary>
   /// Gaelic Scottish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGaelicScotland))]
+  [WordInteropEnumValue("wdGaelicScotland")]
   GaelicScotland = 1084,
   /// <summary>
   /// Yiddish language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdYiddish))]
+  [WordInteropEnumValue("wdYiddish")]
   Yiddish = 1085,
   /// <summary>
   /// Malaysian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMalaysian))]
+  [WordInteropEnumValue("wdMalaysian")]
   Malaysian = 1086,
   /// <summary>
   /// Kazakh language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKazakh))]
+  [WordInteropEnumValue("wdKazakh")]
   Kazakh = 1087,
   /// <summary>
   /// Kyrgyz language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKyrgyz))]
+  [WordInteropEnumValue("wdKyrgyz")]
   Kyrgyz = 1088,
   /// <summary>
   /// Kirghiz language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKirghiz))]
+  [WordInteropEnumValue("wdKirghiz")]
   Kirghiz = 1088,
   /// <summary>
   /// Swahili language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwahili))]
+  [WordInteropEnumValue("wdSwahili")]
   Swahili = 1089,
   /// <summary>
   /// Turkmen language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTurkmen))]
+  [WordInteropEnumValue("wdTurkmen")]
   Turkmen = 1090,
   /// <summary>
   /// Uzbek Latin language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdUzbekLatin))]
+  [WordInteropEnumValue("wdUzbekLatin")]
   UzbekLatin = 1091,
   /// <summary>
   /// Tatar language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTatar))]
+  [WordInteropEnumValue("wdTatar")]
   Tatar = 1092,
   /// <summary>
   /// Bengali language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBengali))]
+  [WordInteropEnumValue("wdBengali")]
   Bengali = 1093,
   /// <summary>
   /// Punjabi language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPunjabi))]
+  [WordInteropEnumValue("wdPunjabi")]
   Punjabi = 1094,
   /// <summary>
   /// Gujarati language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGujarati))]
+  [WordInteropEnumValue("wdGujarati")]
   Gujarati = 1095,
   /// <summary>
   /// Oriya language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdOriya))]
+  [WordInteropEnumValue("wdOriya")]
   Oriya = 1096,
   /// <summary>
   /// Tamil language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTamil))]
+  [WordInteropEnumValue("wdTamil")]
   Tamil = 1097,
   /// <summary>
   /// Telugu language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTelugu))]
+  [WordInteropEnumValue("wdTelugu")]
   Telugu = 1098,
   /// <summary>
   /// Kannada language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKannada))]
+  [WordInteropEnumValue("wdKannada")]
   Kannada = 1099,
   /// <summary>
   /// Malayalam language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMalayalam))]
+  [WordInteropEnumValue("wdMalayalam")]
   Malayalam = 1100,
   /// <summary>
   /// Assamese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAssamese))]
+  [WordInteropEnumValue("wdAssamese")]
   Assamese = 1101,
   /// <summary>
   /// Marathi language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMarathi))]
+  [WordInteropEnumValue("wdMarathi")]
   Marathi = 1102,
   /// <summary>
   /// Sanskrit language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSanskrit))]
+  [WordInteropEnumValue("wdSanskrit")]
   Sanskrit = 1103,
   /// <summary>
   /// Mongolian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMongolian))]
+  [WordInteropEnumValue("wdMongolian")]
   Mongolian = 1104,
   /// <summary>
   /// Tibetan language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTibetan))]
+  [WordInteropEnumValue("wdTibetan")]
   Tibetan = 1105,
   /// <summary>
   /// Welsh language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdWelsh))]
+  [WordInteropEnumValue("wdWelsh")]
   Welsh = 1106,
   /// <summary>
   /// Khmer language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKhmer))]
+  [WordInteropEnumValue("wdKhmer")]
   Khmer = 1107,
   /// <summary>
   /// Lao language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdLao))]
+  [WordInteropEnumValue("wdLao")]
   Lao = 1108,
   /// <summary>
   /// Burmese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBurmese))]
+  [WordInteropEnumValue("wdBurmese")]
   Burmese = 1109,
   /// <summary>
   /// Galician language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGalician))]
+  [WordInteropEnumValue("wdGalician")]
   Galician = 1110,
   /// <summary>
   /// Konkani language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKonkani))]
+  [WordInteropEnumValue("wdKonkani")]
   Konkani = 1111,
   /// <summary>
   /// Manipuri language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdManipuri))]
+  [WordInteropEnumValue("wdManipuri")]
   Manipuri = 1112,
   /// <summary>
   /// Sindhi language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSindhi))]
+  [WordInteropEnumValue("wdSindhi")]
   Sindhi = 1113,
   /// <summary>
   /// Syriac language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSyriac))]
+  [WordInteropEnumValue("wdSyriac")]
   Syriac = 1114,
   /// <summary>
   /// Sinhalese language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSinhalese))]
+  [WordInteropEnumValue("wdSinhalese")]
   Sinhalese = 1115,
   /// <summary>
   /// Cherokee language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdCherokee))]
+  [WordInteropEnumValue("wdCherokee")]
   Cherokee = 1116,
   /// <summary>
   /// Inuktitut language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdInuktitut))]
+  [WordInteropEnumValue("wdInuktitut")]
   Inuktitut = 1117,
   /// <summary>
   /// Amharic language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAmharic))]
+  [WordInteropEnumValue("wdAmharic")]
   Amharic = 1118,
   /// <summary>
   /// Tamazight language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTamazight))]
+  [WordInteropEnumValue("wdTamazight")]
   Tamazight = 1119,
   /// <summary>
   /// Kashmiri language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKashmiri))]
+  [WordInteropEnumValue("wdKashmiri")]
   Kashmiri = 1120,
   /// <summary>
   /// Nepali language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdNepali))]
+  [WordInteropEnumValue("wdNepali")]
   Nepali = 1121,
   /// <summary>
   /// Frisian Netherlands language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrisianNetherlands))]
+  [WordInteropEnumValue("wdFrisianNetherlands")]
   FrisianNetherlands = 1122,
   /// <summary>
   /// Pashto language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPashto))]
+  [WordInteropEnumValue("wdPashto")]
   Pashto = 1123,
   /// <summary>
   /// Filipino language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFilipino))]
+  [WordInteropEnumValue("wdFilipino")]
   Filipino = 1124,
   /// <summary>
   /// Divehi language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdDivehi))]
+  [WordInteropEnumValue("wdDivehi")]
   Divehi = 1125,
   /// <summary>
   /// Edo language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEdo))]
+  [WordInteropEnumValue("wdEdo")]
   Edo = 1126,
   /// <summary>
   /// Fulfulde language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFulfulde))]
+  [WordInteropEnumValue("wdFulfulde")]
   Fulfulde = 1127,
   /// <summary>
   /// Hausa language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdHausa))]
+  [WordInteropEnumValue("wdHausa")]
   Hausa = 1128,
   /// <summary>
   /// Ibibio language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdIbibio))]
+  [WordInteropEnumValue("wdIbibio")]
   Ibibio = 1129,
   /// <summary>
   /// Yoruba language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdYoruba))]
+  [WordInteropEnumValue("wdYoruba")]
   Yoruba = 1130,
   /// <summary>
   /// Igbo language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdIgbo))]
+  [WordInteropEnumValue("wdIgbo")]
   Igbo = 1136,
   /// <summary>
   /// Kanuri language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdKanuri))]
+  [WordInteropEnumValue("wdKanuri")]
   Kanuri = 1137,
   /// <summary>
   /// Oromo language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdOromo))]
+  [WordInteropEnumValue("wdOromo")]
   Oromo = 1138,
   /// <summary>
   /// Tigrigna Ethiopic language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTigrignaEthiopic))]
+  [WordInteropEnumValue("wdTigrignaEthiopic")]
   TigrignaEthiopic = 1139,
   /// <summary>
   /// Guarani language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGuarani))]
+  [WordInteropEnumValue("wdGuarani")]
   Guarani = 1140,
   /// <summary>
   /// Hawaiian language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdHawaiian))]
+  [WordInteropEnumValue("wdHawaiian")]
   Hawaiian = 1141,
   /// <summary>
   /// Latin language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdLatin))]
+  [WordInteropEnumValue("wdLatin")]
   Latin = 1142,
   /// <summary>
   /// Somali language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSomali))]
+  [WordInteropEnumValue("wdSomali")]
   Somali = 1143,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdYi))]
+  [WordInteropEnumValue("wdYi")]
   Yi = 1144,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicIraq))]
+  [WordInteropEnumValue("wdArabicIraq")]
   ArabicIraq = 2049,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSimplifiedChinese))]
+  [WordInteropEnumValue("wdSimplifiedChinese")]
   SimplifiedChinese = 2052,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwissGerman))]
+  [WordInteropEnumValue("wdSwissGerman")]
   SwissGerman = 2055,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishUK))]
+  [WordInteropEnumValue("wdEnglishUK")]
   EnglishUK = 2057,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMexicanSpanish))]
+  [WordInteropEnumValue("wdMexicanSpanish")]
   MexicanSpanish = 2058,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBelgianFrench))]
+  [WordInteropEnumValue("wdBelgianFrench")]
   BelgianFrench = 2060,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwissItalian))]
+  [WordInteropEnumValue("wdSwissItalian")]
   SwissItalian = 2064,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdBelgianDutch))]
+  [WordInteropEnumValue("wdBelgianDutch")]
   BelgianDutch = 2067,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdNorwegianNynorsk))]
+  [WordInteropEnumValue("wdNorwegianNynorsk")]
   NorwegianNynorsk = 2068,
   /// <summary>
   /// Portuguese (Brazil) language.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdPortuguese))]
+  [WordInteropEnumValue("wdPortuguese")]
   Portuguese = 2070,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdRomanianMoldova))]
+  [WordInteropEnumValue("wdRomanianMoldova")]
   RomanianMoldova = 2072,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdRussianMoldova))]
+  [WordInteropEnumValue("wdRussianMoldova")]
   RussianMoldova = 2073,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSerbianLatin))]
+  [WordInteropEnumValue("wdSerbianLatin")]
   SerbianLatin = 2074,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwedishFinland))]
+  [WordInteropEnumValue("wdSwedishFinland")]
   SwedishFinland = 2077,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdAzeriCyrillic))]
+  [WordInteropEnumValue("wdAzeriCyrillic")]
   AzeriCyrillic = 2092,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGaelicIreland))]
+  [WordInteropEnumValue("wdGaelicIreland")]
   GaelicIreland = 2108,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdMalayBruneiDarussalam))]
+  [WordInteropEnumValue("wdMalayBruneiDarussalam")]
   MalayBruneiDarussalam = 2110,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdUzbekCyrillic))]
+  [WordInteropEnumValue("wdUzbekCyrillic")]
   UzbekCyrillic = 2115,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSindhiPakistan))]
+  [WordInteropEnumValue("wdSindhiPakistan")]
   SindhiPakistan = 2137,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTamazightLatin))]
+  [WordInteropEnumValue("wdTamazightLatin")]
   TamazightLatin = 2143,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdTigrignaEritrea))]
+  [WordInteropEnumValue("wdTigrignaEritrea")]
   TigrignaEritrea = 2163,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicEgypt))]
+  [WordInteropEnumValue("wdArabicEgypt")]
   ArabicEgypt = 3073,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdChineseHongKongSAR))]
+  [WordInteropEnumValue("wdChineseHongKongSAR")]
   ChineseHongKongSAR = 3076,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGermanAustria))]
+  [WordInteropEnumValue("wdGermanAustria")]
   GermanAustria = 3079,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishAUS))]
+  [WordInteropEnumValue("wdEnglishAUS")]
   EnglishAUS = 3081,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishModernSort))]
+  [WordInteropEnumValue("wdSpanishModernSort")]
   SpanishModernSort = 3082,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchCanadian))]
+  [WordInteropEnumValue("wdFrenchCanadian")]
   FrenchCanadian = 3084,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSerbianCyrillic))]
+  [WordInteropEnumValue("wdSerbianCyrillic")]
   SerbianCyrillic = 3098,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicLibya))]
+  [WordInteropEnumValue("wdArabicLibya")]
   ArabicLibya = 4097,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdChineseSingapore))]
+  [WordInteropEnumValue("wdChineseSingapore")]
   ChineseSingapore = 4100,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGermanLuxembourg))]
+  [WordInteropEnumValue("wdGermanLuxembourg")]
   GermanLuxembourg = 4103,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishCanadian))]
+  [WordInteropEnumValue("wdEnglishCanadian")]
   EnglishCanadian = 4105,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishGuatemala))]
+  [WordInteropEnumValue("wdSpanishGuatemala")]
   SpanishGuatemala = 4106,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSwissFrench))]
+  [WordInteropEnumValue("wdSwissFrench")]
   SwissFrench = 4108,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicAlgeria))]
+  [WordInteropEnumValue("wdArabicAlgeria")]
   ArabicAlgeria = 5121,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdChineseMacaoSAR))]
+  [WordInteropEnumValue("wdChineseMacaoSAR")]
   ChineseMacaoSAR = 5124,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdGermanLiechtenstein))]
+  [WordInteropEnumValue("wdGermanLiechtenstein")]
   GermanLiechtenstein = 5127,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishNewZealand))]
+  [WordInteropEnumValue("wdEnglishNewZealand")]
   EnglishNewZealand = 5129,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishCostaRica))]
+  [WordInteropEnumValue("wdSpanishCostaRica")]
   SpanishCostaRica = 5130,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchLuxembourg))]
+  [WordInteropEnumValue("wdFrenchLuxembourg")]
   FrenchLuxembourg = 5132,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicMorocco))]
+  [WordInteropEnumValue("wdArabicMorocco")]
   ArabicMorocco = 6145,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishIreland))]
+  [WordInteropEnumValue("wdEnglishIreland")]
   EnglishIreland = 6153,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishPanama))]
+  [WordInteropEnumValue("wdSpanishPanama")]
   SpanishPanama = 6154,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchMonaco))]
+  [WordInteropEnumValue("wdFrenchMonaco")]
   FrenchMonaco = 6156,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicTunisia))]
+  [WordInteropEnumValue("wdArabicTunisia")]
   ArabicTunisia = 7169,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishSouthAfrica))]
+  [WordInteropEnumValue("wdEnglishSouthAfrica")]
   EnglishSouthAfrica = 7177,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishDominicanRepublic))]
+  [WordInteropEnumValue("wdSpanishDominicanRepublic")]
   SpanishDominicanRepublic = 7178,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchWestIndies))]
+  [WordInteropEnumValue("wdFrenchWestIndies")]
   FrenchWestIndies = 7180,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicOman))]
+  [WordInteropEnumValue("wdArabicOman")]
   ArabicOman = 8193,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishJamaica))]
+  [WordInteropEnumValue("wdEnglishJamaica")]
   EnglishJamaica = 8201,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishVenezuela))]
+  [WordInteropEnumValue("wdSpanishVenezuela")]
   SpanishVenezuela = 8202,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchReunion))]
+  [WordInteropEnumValue("wdFrenchReunion")]
   FrenchReunion = 8204,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicYemen))]
+  [WordInteropEnumValue("wdArabicYemen")]
   ArabicYemen = 9217,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishCaribbean))]
+  [WordInteropEnumValue("wdEnglishCaribbean")]
   EnglishCaribbean = 9225,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishColombia))]
+  [WordInteropEnumValue("wdSpanishColombia")]
   SpanishColombia = 9226,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchCongoDRC))]
+  [WordInteropEnumValue("wdFrenchCongoDRC")]
   FrenchCongoDRC = 9228,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicSyria))]
+  [WordInteropEnumValue("wdArabicSyria")]
   ArabicSyria = 10241,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishBelize))]
+  [WordInteropEnumValue("wdEnglishBelize")]
   EnglishBelize = 10249,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishPeru))]
+  [WordInteropEnumValue("wdSpanishPeru")]
   SpanishPeru = 10250,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchSenegal))]
+  [WordInteropEnumValue("wdFrenchSenegal")]
   FrenchSenegal = 10252,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicJordan))]
+  [WordInteropEnumValue("wdArabicJordan")]
   ArabicJordan = 11265,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishTrinidadTobago))]
+  [WordInteropEnumValue("wdEnglishTrinidadTobago")]
   EnglishTrinidadTobago = 11273,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishArgentina))]
+  [WordInteropEnumValue("wdSpanishArgentina")]
   SpanishArgentina = 11274,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchCameroon))]
+  [WordInteropEnumValue("wdFrenchCameroon")]
   FrenchCameroon = 11276,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicLebanon))]
+  [WordInteropEnumValue("wdArabicLebanon")]
   ArabicLebanon = 12289,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishZimbabwe))]
+  [WordInteropEnumValue("wdEnglishZimbabwe")]
   EnglishZimbabwe = 12297,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishEcuador))]
+  [WordInteropEnumValue("wdSpanishEcuador")]
   SpanishEcuador = 12298,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchCotedIvoire))]
+  [WordInteropEnumValue("wdFrenchCotedIvoire")]
   FrenchCotedIvoire = 12300,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicKuwait))]
+  [WordInteropEnumValue("wdArabicKuwait")]
   ArabicKuwait = 13313,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishPhilippines))]
+  [WordInteropEnumValue("wdEnglishPhilippines")]
   EnglishPhilippines = 13321,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishChile))]
+  [WordInteropEnumValue("wdSpanishChile")]
   SpanishChile = 13322,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchMali))]
+  [WordInteropEnumValue("wdFrenchMali")]
   FrenchMali = 13324,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicUAE))]
+  [WordInteropEnumValue("wdArabicUAE")]
   ArabicUAE = 14337,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdEnglishIndonesia))]
+  [WordInteropEnumValue("wdEnglishIndonesia")]
   EnglishIndonesia = 14345,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishUruguay))]
+  [WordInteropEnumValue("wdSpanishUruguay")]
   SpanishUruguay = 14346,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchMorocco))]
+  [WordInteropEnumValue("wdFrenchMorocco")]
   FrenchMorocco = 14348,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicBahrain))]
+  [WordInteropEnumValue("wdArabicBahrain")]
   ArabicBahrain = 15361,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishParaguay))]
+  [WordInteropEnumValue("wdSpanishParaguay")]
   SpanishParaguay = 15370,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdFrenchHaiti))]
+  [WordInteropEnumValue("wdFrenchHaiti")]
   FrenchHaiti = 15372,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdArabicQatar))]
+  [WordInteropEnumValue("wdArabicQatar")]
   ArabicQatar = 16385,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishBolivia))]
+  [WordInteropEnumValue("wdSpanishBolivia")]
   SpanishBolivia = 16394,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishElSalvador))]
+  [WordInteropEnumValue("wdSpanishElSalvador")]
   SpanishElSalvador = 17418,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishHonduras))]
+  [WordInteropEnumValue("wdSpanishHonduras")]
   SpanishHonduras = 18442,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishNicaragua))]
+  [WordInteropEnumValue("wdSpanishNicaragua")]
   SpanishNicaragua = 19466,
   /// <summary>
   /// Specifies the language to use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdLanguageID.wdSpanishPuertoRico))]
+  [WordInteropEnumValue("wdSpanishPuertoRico")]
   SpanishPuertoRico = 20490
 }

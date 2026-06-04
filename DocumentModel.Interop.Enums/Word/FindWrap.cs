@@ -7,23 +7,23 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfindwrap?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFindWrap))]
+[WordInteropEnumType("WdFindWrap")]
 public enum FindWrap
 {
   /// <summary>
   /// The find operation ends if the beginning or end of the search range is reached.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindWrap.wdFindStop))]
+  [WordInteropEnumValue("wdFindStop")]
   Stop = 0,
   /// <summary>
   /// The find operation continues if the beginning or end of the search range is reached.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindWrap.wdFindContinue))]
+  [WordInteropEnumValue("wdFindContinue")]
   Continue = 1,
   /// <summary>
   /// After searching the selection or range, Microsoft Word displays a message asking whether to search the
   /// remainder of the document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindWrap.wdFindAsk))]
+  [WordInteropEnumValue("wdFindAsk")]
   Ask = 2
 }

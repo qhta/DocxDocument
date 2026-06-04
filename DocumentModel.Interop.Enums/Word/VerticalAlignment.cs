@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdverticalalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdVerticalAlignment))]
+[WordInteropEnumType("WdVerticalAlignment")]
 public enum VerticalAlignment
 {
   /// <summary>
   /// Top vertical alignment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdVerticalAlignment.wdAlignVerticalTop))]
+  [WordInteropEnumValue("wdAlignVerticalTop")]
   Top = 0,
   /// <summary>
   /// Center vertical alignment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdVerticalAlignment.wdAlignVerticalCenter))]
+  [WordInteropEnumValue("wdAlignVerticalCenter")]
   Center = 1,
   /// <summary>
   /// Justified vertical alignment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdVerticalAlignment.wdAlignVerticalJustify))]
+  [WordInteropEnumValue("wdAlignVerticalJustify")]
   Justify = 2,
   /// <summary>
   /// Bottom vertical alignment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdVerticalAlignment.wdAlignVerticalBottom))]
+  [WordInteropEnumValue("wdAlignVerticalBottom")]
   Bottom = 3
 }

@@ -6,102 +6,102 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdColorIndex))]
+[WordInteropEnumType("WdColorIndex")]
 public enum ColorIndex
 {
   /// <summary>
   /// Automatic color. Default; usually black.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdAuto))]
+  [WordInteropEnumValue("wdAuto")]
   Auto = 0,
   /// <summary>
   /// Removes highlighting that has been applied.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdNoHighlight))]
+  [WordInteropEnumValue("wdNoHighlight")]
   NoHighlight = 0,
   /// <summary>
   /// Black color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdBlack))]
+  [WordInteropEnumValue("wdBlack")]
   Black = 1,
   /// <summary>
   /// Blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdBlue))]
+  [WordInteropEnumValue("wdBlue")]
   Blue = 2,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdTurquoise))]
+  [WordInteropEnumValue("wdTurquoise")]
   Turquoise = 3,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdBrightGreen))]
+  [WordInteropEnumValue("wdBrightGreen")]
   BrightGreen = 4,
   /// <summary>
   /// Pink color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdPink))]
+  [WordInteropEnumValue("wdPink")]
   Pink = 5,
   /// <summary>
   /// Red color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdRed))]
+  [WordInteropEnumValue("wdRed")]
   Red = 6,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdYellow))]
+  [WordInteropEnumValue("wdYellow")]
   Yellow = 7,
   /// <summary>
   /// White color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdWhite))]
+  [WordInteropEnumValue("wdWhite")]
   White = 8,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdDarkBlue))]
+  [WordInteropEnumValue("wdDarkBlue")]
   DarkBlue = 9,
   /// <summary>
   /// Teal color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdTeal))]
+  [WordInteropEnumValue("wdTeal")]
   Teal = 10,
   /// <summary>
   /// Green color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdGreen))]
+  [WordInteropEnumValue("wdGreen")]
   Green = 11,
   /// <summary>
   /// Violet color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdViolet))]
+  [WordInteropEnumValue("wdViolet")]
   Violet = 12,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdDarkRed))]
+  [WordInteropEnumValue("wdDarkRed")]
   DarkRed = 13,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdDarkYellow))]
+  [WordInteropEnumValue("wdDarkYellow")]
   DarkYellow = 14,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdGray50))]
+  [WordInteropEnumValue("wdGray50")]
   Gray50 = 15,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdGray25))]
+  [WordInteropEnumValue("wdGray25")]
   Gray25 = 16,
   /// <summary>
   /// Color defined by document author.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdColorIndex.wdByAuthor))]
+  [WordInteropEnumValue("wdByAuthor")]
   ByAuthor = -1
 }

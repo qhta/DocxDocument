@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecompress?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoPictureCompress))]
+[OfficeInteropEnumType("MsoPictureCompress")]
 public enum PictureCompress
 {
   /// <summary>
   /// The picture is compressed or not depending on the settings for the document.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureCompress.msoPictureCompressDocDefault))]
+  [OfficeInteropEnumValue("msoPictureCompressDocDefault")]
   DocDefault = -1,
   /// <summary>
   /// The picture is not compressed.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureCompress.msoPictureCompressFalse))]
+  [OfficeInteropEnumValue("msoPictureCompressFalse")]
   False,
   /// <summary>
   /// The picture will be compressed.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureCompress.msoPictureCompressTrue))]
+  [OfficeInteropEnumValue("msoPictureCompressTrue")]
   True
 }

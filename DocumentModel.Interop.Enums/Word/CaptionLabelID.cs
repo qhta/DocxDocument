@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionlabelid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCaptionLabelID))]
+[WordInteropEnumType("WdCaptionLabelID")]
 public enum CaptionLabelID
 {
   /// <summary>
   /// Equation.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionLabelID.wdCaptionEquation))]
+  [WordInteropEnumValue("wdCaptionEquation")]
   Equation = -3,
   /// <summary>
   /// Table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionLabelID.wdCaptionTable))]
+  [WordInteropEnumValue("wdCaptionTable")]
   Table = -2,
   /// <summary>
   /// Figure.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionLabelID.wdCaptionFigure))]
+  [WordInteropEnumValue("wdCaptionFigure")]
   Figure = -1
 }

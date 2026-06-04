@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoTextureType))]
+[OfficeInteropEnumType("MsoTextureType")]
 public enum TextureType
 {
   /// <summary>
   /// Specifies the texture type for the selected fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureType.msoTextureTypeMixed))]
+  [OfficeInteropEnumValue("msoTextureTypeMixed")]
   Mixed = -2,
   /// <summary>
   /// Preset texture type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureType.msoTexturePreset))]
+  [OfficeInteropEnumValue("msoTexturePreset")]
   Preset = 1,
   /// <summary>
   /// User-defined texture type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextureType.msoTextureUserDefined))]
+  [OfficeInteropEnumValue("msoTextureUserDefined")]
   UserDefined = 2
 }

@@ -6,23 +6,23 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesizerule?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFrameSizeRule))]
+[WordInteropEnumType("WdFrameSizeRule")]
 public enum FrameSizeRule
 {
   /// <summary>
   /// Sets the height or width according to the height or width of the item in the frame.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrameSizeRule.wdFrameAuto))]
+  [WordInteropEnumValue("wdFrameAuto")]
   Auto = 0,
   /// <summary>
   /// Sets the height or width to a value equal to or greater than the value specified by the Height property or
   /// Width property.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrameSizeRule.wdFrameAtLeast))]
+  [WordInteropEnumValue("wdFrameAtLeast")]
   AtLeast = 1,
   /// <summary>
   /// Sets the height or width to an exact value specified by the Height property or Width property.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrameSizeRule.wdFrameExact))]
+  [WordInteropEnumValue("wdFrameExact")]
   Exact = 2
 }

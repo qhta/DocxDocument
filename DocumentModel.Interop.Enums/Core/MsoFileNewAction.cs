@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewaction?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFileNewAction))]
+[OfficeInteropEnumType("MsoFileNewAction")]
 public enum FileNewAction
 {
   /// <summary>
   /// Edit file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewAction.msoEditFile))]
+  [OfficeInteropEnumValue("msoEditFile")]
   EditFile,
   /// <summary>
   /// Create a new file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewAction.msoCreateNewFile))]
+  [OfficeInteropEnumValue("msoCreateNewFile")]
   CreateNewFile,
   /// <summary>
   /// Open file.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileNewAction.msoOpenFile))]
+  [OfficeInteropEnumValue("msoOpenFile")]
   OpenFile
 }

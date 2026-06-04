@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoAlertIconType))]
+[OfficeInteropEnumType("MsoAlertIconType")]
 public enum AlertIconType
 {
   /// <summary>
   /// Displays no icon with the alert message.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconNoIcon))]
+  [OfficeInteropEnumValue("msoAlertIconNoIcon")]
   NoIcon,
   /// <summary>
   /// Displays the Critical icon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconCritical))]
+  [OfficeInteropEnumValue("msoAlertIconCritical")]
   Critical,
   /// <summary>
   /// Displays the Query icon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconQuery))]
+  [OfficeInteropEnumValue("msoAlertIconQuery")]
   Query,
   /// <summary>
   /// Displays the Warning icon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconWarning))]
+  [OfficeInteropEnumValue("msoAlertIconWarning")]
   Warning,
   /// <summary>
   /// Displays the Info icon.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertIconType.msoAlertIconInfo))]
+  [OfficeInteropEnumValue("msoAlertIconInfo")]
   Info
 }

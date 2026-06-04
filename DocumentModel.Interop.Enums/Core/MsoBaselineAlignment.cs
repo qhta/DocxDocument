@@ -3,37 +3,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobaselinealignment?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBaselineAlignment))]
+[OfficeInteropEnumType("MsoBaselineAlignment")]
 public enum BaselineAlignment
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignMixed))]
+  [OfficeInteropEnumValue("msoBaselineAlignMixed")]
   Mixed = -2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignBaseline))]
+  [OfficeInteropEnumValue("msoBaselineAlignBaseline")]
   Baseline = 1,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignTop))]
+  [OfficeInteropEnumValue("msoBaselineAlignTop")]
   Top = 2,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignCenter))]
+  [OfficeInteropEnumValue("msoBaselineAlignCenter")]
   Center = 3,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignFarEast50))]
+  [OfficeInteropEnumValue("msoBaselineAlignFarEast50")]
   FarEast50 = 4,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBaselineAlignment.msoBaselineAlignAuto))]
+  [OfficeInteropEnumValue("msoBaselineAlignAuto")]
   Auto = 5
 }

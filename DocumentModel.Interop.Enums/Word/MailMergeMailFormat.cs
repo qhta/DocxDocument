@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemailformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat))]
+[WordInteropEnumType("WdMailMergeMailFormat")]
 public enum MailMergeMailFormat
 {
   /// <summary>
   /// Sends mail merge e-mail documents using plain text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat.wdMailFormatPlainText))]
+  [WordInteropEnumValue("wdMailFormatPlainText")]
   PlainText = 0,
   /// <summary>
   /// Sends mail merge e-mail documents using HTML format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeMailFormat.wdMailFormatHTML))]
+  [WordInteropEnumValue("wdMailFormatHTML")]
   HTML = 1
 }

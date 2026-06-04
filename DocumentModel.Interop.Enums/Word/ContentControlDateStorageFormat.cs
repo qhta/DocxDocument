@@ -7,24 +7,24 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontroldatestorageformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat))]
+[WordInteropEnumType("WdContentControlDateStorageFormat")]
 public enum ContentControlDateStorageFormat
 {
   /// <summary>
   /// Specifies to store or retrieve the date value for a date content control as text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat.wdContentControlDateStorageText))]
+  [WordInteropEnumValue("wdContentControlDateStorageText")]
   Text = 0,
   /// <summary>
   /// Specifies to store or retrieve the date value for a date content control as a date in the standard XML Schema
   /// DateTime format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat.wdContentControlDateStorageDate))]
+  [WordInteropEnumValue("wdContentControlDateStorageDate")]
   Date = 1,
   /// <summary>
   /// Specifies to store or retrieve the date value for a date content control as a time in the standard XML Schema
   /// DateTime format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat.wdContentControlDateStorageDateTime))]
+  [WordInteropEnumValue("wdContentControlDateStorageDateTime")]
   DateTime = 2
 }

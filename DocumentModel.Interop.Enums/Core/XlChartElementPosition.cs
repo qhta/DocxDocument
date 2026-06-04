@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartelementposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlChartElementPosition))]
+[OfficeInteropEnumType("XlChartElementPosition")]
 public enum ChartElementPosition
 {
   /// <summary>
   /// Automatically sets the position of the chart element.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartElementPosition.xlChartElementPositionAutomatic))]
+  [OfficeInteropEnumValue("xlChartElementPositionAutomatic")]
   Automatic = -4105,
   /// <summary>
   /// Specifies a specific position for the chart element.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartElementPosition.xlChartElementPositionCustom))]
+  [OfficeInteropEnumValue("xlChartElementPositionCustom")]
   Custom = -4114
 }

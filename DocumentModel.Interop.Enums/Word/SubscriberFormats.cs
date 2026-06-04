@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsubscriberformats?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSubscriberFormats))]
+[WordInteropEnumType("WdSubscriberFormats")]
 public enum SubscriberFormats
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSubscriberFormats.wdSubscriberBestFormat))]
+  [WordInteropEnumValue("wdSubscriberBestFormat")]
   BestFormat = 0,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSubscriberFormats.wdSubscriberRTF))]
+  [WordInteropEnumValue("wdSubscriberRTF")]
   RTF = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSubscriberFormats.wdSubscriberText))]
+  [WordInteropEnumValue("wdSubscriberText")]
   Text = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSubscriberFormats.wdSubscriberPict))]
+  [WordInteropEnumValue("wdSubscriberPict")]
   Pict = 4
 }

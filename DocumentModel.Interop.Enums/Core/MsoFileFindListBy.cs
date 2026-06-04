@@ -7,17 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindlistby?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFileFindListBy))]
+[OfficeInteropEnumType("MsoFileFindListBy")]
 public enum FileFindListBy
 {
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileFindListBy.msoListbyName))]
+  [OfficeInteropEnumValue("msoListbyName")]
   Name = 1,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFileFindListBy.msoListbyTitle))]
+  [OfficeInteropEnumValue("msoListbyTitle")]
   Title
 }

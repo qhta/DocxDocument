@@ -4,32 +4,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoContactCardType))]
+[OfficeInteropEnumType("MsoContactCardType")]
 public enum ContactCardType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardType.msoContactCardTypeEnterpriseContact))]
+  [OfficeInteropEnumValue("msoContactCardTypeEnterpriseContact")]
   EnterpriseContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardType.msoContactCardTypePersonalContact))]
+  [OfficeInteropEnumValue("msoContactCardTypePersonalContact")]
   PersonalContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardType.msoContactCardTypeUnknownContact))]
+  [OfficeInteropEnumValue("msoContactCardTypeUnknownContact")]
   UnknownContact,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardType.msoContactCardTypeEnterpriseGroup))]
+  [OfficeInteropEnumValue("msoContactCardTypeEnterpriseGroup")]
   EnterpriseGroup,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardType.msoContactCardTypePersonalDistributionList))]
+  [OfficeInteropEnumValue("msoContactCardTypePersonalDistributionList")]
   PersonalDistributionList
 }

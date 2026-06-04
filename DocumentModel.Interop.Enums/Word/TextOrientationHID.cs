@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextorientationhid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTextOrientationHID))]
+[WordInteropEnumType("WdTextOrientationHID")]
 public enum TextOrientationHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTextOrientationHID.emptyenum))]
+  [WordInteropEnumValue("emptyenum")]
   emptyenum = 0
 }

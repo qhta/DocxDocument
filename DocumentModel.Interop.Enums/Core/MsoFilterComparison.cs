@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiltercomparison?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFilterComparison))]
+[OfficeInteropEnumType("MsoFilterComparison")]
 public enum FilterComparison
 {
   /// <summary>
   /// Column matches CompareTo if the CompareTo value is the same as the Column value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonEqual))]
+  [OfficeInteropEnumValue("msoFilterComparisonEqual")]
   Equal,
   /// <summary>
   /// Column matches CompareTo if the CompareTo value is not equal to the Column value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonNotEqual))]
+  [OfficeInteropEnumValue("msoFilterComparisonNotEqual")]
   NotEqual,
   /// <summary>
   /// Column matches CompareTo if the Column value is less than the CompareTo value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonLessThan))]
+  [OfficeInteropEnumValue("msoFilterComparisonLessThan")]
   LessThan,
   /// <summary>
   /// Column matches CompareTo if the Column value is greater than the CompareTo value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonGreaterThan))]
+  [OfficeInteropEnumValue("msoFilterComparisonGreaterThan")]
   GreaterThan,
   /// <summary>
   /// Column matches CompareTo if the Column value is less than or equal to the CompareTo value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonLessThanEqual))]
+  [OfficeInteropEnumValue("msoFilterComparisonLessThanEqual")]
   LessThanEqual,
   /// <summary>
   /// Column matches CompareTo if the Column value is greater than or equal to the CompareTo value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonGreaterThanEqual))]
+  [OfficeInteropEnumValue("msoFilterComparisonGreaterThanEqual")]
   GreaterThanEqual,
   /// <summary>
   /// Column passes filter if Column is blank.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonIsBlank))]
+  [OfficeInteropEnumValue("msoFilterComparisonIsBlank")]
   IsBlank,
   /// <summary>
   /// Column passes filter if Column is blank.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonIsNotBlank))]
+  [OfficeInteropEnumValue("msoFilterComparisonIsNotBlank")]
   IsNotBlank,
   /// <summary>
   /// Column matches CompareTo if any part of the CompareTo string is contained in the Column value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonContains))]
+  [OfficeInteropEnumValue("msoFilterComparisonContains")]
   Contains,
   /// <summary>
   /// Column matches CompareTo if any part of the CompareTo string is not contained in the Column value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFilterComparison.msoFilterComparisonNotContains))]
+  [OfficeInteropEnumValue("msoFilterComparisonNotContains")]
   NotContains
 }

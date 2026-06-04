@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoextrainfomethod?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoExtraInfoMethod))]
+[OfficeInteropEnumType("MsoExtraInfoMethod")]
 public enum ExtraInfoMethod
 {
   /// <summary>
   /// The value specified in the ExtraInfo property is a string that is appended to the address.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoExtraInfoMethod.msoMethodGet))]
+  [OfficeInteropEnumValue("msoMethodGet")]
   Get,
   /// <summary>
   /// The value specified in the ExtraInfo property is posted as a string or byte array.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoExtraInfoMethod.msoMethodPost))]
+  [OfficeInteropEnumValue("msoMethodPost")]
   Post
 }

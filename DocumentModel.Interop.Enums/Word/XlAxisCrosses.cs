@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlaxiscrosses?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlAxisCrosses))]
+[WordInteropEnumType("XlAxisCrosses")]
 public enum AxisCrosses
 {
   /// <summary>
   /// The axis crosses at the maximum value.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlAxisCrosses.xlAxisCrossesMaximum))]
+  [WordInteropEnumValue("xlAxisCrossesMaximum")]
   Maximum = 2,
   /// <summary>
   /// The axis crosses at the minimum value.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlAxisCrosses.xlAxisCrossesMinimum))]
+  [WordInteropEnumValue("xlAxisCrossesMinimum")]
   Minimum = 4,
   /// <summary>
   /// The CrossesAt property specifies the axis crossing point.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlAxisCrosses.xlAxisCrossesCustom))]
+  [WordInteropEnumValue("xlAxisCrossesCustom")]
   Custom = -4114,
   /// <summary>
   /// Microsoft Word sets the axis crossing point.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlAxisCrosses.xlAxisCrossesAutomatic))]
+  [WordInteropEnumValue("xlAxisCrossesAutomatic")]
   Automatic = -4105
 }

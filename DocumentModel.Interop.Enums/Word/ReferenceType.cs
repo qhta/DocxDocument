@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreferencetype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdReferenceType))]
+[WordInteropEnumType("WdReferenceType")]
 public enum ReferenceType
 {
   /// <summary>
   /// Numbered item.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReferenceType.wdRefTypeNumberedItem))]
+  [WordInteropEnumValue("wdRefTypeNumberedItem")]
   NumberedItem = 0,
   /// <summary>
   /// Heading.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReferenceType.wdRefTypeHeading))]
+  [WordInteropEnumValue("wdRefTypeHeading")]
   Heading = 1,
   /// <summary>
   /// Bookmark.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReferenceType.wdRefTypeBookmark))]
+  [WordInteropEnumValue("wdRefTypeBookmark")]
   Bookmark = 2,
   /// <summary>
   /// Footnote.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReferenceType.wdRefTypeFootnote))]
+  [WordInteropEnumValue("wdRefTypeFootnote")]
   Footnote = 3,
   /// <summary>
   /// Endnote.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReferenceType.wdRefTypeEndnote))]
+  [WordInteropEnumValue("wdRefTypeEndnote")]
   Endnote = 4
 }

@@ -7,29 +7,29 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddeletecells?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDeleteCells))]
+[WordInteropEnumType("WdDeleteCells")]
 public enum DeleteCells
 {
   /// <summary>
   /// Shift remaining cells left in the row where the deletion occurred after a cell or range of cells has been
   /// deleted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeleteCells.wdDeleteCellsShiftLeft))]
+  [WordInteropEnumValue("wdDeleteCellsShiftLeft")]
   ShiftLeft = 0,
   /// <summary>
   /// Shift remaining cells up in the column where the deletion occurred after a cell or range of cells has been
   /// deleted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeleteCells.wdDeleteCellsShiftUp))]
+  [WordInteropEnumValue("wdDeleteCellsShiftUp")]
   ShiftUp = 1,
   /// <summary>
   /// Delete the entire row of cells from the table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeleteCells.wdDeleteCellsEntireRow))]
+  [WordInteropEnumValue("wdDeleteCellsEntireRow")]
   EntireRow = 2,
   /// <summary>
   /// Delete the entire column of cells from the table.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeleteCells.wdDeleteCellsEntireColumn))]
+  [WordInteropEnumValue("wdDeleteCellsEntireColumn")]
   EntireColumn = 3
 }

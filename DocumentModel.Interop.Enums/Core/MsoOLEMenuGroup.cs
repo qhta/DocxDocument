@@ -8,42 +8,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoolemenugroup?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoOLEMenuGroup))]
+[OfficeInteropEnumType("MsoOLEMenuGroup")]
 public enum OLEMenuGroup
 {
   /// <summary>
   /// Pop-up control is not merged.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupNone))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupNone")]
   None = -1,
   /// <summary>
   /// File menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupFile))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupFile")]
   File,
   /// <summary>
   /// Edit menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupEdit))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupEdit")]
   Edit,
   /// <summary>
   /// Container menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupContainer))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupContainer")]
   Container,
   /// <summary>
   /// Object menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupObject))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupObject")]
   Object,
   /// <summary>
   /// Window menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupWindow))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupWindow")]
   Window,
   /// <summary>
   /// Help menu.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoOLEMenuGroup.msoOLEMenuGroupHelp))]
+  [OfficeInteropEnumValue("msoOLEMenuGroupHelp")]
   Help
 }

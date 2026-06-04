@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsballoonwidthtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisionsBalloonWidthType))]
+[WordInteropEnumType("WdRevisionsBalloonWidthType")]
 public enum RevisionsBalloonWidthType
 {
   /// <summary>
   /// Measured as a percentage of the width of the document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsBalloonWidthType.wdBalloonWidthPercent))]
+  [WordInteropEnumValue("wdBalloonWidthPercent")]
   Percent = 0,
   /// <summary>
   /// Measured in points.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsBalloonWidthType.wdBalloonWidthPoints))]
+  [WordInteropEnumValue("wdBalloonWidthPoints")]
   Points = 1
 }

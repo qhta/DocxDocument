@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoChartFieldType))]
+[OfficeInteropEnumType("MsoChartFieldType")]
 public enum ChartFieldType
 {
   /// <summary>
   /// Specifies the Bubble size of the data point.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldBubbleSize))]
+  [OfficeInteropEnumValue("msoChartFieldBubbleSize")]
   BubbleSize = 1,
   /// <summary>
   /// Specifies the category name size of the data point.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldCategoryName))]
+  [OfficeInteropEnumValue("msoChartFieldCategoryName")]
   CategoryName,
   /// <summary>
   /// Specifies a percentage of the values.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldPercentage))]
+  [OfficeInteropEnumValue("msoChartFieldPercentage")]
   Percentage,
   /// <summary>
   /// Specifies the data series name.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldSeriesName))]
+  [OfficeInteropEnumValue("msoChartFieldSeriesName")]
   SeriesName,
   /// <summary>
   /// Specifies the value of the data field.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldValue))]
+  [OfficeInteropEnumValue("msoChartFieldValue")]
   Value,
   /// <summary>
   /// Specifies the formula used in the data point.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldFormula))]
+  [OfficeInteropEnumValue("msoChartFieldFormula")]
   Formula,
   /// <summary>
   /// Specifies the value of a range of data.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoChartFieldType.msoChartFieldRange))]
+  [OfficeInteropEnumValue("msoChartFieldRange")]
   Range
 }

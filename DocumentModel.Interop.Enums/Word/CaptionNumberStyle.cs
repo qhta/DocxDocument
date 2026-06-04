@@ -6,167 +6,167 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle))]
+[WordInteropEnumType("WdCaptionNumberStyle")]
 public enum CaptionNumberStyle
 {
   /// <summary>
   /// Arabic style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleArabic))]
+  [WordInteropEnumValue("wdCaptionNumberStyleArabic")]
   Arabic = 0,
   /// <summary>
   /// Uppercase roman style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleUppercaseRoman))]
+  [WordInteropEnumValue("wdCaptionNumberStyleUppercaseRoman")]
   UppercaseRoman = 1,
   /// <summary>
   /// Lowercase roman style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleLowercaseRoman))]
+  [WordInteropEnumValue("wdCaptionNumberStyleLowercaseRoman")]
   LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleUppercaseLetter))]
+  [WordInteropEnumValue("wdCaptionNumberStyleUppercaseLetter")]
   UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleLowercaseLetter))]
+  [WordInteropEnumValue("wdCaptionNumberStyleLowercaseLetter")]
   LowercaseLetter = 4,
   /// <summary>
   /// Kanji style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleKanji))]
+  [WordInteropEnumValue("wdCaptionNumberStyleKanji")]
   Kanji = 10,
   /// <summary>
   /// Kanji digit style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleKanjiDigit))]
+  [WordInteropEnumValue("wdCaptionNumberStyleKanjiDigit")]
   KanjiDigit = 11,
   /// <summary>
   /// Full-width Arabic style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleArabicFullWidth))]
+  [WordInteropEnumValue("wdCaptionNumberStyleArabicFullWidth")]
   ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleKanjiTraditional))]
+  [WordInteropEnumValue("wdCaptionNumberStyleKanjiTraditional")]
   KanjiTraditional = 16,
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleNumberInCircle))]
+  [WordInteropEnumValue("wdCaptionNumberStyleNumberInCircle")]
   NumberInCircle = 18,
   /// <summary>
   /// Ganada style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleGanada))]
+  [WordInteropEnumValue("wdCaptionNumberStyleGanada")]
   Ganada = 24,
   /// <summary>
   /// Chosung style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleChosung))]
+  [WordInteropEnumValue("wdCaptionNumberStyleChosung")]
   Chosung = 25,
   /// <summary>
   /// Zodiac style 1.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleZodiac1))]
+  [WordInteropEnumValue("wdCaptionNumberStyleZodiac1")]
   Zodiac1 = 30,
   /// <summary>
   /// Zodiac style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleZodiac2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleZodiac2")]
   Zodiac2 = 31,
   /// <summary>
   /// Traditional Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleTradChinNum2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleTradChinNum2")]
   TradChinNum2 = 34,
   /// <summary>
   /// Traditional Chinese number style 3.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleTradChinNum3))]
+  [WordInteropEnumValue("wdCaptionNumberStyleTradChinNum3")]
   TradChinNum3 = 35,
   /// <summary>
   /// Simplified Chinese number style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleSimpChinNum2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleSimpChinNum2")]
   SimpChinNum2 = 38,
   /// <summary>
   /// Simplified Chinese number style 3.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleSimpChinNum3))]
+  [WordInteropEnumValue("wdCaptionNumberStyleSimpChinNum3")]
   SimpChinNum3 = 39,
   /// <summary>
   /// Hanja read style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHanjaRead))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHanjaRead")]
   HanjaRead = 41,
   /// <summary>
   /// Hanja read digit style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHanjaReadDigit))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHanjaReadDigit")]
   HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew letter style 1.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHebrewLetter1))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHebrewLetter1")]
   HebrewLetter1 = 45,
   /// <summary>
   /// Arabic letter style 1.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleArabicLetter1))]
+  [WordInteropEnumValue("wdCaptionNumberStyleArabicLetter1")]
   ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew letter style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHebrewLetter2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHebrewLetter2")]
   HebrewLetter2 = 47,
   /// <summary>
   /// Arabic letter style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleArabicLetter2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleArabicLetter2")]
   ArabicLetter2 = 48,
   /// <summary>
   /// Hindi letter style 1.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHindiLetter1))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHindiLetter1")]
   HindiLetter1 = 49,
   /// <summary>
   /// Hindi letter style 2.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHindiLetter2))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHindiLetter2")]
   HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHindiArabic))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHindiArabic")]
   HindiArabic = 51,
   /// <summary>
   /// Hindi cardinal style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleHindiCardinalText))]
+  [WordInteropEnumValue("wdCaptionNumberStyleHindiCardinalText")]
   HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleThaiLetter))]
+  [WordInteropEnumValue("wdCaptionNumberStyleThaiLetter")]
   ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleThaiArabic))]
+  [WordInteropEnumValue("wdCaptionNumberStyleThaiArabic")]
   ThaiArabic = 54,
   /// <summary>
   /// Thai cardinal text style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleThaiCardinalText))]
+  [WordInteropEnumValue("wdCaptionNumberStyleThaiCardinalText")]
   ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese cardinal text style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCaptionNumberStyle.wdCaptionNumberStyleVietCardinalText))]
+  [WordInteropEnumValue("wdCaptionNumberStyleVietCardinalText")]
   VietCardinalText = 56
 }

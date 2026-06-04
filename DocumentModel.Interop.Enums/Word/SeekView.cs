@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdseekview?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSeekView))]
+[WordInteropEnumType("WdSeekView")]
 public enum SeekView
 {
   /// <summary>
   /// The main document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekMainDocument))]
+  [WordInteropEnumValue("wdSeekMainDocument")]
   MainDocument = 0,
   /// <summary>
   /// The primary header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekPrimaryHeader))]
+  [WordInteropEnumValue("wdSeekPrimaryHeader")]
   PrimaryHeader = 1,
   /// <summary>
   /// The first page header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekFirstPageHeader))]
+  [WordInteropEnumValue("wdSeekFirstPageHeader")]
   FirstPageHeader = 2,
   /// <summary>
   /// The even pages header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekEvenPagesHeader))]
+  [WordInteropEnumValue("wdSeekEvenPagesHeader")]
   EvenPagesHeader = 3,
   /// <summary>
   /// The primary footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekPrimaryFooter))]
+  [WordInteropEnumValue("wdSeekPrimaryFooter")]
   PrimaryFooter = 4,
   /// <summary>
   /// The first page footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekFirstPageFooter))]
+  [WordInteropEnumValue("wdSeekFirstPageFooter")]
   FirstPageFooter = 5,
   /// <summary>
   /// The even pages footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekEvenPagesFooter))]
+  [WordInteropEnumValue("wdSeekEvenPagesFooter")]
   EvenPagesFooter = 6,
   /// <summary>
   /// Footnotes.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekFootnotes))]
+  [WordInteropEnumValue("wdSeekFootnotes")]
   Footnotes = 7,
   /// <summary>
   /// Endnotes.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekEndnotes))]
+  [WordInteropEnumValue("wdSeekEndnotes")]
   Endnotes = 8,
   /// <summary>
   /// The current page header.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekCurrentPageHeader))]
+  [WordInteropEnumValue("wdSeekCurrentPageHeader")]
   CurrentPageHeader = 9,
   /// <summary>
   /// The current page footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSeekView.wdSeekCurrentPageFooter))]
+  [WordInteropEnumValue("wdSeekCurrentPageFooter")]
   CurrentPageFooter = 10
 }

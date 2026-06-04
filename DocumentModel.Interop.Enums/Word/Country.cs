@@ -6,127 +6,127 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcountry?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCountry))]
+[WordInteropEnumType("WdCountry")]
 public enum Country
 {
   /// <summary>
   /// United States
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdUS))]
+  [WordInteropEnumValue("wdUS")]
   US = 1,
   /// <summary>
   /// Canada
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdCanada))]
+  [WordInteropEnumValue("wdCanada")]
   Canada = 2,
   /// <summary>
   /// Latin America
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdLatinAmerica))]
+  [WordInteropEnumValue("wdLatinAmerica")]
   LatinAmerica = 3,
   /// <summary>
   /// Netherlands
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdNetherlands))]
+  [WordInteropEnumValue("wdNetherlands")]
   Netherlands = 31,
   /// <summary>
   /// France
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdFrance))]
+  [WordInteropEnumValue("wdFrance")]
   France = 33,
   /// <summary>
   /// Spain
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdSpain))]
+  [WordInteropEnumValue("wdSpain")]
   Spain = 34,
   /// <summary>
   /// Italy
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdItaly))]
+  [WordInteropEnumValue("wdItaly")]
   Italy = 39,
   /// <summary>
   /// United Kingdom
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdUK))]
+  [WordInteropEnumValue("wdUK")]
   UK = 44,
   /// <summary>
   /// Denmark
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdDenmark))]
+  [WordInteropEnumValue("wdDenmark")]
   Denmark = 45,
   /// <summary>
   /// Sweden
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdSweden))]
+  [WordInteropEnumValue("wdSweden")]
   Sweden = 46,
   /// <summary>
   /// Norway
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdNorway))]
+  [WordInteropEnumValue("wdNorway")]
   Norway = 47,
   /// <summary>
   /// Germany
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdGermany))]
+  [WordInteropEnumValue("wdGermany")]
   Germany = 49,
   /// <summary>
   /// Peru
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdPeru))]
+  [WordInteropEnumValue("wdPeru")]
   Peru = 51,
   /// <summary>
   /// Mexico
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdMexico))]
+  [WordInteropEnumValue("wdMexico")]
   Mexico = 52,
   /// <summary>
   /// Argentina
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdArgentina))]
+  [WordInteropEnumValue("wdArgentina")]
   Argentina = 54,
   /// <summary>
   /// Brazil
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdBrazil))]
+  [WordInteropEnumValue("wdBrazil")]
   Brazil = 55,
   /// <summary>
   /// Chile
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdChile))]
+  [WordInteropEnumValue("wdChile")]
   Chile = 56,
   /// <summary>
   /// Venezuela
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdVenezuela))]
+  [WordInteropEnumValue("wdVenezuela")]
   Venezuela = 58,
   /// <summary>
   /// Japan
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdJapan))]
+  [WordInteropEnumValue("wdJapan")]
   Japan = 81,
   /// <summary>
   /// Korea
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdKorea))]
+  [WordInteropEnumValue("wdKorea")]
   Korea = 82,
   /// <summary>
   /// China
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdChina))]
+  [WordInteropEnumValue("wdChina")]
   China = 86,
   /// <summary>
   /// Iceland
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdIceland))]
+  [WordInteropEnumValue("wdIceland")]
   Iceland = 354,
   /// <summary>
   /// Finland
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdFinland))]
+  [WordInteropEnumValue("wdFinland")]
   Finland = 358,
   /// <summary>
   /// Taiwan
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCountry.wdTaiwan))]
+  [WordInteropEnumValue("wdTaiwan")]
   Taiwan = 886
 }

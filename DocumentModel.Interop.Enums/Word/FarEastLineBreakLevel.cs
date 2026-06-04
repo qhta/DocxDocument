@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfareastlinebreaklevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFarEastLineBreakLevel))]
+[WordInteropEnumType("WdFarEastLineBreakLevel")]
 public enum FarEastLineBreakLevel
 {
   /// <summary>
   /// Normal line break control.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFarEastLineBreakLevel.wdFarEastLineBreakLevelNormal))]
+  [WordInteropEnumValue("wdFarEastLineBreakLevelNormal")]
   Normal = 0,
   /// <summary>
   /// Strict line break control.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFarEastLineBreakLevel.wdFarEastLineBreakLevelStrict))]
+  [WordInteropEnumValue("wdFarEastLineBreakLevelStrict")]
   Strict = 1,
   /// <summary>
   /// Custom line break control.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFarEastLineBreakLevel.wdFarEastLineBreakLevelCustom))]
+  [WordInteropEnumValue("wdFarEastLineBreakLevelCustom")]
   Custom = 2
 }

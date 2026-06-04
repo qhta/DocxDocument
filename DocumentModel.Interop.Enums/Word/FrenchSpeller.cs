@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfrenchspeller?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFrenchSpeller))]
+[WordInteropEnumType("WdFrenchSpeller")]
 public enum FrenchSpeller
 {
   /// <summary>
   /// Use both Post Reform and Pre-Reform French dictionaries when checking French language spelling.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrenchSpeller.wdFrenchBoth))]
+  [WordInteropEnumValue("wdFrenchBoth")]
   Both = 0,
   /// <summary>
   /// Use only the Pre-Reform French dictionary when checking French language spelling.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrenchSpeller.wdFrenchPreReform))]
+  [WordInteropEnumValue("wdFrenchPreReform")]
   PreReform = 1,
   /// <summary>
   /// Use only the Post Reform French dictionary when checking French language spelling.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFrenchSpeller.wdFrenchPostReform))]
+  [WordInteropEnumValue("wdFrenchPostReform")]
   PostReform = 2
 }

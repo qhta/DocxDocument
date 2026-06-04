@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdanimation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdAnimation))]
+[WordInteropEnumType("WdAnimation")]
 public enum WdAnimation
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationNone))]
+  [WordInteropEnumValue("wdAnimationNone")]
   None = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationLasVegasLights))]
+  [WordInteropEnumValue("wdAnimationLasVegasLights")]
   LasVegasLights = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationBlinkingBackground))]
+  [WordInteropEnumValue("wdAnimationBlinkingBackground")]
   BlinkingBackground = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationSparkleText))]
+  [WordInteropEnumValue("wdAnimationSparkleText")]
   SparkleText = 3,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationMarchingBlackAnts))]
+  [WordInteropEnumValue("wdAnimationMarchingBlackAnts")]
   MarchingBlackAnts = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationMarchingRedAnts))]
+  [WordInteropEnumValue("wdAnimationMarchingRedAnts")]
   MarchingRedAnts = 5,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAnimation.wdAnimationShimmer))]
+  [WordInteropEnumValue("wdAnimationShimmer")]
   Shimmer = 6
 }

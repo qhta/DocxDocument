@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosoftedgetype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoSoftEdgeType))]
+[OfficeInteropEnumType("MsoSoftEdgeType")]
 public enum SoftEdgeType
 {
   /// <summary>
   /// A mix of soft edge types.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeTypeMixed))]
+  [OfficeInteropEnumValue("msoSoftEdgeTypeMixed")]
   Mixed = -2,
   /// <summary>
   /// No soft edge.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeTypeNone))]
+  [OfficeInteropEnumValue("msoSoftEdgeTypeNone")]
   None = 0,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType1))]
+  [OfficeInteropEnumValue("msoSoftEdgeType1")]
   Type1 = 1,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType2))]
+  [OfficeInteropEnumValue("msoSoftEdgeType2")]
   Type2 = 2,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType3))]
+  [OfficeInteropEnumValue("msoSoftEdgeType3")]
   Type3 = 3,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType4))]
+  [OfficeInteropEnumValue("msoSoftEdgeType4")]
   Type4 = 4,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType5))]
+  [OfficeInteropEnumValue("msoSoftEdgeType5")]
   Type5 = 5,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSoftEdgeType.msoSoftEdgeType6))]
+  [OfficeInteropEnumValue("msoSoftEdgeType6")]
   Type6 = 6
 }

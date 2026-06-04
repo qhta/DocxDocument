@@ -6,132 +6,132 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoPresetGradientType))]
+[OfficeInteropEnumType("MsoPresetGradientType")]
 public enum PresetGradientType
 {
   /// <summary>
   /// Specifies which predefined gradient to use to fill a shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoPresetGradientMixed))]
+  [OfficeInteropEnumValue("msoPresetGradientMixed")]
   Mixed = -2,
   /// <summary>
   /// Early Sunset gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientEarlySunset))]
+  [OfficeInteropEnumValue("msoGradientEarlySunset")]
   EarlySunset = 1,
   /// <summary>
   /// Late Sunset gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientLateSunset))]
+  [OfficeInteropEnumValue("msoGradientLateSunset")]
   LateSunset = 2,
   /// <summary>
   /// Nightfall gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientNightfall))]
+  [OfficeInteropEnumValue("msoGradientNightfall")]
   Nightfall = 3,
   /// <summary>
   /// Daybreak gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientDaybreak))]
+  [OfficeInteropEnumValue("msoGradientDaybreak")]
   Daybreak = 4,
   /// <summary>
   /// Horizon gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientHorizon))]
+  [OfficeInteropEnumValue("msoGradientHorizon")]
   Horizon = 5,
   /// <summary>
   /// Desert gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientDesert))]
+  [OfficeInteropEnumValue("msoGradientDesert")]
   Desert = 6,
   /// <summary>
   /// Ocean gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientOcean))]
+  [OfficeInteropEnumValue("msoGradientOcean")]
   Ocean = 7,
   /// <summary>
   /// Calm Water gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientCalmWater))]
+  [OfficeInteropEnumValue("msoGradientCalmWater")]
   CalmWater = 8,
   /// <summary>
   /// Fire gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientFire))]
+  [OfficeInteropEnumValue("msoGradientFire")]
   Fire = 9,
   /// <summary>
   /// Fog gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientFog))]
+  [OfficeInteropEnumValue("msoGradientFog")]
   Fog = 10,
   /// <summary>
   /// Moss gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientMoss))]
+  [OfficeInteropEnumValue("msoGradientMoss")]
   Moss = 11,
   /// <summary>
   /// Peacock gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientPeacock))]
+  [OfficeInteropEnumValue("msoGradientPeacock")]
   Peacock = 12,
   /// <summary>
   /// Wheat gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientWheat))]
+  [OfficeInteropEnumValue("msoGradientWheat")]
   Wheat = 13,
   /// <summary>
   /// Parchment gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientParchment))]
+  [OfficeInteropEnumValue("msoGradientParchment")]
   Parchment = 14,
   /// <summary>
   /// Mahogany gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientMahogany))]
+  [OfficeInteropEnumValue("msoGradientMahogany")]
   Mahogany = 15,
   /// <summary>
   /// Rainbow gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientRainbow))]
+  [OfficeInteropEnumValue("msoGradientRainbow")]
   Rainbow = 16,
   /// <summary>
   /// Rainbow II gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientRainbowII))]
+  [OfficeInteropEnumValue("msoGradientRainbowII")]
   RainbowII = 17,
   /// <summary>
   /// Gold gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientGold))]
+  [OfficeInteropEnumValue("msoGradientGold")]
   Gold = 18,
   /// <summary>
   /// Gold II gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientGoldII))]
+  [OfficeInteropEnumValue("msoGradientGoldII")]
   GoldII = 19,
   /// <summary>
   /// Brass gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientBrass))]
+  [OfficeInteropEnumValue("msoGradientBrass")]
   Brass = 20,
   /// <summary>
   /// Chrome gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientChrome))]
+  [OfficeInteropEnumValue("msoGradientChrome")]
   Chrome = 21,
   /// <summary>
   /// Chrome II gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientChromeII))]
+  [OfficeInteropEnumValue("msoGradientChromeII")]
   ChromeII = 22,
   /// <summary>
   /// Silver gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientSilver))]
+  [OfficeInteropEnumValue("msoGradientSilver")]
   Silver = 23,
   /// <summary>
   /// Sapphire gradient.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPresetGradientType.msoGradientSapphire))]
+  [OfficeInteropEnumValue("msoGradientSapphire")]
   Sapphire = 24
 }

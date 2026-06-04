@@ -7,22 +7,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcheckinversiontype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCheckInVersionType))]
+[WordInteropEnumType("WdCheckInVersionType")]
 public enum CheckInVersionType
 {
   /// <summary>
   /// Minor version.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCheckInVersionType.wdCheckInMinorVersion))]
+  [WordInteropEnumValue("wdCheckInMinorVersion")]
   MinorVersion = 0,
   /// <summary>
   /// Major version.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCheckInVersionType.wdCheckInMajorVersion))]
+  [WordInteropEnumValue("wdCheckInMajorVersion")]
   MajorVersion = 1,
   /// <summary>
   /// Overwrite current version on the server.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCheckInVersionType.wdCheckInOverwriteVersion))]
+  [WordInteropEnumValue("wdCheckInOverwriteVersion")]
   OverwriteVersion = 2
 }

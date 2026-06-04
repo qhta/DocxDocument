@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtrailingcharacter?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTrailingCharacter))]
+[WordInteropEnumType("WdTrailingCharacter")]
 public enum TrailingCharacter
 {
   /// <summary>
   /// A tab is inserted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTrailingCharacter.wdTrailingTab))]
+  [WordInteropEnumValue("wdTrailingTab")]
   Tab = 0,
   /// <summary>
   /// A space is inserted. default.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTrailingCharacter.wdTrailingSpace))]
+  [WordInteropEnumValue("wdTrailingSpace")]
   Space = 1,
   /// <summary>
   /// No character is inserted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTrailingCharacter.wdTrailingNone))]
+  [WordInteropEnumValue("wdTrailingNone")]
   None = 2
 }

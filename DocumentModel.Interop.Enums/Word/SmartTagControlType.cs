@@ -6,87 +6,87 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsmarttagcontroltype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSmartTagControlType))]
+[WordInteropEnumType("WdSmartTagControlType")]
 public enum SmartTagControlType
 {
   /// <summary>
   /// Smart tag.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlSmartTag))]
+  [WordInteropEnumValue("wdControlSmartTag")]
   SmartTag = 1,
   /// <summary>
   /// Link.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlLink))]
+  [WordInteropEnumValue("wdControlLink")]
   Link = 2,
   /// <summary>
   /// Help.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlHelp))]
+  [WordInteropEnumValue("wdControlHelp")]
   Help = 3,
   /// <summary>
   /// Help URL.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlHelpURL))]
+  [WordInteropEnumValue("wdControlHelpURL")]
   HelpURL = 4,
   /// <summary>
   /// Separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlSeparator))]
+  [WordInteropEnumValue("wdControlSeparator")]
   Separator = 5,
   /// <summary>
   /// Button.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlButton))]
+  [WordInteropEnumValue("wdControlButton")]
   Button = 6,
   /// <summary>
   /// Label.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlLabel))]
+  [WordInteropEnumValue("wdControlLabel")]
   Label = 7,
   /// <summary>
   /// Image.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlImage))]
+  [WordInteropEnumValue("wdControlImage")]
   Image = 8,
   /// <summary>
   /// Check box.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlCheckbox))]
+  [WordInteropEnumValue("wdControlCheckbox")]
   Checkbox = 9,
   /// <summary>
   /// Text box.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlTextbox))]
+  [WordInteropEnumValue("wdControlTextbox")]
   Textbox = 10,
   /// <summary>
   /// List box.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlListbox))]
+  [WordInteropEnumValue("wdControlListbox")]
   Listbox = 11,
   /// <summary>
   /// Combo box.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlCombo))]
+  [WordInteropEnumValue("wdControlCombo")]
   Combo = 12,
   /// <summary>
   /// ActiveX control.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlActiveX))]
+  [WordInteropEnumValue("wdControlActiveX")]
   ActiveX = 13,
   /// <summary>
   /// Document fragment.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlDocumentFragment))]
+  [WordInteropEnumValue("wdControlDocumentFragment")]
   DocumentFragment = 14,
   /// <summary>
   /// Document fragment URL.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlDocumentFragmentURL))]
+  [WordInteropEnumValue("wdControlDocumentFragmentURL")]
   DocumentFragmentURL = 15,
   /// <summary>
   /// Radio group.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSmartTagControlType.wdControlRadioGroup))]
+  [WordInteropEnumValue("wdControlRadioGroup")]
   RadioGroup = 16
 }

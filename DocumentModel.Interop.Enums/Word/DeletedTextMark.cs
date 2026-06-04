@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddeletedtextmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDeletedTextMark))]
+[WordInteropEnumType("WdDeletedTextMark")]
 public enum DeletedTextMark
 {
   /// <summary>
   /// Deleted text is hidden.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkHidden))]
+  [WordInteropEnumValue("wdDeletedTextMarkHidden")]
   Hidden = 0,
   /// <summary>
   /// Deleted text is marked up by using strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkStrikeThrough))]
+  [WordInteropEnumValue("wdDeletedTextMarkStrikeThrough")]
   StrikeThrough = 1,
   /// <summary>
   /// Deleted text is marked up by using caret characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkCaret))]
+  [WordInteropEnumValue("wdDeletedTextMarkCaret")]
   Caret = 2,
   /// <summary>
   /// Deleted text is marked up by using pound characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkPound))]
+  [WordInteropEnumValue("wdDeletedTextMarkPound")]
   Pound = 3,
   /// <summary>
   /// Deleted text is not marked up.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkNone))]
+  [WordInteropEnumValue("wdDeletedTextMarkNone")]
   None = 4,
   /// <summary>
   /// Deleted text is displayed in bold.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkBold))]
+  [WordInteropEnumValue("wdDeletedTextMarkBold")]
   Bold = 5,
   /// <summary>
   /// Deleted text is displayed in italics.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkItalic))]
+  [WordInteropEnumValue("wdDeletedTextMarkItalic")]
   Italic = 6,
   /// <summary>
   /// Deleted text is underlined.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkUnderline))]
+  [WordInteropEnumValue("wdDeletedTextMarkUnderline")]
   Underline = 7,
   /// <summary>
   /// Deleted text is marked up by using double-underline characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkDoubleUnderline))]
+  [WordInteropEnumValue("wdDeletedTextMarkDoubleUnderline")]
   DoubleUnderline = 8,
   /// <summary>
   /// Deleted text is displayed in a specified color (default
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkColorOnly))]
+  [WordInteropEnumValue("wdDeletedTextMarkColorOnly")]
   ColorOnly = 9,
   /// <summary>
   /// Deleted text is marked up by using double- strikethrough characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDeletedTextMark.wdDeletedTextMarkDoubleStrikeThrough))]
+  [WordInteropEnumValue("wdDeletedTextMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 10
 }

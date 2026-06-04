@@ -6,27 +6,27 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathfractype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOMathFracType))]
+[WordInteropEnumType("WdOMathFracType")]
 public enum OMathFracType
 {
   /// <summary>
   /// Normal fraction bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathFracType.wdOMathFracBar))]
+  [WordInteropEnumValue("wdOMathFracBar")]
   Bar = 0,
   /// <summary>
   /// No fraction bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathFracType.wdOMathFracNoBar))]
+  [WordInteropEnumValue("wdOMathFracNoBar")]
   NoBar = 1,
   /// <summary>
   /// Skewed fraction bar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathFracType.wdOMathFracSkw))]
+  [WordInteropEnumValue("wdOMathFracSkw")]
   Skewed = 2,
   /// <summary>
   /// Show fraction inline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathFracType.wdOMathFracLin))]
+  [WordInteropEnumValue("wdOMathFracLin")]
   Inline = 3
 }

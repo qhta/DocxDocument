@@ -7,27 +7,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofareastlinebreaklanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoFarEastLineBreakLanguageID))]
+[OfficeInteropEnumType("MsoFarEastLineBreakLanguageID")]
 public enum FarEastLineBreakLanguageID
 {
   /// <summary>
   /// Japanese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFarEastLineBreakLanguageID.MsoFarEastLineBreakLanguageJapanese))]
+  [OfficeInteropEnumValue("MsoFarEastLineBreakLanguageJapanese")]
   Japanese = 1041,
   /// <summary>
   /// Korean.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFarEastLineBreakLanguageID.MsoFarEastLineBreakLanguageKorean))]
+  [OfficeInteropEnumValue("MsoFarEastLineBreakLanguageKorean")]
   Korean = 1042,
   /// <summary>
   /// Simplified Chinese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFarEastLineBreakLanguageID.MsoFarEastLineBreakLanguageSimplifiedChinese))]
+  [OfficeInteropEnumValue("MsoFarEastLineBreakLanguageSimplifiedChinese")]
   SimplifiedChinese = 2052,
   /// <summary>
   /// Traditional Chinese.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoFarEastLineBreakLanguageID.MsoFarEastLineBreakLanguageTraditionalChinese))]
+  [OfficeInteropEnumValue("MsoFarEastLineBreakLanguageTraditionalChinese")]
   TraditionalChinese = 1028
 }

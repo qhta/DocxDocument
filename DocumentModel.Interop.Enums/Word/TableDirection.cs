@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtabledirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTableDirection))]
+[WordInteropEnumType("WdTableDirection")]
 public enum TableDirection
 {
   /// <summary>
   /// The selected rows are arranged with the first column in the rightmost position.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableDirection.wdTableDirectionRtl))]
+  [WordInteropEnumValue("wdTableDirectionRtl")]
   Rtl = 0,
   /// <summary>
   /// The selected rows are arranged with the first column in the leftmost position.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTableDirection.wdTableDirectionLtr))]
+  [WordInteropEnumValue("wdTableDirectionLtr")]
   Ltr = 1
 }

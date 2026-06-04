@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelocate?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRelocate))]
+[WordInteropEnumType("WdRelocate")]
 public enum Relocate
 {
   /// <summary>
   /// Above the previous visible paragraph.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelocate.wdRelocateUp))]
+  [WordInteropEnumValue("wdRelocateUp")]
   Up = 0,
   /// <summary>
   /// Below the next visible paragraph.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRelocate.wdRelocateDown))]
+  [WordInteropEnumValue("wdRelocateDown")]
   Down = 1
 }

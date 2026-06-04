@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomoverow?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoMoveRow))]
+[OfficeInteropEnumType("MsoMoveRow")]
 public enum MoveRow
 {
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMoveRow.msoMoveRowFirst))]
+  [OfficeInteropEnumValue("msoMoveRowFirst")]
   First = -4,
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMoveRow.msoMoveRowPrev))]
+  [OfficeInteropEnumValue("msoMoveRowPrev")]
   Prev,
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMoveRow.msoMoveRowNext))]
+  [OfficeInteropEnumValue("msoMoveRowNext")]
   Next,
   /// <summary>
   /// Internal use only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoMoveRow.msoMoveRowNbr))]
+  [OfficeInteropEnumValue("msoMoveRowNbr")]
   Nbr
 }

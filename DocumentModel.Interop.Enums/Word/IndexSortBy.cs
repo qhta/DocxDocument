@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdindexsortby?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdIndexSortBy))]
+[WordInteropEnumType("WdIndexSortBy")]
 public enum IndexSortBy
 {
   /// <summary>
   /// Sort by the number of strokes in a character.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexSortBy.wdIndexSortByStroke))]
+  [WordInteropEnumValue("wdIndexSortByStroke")]
   Stroke = 0,
   /// <summary>
   /// Sort phonetically.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexSortBy.wdIndexSortBySyllable))]
+  [WordInteropEnumValue("wdIndexSortBySyllable")]
   Syllable = 1
 }

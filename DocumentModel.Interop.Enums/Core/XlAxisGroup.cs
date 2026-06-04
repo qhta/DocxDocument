@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxisgroup?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlAxisGroup))]
+[OfficeInteropEnumType("XlAxisGroup")]
 public enum AxisGroup
 {
   /// <summary>
   /// Primary axis group.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisGroup.xlPrimary))]
+  [OfficeInteropEnumValue("xlPrimary")]
   Primary = 1,
   /// <summary>
   /// Secondary axis group.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlAxisGroup.xlSecondary))]
+  [OfficeInteropEnumValue("xlSecondary")]
   Secondary
 }

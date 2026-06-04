@@ -8,47 +8,47 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlhalign?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlHAlign))]
+[OfficeInteropEnumType("XlHAlign")]
 public enum HAlign
 {
   /// <summary>
   /// Center.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignCenter))]
+  [OfficeInteropEnumValue("xlHAlignCenter")]
   Center = -4108,
   /// <summary>
   /// Center across selection.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignCenterAcrossSelection))]
+  [OfficeInteropEnumValue("xlHAlignCenterAcrossSelection")]
   CenterAcrossSelection = 7,
   /// <summary>
   /// Distribute.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignDistributed))]
+  [OfficeInteropEnumValue("xlHAlignDistributed")]
   Distributed = -4117,
   /// <summary>
   /// Fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignFill))]
+  [OfficeInteropEnumValue("xlHAlignFill")]
   Fill = 5,
   /// <summary>
   /// Align according to data type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignGeneral))]
+  [OfficeInteropEnumValue("xlHAlignGeneral")]
   General = 1,
   /// <summary>
   /// Justify.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignJustify))]
+  [OfficeInteropEnumValue("xlHAlignJustify")]
   Justify = -4130,
   /// <summary>
   /// Left.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignLeft))]
+  [OfficeInteropEnumValue("xlHAlignLeft")]
   Left = -4131,
   /// <summary>
   /// Right.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlHAlign.xlHAlignRight))]
+  [OfficeInteropEnumValue("xlHAlignRight")]
   Right = -4152
 }

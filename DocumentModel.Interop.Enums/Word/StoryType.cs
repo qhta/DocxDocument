@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstorytype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdStoryType))]
+[WordInteropEnumType("WdStoryType")]
 public enum StoryType
 {
   /// <summary>
   /// Main text story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdMainTextStory))]
+  [WordInteropEnumValue("wdMainTextStory")]
   MainTextStory = 1,
   /// <summary>
   /// Footnotes story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFootnotesStory))]
+  [WordInteropEnumValue("wdFootnotesStory")]
   FootnotesStory = 2,
   /// <summary>
   /// Endnotes story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEndnotesStory))]
+  [WordInteropEnumValue("wdEndnotesStory")]
   EndnotesStory = 3,
   /// <summary>
   /// Comments story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdCommentsStory))]
+  [WordInteropEnumValue("wdCommentsStory")]
   CommentsStory = 4,
   /// <summary>
   /// Text frame story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdTextFrameStory))]
+  [WordInteropEnumValue("wdTextFrameStory")]
   TextFrameStory = 5,
   /// <summary>
   /// Even pages header story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEvenPagesHeaderStory))]
+  [WordInteropEnumValue("wdEvenPagesHeaderStory")]
   EvenPagesHeaderStory = 6,
   /// <summary>
   /// Primary header story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdPrimaryHeaderStory))]
+  [WordInteropEnumValue("wdPrimaryHeaderStory")]
   PrimaryHeaderStory = 7,
   /// <summary>
   /// Even pages footer story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEvenPagesFooterStory))]
+  [WordInteropEnumValue("wdEvenPagesFooterStory")]
   EvenPagesFooterStory = 8,
   /// <summary>
   /// Primary footer story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdPrimaryFooterStory))]
+  [WordInteropEnumValue("wdPrimaryFooterStory")]
   PrimaryFooterStory = 9,
   /// <summary>
   /// First page header story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFirstPageHeaderStory))]
+  [WordInteropEnumValue("wdFirstPageHeaderStory")]
   FirstPageHeaderStory = 10,
   /// <summary>
   /// First page footer story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFirstPageFooterStory))]
+  [WordInteropEnumValue("wdFirstPageFooterStory")]
   FirstPageFooterStory = 11,
   /// <summary>
   /// Footnote separator story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFootnoteSeparatorStory))]
+  [WordInteropEnumValue("wdFootnoteSeparatorStory")]
   FootnoteSeparatorStory = 12,
   /// <summary>
   /// Footnote continuation separator story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFootnoteContinuationSeparatorStory))]
+  [WordInteropEnumValue("wdFootnoteContinuationSeparatorStory")]
   FootnoteContinuationSeparatorStory = 13,
   /// <summary>
   /// Footnote continuation notice story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdFootnoteContinuationNoticeStory))]
+  [WordInteropEnumValue("wdFootnoteContinuationNoticeStory")]
   FootnoteContinuationNoticeStory = 14,
   /// <summary>
   /// Endnote separator story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEndnoteSeparatorStory))]
+  [WordInteropEnumValue("wdEndnoteSeparatorStory")]
   EndnoteSeparatorStory = 15,
   /// <summary>
   /// Endnote continuation separator story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEndnoteContinuationSeparatorStory))]
+  [WordInteropEnumValue("wdEndnoteContinuationSeparatorStory")]
   EndnoteContinuationSeparatorStory = 16,
   /// <summary>
   /// Endnote continuation notice story.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdStoryType.wdEndnoteContinuationNoticeStory))]
+  [WordInteropEnumValue("wdEndnoteContinuationNoticeStory")]
   EndnoteContinuationNoticeStory = 17
 }

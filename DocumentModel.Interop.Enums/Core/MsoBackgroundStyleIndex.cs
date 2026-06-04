@@ -6,77 +6,77 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobackgroundstyleindex?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoBackgroundStyleIndex))]
+[OfficeInteropEnumType("MsoBackgroundStyleIndex")]
 public enum BackgroundStyleIndex
 {
   /// <summary>
   /// Specifies a combination of styles.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStyleMixed))]
+  [OfficeInteropEnumValue("msoBackgroundStyleMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies no styles.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStyleNotAPreset))]
+  [OfficeInteropEnumValue("msoBackgroundStyleNotAPreset")]
   NotAPreset = 0,
   /// <summary>
   /// Specifies style 1.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset1))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset1")]
   Preset1 = 1,
   /// <summary>
   /// Specifies style 2.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset2))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset2")]
   Preset2 = 2,
   /// <summary>
   /// Specifies style 3.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset3))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset3")]
   Preset3 = 3,
   /// <summary>
   /// Specifies style 4.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset4))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset4")]
   Preset4 = 4,
   /// <summary>
   /// Specifies style 5.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset5))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset5")]
   Preset5 = 5,
   /// <summary>
   /// Specifies style 6.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset6))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset6")]
   Preset6 = 6,
   /// <summary>
   /// Specifies style 7.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset7))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset7")]
   Preset7 = 7,
   /// <summary>
   /// Specifies style 8.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset8))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset8")]
   Preset8 = 8,
   /// <summary>
   /// Specifies style 9.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset9))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset9")]
   Preset9 = 9,
   /// <summary>
   /// Specifies style 10.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset10))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset10")]
   Preset10 = 10,
   /// <summary>
   /// Specifies style 11.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset11))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset11")]
   Preset11 = 11,
   /// <summary>
   /// Specifies style 12.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoBackgroundStyleIndex.msoBackgroundStylePreset12))]
+  [OfficeInteropEnumValue("msoBackgroundStylePreset12")]
   Preset12 = 12
 }

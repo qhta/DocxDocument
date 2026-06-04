@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmergesubtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMergeSubType))]
+[WordInteropEnumType("WdMergeSubType")]
 public enum MergeSubType
 {
   /// <summary>
   /// Other type of data source.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeOther))]
+  [WordInteropEnumValue("wdMergeSubTypeOther")]
   Other = 0,
   /// <summary>
   /// Microsoft Access.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeAccess))]
+  [WordInteropEnumValue("wdMergeSubTypeAccess")]
   Access = 1,
   /// <summary>
   /// Office Address List.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeOAL))]
+  [WordInteropEnumValue("wdMergeSubTypeOAL")]
   OAL = 2,
   /// <summary>
   /// OLE database.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeOLEDBWord))]
+  [WordInteropEnumValue("wdMergeSubTypeOLEDBWord")]
   OLEDBWord = 3,
   /// <summary>
   /// Microsoft Works.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeWorks))]
+  [WordInteropEnumValue("wdMergeSubTypeWorks")]
   Works = 4,
   /// <summary>
   /// OLE database.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeOLEDBText))]
+  [WordInteropEnumValue("wdMergeSubTypeOLEDBText")]
   OLEDBText = 5,
   /// <summary>
   /// Microsoft Outlook.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeOutlook))]
+  [WordInteropEnumValue("wdMergeSubTypeOutlook")]
   Outlook = 6,
   /// <summary>
   /// Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeWord))]
+  [WordInteropEnumValue("wdMergeSubTypeWord")]
   Word = 7,
   /// <summary>
   /// Microsoft Word 2000.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeSubType.wdMergeSubTypeWord2000))]
+  [WordInteropEnumValue("wdMergeSubTypeWord2000")]
   Word2000 = 8
 }

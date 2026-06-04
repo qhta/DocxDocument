@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdimemode?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdIMEMode))]
+[WordInteropEnumType("WdIMEMode")]
 public enum IMEMode
 {
   /// <summary>
   /// Does not change the IME mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeNoControl))]
+  [WordInteropEnumValue("wdIMEModeNoControl")]
   NoControl = 0,
   /// <summary>
   /// Activates the IME.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeOn))]
+  [WordInteropEnumValue("wdIMEModeOn")]
   On = 1,
   /// <summary>
   /// Disables the IME and activates Latin text entry.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeOff))]
+  [WordInteropEnumValue("wdIMEModeOff")]
   Off = 2,
   /// <summary>
   /// Activates the IME in full-width hiragana mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeHiragana))]
+  [WordInteropEnumValue("wdIMEModeHiragana")]
   Hiragana = 4,
   /// <summary>
   /// Activates the IME in full-width katakana mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeKatakana))]
+  [WordInteropEnumValue("wdIMEModeKatakana")]
   Katakana = 5,
   /// <summary>
   /// Activates the IME in half-width katakana mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeKatakanaHalf))]
+  [WordInteropEnumValue("wdIMEModeKatakanaHalf")]
   KatakanaHalf = 6,
   /// <summary>
   /// Activates the IME in full-width Latin mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeAlphaFull))]
+  [WordInteropEnumValue("wdIMEModeAlphaFull")]
   AlphaFull = 7,
   /// <summary>
   /// Activates the IME in half-width Latin mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeAlpha))]
+  [WordInteropEnumValue("wdIMEModeAlpha")]
   Alpha = 8,
   /// <summary>
   /// Activates the IME in full-width Hangul mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeHangulFull))]
+  [WordInteropEnumValue("wdIMEModeHangulFull")]
   HangulFull = 9,
   /// <summary>
   /// Activates the IME in half-width Hangul mode.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIMEMode.wdIMEModeHangul))]
+  [WordInteropEnumValue("wdIMEModeHangul")]
   Hangul = 10
 }

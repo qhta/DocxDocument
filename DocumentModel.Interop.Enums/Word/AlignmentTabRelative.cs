@@ -7,17 +7,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabrelative?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdAlignmentTabRelative))]
+[WordInteropEnumType("WdAlignmentTabRelative")]
 public enum AlignmentTabRelative
 {
   /// <summary>
   /// Word calculates tab alignment relative to the margins
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAlignmentTabRelative.wdMargin))]
+  [WordInteropEnumValue("wdMargin")]
   Margin = 0,
   /// <summary>
   /// Word calculates tab alignment relative to the paragraph indents.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAlignmentTabRelative.wdIndent))]
+  [WordInteropEnumValue("wdIndent")]
   Indent = 1
 }

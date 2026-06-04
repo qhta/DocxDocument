@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowizardacttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoWizardActType))]
+[OfficeInteropEnumType("MsoWizardActType")]
 public enum WizardActType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardActType.msoWizardActInactive))]
+  [OfficeInteropEnumValue("msoWizardActInactive")]
   Inactive,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardActType.msoWizardActActive))]
+  [OfficeInteropEnumValue("msoWizardActActive")]
   Active,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardActType.msoWizardActSuspend))]
+  [OfficeInteropEnumValue("msoWizardActSuspend")]
   Suspend,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoWizardActType.msoWizardActResume))]
+  [OfficeInteropEnumValue("msoWizardActResume")]
   Resume
 }

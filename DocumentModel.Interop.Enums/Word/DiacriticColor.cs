@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddiacriticcolor?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDiacriticColor))]
+[WordInteropEnumType("WdDiacriticColor")]
 public enum DiacriticColor
 {
   /// <summary>
   /// Bi-directional language (Arabic, Hebrew, and so forth).
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDiacriticColor.wdDiacriticColorBidi))]
+  [WordInteropEnumValue("wdDiacriticColorBidi")]
   Bidi = 0,
   /// <summary>
   /// Latin style languages.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDiacriticColor.wdDiacriticColorLatin))]
+  [WordInteropEnumValue("wdDiacriticColorLatin")]
   Latin = 1
 }

@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailsystem?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailSystem))]
+[WordInteropEnumType("WdMailSystem")]
 public enum MailSystem
 {
   /// <summary>
   /// No mail system.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailSystem.wdNoMailSystem))]
+  [WordInteropEnumValue("wdNoMailSystem")]
   NoMailSystem = 0,
   /// <summary>
   /// Standard Messaging Application Programming Interface (MAPI) mail system.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailSystem.wdMAPI))]
+  [WordInteropEnumValue("wdMAPI")]
   MAPI = 1,
   /// <summary>
   /// PowerTalk mail system.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailSystem.wdPowerTalk))]
+  [WordInteropEnumValue("wdPowerTalk")]
   PowerTalk = 2,
   /// <summary>
   /// Both a standard Messaging Application Programming Interface (MAPI) mail system and a PowerTalk mail system.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailSystem.wdMAPIandPowerTalk))]
+  [WordInteropEnumValue("wdMAPIandPowerTalk")]
   MAPIandPowerTalk = 3
 }

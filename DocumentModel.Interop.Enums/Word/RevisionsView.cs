@@ -7,17 +7,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsview?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisionsView))]
+[WordInteropEnumType("WdRevisionsView")]
 public enum RevisionsView
 {
   /// <summary>
   /// Displays the document with formatting and content changes applied.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsView.wdRevisionsViewFinal))]
+  [WordInteropEnumValue("wdRevisionsViewFinal")]
   Final = 0,
   /// <summary>
   /// Displays the document before changes were made.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisionsView.wdRevisionsViewOriginal))]
+  [WordInteropEnumValue("wdRevisionsViewOriginal")]
   Original = 1
 }

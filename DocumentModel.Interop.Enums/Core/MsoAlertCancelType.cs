@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertcanceltype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoAlertCancelType))]
+[OfficeInteropEnumType("MsoAlertCancelType")]
 public enum AlertCancelType
 {
   /// <summary>
   /// Default behavior for canceling an alert.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelDefault))]
+  [OfficeInteropEnumValue("msoAlertCancelDefault")]
   Default = -1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelFirst))]
+  [OfficeInteropEnumValue("msoAlertCancelFirst")]
   First,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelSecond))]
+  [OfficeInteropEnumValue("msoAlertCancelSecond")]
   Second,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelThird))]
+  [OfficeInteropEnumValue("msoAlertCancelThird")]
   Third,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelFourth))]
+  [OfficeInteropEnumValue("msoAlertCancelFourth")]
   Fourth,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoAlertCancelType.msoAlertCancelFifth))]
+  [OfficeInteropEnumValue("msoAlertCancelFifth")]
   Fifth
 }

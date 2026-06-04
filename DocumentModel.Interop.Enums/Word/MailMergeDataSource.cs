@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedatasource?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMailMergeDataSource))]
+[WordInteropEnumType("WdMailMergeDataSource")]
 public enum MailMergeDataSourceType
 {
   /// <summary>
   /// From Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromWord))]
+  [WordInteropEnumValue("wdMergeInfoFromWord")]
   MergeInfoFromWord = 0,
   /// <summary>
   /// From Microsoft Access using Dynamic Data Exchange (DDE).
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromAccessDDE))]
+  [WordInteropEnumValue("wdMergeInfoFromAccessDDE")]
   MergeInfoFromAccessDDE = 1,
   /// <summary>
   /// From Microsoft Excel using DDE.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromExcelDDE))]
+  [WordInteropEnumValue("wdMergeInfoFromExcelDDE")]
   MergeInfoFromExcelDDE = 2,
   /// <summary>
   /// From MSQuery using DDE.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromMSQueryDDE))]
+  [WordInteropEnumValue("wdMergeInfoFromMSQueryDDE")]
   MergeInfoFromMSQueryDDE = 3,
   /// <summary>
   /// From an Open Database Connectivity (ODBC) connection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromODBC))]
+  [WordInteropEnumValue("wdMergeInfoFromODBC")]
   MergeInfoFromODBC = 4,
   /// <summary>
   /// From an Office Data Source Object (ODSO).
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdMergeInfoFromODSO))]
+  [WordInteropEnumValue("wdMergeInfoFromODSO")]
   MergeInfoFromODSO = 5,
   /// <summary>
   /// No merge information provided.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMailMergeDataSource.wdNoMergeInfo))]
+  [WordInteropEnumValue("wdNoMergeInfo")]
   NoMergeInfo = -1
 }

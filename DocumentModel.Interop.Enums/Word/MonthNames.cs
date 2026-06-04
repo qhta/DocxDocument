@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmonthnames?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMonthNames))]
+[WordInteropEnumType("WdMonthNames")]
 public enum MonthNames
 {
   /// <summary>
   /// Arabic format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMonthNames.wdMonthNamesArabic))]
+  [WordInteropEnumValue("wdMonthNamesArabic")]
   Arabic = 0,
   /// <summary>
   /// English format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMonthNames.wdMonthNamesEnglish))]
+  [WordInteropEnumValue("wdMonthNamesEnglish")]
   English = 1,
   /// <summary>
   /// French format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMonthNames.wdMonthNamesFrench))]
+  [WordInteropEnumValue("wdMonthNamesFrench")]
   French = 2
 }

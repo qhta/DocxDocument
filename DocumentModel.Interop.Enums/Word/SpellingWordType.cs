@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspellingwordtype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSpellingWordType))]
+[WordInteropEnumType("WdSpellingWordType")]
 public enum SpellingWordType
 {
   /// <summary>
   /// Spellword searching.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdSpellword))]
+  [WordInteropEnumValue("wdSpellword")]
   Spellword = 0,
   /// <summary>
   /// Wildcard searching.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdWildcard))]
+  [WordInteropEnumValue("wdWildcard")]
   Wildcard = 1,
   /// <summary>
   /// Anagram searching.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSpellingWordType.wdAnagram))]
+  [WordInteropEnumValue("wdAnagram")]
   Anagram = 2
 }

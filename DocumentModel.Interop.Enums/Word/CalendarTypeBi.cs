@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcalendartypebi?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCalendarTypeBi))]
+[WordInteropEnumType("WdCalendarTypeBi")]
 public enum CalendarTypeBi
 {
   /// <summary>
   /// Bi-directional calendar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarTypeBi.wdCalendarTypeBidi))]
+  [WordInteropEnumValue("wdCalendarTypeBidi")]
   Bidi = 99,
   /// <summary>
   /// Gregorian calendar.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarTypeBi.wdCalendarTypeGregorian))]
+  [WordInteropEnumValue("wdCalendarTypeGregorian")]
   Gregorian = 100
 }

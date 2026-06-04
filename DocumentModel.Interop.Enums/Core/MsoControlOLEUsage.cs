@@ -7,27 +7,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontrololeusage?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoControlOLEUsage))]
+[OfficeInteropEnumType("MsoControlOLEUsage")]
 public enum ControlOLEUsage
 {
   /// <summary>
   /// Control runs on neither client nor server.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoControlOLEUsage.msoControlOLEUsageNeither))]
+  [OfficeInteropEnumValue("msoControlOLEUsageNeither")]
   Neither,
   /// <summary>
   /// Server-only control.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoControlOLEUsage.msoControlOLEUsageServer))]
+  [OfficeInteropEnumValue("msoControlOLEUsageServer")]
   Server,
   /// <summary>
   /// Client-only control.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoControlOLEUsage.msoControlOLEUsageClient))]
+  [OfficeInteropEnumValue("msoControlOLEUsageClient")]
   Client,
   /// <summary>
   /// Control runs on both client and server.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoControlOLEUsage.msoControlOLEUsageBoth))]
+  [OfficeInteropEnumValue("msoControlOLEUsageBoth")]
   Both
 }

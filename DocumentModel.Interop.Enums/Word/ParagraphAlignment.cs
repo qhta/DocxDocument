@@ -6,52 +6,52 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdparagraphalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdParagraphAlignment))]
+[WordInteropEnumType("WdParagraphAlignment")]
 public enum ParagraphAlignment
 {
   /// <summary>
   /// Left-aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft))]
+  [WordInteropEnumValue("wdAlignParagraphLeft")]
   Left = 0,
   /// <summary>
   /// Center-aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter))]
+  [WordInteropEnumValue("wdAlignParagraphCenter")]
   Center = 1,
   /// <summary>
   /// Right-aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphRight))]
+  [WordInteropEnumValue("wdAlignParagraphRight")]
   Right = 2,
   /// <summary>
   /// Fully justified.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphJustify))]
+  [WordInteropEnumValue("wdAlignParagraphJustify")]
   Justify = 3,
   /// <summary>
   /// Paragraph characters are distributed to fill the entire width of the paragraph.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphDistribute))]
+  [WordInteropEnumValue("wdAlignParagraphDistribute")]
   Distribute = 4,
   /// <summary>
   /// Justified with a medium character compression ratio.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphJustifyMed))]
+  [WordInteropEnumValue("wdAlignParagraphJustifyMed")]
   JustifyMed = 5,
   /// <summary>
   /// Justified with a high character compression ratio.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphJustifyHi))]
+  [WordInteropEnumValue("wdAlignParagraphJustifyHi")]
   JustifyHi = 7,
   /// <summary>
   /// Justified with a low character compression ratio.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphJustifyLow))]
+  [WordInteropEnumValue("wdAlignParagraphJustifyLow")]
   JustifyLow = 8,
   /// <summary>
   /// Justified according to Thai formatting layout.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphThaiJustify))]
+  [WordInteropEnumValue("wdAlignParagraphThaiJustify")]
   ThaiJustify = 9
 }

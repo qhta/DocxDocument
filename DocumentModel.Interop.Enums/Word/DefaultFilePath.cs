@@ -6,92 +6,92 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddefaultfilepath?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDefaultFilePath))]
+[WordInteropEnumType("WdDefaultFilePath")]
 public enum DefaultFilePath
 {
   /// <summary>
   /// Documents path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdDocumentsPath))]
+  [WordInteropEnumValue("wdDocumentsPath")]
   DocumentsPath = 0,
   /// <summary>
   /// Pictures path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdPicturesPath))]
+  [WordInteropEnumValue("wdPicturesPath")]
   PicturesPath = 1,
   /// <summary>
   /// User templates path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdUserTemplatesPath))]
+  [WordInteropEnumValue("wdUserTemplatesPath")]
   UserTemplatesPath = 2,
   /// <summary>
   /// Workgroup templates path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdWorkgroupTemplatesPath))]
+  [WordInteropEnumValue("wdWorkgroupTemplatesPath")]
   WorkgroupTemplatesPath = 3,
   /// <summary>
   /// User Options path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdUserOptionsPath))]
+  [WordInteropEnumValue("wdUserOptionsPath")]
   UserOptionsPath = 4,
   /// <summary>
   /// Path for Auto Recover files.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdAutoRecoverPath))]
+  [WordInteropEnumValue("wdAutoRecoverPath")]
   AutoRecoverPath = 5,
   /// <summary>
   /// Tools path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdToolsPath))]
+  [WordInteropEnumValue("wdToolsPath")]
   ToolsPath = 6,
   /// <summary>
   /// Tutorial path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdTutorialPath))]
+  [WordInteropEnumValue("wdTutorialPath")]
   TutorialPath = 7,
   /// <summary>
   /// Startup path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdStartupPath))]
+  [WordInteropEnumValue("wdStartupPath")]
   StartupPath = 8,
   /// <summary>
   /// Program path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdProgramPath))]
+  [WordInteropEnumValue("wdProgramPath")]
   ProgramPath = 9,
   /// <summary>
   /// Graphics filters path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdGraphicsFiltersPath))]
+  [WordInteropEnumValue("wdGraphicsFiltersPath")]
   GraphicsFiltersPath = 10,
   /// <summary>
   /// Text converters path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdTextConvertersPath))]
+  [WordInteropEnumValue("wdTextConvertersPath")]
   TextConvertersPath = 11,
   /// <summary>
   /// Proofing tools path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdProofingToolsPath))]
+  [WordInteropEnumValue("wdProofingToolsPath")]
   ProofingToolsPath = 12,
   /// <summary>
   /// Temp file path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdTempFilePath))]
+  [WordInteropEnumValue("wdTempFilePath")]
   TempFilePath = 13,
   /// <summary>
   /// Current folder path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdCurrentFolderPath))]
+  [WordInteropEnumValue("wdCurrentFolderPath")]
   CurrentFolderPath = 14,
   /// <summary>
   /// Style Gallery path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdStyleGalleryPath))]
+  [WordInteropEnumValue("wdStyleGalleryPath")]
   StyleGalleryPath = 15,
   /// <summary>
   /// Border art path.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDefaultFilePath.wdBorderArtPath))]
+  [WordInteropEnumValue("wdBorderArtPath")]
   BorderArtPath = 19
 }

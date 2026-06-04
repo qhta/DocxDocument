@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoletype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOLEType))]
+[WordInteropEnumType("WdOLEType")]
 public enum OLEType
 {
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOLEType.wdOLELink))]
+  [WordInteropEnumValue("wdOLELink")]
   Link = 0,
   /// <summary>
   /// Embedded OLE object.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOLEType.wdOLEEmbed))]
+  [WordInteropEnumValue("wdOLEEmbed")]
   Embed = 1,
   /// <summary>
   /// OLE control.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOLEType.wdOLEControl))]
+  [WordInteropEnumValue("wdOLEControl")]
   Control = 2
 }

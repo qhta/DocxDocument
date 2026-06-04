@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutangletype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoCalloutAngleType))]
+[OfficeInteropEnumType("MsoCalloutAngleType")]
 public enum CalloutAngleType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngleMixed))]
+  [OfficeInteropEnumValue("msoCalloutAngleMixed")]
   Mixed = -2,
   /// <summary>
   /// Default angle. Angle can be changed as you drag the object.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngleAutomatic))]
+  [OfficeInteropEnumValue("msoCalloutAngleAutomatic")]
   Automatic = 1,
   /// <summary>
   /// 30Ëš angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngle30))]
+  [OfficeInteropEnumValue("msoCalloutAngle30")]
   ThirtyDegrees = 2,
   /// <summary>
   /// 45Ëš angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngle45))]
+  [OfficeInteropEnumValue("msoCalloutAngle45")]
   FortyFiveDegrees = 3,
   /// <summary>
   /// 60Ëš angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngle60))]
+  [OfficeInteropEnumValue("msoCalloutAngle60")]
   SixtyDegrees = 4,
   /// <summary>
   /// 90Ëš angle.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCalloutAngleType.msoCalloutAngle90))]
+  [OfficeInteropEnumValue("msoCalloutAngle90")]
   NinetyDegrees = 5
 }

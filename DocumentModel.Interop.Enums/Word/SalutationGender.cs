@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsalutationgender?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSalutationGender))]
+[WordInteropEnumType("WdSalutationGender")]
 public enum SalutationGender
 {
   /// <summary>
   /// Female gender.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSalutationGender.wdGenderFemale))]
+  [WordInteropEnumValue("wdGenderFemale")]
   Female = 0,
   /// <summary>
   /// Male gender.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSalutationGender.wdGenderMale))]
+  [WordInteropEnumValue("wdGenderMale")]
   Male = 1,
   /// <summary>
   /// Neutral gender.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSalutationGender.wdGenderNeutral))]
+  [WordInteropEnumValue("wdGenderNeutral")]
   Neutral = 2,
   /// <summary>
   /// Unknown gender.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSalutationGender.wdGenderUnknown))]
+  [WordInteropEnumValue("wdGenderUnknown")]
   Unknown = 3
 }

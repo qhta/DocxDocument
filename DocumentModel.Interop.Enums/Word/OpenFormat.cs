@@ -6,117 +6,117 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdopenformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOpenFormat))]
+[WordInteropEnumType("WdOpenFormat")]
 public enum OpenFormat
 {
   /// <summary>
   /// The existing format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatAuto))]
+  [WordInteropEnumValue("wdOpenFormatAuto")]
   Auto = 0,
   /// <summary>
   /// Microsoft Word format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatDocument))]
+  [WordInteropEnumValue("wdOpenFormatDocument")]
   Document = 1,
   /// <summary>
   /// Microsoft Word 97 document format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatDocument97))]
+  [WordInteropEnumValue("wdOpenFormatDocument97")]
   Document97 = 1,
   /// <summary>
   /// As a Microsoft Word template.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatTemplate))]
+  [WordInteropEnumValue("wdOpenFormatTemplate")]
   Template = 2,
   /// <summary>
   /// Word 97 template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatTemplate97))]
+  [WordInteropEnumValue("wdOpenFormatTemplate97")]
   Template97 = 2,
   /// <summary>
   /// Rich text format (RTF).
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatRTF))]
+  [WordInteropEnumValue("wdOpenFormatRTF")]
   RTF = 3,
   /// <summary>
   /// Unencoded text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatText))]
+  [WordInteropEnumValue("wdOpenFormatText")]
   Text = 4,
   /// <summary>
   /// Unicode text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatUnicodeText))]
+  [WordInteropEnumValue("wdOpenFormatUnicodeText")]
   UnicodeText = 5,
   /// <summary>
   /// Encoded text format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatEncodedText))]
+  [WordInteropEnumValue("wdOpenFormatEncodedText")]
   EncodedText = 5,
   /// <summary>
   /// A Microsoft Word format that is backward compatible with earlier versions of Microsoft Word.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatAllWord))]
+  [WordInteropEnumValue("wdOpenFormatAllWord")]
   AllWord = 6,
   /// <summary>
   /// HTML format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatWebPages))]
+  [WordInteropEnumValue("wdOpenFormatWebPages")]
   WebPages = 7,
   /// <summary>
   /// XML format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXML))]
+  [WordInteropEnumValue("wdOpenFormatXML")]
   XML = 8,
   /// <summary>
   /// XML document format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLDocument))]
+  [WordInteropEnumValue("wdOpenFormatXMLDocument")]
   XMLDocument = 9,
   /// <summary>
   /// XML document format with macros enabled.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLDocumentMacroEnabled))]
+  [WordInteropEnumValue("wdOpenFormatXMLDocumentMacroEnabled")]
   XMLDocumentMacroEnabled = 10,
   /// <summary>
   /// XML template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLTemplate))]
+  [WordInteropEnumValue("wdOpenFormatXMLTemplate")]
   XMLTemplate = 11,
   /// <summary>
   /// XML template format with macros enabled.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLTemplateMacroEnabled))]
+  [WordInteropEnumValue("wdOpenFormatXMLTemplateMacroEnabled")]
   XMLTemplateMacroEnabled = 12,
   /// <summary>
   /// Word template format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatAllWordTemplates))]
+  [WordInteropEnumValue("wdOpenFormatAllWordTemplates")]
   AllWordTemplates = 13,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLDocumentSerialized))]
+  [WordInteropEnumValue("wdOpenFormatXMLDocumentSerialized")]
   XMLDocumentSerialized = 14,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLDocumentMacroEnabledSerialized))]
+  [WordInteropEnumValue("wdOpenFormatXMLDocumentMacroEnabledSerialized")]
   XMLDocumentMacroEnabledSerialized = 15,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLTemplateSerialized))]
+  [WordInteropEnumValue("wdOpenFormatXMLTemplateSerialized")]
   XMLTemplateSerialized = 16,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatXMLTemplateMacroEnabledSerialized))]
+  [WordInteropEnumValue("wdOpenFormatXMLTemplateMacroEnabledSerialized")]
   XMLTemplateMacroEnabledSerialized = 17,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOpenFormat.wdOpenFormatOpenDocumentText))]
+  [WordInteropEnumValue("wdOpenFormatOpenDocumentText")]
   OpenDocumentText = 18
 }

@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptypemerged?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdWrapTypeMerged))]
+[WordInteropEnumType("WdWrapTypeMerged")]
 public enum WrapTypeMerged
 {
   /// <summary>
   /// In line with text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeInline))]
+  [WordInteropEnumValue("wdWrapMergeInline")]
   Inline = 0,
   /// <summary>
   /// Square.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeSquare))]
+  [WordInteropEnumValue("wdWrapMergeSquare")]
   Square = 1,
   /// <summary>
   /// Tight.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeTight))]
+  [WordInteropEnumValue("wdWrapMergeTight")]
   Tight = 2,
   /// <summary>
   /// Behind text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeBehind))]
+  [WordInteropEnumValue("wdWrapMergeBehind")]
   Behind = 3,
   /// <summary>
   /// In front of text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeFront))]
+  [WordInteropEnumValue("wdWrapMergeFront")]
   Front = 4,
   /// <summary>
   /// Through.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeThrough))]
+  [WordInteropEnumValue("wdWrapMergeThrough")]
   Through = 5,
   /// <summary>
   /// Top and bottom.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdWrapTypeMerged.wdWrapMergeTopBottom))]
+  [WordInteropEnumValue("wdWrapMergeTopBottom")]
   TopBottom = 6
 }

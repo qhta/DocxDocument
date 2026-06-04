@@ -6,22 +6,22 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathvertaligntype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOMathVertAlignType))]
+[WordInteropEnumType("WdOMathVertAlignType")]
 public enum OMathVertAlignType
 {
   /// <summary>
   /// Vertically centers the equation in the shape canvas or line.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathVertAlignType.wdOMathVertAlignCenter))]
+  [WordInteropEnumValue("wdOMathVertAlignCenter")]
   Center = 0,
   /// <summary>
   /// Aligns the equation on the top of the shape canvas or line.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathVertAlignType.wdOMathVertAlignTop))]
+  [WordInteropEnumValue("wdOMathVertAlignTop")]
   Top = 1,
   /// <summary>
   /// Aligns the equation on the bottom of the shape canvas or line.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathVertAlignType.wdOMathVertAlignBottom))]
+  [WordInteropEnumValue("wdOMathVertAlignBottom")]
   Bottom = 2
 }

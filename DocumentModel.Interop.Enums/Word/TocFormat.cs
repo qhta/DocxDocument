@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtocformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdTocFormat))]
+[WordInteropEnumType("WdTocFormat")]
 public enum TocFormat
 {
   /// <summary>
   /// Template formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCTemplate))]
+  [WordInteropEnumValue("wdTOCTemplate")]
   Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCClassic))]
+  [WordInteropEnumValue("wdTOCClassic")]
   Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCDistinctive))]
+  [WordInteropEnumValue("wdTOCDistinctive")]
   Distinctive = 2,
   /// <summary>
   /// Fancy formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCFancy))]
+  [WordInteropEnumValue("wdTOCFancy")]
   Fancy = 3,
   /// <summary>
   /// Modern formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCModern))]
+  [WordInteropEnumValue("wdTOCModern")]
   Modern = 4,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCFormal))]
+  [WordInteropEnumValue("wdTOCFormal")]
   Formal = 5,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdTocFormat.wdTOCSimple))]
+  [WordInteropEnumValue("wdTOCSimple")]
   Simple = 6
 }

@@ -6,57 +6,57 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcharactercase?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCharacterCase))]
+[WordInteropEnumType("WdCharacterCase")]
 public enum CharacterCase
 {
   /// <summary>
   /// Lower case.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdLowerCase))]
+  [WordInteropEnumValue("wdLowerCase")]
   LowerCase = 0,
   /// <summary>
   /// Upper case.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdUpperCase))]
+  [WordInteropEnumValue("wdUpperCase")]
   UpperCase = 1,
   /// <summary>
   /// Title word case.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdTitleWord))]
+  [WordInteropEnumValue("wdTitleWord")]
   TitleWord = 2,
   /// <summary>
   /// Sentence case.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdTitleSentence))]
+  [WordInteropEnumValue("wdTitleSentence")]
   TitleSentence = 4,
   /// <summary>
   /// Toggles upper case characters to lower, and lower case characters to upper.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdToggleCase))]
+  [WordInteropEnumValue("wdToggleCase")]
   ToggleCase = 5,
   /// <summary>
   /// Half-width. Used for Japanese characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdHalfWidth))]
+  [WordInteropEnumValue("wdHalfWidth")]
   HalfWidth = 6,
   /// <summary>
   /// Full-width. Used for Japanese characters.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdFullWidth))]
+  [WordInteropEnumValue("wdFullWidth")]
   FullWidth = 7,
   /// <summary>
   /// Katakana characters. Used with Japanese text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdKatakana))]
+  [WordInteropEnumValue("wdKatakana")]
   Katakana = 8,
   /// <summary>
   /// Hiragana characters. Used with Japanese text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdHiragana))]
+  [WordInteropEnumValue("wdHiragana")]
   Hiragana = 9,
   /// <summary>
   /// Toggles between upper, lower, and sentence case.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCharacterCase.wdNextCase))]
+  [WordInteropEnumValue("wdNextCase")]
   NextCase = -1
 }

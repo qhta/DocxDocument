@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocpartinsertoptions?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDocPartInsertOptions))]
+[WordInteropEnumType("WdDocPartInsertOptions")]
 public enum DocPartInsertOptions
 {
   /// <summary>
   /// Inline building block.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocPartInsertOptions.wdInsertContent))]
+  [WordInteropEnumValue("wdInsertContent")]
   Content = 0,
   /// <summary>
   /// Paragraph-level building block.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocPartInsertOptions.wdInsertParagraph))]
+  [WordInteropEnumValue("wdInsertParagraph")]
   Paragraph = 1,
   /// <summary>
   /// Page-level building block.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocPartInsertOptions.wdInsertPage))]
+  [WordInteropEnumValue("wdInsertPage")]
   Page = 2
 }

@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpagenumberalignment?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdPageNumberAlignment))]
+[WordInteropEnumType("WdPageNumberAlignment")]
 public enum PageNumberAlignment
 {
   /// <summary>
   /// Left-aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageNumberAlignment.wdAlignPageNumberLeft))]
+  [WordInteropEnumValue("wdAlignPageNumberLeft")]
   Left = 0,
   /// <summary>
   /// Centered.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageNumberAlignment.wdAlignPageNumberCenter))]
+  [WordInteropEnumValue("wdAlignPageNumberCenter")]
   Center = 1,
   /// <summary>
   /// Right-aligned.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageNumberAlignment.wdAlignPageNumberRight))]
+  [WordInteropEnumValue("wdAlignPageNumberRight")]
   Right = 2,
   /// <summary>
   /// Left-aligned just inside the footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageNumberAlignment.wdAlignPageNumberInside))]
+  [WordInteropEnumValue("wdAlignPageNumberInside")]
   Inside = 3,
   /// <summary>
   /// Right-aligned just outside the footer.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdPageNumberAlignment.wdAlignPageNumberOutside))]
+  [WordInteropEnumValue("wdAlignPageNumberOutside")]
   Outside = 4
 }

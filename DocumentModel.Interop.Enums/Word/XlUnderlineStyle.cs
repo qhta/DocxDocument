@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlunderlinestyle?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlUnderlineStyle))]
+[WordInteropEnumType("XlUnderlineStyle")]
 public enum UnderlineStyle
 {
   /// <summary>
   /// Single underlining.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlUnderlineStyle.xlUnderlineStyleSingle))]
+  [WordInteropEnumValue("xlUnderlineStyleSingle")]
   Single = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlUnderlineStyle.xlUnderlineStyleSingleAccounting))]
+  [WordInteropEnumValue("xlUnderlineStyleSingleAccounting")]
   SingleAccounting = 4,
   /// <summary>
   /// Two thin underlines placed close together.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlUnderlineStyle.xlUnderlineStyleDoubleAccounting))]
+  [WordInteropEnumValue("xlUnderlineStyleDoubleAccounting")]
   DoubleAccounting = 5,
   /// <summary>
   /// No underlining.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlUnderlineStyle.xlUnderlineStyleNone))]
+  [WordInteropEnumValue("xlUnderlineStyleNone")]
   None = -4142,
   /// <summary>
   /// Double thick underline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlUnderlineStyle.xlUnderlineStyleDouble))]
+  [WordInteropEnumValue("xlUnderlineStyleDouble")]
   Double = -4119
 }

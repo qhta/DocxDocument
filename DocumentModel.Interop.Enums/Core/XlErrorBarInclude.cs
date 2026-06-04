@@ -8,27 +8,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbarinclude?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlErrorBarInclude))]
+[OfficeInteropEnumType("XlErrorBarInclude")]
 public enum ErrorBarInclude
 {
   /// <summary>
   /// Both positive and negative error range.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarInclude.xlErrorBarIncludeBoth))]
+  [OfficeInteropEnumValue("xlErrorBarIncludeBoth")]
   Both = 1,
   /// <summary>
   /// Only negative error range.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarInclude.xlErrorBarIncludeMinusValues))]
+  [OfficeInteropEnumValue("xlErrorBarIncludeMinusValues")]
   MinusValues = 3,
   /// <summary>
   /// No error bar range.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarInclude.xlErrorBarIncludeNone))]
+  [OfficeInteropEnumValue("xlErrorBarIncludeNone")]
   None = -4142,
   /// <summary>
   /// Only positive error range.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarInclude.xlErrorBarIncludePlusValues))]
+  [OfficeInteropEnumValue("xlErrorBarIncludePlusValues")]
   PlusValues = 2
 }

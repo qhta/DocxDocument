@@ -7,52 +7,52 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlpiesliceindex?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlPieSliceIndex))]
+[OfficeInteropEnumType("XlPieSliceIndex")]
 public enum PieSliceIndex
 {
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlOuterCounterClockwisePoint))]
+  [OfficeInteropEnumValue("xlOuterCounterClockwisePoint")]
   OuterCounterClockwisePoint = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlOuterCenterPoint))]
+  [OfficeInteropEnumValue("xlOuterCenterPoint")]
   OuterCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlOuterClockwisePoint))]
+  [OfficeInteropEnumValue("xlOuterClockwisePoint")]
   OuterClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlMidClockwiseRadiusPoint))]
+  [OfficeInteropEnumValue("xlMidClockwiseRadiusPoint")]
   MidClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlCenterPoint))]
+  [OfficeInteropEnumValue("xlCenterPoint")]
   CenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlMidCounterClockwiseRadiusPoint))]
+  [OfficeInteropEnumValue("xlMidCounterClockwiseRadiusPoint")]
   MidCounterClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlInnerClockwisePoint))]
+  [OfficeInteropEnumValue("xlInnerClockwisePoint")]
   InnerClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlInnerCenterPoint))]
+  [OfficeInteropEnumValue("xlInnerCenterPoint")]
   InnerCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPieSliceIndex.xlInnerCounterClockwisePoint))]
+  [OfficeInteropEnumValue("xlInnerCounterClockwisePoint")]
   InnerCounterClockwisePoint
 }

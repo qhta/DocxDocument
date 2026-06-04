@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoleplacement?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOLEPlacement))]
+[WordInteropEnumType("WdOLEPlacement")]
 public enum OLEPlacement
 {
   /// <summary>
   /// In line with text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOLEPlacement.wdInLine))]
+  [WordInteropEnumValue("wdInLine")]
   InLine = 0,
   /// <summary>
   /// Float over text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOLEPlacement.wdFloatOverText))]
+  [WordInteropEnumValue("wdFloatOverText")]
   FloatOverText = 1
 }

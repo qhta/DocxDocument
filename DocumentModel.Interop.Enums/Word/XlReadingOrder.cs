@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlreadingorder?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlReadingOrder))]
+[WordInteropEnumType("XlReadingOrder")]
 public enum XlReadingOrder
 {
   /// <summary>
   /// Right-to-left.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlReadingOrder.xlRTL))]
+  [WordInteropEnumValue("xlRTL")]
   RTL = -5004,
   /// <summary>
   /// Left-to-right.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlReadingOrder.xlLTR))]
+  [WordInteropEnumValue("xlLTR")]
   LTR = -5003,
   /// <summary>
   /// According to context.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlReadingOrder.xlContext))]
+  [WordInteropEnumValue("xlContext")]
   Context = -5002
 }

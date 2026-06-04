@@ -6,67 +6,67 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocharacterset?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoCharacterSet))]
+[OfficeInteropEnumType("MsoCharacterSet")]
 public enum CharacterSet
 {
   /// <summary>
   /// Arabic character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetArabic))]
+  [OfficeInteropEnumValue("msoCharacterSetArabic")]
   Arabic = 1,
   /// <summary>
   /// Cyrillic character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetCyrillic))]
+  [OfficeInteropEnumValue("msoCharacterSetCyrillic")]
   Cyrillic,
   /// <summary>
   /// English, Western European, and other Latin script character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetEnglishWesternEuropeanOtherLatinScript))]
+  [OfficeInteropEnumValue("msoCharacterSetEnglishWesternEuropeanOtherLatinScript")]
   EnglishWesternEuropeanOtherLatinScript,
   /// <summary>
   /// Greek character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetGreek))]
+  [OfficeInteropEnumValue("msoCharacterSetGreek")]
   Greek,
   /// <summary>
   /// Hebrew character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetHebrew))]
+  [OfficeInteropEnumValue("msoCharacterSetHebrew")]
   Hebrew,
   /// <summary>
   /// Japanese character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetJapanese))]
+  [OfficeInteropEnumValue("msoCharacterSetJapanese")]
   Japanese,
   /// <summary>
   /// Korean character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetKorean))]
+  [OfficeInteropEnumValue("msoCharacterSetKorean")]
   Korean,
   /// <summary>
   /// Multilingual Unicode character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetMultilingualUnicode))]
+  [OfficeInteropEnumValue("msoCharacterSetMultilingualUnicode")]
   MultilingualUnicode,
   /// <summary>
   /// Simplified Chinese character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetSimplifiedChinese))]
+  [OfficeInteropEnumValue("msoCharacterSetSimplifiedChinese")]
   SimplifiedChinese,
   /// <summary>
   /// Thai character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetThai))]
+  [OfficeInteropEnumValue("msoCharacterSetThai")]
   Thai,
   /// <summary>
   /// Traditional Chinese character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetTraditionalChinese))]
+  [OfficeInteropEnumValue("msoCharacterSetTraditionalChinese")]
   TraditionalChinese,
   /// <summary>
   /// Vietnamese character set.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCharacterSet.msoCharacterSetVietnamese))]
+  [OfficeInteropEnumValue("msoCharacterSetVietnamese")]
   Vietnamese
 }

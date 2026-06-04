@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfootnotelocation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFootnoteLocation))]
+[WordInteropEnumType("WdFootnoteLocation")]
 public enum FootnoteLocation
 {
   /// <summary>
   /// At bottom of current page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFootnoteLocation.wdBottomOfPage))]
+  [WordInteropEnumValue("wdBottomOfPage")]
   BottomOfPage = 0,
   /// <summary>
   /// Beneath current text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFootnoteLocation.wdBeneathText))]
+  [WordInteropEnumValue("wdBeneathText")]
   BeneathText = 1
 }

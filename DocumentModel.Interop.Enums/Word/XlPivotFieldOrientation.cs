@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpivotfieldorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation))]
+[WordInteropEnumType("XlPivotFieldOrientation")]
 public enum PivotFieldOrientation
 {
   /// <summary>
   /// Hidden
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation.xlHidden))]
+  [WordInteropEnumValue("xlHidden")]
   Hidden = 0,
   /// <summary>
   /// Row
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation.xlRowField))]
+  [WordInteropEnumValue("xlRowField")]
   RowField = 1,
   /// <summary>
   /// Column
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation.xlColumnField))]
+  [WordInteropEnumValue("xlColumnField")]
   ColumnField = 2,
   /// <summary>
   /// Page
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation.xlPageField))]
+  [WordInteropEnumValue("xlPageField")]
   PageField = 3,
   /// <summary>
   /// Data
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlPivotFieldOrientation.xlDataField))]
+  [WordInteropEnumValue("xlDataField")]
   DataField = 4
 }

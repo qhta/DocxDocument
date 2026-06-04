@@ -8,167 +8,167 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartitem?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlChartItem))]
+[OfficeInteropEnumType("XlChartItem")]
 public enum ChartItem
 {
   /// <summary>
   /// Data label.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlDataLabel))]
+  [OfficeInteropEnumValue("xlDataLabel")]
   DataLabel = 0,
   /// <summary>
   /// Chart area.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlChartArea))]
+  [OfficeInteropEnumValue("xlChartArea")]
   ChartArea = 2,
   /// <summary>
   /// Series lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlSeries))]
+  [OfficeInteropEnumValue("xlSeries")]
   Series = 3,
   /// <summary>
   /// Chart title.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlChartTitle))]
+  [OfficeInteropEnumValue("xlChartTitle")]
   ChartTitle = 4,
   /// <summary>
   /// Walls.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlWalls))]
+  [OfficeInteropEnumValue("xlWalls")]
   Walls = 5,
   /// <summary>
   /// Corners.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlCorners))]
+  [OfficeInteropEnumValue("xlCorners")]
   Corners = 6,
   /// <summary>
   /// Data table.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlDataTable))]
+  [OfficeInteropEnumValue("xlDataTable")]
   DataTable = 7,
   /// <summary>
   /// Trend line.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlTrendline))]
+  [OfficeInteropEnumValue("xlTrendline")]
   Trendline = 8,
   /// <summary>
   /// Y error bars.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlErrorBars))]
+  [OfficeInteropEnumValue("xlErrorBars")]
   ErrorBars = 9,
   /// <summary>
   /// X error bars.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlXErrorBars))]
+  [OfficeInteropEnumValue("xlXErrorBars")]
   XErrorBars = 10,
   /// <summary>
   /// Y error bars.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlYErrorBars))]
+  [OfficeInteropEnumValue("xlYErrorBars")]
   YErrorBars = 11,
   /// <summary>
   /// Legend entry.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlLegendEntry))]
+  [OfficeInteropEnumValue("xlLegendEntry")]
   LegendEntry = 12,
   /// <summary>
   /// Legend key.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlLegendKey))]
+  [OfficeInteropEnumValue("xlLegendKey")]
   LegendKey = 13,
   /// <summary>
   /// Shape.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlShape))]
+  [OfficeInteropEnumValue("xlShape")]
   Shape = 14,
   /// <summary>
   /// Major gridlines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlMajorGridlines))]
+  [OfficeInteropEnumValue("xlMajorGridlines")]
   MajorGridlines = 15,
   /// <summary>
   /// Minor gridlines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlMinorGridlines))]
+  [OfficeInteropEnumValue("xlMinorGridlines")]
   MinorGridlines = 16,
   /// <summary>
   /// Axis title.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlAxisTitle))]
+  [OfficeInteropEnumValue("xlAxisTitle")]
   AxisTitle = 17,
   /// <summary>
   /// Up bars.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlUpBars))]
+  [OfficeInteropEnumValue("xlUpBars")]
   UpBars = 18,
   /// <summary>
   /// Plot area.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlPlotArea))]
+  [OfficeInteropEnumValue("xlPlotArea")]
   PlotArea = 19,
   /// <summary>
   /// Down bars.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlDownBars))]
+  [OfficeInteropEnumValue("xlDownBars")]
   DownBars = 20,
   /// <summary>
   /// Axis.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlAxis))]
+  [OfficeInteropEnumValue("xlAxis")]
   Axis = 21,
   /// <summary>
   /// Series lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlSeriesLines))]
+  [OfficeInteropEnumValue("xlSeriesLines")]
   SeriesLines = 22,
   /// <summary>
   /// Floor.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlFloor))]
+  [OfficeInteropEnumValue("xlFloor")]
   Floor = 23,
   /// <summary>
   /// Legend.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlLegend))]
+  [OfficeInteropEnumValue("xlLegend")]
   Legend = 24,
   /// <summary>
   /// HiLo lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlHiLoLines))]
+  [OfficeInteropEnumValue("xlHiLoLines")]
   HiLoLines = 25,
   /// <summary>
   /// Drop lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlDropLines))]
+  [OfficeInteropEnumValue("xlDropLines")]
   DropLines = 26,
   /// <summary>
   /// Radar axis labels.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlRadarAxisLabels))]
+  [OfficeInteropEnumValue("xlRadarAxisLabels")]
   RadarAxisLabels = 27,
   /// <summary>
   /// Nothing.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlNothing))]
+  [OfficeInteropEnumValue("xlNothing")]
   Nothing = 28,
   /// <summary>
   /// Leader lines.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlLeaderLines))]
+  [OfficeInteropEnumValue("xlLeaderLines")]
   LeaderLines = 29,
   /// <summary>
   /// Display unit label.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlDisplayUnitLabel))]
+  [OfficeInteropEnumValue("xlDisplayUnitLabel")]
   DisplayUnitLabel = 30,
   /// <summary>
   /// PivotChart field button.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlPivotChartFieldButton))]
+  [OfficeInteropEnumValue("xlPivotChartFieldButton")]
   PivotChartFieldButton = 31,
   /// <summary>
   /// PivotChart drop zone.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlChartItem.xlPivotChartDropZone))]
+  [OfficeInteropEnumValue("xlPivotChartDropZone")]
   PivotChartDropZone = 32
 }

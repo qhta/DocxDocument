@@ -7,32 +7,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosortby?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoSortBy))]
+[OfficeInteropEnumType("MsoSortBy")]
 public enum SortBy
 {
   /// <summary>
   /// File name.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSortBy.msoSortByFileName))]
+  [OfficeInteropEnumValue("msoSortByFileName")]
   FileName = 1,
   /// <summary>
   /// File size.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSortBy.msoSortBySize))]
+  [OfficeInteropEnumValue("msoSortBySize")]
   Size,
   /// <summary>
   /// File type.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSortBy.msoSortByFileType))]
+  [OfficeInteropEnumValue("msoSortByFileType")]
   FileType,
   /// <summary>
   /// Last modified date.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSortBy.msoSortByLastModified))]
+  [OfficeInteropEnumValue("msoSortByLastModified")]
   LastModified,
   /// <summary>
   /// No sort.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSortBy.msoSortByNone))]
+  [OfficeInteropEnumValue("msoSortByNone")]
   None
 }

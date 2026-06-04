@@ -8,17 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbardirection?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlErrorBarDirection))]
+[OfficeInteropEnumType("XlErrorBarDirection")]
 public enum ErrorBarDirection
 {
   /// <summary>
   /// Bars run parallel to the Y axis for X-axis values.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarDirection.xlChartX))]
+  [OfficeInteropEnumValue("xlChartX")]
   X = -4168,
   /// <summary>
   /// Bars run parallel to the X axis for Y-axis values.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlErrorBarDirection.xlChartY))]
+  [OfficeInteropEnumValue("xlChartY")]
   Y = 1
 }

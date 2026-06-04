@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmergeformatfrom?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMergeFormatFrom))]
+[WordInteropEnumType("WdMergeFormatFrom")]
 public enum MergeFormatFrom
 {
   /// <summary>
   /// Retains formatting from the original document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeFormatFrom.wdMergeFormatFromOriginal))]
+  [WordInteropEnumValue("wdMergeFormatFromOriginal")]
   Original = 0,
   /// <summary>
   /// Retains formatting from the revised document.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeFormatFrom.wdMergeFormatFromRevised))]
+  [WordInteropEnumValue("wdMergeFormatFromRevised")]
   Revised = 1,
   /// <summary>
   /// Prompt the user for the document to use for formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMergeFormatFrom.wdMergeFormatFromPrompt))]
+  [WordInteropEnumValue("wdMergeFormatFromPrompt")]
   Prompt = 2
 }

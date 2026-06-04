@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncavailabletype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoSyncAvailableType))]
+[OfficeInteropEnumType("MsoSyncAvailableType")]
 public enum SyncAvailableType
 {
   /// <summary>
   /// No synchronization is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSyncAvailableType.msoSyncAvailableNone))]
+  [OfficeInteropEnumValue("msoSyncAvailableNone")]
   None,
   /// <summary>
   /// Synchronization is available offline only.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSyncAvailableType.msoSyncAvailableOffline))]
+  [OfficeInteropEnumValue("msoSyncAvailableOffline")]
   Offline,
   /// <summary>
   /// Synchronization is available offline and online.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoSyncAvailableType.msoSyncAvailableAnywhere))]
+  [OfficeInteropEnumValue("msoSyncAvailableAnywhere")]
   Anywhere
 }

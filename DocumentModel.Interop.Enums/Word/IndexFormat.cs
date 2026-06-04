@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdindexformat?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdIndexFormat))]
+[WordInteropEnumType("WdIndexFormat")]
 public enum IndexFormat
 {
   /// <summary>
   /// From template.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexTemplate))]
+  [WordInteropEnumValue("wdIndexTemplate")]
   Template = 0,
   /// <summary>
   /// Classic.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexClassic))]
+  [WordInteropEnumValue("wdIndexClassic")]
   Classic = 1,
   /// <summary>
   /// Fancy.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexFancy))]
+  [WordInteropEnumValue("wdIndexFancy")]
   Fancy = 2,
   /// <summary>
   /// Modern.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexModern))]
+  [WordInteropEnumValue("wdIndexModern")]
   Modern = 3,
   /// <summary>
   /// Bulleted.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexBulleted))]
+  [WordInteropEnumValue("wdIndexBulleted")]
   Bulleted = 4,
   /// <summary>
   /// Formal.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexFormal))]
+  [WordInteropEnumValue("wdIndexFormal")]
   Formal = 5,
   /// <summary>
   /// Simple.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdIndexFormat.wdIndexSimple))]
+  [WordInteropEnumValue("wdIndexSimple")]
   Simple = 6
 }

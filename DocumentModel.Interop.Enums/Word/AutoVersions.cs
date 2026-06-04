@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdautoversions?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdAutoVersions))]
+[WordInteropEnumType("WdAutoVersions")]
 public enum AutoVersions
 {
   /// <summary>
   /// No document version is saved.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoVersions.wdAutoVersionOff))]
+  [WordInteropEnumValue("wdAutoVersionOff")]
   ff = 0,
   /// <summary>
   /// A document version is saved automatically when the document is closed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoVersions.wdAutoVersionOnClose))]
+  [WordInteropEnumValue("wdAutoVersionOnClose")]
   nClose = 1
 }

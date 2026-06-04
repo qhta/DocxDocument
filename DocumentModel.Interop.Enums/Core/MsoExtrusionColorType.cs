@@ -8,22 +8,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoextrusioncolortype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoExtrusionColorType))]
+[OfficeInteropEnumType("MsoExtrusionColorType")]
 public enum ExtrusionColorType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoExtrusionColorType.msoExtrusionColorTypeMixed))]
+  [OfficeInteropEnumValue("msoExtrusionColorTypeMixed")]
   TypeMixed = -2,
   /// <summary>
   /// Extrusion color is based on shape fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoExtrusionColorType.msoExtrusionColorAutomatic))]
+  [OfficeInteropEnumValue("msoExtrusionColorAutomatic")]
   Automatic = 1,
   /// <summary>
   /// Extrusion color is independent of shape fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoExtrusionColorType.msoExtrusionColorCustom))]
+  [OfficeInteropEnumValue("msoExtrusionColorCustom")]
   Custom = 2
 }

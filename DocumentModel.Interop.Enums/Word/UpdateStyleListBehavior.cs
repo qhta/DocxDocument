@@ -7,19 +7,19 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdupdatestylelistbehavior?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdUpdateStyleListBehavior))]
+[WordInteropEnumType("WdUpdateStyleListBehavior")]
 public enum UpdateStyleListBehavior
 {
   /// <summary>
   /// Keeps the existing numbering or bullets pattern for all other paragraphs that use the same style and does not
   /// apply the numbering or bullets pattern of the selection.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdUpdateStyleListBehavior.wdListBehaviorKeepPreviousPattern))]
+  [WordInteropEnumValue("wdListBehaviorKeepPreviousPattern")]
   KeepPreviousPattern = 0,
   /// <summary>
   /// Adds the numbering or bullets pattern of the selection to all paragraphs in the document that use the same
   /// style.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdUpdateStyleListBehavior.wdListBehaviorAddBulletsNumbering))]
+  [WordInteropEnumValue("wdListBehaviorAddBulletsNumbering")]
   AddBulletsNumbering = 1
 }

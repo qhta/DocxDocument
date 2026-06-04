@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcollapsedirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCollapseDirection))]
+[WordInteropEnumType("WdCollapseDirection")]
 public enum CollapseDirection
 {
   /// <summary>
   /// Collapse the range to the ending point.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCollapseDirection.wdCollapseEnd))]
+  [WordInteropEnumValue("wdCollapseEnd")]
   End = 0,
   /// <summary>
   /// Collapse the range to the starting point.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCollapseDirection.wdCollapseStart))]
+  [WordInteropEnumValue("wdCollapseStart")]
   Start = 1
 }

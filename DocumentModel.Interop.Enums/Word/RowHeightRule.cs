@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrowheightrule?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRowHeightRule))]
+[WordInteropEnumType("WdRowHeightRule")]
 public enum RowHeightRule
 {
   /// <summary>
   /// The row height is adjusted to accommodate the tallest value in the row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRowHeightRule.wdRowHeightAuto))]
+  [WordInteropEnumValue("wdRowHeightAuto")]
   Auto = 0,
   /// <summary>
   /// The row height is at least a minimum specified value.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRowHeightRule.wdRowHeightAtLeast))]
+  [WordInteropEnumValue("wdRowHeightAtLeast")]
   AtLeast = 1,
   /// <summary>
   /// The row height is an exact value.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRowHeightRule.wdRowHeightExactly))]
+  [WordInteropEnumValue("wdRowHeightExactly")]
   Exactly = 2
 }

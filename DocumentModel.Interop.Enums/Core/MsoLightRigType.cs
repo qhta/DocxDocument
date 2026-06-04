@@ -6,147 +6,147 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolightrigtype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoLightRigType))]
+[OfficeInteropEnumType("MsoLightRigType")]
 public enum LightRigType
 {
   /// <summary>
   /// Specifies the Mixed effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigMixed))]
+  [OfficeInteropEnumValue("msoLightRigMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies the LegacyFlat1 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyFlat1))]
+  [OfficeInteropEnumValue("msoLightRigLegacyFlat1")]
   LegacyFlat1 = 1,
   /// <summary>
   /// Specifies the LegacyFlat2 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyFlat2))]
+  [OfficeInteropEnumValue("msoLightRigLegacyFlat2")]
   LegacyFlat2 = 2,
   /// <summary>
   /// Specifies the LegacyFlat3 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyFlat3))]
+  [OfficeInteropEnumValue("msoLightRigLegacyFlat3")]
   LegacyFlat3 = 3,
   /// <summary>
   /// Specifies the LegacyFlat4 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyFlat4))]
+  [OfficeInteropEnumValue("msoLightRigLegacyFlat4")]
   LegacyFlat4 = 4,
   /// <summary>
   /// Specifies the LegacyNormal1 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyNormal1))]
+  [OfficeInteropEnumValue("msoLightRigLegacyNormal1")]
   LegacyNormal1 = 5,
   /// <summary>
   /// Specifies the LegacyNormal2 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyNormal2))]
+  [OfficeInteropEnumValue("msoLightRigLegacyNormal2")]
   LegacyNormal2 = 6,
   /// <summary>
   /// Specifies the LegacyNormal3 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyNormal3))]
+  [OfficeInteropEnumValue("msoLightRigLegacyNormal3")]
   LegacyNormal3 = 7,
   /// <summary>
   /// Specifies the LegacyNormal4 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyNormal4))]
+  [OfficeInteropEnumValue("msoLightRigLegacyNormal4")]
   LegacyNormal4 = 8,
   /// <summary>
   /// Specifies the LegacyHarsh1 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyHarsh1))]
+  [OfficeInteropEnumValue("msoLightRigLegacyHarsh1")]
   LegacyHarsh1 = 9,
   /// <summary>
   /// Specifies the LegacyHarsh2 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyHarsh2))]
+  [OfficeInteropEnumValue("msoLightRigLegacyHarsh2")]
   LegacyHarsh2 = 10,
   /// <summary>
   /// Specifies the LegacyHarsh3 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyHarsh3))]
+  [OfficeInteropEnumValue("msoLightRigLegacyHarsh3")]
   LegacyHarsh3 = 11,
   /// <summary>
   /// Specifies the LegacyHarsh4 effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigLegacyHarsh4))]
+  [OfficeInteropEnumValue("msoLightRigLegacyHarsh4")]
   LegacyHarsh4 = 12,
   /// <summary>
   /// Specifies the ThreePoint effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigThreePoint))]
+  [OfficeInteropEnumValue("msoLightRigThreePoint")]
   ThreePoints = 13,
   /// <summary>
   /// Specifies the Balanced effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigBalanced))]
+  [OfficeInteropEnumValue("msoLightRigBalanced")]
   Balanced = 14,
   /// <summary>
   /// Specifies the Soft effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigSoft))]
+  [OfficeInteropEnumValue("msoLightRigSoft")]
   Soft = 15,
   /// <summary>
   /// Specifies the Harsh effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigHarsh))]
+  [OfficeInteropEnumValue("msoLightRigHarsh")]
   Harsh = 16,
   /// <summary>
   /// Specifies the Flood effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigFlood))]
+  [OfficeInteropEnumValue("msoLightRigFlood")]
   Flood = 17,
   /// <summary>
   /// Specifies the Contrasting effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigContrasting))]
+  [OfficeInteropEnumValue("msoLightRigContrasting")]
   Contrasting = 18,
   /// <summary>
   /// Specifies the Morning effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigMorning))]
+  [OfficeInteropEnumValue("msoLightRigMorning")]
   Morning = 19,
   /// <summary>
   /// Specifies the Sunrise effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigSunrise))]
+  [OfficeInteropEnumValue("msoLightRigSunrise")]
   Sunrise = 20,
   /// <summary>
   /// Specifies the Sunset effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigSunset))]
+  [OfficeInteropEnumValue("msoLightRigSunset")]
   Sunset = 21,
   /// <summary>
   /// Specifies the Chilly effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigChilly))]
+  [OfficeInteropEnumValue("msoLightRigChilly")]
   Chilly = 22,
   /// <summary>
   /// Specifies the Freezing effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigFreezing))]
+  [OfficeInteropEnumValue("msoLightRigFreezing")]
   Freezing = 23,
   /// <summary>
   /// Specifies the Flat effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigFlat))]
+  [OfficeInteropEnumValue("msoLightRigFlat")]
   Flat = 24,
   /// <summary>
   /// Specifies the TwoPoint effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigTwoPoint))]
+  [OfficeInteropEnumValue("msoLightRigTwoPoint")]
   TwoPoints = 25,
   /// <summary>
   /// Specifies the Glow effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigGlow))]
+  [OfficeInteropEnumValue("msoLightRigGlow")]
   Glow = 26,
   /// <summary>
   /// Specifies the BrightRoom effect.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLightRigType.msoLightRigBrightRoom))]
+  [OfficeInteropEnumValue("msoLightRigBrightRoom")]
   BrightRoom = 27
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentkind?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDocumentKind))]
+[WordInteropEnumType("WdDocumentKind")]
 public enum DocumentKind
 {
   /// <summary>
   /// No format specified.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentKind.wdDocumentNotSpecified))]
+  [WordInteropEnumValue("wdDocumentNotSpecified")]
   NotSpecified = 0,
   /// <summary>
   /// Letter format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentKind.wdDocumentLetter))]
+  [WordInteropEnumValue("wdDocumentLetter")]
   Letter = 1,
   /// <summary>
   /// E-mail format.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentKind.wdDocumentEmail))]
+  [WordInteropEnumValue("wdDocumentEmail")]
   Email = 2
 }

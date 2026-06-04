@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisedlinesmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdRevisedLinesMark))]
+[WordInteropEnumType("WdRevisedLinesMark")]
 public enum RevisedLinesMark
 {
   /// <summary>
   /// Not displayed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedLinesMark.wdRevisedLinesMarkNone))]
+  [WordInteropEnumValue("wdRevisedLinesMarkNone")]
   None = 0,
   /// <summary>
   /// In the left border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedLinesMark.wdRevisedLinesMarkLeftBorder))]
+  [WordInteropEnumValue("wdRevisedLinesMarkLeftBorder")]
   LeftBorder = 1,
   /// <summary>
   /// In the right border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedLinesMark.wdRevisedLinesMarkRightBorder))]
+  [WordInteropEnumValue("wdRevisedLinesMarkRightBorder")]
   RightBorder = 2,
   /// <summary>
   /// Outside the border.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdRevisedLinesMark.wdRevisedLinesMarkOutsideBorder))]
+  [WordInteropEnumValue("wdRevisedLinesMarkOutsideBorder")]
   OutsideBorder = 3
 }

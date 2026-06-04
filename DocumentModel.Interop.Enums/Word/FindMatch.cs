@@ -6,112 +6,112 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfindmatch?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdFindMatch))]
+[WordInteropEnumType("WdFindMatch")]
 public enum FindMatch
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchGraphic))]
+  [WordInteropEnumValue("wdMatchGraphic")]
   Graphic = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchCommentMark))]
+  [WordInteropEnumValue("wdMatchCommentMark")]
   CommentMark = 5,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchTabCharacter))]
+  [WordInteropEnumValue("wdMatchTabCharacter")]
   TabCharacter = 9,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchCaretCharacter))]
+  [WordInteropEnumValue("wdMatchCaretCharacter")]
   CaretCharacter = 11,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchColumnBreak))]
+  [WordInteropEnumValue("wdMatchColumnBreak")]
   ColumnBreak = 14,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchField))]
+  [WordInteropEnumValue("wdMatchField")]
   Field = 19,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchNonbreakingHyphen))]
+  [WordInteropEnumValue("wdMatchNonbreakingHyphen")]
   NonbreakingHyphen = 30,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchOptionalHyphen))]
+  [WordInteropEnumValue("wdMatchOptionalHyphen")]
   OptionalHyphen = 31,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchNonbreakingSpace))]
+  [WordInteropEnumValue("wdMatchNonbreakingSpace")]
   NonbreakingSpace = 160,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchEnDash))]
+  [WordInteropEnumValue("wdMatchEnDash")]
   EnDash = 8211,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchEmDash))]
+  [WordInteropEnumValue("wdMatchEmDash")]
   EmDash = 8212,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchManualLineBreak))]
+  [WordInteropEnumValue("wdMatchManualLineBreak")]
   ManualLineBreak = 65551,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchParagraphMark))]
+  [WordInteropEnumValue("wdMatchParagraphMark")]
   ParagraphMark = 65551,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchFootnoteMark))]
+  [WordInteropEnumValue("wdMatchFootnoteMark")]
   FootnoteMark = 65554,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchEndnoteMark))]
+  [WordInteropEnumValue("wdMatchEndnoteMark")]
   EndnoteMark = 65555,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchManualPageBreak))]
+  [WordInteropEnumValue("wdMatchManualPageBreak")]
   ManualPageBreak = 65564,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchAnyDigit))]
+  [WordInteropEnumValue("wdMatchAnyDigit")]
   AnyDigit = 65567,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchSectionBreak))]
+  [WordInteropEnumValue("wdMatchSectionBreak")]
   SectionBreak = 65580,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchAnyLetter))]
+  [WordInteropEnumValue("wdMatchAnyLetter")]
   AnyLetter = 65583,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchAnyCharacter))]
+  [WordInteropEnumValue("wdMatchAnyCharacter")]
   AnyCharacter = 65599,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdFindMatch.wdMatchWhiteSpace))]
+  [WordInteropEnumValue("wdMatchWhiteSpace")]
   WhiteSpace = 65655
 }

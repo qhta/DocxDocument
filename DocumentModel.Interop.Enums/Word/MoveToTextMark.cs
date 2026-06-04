@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovetotextmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMoveToTextMark))]
+[WordInteropEnumType("WdMoveToTextMark")]
 public enum MoveToTextMark
 {
   /// <summary>
   /// No special formatting for moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkNone))]
+  [WordInteropEnumValue("wdMoveToTextMarkNone")]
   None = 0,
   /// <summary>
   /// Marks moved text with bold formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkBold))]
+  [WordInteropEnumValue("wdMoveToTextMarkBold")]
   Bold = 1,
   /// <summary>
   /// Marks moved text with italic formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkItalic))]
+  [WordInteropEnumValue("wdMoveToTextMarkItalic")]
   Italic = 2,
   /// <summary>
   /// Underlines moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkUnderline))]
+  [WordInteropEnumValue("wdMoveToTextMarkUnderline")]
   Underline = 3,
   /// <summary>
   /// Moved text is marked with a double underline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkDoubleUnderline))]
+  [WordInteropEnumValue("wdMoveToTextMarkDoubleUnderline")]
   DoubleUnderline = 4,
   /// <summary>
   /// Marks moved text with color only. Use the MoveToTextColor property to set the color of moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkColorOnly))]
+  [WordInteropEnumValue("wdMoveToTextMarkColorOnly")]
   ColorOnly = 5,
   /// <summary>
   /// Moved text is marked with a strikethrough.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkStrikeThrough))]
+  [WordInteropEnumValue("wdMoveToTextMarkStrikeThrough")]
   StrikeThrough = 6,
   /// <summary>
   /// Moved text is marked with a double strikethrough.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveToTextMark.wdMoveToTextMarkDoubleStrikeThrough))]
+  [WordInteropEnumValue("wdMoveToTextMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 7
 }

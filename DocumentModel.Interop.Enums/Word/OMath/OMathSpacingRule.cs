@@ -6,32 +6,32 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathspacingrule?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOMathSpacingRule))]
+[WordInteropEnumType("WdOMathSpacingRule")]
 public enum OMathSpacingRule
 {
   /// <summary>
   /// Single spacing.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathSpacingRule.wdOMathSpacingSingle))]
+  [WordInteropEnumValue("wdOMathSpacingSingle")]
   Single = 0,
   /// <summary>
   /// 1.5 spacing.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathSpacingRule.wdOMathSpacing1pt5))]
+  [WordInteropEnumValue("wdOMathSpacing1pt5")]
   OnePtFive = 1,
   /// <summary>
   /// Double spacing.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathSpacingRule.wdOMathSpacingDouble))]
+  [WordInteropEnumValue("wdOMathSpacingDouble")]
   Double = 2,
   /// <summary>
   /// Exact spacing measurement.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathSpacingRule.wdOMathSpacingExactly))]
+  [WordInteropEnumValue("wdOMathSpacingExactly")]
   Exactly = 3,
   /// <summary>
   /// Custom spacing measurement.
   /// </summary>  
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathSpacingRule.wdOMathSpacingMultiple))]
+  [WordInteropEnumValue("wdOMathSpacingMultiple")]
   Multiple = 4
 }

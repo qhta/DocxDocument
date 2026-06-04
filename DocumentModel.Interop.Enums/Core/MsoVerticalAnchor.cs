@@ -6,39 +6,39 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoverticalanchor?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoVerticalAnchor))]
+[OfficeInteropEnumType("MsoVerticalAnchor")]
 public enum VerticalAnchor
 {
   /// <summary>
   /// Specifies the vertical alignment of text in a text frame.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoVerticalAnchorMixed))]
+  [OfficeInteropEnumValue("msoVerticalAnchorMixed")]
   Mixed = -2,
   /// <summary>
   /// Aligns text to top of text frame.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoAnchorTop))]
+  [OfficeInteropEnumValue("msoAnchorTop")]
   Top = 1,
   /// <summary>
   /// Anchors bottom of text string to current position, regardless of text resizing. When you resize text without
   /// baseline anchoring, text centers itself on previous position.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoAnchorTopBaseline))]
+  [OfficeInteropEnumValue("msoAnchorTopBaseline")]
   TopBaseline = 2,
   /// <summary>
   /// Centers text vertically.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoAnchorMiddle))]
+  [OfficeInteropEnumValue("msoAnchorMiddle")]
   Middle = 3,
   /// <summary>
   /// Aligns text to bottom of text frame.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoAnchorBottom))]
+  [OfficeInteropEnumValue("msoAnchorBottom")]
   Bottom = 4,
   /// <summary>
   /// Anchors bottom of text string to current position, regardless of text resizing. When you resize text without
   /// baseline anchoring, text centers itself on previous position.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoVerticalAnchor.msoAnchorBottomBaseLine))]
+  [OfficeInteropEnumValue("msoAnchorBottomBaseLine")]
   BottomBaseLine = 5
 }

@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdemailhtmlfidelity?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdEmailHTMLFidelity))]
+[WordInteropEnumType("WdEmailHTMLFidelity")]
 public enum EmailHTMLFidelity
 {
   /// <summary>
   /// Removes all HTML tags that do not affect how a message displays.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEmailHTMLFidelity.wdEmailHTMLFidelityLow))]
+  [WordInteropEnumValue("wdEmailHTMLFidelityLow")]
   Low = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEmailHTMLFidelity.wdEmailHTMLFidelityMedium))]
+  [WordInteropEnumValue("wdEmailHTMLFidelityMedium")]
   Medium = 2,
   /// <summary>
   /// Leaves HTML intact.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdEmailHTMLFidelity.wdEmailHTMLFidelityHigh))]
+  [WordInteropEnumValue("wdEmailHTMLFidelityHigh")]
   High = 3
 }

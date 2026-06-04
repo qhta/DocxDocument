@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocproperties?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoDocProperties))]
+[OfficeInteropEnumType("MsoDocProperties")]
 public enum MsoDocProperties
 {
   /// <summary>
   /// Integer value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeNumber))]
+  [OfficeInteropEnumValue("msoPropertyTypeNumber")]
   Number = 1,
   /// <summary>
   /// Boolean value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeBoolean))]
+  [OfficeInteropEnumValue("msoPropertyTypeBoolean")]
   Boolean,
   /// <summary>
   /// Date value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeDate))]
+  [OfficeInteropEnumValue("msoPropertyTypeDate")]
   Date,
   /// <summary>
   /// String value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeString))]
+  [OfficeInteropEnumValue("msoPropertyTypeString")]
   String,
   /// <summary>
   /// Floating point value.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDocProperties.msoPropertyTypeFloat))]
+  [OfficeInteropEnumValue("msoPropertyTypeFloat")]
   Float
 }

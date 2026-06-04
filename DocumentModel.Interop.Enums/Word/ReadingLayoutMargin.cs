@@ -6,23 +6,23 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreadinglayoutmargin?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdReadingLayoutMargin))]
+[WordInteropEnumType("WdReadingLayoutMargin")]
 public enum ReadingLayoutMargin
 {
   /// <summary>
   /// Shows the pages without margins.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReadingLayoutMargin.wdAutomaticMargin))]
+  [WordInteropEnumValue("wdAutomaticMargin")]
   AutomaticMargin = 0,
   /// <summary>
   /// Microsoft Office Word determines automatically whether to show or hide the margins based on the available
   /// space.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReadingLayoutMargin.wdSuppressMargin))]
+  [WordInteropEnumValue("wdSuppressMargin")]
   SuppressMargin = 1,
   /// <summary>
   /// Shows the pages with margins.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdReadingLayoutMargin.wdFullMargin))]
+  [WordInteropEnumValue("wdFullMargin")]
   FullMargin = 2
 }

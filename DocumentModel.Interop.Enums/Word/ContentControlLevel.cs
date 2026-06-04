@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontrollevel?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdContentControlLevel))]
+[WordInteropEnumType("WdContentControlLevel")]
 public enum ContentControlLevel
 {
   /// <summary>
   /// Represents a content control that surrounds content within a single paragraph.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlLevel.wdContentControlLevelInline))]
+  [WordInteropEnumValue("wdContentControlLevelInline")]
   Inline = 0,
   /// <summary>
   /// Represents a content control that surrounds one or more complete paragraphs.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlLevel.wdContentControlLevelParagraph))]
+  [WordInteropEnumValue("wdContentControlLevelParagraph")]
   Paragraph = 1,
   /// <summary>
   /// Represents a content control that surrounds a table row.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlLevel.wdContentControlLevelRow))]
+  [WordInteropEnumValue("wdContentControlLevelRow")]
   Row = 2,
   /// <summary>
   /// Represents a content control that surrounds a table cell.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdContentControlLevel.wdContentControlLevelCell))]
+  [WordInteropEnumValue("wdContentControlLevelCell")]
   Cell = 3
 }

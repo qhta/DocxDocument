@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentviewdirection?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdDocumentViewDirection))]
+[WordInteropEnumType("WdDocumentViewDirection")]
 public enum DocumentViewDirection
 {
   /// <summary>
   /// Displays the document with right alignment and right-to-left reading order.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentViewDirection.wdDocumentViewRtl))]
+  [WordInteropEnumValue("wdDocumentViewRtl")]
   Rtl = 0,
   /// <summary>
   /// Displays the document with left alignment and left-to-right reading order.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdDocumentViewDirection.wdDocumentViewLtr))]
+  [WordInteropEnumValue("wdDocumentViewLtr")]
   Ltr = 1
 }

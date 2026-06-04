@@ -6,12 +6,12 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistnumberstylehid?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdListNumberStyleHID))]
+[WordInteropEnumType("WdListNumberStyleHID")]
 public enum ListNumberStyleHID
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdListNumberStyleHID.emptyenum))]
+  [WordInteropEnumValue("emptyenum")]
   emptyenum = 0
 }

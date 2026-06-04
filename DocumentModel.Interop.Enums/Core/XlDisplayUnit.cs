@@ -8,62 +8,62 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldisplayunit?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlDisplayUnit))]
+[OfficeInteropEnumType("XlDisplayUnit")]
 public enum DisplayUnit
 {
   /// <summary>
   /// Specifies units of hundreds.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlHundreds))]
+  [OfficeInteropEnumValue("xlHundreds")]
   Hundreds = -2,
   /// <summary>
   /// Specifies units of thousands.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlThousands))]
+  [OfficeInteropEnumValue("xlThousands")]
   Thousands = -3,
   /// <summary>
   /// Specifies units of tens of thousands.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlTenThousands))]
+  [OfficeInteropEnumValue("xlTenThousands")]
   TenThousands = -4,
   /// <summary>
   /// Specifies units of hundreds of thousands.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlHundredThousands))]
+  [OfficeInteropEnumValue("xlHundredThousands")]
   HundredThousands = -5,
   /// <summary>
   /// Specifies units of millions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlMillions))]
+  [OfficeInteropEnumValue("xlMillions")]
   Millions = -6,
   /// <summary>
   /// Specifies units of tens of millions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlTenMillions))]
+  [OfficeInteropEnumValue("xlTenMillions")]
   TenMillions = -7,
   /// <summary>
   /// Specifies units of hundreds of millions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlHundredMillions))]
+  [OfficeInteropEnumValue("xlHundredMillions")]
   HundredMillions = -8,
   /// <summary>
   /// Specifies units of thousands of millions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlThousandMillions))]
+  [OfficeInteropEnumValue("xlThousandMillions")]
   ThousandMillions = -9,
   /// <summary>
   /// Specifies units of millions of millions.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlMillionMillions))]
+  [OfficeInteropEnumValue("xlMillionMillions")]
   MillionMillions = -10,
   /// <summary>
   /// Specifies custom units.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlDisplayUnitCustom))]
+  [OfficeInteropEnumValue("xlDisplayUnitCustom")]
   DisplayUnitCustom = -4114,
   /// <summary>
   /// No units are displayed.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlDisplayUnit.xlDisplayUnitNone))]
+  [OfficeInteropEnumValue("xlDisplayUnitNone")]
   DisplayUnitNone = -4142
 }

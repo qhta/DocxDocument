@@ -6,42 +6,42 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartpictureplacement?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlChartPicturePlacement))]
+[WordInteropEnumType("XlChartPicturePlacement")]
 public enum XlChartPicturePlacement
 {
   /// <summary>
   /// Display on sides.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlSides))]
+  [WordInteropEnumValue("xlSides")]
   Sides = 1,
   /// <summary>
   /// Display on end.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlEnd))]
+  [WordInteropEnumValue("xlEnd")]
   End = 2,
   /// <summary>
   /// Display on end and sides.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlEndSides))]
+  [WordInteropEnumValue("xlEndSides")]
   EndSides = 3,
   /// <summary>
   /// Display on front.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlFront))]
+  [WordInteropEnumValue("xlFront")]
   Front = 4,
   /// <summary>
   /// Display on front and sides.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlFrontSides))]
+  [WordInteropEnumValue("xlFrontSides")]
   FrontSides = 5,
   /// <summary>
   /// Display on front and end.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlFrontEnd))]
+  [WordInteropEnumValue("xlFrontEnd")]
   FrontEnd = 6,
   /// <summary>
   /// Display on all faces.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartPicturePlacement.xlAllFaces))]
+  [WordInteropEnumValue("xlAllFaces")]
   AllFaces = 7
 }

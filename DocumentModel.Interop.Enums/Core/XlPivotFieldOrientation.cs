@@ -8,32 +8,32 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlpivotfieldorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.XlPivotFieldOrientation))]
+[OfficeInteropEnumType("XlPivotFieldOrientation")]
 public enum PivotFieldOrientation
 {
   /// <summary>
   /// Specifies the Column field.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPivotFieldOrientation.xlColumnField))]
+  [OfficeInteropEnumValue("xlColumnField")]
   ColumnField = 2,
   /// <summary>
   /// Specifies the Data field.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPivotFieldOrientation.xlDataField))]
+  [OfficeInteropEnumValue("xlDataField")]
   DataField = 4,
   /// <summary>
   /// Specifies that the field is hidden.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPivotFieldOrientation.xlHidden))]
+  [OfficeInteropEnumValue("xlHidden")]
   Hidden = 0,
   /// <summary>
   /// Specifies the Page field.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPivotFieldOrientation.xlPageField))]
+  [OfficeInteropEnumValue("xlPageField")]
   PageField = 3,
   /// <summary>
   /// Specifies the Row field.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.XlPivotFieldOrientation.xlRowField))]
+  [OfficeInteropEnumValue("xlRowField")]
   RowField = 1
 }

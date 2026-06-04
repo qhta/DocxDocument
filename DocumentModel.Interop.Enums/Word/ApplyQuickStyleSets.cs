@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdapplyquickstylesets?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdApplyQuickStyleSets))]
+[WordInteropEnumType("WdApplyQuickStyleSets")]
 public enum ApplyQuickStyleSets
 {
   /// <summary>
   /// Resets the Quick Style to the style set in use when the document was opened.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdApplyQuickStyleSets.wdSessionStartSet))]
+  [WordInteropEnumValue("wdSessionStartSet")]
   SessionStartSet = 1,
   /// <summary>
   /// Resets the Quick Style to the style set from the template, if any.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdApplyQuickStyleSets.wdTemplateSet))]
+  [WordInteropEnumValue("wdTemplateSet")]
   TemplateSet = 2
 }

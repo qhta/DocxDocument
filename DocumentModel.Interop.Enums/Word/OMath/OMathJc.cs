@@ -6,32 +6,32 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathjc?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOMathJc))]
+[WordInteropEnumType("WdOMathJc")]
 public enum OMathJc
 {
   /// <summary>
   /// Center as a group.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathJc.wdOMathJcCenterGroup))]
+  [WordInteropEnumValue("wdOMathJcCenterGroup")]
   CenterGroup = 1,
   /// <summary>
   /// Center.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathJc.wdOMathJcCenter))]
+  [WordInteropEnumValue("wdOMathJcCenter")]
   Center = 2,
   /// <summary>
   /// Left.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathJc.wdOMathJcLeft))]
+  [WordInteropEnumValue("wdOMathJcLeft")]
   Left = 3,
   /// <summary>
   /// Right.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathJc.wdOMathJcRight))]    
+  [WordInteropEnumValue("wdOMathJcRight")]    
   Right = 4,
   /// <summary>
   /// Inline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOMathJc.wdOMathJcInline))]
+  [WordInteropEnumValue("wdOMathJcInline")]
   Inline = 7
 }

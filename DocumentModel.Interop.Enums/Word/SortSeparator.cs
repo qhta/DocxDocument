@@ -6,22 +6,22 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsortseparator?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdSortSeparator))]
+[WordInteropEnumType("WdSortSeparator")]
 public enum SortSeparator
 {
   /// <summary>
   /// Tab.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSortSeparator.wdSortSeparateByTabs))]
+  [WordInteropEnumValue("wdSortSeparateByTabs")]
   Tabs = 0,
   /// <summary>
   /// Comma.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSortSeparator.wdSortSeparateByCommas))]
+  [WordInteropEnumValue("wdSortSeparateByCommas")]
   Commas = 1,
   /// <summary>
   /// Default table separator.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdSortSeparator.wdSortSeparateByDefaultTableSeparator))]
+  [WordInteropEnumValue("wdSortSeparateByDefaultTableSeparator")]
   DefaultTableSeparator = 2
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodistributecmd?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoDistributeCmd))]
+[OfficeInteropEnumType("MsoDistributeCmd")]
 public enum DistributeCmd
 {
   /// <summary>
   /// Distribute horizontally.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDistributeCmd.msoDistributeHorizontally))]
+  [OfficeInteropEnumValue("msoDistributeHorizontally")]
   Horizontally,
   /// <summary>
   /// Distribute vertically.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDistributeCmd.msoDistributeVertically))]
+  [OfficeInteropEnumValue("msoDistributeVertically")]
   Vertically
 }

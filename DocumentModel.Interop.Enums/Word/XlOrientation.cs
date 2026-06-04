@@ -6,27 +6,27 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlOrientation))]
+[WordInteropEnumType("XlOrientation")]
 public enum XlOrientation
 {
   /// <summary>
   /// Text runs upward.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlOrientation.xlUpward))]
+  [WordInteropEnumValue("xlUpward")]
   Upward = -4171,
   /// <summary>
   /// Text runs downward.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlOrientation.xlDownward))]
+  [WordInteropEnumValue("xlDownward")]
   Downward = -4170,
   /// <summary>
   /// Text runs downward and is centered in the cell.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlOrientation.xlVertical))]
+  [WordInteropEnumValue("xlVertical")]
   Vertical = -4166,
   /// <summary>
   /// Text runs horizontally.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlOrientation.xlHorizontal))]
+  [WordInteropEnumValue("xlHorizontal")]
   Horizontal = -4128
 }

@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcalendartype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdCalendarType))]
+[WordInteropEnumType("WdCalendarType")]
 public enum CalendarType
 {
   /// <summary>
   /// Western.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarWestern))]
+  [WordInteropEnumValue("wdCalendarWestern")]
   Western = 0,
   /// <summary>
   /// Arabic.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarArabic))]
+  [WordInteropEnumValue("wdCalendarArabic")]
   Arabic = 1,
   /// <summary>
   /// Hebrew.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarHebrew))]
+  [WordInteropEnumValue("wdCalendarHebrew")]
   Hebrew = 2,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarTaiwan))]
+  [WordInteropEnumValue("wdCalendarTaiwan")]
   Taiwan = 3,
   /// <summary>
   /// Japanese.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarJapan))]
+  [WordInteropEnumValue("wdCalendarJapan")]
   Japan = 4,
   /// <summary>
   /// Thai.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarThai))]
+  [WordInteropEnumValue("wdCalendarThai")]
   Thai = 5,
   /// <summary>
   /// Korean.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarKorean))]
+  [WordInteropEnumValue("wdCalendarKorean")]
   Korean = 6,
   /// <summary>
   /// Saka Era.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarSakaEra))]
+  [WordInteropEnumValue("wdCalendarSakaEra")]
   SakaEra = 7,
   /// <summary>
   /// English.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarTranslitEnglish))]
+  [WordInteropEnumValue("wdCalendarTranslitEnglish")]
   TranslitEnglish = 8,
   /// <summary>
   /// French.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarTranslitFrench))]
+  [WordInteropEnumValue("wdCalendarTranslitFrench")]
   TranslitFrench = 9,
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdCalendarType.wdCalendarUmalqura))]
+  [WordInteropEnumValue("wdCalendarUmalqura")]
   Umalqura = 13
 }

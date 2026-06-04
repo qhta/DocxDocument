@@ -6,47 +6,47 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinefilltype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoLineFillType))]
+[OfficeInteropEnumType("MsoLineFillType")]
 public enum LineFillType
 {
   /// <summary>
   /// Specifies a mixture of line fill types.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillMixed))]
+  [OfficeInteropEnumValue("msoLineFillMixed")]
   Mixed = -2,
   /// <summary>
   /// No line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillNone))]
+  [OfficeInteropEnumValue("msoLineFillNone")]
   None = 0,
   /// <summary>
   /// Specifies a solid color line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillSolid))]
+  [OfficeInteropEnumValue("msoLineFillSolid")]
   Solid = 1,
   /// <summary>
   /// Specifies a pattern line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillPatterned))]
+  [OfficeInteropEnumValue("msoLineFillPatterned")]
   Patterned = 2,
   /// <summary>
   /// Specifies a gradient line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillGradient))]
+  [OfficeInteropEnumValue("msoLineFillGradient")]
   Gradient = 3,
   /// <summary>
   /// Specifies a textured line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillTextured))]
+  [OfficeInteropEnumValue("msoLineFillTextured")]
   Textured = 4,
   /// <summary>
   /// Specifies the same fill as the background.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillBackground))]
+  [OfficeInteropEnumValue("msoLineFillBackground")]
   Background = 5,
   /// <summary>
   /// Specifies a picture line fill.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoLineFillType.msoLineFillPicture))]
+  [OfficeInteropEnumValue("msoLineFillPicture")]
   Picture = 6
 }

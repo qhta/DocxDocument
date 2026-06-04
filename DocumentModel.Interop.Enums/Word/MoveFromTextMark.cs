@@ -6,62 +6,62 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovefromtextmark?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdMoveFromTextMark))]
+[WordInteropEnumType("WdMoveFromTextMark")]
 public enum MoveFromTextMark
 {
   /// <summary>
   /// Hides moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkHidden))]
+  [WordInteropEnumValue("wdMoveFromTextMarkHidden")]
   Hidden = 0,
   /// <summary>
   /// Marks moved text with a double strikethrough.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkDoubleStrikeThrough))]
+  [WordInteropEnumValue("wdMoveFromTextMarkDoubleStrikeThrough")]
   DoubleStrikeThrough = 1,
   /// <summary>
   /// Marks moved text with a strikethrough.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkStrikeThrough))]
+  [WordInteropEnumValue("wdMoveFromTextMarkStrikeThrough")]
   StrikeThrough = 2,
   /// <summary>
   /// Marks moved text with a caret.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkCaret))]
+  [WordInteropEnumValue("wdMoveFromTextMarkCaret")]
   Caret = 3,
   /// <summary>
   /// Marks moved text with a pound (number) sign.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkPound))]
+  [WordInteropEnumValue("wdMoveFromTextMarkPound")]
   Pound = 4,
   /// <summary>
   /// Marks moved text with a pound (number) sign.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkNone))]
+  [WordInteropEnumValue("wdMoveFromTextMarkNone")]
   None = 5,
   /// <summary>
   /// Marks moved text with bold formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkBold))]
+  [WordInteropEnumValue("wdMoveFromTextMarkBold")]
   Bold = 6,
   /// <summary>
   /// Marks moved text with italic formatting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkItalic))]
+  [WordInteropEnumValue("wdMoveFromTextMarkItalic")]
   Italic = 7,
   /// <summary>
   /// Underlines moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkUnderline))]
+  [WordInteropEnumValue("wdMoveFromTextMarkUnderline")]
   Underline = 8,
   /// <summary>
   /// Marks moved text with a double underline.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkDoubleUnderline))]
+  [WordInteropEnumValue("wdMoveFromTextMarkDoubleUnderline")]
   DoubleUnderline = 9,
   /// <summary>
   /// Marks moved text with color only. Use the MoveFromTextColor property to set the color of moved text.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdMoveFromTextMark.wdMoveFromTextMarkColorOnly))]
+  [WordInteropEnumValue("wdMoveFromTextMarkColorOnly")]
   ColorOnly = 10
 }

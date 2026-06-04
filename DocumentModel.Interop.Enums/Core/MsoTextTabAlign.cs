@@ -6,35 +6,35 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexttabalign?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoTextTabAlign))]
+[OfficeInteropEnumType("MsoTextTabAlign")]
 public enum TextTabAlign
 {
   /// <summary>
   /// Specifies that mixed text alignment against tab stops is used.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextTabAlign.msoTabAlignMixed))]
+  [OfficeInteropEnumValue("msoTabAlignMixed")]
   Mixed = -2,
   /// <summary>
   /// Specifies that the following text starts immediately after the designated tab stop.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextTabAlign.msoTabAlignLeft))]
+  [OfficeInteropEnumValue("msoTabAlignLeft")]
   Left = 0,
   /// <summary>
   /// Specifies that the following text up to next tab or line break is centered on the designated tab stop.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextTabAlign.msoTabAlignCenter))]
+  [OfficeInteropEnumValue("msoTabAlignCenter")]
   Center = 1,
   /// <summary>
   /// Specifies that the following text up to the next tab or line break is rendered flush right to the designated
   /// tab stop.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextTabAlign.msoTabAlignRight))]
+  [OfficeInteropEnumValue("msoTabAlignRight")]
   Right = 2,
   /// <summary>
   /// Specifies that the following text is searched for the first occurrence of the character representing the
   /// decimal point. The text up to the next tab or line break is then aligned such that the decimal point starts at
   /// the designated tab stop.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoTextTabAlign.msoTabAlignDecimal))]
+  [OfficeInteropEnumValue("msoTabAlignDecimal")]
   Decimal = 3
 }

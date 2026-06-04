@@ -4,27 +4,27 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardaddresstype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoContactCardAddressType))]
+[OfficeInteropEnumType("MsoContactCardAddressType")]
 public enum ContactCardAddressType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardAddressType.msoContactCardAddressTypeUnknown))]
+  [OfficeInteropEnumValue("msoContactCardAddressTypeUnknown")]
   Unknown,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardAddressType.msoContactCardAddressTypeOutlook))]
+  [OfficeInteropEnumValue("msoContactCardAddressTypeOutlook")]
   Outlook,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardAddressType.msoContactCardAddressTypeSMTP))]
+  [OfficeInteropEnumValue("msoContactCardAddressTypeSMTP")]
   SMTP,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoContactCardAddressType.msoContactCardAddressTypeIM))]
+  [OfficeInteropEnumValue("msoContactCardAddressTypeIM")]
   IM
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdborderdistancefrom?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdBorderDistanceFrom))]
+[WordInteropEnumType("WdBorderDistanceFrom")]
 public enum BorderDistanceFrom
 {
   /// <summary>
   /// From the text it surrounds.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderDistanceFrom.wdBorderDistanceFromText))]
+  [WordInteropEnumValue("wdBorderDistanceFromText")]
   Text = 0,
   /// <summary>
   /// From the edge of the page.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBorderDistanceFrom.wdBorderDistanceFromPageEdge))]
+  [WordInteropEnumValue("wdBorderDistanceFromPageEdge")]
   PageEdge = 1
 }

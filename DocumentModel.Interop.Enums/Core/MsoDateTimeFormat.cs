@@ -6,82 +6,82 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodatetimeformat?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoDateTimeFormat))]
+[OfficeInteropEnumType("MsoDateTimeFormat")]
 public enum DateTimeFormat
 {
   /// <summary>
   /// Specifies a mixed format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeFormatMixed))]
+  [OfficeInteropEnumValue("msoDateTimeFormatMixed")]
   FormatMixed = -2,
   /// <summary>
   /// Specifies a Mdyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMdyy))]
+  [OfficeInteropEnumValue("msoDateTimeMdyy")]
   Mdyy = 1,
   /// <summary>
   /// Specifies a ddddMMMMddyyyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeddddMMMMddyyyy))]
+  [OfficeInteropEnumValue("msoDateTimeddddMMMMddyyyy")]
   ddddMMMMddyyyy = 2,
   /// <summary>
   /// Specifies MMMMyyyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimedMMMMyyyy))]
+  [OfficeInteropEnumValue("msoDateTimedMMMMyyyy")]
   MMMMyyyy = 3,
   /// <summary>
   /// Specifies a MMMMdyyyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMMMMdyyyy))]
+  [OfficeInteropEnumValue("msoDateTimeMMMMdyyyy")]
   MMMMdyyyy = 4,
   /// <summary>
   /// Specifies MMMyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimedMMMyy))]
+  [OfficeInteropEnumValue("msoDateTimedMMMyy")]
   MMMyy = 5,
   /// <summary>
   /// Specifies a MMMMyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMMMMyy))]
+  [OfficeInteropEnumValue("msoDateTimeMMMMyy")]
   MMMMyy = 6,
   /// <summary>
   /// Specifies a MMyy format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMMyy))]
+  [OfficeInteropEnumValue("msoDateTimeMMyy")]
   MMyy = 7,
   /// <summary>
   /// Specifies a MMddyyHmm format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMMddyyHmm))]
+  [OfficeInteropEnumValue("msoDateTimeMMddyyHmm")]
   MMddyyHmm = 8,
   /// <summary>
   /// Specifies a MMddyyhmmAMPM format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeMMddyyhmmAMPM))]
+  [OfficeInteropEnumValue("msoDateTimeMMddyyhmmAMPM")]
   MMddyyhmmAMPM = 9,
   /// <summary>
   /// Specifies Hmm format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeHmm))]
+  [OfficeInteropEnumValue("msoDateTimeHmm")]
   Hmm = 10,
   /// <summary>
   /// Specifies a Hmmss format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeHmmss))]
+  [OfficeInteropEnumValue("msoDateTimeHmmss")]
   Hmmss = 11,
   /// <summary>
   /// Specifies a hmmAMPM format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimehmmAMPM))]
+  [OfficeInteropEnumValue("msoDateTimehmmAMPM")]
   hmmAMPM = 12,
   /// <summary>
   /// Specifies a hmmssAMPM format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimehmmssAMPM))]
+  [OfficeInteropEnumValue("msoDateTimehmmssAMPM")]
   hmmssAMPM = 13,
   /// <summary>
   /// Specifies that the Office application will determine the format.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoDateTimeFormat.msoDateTimeFigureOut))]
+  [OfficeInteropEnumValue("msoDateTimeFigureOut")]
   FigureOut = 14
 }

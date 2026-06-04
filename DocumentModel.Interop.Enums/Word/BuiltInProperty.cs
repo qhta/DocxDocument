@@ -6,157 +6,157 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuiltinproperty?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdBuiltInProperty))]
+[WordInteropEnumType("WdBuiltInProperty")]
 public enum BuiltInProperty
 {
   /// <summary>
   /// Title.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyTitle))]
+  [WordInteropEnumValue("wdPropertyTitle")]
   Title = 1,
   /// <summary>
   /// Subject.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertySubject))]
+  [WordInteropEnumValue("wdPropertySubject")]
   Subject = 2,
   /// <summary>
   /// Author.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyAuthor))]
+  [WordInteropEnumValue("wdPropertyAuthor")]
   Author = 3,
   /// <summary>
   /// Keywords.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyKeywords))]
+  [WordInteropEnumValue("wdPropertyKeywords")]
   Keywords = 4,
   /// <summary>
   /// Comments.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyComments))]
+  [WordInteropEnumValue("wdPropertyComments")]
   Comments = 5,
   /// <summary>
   /// Template name.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyTemplate))]
+  [WordInteropEnumValue("wdPropertyTemplate")]
   Template = 6,
   /// <summary>
   /// Last author.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyLastAuthor))]
+  [WordInteropEnumValue("wdPropertyLastAuthor")]
   LastAuthor = 7,
   /// <summary>
   /// Revision number.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyRevision))]
+  [WordInteropEnumValue("wdPropertyRevision")]
   Revision = 8,
   /// <summary>
   /// Name of application.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyAppName))]
+  [WordInteropEnumValue("wdPropertyAppName")]
   AppName = 9,
   /// <summary>
   /// Time last printed.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyTimeLastPrinted))]
+  [WordInteropEnumValue("wdPropertyTimeLastPrinted")]
   TimeLastPrinted = 10,
   /// <summary>
   /// Time created.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyTimeCreated))]
+  [WordInteropEnumValue("wdPropertyTimeCreated")]
   TimeCreated = 11,
   /// <summary>
   /// Time last saved.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyTimeLastSaved))]
+  [WordInteropEnumValue("wdPropertyTimeLastSaved")]
   TimeLastSaved = 12,
   /// <summary>
   /// Number of edits to VBA project.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyVBATotalEdit))]
+  [WordInteropEnumValue("wdPropertyVBATotalEdit")]
   VBATotalEdit = 13,
   /// <summary>
   /// Page count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyPages))]
+  [WordInteropEnumValue("wdPropertyPages")]
   Pages = 14,
   /// <summary>
   /// Word count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyWords))]
+  [WordInteropEnumValue("wdPropertyWords")]
   Words = 15,
   /// <summary>
   /// Character count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyCharacters))]
+  [WordInteropEnumValue("wdPropertyCharacters")]
   Characters = 16,
   /// <summary>
   /// Security setting.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertySecurity))]
+  [WordInteropEnumValue("wdPropertySecurity")]
   Security = 17,
   /// <summary>
   /// Category.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyCategory))]
+  [WordInteropEnumValue("wdPropertyCategory")]
   Category = 18,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyFormat))]
+  [WordInteropEnumValue("wdPropertyFormat")]
   Format = 19,
   /// <summary>
   /// Manager.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyManager))]
+  [WordInteropEnumValue("wdPropertyManager")]
   Manager = 20,
   /// <summary>
   /// Company.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyCompany))]
+  [WordInteropEnumValue("wdPropertyCompany")]
   Company = 21,
   /// <summary>
   /// Byte count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyBytes))]
+  [WordInteropEnumValue("wdPropertyBytes")]
   Bytes = 22,
   /// <summary>
   /// Line count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyLines))]
+  [WordInteropEnumValue("wdPropertyLines")]
   Lines = 23,
   /// <summary>
   /// Paragraph count.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyParas))]
+  [WordInteropEnumValue("wdPropertyParas")]
   Paras = 24,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertySlides))]
+  [WordInteropEnumValue("wdPropertySlides")]
   Slides = 25,
   /// <summary>
   /// Notes.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyNotes))]
+  [WordInteropEnumValue("wdPropertyNotes")]
   Notes = 26,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyHiddenSlides))]
+  [WordInteropEnumValue("wdPropertyHiddenSlides")]
   HiddenSlides = 27,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyMMClips))]
+  [WordInteropEnumValue("wdPropertyMMClips")]
   MMClips = 28,
   /// <summary>
   /// Not supported.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyHyperlinkBase))]
+  [WordInteropEnumValue("wdPropertyHyperlinkBase")]
   HyperlinkBase = 29,
   /// <summary>
   /// Character count with spaces.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdBuiltInProperty.wdPropertyCharsWSpaces))]
+  [WordInteropEnumValue("wdPropertyCharsWSpaces")]
   CharsWSpaces = 30
 }

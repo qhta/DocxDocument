@@ -6,29 +6,29 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartsplittype?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.XlChartSplitType))]
+[WordInteropEnumType("XlChartSplitType")]
 public enum ChartSplitType
 {
   /// <summary>
   /// Second chart displays the smallest values in the data series. The number of values to display is specified by
   /// the SplitValue property.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartSplitType.xlSplitByPosition))]
+  [WordInteropEnumValue("xlSplitByPosition")]
   Position = 1,
   /// <summary>
   /// Second chart displays values less than the value specified by the SplitValue property.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartSplitType.xlSplitByValue))]
+  [WordInteropEnumValue("xlSplitByValue")]
   Value = 2,
   /// <summary>
   /// Second chart displays values less than some percentage of the total value. The percentage is specified by the
   /// SplitValue property.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartSplitType.xlSplitByPercentValue))]
+  [WordInteropEnumValue("xlSplitByPercentValue")]
   PercentValue = 3,
   /// <summary>
   /// Arbitrary slides are displayed in the second chart.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.XlChartSplitType.xlSplitByCustomSplit))]
+  [WordInteropEnumValue("xlSplitByCustomSplit")]
   CustomSplit = 4
 }

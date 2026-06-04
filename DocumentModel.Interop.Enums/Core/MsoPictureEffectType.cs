@@ -3,147 +3,147 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopictureeffecttype?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoPictureEffectType))]
+[OfficeInteropEnumType("MsoPictureEffectType")]
 public enum PictureEffectType
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectNone))]
+  [OfficeInteropEnumValue("msoEffectNone")]
   None,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectBackgroundRemoval))]
+  [OfficeInteropEnumValue("msoEffectBackgroundRemoval")]
   BackgroundRemoval,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectBlur))]
+  [OfficeInteropEnumValue("msoEffectBlur")]
   Blur,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectBrightnessContrast))]
+  [OfficeInteropEnumValue("msoEffectBrightnessContrast")]
   BrightnessContrast,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectCement))]
+  [OfficeInteropEnumValue("msoEffectCement")]
   Cement,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectCrisscrossEtching))]
+  [OfficeInteropEnumValue("msoEffectCrisscrossEtching")]
   CrisscrossEtching,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectChalkSketch))]
+  [OfficeInteropEnumValue("msoEffectChalkSketch")]
   ChalkSketch,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectColorTemperature))]
+  [OfficeInteropEnumValue("msoEffectColorTemperature")]
   ColorTemperature,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectCutout))]
+  [OfficeInteropEnumValue("msoEffectCutout")]
   Cutout,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectFilmGrain))]
+  [OfficeInteropEnumValue("msoEffectFilmGrain")]
   FilmGrain,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectGlass))]
+  [OfficeInteropEnumValue("msoEffectGlass")]
   Glass,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectGlowDiffused))]
+  [OfficeInteropEnumValue("msoEffectGlowDiffused")]
   GlowDiffused,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectGlowEdges))]
+  [OfficeInteropEnumValue("msoEffectGlowEdges")]
   GlowEdges,
   /// <summary>
   /// public enum class PictureEffectType
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectLightScreen))]
+  [OfficeInteropEnumValue("msoEffectLightScreen")]
   LightScreen,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectLineDrawing))]
+  [OfficeInteropEnumValue("msoEffectLineDrawing")]
   LineDrawing,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectMarker))]
+  [OfficeInteropEnumValue("msoEffectMarker")]
   Marker,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectMosiaicBubbles))]
+  [OfficeInteropEnumValue("msoEffectMosiaicBubbles")]
   MosiaicBubbles,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPaintBrush))]
+  [OfficeInteropEnumValue("msoEffectPaintBrush")]
   PaintBrush,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPaintStrokes))]
+  [OfficeInteropEnumValue("msoEffectPaintStrokes")]
   PaintStrokes,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPastelsSmooth))]
+  [OfficeInteropEnumValue("msoEffectPastelsSmooth")]
   PastelsSmooth,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPencilGrayscale))]
+  [OfficeInteropEnumValue("msoEffectPencilGrayscale")]
   PencilGrayscale,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPencilSketch))]
+  [OfficeInteropEnumValue("msoEffectPencilSketch")]
   PencilSketch,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPhotocopy))]
+  [OfficeInteropEnumValue("msoEffectPhotocopy")]
   Photocopy,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectPlasticWrap))]
+  [OfficeInteropEnumValue("msoEffectPlasticWrap")]
   PlasticWrap,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectSaturation))]
+  [OfficeInteropEnumValue("msoEffectSaturation")]
   Saturation,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectSharpenSoften))]
+  [OfficeInteropEnumValue("msoEffectSharpenSoften")]
   SharpenSoften,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectTexturizer))]
+  [OfficeInteropEnumValue("msoEffectTexturizer")]
   Texturizer,
   /// <summary>
   /// No description is available.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoPictureEffectType.msoEffectWatercolorSponge))]
+  [OfficeInteropEnumValue("msoEffectWatercolorSponge")]
   WatercolorSponge
 }

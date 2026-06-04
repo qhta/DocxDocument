@@ -6,37 +6,37 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdautomacros?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdAutoMacros))]
+[WordInteropEnumType("WdAutoMacros")]
 public enum AutoMacros
 {
   /// <summary>
   /// AutoExec macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoExec))]
+  [WordInteropEnumValue("wdAutoExec")]
   Exec = 0,
   /// <summary>
   /// AutoNew macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoNew))]
+  [WordInteropEnumValue("wdAutoNew")]
   New = 1,
   /// <summary>
   /// AutoOpen macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoOpen))]
+  [WordInteropEnumValue("wdAutoOpen")]
   Open = 2,
   /// <summary>
   /// AutoClose macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoClose))]
+  [WordInteropEnumValue("wdAutoClose")]
   Close = 3,
   /// <summary>
   /// AutoExit macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoExit))]
+  [WordInteropEnumValue("wdAutoExit")]
   Exit = 4,
   /// <summary>
   /// AutoSync macro.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdAutoMacros.wdAutoSync))]
+  [WordInteropEnumValue("wdAutoSync")]
   Sync = 5
 }

@@ -6,17 +6,17 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdorientation?view=office-pia` for Office interop details.
 /// </remarks>
-[WordInteropEnumType(typeof(Microsoft.Office.Interop.Word.WdOrientation))]
+[WordInteropEnumType("WdOrientation")]
 public enum Orientation
 {
   /// <summary>
   /// Portrait orientation.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOrientation.wdOrientPortrait))]
+  [WordInteropEnumValue("wdOrientPortrait")]
   Portrait = 0,
   /// <summary>
   /// Landscape orientation.
   /// </summary>
-  [WordInteropEnumValue(nameof(Microsoft.Office.Interop.Word.WdOrientation.wdOrientLandscape))]
+  [WordInteropEnumValue("wdOrientLandscape")]
   Landscape = 1
 }

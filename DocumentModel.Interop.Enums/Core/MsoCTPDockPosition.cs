@@ -6,32 +6,32 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockposition?view=office-pia` for Office interop details.
 /// </remarks>
-[OfficeInteropEnumType(typeof(Microsoft.Office.Core.MsoCTPDockPosition))]
+[OfficeInteropEnumType("MsoCTPDockPosition")]
 public enum CTPDockPosition
 {
   /// <summary>
   /// Dock the task pane on the left side of the document window.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionLeft))]
+  [OfficeInteropEnumValue("msoCTPDockPositionLeft")]
   Left,
   /// <summary>
   /// Dock the task pane at the top of the document window.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionTop))]
+  [OfficeInteropEnumValue("msoCTPDockPositionTop")]
   Top,
   /// <summary>
   /// Dock the task pane on the right side of the document window.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionRight))]
+  [OfficeInteropEnumValue("msoCTPDockPositionRight")]
   Right,
   /// <summary>
   /// Dock the task pane at the bottom of the document window.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionBottom))]
+  [OfficeInteropEnumValue("msoCTPDockPositionBottom")]
   Bottom,
   /// <summary>
   /// Don't dock the task pane.
   /// </summary>
-  [OfficeInteropEnumValue(nameof(Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionFloating))]
+  [OfficeInteropEnumValue("msoCTPDockPositionFloating")]
   Floating
 }
