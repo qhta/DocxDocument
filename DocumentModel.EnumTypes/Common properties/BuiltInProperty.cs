@@ -99,7 +99,7 @@ public enum BuiltInProperty
   /// <summary>
   /// ILine count.
   /// </summary>
-  ILines = 23,
+  Lines = 23,
   /// <summary>
   /// IParagraph count.
   /// </summary>

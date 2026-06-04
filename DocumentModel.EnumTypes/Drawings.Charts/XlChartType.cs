@@ -95,19 +95,19 @@ public enum ChartType
   /// </summary>
   BarOfPie = 71,
   /// <summary>
-  /// Scatter with Smoothed ILines and No Data Markers
+  /// Scatter with Smoothed Lines and No Data Markers
   /// </summary>
   XYScatterSmooth = 72,
   /// <summary>
-  /// Scatter with Smoothed ILines and No Data Markers
+  /// Scatter with Smoothed Lines and No Data Markers
   /// </summary>
   XYScatterSmoothNoMarkers = 73,
   /// <summary>
-  /// Scatter with ILines and No Data Markers
+  /// Scatter with Lines and No Data Markers
   /// </summary>
   XYScatterLines = 74,
   /// <summary>
-  /// Scatter with ILines and No Data Markers
+  /// Scatter with Lines and No Data Markers
   /// </summary>
   XYScatterLinesNoMarkers = 75,
   /// <summary>
@@ -283,7 +283,7 @@ public enum ChartType
   /// </summary>
   Pie = 5,
   /// <summary>
-  /// Scatter with ILines and No Data Markers
+  /// Scatter with Lines and No Data Markers
   /// </summary>
   XYScatter = -4169,
   /// <summary>

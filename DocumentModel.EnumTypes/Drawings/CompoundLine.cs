@@ -12,22 +12,22 @@ public enum CompoundLine
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.CompoundLineValues.Single))]
   Single,
   /// <summary>
-  ///   Double ILines.
+  ///   Double Lines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.CompoundLineValues.Double))]
   Double,
   /// <summary>
-  ///   Thick Thin Double ILines.
+  ///   Thick Thin Double Lines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.CompoundLineValues.ThickThin))]
   ThickThin,
   /// <summary>
-  ///   Thin Thick Double ILines.
+  ///   Thin Thick Double Lines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.CompoundLineValues.ThinThick))]
   ThinThick,
   /// <summary>
-  ///   Thin Thick Thin Triple ILines.
+  ///   Thin Thick Thin Triple Lines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.CompoundLineValues.Triple))]
   Triple
