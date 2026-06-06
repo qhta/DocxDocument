@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the drop lines in a chart group.
 /// </summary>
@@ -10,23 +9,19 @@ public interface IDropLines : IInteropObject
   /// Gets the name of the `DropLines` object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.name?view=word-pia"/>
-  public string Name { get; }
-
+  public string Name { get; }	
   /// <summary>
   /// Gets the border formatting for the drop lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.border?view=word-pia"/>
-  public IChartBorder Border { get; }
-
+  public IChartBorder Border { get; }	
   /// <summary>
   /// Gets the chart formatting for the drop lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.format?view=word-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the object.
   /// </summary>
@@ -34,7 +29,6 @@ public interface IDropLines : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines.select?view=word-pia"/>
-  public void Select();
-
+  public void Select();	
   #endregion methods
 }

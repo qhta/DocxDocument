@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a legend entry in a chart legend.
 /// </summary>
@@ -51,11 +50,9 @@ public interface ILegendEntry
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the legend entry.
   /// </summary>
@@ -67,9 +64,7 @@ public interface ILegendEntry
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

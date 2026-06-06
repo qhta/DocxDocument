@@ -1,7 +1,5 @@
-using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `CustomXMLNodes` interface.
 /// </summary>
@@ -14,5 +12,4 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnodes?view=office-pia"/>
 public interface ICustomXMLNodes: IInteropCollection<ICustomXMLNode>
 {
-}
-
+}	

@@ -1,17 +1,13 @@
-﻿using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+﻿using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a collection of debug unit tests.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts?view=office-pia"/>
 public interface IDebugOptions_UTs: IInteropCollection<IDebugOptions_UT>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Gets unit tests in a specific collection.
   /// </summary>
@@ -34,9 +30,7 @@ public interface IDebugOptions_UTs: IInteropCollection<IDebugOptions_UT>
   /// <param name="bstrUnitTestNameFilter">The `bstrUnitTestNameFilter` parameter.</param>
   /// <returns>The matching unit tests.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getmatchingunittestsincollection?view=office-pia"/>
-  public IDebugOptions_UTs GetMatchingUnitTestsInCollection(string bstrCollectionName, string bstrUnitTestNameFilter);
-
+  public IDebugOptions_UTs GetMatchingUnitTestsInCollection(string bstrCollectionName, string bstrUnitTestNameFilter);	
   #endregion methods
-}
-
+}	
 

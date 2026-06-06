@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the upper limit mathematical construct, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
@@ -10,17 +9,14 @@ public interface IMathLimUpp : IInteropObject
   /// Returns the base expression for the upper-limit construct.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.e?view=word-pia"/>
-  public IMath E { get; }
-
+  public IMath E { get; }	
   /// <summary>
   /// Returns the upper limit expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.lim?view=word-pia"/>
-  public IMath Lim { get; }
+  public IMath Lim { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Converts the upper-limit construct to a lower-limit construct.
   /// </summary>
@@ -29,9 +25,7 @@ public interface IMathLimUpp : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.tolimlow?view=word-pia"/>
-  public IMathFunction ToLimLow();
-
+  public IMathFunction ToLimLow();	
   #endregion methods
-}
-
+}	
 

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a Microsoft Office system contact card.
 /// </summary>
@@ -21,10 +20,8 @@ public interface IContactCard: IInteropObject
   /// Gets the `CardType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.cardtype?view=office-pia"/>
-  public ContactCardType CardType { get; }
-
-  #region methods
-
+  public ContactCardType CardType { get; }	
+  #region methods	
   /// <summary>
   /// Closes the contact card.
   /// </summary>
@@ -43,8 +40,6 @@ public interface IContactCard: IInteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contactcard.show?view=office-pia"/>
   public void Show
   (ContactCardStyle CardStyle, int RectangleLeft, int RectangleRight, int RectangleTop, int RectangleBottom,
-    int HorizontalPosition, bool ShowWithDelay);
-
+    int HorizontalPosition, bool ShowWithDelay);	
   #endregion methods
-}
-
+}	

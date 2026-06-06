@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `ThemeFont` interface.
 /// </summary>
@@ -13,5 +11,4 @@ public interface IThemeFont: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefont.name?view=office-pia"/>
   public string Name { get; set; }
-}
-
+}	

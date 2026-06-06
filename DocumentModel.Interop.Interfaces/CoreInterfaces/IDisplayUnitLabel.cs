@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a display unit label.
 /// </summary>
@@ -131,11 +130,9 @@ public interface IDisplayUnitLabel: IChartTitle
   /// Gets or sets the `FormulaR1C1Local` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.formular1c1local?view=office-pia"/>
-  public new string FormulaR1C1Local { get; set; }
+  public new string FormulaR1C1Local { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the display unit label.
   /// </summary>
@@ -147,9 +144,7 @@ public interface IDisplayUnitLabel: IChartTitle
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.select?view=office-pia"/>
-  public new object Select();
-
+  public new object Select();	
   #endregion methods
-}
-
+}	
 

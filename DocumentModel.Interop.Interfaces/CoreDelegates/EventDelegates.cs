@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
-
+﻿namespace DocumentModel.Interop.Core;	
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 public delegate void MsoEnvelopeVBEvents_EnvelopeShowEventHandler();
 public delegate void MsoEnvelopeVBEvents_EnvelopeHideEventHandler();
@@ -13,8 +12,6 @@ public delegate void _CustomXMLPartEvents_NodeAfterDeleteEventHandler(ICustomXML
 public delegate void _CustomXMLPartEvents_NodeAfterReplaceEventHandler(ICustomXMLNode OldNode, ICustomXMLNode NewNode, bool InUndoRedo);
 public delegate void _CustomXMLPartsEvents_PartAfterAddEventHandler(ICustomXMLPart NewPart);
 public delegate void _CustomXMLPartsEvents_PartBeforeDeleteEventHandler(ICustomXMLPart OldPart);
-public delegate void _CustomXMLPartsEvents_PartAfterLoadEventHandler(ICustomXMLPart Part);
-
-
-
+public delegate void _CustomXMLPartsEvents_PartAfterLoadEventHandler(ICustomXMLPart Part);	
+	
 

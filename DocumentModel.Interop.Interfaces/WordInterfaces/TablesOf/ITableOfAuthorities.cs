@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single table of authorities in a document (a TOA field).
 /// </summary>
@@ -10,79 +9,66 @@ public interface ITableOfAuthorities : IInteropObject
   /// True if five or more page references to the same authority are replaced with "Passim."
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.passim?view=word-pia"/>
-  public bool Passim { get; set; }
-
+  public bool Passim { get; set; }	
   /// <summary>
   /// True if formatting from table of authorities entries is applied to the entries in the specified table of
   /// authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.keepentryformatting?view=word-pia"/>
-  public bool KeepEntryFormatting { get; set; }
-
+  public bool KeepEntryFormatting { get; set; }	
   /// <summary>
   /// Returns or sets the category of entries to be included in a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.category?view=word-pia"/>
-  public int Category { get; set; }
-
+  public int Category { get; set; }	
   /// <summary>
   /// Returns or sets the name of the bookmark from which to collect table of authorities entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.bookmark?view=word-pia"/>
-  public string IBookmark { get; set; }
-
+  public string IBookmark { get; set; }	
   /// <summary>
   /// Returns or sets the characters (up to five) between the sequence number and the page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.separator?view=word-pia"/>
-  public string Separator { get; set; }
-
+  public string Separator { get; set; }	
   /// <summary>
   /// Returns or sets the Sequence (SEQ) field identifier for a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.includesequencename?view=word-pia"/>
-  public string IncludeSequenceName { get; set; }
-
+  public string IncludeSequenceName { get; set; }	
   /// <summary>
   /// Returns or sets the characters (up to five) that separate a table of authorities entry and its page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.entryseparator?view=word-pia"/>
-  public string EntrySeparator { get; set; }
-
+  public string EntrySeparator { get; set; }	
   /// <summary>
   /// Returns or sets the characters (up to five) that separate a range of pages in a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.pagerangeseparator?view=word-pia"/>
-  public string PageRangeSeparator { get; set; }
-
+  public string PageRangeSeparator { get; set; }	
   /// <summary>
   /// True if the category name for a group of entries appears in the table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.includecategoryheader?view=word-pia"/>
-  public bool IncludeCategoryHeader { get; set; }
-
+  public bool IncludeCategoryHeader { get; set; }	
   /// <summary>
   /// Returns of sets the characters (up to five) that separate individual page references in a table of
   /// authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.pagenumberseparator?view=word-pia"/>
-  public string PageNumberSeparator { get; set; }
-
+  public string PageNumberSeparator { get; set; }	
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.range?view=word-pia"/>
-  public IRange range { get; }
-
+  public IRange range { get; }	
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.tableader?view=word-pia"/>
-  public TabLeader TabLeader { get; set; }
+  public TabLeader TabLeader { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -90,7 +76,6 @@ public interface ITableOfAuthorities : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

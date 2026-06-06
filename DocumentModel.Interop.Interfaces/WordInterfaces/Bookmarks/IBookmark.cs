@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single bookmark.
 /// </summary>
@@ -10,47 +9,39 @@ public interface IBookmark : IInteropObject
   /// Gets the name of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.name?view=word-pia"/>
-  public string Name { get; }
-
+  public string Name { get; }	
   /// <summary>
   /// Gets the range that represents the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.range?view=word-pia"/>
-  public IRange range { get; }
-
+  public IRange range { get; }	
   /// <summary>
   /// Gets a value indicating whether the bookmark is empty.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.empty?view=word-pia"/>
-  public bool Empty { get; }
-
+  public bool Empty { get; }	
   /// <summary>
   /// Gets or sets the starting character position of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.start?view=word-pia"/>
-  public int Start { get; set; }
-
+  public int Start { get; set; }	
   /// <summary>
   /// Gets or sets the ending character position of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.end?view=word-pia"/>
-  public int End { get; set; }
-
+  public int End { get; set; }	
   /// <summary>
   /// Gets a value indicating whether the bookmark is a table column bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.column?view=word-pia"/>
-  public bool Column { get; }
-
+  public bool Column { get; }	
   /// <summary>
   /// Gets the story type for the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.storytype?view=word-pia"/>
-  public StoryType StoryType { get; }
+  public StoryType StoryType { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the specified IBookmark object.
   /// </summary>
@@ -58,7 +49,6 @@ public interface IBookmark : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.select?view=word-pia"/>
-  public void Select();
-
+  public void Select();	
   #endregion methods
 }

@@ -1,16 +1,13 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Defines converter-specific preferences for Office document converters.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia"/>
 public interface IConverterPreferences
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Gets whether macros are enabled.
   /// </summary>
@@ -28,8 +25,6 @@ public interface IConverterPreferences
   /// </summary>
   /// <param name="pfLossySave">The `pfLossySave` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrgetlossysave?view=office-pia"/>
-  public void HrGetLossySave(out int pfLossySave);
-
+  public void HrGetLossySave(out int pfLossySave);	
   #endregion methods
-}
-
+}	

@@ -1,7 +1,5 @@
-using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SharedWorkspaceTasks` interface.
 /// </summary>
@@ -14,11 +12,9 @@ public interface ISharedWorkspaceTasks: IInteropCollection<ISharedWorkspaceTask>
   /// Gets the `ItemCountExceeded` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.itemcountexceeded?view=office-pia"/>
-  public bool ItemCountExceeded { get; }
+  public bool ItemCountExceeded { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
@@ -31,8 +27,6 @@ public interface ISharedWorkspaceTasks: IInteropCollection<ISharedWorkspaceTask>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
   public ISharedWorkspaceTask Add
-    (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
-
+    (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);	
   #endregion methods
-}
-
+}	

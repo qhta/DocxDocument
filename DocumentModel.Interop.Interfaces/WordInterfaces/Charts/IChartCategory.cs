@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents all chart categories in the document, whether visible (unfiltered) or not.
 /// </summary>
@@ -15,6 +14,5 @@ public interface IChartCategory : IInteropObject
   /// Gets or sets a value indicating whether the chart category is filtered.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory.isfiltered?view=word-pia"/>
-  public bool IsFiltered { get; set; }
-
+  public bool IsFiltered { get; set; }	
 }

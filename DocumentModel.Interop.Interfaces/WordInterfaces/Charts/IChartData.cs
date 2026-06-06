@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents access to the linked or embedded data associated with a chart.
 /// </summary>
@@ -10,17 +9,14 @@ public interface IChartData
   /// Gets the workbook that contains the chart data.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata.workbook?view=word-pia"/>
-  public object Workbook { get; }
-
+  public object Workbook { get; }	
   /// <summary>
   /// Gets a value indicating whether the chart data is linked to an external workbook.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata.islinked?view=word-pia"/>
-  public bool IsLinked { get; }
+  public bool IsLinked { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Activates the first window of the workbook associated with the chart.
   /// </summary>
@@ -28,7 +24,6 @@ public interface IChartData
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata.activate?view=word-pia"/>
-  public void Activate();
-
+  public void Activate();	
   #endregion methods
 }

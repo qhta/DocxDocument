@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents file search functionality available in Office.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch?view=office-pia"/>
 public interface IFileSearch
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Executes the file search using the specified sort options.
   /// </summary>
@@ -30,8 +27,6 @@ public interface IFileSearch
   /// Refreshes the available search scopes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch.refreshscopes?view=office-pia"/>
-  public void RefreshScopes();
-
+  public void RefreshScopes();	
   #endregion methods
-}
-
+}	

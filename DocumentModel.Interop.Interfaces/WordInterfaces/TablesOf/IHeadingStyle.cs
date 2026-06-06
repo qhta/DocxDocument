@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a heading style used when building a table of contents or table of figures.
 /// </summary>
@@ -10,17 +9,14 @@ public interface IHeadingStyle : IInteropObject
   /// Returns or sets the style associated with the heading style entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle.style?view=word-pia"/>
-  public object Style { get; set; }
-
+  public object Style { get; set; }	
   /// <summary>
   /// Returns or sets the outline level associated with the heading style entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle.level?view=word-pia"/>
-  public short Level { get; set; }
+  public short Level { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -28,7 +24,6 @@ public interface IHeadingStyle : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

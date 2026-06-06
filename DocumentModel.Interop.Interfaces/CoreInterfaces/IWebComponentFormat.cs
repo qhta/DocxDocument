@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `WebComponentFormat` interface.
 /// </summary>
@@ -36,17 +35,13 @@ public interface IWebComponentFormat
   /// Gets or sets the `PreviewGraphic` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat.previewgraphic?view=office-pia"/>
-  public string PreviewGraphic { get; set; }
+  public string PreviewGraphic { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `LaunchPropertiesWindow`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat.launchpropertieswindow?view=office-pia"/>
-  public void LaunchPropertiesWindow();
-
+  public void LaunchPropertiesWindow();	
   #endregion methods
-}
-
+}	

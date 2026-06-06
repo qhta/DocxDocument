@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SmartArt` interface.
 /// </summary>
@@ -38,17 +37,13 @@ public interface ISmartArt: IInteropObject
   /// Gets or sets the `Reverse` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reverse?view=office-pia"/>
-  public TriState Reverse { get; set; }
+  public TriState Reverse { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Reset`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reset?view=office-pia"/>
-  public void Reset();
-
+  public void Reset();	
   #endregion methods
-}
-
+}	

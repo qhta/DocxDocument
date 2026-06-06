@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents chart grid lines.
 /// </summary>
@@ -21,11 +20,9 @@ public interface IGridLines
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the grid lines.
   /// </summary>
@@ -37,9 +34,7 @@ public interface IGridLines
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines.delete?view=office-pia"/>
-  public object Delete();
-
+  public object Delete();	
   #endregion methods
-}
-
+}	
 

@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a single policy setting within a server policy.
 /// </summary>
@@ -28,5 +26,4 @@ public interface IPolicyItem: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.policyitem.data?view=office-pia"/>
   public string Data { get; }
-}
-
+}	

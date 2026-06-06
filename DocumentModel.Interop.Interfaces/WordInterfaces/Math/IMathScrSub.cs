@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an equation with a base that contains a subscript.
 /// </summary>
@@ -15,8 +14,6 @@ public interface IMathScrSub : IInteropObject
   /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsub.sub?view=word-pia"/>
-  public IMath Sub { get; }
-
-}
-
+  public IMath Sub { get; }	
+}	
 

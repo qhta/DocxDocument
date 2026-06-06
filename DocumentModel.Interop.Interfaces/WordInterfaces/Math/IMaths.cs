@@ -1,15 +1,12 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of equations. Use the OMaths object to access individual members of the collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths?view=word-pia"/>
 public interface IMaths : IInteropObject, IInteropCollection<IMath>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Converts all equations in the collection to linear format. .
   /// </summary>
@@ -17,8 +14,7 @@ public interface IMaths : IInteropObject, IInteropCollection<IMath>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.linearize?view=word-pia"/>
-  public void Linearize();
-
+  public void Linearize();	
   /// <summary>
   /// Converts all equations in the collection to professional format.
   /// </summary>
@@ -26,8 +22,7 @@ public interface IMaths : IInteropObject, IInteropCollection<IMath>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.buildup?view=word-pia"/>
-  public void BuildUp();
-
+  public void BuildUp();	
   /// <summary>
   /// Returns a new range that represents the sum of the current range and the specified range.
   /// </summary>
@@ -36,8 +31,6 @@ public interface IMaths : IInteropObject, IInteropCollection<IMath>
   /// <param name="range">The range to add to the current range. Must not be null.</param>
   /// <returns>A new Range instance representing the combined range of the current and specified ranges.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.add?view=word-pia"/>
-  public IRange Add(IRange range);
-
+  public IRange Add(IRange range);	
   #endregion methods
-}
-
+}	

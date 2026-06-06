@@ -1,15 +1,12 @@
-﻿namespace DocumentModel.Interop.Core;
-
+﻿namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the floor of a 3-D chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsofloor?view=office-pia"/>
 public interface IFloor
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the chart floor.
   /// </summary>
@@ -26,9 +23,7 @@ public interface IFloor
   /// Pastes content onto the chart floor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsofloor.paste?view=office-pia"/>
-  public void Paste();
-
+  public void Paste();	
   #endregion methods
-}
-
+}	
 

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of spelling and grammatical errors for the specified document or range.
 /// </summary>

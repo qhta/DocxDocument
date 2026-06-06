@@ -1,16 +1,13 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink?view=office-pia"/>
 public interface IDispCagNotifySink
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Inserts a clip.
   /// </summary>
@@ -22,9 +19,7 @@ public interface IDispCagNotifySink
   /// Indicates that the window is closing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink.windowisclosing?view=office-pia"/>
-  public void WindowIsClosing();
-
+  public void WindowIsClosing();	
   #endregion methods
-}
-
+}	
 

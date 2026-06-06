@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a chart data table.
 /// </summary>
@@ -46,11 +45,9 @@ public interface IDataTable
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the data table.
   /// </summary>
@@ -60,9 +57,7 @@ public interface IDataTable
   /// Deletes the data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	
 

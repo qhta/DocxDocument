@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a chart axis.
 /// </summary>
@@ -236,11 +235,9 @@ public interface IAxis
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the axis.
   /// </summary>
@@ -252,9 +249,7 @@ public interface IAxis
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

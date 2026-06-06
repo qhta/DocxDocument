@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a collection of SmartTagType objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtypes?view=word-pia"/>
 public interface ISmartTagTypes : IInteropObject, IInteropCollection<ISmartTagType>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Reloads all smart tag actions and recognizers installed on a user's computer.
   /// </summary>
@@ -17,7 +14,6 @@ public interface ISmartTagTypes : IInteropObject, IInteropCollection<ISmartTagTy
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtypes.reloadall?view=word-pia"/>
-  public void ReloadAll();
-
+  public void ReloadAll();	
   #endregion methods
 }

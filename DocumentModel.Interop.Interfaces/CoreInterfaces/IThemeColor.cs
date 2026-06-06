@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `ThemeColor` interface.
 /// </summary>
@@ -18,5 +16,4 @@ public interface IThemeColor: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolor.themecolorschemeindex?view=office-pia"/>
   public ThemeColorSchemeIndex ThemeColorSchemeIndex { get; }
-}
-
+}	

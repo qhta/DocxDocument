@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a delimiter object, consisting of opening and closing delimiters (such as parentheses, braces, brackets, or vertical bars), and one or more elements contained inside the delimiters.
 /// </summary>
@@ -45,7 +44,5 @@ public interface IMathDelim : IInteropObject
   /// Returns or sets whether the right delimiter is omitted.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathdelim.norightchar?view=word-pia"/>
-  public bool NoRightChar { get; set; }
-
-}
-
+  public bool NoRightChar { get; set; }	
+}	

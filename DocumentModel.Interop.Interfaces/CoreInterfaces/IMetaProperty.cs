@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a metadata property.
 /// </summary>
@@ -42,18 +40,14 @@ public interface IMetaProperty: IInteropObject
   /// Gets the `ValidationError` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validationerror?view=office-pia"/>
-  public string ValidationError { get; }
+  public string ValidationError { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Validates the metadata property value.
   /// </summary>
   /// <returns>The validation error message, if any.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia"/>
-  public string Validate();
-
+  public string Validate();	
   #endregion methods
-}
-
+}	

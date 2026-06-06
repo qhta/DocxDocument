@@ -1,7 +1,5 @@
-﻿using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+﻿using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Manages debug unit tests.
 /// </summary>
@@ -17,11 +15,9 @@ public interface IDebugOptions_UTManager: IInteropObject
   /// Gets or sets the `ReportErrors` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.reporterrors?view=office-pia"/>
-  public bool ReportErrors { get; set; }
+  public bool ReportErrors { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Notifies the start of a unit test suite run.
   /// </summary>
@@ -31,9 +27,7 @@ public interface IDebugOptions_UTManager: IInteropObject
   /// Notifies the end of a unit test suite run.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.notifyendoftestsuiterun?view=office-pia"/>
-  public void NotifyEndOfTestSuiteRun();
-
+  public void NotifyEndOfTestSuiteRun();	
   #endregion methods
-}
-
+}	
 

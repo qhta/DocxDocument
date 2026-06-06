@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a custom task pane in the container application.
 /// </summary>
@@ -47,17 +45,13 @@ public interface ICustomTaskPane
   /// Gets or sets the `DockPositionRestrict` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.dockpositionrestrict?view=office-pia"/>
-  public CTPDockPositionRestrict DockPositionRestrict { get; set; }
+  public CTPDockPositionRestrict DockPositionRestrict { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the active custom task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

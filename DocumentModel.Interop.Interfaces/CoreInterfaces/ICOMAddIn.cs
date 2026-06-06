@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a COM add-in in the Microsoft Office host application.
 /// </summary>
@@ -33,5 +31,4 @@ public interface ICOMAddIn: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddin.object?view=office-pia"/>
   public object Object { get; set; }
-}
-
+}	

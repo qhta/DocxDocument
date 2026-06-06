@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents high-low lines in a chart group.
 /// </summary>
@@ -10,23 +9,19 @@ public interface IHiLoLines : IInteropObject
   /// Returns the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.name?view=word-pia"/>
-  public string Name { get; }
-
+  public string Name { get; }	
   /// <summary>
   /// Returns a border object that represents the high-low lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.border?view=word-pia"/>
-  public IChartBorder Border { get; }
-
+  public IChartBorder Border { get; }	
   /// <summary>
   /// Returns the chart format properties for the high-low lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.format?view=word-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the object.
   /// </summary>
@@ -34,7 +29,6 @@ public interface IHiLoLines : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.select?view=word-pia"/>
-  public void Select();
-
+  public void Select();	
   #endregion methods
 }

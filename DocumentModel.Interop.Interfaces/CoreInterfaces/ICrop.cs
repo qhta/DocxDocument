@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents an object used to remove a portion of an image.
 /// </summary>
@@ -48,5 +46,4 @@ public interface ICrop: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.crop.shapeheight?view=office-pia"/>
   public float ShapeHeight { get; set; }
-}
-
+}	

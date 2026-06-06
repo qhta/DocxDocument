@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single instance of a custom property for a smart tag.
 /// </summary>
@@ -10,17 +9,14 @@ public interface ICustomProperty : IInteropObject
   /// Gets the name of the custom property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty.name?view=word-pia"/>
-  public string Name { get; }
-
+  public string Name { get; }	
   /// <summary>
   /// Gets or sets the value of the custom property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string Value { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -28,7 +24,6 @@ public interface ICustomProperty : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

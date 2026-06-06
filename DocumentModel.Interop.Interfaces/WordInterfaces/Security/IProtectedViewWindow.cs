@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a protected view window.
 /// </summary>
@@ -10,78 +9,65 @@ public interface IProtectedViewWindow : IInteropObject
   /// Gets or sets the caption text that is displayed in the title bar of the document or protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.caption?view=word-pia"/>
-  public string Caption { get; set; }
-
+  public string Caption { get; set; }	
   /// <summary>
   /// Gets a Document object associated with the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.document?view=word-pia"/>
-  public IDocument document { get; }
-
+  public IDocument document { get; }	
   /// <summary>
   /// Gets or sets a value, in points, that represents the horizontal position of the specified protected view
   /// window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.left?view=word-pia"/>
-  public int Left { get; set; }
-
+  public int Left { get; set; }	
   /// <summary>
   /// Gets or sets the vertical position, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.top?view=word-pia"/>
-  public int Top { get; set; }
-
+  public int Top { get; set; }	
   /// <summary>
   /// Gets or sets the width, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.width?view=word-pia"/>
-  public int Width { get; set; }
-
+  public int Width { get; set; }	
   /// <summary>
   /// Gets or sets the height of the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.height?view=word-pia"/>
-  public int Height { get; set; }
-
+  public int Height { get; set; }	
   /// <summary>
   /// Gets or sets the state of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.windowstate?view=word-pia"/>
-  public WindowState WindowState { get; set; }
-
+  public WindowState WindowState { get; set; }	
   /// <summary>
   /// Gets whether the specified protected view window is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.active?view=word-pia"/>
-  public bool Active { get; }
-
+  public bool Active { get; }	
   /// <summary>
   /// Returns a value that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.index?view=word-pia"/>
-  public int Index { get; }
-
+  public int Index { get; }	
   /// <summary>
   /// Gets or sets whether the specified protected view window is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.visible?view=word-pia"/>
-  public bool Visible { get; set; }
-
+  public bool Visible { get; set; }	
   /// <summary>
   /// Gets the name of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcename?view=word-pia"/>
-  public string SourceName { get; }
-
+  public string SourceName { get; }	
   /// <summary>
   /// Gets the path of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcepath?view=word-pia"/>
-  public string SourcePath { get; }
+  public string SourcePath { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Activates the specified protected view window.
   /// </summary>
@@ -89,7 +75,6 @@ public interface IProtectedViewWindow : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.activate?view=word-pia"/>
-  public void Activate();
-
+  public void Activate();	
   #endregion methods
 }

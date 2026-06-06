@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of Revision objects that represent the changes marked with revision marks in a range or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisions?view=word-pia"/>
 public interface IRevisions : IInteropObject, IInteropCollection<IRevision>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Accepts all the tracked changes in a document or range. The revision marks are removed, and the changes are
   /// incorporated into the document.
@@ -18,8 +15,7 @@ public interface IRevisions : IInteropObject, IInteropCollection<IRevision>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisions.acceptall?view=word-pia"/>
-  public void AcceptAll();
-
+  public void AcceptAll();	
   /// <summary>
   /// Rejects all the tracked changes in a range. The revision marks are removed, leaving the original text intact.
   /// </summary>
@@ -27,7 +23,6 @@ public interface IRevisions : IInteropObject, IInteropCollection<IRevision>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisions.rejectall?view=word-pia"/>
-  public void RejectAll();
-
+  public void RejectAll();	
   #endregion methods
 }

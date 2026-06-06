@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `Signature` interface.
 /// </summary>
@@ -83,11 +82,9 @@ public interface ISignature: IInteropObject
   /// Gets the `SortHint` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.sorthint?view=office-pia"/>
-  public int SortHint { get; }
+  public int SortHint { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Delete`.
   /// </summary>
@@ -106,8 +103,6 @@ public interface ISignature: IInteropObject
   /// Invokes `ShowDetails`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.showdetails?view=office-pia"/>
-  public void ShowDetails();
-
+  public void ShowDetails();	
   #endregion methods
-}
-
+}	

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IShapeNode: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenode.segmenttype?view=office-pia"/>
   public SegmentType SegmentType { get; }
-}
-
+}	

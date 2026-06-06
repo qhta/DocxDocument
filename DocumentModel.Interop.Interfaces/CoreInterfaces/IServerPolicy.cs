@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a policy specified for a server-stored document type.
 /// </summary>
@@ -42,5 +41,4 @@ public interface IServerPolicy: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy.blockpreview?view=office-pia"/>
   public bool BlockPreview { get; }
-}
-
+}	

@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Provides file dialog box functionality similar to Office Open and Save dialogs.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialog?view=office-pia"/>
 public interface IFileDialog
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Displays the file dialog.
   /// </summary>
@@ -20,8 +17,6 @@ public interface IFileDialog
   /// Executes the action associated with the file dialog.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialog.execute?view=office-pia"/>
-  public void Execute();
-
+  public void Execute();	
   #endregion methods
-}
-
+}	

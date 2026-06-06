@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a legend key in a chart.
 /// </summary>
@@ -106,11 +105,9 @@ public interface ILegendKey
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.pictureunit2?view=office-pia"/>
-  public double PictureUnit2 { get; set; }
+  public double PictureUnit2 { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Clears formatting from the legend key.
   /// </summary>
@@ -128,9 +125,7 @@ public interface ILegendKey
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

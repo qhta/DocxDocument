@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A mapped data field in Microsoft Word is a built-in feature primarily used in Mail Merge that acts
 /// as a universal placeholder for common information, such as "First Name" or "Address"
@@ -31,6 +30,5 @@ public interface IMappedDataField : IInteropObject
   /// Returns or sets the index of the mapped data source field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.datafieldindex?view=word-pia"/>
-  public int DataFieldIndex { get; set; }
-
+  public int DataFieldIndex { get; set; }	
 }

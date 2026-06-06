@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a single saved version of a shared document in a document library.
 /// </summary>
@@ -27,11 +25,9 @@ public interface IDocumentLibraryVersion: IInteropObject
   /// Gets the `Comments` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversion.comments?view=office-pia"/>
-  public string Comments { get; }
+  public string Comments { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes this document library version.
   /// </summary>
@@ -48,8 +44,6 @@ public interface IDocumentLibraryVersion: IInteropObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversion.restore?view=office-pia"/>
-  public object Restore();
-
+  public object Restore();	
   #endregion methods
-}
-
+}	

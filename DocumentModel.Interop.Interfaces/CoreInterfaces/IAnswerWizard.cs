@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the Answer Wizard in a Microsoft Office application.
 /// </summary>
@@ -11,11 +10,9 @@ public interface IAnswerWizard: IInteropObject
   /// Gets the Answer Wizard files available to the active Office application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizard.files?view=office-pia"/>
-  public IAnswerWizardFiles Files { get; }
+  public IAnswerWizardFiles Files { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Clears the list of Answer Wizard files.
   /// </summary>
@@ -25,8 +22,6 @@ public interface IAnswerWizard: IInteropObject
   /// Resets the Answer Wizard file list to the default set.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizard.resetfilelist?view=office-pia"/>
-  public void ResetFileList();
-
+  public void ResetFileList();	
   #endregion methods
-}
-
+}	

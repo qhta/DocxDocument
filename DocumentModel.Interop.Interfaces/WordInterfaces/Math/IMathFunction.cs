@@ -159,5 +159,4 @@ public interface IMathFunction : IInteropObject
 
   #endregion methods
 }
-
-
+	

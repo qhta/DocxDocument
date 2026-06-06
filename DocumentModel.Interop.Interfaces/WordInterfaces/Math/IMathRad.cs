@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the mathematical radical object, consisting of a radical, a base, and an optional degree.
 /// </summary>
@@ -20,8 +19,6 @@ public interface IMathRad : IInteropObject
   /// Returns or sets whether the radical degree is hidden.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.hidedeg?view=word-pia"/>
-  public bool HideDeg { get; set; }
-
-}
-
+  public bool HideDeg { get; set; }	
+}	
 

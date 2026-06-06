@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of AutoCaption objects that represent the captions that can be automatically added when items such as tables, pictures, or OLE objects are inserted into a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaptions?view=word-pia"/>
 public interface IAutoCaptions : IInteropObject, IInteropCollection<IAutoCaption>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Prevents Microsoft Word from automatically adding captions to any type of item.
   /// </summary>
@@ -17,7 +14,6 @@ public interface IAutoCaptions : IInteropObject, IInteropCollection<IAutoCaption
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaptions.cancelautoinsert?view=word-pia"/>
-  public void CancelAutoInsert();
-
+  public void CancelAutoInsert();	
   #endregion methods
 }

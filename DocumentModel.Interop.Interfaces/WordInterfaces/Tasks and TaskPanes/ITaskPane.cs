@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single task pane available to Microsoft Word, which contains common tasks that users perform.
 /// </summary>
@@ -10,6 +9,5 @@ public interface ITaskPane : IInteropObject
   /// Determines if the specified object is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.taskpane.visible?view=word-pia"/>
-  public bool Visible { get; set; }
-
+  public bool Visible { get; set; }	
 }

@@ -1,7 +1,5 @@
-﻿using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+﻿using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the result of a debug unit test run.
 /// </summary>
@@ -18,6 +16,5 @@ public interface IDebugOptions_UTRunResult: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult.errorstring?view=office-pia"/>
   public string ErrorString { get; }
-}
-
+}	
 

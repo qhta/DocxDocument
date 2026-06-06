@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the list gallery objects for the Bullets and Numbering dialog box tabs.
 /// </summary>

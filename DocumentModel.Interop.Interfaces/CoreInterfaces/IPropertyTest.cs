@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a single file search criterion.
 /// </summary>
@@ -33,5 +31,4 @@ public interface IPropertyTest: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest.connector?view=office-pia"/>
   public Connector Connector { get; }
-}
-
+}	

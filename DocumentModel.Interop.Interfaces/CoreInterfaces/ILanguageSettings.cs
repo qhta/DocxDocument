@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents language settings used by the Office application.
 /// </summary>
@@ -17,5 +16,4 @@ public interface ILanguageSettings: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings.languagepreferredforediting?view=office-pia"/>
   public bool LanguagePreferredForEditing { get; }
-}
-
+}	

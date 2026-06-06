@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the math AutoCorrect feature in Microsoft Office Word. To access the math AutoCorrect entries, use the OMathAutoCorrectEntries collection.
 /// </summary>
@@ -25,7 +24,5 @@ public interface IMathAutoCorrect : IInteropObject
   /// Returns the collection of recognized math functions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrect.functions?view=word-pia"/>
-  public IMathRecognizedFunctions Functions { get; }
-
-}
-
+  public IMathRecognizedFunctions Functions { get; }	
+}	

@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an invisible box around an equation or part of an equation to which you can assign properties that affect the layout or mathematical formatting of the entire box. For example, a box can serve as an operator emulator with or without an alignment point, serve as a like breakpoint, have an associated argument size (argSz), or be grouped so as not to allow line breaks.
 /// </summary>
@@ -50,8 +49,6 @@ public interface IMathBorderBox : IInteropObject
   /// Returns or sets whether a diagonal strike-through line from top-left to bottom-right is shown.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.striketlbr?view=word-pia"/>
-  public bool StrikeTLBR { get; set; }
-
-}
-
+  public bool StrikeTLBR { get; set; }	
+}	
 

@@ -1,16 +1,13 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Defines UI callback methods for Office document converters.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback?view=office-pia"/>
 public interface IConverterUICallback
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Reports conversion progress.
   /// </summary>
@@ -34,8 +31,6 @@ public interface IConverterUICallback
   /// <param name="pbstrInput">The `pbstrInput` parameter.</param>
   /// <param name="fPassword">The `fPassword` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrinputbox?view=office-pia"/>
-  public void HrInputBox(string bstrText, string bstrCaption, out string pbstrInput, int fPassword);
-
+  public void HrInputBox(string bstrText, string bstrCaption, out string pbstrInput, int fPassword);	
   #endregion methods
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains magnification options (for example, the zoom percentage) for a window or pane.
 /// </summary>
@@ -28,6 +27,5 @@ public interface IZoom : IInteropObject
   /// view or print preview.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagecolumns?view=word-pia"/>
-  public int PageColumns { get; set; }
-
+  public int PageColumns { get; set; }	
 }

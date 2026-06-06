@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents tick labels on a chart axis.
 /// </summary>
@@ -71,11 +70,9 @@ public interface ITickLabels
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the tick labels.
   /// </summary>
@@ -87,9 +84,7 @@ public interface ITickLabels
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

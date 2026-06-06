@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents line numbers in the left margin or to the left of each newspaper-style column.
 /// </summary>
@@ -30,6 +29,5 @@ public interface ILineNumbering : IInteropObject
   /// Returns or sets whether line numbering is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.active?view=word-pia"/>
-  public int Active { get; set; }
-
+  public int Active { get; set; }	
 }

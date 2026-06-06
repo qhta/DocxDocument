@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a custom or built-in document property.
 /// </summary>
@@ -41,16 +39,13 @@ public interface IDocumentProperty
   /// This property applies only to custom document properties; you cannot use it with built-in document properties.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linksource?view=office-pia"/>
-  public string LinkSource { get; set; }
+  public string LinkSource { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the document property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

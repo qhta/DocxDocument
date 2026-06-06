@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of Reviewer objects that represents the reviewers of one or more documents. The Reviewers
 /// collection contains the names of all reviewers who have reviewed documents opened or edited on a machine.

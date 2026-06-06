@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a Microsoft Office theme.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IOfficeTheme: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officetheme.themeeffectscheme?view=office-pia"/>
   public IThemeEffectScheme ThemeEffectScheme { get; }
-}
-
+}	

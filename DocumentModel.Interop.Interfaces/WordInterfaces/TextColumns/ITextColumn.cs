@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single text column.
 /// </summary>
@@ -15,6 +14,5 @@ public interface ITextColumn : IInteropObject
   /// Returns or sets the amount of spacing (in points) after the specified text column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumn.spaceafter?view=word-pia"/>
-  public float SpaceAfter { get; set; }
-
+  public float SpaceAfter { get; set; }	
 }

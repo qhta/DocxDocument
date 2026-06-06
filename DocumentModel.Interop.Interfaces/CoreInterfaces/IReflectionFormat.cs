@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the reflection effect in Office graphics.
 /// </summary>
@@ -32,5 +31,4 @@ public interface IReflectionFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.reflectionformat.blur?view=office-pia"/>
   public float Blur { get; set; }
-}
-
+}	

@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a folder-tree scope that can be searched.
 /// </summary>
@@ -18,5 +16,4 @@ public interface ISearchScope: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscope.scopefolder?view=office-pia"/>
   public IScopeFolder ScopeFolder { get; }
-}
-
+}	

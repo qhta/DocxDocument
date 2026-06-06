@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an equation that contains a superscript or subscript to the left of the base.
 /// </summary>
@@ -10,23 +9,19 @@ public interface IMathScrPre : IInteropObject
   /// Returns the subscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sub?view=word-pia"/>
-  public IMath Sub { get; }
-
+  public IMath Sub { get; }	
   /// <summary>
   /// Returns the superscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sup?view=word-pia"/>
-  public IMath Sup { get; }
-
+  public IMath Sup { get; }	
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.e?view=word-pia"/>
-  public IMath E { get; }
+  public IMath E { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Creates a new script function with both subscript and superscript components based on the current mathematical
   /// object.
@@ -36,9 +31,7 @@ public interface IMathScrPre : IInteropObject
   /// customization of the subscript and superscript values.</remarks>
   /// <returns>An instance of the OMathFunction representing the script function with subscript and superscript applied.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.toscrsubsup?view=word-pia"/>
-  public IMathFunction ToScrSubSup();
-
+  public IMathFunction ToScrSubSup();	
   #endregion methods
-}
-
+}	
 

@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a mathematical equation array object, consisting of one or more equations that can be vertically justified as a unit respect to surrounding text on the line.
 /// </summary>
@@ -35,7 +34,5 @@ public interface IMathEqArray : IInteropObject
   /// Returns or sets the row spacing value.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacing?view=word-pia"/>
-  public int RowSpacing { get; set; }
-
-}
-
+  public int RowSpacing { get; set; }	
+}	

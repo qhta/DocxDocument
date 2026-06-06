@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a resolved or selected item of data.
 /// </summary>
@@ -46,5 +45,4 @@ public interface IPickerResult: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresult.duplicateresults?view=office-pia"/>
   public IPickerResults DuplicateResults { get; }
-}
-
+}	

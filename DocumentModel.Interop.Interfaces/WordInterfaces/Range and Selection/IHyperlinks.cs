@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the collection of Hyperlink objects in a document, range, or selection.
 /// </summary>

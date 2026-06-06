@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
@@ -17,5 +16,4 @@ public interface ILicValidator
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator.selection?view=office-pia"/>
   public int Selection { get; set; }
-}
-
+}	

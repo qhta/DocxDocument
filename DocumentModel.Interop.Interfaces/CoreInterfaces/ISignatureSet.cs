@@ -1,7 +1,5 @@
-using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SignatureSet` interface.
 /// </summary>
@@ -24,11 +22,9 @@ public interface ISignatureSet: IInteropCollection<ISignature>
   /// Sets the `ShowSignaturesPane` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.showsignaturespane?view=office-pia"/>
-  public bool ShowSignaturesPane { set; }
+  public bool ShowSignaturesPane { set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
@@ -53,8 +49,6 @@ public interface ISignatureSet: IInteropCollection<ISignature>
   /// <param name="varSigProv">The `varSigProv` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.addsignatureline?view=office-pia"/>
-  public ISignature AddSignatureLine(object varSigProv);
-
+  public ISignature AddSignatureLine(object varSigProv);	
   #endregion methods
-}
-
+}	

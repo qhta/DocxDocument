@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains global application-level attributes used by Microsoft Word when you save a document as a Web page or open a Web page.
 /// </summary>
@@ -95,6 +94,5 @@ public interface IDefaultWebOptions : IInteropObject
   /// Gets or sets a value indicating whether new web pages are saved as single-file web archives.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.savenewwebpagesaswebarchives?view=word-pia"/>
-  public bool SaveNewWebPagesAsWebArchives { get; set; }
-
+  public bool SaveNewWebPagesAsWebArchives { get; set; }	
 }

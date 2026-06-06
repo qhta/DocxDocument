@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SignatureSetup` interface.
 /// </summary>
@@ -59,5 +58,4 @@ public interface ISignatureSetup: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturesetup.additionalxml?view=office-pia"/>
   public string AdditionalXml { get; set; }
-}
-
+}	

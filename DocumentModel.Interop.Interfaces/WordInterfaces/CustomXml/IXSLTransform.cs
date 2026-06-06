@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single registered Extensible Stylesheet Language Transformation (XSLT).
 /// </summary>

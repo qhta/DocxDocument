@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Describes a single picture effect parameter.
 /// </summary>
@@ -18,5 +16,4 @@ public interface IEffectParameter: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.effectparameter.value?view=office-pia"/>
   public object Value { get; set; }
-}
-
+}	

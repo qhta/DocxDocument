@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Provides file search functionality.
 /// </summary>
@@ -117,11 +115,9 @@ public interface IFind
   /// Gets or sets the `FileType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.filetype?view=office-pia"/>
-  public int FileType { get; set; }
+  public int FileType { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Displays the Find dialog.
   /// </summary>
@@ -150,8 +146,6 @@ public interface IFind
   /// </summary>
   /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.delete?view=office-pia"/>
-  public void Delete(string bstrQueryName);
-
+  public void Delete(string bstrQueryName);	
   #endregion methods
-}
-
+}	

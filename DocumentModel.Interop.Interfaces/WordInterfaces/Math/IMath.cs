@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an equation. OMath objects are members of the OMaths collection.
 /// </summary>
@@ -10,89 +9,74 @@ public interface IMath : IInteropObject
   /// Returns the range that contains the equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.range?view=word-pia"/>
-  public IRange range { get; }
-
+  public IRange range { get; }	
   /// <summary>
   /// Returns the collection of equation functions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.functions?view=word-pia"/>
-  public IMathFunctions Functions { get; }
-
+  public IMathFunctions Functions { get; }	
   /// <summary>
   /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.type?view=word-pia"/>
-  public MathType Type { get; set; }
-
+  public MathType Type { get; set; }	
   /// <summary>
   /// Returns the parent equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentomath?view=word-pia"/>
-  public IMath ParentOMath { get; }
-
+  public IMath ParentOMath { get; }	
   /// <summary>
   /// Returns the parent equation function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentfunction?view=word-pia"/>
-  public IMathFunction ParentFunction { get; }
-
+  public IMathFunction ParentFunction { get; }	
   /// <summary>
   /// Returns the parent matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentrow?view=word-pia"/>
-  public IMathMatRow ParentRow { get; }
-
+  public IMathMatRow ParentRow { get; }	
   /// <summary>
   /// Returns the parent matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentcol?view=word-pia"/>
-  public IMathMatCol ParentCol { get; }
-
+  public IMathMatCol ParentCol { get; }	
   /// <summary>
   /// Returns the parent argument equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentarg?view=word-pia"/>
-  public IMath ParentArg { get; }
-
+  public IMath ParentArg { get; }	
   /// <summary>
   /// Returns the index of the argument within the parent function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.argindex?view=word-pia"/>
-  public int ArgIndex { get; }
-
+  public int ArgIndex { get; }	
   /// <summary>
   /// Returns the nesting level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
-
+  public int NestingLevel { get; }	
   /// <summary>
   /// Returns or sets the argument size.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.argsize?view=word-pia"/>
-  public int ArgSize { get; set; }
-
+  public int ArgSize { get; set; }	
   /// <summary>
   /// Returns the collection of equation line breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.breaks?view=word-pia"/>
-  public IMathBreaks Breaks { get; }
-
+  public IMathBreaks Breaks { get; }	
   /// <summary>
   /// Returns or sets the justification.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.justification?view=word-pia"/>
-  public MathJc Justification { get; set; }
-
+  public MathJc Justification { get; set; }	
   /// <summary>
   /// Returns or sets the alignment point for the equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.alignpoint?view=word-pia"/>
-  public int AlignPoint { get; set; }
+  public int AlignPoint { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Converts an equation into a linear format.
   /// </summary>
@@ -100,9 +84,7 @@ public interface IMath : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.linearize?view=word-pia"/>
-  public void Linearize();
-
+  public void Linearize();	
   #endregion methods
-}
-
+}	
 

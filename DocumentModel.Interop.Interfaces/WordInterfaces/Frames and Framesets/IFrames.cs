@@ -1,15 +1,12 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of Frame objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames?view=word-pia"/>
 public interface IFrames : IInteropObject, IInteropCollection<IFrame>
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
@@ -19,8 +16,7 @@ public interface IFrames : IInteropObject, IInteropCollection<IFrame>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames.add?view=word-pia"/>
-  public IFrame Add(IRange range);
-
+  public IFrame Add(IRange range);	
   /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -28,7 +24,6 @@ public interface IFrames : IInteropObject, IInteropCollection<IFrame>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

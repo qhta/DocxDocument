@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SharedWorkspaceMember` interface.
 /// </summary>
@@ -25,17 +24,13 @@ public interface ISharedWorkspaceMember: IInteropObject
   /// Gets the `Id` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember.id?view=office-pia"/>
-  public string Id { get; }
+  public string Id { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Delete`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

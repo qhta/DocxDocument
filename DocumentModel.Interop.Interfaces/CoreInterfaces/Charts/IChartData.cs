@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents chart data.
 /// </summary>
@@ -16,11 +15,9 @@ public interface IChartData
   /// Gets the `IsLinked` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.islinked?view=office-pia"/>
-  public bool IsLinked { get; }
+  public bool IsLinked { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Activates chart data editing.
   /// </summary>
@@ -35,9 +32,7 @@ public interface IChartData
   /// Activates the chart data window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata.activatechartdatawindow?view=office-pia"/>
-  public void ActivateChartDataWindow();
-
+  public void ActivateChartDataWindow();	
   #endregion methods
-}
-
+}	
 

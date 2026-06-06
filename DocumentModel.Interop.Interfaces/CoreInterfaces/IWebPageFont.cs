@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `WebPageFont` interface.
 /// </summary>
@@ -27,5 +26,4 @@ public interface IWebPageFont: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webpagefont.fixedwidthfontsize?view=office-pia"/>
   public float FixedWidthFontSize { get; set; }
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single check box form field.
 /// </summary>
@@ -30,6 +29,5 @@ public interface ICheckBox : IInteropObject
   /// Gets or sets the current value of the check box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.value?view=word-pia"/>
-  public bool Value { get; set; }
-
+  public bool Value { get; set; }	
 }

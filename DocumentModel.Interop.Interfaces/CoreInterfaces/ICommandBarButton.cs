@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `_CommandBarButton` class.
 /// </summary>
@@ -48,23 +47,18 @@ public interface ICommandBarButton: ICommandBarControl
   /// Gets or sets the `Mask` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.mask?view=office-pia"/>
-  public object Mask { get; set; }
+  public object Mask { get; set; }	
 
-
-  #region methods
-
+  #region methods	
   /// <summary>
   /// Invokes `CopyFace`.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.copyface?view=office-pia"/>
-  public void CopyFace();
-
+  public void CopyFace();	
   /// <summary>
   /// Invokes `PasteFace`.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.pasteface?view=office-pia"/>
-  public void PasteFace();
-
+  public void PasteFace();	
   #endregion methods
-}
-
+}	

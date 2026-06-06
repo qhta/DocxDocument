@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SoftEdgeFormat` interface.
 /// </summary>
@@ -17,5 +16,4 @@ public interface ISoftEdgeFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.softedgeformat.radius?view=office-pia"/>
   public float Radius { get; set; }
-}
-
+}	

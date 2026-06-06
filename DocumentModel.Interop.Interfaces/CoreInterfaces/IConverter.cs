@@ -1,16 +1,13 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Defines methods used by Office document converters.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia"/>
 public interface IConverter
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Initializes the converter.
   /// </summary>
@@ -70,8 +67,6 @@ public interface IConverter
   /// <param name="pbstrErrorMsg">The `pbstrErrorMsg` parameter.</param>
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgeterrorstring?view=office-pia"/>
-  public void HrGetErrorString(int hrErr, out string pbstrErrorMsg, IConverterApplicationPreferences pcap);
-
+  public void HrGetErrorString(int hrErr, out string pbstrErrorMsg, IConverterApplicationPreferences pcap);	
   #endregion methods
-}
-
+}	

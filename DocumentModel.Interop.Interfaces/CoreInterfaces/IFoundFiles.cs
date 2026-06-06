@@ -1,12 +1,9 @@
-using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the list of files returned from a file search.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.foundfiles?view=office-pia"/>
 public interface IFoundFiles: IInteropCollection<string>
 {
-}
-
+}	

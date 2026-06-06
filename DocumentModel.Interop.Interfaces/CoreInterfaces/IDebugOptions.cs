@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents debug options for Office.
 /// </summary>
@@ -31,11 +30,9 @@ public interface IDebugOptions: IInteropObject
   /// Gets the `UnitTestManager` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.unittestmanager?view=office-pia"/>
-  public object UnitTestManager { get; }
+  public object UnitTestManager { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Adds an assert tag to ignore.
   /// </summary>
@@ -47,9 +44,7 @@ public interface IDebugOptions: IInteropObject
   /// </summary>
   /// <param name="bstrTagToIgnore">The `bstrTagToIgnore` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.removeignoredasserttag?view=office-pia"/>
-  public void RemoveIgnoredAssertTag(string bstrTagToIgnore);
-
+  public void RemoveIgnoredAssertTag(string bstrTagToIgnore);	
   #endregion methods
-}
-
+}	
 

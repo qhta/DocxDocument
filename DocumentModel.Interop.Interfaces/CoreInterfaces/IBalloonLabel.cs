@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a label in the Office Assistant balloon.
 /// </summary>
@@ -23,5 +21,4 @@ public interface IBalloonLabel: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloonlabel.text?view=office-pia"/>
   public string Text { get; set; }
-}
-
+}	

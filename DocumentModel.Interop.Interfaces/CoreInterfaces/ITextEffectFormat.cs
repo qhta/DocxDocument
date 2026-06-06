@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `TextEffectFormat` interface.
 /// </summary>
@@ -66,17 +65,13 @@ public interface ITextEffectFormat: IInteropObject
   /// Gets or sets the `Tracking` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.tracking?view=office-pia"/>
-  public float Tracking { get; set; }
+  public float Tracking { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `ToggleVerticalText`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.toggleverticaltext?view=office-pia"/>
-  public void ToggleVerticalText();
-
+  public void ToggleVerticalText();	
   #endregion methods
-}
-
+}	

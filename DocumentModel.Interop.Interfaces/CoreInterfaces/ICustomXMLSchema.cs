@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `CustomXMLSchema` interface.
 /// </summary>
@@ -22,11 +21,9 @@ public interface ICustomXMLSchema: IInteropObject
   /// Gets the `NamespaceURI` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema.namespaceuri?view=office-pia"/>
-  public string NamespaceURI { get; }
+  public string NamespaceURI { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the schema from the collection.
   /// </summary>
@@ -36,8 +33,6 @@ public interface ICustomXMLSchema: IInteropObject
   /// Reloads the schema from its source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema.reload?view=office-pia"/>
-  public void Reload();
-
+  public void Reload();	
   #endregion methods
-}
-
+}	

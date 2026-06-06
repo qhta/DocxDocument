@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a mail merge field name in a data source.
 /// </summary>
@@ -15,6 +14,5 @@ public interface IMailMergeFieldName : IInteropObject
   /// Returns the index number of the field in the mail merge field names collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefieldname.index?view=word-pia"/>
-  public int Index { get; }
-
+  public int Index { get; }	
 }

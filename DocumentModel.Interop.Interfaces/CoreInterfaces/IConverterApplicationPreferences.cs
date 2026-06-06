@@ -1,16 +1,13 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Defines application preferences used by Office document converters.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences?view=office-pia"/>
 public interface IConverterApplicationPreferences
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Gets the current locale identifier.
   /// </summary>
@@ -34,8 +31,6 @@ public interface IConverterApplicationPreferences
   /// </summary>
   /// <param name="pFormat">The `pFormat` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrcheckformat?view=office-pia"/>
-  public void HrCheckFormat(out int pFormat);
-
+  public void HrCheckFormat(out int pFormat);	
   #endregion methods
-}
-
+}	

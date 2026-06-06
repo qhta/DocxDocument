@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents line formatting for a shape.
 /// </summary>
@@ -82,5 +81,4 @@ public interface ILineFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.insetpen?view=office-pia"/>
   public TriState InsetPen { get; set; }
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of Window objects that represent all the available windows.
 /// </summary>
@@ -11,11 +10,9 @@ public interface IWindows : IInteropObject, IInteropCollection<IWindow>
   /// same time.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows.syncscrollingsidebyside?view=word-pia"/>
-  public bool SyncScrollingSideBySide { get; set; }
+  public bool SyncScrollingSideBySide { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Adds a new window to the collection.
   /// </summary>
@@ -25,7 +22,6 @@ public interface IWindows : IInteropObject, IInteropCollection<IWindow>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows.add?view=word-pia"/>
-  public IWindow Add(object window);
-
+  public IWindow Add(object window);	
   #endregion methods
 }

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the text frame in a Shape object. Contains the text in the text frame as well as the properties
 /// that control the margins and orientation of the text frame.
@@ -12,130 +11,109 @@ public interface ITextFrame : IInteropObject
   /// rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginbottom?view=word-pia"/>
-  public float MarginBottom { get; set; }
-
+  public float MarginBottom { get; set; }	
   /// <summary>
   /// Returns or sets the distance (in points) between the left edge of the text frame and the left edge of the
   /// inscribed rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginleft?view=word-pia"/>
-  public float MarginLeft { get; set; }
-
+  public float MarginLeft { get; set; }	
   /// <summary>
   /// Returns or sets the distance (in points) between the right edge of the text frame and the right edge of the
   /// inscribed rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginright?view=word-pia"/>
-  public float MarginRight { get; set; }
-
+  public float MarginRight { get; set; }	
   /// <summary>
   /// Returns or sets the distance (in points) between the top of the text frame and the top of the inscribed
   /// rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.margintop?view=word-pia"/>
-  public float MarginTop { get; set; }
-
+  public float MarginTop { get; set; }	
   /// <summary>
   /// Returns or sets the orientation of the text inside the frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.orientation?view=word-pia"/>
-  public Core.TextOrientation Orientation { get; set; }
-
+  public Core.TextOrientation Orientation { get; set; }	
   /// <summary>
   /// Returns a Range object that represents the text in the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.textrange?view=word-pia"/>
-  public IRange TextRange { get; }
-
+  public IRange TextRange { get; }	
   /// <summary>
   /// Returns a Range object that represents the entire story in a series of shapes with linked text frames that the
   /// specified text frame belongs to.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.containingrange?view=word-pia"/>
-  public IRange ContainingRange { get; }
-
+  public IRange ContainingRange { get; }	
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.next?view=word-pia"/>
-  public ITextFrame Next { get; set; }
-
+  public ITextFrame Next { get; set; }	
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.previous?view=word-pia"/>
-  public ITextFrame Previous { get; set; }
-
+  public ITextFrame Previous { get; set; }	
   /// <summary>
   /// True if the text inside the specified text frame doesn't all fit within the frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.overflowing?view=word-pia"/>
-  public bool Overflowing { get; }
-
+  public bool Overflowing { get; }	
   /// <summary>
   /// True if the specified shape has text associated with it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.hastext?view=word-pia"/>
-  public int HasText { get; }
-
+  public int HasText { get; }	
   /// <summary>
   /// Returns or sets an Integer that represents whether a text frame is sized automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.autosize?view=word-pia"/>
-  public int AutoSize { get; set; }
-
+  public int AutoSize { get; set; }	
   /// <summary>
   /// True if Microsoft Word wraps Latin text in the middle of a word in the specified paragraphs or text frames.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.wordwrap?view=word-pia"/>
-  public int WordWrap { get; set; }
-
+  public int WordWrap { get; set; }	
   /// <summary>
   /// Returns or sets an VerticalAnchor constant that represents the vertical alignment of the text within a
   /// shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.verticalanchor?view=word-pia"/>
-  public Core.VerticalAnchor VerticalAnchor { get; set; }
-
+  public Core.VerticalAnchor VerticalAnchor { get; set; }	
   /// <summary>
   /// Gets or sets the horizontal alignment of text in a text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.horizontalanchor?view=word-pia"/>
-  public Core.HorizontalAnchor HorizontalAnchor { get; set; }
-
+  public Core.HorizontalAnchor HorizontalAnchor { get; set; }	
   /// <summary>
   /// Gets or sets the path type for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.pathformat?view=word-pia"/>
-  public Core.PathFormat PathFormat { get; set; }
-
+  public Core.PathFormat PathFormat { get; set; }	
   /// <summary>
   /// Gets or sets the warp format (how the text is warped) for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.warpformat?view=word-pia"/>
-  public Core.WarpFormat WarpFormat { get; set; }
-
+  public Core.WarpFormat WarpFormat { get; set; }	
   /// <summary>
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.column?view=word-pia"/>
-  public Core.ITextColumn2 Column { get; }
-
+  public Core.ITextColumn2 Column { get; }	
   /// <summary>
   /// Gets a ThreeDFormat object that contains 3-D effect formatting properties for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.threed?view=word-pia"/>
-  public IThreeDFormat ThreeD { get; }
-
+  public IThreeDFormat ThreeD { get; }	
   /// <summary>
   /// Gets or sets whether the text in the text frame should not rotate when the shape is rotated.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.notextrotation?view=word-pia"/>
-  public Core.TriState NoTextRotation { get; set; }
+  public Core.TriState NoTextRotation { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Breaks the forward link for the specified text frame, if such a link exists.
   /// </summary>
@@ -143,7 +121,6 @@ public interface ITextFrame : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.breakforwardlink?view=word-pia"/>
-  public void BreakForwardLink();
-
+  public void BreakForwardLink();	
   #endregion methods
 }

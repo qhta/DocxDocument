@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an individual schema that is attached to a document.
 /// </summary>
@@ -11,17 +10,14 @@ public interface IXMLSchemaReference : IInteropObject
   /// specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.namespaceuri?view=word-pia"/>
-  public string NamespaceURI { get; }
-
+  public string NamespaceURI { get; }	
   /// <summary>
   /// Returns a String indicating the location of the specified XML schema.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.location?view=word-pia"/>
-  public string Location { get; }
+  public string Location { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -29,7 +25,6 @@ public interface IXMLSchemaReference : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

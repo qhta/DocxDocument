@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Contains first-line and hanging indent settings for an outline level.
 /// </summary>
@@ -17,5 +16,4 @@ public interface IRulerLevel2: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevel2.leftmargin?view=office-pia"/>
   public float LeftMargin { get; set; }
-}
-
+}	

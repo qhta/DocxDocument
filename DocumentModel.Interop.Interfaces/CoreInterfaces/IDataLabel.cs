@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a data label.
 /// </summary>
@@ -201,11 +200,9 @@ public interface IDataLabel
   /// Gets or sets the `Width` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.width?view=office-pia"/>
-  public double Width { get; set; }
+  public double Width { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the data label.
   /// </summary>
@@ -217,9 +214,7 @@ public interface IDataLabel
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.delete?view=office-pia"/>
-  public object Delete();
-
+  public object Delete();	
   #endregion methods
-}
-
+}	
 

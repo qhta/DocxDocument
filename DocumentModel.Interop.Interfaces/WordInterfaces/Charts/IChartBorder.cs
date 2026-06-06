@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the border of an object.
 /// </summary>
@@ -25,6 +24,5 @@ public interface IChartBorder : IInteropObject
   /// Gets or sets the thickness of the chart border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartborder.weight?view=word-pia"/>
-  public object Weight { get; set; }
-
+  public object Weight { get; set; }	
 }

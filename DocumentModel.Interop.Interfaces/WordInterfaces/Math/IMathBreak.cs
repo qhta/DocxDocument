@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents individual line breaks in an equation. Each OMathBreak object is a member of the OMathBreaks collection.
 /// </summary>
@@ -10,17 +9,14 @@ public interface IMathBreak : IInteropObject
   /// Returns the range at the equation line break location.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.range?view=word-pia"/>
-  public IRange range { get; }
-
+  public IRange range { get; }	
   /// <summary>
   /// Returns or sets the alignment position at the line break.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.alignat?view=word-pia"/>
-  public int AlignAt { get; set; }
+  public int AlignAt { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified line break.
   /// </summary>
@@ -28,8 +24,6 @@ public interface IMathBreak : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

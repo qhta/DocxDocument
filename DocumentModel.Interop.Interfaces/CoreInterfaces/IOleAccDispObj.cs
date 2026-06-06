@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
@@ -45,8 +44,6 @@ public interface IOleAccDispObj: IAccessible
   /// </summary>
   /// <param name="varChild">The `varChild` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accdodefaultaction?view=office-pia"/>
-  public new void DoDefaultAction(object varChild);
-
-}
-
+  public new void DoDefaultAction(object varChild);	
+}	
 

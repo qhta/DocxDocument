@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single table of authorities category.
 /// </summary>
@@ -15,6 +14,5 @@ public interface ITableOfAuthoritiesCategory : IInteropObject
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthoritiescategory.index?view=word-pia"/>
-  public int Index { get; }
-
+  public int Index { get; }	
 }

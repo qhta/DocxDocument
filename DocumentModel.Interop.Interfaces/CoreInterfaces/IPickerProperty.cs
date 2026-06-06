@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a custom picker property.
 /// </summary>
@@ -21,5 +20,4 @@ public interface IPickerProperty: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperty.type?view=office-pia"/>
   public IPickerField Type { get; }
-}
-
+}	

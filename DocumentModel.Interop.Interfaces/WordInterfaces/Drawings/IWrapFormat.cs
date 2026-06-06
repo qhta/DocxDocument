@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents all the properties for wrapping text around a shape or shape range.
 /// </summary>
@@ -47,6 +46,5 @@ public interface IWrapFormat : IInteropObject
   /// True or False.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.allowoverlap?view=word-pia"/>
-  public int AllowOverlap { get; set; }
-
+  public int AllowOverlap { get; set; }	
 }

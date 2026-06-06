@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents line and arrowhead formatting. For a line, the LineFormat object contains formatting information for the line itself; for a shape with a border, this object contains formatting information for the shape's border.
 /// </summary>
@@ -80,6 +79,5 @@ public interface ILineFormat : IInteropObject
   /// Returns or sets whether the stroke is drawn inside the shape boundary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.insetpen?view=word-pia"/>
-  public Core.TriState InsetPen { get; set; }
-
+  public Core.TriState InsetPen { get; set; }	
 }

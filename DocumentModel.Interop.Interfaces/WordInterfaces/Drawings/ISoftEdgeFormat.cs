@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the soft edge formatting for a shape or range of shapes.
 /// </summary>
@@ -16,6 +15,5 @@ public interface ISoftEdgeFormat : IInteropObject
   /// Gets or sets a value that represents the length of the radius for a soft edge effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.radius?view=word-pia"/>
-  public float Radius { get; set; }
-
+  public float Radius { get; set; }	
 }

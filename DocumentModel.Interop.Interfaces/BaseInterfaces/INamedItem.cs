@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop;
-
+﻿namespace DocumentModel.Interop;	
 /// <summary>
 /// Interface for items that have a name.
 /// </summary>

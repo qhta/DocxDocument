@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents horizontal line formatting.
 /// </summary>
@@ -25,6 +24,5 @@ public interface IHorizontalLineFormat : IInteropObject
   /// Returns or sets how the width of the horizontal line is measured.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.widthtype?view=word-pia"/>
-  public HorizontalLineWidthType WidthType { get; set; }
-
+  public HorizontalLineWidthType WidthType { get; set; }	
 }

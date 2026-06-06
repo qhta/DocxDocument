@@ -1,17 +1,13 @@
-using System;
-
-namespace DocumentModel.Interop.Core;
-
+using System;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicagent?view=office-pia"/>
 public interface ILicAgent
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Initialize`.
   /// </summary>
@@ -612,8 +608,6 @@ public interface ILicAgent
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicagent.displaysslcert?view=office-pia"/>
-  public uint DisplaySSLCert();
-
+  public uint DisplaySSLCert();	
   #endregion methods
-}
-
+}	

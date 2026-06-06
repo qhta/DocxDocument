@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents border formatting for a chart element.
 /// </summary>
@@ -27,6 +26,5 @@ public interface IBorder
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoborder.weight?view=office-pia"/>
   public object Weight { get; set; }
-}
-
+}	
 

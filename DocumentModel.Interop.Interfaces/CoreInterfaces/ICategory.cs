@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
@@ -17,6 +16,5 @@ public interface ICategory
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocategory.isfiltered?view=office-pia"/>
   public bool IsFiltered { get; set; }
-}
-
+}	
 

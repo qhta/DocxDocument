@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// In Microsoft Word, TextRetrievalMode is a programming object used in Visual Basic for Applications (VBA)
 /// that controls exactly how text is extracted from a Range object.
@@ -28,6 +27,5 @@ public interface ITextRetrievalMode : IInteropObject
   /// True if the text retrieved from the specified range includes field codes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includefieldcodes?view=word-pia"/>
-  public bool IncludeFieldCodes { get; set; }
-
+  public bool IncludeFieldCodes { get; set; }	
 }

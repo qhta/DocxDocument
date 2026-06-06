@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents characters in chart text.
 /// </summary>
@@ -31,11 +30,9 @@ public interface ICharacters
   /// Gets or sets the `PhoneticCharacters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.phoneticcharacters?view=office-pia"/>
-  public string PhoneticCharacters { get; set; }
+  public string PhoneticCharacters { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified characters.
   /// </summary>
@@ -48,9 +45,7 @@ public interface ICharacters
   /// <param name="bstr">The `bstr` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.insert?view=office-pia"/>
-  public object Insert(string bstr);
-
+  public object Insert(string bstr);	
   #endregion methods
-}
-
+}	
 

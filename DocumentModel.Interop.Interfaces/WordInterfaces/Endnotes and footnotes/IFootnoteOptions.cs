@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the properties assigned to a range or selection of footnotes in a document.
 /// </summary>
@@ -30,6 +29,5 @@ public interface IFootnoteOptions : IInteropObject
   /// Returns or sets the way footnotes are laid out in columns when the section containing the reference mark has multiple columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnoteoptions.layoutcolumns?view=word-pia"/>
-  public int LayoutColumns { get; set; }
-
+  public int LayoutColumns { get; set; }	
 }

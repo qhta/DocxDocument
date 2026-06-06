@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents drop lines in a chart.
 /// </summary>
@@ -21,11 +20,9 @@ public interface IDropLines
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodroplines.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the drop lines.
   /// </summary>
@@ -35,9 +32,7 @@ public interface IDropLines
   /// Deletes the drop lines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodroplines.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	
 

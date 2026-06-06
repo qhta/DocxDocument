@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Provides access to functionality that lets you send documents as email from Office applications.
 /// </summary>
@@ -22,6 +21,5 @@ public interface IEnvelopeVB
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb.commandbars?view=office-pia"/>
   public object CommandBars { get; }
-}
-
+}	
 

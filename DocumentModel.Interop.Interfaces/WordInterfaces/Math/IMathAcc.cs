@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an equation that has an accent mark above the base.
 /// </summary>
@@ -15,8 +14,6 @@ public interface IMathAcc : IInteropObject
   /// Returns or sets the accent character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathacc.char?view=word-pia"/>
-  public short Char { get; set; }
-
-}
-
+  public short Char { get; set; }	
+}	
 

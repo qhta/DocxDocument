@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the chart area.
 /// </summary>
@@ -71,11 +70,9 @@ public interface IChartArea
   /// Gets or sets the `RoundedCorners` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.roundedcorners?view=office-pia"/>
-  public bool RoundedCorners { get; set; }
+  public bool RoundedCorners { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the chart area.
   /// </summary>
@@ -105,9 +102,7 @@ public interface IChartArea
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.clearformats?view=office-pia"/>
-  public object ClearFormats();
-
+  public object ClearFormats();	
   #endregion methods
-}
-
+}	
 

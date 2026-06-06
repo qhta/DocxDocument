@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a file in a shared workspace.
 /// </summary>
@@ -32,17 +30,13 @@ public interface ISharedWorkspaceFile: IInteropObject
   /// Gets the `ModifiedDate` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile.modifieddate?view=office-pia"/>
-  public object ModifiedDate { get; }
+  public object ModifiedDate { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Delete`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

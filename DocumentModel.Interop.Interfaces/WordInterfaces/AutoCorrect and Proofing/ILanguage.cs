@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a language used for proofing or formatting in Microsoft Word.
 /// </summary>
@@ -55,6 +54,5 @@ public interface ILanguage : IInteropObject
   /// Returns or sets the type of spelling dictionary used for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.spellingdictionarytype?view=word-pia"/>
-  public DictionaryType SpellingDictionaryType { get; set; }
-
+  public DictionaryType SpellingDictionaryType { get; set; }	
 }

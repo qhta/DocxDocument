@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `WebComponentProperties` interface.
 /// </summary>
@@ -52,5 +51,4 @@ public interface IWebComponentProperties
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentproperties.tag?view=office-pia"/>
   public string Tag { get; set; }
-}
-
+}	

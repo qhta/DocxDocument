@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the object passed into each Ribbon UI control callback procedure.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IRibbonControl
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.tag?view=office-pia"/>
   public string Tag { get; }
-}
-
+}	

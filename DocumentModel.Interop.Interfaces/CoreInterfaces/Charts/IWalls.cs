@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents chart walls.
 /// </summary>
@@ -46,11 +45,9 @@ public interface IWalls
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.format?view=office-pia"/>
-  public IChartFormat Format { get; }
+  public IChartFormat Format { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the chart walls.
   /// </summary>
@@ -67,9 +64,7 @@ public interface IWalls
   /// Pastes content onto the chart walls.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.paste?view=office-pia"/>
-  public void Paste();
-
+  public void Paste();	
   #endregion methods
-}
-
+}	
 

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `TextFrame2` interface.
 /// </summary>
@@ -96,17 +95,13 @@ public interface ITextFrame2: IInteropObject
   /// Gets or sets the `NoTextRotation` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.notextrotation?view=office-pia"/>
-  public TriState NoTextRotation { get; set; }
+  public TriState NoTextRotation { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `DeleteText`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.deletetext?view=office-pia"/>
-  public void DeleteText();
-
+  public void DeleteText();	
   #endregion methods
-}
-
+}	

@@ -1,12 +1,10 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Events interface for Microsoft Word Document object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event?view=word-pia"/>
 public interface IDocumentEvents
-{
-
+{	
   /// <summary>
   /// Subscribes a handler to the New event.
   /// </summary>
@@ -14,8 +12,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_new?view=word-pia"/>
-  public event DocumentEvents2_NewEventHandler OnNew;
-
+  public event DocumentEvents2_NewEventHandler OnNew;	
   /// <summary>
   /// Subscribes a handler to the Open event.
   /// </summary>
@@ -23,8 +20,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_open?view=word-pia"/>
-  public event DocumentEvents2_OpenEventHandler OnOpen;
-
+  public event DocumentEvents2_OpenEventHandler OnOpen;	
   /// <summary>
   /// Subscribes a handler to the Close event.
   /// </summary>
@@ -32,8 +28,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_close?view=word-pia"/>
-  public event DocumentEvents2_CloseEventHandler OnClose;
-
+  public event DocumentEvents2_CloseEventHandler OnClose;	
   /// <summary>
   /// Subscribes a handler to the Sync event.
   /// </summary>
@@ -41,8 +36,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_sync?view=word-pia"/>
-  public event DocumentEvents2_SyncEventHandler OnSync;
-
+  public event DocumentEvents2_SyncEventHandler OnSync;	
   /// <summary>
   /// Subscribes a handler to the XMLAfterInsert event.
   /// </summary>
@@ -50,8 +44,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_xmlafterinsert?view=word-pia"/>
-  public event DocumentEvents2_XMLAfterInsertEventHandler OnXMLAfterInsert;
-
+  public event DocumentEvents2_XMLAfterInsertEventHandler OnXMLAfterInsert;	
   /// <summary>
   /// Subscribes a handler to the XMLBeforeDelete event.
   /// </summary>
@@ -59,8 +52,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_xmlbeforedelete?view=word-pia"/>
-  public event DocumentEvents2_XMLBeforeDeleteEventHandler OnXMLBeforeDelete;
-
+  public event DocumentEvents2_XMLBeforeDeleteEventHandler OnXMLBeforeDelete;	
   /// <summary>
   /// Subscribes a handler to the ContentControlAfterAdd event.
   /// </summary>
@@ -68,8 +60,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolafteradd?view=word-pia"/>
-  public event DocumentEvents2_ContentControlAfterAddEventHandler OnContentControlAfterAdd;
-
+  public event DocumentEvents2_ContentControlAfterAddEventHandler OnContentControlAfterAdd;	
   /// <summary>
   /// Subscribes a handler to the ContentControlBeforeDelete event.
   /// </summary>
@@ -77,8 +68,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolbeforedelete?view=word-pia"/>
-  public event DocumentEvents2_ContentControlBeforeDeleteEventHandler OnContentControlBeforeDelete;
-
+  public event DocumentEvents2_ContentControlBeforeDeleteEventHandler OnContentControlBeforeDelete;	
   /// <summary>
   /// Subscribes a handler to the ContentControlOnExit event.
   /// </summary>
@@ -86,8 +76,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolonexit?view=word-pia"/>
-  public event DocumentEvents2_ContentControlOnExitEventHandler OnContentControlOnExit;
-
+  public event DocumentEvents2_ContentControlOnExitEventHandler OnContentControlOnExit;	
   /// <summary>
   /// Subscribes a handler to the ContentControlOnEnter event.
   /// </summary>
@@ -95,8 +84,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolonenter?view=word-pia"/>
-  public event DocumentEvents2_ContentControlOnEnterEventHandler OnContentControlOnEnter;
-
+  public event DocumentEvents2_ContentControlOnEnterEventHandler OnContentControlOnEnter;	
   /// <summary>
   /// Subscribes a handler to the ContentControlBeforeStoreUpdate event.
   /// </summary>
@@ -104,8 +92,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolbeforestoreupdate?view=word-pia"/>
-  public event DocumentEvents2_ContentControlBeforeStoreUpdateEventHandler OnContentControlBeforeStoreUpdate;
-
+  public event DocumentEvents2_ContentControlBeforeStoreUpdateEventHandler OnContentControlBeforeStoreUpdate;	
   /// <summary>
   /// Subscribes a handler to the ContentControlBeforeContentUpdate event.
   /// </summary>
@@ -113,8 +100,7 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_contentcontrolbeforecontentupdate?view=word-pia"/>
-  public event DocumentEvents2_ContentControlBeforeContentUpdateEventHandler OnContentControlBeforeContentUpdate;
-
+  public event DocumentEvents2_ContentControlBeforeContentUpdateEventHandler OnContentControlBeforeContentUpdate;	
   /// <summary>
   /// Subscribes a handler to the BuildingBlockInsert event.
   /// </summary>
@@ -122,6 +108,5 @@ public interface IDocumentEvents
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2_event.add_buildingblockinsert?view=word-pia"/>
-  public event DocumentEvents2_BuildingBlockInsertEventHandler OnBuildingBlockInsert;
-
+  public event DocumentEvents2_BuildingBlockInsertEventHandler OnBuildingBlockInsert;	
 }

@@ -1,16 +1,13 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder?view=office-pia"/>
 public interface IFreeformBuilder: IInteropObject
-{
+{	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Adds one or more nodes to the freeform being built.
   /// </summary>
@@ -31,8 +28,6 @@ public interface IFreeformBuilder: IInteropObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.converttoshape?view=office-pia"/>
-  public IShape ConvertToShape();
-
+  public IShape ConvertToShape();	
   #endregion methods
-}
-
+}	

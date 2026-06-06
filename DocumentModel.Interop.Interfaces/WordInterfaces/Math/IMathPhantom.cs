@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a phantom object, which has two primary uses: (1) adding the spacing of the phantom base without displaying that base or (2) suppressing part of the glyph from spacing considerations.
 /// </summary>
@@ -40,8 +39,6 @@ public interface IMathPhantom : IInteropObject
   /// Returns or sets whether the phantom is smashed for layout.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.smash?view=word-pia"/>
-  public bool Smash { get; set; }
-
-}
-
+  public bool Smash { get; set; }	
+}	
 

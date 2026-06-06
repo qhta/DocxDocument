@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents installed components that label text with types of information.
 /// </summary>
@@ -25,6 +24,5 @@ public interface ISmartTagRecognizer : IInteropObject
   /// Returns the label that identifies the specified smart tag recognizer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.caption?view=word-pia"/>
-  public string Caption { get; }
-
+  public string Caption { get; }	
 }

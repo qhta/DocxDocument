@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SmartArtNode` interface.
 /// </summary>
@@ -46,11 +45,9 @@ public interface ISmartArtNode: IInteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.type?view=office-pia"/>
-  public SmartArtNodeType Type { get; }
+  public SmartArtNodeType Type { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `AddNode`.
   /// </summary>
@@ -95,8 +92,6 @@ public interface ISmartArtNode: IInteropObject
   /// Invokes `ReorderDown`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.reorderdown?view=office-pia"/>
-  public void ReorderDown();
-
+  public void ReorderDown();	
   #endregion methods
-}
-
+}	

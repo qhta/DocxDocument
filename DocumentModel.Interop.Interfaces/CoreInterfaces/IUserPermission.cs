@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `UserPermission` interface.
 /// </summary>
@@ -22,17 +20,13 @@ public interface IUserPermission: IInteropObject
   /// Gets or sets the `ExpirationDate` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.expirationdate?view=office-pia"/>
-  public object ExpirationDate { get; set; }
+  public object ExpirationDate { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Remove`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.remove?view=office-pia"/>
-  public void Remove();
-
+  public void Remove();	
   #endregion methods
-}
-
+}	

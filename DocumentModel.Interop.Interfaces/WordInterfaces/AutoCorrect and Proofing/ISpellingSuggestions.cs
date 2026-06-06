@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of SpellingSuggestion objects that represent all the suggestions for a specified word or for the
 /// first word in the specified range.

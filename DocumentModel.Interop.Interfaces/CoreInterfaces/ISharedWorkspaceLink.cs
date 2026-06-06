@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SharedWorkspaceLink` interface.
 /// </summary>
@@ -44,11 +42,9 @@ public interface ISharedWorkspaceLink: IInteropObject
   /// Gets the `ModifiedDate` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.modifieddate?view=office-pia"/>
-  public object ModifiedDate { get; }
+  public object ModifiedDate { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Save`.
   /// </summary>
@@ -58,8 +54,6 @@ public interface ISharedWorkspaceLink: IInteropObject
   /// Invokes `Delete`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

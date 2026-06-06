@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Contains font attributes for an object, such as name, size, style, and color.
 /// </summary>
@@ -172,5 +171,4 @@ public interface IFont2: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.nameother?view=office-pia"/>
   public string NameOther { get; set; }
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the geometry and the geometry-editing properties of the nodes in a user-defined freeform.
 /// </summary>
@@ -22,6 +21,5 @@ public interface IShapeNode : IInteropObject
   /// Returns a value that indicates whether the segment associated with the specified node is straight or curved.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.segmenttype?view=word-pia"/>
-  public Core.SegmentType SegmentType { get; }
-
+  public Core.SegmentType SegmentType { get; }	
 }

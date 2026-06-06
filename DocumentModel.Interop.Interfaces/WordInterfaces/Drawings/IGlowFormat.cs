@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents glow formatting for a shape or shape range.
 /// </summary>
@@ -20,6 +19,5 @@ public interface IGlowFormat : IInteropObject
   /// Returns or sets the transparency of the glow effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat.transparency?view=word-pia"/>
-  public float Transparency { get; set; }
-
+  public float Transparency { get; set; }	
 }

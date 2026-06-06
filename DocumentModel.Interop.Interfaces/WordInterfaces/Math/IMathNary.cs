@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the mathematical n-ary object, consisting of an n-ary object, a base (or operand), and optional upper limits and lower limits.
 /// </summary>
@@ -45,8 +44,6 @@ public interface IMathNary : IInteropObject
   /// Returns or sets whether the superscript is hidden.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.hidesup?view=word-pia"/>
-  public bool HideSup { get; set; }
-
-}
-
+  public bool HideSup { get; set; }	
+}	
 

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the ruler for text in a shape or text style.
 /// </summary>
@@ -17,5 +16,4 @@ public interface IRuler2: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ruler2.tabstops?view=office-pia"/>
   public ITabStops2 TabStops { get; }
-}
-
+}	

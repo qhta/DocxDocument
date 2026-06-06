@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SmartArtQuickStyle` interface.
 /// </summary>
@@ -27,5 +26,4 @@ public interface ISmartArtQuickStyle: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle.category?view=office-pia"/>
   public string Category { get; }
-}
-
+}	

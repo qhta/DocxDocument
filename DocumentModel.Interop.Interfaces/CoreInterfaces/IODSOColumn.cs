@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a field in a data source.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IODSOColumn: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsocolumn.value?view=office-pia"/>
   public string Value { get; }
-}
-
+}	

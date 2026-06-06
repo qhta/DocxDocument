@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains a collection of adjustment values for the specified AutoShape or WordArt object.
 /// </summary>

@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a check box in the Office Assistant balloon.
 /// </summary>
@@ -28,5 +26,4 @@ public interface IBalloonCheckbox: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ballooncheckbox.text?view=office-pia"/>
   public string Text { get; set; }
-}
-
+}	

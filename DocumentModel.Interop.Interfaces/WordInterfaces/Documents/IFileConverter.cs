@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a file converter that's used to open or save files.
 /// </summary>
@@ -50,6 +49,5 @@ public interface IFileConverter : IInteropObject
   /// Returns the file name extensions associated with the specified <see cref="IFileConverter"/> object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.extensions?view=word-pia"/>
-  public string Extensions { get; }
-
+  public string Extensions { get; }	
 }

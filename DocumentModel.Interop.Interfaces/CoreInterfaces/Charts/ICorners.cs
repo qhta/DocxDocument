@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents chart corners.
 /// </summary>
@@ -11,19 +10,15 @@ public interface ICorners
   /// Gets the `Name` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocorners.name?view=office-pia"/>
-  public string Name { get; }
+  public string Name { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Selects the chart corners.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocorners.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `CustomXMLPrefixMapping` interface.
 /// </summary>
@@ -23,5 +22,4 @@ public interface ICustomXMLPrefixMapping: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping.namespaceuri?view=office-pia"/>
   public string NamespaceURI { get; }
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a footnote positioned at the bottom of the page or beneath text. The Footnote object is a member of the Footnotes collection. The Footnotes collection represents the footnotes in a selection, range, or document.
 /// </summary>
@@ -10,23 +9,19 @@ public interface IFootnote : IInteropObject
   /// Returns a <see cref="IRange"/> object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.range?view=word-pia"/>
-  public IRange range { get; }
-
+  public IRange range { get; }	
   /// <summary>
   /// Returns a <see cref="IRange"/> object that represents a footnote, endnote, or comment reference mark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.reference?view=word-pia"/>
-  public IRange Reference { get; }
-
+  public IRange Reference { get; }	
   /// <summary>
   /// Returns an integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified object.
   /// </summary>
@@ -34,7 +29,6 @@ public interface IFootnote : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
 }

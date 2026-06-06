@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Microsoft Word’s Readability Statistics is a built-in tool that evaluates the clarity and reading level of your writing.
 /// It calculates sentence length, vocabulary complexity, and passive voice to provide a detailed report on how easy your text is to understand.

@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a group character object, consisting of a character drawn above or below text, often with the purpose of visually grouping items.
 /// </summary>
@@ -25,8 +24,6 @@ public interface IMathGroupChar : IInteropObject
   /// Returns or sets whether top alignment is used.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.aligntop?view=word-pia"/>
-  public bool AlignTop { get; set; }
-
-}
-
+  public bool AlignTop { get; set; }	
+}	
 

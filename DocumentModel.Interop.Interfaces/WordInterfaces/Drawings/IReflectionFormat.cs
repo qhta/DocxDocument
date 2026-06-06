@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Microsoft Word’s Reflection format is a visual Text Effect or Picture Style that creates a mirrored,
 /// water-like reflection of your text or image directly below it..
@@ -34,6 +33,5 @@ public interface IReflectionFormat : IInteropObject
   /// Gets or sets a value that specifies the degree of blur effect applied to the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.blur?view=word-pia"/>
-  public float Blur { get; set; }
-
+  public float Blur { get; set; }	
 }

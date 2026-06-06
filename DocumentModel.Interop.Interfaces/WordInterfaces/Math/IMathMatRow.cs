@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a matrix row. The OMathMatRow is a member of the OMathMatRows collection.
 /// </summary>
@@ -10,17 +9,14 @@ public interface IMathMatRow : IInteropObject
   /// Returns the collection of arguments in the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.args?view=word-pia"/>
-  public IMathArgs Args { get; }
-
+  public IMathArgs Args { get; }	
   /// <summary>
   /// Returns the index number of the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.rowindex?view=word-pia"/>
-  public int RowIndex { get; }
+  public int RowIndex { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes the specified matrix row.
   /// </summary>
@@ -28,8 +24,6 @@ public interface IMathMatRow : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.delete?view=word-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

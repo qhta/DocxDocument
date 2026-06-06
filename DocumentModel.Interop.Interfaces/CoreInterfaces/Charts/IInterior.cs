@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents interior formatting for a chart element.
 /// </summary>
@@ -37,6 +36,5 @@ public interface IInterior
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsointerior.patterncolorindex?view=office-pia"/>
   public object PatternColorIndex { get; set; }
-}
-
+}	
 

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+﻿using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `Trendlines` interface.
 /// </summary>
@@ -17,11 +15,9 @@ public interface ITrendlines: IEnumerable
   /// Gets the trendline at the specified index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.item?view=office-pia"/>
-  public ITrendline this[object Index] { get; }
+  public ITrendline this[object Index] { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
@@ -44,9 +40,7 @@ public interface ITrendlines: IEnumerable
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.getenumerator?view=office-pia"/>
-  public new IEnumerator GetEnumerator();
-
+  public new IEnumerator GetEnumerator();	
   #endregion methods
-}
-
+}	
 

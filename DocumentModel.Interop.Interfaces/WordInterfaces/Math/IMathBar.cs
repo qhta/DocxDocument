@@ -1,5 +1,4 @@
-﻿namespace DocumentModel.Interop.Word;
-
+﻿namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents an equation with a bar above or below the base.
 /// </summary>
@@ -15,8 +14,6 @@ public interface IMathBar : IInteropObject
   /// Returns or sets whether the bar appears above the expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbar.bartop?view=word-pia"/>
-  public bool BarTop { get; set; }
-
-}
-
+  public bool BarTop { get; set; }	
+}	
 

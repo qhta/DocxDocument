@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a dropped capital letter at the beginning of a paragraph.
 /// </summary>
@@ -10,29 +9,24 @@ public interface IDropCap : IInteropObject
   /// Gets or sets the position of the drop cap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.position?view=word-pia"/>
-  public DropPosition Position { get; set; }
-
+  public DropPosition Position { get; set; }	
   /// <summary>
   /// Gets or sets the font name for the drop cap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.fontname?view=word-pia"/>
-  public string FontName { get; set; }
-
+  public string FontName { get; set; }	
   /// <summary>
   /// Gets or sets the number of lines that the drop cap occupies.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.linestodrop?view=word-pia"/>
-  public int LinesToDrop { get; set; }
-
+  public int LinesToDrop { get; set; }	
   /// <summary>
   /// Gets or sets the distance, in points, between the drop cap and the surrounding text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.distancefromtext?view=word-pia"/>
-  public float DistanceFromText { get; set; }
+  public float DistanceFromText { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Removes the dropped capital letter formatting.
   /// </summary>
@@ -40,7 +34,6 @@ public interface IDropCap : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.clear?view=word-pia"/>
-  public void Clear();
-
+  public void Clear();	
   #endregion methods
 }

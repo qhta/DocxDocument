@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents paragraph formatting of a text range.
 /// </summary>
@@ -97,5 +96,4 @@ public interface IParagraphFormat2: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.wordwrap?view=office-pia"/>
   public TriState WordWrap { get; set; }
-}
-
+}	

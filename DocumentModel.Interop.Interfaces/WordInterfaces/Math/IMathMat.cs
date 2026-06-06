@@ -77,5 +77,4 @@ public interface IMathMat : IInteropObject
 
   #endregion methods
 }
-
-
+	

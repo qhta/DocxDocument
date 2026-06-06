@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `TextFrame` interface.
 /// </summary>
@@ -32,5 +31,4 @@ public interface ITextFrame: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe.orientation?view=office-pia"/>
   public TextOrientation Orientation { get; set; }
-}
-
+}	

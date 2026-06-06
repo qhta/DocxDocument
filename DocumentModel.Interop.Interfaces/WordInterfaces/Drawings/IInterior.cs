@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents the interior of an object.
 /// </summary>
@@ -35,6 +34,5 @@ public interface IInterior : IInteropObject
   /// Returns or sets the pattern color index of the object interior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolorindex?view=word-pia"/>
-  public object PatternColorIndex { get; set; }
-
+  public object PatternColorIndex { get; set; }	
 }

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
@@ -76,8 +75,7 @@ public interface IAccessible
   /// Gets the default action description for the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdefaultaction?view=office-pia"/>
-  public string DefaultAction { get; }
-
+  public string DefaultAction { get; }	
   #region methods
   /// <summary>
   /// Selects the specified essible child object.
@@ -119,5 +117,4 @@ public interface IAccessible
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdodefaultaction?view=office-pia"/>
   public void DoDefaultAction(object varChild);
   #endregion
-}
-
+}	

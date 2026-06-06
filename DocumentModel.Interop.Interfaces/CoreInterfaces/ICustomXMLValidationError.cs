@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `CustomXMLValidationError` interface.
 /// </summary>
@@ -37,17 +36,13 @@ public interface ICustomXMLValidationError: IInteropObject
   /// Gets the `ErrorCode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.errorcode?view=office-pia"/>
-  public int ErrorCode { get; }
+  public int ErrorCode { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Deletes this validation error from the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains the font attributes (font name, font size, color, and so on) for an object chart.
 /// </summary>
@@ -75,6 +74,5 @@ public interface IChartFont : IInteropObject
   /// Gets or sets the underline style for the chart font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfont.underline?view=word-pia"/>
-  public object Underline { get; set; }
-
+  public object Underline { get; set; }	
 }

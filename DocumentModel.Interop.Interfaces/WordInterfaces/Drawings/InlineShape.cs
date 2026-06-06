@@ -202,12 +202,11 @@ public interface IInlineShape : IInteropObject
   /// Returns the edit ID of the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.editid?view=word-pia"/>
-  public int EditID { get; }
-
+  public int EditID { get; }	
 
   #region methods
 
-/// <summary>
+  /// <summary>
   /// Activates the specified object.
   /// </summary>
   /// <remarks>

@@ -1,7 +1,5 @@
-using System.Collections;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Collections;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a collection of DocumentLibraryVersion objects.
 /// </summary>
@@ -13,5 +11,4 @@ public interface IDocumentLibraryVersions: IInteropCollection<IDocumentLibraryVe
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversions.isversioningenabled?view=office-pia"/>
   public bool IsVersioningEnabled { get; }
-}
-
+}	

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a glow effect around an Office graphic.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IGlowFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat.transparency?view=office-pia"/>
   public float Transparency { get; set; }
-}
-
+}	

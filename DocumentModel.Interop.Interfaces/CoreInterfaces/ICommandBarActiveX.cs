@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `_CommandBarActiveX` interface.
 /// </summary>
@@ -26,8 +25,7 @@ public interface ICommandBarActiveX : ICommandBarControl
   /// Gets the `InstanceIdPtr` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.instanceidptr?view=office-pia"/>
-  public object InstanceIdPtr { get; }
-
+  public object InstanceIdPtr { get; }	
   #region methods
   /// <summary>
   /// Invokes `SetInnerObjectFactory`.
@@ -39,8 +37,6 @@ public interface ICommandBarActiveX : ICommandBarControl
   /// Invokes `EnsureControl`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.ensurecontrol?view=office-pia"/>
-  public void EnsureControl();
-
+  public void EnsureControl();	
   #endregion methods
-}
-
+}	

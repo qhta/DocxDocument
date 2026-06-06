@@ -1,7 +1,5 @@
-using System.Reflection;
-
-namespace DocumentModel.Interop.Core;
-
+using System.Reflection;	
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents the `SharedWorkspaceTask` interface.
 /// </summary>
@@ -59,11 +57,9 @@ public interface ISharedWorkspaceTask: IInteropObject
   /// Gets the `ModifiedDate` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.modifieddate?view=office-pia"/>
-  public object ModifiedDate { get; }
+  public object ModifiedDate { get; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Invokes `Save`.
   /// </summary>
@@ -73,8 +69,6 @@ public interface ISharedWorkspaceTask: IInteropObject
   /// Invokes `Delete`.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.delete?view=office-pia"/>
-  public void Delete();
-
+  public void Delete();	
   #endregion methods
-}
-
+}	

@@ -1,6 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents one gradient stop.
 /// </summary>
@@ -22,5 +21,4 @@ public interface IGradientStop: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstop.transparency?view=office-pia"/>
   public float Transparency { get; set; }
-}
-
+}	

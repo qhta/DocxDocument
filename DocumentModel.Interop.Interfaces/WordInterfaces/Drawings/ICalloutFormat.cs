@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains properties and methods that apply to line callouts.
 /// </summary>
@@ -10,65 +9,54 @@ public interface ICalloutFormat : IInteropObject
   /// Gets or sets a value indicating whether the callout line has an accent bar.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.accent?view=word-pia"/>
-  public Core.TriState Accent { get; set; }
-
+  public Core.TriState Accent { get; set; }	
   /// <summary>
   /// Gets or sets the angle type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.angle?view=word-pia"/>
-  public Core.CalloutAngleType Angle { get; set; }
-
+  public Core.CalloutAngleType Angle { get; set; }	
   /// <summary>
   /// Gets or sets a value indicating whether the callout automatically attaches to points on the shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autoattach?view=word-pia"/>
-  public Core.TriState AutoAttach { get; set; }
-
+  public Core.TriState AutoAttach { get; set; }	
   /// <summary>
   /// Gets a value indicating whether the callout length is adjusted automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autolength?view=word-pia"/>
-  public Core.TriState AutoLength { get; }
-
+  public Core.TriState AutoLength { get; }	
   /// <summary>
   /// Gets or sets a value indicating whether the callout has a border around the text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.border?view=word-pia"/>
-  public Core.TriState Border { get; set; }
-
+  public Core.TriState Border { get; set; }	
   /// <summary>
   /// Gets the vertical distance, in points, between the callout text and the callout line anchor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.drop?view=word-pia"/>
-  public float Drop { get; }
-
+  public float Drop { get; }	
   /// <summary>
   /// Gets the drop type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.droptype?view=word-pia"/>
-  public Core.CalloutDropType DropType { get; }
-
+  public Core.CalloutDropType DropType { get; }	
   /// <summary>
   /// Gets or sets the distance, in points, between the callout line and the callout text box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.gap?view=word-pia"/>
-  public float Gap { get; set; }
-
+  public float Gap { get; set; }	
   /// <summary>
   /// Gets the length, in points, of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.length?view=word-pia"/>
-  public float Length { get; }
-
+  public float Length { get; }	
   /// <summary>
   /// Gets or sets the callout type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.type?view=word-pia"/>
-  public Core.CalloutType Type { get; set; }
+  public Core.CalloutType Type { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Specifies that the first segment of the callout line (the segment attached to the text callout box) be scaled
   /// automatically when the callout is moved.
@@ -77,7 +65,6 @@ public interface ICalloutFormat : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.automaticlength?view=word-pia"/>
-  public void AutomaticLength();
-
+  public void AutomaticLength();	
   #endregion methods
 }

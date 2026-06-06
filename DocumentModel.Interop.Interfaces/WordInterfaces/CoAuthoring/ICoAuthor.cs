@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Represents a single co-author in the document. The CoAuthor object is a member of the CoAuthors collection. The CoAuthors collection contains all the co-authors in the document (authors that are actively editing the document).
 /// </summary>
@@ -30,6 +29,5 @@ public interface ICoAuthor : IInteropObject
   /// Gets the email address of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.emailaddress?view=word-pia"/>
-  public string EmailAddress { get; }
-
+  public string EmailAddress { get; }	
 }

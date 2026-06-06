@@ -1,6 +1,5 @@
 ﻿
-namespace DocumentModel.Interop.Core;
-
+namespace DocumentModel.Interop.Core;	
 /// <summary>
 /// Represents a trendline in a chart.
 /// </summary>
@@ -91,11 +90,9 @@ public interface ITrendline
   /// Gets or sets the `Forward2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.forward2?view=office-pia"/>
-  public double Forward2 { get; set; }
+  public double Forward2 { get; set; }	
 
-
-  #region methods
-
+  #region methods	
 /// <summary>
   /// Clears formatting from the trendline.
   /// </summary>
@@ -113,9 +110,7 @@ public interface ITrendline
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.select?view=office-pia"/>
-  public object Select();
-
+  public object Select();	
   #endregion methods
-}
-
+}	
 

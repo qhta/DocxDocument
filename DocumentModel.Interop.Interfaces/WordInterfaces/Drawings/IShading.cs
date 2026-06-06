@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// Contains shading attributes for an object.
 /// </summary>
@@ -34,6 +33,5 @@ public interface IShading : IInteropObject
   /// Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.backgroundpatterncolor?view=word-pia"/>
-  public PresetColors BackgroundPatternColor { get; set; }
-
+  public PresetColors BackgroundPatternColor { get; set; }	
 }

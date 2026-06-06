@@ -1,5 +1,4 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Interop.Word;	
 /// <summary>
 /// A collection of FileConverter objects that represent all the file converters available for opening and saving files.
 /// </summary>
