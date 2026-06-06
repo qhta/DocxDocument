@@ -1,11 +1,11 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public interface ICommandBar: IMsoOleAccDispObj
+public interface ICommandBar: IOleAccDispObj
 {
   /// <summary>
   /// Gets the `BuiltIn` property.
@@ -142,4 +142,5 @@ public interface ICommandBar: IMsoOleAccDispObj
 
   #endregion methods
 }
+
 

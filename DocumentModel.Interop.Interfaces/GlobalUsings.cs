@@ -2,6 +2,7 @@
 
 global using DocumentModel.Interop;
 global using DocumentModel.Interop.Word;
+global using DocumentModel.Wordprocessing;
 
 global using Qhta.OpenXmlTools;
 

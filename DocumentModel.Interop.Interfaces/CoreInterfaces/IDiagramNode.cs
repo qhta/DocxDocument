@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -26,7 +26,7 @@ public interface IDiagramNode: IInteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public IDiagram Diagram { get; }
   /// <summary>
   /// Gets or sets the `Layout` property.
   /// </summary>
@@ -107,4 +107,5 @@ public interface IDiagramNode: IInteropObject
 
   #endregion methods
 }
+
 

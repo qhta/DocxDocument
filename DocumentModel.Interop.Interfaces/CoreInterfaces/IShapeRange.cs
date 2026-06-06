@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Reflection;
 
 namespace DocumentModel.Interop.Core;
@@ -173,7 +173,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public IDiagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>
@@ -223,7 +223,7 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// Gets the `Chart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.chart?view=office-pia"/>
-  public IMsoChart Chart { get; }
+  public IChart Chart { get; }
   /// <summary>
   /// Gets or sets the `ShapeStyle` property.
   /// </summary>
@@ -426,4 +426,5 @@ public interface IShapeRange: IInteropCollection<IShape>
 
   #endregion methods
 }
+
 

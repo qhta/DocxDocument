@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -171,7 +171,7 @@ public interface IShape: IInteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public IDiagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>
@@ -221,7 +221,7 @@ public interface IShape: IInteropObject
   /// Gets the `Chart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.chart?view=office-pia"/>
-  public IMsoChart Chart { get; }
+  public IChart Chart { get; }
   /// <summary>
   /// Gets or sets the `ShapeStyle` property.
   /// </summary>
@@ -400,4 +400,5 @@ public interface IShape: IInteropObject
 
   #endregion methods
 }
+
 

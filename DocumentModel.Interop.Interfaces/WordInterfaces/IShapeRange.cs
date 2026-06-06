@@ -237,7 +237,7 @@ public interface IShapeRange : IInteropObject, IInteropCollection<IShape>
   /// Returns a Diagram object to which a diagram node belongs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.diagram?view=word-pia"/>
-  public Core.IMsoDiagram Diagram { get; }
+  public Core.IDiagram Diagram { get; }
 
   /// <summary>
   /// MsoTrue if a shape is a diagram node.

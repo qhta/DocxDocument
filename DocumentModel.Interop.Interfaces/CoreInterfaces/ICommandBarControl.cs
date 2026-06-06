@@ -1,11 +1,11 @@
-
+﻿
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a command bar control.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol?view=office-pia"/>
-public interface ICommandBarControl: IMsoOleAccDispObj
+public interface ICommandBarControl: IOleAccDispObj
 {
   /// <summary>
   /// Gets or sets the `BeginGroup` property.
@@ -164,4 +164,5 @@ public interface ICommandBarControl: IMsoOleAccDispObj
   public void Reset();
   #endregion methods
 }
+
 

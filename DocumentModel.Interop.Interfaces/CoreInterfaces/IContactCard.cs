@@ -7,11 +7,25 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contactcard?view=office-pia"/>
 public interface IContactCard: IInteropObject
 {
-
+  /// <summary>
+  /// Gets the `Address` property.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.address?view=office-pia"/>
+  public string Address { get; }
+  /// <summary>
+  /// Gets the `AddressType` property.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.addresstype?view=office-pia"/>
+  public ContactCardAddressType AddressType { get; }
+  /// <summary>
+  /// Gets the `CardType` property.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.cardtype?view=office-pia"/>
+  public ContactCardType CardType { get; }
 
   #region methods
 
-/// <summary>
+  /// <summary>
   /// Closes the contact card.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contactcard.close?view=office-pia"/>
