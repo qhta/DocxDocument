@@ -1,7 +1,8 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents a single mapped data field.
+/// A mapped data field in Microsoft Word is a built-in feature primarily used in Mail Merge that acts
+/// as a universal placeholder for common information, such as "First Name" or "Address"
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield?view=word-pia"/>
 public interface IMappedDataField : IInteropObject

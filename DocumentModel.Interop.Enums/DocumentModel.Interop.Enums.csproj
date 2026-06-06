@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Application\TaskPanes\" />
+    <Folder Include="Core\TaskPanes\" />
     <Folder Include="tools\" />
     <Folder Include="Word\AutoCorrect\" />
     <Folder Include="Word\Bibliography\" />

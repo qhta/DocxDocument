@@ -1,7 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents a Windows Live Broadcast Service broadcast session.
+/// Microsoft Word Broadcast (also known as Present Online) is a built-in feature
+/// that allows you to share your Word document live with remote viewers through a web browser.
+/// Attendees do not need to have Word installed on their devices or a paid Microsoft account to follow along
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast?view=word-pia"/>
 public interface IBroadcast : IInteropObject

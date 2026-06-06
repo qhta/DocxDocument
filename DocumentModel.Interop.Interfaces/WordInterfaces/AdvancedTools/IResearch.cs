@@ -1,7 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Provides access to the research service feature of Microsoft Office Word.
+/// Microsoft Word Research refers to a suite of built-in tools designed to help you find reliable sources,
+/// define terms, and format citations directly within your document.
+/// It eliminates the need to constantly switch between Word and your web browser while writing papers or reports
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
 public interface IResearch : IInteropObject

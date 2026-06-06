@@ -1,7 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents the reflection formatting for a shape or range of shapes.
+/// Microsoft Word’s Reflection format is a visual Text Effect or Picture Style that creates a mirrored,
+/// water-like reflection of your text or image directly below it..
+/// It is primarily used for titles, logos, or design covers to add a modern, polished aesthetic to your document
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat?view=word-pia"/>
 public interface IReflectionFormat : IInteropObject

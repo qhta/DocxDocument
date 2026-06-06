@@ -1,8 +1,9 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// A collection of Variable objects that represent the variables added to a document or template. Document
-/// variables are used to preserve macro settings in between macro sessions.
+/// Microsoft Word variables are hidden name-value pairs stored within a document or template.
+/// They are primarily used to store data, preserve macro settings,
+/// or dynamically populate and update information throughout a document without altering the core text
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variables?view=word-pia"/>
 public interface IVariables : IInteropObject, IInteropCollection<IVariable>

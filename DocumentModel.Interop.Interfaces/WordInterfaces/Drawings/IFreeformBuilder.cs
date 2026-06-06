@@ -1,13 +1,12 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents the geometry of a freeform while it's being built.
+/// In Microsoft Word, the Freeform tool lets you draw custom shapes with both straight and curved segments directly into your document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
 public interface IFreeformBuilder : IInteropObject
 {
-
-
+  
   #region methods
 
 /// <summary>

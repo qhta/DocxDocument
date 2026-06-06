@@ -1,7 +1,10 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Provides an entry point into the undo stack.
+/// In Microsoft Word, the UndoRecord object is a VBA (Visual Basic for Applications) feature that allows developers
+/// to group a series of code-driven actions into a single block.
+/// Instead of a user having to press Ctrl+Z multiple times to reverse every step of a macro,
+/// a custom undo record lets them undo the entire macro with a single click.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.undorecord?view=word-pia"/>
 public interface IUndoRecord : IInteropObject
