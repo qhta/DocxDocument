@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents a contiguous area in a document.
@@ -524,7 +524,7 @@ public interface IRange : IInteropObject
   /// Returns an OMaths collection that represents the OMath objects within the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
+  public IMaths OMaths { get; }
 
   /// <summary>
   /// Returns a Object that represents the style used to format one or more characters. Read-only.
@@ -630,3 +630,4 @@ public interface IRange : IInteropObject
 
   #endregion methods
 }
+

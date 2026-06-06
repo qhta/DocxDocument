@@ -631,10 +631,10 @@ public interface IApplication : IInteropObject
   public bool RestrictLinkedStyles { get; set; }
 
   /// <summary>
-  /// Returns the auto correct entries for equations. Read-only.
+  /// Returns the auto correct entries for equations as an IMathAutoCorrect object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.omathautocorrect?view=word-pia"/>
-  public IOMathAutoCorrect OMathAutoCorrect { get; }
+  public IMathAutoCorrect OMathAutoCorrect { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether the document properties panel is displayed. Read/write.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents the current selection in a window or pane.
@@ -392,7 +392,7 @@ public interface ISelection : IInteropObject
   /// Returns an OMaths collection that represents the OMath objects within the current selection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
+  public IMaths OMaths { get; }
 
   /// <summary>
   /// Returns a String that represents the XML contained within the selection in the Microsoft Office Word Open XML
@@ -449,3 +449,4 @@ public interface ISelection : IInteropObject
 
   #endregion methods
 }
+

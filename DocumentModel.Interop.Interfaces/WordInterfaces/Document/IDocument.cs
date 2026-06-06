@@ -623,67 +623,67 @@ public interface IDocument : IInteropObject
   /// Returns or sets a OMathBreakBin enumeration value that represents where Microsoft Office Word places binary operators when equations span two or more lines. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathbreakbin?view=word-pia"/>
-  public OMathBreakBin OMathBreakBin { get; set; }
+  public MathBreakBin MathBreakBin { get; set; }
 
   /// <summary>
   /// Returns or sets a OMathBreakSub enumeration value that represents how Microsoft Office Word handles a subtraction operator that falls before a line break. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathbreaksub?view=word-pia"/>
-  public OMathBreakSub OMathBreakSub { get; set; }
+  public MathBreakSub MathBreakSub { get; set; }
 
   /// <summary>
   /// Returns the name of the font used in a document to display equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathfontname?view=word-pia"/>
-  public string OMathFontName { get; set; }
+  public string MathFontName { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents the default location of limits for integrals. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathintsubsuplim?view=word-pia"/>
-  public bool OMathIntSubSupLim { get; set; }
+  public bool MathIntSubSupLim { get; set; }
 
   /// <summary>
-  /// Returns or sets the default justificationÄŹĹĽËťleft, right, centered, or centered as a groupÄŹĹĽËťof a group of equations. Read/write.
+  /// Returns or sets the default justification: left, right, centered, or centered as a group of a group of equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathjc?view=word-pia"/>
-  public OMathJc OMathJc { get; set; }
+  public MathJc MathJc { get; set; }
 
   /// <summary>
   /// Returns or sets the left margin for equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathleftmargin?view=word-pia"/>
-  public float OMathLeftMargin { get; set; }
+  public float MathLeftMargin { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents the default location of limits for n-ary objects other than integrals. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathnarysupsublim?view=word-pia"/>
-  public bool OMathNarySupSubLim { get; set; }
+  public bool MathNarySupSubLim { get; set; }
 
   /// <summary>
   /// Returns or sets the right margin for equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathrightmargin?view=word-pia"/>
-  public float OMathRightMargin { get; set; }
+  public float MathRightMargin { get; set; }
 
   /// <summary>
-  /// Returns the OMath objects within the specified range. Read-only.
+  /// Returns the Math objects within the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
+  public IMaths Maths { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to use small fractions in equations contained within the document. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathsmallfrac?view=word-pia"/>
-  public bool OMathSmallFrac { get; set; }
+  public bool MathSmallFrac { get; set; }
 
   /// <summary>
   /// Returns the placement of the second line of an equation that wraps to a new line. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathwrap?view=word-pia"/>
-  public float OMathWrap { get; set; }
+  public float MathWrap { get; set; }
 
   /// <summary>
   /// Returns the encoding used to open the specified document.
