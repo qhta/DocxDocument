@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Core\Application\TaskPanes\" />
     <Folder Include="tools\" />
     <Folder Include="Word\AutoCorrect\" />
     <Folder Include="Word\Bibliography\" />
@@ -57,6 +58,11 @@
     <Folder Include="Word\Views\" />
     <Folder Include="Word\Vml\" />
     <Folder Include="Word\Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
+    <PackageReference Include="MicrosoftOfficeCore" Version="15.0.0" />
   </ItemGroup>
 
   <ItemGroup>
