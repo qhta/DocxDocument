@@ -12,7 +12,6 @@
     <Folder Include="Word\AutoCorrect\" />
     <Folder Include="Word\Bibliography\" />
     <Folder Include="Word\Bookmarks\" />
-    <Folder Include="Word\Borders\" />
     <Folder Include="Word\Breaks\" />
     <Folder Include="Word\BuildingBlocks\" />
     <Folder Include="Word\Captions\" />
@@ -21,7 +20,6 @@
     <Folder Include="Word\ContentControls\" />
     <Folder Include="Word\CustomXml\" />
     <Folder Include="Word\Dictionaries\" />
-    <Folder Include="Word\Documents\" />
     <Folder Include="Word\Document\" />
     <Folder Include="Word\Drawings\" />
     <Folder Include="Word\Editors\" />
@@ -37,7 +35,7 @@
     <Folder Include="Word\InlineShapes\" />
     <Folder Include="Word\KeyBindings\" />
     <Folder Include="Word\Lists\" />
-    <Folder Include="Word\MailMerge\" />
+    <Folder Include="Word\Math\" />
     <Folder Include="Word\Numbering\" />
     <Folder Include="Word\Pages\" />
     <Folder Include="Word\Paragraph properties\" />
@@ -49,10 +47,10 @@
     <Folder Include="Word\Sdt\" />
     <Folder Include="Word\Settings\" />
     <Folder Include="Word\SmartTags\" />
+    <Folder Include="Word\Styles\" />
     <Folder Include="Word\Table properties\" />
     <Folder Include="Word\TableOf\" />
     <Folder Include="Word\Tables\" />
-    <Folder Include="Word\Unused\" />
     <Folder Include="Word\Versioning\" />
     <Folder Include="Word\Views\" />
     <Folder Include="Word\Vml\" />
