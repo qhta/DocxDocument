@@ -101,7 +101,7 @@ public interface ITextFrame : IInteropObject
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.column?view=word-pia"/>
-  public Core.ITextColumn2 Column { get; }	
+  public Core.ITextColumn Column { get; }	
   /// <summary>
   /// Gets a ThreeDFormat object that contains 3-D effect formatting properties for the specified text frame.
   /// </summary>

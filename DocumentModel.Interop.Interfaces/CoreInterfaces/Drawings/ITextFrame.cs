@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TextFrame` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe?view=office-pia"/>
-public interface ITextFrame: IInteropObject
+public interface ITextFrame2: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `MarginBottom` property.

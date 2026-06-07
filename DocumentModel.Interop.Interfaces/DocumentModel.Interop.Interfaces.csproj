@@ -40,7 +40,4 @@
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>	
-  <ItemGroup>
-    <Folder Include="CoreInterfaces\Range and Selection\" />
-  </ItemGroup>	
 </Project>

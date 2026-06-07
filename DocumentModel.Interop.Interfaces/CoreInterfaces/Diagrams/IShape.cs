@@ -111,7 +111,7 @@ public interface IShape: IInteropObject
   /// Gets the `TextFrame` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe?view=office-pia"/>
-  public ITextFrame TextFrame { get; }
+  public ITextFrame2 TextFrame { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
