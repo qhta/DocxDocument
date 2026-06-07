@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
@@ -7,7 +7,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdworddialog?view=office-pia` for Office interop details.
 /// </remarks>
-[InteropEnumType(typeof(Microsoft.Office.Interop.Word.WdWordDialog))]
+[InteropEnumType("Microsoft.Office.Interop.Word.WdWordDialog")]
 public enum WordDialog
 {
   /// <summary>
@@ -21,13 +21,13 @@ public enum WordDialog
   [InteropEnumValue("wdDialogHelpWordPerfectHelp")]
   HelpWordPerfectHelp = 10,
   /// <summary>
-  /// FileName, Directory, ITemplate, Title, Created, LastSaved, LastSavedBy, IRevision, Time, Printed, IPages, IWords,
-  /// ICharacters, IParagraphs, Lines,
+  /// FileName, Directory, Template, Title, Created, LastSaved, LastSavedBy, Revision, Time, Printed, Pages, Words,
+  /// Characters, Paragraphs, Lines,
   /// </summary>
-  [InteropEnumValue("wdDialogFileStatistics")]
+  [InteropEnumValue("wdDialogDocumentStatistics")]
   DocumentStatistics = 78,
   /// <summary>
-  /// ITemplate, NewTemplate, DocumentType, Visible
+  /// Template, NewTemplate, DocumentType, Visible
   /// </summary>
   [InteropEnumValue("wdDialogFileNew")]
   FileNew = 79,
@@ -56,7 +56,7 @@ public enum WordDialog
   [InteropEnumValue("wdDialogFileSaveAs")]
   FileSaveAs = 84,
   /// <summary>
-  /// Title, Subject, Author, Keywords, IComments, FileName, Directory, ITemplate, CreateDate, LastSavedDate,
+  /// Title, Subject, Author, Keywords, Comments, FileName, Directory, Template, CreateDate, LastSavedDate,
   /// LastSavedBy, RevisionNumber, EditTime, LastPrintedDate, NumPages, NumWords, NumChars, NumParas, NumLines,
   /// Update, FileSize
   /// </summary>
@@ -68,29 +68,29 @@ public enum WordDialog
   [InteropEnumValue("wdDialogToolsTemplates")]
   ToolsTemplates = 87,
   /// <summary>
-  /// Background, AppendPrFile, IRange, PrToFileName, From, To, Type, NumCopies, IPages, Order, PrintToFile, Collate,
+  /// Background, AppendPrFile, Range, PrToFileName, From, To, Type, NumCopies, Pages, Order, PrintToFile, Collate,
   /// FileName, Printer, OutputPrinter, DuplexPrint, PrintZoomColumn, PrintZoomRow, PrintZoomPaperWidth,
   /// PrintZoomPaperHeight, ZoomPaper
   /// </summary>
   [InteropEnumValue("wdDialogFilePrint")]
   FilePrint = 88,
   /// <summary>
-  /// Printer, IOptions, Network, DoNotSetAsSysDefault
+  /// Printer, Options, Network, DoNotSetAsSysDefault
   /// </summary>
   [InteropEnumValue("wdDialogFilePrintSetup")]
   FilePrintSetup = 97,
   /// <summary>
-  /// SearchName, SearchPath, Name, SubDir, Title, Author, Keywords, Subject, IOptions, MatchCase, Text,
-  /// PatternMatch, DateSavedFrom, DateSavedTo, SavedBy, DateCreatedFrom, DateCreatedTo, IView, SortBy, ListBy,
+  /// SearchName, SearchPath, Name, SubDir, Title, Author, Keywords, Subject, Options, MatchCase, Text,
+  /// PatternMatch, DateSavedFrom, DateSavedTo, SavedBy, DateCreatedFrom, DateCreatedTo, View, SortBy, ListBy,
   /// SelectedFile, Add, Delete, ShowFolders, MatchByte
   /// </summary>
   [InteropEnumValue("wdDialogFileFind")]
   FileFind = 99,
   /// <summary>
-  /// IPoints, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
-  /// Position, Kerning, KerningMin, Default, Tab, IFont, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
+  /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
+  /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi,
+  /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
   [InteropEnumValue("wdDialogFormatAddrFonts")]
   FormatAddrFonts = 103,
@@ -100,14 +100,14 @@ public enum WordDialog
   [InteropEnumValue("wdDialogEditPasteSpecial")]
   EditPasteSpecial = 111,
   /// <summary>
-  /// IFind, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
+  /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
   /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
   /// MatchAlefHamza,
   /// </summary>
   [InteropEnumValue("wdDialogEditFind")]
   EditFind = 112,
   /// <summary>
-  /// IFind, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
+  /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
   /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
   /// MatchAlefHamza,
   /// </summary>
@@ -119,7 +119,7 @@ public enum WordDialog
   [InteropEnumValue("wdDialogEditStyle")]
   EditStyle = 120,
   /// <summary>
-  /// UpdateMode, Locked, SavePictureInDoc, UpdateNow, OpenSource, KillLink, Link, IApplication, Item, FileName,
+  /// UpdateMode, Locked, SavePictureInDoc, UpdateNow, OpenSource, KillLink, Link, Application, Item, FileName,
   /// </summary>
   [InteropEnumValue("wdDialogEditLinks")]
   EditLinks = 124,
@@ -184,7 +184,7 @@ public enum WordDialog
   [InteropEnumValue("wdDialogInsertBreak")]
   InsertBreak = 159,
   /// <summary>
-  /// IFont, Tab, CharNum, CharNumLow, Unicode, Hint
+  /// Font, Tab, CharNum, CharNumLow, Unicode, Hint
   /// </summary>
   [InteropEnumValue("wdDialogInsertSymbol")]
   InsertSymbol = 162,
@@ -194,7 +194,7 @@ public enum WordDialog
   [InteropEnumValue("wdDialogInsertPicture")]
   InsertPicture = 163,
   /// <summary>
-  /// Name, IRange, ConfirmConversions, Link,
+  /// Name, Range, ConfirmConversions, Link,
   /// </summary>
   [InteropEnumValue("wdDialogInsertFile")]
   InsertFile = 164,
@@ -224,15 +224,15 @@ public enum WordDialog
   [InteropEnumValue("wdDialogMarkIndexEntry")]
   MarkIndexEntry = 169,
   /// <summary>
-  /// Outline, IFields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
-  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, IColumns, ICategory, Label, ShowPageNumbers,
+  /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
+  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
   /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage,
   /// </summary>
   [InteropEnumValue("wdDialogInsertIndex")]
   InsertIndex = 170,
   /// <summary>
-  /// Outline, IFields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
-  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, IColumns, ICategory, Label, ShowPageNumbers,
+  /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
+  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
   /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage,
   /// </summary>
   [InteropEnumValue("wdDialogInsertTableOfContents")]
@@ -248,10 +248,10 @@ public enum WordDialog
   [InteropEnumValue("wdDialogToolsCreateEnvelope")]
   ToolsCreateEnvelope = 173,
   /// <summary>
-  /// IPoints, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
-  /// Position, Kerning, KerningMin, Default, Tab, IFont, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
+  /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
+  /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi,
+  /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
   [InteropEnumValue("wdDialogFormatFont")]
   FormatFont = 174,
@@ -262,23 +262,23 @@ public enum WordDialog
   /// AdjustRight, CharacterUnitFirstIndent, CharacterUnitRightIndent, LineUnitBefore, LineUnitAfter,
   /// NoSpaceBetweenParagraphsOfSameStyle,
   /// </summary>
-  [InteropEnumValue("wdDialogFormatParagraph")] 
+  [InteropEnumValue("wdDialogFormatParagraph")]
   FormatParagraph = 175,
   /// <summary>
-  /// SectionStart, VertAlign, IEndnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
+  /// SectionStart, VertAlign, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
   /// </summary>
   [InteropEnumValue("wdDialogFormatSectionLayout")]
   FormatSectionLayout = 176,
   /// <summary>
-  /// IColumns, ColumnNo, ColumnWidth, ColumnSpacing, EvenlySpaced, ApplyColsTo, ColLine, StartNewCol, FlowColumnsRtl
+  /// Columns, ColumnNo, ColumnWidth, ColumnSpacing, EvenlySpaced, ApplyColsTo, ColLine, StartNewCol, FlowColumnsRtl
   /// </summary>
   [InteropEnumValue("wdDialogFormatColumns")]
   FormatColumns = 177,
   /// <summary>
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
   /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
-  /// SectionStart, OddAndEvenPages, DifferentFirstPage, IEndnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
+  /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
+  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment, FolioPrint
   /// </summary>
   [InteropEnumValue("wdDialogFilePageSetup")]
@@ -286,8 +286,8 @@ public enum WordDialog
   /// <summary>
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
   /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
-  /// SectionStart, OddAndEvenPages, DifferentFirstPage, IEndnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
+  /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
+  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment
   /// </summary>
   [InteropEnumValue("wdDialogFileDocumentLayout")]
@@ -421,7 +421,7 @@ public enum WordDialog
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [InteropEnumValue("wdDialogToolsOptionsAdvanced")]
+  [InteropEnumValue("wdDialogToolsAdvancedSettings")]
   ToolsAdvancedSettings = 206,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
@@ -871,8 +871,8 @@ public enum WordDialog
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [InteropEnumValue("wdDialogIMailMerge")]
-  IMailMerge = 676,
+  [InteropEnumValue("wdDialogMailMerge")]
+  MailMerge = 676,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
@@ -1027,8 +1027,8 @@ public enum WordDialog
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [InteropEnumValue("wdDialogIEmailOptions")]
-  IEmailOptions = 863,
+  [InteropEnumValue("wdDialogEmailOptions")]
+  EmailOptions = 863,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
@@ -1057,8 +1057,8 @@ public enum WordDialog
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [InteropEnumValue("wdDialogIWebOptions")]
-  IWebOptions = 898,
+  [InteropEnumValue("wdDialogWebOptions")]
+  WebOptions = 898,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
@@ -1363,8 +1363,8 @@ public enum WordDialog
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
-  [InteropEnumValue("wdDialogIOMathRecognizedFunctions")]
-  IOMathRecognizedFunctions = 2165,
+  [InteropEnumValue("wdDialogOMathRecognizedFunctions")]
+  OMathRecognizedFunctions = 2165,
   /// <summary>
   /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
   /// applicable, that you can use to get or set values in a dialog box.
@@ -1426,4 +1426,3 @@ public enum WordDialog
   [InteropEnumValue("wdDialogMailMergeInsertSkipIf")]
   MailMergeInsertSkipIf = 4055
 }
-

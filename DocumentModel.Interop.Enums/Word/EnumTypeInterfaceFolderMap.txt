@@ -1,0 +1,261 @@
+﻿EnumFile	Folder
+EncloseStyle.cs	Unused
+EnclosureType.cs	Unused
+EndnoteLocation.cs	Endnotes and footnotes
+EndStyleCap.cs	Charts
+EnvelopeOrientation.cs	MailMerge
+ErrorBarDirection.cs	Unused
+ErrorBarInclude.cs	Unused
+ErrorBarType.cs	Unused
+ExportCreateBookmarks.cs	Document
+ExportFormat.cs	Document
+ExportItem.cs	Document
+ExportOptimizeFor.cs	Document
+ExportRange.cs	Document
+FarEastLineBreakLanguageID.cs	Document
+FarEastLineBreakLevel.cs	Document
+FieldKind.cs	Fields
+FieldShading.cs	View
+FieldType.cs	Ambiguous
+FindMatch.cs	Unused
+FindWrap.cs	Find and Replace
+FlowDirection.cs	TextColumns
+FontBias.cs	Unused
+FootnoteLocation.cs	Endnotes and footnotes
+FramePosition.cs	Unused
+FramesetNewFrameLocation.cs	Frames and Framesets
+FramesetSizeType.cs	Frames and Framesets
+FramesetType.cs	Frames and Framesets
+FrameSizeRule.cs	Frames and Framesets
+FrenchSpeller.cs	Options
+GoToDirection.cs	Document
+GoToItem.cs	Document
+Granularity.cs	Unused
+GutterStyle.cs	Pages
+GutterStyleOld.cs	Pages
+HAlign.cs	Unused
+HeaderFooterIndex.cs	Headers and Footers
+HeadingSeparator.cs	Indexes
+HebSpellStart.cs	Options
+HelpType.cs	Ambiguous
+HelpTypeHID.cs	Unused
+HighAnsiText.cs	Options
+HorizontalInVerticalType.cs	Range and Selection
+HorizontalLineAlignment.cs	Drawings
+HorizontalLineWidthType.cs	Drawings
+IMEMode.cs	Windows and Panes
+IndexFilter.cs	Indexes
+IndexFormat.cs	Indexes
+IndexSortBy.cs	Indexes
+IndexType.cs	Indexes
+Information.cs	Ambiguous
+InlineShapeType.cs	Drawings
+InsertCells.cs	Unused
+InsertedTextMark.cs	Options
+InternationalIndex.cs	Application
+JustificationMode.cs	Document
+Kana.cs	Ambiguous
+Key.cs	Ambiguous
+KeyCategory.cs	Ambiguous
+LanguageID.cs	Ambiguous
+LanguageID2000.cs	Unused
+LayoutMode.cs	Pages
+LegendPosition.cs	Charts
+LetterheadLocation.cs	Ambiguous
+LetterStyle.cs	Ambiguous
+Ligatures.cs	Text properties
+LineEndingType.cs	Document
+LineSpacing.cs	Ambiguous
+LineStyle.cs	Ambiguous
+LineType.cs	Drawings
+LineWidth.cs	Ambiguous
+LinkType.cs	Ambiguous
+ListApplyTo.cs	Unused
+ListGalleryType.cs	Unused
+ListLevelAlignment.cs	Numbering lists
+ListNumberStyle.cs	Numbering lists
+ListNumberStyleHID.cs	Unused
+ListType.cs	Numbering lists
+LockType.cs	CoAuthoring
+MappedDataFieldType.cs	Unused
+MarkerStyle.cs	Charts
+MeasurementUnits.cs	Options
+MeasurementUnitsHID.cs	Unused
+MergeFormatFrom.cs	Document
+MergeSubType.cs	Unused
+MergeTarget.cs	Document
+MonthNames.cs	Options
+MoveFromTextMark.cs	Options
+MovementType.cs	Unused
+MoveToTextMark.cs	Options
+MultipleWordConversionsMode.cs	Options
+NewDocumentType.cs	Unused
+NoteNumberStyle.cs	Endnotes and footnotes
+NoteNumberStyleHID.cs	Unused
+NumberForm.cs	Text properties
+NumberingRule.cs	Ambiguous
+NumberSpacing.cs	Text properties
+NumberStyleWordBasicBiDi.cs	Unused
+NumberType.cs	Ambiguous
+OLEPlacement.cs	Unused
+OLEType.cs	Unused
+OLEVerb.cs	Unused
+OpenFormat.cs	Ambiguous
+OrganizerObject.cs	Unused
+Orientation.cs	Ambiguous
+OriginalFormat.cs	Ambiguous
+OutlineLevel.cs	Ambiguous
+PageBorderArt.cs	Borders
+PageColor.cs	View
+PageFit.cs	View
+PageNumberAlignment.cs	Pages
+PageNumberStyle.cs	Pages
+PageNumberStyleHID.cs	Unused
+PaperSize.cs	Pages
+PaperTray.cs	Ambiguous
+ParagraphAlignment.cs	Ambiguous
+ParagraphAlignmentHID.cs	Unused
+PartOfSpeech.cs	Unused
+PasteDataType.cs	Unused
+PasteOptions.cs	Options
+Pattern.cs	Ambiguous
+PhoneticGuideAlignmentType.cs	Unused
+PictureAppearance.cs	Unused
+PictureLinkType.cs	Unused
+PieSliceIndex.cs	Unused
+PieSliceLocation.cs	Unused
+PivotFieldOrientation.cs	Unused
+PortugueseReform.cs	Options
+PreferredWidthType.cs	Tables
+PrintOutItem.cs	Document
+PrintOutPages.cs	Document
+PrintOutRange.cs	Document
+ProofreadingErrorType.cs	AutoCorrect and Proofing
+ProtectedViewCloseReason.cs	Unused
+ProtectionType.cs	Ambiguous
+ReadingLayoutMargin.cs	View
+ReadingOrder.cs	Ambiguous
+RecoveryType.cs	Unused
+RectangleType.cs	Drawings
+ReferenceKind.cs	Unused
+ReferenceType.cs	Document
+RelativeHorizontalPosition.cs	Ambiguous
+RelativeHorizontalSize.cs	Diagrams
+RelativeVerticalPosition.cs	Ambiguous
+RelativeVerticalSize.cs	Diagrams
+Relocate.cs	Unused
+RemoveDocInfoType.cs	Document
+Replace.cs	Ambiguous
+RevisedLinesMark.cs	Options
+RevisedPropertiesMark.cs	Options
+RevisionsBalloonMargin.cs	View
+RevisionsBalloonPrintOrientation.cs	Options
+RevisionsBalloonWidthType.cs	View
+RevisionsMarkup.cs	Revisions
+RevisionsMode.cs	View
+RevisionsView.cs	Ambiguous
+RevisionsWrap.cs	Unused
+RevisionType.cs	Ambiguous
+RgbColor.cs	Unused
+RoutingSlipDelivery.cs	AdvancedTools
+RoutingSlipStatus.cs	AdvancedTools
+RowAlignment.cs	Ambiguous
+RowCol.cs	Charts
+RowHeightRule.cs	Tables
+RulerStyle.cs	Unused
+SalutationGender.cs	Email
+SalutationType.cs	Ambiguous
+SaveFormat.cs	Ambiguous
+SaveOptions.cs	Document
+ScaleType.cs	Charts
+ScrollbarType.cs	Frames and Framesets
+SectionDirection.cs	Pages
+SectionStart.cs	Pages
+SeekView.cs	View
+SelectionFlags.cs	Range and Selection
+SelectionType.cs	Range and Selection
+SeparatorType.cs	Ambiguous
+SeriesNameLevel.cs	Charts
+ShapePosition.cs	Diagrams
+ShapePositionRelative.cs	Unused
+ShapeSizeRelative.cs	Unused
+ShowFilter.cs	Document
+ShowSourceDocuments.cs	Windows and Panes
+SizeRepresents.cs	Charts
+SmartTagControlType.cs	SmartTags
+SortFieldType.cs	Unused
+SortFieldTypeHID.cs	Unused
+SortOrder.cs	Unused
+SortSeparator.cs	Unused
+SpanishSpeller.cs	Options
+SpecialPane.cs	View
+SpellingErrorType.cs	AutoCorrect and Proofing
+SpellingWordType.cs	Unused
+Statistic.cs	Ambiguous
+StatisticHID.cs	Unused
+StoryType.cs	Ambiguous
+StyleSheetLinkType.cs	Web and HTML
+StyleSheetPrecedence.cs	Web and HTML
+StyleSort.cs	Document
+StyleType.cs	Styles
+StylisticSet.cs	Text properties
+SubscriberFormats.cs	Unused
+SummaryLength.cs	Document
+SummaryMode.cs	Document
+TabAlignment.cs	Paragraph properties
+TabLeader.cs	Ambiguous
+TabLeaderHID.cs	Unused
+TableDirection.cs	Ambiguous
+TableFieldSeparator.cs	Unused
+TableFormat.cs	Unused
+TableFormatApply.cs	Unused
+TablePosition.cs	Unused
+TaskPanes.cs	Unused
+TaskPaneType.cs	Unused
+TCSCConverterDirection.cs	Unused
+TemplateType.cs	Document
+TextboxTightWrap.cs	Ambiguous
+TextFormFieldType.cs	FormFields
+TextOrientation.cs	Ambiguous
+TextOrientationHID.cs	Unused
+TextureIndex.cs	Drawings
+ThemeColorIndex.cs	Drawings
+TickLabelOrientation.cs	Charts
+TickLabelPosition.cs	Charts
+TickMark.cs	Charts
+TimeUnit.cs	Charts
+ToaFormat.cs	TablesOf
+TocFormat.cs	TablesOf
+TofFormat.cs	TablesOf
+TrailingCharacter.cs	Numbering lists
+TrendlineType.cs	Charts
+TwoLinesInOneType.cs	Range and Selection
+Underline.cs	Ambiguous
+UnderlineStyle.cs	Unused
+Units.cs	Ambiguous
+UpdateStyleListBehavior.cs	Options
+UseFormattingFrom.cs	Document
+VAlign.cs	Unused
+VerticalAlignment.cs	Ambiguous
+ViewType.cs	Ambiguous
+ViewTypeOld.cs	Unused
+VisualSelection.cs	Options
+WdBuildingBlockTypes.cs	Unused
+WindowState.cs	Ambiguous
+WindowType.cs	Windows and Panes
+WordDialog.cs	Dialogs
+WordDialogHID.cs	Unused
+WordDialogTab.cs	Dialogs
+WordDialogTabHID.cs	Unused
+WrapSideType.cs	Drawings
+WrapType.cs	Drawings
+WrapTypeMerged.cs	Options
+XlColorIndex.cs	Unused
+XlConstants.cs	Unused
+XlLineStyle.cs	Unused
+XlOrientation.cs	Unused
+XlReadingOrder.cs	Unused
+XMLNodeLevel.cs	CustomXml
+XMLNodeType.cs	CustomXml
+XMLSelectionChangeReason.cs	Unused
+XMLValidationStatus.cs	CustomXml

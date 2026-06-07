@@ -9,38 +9,15 @@
 
   <ItemGroup>
     <Folder Include="Core\TaskPanes\" />
-    <Folder Include="Word\Bibliography\" />
-    <Folder Include="Word\BuildingBlocks\" />
     <Folder Include="Word\CoAuthoring\" />
-    <Folder Include="Word\Common\" />
     <Folder Include="Word\CustomXml\" />
-    <Folder Include="Word\Dictionaries\" />
-    <Folder Include="Word\Editors\" />
-    <Folder Include="Word\Fields\" />
-    <Folder Include="Word\Find and replace\" />
-    <Folder Include="Word\Fonts\" />
-    <Folder Include="Word\Footnotes and endnotes\" />
     <Folder Include="Word\FormFields\" />
     <Folder Include="Word\Frames and framesets\" />
     <Folder Include="Word\Headers and footers\" />
     <Folder Include="Word\Indexes\" />
-    <Folder Include="Word\Info\" />
-    <Folder Include="Word\InlineShapes\" />
-    <Folder Include="Word\KeyBindings\" />
     <Folder Include="Word\Math\" />
     <Folder Include="Word\Endnotes and footnotes\" />
-    <Folder Include="Word\Pages\" />
-    <Folder Include="Word\Revisions\" />
-    <Folder Include="Word\Ruby\" />
-    <Folder Include="Word\Run content\" />
-    <Folder Include="Word\Run properties\" />
-    <Folder Include="Word\Sdt\" />
-    <Folder Include="Word\Settings\" />
     <Folder Include="Word\SmartTags\" />
-    <Folder Include="Word\TableOf\" />
-    <Folder Include="Word\Versioning\" />
-    <Folder Include="Word\Vml\" />
-    <Folder Include="Word\Windows\" />
   </ItemGroup>
 
   <ItemGroup>
