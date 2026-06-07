@@ -13,10 +13,10 @@ public interface IFind : IInteropObject
   public bool Forward { get; set; }
 
   /// <summary>
-  /// Returns or sets a <see cref="IFontFormat"/> object that represents the character formatting of the specified object.
+  /// Returns or sets a <see cref="ITextFormat"/> object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
   /// <summary>
   /// Determines if the search for the specified object has produced a match.

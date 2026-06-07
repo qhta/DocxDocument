@@ -3,7 +3,7 @@ namespace DocumentModel.Interop;
 /// <summary>
 /// Defines the formatting properties for text. These properties include font name, font size, and font style. The TextFormat object is used by the Font property of the CharacterFormat object and the ParagraphFormat object to specify the formatting of text in a document.
 /// </summary>
-public interface IITextFormat
+public interface ITextFormat
 {
   /// <summary>
   /// The name of the font.

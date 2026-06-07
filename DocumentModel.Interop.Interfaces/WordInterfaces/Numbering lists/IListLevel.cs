@@ -76,7 +76,7 @@ public interface IListLevel : IInteropObject
   /// Returns or sets the font formatting for the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the higher list level that causes numbering to restart.

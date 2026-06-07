@@ -34,7 +34,7 @@ public interface IRange : IInteropObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents all the properties of the specified range.

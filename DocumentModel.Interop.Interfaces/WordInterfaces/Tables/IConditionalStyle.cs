@@ -45,6 +45,6 @@ public interface IConditionalStyle : IInteropObject
   /// Gets or sets the font formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
 }

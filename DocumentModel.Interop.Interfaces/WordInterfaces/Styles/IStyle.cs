@@ -75,7 +75,7 @@ public interface IStyle : IInteropObject
   /// Font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.

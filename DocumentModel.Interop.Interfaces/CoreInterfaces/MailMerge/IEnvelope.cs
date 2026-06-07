@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// Provides access to functionality that lets you send documents as email from Office applications.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevb?view=office-pia"/>
-public interface IEnvelopeVB
+public interface IEnvelope
 {
   /// <summary>
   /// Gets or sets the `Introduction` property.

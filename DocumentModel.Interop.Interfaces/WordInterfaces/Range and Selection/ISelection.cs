@@ -34,7 +34,7 @@ public interface ISelection : IInteropObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.font?view=word-pia"/>
-  public IFontFormat FontFormat { get; set; }
+  public ITextFormat FontFormat { get; set; }
 
   /// <summary>
   /// Returns the selection type.
