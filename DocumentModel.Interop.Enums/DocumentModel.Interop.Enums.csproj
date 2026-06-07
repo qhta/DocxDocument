@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Core\TaskPanes\" />
-    <Folder Include="tools\" />
     <Folder Include="Word\AutoCorrect\" />
     <Folder Include="Word\Bibliography\" />
     <Folder Include="Word\Bookmarks\" />
