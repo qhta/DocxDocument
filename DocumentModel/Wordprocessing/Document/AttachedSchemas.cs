@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public class AttachedSchemas: ElementCollection<Schema>
 {
   /// <summary>
-  /// Modified Ifor tests.
+  /// Modified for tests.
   /// </summary>
   /// <returns></returns>
   public override string ToString()

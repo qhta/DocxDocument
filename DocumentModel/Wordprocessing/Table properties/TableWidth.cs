@@ -1,15 +1,15 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TableWidth class. Its Value can be absolute (Iin twips) or relative (Iin fiftieth of percent), or "auto" or "nil".
+///   Defines the TableWidth class. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
 ///   The type of the Value is determined with the Type property.
-///   This class is used Iin multiple measures according Ito table horizontal dimension.
+///   This class is used in multiple measures according Ito table horizontal dimension.
 /// </summary>
 [TypeConverter(typeof(TableWidthTypeConverter))]
 public class TableWidth : ModelElement
 {
   /// <summary>
-  ///   ITable Width value. Can be absolute (Iin twips) or relative (Iin fiftieth of percent).
+  ///   ITable Width value. Can be absolute (in twips) or relative (in fiftieth of percent).
   /// </summary>
   public Int64 Value { get; set; }
 
@@ -74,7 +74,7 @@ public class TableWidth : ModelElement
     {
       Type = TableWidthUnitType.Pct;
       str = str.Substring(0, str.Length - 1);
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture);
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
       Value = (Int64)(val * 50);
     }
     else
@@ -83,25 +83,25 @@ public class TableWidth : ModelElement
       if (str.EndsWith("mm"))
       {
         str = str.Substring(0, str.Length - 2).Trim();
-        var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInMM;
+        var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInMM;
         Value = (Int64)val;
       }
       if (str.EndsWith("cm"))
       {
         str = str.Substring(0, str.Length - 2).Trim();
-        var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInCM;
+        var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInCM;
         Value = (Int64)val;
       }
-      else if (str.EndsWith("Iin"))
+      else if (str.EndsWith("in"))
       {
         str = str.Substring(0, str.Length - 2).Trim();
-        var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInInch;
+        var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInInch;
         Value = (int)val;
       }
       else if (str.EndsWith("pt"))
       {
         str = str.Substring(0, str.Length - 2).Trim();
-        var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInPoint;
+        var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * Twips.TwipsInPoint;
         Value = (Int64)val;
       }
       else Value = Int32.Parse(str);
@@ -133,7 +133,7 @@ public class TableWidth : ModelElement
       return "nil";
     if (Type == TableWidthUnitType.Auto)
       return "auto";
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -146,7 +146,7 @@ public class TableWidth : ModelElement
       return "nil";
     if (Type == TableWidthUnitType.Auto)
       return "auto";
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -170,7 +170,7 @@ public class TableWidth : ModelElement
         return (Value / Twips.TwipsInMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / Twips.TwipsInCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / Twips.TwipsInInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / Twips.TwipsInPoint).ToString(format, provider) + unit;
@@ -198,7 +198,7 @@ public class TableWidth : ModelElement
         return (Value / Twips.TwipsInMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / Twips.TwipsInCM).ToString(provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / Twips.TwipsInInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / Twips.TwipsInPoint).ToString(provider) + unit;

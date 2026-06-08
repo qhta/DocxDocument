@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Common base class Ifor 
+///   Common base class for 
 ///   <see cref="InsertedRun"/>, <see cref="DeletedRun"/>, <see cref="MoveFromRun"/>, <see cref="MoveToRun"/> classes.
 /// </summary>
 public abstract class RunTrackChangeType: ElementCollection<IParagraphContent>, ICommonContent

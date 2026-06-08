@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the SignatureLine Class.
@@ -7,62 +7,62 @@
 public class SignatureLine: ModelElement
 {
   /// <summary>
-  ///   isSignatureLine, this property is Ionly available Iin Office 2013 and later.
+  ///   isSignatureLine, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public bool? IsSignatureLine { get; set; }
 
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2013 and later.
+  ///   id, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   provId, this property is Ionly available Iin Office 2013 and later.
+  ///   provId, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? ProviderId { get; set; }
 
   /// <summary>
-  ///   signingInstructionsSet, this property is Ionly available Iin Office 2013 and later.
+  ///   signingInstructionsSet, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public bool? SigningInstructionsSet { get; set; }
 
   /// <summary>
-  ///   allowComments, this property is Ionly available Iin Office 2013 and later.
+  ///   allowComments, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public bool? AllowComments { get; set; }
 
   /// <summary>
-  ///   showSignDate, this property is Ionly available Iin Office 2013 and later.
+  ///   showSignDate, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public bool? ShowSignDate { get; set; }
 
   /// <summary>
-  ///   suggestedSigner, this property is Ionly available Iin Office 2013 and later.
+  ///   suggestedSigner, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? SuggestedSigner { get; set; }
 
   /// <summary>
-  ///   suggestedSigner2, this property is Ionly available Iin Office 2013 and later.
+  ///   suggestedSigner2, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? SuggestedSigner2 { get; set; }
 
   /// <summary>
-  ///   suggestedSignerEmail, this property is Ionly available Iin Office 2013 and later.
+  ///   suggestedSignerEmail, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? SuggestedSignerEmail { get; set; }
 
   /// <summary>
-  ///   signingInstructions, this property is Ionly available Iin Office 2013 and later.
+  ///   signingInstructions, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? SigningInstructions { get; set; }
 
   /// <summary>
-  ///   addlXml, this property is Ionly available Iin Office 2013 and later.
+  ///   addlXml, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? AdditionalXml { get; set; }
 
   /// <summary>
-  ///   sigProvUrl, this property is Ionly available Iin Office 2013 and later.
+  ///   sigProvUrl, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? SignatureProviderUrl { get; set; }
 }

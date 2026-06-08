@@ -26,7 +26,7 @@ public class DocumentSettings : DocumentProperties
   /// This element specifies information about the parameters of the grammar checking 
   /// which was performed on the contents of the current WordprocessingML document. 
   /// </summary>
-  [ICategory("Proofing")]
+  [Category("Proofing")]
   public Collection<ActiveWritingStyle>? ActiveWritingStyles { get; set; }
 
   /// <summary>
@@ -35,39 +35,39 @@ public class DocumentSettings : DocumentProperties
   /// defined using the pgBorders element (Â§17.6.10) if the spacing between these borders is less than or equal Ito 10.5 points 
   /// (one character width) or less from the page border. The presence of this setting shall ensure 
   /// there are no gaps of one character width or less between adjoining page and paragraph/table borders, 
-  /// as borders which are perfectly aligning shall not be displayed Iin favor of the intervening page border. 
+  /// as borders which are perfectly aligning shall not be displayed in favor of the intervening page border. 
   /// </summary>
-  [ICategory("IPage borders")]
+  [Category("IPage borders")]
   public bool? AlignBorderAndEdges { get; set; }
 
   /// <summary>
   /// This element specifies whether custom XML markup specified via the customXml element 
   /// which has no associated namespace shall be treated as an error and moved into a special error namespace 
-  /// (Ifor the purposes of XML schema validation) when the document is opened. 
-  /// If this element is turned on, when an application determines Ithat the current XML markup is Iin the empty namespace, 
+  /// (for the purposes of XML schema validation) when the document is opened. 
+  /// If this element is turned on, when an application determines Ithat the current XML markup is in the empty namespace, 
   /// those elements shall not automatically be moved into an error namespace. 
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? AlwaysMergeEmptyNamespace { get; set; }
 
   /// <summary>
   /// This element specifies Ithat each custom XML element specified using the customXml element 
-  /// within this document shall always show some form of Iin-document placeholder text presentation when it contains no run content. 
-  /// If the placeholder element (Â§17.5.2.25) is present Iin the custom XML element's properties, 
+  /// within this document shall always show some form of in-document placeholder text presentation when it contains no run content. 
+  /// If the placeholder element (Â§17.5.2.25) is present in the custom XML element's properties, 
   /// then this is the placeholder text displayed and this effect has no effect. 
   /// If the placeholder element is omitted, then the application shall use the name of the element 
-  /// Ito generate default placeholder text Iin its place. 
+  /// Ito generate default placeholder text in its place. 
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? AlwaysShowPlaceholderText { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat the custom XML schema whose target namespace matches the value specified Iin the val attribute 
+  /// This element specifies Ithat the custom XML schema whose target namespace matches the value specified in the val attribute 
   /// should be associated with this document when it is loaded, if such a schema is available Ito the hosting application. 
   /// Applications can also load and utilize any additional schemas as well as those explicitly mentioned here. 
-  /// These customXML schemas can then be used Ito validate the structure of the custom XML markup Iin the document, etc.
+  /// These customXML schemas can then be used Ito validate the structure of the custom XML markup in the document, etc.
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public AttachedSchemas? AttachedSchemas { get; set; }
 
   /// <summary>
@@ -75,7 +75,7 @@ public class DocumentSettings : DocumentProperties
   /// if it is accessible and of a format supported by an application. 
   /// Specifically, this element's val attribute shall contain the file path of the associated document template.  
   /// </summary>
-  [ICategory("ITemplate")]
+  [Category("ITemplate")]
   public AttachedTemplate? AttachedTemplate { get; set; }
 
   /// <summary>
@@ -83,73 +83,73 @@ public class DocumentSettings : DocumentProperties
   /// (i.e. not explicitly applied by a use or an application) shall be allowed Ito override formatting protection 
   /// enabled via the formatting attribute on the documentProtection element (Â§17.15.1.9) 
   /// when those formatting operations would add formatting which has been explicitly disabled. 
-  /// Example: Automatically adding superscript Ito the st Iin the string 1st.
+  /// Example: Automatically adding superscript Ito the st in the string 1st.
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public bool? AutoFormatOverride { get; set; }
 
   /// <summary>
   /// This element specifies whether the content of a given WordprocessingML document should automatically be hyphenated 
   /// by the hosting application before it is displayed, if the application supports this functionality.
   /// </summary>
-  [ICategory("Hyphenation")]
+  [Category("Hyphenation")]
   public bool? AutoHyphenation { get; set; }
 
   /// <summary>
   /// This element specifies if the contents of a given WordprocessingML document should be printed as signatures. 
   /// Signatures are printed sheets, which depict several pages of a document Ithat are folded 
   /// and bound with other signatures Ito form a booklet, a set of which can be bound together Ito form a book like publication. 
-  /// Specifically, this element specifies Ithat each page Iin a given WordprocessingML document should be oriented Iin a landscape fashion, 
-  /// divided Iin half vertically with two left margins emanating from the bisector of the page, 
+  /// Specifically, this element specifies Ithat each page in a given WordprocessingML document should be oriented in a landscape fashion, 
+  /// divided in half vertically with two left margins emanating from the bisector of the page, 
   /// and two right margins instantiated at the left and right side of each page.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? BookFoldPrinting { get; set; }
 
   /// <summary>
-  /// This element shall be used Iin conjunction with the bookFoldPrinting (Â§17.15.1.11) and bookFoldRevPrinting (Â§17.15.1.13) 
-  /// elements Ito specify the number of pages Ito be included Iin each booklet when printing a series of signatures. 
+  /// This element shall be used in conjunction with the bookFoldPrinting (Â§17.15.1.11) and bookFoldRevPrinting (Â§17.15.1.13) 
+  /// elements Ito specify the number of pages Ito be included in each booklet when printing a series of signatures. 
   /// Signatures are printed sheets, which depict several pages of a document Ithat are Ito be folded 
   /// and bound with other signatures Ito form a booklet.
   /// Booklets can be bound together Ito form a book like publication.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public short? BookFoldPrintingSheets { get; set; }
 
   /// <summary>
-  /// This element specifies if pages of a given WordprocessingML document are Ito be printed as signatures Iin reverse order. 
+  /// This element specifies if pages of a given WordprocessingML document are Ito be printed as signatures in reverse order. 
   /// Signatures are printed sheets, which depict several pages of a document Ithat are folded 
   /// and bound with other signatures Ito form a booklet, 
   /// a set of which can be bound together Ito form a book like publication. 
-  /// Specifically, this element specifies Ithat each page Iin a given WordprocessingML document 
-  /// should be oriented Iin a landscape fashion and divided Iin half vertically, 
+  /// Specifically, this element specifies Ithat each page in a given WordprocessingML document 
+  /// should be oriented in a landscape fashion and divided in half vertically, 
   /// with two left margins emanating from the bisector of the page, 
   /// and right margins instantiated at the left and right side of each page.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? BookFoldReversePrinting { get; set; }
 
   /// <summary>
   /// This element specifies Ithat a given WordprocessingML documentâ€™s page border 
   /// specified using the pgBorders element (Â§17.6.10) should not surround contents of the footer.
   /// </summary>
-  [ICategory("IPage borders")]
+  [Category("IPage borders")]
   public bool? BordersDoNotSurroundFooter { get; set; }
 
   /// <summary>
   /// This element specifies Ithat a given WordprocessingML documentâ€™s page border 
   /// specified using the pgBorders element (Â§17.6.10) should not surround contents of the header.
   /// </summary>
-  [ICategory("IPage borders")]
+  [Category("IPage borders")]
   public bool? BordersDoNotSurroundHeader { get; set; }
 
   /// <summary>
-  /// This element specifies the presence of information about captions Iin a given WordprocessingML document.
+  /// This element specifies the presence of information about captions in a given WordprocessingML document.
   /// </summary>
   public Captions? Captions { get; set; }
 
   /// <summary>
-  /// This element specifies how full-width characters Iin the current WordprocessingML document 
+  /// This element specifies how full-width characters in the current WordprocessingML document 
   /// should be compressed Ito remove additional whitespace when the contents of this document are displayed, 
   /// specifically by specifying the set(s) of characters which can be compressed Ito remove additional whitespace. 
   /// The behavior of this element is functionally identical Ito the CSS text-justify-trim property.
@@ -158,30 +158,30 @@ public class DocumentSettings : DocumentProperties
 
   /// <summary>
   /// This elementspecifies how the datapoint properties ([MS-ODRAWXML] section 2.8.3.1) and datalabels ([MS-ODRAWXML] section 2.2.1.2) 
-  /// Iin all charts ([ISO/IEC29500-1:2016] section 21.2) Iin this document behave.
+  /// in all charts ([ISO/IEC29500-1:2016] section 21.2) in this document behave.
   /// </summary>
-  [ICategory("Tracking")]
+  [Category("Tracking")]
   public bool? ChartTrackingRefBased { get; set; }
 
   /// <summary>
   /// This element specifies the paragraph style, specified using the style element, 
   /// which shall be applied Ito paragraphs which are automatically Icreated 
   /// when text is inserted into a WordprocessingML document 
-  /// Iin an area of the document Ithat has no other style associated with it. 
+  /// in an area of the document Ithat has no other style associated with it. 
   /// This style is referenced via the val attribute, which stores the style ID 
-  /// of the style (stored Iin the styleId attribute on the style definition). 
+  /// of the style (stored in the styleId attribute on the style definition). 
   /// </summary>
   public string? ClickAndTypeStyle { get; set; }
 
   /// <summary>
-  /// This element specifies the theme color, stored Iin the document's Theme part 
+  /// This element specifies the theme color, stored in the document's Theme part 
   /// Ito which the value of this theme color shall be mapped. 
   /// This mapping enables multiple theme colors Ito be chained together.
   /// </summary>
   public ColorSchemeMapping? ColorSchemeMapping { get; set; }
 
   /// <summary>
-  /// This element specifies a set of optional compatibility options Ifor the current document.
+  /// This element specifies a set of optional compatibility options for the current document.
   /// </summary>
   public Compatibility? Compatibility { get; set; }
 
@@ -194,25 +194,25 @@ public class DocumentSettings : DocumentProperties
   /// This element specifies the maximum number of consecutive lines of text 
   /// Ithat can end with a hyphen when the contents of this document are displayed. 
   /// Once this limit has been reached, the following line shall not be hyphenated 
-  /// regardless of whether or not it meets the criteria needed Ifor hyphenation.
+  /// regardless of whether or not it meets the criteria needed for hyphenation.
   /// </summary>
-  [ICategory("Hyphenation")]
+  [Category("Hyphenation")]
   public ushort? ConsecutiveHyphenLimit { get; set; }
 
   /// <summary>
   /// This element specifies the character Ithat shall be interpreted as the radix point 
-  /// when evaluating the contents of all fields Iin the current document. 
+  /// when evaluating the contents of all fields in the current document. 
   /// </summary>
   public string? DecimalSymbol { get; set; }
 
   /// <summary>
-  /// This element Ithat specifies the resolution Iin dots per inch (DPI) at which images Iin the document will be saved.
+  /// This element Ithat specifies the resolution in dots per inch (DPI) at which images in the document will be saved.
   /// This setting is ignored by images Ithat have dots per inch (DPI) specified by useLocalDpi 
-  /// (as specified Iin [MS-ODRAWXML] section 2.3.1.13). 
+  /// (as specified in [MS-ODRAWXML] section 2.3.1.13). 
   /// This setting is also ignored when doNotAutoCompressPictures 
-  /// (as specified Iin [ISO/IEC29500-1:2016] section 17.15.1.33) is set Ito "true".
+  /// (as specified in [ISO/IEC29500-1:2016] section 17.15.1.33) is set Ito "true".
   /// </summary>
-  [ICategory("Images")]
+  [Category("Images")]
   public int? DefaultImageDpi { get; set; }
 
   /// <summary>
@@ -223,57 +223,57 @@ public class DocumentSettings : DocumentProperties
   ///  This link is made by referencing the styleId attribute value of the table style 
   ///  which shall be used Ito format newly inserted tables.
   /// </summary>
-  [ICategory("Styling")]
+  [Category("Styling")]
   public string? DefaultTableStyle { get; set; }
 
   /// <summary>
   /// This element specifies the value which shall be used as the multiplier 
-  /// Ito generate automatic tab stops Iin this document. 
+  /// Ito generate automatic tab stops in this document. 
   /// Automatic tab stops refer Ito the tab stop locations 
-  /// which occur after all custom tab stops Iin the current paragraph have been surpassed.
+  /// which occur after all custom tab stops in the current paragraph have been surpassed.
   /// </summary>
   public short? DefaultTabStop { get; set; }
 
   /// <summary>
   /// This element Ithat specifies Ithat when true, the cropped-out areas of the images are not Ito be saved. 
-  /// Rather, the images saved are the results of applying imgProps (as specified Iin [MS-ODRAWXML] section 2.3.1.9) 
-  /// on the original images. See section 2.2.2 Ifor how this element integrates with ISO/IEC-29500-1.
+  /// Rather, the images saved are the results of applying imgProps (as specified in [MS-ODRAWXML] section 2.3.1.9) 
+  /// on the original images. See section 2.2.2 for how this element integrates with ISO/IEC-29500-1.
   /// </summary>
-  [ICategory("Images")]
+  [Category("Images")]
   public bool? DiscardImageEditingData { get; set; }
 
   /// <summary>
-  /// This element specifies whether the images and colors defined Iin the document's background 
+  /// This element specifies whether the images and colors defined in the document's background 
   /// using the background element (Â§17.2.1) shall be displayed when the document 
-  /// is displayed Iin print layout view (Â§17.18.102) as specified Iin the view element (Â§17.15.1.92).
+  /// is displayed in print layout view (Â§17.18.102) as specified in the view element (Â§17.15.1.92).
   /// </summary>
-  [ICategory("IView")]
+  [Category("IView")]
   public bool? DisplayBackgroundShape { get; set; }
 
   /// <summary>
   /// This element specifies the number of horizontal grid units defined using the drawingGridHorizontalSpacing element (Â§17.15.1.45) 
-  /// which shall be allowed between subsequent visible horizontal drawing grid lines Iin this document, if gridlines are being shown.
-  /// Note: The display of gridlines is an application-level setting not specified Iin ECMA-376. 
-  /// The drawing grid is a grid which can be used by applications Ito help position floating objects Iin the document.
+  /// which shall be allowed between subsequent visible horizontal drawing grid lines in this document, if gridlines are being shown.
+  /// Note: The display of gridlines is an application-level setting not specified in ECMA-376. 
+  /// The drawing grid is a grid which can be used by applications Ito help position floating objects in the document.
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public int? DisplayHorizontalDrawingGrid { get; set; }
 
   /// <summary>
   /// This element specifies the number of vertical grid units defined using the drawingGridVerticalSpacing element (Â§17.15.1.47) 
-  /// which shall be allowed between subsequent vertical gridlines Iin this document, if gridlines are being shown. 
-  /// Note: The display of gridlines is an application-level setting not specified Iin ECMA-376. 
-  /// The drawing grid is a grid which can be used by applications Ito help position floating objects Iin the document. 
+  /// which shall be allowed between subsequent vertical gridlines in this document, if gridlines are being shown. 
+  /// Note: The display of gridlines is an application-level setting not specified in ECMA-376. 
+  /// The drawing grid is a grid which can be used by applications Ito help position floating objects in the document. 
   /// If this element is omitted, then vertical gridlines shall not be displayed.
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public int? DisplayVerticalDrawingGrid { get; set; }
 
   /// <summary>
-  /// A CT_LongHexNumber element Ithat specifies an arbitrary identifier Ifor the context of the paragraph identifiers 
-  /// Iin the document. Values MUST be greater than 0 and less than 0x80000000. 
+  /// A CT_LongHexNumber element Ithat specifies an arbitrary identifier for the context of the paragraph identifiers 
+  /// in the document. Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
-  [ICategory("Identification")]
+  [Category("Identification")]
   public HexInt? DocumentId { get; set; }
 
   /// <summary>
@@ -285,7 +285,7 @@ public class DocumentSettings : DocumentProperties
   /// Note: This protection does not encrypt the document, and malicious applications might circumvent its use. 
   /// This protection is not intended as a security feature. 
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public DocumentProtection? DocumentProtection { get; set; }
 
   /// <summary>
@@ -296,44 +296,44 @@ public class DocumentSettings : DocumentProperties
   public DocumentKind? DocumentType { get; set; }
 
   /// <summary>
-  /// This element specifies the presence of document variables Iin a WordprocessingML. 
-  /// A document variable is a storage location Ifor arbitrary customer data Iin name/value pairs 
-  /// Ithat is persisted Iin a given WordprocessingML document
+  /// This element specifies the presence of document variables in a WordprocessingML. 
+  /// A document variable is a storage location for arbitrary customer data in name/value pairs 
+  /// Ithat is persisted in a given WordprocessingML document
   /// </summary>
   public DocumentVariables? DocumentVariables { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat pictures Iin this document shall not automatically be compressed 
-  /// when saving the document Iin order Ito reduce the overall size of the resulting WordprocessingML document.
+  /// This element specifies Ithat pictures in this document shall not automatically be compressed 
+  /// when saving the document in order Ito reduce the overall size of the resulting WordprocessingML document.
   /// </summary>
-  [ICategory("Images")]
+  [Category("Images")]
   public bool? DoNotAutoCompressPictures { get; set; }
 
   /// <summary>
-  /// This element specifies whether a visual cue should be displayed around content contained Iin a WordprocessingML document 
+  /// This element specifies whether a visual cue should be displayed around content contained in a WordprocessingML document 
   /// which is contained with custom XML markup specified via the customXml element when an application determines 
   /// Ithat the current XML markup (or its contents) violate the constraints of the attached XML schema(s). 
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? DoNotDemarcateInvalidXml { get; set; }
 
   /// <summary>
   /// This element specifies whether applications displaying this document should display the contents of the header and footer 
-  /// when displaying the document Iin print layout view (Â§17.18.102) or should collapse those areas 
+  /// when displaying the document in print layout view (Â§17.18.102) or should collapse those areas 
   /// as well as the whitespace on all displayed pages so Ithat the text extents are directly following one another.
   /// </summary>
-  [ICategory("IView")]
+  [Category("IView")]
   public bool? DoNotDisplayPageBoundaries { get; set; }
 
   /// <summary>
   /// This element specifies whether or not words comprised of all capital letters shall be hyphenated 
   /// within a given document when automatic hyphenation is specified via the autoHyphenation element (Â§17.15.1.10).
   /// </summary>
-  [ICategory("Hyphenation")]
+  [Category("Hyphenation")]
   public bool? DoNotHyphenateCaps { get; set; }
 
   /// <summary>
-  /// This element specifies if document content contained Iin text boxes, footnotes, and endnotes 
+  /// This element specifies if document content contained in text boxes, footnotes, and endnotes 
   /// shall be excluded when an application calculates a given documentâ€™s statistics 
   /// when these values are calculated and/or displayed by an application.
   /// </summary>
@@ -341,7 +341,7 @@ public class DocumentSettings : DocumentProperties
 
   /// <summary>
   /// This element specifies whether a visual cue should be displayed around form fields contained 
-  /// Iin a WordprocessingML document specified via the FORMTEXT, FORMCHECKBOX, or FORMDROPDOWN fields.
+  /// in a WordprocessingML document specified via the FORMTEXT, FORMCHECKBOX, or FORMDROPDOWN fields.
   /// </summary>
   public bool? DoNotShadeFormData { get; set; }
 
@@ -349,7 +349,7 @@ public class DocumentSettings : DocumentProperties
   /// This element specifies Ithat applications shall not track revisions made Ito the formatting 
   /// of this WordprocessingML document when the trackRevisions element (Â§17.15.1.89) is turned on.
   /// </summary>
-  [ICategory("Tracking")]
+  [Category("Tracking")]
   public bool? DoNotTrackFormatting { get; set; }
 
   /// <summary>
@@ -358,99 +358,99 @@ public class DocumentSettings : DocumentProperties
   /// Instead, applications should use a standard insertion and deletion annotation syntax. 
   /// Existing moves shall not be modified.
   /// </summary>
-  [ICategory("Tracking")]
+  [Category("Tracking")]
   public bool? DoNotTrackMoves { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat the top-left corner of the page shall not be used as the origin Ifor the drawing grid. 
+  /// This element specifies Ithat the top-left corner of the page shall not be used as the origin for the drawing grid. 
   /// The drawing grid is a virtual grid which can be used by applications Ito specify 
   /// where drawing objects shall be positioned on a page when inserted (i.e. Ito ensure objects are aligned, etc.). 
   /// If this element is present the grid shall start at the top-left edge of the page and not the text extents.
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public bool? DoNotUseMarginsForDrawingGridOrigin { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat applications shall not validate the custom XML markup Iin this document 
+  /// This element specifies Ithat applications shall not validate the custom XML markup in this document 
   /// against the applicable custom XML schema(s), even when those schemas are available. 
   /// The application should silently behave as if it was unable Ito provide this functionality. 
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? DoNotValidateAgainstSchema { get; set; }
 
   /// <summary>
   /// This element specifies the distance from of the left edge of the page which shall be used as the origin 
-  /// Ifor the horizontal gridlines used by the drawing grid. The drawing grid is a virtual grid 
+  /// for the horizontal gridlines used by the drawing grid. The drawing grid is a virtual grid 
   /// which might be used by applications Ito specify where drawing objects shall be positioned on a page when inserted 
   /// (i.e. Ito ensure objects are aligned, etc.). Since the grid always covers the entire page 
   /// when the doNotUseMarginsForDrawingGridOrigin element (Â§17.15.1.42) is specified, 
   /// this element shall Ionly affect the starting edge of the first horizontal gridline displayed 
   /// (i.e. it Ionly adjusts the grid by the modulus of the value against the width of one grid unit).
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public Twips? DrawingGridHorizontalOrigin { get; set; }
 
   /// <summary>
-  /// This element specifies the width of horizontal grid units Iin this document. 
-  /// The drawing grid is a grid which can be used by applications Ito help position floating objects Iin the document. 
-  /// If this element is omitted, then each horizontal grid unit shall be 180 twentieths of a point (0.125") Iin width.
+  /// This element specifies the width of horizontal grid units in this document. 
+  /// The drawing grid is a grid which can be used by applications Ito help position floating objects in the document. 
+  /// If this element is omitted, then each horizontal grid unit shall be 180 twentieths of a point (0.125") in width.
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public Twips? DrawingGridHorizontalSpacing { get; set; }
 
   /// <summary>
   /// This element specifies the distance from of the top edge of the page which shall be used as the origin 
-  /// Ifor the vertical gridlines used by the drawing grid. The drawing grid is a virtual grid 
+  /// for the vertical gridlines used by the drawing grid. The drawing grid is a virtual grid 
   /// which can be used by applications Ito specify where drawing objects shall be positioned on a page when inserted 
   /// (i.e. Ito ensure objects are aligned, etc.). Since the grid always covers the entire page 
   /// when the doNotUseMarginsForDrawingGridOrigin element (Â§17.15.1.42) is specified, 
   /// this element shall Ionly affect the starting edge of the first vertical gridline displayed 
   /// (i.e. it Ionly adjusts the grid by the modulus of the value against the width of one grid unit).
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public Twips? DrawingGridVerticalOrigin { get; set; }
 
   /// <summary>
-  /// This element specifies the width of vertical grid units Iin this document. 
-  /// The drawing grid is a grid which can be used by applications Ito help position floating objects Iin the document.
+  /// This element specifies the width of vertical grid units in this document. 
+  /// The drawing grid is a grid which can be used by applications Ito help position floating objects in the document.
   /// </summary>
-  [ICategory("IDocument grid")]
+  [Category("IDocument grid")]
   public Twips? DrawingGridVerticalSpacing { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat applications shall embed common system fonts when they are Iin use 
-  /// and font embedding is enabled Ifor this document using the embedTrueTypeFonts element (Â§17.8.3.8). 
+  /// This element specifies Ithat applications shall embed common system fonts when they are in use 
+  /// and font embedding is enabled for this document using the embedTrueTypeFonts element (Â§17.8.3.8). 
   /// </summary>
-  [ICategory("Fonts")]
+  [Category("Fonts")]
   public bool? EmbedSystemFonts { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat applications shall embed the fonts Iin use Iin this document when it is saved. 
-  /// These fonts shall be embedded subject Ito the algorithm specified Iin Â§17.8.1.
+  /// This element specifies Ithat applications shall embed the fonts in use in this document when it is saved. 
+  /// These fonts shall be embedded subject Ito the algorithm specified in Â§17.8.1.
   /// </summary>
-  [ICategory("Fonts")]
+  [Category("Fonts")]
   public bool? EmbedTrueTypeFonts { get; set; }
 
   /// <summary>
-  /// This element specifies the endnote properties Ifor the current document. 
+  /// This element specifies the endnote properties for the current document. 
   /// Each of these properties are stored as a child element within the endnotePr element.
-  /// These properties can be overridden Ifor a specific section via the section-wide endnotePr element (Â§17.11.5).
+  /// These properties can be overridden for a specific section via the section-wide endnotePr element (Â§17.11.5).
   /// </summary>
-  [ICategory("IFootnotes and endnotes")]
+  [Category("IFootnotes and endnotes")]
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties { get; set; }
 
   /// <summary>
-  /// This element specifies whether sections Iin this document shall have different headers and footers 
-  /// Ifor even and odd pages (an odd page header/footer and an even page header/footer).
+  /// This element specifies whether sections in this document shall have different headers and footers 
+  /// for even and odd pages (an odd page header/footer and an even page header/footer).
   /// </summary>
   public bool? EvenAndOddHeaders { get; set; }
 
   /// <summary>
-  /// This element specifies the footnote properties Ifor this document. 
+  /// This element specifies the footnote properties for this document. 
   /// Each property is stored as a unique element within the footnotePr element.
-  /// These properties can be overridden Ifor a specific section via the section-wide footnotePr element (Â§17.11.11).
+  /// These properties can be overridden for a specific section via the section-wide footnotePr element (Â§17.11.11).
   /// </summary>
-  [ICategory("IFootnotes and endnotes")]
+  [Category("IFootnotes and endnotes")]
   public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties { get; set; }
 
   /// <summary>
@@ -462,14 +462,14 @@ public class DocumentSettings : DocumentProperties
 
   /// <summary>
   /// This element specifies Ithat the document was last saved while the placeholder text 
-  /// of all structured document tags Iin this document were being edited. 
-  /// This means Ithat the placeholder text currently displayed Iin all structured document tags 
+  /// of all structured document tags in this document were being edited. 
+  /// This means Ithat the placeholder text currently displayed in all structured document tags 
   /// which are displaying the showingPlcHdr element (Â§17.5.2.39) shall be committed 
   /// Ito the corresponding glossary document entry as specified using the docPart element (Â§17.12.5) 
-  /// when this document is opened, Iin order Ito ensure Ithat the most recent placeholder text is stored Iin the glossary document entry. 
+  /// when this document is opened, in order Ito ensure Ithat the most recent placeholder text is stored in the glossary document entry. 
   /// If the current placeholder text cannot be saved as a glossary document entry, then it should be modified as needed before saving.
   /// </summary>
-  [ICategory("Forms")]
+  [Category("Forms")]
   public bool? FormsDesign { get; set; }
 
   /// <summary>
@@ -478,121 +478,121 @@ public class DocumentSettings : DocumentProperties
   /// A gutter is the white space formed by the inner margins of two pages facing one another; 
   /// such as the white space between the text on pages of a book when the book is opened.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? GutterAtTop { get; set; }
 
   /// <summary>
-  /// This element specifies the default parameters Ifor object using the VML syntax (Â§14.1) 
-  /// inserted Iin the header and footer of a WordprocessingML document. 
+  /// This element specifies the default parameters for object using the VML syntax (Â§14.1) 
+  /// inserted in the header and footer of a WordprocessingML document. 
   /// </summary>
-  [ICategory("VML")]
+  [Category("VML")]
   [Obsolete]
   public HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
 
   /// <summary>
-  /// This element specifies whether a visual cue should be displayed around run content contained Iin a WordprocessingML document 
+  /// This element specifies whether a visual cue should be displayed around run content contained in a WordprocessingML document 
   /// which has been flagged as a possible grammatical error using the proofErr element (Â§17.13.8.1) or via the application's own grammar engine.
   /// </summary>
-  [ICategory("Proofing")]
+  [Category("Proofing")]
   public bool? HideGrammaticalErrors { get; set; }
 
   /// <summary>
-  /// This element specifies whether a visual cue should be displayed around run content contained Iin a WordprocessingML document 
+  /// This element specifies whether a visual cue should be displayed around run content contained in a WordprocessingML document 
   /// which has been flagged as a possible spelling error using the proofErr element (Â§17.13.8.1) or via the application's own spelling engine.
   /// </summary>
-  [ICategory("Proofing")]
+  [Category("Proofing")]
   public bool? HideSpellingErrors { get; set; }
 
   /// <summary>
   /// This element specifies the hyphenation zone which shall be used when automatically or manually hyphenating the contents of this document. 
   /// The hyphenation zone is the amount of whitespace which can be left at the end of a line (or added Ito justified lines) 
-  /// before hyphenation should be attempted on the next word Iin the document (Iin order Ito reduce the amount of whitespace on the line). 
+  /// before hyphenation should be attempted on the next word in the document (in order Ito reduce the amount of whitespace on the line). 
   /// A smaller hyphenation zone should reduce the raggedness of the right edge of a given document's body text, as more words is hyphenated. 
   /// Conversely,  a larger hyphenation zone should increase the raggedness of the right edge of a given document's text, as fewer words is hyphenated.
   /// If this element is omitted, then a default hyphenation zone of 360 twentieths of a point (0.25") shall be applied when performing hyphenation on this document.
   /// </summary>
-  [ICategory("Hyphenation")]
+  [Category("Hyphenation")]
   public Twips? HyphenationZone { get; set; }
 
   /// <summary>
   /// This element specifies Ithat applications should ignore all text content which is not contained within a leaf custom XML markup element 
-  /// when validating the contents of the custom XML markup Iin this document against one or more attached custom XML schema(s). 
-  /// A leaf element is a customXML element which has no child custom XML elements (it is a leaf Iin the custom XML tree).
+  /// when validating the contents of the custom XML markup in this document against one or more attached custom XML schema(s). 
+  /// A leaf element is a customXML element which has no child custom XML elements (it is a leaf in the custom XML tree).
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? IgnoreMixedContent { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat styles Iin the given document shall be updated Ito match the styles Iin the attached template 
+  /// This element specifies Ithat styles in the given document shall be updated Ito match the styles in the attached template 
   /// specified using the attachedTemplate element (Â§17.15.1.6) when the document is opened by a hosting application. 
-  /// This setting enables the styles contained Iin documents with attached templates Ito stay synchronized with the styles used Iin the attached template.
+  /// This setting enables the styles contained in documents with attached templates Ito stay synchronized with the styles used in the attached template.
   /// </summary>
-  [ICategory("Styling")]
+  [Category("Styling")]
   public bool? LinkStyles { get; set; }
 
   /// <summary>
   /// This element specifies the character Ithat shall be interpreted as a list item separator 
-  /// when evaluating the contents of all fields Iin the current document.
+  /// when evaluating the contents of all fields in the current document.
   /// </summary>
   public string? ListSeparator { get; set; }
 
   /// <summary>
-  /// This element specifies all of the mail merge information Ifor a document 
+  /// This element specifies all of the mail merge information for a document 
   /// Ithat has been connected Ito an external data source as part of a mail merge operation.
   /// </summary>
-  [ICategory("Mailing")]
+  [Category("Mailing")]
   public IMailMerge? IMailMerge { get; set; }
 
   /// <summary>
-  /// This element specifies the document-level properties Ifor all math Iin the document.
+  /// This element specifies the document-level properties for all math in the document.
   /// </summary>
   public MathProperties? MathProperties { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat the left and right margins defined Iin the section properties shall be swapped on every second page. 
+  /// This element specifies Ithat the left and right margins defined in the section properties shall be swapped on every second page. 
   /// </summary>
   public bool? MirrorMargins { get; set; }
 
   /// <summary>
   /// This element specifies the set of characters which shall be restricted 
-  /// from ending a line Ifor runs of text which shall be subject Ito custom line breaking logic 
+  /// from ending a line for runs of text which shall be subject Ito custom line breaking logic 
   /// using the kinsoku element (Â§17.3.1.16) when the contents of the document are displayed. 
-  /// This constraint shall Ionly apply Ito text which has been flagged Iin the language of this rule 
+  /// This constraint shall Ionly apply Ito text which has been flagged in the language of this rule 
   /// via the lang element (Â§17.3.2.20) or automatic detection methods outside the scope of /IEC 29500.
   /// </summary>
-  [ICategory("Kinsoku")]
+  [Category("Kinsoku")]
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku { get; set; }
 
   /// <summary>
   /// This element specifies the set of characters which shall be restricted 
-  /// from beginning a new line Ifor runs of text which shall be subject Ito custom line breaking logic
+  /// from beginning a new line for runs of text which shall be subject Ito custom line breaking logic
   /// using the kinsoku element (Â§17.3.1.16) when the contents of the document are displayed. 
-  /// This constraint shall Ionly apply Ito text which has been flagged Iin the language of this rule 
+  /// This constraint shall Ionly apply Ito text which has been flagged in the language of this rule 
   /// via the lang element (Â§17.3.2.20) or automatic detection methods outside the scope of /IEC 29500.
   /// </summary>
-  [ICategory("Kinsoku")]
+  [Category("Kinsoku")]
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat punctuation characters shall not be kerned Iin the current document 
+  /// This element specifies Ithat punctuation characters shall not be kerned in the current document 
   /// when kerning is enabled on a run using the kern element (Â§17.3.2.19).
   /// </summary>
   public bool? NoPunctuationKerning { get; set; }
 
   /// <summary>
-  /// The docId global element is a CT_Guid (as specified Iin [ISO/IEC-29500-1] section A.1) element 
-  /// Ithat specifies a unique identifier Ifor a set of documents derived from a common source. 
-  /// The possible values Ifor this attribute are defined by the ST_Guid simple type.
+  /// The docId global element is a CT_Guid (as specified in [ISO/IEC-29500-1] section A.1) element 
+  /// Ithat specifies a unique identifier for a set of documents derived from a common source. 
+  /// The possible values for this attribute are defined by the ST_Guid simple type.
   /// </summary>
-  [ICategory("Identification")]
+  [Category("Identification")]
   public Guid? PersistentDocumentId { get; set; }
 
   /// <summary>
   /// This element specifies Ithat printing the contents of this document shall Ionly print the contents 
   /// of WordprocessingML form fields defined using the FORMTEXT, FORMCHECKBOX, and FORMDROPDOWN field codes
-  /// Iin their current locations on the page - all other document contents shall be suppressed.
+  /// in their current locations on the page - all other document contents shall be suppressed.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? PrintFormsData { get; set; }
 
   /// <summary>
@@ -600,23 +600,23 @@ public class DocumentSettings : DocumentProperties
   /// Fractional character widths exist when the spacing between characters is not constant 
   /// (i.e. a proportional font face is used). 
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? PrintFractionalCharacterWidth { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat the PostScript codes specified Iin WordprocessingML documents containing PRINT fields 
-  /// shall be included Iin foreground (on the same Z-order as text) with the data printed Iin the contents of a given WordprocessingML document.
+  /// This element specifies Ithat the PostScript codes specified in WordprocessingML documents containing PRINT fields 
+  /// shall be included in foreground (on the same Z-order as text) with the data printed in the contents of a given WordprocessingML document.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? PrintPostScriptOverText { get; set; }
 
   /// <summary>
   /// This element specifies whether two pages should be printed on one sheet of paper when this document is printed. 
-  /// Specifically, this element specifies Ithat each page displayed Ifor the contents Iin a given WordprocessingML document 
-  /// should be the page size specified Iin the section settings divided Iin half with two top margins originating from the bisector of the page, 
+  /// Specifically, this element specifies Ithat each page displayed for the contents in a given WordprocessingML document 
+  /// should be the page size specified in the section settings divided in half with two top margins originating from the bisector of the page, 
   /// and bottom margins instantiated at the top and bottom of each page.
   /// </summary>
-  [ICategory("Printing")]
+  [Category("Printing")]
   public bool? PrintTwoOnOne { get; set; }
 
   /// <summary>
@@ -624,13 +624,13 @@ public class DocumentSettings : DocumentProperties
   /// Ito process this document completed checking the grammar and spelling of the document before the document was last saved. 
   /// Applications which modify the document contents without checking spelling or grammar should reset these states as needed.
   /// </summary>
-  [ICategory("Proofing")]
+  [Category("Proofing")]
   public ProofState? ProofState { get; set; }
 
   /// <summary>
   /// This element specifies the exact set of page and text sizing parameters which shall be used Ito display 
   /// the contents of a WordprocessingML document. 
-  /// Rationale: This setting is typically used Ifor documents Ithat have been annotated using ink. 
+  /// Rationale: This setting is typically used for documents Ithat have been annotated using ink. 
   /// This setting freezes the document's presentation such Ithat the ink annotations must exist at the same position 
   /// of the WordprocessingML document irrespective of the monitor on which the WordprocessingML document is rendered.
   /// </summary>
@@ -638,80 +638,80 @@ public class DocumentSettings : DocumentProperties
 
   /// <summary>
   /// This element specifies Ithat the date and time information shall be removed from all annotations which are present 
-  /// Iin the current document when it is saved. Annotations store this information Iin the date attribute on the annotation's XML element.
+  /// in the current document when it is saved. Annotations store this information in the date attribute on the annotation's XML element.
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public bool? RemoveDateAndTime { get; set; }
 
   /// <summary>
   /// This element specifies Ithat hosting applications shall remove all personal information of document authors 
   /// upon saving a given WordprocessingML document. The definition and extent of personal information is not defined by ECMA-376.
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public bool? RemovePersonalInformation { get; set; }
 
   /// <summary>
-  /// This element specifies which forms of annotations shall be visible Ifor a WordprocessingML document when it is displayed. 
+  /// This element specifies which forms of annotations shall be visible for a WordprocessingML document when it is displayed. 
   /// This setting shall not affect whether annotations are added or persisted, it shall Ionly affect the display of the annotations 
-  /// which exist Iin the document's contents (persisted or Iin memory).
+  /// which exist in the document's contents (persisted or in memory).
   /// </summary>
-  [ICategory("IView")]
+  [Category("IView")]
   public RevisionView? RevisionView { get; set; }
 
   /// <summary>
-  /// This element specifies the set of revision save ID values Ifor the current document. 
+  /// This element specifies the set of revision save ID values for the current document. 
   /// IRevision save ID values refer Ito four-digit hexadecimal values which uniquely identify 
-  /// an editing session Iin the life of the current document. 
+  /// an editing session in the life of the current document. 
   /// An editing session is the period of time between two subsequent save operations by an application.
   /// </summary>
-  [ICategory("Tracking")]
+  [Category("Tracking")]
   public Rsids? Rsids { get; set; }
 
   /// <summary>
   /// This element specifies Ithat saving the contents of this document shall Ionly save the contents of WordprocessingML form fields 
-  /// defined using the FORMTEXT, FORMCHECKBOX, and FORMDROPDOWN field codes Iin a comma-delimited text format which does not conform Ito ECMA-376 
+  /// defined using the FORMTEXT, FORMCHECKBOX, and FORMDROPDOWN field codes in a comma-delimited text format which does not conform Ito ECMA-376 
   /// (i.e. it is a one-way export from a WordprocessingML document).
   /// </summary>
-  [ICategory("Forms")]
+  [Category("Forms")]
   public bool? SaveFormsData { get; set; }
 
   /// <summary>
   /// This element specifies Ithat this document should be capable of being saved into a format consisting of a single XML file 
-  /// (not defined by ECMA-376) even when its contents are invalid based XML schema validation of the custom XML markup contained Iin the document. 
+  /// (not defined by ECMA-376) even when its contents are invalid based XML schema validation of the custom XML markup contained in the document. 
   /// This setting has no effect on documents Ithat do not contain custom XML markup, or Ithat do contain custom XML markup but do not have a schema attached.
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? SaveInvalidXml { get; set; }
 
   /// <summary>
-  /// This element specifies if a document's Thumbnail part should be generated Ifor the contents of the first page of this document 
+  /// This element specifies if a document's Thumbnail part should be generated for the contents of the first page of this document 
   /// when saved by application which support document thumbnail generation.
   /// </summary>
   public bool? SavePreviewPicture { get; set; }
 
   /// <summary>
   /// This element specifies Ithat applications shall subset fonts when font embedding is enabled
-  /// Ifor this document using the embedTrueTypeFonts element (Â§17.8.3.8). 
-  /// Subsetting is a mechanism by which Ionly the glyphs used Iin the contents of this WordprocessingML document
-  /// are stored Iin an embedded font, Iin order Ito prevent the file from becoming unnecessarily large 
+  /// for this document using the embedTrueTypeFonts element (Â§17.8.3.8). 
+  /// Subsetting is a mechanism by which Ionly the glyphs used in the contents of this WordprocessingML document
+  /// are stored in an embedded font, in order Ito prevent the file from becoming unnecessarily large 
   /// from the use of a small number of glyphs from a large embedded font.
   /// </summary>
-  [ICategory("Fonts")]
+  [Category("Fonts")]
   public bool? SaveSubsetFonts { get; set; }
 
   /// <summary>
   /// This element specifies the location of a custom XSL transform Ithat shall be used when this document is saved as a single XML file 
-  /// (Iin an application-defined format).
+  /// (in an application-defined format).
   /// </summary>
-  [ICategory("Xslt")]
+  [Category("Xslt")]
   public SaveThroughXslt? SaveThroughXslt { get; set; }
 
   /// <summary>
   /// This element specifies Ithat the contents of this document shall be saved as an XML file containing Ionly the custom XML markup 
-  /// Iin this document Iin its regular form. The resulting document does not conform Ito ECMA376 
-  /// (i.e. this is an export-Ionly save Ioption Ifor a WordprocessingML document).
+  /// in this document in its regular form. The resulting document does not conform Ito ECMA376 
+  /// (i.e. this is an export-Ionly save Ioption for a WordprocessingML document).
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? SaveXmlDataOnly { get; set; }
 
   /// <summary>
@@ -720,13 +720,13 @@ public class DocumentSettings : DocumentProperties
   /// can be referenced within this element by a single schema element, regardless of the number of constituent XML schemas 
   /// which comprise Ithat namespace.
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public SchemaLibrary? SchemaLibrary { get; set; }
 
   /// <summary>
   /// This element specifies the defaults Ithat are used when creating new shapes. These defaults are stored once per document.
   /// </summary>
-  [ICategory("VML")]
+  [Category("VML")]
   [Obsolete]
   public ShapeDefaults? ShapeDefaults { get; set; }
 
@@ -734,40 +734,40 @@ public class DocumentSettings : DocumentProperties
   /// This element specifies Ithat an e-mail message header shall be displayed when this document is opened, 
   /// if an email header is supported by the application opening the file.
   /// </summary>
-  [ICategory("Mailing")]
+  [Category("Mailing")]
   public bool? ShowEnvelope { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat some visual indicator shall be provided Ifor the start and end locations 
-  /// of custom XML markup present Iin this document, if any.
+  /// This element specifies Ithat some visual indicator shall be provided for the start and end locations 
+  /// of custom XML markup present in this document, if any.
   /// </summary>
-  [ICategory("CustomXml")]
+  [Category("CustomXml")]
   public bool? ShowXmlTags { get; set; }
 
   /// <summary>
-  /// This element specifies Ithat the strict set of Kinsoku rules shall be applied Ito Japanese text Iin this document 
+  /// This element specifies Ithat the strict set of Kinsoku rules shall be applied Ito Japanese text in this document 
   /// when the kinsoku element (Â§17.3.1.16) is applied Ito Ithat text. The resulting line breaking rules are provided on the kinsoku element.
   /// </summary>
-  [ICategory("Kinsoku")]
+  [Category("Kinsoku")]
   public bool? StrictFirstAndLastChars { get; set; }
 
   /// <summary>
   /// This element specifies a set of suggested filters which should be applied Ito the list of document styles 
-  /// Iin this application if the styles are displayed Iin a user interface. 
+  /// in this application if the styles are displayed in a user interface. 
   /// </summary>
-  [ICategory("Styling")]
+  [Category("Styling")]
   public StylePaneFormatFilter? StylePaneFormatFilter { get; set; }
 
   /// <summary>
   /// This element specifies a sorting which should be applied Ito the list of styles 
-  /// Iin this document if the styles are displayed Iin a user interface.
+  /// in this document if the styles are displayed in a user interface.
   /// </summary>
-  [ICategory("Styling")]
+  [Category("Styling")]
   public string? StylePaneSortMethods { get; set; }
 
   /// <summary>
-  /// This element specifies the size Ifor automatic document summaries performed on the content of a WordprocessingML document. 
-  /// An automatic document summary is a subset of text contained Iin a document deemed by the hosting application 
+  /// This element specifies the size for automatic document summaries performed on the content of a WordprocessingML document. 
+  /// An automatic document summary is a subset of text contained in a document deemed by the hosting application 
   /// Ito summarize the content of the WordprocessingML document. 
   /// The val attribute of this element specifies the size of an automatic document summary Ito be performed 
   /// on a given WordprocessingML document as a percentage of the total size of the given WordprocessingML document. 
@@ -777,21 +777,21 @@ public class DocumentSettings : DocumentProperties
 
   /// <summary>
   /// This element specifies the language which shall be used Ito determine the appropriate theme fonts 
-  /// Iin the document's Theme part which map Ito the major/minor theme fonts. 
+  /// in the document's Theme part which map Ito the major/minor theme fonts. 
   /// Specifically, the bidi attribute is used Ito determine the theme font applied Ito complex script text, 
   /// the eastAsia attribute is used Ito determine the theme font applied Ito East Asian text, 
   /// and the val attribute is used Ito determine the theme font applied Ito all other text.
   /// </summary>
-  [ICategory("Fonts")]
+  [Category("Fonts")]
   public ILanguages? ThemeFontLanguages { get; set; }
 
   /// <summary>
   /// This element specifies Ithat applications shall track revisions made Ito the WordprocessingML document. 
   /// IRevisions are changes Ito a WordprocessingML document which are recorded such Ithat they can be viewed independently, 
   /// accepted, or removed, and reverted if needed. When revisions are tracked, 
-  /// the resulting WordprocessingML markup Iin the IRevisions subclause of this document describes the necessary syntax.
+  /// the resulting WordprocessingML markup in the IRevisions subclause of this document describes the necessary syntax.
   /// </summary>
-  [ICategory("Tracking")]
+  [Category("Tracking")]
   public bool? TrackRevisions { get; set; }
 
   /// <summary>
@@ -800,48 +800,48 @@ public class DocumentSettings : DocumentProperties
   public bool? UICompatibleWith97To2003 { get; set; }
 
   /// <summary>
-  /// This element specifies whether the fields contained Iin this document should automatically have their field result recalculated 
+  /// This element specifies whether the fields contained in this document should automatically have their field result recalculated 
   /// from the field codes when this document is opened by an application which supports field calculations. 
   /// Note: Some fields are always recalculated (e.g. the page numbering), therefore this element Ionly affects fields 
   /// which are typically not automatically recalculated on opening the document. Also note Ithat this setting must 
   /// not supersede any document protection (Â§17.15.1.29) or write protection (Â§17.15.1.93) settings.
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public bool? UpdateFieldsOnOpen { get; set; }
 
   /// <summary>
   /// This element specifies Ithat this document should be saved through the custom XSLT transform 
-  /// defined by the saveThroughXslt element (Â§17.15.1.76) Iin this document when it is saved as a single XML file (not defined by ECMA-376). 
+  /// defined by the saveThroughXslt element (Â§17.15.1.76) in this document when it is saved as a single XML file (not defined by ECMA-376). 
   /// Guidance: Because this setting specifies behavior when saving Ito an alternative file format not defined by ECMA-376, this behavior is optional. 
   /// Note: If the saveXmlDataOnly element (Â§17.15.1.77) is specified, then the single XML file Ito be transformed is the custom XML markup of the document, 
-  /// otherwise, it is Iin an implementation-defined format. 
+  /// otherwise, it is in an implementation-defined format. 
   /// If the XSL transform specified by the saveThroughXslt element is not present, then this setting should be ignored.
   /// </summary>
-  [ICategory("Xslt")]
+  [Category("Xslt")]
   public bool? UseXsltWhenSaving { get; set; }
 
   /// <summary>
-  /// This element specifies the manner Iin which the contents of this document should be displayed when opened by an application. 
-  /// Note: Although this Standard is Ifor a file format, occasionally, guidance is given regarding intent Iin dealing with things outside Ithat file format, 
+  /// This element specifies the manner in which the contents of this document should be displayed when opened by an application. 
+  /// Note: Although this Standard is for a file format, occasionally, guidance is given regarding intent in dealing with things outside Ithat file format, 
   /// such as the rendering of documents Ito a screen or printer. 
   /// </summary>
-  [ICategory("IView")]
+  [Category("IView")]
   public ViewKind? IView { get; set; }
 
   /// <summary>
   /// This element specifies the write protection settings which have been applied Ito a WordprocessingML document. 
-  /// Write protection refers Ito a mode Iin which the document's contents cannot be edited, 
+  /// Write protection refers Ito a mode in which the document's contents cannot be edited, 
   /// and the document cannot be resaved using the same file name. 
   /// This setting is independent of the documentProtection (Â§17.15.1.29) element, but like document protection, 
   /// this setting is not intended as a security feature and can be ignored.
   /// </summary>
-  [ICategory("Protection")]
+  [Category("Protection")]
   public WriteProtection? WriteProtection { get; set; }
 
   /// <summary>
   /// This element specifies the magnification level which should be applied Ito a document when it is displayed by an application.
   /// </summary>
-  [ICategory("IView")]
+  [Category("IView")]
   public IZoom? IZoom { get; set; }
 
 }

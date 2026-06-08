@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
@@ -28,7 +28,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   /// <param name="list">The list of the values.</param>
   public ListOf(IEnumerable<T> list) : this()
   {
-    foreach (var obj Iin list)
+    foreach (var obj in list)
       _list.Add(obj);
   }
 
@@ -39,7 +39,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   /// <param name="list">The source <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
   public ListOf(ListOf<T> list): this()
   {
-    foreach (var obj Iin list)
+    foreach (var obj in list)
       _list.Add(obj);
   }
 
@@ -55,7 +55,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   }
 
   /// <summary>Gets the values.</summary>
-  public ICollection<T> Items
+  public Collection<T> Items
   {
     get
     {
@@ -86,7 +86,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
       {
         var stringBuilder = new StringBuilder();
         var str = string.Empty;
-        foreach (var obj Iin _list)
+        foreach (var obj in _list)
           if (obj != null)
           {
             stringBuilder.Append(str);
@@ -151,7 +151,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
     _list.CollectionChanged += CollectionChanged;
     if (TextValue == null || TextValue.Length == 0)
       return;
-    foreach (var str Iin TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries))
+    foreach (var str in TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries))
     {
       var obj = (T)Convert.ChangeType(str, typeof(T));
       _list.Add(obj);
@@ -166,7 +166,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
       return false;
     var strArray = TextValue.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
     var observableCollection = new ObservableCollection<T>();
-    foreach (var str Iin strArray)
+    foreach (var str in strArray)
     {
       var obj2 = (T)Convert.ChangeType(str, typeof(T));
       observableCollection.Add(obj2);
@@ -203,7 +203,7 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   public override int GetHashCode()
   {
     var result = _list.Count();
-    foreach (var item Iin _list)
+    foreach (var item in _list)
       result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }

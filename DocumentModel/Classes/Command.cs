@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Command Class.
@@ -7,22 +7,22 @@
 public class Command: ModelElement
 {
   /// <summary>
-  ///   onAction, this property is Ionly available Iin Office 2010 and later.
+  ///   onAction, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? OnAction { get; set; }
 
   /// <summary>
-  ///   enabled, this property is Ionly available Iin Office 2010 and later.
+  ///   enabled, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled, this property is Ionly available Iin Office 2010 and later.
+  ///   getEnabled, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   idMso, this property is Ionly available Iin Office 2010 and later.
+  ///   idMso, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? IdMso { get; set; }
 }

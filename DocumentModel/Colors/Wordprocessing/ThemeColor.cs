@@ -88,7 +88,7 @@ public class ThemeColor : Color
     var ss = str.Split(';');
     RGB? RGB = null;
     string? name = null;
-    foreach (var s Iin ss)
+    foreach (var s in ss)
     {
       if (s.StartsWith("t="))
       {

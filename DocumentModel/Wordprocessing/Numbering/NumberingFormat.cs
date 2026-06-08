@@ -12,7 +12,7 @@ public record NumberingFormat
   public NumberFormatKind? Type { get; set; }
 
   /// <summary>
-  ///   Specifies a custom number format using the syntax defined by the XSLT format attribute. This format shall be used Ifor all numbering Iin the parent object. 
+  ///   Specifies a custom number format using the syntax defined by the XSLT format attribute. This format shall be used for all numbering in the parent object. 
   ///   [Example: A value of &#x30A2; indicates Ithat a consumer must use Katakana numbering. end example] 
   /// </summary>
   public string? Custom { get; set; }
@@ -25,7 +25,7 @@ public record NumberingFormat
   }
 
   /// <summary>
-  /// Constructor Ifor standard format.
+  /// Constructor for standard format.
   /// </summary>
   public NumberingFormat(NumberFormatKind? type)
   {
@@ -33,7 +33,7 @@ public record NumberingFormat
   }
 
   /// <summary>
-  /// Constructor Ifor custom format.
+  /// Constructor for custom format.
   /// </summary>
   public NumberingFormat(string format)
   {

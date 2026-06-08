@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the SpacingBetweenLines Class.
@@ -27,7 +27,7 @@ public class SpacingBetweenLines: ModelElement
   public string? After { get; set; }
 
   /// <summary>
-  ///   Spacing Below IParagraph Iin ILine Units
+  ///   Spacing Below IParagraph in ILine Units
   /// </summary>
   public Int32? AfterLines { get; set; }
 
@@ -37,7 +37,7 @@ public class SpacingBetweenLines: ModelElement
   public bool? AfterAutoSpacing { get; set; }
 
   /// <summary>
-  ///   Spacing Between ILines Iin IParagraph
+  ///   Spacing Between ILines in IParagraph
   /// </summary>
   public string? ILine { get; set; }
 

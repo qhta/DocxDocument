@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   TablePropertyExceptionsChange class used Iin <see cref="TablePropertyExceptions"/>.
+///   TablePropertyExceptionsChange class used in <see cref="TablePropertyExceptions"/>.
 ///   Represents <see cref="PreviousTablePropertyExceptions"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TablePropertyExceptionsChange: ModelElement

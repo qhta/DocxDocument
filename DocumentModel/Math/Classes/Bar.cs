@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies the bar function, consisting of a base argument and an overbar or underbar, as Iin ÂŻa and _đť‘Ž.
+///   This element specifies the bar function, consisting of a base argument and an overbar or underbar, as in ÂŻa and _đť‘Ž.
 /// </summary>
 public class Bar: ModelElement, ICommonMathContent
 {

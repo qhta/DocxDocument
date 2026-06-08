@@ -12,10 +12,10 @@ using System.ComponentModel;
 namespace DocumentModel.Attributes
 {
   /// <summary>
-  /// Defines the attribute which is used Ito decorate a class Ifor type of the possible child elements.
+  /// Defines the attribute which is used Ito decorate a class for type of the possible child elements.
   /// </summary>
   [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
-  [Obsolete("This attribute is no longer used and will be removed Iin a later release")]
+  [Obsolete("This attribute is no longer used and will be removed in a later release")]
   [EditorBrowsable(EditorBrowsableState.Never)]
   public sealed class ChildElementInfoAttribute : Attribute
   {

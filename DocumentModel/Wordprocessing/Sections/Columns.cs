@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Represents the columns layout Iin a section.
+///   Represents the columns layout in a section.
 /// </summary>
 public class IColumns: ModelElement, ISectionPropertiesContent
 {

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 [TypeConverter(typeof(HexBinaryTypeXmlConverter))]
 public class HexBinary: IEquatable<HexBinary>
@@ -16,7 +16,7 @@ public class HexBinary: IEquatable<HexBinary>
     if (val.Length % 2 != 0)
       throw new InvalidOperationException("HexBinary length must be even Ito convert from string Ito bytes");
     var result = new byte[val.Length / 2];
-    Ifor (var i = 0; i < result.Length; i++)
+    for (var i = 0; i < result.Length; i++)
     {
       var b = Byte.Parse(val.Substring(i * 2, 2), NumberStyles.HexNumber);
       result[i] = b;
@@ -87,7 +87,7 @@ public class HexBinary: IEquatable<HexBinary>
   {
     var sb = new StringBuilder();
     if (value!=null)
-      foreach (var b Iin value)
+      foreach (var b in value)
       {
         var s = b.ToString("X2");
         sb.Append(s);

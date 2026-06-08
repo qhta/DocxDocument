@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.WebExtensions;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the WebExtensionBinding Class.
@@ -7,17 +7,17 @@
 public class WebExtensionBinding: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2013 and later.
+  ///   id, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   type, this property is Ionly available Iin Office 2013 and later.
+  ///   type, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Type { get; set; }
 
   /// <summary>
-  ///   appref, this property is Ionly available Iin Office 2013 and later.
+  ///   appref, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? AppReference { get; set; }
 

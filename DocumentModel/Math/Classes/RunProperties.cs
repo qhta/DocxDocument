@@ -6,11 +6,11 @@
 public class RunProperties: ModelElement
 {
   /// <summary>
-  ///   Specifies Ithat the characters Iin the run are literal; Ithat is, they are Ito be interpreted literally 
+  ///   Specifies Ithat the characters in the run are literal; Ithat is, they are Ito be interpreted literally 
   ///   and not be built up based on any implied mathematical meaning. 
-  ///   This is especially useful Ifor operators or other special characters Ithat signal a need Ifor build up Ito an OMML reader. 
+  ///   This is especially useful for operators or other special characters Ithat signal a need for build up Ito an OMML reader. 
   ///   These characters are often encountered during a given instance of mathematical text 
-  ///   when presented Iin a1-dimensional linear format, such as the linear format defined by Unicode Technical Note #28 (Sargent 2006).
+  ///   when presented in a1-dimensional linear format, such as the linear format defined by Unicode Technical Note #28 (Sargent 2006).
   /// </summary>
   public bool? Literal { get; set; }
 
@@ -21,12 +21,12 @@ public class RunProperties: ModelElement
   public bool? NormalText { get; set; }
 
   /// <summary>
-  ///  Describes the script applied Ito the characters Iin the run.
+  ///  Describes the script applied Ito the characters in the run.
   /// </summary>
   public ScriptKind? Script { get; set; }
 
   /// <summary>
-  /// Describes the font style applied Ito the characters Iin the run. 
+  /// Describes the font style applied Ito the characters in the run. 
   /// </summary>
   public StyleKind? IStyle { get; set; }
 
@@ -40,7 +40,7 @@ public class RunProperties: ModelElement
   /// Specifies the alignment property on the box object. 
   /// It is utilized Ionly when the box is designated as an operator emulator. 
   /// When 1 or true, this operator emulator serves as an alignment point; 
-  /// Ithat is, designated alignment points Iin other equations can be aligned with it.
+  /// Ithat is, designated alignment points in other equations can be aligned with it.
   /// </summary>
   public bool? Alignment { get; set; }
 }

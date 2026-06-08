@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the section properties Ifor a section of the document.
+///   Defines the section properties for a section of the document.
 ///   If it occurs as the last body element, then it specifies the properties of the last section of the document.
 ///   For any other section the properties are stored as a child element of the paragraph element 
-///   corresponding Ito the last paragraph Iin the given section.
+///   corresponding Ito the last paragraph in the given section.
 /// </summary>
 public partial class SectionProperties : ModelElement, IStoryContent
 {

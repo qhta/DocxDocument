@@ -1,10 +1,10 @@
 ﻿using DocumentModel.Vml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Default Properties Ifor VML Objects Iin Main IDocument.
+///   Default Properties for VML Objects in Main IDocument.
 /// </summary>
 public class ShapeDefaults: ModelElement
 {

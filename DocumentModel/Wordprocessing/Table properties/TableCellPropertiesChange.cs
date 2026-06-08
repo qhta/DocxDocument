@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   TableCellPropertiesChange class used Iin <see cref="TableCellProperties"/>.
+///   TableCellPropertiesChange class used in <see cref="TableCellProperties"/>.
 ///   Represents <see cref="PreviousTableCellProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TableCellPropertiesChange: ModelElement

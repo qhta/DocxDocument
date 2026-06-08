@@ -1,19 +1,19 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies the presence of a simple field at the current location Iin the document. 
+///   This element specifies the presence of a simple field at the current location in the document. 
 ///   The semantics of this field are defined via its field codes.
 /// </summary>
 public class SimpleField: ElementCollection<IModelElement>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
-  ///   Specifies the field codes Ifor the simple field. The possible field codes are defined Iin Â§17.16.5.
+  ///   Specifies the field codes for the simple field. The possible field codes are defined in Â§17.16.5.
   /// </summary>
   public string? Instruction { get; set; }
 
   /// <summary>
   ///   Specifies Ithat the parent field shall not have its field result recalculated, 
-  ///   even if an application attempts Ito recalculate the results of all fields Iin the document 
+  ///   even if an application attempts Ito recalculate the results of all fields in the document 
   ///   or a recalculation is explicitly requested.
   /// </summary>
   public bool? FieldLock { get; set; }

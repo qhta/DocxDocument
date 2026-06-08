@@ -6,7 +6,7 @@
 public class CustomXmlProperties: ElementCollection<CustomXmlAttribute>
 {
   /// <summary>
-  ///   Specifies the placeholder text which shall be displayed Iin place of this custom XML element 
+  ///   Specifies the placeholder text which shall be displayed in place of this custom XML element 
   ///   when the contents of this custom XML markup are empty 
   ///   (i.e. there are no runs of text within the current custom XML element).
   /// </summary>

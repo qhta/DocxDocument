@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Item Class.
@@ -7,32 +7,32 @@
 public class Item: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   label, this property is Ionly available Iin Office 2010 and later.
+  ///   label, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   image, this property is Ionly available Iin Office 2010 and later.
+  ///   image, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   imageMso, this property is Ionly available Iin Office 2010 and later.
+  ///   imageMso, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   screentip, this property is Ionly available Iin Office 2010 and later.
+  ///   screentip, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   supertip, this property is Ionly available Iin Office 2010 and later.
+  ///   supertip, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Supertip { get; set; }
 }

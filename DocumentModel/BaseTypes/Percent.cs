@@ -16,7 +16,7 @@ public struct Percent: IComparable<Percent>
   {
     if (str.EndsWith("%"))
       str = str.Substring(0, str.Length - 1);
-    var val = Double.Parse(str.Replace(",","."), ISystem.Globalization.CultureInfo.InvariantCulture);
+    var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
     Value = val;
   }
 
@@ -60,7 +60,7 @@ public struct Percent: IComparable<Percent>
   /// </summary>
   public string ToHexString()
   {
-    var val = (Byte)(ISystem.Math.Round(Value * 255 / 100.0));
+    var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
     var str = val.ToString("X2");
 //    Debug.WriteLine($"{Value} => {str}");
     return str;
@@ -80,7 +80,7 @@ public struct Percent: IComparable<Percent>
   /// </summary>
   public string ToString(string unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -89,7 +89,7 @@ public struct Percent: IComparable<Percent>
   /// </summary>
   public string ToString(int precision, string unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -118,7 +118,7 @@ public struct Percent: IComparable<Percent>
     return Value.ToString(provider);
   }
 
-  #pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+  #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator Percent(string value) { return new Percent(value); }
   public static implicit operator string(Percent value) { return value.Value.ToString(); }
   public static implicit operator Percent(Int16 value) { return new Percent(value); }

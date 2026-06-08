@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Counterpart of <see cref="SdtRun"/> class Iin Ruby domain.
+///   Counterpart of <see cref="SdtRun"/> class in Ruby domain.
 /// </summary>
 public class SdtRunRuby: ElementCollection<IRubyContent>, IRubyContent
 {

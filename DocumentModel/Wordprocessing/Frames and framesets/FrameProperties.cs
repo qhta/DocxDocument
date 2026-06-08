@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the FrameProperties Class.
@@ -12,7 +12,7 @@ public class FrameProperties: ModelElement
   public DropCapLocationKind? IDropCap { get; set; }
 
   /// <summary>
-  ///   Drop Cap Vertical Height Iin ILines
+  ///   Drop Cap Vertical Height in ILines
   /// </summary>
   public Int32? ILines { get; set; }
 

@@ -8,7 +8,7 @@
 public class TableProperties: ExtBaseTableProperties
 {
   /// <summary>
-  ///   IRevision Information Ifor ITable Properties.
+  ///   IRevision Information for ITable Properties.
   /// </summary>
   public TablePropertiesChange? TablePropertiesChange { get; set; }
 }

@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   2D Transform Ifor Grouped Objects.
+///   2D Transform for Grouped Objects.
 /// </summary>
 public class TransformGroup: ModelElement
 {

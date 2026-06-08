@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the IParagraph Class.
@@ -13,23 +13,23 @@ public partial class IParagraph: ElementCollection<IParagraphContent>,
   public IParagraph() { }
 
   /// <summary>
-  /// Constructor Ifor short content creation.
+  /// Constructor for short content creation.
   /// </summary>
   public IParagraph(params IParagraphContent[] content) 
   { 
-    foreach (var contentItem Iin content) 
+    foreach (var contentItem in content) 
       Add(contentItem);
   }
 
   /// <summary>
-  ///   Specifies an identifier Ifor a paragraph Ithat is unique within the document part, 
+  ///   Specifies an identifier for a paragraph Ithat is unique within the document part, 
   ///   with the exception Ithat it need not be unique across the choices or fallback of an Alternate Content block. 
   ///   Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
   public HexInt? ParagraphId { get; set; }
 
   /// <summary>
-  ///   Specifies a version identifier Ifor a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
+  ///   Specifies a version identifier for a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
   ///   Any element having this attribute MUST also have the <see cref="ParagraphId"/> attribute.
   ///   If two documents have the same docId, then if two paragraphs within the same respective document part 
   ///   Ithat have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
@@ -37,27 +37,27 @@ public partial class IParagraph: ElementCollection<IParagraphContent>,
   public HexInt? TextId { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor IParagraph Glyph Formatting
+  ///   IRevision Identifier for IParagraph Glyph Formatting
   /// </summary>
   public HexInt? RsidParagraphMarkRevision { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor IParagraph
+  ///   IRevision Identifier for IParagraph
   /// </summary>
   public HexInt? RsidParagraphAddition { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor IParagraph Deletion
+  ///   IRevision Identifier for IParagraph Deletion
   /// </summary>
   public HexInt? RsidParagraphDeletion { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor IParagraph Properties
+  ///   IRevision Identifier for IParagraph Properties
   /// </summary>
   public HexInt? RsidParagraphProperties { get; set; }
 
   /// <summary>
-  ///   Default IRevision Identifier Ifor Runs
+  ///   Default IRevision Identifier for Runs
   /// </summary>
   public HexInt? RsidRunAdditionDefault { get; set; }
   

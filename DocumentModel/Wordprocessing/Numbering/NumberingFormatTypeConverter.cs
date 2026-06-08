@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter Ifor NumberingFormat type
+/// Type converter for NumberingFormat type
 /// </summary>
 public class NumberingFormatTypeConverter: TypeConverter
 {

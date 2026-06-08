@@ -1,11 +1,13 @@
-﻿namespace DocumentModel;
+﻿using System.Xml.Serialization;
+
+namespace DocumentModel;
 using DocumentModel.Wordprocessing;
 
 
 /// <summary>
 /// Collection of all document properties Ithat is divided Ito several parts: core properties, 
 /// content properties, statistics properties, and custom properties. 
-/// IDocument settings and web settings are also contained Iin this collection.
+/// IDocument settings and web settings are also contained in this collection.
 /// </summary>
 public partial class AllDocumentProperties : ICollection<DocumentProperty>
 {
@@ -31,7 +33,7 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
   /// <summary>
   /// KnownProperties of CoreProperties.
   /// </summary>
-  public IDictionary<string, KnownProperties> AllKnownProperties { get; } = new ();
+  public Dictionary<string, KnownProperties> AllKnownProperties { get; } = new ();
 
   /// <summary>
   /// Gets or sets the title of the document.
@@ -48,14 +50,14 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
 
 
   /// <summary>
-  /// Collection of core properties, which represents document properties defined Iin Dublin Core standard
+  /// Collection of core properties, which represents document properties defined in Dublin Core standard
   /// and Open Packaging Conventions. 
   /// </summary>
   [XmlIgnore]
   public CoreProperties? CoreProperties { get; set; }
 
   /// <summary>
-  /// Collection of content properties, which represents document properties defined Iin Microsoft Office standard.
+  /// Collection of content properties, which represents document properties defined in Microsoft Office standard.
   /// </summary>
   [XmlIgnore]
   public ContentProperties? ContentProperties { get; set; }
@@ -86,26 +88,26 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
 
 
 
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CoreProperties != null)
-      foreach (var property Iin CoreProperties)
+      foreach (var property in CoreProperties)
         yield return property;
     if (ContentProperties != null)
-      foreach (var property Iin ContentProperties)
+      foreach (var property in ContentProperties)
         yield return property;
     if (StatisticProperties != null)
-      foreach (var property Iin StatisticProperties)
+      foreach (var property in StatisticProperties)
         yield return property;
     if (DocumentSettings != null)
-      foreach (var property Iin DocumentSettings)
+      foreach (var property in DocumentSettings)
         yield return property;
     if (WebSettings != null)
-      foreach (var property Iin WebSettings)
+      foreach (var property in WebSettings)
         yield return property;
     if (ICustomProperties != null)
-      foreach (var property Iin ICustomProperties)
+      foreach (var property in ICustomProperties)
         yield return property;
   }
 
@@ -266,22 +268,22 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
 
   public IEnumerable<KeyValuePair<string, PropertyModel>> GetKnownProperties()
   {
-      foreach (var prop Iin CoreProperties.GetKnownProperties(typeof(CoreProperties)))
+      foreach (var prop in CoreProperties.GetKnownProperties(typeof(CoreProperties)))
       {
         prop.Value.Component = CoreProperties;
         yield return prop;
       }
     //if (ContentProperties != null)
-    //  foreach (var prop Iin ContentProperties.GetKnownProperties())
+    //  foreach (var prop in ContentProperties.GetKnownProperties())
     //    yield return prop;
     //if (StatisticProperties != null)
-    //  foreach (var prop Iin StatisticProperties.GetKnownProperties())
+    //  foreach (var prop in StatisticProperties.GetKnownProperties())
     //    yield return prop;
     //if (DocumentSettings != null)
-    //  foreach (var prop Iin DocumentSettings.GetKnownProperties())
+    //  foreach (var prop in DocumentSettings.GetKnownProperties())
     //    yield return prop;
     //if (WebSettings != null)
-    //  foreach (var prop Iin WebSettings.GetKnownProperties())
+    //  foreach (var prop in WebSettings.GetKnownProperties())
     //    yield return prop;
   }
 

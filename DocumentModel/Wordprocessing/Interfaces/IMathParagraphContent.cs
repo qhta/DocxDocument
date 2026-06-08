@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   Interface Ifor elements Ithat can be included Iin document <see cref="DMM.IParagraph"/> element.
+///   Interface for elements Ithat can be included in document <see cref="DMM.IParagraph"/> element.
 /// </summary>
 public interface IMathParagraphContent: IModelElement, DMM.IOfficeMathContent
 {

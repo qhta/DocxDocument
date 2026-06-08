@@ -1,10 +1,9 @@
-﻿using ISystem.ComponentModel;
-using ISystem.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel;
 
 using Qhta.Xml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines IStyles.
@@ -12,7 +11,7 @@ namespace DocumentModel.Wordprocessing;
 //[XmlContentProperty("LatentStyleExceptions")]
 public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInfo>//, IDictionary<string, LatentStyleExceptionInfo>
 {
-  public IDictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
+  public Dictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
 
   public LatentStyles()
   {
@@ -27,7 +26,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
     set
     {
       if (value!=null)
-        foreach (var item Iin value)
+        foreach (var item in value)
           Add(item);
     }
   }
@@ -64,22 +63,22 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
 
   public void Add(KeyValuePair<string, LatentStyleExceptionInfo> item)
   {
-    ((ICollection<KeyValuePair<string, LatentStyleExceptionInfo>>)StyleIndex).Add(item);
+    ((IDictionary<string, LatentStyleExceptionInfo>)StyleIndex).Add(item);
   }
 
   public bool Contains(KeyValuePair<string, LatentStyleExceptionInfo> item)
   {
-    return (StyleIndex).Contains(item);
+    return ((IDictionary<string, LatentStyleExceptionInfo>)StyleIndex).Contains(item);
   }
 
   public void CopyTo(KeyValuePair<string, LatentStyleExceptionInfo>[] array, int arrayIndex)
   {
-    ((ICollection<KeyValuePair<string, LatentStyleExceptionInfo>>)StyleIndex).CopyTo(array, arrayIndex);
+    ((IDictionary<string, LatentStyleExceptionInfo>)StyleIndex).CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, LatentStyleExceptionInfo> item)
   {
-    return ((ICollection<KeyValuePair<string, LatentStyleExceptionInfo>>)StyleIndex).Remove(item);
+    return ((IDictionary<string, LatentStyleExceptionInfo>)StyleIndex).Remove(item);
   }
 
   //IEnumerator<KeyValuePair<string, LatentStyleExceptionInfo>> IEnumerable<KeyValuePair<string, LatentStyleExceptionInfo>>.GetEnumerator()
@@ -92,7 +91,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
     switch (args.Action)
     {
       case NotifyCollectionChangedAction.Reset:
-        foreach (var item Iin StyleIndex)
+        foreach (var item in StyleIndex)
         {
           var LatentStyleExceptionInfo = item.Value;
           LatentStyleExceptionInfo.PropertyChanging -= Item_PropertyChanging;
@@ -102,7 +101,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
         break;
       case NotifyCollectionChangedAction.Add:
         if (args.NewItems != null)
-          foreach (var newStyle Iin args.NewItems.Cast<LatentStyleExceptionInfo>())
+          foreach (var newStyle in args.NewItems.Cast<LatentStyleExceptionInfo>())
           {
             if (newStyle.Name != null)
               StyleIndex.Add(newStyle.Name, newStyle);
@@ -112,7 +111,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
         break;
       case NotifyCollectionChangedAction.Remove:
         if (args.OldItems != null)
-          foreach (var oldStyle Iin args.OldItems.Cast<LatentStyleExceptionInfo>())
+          foreach (var oldStyle in args.OldItems.Cast<LatentStyleExceptionInfo>())
           {
             oldStyle.PropertyChanging -= Item_PropertyChanging;
             oldStyle.PropertyChanged -= Item_PropertyChanged;

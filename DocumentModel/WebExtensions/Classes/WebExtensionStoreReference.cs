@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.WebExtensions;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the WebExtensionStoreReference Class.
@@ -7,22 +7,22 @@
 public class WebExtensionStoreReference: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2013 and later.
+  ///   id, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   version, this property is Ionly available Iin Office 2013 and later.
+  ///   version, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? IVersion { get; set; }
 
   /// <summary>
-  ///   store, this property is Ionly available Iin Office 2013 and later.
+  ///   store, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Store { get; set; }
 
   /// <summary>
-  ///   storeType, this property is Ionly available Iin Office 2013 and later.
+  ///   storeType, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? StoreType { get; set; }
 

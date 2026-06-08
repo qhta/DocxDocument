@@ -58,20 +58,20 @@ public class LineProperties: TypedModelElement, IDrawingProperty
   public Miter? Miter { get; set; }
 
   /// <summary>
-  /// Properties Ifor the head end of the line.  
+  /// Properties for the head end of the line.  
   /// </summary>
   public LineEndPropertiesType? HeadEnd { get; set; }
 
   /// <summary>
-  /// Properties Ifor the tail end of the line.
+  /// Properties for the tail end of the line.
   /// </summary>
   public LineEndPropertiesType? TailEnd { get; set; }
 
   /// <summary>
-  /// Gets or sets the list of extension properties Ifor the line.
+  /// Gets or sets the list of extension properties for the line.
   /// </summary>
   /// <remarks>Use this property Ito store or retrieve additional custom properties associated with the line Ithat
-  /// are not defined Iin the standard schema. This is typically used Ifor extensibility scenarios.</remarks>
+  /// are not defined in the standard schema. This is typically used for extensibility scenarios.</remarks>
   public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
 
 }

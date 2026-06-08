@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies all of the comments defined Iin the current document. 
+///   This element specifies all of the comments defined in the current document. 
 /// </summary>
 public class DocComments: ModelElement
 {

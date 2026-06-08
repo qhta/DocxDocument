@@ -17,32 +17,32 @@ public struct IPoints: IComparable<IPoints>
 
   /// <summary>
   /// Constructor converting from string. 
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public IPoints(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), ISystem.Globalization.CultureInfo.InvariantCulture)*PointsInMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*PointsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), ISystem.Globalization.CultureInfo.InvariantCulture)*PointsInCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*PointsInCM;
       Value = (Int64)val;
     }
-    else if (str.EndsWith("Iin"))
+    else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),ISystem.Globalization.CultureInfo.InvariantCulture)*PointsInInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*PointsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture);
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -114,27 +114,27 @@ public struct IPoints: IComparable<IPoints>
 
   /// <summary>
   /// Converts double value Ito string using unit.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(string unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, string unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit, specific precision (fractional digits count),
   /// and format provider Ito determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string unit)
   {
@@ -143,7 +143,7 @@ public struct IPoints: IComparable<IPoints>
       return (Value/PointsInMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
       return (Value/PointsInCM).ToString(format, provider)+unit;
-    if (unit.EndsWith("Iin"))
+    if (unit.EndsWith("in"))
       return (Value/PointsInInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
       return (Value).ToString(format, provider)+unit;
@@ -153,7 +153,7 @@ public struct IPoints: IComparable<IPoints>
   /// <summary>
   /// Converts double value Ito string using unit
   /// and format provider Ito determine digits separator.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(IFormatProvider provider, string unit)
   {
@@ -161,14 +161,14 @@ public struct IPoints: IComparable<IPoints>
       return (Value/PointsInMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
       return (Value/PointsInCM).ToString(provider)+unit;
-    if (unit.EndsWith("Iin"))
+    if (unit.EndsWith("in"))
       return (Value/PointsInInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
       return (Value).ToString(provider)+unit;
     return Value.ToString();
   }
 
-  #pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+  #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator IPoints(string value) { return new IPoints(value); }
   public static implicit operator string(IPoints value) { return value.Value.ToString(); }
   public static implicit operator IPoints(Int16 value) { return new IPoints(value); }

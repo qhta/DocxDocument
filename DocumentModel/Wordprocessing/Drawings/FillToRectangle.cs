@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the FillToRectangle Class.
@@ -7,22 +7,22 @@
 public class FillToRectangle: ModelElement
 {
   /// <summary>
-  ///   l, this property is Ionly available Iin Office 2010 and later.
+  ///   l, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Left { get; set; }
 
   /// <summary>
-  ///   t, this property is Ionly available Iin Office 2010 and later.
+  ///   t, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Top { get; set; }
 
   /// <summary>
-  ///   r, this property is Ionly available Iin Office 2010 and later.
+  ///   r, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Right { get; set; }
 
   /// <summary>
-  ///   b, this property is Ionly available Iin Office 2010 and later.
+  ///   b, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Bottom { get; set; }
 }

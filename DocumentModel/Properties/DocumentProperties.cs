@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public class DocumentProperties : ICollection<DocumentProperty>
 {
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
-    foreach (var prop Iin GetKnownProperties(this).Values)
+    foreach (var prop in GetKnownProperties(this).Values)
     {
       string name = prop.Name;
       var value = GetValue(name);
@@ -32,7 +32,7 @@ public class DocumentProperties : ICollection<DocumentProperty>
 
   public void Clear()
   {
-    foreach (var prop Iin GetKnownProperties(this).Values) Set(prop.Name, null);
+    foreach (var prop in GetKnownProperties(this).Values) Set(prop.Name, null);
   }
 
   public bool Contains(DocumentProperty item)
@@ -44,8 +44,8 @@ public class DocumentProperties : ICollection<DocumentProperty>
 
   public void CopyTo(DocumentProperty[] array, int arrayIndex)
   {
-    var items = new IList<DocumentProperty>();
-    foreach (var item Iin this) items.Add(item);
+    var items = new List<DocumentProperty>();
+    foreach (var item in this) items.Add(item);
     items.CopyTo(array, arrayIndex);
   }
 
@@ -66,7 +66,7 @@ public class DocumentProperties : ICollection<DocumentProperty>
   public int Count()
   {
     var knownPropertiesCount = 0;
-    foreach (var name Iin GetKnownProperties(this).Keys)
+    foreach (var name in GetKnownProperties(this).Keys)
     {
       var item = GetValue(name);
       if (item != null)

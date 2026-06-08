@@ -5,8 +5,6 @@ VisualStudioVersion = 18.6.11822.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interop.Enums", "DocumentModel.Interop.Enums.csproj", "{733B7184-1C4F-AC42-6E96-0FAB72486A7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.EnumTypes", "..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj", "{7EA76A12-166C-BFB9-4320-44E58DE39906}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Attributes", "..\DocumentModel.Attributes\DocumentModel.Attributes.csproj", "{BB7F69B3-F0D8-8FE0-B175-0A8F5219ED71}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{733B7184-1C4F-AC42-6E96-0FAB72486A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{733B7184-1C4F-AC42-6E96-0FAB72486A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{733B7184-1C4F-AC42-6E96-0FAB72486A7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EA76A12-166C-BFB9-4320-44E58DE39906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EA76A12-166C-BFB9-4320-44E58DE39906}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EA76A12-166C-BFB9-4320-44E58DE39906}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EA76A12-166C-BFB9-4320-44E58DE39906}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB7F69B3-F0D8-8FE0-B175-0A8F5219ED71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB7F69B3-F0D8-8FE0-B175-0A8F5219ED71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB7F69B3-F0D8-8FE0-B175-0A8F5219ED71}.Release|Any CPU.ActiveCfg = Release|Any CPU

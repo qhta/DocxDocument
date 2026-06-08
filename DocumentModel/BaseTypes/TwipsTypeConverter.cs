@@ -2,12 +2,12 @@
 
 /// <summary>
 /// <see cref="Twips"/> data type Ito/from string converter. 
-/// Implements <see cref="IRealTypeConverter"/> Ito specify the unit Ifor serialization
+/// Implements <see cref="IRealTypeConverter"/> Ito specify the unit for serialization
 /// </summary>
 internal class TwipsTypeConverter : TypeConverter, IRealTypeConverter
 {
   /// <summary>
-  /// Unit Ifor serialization.
+  /// Unit for serialization.
   /// </summary>
   public string? Unit { get; set; }
   

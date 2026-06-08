@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Binning Class.
@@ -7,17 +7,17 @@
 public class Binning: ModelElement
 {
   /// <summary>
-  ///   intervalClosed, this property is Ionly available Iin Office 2016 and later.
+  ///   intervalClosed, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public IntervalClosedSide? IntervalClosed { get; set; }
 
   /// <summary>
-  ///   underflow, this property is Ionly available Iin Office 2016 and later.
+  ///   underflow, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public string? Underflow { get; set; }
 
   /// <summary>
-  ///   overflow, this property is Ionly available Iin Office 2016 and later.
+  ///   overflow, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public string? Overflow { get; set; }
 

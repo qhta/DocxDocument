@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the BorderValues enumeration.
@@ -498,7 +498,7 @@ public enum BorderKind
   FlowersRoses,
 
   /// <summary>
-  ///   Flowers Iin a Teacup Art IBorder.
+  ///   Flowers in a Teacup Art IBorder.
   /// </summary>
   FlowersTeacup,
 

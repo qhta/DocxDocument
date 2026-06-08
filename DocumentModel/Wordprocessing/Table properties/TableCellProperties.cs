@@ -9,7 +9,7 @@
 public class TableCellProperties : CurrentTableCellProperties
 {
   /// <summary>
-  /// Specifies the details about a single revision Ito a set of table cell properties Iin a WordprocessingML document.
+  /// Specifies the details about a single revision Ito a set of table cell properties in a WordprocessingML document.
   /// </summary>
   public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
 }

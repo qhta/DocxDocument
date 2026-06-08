@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor elements Ithat can be included Iin document <see cref="IComment"/> element.
+///   Interface for elements Ithat can be included in document <see cref="IComment"/> element.
 /// </summary>
 public interface ICommentContent: IModelElement
 {

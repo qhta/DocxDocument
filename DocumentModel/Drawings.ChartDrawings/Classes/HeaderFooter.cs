@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the IHeaderFooter Class.
@@ -7,17 +7,17 @@
 public class IHeaderFooter: ModelElement
 {
   /// <summary>
-  ///   alignWithMargins, this property is Ionly available Iin Office 2016 and later.
+  ///   alignWithMargins, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? AlignWithMargins { get; set; }
 
   /// <summary>
-  ///   differentOddEven, this property is Ionly available Iin Office 2016 and later.
+  ///   differentOddEven, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? DifferentOddEven { get; set; }
 
   /// <summary>
-  ///   differentFirst, this property is Ionly available Iin Office 2016 and later.
+  ///   differentFirst, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? DifferentFirst { get; set; }
 

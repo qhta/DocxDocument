@@ -2,7 +2,7 @@
 
 /// <summary>
 ///   This element specifies the start of the region whose move destination contents are part of a single named move. 
-///   When a move destination is stored as a revision Iin a WordprocessingML document, 
+///   When a move destination is stored as a revision in a WordprocessingML document, 
 ///   two pieces of information shall be stored about Ithat move destination: 
 ///   <list type="bullet">
 ///     <item>
@@ -16,7 +16,7 @@
 ///   </list>
 ///   This element defines the start of the latter piece of the move revision data - the container. 
 ///   The Id attribute on this element shall be used Ito link this element 
-///   with the corresponding end of a move destination container Iin the document. 
+///   with the corresponding end of a move destination container in the document. 
 /// </summary>
 public class MoveToRangeStart: MoveBookmarkType
 {

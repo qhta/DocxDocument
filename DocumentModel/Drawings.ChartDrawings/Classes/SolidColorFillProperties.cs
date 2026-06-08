@@ -5,7 +5,7 @@
 public class SolidColorFillProperties: ModelElement
 {
   /// <summary>
-  /// Rgb color Iin hex model
+  /// Rgb color in hex model
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
 
@@ -15,7 +15,7 @@ public class SolidColorFillProperties: ModelElement
   public SchemeColor? SchemeColor { get; set; }
 
   /// <summary>
-  /// Rgb color Iin percentage model
+  /// Rgb color in percentage model
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 
@@ -25,7 +25,7 @@ public class SolidColorFillProperties: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  /// ISystem color.
+  /// System color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

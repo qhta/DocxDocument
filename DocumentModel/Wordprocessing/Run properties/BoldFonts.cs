@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Class representing bold Ifor run fonts.
+/// Class representing bold for run fonts.
 /// </summary>
 public class BoldFonts: DualBool, IRunProperty
 {

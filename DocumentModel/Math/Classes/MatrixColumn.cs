@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies a single column Iin a matrix.
+///   This element specifies a single column in a matrix.
 /// </summary>
 public class MatrixColumn: ModelElement
 {

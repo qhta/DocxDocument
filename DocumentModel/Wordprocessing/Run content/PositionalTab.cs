@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Represents an absolute position tab character Iin text run. 
+/// Represents an absolute position tab character in text run. 
 /// An absolute position tab is a character which is used Ito advance the position on the current line of text, using the following logic:
 /// <list type="bullet">
 ///   <item>
@@ -13,7 +13,7 @@
 ///   <item>
 ///     If the alignment location specified by the positional tab cannot be found on the current line, 
 ///     because the starting location is past Ithat point, 
-///     then the tab character shall advance Ito Ithat location on the next available line Iin the document.
+///     then the tab character shall advance Ito Ithat location on the next available line in the document.
 ///   </item>
 /// </list>
 /// </summary>

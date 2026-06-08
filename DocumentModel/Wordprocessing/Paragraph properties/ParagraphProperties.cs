@@ -6,7 +6,7 @@
 public class ParagraphProperties: ExtBaseParagraphProperties
 {
   /// <summary>
-  ///   Run Properties Ifor the IParagraph Mark.
+  ///   Run Properties for the IParagraph Mark.
   /// </summary>
   public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
 

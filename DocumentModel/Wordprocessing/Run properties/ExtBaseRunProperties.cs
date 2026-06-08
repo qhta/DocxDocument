@@ -6,14 +6,14 @@
 /// </summary>
 public abstract class ExtBaseRunProperties : BaseRunProperties
 {
-  #region These properties are defined Iin ECMA
+  #region These properties are defined in ECMA
   /// <summary>
   ///   Specifies the style ID of the character style which shall be used Ito format the contents of this paragraph.
   /// </summary>
   public string? RunStyle { get; set; }
 
   /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting Ifor this run. 
+  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
   /// </summary>
   public bool? ComplexScript { get; set; }
 
@@ -32,7 +32,7 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
 
   #endregion
 
-  #region These properties are defined Iin Office Word Extensions (from Office 2010)
+  #region These properties are defined in Office Word Extensions (from Office 2010)
 
   /// <summary>
   ///   Specifies whether Ito display the characters using contextual alternates according Ito OpenType IFont specification.
@@ -55,22 +55,22 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   public Reflection? Reflection { get; set; }
 
   /// <summary>
-  ///   TextOutlineEffect, this property is Ionly available Iin Office 2010 and later..
+  ///   TextOutlineEffect, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
-  ///   FillTextEffect, this property is Ionly available Iin Office 2010 and later..
+  ///   FillTextEffect, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public FillTextEffect? FillTextEffect { get; set; }
 
   /// <summary>
-  ///   Scene3D, this property is Ionly available Iin Office 2010 and later..
+  ///   Scene3D, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public Scene3D? Scene3D { get; set; }
 
   /// <summary>
-  ///   Properties3D, this property is Ionly available Iin Office 2010 and later..
+  ///   Properties3D, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public Properties3D? Properties3D { get; set; }
 
@@ -80,17 +80,17 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   public LigaturesKind? Ligatures { get; set; }
 
   /// <summary>
-  ///   NumberingFormat, this property is Ionly available Iin Office 2010 and later..
+  ///   NumberingFormat, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public NumberFormKind? NumberingFormat { get; set; }
 
   /// <summary>
-  ///   NumberSpacing, this property is Ionly available Iin Office 2010 and later..
+  ///   NumberSpacing, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public NumberSpacingKind? NumberSpacing { get; set; }
 
   /// <summary>
-  ///   StylisticSets, this property is Ionly available Iin Office 2010 and later..
+  ///   StylisticSets, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public StylisticSets? StylisticSets { get; set; }
   #endregion

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specialized reference Ifor endnote separator
+///   Specialized reference for endnote separator
 /// </summary>
 public class EndnoteSeparator: FootnoteEndnoteSeparatorReferenceType
 {

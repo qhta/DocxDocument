@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 {
@@ -41,7 +41,7 @@ internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 
   public object? ReadXml(object? context, IXmlReader reader, Type objectType, object? existingValue, IXmlSerializer? serializer)
   {
-    if (reader.NodeType==ISystem.Xml.XmlNodeType.Element)
+    if (reader.NodeType==System.Xml.XmlNodeType.Element)
       reader.Read(); // read pass start element;
     var str = reader.Value;
     if (str=="")

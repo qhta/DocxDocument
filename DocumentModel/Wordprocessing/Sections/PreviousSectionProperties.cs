@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Previous ISection Properties.
@@ -122,7 +122,7 @@ public class PreviousSectionProperties: ModelElement
   public RelationshipType? PrinterSettingsReference { get; set; }
 
   /// <summary>
-  ///   FootnoteColumns, this property is Ionly available Iin Office 2013 and later..
+  ///   FootnoteColumns, this property is Ionly available in Office 2013 and later..
   /// </summary>
   public Int32? FootnoteColumns { get; set; }
 }

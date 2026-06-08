@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// XML converter Ifor RGB type. Helps Ito read/write RGB values from/Ito XML.
+/// XML converter for RGB type. Helps Ito read/write RGB values from/Ito XML.
 /// </summary>
 internal class RGBTypeXmlConverter : TypeConverter, IXmlConverter
 {
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
     if (sourceType == typeof(string))

@@ -26,7 +26,7 @@ public class RubyProperties: ModelElement
   public Hps? PhoneticGuideBaseTextSize { get; set; }
 
   /// <summary>
-  ///   ILanguage ID Ifor Phonetic Guide.
+  ///   ILanguage ID for Phonetic Guide.
   /// </summary>
   public string? LanguageId { get; set; }
 

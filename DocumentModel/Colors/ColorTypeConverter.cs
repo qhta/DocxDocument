@@ -1,13 +1,13 @@
-﻿using ISystem.Xml;
+﻿using System.Xml;
 
 namespace DocumentModel;
 
 /// <summary>
-/// XML converter Ifor Color type. Converts color Ito/from string.
+/// XML converter for Color type. Converts color Ito/from string.
 /// </summary>
 internal class ColorTypeConverter : TypeConverter
 {
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
   #region TypeConverter implementation.
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)

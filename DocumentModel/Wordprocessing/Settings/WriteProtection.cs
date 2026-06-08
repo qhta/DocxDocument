@@ -2,14 +2,14 @@
 
 /// <summary>
 ///   This element specifies the write protection settings which have been applied Ito a WordprocessingML document.
-///   Write protection refers Ito a mode Iin which the document's contents cannot be edited, and the document cannot
+///   Write protection refers Ito a mode in which the document's contents cannot be edited, and the document cannot
 ///   be resaved using the same file name. This setting is independent of the documentProtection (Â§17.15.1.29)
 ///  element, but like document protection, this setting is not intended as a security feature and can be ignored.
 /// </summary>
 public class WriteProtection: ModelElement
 {
   /// <summary>
-  ///   Recommend Write Protection Iin User Interface
+  ///   Recommend Write Protection in User Interface
   /// </summary>
   public bool? Recommended { get; set; }
 
@@ -69,28 +69,28 @@ public class WriteProtection: ModelElement
   public Base64Binary? Hash { get; set; }
 
   /// <summary>
-  ///   Salt Ifor Password Verifier
+  ///   Salt for Password Verifier
   /// </summary>
   public Base64Binary? Salt { get; set; }
 
   /// <summary>
   ///   Specifies the specific cryptographic hashing algorithm which shall be used along with the
-  ///   salt attribute and input password Iin order Ito compute the hash value.
+  ///   salt attribute and input password in order Ito compute the hash value.
   /// </summary>
   public string? AlgorithmName { get; set; }
 
   /// <summary>
-  ///   hashValue, this property is Ionly available Iin Office 2010 and later.
+  ///   hashValue, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Base64Binary? HashValue { get; set; }
 
   /// <summary>
-  ///   saltValue, this property is Ionly available Iin Office 2010 and later.
+  ///   saltValue, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Base64Binary? SaltValue { get; set; }
 
   /// <summary>
-  ///   spinCount, this property is Ionly available Iin Office 2010 and later.
+  ///   spinCount, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? SpinCount { get; set; }
 }

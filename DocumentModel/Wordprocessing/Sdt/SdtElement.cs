@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines SdtElement - the base class Ifor the sdt elements.
+///   Defines SdtElement - the base class for the sdt elements.
 /// </summary>
 public class SdtElement: ModelElement
 {

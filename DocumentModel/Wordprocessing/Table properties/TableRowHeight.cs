@@ -74,7 +74,7 @@ public class TableRowHeight: ModelElement
   {
     if (Type == HeightRuleKind.Auto)
       return "auto";
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
@@ -85,7 +85,7 @@ public class TableRowHeight: ModelElement
   {
     if (Type == HeightRuleKind.Auto)
       return "auto";
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>

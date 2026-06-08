@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the DataLabelVisibilities Class.
@@ -7,17 +7,17 @@
 public class DataLabelVisibilities: ModelElement
 {
   /// <summary>
-  ///   seriesName, this property is Ionly available Iin Office 2016 and later.
+  ///   seriesName, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? SeriesName { get; set; }
 
   /// <summary>
-  ///   categoryName, this property is Ionly available Iin Office 2016 and later.
+  ///   categoryName, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? CategoryName { get; set; }
 
   /// <summary>
-  ///   value, this property is Ionly available Iin Office 2016 and later.
+  ///   value, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? Value { get; set; }
 }

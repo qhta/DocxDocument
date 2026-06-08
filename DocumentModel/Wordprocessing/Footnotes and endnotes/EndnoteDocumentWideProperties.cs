@@ -40,7 +40,7 @@ public class EndnoteDocumentWideProperties: ModelElement
   public EndnoteSeparators? EndnoteSeparators { get; set; }
 
   /// <summary>
-  /// Modified Ifor tests.
+  /// Modified for tests.
   /// </summary>
   public override string ToString()
   {

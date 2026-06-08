@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Indentation Class.
@@ -12,17 +12,17 @@ public class Indentation: ModelElement
   public string? Left { get; set; }
 
   /// <summary>
-  ///   start, this property is Ionly available Iin Office 2010 and later.
+  ///   start, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Start { get; set; }
 
   /// <summary>
-  ///   Left Indentation Iin Character Units
+  ///   Left Indentation in Character Units
   /// </summary>
   public Int32? LeftChars { get; set; }
 
   /// <summary>
-  ///   startChars, this property is Ionly available Iin Office 2010 and later.
+  ///   startChars, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? StartCharacters { get; set; }
 
@@ -32,17 +32,17 @@ public class Indentation: ModelElement
   public string? Right { get; set; }
 
   /// <summary>
-  ///   end, this property is Ionly available Iin Office 2010 and later.
+  ///   end, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? End { get; set; }
 
   /// <summary>
-  ///   Right Indentation Iin Character Units
+  ///   Right Indentation in Character Units
   /// </summary>
   public Int32? RightChars { get; set; }
 
   /// <summary>
-  ///   endChars, this property is Ionly available Iin Office 2010 and later.
+  ///   endChars, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? EndCharacters { get; set; }
 
@@ -52,7 +52,7 @@ public class Indentation: ModelElement
   public string? Hanging { get; set; }
 
   /// <summary>
-  ///   Indentation Removed From First ILine Iin Character Units
+  ///   Indentation Removed From First ILine in Character Units
   /// </summary>
   public Int32? HangingChars { get; set; }
 
@@ -62,7 +62,7 @@ public class Indentation: ModelElement
   public string? FirstLine { get; set; }
 
   /// <summary>
-  ///   Additional First ILine Indentation Iin Character Units
+  ///   Additional First ILine Indentation in Character Units
   /// </summary>
   public Int32? FirstLineChars { get; set; }
 }

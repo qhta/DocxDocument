@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 /// Represents the list of string
@@ -19,7 +19,7 @@ public class StringList : ICollection, ICollection<string>, IEnumerable, IEquata
     if (str != null)
     {
       var ss = str.Split(',');
-      foreach (var s Iin ss)
+      foreach (var s in ss)
       { _list.Add(s); }
     }
   }
@@ -87,7 +87,7 @@ public class StringList : ICollection, ICollection<string>, IEnumerable, IEquata
   {
     if (other == null) return false;
     if (this.Count != other.Count) return false;
-    Ifor (int i = 0; i < this.Count; i++)
+    for (int i = 0; i < this.Count; i++)
       if (!this._list[i].Equals(other._list[i])) return false;
     return true;
   }
@@ -95,7 +95,7 @@ public class StringList : ICollection, ICollection<string>, IEnumerable, IEquata
   public override int GetHashCode()
   {
     var result = 0;
-    foreach (var item Iin _list)
+    foreach (var item in _list)
       result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }

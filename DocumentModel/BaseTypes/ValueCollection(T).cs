@@ -1,13 +1,13 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
-public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ValueCollection<T>>
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+public class ValueCollection<T> : ModelElement, ICollection, Collection<T>, INotifyCollectionChanged, IEquatable<ValueCollection<T>>
 {
 
   public ValueCollection(){ }
 
   public ValueCollection(ValueCollection<T> other)
   { 
-    foreach (var item Iin other)
+    foreach (var item in other)
       Add(item);
   }
 
@@ -16,36 +16,36 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
 
   public void Add(T item)
   {
-    ((ICollection<T>)Items).Add(item);
+    ((Collection<T>)Items).Add(item);
   }
 
   public void Clear()
   {
-    ((ICollection<T>)Items).Clear();
+    ((Collection<T>)Items).Clear();
   }
 
   public bool Contains(T item)
   {
-    return ((ICollection<T>)Items).Contains(item);
+    return ((Collection<T>)Items).Contains(item);
   }
 
   public void CopyTo(T[] array, int arrayIndex)
   {
-    ((ICollection<T>)Items).CopyTo(array, arrayIndex);
+    ((Collection<T>)Items).CopyTo(array, arrayIndex);
   }
 
   public bool Remove(T item)
   {
-    return ((ICollection<T>)Items).Remove(item);
+    return ((Collection<T>)Items).Remove(item);
   }
 
   [XmlIgnore]
   [JsonIgnore]
-  public int Count => ((ICollection<T>)Items).Count;
+  public int Count => ((Collection<T>)Items).Count;
 
   [XmlIgnore]
   [JsonIgnore]
-  public bool IsReadOnly => ((ICollection<T>)Items).IsReadOnly;
+  public bool IsReadOnly => ((Collection<T>)Items).IsReadOnly;
 
   public IEnumerator<T> GetEnumerator()
   {
@@ -109,7 +109,7 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
   public override int GetHashCode()
   {
     var thisHashCode = 0;//EqualityComparer<Type>.Default.GetHashCode(EqualityContract);
-    foreach (var item Iin this)
+    foreach (var item in this)
     {
       if (item != null)
         thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
@@ -119,7 +119,7 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
 
   //protected virtual bool PrintMembers(StringBuilder builder)
   //{
-  //  foreach (var item Iin this)
+  //  foreach (var item in this)
   //    if (item!=null)
   //      builder.AppendLine(item.ToString());
   //  return true;

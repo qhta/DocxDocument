@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies the properties Ifor one of the fonts used Iin this document. 
-///   A font element shall be written out Ifor each font face used Iin the document, and includes:
+///   Specifies the properties for one of the fonts used in this document. 
+///   A font element shall be written out for each font face used in the document, and includes:
 ///   <list type="bullet">
 ///     <item>
-///       The name of the font as used Iin the document's stories
+///       The name of the font as used in the document's stories
 ///     </item>
 ///     <item>
 ///       (optionally) IFont metrics allowing other applications Ito locate appropriate substitute fonts as needed
@@ -19,21 +19,21 @@ public class IFont: ModelElement
 {
   /// <summary>
   ///   Specifies the primary name of the current font. 
-  ///   This name shall be used Ito link the information stored Iin this element 
-  ///   with uses of this value Iin the rFonts element (Â§17.3.2.26) Iin document content.
+  ///   This name shall be used Ito link the information stored in this element 
+  ///   with uses of this value in the rFonts element (Â§17.3.2.26) in document content.
   /// </summary>
   public string? Name { get; set; }
 
   /// <summary>
   ///   Specifies a set of alternative names which can be used Ito locate the font specified by the parent element. 
-  ///   This set of alternative names is stored Iin a comma-delimited list, with all adjacent commas ignored 
+  ///   This set of alternative names is stored in a comma-delimited list, with all adjacent commas ignored 
   ///   (i.e. a value of Name A, Name B is equivalent Ito Name A,,,,,,,,, Name B). 
   /// </summary>
   public StringList? Aliases { get; set; }
 
   /// <summary>
-  ///   Specifies the Panose-1 classification number shown Iin Â§5.2.7.17 of ISO/IEC 14496-22. 
-  ///   This information can be used as defined Iin font substitution logic 
+  ///   Specifies the Panose-1 classification number shown in Â§5.2.7.17 of ISO/IEC 14496-22. 
+  ///   This information can be used as defined in font substitution logic 
   ///   Ito locate an appropriate substitute font when this font is not available. 
   ///   This information is determined by querying the font when present 
   ///   and shall not be modified when the font is not available.
@@ -42,7 +42,7 @@ public class IFont: ModelElement
 
   /// <summary>
   ///   Specifies the character set which is supported by the parent font. 
-  ///   This information can be used as defined Iin font substitution logic 
+  ///   This information can be used as defined in font substitution logic 
   ///   Ito locate an appropriate substitute font when this font is not available. 
   ///   This information is determined by querying the font when present 
   ///   and shall not be modified when the font is not available. .

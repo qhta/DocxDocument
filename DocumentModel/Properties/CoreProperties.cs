@@ -6,7 +6,7 @@ using PP = DocumentFormat.OpenXml.Packaging;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Collection of core properties, which represents document properties defined Iin Dublin Core standard
+///   Collection of core properties, which represents document properties defined in Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
 public partial class CoreProperties : DocumentProperties
@@ -31,7 +31,7 @@ public partial class CoreProperties : DocumentProperties
   }
 
   /// <summary>
-  /// Known properties Ithat can be set Iin CoreProperties
+  /// Known properties Ithat can be set in CoreProperties
   /// </summary>
   public KnownProperties KnownProperties { get; }
 
@@ -59,7 +59,7 @@ public partial class CoreProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   An entity primarily responsible Ifor making the content of the resource.
+  ///   An entity primarily responsible for making the content of the resource.
   /// </summary>
   public string? Creator
   {
@@ -68,8 +68,8 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   A delimited set of keywords Ito support searching and indexing. 
-  ///   This is typically a list of terms Ithat are not available elsewhere Iin the properties. 
-  ///   The definition of this element uniquely allows Ifor: 
+  ///   This is typically a list of terms Ithat are not available elsewhere in the properties. 
+  ///   The definition of this element uniquely allows for: 
   ///   Use of the xml:lang attribute Ito identify languages 
   ///   A mixed content model, such Ithat keywords can be flagged individually 
   /// </summary>
@@ -141,7 +141,7 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   A categorization of the content of this package. 
-  ///   Example values Ifor this property might include: 
+  ///   Example values for this property might include: 
   ///   Resume, Letter, Financial Forecast, Proposal, Technical Presentation, and so on.
   ///   This value might be used by an application's user interface Ito facilitate navigation of a large set of documents.
   /// </summary>

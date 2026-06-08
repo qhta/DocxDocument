@@ -1,8 +1,8 @@
 ﻿//#define TraceSetValue
 
-using ISystem;
-using ISystem.ComponentModel;
-using ISystem.Xml;
+using System;
+using System.ComponentModel;
+using System.Xml;
 
 using DocumentModel;
 
@@ -10,7 +10,7 @@ using Qhta.Conversion;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Variant implementation. Value is of any type.

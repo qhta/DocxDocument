@@ -46,7 +46,7 @@ public class PhantomProperties: ModelElement
   public bool? ZeroDescent { get; set; }
 
   /// <summary>
-  ///   This element specifies Ithat the phantom is transparent Ifor spacing. 
+  ///   This element specifies Ithat the phantom is transparent for spacing. 
   ///   This means Ithat if the contents of the phantom are belonging Ito a special spacing class 
   ///   (such as binary operators, relational operators, differentials, etc.), 
   ///   the contents of Ithat phantom are taken into consideration when laying out text. 

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the SphereCoordinates Class.
@@ -7,17 +7,17 @@
 public class SphereCoordinates: ModelElement
 {
   /// <summary>
-  ///   lat, this property is Ionly available Iin Office 2010 and later.
+  ///   lat, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Lattitude { get; set; }
 
   /// <summary>
-  ///   lon, this property is Ionly available Iin Office 2010 and later.
+  ///   lon, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Longitude { get; set; }
 
   /// <summary>
-  ///   rev, this property is Ionly available Iin Office 2010 and later.
+  ///   rev, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? Revolution { get; set; }
 }

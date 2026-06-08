@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies Ithat a break shall be placed at the current location Iin the run content. 
+///   Specifies Ithat a break shall be placed at the current location in the run content. 
 ///   A break is a special character which is used Ito override the normal line breaking 
 ///   Ithat would be performed based on the normal layout of the documentâ€™s contents. 
 ///   The behavior of this break character (the location where text shall be restarted after this break) 
@@ -15,7 +15,7 @@ public class IBreak: ModelElement, IRunContent
   public BreakKind? Type { get; set; }
 
   /// <summary>
-  ///   Restart location Ifor text wrapping break
+  ///   Restart location for text wrapping break
   /// </summary>
   public BreakTextRestartLocationKind? Clear { get; set; }
 

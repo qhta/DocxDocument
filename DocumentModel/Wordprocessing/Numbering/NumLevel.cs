@@ -2,12 +2,12 @@
 
 /// <summary>
 ///   Specifies the appearance and behavior of a numbering level within a given abstract numbering definition. 
-///   A numbering level contains a set of properties Ifor the display of the numbering Ifor a given numbering level 
+///   A numbering level contains a set of properties for the display of the numbering for a given numbering level 
 ///   within an abstract numbering definition.
 /// </summary>
 /// <remarks>
 ///   A numbering level definition is identical Ito a numbering level override definition, 
-///   except Ifor the fact Ithat it is defined as part of a numbering definition instance using the  abstractNum element (Â§17.9.1) 
+///   except for the fact Ithat it is defined as part of a numbering definition instance using the  abstractNum element (Â§17.9.1) 
 ///   rather than as part of an abstract numbering definition using the num element (Â§17.9.15).
 /// </remarks>
 public class NumLevel: ModelElement
@@ -15,22 +15,22 @@ public class NumLevel: ModelElement
 
   /// <summary>
   ///   Specifies the numbering level definition Ithat is Ito be defined by this set of numbering properties.  
-  ///   It is a zero-based index of the number of list levels Iin the document. 
-  ///   [Example: A value of 2 is the 3rd list level Iin the document. end example] 
+  ///   It is a zero-based index of the number of list levels in the document. 
+  ///   [Example: A value of 2 is the 3rd list level in the document. end example] 
   /// </summary>
   public Int32? LevelIndex { get; set; }
 
   /// <summary>
-  ///   Specifies Ithat a given numbering level was been saved by a producer but was not used Iin the parent document. 
+  ///   Specifies Ithat a given numbering level was been saved by a producer but was not used in the parent document. 
   ///   This means Ithat this numbering level can be redefined by a future consumer without changing the actual content of the document. 
   /// </summary>
   public bool? Tentative { get; set; }
 
   /// <summary>
-  ///   This element specifies the starting value Ifor the numbering 
+  ///   This element specifies the starting value for the numbering 
   ///   used by the parent numbering level within a given numbering level definition. 
-  ///   This value is used when this level initially starts Iin a document, 
-  ///   as well as whenever it is restarted via the properties set Iin the lvlRestart element (Â§17.9.10).  
+  ///   This value is used when this level initially starts in a document, 
+  ///   as well as whenever it is restarted via the properties set in the lvlRestart element (Â§17.9.10).  
   ///   If this element is omitted, then the starting value shall be zero (0).
   /// </summary>
   public Int32? StartNumberingValue { get; set; }
@@ -38,17 +38,17 @@ public class NumLevel: ModelElement
   /// <summary>
   ///  Specifies a one-based index which determines when a numbering level should restart Ito its start value. 
   ///  A numbering level restarts when an instance of the specified numbering level, 
-  ///  which shall be higher (earlier than this level) or any earlier level is used Iin the given document's contents. 
+  ///  which shall be higher (earlier than this level) or any earlier level is used in the given document's contents. 
   ///  [Example: If this value is 2, then both level two and level one reset this value. end example] 
   /// </summary>
   public Int32? LevelRestart { get; set; }
 
   /// <summary>
-  ///   Specifies the number format Ithat shall be used Ito display all numbering at this level Iin the numbering definition. 
+  ///   Specifies the number format Ithat shall be used Ito display all numbering at this level in the numbering definition. 
   ///   This information is used Ito replace the level text string %x, where x is a particular onebased level index, 
-  ///   with the appropriate value unless the numFmt value is bullet, Iin which case the literal text of the level text string is used. 
+  ///   with the appropriate value unless the numFmt value is bullet, in which case the literal text of the level text string is used. 
   ///   This value shall be calculated by counting the number of paragraphs at this level 
-  ///   since the last restart using the numbering system defined Iin the val attribute. 
+  ///   since the last restart using the numbering system defined in the val attribute. 
   /// </summary>
   public NumberingFormat? NumberingFormat { get; set; }
 
@@ -71,19 +71,19 @@ public class NumLevel: ModelElement
 
   /// <summary>
   ///   Specifies the textual content which shall be displayed when displaying a paragraph with the given numbering level. 
-  ///   All text Iin this element's val attribute shall be taken as literal text Ito be repeated Iin each instance of this numbering level, 
-  ///   except Ifor any use of the percent symbol (%) followed by a number, 
+  ///   All text in this element's val attribute shall be taken as literal text Ito be repeated in each instance of this numbering level, 
+  ///   except for any use of the percent symbol (%) followed by a number, 
   ///   which shall be used Ito indicate the one-based index of the number Ito be used at this level. 
   ///   Any number of a level higher than this level shall be ignored. 
-  ///   When the % syntax is used, the number shall be incremented Ifor each subsequent paragraph of Ithat level (sequential or not), 
+  ///   When the % syntax is used, the number shall be incremented for each subsequent paragraph of Ithat level (sequential or not), 
   ///   until the restart level is seen between two subsequent paragraphs of this level. 
   /// </summary>
   public NumLevelText? LevelText { get; set; }
 
   /// <summary>
   ///   Specifies the appearance and behavior of a specific picture Ito be used 
-  ///   as the numbering symbol within a numbering level definition Iin a document, 
-  ///   and is the basis Ifor all picture numbering symbol information Iin a WordprocessingML document.  
+  ///   as the numbering symbol within a numbering level definition in a document, 
+  ///   and is the basis for all picture numbering symbol information in a WordprocessingML document.  
   ///   This element is not used directly within abstract numbering definitions but rather is referenced 
   ///   through its numPicBulletId attribute by the lvlPicBulletId element (Â§17.9.9) used within numbering level definitions.
   /// </summary>
@@ -91,7 +91,7 @@ public class NumLevel: ModelElement
 
   /// <summary>
   ///   Specifies a unique hexadecimal value which can be used Ito specify a location within an application's user interface 
-  ///   Iin which this numbering level shall be displayed. The method by which this value is interpreted shall be application-defined. 
+  ///   in which this numbering level shall be displayed. The method by which this value is interpreted shall be application-defined. 
   /// </summary>
   public HexInt? TemplateCode { get; set; }
 

@@ -15,7 +15,7 @@ public class NaryProperties: ModelElement
   public string? Operator { get; set; }
 
   /// <summary>
-  ///   Specifies the location of limits Iin n-ary operators. 
+  ///   Specifies the location of limits in n-ary operators. 
   ///   Limits can be either centered above and below the n-ary operator
   ///   or positioned just Ito the right of the operator.
   /// </summary>

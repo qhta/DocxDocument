@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   New IShape Defaults.
@@ -42,7 +42,7 @@ public class ShapeDefaults: ModelElement
   public string? StrokeColor { get; set; }
 
   /// <summary>
-  ///   Allow Iin ITable ICell
+  ///   Allow in ITable ICell
   /// </summary>
   public bool? AllowInCell { get; set; }
 

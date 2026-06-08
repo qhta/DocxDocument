@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Interface Ifor all model elements.
+///   Interface for all model elements.
 /// </summary>
 public interface IModelElement
 {

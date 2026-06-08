@@ -80,7 +80,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The intended format Ifor a presentation document. For example, a presentation intended
+  ///   The intended format for a presentation document. For example, a presentation intended
   ///   Ito be shown on video has PresentationFormat "Video".
   /// </summary>
   public string? PresentationFormat
@@ -99,7 +99,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Indicates the grouping of document parts and the number of parts Iin each group.
+  ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   public HeadingPairs? HeadingPairs
@@ -117,7 +117,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Indicates whether hyperlinks Iin a document are up-Ito-date.
+  ///   Indicates whether hyperlinks in a document are up-Ito-date.
   ///   TRUE means Ithat hyperlinks are updated, FALSE means Ithat hyperlinks are outdated.
   /// </summary>
   public bool? LinksUpToDate
@@ -135,7 +135,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The base string used Ifor evaluating relative hyperlinks Iin this document.
+  ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
   public string? HyperlinkBase
   {
@@ -143,7 +143,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The set of hyperlinks Ithat were Iin this document when last saved.
+  ///   The set of hyperlinks Ithat were in this document when last saved.
   /// </summary>
   public DMPr.HyperlinkList? HyperlinkList
   {
@@ -151,8 +151,8 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Specifies Ithat one or more hyperlinks Iin this part were updated exclusively Iin this part by a producer. 
-  ///   The next producer Ito open this document shall update the hyperlink relationships with the new hyperlinks specified Iin this part.
+  ///   Specifies Ithat one or more hyperlinks in this part were updated exclusively in this part by a producer. 
+  ///   The next producer Ito open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
   /// </summary>
   public bool? HyperlinksChanged
   {
@@ -165,7 +165,7 @@ public partial class ContentProperties : DocumentProperties
   ///   1 - IDocument is password protected.
   ///   2 - IDocument is recommended Ito be opened as read-Ionly.
   ///   4 - IDocument is enforced Ito be opened as read-Ionly.
-  ///   8 - IDocument is locked Ifor annotation
+  ///   8 - IDocument is locked for annotation
   /// </summary>
   public int? DocumentSecurity
   {
@@ -175,8 +175,8 @@ public partial class ContentProperties : DocumentProperties
   /// <summary>
   ///   This element contains the signature of a digitally signed document.
   ///   This property is a mechanism used by legacy documents Ito store the digital signature of its binary
-  ///   representation, and should be avoided Iin favor of the well-defined mechanism defined Iin Part 2. Any use of this
-  ///   property should be Ifor legacy compatibility Ionly, and is application-defined. 
+  ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
+  ///   property should be for legacy compatibility Ionly, and is application-defined. 
   /// </summary>
   public byte[]? DigitalSignature
   {

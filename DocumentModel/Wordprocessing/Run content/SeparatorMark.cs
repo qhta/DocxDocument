@@ -10,7 +10,7 @@
 public class SeparatorMark : ModelElement, IRunContent
 {
   /// <summary>
-  /// Specifies whether the separator mark occurs Iin endnote or footnote.
+  /// Specifies whether the separator mark occurs in endnote or footnote.
   /// </summary>
    public NoteReferenceKind? Value { get; set;}
 

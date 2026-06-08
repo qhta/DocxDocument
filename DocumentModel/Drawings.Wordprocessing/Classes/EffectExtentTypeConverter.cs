@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Type converter Ifor EffectExtent type.
+/// Type converter for EffectExtent type.
 /// </summary>
 internal class EffectExtentTypeConverter : TypeConverter
 {

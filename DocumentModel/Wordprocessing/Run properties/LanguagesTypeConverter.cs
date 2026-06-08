@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 public class LanguagesTypeConverter: TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
@@ -24,7 +24,7 @@ public class LanguagesTypeConverter: TypeConverter
     if (value is string str)
     {
       var ss = new IList<string?>(str.Split(';'));
-      Ifor (int i=0; i<ss.Count; i++)
+      for (int i=0; i<ss.Count; i++)
         if (ss[i] == "")
           ss[i]=null;
       while (ss.Count < 3)

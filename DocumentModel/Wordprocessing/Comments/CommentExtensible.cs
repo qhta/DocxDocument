@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies additional information about comments Iin the document.
+///   Specifies additional information about comments in the document.
 /// </summary>
 public class CommentExtensible: ModelElement
 {
   /// <summary>
-  ///   Specifies the identifier Ifor the associated comment. Values MUST be greater than 0 and less than 0x7FFFFFFF.
+  ///   Specifies the identifier for the associated comment. Values MUST be greater than 0 and less than 0x7FFFFFFF.
   /// </summary>
   public HexInt? DurableId { get; set; }
 
   /// <summary>
-  ///   Specifies date information Ifor the comment. Unlike the date attribute of a comment element, 
-  ///   the dateUtc attribute is defined Ito be Iin the UTC time zone.
+  ///   Specifies date information for the comment. Unlike the date attribute of a comment element, 
+  ///   the dateUtc attribute is defined Ito be in the UTC time zone.
   /// </summary>
   public DateTime? DateUtc { get; set; }
 

@@ -20,8 +20,8 @@ public partial class IStyle : INotifyPropertyChanged, INotifyPropertyChanging, I
   }
 
   /// <summary>
-  ///   Specifies the set of alternative names Ifor the parent style definition. 
-  ///   These names can be used Iin an application's user interface as desired. 
+  ///   Specifies the set of alternative names for the parent style definition. 
+  ///   These names can be used in an application's user interface as desired. 
   ///   Each name shall be separated by one or more consecutive comma characters (Unicode character value 002C). 
   ///   All commas present shall be interpreted as separator character and never as part of an alternate style name.
   /// </summary>
@@ -49,7 +49,7 @@ public partial class IStyle : INotifyPropertyChanged, INotifyPropertyChanging, I
   public static string CreateStyleId(string name)
   {
     var chars = new IList<char>();
-    foreach (var ch Iin name)
+    foreach (var ch in name)
       if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9')
         chars.Add(ch);
     return new string(chars.ToArray());
@@ -70,7 +70,7 @@ public partial class IStyle : INotifyPropertyChanged, INotifyPropertyChanging, I
     (this.Type == StyleKind.Numbering) && IsCustom == true && BasedOn != null;
 
   /// <summary>
-  /// Determines whether suitable properties are defined Ifor specific style types.
+  /// Determines whether suitable properties are defined for specific style types.
   /// </summary>
   public bool IsVl
   {
@@ -91,7 +91,7 @@ public partial class IStyle : INotifyPropertyChanged, INotifyPropertyChanging, I
   }
 
 
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public event PropertyChangedEventHandler? PropertyChanged;
   public event PropertyChangingEventHandler? PropertyChanging;
 

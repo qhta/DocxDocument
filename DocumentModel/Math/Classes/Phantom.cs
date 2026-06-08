@@ -3,7 +3,7 @@
 /// <summary>
 ///   This element specifies the phantom object. This object has two primary uses: 
 ///   adding the spacing of the phantom base element e without displaying Ithat base; 
-///   and suppressing part of the glyph Ifor spacing considerations.
+///   and suppressing part of the glyph for spacing considerations.
 /// </summary>
 public class Phantom: ModelElement, ICommonMathContent
 {

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the TextCharacterPropertiesType Class.
@@ -7,12 +7,12 @@
 public class TextCharacterPropertiesType: ModelElement
 {
   /// <summary>
-  ///   Gets or sets the  value. It is Ionly available Ifor backwards compatibility
+  ///   Gets or sets the  value. It is Ionly available for backwards compatibility
   /// </summary>
   public bool? SmtClean { get; set; }
 
   /// <summary>
-  ///   Gets or sets the  value. It is Ionly available Ifor backwards compatibility
+  ///   Gets or sets the  value. It is Ionly available for backwards compatibility
   /// </summary>
   public UInt32? SmtId { get; set; }
 

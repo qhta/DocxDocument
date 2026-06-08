@@ -11,7 +11,7 @@ public struct RowSpacing
   /// </summary>
   public RowSpacingRuleKind Rule { get; set; }
   /// <summary>
-  /// Specifies numeric value Ifor Exactly and Multiply rules.
+  /// Specifies numeric value for Exactly and Multiply rules.
   /// </summary>
   public UInt16? Value { get; set; }
 

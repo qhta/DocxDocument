@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.Office.ScriptLink;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ScriptLink Class.
@@ -7,7 +7,7 @@
 public class ScriptLink: ModelElement
 {
   /// <summary>
-  ///   val, this property is Ionly available Iin Microsoft365 and later.
+  ///   val, this property is Ionly available in Microsoft365 and later.
   /// </summary>
   public string? Val { get; set; }
 

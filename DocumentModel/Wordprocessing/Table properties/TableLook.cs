@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the TableLook Class.
@@ -12,32 +12,32 @@ public class TableLook: ModelElement
   public HexChar? Val { get; set; }
 
   /// <summary>
-  ///   firstRow, this property is Ionly available Iin Office 2010 and later.
+  ///   firstRow, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? FirstRow { get; set; }
 
   /// <summary>
-  ///   lastRow, this property is Ionly available Iin Office 2010 and later.
+  ///   lastRow, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? LastRow { get; set; }
 
   /// <summary>
-  ///   firstColumn, this property is Ionly available Iin Office 2010 and later.
+  ///   firstColumn, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? FirstColumn { get; set; }
 
   /// <summary>
-  ///   lastColumn, this property is Ionly available Iin Office 2010 and later.
+  ///   lastColumn, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? LastColumn { get; set; }
 
   /// <summary>
-  ///   noHBand, this property is Ionly available Iin Office 2010 and later.
+  ///   noHBand, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? NoHorizontalBand { get; set; }
 
   /// <summary>
-  ///   noVBand, this property is Ionly available Iin Office 2010 and later.
+  ///   noVBand, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? NoVerticalBand { get; set; }
 }

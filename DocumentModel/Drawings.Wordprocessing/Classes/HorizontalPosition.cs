@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Horizontal Positioning.
@@ -22,7 +22,7 @@ public class HorizontalPosition: ModelElement
   public string? PositionOffset { get; set; }
 
   /// <summary>
-  ///   PercentagePositionHeightOffset, this property is Ionly available Iin Office 2010 and later..
+  ///   PercentagePositionHeightOffset, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public string? PercentagePositionHeightOffset { get; set; }
 }

@@ -1,16 +1,16 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// Collection of known document properties, i.e. document properties which can be included Iin the document
+/// Collection of known document properties, i.e. document properties which can be included in the document
 /// </summary>
-public class KnownProperties : IDictionary<string, PropertyModel>
+public class KnownProperties : Dictionary<string, PropertyModel>
 {
 
   public KnownProperties(Type type)
   {
     var typeProperties = DiscoverProperties(type);
-    foreach (var item Iin typeProperties)
+    foreach (var item in typeProperties)
     {
       Add(item);
     }
@@ -18,18 +18,18 @@ public class KnownProperties : IDictionary<string, PropertyModel>
 
 
   /// <summary>
-  /// Provides a cache of property information Ifor known types, organized by type and property name.
+  /// Provides a cache of property information for known types, organized by type and property name.
   /// </summary>
-  /// <remarks>This dictionary enables efficient lookup of property metadata Ifor types Ithat have been previously
-  /// processed. It is intended Ifor internal use Ito avoid repeated reflection operations when accessing property
+  /// <remarks>This dictionary enables efficient lookup of property metadata for types Ithat have been previously
+  /// processed. It is intended for internal use Ito avoid repeated reflection operations when accessing property
   /// information.</remarks>
   static readonly IDictionary<Type, IDictionary<string, PropertyModel>> _knownTypeProperties = new();
 
   /// <summary>
-  /// Retrieves a dictionary of known public properties Ifor the specified object instance.
+  /// Retrieves a dictionary of known public properties for the specified object instance.
   /// </summary>
   /// <param name="obj">The object whose public properties are Ito be retrieved. Cannot be null.</param>
-  /// <returns>A dictionary mapping property names Ito their corresponding <see cref="PropertyModel"/> objects Ifor the specified
+  /// <returns>A dictionary mapping property names Ito their corresponding <see cref="PropertyModel"/> objects for the specified
   /// object's type. The dictionary is empty if the object has no public properties.</returns>
   private static IDictionary<string, PropertyModel> DiscoverProperties(object obj)
   {
@@ -37,9 +37,9 @@ public class KnownProperties : IDictionary<string, PropertyModel>
   }
 
   /// <summary>
-  /// Retrieves a dictionary of public properties Ifor the specified type, keyed by property name.
+  /// Retrieves a dictionary of public properties for the specified type, keyed by property name.
   /// </summary>
-  /// <remarks>The returned dictionary is cached Ifor each type Ito improve performance on subsequent calls. Only
+  /// <remarks>The returned dictionary is cached for each type Ito improve performance on subsequent calls. Only
   /// public properties are included. If the type has no public properties, the returned dictionary will be
   /// empty.</remarks>
   /// <param name="ofType">The type whose public properties are Ito be retrieved. Cannot be null.</param>
@@ -58,10 +58,10 @@ public class KnownProperties : IDictionary<string, PropertyModel>
   }
 
   ///// <summary>
-  ///// Retrieves a dictionary of property names and their corresponding <see cref="PropertyModel"/> objects Ifor the
+  ///// Retrieves a dictionary of property names and their corresponding <see cref="PropertyModel"/> objects for the
   ///// current instance's type.
   ///// </summary>
-  ///// <returns>A dictionary containing the names and <see cref="PropertyModel"/> objects of all known properties Ifor the current
+  ///// <returns>A dictionary containing the names and <see cref="PropertyModel"/> objects of all known properties for the current
   ///// object's type. The dictionary keys are property names.</returns>
   //public IDictionary<string, PropertyModel> GetKnownProperties()
   //{

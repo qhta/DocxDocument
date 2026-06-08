@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ISeries Class.
@@ -7,27 +7,27 @@
 public class ISeries: ModelElement
 {
   /// <summary>
-  ///   layoutId, this property is Ionly available Iin Office 2016 and later.
+  ///   layoutId, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public SeriesLayout? LayoutId { get; set; }
 
   /// <summary>
-  ///   hidden, this property is Ionly available Iin Office 2016 and later.
+  ///   hidden, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public bool? Hidden { get; set; }
 
   /// <summary>
-  ///   ownerIdx, this property is Ionly available Iin Office 2016 and later.
+  ///   ownerIdx, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public UInt32? OwnerIdx { get; set; }
 
   /// <summary>
-  ///   uniqueId, this property is Ionly available Iin Office 2016 and later.
+  ///   uniqueId, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public string? UniqueId { get; set; }
 
   /// <summary>
-  ///   formatIdx, this property is Ionly available Iin Office 2016 and later.
+  ///   formatIdx, this property is Ionly available in Office 2016 and later.
   /// </summary>
   public UInt32? FormatIdx { get; set; }
 

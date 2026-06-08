@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies  a phonetic guide at the current location Iin the document. 
+///   This element specifies  a phonetic guide at the current location in the document. 
 ///   A phonetic guide (often called ruby text) is a run of content with base text which appears 
-///   at the normal baseline location Ifor text Iin this run, 
-///   with phonetic guide text displayed above it Iin the document. 
+///   at the normal baseline location for text in this run, 
+///   with phonetic guide text displayed above it in the document. 
 ///   The resulting construct is called a phonetic guide as it is typically used 
-///   Ito map words Iin one language Ito another phonetically.
+///   Ito map words in one language Ito another phonetically.
 /// </summary>
 public class Ruby: ModelElement, IRunContent, IRubyContent
 {

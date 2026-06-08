@@ -1,10 +1,10 @@
-﻿using ISystem.ComponentModel;
-using ISystem.Xml;
+﻿using System.ComponentModel;
+using System.Xml;
 
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 internal class ArrayXmlTypeConverter : VariantTypeConverter, IXmlConverter
 {

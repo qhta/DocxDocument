@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the LinkedTextBox Class.
@@ -7,12 +7,12 @@
 public class LinkedTextBox: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public UInt16? Id { get; set; }
 
   /// <summary>
-  ///   seq, this property is Ionly available Iin Office 2010 and later.
+  ///   seq, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public UInt16? Sequence { get; set; }
 

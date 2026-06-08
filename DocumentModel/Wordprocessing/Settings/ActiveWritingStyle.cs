@@ -8,13 +8,13 @@ public class ActiveWritingStyle: ModelElement
 {
   /// <summary>
   ///   Specifies the name of the application which specified the grammatical settings 
-  ///   contained on the attributes Ifor this element.
+  ///   contained on the attributes for this element.
   /// </summary>
   public string? ApplicationName { get; set; }
 
   /// <summary>
   ///   Specifies if the grammar content checking performed on this document 
-  ///   included stylistic rules Ifor the document content. 
+  ///   included stylistic rules for the document content. 
   ///   If specified, applications which support this functionality shall check stylistic rules 
   ///   as well as grammatical ones when checking the grammatical content of this document. 
   /// </summary>
@@ -27,7 +27,7 @@ public class ActiveWritingStyle: ModelElement
   public Int32? DllVersion { get; set; }
 
   /// <summary>
-  ///   Specifies a value indicating a unique ID Ifor the writing style engine 
+  ///   Specifies a value indicating a unique ID for the writing style engine 
   ///   Ithat was used Ito check the grammatical content of the WordprocessingML document.
   /// </summary>
   public UInt16? VendorID { get; set; }

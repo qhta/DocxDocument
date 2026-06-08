@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the LineSketchStyleProperties Class.
@@ -7,7 +7,7 @@
 public class LineSketchStyleProperties: ModelElement
 {
   /// <summary>
-  ///   sd, this property is Ionly available Iin Office 2021 and later.
+  ///   sd, this property is Ionly available in Office 2021 and later.
   /// </summary>
   public UInt32? Sd { get; set; }
 

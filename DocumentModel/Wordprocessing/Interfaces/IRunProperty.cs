@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor Run property
+///   Interface for Run property
 /// </summary>
 public interface IRunProperty: IModelElement, IUniqueModelElement<Type> 
 {

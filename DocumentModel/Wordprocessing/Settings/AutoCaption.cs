@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Single Automatic Captioning Setting.
@@ -12,7 +12,7 @@ public class IAutoCaption: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Caption Used Ifor Automatic Captioning
+  ///   Caption Used for Automatic Captioning
   /// </summary>
   public string? Caption { get; set; }
 }

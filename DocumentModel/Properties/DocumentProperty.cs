@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   IDocument Property.
@@ -8,7 +8,7 @@
 public partial class DocumentProperty : ModelElement
 {
   /// <summary>
-  ///   Default constructor. Needed Ifor XML serialization.
+  ///   Default constructor. Needed for XML serialization.
   /// </summary>
   public DocumentProperty() { }
 

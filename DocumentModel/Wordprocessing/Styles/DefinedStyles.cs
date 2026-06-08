@@ -1,7 +1,5 @@
-﻿using ISystem.Diagnostics.CodeAnalysis;
-
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines IStyles.
@@ -54,30 +52,30 @@ public partial class DefinedStyles : ElementCollection<IStyle>
   }
 
   [XmlIgnore]
-  public ICollection<string> Keys => StyleIndex.Keys;
+  public Collection<string> Keys => StyleIndex.Keys;
   
   [XmlIgnore]
 
-  public ICollection<IStyle> Values => StyleIndex.Values;
+  public Collection<IStyle> Values => StyleIndex.Values;
 
   public void Add(KeyValuePair<string, IStyle> item)
   {
-    ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Add(item);
+    ((Collection<KeyValuePair<string, IStyle>>)StyleIndex).Add(item);
   }
 
   public bool Contains(KeyValuePair<string, IStyle> item)
   {
-    return ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Contains(item);
+    return ((Collection<KeyValuePair<string, IStyle>>)StyleIndex).Contains(item);
   }
 
   public void CopyTo(KeyValuePair<string, IStyle>[] array, int arrayIndex)
   {
-    ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).CopyTo(array, arrayIndex);
+    ((Collection<KeyValuePair<string, IStyle>>)StyleIndex).CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, IStyle> item)
   {
-    return ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Remove(item);
+    return ((Collection<KeyValuePair<string, IStyle>>)StyleIndex).Remove(item);
   }
 
   //IEnumerator<KeyValuePair<string, IStyle>> IEnumerable<KeyValuePair<string, IStyle>>.GetEnumerator()
@@ -98,7 +96,7 @@ public partial class DefinedStyles : ElementCollection<IStyle>
     switch (args.Action)
     {
       case NotifyCollectionChangedAction.Reset:
-        foreach (var item Iin this)
+        foreach (var item in this)
         {
           var style = item;
           style.PropertyChanging -= Item_PropertyChanging;
@@ -107,7 +105,7 @@ public partial class DefinedStyles : ElementCollection<IStyle>
         break;
       case NotifyCollectionChangedAction.Add:
         if (args.NewItems != null)
-          foreach (var newStyle Iin args.NewItems.Cast<IStyle>())
+          foreach (var newStyle in args.NewItems.Cast<IStyle>())
           {
             var id = newStyle.StyleId;
             if (id != null)
@@ -118,7 +116,7 @@ public partial class DefinedStyles : ElementCollection<IStyle>
         break;
       case NotifyCollectionChangedAction.Replace:
         if (args.OldItems != null)
-          foreach (var oldStyle Iin args.OldItems.Cast<IStyle>())
+          foreach (var oldStyle in args.OldItems.Cast<IStyle>())
           {
             var id = oldStyle.StyleId;
             if (id != null)
@@ -127,7 +125,7 @@ public partial class DefinedStyles : ElementCollection<IStyle>
             oldStyle.PropertyChanged -= Item_PropertyChanged;
           }
         if (args.NewItems != null)
-          foreach (var newStyle Iin args.NewItems.Cast<IStyle>())
+          foreach (var newStyle in args.NewItems.Cast<IStyle>())
           {
             var id = newStyle.StyleId;
             if (id != null)
@@ -138,7 +136,7 @@ public partial class DefinedStyles : ElementCollection<IStyle>
         break;
       case NotifyCollectionChangedAction.Remove:
         if (args.OldItems != null)
-          foreach (var oldStyle Iin args.OldItems.Cast<IStyle>())
+          foreach (var oldStyle in args.OldItems.Cast<IStyle>())
           {
             var id = oldStyle.StyleId;
             if (id != null)
@@ -172,5 +170,5 @@ public partial class DefinedStyles : ElementCollection<IStyle>
     //  }
   }
 
-  //bool ICollection<KeyValuePair<string, IStyle>>.IsReadOnly { get; }
+  //bool Collection<KeyValuePair<string, IStyle>>.IsReadOnly { get; }
 }

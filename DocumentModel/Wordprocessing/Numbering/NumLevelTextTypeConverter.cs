@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter Ifor NumLevelText type
+/// Type converter for NumLevelText type
 /// </summary>
 public class NumLevelTextTypeConverter: TypeConverter
 {

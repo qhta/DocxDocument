@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the TableWidthUnitValues enumeration.
@@ -13,12 +13,12 @@ public enum TableWidthUnitType
   Nil,
 
   /// <summary>
-  ///   Width Iin Fiftieths of a Percent.
+  ///   Width in Fiftieths of a Percent.
   /// </summary>
   Pct,
 
   /// <summary>
-  ///   Width Iin Twentieths of a IPoint.
+  ///   Width in Twentieths of a IPoint.
   /// </summary>
   Twips,
 

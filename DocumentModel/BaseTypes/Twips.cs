@@ -7,24 +7,24 @@
 public struct Twips : IComparable<Twips>
 {
   /// <summary>
-  /// How many twips are Iin one millimeter.
+  /// How many twips are in one millimeter.
   /// There is a small difference between real and nominal factors.
   /// </summary>
   public const double TwipsInMM = 1440 / 25.4; //56,695238095238095238095238095238;
 
   /// <summary>
-  /// How many twips are Iin one centimeter.
+  /// How many twips are in one centimeter.
   /// There is a small difference between real and nominal factors.
   /// </summary>
   public const double TwipsInCM = TwipsInMM / 10.0;
 
   /// <summary>
-  /// How many twips are Iin one inch.
+  /// How many twips are in one inch.
   /// </summary>
   public const double TwipsInInch = 1440;
 
   /// <summary>
-  /// How many twips are Iin one point.
+  /// How many twips are in one point.
   /// </summary>
   public const double TwipsInPoint = 20;
 
@@ -32,32 +32,32 @@ public struct Twips : IComparable<Twips>
 
   /// <summary>
   /// Constructor converting from string. 
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public Twips(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * TwipsInMM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * TwipsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * TwipsInCM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * TwipsInCM;
       Value = (Int64)val;
     }
-    else if (str.EndsWith("Iin"))
+    else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * TwipsInInch;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * TwipsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * TwipsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * TwipsInPoint;
       Value = (Int64)val;
     }
     else Value = Int32.Parse(str);
@@ -129,27 +129,27 @@ public struct Twips : IComparable<Twips>
 
   /// <summary>
   /// Converts double value Ito string using unit.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(string? unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, string? unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit, specific precision (fractional digits count),
   /// and format provider Ito determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -162,7 +162,7 @@ public struct Twips : IComparable<Twips>
         return (Value / TwipsInMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / TwipsInCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / TwipsInInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / TwipsInPoint).ToString(format, provider) + unit;
@@ -173,7 +173,7 @@ public struct Twips : IComparable<Twips>
   /// <summary>
   /// Converts double value Ito string using unit
   /// and format provider Ito determine digits separator.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
   {
@@ -185,7 +185,7 @@ public struct Twips : IComparable<Twips>
         return (Value / TwipsInMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / TwipsInCM).ToString(provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / TwipsInInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / TwipsInPoint).ToString(provider) + unit;
@@ -193,7 +193,7 @@ public struct Twips : IComparable<Twips>
     return Value.ToString();
   }
 
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator Twips(string value) { return new Twips(value); }
   public static implicit operator string(Twips value) { return value.Value.ToString(); }
   public static implicit operator Twips(Int16 value) { return new Twips(value); }

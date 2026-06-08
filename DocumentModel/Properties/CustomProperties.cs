@@ -5,14 +5,14 @@
 /// </summary>
 public partial class ICustomProperties : ICollection<DocumentProperty>
 {
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public Collection<DocumentProperty>? CustomDocumentProperties { get; set; }
 
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CustomDocumentProperties == null)
       yield break;
-    foreach (var item Iin CustomDocumentProperties)
+    foreach (var item in CustomDocumentProperties)
       yield return item;
   }
 

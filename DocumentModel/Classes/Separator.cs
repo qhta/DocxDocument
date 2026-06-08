@@ -8,47 +8,47 @@ namespace DocumentModel;
 public class Separator: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is Ionly available Iin Office 2010 and later.
+  ///   idQ, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is Ionly available Iin Office 2010 and later.
+  ///   tag, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   visible, this property is Ionly available Iin Office 2010 and later.
+  ///   visible, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is Ionly available Iin Office 2010 and later.
+  ///   getVisible, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   insertAfterMso, this property is Ionly available Iin Office 2010 and later.
+  ///   insertAfterMso, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
-  ///   insertBeforeMso, this property is Ionly available Iin Office 2010 and later.
+  ///   insertBeforeMso, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
-  ///   insertAfterQ, this property is Ionly available Iin Office 2010 and later.
+  ///   insertAfterQ, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? InsertAfterQulifiedId { get; set; }
 
   /// <summary>
-  ///   insertBeforeQ, this property is Ionly available Iin Office 2010 and later.
+  ///   insertBeforeQ, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? InsertBeforeQulifiedId { get; set; }
 }

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the HyperlinkType Class.
@@ -22,12 +22,12 @@ public class HyperlinkType: ModelElement
   public string? Action { get; set; }
 
   /// <summary>
-  ///   target frame Ifor navigating Ito the URI
+  ///   target frame for navigating Ito the URI
   /// </summary>
   public string? TargetFrame { get; set; }
 
   /// <summary>
-  ///   tooltip Ifor display
+  ///   tooltip for display
   /// </summary>
   public string? Tooltip { get; set; }
 

@@ -9,7 +9,7 @@
 namespace DocumentModel.Attributes
 {
   /// <summary>
-  /// Represents the custom attribute Ifor fields Iin a generated enum.
+  /// Represents the custom attribute for fields in a generated enum.
   /// </summary>
   [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
   public sealed class EnumStringAttribute : Attribute
@@ -21,7 +21,7 @@ namespace DocumentModel.Attributes
     /// <param name="value">The text string.</param>
     public EnumStringAttribute(string value) => this.Value = value;
 
-    /// <summary>Gets the text string Iin the custom attribute.</summary>
+    /// <summary>Gets the text string in the custom attribute.</summary>
     public string Value { get; }
   }
 }

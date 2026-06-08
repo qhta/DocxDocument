@@ -1,9 +1,9 @@
-﻿using ISystem.Net.WebSockets;
+﻿using System.Net.WebSockets;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter Ifor FontSignature type
+/// Type converter for FontSignature type
 /// </summary>
 public class FontSignatureTypeConverter: TypeConverter
 {
@@ -37,7 +37,7 @@ public class FontSignatureTypeConverter: TypeConverter
       var result = new FontSignature();
       var ss = str.Split(" ");
       int i=0;
-      foreach (var s Iin ss)
+      foreach (var s in ss)
       {
         result.Items[i++] = s;
       }

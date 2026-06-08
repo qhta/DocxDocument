@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor range marker elements.
+///   Interface for range marker elements.
 /// </summary>
 public interface IRangeMarkupElement
 {

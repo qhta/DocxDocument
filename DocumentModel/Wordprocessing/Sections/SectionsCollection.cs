@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Collection of sections Ithat should be rebuild after SectionProperties 
-///   were added Ito or deleted from ParagraphProperties Iin any paragraph.
-///   Also the last SectionProperties element Iin a Body defines the last section Iin this collection.
+///   were added Ito or deleted from ParagraphProperties in any paragraph.
+///   Also the last SectionProperties element in a Body defines the last section in this collection.
 /// </summary>
 public class SectionsCollection : LinkedList<ISection>
 {

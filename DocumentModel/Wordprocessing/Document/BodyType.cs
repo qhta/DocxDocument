@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Common class Ifor <see cref="Body"/> and <see cref="DocPartBody"/> elements.
+///   Common class for <see cref="Body"/> and <see cref="DocPartBody"/> elements.
 /// </summary>
 public abstract class BodyType : Story
 {

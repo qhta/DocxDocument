@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor elements Ithat can be included Iin document <see cref="IParagraph"/> element.
+///   Interface for elements Ithat can be included in document <see cref="IParagraph"/> element.
 /// </summary>
 public interface IParagraphContent: IModelElement, DMM.IOfficeMathContent
 {

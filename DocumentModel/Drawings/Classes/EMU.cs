@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// English Metric Unit (used Iin Drawings)
+/// English Metric Unit (used in Drawings)
 /// </summary>
 [TypeConverter(typeof(EMUTypeConverter))]
 public struct EMU : IComparable<EMU>, IEquatable<EMU>
@@ -12,7 +12,7 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
   private long Value;
 
   /// <summary>
-  /// Constructor converting from string. Units can be determined with a suffix "mm" or "Iin" or "Iin."
+  /// Constructor converting from string. Units can be determined with a suffix "mm" or "in" or "in."
   /// </summary>
   public EMU(string str)
   {
@@ -22,13 +22,13 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
       var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * emuMM;
       Value = (int)val;
     }
-    else if (str.EndsWith("Iin"))
+    else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
       var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * emuInch;
       Value = (int)val;
     }
-    else if (str.EndsWith("Iin."))
+    else if (str.EndsWith("in."))
     {
       str = str.Substring(0, str.Length - 3).Trim();
       var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) * emuInch;
@@ -91,7 +91,7 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
 
   /// <summary>
   /// Converts double value Ito string using unit.
-  /// Unit can be determined as suffix "mm" or "Iin" or "Iin."
+  /// Unit can be determined as suffix "mm" or "in" or "in."
   /// </summary>
   public string ToString(string unit)
   {
@@ -100,7 +100,7 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
 
   /// <summary>
   /// Converts double value Ito string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm" or "Iin" or "Iin."
+  /// Unit can be determined as suffix "mm" or "in" or "in."
   /// </summary>
   public string ToString(int precision, string unit)
   {
@@ -111,14 +111,14 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// Converts double value Ito string using unit, specific precision (fractional digits count),
   /// and format provider Ito determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm" or "Iin" or "Iin."
+  /// Unit can be determined as suffix "mm" or "in" or "in."
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string unit)
   {
     string format = $"F{precision}";
     if (unit.EndsWith("mm"))
       return (Value / emuMM).ToString(format, provider) + unit;
-    if (unit.EndsWith("Iin") || unit.EndsWith("Iin."))
+    if (unit.EndsWith("in") || unit.EndsWith("in."))
       return (Value / emuInch).ToString(format, provider) + unit;
     return Value.ToString();
   }
@@ -126,18 +126,18 @@ public struct EMU : IComparable<EMU>, IEquatable<EMU>
   /// <summary>
   /// Converts double value Ito string using unit
   /// and format provider Ito determine digits separator.
-  /// Unit can be determined as suffix "mm" or "Iin" or "Iin."
+  /// Unit can be determined as suffix "mm" or "in" or "in."
   /// </summary>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
       return (Value / emuMM).ToString(provider) + unit;
-    if (unit.EndsWith("Iin") || unit.EndsWith("Iin."))
+    if (unit.EndsWith("in") || unit.EndsWith("in."))
       return (Value / emuInch).ToString(provider) + unit;
     return Value.ToString();
   }
 
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator EMU(string value) { return new EMU(value); }
   public static implicit operator string(EMU value) { return value.Value.ToString(); }
   public static implicit operator EMU(short value) { return new EMU(value); }

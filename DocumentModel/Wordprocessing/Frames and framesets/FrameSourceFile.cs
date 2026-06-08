@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Reference Ito source file Ifor a frame.
+///   Reference Ito source file for a frame.
 /// </summary>
 public class FrameSourceFile: ExternalFile
 {

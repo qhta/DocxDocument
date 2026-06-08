@@ -1,4 +1,4 @@
-﻿using ISystem.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace DocumentModel.Drawings;
 

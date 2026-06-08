@@ -5,7 +5,7 @@
 ///   by the Bidirectional Algorithm (cf. Unicode Technical Report #9). 
 ///   The presence of this markup is functionally equivalent Ito the presence of a LRO/RLO character 
 ///   at the location of the start element, and a corresponding PDF character at the location of the end element 
-///   Iin a string of Unicode text. 
+///   in a string of Unicode text. 
 /// </summary>
 public class BidirectionalOverride: BidirectionalElement
 {

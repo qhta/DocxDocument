@@ -6,7 +6,7 @@
 public class Extension: ModelElement
 {
   /// <summary>
-  ///   uri, this property is Ionly available Iin Office 2021 and later.
+  ///   uri, this property is Ionly available in Office 2021 and later.
   /// </summary>
   public string? Uri { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies a location within a document Ifor the insertion of the contents 
+///   This element specifies a location within a document for the insertion of the contents 
 ///   of a specified file containing external content Ito be imported into the main WordprocessingML document. 
 ///   The specified file's contents should appear at the specified location within the document, 
 ///   and can henceforth be emitted as regular WordprocessingML without distinction Ito its origin. 

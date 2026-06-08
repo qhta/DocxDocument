@@ -1,14 +1,10 @@
-﻿using ISystem.Collections.Immutable;
-using ISystem.Collections.ObjectModel;
-using ISystem.Diagnostics.CodeAnalysis;
-
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
   where T : class, INamedObject, IEquatable<T>
 {
-  private readonly SortedDictionary<string, T> _dictionary = null!;
+  private readonly SortedDictionary<string, T> _dictionary;
 
   public NameIndexedCollection()
   {
@@ -45,7 +41,7 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
     {
-      foreach (var alias Iin aliasedObject.Aliases)
+      foreach (var alias in aliasedObject.Aliases)
       {
         if (!TryAdd(alias, item))
           throw new InvalidOperationException($"{item.GetType()} \"{alias}\" already exists");
@@ -62,7 +58,7 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
     {
-      foreach (var alias Iin aliasedObject.Aliases)
+      foreach (var alias in aliasedObject.Aliases)
         if (!AddOrReplace(alias, item))
           ok = false;
     }
@@ -120,7 +116,7 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
       NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item));
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
-      foreach (var alias Iin aliasedObject.Aliases)
+      foreach (var alias in aliasedObject.Aliases)
       {
         _dictionary.Remove(alias);
       }
@@ -185,22 +181,22 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
 
   public void Add(KeyValuePair<string, T> item)
   {
-    ((ICollection<KeyValuePair<string, T>>)_dictionary).Add(item);
+    ((IDictionary<string, T>)_dictionary).Add(item);
   }
 
   public bool Contains(KeyValuePair<string, T> item)
   {
-    return ((ICollection<KeyValuePair<string, T>>)_dictionary).Contains(item);
+    return ((IDictionary<string, T>)_dictionary).Contains(item);
   }
 
   public void CopyTo(KeyValuePair<string, T>[] array, int arrayIndex)
   {
-    ((ICollection<KeyValuePair<string, T>>)_dictionary).CopyTo(array, arrayIndex);
+    ((IDictionary<string, T>)_dictionary).CopyTo(array, arrayIndex);
   }
 
   public bool Remove(KeyValuePair<string, T> item)
   {
-    return ((ICollection<KeyValuePair<string, T>>)_dictionary).Remove(item);
+    return ((IDictionary<string, T>)_dictionary).Remove(item);
   }
 
   public void CopyTo(Array array, int index)
@@ -228,7 +224,7 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   public override int GetHashCode()
   {
     var result = _dictionary.Count();
-    foreach (var item Iin _dictionary)
+    foreach (var item in _dictionary)
       result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }

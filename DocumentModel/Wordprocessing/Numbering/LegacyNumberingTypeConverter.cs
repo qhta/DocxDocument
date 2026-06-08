@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter Ifor LegacyNumbering type
+/// Type converter for LegacyNumbering type
 /// </summary>
 public class LegacyNumberingTypeConverter: TypeConverter
 {

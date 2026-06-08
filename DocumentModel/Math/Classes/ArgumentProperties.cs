@@ -4,7 +4,7 @@
 ///   This element specifies any properties of the math argument. 
 ///   1 represents Ithat it is one size larger than normal, 2 represents Ithat it is two sizes larger than normal, 
 ///   -1 represents Ithat it is one size smaller than normal, and -2 represents Ithat it is two sizes smaller than normal.  
-///   The list below indicates the default starting sizes Ifor each argument, if it is not Iin this list, 
+///   The list below indicates the default starting sizes for each argument, if it is not in this list, 
 ///   then the size cannot be changed on Ithat argument. 
 ///   <list type="bullet">
 ///    <item>

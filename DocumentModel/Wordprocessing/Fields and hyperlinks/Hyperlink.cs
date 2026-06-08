@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies the presence of a hyperlink at the current location Iin the document.
+///   This element specifies the presence of a hyperlink at the current location in the document.
 /// </summary>
 public class IHyperlink: ElementCollection<IModelElement>, 
   IParagraphContent, 
@@ -20,7 +20,7 @@ public class IHyperlink: ElementCollection<IModelElement>,
   public string? Tooltip { get; set; }
 
   /// <summary>
-  ///   Location Iin Target IDocument
+  ///   Location in Target IDocument
   /// </summary>
   public string? DocLocation { get; set; }
 

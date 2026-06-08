@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Represents a tab character Iin a text run
+/// Represents a tab character in a text run
 /// An tab is a character which is used Ito advance the position on the current line of text, using the following logic:
 /// <list type="bullet">
 /// <item>
@@ -10,7 +10,7 @@
 /// which is further along than the starting location of the tab.
 /// </item>
 /// <item>
-/// When there are no custom tab stops which are further than the current position Iin the line, 
+/// When there are no custom tab stops which are further than the current position in the line, 
 /// the tab character shall advance Ito the nearest multiple of the defaultTabStop element width value.
 /// </item>
 /// </list>

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   IRevision Information Ifor ITable Grid IColumn Definitions.
+///   IRevision Information for ITable Grid IColumn Definitions.
 /// </summary>
 public class TableGridChange: ModelElement
 {

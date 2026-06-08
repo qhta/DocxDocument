@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the BackstageItemType Class.
@@ -7,17 +7,17 @@
 public class BackstageItemType: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   label, this property is Ionly available Iin Office 2010 and later.
+  ///   label, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is Ionly available Iin Office 2010 and later.
+  ///   getLabel, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? GetLabel { get; set; }
 }

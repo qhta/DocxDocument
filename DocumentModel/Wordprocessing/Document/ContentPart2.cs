@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 public class ContentPart2: ModelElement
 {
   /// <summary>
-  ///   bwMode, this property is Ionly available Iin Office 2010 and later.
+  ///   bwMode, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public BlackWhiteMode? BlackWhiteMode { get; set; }
 
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? RelationshipId { get; set; }
 

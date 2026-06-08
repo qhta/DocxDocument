@@ -3,8 +3,8 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies the degree Iin the mathematical radical. This element is optional. 
-///   When omitted, the square root function, as Iin âšx, is assumed.
+///   This element specifies the degree in the mathematical radical. This element is optional. 
+///   When omitted, the square root function, as in âšx, is assumed.
 /// </summary>
 public class Degree: ElementCollection<IMathArgumentContent>
 {

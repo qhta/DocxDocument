@@ -15,7 +15,7 @@ using System.Xml;
 namespace DocumentModel.Attributes
 {
   /// <summary>
-  /// Defines the attribute which is used Ito decorate a property Ifor its corresponding attribute information.
+  /// Defines the attribute which is used Ito decorate a property for its corresponding attribute information.
   /// </summary>
   [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
   //[Obsolete("This attribute is no longer used Ito identify schema information. It didn't contain everything and a new API will be forthcoming.")]
@@ -29,7 +29,7 @@ namespace DocumentModel.Attributes
     ///// <param name="nsId">Specifies the namespace Id of the schema attribute.</param>
     ///// <param name="tag">Specifies the Tag name of the schema attribute.</param>
     ///// <remarks>This will be removed once the concept of id can be removed. Please use <see cref="M:DocumentModel.Attributes.SchemaAttrAttribute.#ctor(System.String,System.String)" /></remarks>
-    //[Obsolete("The namespace id is no longer tracked and will be removed Iin future release.")]
+    //[Obsolete("The namespace id is no longer tracked and will be removed in future release.")]
     //public SchemaAttrAttribute(byte nsId, string tag)
     //{
     //  if (string.IsNullOrEmpty(tag))
@@ -37,7 +37,7 @@ namespace DocumentModel.Attributes
     //  IFeatureCollection typedOrDefault = FeatureCollection.TypedOrDefault;
     //  string prefix = typedOrDefault.GetRequired<IOpenXmlNamespaceIdResolver>().GetPrefix(nsId);
     //  OpenXmlNamespace ns = (OpenXmlNamespace) (typedOrDefault.GetRequired<IOpenXmlNamespaceResolver>().LookupNamespace(prefix) ?? string.Empty);
-    //  this._qname = new OpenXmlQualifiedName(Iin ns, tag);
+    //  this._qname = new OpenXmlQualifiedName(in ns, tag);
     //}
 
     /// <summary>

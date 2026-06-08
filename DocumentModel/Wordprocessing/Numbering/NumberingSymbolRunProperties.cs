@@ -6,7 +6,7 @@
 public class NumberingSymbolRunProperties: BaseRunProperties
 {
   /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting Ifor this run. 
+  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
   /// </summary>
   public bool? ComplexScript { get; set; }
 

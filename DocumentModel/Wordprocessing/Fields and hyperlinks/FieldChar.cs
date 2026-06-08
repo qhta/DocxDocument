@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Represents a complex field character Iin the text run. A complex field character is a special character 
+///   Represents a complex field character in the text run. A complex field character is a special character 
 ///   which delimits the start and end of a complex field or separates its field codes from its current field result.
 ///   Two complex field characters are required: a start character, which specifies the beginning of a complex field within the document content; 
 ///   and an end character, which specifies the end of a complex field. This syntax allows multiple fields Ito be embedded within each other.

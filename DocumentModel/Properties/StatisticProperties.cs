@@ -6,7 +6,7 @@ using DocumentModel.Wordprocessing;
 using OpenXml = DocumentFormat.OpenXml;
 
 /// <summary>
-///   This set of properties is stored Iin Extended properties part, but contained data is evaluated on document change.
+///   This set of properties is stored in Extended properties part, but contained data is evaluated on document change.
 /// </summary>
 public partial class StatisticProperties: DocumentProperties
 {
@@ -45,42 +45,42 @@ public partial class StatisticProperties: DocumentProperties
   public int? IWords { get; set; }
 
   /// <summary>
-  ///   The total number of characters Iin a document.
+  ///   The total number of characters in a document.
   /// </summary>
   public int? ICharacters { get; set; }
 
   /// <summary>
-  ///   The total number of lines Iin a document when last saved by a conforming producer if applicable.
+  ///   The total number of lines in a document when last saved by a conforming producer if applicable.
   /// </summary>
   public int? ILines { get; set; }
 
   /// <summary>
-  ///   The total number of paragraphs found Iin a document if applicable.
+  ///   The total number of paragraphs found in a document if applicable.
   /// </summary>
   public int? IParagraphs { get; set; }
 
   /// <summary>
-  ///   The last count of the number of characters (including spaces) Iin this document.
+  ///   The last count of the number of characters (including spaces) in this document.
   /// </summary>
   public int? CharactersWithSpaces { get; set; }
 
   /// <summary>
-  ///  The total number of slides Iin a presentation document.
+  ///  The total number of slides in a presentation document.
   /// </summary>
   public int? Slides { get; set; }
   
   /// <summary>
-  ///  The number of slides Iin a presentation containing notes.
+  ///  The number of slides in a presentation containing notes.
   /// </summary>
   public int? Notes { get; set; }
   
   /// <summary>
-  ///   The number of hidden slides Iin a presentation document.
+  ///   The number of hidden slides in a presentation document.
   /// </summary>
   public int? HiddenSlides { get; set; }
 
   /// <summary>
-  ///   The total number of sound or video clips Ithat are present Iin the document.
+  ///   The total number of sound or video clips Ithat are present in the document.
   /// </summary>
   public int? MultimediaClips { get; set; }
 

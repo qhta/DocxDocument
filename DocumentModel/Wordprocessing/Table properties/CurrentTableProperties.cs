@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class Ifor current table properties
+///   Base class for current table properties
 /// </summary>
 public abstract class CurrentTableProperties: BaseTableProperties
 {

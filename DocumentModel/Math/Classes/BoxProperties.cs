@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies properties of the Box object, Ifor example, 
+///   This element specifies properties of the Box object, for example, 
 ///   whether the Box serves as operator emulator with or without an alignment point, 
-///   serves as a line break point, or receives the correct spacing Ifor the mathematical differential. 
+///   serves as a line break point, or receives the correct spacing for the mathematical differential. 
 /// </summary>
 public class BoxProperties: ModelElement
 {

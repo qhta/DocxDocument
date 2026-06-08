@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the EastAsianLayout Class.
@@ -12,17 +12,17 @@ public class EastAsianLayout: ModelElement
   public Int32? Id { get; set; }
 
   /// <summary>
-  ///   Two ILines Iin One
+  ///   Two ILines in One
   /// </summary>
   public bool? Combine { get; set; }
 
   /// <summary>
-  ///   Display Brackets Around Two ILines Iin One
+  ///   Display Brackets Around Two ILines in One
   /// </summary>
   public CombineBracketKind? CombineBrackets { get; set; }
 
   /// <summary>
-  ///   Horizontal Iin Vertical (Rotate Text)
+  ///   Horizontal in Vertical (Rotate Text)
   /// </summary>
   public bool? Vertical { get; set; }
 

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Numbering Definitions.
@@ -7,7 +7,7 @@
 public class Numbering: ModelElement
 {
   /// <summary>
-  /// Specifies Ito a consumer the progress Iin the last attempt made by the application 
+  /// Specifies Ito a consumer the progress in the last attempt made by the application 
   /// Ito remove unused abstract numbering definitions from a given document. 
   /// </summary>
   public HexInt? NumberingIdMacAtCleanup { get; set; }

@@ -27,12 +27,12 @@ public abstract class ExtBaseTableProperties: CurrentTableProperties
   public bool? BiDiVisual { get; set; }
 
   /// <summary>
-  ///   TableCaption, this property is Ionly available Iin Office 2010 and later..
+  ///   TableCaption, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public string? TableCaption { get; set; }
 
   /// <summary>
-  ///   TableDescription, this property is Ionly available Iin Office 2010 and later..
+  ///   TableDescription, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public string? TableDescription { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   Interface Ifor math elements Ithat can be included Iin Office Math
+///   Interface for math elements Ithat can be included in Office Math
 /// </summary>
 public interface IOfficeMathContent: IModelElement
 {

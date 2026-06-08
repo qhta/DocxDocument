@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies a reference Ito XML content Iin a format not defined by ECMA-376. 
+///   This element specifies a reference Ito XML content in a format not defined by ECMA-376. 
 ///   This part allows the native use of other commonly used interchange formats, such as:  
 ///   <list type="bullet">
 ///    <item>

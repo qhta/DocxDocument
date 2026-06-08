@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Type converter Ifor EMU type.
+/// Type converter for EMU type.
 /// </summary>
 internal class EMUTypeConverter : TypeConverter
 {

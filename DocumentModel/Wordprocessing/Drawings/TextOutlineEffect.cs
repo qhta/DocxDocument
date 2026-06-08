@@ -8,22 +8,22 @@ namespace DocumentModel.Wordprocessing;
 public class TextOutlineEffect: TypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   w, this property is Ionly available Iin Office 2010 and later.
+  ///   w, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? LineWidth { get; set; }
 
   /// <summary>
-  ///   cap, this property is Ionly available Iin Office 2010 and later.
+  ///   cap, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public LineCapKind? CapType { get; set; }
 
   /// <summary>
-  ///   cmpd, this property is Ionly available Iin Office 2010 and later.
+  ///   cmpd, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public CompoundLineKind? Compound { get; set; }
 
   /// <summary>
-  ///   algn, this property is Ionly available Iin Office 2010 and later.
+  ///   algn, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
 

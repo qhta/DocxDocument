@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class Ifor ParagraphMarkRunProperties classes.
+///   Base class for ParagraphMarkRunProperties classes.
 ///   Contains  these common properties, which are not applied Ito <see cref="ExtBaseRunProperties"/>
 /// </summary>
 public abstract class BaseParagraphMarkRunProperties: ExtBaseRunProperties
@@ -27,12 +27,12 @@ public abstract class BaseParagraphMarkRunProperties: ExtBaseRunProperties
   public TrackChangeType? MoveTo { get; set; }
 
   /// <summary>
-  /// Specifies Ithat the parent object has been inserted Iin conflict with edits made by other users.
+  /// Specifies Ithat the parent object has been inserted in conflict with edits made by other users.
   /// </summary>
   public TrackChangeType2? ConflictInsertion { get; set; }
 
   /// <summary>
-  /// /Specifies Ithat the parent object has been deleted Iin conflict with edits made by other users.
+  /// /Specifies Ithat the parent object has been deleted in conflict with edits made by other users.
   /// </summary>
   public TrackChangeType2? ConflictDeletion { get; set; }
 

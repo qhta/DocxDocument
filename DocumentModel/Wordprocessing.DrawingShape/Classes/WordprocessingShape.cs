@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the WordprocessingShape Class.
@@ -7,7 +7,7 @@
 public class WordprocessingShape: ModelElement
 {
   /// <summary>
-  ///   normalEastAsianFlow, this property is Ionly available Iin Office 2010 and later.
+  ///   normalEastAsianFlow, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public bool? NormalEastAsianFlow { get; set; }
 

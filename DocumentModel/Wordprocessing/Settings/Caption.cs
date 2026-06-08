@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Single Caption Type Definition.
@@ -17,12 +17,12 @@ public class Caption: ModelElement
   public CaptionPositionKind? Position { get; set; }
 
   /// <summary>
-  ///   Include Chapter Number Iin IField Ifor Caption
+  ///   Include Chapter Number in IField for Caption
   /// </summary>
   public bool? ChapterNumber { get; set; }
 
   /// <summary>
-  ///   IStyle Ifor Chapter Headings
+  ///   IStyle for Chapter Headings
   /// </summary>
   public Int32? Heading { get; set; }
 

@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Flags Ito code ConditionalFormatStyle Val property.
-/// Binary values are declared as Iin OpenXml
+/// Binary values are declared as in OpenXml
 /// </summary>
 [Flags]
 public enum TableLookFlags

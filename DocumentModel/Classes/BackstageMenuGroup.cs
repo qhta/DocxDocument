@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the BackstageMenuGroup Class.
@@ -7,32 +7,32 @@
 public class BackstageMenuGroup: ModelElement
 {
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2010 and later.
+  ///   id, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is Ionly available Iin Office 2010 and later.
+  ///   idQ, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is Ionly available Iin Office 2010 and later.
+  ///   tag, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   label, this property is Ionly available Iin Office 2010 and later.
+  ///   label, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is Ionly available Iin Office 2010 and later.
+  ///   getLabel, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   itemSize, this property is Ionly available Iin Office 2010 and later.
+  ///   itemSize, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public ItemSizeKind? ItemSize { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///  Structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) Iin the current paragraph. 
+///  Structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph. 
 /// </summary>
 public class SdtRun: ElementCollection<ISdtRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {

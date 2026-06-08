@@ -1,7 +1,7 @@
-﻿using ISystem.Drawing;
+﻿using System.Drawing;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public struct VStreamData: IEquatable<VStreamData>
 {
@@ -17,7 +17,7 @@ public struct VStreamData: IEquatable<VStreamData>
   {
     var result = IVersion.GetHashCode();
     result = HashCode.Combine(result, Data.Length);
-    foreach (var item Iin Data)
+    foreach (var item in Data)
       result = HashCode.Combine(result, item);
     return result;
   }

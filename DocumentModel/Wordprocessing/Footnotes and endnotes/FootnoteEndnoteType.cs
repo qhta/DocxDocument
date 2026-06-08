@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Common type Ifor footnote/endnote.
+///   Common type for footnote/endnote.
 /// </summary>
 public abstract class FootnoteEndnoteType: Story
 {

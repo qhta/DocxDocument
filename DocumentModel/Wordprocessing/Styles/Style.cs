@@ -107,7 +107,7 @@ public partial class IStyle : ModelElement, IEquatable<IStyle>
   public Boolean IsPersonalReply { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor IStyle Definition.
+  ///   IRevision Identifier for IStyle Definition.
   /// </summary>
    public HexInt? Rsid { get; set; }
 

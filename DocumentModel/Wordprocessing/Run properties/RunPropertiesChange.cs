@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   RunPropertiesChange class used Iin <see cref="RunProperties"/>.
+///   RunPropertiesChange class used in <see cref="RunProperties"/>.
 ///   Represents <see cref="PreviousRunProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class RunPropertiesChange: ModelElement

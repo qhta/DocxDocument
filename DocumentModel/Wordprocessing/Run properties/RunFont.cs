@@ -6,7 +6,7 @@
 public struct RunFont
 {
   /// <summary>
-  /// Default constructor. Needed Ifor deserialization.
+  /// Default constructor. Needed for deserialization.
   /// </summary>
   public RunFont(){ }
 
@@ -16,7 +16,7 @@ public struct RunFont
   public string? Name { get; set; }
 
   /// <summary>
-  /// Specifies a theme font Ifor this font.
+  /// Specifies a theme font for this font.
   /// </summary>
   public ThemeFontKind? Theme { get; set; }
 

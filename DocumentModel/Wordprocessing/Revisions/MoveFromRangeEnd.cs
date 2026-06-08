@@ -2,7 +2,7 @@
 
 /// <summary>
 ///   This element specifies the end of a region whose move source contents are part of a single named move. 
-///   When a move source is stored as a revision Iin a WordprocessingML document, two pieces of information shall be stored about Ithat move source:
+///   When a move source is stored as a revision in a WordprocessingML document, two pieces of information shall be stored about Ithat move source:
 ///   <list type="bullet">
 ///     <item>
 ///       A set of pieces of content which were moved - both inline-level content (Â§17.13.5.22) and paragraphs (Â§17.13.5.21) 
@@ -15,7 +15,7 @@
 ///   </list>
 ///   This element defines the end of the latter piece of the move revision data - the container. 
 ///   The Id attribute on this element shall be used Ito link this element 
-///   with the corresponding start of a move source container Iin the document. 
+///   with the corresponding start of a move source container in the document. 
 /// </summary>
 public class MoveFromRangeEnd: MarkupRangeElement
 {

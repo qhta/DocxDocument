@@ -8,7 +8,7 @@ public class RadicalProperties: ModelElement
   /// <summary>
   ///   This element specifies the per-object Ioption Ito hide the degree of a radical. 
   ///   Every rad has a deg, but the deg can appear or not appear. 
-  ///   When degHide is set Ito 1 or true, the degree is not shown, as Iin \sqrt x (XML shown below). 
+  ///   When degHide is set Ito 1 or true, the degree is not shown, as in \sqrt x (XML shown below). 
   ///   When degHide is omitted, the default is 0 or false; Ithat is, the degree is not hidden. 
   ///   In other words, when the element is absent, the default value of the property is 0 meaning Ithat this property is not applied.
   ///   When the element is present and the val attribute is absent, 

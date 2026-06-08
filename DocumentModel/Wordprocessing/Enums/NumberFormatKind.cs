@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the NumberFormatValues enumeration.
@@ -63,7 +63,7 @@ public enum NumberFormatKind
   IdeographDigital,
 
   /// <summary>
-  ///   Japanese Counting ISystem.
+  ///   Japanese Counting System.
   /// </summary>
   JapaneseCounting,
 
@@ -93,12 +93,12 @@ public enum NumberFormatKind
   JapaneseLegal,
 
   /// <summary>
-  ///   Japanese Digital Ten Thousand Counting ISystem.
+  ///   Japanese Digital Ten Thousand Counting System.
   /// </summary>
   JapaneseDigitalTenThousand,
 
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   DecimalEnclosedCircle,
 
@@ -143,17 +143,17 @@ public enum NumberFormatKind
   DecimalEnclosedFullstop,
 
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin Parenthesis.
+  ///   Decimal Numbers Enclosed in Parenthesis.
   /// </summary>
   DecimalEnclosedParen,
 
   /// <summary>
-  ///   Decimal Numbers Enclosed Iin a Circle.
+  ///   Decimal Numbers Enclosed in a Circle.
   /// </summary>
   DecimalEnclosedCircleChinese,
 
   /// <summary>
-  ///   Ideographs Enclosed Iin a Circle.
+  ///   Ideographs Enclosed in a Circle.
   /// </summary>
   IdeographEnclosedCircle,
 
@@ -173,7 +173,7 @@ public enum NumberFormatKind
   IdeographZodiacTraditional,
 
   /// <summary>
-  ///   Taiwanese Counting ISystem.
+  ///   Taiwanese Counting System.
   /// </summary>
   TaiwaneseCounting,
 
@@ -183,17 +183,17 @@ public enum NumberFormatKind
   IdeographLegalTraditional,
 
   /// <summary>
-  ///   Taiwanese Counting Thousand ISystem.
+  ///   Taiwanese Counting Thousand System.
   /// </summary>
   TaiwaneseCountingThousand,
 
   /// <summary>
-  ///   Taiwanese Digital Counting ISystem.
+  ///   Taiwanese Digital Counting System.
   /// </summary>
   TaiwaneseDigital,
 
   /// <summary>
-  ///   Chinese Counting ISystem.
+  ///   Chinese Counting System.
   /// </summary>
   ChineseCounting,
 
@@ -203,17 +203,17 @@ public enum NumberFormatKind
   ChineseLegalSimplified,
 
   /// <summary>
-  ///   Chinese Counting Thousand ISystem.
+  ///   Chinese Counting Thousand System.
   /// </summary>
   ChineseCountingThousand,
 
   /// <summary>
-  ///   Korean Digital Counting ISystem.
+  ///   Korean Digital Counting System.
   /// </summary>
   KoreanDigital,
 
   /// <summary>
-  ///   Korean Counting ISystem.
+  ///   Korean Counting System.
   /// </summary>
   KoreanCounting,
 
@@ -223,7 +223,7 @@ public enum NumberFormatKind
   KoreanLegal,
 
   /// <summary>
-  ///   Korean Digital Counting ISystem Alternate.
+  ///   Korean Digital Counting System Alternate.
   /// </summary>
   KoreanDigital2,
 
@@ -288,7 +288,7 @@ public enum NumberFormatKind
   HindiNumbers,
 
   /// <summary>
-  ///   Hindi Counting ISystem.
+  ///   Hindi Counting System.
   /// </summary>
   HindiCounting,
 
@@ -303,7 +303,7 @@ public enum NumberFormatKind
   ThaiNumbers,
 
   /// <summary>
-  ///   Thai Counting ISystem.
+  ///   Thai Counting System.
   /// </summary>
   ThaiCounting,
 

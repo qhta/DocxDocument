@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 internal class StringListTypeConverter : TypeConverter
 {
@@ -36,7 +36,7 @@ internal class StringListTypeConverter : TypeConverter
       str = str.ReplaceStart("\"", "");
       str = str.ReplaceEnd("\"", "");
       var ss = str.Split('\t');
-      foreach (var s Iin ss)
+      foreach (var s in ss)
         result.Add(s);
       return result;
     }

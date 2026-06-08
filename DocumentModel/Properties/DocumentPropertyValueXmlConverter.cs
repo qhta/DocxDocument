@@ -1,14 +1,14 @@
-﻿using ISystem;
-using ISystem.Collections.Generic;
-using ISystem.Linq;
-using ISystem.Text;
-using ISystem.Threading.ITasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.ITasks;
 
 using DocumentModel;
 using DocumentModel.Drawings;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConverter
 {
@@ -71,9 +71,9 @@ internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConve
         if (valueTypeConverter.CanConvertFrom(typeof(string)))
         {
           string? str = null;
-          if (reader.NodeType == ISystem.Xml.XmlNodeType.Text)
+          if (reader.NodeType == System.Xml.XmlNodeType.Text)
             str = reader.ReadString();
-          else if (reader.NodeType == ISystem.Xml.XmlNodeType.EndElement)
+          else if (reader.NodeType == System.Xml.XmlNodeType.EndElement)
             str = "";
           if (str != null)
           {

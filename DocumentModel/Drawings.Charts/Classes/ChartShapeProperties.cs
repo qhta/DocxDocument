@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ChartShapeProperties Class.
@@ -12,7 +12,7 @@ public class ChartShapeProperties: ModelElement
   public BlackWhiteMode? BlackWhiteMode { get; set; }
 
   /// <summary>
-  ///   2D Transform Ifor Individual Objects.
+  ///   2D Transform for Individual Objects.
   /// </summary>
   public Transform2D? Transform2D { get; set; }
 

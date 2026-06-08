@@ -21,7 +21,7 @@ public class Schema: ModelElement
   public string? SchemaLocation { get; set; }
 
   /// <summary>
-  /// Modified Ifor tests.
+  /// Modified for tests.
   /// </summary>
   /// <returns></returns>
   public override string ToString()

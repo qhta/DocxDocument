@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   IDocument Editing Restrictions.
@@ -77,27 +77,27 @@ public class DocumentProtection: ModelElement
   public Base64Binary? Hash { get; set; }
 
   /// <summary>
-  ///   Salt Ifor Password Verifier
+  ///   Salt for Password Verifier
   /// </summary>
   public Base64Binary? Salt { get; set; }
 
   /// <summary>
-  ///   algorithmName, this property is Ionly available Iin Office 2010 and later.
+  ///   algorithmName, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public string? AlgorithmName { get; set; }
 
   /// <summary>
-  ///   hashValue, this property is Ionly available Iin Office 2010 and later.
+  ///   hashValue, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Base64Binary? HashValue { get; set; }
 
   /// <summary>
-  ///   saltValue, this property is Ionly available Iin Office 2010 and later.
+  ///   saltValue, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Base64Binary? SaltValue { get; set; }
 
   /// <summary>
-  ///   spinCount, this property is Ionly available Iin Office 2010 and later.
+  ///   spinCount, this property is Ionly available in Office 2010 and later.
   /// </summary>
   public Int32? SpinCount { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Represents a hyphen Iin a text run. 
+///   Represents a hyphen in a text run. 
 ///   There are two complementary ways Ito specific a character code of the hyphen: 
 ///   with enum typed HyphenKind or with a text string.
 /// </summary>

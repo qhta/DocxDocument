@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Preset Shadow.
@@ -37,7 +37,7 @@ public class PresetShadow: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   ISystem Color.
+  ///   System Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

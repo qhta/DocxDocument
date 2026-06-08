@@ -1,8 +1,8 @@
-﻿using ISystem.ComponentModel;
+﻿using System.ComponentModel;
 using DocumentModel;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
 public struct HexChar : IConvertible, IEquatable<HexChar>

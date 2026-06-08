@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Office Data ISource Object Settings.
@@ -22,7 +22,7 @@ public class DataSourceObject: ModelElement
   public RelationshipType? SourceReference { get; set; }
 
   /// <summary>
-  ///   IColumn Delimiter Ifor Data ISource.
+  ///   IColumn Delimiter for Data ISource.
   /// </summary>
   public UInt32? ColumnDelimiter { get; set; }
 

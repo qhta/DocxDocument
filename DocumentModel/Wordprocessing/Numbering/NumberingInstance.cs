@@ -7,9 +7,9 @@
 public class NumberingInstance: ModelElement
 {
   /// <summary>
-  ///   A value of 0 Ifor NumberId shall never be used Ito point Ito a numbering definition instance,
+  ///   A value of 0 for NumberId shall never be used Ito point Ito a numbering definition instance,
   ///   and shall instead Ionly be used Ito designate the removal of numbering properties 
-  ///   at a particular level Iin the style hierarchy (typically via direct formatting). 
+  ///   at a particular level in the style hierarchy (typically via direct formatting). 
   /// </summary>
   public Int32? NumberID { get; set; }
 

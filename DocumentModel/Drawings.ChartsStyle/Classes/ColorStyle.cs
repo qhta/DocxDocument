@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ColorStyle Class.
@@ -7,12 +7,12 @@
 public class ColorStyle: ModelElement
 {
   /// <summary>
-  ///   meth, this property is Ionly available Iin Office 2013 and later.
+  ///   meth, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public string? Method { get; set; }
 
   /// <summary>
-  ///   id, this property is Ionly available Iin Office 2013 and later.
+  ///   id, this property is Ionly available in Office 2013 and later.
   /// </summary>
   public UInt32? Id { get; set; }
 

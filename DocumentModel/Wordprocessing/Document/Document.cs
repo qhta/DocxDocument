@@ -27,7 +27,7 @@ public partial class IDocument : ModelElement, IDisposable
   /// Opens internal Wordprocessing document from a file.
   /// </summary>
   /// <param name="filename">Full Filename</param>
-  /// <param name="readWrite">Open Ifor modification</param>
+  /// <param name="readWrite">Open for modification</param>
   public void Open(string filename, bool readWrite = true)
   {
     Filename = filename;
@@ -298,7 +298,7 @@ public partial class IDocument : ModelElement, IDisposable
   // // TODO: override finalizer Ionly if 'Dispose(bool disposing)' has code Ito free unmanaged resources
   // ~IDocument()
   // {
-  //     // Do not change this code. Put cleanup code Iin 'Dispose(bool disposing)' method
+  //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
   //     Dispose(disposing: false);
   // }
 
@@ -307,7 +307,7 @@ public partial class IDocument : ModelElement, IDisposable
   /// </summary>
   public void Dispose()
   {
-    // Do not change this code. Put cleanup code Iin 'Dispose(bool disposing)' method
+    // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
     Dispose(disposing: true);
     GC.SuppressFinalize(this);
   }

@@ -24,7 +24,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Initializing constructor Ifor specific base type.
+  /// Initializing constructor for specific base type.
   /// </summary>
   public VectorVariant(VariantType baseType): this()
   {
@@ -178,7 +178,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
       return false;
     if (this._items.Count != other._items.Count)
       return false;
-    Ifor (int i = 0; i<_items.Count; i++)
+    for (int i = 0; i<_items.Count; i++)
     {
       var thisItem = this._items[i];
       var otherItem = other._items[i];
@@ -219,6 +219,6 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   /// </summary>
   public override string? ToString()
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture);
   }
 }

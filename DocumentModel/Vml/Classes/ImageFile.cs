@@ -3,7 +3,7 @@ using DocumentModel.Wordprocessing.Vml;
 using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Image File.
@@ -121,7 +121,7 @@ public class ImageFile: ModelElement, IEmbeddedObjectContent
   public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
 
   /// <summary>
-  ///   Allow Iin ITable ICell
+  ///   Allow in ITable ICell
   /// </summary>
   public bool? AllowInCell { get; set; }
 

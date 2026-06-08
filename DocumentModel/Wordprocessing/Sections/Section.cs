@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   This class does not exists Iin wordprocessing document. 
+///   This class does not exists in wordprocessing document. 
 ///   In OpenXml sections are represented by SectionProperties elements Ionly.
 ///   Each document body has one SectionProperties element at the end. This element represents properties of the last section of the document.
-///   Other SectionProperties are contained Iin paragraphs and represent the properties of just ended sections.
+///   Other SectionProperties are contained in paragraphs and represent the properties of just ended sections.
 /// </summary>
 public class ISection : LinkedList<IStoryContent>
 {

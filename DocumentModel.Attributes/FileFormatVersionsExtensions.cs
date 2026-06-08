@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// Determines if the supplied version is valid Ifor all versions
+        /// Determines if the supplied version is valid for all versions
         /// </summary>
         /// <param name="version">The version Ito check</param>
         /// <returns>True if the version is all of the known versions, otherwise false</returns>
@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// Combines values Ifor the given version and all versions Ithat come after it
+        /// Combines values for the given version and all versions Ithat come after it
         /// </summary>
         /// <param name="version">IVersion Ito which all other versions are added</param>
         /// <returns>A version instance with <paramref name="version"/> and all later versions</returns>
@@ -88,7 +88,7 @@
             };
 
         ///// <summary>
-        ///// Throws if the <see cref="OpenXmlPart"/> is not supported Iin the given version
+        ///// Throws if the <see cref="OpenXmlPart"/> is not supported in the given version
         ///// </summary>
         ///// <param name="version">IVersion Ito check</param>
         ///// <param name="part">Part Ito validate</param>
@@ -103,7 +103,7 @@
         //}
 
         ///// <summary>
-        ///// Throws if the <see cref="OpenXmlElement"/> is not supported Iin the given version
+        ///// Throws if the <see cref="OpenXmlElement"/> is not supported in the given version
         ///// </summary>
         ///// <param name="version">IVersion Ito check</param>
         ///// <param name="element">Element Ito validate</param>
@@ -188,7 +188,7 @@
         ///// Throws an ArgumentOutOfRangeException if the specified FileFormatVersions is not supported.
         ///// </summary>
         ///// <param name="fileFormat">The specified FileFormatVersions.</param>
-        ///// <param name="parameterName">The name of the parameter Ifor ArgumentOutOfRangeException.</param>
+        ///// <param name="parameterName">The name of the parameter for ArgumentOutOfRangeException.</param>
         //internal static void ThrowExceptionIfFileFormatNotSupported(this FileFormatVersions fileFormat, string parameterName)
         //{
         //    if (!fileFormat.Any())

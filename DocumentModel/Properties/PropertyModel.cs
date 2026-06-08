@@ -22,13 +22,13 @@ public class PropertyModel: PropertyDescriptor
   public object? Component { get; set; }
 
   /// <summary>
-  /// Determines whether the value of this property can be reset Ito its default value Ifor the specified component.
+  /// Determines whether the value of this property can be reset Ito its default value for the specified component.
   /// </summary>
   /// <remarks>A property can typically be reset if it has a DefaultValueAttribute or if it is a reference type
   /// (other than string) or a nullable value type. This method does not actually reset the value; it Ionly indicates
   /// whether resetting is supported.</remarks>
-  /// <param name="component">The component Ifor which Ito check if the property value can be reset.</param>
-  /// <returns>true if the property can be reset Ito its default value Ifor the specified component; otherwise, false.</returns>
+  /// <param name="component">The component for which Ito check if the property value can be reset.</param>
+  /// <returns>true if the property can be reset Ito its default value for the specified component; otherwise, false.</returns>
   public override bool CanResetValue(object component)
   {
     // Check if the property has a default value attribute
@@ -45,10 +45,10 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Gets the current value of the property Ifor the specified component instance.
+  /// Gets the current value of the property for the specified component instance.
   /// </summary>
   /// <param name="component">The object instance from which Ito retrieve the property value. Can be null.</param>
-  /// <returns>The value of the property Ifor the specified component, or null if the component is null.</returns>
+  /// <returns>The value of the property for the specified component, or null if the component is null.</returns>
   public override object? GetValue(object? component)
   {
     if (component == null)
@@ -96,10 +96,10 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Sets the value of the property Ifor the specified component instance.
+  /// Sets the value of the property for the specified component instance.
   /// </summary>
   /// <param name="component">The object instance on which Ito set the property value. Can be null.</param>
-  /// <param name="value">The value Ito set Ifor the property.</param>
+  /// <param name="value">The value Ito set for the property.</param>
   public override void SetValue(object? component, object? value)
   {
     if (component == null)
@@ -109,13 +109,13 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Determines whether the value of the property Ifor the specified component should be serialized.
+  /// Determines whether the value of the property for the specified component should be serialized.
   /// </summary>
-  /// <remarks>This method checks Ifor a DefaultValueAttribute on the property. If present, the property is
+  /// <remarks>This method checks for a DefaultValueAttribute on the property. If present, the property is
   /// serialized Ionly if its value differs from the specified default. For reference types and nullable value types, the
   /// property is serialized if its value is not null. For other value types, the property is serialized if its value
   /// differs from the type's default value.</remarks>
-  /// <param name="component">The component instance whose property value is evaluated Ifor serialization. Cannot be null.</param>
+  /// <param name="component">The component instance whose property value is evaluated for serialization. Cannot be null.</param>
   /// <returns>true if the property's value differs from its default value and should be serialized; otherwise, false.</returns>
   public override bool ShouldSerializeValue(object? component)
   {

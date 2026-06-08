@@ -7,9 +7,9 @@
 ///   Ithat can be vertically justified as a unit with respect Ito surrounding text on the line. 
 ///   Alignment of multiple points within each run of mathematical text can occur within the array 
 ///   through the use of align values and spacer values. An align value is an ampersand within the array 
-///   which acts as an alignment point (as described Iin Â§22.1.2.3). A spacer value is an ampersand within the array 
-///   which designates where space can be added Iin order Ito align the align values on different rows of the array. 
-///   Within each argument Iin the array, every odd ampersand is an align value and every even ampersand is a spacer value 
+///   which acts as an alignment point (as described in Â§22.1.2.3). A spacer value is an ampersand within the array 
+///   which designates where space can be added in order Ito align the align values on different rows of the array. 
+///   Within each argument in the array, every odd ampersand is an align value and every even ampersand is a spacer value 
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
 public class EquationArray: ElementCollection<Argument>, ICommonMathContent

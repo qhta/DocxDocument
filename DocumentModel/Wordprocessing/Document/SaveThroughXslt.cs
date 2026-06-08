@@ -7,7 +7,7 @@ public class SaveThroughXslt: ExternalFile
 {
 
   /// <summary>
-  ///   Local Identifier Ifor XSL Transform
+  ///   Local Identifier for XSL Transform
   /// </summary>
   public string? SolutionId { get; set; }
 }

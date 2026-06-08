@@ -20,26 +20,26 @@ public class Run : ElementCollection<IRunContent>,
   public Run() { }
 
   /// <summary>
-  /// Constructor Ifor short content creation.
+  /// Constructor for short content creation.
   /// </summary>
   public Run(params IRunContent[] content) 
   { 
-    foreach (var contentItem Iin content) 
+    foreach (var contentItem in content) 
       Add(contentItem);
   }
 
   /// <summary>
-  ///   IRevision Identifier Ifor Run Properties
+  ///   IRevision Identifier for Run Properties
   /// </summary>
   public HexInt? RsidRunProperties { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor Run Deletion
+  ///   IRevision Identifier for Run Deletion
   /// </summary>
   public HexInt? RsidRunDeletion { get; set; }
 
   /// <summary>
-  ///   IRevision Identifier Ifor Run
+  ///   IRevision Identifier for Run
   /// </summary>
   public HexInt? RsidRunAddition { get; set; }
 

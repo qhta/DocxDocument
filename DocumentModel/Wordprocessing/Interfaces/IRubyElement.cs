@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor Ruby elements.
+///   Interface for Ruby elements.
 /// </summary>
 public interface IRubyElement : IModelElement
 {

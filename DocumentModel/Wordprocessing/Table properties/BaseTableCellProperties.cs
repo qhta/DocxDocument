@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class Ifor all TableCellProperties classes.
+///   Base class for all TableCellProperties classes.
 ///   Contains common properties.
 /// </summary>
 public class BaseTableCellProperties: ModelElement

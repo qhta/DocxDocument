@@ -26,7 +26,7 @@ public class Glow: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   ISystem Color.
+  ///   System Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

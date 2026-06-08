@@ -2,7 +2,7 @@
 
 /// <summary>
 ///   Default IParagraph Properties class.
-///   Used Iin <see cref="DocDefaults"/>.
+///   Used in <see cref="DocDefaults"/>.
 /// </summary>
 public class DefaultParagraphProperties: BaseParagraphProperties
 {

@@ -23,9 +23,9 @@ public class HyperlinkInfo : ModelElement
   /// <summary>
   ///  The lower 16 bits specify hyperlink type with one of the possible values:
   ///  0 - Graphic shown as background of document
-  ///  1 - Graphic shown Iin document
+  ///  1 - Graphic shown in document
   ///  2 - Graphic used Ito fill a shape
-  ///  3 - Graphic used Ifor shape outline
+  ///  3 - Graphic used for shape outline
   ///  4 - IHyperlink attached Ito a shape
   ///  5 - IHyperlink attached Ito a WordprocessingML  field
   ///  6 - IHyperlink attached Ito a SpreadsheetML  range

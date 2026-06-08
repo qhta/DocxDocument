@@ -3,7 +3,7 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface Ifor marker elements Ithat can be included Iin many document elements.
+///   Interface for marker elements Ithat can be included in many document elements.
 /// </summary>
 public interface ICommonContent: IStoryContent, IParagraphContent, ITableContent, ITableRowContent, ITableCellContent, 
   ISdtBlockContent,

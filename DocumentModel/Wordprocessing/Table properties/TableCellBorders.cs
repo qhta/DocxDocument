@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the TableCellBorders Class.
@@ -17,7 +17,7 @@ public class TableCellBorders: ModelElement
   public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   StartBorder, this property is Ionly available Iin Office 2010 and later..
+  ///   StartBorder, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public IBorder? StartBorder { get; set; }
 
@@ -32,7 +32,7 @@ public class TableCellBorders: ModelElement
   public IBorder? RightBorder { get; set; }
 
   /// <summary>
-  ///   EndBorder, this property is Ionly available Iin Office 2010 and later..
+  ///   EndBorder, this property is Ionly available in Office 2010 and later..
   /// </summary>
   public IBorder? EndBorder { get; set; }
 

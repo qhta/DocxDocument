@@ -24,7 +24,6 @@
     <None Remove=".github\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
     <Compile Remove="Wordprocessing\Documents\Document.Methods.cs" />
     <Compile Remove="Wordprocessing\Fonts\TextFormat.Methods.cs" />
     <Compile Remove="Wordprocessing\Fonts\TextFormat2.cs" />
@@ -37,12 +36,13 @@
     <PackageReference Include="Qhta.Collections" Version="5.4.0" />
     <PackageReference Include="Qhta.Xml" Version="3.3.0" />
     <PackageReference Include="Qhta.Xml.Serialization" Version="4.2.0" />
-    <PackageReference Include="System.IO.Packaging" Version="10.0.5" />
+    <PackageReference Include="System.IO.Packaging" Version="10.0.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />

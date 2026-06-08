@@ -18,32 +18,32 @@ public struct Hps : IComparable<Hps>
 
   /// <summary>
   /// Constructor converting from string.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public Hps(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * HpsInMM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HpsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * HpsInCM;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HpsInCM;
       Value = (Int64)val;
     }
-    else if (str.EndsWith("Iin"))
+    else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * HpsInInch;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HpsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * HpsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * HpsInPoint;
       Value = (Int64)val;
     }
     else Value = Int32.Parse(str);
@@ -115,27 +115,27 @@ public struct Hps : IComparable<Hps>
 
   /// <summary>
   /// Converts double value Ito string using unit.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(string? unit)
   {
-    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, string? unit)
   {
-    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// Converts double value Ito string using unit, specific precision (fractional digits count),
   /// and format provider Ito determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -146,7 +146,7 @@ public struct Hps : IComparable<Hps>
         return (Value / HpsInMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / HpsInCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / HpsInInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / HpsInPoint).ToString(format, provider) + unit;
@@ -157,7 +157,7 @@ public struct Hps : IComparable<Hps>
   /// <summary>
   /// Converts double value Ito string using unit
   /// and format provider Ito determine digits separator.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
   {
@@ -167,7 +167,7 @@ public struct Hps : IComparable<Hps>
         return (Value / HpsInMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / HpsInCM).ToString(provider) + unit;
-      if (unit.EndsWith("Iin"))
+      if (unit.EndsWith("in"))
         return (Value / HpsInInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / HpsInPoint).ToString(provider) + unit;
@@ -175,7 +175,7 @@ public struct Hps : IComparable<Hps>
     return Value.ToString();
   }
 
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator Hps(string value) { return new Hps(value); }
   public static implicit operator string(Hps value) { return value.Value.ToString(); }
   public static implicit operator Hps(Int16 value) { return new Hps(value); }

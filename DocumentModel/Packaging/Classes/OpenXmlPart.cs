@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Represents an abstract base class Ifor all OpenXml parts.
+///   Represents an abstract base class for all OpenXml parts.
 /// </summary>
 public class OpenXmlPart: ModelElement
 {
   /// <summary>
-  ///   Gets the internal part path Iin the package.
+  ///   Gets the internal part path in the package.
   /// </summary>
   public Uri? Uri { get; set; }
 
   /// <summary>
-  ///   Gets the content type (MIME type) of the content data Iin the part.
+  ///   Gets the content type (MIME type) of the content data in the part.
   /// </summary>
   public string? ContentType { get; set; }
 

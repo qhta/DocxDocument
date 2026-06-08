@@ -3,7 +3,7 @@
 namespace DocumentModel.Math;
 
 /// <summary>
-///   Interface Ifor math elements Ithat can be included Iin many other elements.
+///   Interface for math elements Ithat can be included in many other elements.
 /// </summary>
 public interface ICommonMathContent: 
   IParagraphContent, 

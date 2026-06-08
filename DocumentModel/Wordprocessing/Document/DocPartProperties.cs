@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Glossary IDocument Entry Properties.
@@ -32,7 +32,7 @@ public class DocPartProperties: ModelElement
   public Behaviors? Behaviors { get; set; }
 
   /// <summary>
-  ///   Description Ifor Entry.
+  ///   Description for Entry.
   /// </summary>
   public string? Description { get; set; }
 

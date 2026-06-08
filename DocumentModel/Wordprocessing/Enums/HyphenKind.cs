@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the hyphen enumeration Ifor <see cref="Hyphen"/> element
+///   Defines the hyphen enumeration for <see cref="Hyphen"/> element
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum HyphenKind
@@ -14,7 +14,7 @@ public enum HyphenKind
   HyphenMinus = 0x02D,
 
   /// <summary>
-  ///   Invisible, optional hypen used Ifor line-breaking.
+  ///   Invisible, optional hypen used for line-breaking.
   ///   Code: 00AD
   /// </summary>
   SoftHyphen = 0x0AD,
@@ -45,14 +45,14 @@ public enum HyphenKind
 
   /// <summary>
   ///   Unicode dash which is one em wide, a length Ithat varies depending on the font size. 
-  ///   One em is the same length as the font's height (which is typically measured Iin points). 
+  ///   One em is the same length as the font's height (which is typically measured in points). 
   ///   Code: 2014
   /// </summary>
   EmDash = 0x2014,
 
   /// <summary>
   ///   Unicode dash also known as a quotation dash, which is used Ito introduce quoted text. 
-  ///   This is the standard method of printing dialogue Iin some languages. 
+  ///   This is the standard method of printing dialogue in some languages. 
   ///   Code: 2014
   /// </summary>
   LongDash = 0x2015,

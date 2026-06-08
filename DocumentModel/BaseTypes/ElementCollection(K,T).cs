@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 public class ElementCollection<K, T> : ElementCollection<T>, ICollection, ICollection<T>, IList<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
   where T : IUniqueModelElement<K> where K : notnull
 {
@@ -8,12 +8,12 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
 
   public ElementCollection(IEnumerable<T> other) : base(other)
   {
-    foreach (var item Iin other)
+    foreach (var item in other)
       Add(item);
   }
 
   #region IDictionary implementation
-  private IDictionary<K, int> IIndex { get; set; } = new();
+  private Dictionary<K, int> IIndex { get; set; } = new();
 
 
   public new void Add(T item)
@@ -123,7 +123,7 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
   public override int GetHashCode()
   {
     var thisHashCode = 0; //EqualityComparer<Type>.Default.GetHashCode(this.GetType());
-    foreach (var item Iin this)
+    foreach (var item in this)
     {
       if (item!=null)
         //thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));

@@ -1,9 +1,0 @@
-namespace DocumentModel.Wordprocessing;
-
-/// <summary>
-/// A collection of equations. Use the OMaths object to access individual members of the collection.
-/// </summary>
-/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths?view=word-pia"/>
-public partial interface IOMaths : IModelCollection<IOMath>
-{
-}

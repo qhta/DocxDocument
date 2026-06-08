@@ -16,17 +16,17 @@ public class IFrame: ModelElement, IFramesetItem
   public string? FrameName { get; set; }
 
   /// <summary>
-  ///   ISource File Ifor IFrame.
+  ///   ISource File for IFrame.
   /// </summary>
   public FrameSourceFile? FrameSourceFile { get; set; }
 
   /// <summary>
-  ///   Left and Right Margin Ifor IFrame.
+  ///   Left and Right Margin for IFrame.
   /// </summary>
   public UInt32? MarginWidth { get; set; }
 
   /// <summary>
-  ///   Top and Bottom Margin Ifor IFrame.
+  ///   Top and Bottom Margin for IFrame.
   /// </summary>
   public UInt32? MarginHeight { get; set; }
 
