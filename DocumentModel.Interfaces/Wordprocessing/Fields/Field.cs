@@ -67,18 +67,6 @@ public partial interface Field : IModelObject
   public bool ShowCodes { get; set; }
 
   /// <summary>
-  /// Gets the link formatting for a linked field.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
-  public ILinkFormat LinkFormat { get; }
-
-  /// <summary>
-  /// Gets the OLE formatting for an OLE field.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
-  public IOLEFormat OLEFormat { get; }
-
-  /// <summary>
   /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>

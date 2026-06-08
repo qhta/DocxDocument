@@ -7,38 +7,6 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class CorePropertiesTest: _AbstractModelTestClass<CoreProperties>
 {
-  ///// <summary>
-  ///// Creates a new instance of the CoreProperties class populated with sample metadata values for testing or
-  ///// demonstration purposes.
-  ///// </summary>
-  ///// <remarks>The returned CoreProperties instance contains preset values suitable for use in serialization
-  ///// tests or as a template for document property configuration. The associated document is created in a temporary
-  ///// file and disposed after the properties are initialized.</remarks>
-  ///// <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
-  ///// properties.</returns>
-  //protected override CoreProperties CreateSampleData()
-  //{
-  //  var props = new CoreProperties()
-  //  {
-  //    Title = "Sample Title",
-  //    Subject = "Sample Subject",
-  //    Creator = "Test Creator",
-  //    Keywords = "test,serialization,core",
-  //    Description = "A test description for serialization.",
-  //    LastModifiedBy = "TestUser",
-  //    Revision = 5,
-  //    LastPrinted = new DateTime(2024, 1, 1, 12, 0, 0),
-  //    Created = new DateTime(2023, 12, 31, 23, 59, 59),
-  //    Modified = new DateTime(2024, 1, 2, 8, 30, 0),
-  //    Category = "TestCategory",
-  //    Identifier = "ID-12345",
-  //    ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
-  //    Language = "en-US",
-  //    Version = "1.0",
-  //    ContentStatus = "Draft"
-  //  };
-  //  return props;
-  //}
 
   /// <summary>
   /// Updates the specified document with the provided core properties data.

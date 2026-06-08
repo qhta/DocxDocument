@@ -57,7 +57,6 @@
     <Compile Include="Wordprocessing.Drawings\Colors\RgbColorModelHex.Imp.cs" />
     <Compile Include="Wordprocessing.Drawings\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Wordprocessing\Common\Color.Imp.cs" />
-    <Compile Include="Wordprocessing\Document\Document.Imp.cs" />
     <Compile Include="Wordprocessing\Run properties\BaseRunProperties.TextFormat.Imp.cs" />
   </ItemGroup>
   <ItemGroup>

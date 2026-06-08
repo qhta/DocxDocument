@@ -524,12 +524,6 @@ public partial interface IRange : IModelObject
   public object EnhMetaFileBits { get; }
 
   /// <summary>
-  /// Returns an OMaths collection that represents the OMath objects within the specified range. Read-only.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
-
-  /// <summary>
   /// Returns a Object that represents the style used to format one or more characters. Read-only.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.characterstyle?view=word-pia"/>

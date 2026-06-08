@@ -66,16 +66,7 @@ public interface IDefaultWebOptions : IModelObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.pixelsperinch?view=word-pia"/>
   public int PixelsPerInch { get; set; }
-  /// <summary>
-  /// Gets or sets the default encoding used when saving web pages.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.encoding?view=word-pia"/>
-  public Encoding Encoding { get; set; }
-  /// <summary>
-  /// Gets or sets a value indicating whether web pages are always saved in the default encoding.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.alwayssaveindefaultencoding?view=word-pia"/>
-  public bool AlwaysSaveInDefaultEncoding { get; set; }
+
   /// <summary>
   /// Gets the web page font settings.
   /// </summary>

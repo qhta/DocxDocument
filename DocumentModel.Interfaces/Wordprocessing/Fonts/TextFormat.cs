@@ -157,11 +157,6 @@ public partial interface ITextFormat
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.engrave?view=word-pia"/>
   public OnOffToggle? Engrave { get; set; }
 
-  /// <summary>
-  /// Gets or sets the animation effect for the font.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
-  public Animation? Animation { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the font.

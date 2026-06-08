@@ -221,23 +221,10 @@ public partial interface IShape : IModelObject
   public IWrapFormat WrapFormat { get; }
 
   /// <summary>
-  /// Returns a OLEFormat object that represents the OLE characteristics (other than linking) for the specified
-  /// shape.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.oleformat?view=word-pia"/>
-  public IOLEFormat OLEFormat { get; }
-
-  /// <summary>
   /// Returns a Range object that represents the anchoring range for the specified shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.anchor?view=word-pia"/>
   public Range Anchor { get; }
-
-  /// <summary>
-  /// Returns a LinkFormat object that represents the link options of the specified shape that's linked to a file.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.linkformat?view=word-pia"/>
-  public ILinkFormat LinkFormat { get; }
 
   /// <summary>
   /// Returns or sets the alternative text associated with a shape in a Web page.

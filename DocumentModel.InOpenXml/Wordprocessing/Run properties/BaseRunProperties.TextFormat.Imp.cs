@@ -292,12 +292,6 @@ public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
   }
 
   /// <summary>
-  /// Gets or sets the animation effect for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
-  Animation? ITextFormat.Animation { get; set; }
-
-  /// <summary>
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>

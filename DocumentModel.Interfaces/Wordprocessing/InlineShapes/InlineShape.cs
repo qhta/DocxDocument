@@ -26,22 +26,10 @@ public partial interface InlineShape : IModelObject
   public Range Range { get; }
 
   /// <summary>
-  /// Returns a link format object that contains link properties for the inline shape.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.linkformat?view=word-pia"/>
-  public ILinkFormat LinkFormat { get; }
-
-  /// <summary>
   /// Returns a field object associated with the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
   public Field Field { get; }
-
-  /// <summary>
-  /// Returns an OLE format object that contains OLE properties for the inline shape.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.oleformat?view=word-pia"/>
-  public IOLEFormat OLEFormat { get; }
 
   /// <summary>
   /// Returns the type of inline shape.

@@ -72,13 +72,6 @@ public partial interface IWebOptions : IModelObject
   public int PixelsPerInch { get; set; }
 
   /// <summary>
-  /// Returns or sets the document encoding (code page or character set) to be used by the Web browser when you view
-  /// the saved document.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.encoding?view=word-pia"/>
-  public Encoding Encoding { get; set; }
-
-  /// <summary>
   /// Returns the folder suffix that Microsoft Word uses when you save a document as a Web page, use long file
   /// names, and choose to save supporting files in a separate folder (that is, if the UseLongFileNames and
   /// OrganizeInFolder properties are set to True).

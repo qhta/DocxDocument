@@ -195,24 +195,11 @@ public abstract class _AbstractTestClass
                 && !t.Implements(typeof(System.Collections.IDictionary))
       && t.GetConstructor([])!=null).ToArray();
 
+    List<Type> visitedTypes = new List<Type>();
     foreach (var t in modelTypes)
     {
-      var b = t.BaseType;
-      while (b != null && b != typeof(object))
-      {
-        if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
-        {
-          var arg = b.GetGenericArguments()[0];
-          if (!string.IsNullOrEmpty(arg.Namespace))
-          {
-            var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
-            if (UniqueTypeNames.Add(unique))
-              overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
-          }
-          break;
-        }
-        b = b.BaseType;
-      }
+      Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
+      GetXmlAttributeOverrides(t);
     }
 
     var ns = new XmlSerializerNamespaces();
@@ -222,14 +209,41 @@ public abstract class _AbstractTestClass
     ns.Add("dw", "DocumentModel.Drawings.Wordprocessing");
     ns.Add("m", "DocumentModel.Math");
 
-    var xmlSerializer = new XmlSerializer(rootType, overrides, modelTypes, null, null);
+    var xmlSerializer = new XmlSerializer(rootType, overrides, null, null, null);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
       xmlSerializer.Serialize(xmlWriter, data, ns);
       return stringWriter.ToString();
     }
+
+    void GetXmlAttributeOverrides(Type? b)
+    {
+      if (b != null && b != typeof(object))
+      {
+        if (visitedTypes.Contains(b))
+          return;
+        visitedTypes.Add(b);
+        if ((b.FullName ?? "").Contains("<>"))
+          return;
+        if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
+        {
+          var arg = b.GetGenericArguments()[0];
+          if (arg.Name.Contains("<>"))
+            return;
+          if (!string.IsNullOrEmpty(arg.Namespace))
+          {
+            var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
+            if (UniqueTypeNames.Add(unique))
+              overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
+          }
+        }
+        Debug.WriteLine($"GetXmlAttributeOverrides2 for {b.BaseType?.FullName}");
+        GetXmlAttributeOverrides(b.BaseType);
+      }
+    }
   }
+ 
 
   /// <summary>
   /// Deserializes XML to an object of the specified type.

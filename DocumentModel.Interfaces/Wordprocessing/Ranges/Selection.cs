@@ -391,12 +391,6 @@ public partial interface ISelection : IModelObject
   public object EnhMetaFileBits { get; }
 
   /// <summary>
-  /// Returns an OMaths collection that represents the OMath objects within the current selection. Read-only.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
-
-  /// <summary>
   /// Returns a String that represents the XML contained within the selection in the Microsoft Office Word Open XML
   /// format. Read-only.
   /// </summary>

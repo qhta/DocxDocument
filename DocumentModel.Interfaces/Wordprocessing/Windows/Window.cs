@@ -8,23 +8,12 @@ namespace DocumentModel.Wordprocessing;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window?view=word-pia"/>
 public partial interface IWindow : IModelObject
 {
-  /// <summary>
-  /// Returns a Pane object that represents the active pane for the specified window.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.activepane?view=word-pia"/>
-  public IPane ActivePane { get; }
 
   /// <summary>
   /// Returns a Document object associated with the specified window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.document?view=word-pia"/>
   public IDocument Document { get; }
-
-  /// <summary>
-  /// Returns a Panes collection that represents all the window panes for the specified window.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.panes?view=word-pia"/>
-  public IPanes Panes { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
@@ -80,24 +69,6 @@ public partial interface IWindow : IModelObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.windowstate?view=word-pia"/>
   public WindowState WindowState { get; set; }
-
-  /// <summary>
-  /// True if rulers are displayed for the specified window or pane.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayrulers?view=word-pia"/>
-  public bool DisplayRulers { get; set; }
-
-  /// <summary>
-  /// True if a vertical ruler is displayed for the specified window or pane.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayverticalruler?view=word-pia"/>
-  public bool DisplayVerticalRuler { get; set; }
-
-  /// <summary>
-  /// Returns a View object that represents the view for the specified window.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.view?view=word-pia"/>
-  public IView View { get; }
 
   /// <summary>
   /// Returns the window type.

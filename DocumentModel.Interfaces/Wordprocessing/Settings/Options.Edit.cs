@@ -127,13 +127,6 @@ public partial interface IOptions : IModelObject
   public OpenFormat? DefaultOpenFormat { get; set; }
 
   /// <summary> 
-  /// Returns or sets a Encoding constant representing the code page, or character set, that Microsoft Word 
-  /// uses for all documents saved as encoded text files. 
-  /// </summary> 
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttextencoding?view=word-pia"/>
-  public Encoding? DefaultTextEncoding { get; set; }
-
-  /// <summary> 
   /// Returns or sets the default tray your printer uses to print documents. 
   /// </summary> 
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttray?view=word-pia"/>
