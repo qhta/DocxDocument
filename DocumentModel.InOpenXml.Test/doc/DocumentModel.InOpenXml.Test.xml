@@ -578,6 +578,27 @@
             <param name="xmlTypeName">Unique XML type name.</param>
             <param name="xmlNamespace">XML namespace for the type.</param>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest">
+            <summary>
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.BuiltInProperties"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.BuiltInProperties)">
+            <summary>
+            Updates the specified document with the provided built-in properties.
+            </summary>
+            <param name="document">The document to update with new built-in properties.</param>
+            <param name="data">The built-in properties to apply to the document.</param>
+            <returns>The updated built-in properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML markup representing the extended file properties from the specified Wordprocessing document.
+            </summary>
+            <param name="document">The document from which to extract the extended file properties as XML. Must not be null and must contain a valid
+            WordprocessingDocument with an ExtendedFilePropertiesPart.</param>
+            <returns>A string containing the XML markup of the extended file properties for the specified document.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.ColorTypesTest">
             <summary>
             Comprehensive tests for all DocumentModel types implementing IColor.
@@ -1498,11 +1519,6 @@
             <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
             object.</returns>
         </member>
-        <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass._jsonOptions">
-            <summary>
-            JSON options configured for indented formatting. This private field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
-            </summary>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToJson(System.Object)">
             <summary>
             Serializes the specified object to a JSON string using indented formatting.
@@ -1566,6 +1582,44 @@
             <param name="dataType">Target type.</param>
             <param name="xml">XML input.</param>
             <returns>Deserialized instance or null.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Object,System.Xml.Serialization.XmlSerializerNamespaces@)">
+            <summary>
+            Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
+            </summary>
+            <param name="data">The object to serialize.</param>
+            <param name="namespaces">Output parameter for XML namespaces.</param>
+            <returns>XmlSerializer instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Type,System.Xml.Serialization.XmlSerializerNamespaces@)">
+            <summary>
+            Creates an XmlSerializer for the specified root type, including overrides for generic ModelElement types to ensure unique XML type names.
+            </summary>
+            <param name="rootType">The root type for the XmlSerializer.</param>
+            <param name="namespaces">Output parameter for XML namespaces.</param>
+            <returns>XmlSerializer instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetXmlNamespaceForType(System.Type)">
+            <summary>
+            Gets XML namespace for a model type based on its CLR namespace.
+            </summary>
+            <param name="type">Type for which XML namespace is generated.</param>
+            <returns>XML namespace string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">
+            <summary>
+            Adds an XML type override for a closed generic AbstractColor{T}"/> type.
+            </summary>
+            <param name="overrides">Override collection to populate.</param>
+            <param name="type">Closed generic abstract color type to override.</param>
+            <param name="xmlTypeName">Unique XML type name.</param>
+            <param name="xmlNamespace">XML namespace for the type.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateJsonSerializerOptions">
+            <summary>
+            Creates and configures JsonSerializerOptions for JSON serialization and deserialization.
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

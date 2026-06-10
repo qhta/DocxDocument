@@ -1,6 +1,5 @@
 ﻿namespace DocumentModel;
 /// <summary>
-///   Specifies the semantic meaning of the N4L field in <see cref="HyperlinkInfo"/>.
 ///   Indicates the context or attachment type for a hyperlink or graphic reference in a document.
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]

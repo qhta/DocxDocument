@@ -1,15 +1,15 @@
 namespace DocumentModel;
-public partial class BuiltInProperties : DMP.IDocumentProperties
+public partial class BuiltInProperties : DMPr.IDocumentProperties
 {
- IEnumerator<DMP.IDocumentProperty> IEnumerable<DMP.IDocumentProperty>.GetEnumerator() => this.GetEnumerator();
- DMP.IDocumentProperty IModelCollection<DMP.IDocumentProperty>.this[object index]
+ IEnumerator<DMPr.IDocumentProperty> IEnumerable<DMPr.IDocumentProperty>.GetEnumerator() => this.GetEnumerator();
+ DMPr.IDocumentProperty IModelCollection<DMPr.IDocumentProperty>.this[object index]
  {
   get
   {
    if (index is string propertyName)
     if (propertyNameMapping.TryGetValue1(propertyName, out var mappedName))
      index = mappedName;
-   return this[index];
+   return this[(string)index];
   }
 
   set
@@ -17,7 +17,7 @@ public partial class BuiltInProperties : DMP.IDocumentProperties
    if (index is string propertyName)
     if (propertyNameMapping.TryGetValue1(propertyName, out var mappedName))
      index = mappedName;
-   this[index] = (BuiltInProperty)value;
+   this[(string)index] = (BuiltInProperty)value;
   }
  }
  private static readonly BiDiDictionary<string, string> propertyNameMapping = new()

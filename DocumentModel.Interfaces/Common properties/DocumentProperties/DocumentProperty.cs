@@ -23,6 +23,7 @@ public partial interface IDocumentProperty: IModelObject
   /// Returns or sets the document property type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia"/>
+  [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
   public DocPropertyType Type { get; set; }
   /// <summary>
   /// Determine if the value of the custom document property is linked to the content of the container document.

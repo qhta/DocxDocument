@@ -266,10 +266,29 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// Adds an item to the collection.
   /// </summary>
   /// <param name = "item">The item to add.</param>
-  public void Add(ItemType item)
+  public virtual void Add(ItemType item)
   {
+    Debug.WriteLine($"Adding item: {item}");
     Items.Add(item);
   }
+
+  /// <summary>
+  /// Adds an item to the collection.
+  /// </summary>
+  /// <param name = "item">The item to add.</param>
+  public virtual bool TryAdd(ItemType item)
+  {
+    Debug.WriteLine($"Trying to add item: {item}");
+    try
+    {
+      Items.Add(item);
+      return true;
+    }
+    catch
+    {
+      return false;
+    }
+  }   
 
   /// <summary>
   /// Removes all items from the collection.

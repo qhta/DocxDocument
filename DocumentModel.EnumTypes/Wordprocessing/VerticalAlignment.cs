@@ -9,6 +9,10 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues))]
 public enum VerticalAlignment
 {
+  /// <summary>
+  /// Indicates that the element is positioned in line with the surrounding text, following the normal flow of the document.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues.Inline))]
   Inline = 0,
   /// <summary>
   /// Top vertical alignment.

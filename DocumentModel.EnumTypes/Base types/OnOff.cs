@@ -21,6 +21,9 @@ public enum OnOff
   Off = 2,
 }
 
+/// <summary>
+/// Extension methods for the OnOff enumeration, providing convenient conversions between OnOff values and boolean values.
+/// </summary>
 public static class OnOffTools
 {
   /// <summary>

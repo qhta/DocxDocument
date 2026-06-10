@@ -104,11 +104,6 @@ public abstract class _AbstractTestClass
   }
 
   /// <summary>
-  /// JSON options configured for indented formatting. This private field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
-  /// </summary>
-  protected static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-
-  /// <summary>
   /// Serializes the specified object to a JSON string using indented formatting.
   /// </summary>
   /// <remarks>The resulting JSON string is formatted with indentation for readability. If the object contains
@@ -118,7 +113,7 @@ public abstract class _AbstractTestClass
 
   protected string SerializeToJson(object data)
   {
-    return JsonSerializer.Serialize(data, _jsonOptions);
+    return JsonSerializer.Serialize(data, CreateJsonSerializerOptions());
   }
 
   /// <summary>
@@ -131,7 +126,7 @@ public abstract class _AbstractTestClass
   /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
   protected DataType? DeserializeFromJson<DataType>(string json)
   {
-    return JsonSerializer.Deserialize<DataType>(json, _jsonOptions);
+    return JsonSerializer.Deserialize<DataType>(json, CreateJsonSerializerOptions());
   }
 
 
@@ -145,7 +140,7 @@ public abstract class _AbstractTestClass
   /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
   protected object? DeserializeFromJson(Type dataType, string json)
   {
-    return JsonSerializer.Deserialize(json, dataType, _jsonOptions);
+    return JsonSerializer.Deserialize(json, dataType, CreateJsonSerializerOptions());
   }
   /// <summary>
   /// Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
@@ -187,35 +182,72 @@ public abstract class _AbstractTestClass
   /// <returns>Serialized XML text.</returns>
   protected string SerializeObjectToXml(object data)
   {
-    var rootType = data.GetType();
+    var xmlSerializer = CreateXmlSerializer(data, out var namespaces);
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    {
+      xmlSerializer.Serialize(xmlWriter, data, namespaces);
+      return stringWriter.ToString();
+    }
+  }
+ 
+
+  /// <summary>
+  /// Deserializes XML to an object of the specified type.
+  /// </summary>
+  /// <param name="dataType">Target type.</param>
+  /// <param name="xml">XML input.</param>
+  /// <returns>Deserialized instance or null.</returns>
+  protected object? DeserializeObjectFromXml(Type dataType, string xml)
+  {
+    var xmlSerializer = new XmlSerializer(dataType);
+    using (var stringReader = new StringReader(xml))
+    {
+      return xmlSerializer.Deserialize(stringReader);
+    }
+  }
+
+  /// <summary>
+  /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
+  /// </summary>
+  /// <param name="data">The object to serialize.</param>
+  /// <param name="namespaces">Output parameter for XML namespaces.</param>
+  /// <returns>XmlSerializer instance.</returns>
+  protected XmlSerializer CreateXmlSerializer(object data, out XmlSerializerNamespaces namespaces)
+  => CreateXmlSerializer(data.GetType(), out namespaces);
+
+  /// <summary>
+  /// Creates an XmlSerializer for the specified root type, including overrides for generic ModelElement types to ensure unique XML type names.
+  /// </summary>
+  /// <param name="rootType">The root type for the XmlSerializer.</param>
+  /// <param name="namespaces">Output parameter for XML namespaces.</param>
+  /// <returns>XmlSerializer instance.</returns>
+  protected XmlSerializer CreateXmlSerializer(Type rootType, out XmlSerializerNamespaces namespaces) 
+  { 
     var UniqueTypeNames = new HashSet<string>();
     var overrides = new XmlAttributeOverrides();
-    var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
-      .Where(t=>t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
-                && !t.Implements(typeof(System.Collections.IDictionary))
-      && t.GetConstructor([])!=null).ToArray();
+    //var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
+    //  .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
+    //            && !t.Implements(typeof(System.Collections.IDictionary))
+    //  && t.GetConstructor([]) != null).ToArray();
+    var modelTypes = new[] { typeof(DocumentModel.BuiltInProperty) };
 
     List<Type> visitedTypes = new List<Type>();
     foreach (var t in modelTypes)
     {
-      Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
+      //Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
       GetXmlAttributeOverrides(t);
     }
 
-    var ns = new XmlSerializerNamespaces();
-    ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-    ns.Add("d", "DocumentModel.Drawings");
-    ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
-    ns.Add("dw", "DocumentModel.Drawings.Wordprocessing");
-    ns.Add("m", "DocumentModel.Math");
+    namespaces = new XmlSerializerNamespaces();
+    namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+    namespaces.Add("d", "DocumentModel.Drawings");
+    namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
+    namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
+    namespaces.Add("m", "DocumentModel.Math");
 
-    var xmlSerializer = new XmlSerializer(rootType, overrides, null, null, null);
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, data, ns);
-      return stringWriter.ToString();
-    }
+    var xmlSerializer = new XmlSerializer(rootType, overrides, modelTypes, null, null);
+    return xmlSerializer;
 
     void GetXmlAttributeOverrides(Type? b)
     {
@@ -238,25 +270,57 @@ public abstract class _AbstractTestClass
               overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
           }
         }
-        Debug.WriteLine($"GetXmlAttributeOverrides2 for {b.BaseType?.FullName}");
+        //Debug.WriteLine($"GetXmlAttributeOverrides2 for {b.BaseType?.FullName}");
         GetXmlAttributeOverrides(b.BaseType);
       }
     }
   }
- 
+  /// <summary>
+  /// Gets XML namespace for a model type based on its CLR namespace.
+  /// </summary>
+  /// <param name="type">Type for which XML namespace is generated.</param>
+  /// <returns>XML namespace string.</returns>
+  private string GetXmlNamespaceForType(Type type)
+  {
+    var typeNamespace = type.Namespace ?? "DocumentModel";
+    if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
+      return "urn:docmodel:" + typeNamespace.Substring("DocumentModel.".Length).ToLowerInvariant().Replace('.', ':');
+    return "urn:docmodel:global";
+  }
 
   /// <summary>
-  /// Deserializes XML to an object of the specified type.
+  /// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
   /// </summary>
-  /// <param name="dataType">Target type.</param>
-  /// <param name="xml">XML input.</param>
-  /// <returns>Deserialized instance or null.</returns>
-  protected object? DeserializeObjectFromXml(Type dataType, string xml)
+  /// <param name="overrides">Override collection to populate.</param>
+  /// <param name="type">Closed generic abstract color type to override.</param>
+  /// <param name="xmlTypeName">Unique XML type name.</param>
+  /// <param name="xmlNamespace">XML namespace for the type.</param>
+  private void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
   {
-    var xmlSerializer = new XmlSerializer(dataType);
-    using (var stringReader = new StringReader(xml))
+    var attrs = new XmlAttributes
     {
-      return xmlSerializer.Deserialize(stringReader);
-    }
+      XmlType = new XmlTypeAttribute
+      {
+        TypeName = xmlTypeName,
+        Namespace = xmlNamespace
+      }
+    };
+    overrides.Add(type, attrs);
   }
+
+  /// <summary>
+  /// Creates and configures JsonSerializerOptions for JSON serialization and deserialization.
+  /// </summary>
+  /// <returns></returns>
+  protected JsonSerializerOptions CreateJsonSerializerOptions()
+  {
+    var options = new JsonSerializerOptions
+    {
+      DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+      WriteIndented = true
+    };
+
+    return options;
+  }
+
 }

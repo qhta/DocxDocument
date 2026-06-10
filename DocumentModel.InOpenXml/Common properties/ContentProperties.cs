@@ -6,7 +6,7 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXEP.Properties))]
 [XmlRoot("ContentProperties", Namespace = "DocumentModel")]
 [DirectAccess]
-public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
+public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.Properties>
 {
   /// <summary>
   /// Gets the underlying Document instance associated with this object.
@@ -19,7 +19,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public ContentProperties()
+  public ContentProperties(): base(KnownProperties)
   {
   }
 
@@ -27,8 +27,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public ContentProperties(Wordprocessing.Document document): 
-    base(document, document.WordprocessingDocument?.GetExtendedFileProperties())
+  public ContentProperties(Wordprocessing.Document document): this()
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
@@ -55,7 +54,7 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// <summary>
   /// Known properties that can be set in this class.
   /// </summary>
-  public static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(ContentProperties));
+  public new static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(ContentProperties));
   private static KnownProperties? _KnownProperties;
 
   /// <summary>

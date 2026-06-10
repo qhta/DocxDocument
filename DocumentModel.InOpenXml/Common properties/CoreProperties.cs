@@ -6,21 +6,14 @@ namespace DocumentModel;
 /// </summary>
 [OpenXmlType(typeof(PackageProperties))]
 [XmlRoot("CoreProperties", Namespace = "DocumentModel")]
-public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
+public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>, IWordprocessingDocumentAware
 {
-  /// <summary>
-  /// Gets the underlying Document instance associated with this object.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public DXPP.WordprocessingDocument? WordprocessingDocument => _WordprocessingDocument;
-  private DXPP.WordprocessingDocument? _WordprocessingDocument;
+  private new PackageProperties? _openXmlElement;
 
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public CoreProperties()
+  public CoreProperties() : base(KnownProperties)
   {
   }
 
@@ -28,7 +21,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public CoreProperties(Wordprocessing.Document document)
+  public CoreProperties(Wordprocessing.Document document) : this()
   {
     SetParent(document);
     if (document.WordprocessingDocument != null)
@@ -48,45 +41,32 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   }
 
   /// <summary>
-  ///   Attaches this collection to the specified WordprocessingDocument.
+  ///   Assigns the wrapped OpenXml element instance.
   /// </summary>
-  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
-  public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+  /// <param name = "element">The OpenXml element to assign.</param>
+  public override void SetUpdatableElement(object? element)
   {
-    _WordprocessingDocument = wordprocessingDocument;
+    if (element == null)
+      _openXmlElement = null;
+    else if (element is PackageProperties packageProperties)
+      _openXmlElement = packageProperties;
+    else
+      throw new ArgumentException($"Expected an element of type {typeof(PackageProperties).FullName}, but received {element.GetType().FullName}.");
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    SetLoading(true);
-    _WordprocessingDocument = wordprocessingDocument;
-    var packageProperties = wordprocessingDocument.GetPackageProperties();
-    LoadData(packageProperties);
-    SetLoading(false);
-  }
-
-  /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is updated to the wordprocessingDocument's PackageProperties.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    _WordprocessingDocument = wordprocessingDocument;
-    var packageProperties = wordprocessingDocument.GetPackageProperties();
-    UpdateData(packageProperties);
-  }
-
-  /// <summary>
-  /// Detach this instance from the attached document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
-  /// </summary>
-  public void Detach()
-  {
-    _WordprocessingDocument = null;
+    base.AttachAndLoad(wordprocessingDocument);
+    var core = wordprocessingDocument.GetExistingCoreProperties();
+    if (core != null)
+    {
+      SetUpdatableElement(core);
+      LoadData(core);
+    }
   }
 
   /// <summary>
@@ -191,7 +171,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   Provides a registry of known core property definitions for this type.
   /// </summary>
-  public static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(CoreProperties));
+  public new static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(CoreProperties));
 
   private static KnownProperties? _KnownProperties;
 

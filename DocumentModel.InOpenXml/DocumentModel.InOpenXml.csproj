@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Remove="Base classes\ContentItemsCollection.cs" />
     <Compile Remove="Base classes\LazyLoadElementCollection%28T,C%29.cs" />
+    <Compile Remove="Common properties\CoreProperties.DocumentProperties.Impl.cs" />
     <Compile Remove="Drawings\Colors\DrawingColor.cs" />
     <Compile Remove="Drawings\Colors\DrawingColorBase.cs" />
     <Compile Remove="Drawings\Colors\DrawingColorBase.ShouldSerialize.cs" />
@@ -44,8 +45,8 @@
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
     <Compile Include="Base classes\ModelElement%28T%29.Imp.cs" />
     <Compile Include="Base classes\ModelElement.Imp.cs" />
-    <Compile Include="Common properties\BuiltInProperties.Imp.cs" />
-    <Compile Include="Common properties\BuiltInProperty.Imp.cs" />
+    <Compile Include="Common properties\BuiltInProperties.Interface.Imp.cs" />
+    <Compile Include="Common properties\BuiltInProperty.Interface.Imp.cs" />
     <Compile Include="Common properties\CustomProperties.Imp.cs" />
     <Compile Include="Common properties\CustomProperty.Imp.cs" />
     <Compile Include="Drawings\Colors\HslColor.Imp.cs" />

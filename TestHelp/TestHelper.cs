@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using System.Xml;
+using System.Xml.Serialization;
 
 using Qhta.TypeUtils;
 
@@ -190,11 +191,13 @@ public static class TestHelper
   {
     if (instance == null)
       throw new ArgumentNullException(nameof(instance));
+    Debug.WriteLine($"Populating test data for instance of type {instance.GetType().Name}");
     var properties = instance.GetType().GetProperties()
       .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>()==null);
     foreach (var prop in properties)
     {
       var propType = prop.PropertyType.GetNotNullableType();
+      Debug.WriteLine($"Populating property: {prop.Name} of type {propType}");
       // Set each property with new test data
       if (propType == typeof(string))
       {
@@ -272,14 +275,17 @@ public static class TestHelper
       }
       else if (propType.IsClass && propType != typeof(string))
       {
-        // For complex types, recursively change their properties
-        var nestedInstance = prop.GetValue(instance);
-        if (nestedInstance == null)
+        if (!propType.IsAbstract)
         {
-          nestedInstance = Activator.CreateInstance(propType);
-          prop.SetValue(instance, nestedInstance);
+          // For complex types, recursively change their properties
+          var nestedInstance = prop.GetValue(instance);
+          if (nestedInstance == null)
+          {
+            nestedInstance = Activator.CreateInstance(propType);
+            prop.SetValue(instance, nestedInstance);
+          }
+          PopulateTestData(nestedInstance!);
         }
-        PopulateTestData(nestedInstance!);
       }
       else
       {
@@ -576,5 +582,90 @@ public static class TestHelper
       builder.AppendLine(lines[i]);
     }
     return builder.ToString();
+  }
+
+
+  /// <summary>
+  /// Creates XML serializer overrides with separate XML namespaces for different DocumentModel namespaces.
+  /// Also resolves closed generic AbstractColor type name collisions.
+  /// </summary>
+  /// <returns>Prepared overrides used by XmlSerializer.</returns>
+  private static XmlAttributeOverrides CreateXmlSerializerOverrides(Assembly[] assemblies)
+  {
+    var overrides = new XmlAttributeOverrides();
+    foreach (var assembly in assemblies)
+    {
+
+
+      foreach (var type in assembly.GetTypes()
+                 .Where(t => t.Namespace?.StartsWith("DocumentModel", StringComparison.Ordinal) == true))
+      {
+        if (type.IsGenericTypeDefinition)
+          continue;
+        if (typeof(IXmlSerializable).IsAssignableFrom(type))
+          continue;
+
+        var xmlNamespace = GetXmlNamespaceForType(type);
+        if (string.IsNullOrEmpty(xmlNamespace))
+          continue;
+
+        var attrs = new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute
+          {
+            Namespace = xmlNamespace
+          }
+        };
+
+        if (type.IsGenericType)
+        {
+          var genericArgPart = string.Join("_", type.GetGenericArguments().Select(t => t.Name));
+          attrs.XmlType.TypeName = $"{type.Name}_{genericArgPart}";
+        }
+
+        overrides.Add(type, attrs);
+      }
+
+      //AddAbstractColorOverride(overrides, typeof(DMD.AbstractColor<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>),
+      //  "AbstractColorOfDrawingRgbColorModelHex", "urn:docmodel:drawings");
+      //AddAbstractColorOverride(overrides,
+      //  typeof(DMWD.WordAbstractColor<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>),
+      //  "AbstractColorOfWord2010RgbColorModelHex", "urn:docmodel:wordprocessing-drawings");
+
+    }
+    return overrides;
+  }
+
+  /// <summary>
+  /// Gets XML namespace for a model type based on its CLR namespace.
+  /// </summary>
+  /// <param name="type">Type for which XML namespace is generated.</param>
+  /// <returns>XML namespace string.</returns>
+  private static string GetXmlNamespaceForType(Type type)
+  {
+    var typeNamespace = type.Namespace ?? "DocumentModel";
+    if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
+      return "urn:docmodel:" + typeNamespace.Substring("DocumentModel.".Length).ToLowerInvariant().Replace('.', ':');
+    return "urn:docmodel:global";
+  }
+
+  /// <summary>
+  /// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
+  /// </summary>
+  /// <param name="overrides">Override collection to populate.</param>
+  /// <param name="type">Closed generic abstract color type to override.</param>
+  /// <param name="xmlTypeName">Unique XML type name.</param>
+  /// <param name="xmlNamespace">XML namespace for the type.</param>
+  private static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
+  {
+    var attrs = new XmlAttributes
+    {
+      XmlType = new XmlTypeAttribute
+      {
+        TypeName = xmlTypeName,
+        Namespace = xmlNamespace
+      }
+    };
+    overrides.Add(type, attrs);
   }
 }

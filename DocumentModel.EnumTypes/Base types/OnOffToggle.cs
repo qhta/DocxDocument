@@ -25,6 +25,9 @@ public enum OnOffToggle
   Toggle = 3,
 }
 
+/// <summary>
+/// Extension methods for the OnOffToggle enumeration, providing convenient conversions between OnOffToggle values and boolean values, with support for the Toggle state.
+/// </summary>
 public static class OnOffToggleTools
 {
   /// <summary>

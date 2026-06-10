@@ -163,6 +163,18 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
+  /// Retrieves the core file properties for the specified Wordprocessing document.
+  /// </summary>
+  /// <param name = "wordDocument">The Document instance.</param>
+  /// <returns>The core file properties class.</returns>
+  public static DXPP.IPackageProperties? GetExistingCoreProperties(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart;
+    var properties = coreFilePropertiesPart?.CoreFileProperties;
+    return properties;
+  }
+
+  /// <summary>
   /// Retrieves the extended file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name = "wordDocument">The Document instance.</param>

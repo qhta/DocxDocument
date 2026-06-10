@@ -61,6 +61,9 @@ public enum ColorIndex
   Gray25 = 16,
 }
 
+/// <summary>
+/// Extension methods for the ColorIndex enumeration, providing convenient conversions between ColorIndex values and their corresponding hexadecimal RGB color representations.
+/// </summary>
 public static class ColorIndexTools
 {
   /// <summary>

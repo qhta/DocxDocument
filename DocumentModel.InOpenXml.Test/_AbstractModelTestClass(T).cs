@@ -36,12 +36,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testData = CreateSampleData();
-    var xmlSerializer = CreateXmlSerializer();
+    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, testData);
+      xmlSerializer.Serialize(xmlWriter, testData, namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} Serialized XML:\n" + xmlString);
@@ -155,12 +155,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       storedData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
     }
 
-    var xmlSerializer = CreateXmlSerializer();
+    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, storedData);
+      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} {testMethodName} reloaded data is:\n" + xmlString);
@@ -218,12 +218,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       restoredData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");;
     }
 
-    var xmlSerializer = CreateXmlSerializer();
+    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, restoredData);
+      xmlSerializer.Serialize(xmlWriter, restoredData, namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} {testMethodName} updated data is:\n" + xmlString);
@@ -292,106 +292,106 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// <returns>The OpenXml representation of the model collection.</returns>
   protected abstract string GetOpenXmlFromDocument(Document document);
 
-  private static XmlSerializer CreateXmlSerializer()
-  {
-    try
-    {
-      var overrides = new XmlAttributeOverrides();
+  //private static XmlSerializer CreateXmlSerializer()
+  //{
+  //  try
+  //  {
+  //    var overrides = new XmlAttributeOverrides();
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraph")
-          {
-            Namespace = "DocumentModel.Wordprocessing"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraph")
+  //        {
+  //          Namespace = "DocumentModel.Wordprocessing"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Paragraph>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfMathParagraph")
-          {
-            Namespace = "DocumentModel.Math"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Paragraph>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfMathParagraph")
+  //        {
+  //          Namespace = "DocumentModel.Math"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Run>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRun")
-          {
-            Namespace = "DocumentModel.Wordprocessing"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Run>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRun")
+  //        {
+  //          Namespace = "DocumentModel.Wordprocessing"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Run>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfMathRun")
-          {
-            Namespace = "DocumentModel.Math"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Run>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfMathRun")
+  //        {
+  //          Namespace = "DocumentModel.Math"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraphProperties")
-          {
-            Namespace = "DocumentModel.Wordprocessing"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraphProperties")
+  //        {
+  //          Namespace = "DocumentModel.Wordprocessing"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.ParagraphProperties>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfMathParagraphProperties")
-          {
-            Namespace = "DocumentModel.Math"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.ParagraphProperties>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfMathParagraphProperties")
+  //        {
+  //          Namespace = "DocumentModel.Math"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRunProperties")
-          {
-            Namespace = "DocumentModel.Wordprocessing"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRunProperties")
+  //        {
+  //          Namespace = "DocumentModel.Wordprocessing"
+  //        }
+  //      });
 
-      overrides.Add(
-        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.RunProperties>),
-        new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute("ModelElementOfMathRunProperties")
-          {
-            Namespace = "DocumentModel.Math"
-          }
-        });
+  //    overrides.Add(
+  //      typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.RunProperties>),
+  //      new XmlAttributes
+  //      {
+  //        XmlType = new XmlTypeAttribute("ModelElementOfMathRunProperties")
+  //        {
+  //          Namespace = "DocumentModel.Math"
+  //        }
+  //      });
 
-      return new XmlSerializer(typeof(ModelDataType), overrides);
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine($"✗ {typeof(ModelDataType).Name} XmlSerializer creation failed: {ex.Message}");
-      var current = ex.InnerException;
-      var level = 1;
-      while (current != null)
-      {
-        Console.WriteLine($"  Inner[{level}]: {current.GetType().FullName}: {current.Message}");
-        current = current.InnerException;
-        level++;
-      }
-      throw;
-    }
-  }
+  //    return new XmlSerializer(typeof(ModelDataType), overrides);
+  //  }
+  //  catch (Exception ex)
+  //  {
+  //    Console.WriteLine($"✗ {typeof(ModelDataType).Name} XmlSerializer creation failed: {ex.Message}");
+  //    var current = ex.InnerException;
+  //    var level = 1;
+  //    while (current != null)
+  //    {
+  //      Console.WriteLine($"  Inner[{level}]: {current.GetType().FullName}: {current.Message}");
+  //      current = current.InnerException;
+  //      level++;
+  //    }
+  //    throw;
+  //  }
+  //}
 }

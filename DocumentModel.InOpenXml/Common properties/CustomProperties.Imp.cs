@@ -1,11 +1,11 @@
 ﻿using DocumentModel.Interop;
 
 namespace DocumentModel;
-public partial class CustomProperties : DMP.ICustomProperties
+public partial class CustomProperties : DMPr.ICustomProperties
 {
- IEnumerator<DMP.ICustomProperty> IEnumerable<DMP.ICustomProperty>.GetEnumerator() => this.GetEnumerator();
- DMP.ICustomProperty IModelCollection<DMP.ICustomProperty>.this[object index] { get => this[index]; set => this[index] = (CustomProperty)value; }
+ IEnumerator<DMPr.ICustomProperty> IEnumerable<DMPr.ICustomProperty>.GetEnumerator() => this.GetEnumerator();
+ DMPr.ICustomProperty IModelCollection<DMPr.ICustomProperty>.this[object index] { get => this[index]; set => this[index] = (CustomProperty)value; }
 
- DMP.ICustomProperty DMP.ICustomProperties.Add(string name, object value) => this.Add(name, value);
+ DMPr.ICustomProperty DMPr.ICustomProperties.Add(string name, object value) => this.Add(name, value);
 
 }

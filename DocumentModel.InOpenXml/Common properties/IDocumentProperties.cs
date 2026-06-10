@@ -2,6 +2,6 @@
 /// <summary>
 /// Collection of document properties
 /// </summary>
-public interface IDocumentProperties : IElementCollection<BuiltInProperty>, INotifyCollectionChanged
+public interface IDocumentProperties : IElementCollection<DocumentProperty>, INotifyCollectionChanged
 {
 }
