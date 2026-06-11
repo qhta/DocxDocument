@@ -35,9 +35,9 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// from the current object.</returns>
   public DXCP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {
-    _openXmlElement ??= new DXCP.CustomDocumentProperty();
-    UpdateData(_openXmlElement);
-    return _openXmlElement!;
+    _UpdatableElement ??= new DXCP.CustomDocumentProperty();
+    UpdateData(_UpdatableElement);
+    return _UpdatableElement!;
   }
 
   /// <summary>

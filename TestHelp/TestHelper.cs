@@ -191,13 +191,13 @@ public static class TestHelper
   {
     if (instance == null)
       throw new ArgumentNullException(nameof(instance));
-    Debug.WriteLine($"Populating test data for instance of type {instance.GetType().Name}");
+    //Debug.WriteLine($"Populating test data for instance of type {instance.GetType().Name}");
     var properties = instance.GetType().GetProperties()
       .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>()==null);
     foreach (var prop in properties)
     {
       var propType = prop.PropertyType.GetNotNullableType();
-      Debug.WriteLine($"Populating property: {prop.Name} of type {propType}");
+      //Debug.WriteLine($"Populating property: {prop.Name} of type {propType}");
       // Set each property with new test data
       if (propType == typeof(string))
       {

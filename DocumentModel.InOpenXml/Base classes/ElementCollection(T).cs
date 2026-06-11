@@ -268,7 +268,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "item">The item to add.</param>
   public virtual void Add(ItemType item)
   {
-    Debug.WriteLine($"Adding item: {item}");
+    //Debug.WriteLine($"Adding item: {item}");
     Items.Add(item);
   }
 

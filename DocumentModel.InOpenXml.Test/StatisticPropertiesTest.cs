@@ -24,8 +24,8 @@ public class StatisticPropertiesTest : _AbstractModelTestClass<StatisticProperti
   /// <param name="document">The document from which to extract the extended file properties as XML. Must not be null and must contain a valid
   /// WordprocessingDocument with an ExtendedFilePropertiesPart.</param>
   /// <returns>A string containing the XML markup of the extended file properties for the specified document.</returns>
-  protected override string GetOpenXmlFromDocument(Document document)
+  protected override string? GetOpenXmlFromDocument(Document document)
   {
-    return document.WordprocessingDocument!.ExtendedFilePropertiesPart!.Properties!.OuterXml;
+    return document.WordprocessingDocument?.ExtendedFilePropertiesPart?.Properties?.OuterXml;
   }
 }

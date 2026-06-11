@@ -44,7 +44,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   [MultiCategory("Fonts and attributes")]
   public RunFonts? RunFonts
   {
-    get => _RunFonts ??= GetElement<DMW.RunFonts, DXW.RunFonts>(_openXmlElement); 
+    get => _RunFonts ??= GetElement<DMW.RunFonts, DXW.RunFonts>(_UpdatableElement); 
     set => UpdateField(ref _RunFonts, value, nameof(RunFonts));
   }
   private RunFonts? _RunFonts;
@@ -56,7 +56,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   [MultiCategory("Fonts and attributes")]
   public Boolean? Bold
   {
-    get => _Bold ??= GetElement<bool?, DXW.Bold>(_openXmlElement);
+    get => _Bold ??= GetElement<bool?, DXW.Bold>(_UpdatableElement);
     set => UpdateField(ref _Bold, value, nameof(RunFonts));
   }
   private Boolean? _Bold;
@@ -68,7 +68,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   [MultiCategory("Fonts and attributes")]
   public Boolean? BoldCS
   {
-    get => _BoldCS ??= GetElement<bool?, DXW.BoldComplexScript>(_openXmlElement);
+    get => _BoldCS ??= GetElement<bool?, DXW.BoldComplexScript>(_UpdatableElement);
     set => UpdateField(ref _BoldCS, value, nameof(BoldCS));
   }
   private Boolean? _BoldCS;
@@ -80,7 +80,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   [MultiCategory("Fonts and attributes")]
   public Boolean? Italic
   {
-    get => _Italic ??= GetElement<bool?, DXW.Italic>(_openXmlElement);
+    get => _Italic ??= GetElement<bool?, DXW.Italic>(_UpdatableElement);
     set => UpdateField(ref _Italic, value, nameof(Italic));
   }
   private Boolean? _Italic;
@@ -92,7 +92,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   [MultiCategory("Fonts and attributes")]
   public Boolean? ItalicCS
   {
-    get => _ItalicCS ??= GetElement<bool?, DXW.ItalicComplexScript>(_openXmlElement);
+    get => _ItalicCS ??= GetElement<bool?, DXW.ItalicComplexScript>(_UpdatableElement);
     set => UpdateField(ref _ItalicCS, value, nameof(ItalicCS));
   }
   private Boolean? _ItalicCS;
@@ -102,7 +102,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.FontSize))]
   [MultiCategory("Fonts and attributes")]
-  public HPS? FontSize { get => _FontSize ??= GetElement<HPS?, DXW.FontSize>(_openXmlElement); set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
+  public HPS? FontSize { get => _FontSize ??= GetElement<HPS?, DXW.FontSize>(_UpdatableElement); set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
   private HPS? _FontSize;
 
   /// <summary>
@@ -110,7 +110,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.FontSizeComplexScript))]
   [MultiCategory("Fonts and attributes")]
-  public HPS? FontSizeCS { get => _FontSizeCS ??= GetElement<HPS?, DXW.FontSizeComplexScript>(_openXmlElement); set => UpdateField(ref _FontSizeCS, value, nameof(FontSizeCS)); }
+  public HPS? FontSizeCS { get => _FontSizeCS ??= GetElement<HPS?, DXW.FontSizeComplexScript>(_UpdatableElement); set => UpdateField(ref _FontSizeCS, value, nameof(FontSizeCS)); }
   private HPS? _FontSizeCS;
 
   /// <summary>
@@ -118,7 +118,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Caps))]
   [MultiCategory("Fonts and attributes")]
-  public bool? AllCaps { get => _AllCaps ??= GetElement<bool?, DXW.Caps>(_openXmlElement); set => UpdateField(ref _AllCaps, value, nameof(AllCaps)); }
+  public bool? AllCaps { get => _AllCaps ??= GetElement<bool?, DXW.Caps>(_UpdatableElement); set => UpdateField(ref _AllCaps, value, nameof(AllCaps)); }
   private bool? _AllCaps;
 
   /// <summary>
@@ -126,14 +126,14 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.SmallCaps))]
   [MultiCategory("Fonts and attributes")]
-  public bool? SmallCaps { get => _SmallCaps ??= GetElement<bool?, DXW.SmallCaps>(_openXmlElement); set => UpdateField(ref _SmallCaps, value, nameof(SmallCaps)); }
+  public bool? SmallCaps { get => _SmallCaps ??= GetElement<bool?, DXW.SmallCaps>(_UpdatableElement); set => UpdateField(ref _SmallCaps, value, nameof(SmallCaps)); }
   private bool? _SmallCaps;
 
   /// <summary>
   /// Underline style for the run contents.
   /// </summary>
   [MultiCategory("Fonts and attributes")]
-  public Underline? Underline { get => _Underline ??= GetElement<Underline?, DXW.Underline>(_openXmlElement); set => UpdateField(ref _Underline, value, nameof(Underline)); }
+  public Underline? Underline { get => _Underline ??= GetElement<Underline?, DXW.Underline>(_UpdatableElement); set => UpdateField(ref _Underline, value, nameof(Underline)); }
   private Underline? _Underline;
 
   /// <summary>
@@ -141,7 +141,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Strike))]
   [MultiCategory("Fonts and attributes")]
-  public bool? Strike { get => _Strike ??= GetElement<bool?, DXW.Strike>(_openXmlElement); set => UpdateField(ref _Strike, value, nameof(Strike)); }
+  public bool? Strike { get => _Strike ??= GetElement<bool?, DXW.Strike>(_UpdatableElement); set => UpdateField(ref _Strike, value, nameof(Strike)); }
   private bool? _Strike;
 
   /// <summary>
@@ -149,7 +149,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoubleStrike))]
   [MultiCategory("Fonts and attributes")]
-  public bool? DoubleStrike { get => _DoubleStrike ??= GetElement<bool?, DXW.DoubleStrike>(_openXmlElement); set => UpdateField(ref _DoubleStrike, value, nameof(DoubleStrike)); }
+  public bool? DoubleStrike { get => _DoubleStrike ??= GetElement<bool?, DXW.DoubleStrike>(_UpdatableElement); set => UpdateField(ref _DoubleStrike, value, nameof(DoubleStrike)); }
   private bool? _DoubleStrike;
 
   /// <summary>
@@ -157,7 +157,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Color))]
   [MultiCategory("Fonts and attributes")]
-  public DMW.Color? Color { get => _Color ??= GetElement<DMW.Color?, DXW.Color>(_openXmlElement); set => UpdateField(ref _Color, value, nameof(Color)); }
+  public DMW.Color? Color { get => _Color ??= GetElement<DMW.Color?, DXW.Color>(_UpdatableElement); set => UpdateField(ref _Color, value, nameof(Color)); }
   private DMW.Color? _Color;
 
   /// <summary>
@@ -165,7 +165,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Spacing))]
   [MultiCategory("Scaling and spacing")]
-  public Twips? Spacing { get => _Spacing ??= GetElement<Twips?, DXW.Spacing>(_openXmlElement); set => UpdateField(ref _Spacing, value, nameof(Spacing)); }
+  public Twips? Spacing { get => _Spacing ??= GetElement<Twips?, DXW.Spacing>(_UpdatableElement); set => UpdateField(ref _Spacing, value, nameof(Spacing)); }
   private Twips? _Spacing;
 
   /// <summary>
@@ -173,7 +173,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.CharacterScale))]
   [MultiCategory("Scaling and spacing")]
-  public Percent? CharacterScale { get => _CharacterScale ??= GetElement<Percent?, DXW.CharacterScale>(_openXmlElement); set => UpdateField(ref _CharacterScale, value, nameof(CharacterScale)); }
+  public Percent? CharacterScale { get => _CharacterScale ??= GetElement<Percent?, DXW.CharacterScale>(_UpdatableElement); set => UpdateField(ref _CharacterScale, value, nameof(CharacterScale)); }
   private Percent? _CharacterScale;
 
   /// <summary>
@@ -181,7 +181,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Kern))]
   [MultiCategory("Positioning and alignment")]
-  public HPS? Kern { get => _Kern ??= GetElement<HPS?, DXW.Kern>(_openXmlElement); set => UpdateField(ref _Kern, value, nameof(Kern)); }
+  public HPS? Kern { get => _Kern ??= GetElement<HPS?, DXW.Kern>(_UpdatableElement); set => UpdateField(ref _Kern, value, nameof(Kern)); }
   private HPS? _Kern;
 
   /// <summary>
@@ -189,7 +189,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.SnapToGrid))]
   [MultiCategory("Positioning and alignment")]
-  public bool? SnapToGrid { get => _SnapToGrid ??= GetElement<bool?, DXW.SnapToGrid>(_openXmlElement); set => UpdateField(ref _SnapToGrid, value, nameof(SnapToGrid)); }
+  public bool? SnapToGrid { get => _SnapToGrid ??= GetElement<bool?, DXW.SnapToGrid>(_UpdatableElement); set => UpdateField(ref _SnapToGrid, value, nameof(SnapToGrid)); }
   private bool? _SnapToGrid;
 
   /// <summary>
@@ -197,7 +197,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.VerticalTextAlignment))]
   [MultiCategory("Positioning and alignment")]
-  public VerticalPosition? VerticalTextAlignment { get => _VerticalTextAlignment ??= GetElement<VerticalPosition?, DXW.VerticalTextAlignment>(_openXmlElement); set => UpdateField(ref _VerticalTextAlignment, value, nameof(VerticalTextAlignment)); }
+  public VerticalPosition? VerticalTextAlignment { get => _VerticalTextAlignment ??= GetElement<VerticalPosition?, DXW.VerticalTextAlignment>(_UpdatableElement); set => UpdateField(ref _VerticalTextAlignment, value, nameof(VerticalTextAlignment)); }
   private VerticalPosition? _VerticalTextAlignment;
 
   /// <summary>
@@ -245,7 +245,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Position))]
   [MultiCategory("Positioning and alignment")]
-  public Twips? Position { get => _Position ??= GetElement<Twips?, DXW.Position>(_openXmlElement); set => UpdateField(ref _Position, value, nameof(Position)); }
+  public Twips? Position { get => _Position ??= GetElement<Twips?, DXW.Position>(_UpdatableElement); set => UpdateField(ref _Position, value, nameof(Position)); }
   private Twips? _Position;
 
   /// <summary>
@@ -253,7 +253,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Outline))]
   [MultiCategory("Effects and Border")]
-  public bool? Outline { get => _Outline ??= GetElement<bool?, DXW.Outline>(_openXmlElement); set => UpdateField(ref _Outline, value, nameof(Outline)); }
+  public bool? Outline { get => _Outline ??= GetElement<bool?, DXW.Outline>(_UpdatableElement); set => UpdateField(ref _Outline, value, nameof(Outline)); }
   private bool? _Outline;
 
   /// <summary>
@@ -261,7 +261,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Emboss))]
   [MultiCategory("Effects and Border")]
-  public bool? Emboss { get => _Emboss ??= GetElement<bool?, DXW.Emboss>(_openXmlElement); set => UpdateField(ref _Emboss, value, nameof(Emboss)); }
+  public bool? Emboss { get => _Emboss ??= GetElement<bool?, DXW.Emboss>(_UpdatableElement); set => UpdateField(ref _Emboss, value, nameof(Emboss)); }
   private bool? _Emboss;
 
   /// <summary>
@@ -269,7 +269,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Imprint))]
   [MultiCategory("Effects and Border")]
-  public bool? Imprint { get => _Imprint ??= GetElement<bool?, DXW.Imprint>(_openXmlElement); set => UpdateField(ref _Imprint, value, nameof(Imprint)); }
+  public bool? Imprint { get => _Imprint ??= GetElement<bool?, DXW.Imprint>(_UpdatableElement); set => UpdateField(ref _Imprint, value, nameof(Imprint)); }
   private bool? _Imprint;
 
   /// <summary>
@@ -277,7 +277,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Shadow))]
   [MultiCategory("Effects and Border")]
-  public bool? HasShadow { get => _HasShadow ??= GetElement<bool?, DXW.Shadow>(_openXmlElement); set => UpdateField(ref _HasShadow, value, nameof(HasShadow)); }
+  public bool? HasShadow { get => _HasShadow ??= GetElement<bool?, DXW.Shadow>(_UpdatableElement); set => UpdateField(ref _HasShadow, value, nameof(HasShadow)); }
   private bool? _HasShadow;
 
   /// <summary>
@@ -285,7 +285,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Languages))]
   [MultiCategory("Languages and proofing")]
-  public Languages? Language { get => _Language ??= GetElement<Languages?, DXW.Languages>(_openXmlElement); set => UpdateField(ref _Language, value, nameof(Language)); }
+  public Languages? Language { get => _Language ??= GetElement<Languages?, DXW.Languages>(_UpdatableElement); set => UpdateField(ref _Language, value, nameof(Language)); }
   private Languages? _Language;
 
   /// <summary>
@@ -293,7 +293,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoProof))]
   [MultiCategory("Languages and proofing")]
-  public bool? NoProof { get => _NoProof ??= GetElement<bool?, DXW.NoProof>(_openXmlElement); set => UpdateField(ref _NoProof, value, nameof(NoProof)); }
+  public bool? NoProof { get => _NoProof ??= GetElement<bool?, DXW.NoProof>(_UpdatableElement); set => UpdateField(ref _NoProof, value, nameof(NoProof)); }
   private bool? _NoProof;
 
   /// <summary>
@@ -301,7 +301,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Shading))]
   [MultiCategory("Effects and Border")]
-  public Shading? Shading { get => _Shading ??= GetElement<Shading?, DXW.Shading>(_openXmlElement); set => UpdateField(ref _Shading, value, nameof(Shading)); }
+  public Shading? Shading { get => _Shading ??= GetElement<Shading?, DXW.Shading>(_UpdatableElement); set => UpdateField(ref _Shading, value, nameof(Shading)); }
   private Shading? _Shading;
 
   /// <summary>
@@ -309,7 +309,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Border))]
   [MultiCategory("Effects and Border")]
-  public Border? Border { get => _Border ??= GetElement<Border?, DXW.Border>(_openXmlElement); set => UpdateField(ref _Border, value, nameof(Border)); }
+  public Border? Border { get => _Border ??= GetElement<Border?, DXW.Border>(_UpdatableElement); set => UpdateField(ref _Border, value, nameof(Border)); }
   private Border? _Border;
 
   /// <summary>
@@ -317,7 +317,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.TextEffect))]
   [MultiCategory("Effects and Border")]
-  public TextEffect? TextEffect { get => _TextEffect ??= GetElement<TextEffect?, DXW.TextEffect>(_openXmlElement); set => UpdateField(ref _TextEffect, value, nameof(TextEffect)); }
+  public TextEffect? TextEffect { get => _TextEffect ??= GetElement<TextEffect?, DXW.TextEffect>(_UpdatableElement); set => UpdateField(ref _TextEffect, value, nameof(TextEffect)); }
   private TextEffect? _TextEffect;
 
   /// <summary>
@@ -325,42 +325,42 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.FitText))]
   [MultiCategory("Scaling and spacing")]
-  public FitText? FitText { get => _FitText ??= GetElement<FitText?, DXW.FitText>(_openXmlElement); set => UpdateField(ref _FitText, value, nameof(FitText)); }
+  public FitText? FitText { get => _FitText ??= GetElement<FitText?, DXW.FitText>(_UpdatableElement); set => UpdateField(ref _FitText, value, nameof(FitText)); }
   private FitText? _FitText;
 
   /// <summary>
   /// Emphasis mark applied to each non-space character in the run.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Emphasis))]
-  public EmphasisMark? Emphasis { get => _Emphasis ??= GetElement<EmphasisMark?, DXW.Emphasis>(_openXmlElement); set => UpdateField(ref _Emphasis, value, nameof(Emphasis)); }
+  public EmphasisMark? Emphasis { get => _Emphasis ??= GetElement<EmphasisMark?, DXW.Emphasis>(_UpdatableElement); set => UpdateField(ref _Emphasis, value, nameof(Emphasis)); }
   private EmphasisMark? _Emphasis;
 
   /// <summary>
   /// East Asian typography settings, including two lines in one and horizontal in vertical text options.
   /// </summary>
   [OpenXmlElement(typeof(DXW.EastAsianLayout))]
-  public EastAsianLayout? EastAsianLayout { get => _EastAsianLayout ??= GetElement<EastAsianLayout?, DXW.EastAsianLayout>(_openXmlElement); set => UpdateField(ref _EastAsianLayout, value, nameof(EastAsianLayout)); }
+  public EastAsianLayout? EastAsianLayout { get => _EastAsianLayout ??= GetElement<EastAsianLayout?, DXW.EastAsianLayout>(_UpdatableElement); set => UpdateField(ref _EastAsianLayout, value, nameof(EastAsianLayout)); }
   private EastAsianLayout? _EastAsianLayout;
 
   /// <summary>
   /// Hides the run contents from display at display time in the document.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Vanish))]
-  public bool? Hidden { get => _hidden ??= GetElement<bool?, DXW.Vanish>(_openXmlElement); set => UpdateField(ref _hidden, value, nameof(Hidden)); }
+  public bool? Hidden { get => _hidden ??= GetElement<bool?, DXW.Vanish>(_UpdatableElement); set => UpdateField(ref _hidden, value, nameof(Hidden)); }
   private bool? _hidden;
 
   /// <summary>
   /// Ensures the run always behaves as hidden, even when hidden text is displayed (for paragraph marks).
   /// </summary>
   [OpenXmlElement(typeof(DXW.SpecVanish))]
-  public bool? HiddenAlways { get => _hiddenAlways ??= GetElement<bool?, DXW.SpecVanish>(_openXmlElement); set => UpdateField(ref _hiddenAlways, value, nameof(HiddenAlways)); }
+  public bool? HiddenAlways { get => _hiddenAlways ??= GetElement<bool?, DXW.SpecVanish>(_UpdatableElement); set => UpdateField(ref _hiddenAlways, value, nameof(HiddenAlways)); }
   private bool? _hiddenAlways;
 
   /// <summary>
   /// Hides the run contents from display in web page view.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WebHidden))]
-  public bool? HiddenInWeb { get => _hiddenInWeb ??= GetElement<bool?, DXW.WebHidden>(_openXmlElement); set => UpdateField(ref _hiddenInWeb, value, nameof(HiddenInWeb)); }
+  public bool? HiddenInWeb { get => _hiddenInWeb ??= GetElement<bool?, DXW.WebHidden>(_UpdatableElement); set => UpdateField(ref _hiddenInWeb, value, nameof(HiddenInWeb)); }
   private bool? _hiddenInWeb;
   #endregion
   ///// <summary>

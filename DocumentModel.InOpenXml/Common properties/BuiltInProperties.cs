@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// content properties, and statistic properties. 
 /// </summary>
 [XmlRoot("BuiltInProperties", Namespace = "DocumentModel")]
-public partial class BuiltInProperties : ModelElement, IElementCollection<BuiltInProperty>
+public partial class BuiltInProperties : ModelElement//, IElementCollection<BuiltInProperty>
 {
   /// <summary>
   /// Provides access to the core properties of the document.
@@ -171,11 +171,11 @@ public partial class BuiltInProperties : ModelElement, IElementCollection<BuiltI
   /// <returns></returns>
   public IEnumerator<BuiltInProperty> GetEnumerator()
   {
-    foreach (var property in CoreProperties.Cast<BuiltInProperty>())
+    foreach (var property in CoreProperties)
       yield return property;
-    foreach (var property in ContentProperties.Cast<BuiltInProperty>())
+    foreach (var property in ContentProperties)
       yield return property;
-    foreach (var property in StatisticProperties.Cast<BuiltInProperty>())
+    foreach (var property in StatisticProperties)
       yield return property;
   }
 
@@ -207,21 +207,21 @@ public partial class BuiltInProperties : ModelElement, IElementCollection<BuiltI
     }
   }
 
-  /// <summary>
-  /// Copies the built-in properties from the collection to an array, starting at a particular array index.
-  /// </summary>
-  /// <param name="array">The destination array.</param>
-  /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  /// <exception cref="NotImplementedException"></exception>
-  public void CopyTo(BuiltInProperty[] array, int arrayIndex)
-  {
-    var tempList = CoreProperties.ToList();
-    tempList.AddRange(ContentProperties);
-    tempList.AddRange(StatisticProperties);
-    if (array.Length - arrayIndex < tempList.Count)
-      throw new ArgumentException("The destination array has insufficient space to copy the elements.");
-    Array.Copy(tempList.ToArray(), 0, array, arrayIndex, tempList.Count);
-  }
+  ///// <summary>
+  ///// Copies the built-in properties from the collection to an array, starting at a particular array index.
+  ///// </summary>
+  ///// <param name="array">The destination array.</param>
+  ///// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
+  ///// <exception cref="NotImplementedException"></exception>
+  //public void CopyTo(BuiltInProperty[] array, int arrayIndex)
+  //{
+  //  var tempList = CoreProperties.ToList();
+  //  tempList.AddRange(ContentProperties);
+  //  tempList.AddRange(StatisticProperties);
+  //  if (array.Length - arrayIndex < tempList.Count)
+  //    throw new ArgumentException("The destination array has insufficient space to copy the elements.");
+  //  Array.Copy(tempList.ToArray(), 0, array, arrayIndex, tempList.Count);
+  //}
 
   /// <summary>
   /// Gets or sets the built-in property with the specified name. The indexer checks for the existence of the property in the core properties, content properties, and statistic properties, and returns or updates the value accordingly. If a property with the specified name does not exist in any of the subordinate properties, it throws an ArgumentException.

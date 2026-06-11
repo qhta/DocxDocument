@@ -142,17 +142,18 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
-  /// Retrieves the core file properties for the specified Wordprocessing document.
+  /// Retrieves the core file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name = "wordDocument">The Document instance.</param>
+  /// <param name = "createIfNotExist">Indicates whether to create the core file properties if they do not exist.</param>
   /// <returns>The core file properties class.</returns>
-  public static DXPP.IPackageProperties GetCoreProperties(this DXPP.WordprocessingDocument wordDocument)
+  public static DXPP.IPackageProperties? GetCoreProperties(this DXPP.WordprocessingDocument wordDocument, bool createIfNotExist)
   {
-    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? wordDocument.AddCoreFilePropertiesPart();
-    var properties = coreFilePropertiesPart.RootElement as DXPP.IPackageProperties;
-    if (properties == null)
+    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? (createIfNotExist ? wordDocument.AddCoreFilePropertiesPart() : null);
+    var properties = coreFilePropertiesPart?.CoreFileProperties;
+    if (properties == null && createIfNotExist)
     {
-      using var stream = coreFilePropertiesPart.GetStream(FileMode.Create, FileAccess.Write);
+      using var stream = coreFilePropertiesPart!.GetStream(FileMode.Create, FileAccess.Write);
       using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8);
       writer.Write("<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" " + "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " + "xmlns:dcterms=\"http://purl.org/dc/terms/\" " + "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" " + "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" + "</cp:coreProperties>");
       coreFilePropertiesPart.UnloadRootElement();
@@ -163,28 +164,17 @@ public static class WordprocessingHelper
   }
 
   /// <summary>
-  /// Retrieves the core file properties for the specified Wordprocessing document.
-  /// </summary>
-  /// <param name = "wordDocument">The Document instance.</param>
-  /// <returns>The core file properties class.</returns>
-  public static DXPP.IPackageProperties? GetExistingCoreProperties(this DXPP.WordprocessingDocument wordDocument)
-  {
-    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart;
-    var properties = coreFilePropertiesPart?.CoreFileProperties;
-    return properties;
-  }
-
-  /// <summary>
   /// Retrieves the extended file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
   /// <param name = "wordDocument">The Document instance.</param>
+  /// <param name = "createIfNotExist">Indicates whether to create the extended file properties if they do not exist.</param>
   /// <returns>The extended file properties element.</returns>
-  public static DXEP.Properties GetExtendedFileProperties(this DXPP.WordprocessingDocument wordDocument)
+  public static DXEP.Properties? GetExtendedFileProperties(this DXPP.WordprocessingDocument wordDocument, bool createIfNotExist)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
-    DXPP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
-    var properties = part.Properties ?? (part.Properties = new DXEP.Properties());
+    var part = wordDocument.ExtendedFilePropertiesPart ?? (createIfNotExist ? wordDocument.AddExtendedFilePropertiesPart() : null);
+    var properties = part?.Properties ?? (createIfNotExist ? (part!.Properties = new DXEP.Properties()) : null);
     return properties;
   }
 

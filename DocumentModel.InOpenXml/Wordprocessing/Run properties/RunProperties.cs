@@ -15,7 +15,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.RunStyle))]
   public string? RunStyle
   {
-    get => _RunStyle ??= GetElement<string?, DXW.RunStyle>(_openXmlElement);
+    get => _RunStyle ??= GetElement<string?, DXW.RunStyle>(_UpdatableElement);
     set => UpdateField(ref _RunStyle, value, nameof(RunStyle));
   }
 
@@ -27,7 +27,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.Highlight))]
   public HighlightColors? Highlight
   {
-    get => _Highlight ??= GetElement<HighlightColors?, DXW.Highlight>(_openXmlElement);
+    get => _Highlight ??= GetElement<HighlightColors?, DXW.Highlight>(_UpdatableElement);
     set => UpdateField(ref _Highlight, value, nameof(Highlight));
   }
 
@@ -39,7 +39,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.RightToLeftText))]
   public bool? RightToLeftText
   {
-    get => _RightToLeftText ??= GetElement<bool?, DXW.RightToLeftText>(_openXmlElement);
+    get => _RightToLeftText ??= GetElement<bool?, DXW.RightToLeftText>(_UpdatableElement);
     set => UpdateField(ref _RightToLeftText, value, nameof(RightToLeftText));
   }
 
@@ -51,7 +51,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.ComplexScript))]
   public bool? ComplexScript
   {
-    get => _ComplexScript ??= GetElement<bool?, DXW.ComplexScript>(_openXmlElement);
+    get => _ComplexScript ??= GetElement<bool?, DXW.ComplexScript>(_UpdatableElement);
     set => UpdateField(ref _ComplexScript, value, nameof(ComplexScript));
   }
 
@@ -63,7 +63,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.Glow))]
   public DMWD.Glow? Glow
   {
-    get => _Glow ??= GetElement<DMWD.Glow?, DXO10W.Glow>(_openXmlElement);
+    get => _Glow ??= GetElement<DMWD.Glow?, DXO10W.Glow>(_UpdatableElement);
     set => UpdateField(ref _Glow, value, nameof(Glow));
   }
 
@@ -75,7 +75,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.Shadow))]
   public DMWD.Shadow? Shadow
   {
-    get => _Shadow ??= GetElement<DMWD.Shadow?, DXW.Shadow>(_openXmlElement);
+    get => _Shadow ??= GetElement<DMWD.Shadow?, DXW.Shadow>(_UpdatableElement);
     set => UpdateField(ref _Shadow, value, nameof(Shadow));
   }
 
@@ -87,7 +87,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.Reflection))]
   public DMWD.Reflection? Reflection
   {
-    get => _Reflection ??= GetElement<DMWD.Reflection?, DXO10W.Reflection>(_openXmlElement);
+    get => _Reflection ??= GetElement<DMWD.Reflection?, DXO10W.Reflection>(_UpdatableElement);
     set => UpdateField(ref _Reflection, value, nameof(Reflection));
   }
 
@@ -99,7 +99,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.TextOutlineEffect))]
   public DMWD.TextOutlineEffect? TextOutlineEffect
   {
-    get => _TextOutlineEffect ??= GetElement<DMWD.TextOutlineEffect?, DXO10W.TextOutlineEffect>(_openXmlElement);
+    get => _TextOutlineEffect ??= GetElement<DMWD.TextOutlineEffect?, DXO10W.TextOutlineEffect>(_UpdatableElement);
     set => UpdateField(ref _TextOutlineEffect, value, nameof(TextOutlineEffect));
   }
 
@@ -111,7 +111,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.FillTextEffect))]
   public DMWD.FillTextEffect? FillTextEffect
   {
-    get => _FillTextEffect ??= GetElement<DMWD.FillTextEffect?, DXO10W.FillTextEffect>(_openXmlElement);
+    get => _FillTextEffect ??= GetElement<DMWD.FillTextEffect?, DXO10W.FillTextEffect>(_UpdatableElement);
     set => UpdateField(ref _FillTextEffect, value, nameof(FillTextEffect));
   }
 
@@ -123,7 +123,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.Scene3D))]
   public DMWD.Scene3D? Scene3D
   {
-    get => _Scene3D ??= GetElement<DMWD.Scene3D?, DXO10W.Scene3D>(_openXmlElement);
+    get => _Scene3D ??= GetElement<DMWD.Scene3D?, DXO10W.Scene3D>(_UpdatableElement);
     set => UpdateField(ref _Scene3D, value, nameof(Scene3D));
   }
 
@@ -135,7 +135,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.Properties3D))]
   public DMWD.Properties3D? Properties3D
   {
-    get => _Properties3D ??= GetElement<DMWD.Properties3D?, DXO10W.Properties3D>(_openXmlElement);
+    get => _Properties3D ??= GetElement<DMWD.Properties3D?, DXO10W.Properties3D>(_UpdatableElement);
     set => UpdateField(ref _Properties3D, value, nameof(Properties3D));
   }
 
@@ -147,7 +147,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.Ligatures))]
   public Ligatures? Ligatures
   {
-    get => _Ligatures ??= GetElement<Ligatures?, DXO10W.Ligatures>(_openXmlElement);
+    get => _Ligatures ??= GetElement<Ligatures?, DXO10W.Ligatures>(_UpdatableElement);
     set => UpdateField(ref _Ligatures, value, nameof(Ligatures));
   }
 
@@ -159,7 +159,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.NumberingFormat))]
   public NumberForm? NumberingFormat
   {
-    get => _NumberingFormat ??= GetElement<NumberForm?, DXO10W.NumberingFormat>(_openXmlElement);
+    get => _NumberingFormat ??= GetElement<NumberForm?, DXO10W.NumberingFormat>(_UpdatableElement);
     set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat));
   }
 
@@ -171,7 +171,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.NumberSpacing))]
   public NumberSpacing? NumberSpacing
   {
-    get => _NumberSpacing ??= GetElement<NumberSpacing?, DXO10W.NumberSpacing>(_openXmlElement);
+    get => _NumberSpacing ??= GetElement<NumberSpacing?, DXO10W.NumberSpacing>(_UpdatableElement);
     set => UpdateField(ref _NumberSpacing, value, nameof(NumberSpacing));
   }
 
@@ -183,7 +183,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.StylisticSets))]
   public StylisticSets? StylisticSets
   {
-    get => _StylisticSets ??= GetElement<StylisticSets?, DXO10W.StylisticSets>(_openXmlElement);
+    get => _StylisticSets ??= GetElement<StylisticSets?, DXO10W.StylisticSets>(_UpdatableElement);
     set => UpdateField(ref _StylisticSets, value, nameof(StylisticSets));
   }
 
@@ -195,7 +195,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXO10W.ContextualAlternatives))]
   public Boolean? ContextualAlternatives
   {
-    get => _ContextualAlternatives ??= GetElement<Boolean?, DXO10W.ContextualAlternatives>(_openXmlElement);
+    get => _ContextualAlternatives ??= GetElement<Boolean?, DXO10W.ContextualAlternatives>(_UpdatableElement);
     set => UpdateField(ref _ContextualAlternatives, value, nameof(ContextualAlternatives));
   }
 
@@ -207,7 +207,7 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   [OpenXmlElement(typeof(DXW.RunPropertiesChange))]
   public RunPropertiesChange? RunPropertiesChange
   {
-    get => _RunPropertiesChange ??= GetElement<RunPropertiesChange?, DXW.RunPropertiesChange>(_openXmlElement);
+    get => _RunPropertiesChange ??= GetElement<RunPropertiesChange?, DXW.RunPropertiesChange>(_UpdatableElement);
     set => UpdateField(ref _RunPropertiesChange, value, nameof(RunPropertiesChange));
   }
 

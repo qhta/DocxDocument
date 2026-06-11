@@ -34,6 +34,33 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   }
 
   /// <summary>
+  /// Retrieves the Open XML element that represents the updatable content properties for the current instance.
+  /// </summary>
+  /// <returns>An object representing the updatable Open XML content properties, or <see langword="null"/> if no properties are
+  /// available.</returns>
+  public override object? GetUpdatableElement()
+  {
+    if (WordprocessingDocument != null)
+      return WordprocessingDocument.GetExtendedFileProperties(true);
+    return null;
+  }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">Document to attach to.</param>
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    base.AttachAndLoad(wordprocessingDocument);
+    var properties = wordprocessingDocument.GetExtendedFileProperties(true);
+    if (properties != null)
+    {
+      SetUpdatableElement(properties);
+      LoadData(properties);
+    }
+  }
+
+  /// <summary>
   /// Copies data from the specified ContentProperties instance to this instance.
   /// </summary>
   /// <param name = "properties">ContentProperties instance containing the model property value.</param>
@@ -67,7 +94,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.Template))]
   public string? Template
   {
-    get => _Template ??= GetProperty<string?>(_openXmlElement?.Template);
+    get => _Template ??= GetProperty<string?>(_UpdatableElement?.Template);
     set => UpdateField(ref _Template, value, nameof(Template));
   }
   private string? _Template;
@@ -80,7 +107,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.Manager))]
   public string? Manager
   {
-    get => _Manager ??= GetProperty<string?>(_openXmlElement?.Manager);
+    get => _Manager ??= GetProperty<string?>(_UpdatableElement?.Manager);
     set => UpdateField(ref _Manager, value, nameof(Manager));
   }
   private string? _Manager;
@@ -93,7 +120,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.Company))]
   public string? Company
   {
-    get => _Company ??= GetProperty<string?>(_openXmlElement?.Company);
+    get => _Company ??= GetProperty<string?>(_UpdatableElement?.Company);
     set => UpdateField(ref _Company, value, nameof(Company));
   }
   private string? _Company;
@@ -107,7 +134,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.PresentationFormat))]
   public string? PresentationFormat
   {
-    get => _PresentationFormat ??= GetProperty<string?>(_openXmlElement?.PresentationFormat);
+    get => _PresentationFormat ??= GetProperty<string?>(_UpdatableElement?.PresentationFormat);
     set => UpdateField(ref _PresentationFormat, value, nameof(PresentationFormat));
   }
   private string? _PresentationFormat;
@@ -122,7 +149,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.ScaleCrop))]
   public bool? ScaleCrop
   {
-    get => _ScaleCrop ??= GetProperty<bool?>(_openXmlElement?.ScaleCrop);
+    get => _ScaleCrop ??= GetProperty<bool?>(_UpdatableElement?.ScaleCrop);
     set => UpdateField(ref _ScaleCrop, value, nameof(ScaleCrop));
   }
   private bool? _ScaleCrop;
@@ -136,7 +163,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.HeadingPairs))]
   public HeadingPairs? HeadingPairs
   {
-    get => _HeadingPairs ??= GetProperty<HeadingPairs?>(_openXmlElement?.HeadingPairs);
+    get => _HeadingPairs ??= GetProperty<HeadingPairs?>(_UpdatableElement?.HeadingPairs);
     set => UpdateField(ref _HeadingPairs, value, nameof(HeadingPairs));
   }
   private HeadingPairs? _HeadingPairs;
@@ -150,7 +177,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.TitlesOfParts))]
   public StringList? TitlesOfParts
   {
-    get => _TitlesOfParts ??= GetProperty<StringList?>(_openXmlElement?.TitlesOfParts);
+    get => _TitlesOfParts ??= GetProperty<StringList?>(_UpdatableElement?.TitlesOfParts);
     set => UpdateField(ref _TitlesOfParts, value, nameof(TitlesOfParts));
   }
   private StringList? _TitlesOfParts;
@@ -164,7 +191,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.LinksUpToDate))]
   public bool? LinksUpToDate
   {
-    get => _LinksUpToDate ??= GetProperty<bool?>(_openXmlElement?.LinksUpToDate);
+    get => _LinksUpToDate ??= GetProperty<bool?>(_UpdatableElement?.LinksUpToDate);
     set => UpdateField(ref _LinksUpToDate, value, nameof(LinksUpToDate));
   }
   private bool? _LinksUpToDate;
@@ -178,7 +205,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.SharedDocument))]
   public bool? SharedDocument
   {
-    get => _SharedDocument ??= GetProperty<bool?>(_openXmlElement?.SharedDocument);
+    get => _SharedDocument ??= GetProperty<bool?>(_UpdatableElement?.SharedDocument);
     set => UpdateField(ref _SharedDocument, value, nameof(SharedDocument));
   }
   private bool? _SharedDocument;
@@ -192,7 +219,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.HyperlinkBase))]
   public string? HyperlinkBase
   {
-    get => _HyperlinkBase ??= GetProperty<string?>(_openXmlElement?.HyperlinkBase);
+    get => _HyperlinkBase ??= GetProperty<string?>(_UpdatableElement?.HyperlinkBase);
     set => UpdateField(ref _HyperlinkBase, value, nameof(HyperlinkBase));
   }
   private string? _HyperlinkBase;
@@ -205,7 +232,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.HyperlinkList))]
   public HyperlinkList? HyperlinkList
   {
-    get => _HyperlinkList ??= GetProperty<HyperlinkList?>(_openXmlElement?.HyperlinkList);
+    get => _HyperlinkList ??= GetProperty<HyperlinkList?>(_UpdatableElement?.HyperlinkList);
     set => UpdateField(ref _HyperlinkList, value, nameof(HyperlinkList));
   }
   private HyperlinkList? _HyperlinkList;
@@ -219,7 +246,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.HyperlinksChanged))]
   public bool? HyperlinksChanged
   {
-    get => _HyperlinksChanged ??= GetProperty<bool?>(_openXmlElement?.HyperlinksChanged);
+    get => _HyperlinksChanged ??= GetProperty<bool?>(_UpdatableElement?.HyperlinksChanged);
     set => UpdateField(ref _HyperlinksChanged, value, nameof(HyperlinksChanged));
   }
   private bool? _HyperlinksChanged;
@@ -238,7 +265,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.DocumentSecurity))]
   public DocumentSecurity? DocumentSecurity
   {
-    get => _DocumentSecurity ??= GetProperty<DocumentSecurity?>(_openXmlElement?.DocumentSecurity);
+    get => _DocumentSecurity ??= GetProperty<DocumentSecurity?>(_UpdatableElement?.DocumentSecurity);
     set => UpdateField(ref _DocumentSecurity, value, nameof(DocumentSecurity));
   }
   private DocumentSecurity? _DocumentSecurity;
@@ -254,7 +281,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.DigitalSignature))]
   public HexBinary? DigitalSignature
   {
-    get => _DigitalSignature ??= GetProperty<HexBinary?>(_openXmlElement?.DigitalSignature);
+    get => _DigitalSignature ??= GetProperty<HexBinary?>(_UpdatableElement?.DigitalSignature);
     set => UpdateField(ref _DigitalSignature, value, nameof(DigitalSignature));
   }
   private HexBinary? _DigitalSignature;
@@ -269,7 +296,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.Application))]
   public string? Application
   {
-    get => _Application ??= GetProperty<string?>(_openXmlElement?.Application);
+    get => _Application ??= GetProperty<string?>(_UpdatableElement?.Application);
     set => UpdateField(ref _Application, value, nameof(Application));
   }
   private string? _Application;
@@ -284,7 +311,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
   [OpenXmlProperty(nameof(DXEP.Properties.ApplicationVersion))]
   public string? ApplicationVersion
   {
-    get => _ApplicationVersion ??= GetProperty<string?>(_openXmlElement?.ApplicationVersion);
+    get => _ApplicationVersion ??= GetProperty<string?>(_UpdatableElement?.ApplicationVersion);
     set => UpdateField(ref _ApplicationVersion, value, nameof(ApplicationVersion));
   }
   private string? _ApplicationVersion;

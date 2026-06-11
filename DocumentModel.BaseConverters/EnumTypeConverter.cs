@@ -467,9 +467,26 @@ public static partial class EnumTypeConverter
     var valText = openXmlValue.Text;
     if (string.IsNullOrEmpty(valText))
       return null;
-    var intVal = Convert.ToInt32(valText);
-    var enumValue = Enum.ToObject(modelEnumType, intVal);
-    return (Enum)enumValue;
+    if (Int32.TryParse(valText, out var intValue))
+    {
+      var enumValue = Enum.ToObject(modelEnumType, intValue);
+      return (Enum)enumValue;
+    }
+    if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null) Debug.Assert(true);
+
+    var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
+    if (enumValuesMap.TryGetValue1(enumValuesMap, out var result))
+      return (Enum)result;
+    if (Int32.TryParse(valText, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out intValue))
+    {
+      var enumValue = Enum.ToObject(modelEnumType, intValue);
+      return (Enum)enumValue;
+    }
+
+    if (modelEnumType.TryParseEnum(valText, out var enumResult))
+        return (Enum)enumResult!;
+
+    return null;
   }
 
   /// <summary>

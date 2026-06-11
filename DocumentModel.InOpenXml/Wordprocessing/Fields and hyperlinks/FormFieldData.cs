@@ -14,7 +14,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.FormFieldName))]
   public string? FormFieldName 
   {
-    get => _FormFieldName ??= GetElement<string?, DXW.FormFieldName>(_openXmlElement);
+    get => _FormFieldName ??= GetElement<string?, DXW.FormFieldName>(_UpdatableElement);
     set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName));
   }
   private string? _FormFieldName;
@@ -25,7 +25,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.Enabled))]
   public bool? Enabled 
   {
-    get => _Enabled ??= GetElement<bool?, DXW.Enabled>(_openXmlElement);
+    get => _Enabled ??= GetElement<bool?, DXW.Enabled>(_UpdatableElement);
     set => UpdateField(ref _Enabled, value, nameof(Enabled));
   }
   private bool? _Enabled;
@@ -36,7 +36,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.CalculateOnExit))]
   public bool? CalculateOnExit 
   {
-    get => _CalculateOnExit ??= GetElement<bool?, DXW.CalculateOnExit>(_openXmlElement);
+    get => _CalculateOnExit ??= GetElement<bool?, DXW.CalculateOnExit>(_UpdatableElement);
     set => UpdateField(ref _CalculateOnExit, value, nameof(CalculateOnExit));
   }
   private bool? _CalculateOnExit;
@@ -47,7 +47,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.EntryMacro))]
   public string? EntryMacro 
   {
-    get => _EntryMacro ??= GetElement<string?, DXW.EntryMacro>(_openXmlElement);
+    get => _EntryMacro ??= GetElement<string?, DXW.EntryMacro>(_UpdatableElement);
     set => UpdateField(ref _EntryMacro, value, nameof(EntryMacro));
   }
   private string? _EntryMacro;
@@ -58,7 +58,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.ExitMacro))]
   public string? ExitMacro 
   {
-    get => _ExitMacro ??= GetElement<string?, DXW.ExitMacro>(_openXmlElement);
+    get => _ExitMacro ??= GetElement<string?, DXW.ExitMacro>(_UpdatableElement);
     set => UpdateField(ref _ExitMacro, value, nameof(ExitMacro));
   }
   private string? _ExitMacro;
@@ -69,7 +69,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.HelpText))]
   public HelpText? HelpText
   {
-    get => _HelpText ??= GetElement<HelpText?, DXW.HelpText>(_openXmlElement);
+    get => _HelpText ??= GetElement<HelpText?, DXW.HelpText>(_UpdatableElement);
     set => UpdateField(ref _HelpText, value, nameof(HelpText));
   }
   private HelpText? _HelpText;
@@ -80,7 +80,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.StatusText))]
   public StatusText? StatusText
   {
-    get => _StatusText ??= GetElement<StatusText?, DXW.StatusText>(_openXmlElement);
+    get => _StatusText ??= GetElement<StatusText?, DXW.StatusText>(_UpdatableElement);
     set => UpdateField(ref _StatusText, value, nameof(StatusText));
   }
   private StatusText? _StatusText;
@@ -91,7 +91,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.CheckBox))]
   public CheckBox? CheckBox
   {
-    get => _CheckBox ??= GetElement<CheckBox?, DXW.CheckBox>(_openXmlElement);
+    get => _CheckBox ??= GetElement<CheckBox?, DXW.CheckBox>(_UpdatableElement);
     set => UpdateField(ref _CheckBox, value, nameof(CheckBox));
   }
   private CheckBox? _CheckBox;
@@ -102,7 +102,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   [OpenXmlElement(typeof(DXW.DropDownListFormField))]
   public DropDownListFormField? DropDownListFormField
   {
-    get => _DropDownListFormField ??= GetElement<DropDownListFormField?, DXW.DropDownListFormField>(_openXmlElement);
+    get => _DropDownListFormField ??= GetElement<DropDownListFormField?, DXW.DropDownListFormField>(_UpdatableElement);
     set => UpdateField(ref _DropDownListFormField, value, nameof(DropDownListFormField));
   }
   private DropDownListFormField? _DropDownListFormField;

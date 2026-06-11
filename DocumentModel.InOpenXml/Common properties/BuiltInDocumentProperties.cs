@@ -134,7 +134,7 @@ where T: DX.OpenXmlElement
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        if (property.GetValue(this) == item.Value)
+        if ((string?)property.GetValue(this) == item.Value)
           return true;
       }
     }
@@ -212,16 +212,16 @@ where T: DX.OpenXmlElement
   /// </summary>
   public override event NotifyCollectionChangedEventHandler? CollectionChanged;
 
-  /// <summary>
-  /// Copies the elements of the collection of document properties to an array, starting at a particular array index.
-  /// </summary>
-  /// <param name="array">The destination array.</param>
-  /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  public override void CopyTo(BuiltInProperty[] array, int arrayIndex)
-  {
-    var tempArray = this.ToArray();
-    Array.Copy(tempArray, 0, array, arrayIndex, tempArray.Length);
-  }
+  ///// <summary>
+  ///// Copies the elements of the collection of document properties to an array, starting at a particular array index.
+  ///// </summary>
+  ///// <param name="array">The destination array.</param>
+  ///// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
+  //public override void CopyTo(BuiltInProperty[] array, int arrayIndex)
+  //{
+  //  var tempArray = this.ToArray();
+  //  Array.Copy(tempArray, 0, array, arrayIndex, tempArray.Length);
+  //}
 
   /// <summary>
   /// Tries to get a property from this instance by its name.

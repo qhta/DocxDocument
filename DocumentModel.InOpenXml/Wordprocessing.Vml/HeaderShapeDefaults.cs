@@ -16,7 +16,7 @@ public partial class HeaderShapeDefaults: ModelElement<DXW.HeaderShapeDefaults>
   [OpenXmlElement(typeof(DXVO.ShapeDefaults))]
   public ShapeDefaults? ShapeDefaults
   {
-    get => _ShapeDefaults ??= GetElement<ShapeDefaults?, DXVO.ShapeDefaults>(_openXmlElement);
+    get => _ShapeDefaults ??= GetElement<ShapeDefaults?, DXVO.ShapeDefaults>(_UpdatableElement);
     set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults));
   }
   private ShapeDefaults? _ShapeDefaults;
@@ -27,7 +27,7 @@ public partial class HeaderShapeDefaults: ModelElement<DXW.HeaderShapeDefaults>
   [XmlIgnore, OpenXmlElement(typeof(DXVO.ShapeLayout))]
   public ShapeLayout? ShapeLayout
   {
-    get => _ShapeLayout ??= GetElement<ShapeLayout?, DXVO.ShapeLayout>(_openXmlElement);
+    get => _ShapeLayout ??= GetElement<ShapeLayout?, DXVO.ShapeLayout>(_UpdatableElement);
     set => UpdateField(ref _ShapeLayout, value, nameof(ShapeLayout));
   }
   private ShapeLayout? _ShapeLayout;

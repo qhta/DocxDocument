@@ -16,7 +16,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   /// when you want to create a new paragraph in a document without copying from an existing one.</remarks>
   public Paragraph() : base() { }
 
-  private DXW.Paragraph _paragraph => _openXmlElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
+  private DXW.Paragraph _paragraph => _UpdatableElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
 
   /// <summary>
   /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
@@ -151,7 +151,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(DMW.CustomXmlConflictDeletionRangeStart))]
   public ParagraphItemsCollection Items
   {
-    get => _Items ??= new ParagraphItemsCollection(this, _openXmlElement);
+    get => _Items ??= new ParagraphItemsCollection(this, _UpdatableElement);
   }
   private ParagraphItemsCollection? _Items;
 }

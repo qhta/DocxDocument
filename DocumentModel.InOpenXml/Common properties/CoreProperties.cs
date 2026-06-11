@@ -61,7 +61,7 @@ public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>
   public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndLoad(wordprocessingDocument);
-    var core = wordprocessingDocument.GetExistingCoreProperties();
+    var core = wordprocessingDocument.GetCoreProperties(false);
     if (core != null)
     {
       SetUpdatableElement(core);
@@ -146,7 +146,7 @@ public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>
     openXmlProperty.SetValue(openXmlElement, modelValue);
     if (WordprocessingDocument != null)
     {
-      var coreProperties = WordprocessingDocument.GetCoreProperties();
+      var coreProperties = WordprocessingDocument.GetCoreProperties(true);
     }
   }
 

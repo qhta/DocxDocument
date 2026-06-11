@@ -32,7 +32,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
-    _openXmlElement = (OpenXmlType?)openXmlElement;
+    _UpdatableElement = (OpenXmlType?)openXmlElement;
   }
 
 
@@ -42,7 +42,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
   protected ModelElement(DX.OpenXmlElement openXmlElement)
   {
-    _openXmlElement = (OpenXmlType)openXmlElement;
+    _UpdatableElement = (OpenXmlType)openXmlElement;
   }
 
   /// <summary>
@@ -64,7 +64,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
   /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
   /// element.</remarks>
-  protected OpenXmlType? _openXmlElement;
+  protected OpenXmlType? _UpdatableElement;
 
 
   /// <summary>
@@ -139,9 +139,9 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   public virtual void SetUpdatableElement(object? element)
   {
     if (element == null)
-      _openXmlElement = null;
+      _UpdatableElement = null;
     else if (element is OpenXmlType openXmlElement)
-      _openXmlElement = openXmlElement;
+      _UpdatableElement = openXmlElement;
     else
       throw new ArgumentException($"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
   }
@@ -152,7 +152,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <returns>The OpenXml element instance, or null if not set.</returns>
   public override object? GetUpdatableElement()
   {
-    return _openXmlElement;
+    return _UpdatableElement;
   }
 
   /// <summary>
@@ -160,9 +160,10 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool LoadData()
   {
-    if (_openXmlElement !=null)
+    var updatableElement = GetUpdatableElement();
+    if (updatableElement != null)
     {
-      LoadData(_openXmlElement);
+      LoadData(updatableElement);
       return true;
     }
     return false;
@@ -173,9 +174,10 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool UpdateData()
   {
-    if (_openXmlElement != null)
+    var updatableElement = GetUpdatableElement(); 
+    if (updatableElement != null)
     {
-      UpdateData(_openXmlElement);
+      UpdateData(updatableElement);
       return true;
     }
     return false;
@@ -184,6 +186,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <summary>
   /// Checks if the current model element has direct access to its underlying OpenXmlElement, based on the presence of the DirectAccessAttribute and the non-null state of the _openXmlElement field.
   /// </summary>
-  public bool HasDirectAccess => _openXmlElement != null 
+  public bool HasDirectAccess => _UpdatableElement != null 
                                  && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
 }

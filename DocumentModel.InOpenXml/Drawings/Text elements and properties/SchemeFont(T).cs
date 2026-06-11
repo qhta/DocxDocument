@@ -13,7 +13,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   [OpenXmlElement(typeof(DXD.LatinFont))]
   public TextFontType? LatinFont 
   {
-    get => _LatinFont ??= GetElement<TextFontType?, DXD.LatinFont>(_openXmlElement);
+    get => _LatinFont ??= GetElement<TextFontType?, DXD.LatinFont>(_UpdatableElement);
     set => UpdateField(ref _LatinFont, value, nameof(LatinFont));
   }
   private TextFontType? _LatinFont;
@@ -24,7 +24,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   [OpenXmlElement(typeof(DXD.EastAsianFont))]
   public TextFontType? EastAsianFont 
   {
-    get => _EastAsianFont ??= GetElement<TextFontType?, DXD.EastAsianFont>(_openXmlElement);
+    get => _EastAsianFont ??= GetElement<TextFontType?, DXD.EastAsianFont>(_UpdatableElement);
     set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont));
   }
   private TextFontType? _EastAsianFont;
@@ -35,7 +35,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   [OpenXmlElement(typeof(DXD.ComplexScriptFont))]
   public TextFontType? ComplexScriptFont 
   {
-    get => _ComplexScriptFont ??= GetElement<TextFontType?, DXD.ComplexScriptFont>(_openXmlElement);
+    get => _ComplexScriptFont ??= GetElement<TextFontType?, DXD.ComplexScriptFont>(_UpdatableElement);
     set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont));
   }
   private TextFontType? _ComplexScriptFont;
@@ -45,7 +45,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   /// </summary>
   public SupplementalFonts? SupplementalFonts 
   {
-    get => _SupplementalFonts ??= new SupplementalFonts(this, _openXmlElement);
+    get => _SupplementalFonts ??= new SupplementalFonts(this, _UpdatableElement);
     set => UpdateField(ref _SupplementalFonts, value, nameof(SupplementalFonts));
   }
   private SupplementalFonts? _SupplementalFonts;
@@ -57,7 +57,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   [OpenXmlElement(typeof(DXD.ExtensionList))]
   public ExtensionList? ExtensionList 
   {
-    get => _ExtensionList ??= GetElement<ExtensionList?, DXD.ExtensionList>(_openXmlElement);
+    get => _ExtensionList ??= GetElement<ExtensionList?, DXD.ExtensionList>(_UpdatableElement);
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
   private ExtensionList? _ExtensionList;

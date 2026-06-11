@@ -70,7 +70,7 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
 
   public StoryItemsCollection Items
   {
-    get => _Items ??= new StoryItemsCollection(this, _openXmlElement);
+    get => _Items ??= new StoryItemsCollection(this, _UpdatableElement);
   }
   private StoryItemsCollection? _Items;
 

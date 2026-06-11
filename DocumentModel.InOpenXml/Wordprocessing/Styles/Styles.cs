@@ -73,7 +73,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
   public LatentStyles LatentStyles
   {
-    get => _LatentStyles ??= new LatentStyles(this, _openXmlElement?.LatentStyles);
+    get => _LatentStyles ??= new LatentStyles(this, _UpdatableElement?.LatentStyles);
     set => LatentStyles.CopyFrom(value);
   }
   private LatentStyles? _LatentStyles;
@@ -84,7 +84,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   [OpenXmlElementCollection(typeof(DXW.Style))]
   public StyleDefinitions StyleDefinitions
   {
-    get => _StyleDefinitions ??= new StyleDefinitions(this, _openXmlElement);
+    get => _StyleDefinitions ??= new StyleDefinitions(this, _UpdatableElement);
     set => StyleDefinitions.CopyFrom(value);
   }
   private StyleDefinitions? _StyleDefinitions;

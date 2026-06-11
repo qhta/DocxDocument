@@ -138,14 +138,17 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     using (var document = new Document(TestFileName))
     {
       var openXml = GetOpenXmlFromDocument(document);
-      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-      Console.WriteLine(formattedOpenXml);
-      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-      if (!validationResult.IsValid)
+      if (openXml!=null)
       {
-        Console.WriteLine($"✗ {TestName} {testMethodName} OpenXml schema validation FAILED - issues found:");
-        foreach (var msg in validationResult.Messages) Console.WriteLine($" {msg}");
-        return false;
+        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+        Console.WriteLine(formattedOpenXml);
+        var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+        if (!validationResult.IsValid)
+        {
+          Console.WriteLine($"✗ {TestName} {testMethodName} OpenXml schema validation FAILED - issues found:");
+          foreach (var msg in validationResult.Messages) Console.WriteLine($" {msg}");
+          return false;
+        }
       }
     }
 
@@ -201,14 +204,17 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     using (var document = new Document(TestFileName))
     {
       var openXml = GetOpenXmlFromDocument(document);
-      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-      Console.WriteLine(formattedOpenXml);
-      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-      if (!validationResult.IsValid)
+      if (openXml!=null)
       {
-        Console.WriteLine($"✗ {TestName} {testMethodName} OpenXml schema validation FAILED - issues found:");
-        foreach (var msg in validationResult.Messages) Console.WriteLine($" {msg}");
-        return false;
+        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+        Console.WriteLine(formattedOpenXml);
+        var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+        if (!validationResult.IsValid)
+        {
+          Console.WriteLine($"✗ {TestName} {testMethodName} OpenXml schema validation FAILED - issues found:");
+          foreach (var msg in validationResult.Messages) Console.WriteLine($" {msg}");
+          return false;
+        }
       }
     }
 
@@ -290,7 +296,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// </summary>
   /// <param name="document">The document from which to retrieve the OpenXml representation.</param>
   /// <returns>The OpenXml representation of the model collection.</returns>
-  protected abstract string GetOpenXmlFromDocument(Document document);
+  protected abstract string? GetOpenXmlFromDocument(Document document);
 
   //private static XmlSerializer CreateXmlSerializer()
   //{

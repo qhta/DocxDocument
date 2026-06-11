@@ -13,7 +13,7 @@ public partial class CheckBox : ModelElement<DXW.CheckBox>
   [OpenXmlElement(typeof(DXW.FormFieldSize))]
   public HPS? FormFieldSize 
   {
-    get => _FormFieldSize ??= GetElement<HPS?, DXW.FormFieldSize>(_openXmlElement);
+    get => _FormFieldSize ??= GetElement<HPS?, DXW.FormFieldSize>(_UpdatableElement);
     set => UpdateField(ref _FormFieldSize, value, nameof(FormFieldSize));
   }
   private HPS? _FormFieldSize;
@@ -24,7 +24,7 @@ public partial class CheckBox : ModelElement<DXW.CheckBox>
   [OpenXmlElement(typeof(DXW.AutomaticallySizeFormField))]
   public bool? AutomaticallySizeFormField 
   {
-    get => _AutomaticallySizeFormField ??= GetElement<bool?, DXW.AutomaticallySizeFormField>(_openXmlElement);
+    get => _AutomaticallySizeFormField ??= GetElement<bool?, DXW.AutomaticallySizeFormField>(_UpdatableElement);
     set => UpdateField(ref _AutomaticallySizeFormField, value, nameof(AutomaticallySizeFormField));
   }
   private bool? _AutomaticallySizeFormField;
@@ -35,7 +35,7 @@ public partial class CheckBox : ModelElement<DXW.CheckBox>
   [OpenXmlElement(typeof(DXW.DefaultCheckBoxFormFieldState))]
   public bool? DefaultCheckBoxFormFieldState 
   {
-    get => _DefaultCheckBoxFormFieldState ??= GetElement<bool?, DXW.DefaultCheckBoxFormFieldState>(_openXmlElement);
+    get => _DefaultCheckBoxFormFieldState ??= GetElement<bool?, DXW.DefaultCheckBoxFormFieldState>(_UpdatableElement);
     set => UpdateField(ref _DefaultCheckBoxFormFieldState, value, nameof(DefaultCheckBoxFormFieldState));
   }
   private bool? _DefaultCheckBoxFormFieldState;
@@ -46,7 +46,7 @@ public partial class CheckBox : ModelElement<DXW.CheckBox>
   [OpenXmlElement(typeof(DXW.Checked))]
   public bool? Checked 
   {
-    get => _Checked ??= GetElement<bool?, DXW.Checked>(_openXmlElement);
+    get => _Checked ??= GetElement<bool?, DXW.Checked>(_UpdatableElement);
     set => UpdateField(ref _Checked, value, nameof(Checked));
   }
   private bool? _Checked;
