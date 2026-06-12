@@ -7,6 +7,25 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class BuiltInPropertiesTest : _AbstractModelTestClass<BuiltInProperties>
 {
+
+
+  /// <summary>
+  /// Runs all tests.
+  /// </summary>
+  /// <returns>True if all tests pass; otherwise, false.</returns>
+  public override bool Run()
+  {
+    Console.WriteLine($"=== {TestName} test ===\n");
+    if (!TestJsonSerialization()) return false;
+    if (!TestXmlSerialization()) return false;
+    if (!TestEdgeCases()) return false;
+    if (!TestStoreDataInOpenXmlDocument()) return false;
+    if (!TestUpdateDataInOpenXmlDocument()) return false;
+    if (!TestStoreDataInXmlDocument()) return false;
+    Console.WriteLine($"All {TestName} tests passed.\n");
+    return true;
+  }
+
   /// <summary>
   /// Creates a new instance of <see cref="BuiltInProperties"/> populated with sample data for testing purposes.
   /// </summary>

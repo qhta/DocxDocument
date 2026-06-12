@@ -16,8 +16,6 @@ public partial class Document: IDocument
   /// Gets the built-in properties of the document.
   /// This property allows access to built-in document properties through a collection interface.
   /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
   public BuiltInProperties BuiltInProperties
   {
     get => _builtInProperties ??= new BuiltInProperties(this);

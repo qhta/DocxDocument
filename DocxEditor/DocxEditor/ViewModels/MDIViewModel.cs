@@ -1,9 +1,7 @@
 using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Input;
+
 using Qhta.MVVM;
 using Syncfusion.Windows.Shared;
-using Syncfusion.Windows.Tools.Controls;
 
 namespace DocxEditor;
 

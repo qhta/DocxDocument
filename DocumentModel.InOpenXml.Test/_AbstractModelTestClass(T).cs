@@ -21,8 +21,9 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     if (!TestJsonSerialization()) return false;
     if (!TestXmlSerialization()) return false;
     if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
+    if (!TestStoreDataInOpenXmlDocument()) return false;
+    if (!TestUpdateDataInOpenXmlDocument()) return false;
+    //if (!TestStoreDataInXmlDocument()) return false;
     Console.WriteLine($"All {TestName} tests passed.\n");
     return true;
   }
@@ -31,7 +32,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// Tests XML serialization and deserialization of the model collection.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  protected bool TestXmlSerialization()
+  protected virtual bool TestXmlSerialization()
   {
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
@@ -69,7 +70,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// Tests JSON serialization and deserialization of the model collection.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  protected bool TestJsonSerialization()
+  protected virtual bool TestJsonSerialization()
   {
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
@@ -95,7 +96,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// Tests edge cases like empty model collection.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestEdgeCases()
+  protected virtual bool TestEdgeCases()
   {
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
@@ -118,27 +119,59 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     return true;
   }
 
+
   /// <summary>
-  /// Tests setting sample model collection to a new document and outputs the result to the console.
+  /// Tests setting sample model collection to a new OpenXml document and outputs the result to the console.
   /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document model collection can
+  /// <remarks>This method is intended for use in test scenarios to verify that OpenXml document model collection can
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
-  /// <returns>true if the document model collection is successfully stored and verified; otherwise, false.</returns>
-  protected virtual bool TestStoreInDocument()
+  /// <returns>true if the OpenXml document model collection is successfully stored and verified; otherwise, false.</returns>
+  protected virtual bool TestStoreDataInXmlDocument()
   {
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     ModelDataType testData = CreateSampleData();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    string xmlString;
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
+    {
+      SetDataToDocument(document, testData);
+      xmlString = document.GetModelXml();
+    }
+
+
+    Console.WriteLine($"{TestName} {testMethodName} Xml data is:\n" + xmlString);
+    //    Debug.WriteLine($"XmlLength: {xmlString.Length}");
+    if (xmlString.Length < 500)
+    {
+      Console.WriteLine($"✗ {TestName} {testMethodName} failed: XML data is too short\n");
+      return false;
+    }
+    Console.WriteLine($"✓ {TestName} {testMethodName} passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests setting sample model collection to a new OpenXml document and outputs the result to the console.
+  /// </summary>
+  /// <remarks>This method is intended for use in test scenarios to verify that OpenXml document model collection can
+  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+  /// inspection.</remarks>
+  /// <returns>true if the OpenXml document model collection is successfully stored and verified; otherwise, false.</returns>
+  protected virtual bool TestStoreDataInOpenXmlDocument()
+  {
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {TestName} {testMethodName} ---");
+    ModelDataType testData = CreateSampleData();
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       SetDataToDocument(document, testData);
     }
 
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       var openXml = GetOpenXmlFromDocument(document);
-      if (openXml!=null)
+      if (openXml != null)
       {
         var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
         Console.WriteLine(formattedOpenXml);
@@ -153,7 +186,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     }
 
     ModelDataType storedData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       storedData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
     }
@@ -185,13 +218,13 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
-  protected virtual bool TestUpdateInDocument()
+  protected virtual bool TestUpdateDataInOpenXmlDocument()
   {
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     ModelDataType testData = CreateSampleData();
     ModelDataType updatedData;
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       var storedData = SetDataToDocument(document, testData);
       updatedData = UpdateDataInDocument(document, storedData);
@@ -201,10 +234,10 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       //  return false;
       //}
     }
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       var openXml = GetOpenXmlFromDocument(document);
-      if (openXml!=null)
+      if (openXml != null)
       {
         var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
         Console.WriteLine(formattedOpenXml);
@@ -219,9 +252,9 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     }
 
     ModelDataType restoredData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
-      restoredData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");;
+      restoredData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found."); ;
     }
 
     var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
@@ -264,7 +297,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   {
     var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
     if (property == null) throw new InvalidOperationException($"Type {typeof(ModelDataType).Name} not found.");
-    var result = (ModelDataType) property.GetValue(document)!;
+    var result = (ModelDataType)property.GetValue(document)!;
     if (result is IDirectAccessElement directAccessElement && result is ILoadable loadableResult)
       if (directAccessElement.HasDirectAccess)
         loadableResult.LoadData();

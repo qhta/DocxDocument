@@ -583,6 +583,12 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.BuiltInProperties"/>.
             </summary>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.Run">
+            <summary>
+            Runs all tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.CreateSampleData">
             <summary>
             Creates a new instance of <see cref="T:DocumentModel.BuiltInProperties"/> populated with sample data for testing purposes.
@@ -1424,16 +1430,25 @@
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestStoreInDocument">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestStoreDataInXmlDocument">
             <summary>
-            Tests setting sample model collection to a new document and outputs the result to the console.
+            Tests setting sample model collection to a new OpenXml document and outputs the result to the console.
             </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document model collection can
+            <remarks>This method is intended for use in test scenarios to verify that OpenXml document model collection can
             be set and serialized correctly. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
-            <returns>true if the document model collection is successfully stored and verified; otherwise, false.</returns>
+            <returns>true if the OpenXml document model collection is successfully stored and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestUpdateInDocument">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestStoreDataInOpenXmlDocument">
+            <summary>
+            Tests setting sample model collection to a new OpenXml document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that OpenXml document model collection can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the OpenXml document model collection is successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestUpdateDataInOpenXmlDocument">
             <summary>
             Tests updating the sample collection in a document and outputs the result to the console.
             </summary>

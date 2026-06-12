@@ -426,13 +426,13 @@ public class ColorTypesTest : _AbstractTestClass
     Console.WriteLine("\n --- Store Theme in document ---");
     Theme testData = CreateThemeWithColorScheme();
     var testFileName = Path.Combine(_AbstractTestClass.TestFileDir, "TestThemeCreate.docx");
-    using (var document = new Document(testFileName, FileMode.CreateNew))
+    using (var document = Document.Open(testFileName, FileMode.CreateNew))
     {
       document.Theme = testData;
     }
 
     Theme storedData;
-    using (var document = new Document(testFileName))
+    using (var document = Document.Open(testFileName))
     {
       var openXml = document.WordprocessingDocument!.MainDocumentPart!.ThemePart!.Theme!.OuterXml;
       //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",

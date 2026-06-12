@@ -124,12 +124,12 @@ public class NumberingInstancesTest : _AbstractTestClass
   {
     Console.WriteLine("--- Store sample NumberingInstances in new document---");
     Numbering testData = CreateSampleNumbering();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       document.Numbering = testData;
     }
 
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
       var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
@@ -147,7 +147,7 @@ public class NumberingInstancesTest : _AbstractTestClass
     }
 
     Numbering storedData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
     }
@@ -184,7 +184,7 @@ public class NumberingInstancesTest : _AbstractTestClass
     Console.WriteLine("--- Update document NumberingInstances ---");
     Numbering testData = CreateSampleNumbering();
     var initialCount = testData.NumberingInstances.Count;
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       document.Numbering = testData;
       document.Numbering.NumberingInstances.Add(new NumberingInstance()
@@ -193,7 +193,7 @@ public class NumberingInstancesTest : _AbstractTestClass
         NumberID = 4,
       });
     }
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
       var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
@@ -211,7 +211,7 @@ public class NumberingInstancesTest : _AbstractTestClass
     }
 
     Numbering storedData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
     }

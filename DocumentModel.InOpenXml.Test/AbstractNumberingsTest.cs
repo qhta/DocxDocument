@@ -128,13 +128,13 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- AbstractNumberings Test Store sample abstract numbering in new document---");
       Numbering testData = CreateSampleNumbering();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
+      using (var document = Document.Open(TestFileName, FileMode.CreateNew))
       {
         document.Numbering = testData;
       }
 
       Numbering storedData;
-      using (var document = new Document(TestFileName))
+      using (var document = Document.Open(TestFileName))
       {
         var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
         //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
@@ -178,7 +178,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         Numbering testData = CreateSampleNumbering();
         var initialCount = testData.AbstractNumberings.Count;
-        using (var document = new Document(TestFileName, FileMode.CreateNew))
+        using (var document = Document.Open(TestFileName, FileMode.CreateNew))
         {
           document.Numbering = testData;
           document.Numbering.AbstractNumberings.Add(new AbstractNumbering()
@@ -187,7 +187,7 @@ namespace DocumentModel.InOpenXml.Test
           });
         }
         Numbering storedData;
-        using (var document = new Document(TestFileName))
+        using (var document = Document.Open(TestFileName))
         {
           storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
         }
@@ -226,12 +226,12 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- AbstractNumberings Test: Validate sample abstract numbering stored in new document against OpenXml schema ---");
       {
         Numbering testData = CreateSampleNumbering();
-        using (var document = new Document(TestFileName, FileMode.CreateNew))
+        using (var document = Document.Open(TestFileName, FileMode.CreateNew))
         {
           document.Numbering = testData;
         }
 
-        using (var document = new Document(TestFileName))
+        using (var document = Document.Open(TestFileName))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
           //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",

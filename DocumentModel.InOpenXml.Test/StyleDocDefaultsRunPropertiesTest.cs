@@ -123,13 +123,13 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   {
     Console.WriteLine("--- Store sample doc defaults run properties in new document---");
     Styles testData = CreateSampleStyles();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       document.Styles = testData;
     }
 
     Styles storedData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
     }
@@ -162,7 +162,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   {
     Console.WriteLine("--- Update document doc defaults run properties ---");
     Styles testData = CreateSampleStyles();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    using (var document = Document.Open(TestFileName, FileMode.CreateNew))
     {
       document.Styles = testData;
     }
@@ -170,7 +170,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
     testData.DocDefaults = CreateSampleDocDefaults(isUpdated: true);
 
     Styles? storedData;
-    using (var document = new Document(TestFileName))
+    using (var document = Document.Open(TestFileName))
     {
       storedData = document.Styles;
       if (storedData?.DocDefaults != null && testData.DocDefaults != null)
@@ -214,12 +214,12 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
     Console.WriteLine("--- Validate sample doc defaults run properties stored in new document against OpenXml schema ---");
     {
       Styles testData = CreateSampleStyles();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
+      using (var document = Document.Open(TestFileName, FileMode.CreateNew))
       {
         document.Styles = testData;
       }
 
-      using (var document = new Document(TestFileName))
+      using (var document = Document.Open(TestFileName))
       {
         var openXml = document.WordprocessingDocument!.MainDocumentPart!.StyleDefinitionsPart!.Styles!.OuterXml;
         var formattedOpenXml = openXml.FormatXmlWithLineNumbers();

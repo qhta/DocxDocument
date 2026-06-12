@@ -1,16 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media.Animation;
-
-using DocumentModel.Wordprocessing;
-
-using Qhta.MVVM;
-
-using Syncfusion.Windows.Tools.Controls;
-
-using ContentControl = System.Windows.Controls.ContentControl;
+﻿using ContentControl = System.Windows.Controls.ContentControl;
 using Point = System.Windows.Point;
 
 namespace DocxEditor;
@@ -61,7 +49,7 @@ public partial class MainWindow : Window
     if (result == true)
     {
       string filename = dialog.FileName;
-      Document = new Document(filename);
+      Document =  Document.Open(filename);
       var documentVM = new DocumentVM(Document);
       var documentView = new DocumentView();
       documentView.DataContext = documentVM;

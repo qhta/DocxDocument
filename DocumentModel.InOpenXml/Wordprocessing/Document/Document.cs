@@ -1,3 +1,6 @@
+
+using DocumentModel.XmlSerialization;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
@@ -19,21 +22,23 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name = "filePath">The file path of the WordprocessingML document to open.</param>
   /// <param name = "mode">The file mode to open. Create, Open, and OpenOrCreate are recognized. Default is OpenOrCreate</param>
   /// <param name = "access">The file access mode to open. Read, Write, and ReadWrite are recognized. Default is ReadWrite</param>
-  public Document(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite)
+  public static Document Open(string filePath, FileMode mode = FileMode.OpenOrCreate, FileAccess access = FileAccess.ReadWrite)
   {
+    var result = new Document();
     if (mode == FileMode.CreateNew)
     {
       if (File.Exists(filePath))
         File.Delete(filePath);
-      CreateDocument(filePath);
+      result.CreateDocument(filePath);
     }
     else if (mode == FileMode.Create || mode == FileMode.OpenOrCreate && !File.Exists(filePath))
-      CreateDocument(filePath);
+      result.CreateDocument(filePath);
     else if (mode == FileMode.Open || mode == FileMode.OpenOrCreate)
-      OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
+      result.OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
     if (access != FileAccess.ReadWrite && access != FileAccess.Write && access != FileAccess.Read)
-      IsEditable = false;
-    _IsNotificationEnabled = true;
+      result.IsEditable = false;
+    result._IsNotificationEnabled = true;
+    return result;
   }
 
   /// <summary>
@@ -49,6 +54,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   The underlying Open XML word processing document associated with this instance.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
     [DebuggerStepThrough]
@@ -130,8 +138,20 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
+  ///  Serializes the current state of the document, including its properties and settings, to an XML string representation.
+  /// </summary>
+  /// <returns>An XML string representing the current state of the document.</returns>
+  public string GetModelXml()
+  {
+    return XmlSerializationHelper.SerializeObjectToXml(this, [typeof(BuiltInProperties)]);
+  }
+
+  /// <summary>
   /// Filename of the document, which can be used for display purposes or to track the source of the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public string? Filename
   {
     get => _Filename;
@@ -150,6 +170,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// Checks if the document is currently opened in an editable mode,
   /// which determines whether changes can be made to the document's content and properties.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public bool IsEditable
   {
     get => _IsEditable;
@@ -236,6 +259,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Core document properties such as title, author, and subject.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   [NotMapped]
   public CoreProperties CoreProperties
   {
@@ -247,6 +272,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Content-specific document properties, such as content type and structure.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   [NotMapped]
   public ContentProperties ContentProperties
   {
@@ -258,6 +285,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Statistical document properties such as word count and page count.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   [NotMapped]
   public StatisticProperties StatisticProperties
   {
@@ -269,6 +298,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Custom document properties, allowing storage of user-defined metadata.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public CustomProperties CustomProperties
   {
     get => _CustomProperties ??= new CustomProperties(this);
@@ -279,6 +311,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public DocumentSettings DocumentSettings
   {
     get => _DocumentSettings ??= new DocumentSettings(this);
@@ -289,6 +324,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   /// Collection of all known document properties.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public KnownProperties KnownProperties
   {
     get
@@ -321,6 +359,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Collection of revision IDs for tracked changes in the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public Rsids Rsids
   {
     get => _Rsids ??= new Rsids(this);
@@ -331,6 +372,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Collection of DocumentVariables used in the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public DocumentVariables DocumentVariables
   {
     get => _DocumentVariables ??= new DocumentVariables(this);
@@ -341,6 +385,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Font table for the document, providing access to font definitions used within the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public FontTable FontTable
   {
     get => _FontTable ??= new FontTable(this);
@@ -352,6 +399,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Theme colors and fonts.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public DMD.Theme Theme
   {
     get => _Theme ??= new DMD.Theme(this);
@@ -362,6 +412,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Styles for the document, providing access to style definitions used within the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public Styles Styles
   {
     get => _Styles ??= new Styles(this);
@@ -372,6 +425,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   /// Numbering definitions for the document, providing access to numbering formats and instances used within the document.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public Numbering Numbering
   {
     get => _Numbering ??= new Numbering(this);
