@@ -181,7 +181,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Title")]
   [OpenXmlProperty(nameof(CoreProperties.Title))]
-  public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
+  public string? Title 
+  { 
+    get => _Title ??= GetProperty<string?>(nameof(Title));
+    set => UpdateField(ref _Title, value, nameof(Title));
+  }
   private string? _Title;
 
   /// <summary>
@@ -190,7 +194,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Subject")]
   [OpenXmlProperty(nameof(CoreProperties.Subject))]
-  public string? Subject { get => _Subject; set => UpdateField(ref _Subject, value, nameof(Subject)); }
+  public string? Subject
+  {
+    get => _Subject ??= GetProperty<string?>(nameof(Subject));
+    set => UpdateField(ref _Subject, value, nameof(Subject));
+  }
   private string? _Subject;
 
   /// <summary>
@@ -199,7 +207,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Author")]
   [OpenXmlProperty(nameof(CoreProperties.Creator))]
-  public string? Creator { get => _Creator; set => UpdateField(ref _Creator, value, nameof(Creator)); }
+  public string? Creator
+  {
+    get => _Creator ??= GetProperty<string?>(nameof(Creator));
+    set => UpdateField(ref _Creator, value, nameof(Creator));
+  }
   private string? _Creator;
 
   /// <summary>
@@ -208,7 +220,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Keywords")]
   [OpenXmlProperty(nameof(CoreProperties.Keywords))]
-  public string? Keywords { get => _Keywords; set => UpdateField(ref _Keywords, value, nameof(Keywords)); }
+  public string? Keywords
+  {
+    get => _Keywords ??= GetProperty<string?>(nameof(Keywords));
+    set => UpdateField(ref _Keywords, value, nameof(Keywords));
+  }
   private string? _Keywords;
 
   /// <summary>
@@ -217,7 +233,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Comments")]
   [OpenXmlProperty(nameof(CoreProperties.Description))]
-  public string? Description { get => _Description; set => UpdateField(ref _Description, value, nameof(Description)); }
+  public string? Description
+  {
+    get => _Description ??= GetProperty<string?>(nameof(Description));
+    set => UpdateField(ref _Description, value, nameof(Description));
+  }
   private string? _Description;
 
   /// <summary>
@@ -226,7 +246,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Last author")]
   [OpenXmlProperty(nameof(PackageProperties.LastModifiedBy))]
-  public string? LastModifiedBy { get => _LastModifiedBy; set => UpdateField(ref _LastModifiedBy, value, nameof(LastModifiedBy)); }
+  public string? LastModifiedBy
+  {
+    get => _LastModifiedBy ??= GetProperty<string?>(nameof(LastModifiedBy));
+    set => UpdateField(ref _LastModifiedBy, value, nameof(LastModifiedBy));
+  }
   private string? _LastModifiedBy;
 
   /// <summary>
@@ -234,7 +258,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   /// </summary>
   [MultiCategory("Versioning")]
   [BuiltInProperty("Revision number")]
-  public int? Revision { get => _Revision; set => UpdateField(ref _Revision, value, nameof(Revision)); }
+  public int? Revision
+  {
+    get => _Revision ??= GetProperty<int?>(nameof(Revision));
+    set => UpdateField(ref _Revision, value, nameof(Revision));
+  }
   private int? _Revision;
 
   /// <summary>
@@ -243,7 +271,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Last print date")]
   [OpenXmlProperty(nameof(PackageProperties.LastPrinted))]
-  public DateTime? LastPrinted { get => _LastPrinted; set => UpdateField(ref _LastPrinted, value, nameof(LastPrinted)); }
+  public DateTime? LastPrinted
+  {
+    get => _LastPrinted ??= GetProperty<DateTime?>(nameof(LastPrinted));
+    set => UpdateField(ref _LastPrinted, value, nameof(LastPrinted));
+  }
   private DateTime? _LastPrinted;
 
   /// <summary>
@@ -252,7 +284,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Creation date")]
   [OpenXmlProperty(nameof(PackageProperties.Created))]
-  public DateTime? Created { get => _Created; set => UpdateField(ref _Created, value, nameof(Created)); }
+  public DateTime? Created
+  {
+    get => _Created ??= GetProperty<DateTime?>(nameof(Created));
+    set => UpdateField(ref _Created, value, nameof(Created));
+  }
   private DateTime? _Created;
 
   /// <summary>
@@ -261,7 +297,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Last save time")]
   [OpenXmlProperty(nameof(PackageProperties.Modified))]
-  public DateTime? Modified { get => _Modified; set => UpdateField(ref _Modified, value, nameof(Modified)); }
+  public DateTime? Modified
+  {
+    get => _Modified ??= GetProperty<DateTime?>(nameof(Modified));
+    set => UpdateField(ref _Modified, value, nameof(Modified));
+  }
   private DateTime? _Modified;
 
   /// <summary>
@@ -270,7 +310,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Category")]
   [OpenXmlProperty(nameof(PackageProperties.Category))]
-  public string? Category { get => _Category; set => UpdateField(ref _Category, value, nameof(Category)); }
+  public string? Category
+  {
+    get => _Category ??= GetProperty<string?>(nameof(Category));
+    set => UpdateField(ref _Category, value, nameof(Category));
+  }
   private string? _Category;
 
   /// <summary>
@@ -279,7 +323,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Identification")]
   [BuiltInProperty("Identifier")]
   [OpenXmlProperty(nameof(PackageProperties.Identifier))]
-  public string? Identifier { get => _Identifier; set => UpdateField(ref _Identifier, value, nameof(Identifier)); }
+  public string? Identifier
+  {
+    get => _Identifier ??= GetProperty<string?>(nameof(Identifier));
+    set => UpdateField(ref _Identifier, value, nameof(Identifier));
+  }
   private string? _Identifier;
 
   /// <summary>
@@ -288,7 +336,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Content type")]
   [OpenXmlProperty(nameof(PackageProperties.ContentType))]
-  public string? ContentType { get => _ContentType; set => UpdateField(ref _ContentType, value, nameof(ContentType)); }
+  public string? ContentType
+  {
+    get => _ContentType ??= GetProperty<string?>(nameof(ContentType));
+    set => UpdateField(ref _ContentType, value, nameof(ContentType));
+  }
   private string? _ContentType;
 
   /// <summary>
@@ -297,7 +349,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Language")]
   [OpenXmlProperty(nameof(PackageProperties.Language))]
-  public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
+  public string? Language
+  {
+    get => _Language ??= GetProperty<string?>(nameof(Language));
+    set => UpdateField(ref _Language, value, nameof(Language));
+  }
   private string? _Language;
 
   /// <summary>
@@ -306,7 +362,11 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Versioning")]
   [BuiltInProperty("Document version")]
   [OpenXmlProperty(nameof(PackageProperties.Version))]
-  public string? Version { get => _Version; set => UpdateField(ref _Version, value, nameof(Version)); }
+  public string? Version
+  {
+    get => _Version ??= GetProperty<string?>(nameof(Version));
+    set => UpdateField(ref _Version, value, nameof(Version));
+  }
   private string? _Version;
 
   /// <summary>
@@ -315,6 +375,10 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   [MultiCategory("Base")]
   [BuiltInProperty("Content status")]
   [OpenXmlProperty(nameof(PackageProperties.ContentStatus))]
-  public string? ContentStatus { get => _ContentStatus; set => UpdateField(ref _ContentStatus, value, nameof(ContentStatus)); }
+  public string? ContentStatus
+  {
+    get => _ContentStatus ??= GetProperty<string?>(nameof(ContentStatus));
+    set => UpdateField(ref _ContentStatus, value, nameof(ContentStatus));
+  }
   private string? _ContentStatus;
 }
