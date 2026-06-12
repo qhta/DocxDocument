@@ -10,14 +10,14 @@ public partial class NumberingFormat<T> : ModelElement<T> where T : DX.OpenXmlEl
   ///   Format code that defines how numbers are displayed, such as currency, percentage, or custom patterns.
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.NumberingFormat.FormatCode))]
-  public string? FormatCode { get; set; }
+  public string? FormatCode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   ///   Indicates whether the number format is linked to the source data.
   ///   If true, the format will automatically update to match the source.
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.NumberingFormat.SourceLinked))]
-  public bool? SourceLinked { get; set; }
+  public bool? SourceLinked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>

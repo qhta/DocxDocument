@@ -5,7 +5,7 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXEP.Properties))]
 [XmlRoot("StatisticProperties", Namespace = "DocumentModel")]
 [DirectAccess]
-public sealed partial class StatisticProperties : BuiltInDocumentProperties<DXEP.Properties>
+public sealed partial class StatisticProperties : BuiltInDocumentProperties
 {
   /// <summary>
   /// Known properties that can be set in StatisticProperties
@@ -37,6 +37,11 @@ public sealed partial class StatisticProperties : BuiltInDocumentProperties<DXEP
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
+
+  /// <summary>
+  /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
+  /// </summary>
+  private new DXEP.Properties? _UpdatableElement => (DXEP.Properties?)base._UpdatableElement;
 
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable statistic properties for the current instance.

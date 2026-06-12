@@ -56,6 +56,6 @@ public partial interface IChartFormat: IModelObject
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.autoshapetype?view=office-pia"/>
-  public AutoShapeType AutoShapeType { get; set; }
+  public AutoShapeType AutoShapeType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

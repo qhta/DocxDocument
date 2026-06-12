@@ -9,5 +9,5 @@ public partial class TableCell : ModelElement<DXW.TableCell>, ITableRowContent, 
  /// <summary>
  /// Table cell properties, including formatting, borders, and layout options for the cell.
  /// </summary>
- public TableCellProperties? TableCellProperties { get; set; }
+ public TableCellProperties? TableCellProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -6,20 +6,8 @@ namespace DocumentModel;
 /// content properties, and statistic properties. 
 /// </summary>
 [XmlRoot("BuiltInProperties", Namespace = "DocumentModel")]
-public partial class BuiltInProperties : ModelElement//, IElementCollection<BuiltInProperty>
+public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAware, IElementCollection<BuiltInProperty>
 {
-  /// <summary>
-  /// Provides access to the core properties of the document.
-  /// </summary>
-  public CoreProperties CoreProperties { get; private set; }
-  /// <summary>
-  /// Provides access to the content properties of the document.
-  /// </summary>
-  public ContentProperties ContentProperties { get; private set; }
-  /// <summary>
-  /// Provides access to the statistics properties of the document.
-  /// </summary>
-  public StatisticProperties StatisticProperties { get; private set; }
 
   /// <summary>
   /// Default constructor. Initializes an empty collection of built-in properties without associating it with any document.
@@ -44,15 +32,68 @@ public partial class BuiltInProperties : ModelElement//, IElementCollection<Buil
   public BuiltInProperties(DMW.Document document)
   {
     CoreProperties = document.CoreProperties;
+    ContentProperties = document.ContentProperties;
+    StatisticProperties = document.StatisticProperties;
+    if (document.WordprocessingDocument != null)
+    {
+      CoreProperties.AttachAndLoad(document.WordprocessingDocument);
+      ContentProperties.AttachAndLoad(document.WordprocessingDocument);
+      StatisticProperties.AttachAndLoad(document.WordprocessingDocument);
+    }
     foreach (var property in CoreProperties.KnownProperties.Values)
       Attach(CoreProperties, property);
-    ContentProperties = document.ContentProperties;
     foreach (var property in ContentProperties.KnownProperties.Values)
       Attach(ContentProperties, property);
-    StatisticProperties = document.StatisticProperties;
     foreach (var property in StatisticProperties.KnownProperties.Values)
       Attach(StatisticProperties, property);
   }
+  /// <summary>
+  /// Gets the associated WordprocessingDocument.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+
+  void IWordprocessingDocumentAware.Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+
+  }
+  void IWordprocessingDocumentAware.AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+    CoreProperties.AttachAndLoad(wordprocessingDocument);
+    ContentProperties.AttachAndLoad(wordprocessingDocument);
+    StatisticProperties.AttachAndLoad(wordprocessingDocument);
+  }
+  void IWordprocessingDocumentAware.AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+    CoreProperties.AttachAndUpdate(wordprocessingDocument);
+    ContentProperties.AttachAndUpdate(wordprocessingDocument);
+    StatisticProperties.AttachAndUpdate(wordprocessingDocument);
+  }
+  void IWordprocessingDocumentAware.Detach()
+  {
+    WordprocessingDocument = null;
+    CoreProperties.Detach();
+    ContentProperties.Detach();
+    StatisticProperties.Detach();
+  }
+
+  /// <summary>
+  /// Provides access to the core properties of the document.
+  /// </summary>
+  public CoreProperties CoreProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+  /// <summary>
+  /// Provides access to the content properties of the document.
+  /// </summary>
+  public ContentProperties ContentProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+  /// <summary>
+  /// Provides access to the statistics properties of the document.
+  /// </summary>
+  public StatisticProperties StatisticProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
   /// <summary>
   /// Adds a new built-in document property to the collection based on the provided known property model.
@@ -65,16 +106,27 @@ public partial class BuiltInProperties : ModelElement//, IElementCollection<Buil
     var builtInAttribute = propertyInfo.GetCustomAttribute<BuiltInPropertyAttribute>();
     if (builtInAttribute != null)
     {
-      var DocumentProperty = new BuiltInProperty
+      if (TryGetProperty(propertyInfo.Name, out var existingProperty) && existingProperty != null)
       {
-        BaseObject = baseObject,
-        PropertyInfo = propertyInfo,
-        Name = propertyInfo.Name,
-        Type = DocPropertyTypeExtensions.TypeMapping.FirstOrDefault(kv => kv.Value == propertyInfo.PropertyType).Key
-      };
-      //if (!((DMPr.DocPropertyType)DocumentProperty.Type!).IsCompatibleWith(propertyInfo.PropertyType))
-      //  throw new InvalidOperationException("Property type mismatch.");
-      Add(DocumentProperty);
+        var value = existingProperty.Value;
+        existingProperty.BaseObject = baseObject;
+        existingProperty.PropertyInfo = propertyInfo;
+        var value0 = existingProperty.GetAttachedPropertyInfo();
+        if (value!=value0)
+          existingProperty.SetAttachedPropertyValue(value);
+      }
+      else
+      {
+        var DocumentProperty = new BuiltInProperty
+        {
+          BaseObject = baseObject,
+          PropertyInfo = propertyInfo,
+          Name = propertyInfo.Name,
+          Type = DocPropertyTypeExtensions.TypeMapping.FirstOrDefault(kv => kv.Value == propertyInfo.PropertyType).Key
+        };
+
+        Add(DocumentProperty);
+      }
     }
   }
 
@@ -172,11 +224,11 @@ public partial class BuiltInProperties : ModelElement//, IElementCollection<Buil
   public IEnumerator<BuiltInProperty> GetEnumerator()
   {
     foreach (var property in CoreProperties)
-      yield return property;
+      yield return new BuiltInProperty { Name = property.Name, Value = property.Value };
     foreach (var property in ContentProperties)
-      yield return property;
+      yield return new BuiltInProperty { Name = property.Name, Value = property.Value };
     foreach (var property in StatisticProperties)
-      yield return property;
+      yield return new BuiltInProperty { Name = property.Name, Value = property.Value };
   }
 
   /// <summary>
@@ -207,21 +259,22 @@ public partial class BuiltInProperties : ModelElement//, IElementCollection<Buil
     }
   }
 
-  ///// <summary>
-  ///// Copies the built-in properties from the collection to an array, starting at a particular array index.
-  ///// </summary>
-  ///// <param name="array">The destination array.</param>
-  ///// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  ///// <exception cref="NotImplementedException"></exception>
-  //public void CopyTo(BuiltInProperty[] array, int arrayIndex)
-  //{
-  //  var tempList = CoreProperties.ToList();
-  //  tempList.AddRange(ContentProperties);
-  //  tempList.AddRange(StatisticProperties);
-  //  if (array.Length - arrayIndex < tempList.Count)
-  //    throw new ArgumentException("The destination array has insufficient space to copy the elements.");
-  //  Array.Copy(tempList.ToArray(), 0, array, arrayIndex, tempList.Count);
-  //}
+  /// <summary>
+  /// Copies the built-in properties from the collection to an array, starting at a particular array index.
+  /// </summary>
+  /// <param name="array">The destination array.</param>
+  /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
+  /// <exception cref="NotImplementedException"></exception>
+  public void CopyTo(BuiltInProperty[] array, int arrayIndex)
+  {
+    var tempList = new List<BuiltInProperty>();
+    tempList.AddRange(CoreProperties.AsQueryable());
+    tempList.AddRange(ContentProperties.AsQueryable());
+    tempList.AddRange(StatisticProperties.AsQueryable());
+    if (array.Length - arrayIndex < tempList.Count)
+      throw new ArgumentException("The destination array has insufficient space to copy the elements.");
+    Array.Copy(tempList.ToArray(), 0, array, arrayIndex, tempList.Count);
+  }
 
   /// <summary>
   /// Gets or sets the built-in property with the specified name. The indexer checks for the existence of the property in the core properties, content properties, and statistic properties, and returns or updates the value accordingly. If a property with the specified name does not exist in any of the subordinate properties, it throws an ArgumentException.
@@ -251,5 +304,23 @@ public partial class BuiltInProperties : ModelElement//, IElementCollection<Buil
         return;
       throw new ArgumentException($"BuiltInProperty with name '{index}' does not exist.");
     }
+  }
+
+  /// <summary>
+  /// Attempts to get the built-in property with the specified name. The method checks for the existence of the property in the core properties, content properties, and statistic properties, and returns true if found, along with the property value in the out parameter. If a property with the specified name does not exist in any of the subordinate properties, it returns false and sets the out parameter to null.
+  /// </summary>
+  /// <param name="index"></param>
+  /// <param name="property"></param>
+  /// <returns></returns>
+  public bool TryGetProperty(string index, out BuiltInProperty? property)
+  {
+    if (CoreProperties.TryGetProperty(index, out property))
+      return true;
+    if (ContentProperties.TryGetProperty(index, out property))
+      return true;
+    if (StatisticProperties.TryGetProperty(index, out property))
+      return true;
+    property = null!;
+    return false;
   }
 }

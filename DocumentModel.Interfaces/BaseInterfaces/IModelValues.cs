@@ -11,5 +11,5 @@ public interface IModelValues<ItemType>: IEnumerable<ItemType>
   /// </summary>
   /// <param name="Index">The zero-based index of the item to get.</param>
   /// <returns>The item at the specified index.</returns>
-  public ItemType this[object Index] { get; set; }
+  public ItemType this[object Index] { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

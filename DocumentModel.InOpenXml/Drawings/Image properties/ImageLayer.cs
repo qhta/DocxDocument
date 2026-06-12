@@ -9,13 +9,13 @@ public partial class ImageLayer : ModelElementCollection<ImageEffect, DXO10D.Ima
  /// <summary>
  /// Embedded image relationship ID.
  /// </summary>
- public string? Embed { get; set; }
+ public string? Embed { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Name of the image layer.
  /// </summary>
- public string? Name { get; set; }
+ public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// List of image effects applied to the image layer.
  /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+ public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

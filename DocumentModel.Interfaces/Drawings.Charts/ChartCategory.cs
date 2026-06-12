@@ -15,6 +15,6 @@ public interface IChartCategory : IModelObject
   /// Gets or sets a value indicating whether the chart category is filtered.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory.isfiltered?view=word-pia"/>
-  public bool IsFiltered { get; set; }
+  public bool IsFiltered { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

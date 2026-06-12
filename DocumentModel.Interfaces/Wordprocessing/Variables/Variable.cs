@@ -17,7 +17,7 @@ public partial interface IVariable : IModelObject
   /// Returns or sets the value of the document variable.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.

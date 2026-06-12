@@ -277,5 +277,5 @@ public partial class ClassificationLabelList : ModelElementCollection<Classifica
  /// compliance tracking, and information protection capabilities.
  /// </para>
  /// </remarks>
- public ClassificationExtensionList? ClassificationExtensionList { get; set; }
+ public ClassificationExtensionList? ClassificationExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

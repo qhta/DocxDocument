@@ -10,5 +10,5 @@ public interface INamedObject
   /// A name.
   /// </summary>
   /// <returns></returns>
-  public string? Name { get; set; }
+  public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

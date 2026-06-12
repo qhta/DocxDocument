@@ -21,16 +21,16 @@ public partial interface IDiagram: IModelObject
   /// Gets or sets the `AutoLayout` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.autolayout?view=office-pia"/>
-  public TriState AutoLayout { get; set; }
+  public TriState AutoLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Reverse` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.reverse?view=office-pia"/>
-  public TriState Reverse { get; set; }
+  public TriState Reverse { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.autoformat?view=office-pia"/>
-  public TriState AutoFormat { get; set; }
+  public TriState AutoFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

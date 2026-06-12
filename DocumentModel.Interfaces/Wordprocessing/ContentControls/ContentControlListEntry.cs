@@ -10,17 +10,17 @@ public partial interface IContentControlListEntry : IModelObject
   /// Gets or sets the display text of the list entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the value of the list entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the index of the list entry in the collection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.index?view=word-pia"/>
-  public int Index { get; set; }
+  public int Index { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

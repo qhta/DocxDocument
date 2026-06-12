@@ -10,5 +10,5 @@ public partial class CustomXmlProperties : ModelElementCollection<CustomXmlAttri
  /// <summary>
  /// Placeholder text displayed in place of the custom XML element when its contents are empty (i.e., no runs of text within the element).
  /// </summary>
- public string? CustomXmlPlaceholder { get; set; }
+ public string? CustomXmlPlaceholder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

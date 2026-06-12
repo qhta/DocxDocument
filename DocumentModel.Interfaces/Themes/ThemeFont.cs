@@ -12,6 +12,6 @@ public partial interface IThemeFont: IModelObject
   /// Gets or sets the `Name` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefont.name?view=office-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

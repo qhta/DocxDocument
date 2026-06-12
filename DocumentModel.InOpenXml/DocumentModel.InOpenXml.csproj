@@ -45,7 +45,6 @@
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
     <Compile Include="Base classes\ModelElement%28T%29.Imp.cs" />
     <Compile Include="Base classes\ModelElement.Imp.cs" />
-    <Compile Include="Common properties\BuiltInProperties.Interface.Imp.cs" />
     <Compile Include="Common properties\BuiltInProperty.Interface.Imp.cs" />
     <Compile Include="Common properties\CustomProperties.Imp.cs" />
     <Compile Include="Common properties\CustomProperty.Imp.cs" />

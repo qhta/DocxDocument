@@ -11,11 +11,11 @@ public interface ISoftEdgeFormat : IModelObject
   /// edge formatting. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.type?view=word-pia"/>
-  public Drawings.SoftEdgeType Type { get; set; }
+  public Drawings.SoftEdgeType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value that represents the length of the radius for a soft edge effect.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.radius?view=word-pia"/>
-  public float Radius { get; set; }
+  public float Radius { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

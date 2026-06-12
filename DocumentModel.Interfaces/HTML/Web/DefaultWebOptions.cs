@@ -10,62 +10,62 @@ public interface IDefaultWebOptions : IModelObject
   /// Gets or sets a value indicating whether Word optimizes documents for the target browser when saving as a web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.optimizeforbrowser?view=word-pia"/>
-  public bool OptimizeForBrowser { get; set; }
+  public bool OptimizeForBrowser { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the target browser level.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.browserlevel?view=word-pia"/>
-  public BrowserLevel BrowserLevel { get; set; }
+  public BrowserLevel BrowserLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether formatting is saved by using cascading style sheets (CSS).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.relyoncss?view=word-pia"/>
-  public bool RelyOnCSS { get; set; }
+  public bool RelyOnCSS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether supporting files are organized in a separate folder when saving as a web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.organizeinfolder?view=word-pia"/>
-  public bool OrganizeInFolder { get; set; }
+  public bool OrganizeInFolder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether links are updated when the document is saved as a web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.updatelinksonsave?view=word-pia"/>
-  public bool UpdateLinksOnSave { get; set; }
+  public bool UpdateLinksOnSave { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether long file names are used when saving as a web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.uselongfilenames?view=word-pia"/>
-  public bool UseLongFileNames { get; set; }
+  public bool UseLongFileNames { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether Word checks whether Microsoft Office is the default HTML editor.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.checkifofficeishtmleditor?view=word-pia"/>
-  public bool CheckIfOfficeIsHTMLEditor { get; set; }
+  public bool CheckIfOfficeIsHTMLEditor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether Word checks whether it is the default HTML editor.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.checkifwordisdefaulthtmleditor?view=word-pia"/>
-  public bool CheckIfWordIsDefaultHTMLEditor { get; set; }
+  public bool CheckIfWordIsDefaultHTMLEditor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether Vector Markup Language (VML) is used for drawing objects in web pages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.relyonvml?view=word-pia"/>
-  public bool RelyOnVML { get; set; }
+  public bool RelyOnVML { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether PNG graphics are allowed when saving as a web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.allowpng?view=word-pia"/>
-  public bool AllowPNG { get; set; }
+  public bool AllowPNG { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the target screen size for saved web pages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.screensize?view=word-pia"/>
-  public DMD.ScreenSize ScreenSize { get; set; }
+  public DMD.ScreenSize ScreenSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the target pixels-per-inch value for saved web pages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.pixelsperinch?view=word-pia"/>
-  public int PixelsPerInch { get; set; }
+  public int PixelsPerInch { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the web page font settings.
@@ -81,11 +81,11 @@ public interface IDefaultWebOptions : IModelObject
   /// Gets or sets the target browser used for web page compatibility.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.targetbrowser?view=word-pia"/>
-  public HTML.TargetBrowser TargetBrowser { get; set; }
+  public HTML.TargetBrowser TargetBrowser { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether new web pages are saved as single-file web archives.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.savenewwebpagesaswebarchives?view=word-pia"/>
-  public bool SaveNewWebPagesAsWebArchives { get; set; }
+  public bool SaveNewWebPagesAsWebArchives { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

@@ -8,13 +8,13 @@ public interface IIdentifiedChange
   /// <summary>
   /// Unique identifier for the tracked change, used to reference and manage the revision.
   /// </summary>
-  public int? Id { get; set; }
+  public int? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Author of the tracked change, identifying the user who made the revision.
   /// </summary>
-  public string? Author { get; set; }
+  public string? Author { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Date of the tracked change, specifying when the revision was made.
   /// </summary>
-  public DateTime? Date { get; set; }
+  public DateTime? Date { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

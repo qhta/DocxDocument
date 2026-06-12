@@ -22,67 +22,67 @@ public partial interface IEnvelope : IModelObject
   /// Gets or sets a value indicating whether POSTNET bar codes are printed by default.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultprintbarcode?view=word-pia"/>
-  public bool DefaultPrintBarCode { get; set; }
+  public bool DefaultPrintBarCode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether Facing Identification Mark (FIM-A) marks are printed by default.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultprintfima?view=word-pia"/>
-  public bool DefaultPrintFIMA { get; set; }
+  public bool DefaultPrintFIMA { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the default envelope height, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultheight?view=word-pia"/>
-  public float DefaultHeight { get; set; }
+  public float DefaultHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the default envelope width, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultwidth?view=word-pia"/>
-  public float DefaultWidth { get; set; }
+  public float DefaultWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the default envelope size name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultsize?view=word-pia"/>
-  public string DefaultSize { get; set; }
+  public string DefaultSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the return address is omitted by default.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultomitreturnaddress?view=word-pia"/>
-  public bool DefaultOmitReturnAddress { get; set; }
+  public bool DefaultOmitReturnAddress { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the paper tray used to feed envelopes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.feedsource?view=word-pia"/>
-  public PaperTray FeedSource { get; set; }
+  public PaperTray FeedSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge of the envelope to the delivery address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.addressfromleft?view=word-pia"/>
-  public float AddressFromLeft { get; set; }
+  public float AddressFromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge of the envelope to the delivery address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.addressfromtop?view=word-pia"/>
-  public float AddressFromTop { get; set; }
+  public float AddressFromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge of the envelope to the return address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.returnaddressfromleft?view=word-pia"/>
-  public float ReturnAddressFromLeft { get; set; }
+  public float ReturnAddressFromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge of the envelope to the return address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.returnaddressfromtop?view=word-pia"/>
-  public float ReturnAddressFromTop { get; set; }
+  public float ReturnAddressFromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the style used for the delivery address.
@@ -100,65 +100,65 @@ public partial interface IEnvelope : IModelObject
   /// Gets or sets the default envelope orientation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultorientation?view=word-pia"/>
-  public EnvelopeOrientation DefaultOrientation { get; set; }
+  public EnvelopeOrientation DefaultOrientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether envelopes are fed face up by default.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultfaceup?view=word-pia"/>
-  public bool DefaultFaceUp { get; set; }
+  public bool DefaultFaceUp { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether vertical envelopes are used.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.vertical?view=word-pia"/>
-  public bool Vertical { get; set; }
+  public bool Vertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge to the recipient name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.recipientnamefromleft?view=word-pia"/>
-  public float RecipientNamefromLeft { get; set; }
+  public float RecipientNamefromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge to the recipient name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.recipientnamefromtop?view=word-pia"/>
-  public float RecipientNamefromTop { get; set; }
+  public float RecipientNamefromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge to the recipient postal barcode area.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.recipientpostalfromleft?view=word-pia"/>
-  public float RecipientPostalfromLeft { get; set; }
+  public float RecipientPostalfromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge to the recipient postal barcode area.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.recipientpostalfromtop?view=word-pia"/>
-  public float RecipientPostalfromTop { get; set; }
+  public float RecipientPostalfromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge to the sender name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.sendernamefromleft?view=word-pia"/>
-  public float SenderNamefromLeft { get; set; }
+  public float SenderNamefromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge to the sender name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.sendernamefromtop?view=word-pia"/>
-  public float SenderNamefromTop { get; set; }
+  public float SenderNamefromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge to the sender postal barcode area.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.senderpostalfromleft?view=word-pia"/>
-  public float SenderPostalfromLeft { get; set; }
+  public float SenderPostalfromLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge to the sender postal barcode area.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.senderpostalfromtop?view=word-pia"/>
-  public float SenderPostalfromTop { get; set; }
+  public float SenderPostalfromTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

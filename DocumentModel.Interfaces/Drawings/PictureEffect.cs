@@ -17,7 +17,7 @@ public partial interface IPictureEffect: IModelObject
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.position?view=office-pia"/>
-  public int Position { get; set; }
+  public int Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `EffectParameters` property.
   /// </summary>
@@ -27,6 +27,6 @@ public partial interface IPictureEffect: IModelObject
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.visible?view=office-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

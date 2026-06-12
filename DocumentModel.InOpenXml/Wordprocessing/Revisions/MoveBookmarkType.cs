@@ -9,13 +9,13 @@ public abstract partial class MoveBookmarkType<T1, T2> : MarkupStartRangeElement
  /// <summary>
  /// Name of the move bookmark, used to link move source and destination content.
  /// </summary>
- public string? Name { get; set; }
+ public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// First column index for the move, used to specify the column range affected by the move in tables.
  /// </summary>
- public Int32? ColumnFirst { get; set; }
+ public Int32? ColumnFirst { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Last column index for the move, used to specify the column range affected by the move in tables.
  /// </summary>
- public Int32? ColumnLast { get; set; }
+ public Int32? ColumnLast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

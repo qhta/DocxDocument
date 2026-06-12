@@ -6,9 +6,9 @@ namespace DocumentModel;
 /// </summary>
 [OpenXmlType(typeof(PackageProperties))]
 [XmlRoot("CoreProperties", Namespace = "DocumentModel")]
-public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>, IWordprocessingDocumentAware
+public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingDocumentAware
 {
-  private new PackageProperties? _openXmlElement;
+  private PackageProperties? _PackageProperties;
 
   /// <summary>
   /// Default constructor.
@@ -47,9 +47,9 @@ public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>
   public override void SetUpdatableElement(object? element)
   {
     if (element == null)
-      _openXmlElement = null;
+      _PackageProperties = null;
     else if (element is PackageProperties packageProperties)
-      _openXmlElement = packageProperties;
+      _PackageProperties = packageProperties;
     else
       throw new ArgumentException($"Expected an element of type {typeof(PackageProperties).FullName}, but received {element.GetType().FullName}.");
   }
@@ -58,7 +58,7 @@ public partial class CoreProperties : BuiltInDocumentProperties<DXCP.Properties>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  public sealed override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.AttachAndLoad(wordprocessingDocument);
     var core = wordprocessingDocument.GetCoreProperties(false);

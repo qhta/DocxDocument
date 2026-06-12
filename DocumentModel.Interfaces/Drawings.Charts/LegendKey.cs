@@ -28,52 +28,52 @@ public partial interface ILegendKey: IModelObject
   /// Gets or sets the `InvertIfNegative` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.invertifnegative?view=office-pia"/>
-  public bool InvertIfNegative { get; set; }
+  public bool InvertIfNegative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerBackgroundColor` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerbackgroundcolor?view=office-pia"/>
-  public int MarkerBackgroundColor { get; set; }
+  public int MarkerBackgroundColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerBackgroundColorIndex` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerbackgroundcolorindex?view=office-pia"/>
-  public ColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerForegroundColor` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerforegroundcolor?view=office-pia"/>
-  public int MarkerForegroundColor { get; set; }
+  public int MarkerForegroundColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerForegroundColorIndex` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerforegroundcolorindex?view=office-pia"/>
-  public ColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerSize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markersize?view=office-pia"/>
-  public int MarkerSize { get; set; }
+  public int MarkerSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarkerStyle` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerstyle?view=office-pia"/>
-  public MarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `PictureType` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.picturetype?view=office-pia"/>
-  public int PictureType { get; set; }
+  public int PictureType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `PictureUnit` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.pictureunit?view=office-pia"/>
-  public double PictureUnit { get; set; }
+  public double PictureUnit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Smooth` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.smooth?view=office-pia"/>
-  public bool Smooth { get; set; }
+  public bool Smooth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Left` property.
   /// </summary>
@@ -98,7 +98,7 @@ public partial interface ILegendKey: IModelObject
   /// Gets or sets the `Shadow` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.shadow?view=office-pia"/>
-  public bool Shadow { get; set; }
+  public bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -108,6 +108,6 @@ public partial interface ILegendKey: IModelObject
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.pictureunit2?view=office-pia"/>
-  public double PictureUnit2 { get; set; }
+  public double PictureUnit2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

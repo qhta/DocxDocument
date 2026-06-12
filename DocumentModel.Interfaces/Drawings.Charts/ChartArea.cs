@@ -26,12 +26,12 @@ public partial interface IChartArea: IModelObject
   /// Gets or sets the `Shadow` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.shadow?view=office-pia"/>
-  public bool Shadow { get; set; }
+  public bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Height` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.height?view=office-pia"/>
-  public double Height { get; set; }
+  public double Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
@@ -46,22 +46,22 @@ public partial interface IChartArea: IModelObject
   /// Gets or sets the `Left` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.left?view=office-pia"/>
-  public double Left { get; set; }
+  public double Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.top?view=office-pia"/>
-  public double Top { get; set; }
+  public double Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Width` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.width?view=office-pia"/>
-  public double Width { get; set; }
+  public double Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.autoscalefont?view=office-pia"/>
-  public object AutoScaleFont { get; set; }
+  public object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -71,6 +71,6 @@ public partial interface IChartArea: IModelObject
   /// Gets or sets the `RoundedCorners` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.roundedcorners?view=office-pia"/>
-  public bool RoundedCorners { get; set; }
+  public bool RoundedCorners { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

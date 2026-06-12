@@ -18,73 +18,73 @@ public partial interface IListLevel : IModelObject
   /// Returns or sets the number format for the list level.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberformat?view=word-pia"/>
-  public string NumberFormat { get; set; }
+  public string NumberFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the character inserted after the list number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.trailingcharacter?view=word-pia"/>
-  public TrailingCharacter TrailingCharacter { get; set; }
+  public TrailingCharacter TrailingCharacter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the numbering style for the list level.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberstyle?view=word-pia"/>
-  public NumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the position of the list number, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberposition?view=word-pia"/>
-  public float NumberPosition { get; set; }
+  public float NumberPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the alignment of the list number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.alignment?view=word-pia"/>
-  public ListLevelAlignment Alignment { get; set; }
+  public ListLevelAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the position of the list text, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.textposition?view=word-pia"/>
-  public float TextPosition { get; set; }
+  public float TextPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the tab position for the list level, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.tabposition?view=word-pia"/>
-  public float TabPosition { get; set; }
+  public float TabPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether numbering restarts when a higher list level is used.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.resetonhigherold?view=word-pia"/>
-  public bool ResetOnHigherOld { get; set; }
+  public bool ResetOnHigherOld { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the starting number for the list level.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.startat?view=word-pia"/>
-  public int StartAt { get; set; }
+  public int StartAt { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the paragraph style linked to the list level.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.linkedstyle?view=word-pia"/>
-  public string LinkedStyle { get; set; }
+  public string LinkedStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the font formatting for the list number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.font?view=word-pia"/>
-  public ITextFormat TextFormat { get; set; }
+  public ITextFormat TextFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the higher list level that causes numbering to restart.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.resetonhigher?view=word-pia"/>
-  public int ResetOnHigher { get; set; }
+  public int ResetOnHigher { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the picture bullet for the list level.

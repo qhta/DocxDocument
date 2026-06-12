@@ -27,7 +27,7 @@ public interface IHeaderFooter : IModelObject
   /// Returns or sets whether the specified header or footer exists.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.exists?view=word-pia"/>
-  public bool Exists { get; set; }
+  public bool Exists { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns the page numbers collection for the header or footer.
   /// </summary>
@@ -37,7 +37,7 @@ public interface IHeaderFooter : IModelObject
   /// Returns or sets whether the header or footer is linked to the corresponding header or footer in the previous section.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.linktoprevious?view=word-pia"/>
-  public bool LinkToPrevious { get; set; }
+  public bool LinkToPrevious { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns the shapes collection for the header or footer.
   /// </summary>

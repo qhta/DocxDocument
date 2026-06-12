@@ -16,5 +16,5 @@ public partial interface IBibliography : IModelObject
   /// Gets or sets the bibliography style name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography.bibliographystyle?view=word-pia"/>
-  public string BibliographyStyle { get; set; }
+  public string BibliographyStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

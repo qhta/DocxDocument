@@ -234,6 +234,16 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     return (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
   }
 
+
+  //protected FieldType? GetField<FieldType>(ref FieldType? fieldValue)
+  //{
+  //  if (this.GetType().GetCustomAttribute<DirectAccessAttribute>() != null)
+  //  {
+
+  //  }
+  //  return fieldValue;
+  //}
+
   /// <summary>
   /// Updates the specified field with a new value and raises a property change notification if the value has changed.
   /// </summary>
@@ -254,24 +264,20 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       var oldValue = fieldValue;
       if (fieldValue is IChildItem oldChild && oldChild.Parent == this)
         oldChild.SetParent(null);
+      DXPP.WordprocessingDocument? oldWordprocessingDocument = null;
       if (fieldValue is IWordprocessingDocumentAware oldWDAValue && oldWDAValue.WordprocessingDocument != null)
+      {
+        oldWordprocessingDocument = oldWDAValue.WordprocessingDocument;
         oldWDAValue.Detach();
-      //if (newValue is IWordprocessingDocumentAware newWDAValue && this is IWordprocessingDocumentAware thisElement &&
-      //    thisElement.WordprocessingDocument != null)
-      //  newWDAValue.Attach(thisElement.WordprocessingDocument);
-      //else if (newValue is IUpdatable updatableValue)
-      //{
-      //  if (updatableValue.GetUpdatableElement() != null)
-      //    updatableValue.UpdateData();
-      //  else if (fieldValue is IUpdatable updatableFieldValue)
-      //    updatableValue.SetUpdatableElement(updatableFieldValue.GetUpdatableElement());
-      //}
+      }
+      else 
+        oldWordprocessingDocument = (this as IWordprocessingDocumentAware)?.WordprocessingDocument;
 
-      //else if (this is IUpdatable updatableElement)
-      //  updatableElement.UpdateData();
       fieldValue = newValue;
       if (fieldValue is IChildItem newChild && newChild.Parent == null)
         newChild.SetParent(this);
+      if (!IsLoading && newValue is IWordprocessingDocumentAware newWDAValue && oldWordprocessingDocument != null)
+        newWDAValue.AttachAndUpdate(oldWordprocessingDocument);
       if (newValue is INotifyCollectionChanged collection)
         collection.CollectionChanged += ChildCollectionChanged;
       if (newValue is INotifyPropertyChanged notificator)

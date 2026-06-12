@@ -8,5 +8,5 @@ public abstract partial class ObjectProperty
  /// <summary>
  /// Name of the property.
  /// </summary>
- public string? Name { get; set; }
+ public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

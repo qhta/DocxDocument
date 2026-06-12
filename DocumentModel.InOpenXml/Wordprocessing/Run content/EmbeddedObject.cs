@@ -15,16 +15,16 @@ public class EmbeddedObject: ModelElement<DXW.EmbeddedObject>
   /// <para>dxaOrig</para>
   /// </summary>
   [OpenXmlProperty("DxaOriginal")]
-  public String? DxaOriginal { get; set; }
+  public String? DxaOriginal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// <para>dyaOrig</para>
   /// </summary>
   [OpenXmlProperty("DyaOriginal")]
-  public String? DyaOriginal { get; set; }
+  public String? DyaOriginal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// <para>anchorId, this property is only available in Office 2010 and later.</para>
   /// </summary>
   [OpenXmlProperty("AnchorId")]
-  public HexBinary? AnchorId { get; set; }
+  public HexBinary? AnchorId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

@@ -26,49 +26,49 @@ public partial interface IWindow : IModelObject
   /// points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.left?view=word-pia"/>
-  public int Left { get; set; }
+  public int Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the vertical position of the specified window, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.top?view=word-pia"/>
-  public int Top { get; set; }
+  public int Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width of the specified object, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.width?view=word-pia"/>
-  public int Width { get; set; }
+  public int Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the height of the window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.height?view=word-pia"/>
-  public int Height { get; set; }
+  public int Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the window is split into multiple panes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.split?view=word-pia"/>
-  public bool Split { get; set; }
+  public bool Split { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the vertical split percentage for the specified window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.splitvertical?view=word-pia"/>
-  public int SplitVertical { get; set; }
+  public int SplitVertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the caption text for the specified document or application window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the state of the specified document window or task window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.windowstate?view=word-pia"/>
-  public WindowState WindowState { get; set; }
+  public WindowState WindowState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the window type.
@@ -99,44 +99,44 @@ public partial interface IWindow : IModelObject
   /// True if a vertical scroll bar is displayed for the specified window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayverticalscrollbar?view=word-pia"/>
-  public bool DisplayVerticalScrollBar { get; set; }
+  public bool DisplayVerticalScrollBar { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if a horizontal scroll bar is displayed for the specified window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayhorizontalscrollbar?view=word-pia"/>
-  public bool DisplayHorizontalScrollBar { get; set; }
+  public bool DisplayHorizontalScrollBar { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width of the style area in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.styleareawidth?view=word-pia"/>
-  public float StyleAreaWidth { get; set; }
+  public float StyleAreaWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if comments, footnotes, endnotes, and hyperlinks are displayed as tips. Text marked as having comments is
   /// highlighted.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayscreentips?view=word-pia"/>
-  public bool DisplayScreenTips { get; set; }
+  public bool DisplayScreenTips { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the horizontal scroll position as a percentage of the document width.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.horizontalpercentscrolled?view=word-pia"/>
-  public int HorizontalPercentScrolled { get; set; }
+  public int HorizontalPercentScrolled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the vertical scroll position as a percentage of the document length.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.verticalpercentscrolled?view=word-pia"/>
-  public int VerticalPercentScrolled { get; set; }
+  public int VerticalPercentScrolled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the document map is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.documentmap?view=word-pia"/>
-  public bool DocumentMap { get; set; }
+  public bool DocumentMap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified window is active.
@@ -148,7 +148,7 @@ public partial interface IWindow : IModelObject
   /// Returns or sets the width of the document map as a percentage of the width of the specified window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.documentmappercentwidth?view=word-pia"/>
-  public int DocumentMapPercentWidth { get; set; }
+  public int DocumentMapPercentWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
@@ -160,7 +160,7 @@ public partial interface IWindow : IModelObject
   /// Returns or sets the default start-up mode for the Japanese Input Method Editor (IME).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.imemode?view=word-pia"/>
-  public IMEMode IMEMode { get; set; }
+  public IMEMode IMEMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the width (in points) of the active working area in the specified document window.
@@ -178,39 +178,39 @@ public partial interface IWindow : IModelObject
   /// True if the e-mail message header is visible in the document window. The default value is False.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.envelopevisible?view=word-pia"/>
-  public bool EnvelopeVisible { get; set; }
+  public bool EnvelopeVisible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the vertical ruler appears on the right side of the document window in print layout view.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayrightruler?view=word-pia"/>
-  public bool DisplayRightRuler { get; set; }
+  public bool DisplayRightRuler { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the vertical scroll bar appears on the left side of the document window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.displayleftscrollbar?view=word-pia"/>
-  public bool DisplayLeftScrollBar { get; set; }
+  public bool DisplayLeftScrollBar { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified object is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.visible?view=word-pia"/>
-  public bool Visible { get; set; }
+  public bool Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Sets or returns a Boolean that represents whether thumbnail images of the pages in a document are displayed
   /// along the left side of the Microsoft Word document window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.thumbnails?view=word-pia"/>
-  public bool Thumbnails { get; set; }
+  public bool Thumbnails { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ShowSourceDocuments constant that represents how Microsoft Office Word displays source
   /// documents after a compare and merge process. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.showsourcedocuments?view=word-pia"/>
-  public ShowSourceDocuments ShowSourceDocuments { get; set; }
+  public ShowSourceDocuments ShowSourceDocuments { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Integer (int in C#) that indicates the window handle of the specified window. Read- only.

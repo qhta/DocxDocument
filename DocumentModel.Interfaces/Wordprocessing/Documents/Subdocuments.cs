@@ -10,5 +10,5 @@ public partial interface ISubdocuments : IModelCollection<ISubdocument>
   /// True if the subdocuments in the specified document are expanded.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments.expanded?view=word-pia"/>
-  public bool Expanded { get; set; }
+  public bool Expanded { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

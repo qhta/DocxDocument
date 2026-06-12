@@ -26,7 +26,7 @@ public abstract class CollectionItem : ModelElement, ICollectionItem
 //[XmlIgnore]
 //[JsonIgnore]
 //[NotMapped]
-//public object? Collection { get; set; }
+//public object? Collection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 ///// <summary>
 ///// Collection property is defined  but not stored in OpenXml element
 ///// </summary>

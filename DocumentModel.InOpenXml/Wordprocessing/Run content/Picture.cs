@@ -14,5 +14,5 @@ public class Picture: ModelElement<DXW.Picture>
   /// Identifier for the anchor.
   /// </summary>
   [OpenXmlProperty("AnchorId")]
-  public HexBinary? AnchorId { get; set; }
+  public HexBinary? AnchorId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

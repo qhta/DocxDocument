@@ -8,17 +8,17 @@ public partial class ColorStyle //: OfficeArtExtendableElement
   /// <summary>
   /// Method used to apply the color style to chart elements.
   /// </summary>
-  public string? Method { get; set; }
+  public string? Method { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Unique identifier for the color style.
   /// </summary>
-  public UInt32? Id { get; set; }
+  public UInt32? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Color used in the color style.
   /// </summary>
-  public DMD.ColorClass? Color { get; set; }
+  public DMD.ColorClass? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Collection of color style variations for additional customization.
   /// </summary>
-  public ColorStyleVariations? ColorStyleVariations { get; set; }
+  public ColorStyleVariations? ColorStyleVariations { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

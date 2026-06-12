@@ -16,5 +16,5 @@ public partial interface IDictionaries : IModelCollection<IDictionary>
   /// Gets or sets the active custom spelling dictionary.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries.activecustomdictionary?view=word-pia"/>
-  public IDictionary ActiveCustomDictionary { get; set; }
+  public IDictionary ActiveCustomDictionary { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

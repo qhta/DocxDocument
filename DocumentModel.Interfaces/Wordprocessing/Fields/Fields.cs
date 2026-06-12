@@ -10,5 +10,5 @@ public partial interface IFields : IModelCollection<Field>
   /// Determines if all fields in the <see cref="IFields"/> collection are locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fields.locked?view=word-pia"/>
-  public int Locked { get; set; }
+  public int Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

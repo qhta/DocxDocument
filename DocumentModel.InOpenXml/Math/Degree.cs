@@ -12,9 +12,9 @@ public partial class Degree : OfficeMathArgumentType<DXM.Degree>
  /// <summary>
  /// Specifies properties of the degree argument.
  /// </summary>
- public ArgumentProperties? ArgumentProperties { get; set; }
+ public ArgumentProperties? ArgumentProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Specifies formatting of degree argument.
  /// </summary>
- public ControlProperties? ControlProperties { get; set; }
+ public ControlProperties? ControlProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

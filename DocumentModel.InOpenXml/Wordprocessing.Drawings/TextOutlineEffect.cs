@@ -11,45 +11,45 @@ public partial class TextOutlineEffect : IDrawingProperty
  /// <summary>
  /// The width of the outline line, specified in units relevant to the document.
  /// </summary>
- public Int32? LineWidth { get; set; }
+ public Int32? LineWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The cap type applied to the ends of the outline line, such as flat, round, or square.
  /// </summary>
- public LineCap? CapType { get; set; }
+ public LineCap? CapType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The compound line style, specifying whether the outline is single, double, or another compound type.
  /// </summary>
- public CompoundLine? Compound { get; set; }
+ public CompoundLine? Compound { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The alignment of the outline pen, specifying how the outline is positioned relative to the text edge.
  /// </summary>
- public PenAlignment? Alignment { get; set; }
+ public PenAlignment? Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Indicates that no fill is applied to the outline.
  /// </summary>
- public bool? NoFillEmpty { get; set; }
+ public bool? NoFillEmpty { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The solid color fill properties for the outline, specifying a single color fill.
  /// </summary>
- public SolidColorFillProperties? SolidColorFillProperties { get; set; }
+ public SolidColorFillProperties? SolidColorFillProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The gradient fill properties for the outline, specifying a color gradient fill.
  /// </summary>
- public GradientFillProperties? GradientFillProperties { get; set; }
+ public GradientFillProperties? GradientFillProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The preset line dash style for the outline, such as solid, dash, or dot.
  /// </summary>
- public PresetLineDash? PresetLineDashProperties { get; set; }
+ public PresetLineDash? PresetLineDashProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Indicates that the outline uses a round join style.
  /// </summary>
- public bool? RoundEmpty { get; set; }
+ public bool? RoundEmpty { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Indicates that the outline uses a bevel join style.
  /// </summary>
- public bool? BevelEmpty { get; set; }
+ public bool? BevelEmpty { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// The miter join properties for the outline, specifying the miter limit and related settings.
  /// </summary>
- public LineJoinMiterProperties? LineJoinMiterProperties { get; set; }
+ public LineJoinMiterProperties? LineJoinMiterProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

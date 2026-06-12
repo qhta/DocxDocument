@@ -14,20 +14,20 @@
     /// <summary>
     /// Typeface name for the font to be used in the run.
     /// </summary>
-    public string? Name { get; set; }
+    public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
     
     /// <summary>
     /// Theme font to be used for this font, allowing theme-based font selection.
     /// </summary>
-    public ThemeFont? Theme { get; set; }
+    public ThemeFont? Theme { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
     
     /// <summary>
     /// Indicates whether to select a bold version of the font.
     /// </summary>
-    public bool? Bold { get; set; }
+    public bool? Bold { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
     
     /// <summary>
     /// Indicates whether to select an italic version of the font.
     /// </summary>
-    public bool? Italic { get; set; }
+    public bool? Italic { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   }

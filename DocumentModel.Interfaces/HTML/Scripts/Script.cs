@@ -12,17 +12,17 @@ public partial interface IScript: IModelObject
   /// Gets or sets additional attributes for the script tag.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.extended?view=office-pia"/>
-  public string Extended { get; set; }
+  public string Extended { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the script ID.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.id?view=office-pia"/>
-  public string Id { get; set; }
+  public string Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the scripting language.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.language?view=office-pia"/>
-  public ScriptLanguage Language { get; set; }
+  public ScriptLanguage Language { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the script anchor location in the document.
   /// </summary>
@@ -37,6 +37,6 @@ public partial interface IScript: IModelObject
   /// Gets or sets the script content text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.scripttext?view=office-pia"/>
-  public string ScriptText { get; set; }
+  public string ScriptText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

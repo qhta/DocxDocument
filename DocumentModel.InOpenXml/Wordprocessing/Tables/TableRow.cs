@@ -9,33 +9,33 @@ public partial class TableRow : ModelElement<DXW.TableRow>, ITableContent, ISdtR
  /// <summary>
  /// Revision identifier for table row glyph formatting.
  /// </summary>
- public HexInt? RsidTableRowMarkRevision { get; set; }
+ public HexInt? RsidTableRowMarkRevision { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Revision identifier for table row addition.
  /// </summary>
- public HexInt? RsidTableRowAddition { get; set; }
+ public HexInt? RsidTableRowAddition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Revision identifier for table row deletion.
  /// </summary>
- public HexInt? RsidTableRowDeletion { get; set; }
+ public HexInt? RsidTableRowDeletion { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Revision identifier for table row properties.
  /// </summary>
- public HexInt? RsidTableRowProperties { get; set; }
+ public HexInt? RsidTableRowProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Paragraph identifier for the row.
  /// </summary>
- public HexInt? ParagraphId { get; set; }
+ public HexInt? ParagraphId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Text identifier for the row.
  /// </summary>
- public HexInt? TextId { get; set; }
+ public HexInt? TextId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Table-level property exceptions for the row, enabling advanced formatting overrides.
  /// </summary>
- public TablePropertyExceptions? TablePropertyExceptions { get; set; }
+ public TablePropertyExceptions? TablePropertyExceptions { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Table row properties, including formatting and layout options for the row.
  /// </summary>
- public TableRowProperties? TableRowProperties { get; set; }
+ public TableRowProperties? TableRowProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

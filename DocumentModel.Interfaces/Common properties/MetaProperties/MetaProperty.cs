@@ -12,7 +12,7 @@ public partial interface IMetaProperty: IModelObject
   /// Gets or sets the `Value` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.value?view=office-pia"/>
-  public object Value { get; set; }
+  public object Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>

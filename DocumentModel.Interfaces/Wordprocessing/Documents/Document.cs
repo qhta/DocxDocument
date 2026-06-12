@@ -32,25 +32,25 @@ public partial interface IDocument : IModelObject
   /// Returns a Template object that represents the template attached to the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.attachedtemplate?view=word-pia"/>
-  public ITemplate? AttachedTemplate { get; set; }
+  public ITemplate? AttachedTemplate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether automatic formatting options override formatting restrictions in a document where formatting restrictions are in effect.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.autoformatoverride?view=word-pia"/>
-  public bool AutoFormatOverride { get; set; }
+  public bool AutoFormatOverride { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if automatic hyphenation is turned on for the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.autohyphenation?view=word-pia"/>
-  public bool AutoHyphenation { get; set; }
+  public bool AutoHyphenation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Shape object that represents the background image for the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.background?view=word-pia"/>
-  public DMD.IShape? Background { get; set; }
+  public DMD.IShape? Background { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the bibliography references contained within a document. Read-only.
@@ -80,13 +80,13 @@ public partial interface IDocument : IModelObject
   /// Returns or sets a Boolean (bool in C#) that specifies whether charts in the active document use cell-reference data-point tracking. Read-write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.chartdatapointtrack?view=word-pia"/>
-  public bool ChartDataPointTrack { get; set; }
+  public bool ChartDataPointTrack { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the default paragraph style applied to text by the Click and Type feature in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.clickandtypeparagraphstyle?view=word-pia"/>
-  public object? ClickAndTypeParagraphStyle { get; set; }
+  public object? ClickAndTypeParagraphStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a CoAuthoring object that provides an entry point to co-authoring-related object model in the document.
@@ -110,7 +110,7 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the maximum number of consecutive lines that can end with hyphens.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.consecutivehyphenslimit?view=word-pia"/>
-  public int? ConsecutiveHyphensLimit { get; set; }
+  public int? ConsecutiveHyphensLimit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the object that represents the container application for the specified OLE object.
@@ -164,13 +164,13 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the interval (in points) between the default tab stops in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.defaulttabstop?view=word-pia"/>
-  public float? DefaultTabStop { get; set; }
+  public float? DefaultTabStop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a string? indicating the browser frame in which to display a Web page reached through a hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.defaulttargetframe?view=word-pia"/>
-  public string? DefaultTargetFrame { get; set; }
+  public string? DefaultTargetFrame { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -194,7 +194,7 @@ public partial interface IDocument : IModelObject
   /// Returns or sets a Boolean that represents whether formatting restrictions are enforced in a protected document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.enforcestyle?view=word-pia"/>
-  public bool EnforceStyle { get; set; }
+  public bool EnforceStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Envelope object that represents envelope functionality and the envelope in the specified document.
@@ -206,13 +206,13 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the East Asian language to use when breaking lines of text in the specified document or template.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fareastlinebreaklanguage?view=word-pia"/>
-  public FarEastLineBreakLanguageID? FarEastLineBreakLanguage { get; set; }
+  public FarEastLineBreakLanguageID? FarEastLineBreakLanguage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the line break control level for the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fareastlinebreaklevel?view=word-pia"/>
-  public FarEastLineBreakLevel? FarEastLineBreakLevel { get; set; }
+  public FarEastLineBreakLevel? FarEastLineBreakLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the document, range, or selection.
@@ -224,7 +224,7 @@ public partial interface IDocument : IModelObject
   /// Returns or sets a Boolean that indicates whether a document is final. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.final?view=word-pia"/>
-  public bool Final { get; set; }
+  public bool Final { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Footnotes collection that represents all the footnotes in a range, selection, or document.
@@ -236,43 +236,43 @@ public partial interface IDocument : IModelObject
   /// Determines if Microsoft Word is to show clear formatting in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowclear?view=word-pia"/>
-  public bool FormattingShowClear { get; set; }
+  public bool FormattingShowClear { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ShowFilter constant that represents the styles and formatting displayed in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowfilter?view=word-pia"/>
-  public ShowFilter? FormattingShowFilter { get; set; }
+  public ShowFilter? FormattingShowFilter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word displays font formatting in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowfont?view=word-pia"/>
-  public bool FormattingShowFont { get; set; }
+  public bool FormattingShowFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word shows the next heading level when the previous heading level is used. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshownextlevel?view=word-pia"/>
-  public bool FormattingShowNextLevel { get; set; }
+  public bool FormattingShowNextLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word displays number formatting in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshownumbering?view=word-pia"/>
-  public bool FormattingShowNumbering { get; set; }
+  public bool FormattingShowNumbering { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word displays paragraph formatting in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowparagraph?view=word-pia"/>
-  public bool FormattingShowParagraph { get; set; }
+  public bool FormattingShowParagraph { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to show user-defined styles. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowuserstylename?view=word-pia"/>
-  public bool FormattingShowUserStyleName { get; set; }
+  public bool FormattingShowUserStyleName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a FormFields collection that represents all the form fields in the document, range, or selection.
@@ -308,7 +308,7 @@ public partial interface IDocument : IModelObject
   /// Determines if a grammar check has been run on the specified range or document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.grammarchecked?view=word-pia"/>
-  public bool GrammarChecked { get; set; }
+  public bool GrammarChecked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ProofreadingErrors collection that represents the sentences that failed the grammar check on the specified document or range.
@@ -320,49 +320,49 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the amount of horizontal space between the invisible gridlines that Microsoft Word uses when you draw, move, and resize AutoShapes or East Asian characters in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.griddistancehorizontal?view=word-pia"/>
-  public float? GridDistanceHorizontal { get; set; }
+  public float? GridDistanceHorizontal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the amount of vertical space between the invisible gridlines that Microsoft Word uses when you draw, move, and resize AutoShapes or East Asian characters in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.griddistancevertical?view=word-pia"/>
-  public float? GridDistanceVertical { get; set; }
+  public float? GridDistanceVertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word starts the character grid from the upper-left corner of the page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.gridoriginfrommargin?view=word-pia"/>
-  public bool GridOriginFromMargin { get; set; }
+  public bool GridOriginFromMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the point, relative to the left edge of the page, where you want the invisible grid for drawing, moving, and resizing AutoShapes or East Asian characters to begin in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.gridoriginhorizontal?view=word-pia"/>
-  public float? GridOriginHorizontal { get; set; }
+  public float? GridOriginHorizontal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the point, relative to the top of the page, where you want the invisible grid for drawing, moving, and resizing AutoShapes or East Asian characters to begin in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.gridoriginvertical?view=word-pia"/>
-  public float? GridOriginVertical { get; set; }
+  public float? GridOriginVertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the interval at which Microsoft Word displays horizontal character gridlines in print layout view.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.gridspacebetweenhorizontallines?view=word-pia"/>
-  public int? GridSpaceBetweenHorizontalLines { get; set; }
+  public int? GridSpaceBetweenHorizontalLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the interval at which Microsoft Word displays vertical character gridlines in print layout view.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.gridspacebetweenverticallines?view=word-pia"/>
-  public int? GridSpaceBetweenVerticalLines { get; set; }
+  public int? GridSpaceBetweenVerticalLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hasmailer?view=word-pia"/>
-  public bool HasMailer { get; set; }
+  public bool HasMailer { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns True if a password is required to open the specified document.
@@ -374,7 +374,7 @@ public partial interface IDocument : IModelObject
   /// Determines if the specified document has a routing slip attached to it.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hasroutingslip?view=word-pia"/>
-  public bool HasRoutingSlip { get; set; }
+  public bool HasRoutingSlip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Boolean that represents whether a document has an attached Microsoft Visual Basic for Applications project. Read-only.
@@ -404,13 +404,13 @@ public partial interface IDocument : IModelObject
   /// Determine if words in all capital letters can be hyphenated.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hyphenatecaps?view=word-pia"/>
-  public bool HyphenateCaps { get; set; }
+  public bool HyphenateCaps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width of the hyphenation zone, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hyphenationzone?view=word-pia"/>
-  public int? HyphenationZone { get; set; }
+  public int? HyphenationZone { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Indexes collection that represents all the indexes in the specified document.
@@ -446,25 +446,25 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the character spacing adjustment for the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.justificationmode?view=word-pia"/>
-  public JustificationMode? JustificationMode { get; set; }
+  public JustificationMode? JustificationMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word kerns half-width Latin characters and punctuation marks in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.kerningbyalgorithm?view=word-pia"/>
-  public bool KerningByAlgorithm { get; set; }
+  public bool KerningByAlgorithm { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the format type that Microsoft Word uses when automatically formatting the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.kind?view=word-pia"/>
-  public DocumentKind? Kind { get; set; }
+  public DocumentKind? Kind { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.languagedetected?view=word-pia"/>
-  public bool LanguageDetected { get; set; }
+  public bool LanguageDetected { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ListParagraphs collection that represents all the numbered paragraphs in the document.
@@ -488,13 +488,13 @@ public partial interface IDocument : IModelObject
   /// Returns or sets a Boolean that represents whether users can change which set of Quick Styles is being used. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.lockquickstyleset?view=word-pia"/>
-  public bool LockQuickStyleSet { get; set; }
+  public bool LockQuickStyleSet { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether a user can change a document theme. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.locktheme?view=word-pia"/>
-  public bool LockTheme { get; set; }
+  public bool LockTheme { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -518,13 +518,13 @@ public partial interface IDocument : IModelObject
   /// Returns or sets the kinsoku characters after which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.nolinebreakafter?view=word-pia"/>
-  public string? NoLineBreakAfter { get; set; }
+  public string? NoLineBreakAfter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the kinsoku characters before which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.nolinebreakbefore?view=word-pia"/>
-  public string? NoLineBreakBefore { get; set; }
+  public string? NoLineBreakBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns the document title for the original document after running a legal-blackline document compare function. Read-only.
   /// </summary>
@@ -535,7 +535,7 @@ public partial interface IDocument : IModelObject
   /// Returns a PageSetup object that's associated with the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.pagesetup?view=word-pia"/>
-  public IPageSetup? PageSetup { get; set; }
+  public IPageSetup? PageSetup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Paragraphs collection that represents all the paragraphs in the specified document.
@@ -565,7 +565,7 @@ public partial interface IDocument : IModelObject
   /// Determines if the specified document or template hasn't changed since it was last saved.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saved?view=word-pia"/>
-  public bool Saved { get; set; }
+  public bool Saved { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Integer representing the file format of the specified document or file converter.
@@ -577,13 +577,13 @@ public partial interface IDocument : IModelObject
   /// Determines if Microsoft Word saves the data entered in a form as a tab-delimited record for use in a database.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveformsdata?view=word-pia"/>
-  public bool SaveFormsData { get; set; }
+  public bool SaveFormsData { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word saves a subset of the embedded TrueType fonts with the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.savesubsetfonts?view=word-pia"/>
-  public bool SaveSubsetFonts { get; set; }
+  public bool SaveSubsetFonts { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.

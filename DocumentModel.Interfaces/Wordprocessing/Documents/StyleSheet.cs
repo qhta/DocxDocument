@@ -34,11 +34,11 @@ public partial interface IStyleSheet : IModelObject
   /// Returns the template type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.type?view=word-pia"/>
-  public StyleSheetLinkType Type { get; set; }
+  public StyleSheetLinkType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a String representing the title of a Web style sheet.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string Title { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

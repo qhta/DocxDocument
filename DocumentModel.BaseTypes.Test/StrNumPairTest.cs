@@ -573,28 +573,28 @@ public class StrNumPairTestData
 {
   [XmlElement("StringOnly")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public StrNumPair StringOnly { get; set; }
+  public StrNumPair StringOnly { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("NumberOnly")]
-  public StrNumPair NumberOnly { get; set; }
+  public StrNumPair NumberOnly { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Both")]
-  public StrNumPair Both { get; set; }
+  public StrNumPair Both { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Empty")]
-  public StrNumPair Empty { get; set; }
+  public StrNumPair Empty { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Negative")]
-  public StrNumPair Negative { get; set; }
+  public StrNumPair Negative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Zero")]
-  public StrNumPair Zero { get; set; }
+  public StrNumPair Zero { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LongString")]
-  public StrNumPair LongString { get; set; }
+  public StrNumPair LongString { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ParsedFormat")]
-  public StrNumPair ParsedFormat { get; set; }
+  public StrNumPair ParsedFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -602,7 +602,7 @@ public class StrNumPairTestData
 /// </summary>
 public class StrNumPairWrapper
 {
-  public StrNumPair Value { get; set; }
+  public StrNumPair Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

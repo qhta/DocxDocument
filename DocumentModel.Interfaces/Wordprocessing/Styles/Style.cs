@@ -12,13 +12,13 @@ public partial interface IStyle : IModelObject
   /// Returns the name of a built-in style in the language of the user. Read/write String.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.namelocal?view=word-pia"/>
-  public string NameLocal { get; set; }
+  public string NameLocal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an existing style on which you can base the formatting of another style. Read/write Object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.basestyle?view=word-pia"/>
-  public object BaseStyle { get; set; }
+  public object BaseStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the description of the specified style. Read-only String.
@@ -44,7 +44,7 @@ public partial interface IStyle : IModelObject
   /// with the specified style. Read/write Object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.nextparagraphstyle?view=word-pia"/>
-  public object NextParagraphStyle { get; set; }
+  public object NextParagraphStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified style is a built-in style that has been modified or applied in the document or a new
@@ -63,21 +63,21 @@ public partial interface IStyle : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified style.
   /// Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.paragraphformat?view=word-pia"/>
-  public IParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TextFormat object that represents the character formatting of the specified object. Read/write
   /// TextFormat.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public ITextFormat TextFormat { get; set; }
+  public ITextFormat TextFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.
@@ -89,14 +89,14 @@ public partial interface IStyle : IModelObject
   /// Returns or sets the language for the specified object. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the style is automatically redefined based on the selection. False if Microsoft Word prompts for
   /// confirmation before redefining the style based on the selection. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.automaticallyupdate?view=word-pia"/>
-  public bool AutomaticallyUpdate { get; set; }
+  public bool AutomaticallyUpdate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ListTemplate object that represents the list formatting for the specified Style object.
@@ -114,37 +114,37 @@ public partial interface IStyle : IModelObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageidfareast?view=word-pia"/>
-  public LanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.hidden?view=word-pia"/>
-  public bool Hidden { get; set; }
+  public bool Hidden { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the spelling and grammar checker ignores text formatted with this style. Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.noproofing?view=word-pia"/>
-  public int NoProofing { get; set; }
+  public int NoProofing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Sets or returns an Object that represents a link between a paragraph and a character style. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.linkstyle?view=word-pia"/>
-  public object LinkStyle { get; set; }
+  public object LinkStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.visibility?view=word-pia"/>
-  public bool Visibility { get; set; }
+  public bool Visibility { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the spelling and grammar checker ignores text formatted with this style. Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.nospacebetweenparagraphsofsamestyle?view=word-pia"/>
-  public bool NoSpaceBetweenParagraphsOfSameStyle { get; set; }
+  public bool NoSpaceBetweenParagraphsOfSameStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a TableStyle object representing properties that can be applied to a table using a table style.
@@ -156,26 +156,26 @@ public partial interface IStyle : IModelObject
   /// True if the specified style is locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.locked?view=word-pia"/>
-  public bool Locked { get; set; }
+  public bool Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Integer that represents the priority for sorting styles in the Styles task pane. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.priority?view=word-pia"/>
-  public int Priority { get; set; }
+  public int Priority { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Set True to clear the Hidden property when this style is used.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.unhidewhenused?view=word-pia"/>
-  public bool UnhideWhenUsed { get; set; }
+  public bool UnhideWhenUsed { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether the style corresponds to an available quick style.
   /// Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.quickstyle?view=word-pia"/>
-  public bool QuickStyle { get; set; }
+  public bool QuickStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether a style is a linked style that can be used for both

@@ -30,29 +30,29 @@ public partial interface ICaptionLabel : IModelObject
   /// Gets or sets a value indicating whether chapter numbers are included in captions for this label.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.includechapternumber?view=word-pia"/>
-  public bool IncludeChapterNumber { get; set; }
+  public bool IncludeChapterNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the numbering style for captions that use this label.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.numberstyle?view=word-pia"/>
-  public NumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the heading style level used for chapter numbering in captions.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.chapterstylelevel?view=word-pia"/>
-  public int ChapterStyleLevel { get; set; }
+  public int ChapterStyleLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the separator between the chapter number and caption number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.separator?view=word-pia"/>
-  public SeparatorType Separator { get; set; }
+  public SeparatorType Separator { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the position of captions relative to the associated item.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.position?view=word-pia"/>
-  public CaptionPosition Position { get; set; }
+  public CaptionPosition Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

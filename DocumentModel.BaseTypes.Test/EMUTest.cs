@@ -615,25 +615,25 @@ public class EMUTestData
   [XmlElement("Width")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public EMU Width { get; set; }
+  public EMU Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Height")]
-  public EMU Height { get; set; }
+  public EMU Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LeftOffset")]
-  public EMU LeftOffset { get; set; }
+  public EMU LeftOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("TopOffset")]
-  public EMU TopOffset { get; set; }
+  public EMU TopOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public EMU ZeroValue { get; set; }
+  public EMU ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public EMU SmallValue { get; set; }
+  public EMU SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public EMU LargeValue { get; set; }
+  public EMU LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -641,7 +641,7 @@ public class EMUTestData
 /// </summary>
 public class EMUWrapper
 {
-  public EMU Value { get; set; }
+  public EMU Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

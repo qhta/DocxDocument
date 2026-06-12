@@ -10,9 +10,9 @@ public partial class ParagraphMarkRunPropertiesChange : IdentifiedChange<DXW.Par
  /// <summary>
  /// Annotation identifier for the change, used to uniquely identify the revision.
  /// </summary>
- public string? AnnotationId { get; set; }
+ public string? AnnotationId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Previous run properties for the paragraph mark before the change, enabling comparison and tracking of revisions.
  /// </summary>
- public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
+ public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

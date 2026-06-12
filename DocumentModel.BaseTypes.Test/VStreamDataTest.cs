@@ -664,19 +664,19 @@ public class VStreamDataTestData
 {
   [XmlElement("ExcelStream")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public VStreamData ExcelStream { get; set; }
+  public VStreamData ExcelStream { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("WordStream")]
-  public VStreamData WordStream { get; set; }
+  public VStreamData WordStream { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BinaryStream")]
-  public VStreamData BinaryStream { get; set; }
+  public VStreamData BinaryStream { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("EmptyStream")]
-  public VStreamData EmptyStream { get; set; }
+  public VStreamData EmptyStream { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeStream")]
-  public VStreamData LargeStream { get; set; }
+  public VStreamData LargeStream { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

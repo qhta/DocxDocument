@@ -9,17 +9,17 @@ public partial class GradientFill : Fill<DXD.GradientFill>
  /// <summary>
  ///   Tile Flip
  /// </summary>
- public TileFlip? Flip { get; set; }
+ public TileFlip? Flip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   Rotate With Shape
  /// </summary>
- public bool? RotateWithShape { get; set; }
+ public bool? RotateWithShape { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   Gradient Stop List.
  /// </summary>
- public GradientStopList? GradientStopList { get; set; }
+ public GradientStopList? GradientStopList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Relative rectangle coordinates.
  /// </summary>
- public RelativeRectangleType? TileRectangle { get; set; }
+ public RelativeRectangleType? TileRectangle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

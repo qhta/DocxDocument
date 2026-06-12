@@ -40,25 +40,25 @@ public partial interface IMailMergeDataSource : IModelObject
   /// Returns or sets the query string used to retrieve records.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.querystring?view=word-pia"/>
-  public string QueryString { get; set; }
+  public string QueryString { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the active record in the data source.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.activerecord?view=word-pia"/>
-  public MailMergeActiveRecord ActiveRecord { get; set; }
+  public MailMergeActiveRecord ActiveRecord { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the first record number for the merge.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.firstrecord?view=word-pia"/>
-  public int FirstRecord { get; set; }
+  public int FirstRecord { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the last record number for the merge.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.lastrecord?view=word-pia"/>
-  public int LastRecord { get; set; }
+  public int LastRecord { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the mail merge field names collection.
@@ -82,19 +82,19 @@ public partial interface IMailMergeDataSource : IModelObject
   /// Returns or sets whether the current record is included in the merge.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.included?view=word-pia"/>
-  public bool Included { get; set; }
+  public bool Included { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether the current record has an invalid address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.invalidaddress?view=word-pia"/>
-  public bool InvalidAddress { get; set; }
+  public bool InvalidAddress { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets comments about why the current record is invalid.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.invalidcomments?view=word-pia"/>
-  public string InvalidComments { get; set; }
+  public string InvalidComments { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the mapped data fields collection.

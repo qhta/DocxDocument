@@ -10,9 +10,9 @@ public partial class LatentStyle
  /// <summary>
  /// Primary style name associated with the latent style exception.
  /// </summary>
- public string? StyleName { get; set; }
+ public string? StyleName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Alternate style names associated with the latent style exception.
  /// </summary>
- public List<String>? Aliases { get; set; }
+ public List<String>? Aliases { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

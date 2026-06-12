@@ -10,7 +10,7 @@ public partial interface Field : IModelObject
   /// Gets or sets the field code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.code?view=word-pia"/>
-  public IRange Code { get; set; }
+  public IRange Code { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the field type.
@@ -22,7 +22,7 @@ public partial interface Field : IModelObject
   /// Gets or sets a value indicating whether the field is locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.locked?view=word-pia"/>
-  public bool Locked { get; set; }
+  public bool Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the field kind.
@@ -34,13 +34,13 @@ public partial interface Field : IModelObject
   /// Gets or sets the result displayed for the field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.result?view=word-pia"/>
-  public IRange Result { get; set; }
+  public IRange Result { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets data associated with the field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.data?view=word-pia"/>
-  public string Data { get; set; }
+  public string Data { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the next field in the `Fields` collection.
@@ -64,7 +64,7 @@ public partial interface Field : IModelObject
   /// Gets or sets a value indicating whether field codes are displayed instead of field results.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.showcodes?view=word-pia"/>
-  public bool ShowCodes { get; set; }
+  public bool ShowCodes { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the inline shape associated with the field.

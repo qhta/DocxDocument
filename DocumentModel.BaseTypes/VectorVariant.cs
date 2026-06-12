@@ -145,7 +145,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// and serialization implementation.
   /// </para>
   /// </remarks>
-  public VariantType? BaseType { get; set; }
+  public VariantType? BaseType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an enumerator Ithat iterates through the vector elements.

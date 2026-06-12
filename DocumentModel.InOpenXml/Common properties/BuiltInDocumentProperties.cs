@@ -5,8 +5,7 @@ namespace DocumentModel;
 /// Collection of all document properties;
 /// </summary>
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
-public partial class BuiltInDocumentProperties<T> : DocumentProperties<T, BuiltInProperty>
-where T: DX.OpenXmlElement
+public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInProperty>
 {
   /// <summary>
   /// Initializes a new instance of the DocumentProperties class with the specified known properties.
@@ -36,9 +35,12 @@ where T: DX.OpenXmlElement
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        property.SetValue(this, item.Value);
+        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
+        var valueObject = docPropertyType.ConvertStringToObject(item.Value, property.PropertyType);
+        property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
           new[] { item }, Array.Empty<object>()));
+
         return true;
       }
     }
@@ -57,7 +59,7 @@ where T: DX.OpenXmlElement
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(item.Value);
+        var valueObject = docPropertyType.ConvertStringToObject(item.Value, property.PropertyType);
         property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
           new[] { item }, Array.Empty<object>()));
@@ -255,7 +257,7 @@ where T: DX.OpenXmlElement
     if (KnownProperties.TryGetValue(propertyName, out var property))
     {
       var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-      var valueObject = docPropertyType.ConvertStringToObject(builtInProperty.Value);
+      var valueObject = docPropertyType.ConvertStringToObject(builtInProperty.Value, property.PropertyType);
       property.SetValue(this, valueObject);
       return true;
     }
@@ -289,11 +291,23 @@ where T: DX.OpenXmlElement
       if (KnownProperties.TryGetValue(propertyName, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(value.Value);
+        var valueObject = docPropertyType.ConvertStringToObject(value.Value, property.PropertyType);
         property.SetValue(this, valueObject);
         return;
       }
       throw new ArgumentException($"DocumentProperty with name '{propertyName}' does not exist in {GetType().Name}.");
+    }
+  }
+
+  /// <summary>
+  /// Returns an enumerable collection of the document properties in this instance. The collection includes only the properties that have non-null values.
+  /// </summary>
+  /// <returns>An enumerable collection of <see cref="BuiltInProperty"/> objects.</returns>
+  public IEnumerable<BuiltInProperty> AsQueryable()
+  {
+    foreach (var item in this)
+    {
+      yield return item;
     }
   }
 }

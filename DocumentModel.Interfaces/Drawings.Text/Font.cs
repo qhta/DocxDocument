@@ -13,67 +13,67 @@ public partial interface IFont: IModelObject
   /// Gets or sets the `Bold` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.bold?view=office-pia"/>
-  public TriState Bold { get; set; }
+  public TriState Bold { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Italic` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.italic?view=office-pia"/>
-  public TriState Italic { get; set; }
+  public TriState Italic { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Strike` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.strike?view=office-pia"/>
-  public TextStrike Strike { get; set; }
+  public TextStrike Strike { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Caps` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.caps?view=office-pia"/>
-  public TextCaps Caps { get; set; }
+  public TextCaps Caps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutorotateNumbers` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.autorotatenumbers?view=office-pia"/>
-  public TriState AutorotateNumbers { get; set; }
+  public TriState AutorotateNumbers { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `BaselineOffset` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.baselineoffset?view=office-pia"/>
-  public float BaselineOffset { get; set; }
+  public float BaselineOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Kerning` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.kerning?view=office-pia"/>
-  public float Kerning { get; set; }
+  public float Kerning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Size` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.size?view=office-pia"/>
-  public float Size { get; set; }
+  public float Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Spacing` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.spacing?view=office-pia"/>
-  public float Spacing { get; set; }
+  public float Spacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `UnderlineStyle` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.underlinestyle?view=office-pia"/>
-  public UnderlineType UnderlineStyle { get; set; }
+  public UnderlineType UnderlineStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Allcaps` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.allcaps?view=office-pia"/>
-  public TriState Allcaps { get; set; }
+  public TriState Allcaps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `DoubleStrikeThrough` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.doublestrikethrough?view=office-pia"/>
-  public TriState DoubleStrikeThrough { get; set; }
+  public TriState DoubleStrikeThrough { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Equalize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.equalize?view=office-pia"/>
-  public TriState Equalize { get; set; }
+  public TriState Equalize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -113,32 +113,32 @@ public partial interface IFont: IModelObject
   /// Gets or sets the `Smallcaps` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.smallcaps?view=office-pia"/>
-  public TriState Smallcaps { get; set; }
+  public TriState Smallcaps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `SoftEdgeFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.softedgeformat?view=office-pia"/>
-  public SoftEdgeType SoftEdgeFormat { get; set; }
+  public SoftEdgeType SoftEdgeFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `StrikeThrough` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.strikethrough?view=office-pia"/>
-  public TriState StrikeThrough { get; set; }
+  public TriState StrikeThrough { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Subscript` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.subscript?view=office-pia"/>
-  public TriState Subscript { get; set; }
+  public TriState Subscript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Superscript` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.superscript?view=office-pia"/>
-  public TriState Superscript { get; set; }
+  public TriState Superscript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `WordArtformat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.wordartformat?view=office-pia"/>
-  public PresetTextEffect WordArtformat { get; set; }
+  public PresetTextEffect WordArtformat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Embeddable` property.
   /// </summary>
@@ -153,26 +153,26 @@ public partial interface IFont: IModelObject
   /// Gets or sets the `Name` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.name?view=office-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NameAscii` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.nameascii?view=office-pia"/>
-  public string NameAscii { get; set; }
+  public string NameAscii { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NameComplexScript` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.namecomplexscript?view=office-pia"/>
-  public string NameComplexScript { get; set; }
+  public string NameComplexScript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NameFarEast` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.namefareast?view=office-pia"/>
-  public string NameFarEast { get; set; }
+  public string NameFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NameOther` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.nameother?view=office-pia"/>
-  public string NameOther { get; set; }
+  public string NameOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

@@ -30,7 +30,7 @@ public class MDIViewModel: ViewModel
   /// <summary>
   /// Command to change MDI layout (Cascade, Horizontal, Vertical)
   /// </summary>
-  public ICommand MDILayoutChangedCommand { get; set; }
+  public ICommand MDILayoutChangedCommand { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Initializing constructor,

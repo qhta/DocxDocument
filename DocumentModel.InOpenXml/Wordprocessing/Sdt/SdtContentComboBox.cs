@@ -9,5 +9,5 @@ public partial class SdtContentComboBox : SdtListItems
  /// <summary>
  /// Combo box last saved value, specifying the most recently selected or entered option.
  /// </summary>
- public string? LastValue { get; set; }
+ public string? LastValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

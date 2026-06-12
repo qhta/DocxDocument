@@ -15,7 +15,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkgrammarasyoutype?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Grammar")]
-  public bool? CheckGrammarAsYouType { get; set; }
+  public bool? CheckGrammarAsYouType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word checks grammar while checking spelling. 
@@ -24,7 +24,7 @@ public partial interface IOptions : IModelObject
   [MultiCategory("Proofing")]
   [MultiCategory("Grammar")]
   [MultiCategory("Spelling")]
-  public bool? CheckGrammarWithSpelling { get; set; }
+  public bool? CheckGrammarWithSpelling { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word checks spelling and marks errors automatically as you type. 
@@ -32,7 +32,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkspellingasyoutype?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? CheckSpellingAsYouType { get; set; }
+  public bool? CheckSpellingAsYouType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// Returns or sets a Boolean that represents whether to use the contextual speller to check spelling based on 
@@ -41,7 +41,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.contextualspeller?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? ContextualSpeller { get; set; }
+  public bool? ContextualSpeller { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word checks for misused words when checking the spelling and grammar in a document. 
@@ -50,7 +50,7 @@ public partial interface IOptions : IModelObject
   [MultiCategory("Proofing")]
   [MultiCategory("Grammar")]
   [MultiCategory("Spelling")]
-  public bool? EnableMisusedWordsDictionary { get; set; }
+  public bool? EnableMisusedWordsDictionary { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// Returns or sets a Boolean (bool in C#) value that, when True, specifies that users be notified when 
@@ -60,7 +60,7 @@ public partial interface IOptions : IModelObject
   [MultiCategory("Proofing")]
   [MultiCategory("Grammar")]
   [MultiCategory("Spelling")]
-  public bool? EnableProofingToolsAdvertisement { get; set; }
+  public bool? EnableProofingToolsAdvertisement { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if file name extensions, MS-DOS paths, e-mail addresses, server and share names (also known as UNC 
@@ -69,7 +69,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoreinternetandfileaddresses?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? IgnoreInternetAndFileAddresses { get; set; }
+  public bool? IgnoreInternetAndFileAddresses { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if words that contain numbers are ignored while checking spelling. 
@@ -77,7 +77,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoremixeddigits?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? IgnoreMixedDigits { get; set; }
+  public bool? IgnoreMixedDigits { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if words in all uppercase letters are ignored while checking spelling. 
@@ -85,7 +85,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoreuppercase?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? IgnoreUppercase { get; set; }
+  public bool? IgnoreUppercase { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// Returns or sets a Boolean that represents whether to mark words that are repeated when spelling is checked. 
@@ -94,7 +94,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.repeatword?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? RepeatWord { get; set; }
+  public bool? RepeatWord { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word displays a list of summary statistics, including measures of readability, when it has 
@@ -103,7 +103,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showreadabilitystatistics?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Grammar")]
-  public bool? ShowReadabilityStatistics { get; set; }
+  public bool? ShowReadabilityStatistics { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word draws spelling suggestions from the main dictionary only. False if it draws spelling 
@@ -112,7 +112,7 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.suggestfrommaindictionaryonly?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? SuggestFromMainDictionaryOnly { get; set; }
+  public bool? SuggestFromMainDictionaryOnly { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary> 
   /// True if Microsoft Word always suggests alternative spellings for each misspelled word when checking 
@@ -121,6 +121,6 @@ public partial interface IOptions : IModelObject
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.suggestspellingcorrections?view=word-pia"/>
   [MultiCategory("Proofing")]
   [MultiCategory("Spelling")]
-  public bool? SuggestSpellingCorrections { get; set; }
+  public bool? SuggestSpellingCorrections { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

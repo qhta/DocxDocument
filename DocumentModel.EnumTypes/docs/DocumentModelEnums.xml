@@ -38793,12 +38793,13 @@
             <param name="value">The value to convert to a string.</param>
             <returns>The string representation of the value if compatible with the DocPropertyType; otherwise, null.</returns>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertStringToObject(DocumentModel.Properties.DocPropertyType,System.String)">
+        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertStringToObject(DocumentModel.Properties.DocPropertyType,System.String,System.Type)">
             <summary>
             Converts a given string value to its corresponding .NET type based on the specified DocPropertyType. 
             </summary>
             <param name="type">The DocPropertyType value to use for conversion.</param>
             <param name="value">The string value to convert.</param>
+            <param name="propertyType">The target .NET type for the conversion.</param>
             <returns>The corresponding .NET object if conversion is successful; otherwise, null.</returns>
         </member>
         <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertToDocPropertyType(System.Type)">

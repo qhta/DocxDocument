@@ -11,11 +11,11 @@ public partial interface ITabStop: IModelObject
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2.position?view=office-pia"/>
-  public float Position { get; set; }
+  public float Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2.type?view=office-pia"/>
-  public TabStopType Type { get; set; }
+  public TabStopType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

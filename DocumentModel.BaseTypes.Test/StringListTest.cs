@@ -707,22 +707,22 @@ public class StringListTestData
 {
   [XmlElement("EmptyList")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public StringList EmptyList { get; set; } = new StringList();
+  public StringList EmptyList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 
   [XmlElement("SingleItem")]
-  public StringList SingleItem { get; set; } = new StringList();
+  public StringList SingleItem { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 
   [XmlElement("MultipleItems")]
-  public StringList MultipleItems { get; set; } = new StringList();
+  public StringList MultipleItems { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 
   [XmlElement("ItemsWithSpaces")]
-  public StringList ItemsWithSpaces { get; set; } = new StringList();
+  public StringList ItemsWithSpaces { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 
   [XmlElement("SpecialChars")]
-  public StringList SpecialChars { get; set; } = new StringList();
+  public StringList SpecialChars { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 
   [XmlElement("Numbers")]
-  public StringList Numbers { get; set; } = new StringList();
+  public StringList Numbers { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new StringList();
 }
 
 /// <summary>
@@ -730,7 +730,7 @@ public class StringListTestData
 /// </summary>
 public class StringListWrapper
 {
-  public StringList? Value { get; set; }
+  public StringList? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

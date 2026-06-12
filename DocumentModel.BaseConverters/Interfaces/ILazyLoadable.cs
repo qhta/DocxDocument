@@ -12,12 +12,12 @@ public interface ILazyLoadable
   /// Gets or sets a value indicating whether lazy loading is enabled.
   /// </summary>
 
-  public bool IsLazyLoadEnabled { get; set; }
+  public bool IsLazyLoadEnabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// ISource of data for lazy loading. This property can be used to specify the data source from which the model element will load its data when lazy loading is enabled.
   /// </summary>
-  public object? DataSource { get; set; }
+  public object? DataSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// If LazyLoad is enabled, this method loads the related data from the data source and disables lazy loading.

@@ -12,9 +12,9 @@ public partial class FunctionName : OfficeMathArgumentType<DXM.FunctionName>
  /// <summary>
  ///   Specifies properties of argument object.
  /// </summary>
- public ArgumentProperties? ArgumentProperties { get; set; }
+ public ArgumentProperties? ArgumentProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   Specifies formatting of argument object.
  /// </summary>
- public ControlProperties? ControlProperties { get; set; }
+ public ControlProperties? ControlProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

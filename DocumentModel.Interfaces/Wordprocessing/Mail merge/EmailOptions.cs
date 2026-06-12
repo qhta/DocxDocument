@@ -10,19 +10,19 @@ public partial interface IEmailOptions : IModelObject
   /// Gets or sets a value indicating whether theme styles are used for email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.usethemestyle?view=word-pia"/>
-  public bool UseThemeStyle { get; set; }
+  public bool UseThemeStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the text used to mark comments in email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.markcommentswith?view=word-pia"/>
-  public string MarkCommentsWith { get; set; }
+  public string MarkCommentsWith { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether comments are marked in email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.markcomments?view=word-pia"/>
-  public bool MarkComments { get; set; }
+  public bool MarkComments { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the email signature settings.
@@ -46,7 +46,7 @@ public partial interface IEmailOptions : IModelObject
   /// Gets or sets the theme name used for email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.themename?view=word-pia"/>
-  public string ThemeName { get; set; }
+  public string ThemeName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -64,7 +64,7 @@ public partial interface IEmailOptions : IModelObject
   /// Gets or sets a value indicating whether a new color is used for replies.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.newcoloronreply?view=word-pia"/>
-  public bool NewColorOnReply { get; set; }
+  public bool NewColorOnReply { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the style used for plain-text email messages.
@@ -76,161 +76,161 @@ public partial interface IEmailOptions : IModelObject
   /// Gets or sets a value indicating whether theme styles are used for replies.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.usethemestyleonreply?view=word-pia"/>
-  public bool UseThemeStyleOnReply { get; set; }
+  public bool UseThemeStyleOnReply { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies heading styles.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplyheadings?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyHeadings { get; set; }
+  public bool AutoFormatAsYouTypeApplyHeadings { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies borders.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplyborders?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyBorders { get; set; }
+  public bool AutoFormatAsYouTypeApplyBorders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies bulleted lists.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplybulletedlists?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyBulletedLists { get; set; }
+  public bool AutoFormatAsYouTypeApplyBulletedLists { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies numbered lists.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplynumberedlists?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyNumberedLists { get; set; }
+  public bool AutoFormatAsYouTypeApplyNumberedLists { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces straight quotes with smart quotes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplacequotes?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceQuotes { get; set; }
+  public bool AutoFormatAsYouTypeReplaceQuotes { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces symbol characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplacesymbols?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceSymbols { get; set; }
+  public bool AutoFormatAsYouTypeReplaceSymbols { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces ordinals with superscripts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplaceordinals?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceOrdinals { get; set; }
+  public bool AutoFormatAsYouTypeReplaceOrdinals { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces fractions with fraction characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplacefractions?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceFractions { get; set; }
+  public bool AutoFormatAsYouTypeReplaceFractions { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces plain-text emphasis with formatting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplaceplaintextemphasis?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplacePlainTextEmphasis { get; set; }
+  public bool AutoFormatAsYouTypeReplacePlainTextEmphasis { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type formats list item beginnings.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeformatlistitembeginning?view=word-pia"/>
-  public bool AutoFormatAsYouTypeFormatListItemBeginning { get; set; }
+  public bool AutoFormatAsYouTypeFormatListItemBeginning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type defines styles automatically.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypedefinestyles?view=word-pia"/>
-  public bool AutoFormatAsYouTypeDefineStyles { get; set; }
+  public bool AutoFormatAsYouTypeDefineStyles { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces typed hyperlinks with active links.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplacehyperlinks?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceHyperlinks { get; set; }
+  public bool AutoFormatAsYouTypeReplaceHyperlinks { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies automatic table formatting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplytables?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyTables { get; set; }
+  public bool AutoFormatAsYouTypeApplyTables { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies first-line indents.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplyfirstindents?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyFirstIndents { get; set; }
+  public bool AutoFormatAsYouTypeApplyFirstIndents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies date formatting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplydates?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyDates { get; set; }
+  public bool AutoFormatAsYouTypeApplyDates { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type applies closing formatting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeapplyclosings?view=word-pia"/>
-  public bool AutoFormatAsYouTypeApplyClosings { get; set; }
+  public bool AutoFormatAsYouTypeApplyClosings { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type matches parentheses.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypematchparentheses?view=word-pia"/>
-  public bool AutoFormatAsYouTypeMatchParentheses { get; set; }
+  public bool AutoFormatAsYouTypeMatchParentheses { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type replaces Far East dashes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypereplacefareastdashes?view=word-pia"/>
-  public bool AutoFormatAsYouTypeReplaceFarEastDashes { get; set; }
+  public bool AutoFormatAsYouTypeReplaceFarEastDashes { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type deletes automatic spaces.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypedeleteautospaces?view=word-pia"/>
-  public bool AutoFormatAsYouTypeDeleteAutoSpaces { get; set; }
+  public bool AutoFormatAsYouTypeDeleteAutoSpaces { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type inserts closings.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeinsertclosings?view=word-pia"/>
-  public bool AutoFormatAsYouTypeInsertClosings { get; set; }
+  public bool AutoFormatAsYouTypeInsertClosings { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type uses the automatic letter wizard.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeautoletterwizard?view=word-pia"/>
-  public bool AutoFormatAsYouTypeAutoLetterWizard { get; set; }
+  public bool AutoFormatAsYouTypeAutoLetterWizard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether AutoFormat As You Type inserts overs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.autoformatasyoutypeinsertovers?view=word-pia"/>
-  public bool AutoFormatAsYouTypeInsertOvers { get; set; }
+  public bool AutoFormatAsYouTypeInsertOvers { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether formatting is saved by using cascading style sheets (CSS).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.relyoncss?view=word-pia"/>
-  public bool RelyOnCSS { get; set; }
+  public bool RelyOnCSS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the HTML fidelity level for email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.htmlfidelity?view=word-pia"/>
-  public EmailHTMLFidelity HTMLFidelity { get; set; }
+  public EmailHTMLFidelity HTMLFidelity { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether Smart Tags are embedded in email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.embedsmarttag?view=word-pia"/>
-  public bool EmbedSmartTag { get; set; }
+  public bool EmbedSmartTag { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the TAB key indents content in email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.tabindentkey?view=word-pia"/>
-  public bool TabIndentKey { get; set; }
+  public bool TabIndentKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

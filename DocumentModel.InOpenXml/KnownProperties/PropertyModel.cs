@@ -27,7 +27,7 @@ public partial class PropertyModel : PropertyDescriptor
   /// <summary>
   /// Component to which this property is assigned.
   /// </summary>
-  public object? Component { get; set; }
+  public object? Component { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines whether the value of this property can be reset to its default value for the specified component.
@@ -107,16 +107,7 @@ public partial class PropertyModel : PropertyDescriptor
   {
     if (component == null)
       component = Component;
-    try
-    {
-      PropertyInfo.SetValue(component, value);
-
-    }
-    catch (Exception e)
-    {
-      Console.WriteLine(e);
-      throw;
-    }
+    PropertyInfo.SetValue(component, value);
   }
 
   /// <summary>

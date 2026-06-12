@@ -9,5 +9,5 @@ public class WebExtensionPartReference
  /// <summary>
  /// Identifier for the web extension part reference.
  /// </summary>
- public string? Id { get; set; }
+ public string? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

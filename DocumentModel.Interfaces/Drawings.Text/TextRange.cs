@@ -13,7 +13,7 @@ public partial interface ITextRange: IModelCollection<ITextRange>
   /// Gets or sets the `Text` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.text?view=office-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Paragraphs` property.
   /// </summary>
@@ -88,7 +88,7 @@ public partial interface ITextRange: IModelCollection<ITextRange>
   /// Gets or sets the `LanguageID` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.languageid?view=office-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `MathZones` property.
   /// </summary>

@@ -10,19 +10,19 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets a value indicating whether the callout line has an accent bar.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.accent?view=word-pia"/>
-  public TriState Accent { get; set; }
+  public TriState Accent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the angle type of the callout line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.angle?view=word-pia"/>
-  public Drawings.CalloutAngleType Angle { get; set; }
+  public Drawings.CalloutAngleType Angle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the callout automatically attaches to points on the shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autoattach?view=word-pia"/>
-  public TriState AutoAttach { get; set; }
+  public TriState AutoAttach { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the callout length is adjusted automatically.
@@ -34,7 +34,7 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets a value indicating whether the callout has a border around the text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.border?view=word-pia"/>
-  public TriState Border { get; set; }
+  public TriState Border { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the vertical distance, in points, between the callout text and the callout line anchor.
@@ -52,7 +52,7 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets the distance, in points, between the callout line and the callout text box.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.gap?view=word-pia"/>
-  public float Gap { get; set; }
+  public float Gap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the length, in points, of the callout line.
@@ -64,5 +64,5 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets the callout type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.type?view=word-pia"/>
-  public Drawings.CalloutType Type { get; set; }
+  public Drawings.CalloutType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

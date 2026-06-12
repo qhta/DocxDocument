@@ -18,63 +18,63 @@ public partial interface IShadowFormat : IModelObject
   /// the shape has no fill.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.obscured?view=word-pia"/>
-  public TriState Obscured { get; set; }
+  public TriState Obscured { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the horizontal offset (in points) of the shadow from the specified shape. A positive value
   /// offsets the shadow to the right of the shape; a negative value offsets it to the left.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.offsetx?view=word-pia"/>
-  public float OffsetX { get; set; }
+  public float OffsetX { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the vertical offset (in points) of the shadow from the specified shape. A positive value
   /// offsets the shadow below the shape; a negative value offsets it above the shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.offsety?view=word-pia"/>
-  public float OffsetY { get; set; }
+  public float OffsetY { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the degree of transparency of the specified fill, shadow, or line as a value between 0.0
   /// (opaque) and 1.0 (clear).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.transparency?view=word-pia"/>
-  public float Transparency { get; set; }
+  public float Transparency { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the shape shadow type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.type?view=word-pia"/>
-  public Drawings.ShadowType Type { get; set; }
+  public Drawings.ShadowType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.visible?view=word-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ShadowType that represents the type of shadow formatting to apply to a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.style?view=word-pia"/>
-  public Drawings.ShadowStyle Style { get; set; }
+  public Drawings.ShadowStyle Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the blur level for a shadow format. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.blur?view=word-pia"/>
-  public float Blur { get; set; }
+  public float Blur { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the width of the shadow. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.size?view=word-pia"/>
-  public float Size { get; set; }
+  public float Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an TriState that represents whether to rotate the shadow when rotating the shape.
   /// Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.rotatewithshape?view=word-pia"/>
-  public TriState RotateWithShape { get; set; }
+  public TriState RotateWithShape { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

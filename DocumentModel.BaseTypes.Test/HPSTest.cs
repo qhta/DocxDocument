@@ -709,34 +709,34 @@ public class HPSTestData
   [XmlElement("FontSize")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public HPS FontSize { get; set; }
+  public HPS FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LineHeight")]
-  public HPS LineHeight { get; set; }
+  public HPS LineHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LetterSpacing")]
-  public HPS LetterSpacing { get; set; }
+  public HPS LetterSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("WordSpacing")]
-  public HPS WordSpacing { get; set; }
+  public HPS WordSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SuperscriptOffset")]
-  public HPS SuperscriptOffset { get; set; }
+  public HPS SuperscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SubscriptOffset")]
-  public HPS SubscriptOffset { get; set; }
+  public HPS SubscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BorderWidth")]
-  public HPS BorderWidth { get; set; }
+  public HPS BorderWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public HPS ZeroValue { get; set; }
+  public HPS ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public HPS SmallValue { get; set; }
+  public HPS SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public HPS LargeValue { get; set; }
+  public HPS LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -744,7 +744,7 @@ public class HPSTestData
 /// </summary>
 public class HPSWrapper
 {
-  public HPS Value { get; set; }
+  public HPS Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

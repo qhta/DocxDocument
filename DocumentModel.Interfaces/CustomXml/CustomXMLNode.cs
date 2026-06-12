@@ -51,7 +51,7 @@ public partial interface ICustomXMLNode: IModelObject
   /// Gets or sets the `NodeValue` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.nodevalue?view=office-pia"/>
-  public string NodeValue { get; set; }
+  public string NodeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `OwnerDocument` property.
   /// </summary>
@@ -76,7 +76,7 @@ public partial interface ICustomXMLNode: IModelObject
   /// Gets or sets the `Text` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.text?view=office-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `XPath` property.
   /// </summary>

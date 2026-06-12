@@ -12,9 +12,20 @@ public partial class Document: IDocument
   IBibliography? IDocument.Bibliography => throw new NotImplementedException();
   IBookmarks? IDocument.Bookmarks => throw new NotImplementedException();
 
-  DMPr.IDocumentProperties IDocument.BuiltInDocumentProperties => _builtInDocumentProperties ??= new BuiltInProperties(this);
-  private DMPr.IDocumentProperties? _builtInDocumentProperties;
-
+  /// <summary>
+  /// Gets the built-in properties of the document.
+  /// This property allows access to built-in document properties through a collection interface.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  public BuiltInProperties BuiltInProperties
+  {
+    get => _builtInProperties ??= new BuiltInProperties(this);
+    set => UpdateField(ref _builtInProperties, value, nameof(BuiltInProperties));
+  }
+  private BuiltInProperties? _builtInProperties;
+  DMPr.IDocumentProperties IDocument.BuiltInDocumentProperties => new BuiltInPropertiesWrapper(BuiltInProperties);
+  
   ICharacters? IDocument.Characters => throw new NotImplementedException();
   bool IDocument.ChartDataPointTrack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
   object? IDocument.ClickAndTypeParagraphStyle { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

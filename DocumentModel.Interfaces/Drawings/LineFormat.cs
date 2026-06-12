@@ -15,37 +15,37 @@ public interface ILineFormat : IModelObject
   /// Returns or sets the length of the begin arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadlength?view=word-pia"/>
-  public Drawings.ArrowheadLength BeginArrowheadLength { get; set; }
+  public Drawings.ArrowheadLength BeginArrowheadLength { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the style of the begin arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadstyle?view=word-pia"/>
-  public Drawings.ArrowheadStyle BeginArrowheadStyle { get; set; }
+  public Drawings.ArrowheadStyle BeginArrowheadStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the width of the begin arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadwidth?view=word-pia"/>
-  public Drawings.ArrowheadWidth BeginArrowheadWidth { get; set; }
+  public Drawings.ArrowheadWidth BeginArrowheadWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the dash style for the line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.dashstyle?view=word-pia"/>
-  public Drawings.LineDashStyle DashStyle { get; set; }
+  public Drawings.LineDashStyle DashStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the length of the end arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadlength?view=word-pia"/>
-  public Drawings.ArrowheadLength EndArrowheadLength { get; set; }
+  public Drawings.ArrowheadLength EndArrowheadLength { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the style of the end arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadstyle?view=word-pia"/>
-  public Drawings.ArrowheadStyle EndArrowheadStyle { get; set; }
+  public Drawings.ArrowheadStyle EndArrowheadStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the width of the end arrowhead.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadwidth?view=word-pia"/>
-  public Drawings.ArrowheadWidth EndArrowheadWidth { get; set; }
+  public Drawings.ArrowheadWidth EndArrowheadWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns a color format object that represents the foreground color for the line.
   /// </summary>
@@ -55,31 +55,31 @@ public interface ILineFormat : IModelObject
   /// Returns or sets the fill pattern for the line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.pattern?view=word-pia"/>
-  public Drawings.PatternType Pattern { get; set; }
+  public Drawings.PatternType Pattern { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the style of the line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.style?view=word-pia"/>
-  public LineStyle Style { get; set; }
+  public LineStyle Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the transparency of the line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.transparency?view=word-pia"/>
-  public float Transparency { get; set; }
+  public float Transparency { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets whether the line is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.visible?view=word-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the weight of the line, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.weight?view=word-pia"/>
-  public float Weight { get; set; }
+  public float Weight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets whether the stroke is drawn inside the shape boundary.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.insetpen?view=word-pia"/>
-  public TriState InsetPen { get; set; }
+  public TriState InsetPen { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

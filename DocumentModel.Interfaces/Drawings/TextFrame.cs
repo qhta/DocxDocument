@@ -18,34 +18,34 @@ public partial interface ITextFrame : IModelObject
   /// rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginbottom?view=word-pia"/>
-  public float MarginBottom { get; set; }
+  public float MarginBottom { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the distance (in points) between the left edge of the text frame and the left edge of the
   /// inscribed rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginleft?view=word-pia"/>
-  public float MarginLeft { get; set; }
+  public float MarginLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the distance (in points) between the right edge of the text frame and the right edge of the
   /// inscribed rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.marginright?view=word-pia"/>
-  public float MarginRight { get; set; }
+  public float MarginRight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the distance (in points) between the top of the text frame and the top of the inscribed
   /// rectangle of the shape that contains the text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.margintop?view=word-pia"/>
-  public float MarginTop { get; set; }
+  public float MarginTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the orientation of the text inside the frame.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.orientation?view=word-pia"/>
-  public TextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Range object that represents the text in the specified text frame.
@@ -64,13 +64,13 @@ public partial interface ITextFrame : IModelObject
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.next?view=word-pia"/>
-  public ITextFrame Next { get; set; }
+  public ITextFrame Next { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.previous?view=word-pia"/>
-  public ITextFrame Previous { get; set; }
+  public ITextFrame Previous { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text inside the specified text frame doesn't all fit within the frame.
@@ -88,38 +88,38 @@ public partial interface ITextFrame : IModelObject
   /// Returns or sets an Integer that represents whether a text frame is sized automatically.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.autosize?view=word-pia"/>
-  public int AutoSize { get; set; }
+  public int AutoSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if Microsoft Word wraps Latin text in the middle of a word in the specified paragraphs or text frames.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.wordwrap?view=word-pia"/>
-  public int WordWrap { get; set; }
+  public int WordWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an VerticalAnchor constant that represents the vertical alignment of the text within a
   /// shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.verticalanchor?view=word-pia"/>
-  public VerticalAnchor VerticalAnchor { get; set; }
+  public VerticalAnchor VerticalAnchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of text in a text frame.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.horizontalanchor?view=word-pia"/>
-  public HorizontalAnchor HorizontalAnchor { get; set; }
+  public HorizontalAnchor HorizontalAnchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the path type for the specified text frame.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.pathformat?view=word-pia"/>
-  public PathFormat PathFormat { get; set; }
+  public PathFormat PathFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the warp format (how the text is warped) for the specified text frame.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.warpformat?view=word-pia"/>
-  public WarpFormat WarpFormat { get; set; }
+  public WarpFormat WarpFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
@@ -137,5 +137,5 @@ public partial interface ITextFrame : IModelObject
   /// Gets or sets whether the text in the text frame should not rotate when the shape is rotated.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.notextrotation?view=word-pia"/>
-  public TriState NoTextRotation { get; set; }
+  public TriState NoTextRotation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -13,62 +13,62 @@ public partial interface ITextFrame: IModelObject
   /// Gets or sets the `MarginBottom` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.marginbottom?view=office-pia"/>
-  public float MarginBottom { get; set; }
+  public float MarginBottom { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarginLeft` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.marginleft?view=office-pia"/>
-  public float MarginLeft { get; set; }
+  public float MarginLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarginRight` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.marginright?view=office-pia"/>
-  public float MarginRight { get; set; }
+  public float MarginRight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MarginTop` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.margintop?view=office-pia"/>
-  public float MarginTop { get; set; }
+  public float MarginTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.orientation?view=office-pia"/>
-  public TextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HorizontalAnchor` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.horizontalanchor?view=office-pia"/>
-  public HorizontalAnchor HorizontalAnchor { get; set; }
+  public HorizontalAnchor HorizontalAnchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `VerticalAnchor` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.verticalanchor?view=office-pia"/>
-  public VerticalAnchor VerticalAnchor { get; set; }
+  public VerticalAnchor VerticalAnchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `PathFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.pathformat?view=office-pia"/>
-  public Drawings.PathFormat PathFormat { get; set; }
+  public Drawings.PathFormat PathFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `WarpFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.warpformat?view=office-pia"/>
-  public Drawings.WarpFormat WarpFormat { get; set; }
+  public Drawings.WarpFormat WarpFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `WordArtformat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.wordartformat?view=office-pia"/>
-  public Drawings.PresetTextEffect WordArtformat { get; set; }
+  public Drawings.PresetTextEffect WordArtformat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `WordWrap` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.wordwrap?view=office-pia"/>
-  public TriState WordWrap { get; set; }
+  public TriState WordWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoSize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.autosize?view=office-pia"/>
-  public AutoSize AutoSize { get; set; }
+  public AutoSize AutoSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
@@ -98,6 +98,6 @@ public partial interface ITextFrame: IModelObject
   /// Gets or sets the `NoTextRotation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.notextrotation?view=office-pia"/>
-  public TriState NoTextRotation { get; set; }
+  public TriState NoTextRotation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

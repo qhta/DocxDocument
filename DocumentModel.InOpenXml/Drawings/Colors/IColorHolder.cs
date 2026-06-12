@@ -16,7 +16,7 @@ public partial interface IColorHolder
   /// <summary>
   /// Color that is held by this instance. 
   /// </summary>
-  IColor? Color { get; set; }
+  IColor? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the RGB color value represented by this instance, if available.

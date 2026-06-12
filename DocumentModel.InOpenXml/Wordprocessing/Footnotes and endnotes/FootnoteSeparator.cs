@@ -9,5 +9,5 @@ public partial class FootnoteSeparator : FootnoteEndnoteSeparatorReferenceType
  ///// <summary>
  ///// Target footnote associated with this separator, specifying the footnote to which the separator applies.
  ///// </summary>
- //public Footnote? Footnote { get; set; }
+ //public Footnote? Footnote { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

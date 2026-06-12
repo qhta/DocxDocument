@@ -11,7 +11,7 @@ public partial interface IDisplayUnitLabel: IChartTitle
   /// Gets or sets the `Caption` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.caption?view=office-pia"/>
-  public new string Caption { get; set; }
+  public new string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Characters` property.
   /// </summary>
@@ -26,47 +26,47 @@ public partial interface IDisplayUnitLabel: IChartTitle
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.horizontalalignment?view=office-pia"/>
-  public new object HorizontalAlignment { get; set; }
+  public new object HorizontalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.left?view=office-pia"/>
-  public new double Left { get; set; }
+  public new double Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.orientation?view=office-pia"/>
-  public new object Orientation { get; set; }
+  public new object Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Shadow` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.shadow?view=office-pia"/>
-  public new bool Shadow { get; set; }
+  public new bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Text` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.text?view=office-pia"/>
-  public new string Text { get; set; }
+  public new string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.top?view=office-pia"/>
-  public new double Top { get; set; }
+  public new double Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `VerticalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.verticalalignment?view=office-pia"/>
-  public new object VerticalAlignment { get; set; }
+  public new object VerticalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ReadingOrder` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.readingorder?view=office-pia"/>
-  public new int ReadingOrder { get; set; }
+  public new int ReadingOrder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.autoscalefont?view=office-pia"/>
-  public new object AutoScaleFont { get; set; }
+  public new object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
@@ -91,12 +91,12 @@ public partial interface IDisplayUnitLabel: IChartTitle
   /// Gets or sets the `IncludeInLayout` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.includeinlayout?view=office-pia"/>
-  public new bool IncludeInLayout { get; set; }
+  public new bool IncludeInLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.position?view=office-pia"/>
-  public new XlChartElementPosition Position { get; set; }
+  public new XlChartElementPosition Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -116,21 +116,21 @@ public partial interface IDisplayUnitLabel: IChartTitle
   /// Gets or sets the `Formula` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.formula?view=office-pia"/>
-  public new string Formula { get; set; }
+  public new string Formula { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaR1C1` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.formular1c1?view=office-pia"/>
-  public new string FormulaR1C1 { get; set; }
+  public new string FormulaR1C1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaLocal` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.formulalocal?view=office-pia"/>
-  public new string FormulaLocal { get; set; }
+  public new string FormulaLocal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaR1C1Local` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.formular1c1local?view=office-pia"/>
-  public new string FormulaR1C1Local { get; set; }
+  public new string FormulaR1C1Local { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

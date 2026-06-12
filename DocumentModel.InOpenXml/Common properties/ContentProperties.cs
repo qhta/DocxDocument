@@ -6,7 +6,7 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXEP.Properties))]
 [XmlRoot("ContentProperties", Namespace = "DocumentModel")]
 [DirectAccess]
-public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.Properties>
+public sealed partial class ContentProperties : BuiltInDocumentProperties
 {
   /// <summary>
   /// Gets the underlying Document instance associated with this object.
@@ -32,6 +32,10 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
+  /// <summary>
+  /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
+  /// </summary>
+  private new DXEP.Properties? _UpdatableElement => (DXEP.Properties?)base._UpdatableElement;
 
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable content properties for the current instance.
@@ -45,6 +49,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties<DXEP.P
     return null;
   }
 
+  
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
   /// </summary>

@@ -10,5 +10,5 @@ public partial class CustomColorList : ModelElementCollection<CustomColor, DXD.C
  /// <summary>
  ///   List of extension elements for the custom color list, allowing for future extensibility and application-specific color data.
  /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+ public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

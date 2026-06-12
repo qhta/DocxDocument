@@ -774,22 +774,22 @@ public class ArrayVariantTestData
 {
   [XmlElement("IntArray")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public ArrayVariant IntArray { get; set; } = new ArrayVariant();
+  public ArrayVariant IntArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 
   [XmlElement("StringArray")]
-  public ArrayVariant StringArray { get; set; } = new ArrayVariant();
+  public ArrayVariant StringArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 
   [XmlElement("DoubleArray")]
-  public ArrayVariant DoubleArray { get; set; } = new ArrayVariant();
+  public ArrayVariant DoubleArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 
   [XmlElement("BoolArray")]
-  public ArrayVariant BoolArray { get; set; } = new ArrayVariant();
+  public ArrayVariant BoolArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 
   [XmlElement("CustomBoundsArray")]
-  public ArrayVariant CustomBoundsArray { get; set; } = new ArrayVariant();
+  public ArrayVariant CustomBoundsArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 
   [XmlElement("EmptyArray")]
-  public ArrayVariant EmptyArray { get; set; } = new ArrayVariant();
+  public ArrayVariant EmptyArray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ArrayVariant();
 }
 
 

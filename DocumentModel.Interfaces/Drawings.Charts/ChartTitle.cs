@@ -11,7 +11,7 @@ public partial interface IChartTitle: IModelObject
   /// Gets or sets the `Caption` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.caption?view=office-pia"/>
-  public string Caption { get; set; }
+  public string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Characters` property.
   /// </summary>
@@ -26,47 +26,47 @@ public partial interface IChartTitle: IModelObject
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.horizontalalignment?view=office-pia"/>
-  public object HorizontalAlignment { get; set; }
+  public object HorizontalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.left?view=office-pia"/>
-  public double Left { get; set; }
+  public double Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.orientation?view=office-pia"/>
-  public object Orientation { get; set; }
+  public object Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Shadow` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.shadow?view=office-pia"/>
-  public bool Shadow { get; set; }
+  public bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Text` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.text?view=office-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.top?view=office-pia"/>
-  public double Top { get; set; }
+  public double Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `VerticalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.verticalalignment?view=office-pia"/>
-  public object VerticalAlignment { get; set; }
+  public object VerticalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ReadingOrder` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.readingorder?view=office-pia"/>
-  public int ReadingOrder { get; set; }
+  public int ReadingOrder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.autoscalefont?view=office-pia"/>
-  public object AutoScaleFont { get; set; }
+  public object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
@@ -91,12 +91,12 @@ public partial interface IChartTitle: IModelObject
   /// Gets or sets the `IncludeInLayout` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.includeinlayout?view=office-pia"/>
-  public bool IncludeInLayout { get; set; }
+  public bool IncludeInLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.position?view=office-pia"/>
-  public XlChartElementPosition Position { get; set; }
+  public XlChartElementPosition Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -116,21 +116,21 @@ public partial interface IChartTitle: IModelObject
   /// Gets or sets the `Formula` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.formula?view=office-pia"/>
-  public string Formula { get; set; }
+  public string Formula { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaR1C1` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.formular1c1?view=office-pia"/>
-  public string FormulaR1C1 { get; set; }
+  public string FormulaR1C1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaLocal` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.formulalocal?view=office-pia"/>
-  public string FormulaLocal { get; set; }
+  public string FormulaLocal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `FormulaR1C1Local` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.formular1c1local?view=office-pia"/>
-  public string FormulaR1C1Local { get; set; }
+  public string FormulaR1C1Local { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

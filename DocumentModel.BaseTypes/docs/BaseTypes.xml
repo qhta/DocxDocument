@@ -1574,10 +1574,10 @@
         </member>
         <member name="M:DocumentModel.Degrees.ToDateTime(System.IFormatProvider)">
             <summary>
-            Converts the value of this instance Ito an equivalent <see cref="T:System.Diagnostics.DateTime"/>.
+            Converts the value of this instance Ito an equivalent <see cref="T:System.DateTime"/>.
             </summary>
             <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-            <returns>A <see cref="T:System.Diagnostics.DateTime"/> equivalent Ito the value of this instance.</returns>
+            <returns>A <see cref="T:System.DateTime"/> equivalent Ito the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToDecimal(System.IFormatProvider)">
             <summary>
@@ -6307,10 +6307,10 @@
         </member>
         <member name="M:DocumentModel.Percent.ToDateTime(System.IFormatProvider)">
             <summary>
-            Converts the value of this instance Ito an equivalent <see cref="T:System.Diagnostics.DateTime"/>.
+            Converts the value of this instance Ito an equivalent <see cref="T:System.DateTime"/>.
             </summary>
             <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-            <returns>A <see cref="T:System.Diagnostics.DateTime"/> equivalent Ito the value of this instance.</returns>
+            <returns>A <see cref="T:System.DateTime"/> equivalent Ito the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToDecimal(System.IFormatProvider)">
             <summary>
@@ -6745,10 +6745,10 @@
         </member>
         <member name="M:DocumentModel.Percentage.ToDateTime(System.IFormatProvider)">
             <summary>
-            Converts the value of this instance Ito an equivalent <see cref="T:System.Diagnostics.DateTime"/>.
+            Converts the value of this instance Ito an equivalent <see cref="T:System.DateTime"/>.
             </summary>
             <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-            <returns>A <see cref="T:System.Diagnostics.DateTime"/> equivalent Ito the value of this instance.</returns>
+            <returns>A <see cref="T:System.DateTime"/> equivalent Ito the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToDecimal(System.IFormatProvider)">
             <summary>

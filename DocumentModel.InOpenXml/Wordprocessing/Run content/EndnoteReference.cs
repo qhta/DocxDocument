@@ -14,9 +14,9 @@ public class EndnoteReference: ModelElement<DXW.EndnoteReference>
   /// <summary>
   /// <para>Suppress Endnote Reference Mark</para>
   /// </summary>
-  public bool? CustomMarkFollows { get; set; }
+  public bool? CustomMarkFollows { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// <para>Represents the following attribute in the schema: w:id</para>
   /// </summary>
-  public int? Id { get; set; }
+  public int? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

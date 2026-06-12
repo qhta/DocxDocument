@@ -10,7 +10,7 @@ public partial interface IProtectedViewWindow : IModelObject
   /// Gets or sets the caption text that is displayed in the title bar of the document or protected view window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a Document object associated with the protected view window.
@@ -23,31 +23,31 @@ public partial interface IProtectedViewWindow : IModelObject
   /// window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.left?view=word-pia"/>
-  public int Left { get; set; }
+  public int Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the vertical position, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.top?view=word-pia"/>
-  public int Top { get; set; }
+  public int Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the width, in points, of the specified protected view window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.width?view=word-pia"/>
-  public int Width { get; set; }
+  public int Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the height of the protected view window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.height?view=word-pia"/>
-  public int Height { get; set; }
+  public int Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the state of the specified protected view window.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.windowstate?view=word-pia"/>
-  public WindowState WindowState { get; set; }
+  public WindowState WindowState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets whether the specified protected view window is active.
@@ -65,7 +65,7 @@ public partial interface IProtectedViewWindow : IModelObject
   /// Gets or sets whether the specified protected view window is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.visible?view=word-pia"/>
-  public bool Visible { get; set; }
+  public bool Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the name of the source file for the specified protected view window.

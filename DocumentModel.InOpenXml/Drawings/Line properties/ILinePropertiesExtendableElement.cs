@@ -10,5 +10,5 @@ public interface ILinePropertiesExtendableElement: ICollectionItem
   /// <remarks>
   ///   Use this property to store or retrieve additional line properties associated with the line that are not defined in the standard schema.
   /// </remarks>
-  public LinePropertiesExtensionList? LinePropertiesExtensionList { get; set; }
+  public LinePropertiesExtensionList? LinePropertiesExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

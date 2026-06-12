@@ -12,7 +12,7 @@ public partial interface IThreeDFormat : IModelObject
   /// face is the original shape).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.depth?view=word-pia"/>
-  public float Depth { get; set; }
+  public float Depth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ColorFormat object that represents the color of the shape's extrusion.
@@ -26,7 +26,7 @@ public partial interface IThreeDFormat : IModelObject
   /// color is independent of the shape's fill.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.extrusioncolortype?view=word-pia"/>
-  public ExtrusionColorType ExtrusionColorType { get; set; }
+  public ExtrusionColorType ExtrusionColorType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// MsoTrue if the extrusion appears in perspective— that is, if the walls of the extrusion narrow toward a
@@ -34,7 +34,7 @@ public partial interface IThreeDFormat : IModelObject
   /// don't narrow toward a vanishing point.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.perspective?view=word-pia"/>
-  public TriState Perspective { get; set; }
+  public TriState Perspective { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the direction taken by the extrusion's sweep path leading away from the extruded shape (the front face
@@ -47,19 +47,19 @@ public partial interface IThreeDFormat : IModelObject
   /// Returns or sets the position of the light source relative to the extrusion.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingdirection?view=word-pia"/>
-  public PresetLightingDirection PresetLightingDirection { get; set; }
+  public PresetLightingDirection PresetLightingDirection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the intensity of the extrusion lighting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingsoftness?view=word-pia"/>
-  public PresetLightingSoftness PresetLightingSoftness { get; set; }
+  public PresetLightingSoftness PresetLightingSoftness { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the extrusion surface material.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetmaterial?view=word-pia"/>
-  public PresetMaterial PresetMaterial { get; set; }
+  public PresetMaterial PresetMaterial { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the preset extrusion format.
@@ -72,68 +72,68 @@ public partial interface IThreeDFormat : IModelObject
   /// through 90. A positive value indicates upward rotation; a negative value indicates downward rotation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.rotationx?view=word-pia"/>
-  public float RotationX { get; set; }
+  public float RotationX { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the rotation of the extruded shape around the y-axis, in degrees. Can be a value from – 90
   /// through 90. A positive value indicates rotation to the left; a negative value indicates rotation to the right.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.rotationy?view=word-pia"/>
-  public float RotationY { get; set; }
+  public float RotationY { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.visible?view=word-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an BevelType constant that represents the lighting preset. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlighting?view=word-pia"/>
-  public LightRigType PresetLighting { get; set; }
+  public LightRigType PresetLighting { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the z-axis for the shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.z?view=word-pia"/>
-  public float Z { get; set; }
+  public float Z { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an PresetCamera constant that represents the bevel type for the top bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.beveltoptype?view=word-pia"/>
-  public BevelType BevelTopType { get; set; }
+  public BevelType BevelTopType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the top bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.beveltopinset?view=word-pia"/>
-  public float BevelTopInset { get; set; }
+  public float BevelTopInset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the depth of the top bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.beveltopdepth?view=word-pia"/>
-  public float BevelTopDepth { get; set; }
+  public float BevelTopDepth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an PresetCamera constant that represents the bevel type for the bottom bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.bevelbottomtype?view=word-pia"/>
-  public BevelType BevelBottomType { get; set; }
+  public BevelType BevelBottomType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the bottom bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.bevelbottominset?view=word-pia"/>
-  public float BevelBottomInset { get; set; }
+  public float BevelBottomInset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the depth of the bottom bevel. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.bevelbottomdepth?view=word-pia"/>
-  public float BevelBottomDepth { get; set; }
+  public float BevelBottomDepth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an PresetCamera constant that represents the camera presets. Read-only.
@@ -145,13 +145,13 @@ public partial interface IThreeDFormat : IModelObject
   /// Returns or sets a Single that represents z-axis rotation of the camera. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.rotationz?view=word-pia"/>
-  public float RotationZ { get; set; }
+  public float RotationZ { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the width of the contour of a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.contourwidth?view=word-pia"/>
-  public float ContourWidth { get; set; }
+  public float ContourWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ColorFormat object that represents color of the contour of a shape. Read/write.
@@ -163,18 +163,18 @@ public partial interface IThreeDFormat : IModelObject
   /// Returns or sets a Single that represents the amount of perspective for a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.fieldofview?view=word-pia"/>
-  public float FieldOfView { get; set; }
+  public float FieldOfView { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an TriState constant that represents whether text on a shape rotates with shape. msoTrue
   /// rotates the text. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.projecttext?view=word-pia"/>
-  public TriState ProjectText { get; set; }
+  public TriState ProjectText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents angle of the lighting. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.lightangle?view=word-pia"/>
-  public float LightAngle { get; set; }
+  public float LightAngle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

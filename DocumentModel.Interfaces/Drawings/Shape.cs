@@ -28,7 +28,7 @@ public partial interface IShape : IModelObject
   /// line or freeform drawing.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.autoshapetype?view=word-pia"/>
-  public Drawings.AutoShapeType AutoShapeType { get; set; }
+  public Drawings.AutoShapeType AutoShapeType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
@@ -70,7 +70,7 @@ public partial interface IShape : IModelObject
   /// Returns or sets the height of the specified shape in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.height?view=word-pia"/>
-  public float Height { get; set; }
+  public float Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Indicates that a shape has been flipped horizontally.
@@ -83,7 +83,7 @@ public partial interface IShape : IModelObject
   /// or shape range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.left?view=word-pia"/>
-  public float Left { get; set; }
+  public float Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a LineFormat object that contains line formatting properties for the specified shape.
@@ -96,13 +96,13 @@ public partial interface IShape : IModelObject
   /// or if it retains its original proportions.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockaspectratio?view=word-pia"/>
-  public TriState LockAspectRatio { get; set; }
+  public TriState LockAspectRatio { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ShapeNodes collection that represents the geometric description of the specified shape.
@@ -114,7 +114,7 @@ public partial interface IShape : IModelObject
   /// Returns or sets the number of degrees the specified shape is rotated around the z-axis.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.rotation?view=word-pia"/>
-  public float Rotation { get; set; }
+  public float Rotation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a PictureFormat object that contains picture formatting properties for the specified object.
@@ -151,7 +151,7 @@ public partial interface IShape : IModelObject
   /// Returns or sets the vertical position of the specified shape in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.top?view=word-pia"/>
-  public float Top { get; set; }
+  public float Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the shape type.
@@ -176,13 +176,13 @@ public partial interface IShape : IModelObject
   /// Determines if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.visible?view=word-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width of the specified object, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the position of the specified shape in the z-order.
@@ -200,19 +200,19 @@ public partial interface IShape : IModelObject
   /// Specifies to what the horizontal position of a shape is relative.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalposition?view=word-pia"/>
-  public RelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
+  public RelativeHorizontalPosition RelativeHorizontalPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Specifies to what the vertical position of a shape is relative.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalposition?view=word-pia"/>
-  public RelativeVerticalPosition RelativeVerticalPosition { get; set; }
+  public RelativeVerticalPosition RelativeVerticalPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified Shape object's anchor is locked to the anchoring range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockanchor?view=word-pia"/>
-  public int LockAnchor { get; set; }
+  public int LockAnchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a WrapFormat object that contains the properties for wrapping text around the specified shape.
@@ -230,7 +230,7 @@ public partial interface IShape : IModelObject
   /// Returns or sets the alternative text associated with a shape in a Web page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.alternativetext?view=word-pia"/>
-  public string AlternativeText { get; set; }
+  public string AlternativeText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Script object, which represents a block of script or code on the specified Web page.
@@ -297,7 +297,7 @@ public partial interface IShape : IModelObject
   /// table.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.layoutincell?view=word-pia"/>
-  public int LayoutInCell { get; set; }
+  public int LayoutInCell { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified shape has a chart. Read-only.
@@ -315,39 +315,39 @@ public partial interface IShape : IModelObject
   /// Returns or sets a Single that represents the relative left position of a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.leftrelative?view=word-pia"/>
-  public float LeftRelative { get; set; }
+  public float LeftRelative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the relative top position of a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.toprelative?view=word-pia"/>
-  public float TopRelative { get; set; }
+  public float TopRelative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the relative width of a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.widthrelative?view=word-pia"/>
-  public float WidthRelative { get; set; }
+  public float WidthRelative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the percentage of the relative height of a shape. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.heightrelative?view=word-pia"/>
-  public float HeightRelative { get; set; }
+  public float HeightRelative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a RelativeHorizontalSize constant that represents the object to which a range of shapes is
   /// relative. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalsize?view=word-pia"/>
-  public RelativeHorizontalSize RelativeHorizontalSize { get; set; }
+  public RelativeHorizontalSize RelativeHorizontalSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a RelativeVerticalSize constant that represents the relative vertical size of a shape.
   /// Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalsize?view=word-pia"/>
-  public RelativeVerticalSize RelativeVerticalSize { get; set; }
+  public RelativeVerticalSize RelativeVerticalSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a SoftEdgeFormat object that represents the soft edge formatting for a shape. Read- only.
@@ -389,19 +389,19 @@ public partial interface IShape : IModelObject
   /// Gets or sets the shape style for the specified shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shapestyle?view=word-pia"/>
-  public Drawings.ShapeStyleIndex ShapeStyle { get; set; }
+  public Drawings.ShapeStyleIndex ShapeStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the background style of the specified shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.backgroundstyle?view=word-pia"/>
-  public Drawings.BackgroundStyleIndex BackgroundStyle { get; set; }
+  public Drawings.BackgroundStyleIndex BackgroundStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a string that contains a title for the specified shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string Title { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Range object that represents the anchoring range for the specified shape.

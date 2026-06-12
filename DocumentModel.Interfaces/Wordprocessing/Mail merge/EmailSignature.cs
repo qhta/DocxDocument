@@ -10,12 +10,12 @@ public interface IEmailSignature : IModelObject
   /// Gets or sets the signature used for new email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignature.newmessagesignature?view=word-pia"/>
-  public string NewMessageSignature { get; set; }
+  public string NewMessageSignature { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the signature used for reply email messages.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignature.replymessagesignature?view=word-pia"/>
-  public string ReplyMessageSignature { get; set; }
+  public string ReplyMessageSignature { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the collection of available email signature entries.
   /// </summary>

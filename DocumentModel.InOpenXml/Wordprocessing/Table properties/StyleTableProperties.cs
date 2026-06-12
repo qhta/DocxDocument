@@ -10,9 +10,9 @@ public partial class StyleTableProperties : BaseTableProperties<DXW.StyleTablePr
  /// <summary>
  /// Table style row band size, specifying the number of rows in each band for table styling.
  /// </summary>
- public Int32? TableStyleRowBandSize { get; set; }
+ public Int32? TableStyleRowBandSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Table style column band size, specifying the number of columns in each band for table styling.
  /// </summary>
- public Int32? TableStyleColumnBandSize { get; set; }
+ public Int32? TableStyleColumnBandSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

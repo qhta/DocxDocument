@@ -293,7 +293,8 @@ public static class TestHelper
       }
     }
 
-    if (instance.GetType().IsEnumerable(out var elementType))
+    if (instance.GetType().IsEnumerable(out var elementType)
+        && !elementType.IsAbstract)
     {
       var n = Random.Shared.Next(2, 5); // Random number of elements to add
 

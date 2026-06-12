@@ -30,25 +30,25 @@ public partial interface ICell : IModelObject
   /// Gets or sets the width of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the height of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.height?view=word-pia"/>
-  public float Height { get; set; }
+  public float Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the rule for determining row height.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.heightrule?view=word-pia"/>
-  public RowHeightRule HeightRule { get; set; }
+  public RowHeightRule HeightRule { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the vertical alignment of text in the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.verticalalignment?view=word-pia"/>
-  public TableVerticalAlignment VerticalAlignment { get; set; }
+  public TableVerticalAlignment VerticalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the column that contains the cell.
@@ -84,7 +84,7 @@ public partial interface ICell : IModelObject
   /// Gets or sets the border formatting for the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the collection of tables nested within the cell.
@@ -102,53 +102,53 @@ public partial interface ICell : IModelObject
   /// Gets or sets a value indicating whether text wraps within the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.wordwrap?view=word-pia"/>
-  public bool WordWrap { get; set; }
+  public bool WordWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the preferred width of the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.preferredwidth?view=word-pia"/>
-  public float PreferredWidth { get; set; }
+  public float PreferredWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether text is shrunk to fit within the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.fittext?view=word-pia"/>
-  public bool FitText { get; set; }
+  public bool FitText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the top padding of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.toppadding?view=word-pia"/>
-  public float TopPadding { get; set; }
+  public float TopPadding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the bottom padding of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.bottompadding?view=word-pia"/>
-  public float BottomPadding { get; set; }
+  public float BottomPadding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the left padding of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.leftpadding?view=word-pia"/>
-  public float LeftPadding { get; set; }
+  public float LeftPadding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the right padding of the cell, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.rightpadding?view=word-pia"/>
-  public float RightPadding { get; set; }
+  public float RightPadding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the identifier for the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string ID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the preferred width type for the cell.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.preferredwidthtype?view=word-pia"/>
-  public PreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

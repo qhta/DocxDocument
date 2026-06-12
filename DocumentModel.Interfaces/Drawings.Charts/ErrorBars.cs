@@ -21,7 +21,7 @@ public partial interface IErrorBars: IModelObject
   /// Gets or sets the `EndStyle` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.endstyle?view=office-pia"/>
-  public XlEndStyleCap EndStyle { get; set; }
+  public XlEndStyleCap EndStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

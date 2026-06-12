@@ -10,21 +10,21 @@ public interface IHorizontalLineFormat : IModelObject
   /// Returns or sets the width of the horizontal line as a percentage of the window width.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.percentwidth?view=word-pia"/>
-  public float PercentWidth { get; set; }
+  public float PercentWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets whether the horizontal line is displayed without three-dimensional shading.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.noshade?view=word-pia"/>
-  public bool NoShade { get; set; }
+  public bool NoShade { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the alignment for the horizontal line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.alignment?view=word-pia"/>
-  public HorizontalLineAlignment Alignment { get; set; }
+  public HorizontalLineAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets how the width of the horizontal line is measured.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.widthtype?view=word-pia"/>
-  public HorizontalLineWidthType WidthType { get; set; }
+  public HorizontalLineWidthType WidthType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

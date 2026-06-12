@@ -11,5 +11,5 @@ public partial class SectionPropertiesChange : IdentifiedChange<DXW.SectionPrope
  /// Previous section properties before the change, enabling comparison and tracking of revisions.
  /// </summary>
  [OpenXmlElement(typeof(DXW.PreviousSectionProperties))]
- public PreviousSectionProperties? PreviousSectionProperties { get; set; }
+ public PreviousSectionProperties? PreviousSectionProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

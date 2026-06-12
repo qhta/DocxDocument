@@ -687,37 +687,37 @@ public class EPSTestData
   [XmlElement("FontSize")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public EPS FontSize { get; set; }
+  public EPS FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LineHeight")]
-  public EPS LineHeight { get; set; }
+  public EPS LineHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MicroKerning")]
-  public EPS MicroKerning { get; set; }
+  public EPS MicroKerning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LetterSpacing")]
-  public EPS LetterSpacing { get; set; }
+  public EPS LetterSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("WordSpacing")]
-  public EPS WordSpacing { get; set; }
+  public EPS WordSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SuperscriptOffset")]
-  public EPS SuperscriptOffset { get; set; }
+  public EPS SuperscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SubscriptOffset")]
-  public EPS SubscriptOffset { get; set; }
+  public EPS SubscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BorderWidth")]
-  public EPS BorderWidth { get; set; }
+  public EPS BorderWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public EPS ZeroValue { get; set; }
+  public EPS ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public EPS SmallValue { get; set; }
+  public EPS SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public EPS LargeValue { get; set; }
+  public EPS LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -725,7 +725,7 @@ public class EPSTestData
 /// </summary>
 public class EPSWrapper
 {
-  public EPS Value { get; set; }
+  public EPS Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

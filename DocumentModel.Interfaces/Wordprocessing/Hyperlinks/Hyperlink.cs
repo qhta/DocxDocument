@@ -52,35 +52,35 @@ public partial interface IHyperlink : IModelObject
   /// Returns or sets the address for the hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.address?view=word-pia"/>
-  public string Address { get; set; }
+  public string Address { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the subaddress for the hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.subaddress?view=word-pia"/>
-  public string SubAddress { get; set; }
+  public string SubAddress { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the subject line for an e-mail hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.emailsubject?view=word-pia"/>
-  public string EmailSubject { get; set; }
+  public string EmailSubject { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the ScreenTip text for the hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.screentip?view=word-pia"/>
-  public string ScreenTip { get; set; }
+  public string ScreenTip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the display text for the hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.texttodisplay?view=word-pia"/>
-  public string TextToDisplay { get; set; }
+  public string TextToDisplay { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the target frame for the hyperlink.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.target?view=word-pia"/>
-  public string Target { get; set; }
+  public string Target { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

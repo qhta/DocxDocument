@@ -16,13 +16,13 @@ public partial interface IAutoCorrectEntry : IModelObject
   /// Gets or sets the text to find for this AutoCorrect entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the replacement text for this AutoCorrect entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the AutoCorrect entry uses rich-text formatting.

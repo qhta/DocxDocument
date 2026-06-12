@@ -10,5 +10,5 @@ public partial class NumberingChange : TrackChangeType<DXW.NumberingChange>
  /// <summary>
  /// Original numbering value before the change, used for comparison and revision tracking.
  /// </summary>
- public string? Original { get; set; }
+ public string? Original { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

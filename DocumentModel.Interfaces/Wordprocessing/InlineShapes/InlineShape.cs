@@ -17,7 +17,7 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets the borders for the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a range object that represents the inline shape in the document.
@@ -47,31 +47,31 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets the height of the inline shape, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.height?view=word-pia"/>
-  public float Height { get; set; }
+  public float Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width of the inline shape, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the vertical scale of the inline shape, as a percentage.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scaleheight?view=word-pia"/>
-  public float ScaleHeight { get; set; }
+  public float ScaleHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the horizontal scale of the inline shape, as a percentage.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scalewidth?view=word-pia"/>
-  public float ScaleWidth { get; set; }
+  public float ScaleWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether the inline shape retains its original proportions when resized.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.lockaspectratio?view=word-pia"/>
-  public TriState LockAspectRatio { get; set; }
+  public TriState LockAspectRatio { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a line format object that represents line formatting for the inline shape.
@@ -89,7 +89,7 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets picture formatting for the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.pictureformat?view=word-pia"/>
-  public IPictureFormat PictureFormat { get; set; }
+  public IPictureFormat PictureFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a horizontal line format object for the inline shape.
@@ -113,13 +113,13 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets text effect formatting for the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.texteffect?view=word-pia"/>
-  public ITextEffectFormat TextEffect { get; set; }
+  public ITextEffectFormat TextEffect { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets alternative text for the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.alternativetext?view=word-pia"/>
-  public string AlternativeText { get; set; }
+  public string AlternativeText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns whether the inline shape is used as a picture bullet.
@@ -185,7 +185,7 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets the title for the inline shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string Title { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the anchor ID of the inline shape.

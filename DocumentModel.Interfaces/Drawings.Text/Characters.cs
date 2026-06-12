@@ -11,7 +11,7 @@ public partial interface ICharacters: IModelObject
   /// Gets or sets the `Caption` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.caption?view=office-pia"/>
-  public string Caption { get; set; }
+  public string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Count` property.
   /// </summary>
@@ -26,11 +26,11 @@ public partial interface ICharacters: IModelObject
   /// Gets or sets the `Text` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.text?view=office-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `PhoneticCharacters` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.phoneticcharacters?view=office-pia"/>
-  public string PhoneticCharacters { get; set; }
+  public string PhoneticCharacters { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

@@ -88,7 +88,7 @@ public partial interface ISystem : IModelObject
   /// wdCursorIBeam, wdCursorNormal, wdCursorNorthwestArrow, or wdCursorWait.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.cursor?view=word-pia"/>
-  public CursorType Cursor { get; set; }
+  public CursorType Cursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the country/region designation of the system.

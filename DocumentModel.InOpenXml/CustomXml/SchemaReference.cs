@@ -24,5 +24,5 @@ public partial class SchemaReference : CollectionItem
  ///   or from external schema sources, enabling validation of custom XML data elements that belong
  ///   to this namespace.
  /// </remarks>
- public string? UriString { get; set; }
+ public string? UriString { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

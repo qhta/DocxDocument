@@ -11,25 +11,25 @@ public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
   /// The name of the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
-  string? ITextFormat.Name { get; set; }
+  string? ITextFormat.Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for East Asian scripts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
-  string? ITextFormat.NameFarEast { get; set; }
+  string? ITextFormat.NameFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
-  string? ITextFormat.NameAscii { get; set; }
+  string? ITextFormat.NameAscii { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
-  string? ITextFormat.NameOther { get; set; }
+  string? ITextFormat.NameOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The font size in points.
@@ -295,7 +295,7 @@ public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
-  IBorders? ITextFormat.Borders { get; set; }
+  IBorders? ITextFormat.Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
@@ -333,103 +333,103 @@ public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  string? ITextFormat.NameCS { get; set; }
+  string? ITextFormat.NameCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
-  ColorIndex? ITextFormat.ColorIndexCS { get; set; }
+  ColorIndex? ITextFormat.ColorIndexCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  IColor? ITextFormat.DiacriticColor { get; set; }
+  IColor? ITextFormat.DiacriticColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  IColor? ITextFormat.UnderlineColor { get; set; }
+  IColor? ITextFormat.UnderlineColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 
   /// <summary>
   /// Gets or sets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  DMD.IShading? ITextFormat.Shading { get; set; }
+  DMD.IShading? ITextFormat.Shading { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the glow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  DMD.IGlowFormat? ITextFormat.Glow { get; set; }
+  DMD.IGlowFormat? ITextFormat.Glow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the reflection formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  DMD.IReflectionFormat? ITextFormat.Reflection { get; set; }
+  DMD.IReflectionFormat? ITextFormat.Reflection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the shadow formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  DMD.IShadowFormat? ITextFormat.TextShadow { get; set; }
+  DMD.IShadowFormat? ITextFormat.TextShadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the fill formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  DMD.IFillFormat? ITextFormat.Fill { get; set; }
+  DMD.IFillFormat? ITextFormat.Fill { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the line formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  DMD.ILineFormat? ITextFormat.Line { get; set; }
+  DMD.ILineFormat? ITextFormat.Line { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the 3D formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  DMD.IThreeDFormat? ITextFormat.ThreeD { get; set; }
+  DMD.IThreeDFormat? ITextFormat.ThreeD { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the text color formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  DMD.IColorFormat? ITextFormat.TextColor { get; set; }
+  DMD.IColorFormat? ITextFormat.TextColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the ligature setting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  Ligatures? ITextFormat.Ligatures { get; set; }
+  Ligatures? ITextFormat.Ligatures { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  NumberForm? ITextFormat.NumberForm { get; set; }
+  NumberForm? ITextFormat.NumberForm { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number spacing for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  NumberSpacing? ITextFormat.NumberSpacing { get; set; }
+  NumberSpacing? ITextFormat.NumberSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets whether contextual alternates are enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
-  int? ITextFormat.ContextualAlternates { get; set; }
+  int? ITextFormat.ContextualAlternates { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the stylistic set for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  StylisticSet? ITextFormat.StylisticSet { get; set; }
+  StylisticSet? ITextFormat.StylisticSet { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

@@ -10,5 +10,5 @@ public partial interface IFormFields : IModelCollection<IFormField>
   /// Determines if shading is applied to form fields.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.shaded?view=word-pia"/>
-  public bool Shaded { get; set; }
+  public bool Shaded { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

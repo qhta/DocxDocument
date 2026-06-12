@@ -10,26 +10,26 @@ public interface ILineNumbering : IModelObject
   /// Returns or sets when line numbering restarts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.restartmode?view=word-pia"/>
-  public NumberingRule RestartMode { get; set; }
+  public NumberingRule RestartMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the starting line number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.startingnumber?view=word-pia"/>
-  public int StartingNumber { get; set; }
+  public int StartingNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the distance between line numbers and document text, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.distancefromtext?view=word-pia"/>
-  public float DistanceFromText { get; set; }
+  public float DistanceFromText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the line numbering interval.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.countby?view=word-pia"/>
-  public int CountBy { get; set; }
+  public int CountBy { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets whether line numbering is active.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.active?view=word-pia"/>
-  public int Active { get; set; }
+  public int Active { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

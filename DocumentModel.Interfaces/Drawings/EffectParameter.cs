@@ -17,6 +17,6 @@ public partial interface IEffectParameter: IModelObject
   /// Gets or sets the `Value` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.effectparameter.value?view=office-pia"/>
-  public object Value { get; set; }
+  public object Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

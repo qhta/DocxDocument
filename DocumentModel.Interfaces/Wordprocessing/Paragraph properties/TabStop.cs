@@ -12,19 +12,19 @@ public partial interface ITabStop : IModelObject
   /// Returns or sets a constant that represents the alignment for the specified tab stop.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.alignment?view=word-pia"/>
-  public TabAlignment Alignment { get; set; }
+  public TabAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the leader for the specified TabStop object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.leader?view=word-pia"/>
-  public TabLeader Leader { get; set; }
+  public TabLeader Leader { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the position of a tab stop relative to the left margin.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.position?view=word-pia"/>
-  public float Position { get; set; }
+  public float Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified tab stop is a custom tab stop.

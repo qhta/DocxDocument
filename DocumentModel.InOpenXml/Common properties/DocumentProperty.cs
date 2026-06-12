@@ -19,11 +19,11 @@ public abstract partial class DocumentProperty : NamedModelElement
   /// <summary>
   ///   Value of the property as a string.
   /// </summary>
-  public virtual string? Value { get; set; }
+  public virtual String? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   ///   Expected value type
   /// </summary>
   [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-  public virtual DMPr.DocPropertyType Type { get; set; }
+  public virtual DMPr.DocPropertyType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

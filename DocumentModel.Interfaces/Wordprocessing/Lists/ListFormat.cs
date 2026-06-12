@@ -10,7 +10,7 @@ public partial interface IListFormat : IModelObject
   /// Returns or sets the list level number for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listlevelnumber?view=word-pia"/>
-  public int ListLevelNumber { get; set; }
+  public int ListLevelNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the first valid list that is applied to the paragraphs in the range.

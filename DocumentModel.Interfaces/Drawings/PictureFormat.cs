@@ -11,63 +11,63 @@ public partial interface IPictureFormat : IModelObject
   /// number from 0.0 (dimmest) to 1.0 (brightest).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.brightness?view=word-pia"/>
-  public float Brightness { get; set; }
+  public float Brightness { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the type of color transformation applied to the specified picture or OLE object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.colortype?view=word-pia"/>
-  public Drawings.PictureColorType ColorType { get; set; }
+  public Drawings.PictureColorType ColorType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the contrast for the specified picture or OLE object. The value for this property must be a
   /// number from 0.0 (the least contrast) to 1.0 (the greatest contrast).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.contrast?view=word-pia"/>
-  public float Contrast { get; set; }
+  public float Contrast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of points that are cropped off the bottom of the specified picture or OLE object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropbottom?view=word-pia"/>
-  public float CropBottom { get; set; }
+  public float CropBottom { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of points that are cropped off the left side of the specified picture or OLE
   /// object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropleft?view=word-pia"/>
-  public float CropLeft { get; set; }
+  public float CropLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of points that are cropped off the right side of the specified picture or OLE
   /// object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropright?view=word-pia"/>
-  public float CropRight { get; set; }
+  public float CropRight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of points that are cropped off the top of the specified picture or OLE object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.croptop?view=word-pia"/>
-  public float CropTop { get; set; }
+  public float CropTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the transparent color for the specified picture as a red-green-blue (RGB) value.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.transparencycolor?view=word-pia"/>
-  public int TransparencyColor { get; set; }
+  public int TransparencyColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// MsoTrue if the parts of the picture that are defined with a transparent color actually appear transparent.
   /// Applies to bitmaps only.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.transparentbackground?view=word-pia"/>
-  public TriState TransparentBackground { get; set; }
+  public TriState TransparentBackground { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a Crop object that represents an image cropping.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.crop?view=word-pia"/>
-  public Drawings.ICrop Crop { get; set; }
+  public Drawings.ICrop Crop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

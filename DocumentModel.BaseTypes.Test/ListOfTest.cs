@@ -626,28 +626,28 @@ public class ListOfTestData
 {
   [XmlElement("EmptyIntList")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public ListOf<int> EmptyIntList { get; set; } = new ListOf<int>();
+  public ListOf<int> EmptyIntList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<int>();
 
   [XmlElement("SingleInt")]
-  public ListOf<int> SingleInt { get; set; } = new ListOf<int>();
+  public ListOf<int> SingleInt { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<int>();
 
   [XmlElement("MultipleInts")]
-  public ListOf<int> MultipleInts { get; set; } = new ListOf<int>();
+  public ListOf<int> MultipleInts { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<int>();
 
   [XmlElement("EmptyStringList")]
-  public ListOf<string> EmptyStringList { get; set; } = new ListOf<string>();
+  public ListOf<string> EmptyStringList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<string>();
 
   [XmlElement("SingleString")]
-  public ListOf<string> SingleString { get; set; } = new ListOf<string>();
+  public ListOf<string> SingleString { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<string>();
 
   [XmlElement("MultipleStrings")]
-  public ListOf<string> MultipleStrings { get; set; } = new ListOf<string>();
+  public ListOf<string> MultipleStrings { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<string>();
 
   [XmlElement("DoubleList")]
-  public ListOf<double> DoubleList { get; set; } = new ListOf<double>();
+  public ListOf<double> DoubleList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<double>();
 
   [XmlElement("BoolList")]
-  public ListOf<bool> BoolList { get; set; } = new ListOf<bool>();
+  public ListOf<bool> BoolList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new ListOf<bool>();
 }
 
 /// <summary>
@@ -655,7 +655,7 @@ public class ListOfTestData
 /// </summary>
 public class ListOfIntWrapper
 {
-  public ListOf<int>? Value { get; set; }
+  public ListOf<int>? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -663,7 +663,7 @@ public class ListOfIntWrapper
 /// </summary>
 public class ListOfStringWrapper
 {
-  public ListOf<string>? Value { get; set; }
+  public ListOf<string>? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

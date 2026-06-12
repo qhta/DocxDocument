@@ -31,39 +31,39 @@ public partial interface ISmartTagAction : IModelObject
   /// or collapsed in the Document Actions task pane.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.expandhelp?view=word-pia"/>
-  public bool ExpandHelp { get; set; }
+  public bool ExpandHelp { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean that indicates whether a check box in a smart document is selected.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.checkboxstate?view=word-pia"/>
-  public bool CheckboxState { get; set; }
+  public bool CheckboxState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a String that represents the text in a smart document textbox control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.textboxtext?view=word-pia"/>
-  public string TextboxText { get; set; }
+  public string TextboxText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the index number of the selected item in a smart document list box
   /// control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.listselection?view=word-pia"/>
-  public int ListSelection { get; set; }
+  public int ListSelection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the index number of the selected item in a group of radio button
   /// controls in a smart document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.radiogroupselection?view=word-pia"/>
-  public int RadioGroupSelection { get; set; }
+  public int RadioGroupSelection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a 32-bit integer that indicates the application in which the specified object was created.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.expanddocumentfragment?view=word-pia"/>
-  public bool ExpandDocumentFragment { get; set; }
+  public bool ExpandDocumentFragment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Object that represents an ActiveX control displayed in the Document Actions task pane.

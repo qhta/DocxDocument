@@ -12,15 +12,15 @@ public partial class BookmarkStart: MarkupStartRangeElement<DXW.BookmarkStart, D
   /// <summary>
   /// Name of the bookmark. If multiple bookmarks share the same name, only the first (by document order) is maintained; subsequent bookmarks with the same name are ignored.
   /// </summary>
-  public string? Name { get; set; }
+  public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Zero-based index of the first column in this row that is part of the bookmark.
   /// </summary>
-  public Int32? ColumnFirst { get; set; }
+  public Int32? ColumnFirst { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Zero-based index of the last column in this row that is part of the bookmark.
   /// </summary>
-  public Int32? ColumnLast { get; set; }
+  public Int32? ColumnLast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

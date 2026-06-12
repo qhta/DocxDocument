@@ -10,5 +10,5 @@ public partial interface IComments : IModelCollection<IComment>
   /// Gets or sets the reviewer name whose comments are displayed.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments.showby?view=word-pia"/>
-  public string ShowBy { get; set; }
+  public string ShowBy { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

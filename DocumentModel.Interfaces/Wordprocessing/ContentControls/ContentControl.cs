@@ -18,13 +18,13 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets a value indicating whether the content control itself is locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.lockcontentcontrol?view=word-pia"/>
-  public bool LockContentControl { get; set; }
+  public bool LockContentControl { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the contents of the content control are locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.lockcontents?view=word-pia"/>
-  public bool LockContents { get; set; }
+  public bool LockContents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the XML mapping for the content control.
@@ -36,7 +36,7 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets the type of content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.type?view=word-pia"/>
-  public ContentControlType Type { get; set; }
+  public ContentControlType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the collection of list entries for a drop-down or combo box content control.
@@ -54,19 +54,19 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets the title of the content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string Title { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the display format for date values.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplayformat?view=word-pia"/>
-  public string DateDisplayFormat { get; set; }
+  public string DateDisplayFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control supports multiple lines.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.multiline?view=word-pia"/>
-  public bool MultiLine { get; set; }
+  public bool MultiLine { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the parent content control.
@@ -78,7 +78,7 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets a value indicating whether the content control is removed after it is edited.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.temporary?view=word-pia"/>
-  public bool Temporary { get; set; }
+  public bool Temporary { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the unique identifier of the content control.
@@ -96,61 +96,61 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets how date values are stored.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datestorageformat?view=word-pia"/>
-  public DateStorageFormat DateStorageFormat { get; set; }
+  public DateStorageFormat DateStorageFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
-  public IBuildingBlockTypes BuildingBlockType { get; set; }
+  public IBuildingBlockTypes BuildingBlockType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the building block category for a building block gallery content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblockcategory?view=word-pia"/>
-  public string BuildingBlockCategory { get; set; }
+  public string BuildingBlockCategory { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the locale used to display dates.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplaylocale?view=word-pia"/>
-  public LanguageID DateDisplayLocale { get; set; }
+  public LanguageID DateDisplayLocale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the default text style for the content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.defaulttextstyle?view=word-pia"/>
-  public object DefaultTextStyle { get; set; }
+  public object DefaultTextStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the calendar type used for date values.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datecalendartype?view=word-pia"/>
-  public CalendarType DateCalendarType { get; set; }
+  public CalendarType DateCalendarType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a tag value for identifying the content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.tag?view=word-pia"/>
-  public string Tag { get; set; }
+  public string Tag { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether a check box content control is checked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.checked?view=word-pia"/>
-  public bool Checked { get; set; }
+  public bool Checked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color of the content control.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.color?view=word-pia"/>
-  public IColor Color { get; set; }
+  public IColor Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets how the content control appears in the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.appearance?view=word-pia"/>
-  public ContentControlAppearance Appearance { get; set; }
+  public ContentControlAppearance Appearance { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the level of the content control in the content control hierarchy.
@@ -168,11 +168,11 @@ public partial interface IContentControl : IModelObject
   /// Gets or sets the title displayed for each repeating section item.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitemtitle?view=word-pia"/>
-  public string RepeatingSectionItemTitle { get; set; }
+  public string RepeatingSectionItemTitle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether users can insert or delete repeating section items.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.allowinsertdeletesection?view=word-pia"/>
-  public bool AllowInsertDeleteSection { get; set; }
+  public bool AllowInsertDeleteSection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

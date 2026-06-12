@@ -10,7 +10,7 @@ public partial class Extension<T> : ModelElement<T> where T : DX.OpenXmlElement
  ///   Uri string that identifies the extension resource or schema.
  /// </summary>
  [XmlAttribute]
- public string? Uri { get; set; }
+ public string? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>

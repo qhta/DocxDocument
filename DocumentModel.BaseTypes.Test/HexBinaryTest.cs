@@ -332,13 +332,13 @@ public class HexBinaryTestDataClass
 {
   [XmlElement("BinaryData")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexBinary BinaryData { get; set; }
+  public HexBinary BinaryData { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DocumentHash")]
-  public HexBinary DocumentHash { get; set; }
+  public HexBinary DocumentHash { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ImageData")]
-  public HexBinary ImageData { get; set; }
+  public HexBinary ImageData { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -346,7 +346,7 @@ public class HexBinaryTestDataClass
 /// </summary>
 public class HexBinaryTestWrapper
 {
-  public HexBinary Data { get; set; }
+  public HexBinary Data { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

@@ -31,17 +31,17 @@ public partial interface IWalls: IModelObject
   /// Gets or sets the `PictureType` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.picturetype?view=office-pia"/>
-  public object PictureType { get; set; }
+  public object PictureType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `PictureUnit` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.pictureunit?view=office-pia"/>
-  public object PictureUnit { get; set; }
+  public object PictureUnit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Thickness` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.thickness?view=office-pia"/>
-  public int Thickness { get; set; }
+  public int Thickness { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

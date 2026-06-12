@@ -10,10 +10,10 @@ public abstract class RunDate<T> : ModelElement<T>, IRunContent where T : DX.Ope
 ///// Specifies which part of the date is presented (e.g., full date, year, month, day).
 ///// </summary>
 //[DefaultValue(DateItem.Full)]
-//public DateItem Part { get; set; }
+//public DateItem Part { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 ///// <summary>
 ///// Indicates whether the date is displayed in long format. If false, a short format is used by default.
 ///// </summary>
 //[DefaultValue(false)]
-//public bool IsLong { get; set; }
+//public bool IsLong { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -21,7 +21,7 @@ public partial class DataStoreItem
  ///   custom XML data store from other parts of the document, such as content controls that bind
  ///   to the XML data.
  /// </remarks>
- public string? ItemId { get; set; }
+ public string? ItemId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   Gets or sets the collection of XML schema references associated with this custom XML data.
  /// </summary>
@@ -30,5 +30,5 @@ public partial class DataStoreItem
  ///   rules for the custom XML data. Multiple schemas can be referenced to support complex
  ///   XML data structures that span multiple namespaces.
  /// </remarks>
- public SchemaReferences? SchemaReferences { get; set; }
+ public SchemaReferences? SchemaReferences { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -13,12 +13,12 @@ public interface IPropertyVM
   /// <summary>
   /// Value of the property.
   /// </summary>
-  public object? Value { get; set; }
+  public object? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Value type of the property.
   /// </summary>
-  public Type ValueType { get; set; }
+  public Type ValueType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines whether the property is empty

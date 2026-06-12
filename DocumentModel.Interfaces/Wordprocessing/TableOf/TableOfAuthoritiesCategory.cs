@@ -10,7 +10,7 @@ public interface ITableOfAuthoritiesCategory : IModelObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthoritiescategory.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>

@@ -10,5 +10,5 @@ public partial class ParagraphPropertiesChange : TrackChangeType<DXW.ParagraphPr
  /// <summary>
  /// Previous paragraph properties before the change, enabling comparison and tracking of revisions.
  /// </summary>
- public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+ public PreviousParagraphProperties? PreviousParagraphProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

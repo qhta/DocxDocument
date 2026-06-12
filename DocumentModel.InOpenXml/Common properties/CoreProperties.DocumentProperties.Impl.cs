@@ -176,7 +176,7 @@ public partial class CoreProperties : IDocumentProperties
       var value = property.GetValue(this);
       if (value != null)
       {
-        yield return new BuiltInProperty{ Name = property.Name, Value = value};
+        yield return new BuiltInProperty{ Name = property.Name, Value = value.ToString()};
       }
     }
   }

@@ -656,31 +656,31 @@ public class TwipsTestData
   [XmlElement("PageWidth")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public Twips PageWidth { get; set; }
+  public Twips PageWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("PageHeight")]
-  public Twips PageHeight { get; set; }
+  public Twips PageHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LeftMargin")]
-  public Twips LeftMargin { get; set; }
+  public Twips LeftMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("TopMargin")]
-  public Twips TopMargin { get; set; }
+  public Twips TopMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("FontSize")]
-  public Twips FontSize { get; set; }
+  public Twips FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LineSpacing")]
-  public Twips LineSpacing { get; set; }
+  public Twips LineSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public Twips ZeroValue { get; set; }
+  public Twips ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public Twips SmallValue { get; set; }
+  public Twips SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public Twips LargeValue { get; set; }
+  public Twips LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -688,7 +688,7 @@ public class TwipsTestData
 /// </summary>
 public class TwipsWrapper
 {
-  public Twips Value { get; set; }
+  public Twips Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

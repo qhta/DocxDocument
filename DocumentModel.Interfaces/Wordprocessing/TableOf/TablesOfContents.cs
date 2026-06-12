@@ -10,5 +10,5 @@ public partial interface ITablesOfContents : IModelCollection<ITableOfContents>
   /// Returns or sets the formatting for the tables of contents in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents.format?view=word-pia"/>
-  public TocFormat Format { get; set; }
+  public TocFormat Format { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

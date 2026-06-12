@@ -76,7 +76,7 @@ public partial interface IFillFormat : IModelObject
   /// Returns or sets the degree of transparency of the specified fill as a value between 0.0 (opaque) and 1.0 (clear).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.transparency?view=word-pia"/>
-  public float Transparency { get; set; }
+  public float Transparency { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the shape fill format type.
@@ -88,7 +88,7 @@ public partial interface IFillFormat : IModelObject
   /// Returns whether the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.visible?view=word-pia"/>
-  public TriState Visible { get; set; }
+  public TriState Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the <see cref="GradientStops"/> collection associated with the specified fill format.
@@ -100,43 +100,43 @@ public partial interface IFillFormat : IModelObject
   /// Gets or sets a value that specifies the horizontal offset of the texture from the origin in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureoffsetx?view=word-pia"/>
-  public float TextureOffsetX { get; set; }
+  public float TextureOffsetX { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value that specifies the vertical offset of the texture from the origin in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureoffsety?view=word-pia"/>
-  public float TextureOffsetY { get; set; }
+  public float TextureOffsetY { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the alignment (the origin of the coordinate grid) for the tiling of the texture fill.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturealignment?view=word-pia"/>
-  public Drawings.TextureAlignment TextureAlignment { get; set; }
+  public Drawings.TextureAlignment TextureAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value that specifies the horizontal scaling factor for the texture fill.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturehorizontalscale?view=word-pia"/>
-  public float TextureHorizontalScale { get; set; }
+  public float TextureHorizontalScale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value that specifies the vertical scaling factor for the texture fill.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureverticalscale?view=word-pia"/>
-  public float TextureVerticalScale { get; set; }
+  public float TextureVerticalScale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets whether the texture fill is tiled or centered.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturetile?view=word-pia"/>
-  public TriState TextureTile { get; set; }
+  public TriState TextureTile { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets whether the fill rotates with the specified shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.rotatewithobject?view=word-pia"/>
-  public TriState RotateWithObject { get; set; }
+  public TriState RotateWithObject { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a <see cref="PictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
@@ -148,5 +148,5 @@ public partial interface IFillFormat : IModelObject
   /// Gets or sets the angle of the gradient fill for the specified fill format.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientangle?view=word-pia"/>
-  public float GradientAngle { get; set; }
+  public float GradientAngle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

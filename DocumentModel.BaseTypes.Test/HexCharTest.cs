@@ -341,16 +341,16 @@ public class HexCharTestData
 {
   [XmlElement("LetterA")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexChar LetterA { get; set; }
+  public HexChar LetterA { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Space")]
-  public HexChar Space { get; set; }
+  public HexChar Space { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("GreekAlpha")]
-  public HexChar GreekAlpha { get; set; }
+  public HexChar GreekAlpha { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MaxValue")]
-  public HexChar MaxValue { get; set; }
+  public HexChar MaxValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

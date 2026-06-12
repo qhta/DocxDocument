@@ -8,11 +8,11 @@ public partial class LinearGradientFill : GradientFill
  /// <summary>
  ///   Angle
  /// </summary>
- public Int32? Angle { get; set; }
+ public Int32? Angle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
  /// <summary>
  ///   Scaled
  /// </summary>
  [DefaultValue(false)]
- public Boolean Scaled { get; set; }
+ public Boolean Scaled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

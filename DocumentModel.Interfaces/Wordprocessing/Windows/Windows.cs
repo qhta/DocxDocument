@@ -11,5 +11,5 @@ public partial interface IWindows : IModelCollection<IWindow>
   /// same time.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows.syncscrollingsidebyside?view=word-pia"/>
-  public bool SyncScrollingSideBySide { get; set; }
+  public bool SyncScrollingSideBySide { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

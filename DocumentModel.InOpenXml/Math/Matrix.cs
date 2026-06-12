@@ -14,5 +14,5 @@ public partial class Matrix : ModelElementCollection<MatrixRow, DXM.Matrix, DXM.
  /// <summary>
  ///   Matrix Properties.
  /// </summary>
- public MatrixProperties? MatrixProperties { get; set; }
+ public MatrixProperties? MatrixProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

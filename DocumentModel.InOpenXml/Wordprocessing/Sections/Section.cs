@@ -8,5 +8,5 @@ public class Section : ModelElement
 ///// <summary>
 /////   Content of the section.
 ///// </summary>
-//public IStory Content { get; set; }
+//public IStory Content { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

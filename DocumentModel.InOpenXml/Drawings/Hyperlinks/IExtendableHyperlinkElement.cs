@@ -7,5 +7,5 @@ public interface IExtendableHyperlinkElement
   /// <summary>
   ///   Collection of extension elements for additional hyperlink properties.
   /// </summary>
-  public HyperlinkExtensionList? HyperlinkExtensionList { get; set; }
+  public HyperlinkExtensionList? HyperlinkExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

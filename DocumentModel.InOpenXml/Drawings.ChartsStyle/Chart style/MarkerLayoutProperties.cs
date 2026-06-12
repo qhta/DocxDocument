@@ -10,9 +10,9 @@ public partial class MarkerLayoutProperties
   /// <summary>
   /// Marker symbol type used for data points in the chart.
   /// </summary>
-  public MarkerStyle? Symbol { get; set; }
+  public MarkerStyle? Symbol { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Size value for the marker symbols.
   /// </summary>
-  public Byte? Size { get; set; }
+  public Byte? Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

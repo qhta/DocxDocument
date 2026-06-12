@@ -34,19 +34,19 @@ public partial interface IComment : IModelObject
   /// Gets or sets the name of the comment author.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.author?view=word-pia"/>
-  public string Author { get; set; }
+  public string Author { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the initials of the comment author.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.initial?view=word-pia"/>
-  public string Initial { get; set; }
+  public string Initial { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the comment tip is displayed.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.showtip?view=word-pia"/>
-  public bool ShowTip { get; set; }
+  public bool ShowTip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the date and time when the comment was created.
@@ -64,7 +64,7 @@ public partial interface IComment : IModelObject
   /// Gets or sets a value indicating whether the comment is marked as done.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.done?view=word-pia"/>
-  public bool Done { get; set; }
+  public bool Done { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the parent comment for a reply.

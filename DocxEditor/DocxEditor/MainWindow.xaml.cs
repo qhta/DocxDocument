@@ -156,7 +156,7 @@ public partial class MainWindow : Window
   /// <summary>
   /// Gets or sets the currently active view in the MainWindow.
   /// </summary>
-  public System.Windows.Controls.Control? ActiveView { get; set; }
+  public System.Windows.Controls.Control? ActiveView { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 
   private void DockingManager_OnActiveWindowChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

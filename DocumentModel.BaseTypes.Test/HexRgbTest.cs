@@ -682,31 +682,31 @@ public class HexRgbTestData
 {
   [XmlElement("PrimaryRed")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexColor PrimaryRed { get; set; }
+  public HexColor PrimaryRed { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("PrimaryGreen")]
-  public HexColor PrimaryGreen { get; set; }
+  public HexColor PrimaryGreen { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("PrimaryBlue")]
-  public HexColor PrimaryBlue { get; set; }
+  public HexColor PrimaryBlue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SecondaryYellow")]
-  public HexColor SecondaryYellow { get; set; }
+  public HexColor SecondaryYellow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Black")]
-  public HexColor Black { get; set; }
+  public HexColor Black { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("White")]
-  public HexColor White { get; set; }
+  public HexColor White { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Gray")]
-  public HexColor Gray { get; set; }
+  public HexColor Gray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("CustomColor1")]
-  public HexColor CustomColor1 { get; set; }
+  public HexColor CustomColor1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("CustomColor2")]
-  public HexColor CustomColor2 { get; set; }
+  public HexColor CustomColor2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -714,7 +714,7 @@ public class HexRgbTestData
 /// </summary>
 public class HexRgbWrapper
 {
-  public HexColor Value { get; set; }
+  public HexColor Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

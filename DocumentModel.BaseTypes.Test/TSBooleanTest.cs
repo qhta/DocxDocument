@@ -284,16 +284,16 @@ public class TSBooleanTestData
 {
   [XmlElement("Enabled")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public TSBoolean Enabled { get; set; }
+  public TSBoolean Enabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Disabled")]
-  public TSBoolean Disabled { get; set; }
+  public TSBoolean Disabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Indeterminate")]
-  public TSBoolean Indeterminate { get; set; }
+  public TSBoolean Indeterminate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DefaultValue")]
-  public TSBoolean DefaultValue { get; set; }
+  public TSBoolean DefaultValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -301,7 +301,7 @@ public class TSBooleanTestData
 /// </summary>
 public class TSBooleanWrapper
 {
-  public TSBoolean Value { get; set; }
+  public TSBoolean Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

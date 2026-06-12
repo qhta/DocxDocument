@@ -12,37 +12,37 @@ public partial interface IRoutingSlip : IModelObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string Subject { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.message?view=word-pia"/>
-  public string Message { get; set; }
+  public string Message { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.delivery?view=word-pia"/>
-  public RoutingSlipDelivery Delivery { get; set; }
+  public RoutingSlipDelivery Delivery { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.trackstatus?view=word-pia"/>
-  public bool TrackStatus { get; set; }
+  public bool TrackStatus { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.protect?view=word-pia"/>
-  public DocumentProtectionType Protect { get; set; }
+  public DocumentProtectionType Protect { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.returnwhendone?view=word-pia"/>
-  public bool ReturnWhenDone { get; set; }
+  public bool ReturnWhenDone { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

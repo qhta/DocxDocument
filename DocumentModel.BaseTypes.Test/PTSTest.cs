@@ -666,31 +666,31 @@ public class PTSTestData
   [XmlElement("FontSize")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public PTS FontSize { get; set; }
+  public PTS FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LineHeight")]
-  public PTS LineHeight { get; set; }
+  public PTS LineHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ParagraphSpacing")]
-  public PTS ParagraphSpacing { get; set; }
+  public PTS ParagraphSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Indent")]
-  public PTS Indent { get; set; }
+  public PTS Indent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BodyFontSize")]
-  public PTS BodyFontSize { get; set; }
+  public PTS BodyFontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("HeadingFontSize")]
-  public PTS HeadingFontSize { get; set; }
+  public PTS HeadingFontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public PTS ZeroValue { get; set; }
+  public PTS ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public PTS SmallValue { get; set; }
+  public PTS SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public PTS LargeValue { get; set; }
+  public PTS LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -698,7 +698,7 @@ public class PTSTestData
 /// </summary>
 public class PTSWrapper
 {
-  public PTS Value { get; set; }
+  public PTS Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

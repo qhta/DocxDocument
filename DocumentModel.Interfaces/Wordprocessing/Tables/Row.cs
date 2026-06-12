@@ -18,43 +18,43 @@ public partial interface IRow : IModelObject
   /// Determines if the text in a table row or rows are allowed to split across a page break.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.allowbreakacrosspages?view=word-pia"/>
-  public int AllowBreakAcrossPages { get; set; }
+  public int AllowBreakAcrossPages { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a RowAlignment constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.alignment?view=word-pia"/>
-  public TableRowAlignment Alignment { get; set; }
+  public TableRowAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified row or rows are formatted as a table heading.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.headingformat?view=word-pia"/>
-  public int HeadingFormat { get; set; }
+  public int HeadingFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the distance (in points) between text in adjacent columns of the specified row.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.spacebetweencolumns?view=word-pia"/>
-  public float SpaceBetweenColumns { get; set; }
+  public float SpaceBetweenColumns { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the height of the specified row in a table.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.height?view=word-pia"/>
-  public float Height { get; set; }
+  public float Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the rule for determining the height of the specified row.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.heightrule?view=word-pia"/>
-  public RowHeightRule HeightRule { get; set; }
+  public RowHeightRule HeightRule { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the left indent value (in points) for the specified table row.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.leftindent?view=word-pia"/>
-  public float LeftIndent { get; set; }
+  public float LeftIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified column or row is the last one in the table.
@@ -84,7 +84,7 @@ public partial interface IRow : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -115,5 +115,5 @@ public partial interface IRow : IModelObject
   /// page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string ID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

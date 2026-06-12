@@ -18,7 +18,7 @@ public partial interface ITextInput : IModelObject
   /// Returns or sets the text that represents the default text box contents.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textinput.default?view=word-pia"/>
-  public string Default { get; set; }
+  public string Default { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the type of text form field.
@@ -36,5 +36,5 @@ public partial interface ITextInput : IModelObject
   /// Returns or sets the width of the specified object, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textinput.width?view=word-pia"/>
-  public int Width { get; set; }
+  public int Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

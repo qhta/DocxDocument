@@ -11,55 +11,55 @@ public partial interface ITextEffectFormat : IModelObject
   /// Returns or sets a constant that represents the alignment for the specified text effect.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.alignment?view=word-pia"/>
-  public TextEffectAlignment Alignment { get; set; }
+  public TextEffectAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a constant that represents how bold font is handled for the specified text effect.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontbold?view=word-pia"/>
-  public TriState FontBold { get; set; }
+  public TriState FontBold { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Italicizes WordArt text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontitalic?view=word-pia"/>
-  public TriState FontItalic { get; set; }
+  public TriState FontItalic { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the name of the font for the dropped capital letter.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontname?view=word-pia"/>
-  public string FontName { get; set; }
+  public string FontName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the font size for the specified WordArt, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontsize?view=word-pia"/>
-  public float FontSize { get; set; }
+  public float FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Indicates that character pairs in a WordArt object have been kerned.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.kernedpairs?view=word-pia"/>
-  public TriState KernedPairs { get; set; }
+  public TriState KernedPairs { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// MsoTrue if all characters (both uppercase and lowercase) in the specified WordArt are the same height.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.normalizedheight?view=word-pia"/>
-  public TriState NormalizedHeight { get; set; }
+  public TriState NormalizedHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the shape of the specified WordArt.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presetshape?view=word-pia"/>
-  public PresetTextEffectShape PresetShape { get; set; }
+  public PresetTextEffectShape PresetShape { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the style of the specified WordArt.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presettexteffect?view=word-pia"/>
-  public PresetTextEffect PresetTextEffect { get; set; }
+  public PresetTextEffect PresetTextEffect { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// MsoTrue if characters in the specified WordArt are rotated 90 degrees relative to the WordArt's bounding
@@ -67,18 +67,18 @@ public partial interface ITextEffectFormat : IModelObject
   /// bounding shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.rotatedchars?view=word-pia"/>
-  public TriState RotatedChars { get; set; }
+  public TriState RotatedChars { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the text in the specified WordArt.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the ratio of the horizontal space allotted to each character in the specified WordArt in
   /// relation to the width of the character.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.tracking?view=word-pia"/>
-  public float Tracking { get; set; }
+  public float Tracking { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

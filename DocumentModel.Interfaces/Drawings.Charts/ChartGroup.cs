@@ -11,12 +11,12 @@ public partial interface IChartGroup: IModelObject
   /// Gets or sets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.axisgroup?view=office-pia"/>
-  public int XlAxisGroup { get; set; }
+  public int XlAxisGroup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `DoughnutHoleSize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.doughnutholesize?view=office-pia"/>
-  public int DoughnutHoleSize { get; set; }
+  public int DoughnutHoleSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `DownBars` property.
   /// </summary>
@@ -31,37 +31,37 @@ public partial interface IChartGroup: IModelObject
   /// Gets or sets the `FirstSliceAngle` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.firstsliceangle?view=office-pia"/>
-  public int FirstSliceAngle { get; set; }
+  public int FirstSliceAngle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `GapWidth` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.gapwidth?view=office-pia"/>
-  public int GapWidth { get; set; }
+  public int GapWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasDropLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hasdroplines?view=office-pia"/>
-  public bool HasDropLines { get; set; }
+  public bool HasDropLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasHiLoLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hashilolines?view=office-pia"/>
-  public bool HasHiLoLines { get; set; }
+  public bool HasHiLoLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasRadarAxisLabels` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hasradaraxislabels?view=office-pia"/>
-  public bool HasRadarAxisLabels { get; set; }
+  public bool HasRadarAxisLabels { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasSeriesLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hasserieslines?view=office-pia"/>
-  public bool HasSeriesLines { get; set; }
+  public bool HasSeriesLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasUpDownBars` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hasupdownbars?view=office-pia"/>
-  public bool HasUpDownBars { get; set; }
+  public bool HasUpDownBars { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `HiLoLines` property.
   /// </summary>
@@ -76,7 +76,7 @@ public partial interface IChartGroup: IModelObject
   /// Gets or sets the `Overlap` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.overlap?view=office-pia"/>
-  public int Overlap { get; set; }
+  public int Overlap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `RadarAxisLabels` property.
   /// </summary>
@@ -91,12 +91,12 @@ public partial interface IChartGroup: IModelObject
   /// Gets or sets the `SubType` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.subtype?view=office-pia"/>
-  public int SubType { get; set; }
+  public int SubType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.type?view=office-pia"/>
-  public int Type { get; set; }
+  public int Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `UpBars` property.
   /// </summary>
@@ -106,41 +106,41 @@ public partial interface IChartGroup: IModelObject
   /// Gets or sets the `VaryByCategories` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.varybycategories?view=office-pia"/>
-  public bool VaryByCategories { get; set; }
+  public bool VaryByCategories { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `SizeRepresents` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.sizerepresents?view=office-pia"/>
-  public SizeRepresents SizeRepresents { get; set; }
+  public SizeRepresents SizeRepresents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `BubbleScale` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.bubblescale?view=office-pia"/>
-  public int BubbleScale { get; set; }
+  public int BubbleScale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowNegativeBubbles` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.shownegativebubbles?view=office-pia"/>
-  public bool ShowNegativeBubbles { get; set; }
+  public bool ShowNegativeBubbles { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `SplitType` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.splittype?view=office-pia"/>
-  public XlChartSplitType SplitType { get; set; }
+  public XlChartSplitType SplitType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `SplitValue` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.splitvalue?view=office-pia"/>
-  public object SplitValue { get; set; }
+  public object SplitValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `SecondPlotSize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.secondplotsize?view=office-pia"/>
-  public int SecondPlotSize { get; set; }
+  public int SecondPlotSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Has3DShading` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.has3dshading?view=office-pia"/>
-  public bool Has3DShading { get; set; }
+  public bool Has3DShading { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

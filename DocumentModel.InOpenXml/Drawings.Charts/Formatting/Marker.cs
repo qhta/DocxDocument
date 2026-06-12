@@ -11,23 +11,23 @@ public partial class Marker : ModelElement<DXDC.Marker>
  ///   Symbol style of the marker.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Marker.Symbol))]
- public MarkerStyle? Symbol { get; set; }
+ public MarkerStyle? Symbol { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
  /// <summary>
  ///   Size of the marker.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Marker.Size))]
- public Byte? Size { get; set; }
+ public Byte? Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
  /// <summary>
  ///   Visual and shape properties for the marker.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Marker.ChartShapeProperties))]
- public ChartShapeProperties? ChartShapeProperties { get; set; }
+ public ChartShapeProperties? ChartShapeProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
  /// <summary>
  ///   Collection of extension elements for additional marker customization.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Marker.ExtensionList))]
- public ExtensionList? ExtensionList { get; set; }
+ public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

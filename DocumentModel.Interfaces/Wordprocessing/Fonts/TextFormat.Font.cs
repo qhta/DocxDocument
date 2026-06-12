@@ -10,30 +10,30 @@ public partial interface ITextFormat
   /// Gets or sets the ligature setting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  public Ligatures? Ligatures { get; set; }
+  public Ligatures? Ligatures { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  public NumberForm? NumberForm { get; set; }
+  public NumberForm? NumberForm { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number spacing for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  public NumberSpacing? NumberSpacing { get; set; }
+  public NumberSpacing? NumberSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets whether contextual alternates are enabled.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
-  public int? ContextualAlternates { get; set; }
+  public int? ContextualAlternates { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the stylistic set for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  public StylisticSet? StylisticSet { get; set; }
+  public StylisticSet? StylisticSet { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

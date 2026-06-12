@@ -8,28 +8,28 @@ public interface IColor
   /// <summary>
   /// Gets or sets the RGB value represented by this property.
   /// </summary>
-  public UInt32? RGB { get; set; }
+  public UInt32? RGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Red component of the color as a percentage value.
   /// </summary>
-  public double? Red { get; set; }
+  public double? Red { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Green component of the color as a percentage value.
   /// </summary>
-  public double? Green { get; set; }
+  public double? Green { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Blue component of the color as a percentage value.
   /// </summary>
-  public double? Blue { get; set; }
+  public double? Blue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
   /// The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
   /// </summary>
-  public string? Name { get; set; }
+  public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   ///// <summary>
   ///// Gets or sets the theme tint represented by this property.
@@ -42,7 +42,7 @@ public interface IColor
   ///// <item>Convert the resultant HSL color to RGB</item>
   ///// </list> 
   ///// </remarks> 
-  //public double? Tint { get; set; }
+  //public double? Tint { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   ///// <summary>
   ///// Gets or sets the theme shade represented by this property.
@@ -55,6 +55,6 @@ public interface IColor
   ///// <item>Convert the resultant HSL color to RGB</item>
   ///// </list>
   ///// </remarks>  
-  //public double? Shade { get; set; }
+  //public double? Shade { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

@@ -8,13 +8,13 @@ public interface RecipientData: ICollectionItem
   /// <summary>
   /// Indicates whether the record is included in the mail merge.
   /// </summary>
-  public bool? Active { get; set; }
+  public bool? Active { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Index of the column containing unique values for the record, specified as a zero-based index.
   /// </summary>
-  public UInt32? ColumnIndex { get; set; }
+  public UInt32? ColumnIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Unique value for the record, specified as a hexadecimal binary value.
   /// </summary>
-  public HexBinary? UniqueTag { get; set; }
+  public HexBinary? UniqueTag { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

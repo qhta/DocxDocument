@@ -22,6 +22,6 @@ public partial interface IHTMLProjectItem: IModelObject
   /// Gets or sets the HTML text in the HTML editor.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem.text?view=office-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

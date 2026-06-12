@@ -9,25 +9,25 @@ public partial class BlipFill : Fill<DXD.BlipFill>
  /// <summary>
  /// DPI (dots per inch) setting for the blip fill.
  /// </summary>
- public UInt32? Dpi { get; set; }
+ public UInt32? Dpi { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Gets or sets a value indicating whether the fill rotates with the shape.
  /// </summary>
- public bool? RotateWithShape { get; set; }
+ public bool? RotateWithShape { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Blip (image) used for the fill.
  /// </summary>
- public Blip? Blip { get; set; }
+ public Blip? Blip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Source rectangle, which defines the portion of the image to use.
  /// </summary>
- public RelativeRectangleType? SourceRectangle { get; set; }
+ public RelativeRectangleType? SourceRectangle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Tile settings for the blip fill.
  /// </summary>
- public Tile? Tile { get; set; }
+ public Tile? Tile { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Stretch settings for the blip fill.
  /// </summary>
- public Stretch? Stretch { get; set; }
+ public Stretch? Stretch { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

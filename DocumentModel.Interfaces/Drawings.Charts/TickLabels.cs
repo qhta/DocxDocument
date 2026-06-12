@@ -21,32 +21,32 @@ public partial interface ITickLabels: IModelObject
   /// Gets or sets the `NumberFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.numberformat?view=office-pia"/>
-  public string NumberFormat { get; set; }
+  public string NumberFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NumberFormatLinked` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.numberformatlinked?view=office-pia"/>
-  public bool NumberFormatLinked { get; set; }
+  public bool NumberFormatLinked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NumberFormatLocal` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.numberformatlocal?view=office-pia"/>
-  public object NumberFormatLocal { get; set; }
+  public object NumberFormatLocal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.orientation?view=office-pia"/>
-  public XlTickLabelOrientation Orientation { get; set; }
+  public XlTickLabelOrientation Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ReadingOrder` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.readingorder?view=office-pia"/>
-  public int ReadingOrder { get; set; }
+  public int ReadingOrder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.autoscalefont?view=office-pia"/>
-  public object AutoScaleFont { get; set; }
+  public object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Depth` property.
   /// </summary>
@@ -56,17 +56,17 @@ public partial interface ITickLabels: IModelObject
   /// Gets or sets the `Offset` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.offset?view=office-pia"/>
-  public int Offset { get; set; }
+  public int Offset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Alignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.alignment?view=office-pia"/>
-  public int Alignment { get; set; }
+  public int Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `MultiLevel` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.multilevel?view=office-pia"/>
-  public bool MultiLevel { get; set; }
+  public bool MultiLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

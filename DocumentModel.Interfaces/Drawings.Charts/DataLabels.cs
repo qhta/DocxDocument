@@ -42,97 +42,97 @@ public partial interface IDataLabels: IEnumerable
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.horizontalalignment?view=office-pia"/>
-  public object HorizontalAlignment { get; set; }
+  public object HorizontalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.orientation?view=office-pia"/>
-  public object Orientation { get; set; }
+  public object Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Shadow` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.shadow?view=office-pia"/>
-  public bool Shadow { get; set; }
+  public bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `VerticalAlignment` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.verticalalignment?view=office-pia"/>
-  public object VerticalAlignment { get; set; }
+  public object VerticalAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ReadingOrder` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.readingorder?view=office-pia"/>
-  public int ReadingOrder { get; set; }
+  public int ReadingOrder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.autoscalefont?view=office-pia"/>
-  public object AutoScaleFont { get; set; }
+  public object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `AutoText` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.autotext?view=office-pia"/>
-  public bool AutoText { get; set; }
+  public bool AutoText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NumberFormat` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.numberformat?view=office-pia"/>
-  public string NumberFormat { get; set; }
+  public string NumberFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NumberFormatLinked` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.numberformatlinked?view=office-pia"/>
-  public bool NumberFormatLinked { get; set; }
+  public bool NumberFormatLinked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `NumberFormatLocal` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.numberformatlocal?view=office-pia"/>
-  public object NumberFormatLocal { get; set; }
+  public object NumberFormatLocal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowLegendKey` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showlegendkey?view=office-pia"/>
-  public bool ShowLegendKey { get; set; }
+  public bool ShowLegendKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.type?view=office-pia"/>
-  public object Type { get; set; }
+  public object Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.position?view=office-pia"/>
-  public XlDataLabelPosition Position { get; set; }
+  public XlDataLabelPosition Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowSeriesName` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showseriesname?view=office-pia"/>
-  public bool ShowSeriesName { get; set; }
+  public bool ShowSeriesName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowCategoryName` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showcategoryname?view=office-pia"/>
-  public bool ShowCategoryName { get; set; }
+  public bool ShowCategoryName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowValue` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showvalue?view=office-pia"/>
-  public bool ShowValue { get; set; }
+  public bool ShowValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowPercentage` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showpercentage?view=office-pia"/>
-  public bool ShowPercentage { get; set; }
+  public bool ShowPercentage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `ShowBubbleSize` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showbubblesize?view=office-pia"/>
-  public bool ShowBubbleSize { get; set; }
+  public bool ShowBubbleSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Separator` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.separator?view=office-pia"/>
-  public object Separator { get; set; }
+  public object Separator { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Count` property.
   /// </summary>
@@ -152,6 +152,6 @@ public partial interface IDataLabels: IEnumerable
   /// Gets or sets the `ShowRange` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.showrange?view=office-pia"/>
-  public bool ShowRange { get; set; }
+  public bool ShowRange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

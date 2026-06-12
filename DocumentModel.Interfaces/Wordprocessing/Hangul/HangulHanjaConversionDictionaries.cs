@@ -16,7 +16,7 @@ public partial interface IHangulHanjaConversionDictionaries : IModelCollection<I
   /// Returns or sets the active custom Hangul-Hanja conversion dictionary.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.activecustomdictionary?view=word-pia"/>
-  public IDictionary ActiveCustomDictionary { get; set; }
+  public IDictionary ActiveCustomDictionary { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the built-in Hangul-Hanja conversion dictionary.

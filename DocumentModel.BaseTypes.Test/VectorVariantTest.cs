@@ -719,22 +719,22 @@ public class VectorVariantTestData
 {
   [XmlElement("IntVector")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public VectorVariant IntVector { get; set; } = new VectorVariant();
+  public VectorVariant IntVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 
   [XmlElement("StringVector")]
-  public VectorVariant StringVector { get; set; } = new VectorVariant();
+  public VectorVariant StringVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 
   [XmlElement("DoubleVector")]
-  public VectorVariant DoubleVector { get; set; } = new VectorVariant();
+  public VectorVariant DoubleVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 
   [XmlElement("BoolVector")]
-  public VectorVariant BoolVector { get; set; } = new VectorVariant();
+  public VectorVariant BoolVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 
   [XmlElement("MixedVector")]
-  public VectorVariant MixedVector { get; set; } = new VectorVariant();
+  public VectorVariant MixedVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 
   [XmlElement("EmptyVector")]
-  public VectorVariant EmptyVector { get; set; } = new VectorVariant();
+  public VectorVariant EmptyVector { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = new VectorVariant();
 }
 
 

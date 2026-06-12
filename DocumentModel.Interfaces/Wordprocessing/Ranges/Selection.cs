@@ -12,31 +12,31 @@ public partial interface ISelection : IModelObject
   /// Returns or sets the text in the specified selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Range object that includes the formatted text in the specified selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.formattedtext?view=word-pia"/>
-  public IRange FormattedText { get; set; }
+  public IRange FormattedText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the starting character position of a selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.start?view=word-pia"/>
-  public int Start { get; set; }
+  public int Start { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the ending character position of a selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.end?view=word-pia"/>
-  public int End { get; set; }
+  public int End { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TextFormat object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.font?view=word-pia"/>
-  public ITextFormat TextFormat { get; set; }
+  public ITextFormat TextFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the selection type.
@@ -54,7 +54,7 @@ public partial interface ISelection : IModelObject
   /// Returns or sets the style for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.style?view=word-pia"/>
-  public object Style { get; set; }
+  public object Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified selection.
@@ -120,7 +120,7 @@ public partial interface ISelection : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -150,13 +150,13 @@ public partial interface ISelection : IModelObject
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.paragraphformat?view=word-pia"/>
-  public IParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.pagesetup?view=word-pia"/>
-  public IPageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Bookmarks collection that represents all the bookmarks in a selection.
@@ -174,19 +174,19 @@ public partial interface ISelection : IModelObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageidfareast?view=word-pia"/>
-  public LanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageidother?view=word-pia"/>
-  public LanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified selection.
@@ -248,7 +248,7 @@ public partial interface ISelection : IModelObject
   /// Returns or sets properties of the selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.flags?view=word-pia"/>
-  public SelectionFlags Flags { get; set; }
+  public SelectionFlags Flags { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the selection in the specified window or pane is active.
@@ -260,7 +260,7 @@ public partial interface ISelection : IModelObject
   /// Determines if the beginning of the selection is active.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.startisactive?view=word-pia"/>
-  public bool StartIsActive { get; set; }
+  public bool StartIsActive { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the insertion point is at the end of a line that wraps to the next line.
@@ -272,19 +272,19 @@ public partial interface ISelection : IModelObject
   /// Determines if Extend mode is active.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.extendmode?view=word-pia"/>
-  public bool ExtendMode { get; set; }
+  public bool ExtendMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if column selection mode is active.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.columnselectmode?view=word-pia"/>
-  public bool ColumnSelectMode { get; set; }
+  public bool ColumnSelectMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the orientation of text in a selection when the Text Direction feature is enabled.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.orientation?view=word-pia"/>
-  public TextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a IInlineShapes collection that represents all the InlineShape objects in a selection.
@@ -308,7 +308,7 @@ public partial interface ISelection : IModelObject
   /// Determines if the spelling and grammar checker ignores the specified text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.noproofing?view=word-pia"/>
-  public int NoProofing { get; set; }
+  public int NoProofing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Tables collection that represents the tables at the outermost nesting level in the current
@@ -321,14 +321,14 @@ public partial interface ISelection : IModelObject
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languagedetected?view=word-pia"/>
-  public bool LanguageDetected { get; set; }
+  public bool LanguageDetected { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width (in the current measurement units) in which Microsoft Word fits the text in the
   /// current selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.fittextwidth?view=word-pia"/>
-  public float FitTextWidth { get; set; }
+  public float FitTextWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a HTMLDivisions object that represents an HTML division in a Web document.

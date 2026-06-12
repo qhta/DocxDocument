@@ -12,5 +12,5 @@ public partial class NonVisualDrawingPropertiesExtension : NonVisualDrawingPrope
  /// <summary>
  ///   URI string identifying the extension type or schema for the non-visual drawing properties extension.
  /// </summary>
- public string? Uri { get; set; }
+ public string? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -10,11 +10,11 @@ public partial interface IBookmarks : IModelCollection<IBookmark>
   /// Gets or sets the default sorting order for bookmarks.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks.defaultsorting?view=word-pia"/>
-  public BookmarkSortBy DefaultSorting { get; set; }
+  public BookmarkSortBy DefaultSorting { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether hidden bookmarks are displayed.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks.showhidden?view=word-pia"/>
-  public bool ShowHidden { get; set; }
+  public bool ShowHidden { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

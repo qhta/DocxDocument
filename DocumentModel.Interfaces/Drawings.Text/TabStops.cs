@@ -13,6 +13,6 @@ public partial interface ITabStops: IModelCollection<ITabStop>
   /// Gets or sets the `DefaultSpacing` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.defaultspacing?view=office-pia"/>
-  public float DefaultSpacing { get; set; }
+  public float DefaultSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 

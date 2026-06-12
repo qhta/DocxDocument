@@ -10,5 +10,5 @@ public partial class ParagraphMarkRunProperties : BaseParagraphMarkRunProperties
  /// <summary>
  /// Set of run properties applied to the glyph representing the physical location of the paragraph mark, attributed to a revision by a specific author at a specific time. Contains the set of properties tracked as a specific set of revisions by one author.
  /// </summary>
- public ParagraphMarkRunPropertiesChange? ParagraphMarkRunPropertiesChange { get; set; }
+ public ParagraphMarkRunPropertiesChange? ParagraphMarkRunPropertiesChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

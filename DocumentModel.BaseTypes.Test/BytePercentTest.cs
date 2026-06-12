@@ -412,22 +412,22 @@ public class BytePercentTestData
 {
   [XmlElement("Opacity")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public BytePercent Opacity { get; set; }
+  public BytePercent Opacity { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ColorAlpha")]
-  public BytePercent ColorAlpha { get; set; }
+  public BytePercent ColorAlpha { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("FillLevel")]
-  public BytePercent FillLevel { get; set; }
+  public BytePercent FillLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroPercent")]
-  public BytePercent ZeroPercent { get; set; }
+  public BytePercent ZeroPercent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MaxPercent")]
-  public BytePercent MaxPercent { get; set; }
+  public BytePercent MaxPercent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MidPercent")]
-  public BytePercent MidPercent { get; set; }
+  public BytePercent MidPercent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -435,7 +435,7 @@ public class BytePercentTestData
 /// </summary>
 public class BytePercentWrapper
 {
-  public BytePercent Value { get; set; }
+  public BytePercent Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

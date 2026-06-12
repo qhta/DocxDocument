@@ -116,7 +116,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsLazyLoadEnabled { get; set; }
+  public bool IsLazyLoadEnabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Data source for lazy loading. 
@@ -124,7 +124,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public object? DataSource { get; set; }
+  public object? DataSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 
   /// <summary>

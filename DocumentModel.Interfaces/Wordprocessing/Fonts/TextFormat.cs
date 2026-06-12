@@ -13,7 +13,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.bold?view=word-pia"/>
-  public OnOffToggle? Bold { get; set; }
+  public OnOffToggle? Bold { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as italic.
@@ -21,7 +21,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italic?view=word-pia"/>
-  public OnOffToggle? Italic { get; set; }
+  public OnOffToggle? Italic { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as hidden.
@@ -29,7 +29,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.hidden?view=word-pia"/>
-  public OnOffToggle? Hidden { get; set; }
+  public OnOffToggle? Hidden { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as small capital letters.
@@ -37,7 +37,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.smallcaps?view=word-pia"/>
-  public OnOffToggle? SmallCaps { get; set; }
+  public OnOffToggle? SmallCaps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as all capital letters.
@@ -45,7 +45,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.allcaps?view=word-pia"/>
-  public OnOffToggle? AllCaps { get; set; }
+  public OnOffToggle? AllCaps { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as strike-through.
@@ -53,7 +53,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.strikethrough?view=word-pia"/>
-  public OnOffToggle? StrikeThrough { get; set; }
+  public OnOffToggle? StrikeThrough { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as double strike-through.
@@ -61,13 +61,13 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.doublestrikethrough?view=word-pia"/>
-  public OnOffToggle? DoubleStrikeThrough { get; set; }
+  public OnOffToggle? DoubleStrikeThrough { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color index for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindex?view=word-pia"/>
-  public ColorIndex? ColorIndex { get; set; }
+  public ColorIndex? ColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as subscript.
@@ -75,7 +75,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.subscript?view=word-pia"/>
-  public OnOffToggle? Subscript { get; set; }
+  public OnOffToggle? Subscript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as superscript.
@@ -83,49 +83,49 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.superscript?view=word-pia"/>
-  public OnOffToggle? Superscript { get; set; }
+  public OnOffToggle? Superscript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the underline style for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
-  public UnderlineType? Underline { get; set; }
+  public UnderlineType? Underline { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The font size in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.size?view=word-pia"/>
-  public float? FontSize { get; set; }
+  public float? FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
-  public string? Name { get; set; }
+  public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.position?view=word-pia"/>
-  public int? Position { get; set; }
+  public int? Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The spacing (in points) between characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.spacing?view=word-pia"/>
-  public float? Spacing { get; set; }
+  public float? Spacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The scaling percentage applied to the font. This property stretches or compresses text horizontally as a percentage of the current size (the scaling range is from 1 through 600).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.scaling?view=word-pia"/>
-  public int? Scaling { get; set; }
+  public int? Scaling { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shadow?view=word-pia"/>
-  public OnOff? HasShadow { get; set; }
+  public OnOff? HasShadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as outlined.
@@ -133,7 +133,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.outline?view=word-pia"/>
-  public OnOffToggle? Outline { get; set; }
+  public OnOffToggle? Outline { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as embossed.
@@ -141,13 +141,13 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emboss?view=word-pia"/>
-  public OnOffToggle? Emboss { get; set; }
+  public OnOffToggle? Emboss { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The minimum font size for which kerning should be applied automatically.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.kerning?view=word-pia"/>
-  public float? Kerning { get; set; }
+  public float? Kerning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as engraved.
@@ -155,50 +155,50 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.engrave?view=word-pia"/>
-  public OnOffToggle? Engrave { get; set; }
+  public OnOffToggle? Engrave { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 
   /// <summary>
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
-  public IBorders? Borders { get; set; }
+  public IBorders? Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
-  public EmphasisMark? EmphasisMark { get; set; }
+  public EmphasisMark? EmphasisMark { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether to disable character spacing on the document grid.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.disablecharacterspacegrid?view=word-pia"/>
-  public bool? DisableCharacterSpaceGrid { get; set; }
+  public bool? DisableCharacterSpaceGrid { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for East Asian scripts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
-  public string? NameFarEast { get; set; }
+  public string? NameFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
-  public string? NameAscii { get; set; }
+  public string? NameAscii { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
-  public string? NameOther { get; set; }
+  public string? NameOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The 24-bit color for the specified TextFormat object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
-  public IColor? Color { get; set; }
+  public IColor? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as bold for complex script.
@@ -206,7 +206,7 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.boldbi?view=word-pia"/>
-  public OnOffToggle? BoldCS { get; set; }
+  public OnOffToggle? BoldCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the text is formatted as italic for complex script.
@@ -214,36 +214,36 @@ public partial interface ITextFormat
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italicbi?view=word-pia"/>
-  public OnOffToggle? ItalicCS { get; set; }
+  public OnOffToggle? ItalicCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The font size in points for complex script.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.sizebi?view=word-pia"/>
-  public float? FontSizeCS { get; set; }
+  public float? FontSizeCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  public string? NameCS { get; set; }
+  public string? NameCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
-  public ColorIndex? ColorIndexCS { get; set; }
+  public ColorIndex? ColorIndexCS { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  public IColor? DiacriticColor { get; set; }
+  public IColor? DiacriticColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  public IColor? UnderlineColor { get; set; }
+  public IColor? UnderlineColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

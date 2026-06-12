@@ -16,5 +16,5 @@ public partial interface IListEntry : IModelObject
   /// Returns or sets the text of the list entry item.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentry.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

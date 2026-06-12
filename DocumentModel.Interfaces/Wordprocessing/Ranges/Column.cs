@@ -10,7 +10,7 @@ public partial interface IColumn : IModelObject
   /// Gets or sets the width of the column, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the column is the first column in the table.
@@ -40,7 +40,7 @@ public partial interface IColumn : IModelObject
   /// Gets or sets the border formatting for the column.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the shading formatting for the column.
@@ -70,11 +70,11 @@ public partial interface IColumn : IModelObject
   /// Gets or sets the preferred width of the column.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.preferredwidth?view=word-pia"/>
-  public float PreferredWidth { get; set; }
+  public float PreferredWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the preferred width type for the column.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.preferredwidthtype?view=word-pia"/>
-  public PreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

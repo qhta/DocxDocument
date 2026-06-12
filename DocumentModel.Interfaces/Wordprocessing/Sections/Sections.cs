@@ -22,5 +22,5 @@ public partial interface ISections : IModelCollection<ISection>
   /// Returns a PageSetup object that's associated with the specified sections
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.pagesetup?view=word-pia"/>
-  public IPageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

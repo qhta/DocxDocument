@@ -15,7 +15,7 @@ public interface ISmartTagRecognizer : IModelObject
   /// True if a smart tag recognizer is enabled.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.enabled?view=word-pia"/>
-  public bool Enabled { get; set; }
+  public bool Enabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the programmatic identifier (ProgID) for the specified object.
   /// </summary>

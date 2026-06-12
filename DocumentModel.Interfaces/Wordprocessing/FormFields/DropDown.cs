@@ -15,12 +15,12 @@ public interface IDropDown : IModelObject
   /// Gets or sets the index number of the default list entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.default?view=word-pia"/>
-  public int Default { get; set; }
+  public int Default { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the index number of the selected list entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown.value?view=word-pia"/>
-  public int Value { get; set; }
+  public int Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the collection of list entries in the drop-down form field.
   /// </summary>

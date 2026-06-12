@@ -8,5 +8,5 @@ public partial class BubbleChartExtension : Extension
   /// <summary>
   ///   Filtered bubble series for the chart extension.
   /// </summary>
-  public FilteredBubbleSeries? FilteredBubbleSeries { get; set; }
+  public FilteredBubbleSeries? FilteredBubbleSeries { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

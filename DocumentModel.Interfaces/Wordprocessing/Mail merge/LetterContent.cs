@@ -16,155 +16,155 @@ public interface ILetterContent
   /// Gets or sets the date format for the letter.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.dateformat?view=word-pia"/>
-  public string DateFormat { get; set; }
+  public string DateFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether to include the header and footer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.includeheaderfooter?view=word-pia"/>
-  public bool IncludeHeaderFooter { get; set; }
+  public bool IncludeHeaderFooter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the page design template name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.pagedesign?view=word-pia"/>
-  public string PageDesign { get; set; }
+  public string PageDesign { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the letter style.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterstyle?view=word-pia"/>
-  public LetterStyle LetterStyle { get; set; }
+  public LetterStyle LetterStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether letterhead is used.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterhead?view=word-pia"/>
-  public bool Letterhead { get; set; }
+  public bool Letterhead { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the letterhead location.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterheadlocation?view=word-pia"/>
-  public LetterheadLocation LetterheadLocation { get; set; }
+  public LetterheadLocation LetterheadLocation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the letterhead size.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterheadsize?view=word-pia"/>
-  public float LetterheadSize { get; set; }
+  public float LetterheadSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the recipient name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientname?view=word-pia"/>
-  public string RecipientName { get; set; }
+  public string RecipientName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the recipient address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientaddress?view=word-pia"/>
-  public string RecipientAddress { get; set; }
+  public string RecipientAddress { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the salutation text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.salutation?view=word-pia"/>
-  public string Salutation { get; set; }
+  public string Salutation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the salutation type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.salutationtype?view=word-pia"/>
-  public SalutationType SalutationType { get; set; }
+  public SalutationType SalutationType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the recipient reference.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientreference?view=word-pia"/>
-  public string RecipientReference { get; set; }
+  public string RecipientReference { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the mailing instructions.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.mailinginstructions?view=word-pia"/>
-  public string MailingInstructions { get; set; }
+  public string MailingInstructions { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the attention line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.attentionline?view=word-pia"/>
-  public string AttentionLine { get; set; }
+  public string AttentionLine { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the subject.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string Subject { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the number of enclosures.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.enclosurenumber?view=word-pia"/>
-  public int EnclosureNumber { get; set; }
+  public int EnclosureNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the carbon-copy (CC) list.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.cclist?view=word-pia"/>
-  public string CCList { get; set; }
+  public string CCList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the return address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.returnaddress?view=word-pia"/>
-  public string ReturnAddress { get; set; }
+  public string ReturnAddress { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendername?view=word-pia"/>
-  public string SenderName { get; set; }
+  public string SenderName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the closing text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.closing?view=word-pia"/>
-  public string Closing { get; set; }
+  public string Closing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender company.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercompany?view=word-pia"/>
-  public string SenderCompany { get; set; }
+  public string SenderCompany { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender job title.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderjobtitle?view=word-pia"/>
-  public string SenderJobTitle { get; set; }
+  public string SenderJobTitle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender initials.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderinitials?view=word-pia"/>
-  public string SenderInitials { get; set; }
+  public string SenderInitials { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value indicating whether to include the information block.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.infoblock?view=word-pia"/>
-  public bool InfoBlock { get; set; }
+  public bool InfoBlock { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the recipient postal code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientcode?view=word-pia"/>
-  public string RecipientCode { get; set; }
+  public string RecipientCode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the recipient gender used for salutation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientgender?view=word-pia"/>
-  public SalutationGender RecipientGender { get; set; }
+  public SalutationGender RecipientGender { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the short-form return address.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.returnaddressshortform?view=word-pia"/>
-  public string ReturnAddressShortForm { get; set; }
+  public string ReturnAddressShortForm { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender city.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercity?view=word-pia"/>
-  public string SenderCity { get; set; }
+  public string SenderCity { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender postal code.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercode?view=word-pia"/>
-  public string SenderCode { get; set; }
+  public string SenderCode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender gender used for salutation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendergender?view=word-pia"/>
-  public SalutationGender SenderGender { get; set; }
+  public SalutationGender SenderGender { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the sender reference.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderreference?view=word-pia"/>
-  public string SenderReference { get; set; }
+  public string SenderReference { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

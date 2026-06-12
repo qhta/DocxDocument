@@ -9,5 +9,5 @@ public partial class SdtContentDropDownList : SdtListItems
  /// <summary>
  /// Drop-down list last saved value, specifying the most recently selected option.
  /// </summary>
- public string? LastValue { get; set; }
+ public string? LastValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -17,7 +17,7 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
     get
     {
       var valueString = this.Value;
-      var value = Type.ConvertStringToObject(valueString);
+      var value = Type.ConvertStringToObject(valueString, PropertyInfo?.PropertyType ?? typeof(object));
       return value;
     }
     set
@@ -41,13 +41,13 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   /// Determine if the value of the custom document property is linked to the content of the container document. This property applies only to custom document properties.
   /// For built-in document properties, the value of this property is False.
   /// </summary>
-  bool DMPr.IDocumentProperty.LinkToContent { get; set; } = false;
+  bool DMPr.IDocumentProperty.LinkToContent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = false;
 
   /// <summary>
   /// Gets or sets the source of the link for the custom document property.
   /// This property applies only to custom document properties; you cannot use it with built-in document properties.
   /// </summary>
-  string DMPr.IDocumentProperty.LinkSource { get; set; } = string.Empty;
+  string DMPr.IDocumentProperty.LinkSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
 
   /// <summary>
   /// Deletes the custom document property from the collection. This method applies only to custom document properties; you cannot use it with built-in document properties.

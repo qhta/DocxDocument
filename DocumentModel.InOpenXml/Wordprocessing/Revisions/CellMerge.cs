@@ -10,9 +10,9 @@ public partial class CellMerge : TrackChangeType<DXW.CellMerge>
  /// <summary>
  /// Current vertical merge revision state for the table cell (e.g., continue, restart, none).
  /// </summary>
- public VerticalMergeRevision? VerticalMerge { get; set; }
+ public VerticalMergeRevision? VerticalMerge { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Original vertical merge revision state for the table cell before the change.
  /// </summary>
- public VerticalMergeRevision? VerticalMergeOriginal { get; set; }
+ public VerticalMergeRevision? VerticalMergeOriginal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

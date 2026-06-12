@@ -10,13 +10,13 @@ public partial interface IFind : IModelObject
   /// Determines if the find operation searches forward through the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.forward?view=word-pia"/>
-  public bool Forward { get; set; }
+  public bool Forward { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a <see cref="TextFormat"/> object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.font?view=word-pia"/>
-  public ITextFormat TextFormat { get; set; }
+  public ITextFormat TextFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the search for the specified object has produced a match.
@@ -28,73 +28,73 @@ public partial interface IFind : IModelObject
   /// Determines if all forms of the text to find are found by the find operation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchallwordforms?view=word-pia"/>
-  public bool MatchAllWordForms { get; set; }
+  public bool MatchAllWordForms { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the find operation is case-sensitive.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchcase?view=word-pia"/>
-  public bool MatchCase { get; set; }
+  public bool MatchCase { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the text to find contains wildcards.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchwildcards?view=word-pia"/>
-  public bool MatchWildcards { get; set; }
+  public bool MatchWildcards { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if words that sound similar to the text to find are returned by the find operation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchsoundslike?view=word-pia"/>
-  public bool MatchSoundsLike { get; set; }
+  public bool MatchSoundsLike { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the find operation locates only entire words and not text that's part of a larger word.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchwholeword?view=word-pia"/>
-  public bool MatchWholeWord { get; set; }
+  public bool MatchWholeWord { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word uses the nonspecific search options for Japanese text during a search.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchfuzzy?view=word-pia"/>
-  public bool MatchFuzzy { get; set; }
+  public bool MatchFuzzy { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word distinguishes between full-width and half-width letters or characters during a search.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchbyte?view=word-pia"/>
-  public bool MatchByte { get; set; }
+  public bool MatchByte { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a <see cref="ParagraphFormat"/> object that represents the paragraph settings for the specified range, selection, find or replacement operation, or style.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.paragraphformat?view=word-pia"/>
-  public IParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.style?view=word-pia"/>
-  public object Style { get; set; }
+  public object Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the text to find or replace in the specified range or selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if highlight formatting is included in the find criteria.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.highlight?view=word-pia"/>
-  public int Highlight { get; set; }
+  public int Highlight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a <see cref="Replacement"/> object that contains the criteria for a replace operation.
@@ -112,95 +112,95 @@ public partial interface IFind : IModelObject
   /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.wrap?view=word-pia"/>
-  public FindWrap Wrap { get; set; }
+  public FindWrap Wrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determine if formatting is included in the find operation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.format?view=word-pia"/>
-  public bool Format { get; set; }
+  public bool Format { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidfareast?view=word-pia"/>
-  public LanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidother?view=word-pia"/>
-  public LanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically corrects Hangul endings when replacing Hangul text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.correcthangulendings?view=word-pia"/>
-  public bool CorrectHangulEndings { get; set; }
+  public bool CorrectHangulEndings { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word finds or replaces text that the spelling and grammar checker ignores.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.noproofing?view=word-pia"/>
-  public int NoProofing { get; set; }
+  public int NoProofing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if find operations match text with matching kashidas in an Arabic language document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchkashida?view=word-pia"/>
-  public bool MatchKashida { get; set; }
+  public bool MatchKashida { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if find operations match text with matching diacritics in a right-to-left language document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchdiacritics?view=word-pia"/>
-  public bool MatchDiacritics { get; set; }
+  public bool MatchDiacritics { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if find operations match text with matching alef hamzas in an Arabic language document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchalefhamza?view=word-pia"/>
-  public bool MatchAlefHamza { get; set; }
+  public bool MatchAlefHamza { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if find operations match text with matching bidirectional control characters in a right-to-left language document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchcontrol?view=word-pia"/>
-  public bool MatchControl { get; set; }
+  public bool MatchControl { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether all white space and control characters between words are ignored.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchphrase?view=word-pia"/>
-  public bool MatchPhrase { get; set; }
+  public bool MatchPhrase { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether words beginning with the search string are matched.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchprefix?view=word-pia"/>
-  public bool MatchPrefix { get; set; }
+  public bool MatchPrefix { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether words ending with the search string are matched.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.matchsuffix?view=word-pia"/>
-  public bool MatchSuffix { get; set; }
+  public bool MatchSuffix { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether a find operation should ignore extra white space in found text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.ignorespace?view=word-pia"/>
-  public bool IgnoreSpace { get; set; }
+  public bool IgnoreSpace { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether a find operation should ignore punctuation in found text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.ignorepunct?view=word-pia"/>
-  public bool IgnorePunct { get; set; }
+  public bool IgnorePunct { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether to locate phonetic Hangul and Hanja characters in a Korean language find operation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.hanjaphonetichangul?view=word-pia"/>
-  public bool HanjaPhoneticHangul { get; set; }
+  public bool HanjaPhoneticHangul { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

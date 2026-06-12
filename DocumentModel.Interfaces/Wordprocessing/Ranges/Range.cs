@@ -13,31 +13,31 @@ public partial interface IRange : IModelObject
   /// Returns or sets the text in the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Range object that includes the formatted text in the specified range or selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.formattedtext?view=word-pia"/>
-  public IRange FormattedText { get; set; }
+  public IRange FormattedText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the starting character position of a range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.start?view=word-pia"/>
-  public int Start { get; set; }
+  public int Start { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the ending character position of a range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.end?view=word-pia"/>
-  public int End { get; set; }
+  public int End { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TextFormat object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
-  public ITextFormat TextFormat { get; set; }
+  public ITextFormat TextFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Range object that represents all the properties of the specified range.
@@ -115,7 +115,7 @@ public partial interface IRange : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -127,7 +127,7 @@ public partial interface IRange : IModelObject
   /// Returns a TextRetrievalMode object that controls how text is retrieved from the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.textretrievalmode?view=word-pia"/>
-  public ITextRetrievalMode TextRetrievalMode { get; set; }
+  public ITextRetrievalMode TextRetrievalMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the range.
@@ -151,7 +151,7 @@ public partial interface IRange : IModelObject
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.paragraphformat?view=word-pia"/>
-  public IParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ListFormat object that represents all the list formatting characteristics of a range.
@@ -169,31 +169,31 @@ public partial interface IRange : IModelObject
   /// Determines if the font or range is formatted as bold.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.bold?view=word-pia"/>
-  public int Bold { get; set; }
+  public int Bold { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the range is formatted as italic.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.italic?view=word-pia"/>
-  public int Italic { get; set; }
+  public int Italic { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the type of underline applied to the range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.underline?view=word-pia"/>
-  public UnderlineType Underline { get; set; }
+  public UnderlineType Underline { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the emphasis mark for a character or designated character string.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.emphasismark?view=word-pia"/>
-  public EmphasisMark EmphasisMark { get; set; }
+  public EmphasisMark EmphasisMark { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word ignores the number of characters per line for the range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.disablecharacterspacegrid?view=word-pia"/>
-  public bool DisableCharacterSpaceGrid { get; set; }
+  public bool DisableCharacterSpaceGrid { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Revisions collection that represents the tracked changes in the range.
@@ -205,7 +205,7 @@ public partial interface IRange : IModelObject
   /// Returns or sets the style for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.style?view=word-pia"/>
-  public object Style { get; set; }
+  public object Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the number of characters in the story that contains the specified range.
@@ -217,7 +217,7 @@ public partial interface IRange : IModelObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a SynonymInfo object that contains information from the thesaurus on synonyms, antonyms, or related
@@ -248,19 +248,19 @@ public partial interface IRange : IModelObject
   /// Determines if a grammar check has been run on the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.grammarchecked?view=word-pia"/>
-  public bool GrammarChecked { get; set; }
+  public bool GrammarChecked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if spelling has been checked throughout the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.spellingchecked?view=word-pia"/>
-  public bool SpellingChecked { get; set; }
+  public bool SpellingChecked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the highlight color for the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.highlightcolorindex?view=word-pia"/>
-  public ColorIndex HighlightColorIndex { get; set; }
+  public ColorIndex HighlightColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Columns collection that represents all the table columns in the range.
@@ -315,7 +315,7 @@ public partial interface IRange : IModelObject
   /// Returns a PageSetup object that's associated with the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.pagesetup?view=word-pia"/>
-  public IPageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range.
@@ -327,7 +327,7 @@ public partial interface IRange : IModelObject
   /// Returns or sets a CharacterCase constant that represents the case of the text in the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.case?view=word-pia"/>
-  public CharacterCase Case { get; set; }
+  public CharacterCase Case { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ReadabilityStatistics collection that represents the readability statistics for the specified range.
@@ -353,7 +353,7 @@ public partial interface IRange : IModelObject
   /// Returns or sets the orientation of text in a range when the Text Direction feature is enabled.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.orientation?view=word-pia"/>
-  public TextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a IInlineShapes collection that represents all the InlineShape objects in a document, range, or
@@ -372,51 +372,51 @@ public partial interface IRange : IModelObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageidfareast?view=word-pia"/>
-  public LanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageidother?view=word-pia"/>
-  public LanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languagedetected?view=word-pia"/>
-  public bool LanguageDetected { get; set; }
+  public bool LanguageDetected { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the width (in the current measurement units) in which Microsoft Word fits the text in the
   /// current range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.fittextwidth?view=word-pia"/>
-  public float FitTextWidth { get; set; }
+  public float FitTextWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the formatting for horizontal text set within vertical text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.horizontalinvertical?view=word-pia"/>
-  public HorizontalInVerticalType HorizontalInVertical { get; set; }
+  public HorizontalInVerticalType HorizontalInVertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether Microsoft Word sets two lines of text in one and specifies the characters that enclose
   /// the text, if any.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.twolinesinone?view=word-pia"/>
-  public Wordprocessing.TwoLinesInOneType TwoLinesInOne { get; set; }
+  public Wordprocessing.TwoLinesInOneType TwoLinesInOne { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified range contains combined characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.combinecharacters?view=word-pia"/>
-  public bool CombineCharacters { get; set; }
+  public bool CombineCharacters { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the spelling and grammar checker ignores the specified text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.noproofing?view=word-pia"/>
-  public int NoProofing { get; set; }
+  public int NoProofing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Tables collection that represents the tables at the outermost nesting level in the current range.
@@ -434,32 +434,32 @@ public partial interface IRange : IModelObject
   /// Returns or sets the character width of the specified range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.characterwidth?view=word-pia"/>
-  public CharacterWidth CharacterWidth { get; set; }
+  public CharacterWidth CharacterWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether the specified range of Japanese language text is hiragana or katakana.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.kana?view=word-pia"/>
-  public Kana Kana { get; set; }
+  public Kana Kana { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the font or range is formatted as bold.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.boldbi?view=word-pia"/>
-  public int BoldBi { get; set; }
+  public int BoldBi { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the range is formatted as italic.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.italicbi?view=word-pia"/>
-  public int ItalicBi { get; set; }
+  public int ItalicBi { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the identifying label for the specified object when the current document is saved as a Web
   /// page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string ID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a HTMLDivisions object that represents an HTML division in a Web document.
@@ -478,7 +478,7 @@ public partial interface IRange : IModelObject
   /// are displayed.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.showall?view=word-pia"/>
-  public bool ShowAll { get; set; }
+  public bool ShowAll { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Document object associated with the specified range.

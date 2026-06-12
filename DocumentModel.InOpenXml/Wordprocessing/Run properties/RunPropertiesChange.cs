@@ -10,9 +10,9 @@ public partial class RunPropertiesChange : IdentifiedChange<DXW.RunPropertiesCha
  /// <summary>
  /// Annotation identifier for the change, used to uniquely identify the revision.
  /// </summary>
- public string? AnnotationId { get; set; }
+ public string? AnnotationId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Previous run properties before the change, enabling comparison and tracking of revisions.
  /// </summary>
- public PreviousRunProperties? PreviousRunProperties { get; set; }
+ public PreviousRunProperties? PreviousRunProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -30,6 +30,6 @@ public interface IMappedDataField : IModelObject
   /// Returns or sets the index of the mapped data source field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield.datafieldindex?view=word-pia"/>
-  public int DataFieldIndex { get; set; }
+  public int DataFieldIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

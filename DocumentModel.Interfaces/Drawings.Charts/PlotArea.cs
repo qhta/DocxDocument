@@ -21,7 +21,7 @@ public partial interface IPlotArea: IModelObject
   /// Gets or sets the `Height` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.height?view=office-pia"/>
-  public double Height { get; set; }
+  public double Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
@@ -36,42 +36,42 @@ public partial interface IPlotArea: IModelObject
   /// Gets or sets the `Left` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.left?view=office-pia"/>
-  public double Left { get; set; }
+  public double Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.top?view=office-pia"/>
-  public double Top { get; set; }
+  public double Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Width` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.width?view=office-pia"/>
-  public double Width { get; set; }
+  public double Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `InsideLeft` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.insideleft?view=office-pia"/>
-  public double InsideLeft { get; set; }
+  public double InsideLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `InsideTop` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.insidetop?view=office-pia"/>
-  public double InsideTop { get; set; }
+  public double InsideTop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `InsideWidth` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.insidewidth?view=office-pia"/>
-  public double InsideWidth { get; set; }
+  public double InsideWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `InsideHeight` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.insideheight?view=office-pia"/>
-  public double InsideHeight { get; set; }
+  public double InsideHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.position?view=office-pia"/>
-  public XlChartElementPosition Position { get; set; }
+  public XlChartElementPosition Position { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

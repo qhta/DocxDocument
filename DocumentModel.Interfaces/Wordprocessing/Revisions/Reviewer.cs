@@ -10,6 +10,6 @@ public interface IReviewer : IModelObject
   /// True if the specified object is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reviewer.visible?view=word-pia"/>
-  public bool Visible { get; set; }
+  public bool Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

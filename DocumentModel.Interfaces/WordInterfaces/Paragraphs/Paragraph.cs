@@ -19,19 +19,19 @@ public partial interface IParagraph : IModelObject
   /// paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.format?view=word-pia"/>
-  public IParagraphFormat Format { get; set; }
+  public IParagraphFormat Format { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TabStops collection that represents all the custom tab stops for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.tabstops?view=word-pia"/>
-  public ITabStops TabStops { get; set; }
+  public ITabStops TabStops { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a DropCap object that represents a dropped capital letter for the specified paragraph.
@@ -43,95 +43,95 @@ public partial interface IParagraph : IModelObject
   /// Returns or sets the style for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.style?view=word-pia"/>
-  public object Style { get; set; }
+  public object Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ParagraphAlignment constant that represents the alignment for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.alignment?view=word-pia"/>
-  public ParagraphAlignment Alignment { get; set; }
+  public ParagraphAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if all lines in the specified paragraphs remain on the same page when Microsoft Word repaginates
   /// the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.keeptogether?view=word-pia"/>
-  public int KeepTogether { get; set; }
+  public int KeepTogether { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified paragraph remains on the same page as the paragraph that follows it when Microsoft
   /// Word repaginates the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.keepwithnext?view=word-pia"/>
-  public int KeepWithNext { get; set; }
+  public int KeepWithNext { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if a page break is forced before the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.pagebreakbefore?view=word-pia"/>
-  public int PageBreakBefore { get; set; }
+  public int PageBreakBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if line numbers are repressed for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.nolinenumber?view=word-pia"/>
-  public int NoLineNumber { get; set; }
+  public int NoLineNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the right indent (in points) for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.rightindent?view=word-pia"/>
-  public float RightIndent { get; set; }
+  public float RightIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the left indent value (in points) for the specified paragraphs, table
   /// rows, or HTML division.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.leftindent?view=word-pia"/>
-  public float LeftIndent { get; set; }
+  public float LeftIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the value (in points) for a first line or hanging indent.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.firstlineindent?view=word-pia"/>
-  public float FirstLineIndent { get; set; }
+  public float FirstLineIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the line spacing (in points) for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.linespacing?view=word-pia"/>
-  public float LineSpacing { get; set; }
+  public float LineSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the line spacing for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.linespacingrule?view=word-pia"/>
-  public LineSpacing LineSpacingRule { get; set; }
+  public LineSpacing LineSpacingRule { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the spacing (in points) before the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.spacebefore?view=word-pia"/>
-  public float SpaceBefore { get; set; }
+  public float SpaceBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the amount of spacing (in points) after the specified paragraph or text column.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.spaceafter?view=word-pia"/>
-  public float SpaceAfter { get; set; }
+  public float SpaceAfter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified paragraphs are included in automatic hyphenation.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.hyphenation?view=word-pia"/>
-  public int Hyphenation { get; set; }
+  public int Hyphenation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the first and last lines in the specified paragraph remain on the same page as the rest of the
   /// paragraph when Microsoft Word repaginates the document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.widowcontrol?view=word-pia"/>
-  public int WidowControl { get; set; }
+  public int WidowControl { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -143,122 +143,122 @@ public partial interface IParagraph : IModelObject
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.fareastlinebreakcontrol?view=word-pia"/>
-  public int FarEastLineBreakControl { get; set; }
+  public int FarEastLineBreakControl { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word wraps Latin text in the middle of a word in the specified paragraphs or text
   /// frames.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.wordwrap?view=word-pia"/>
-  public int WordWrap { get; set; }
+  public int WordWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if hanging punctuation is enabled for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.hangingpunctuation?view=word-pia"/>
-  public int HangingPunctuation { get; set; }
+  public int HangingPunctuation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
   /// paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.halfwidthpunctuationontopofline?view=word-pia"/>
-  public int HalfWidthPunctuationOnTopOfLine { get; set; }
+  public int HalfWidthPunctuationOnTopOfLine { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word is set to automatically add spaces between Japanese and Latin text for the
   /// specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.addspacebetweenfareastandalpha?view=word-pia"/>
-  public int AddSpaceBetweenFarEastAndAlpha { get; set; }
+  public int AddSpaceBetweenFarEastAndAlpha { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word is set to automatically add spaces between Japanese and Latin text for the
   /// specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.addspacebetweenfareastanddigit?view=word-pia"/>
-  public int AddSpaceBetweenFarEastAndDigit { get; set; }
+  public int AddSpaceBetweenFarEastAndDigit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a BaselineAlignment constant that represents the vertical position of fonts on a line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.baselinealignment?view=word-pia"/>
-  public BaselineAlignment BaseLineAlignment { get; set; }
+  public BaselineAlignment BaseLineAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word is set to automatically adjust the right indent for the specified paragraphs if
   /// you’ve specified a set number of characters per line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.autoadjustrightindent?view=word-pia"/>
-  public int AutoAdjustRightIndent { get; set; }
+  public int AutoAdjustRightIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word aligns characters in the specified paragraphs to the line grid when a set number
   /// of lines per page is specified.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.disablelineheightgrid?view=word-pia"/>
-  public int DisableLineHeightGrid { get; set; }
+  public int DisableLineHeightGrid { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the outline level for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.outlinelevel?view=word-pia"/>
-  public OutlineLevel OutlineLevel { get; set; }
+  public OutlineLevel OutlineLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the right indent value (in characters) for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.characterunitrightindent?view=word-pia"/>
-  public float CharacterUnitRightIndent { get; set; }
+  public float CharacterUnitRightIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the left indent value (in characters) for the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.characterunitleftindent?view=word-pia"/>
-  public float CharacterUnitLeftIndent { get; set; }
+  public float CharacterUnitLeftIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the value (in characters) for a first-line or hanging indent.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.characterunitfirstlineindent?view=word-pia"/>
-  public float CharacterUnitFirstLineIndent { get; set; }
+  public float CharacterUnitFirstLineIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the amount of spacing (in gridlines) before the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.lineunitbefore?view=word-pia"/>
-  public float LineUnitBefore { get; set; }
+  public float LineUnitBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the amount of spacing (in gridlines) after the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.lineunitafter?view=word-pia"/>
-  public float LineUnitAfter { get; set; }
+  public float LineUnitAfter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the reading order of the specified paragraphs without changing their alignment.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.readingorder?view=word-pia"/>
-  public ReadingOrder ReadingOrder { get; set; }
+  public ReadingOrder ReadingOrder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the identifying label for the specified object when the current document is saved as a Web
   /// page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string ID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically sets the amount of spacing before the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.spacebeforeauto?view=word-pia"/>
-  public int SpaceBeforeAuto { get; set; }
+  public int SpaceBeforeAuto { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically sets the amount of spacing after the specified paragraphs.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.spaceafterauto?view=word-pia"/>
-  public int SpaceAfterAuto { get; set; }
+  public int SpaceAfterAuto { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if a paragraph contains a special hidden paragraph mark that allows Microsoft Word to appear to
@@ -272,14 +272,14 @@ public partial interface IParagraph : IModelObject
   /// False, or wdUndefined. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.mirrorindents?view=word-pia"/>
-  public int MirrorIndents { get; set; }
+  public int MirrorIndents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TextboxTightWrap constant that represents how tightly text wraps around shapes or text
   /// boxes. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.textboxtightwrap?view=word-pia"/>
-  public TextBoxTightWrap TextboxTightWrap { get; set; }
+  public TextBoxTightWrap TextboxTightWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -298,12 +298,12 @@ public partial interface IParagraph : IModelObject
   /// C#).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.collapsedstate?view=word-pia"/>
-  public bool CollapsedState { get; set; }
+  public bool CollapsedState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether the specified paragraph is collapsed by default when the document loads. Read-write
   /// Boolean (bool in C#).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.collapseheadingbydefault?view=word-pia"/>
-  public bool CollapseHeadingByDefault { get; set; }
+  public bool CollapseHeadingByDefault { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

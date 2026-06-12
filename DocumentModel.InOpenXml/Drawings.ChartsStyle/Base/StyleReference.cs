@@ -8,9 +8,9 @@ public partial class StyleReference
   /// <summary>
   /// Index value identifying the referenced style entry.
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? Index { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// List of string modifiers that customize the referenced style.
   /// </summary>
-  public List<String>? Modifiers { get; set; }
+  public List<String>? Modifiers { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

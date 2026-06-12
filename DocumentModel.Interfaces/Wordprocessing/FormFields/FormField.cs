@@ -16,55 +16,55 @@ public partial interface IFormField : IModelObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an entry macro name for the specified form field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.entrymacro?view=word-pia"/>
-  public string EntryMacro { get; set; }
+  public string EntryMacro { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets an exit macro name for the specified form field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.exitmacro?view=word-pia"/>
-  public string ExitMacro { get; set; }
+  public string ExitMacro { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.ownhelp?view=word-pia"/>
-  public bool OwnHelp { get; set; }
+  public bool OwnHelp { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Specifies the source of the text that's displayed in the status bar when a form field has the focus.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.ownstatus?view=word-pia"/>
-  public bool OwnStatus { get; set; }
+  public bool OwnStatus { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.helptext?view=word-pia"/>
-  public string HelpText { get; set; }
+  public string HelpText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the text that's displayed in the status bar when a form field has the focus.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.statustext?view=word-pia"/>
-  public string StatusText { get; set; }
+  public string StatusText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if a form field is enabled.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.enabled?view=word-pia"/>
-  public bool Enabled { get; set; }
+  public bool Enabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.result?view=word-pia"/>
-  public string Result { get; set; }
+  public string Result { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a <see cref="TextInput"/> object that represents a text form field.
@@ -100,7 +100,7 @@ public partial interface IFormField : IModelObject
   /// Determines if references to the specified form field are automatically updated whenever the field is exited.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.calculateonexit?view=word-pia"/>
-  public bool CalculateOnExit { get; set; }
+  public bool CalculateOnExit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified object.

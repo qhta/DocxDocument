@@ -7,5 +7,5 @@ public interface IOfficeStyleSheetExtendableElement
   /// <summary>
   ///   List of extension elements for the office style sheet.
   /// </summary>
-  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { get; set; }
+  public OfficeStyleSheetExtensionList? OfficeStyleSheetExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

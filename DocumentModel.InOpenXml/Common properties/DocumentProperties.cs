@@ -4,9 +4,8 @@ namespace DocumentModel;
 /// Collection of all document properties;
 /// </summary>
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
-public abstract partial class DocumentProperties<OpenXmlElementType, DocumentPropertyType>: 
-  ModelElement<OpenXmlElementType>, IDocumentProperties<DocumentPropertyType>
-where OpenXmlElementType: DX.OpenXmlElement
+public abstract partial class DocumentProperties<DocumentPropertyType>: 
+  ModelElement<DX.OpenXmlElement>, IDocumentProperties<DocumentPropertyType>
 where DocumentPropertyType: DocumentProperty
 {
   /// <summary>

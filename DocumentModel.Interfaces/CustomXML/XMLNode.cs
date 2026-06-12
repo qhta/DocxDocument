@@ -26,7 +26,7 @@ public partial interface IXMLNode : IModelObject
   /// Returns or sets a String that represents the text displayed for an XML element.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a String that represents the Uniform Resource Identifier (URI) of the schema namespace for the
@@ -95,7 +95,7 @@ public partial interface IXMLNode : IModelObject
   /// Returns or sets a String that represents the value of an attribute.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nodevalue?view=word-pia"/>
-  public string NodeValue { get; set; }
+  public string NodeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Determines if the specified XML element has child elements.
@@ -126,7 +126,7 @@ public partial interface IXMLNode : IModelObject
   /// Returns or sets a String that represents the text displayed for an element that contains no text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.placeholdertext?view=word-pia"/>
-  public string PlaceholderText { get; set; }
+  public string PlaceholderText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a String that represents the XML for the node in the Microsoft Office Word Open XML format. Read-only.

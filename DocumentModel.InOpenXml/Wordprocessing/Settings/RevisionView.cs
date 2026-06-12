@@ -9,21 +9,21 @@ public partial class RevisionView
  /// <summary>
  /// Display visual indicator of the markup area.
  /// </summary>
- public bool? Markup { get; set; }
+ public bool? Markup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Display comments in the document.
  /// </summary>
- public bool? Comments { get; set; }
+ public bool? Comments { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Display content revisions in the document.
  /// </summary>
- public bool? DisplayRevision { get; set; }
+ public bool? DisplayRevision { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Display formatting revisions in the document.
  /// </summary>
- public bool? Formatting { get; set; }
+ public bool? Formatting { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Display ink annotations in the document.
  /// </summary>
- public bool? InkAnnotations { get; set; }
+ public bool? InkAnnotations { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -9,5 +9,5 @@ public partial class ExtraColorSchemeList : ModelElementCollection<ExtraColorSch
  /// <summary>
  /// List of extensions associated with the extra color scheme list.
  /// </summary>
- public ExtensionList? ExtensionList { get; set; }
+ public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

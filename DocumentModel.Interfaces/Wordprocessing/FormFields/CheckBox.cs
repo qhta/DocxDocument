@@ -15,21 +15,21 @@ public interface ICheckBox : IModelObject
   /// Gets or sets a value indicating whether the check box is automatically sized.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.autosize?view=word-pia"/>
-  public bool AutoSize { get; set; }
+  public bool AutoSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the size of the check box, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.size?view=word-pia"/>
-  public float Size { get; set; }
+  public float Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the default value of the check box.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.default?view=word-pia"/>
-  public bool Default { get; set; }
+  public bool Default { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the current value of the check box.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.value?view=word-pia"/>
-  public bool Value { get; set; }
+  public bool Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

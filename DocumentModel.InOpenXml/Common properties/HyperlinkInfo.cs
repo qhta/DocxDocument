@@ -8,15 +8,15 @@ public class HyperlinkInfo : CollectionItem
  /// <summary>
  /// Application specific data associated with the hyperlink.
  /// </summary>
- public Int32 N1 { get; set; }
+ public Int32 N1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Application specific data associated with the hyperlink.
  /// </summary>
- public Int32 N2 { get; set; }
+ public Int32 N2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Application specific data associated with the hyperlink.
  /// </summary>
- public Int32 N3 { get; set; }
+ public Int32 N3 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///  The lower 16 bits specify hyperlink type with one of the possible values:
  ///  0 - Graphic shown as background of document
@@ -27,20 +27,20 @@ public class HyperlinkInfo : CollectionItem
  ///  5 - IHyperlink attached to a WordprocessingML  field
  ///  6 - IHyperlink attached to a SpreadsheetML  range
  /// </summary>
- public HyperlinkAttachment Attachment { get; set; }
+ public HyperlinkAttachment Attachment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///  The high 16 bits store hyperlink action with one of the possible values:
  ///  0 - None
  ///  1 - Change the link to new hyperlink value
  ///  2 - Remove hyperlink from object
  /// </summary>
- public HyperlinkAction Action { get; set; }
+ public HyperlinkAction Action { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Specifies the hyperlink target. It can't be empty because of Open XML specifications.
  /// </summary>
- public String Target { get; set; } = string.Empty;
+ public String Target { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
  /// <summary>
  /// Specifies the location of the hyperlink. It can't be empty because of Open XML specifications.
  /// </summary>
- public String Location { get; set; } = string.Empty;
+ public String Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
 }

@@ -26,13 +26,13 @@ public partial interface IPoint : IModelObject
   /// explosion (the tip of the slice is in the center of the pie). Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.explosion?view=word-pia"/>
-  public int Explosion { get; set; }
+  public int Explosion { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the point has a data label. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.hasdatalabel?view=word-pia"/>
-  public bool HasDataLabel { get; set; }
+  public bool HasDataLabel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns an Interior object that represents the interior of the specified object.
@@ -45,14 +45,14 @@ public partial interface IPoint : IModelObject
   /// Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.invertifnegative?view=word-pia"/>
-  public bool InvertIfNegative { get; set; }
+  public bool InvertIfNegative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Sets the marker background color as an RGB value or returns the corresponding color index value. Applies only
   /// to line, scatter, and radar charts. Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerbackgroundcolor?view=word-pia"/>
-  public int MarkerBackgroundColor { get; set; }
+  public int MarkerBackgroundColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the marker background color as an index into the current color palette, or as one of the
@@ -60,14 +60,14 @@ public partial interface IPoint : IModelObject
   /// and radar charts. Read/write ColorIndex.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerbackgroundcolorindex?view=word-pia"/>
-  public ColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Sets the marker foreground color as an RGB value or returns the corresponding color index value. Applies only
   /// to line, scatter, and radar charts. Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerforegroundcolor?view=word-pia"/>
-  public int MarkerForegroundColor { get; set; }
+  public int MarkerForegroundColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the marker foreground color as an index into the current color palette, or as one of the
@@ -75,65 +75,65 @@ public partial interface IPoint : IModelObject
   /// and radar charts. Read/write ColorIndex.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerforegroundcolorindex?view=word-pia"/>
-  public ColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the data-marker size, in points. Can be a value from 2 through 72. Read/write Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markersize?view=word-pia"/>
-  public int MarkerSize { get; set; }
+  public int MarkerSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the marker style for a point or series in a line chart, scatter chart, or radar chart.
   /// Read/write MarkerStyle.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerstyle?view=word-pia"/>
-  public MarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a ChartPictureType value that represents the way pictures are displayed on a column or bar
   /// picture chart.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.picturetype?view=word-pia"/>
-  public XlChartPictureType PictureType { get; set; }
+  public XlChartPictureType PictureType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if
   /// not, this property is ignored).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.pictureunit?view=word-pia"/>
-  public double PictureUnit { get; set; }
+  public double PictureUnit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if a picture is applied to the sides of the point or all points in the series. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.applypicttosides?view=word-pia"/>
-  public bool ApplyPictToSides { get; set; }
+  public bool ApplyPictToSides { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if a picture is applied to the front of the point or all points in the series. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.applypicttofront?view=word-pia"/>
-  public bool ApplyPictToFront { get; set; }
+  public bool ApplyPictToFront { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if a picture is applied to the end of the point or all points in the series. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.applypicttoend?view=word-pia"/>
-  public bool ApplyPictToEnd { get; set; }
+  public bool ApplyPictToEnd { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Boolean value that determines if the object has a shadow.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.shadow?view=word-pia"/>
-  public bool Shadow { get; set; }
+  public bool Shadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the point is in the secondary section of either a pie of pie chart or a bar of pie chart. Applies only
   /// to points on pie of pie charts or bar of pie charts. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.secondaryplot?view=word-pia"/>
-  public bool SecondaryPlot { get; set; }
+  public bool SecondaryPlot { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a FillFormat object for a specified shape or a ChartFillFormat object for a specified chart that
@@ -146,7 +146,7 @@ public partial interface IPoint : IModelObject
   /// True if a point has a three-dimensional appearance. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.has3deffect?view=word-pia"/>
-  public bool Has3DEffect { get; set; }
+  public bool Has3DEffect { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
@@ -159,7 +159,7 @@ public partial interface IPoint : IModelObject
   /// not, this property is ignored). Read/write Double.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.pictureunit2?view=word-pia"/>
-  public double PictureUnit2 { get; set; }
+  public double PictureUnit2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the height, in points, of the object.

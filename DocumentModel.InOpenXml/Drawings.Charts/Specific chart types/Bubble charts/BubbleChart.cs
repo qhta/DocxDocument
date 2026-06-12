@@ -8,37 +8,37 @@ public partial class BubbleChart : ModelElement<DXDC.BubbleChart>
   /// <summary>
   ///   Indicates whether colors should vary between chart series.
   /// </summary>
-  public bool? VaryColors { get; set; }
+  public bool? VaryColors { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Series displayed in the bubble chart.
   /// </summary>
-  public BubbleChartSeries? BubbleChartSeries { get; set; }
+  public BubbleChartSeries? BubbleChartSeries { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Data labels configuration for the chart.
   /// </summary>
-  public DataLabels? DataLabels { get; set; }
+  public DataLabels? DataLabels { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Indicates whether bubbles are rendered in 3D.
   /// </summary>
-  public bool? Bubble3D { get; set; }
+  public bool? Bubble3D { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Scale factor for the size of the bubbles.
   /// </summary>
-  public UInt32? BubbleScale { get; set; }
+  public UInt32? BubbleScale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Indicates whether negative bubbles are shown.
   /// </summary>
-  public bool? ShowNegativeBubbles { get; set; }
+  public bool? ShowNegativeBubbles { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Specifies how bubble size is represented.
   /// </summary>
-  public SizeRepresents? SizeRepresents { get; set; }
+  public SizeRepresents? SizeRepresents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Identifiers for the axes used in the chart.
   /// </summary>
-  public AxisIds? AxisIds { get; set; }
+  public AxisIds? AxisIds { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Extension list for additional chart properties.
   /// </summary>
-  public BubbleChartExtensionList? BubbleChartExtensionList { get; set; }
+  public BubbleChartExtensionList? BubbleChartExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

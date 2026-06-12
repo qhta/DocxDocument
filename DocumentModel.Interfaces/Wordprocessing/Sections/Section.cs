@@ -15,7 +15,7 @@ public interface ISection : IModelObject
   /// Returns a PageSetup object that's associated with the specified section.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.pagesetup?view=word-pia"/>
-  public IPageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns a HeadersFooters collection that represents the headers for the specified section.
   /// </summary>
@@ -31,7 +31,7 @@ public interface ISection : IModelObject
   /// and modify text only in form fields.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.protectedforforms?view=word-pia"/>
-  public bool ProtectedForForms { get; set; }
+  public bool ProtectedForForms { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
@@ -41,6 +41,6 @@ public interface ISection : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

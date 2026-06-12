@@ -405,25 +405,25 @@ public class HexLongTestData
 {
   [XmlElement("RevisionId")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexLong RevisionId { get; set; }
+  public HexLong RevisionId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DocumentHash")]
-  public HexLong DocumentHash { get; set; }
+  public HexLong DocumentHash { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ColorARGB")]
-  public HexLong ColorARGB { get; set; }
+  public HexLong ColorARGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("NegativeValue")]
-  public HexLong NegativeValue { get; set; }
+  public HexLong NegativeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Zero")]
-  public HexLong Zero { get; set; }
+  public HexLong Zero { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MaxPositive")]
-  public HexLong MaxPositive { get; set; }
+  public HexLong MaxPositive { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MinNegative")]
-  public HexLong MinNegative { get; set; }
+  public HexLong MinNegative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

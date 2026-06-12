@@ -826,34 +826,34 @@ public class VariantTestData
 {
   [XmlElement("IntValue")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public Variant IntValue { get; set; }
+  public Variant IntValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("StringValue")]
-  public Variant StringValue { get; set; }
+  public Variant StringValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DoubleValue")]
-  public Variant DoubleValue { get; set; }
+  public Variant DoubleValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BooleanValue")]
-  public Variant BooleanValue { get; set; }
+  public Variant BooleanValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DateValue")]
-  public Variant DateValue { get; set; }
+  public Variant DateValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DateTimeValue")]
-  public Variant DateTimeValue { get; set; }
+  public Variant DateTimeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("GuidValue")]
-  public Variant GuidValue { get; set; }
+  public Variant GuidValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BlobValue")]
-  public Variant BlobValue { get; set; }
+  public Variant BlobValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("NullValue")]
-  public Variant NullValue { get; set; }
+  public Variant NullValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("EmptyValue")]
-  public Variant EmptyValue { get; set; }
+  public Variant EmptyValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

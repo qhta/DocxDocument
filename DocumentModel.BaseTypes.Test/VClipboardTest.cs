@@ -577,19 +577,19 @@ public class VClipboardDataTestData
 {
   [XmlElement("TextClipboard")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public VClipboardData TextClipboard { get; set; }
+  public VClipboardData TextClipboard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BitmapClipboard")]
-  public VClipboardData BitmapClipboard { get; set; }
+  public VClipboardData BitmapClipboard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BinaryClipboard")]
-  public VClipboardData BinaryClipboard { get; set; }
+  public VClipboardData BinaryClipboard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("EmptyClipboard")]
-  public VClipboardData EmptyClipboard { get; set; }
+  public VClipboardData EmptyClipboard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeClipboard")]
-  public VClipboardData LargeClipboard { get; set; }
+  public VClipboardData LargeClipboard { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

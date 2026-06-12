@@ -10,5 +10,5 @@ public sealed partial class TableGrid : BaseTableGrid<DXW.TableGrid>
  /// <summary>
  /// Change interface for the previous table grid, enabling tracking and management of grid revisions.
  /// </summary>
- public TableGridChange? TableGridChange { get; set; }
+ public TableGridChange? TableGridChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

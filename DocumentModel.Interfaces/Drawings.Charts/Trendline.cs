@@ -13,7 +13,7 @@ public partial interface ITrendline : IModelObject
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.backward?view=word-pia"/>
-  public double Backward { get; set; }
+  public double Backward { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
@@ -32,20 +32,20 @@ public partial interface ITrendline : IModelObject
   /// value). Setting this property to True automatically turns on data labels. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.displayequation?view=word-pia"/>
-  public bool DisplayEquation { get; set; }
+  public bool DisplayEquation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the R-squared value of the trendline is displayed on the chart (in the same data label as the
   /// equation). Setting this property to True automatically turns on data labels. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.displayrsquared?view=word-pia"/>
-  public bool DisplayRSquared { get; set; }
+  public bool DisplayRSquared { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends forward.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.forward?view=word-pia"/>
-  public double Forward { get; set; }
+  public double Forward { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the index number of the object within the collection of similar objects.
@@ -57,46 +57,46 @@ public partial interface ITrendline : IModelObject
   /// Returns or sets the point where the trendline crosses the value axis. Read/write Double.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.intercept?view=word-pia"/>
-  public double Intercept { get; set; }
+  public double Intercept { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the point where the trendline crosses the value axis is automatically determined by the regression.
   /// Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.interceptisauto?view=word-pia"/>
-  public bool InterceptIsAuto { get; set; }
+  public bool InterceptIsAuto { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a String value that represents the name of the object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if Microsoft Word automatically determines the name of the trendline. Read/write Boolean.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.nameisauto?view=word-pia"/>
-  public bool NameIsAuto { get; set; }
+  public bool NameIsAuto { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a Integer value that represents the trendline order (an integer greater than 1) when the
   /// trendline’s Type is xlPolynomial.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.order?view=word-pia"/>
-  public int Order { get; set; }
+  public int Order { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the period for the moving-average trendline. Can be a value from 2 through 255. Read/write
   /// Integer.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.period?view=word-pia"/>
-  public int Period { get; set; }
+  public int Period { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a TrendlineType value that represents the trendline type.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.type?view=word-pia"/>
-  public TrendlineType Type { get; set; }
+  public TrendlineType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
@@ -109,12 +109,12 @@ public partial interface ITrendline : IModelObject
   /// Read/write Double.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.backward2?view=word-pia"/>
-  public double Backward2 { get; set; }
+  public double Backward2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends forward.
   /// Read/write Double.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.forward2?view=word-pia"/>
-  public double Forward2 { get; set; }
+  public double Forward2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -22,7 +22,7 @@ public partial interface IDictionary : IModelObject
   /// Gets or sets the language ID associated with the dictionary.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the dictionary is read-only.
@@ -40,5 +40,5 @@ public partial interface IDictionary : IModelObject
   /// Gets or sets a value indicating whether the dictionary is language-specific.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.languagespecific?view=word-pia"/>
-  public bool LanguageSpecific { get; set; }
+  public bool LanguageSpecific { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

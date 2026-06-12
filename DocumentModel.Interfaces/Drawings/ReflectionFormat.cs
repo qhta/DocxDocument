@@ -11,27 +11,27 @@ public interface IReflectionFormat : IModelObject
   /// reflection. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.type?view=word-pia"/>
-  public Drawings.ReflectionType Type { get; set; }
+  public Drawings.ReflectionType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the degree of transparency for the reflection effect as a value between 0.0 (opaque) and 1.0
   /// (clear).
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.transparency?view=word-pia"/>
-  public float Transparency { get; set; }
+  public float Transparency { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the size of the reflection as a percentage of the reflected shape from 0 to 100.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.size?view=word-pia"/>
-  public float Size { get; set; }
+  public float Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the amount of separation, in points, of the reflected image from the shape.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.offset?view=word-pia"/>
-  public float Offset { get; set; }
+  public float Offset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets a value that specifies the degree of blur effect applied to the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.blur?view=word-pia"/>
-  public float Blur { get; set; }
+  public float Blur { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

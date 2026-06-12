@@ -36,7 +36,7 @@ public partial interface ICustomXMLPart: IModelObject
   /// Gets or sets the schema collection attached to the bound region of data.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.schemacollection?view=office-pia"/>
-  public ICustomXMLSchemaCollection SchemaCollection { get; set; }
+  public ICustomXMLSchemaCollection SchemaCollection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the namespace prefix mappings used against the current custom XML part.

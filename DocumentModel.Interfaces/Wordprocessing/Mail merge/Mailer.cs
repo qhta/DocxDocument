@@ -10,22 +10,22 @@ public interface IMailer : IModelObject
   /// Returns or sets the BCC recipients for the mail message.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.bccrecipients?view=word-pia"/>
-  public object BCCRecipients { get; set; }
+  public object BCCRecipients { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the CC recipients for the mail message.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.ccrecipients?view=word-pia"/>
-  public object CCRecipients { get; set; }
+  public object CCRecipients { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the recipients of the mail message.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.recipients?view=word-pia"/>
-  public object Recipients { get; set; }
+  public object Recipients { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns or sets the enclosures for the mail message.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.enclosures?view=word-pia"/>
-  public object Enclosures { get; set; }
+  public object Enclosures { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns the sender of the mail message.
   /// </summary>
@@ -45,6 +45,6 @@ public interface IMailer : IModelObject
   /// Returns or sets the subject of the mail message.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string Subject { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

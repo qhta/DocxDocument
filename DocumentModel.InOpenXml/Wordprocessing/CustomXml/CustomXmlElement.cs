@@ -9,13 +9,13 @@ public partial class CustomXmlElement : CollectionItem
  /// <summary>
  /// Custom XML markup namespace UriString associated with the element.
  /// </summary>
- public string? UriString { get; set; }
+ public string? UriString { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Name of the custom XML element.
  /// </summary>
- public string? Element { get; set; }
+ public string? Element { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Custom XML properties representing the element tag in the schema (w:customXmlPr).
  /// </summary>
- public CustomXmlProperties? CustomXmlProperties { get; set; }
+ public CustomXmlProperties? CustomXmlProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

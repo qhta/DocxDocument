@@ -28,14 +28,14 @@ public partial interface ITemplate : IModelObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.languageid?view=word-pia"/>
-  public LanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the specified document or template hasn't changed since it was last saved. False if Microsoft Word
   /// displays a prompt to save changes when the document is closed.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.saved?view=word-pia"/>
-  public bool Saved { get; set; }
+  public bool Saved { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the template type.
@@ -73,7 +73,7 @@ public partial interface ITemplate : IModelObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.languageidfareast?view=word-pia"/>
-  public LanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the VBProject object for the specified template.
@@ -85,44 +85,44 @@ public partial interface ITemplate : IModelObject
   /// True if Microsoft Word kerns half-width Latin characters and punctuation marks in the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.kerningbyalgorithm?view=word-pia"/>
-  public bool KerningByAlgorithm { get; set; }
+  public bool KerningByAlgorithm { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the character spacing adjustment for the specified template.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.justificationmode?view=word-pia"/>
-  public JustificationMode JustificationMode { get; set; }
+  public JustificationMode JustificationMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the line break control level for the specified document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.fareastlinebreaklevel?view=word-pia"/>
-  public FarEastLineBreakLevel FarEastLineBreakLevel { get; set; }
+  public FarEastLineBreakLevel FarEastLineBreakLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the kinsoku characters before which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.nolinebreakbefore?view=word-pia"/>
-  public string NoLineBreakBefore { get; set; }
+  public string NoLineBreakBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the kinsoku characters after which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.nolinebreakafter?view=word-pia"/>
-  public string NoLineBreakAfter { get; set; }
+  public string NoLineBreakAfter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// True if the spelling and grammar checker ignores documents based on this template.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.noproofing?view=word-pia"/>
-  public int NoProofing { get; set; }
+  public int NoProofing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the East Asian language to use when breaking lines of text in the specified document or
   /// template.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.fareastlinebreaklanguage?view=word-pia"/>
-  public FarEastLineBreakLanguageID FarEastLineBreakLanguage { get; set; }
+  public FarEastLineBreakLanguageID FarEastLineBreakLanguage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a BuildingBlockEntries collection that represents the collection of building block entries in a

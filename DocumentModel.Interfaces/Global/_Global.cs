@@ -112,7 +112,7 @@ public partial interface I_Global: IModelObject
   /// Returns or sets the Template or Document in which changes to menu bars, toolbars, and key bindings are stored.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.customizationcontext?view=word-pia"/>
-  public object CustomizationContext { get; set; }
+  public object CustomizationContext { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a KeyBindings collection that represents customized key assignments.
@@ -142,7 +142,7 @@ public partial interface I_Global: IModelObject
   /// Determines whether the Visual Basic Editor window is visible.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.showvisualbasiceditor?view=word-pia"/>
-  public bool ShowVisualBasicEditor { get; set; }
+  public bool ShowVisualBasicEditor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a HangulHanjaConversionDictionaries collection that represents active custom conversion dictionaries.

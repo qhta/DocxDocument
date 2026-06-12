@@ -10,9 +10,9 @@ public partial class TableRowPropertiesChange : IdentifiedChange<DXW.TableRowPro
  /// <summary>
  /// Annotation identifier for the change, used to uniquely identify the revision.
  /// </summary>
- public string? AnnotationId { get; set; }
+ public string? AnnotationId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Previous table row properties before the change, enabling comparison and tracking of revisions.
  /// </summary>
- public PreviousTableRowProperties? PreviousTableRowProperties { get; set; }
+ public PreviousTableRowProperties? PreviousTableRowProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

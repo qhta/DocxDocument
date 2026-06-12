@@ -73,8 +73,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     _IsNotificationEnabled = false;
     _WordprocessingDocument = wordprocessingDocument;
-    wordprocessingDocument.GetPackageProperties();
-    CoreProperties.AttachAndLoad(wordprocessingDocument);
+    //wordprocessingDocument.GetPackageProperties();
+    //CoreProperties.AttachAndLoad(wordprocessingDocument);
     _IsNotificationEnabled = null;
   }
 
@@ -85,7 +85,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     _WordprocessingDocument = wordprocessingDocument;
-    CoreProperties.AttachAndUpdate(wordprocessingDocument);
+    //CoreProperties.AttachAndUpdate(wordprocessingDocument);
   }
 
   /// <summary>

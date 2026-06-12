@@ -9,29 +9,29 @@ public partial class CategoryAxis : AbstractAxis<DXDC.CategoryAxis>
   /// <summary>
   ///   Indicates whether labels are automatically generated.
   /// </summary>
-  public bool? AutoLabeled { get; set; }
+  public bool? AutoLabeled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Alignment of the axis labels.
   /// </summary>
-  public LabelAlignment? LabelAlignment { get; set; }
+  public LabelAlignment? LabelAlignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Offset for the axis labels.
   /// </summary>
-  public UInt16? LabelOffset { get; set; }
+  public UInt16? LabelOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Number of tick labels to skip.
   /// </summary>
-  public Int32? TickLabelSkip { get; set; }
+  public Int32? TickLabelSkip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Number of tick marks to skip.
   /// </summary>
-  public Int32? TickMarkSkip { get; set; }
+  public Int32? TickMarkSkip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Indicates whether multi-level labels are disabled.
   /// </summary>
-  public bool? NoMultiLevelLabels { get; set; }
+  public bool? NoMultiLevelLabels { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   ///   Extension list for additional axis properties.
   /// </summary>
-  public CatAxExtensionList? CatAxExtensionList { get; set; }
+  public CatAxExtensionList? CatAxExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

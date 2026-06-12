@@ -16,55 +16,55 @@ public partial interface ICustomLabel : IModelObject
   /// Gets or sets the name of the custom label.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the top margin of the label, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.topmargin?view=word-pia"/>
-  public float TopMargin { get; set; }
+  public float TopMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the side margin of the label, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.sidemargin?view=word-pia"/>
-  public float SideMargin { get; set; }
+  public float SideMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the height of the label, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.height?view=word-pia"/>
-  public float Height { get; set; }
+  public float Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the width of the label, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the vertical pitch between labels, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.verticalpitch?view=word-pia"/>
-  public float VerticalPitch { get; set; }
+  public float VerticalPitch { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the horizontal pitch between labels, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.horizontalpitch?view=word-pia"/>
-  public float HorizontalPitch { get; set; }
+  public float HorizontalPitch { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number of labels across the page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.numberacross?view=word-pia"/>
-  public int NumberAcross { get; set; }
+  public int NumberAcross { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the number of labels down the page.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.numberdown?view=word-pia"/>
-  public int NumberDown { get; set; }
+  public int NumberDown { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the custom label is designed for a dot-matrix printer.
@@ -76,7 +76,7 @@ public partial interface ICustomLabel : IModelObject
   /// Gets or sets the page size used by the custom label.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.pagesize?view=word-pia"/>
-  public CustomLabelPageSize PageSize { get; set; }
+  public CustomLabelPageSize PageSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the custom label definition is valid.

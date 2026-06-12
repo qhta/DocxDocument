@@ -16,5 +16,5 @@ public partial interface IEmailSignatureEntry : IModelObject
   /// Gets or sets the name of the email signature entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentry.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

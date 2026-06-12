@@ -8,29 +8,29 @@ public class WebExtensionTaskPane : CollectionItem
  /// <summary>
  ///   dockstate
  /// </summary>
- public string? DockState { get; set; }
+ public string? DockState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   visibility
  /// </summary>
- public bool? Visibility { get; set; }
+ public bool? Visibility { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   width
  /// </summary>
- public Double? Width { get; set; }
+ public Double? Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   row
  /// </summary>
- public UInt32? Row { get; set; }
+ public UInt32? Row { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   locked
  /// </summary>
- public bool? Locked { get; set; }
+ public bool? Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   WebExtensionPartReference.
  /// </summary>
- public WebExtensionPartReference? WebExtensionPartReference { get; set; }
+ public WebExtensionPartReference? WebExtensionPartReference { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   OfficeArtExtensionList.
  /// </summary>
- public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+ public OfficeArtExtensionList? OfficeArtExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

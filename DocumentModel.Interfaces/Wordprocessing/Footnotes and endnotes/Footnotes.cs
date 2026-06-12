@@ -12,25 +12,25 @@ public partial interface IFootnotes : IModelCollection<IFootnote>
   /// Returns or sets the position of all footnotes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.location?view=word-pia"/>
-  public FootnotePosition Location { get; set; }
+  public FootnotePosition Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the number style for the footnotes in a selection, range, or document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.numberstyle?view=word-pia"/>
-  public NumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the starting note number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.startingnumber?view=word-pia"/>
-  public int StartingNumber { get; set; }
+  public int StartingNumber { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the way footnotes are numbered after page breaks or section breaks.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.numberingrule?view=word-pia"/>
-  public NumberingRule NumberingRule { get; set; }
+  public NumberingRule NumberingRule { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a <see cref="IRange"/> object that represents the footnote separator.

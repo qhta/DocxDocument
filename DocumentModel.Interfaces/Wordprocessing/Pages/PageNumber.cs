@@ -16,5 +16,5 @@ public partial interface IPageNumber : IModelObject
   /// Returns or sets a PageNumberAlignment constant that represents the alignment for the page number.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber.alignment?view=word-pia"/>
-  public PageNumberAlignment Alignment { get; set; }
+  public PageNumberAlignment Alignment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

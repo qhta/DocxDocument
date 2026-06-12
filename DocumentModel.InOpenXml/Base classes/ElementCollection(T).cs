@@ -288,7 +288,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
     {
       return false;
     }
-  }   
+  }
 
   /// <summary>
   /// Removes all items from the collection.

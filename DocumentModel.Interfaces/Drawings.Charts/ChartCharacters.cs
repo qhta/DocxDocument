@@ -10,7 +10,7 @@ public partial interface IChartCharacters : IModelObject
   /// Gets or sets the caption text for the chart characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string Caption { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the number of characters.
@@ -28,11 +28,11 @@ public partial interface IChartCharacters : IModelObject
   /// Gets or sets the text of the chart characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the phonetic characters.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.phoneticcharacters?view=word-pia"/>
-  public string PhoneticCharacters { get; set; }
+  public string PhoneticCharacters { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

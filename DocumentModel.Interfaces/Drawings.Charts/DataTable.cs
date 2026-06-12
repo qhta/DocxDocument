@@ -11,22 +11,22 @@ public partial interface IDataTable: IModelObject
   /// Gets or sets the `ShowLegendKey` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.showlegendkey?view=office-pia"/>
-  public bool ShowLegendKey { get; set; }
+  public bool ShowLegendKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasBorderHorizontal` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.hasborderhorizontal?view=office-pia"/>
-  public bool HasBorderHorizontal { get; set; }
+  public bool HasBorderHorizontal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasBorderVertical` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.hasbordervertical?view=office-pia"/>
-  public bool HasBorderVertical { get; set; }
+  public bool HasBorderVertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets or sets the `HasBorderOutline` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.hasborderoutline?view=office-pia"/>
-  public bool HasBorderOutline { get; set; }
+  public bool HasBorderOutline { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
@@ -41,7 +41,7 @@ public partial interface IDataTable: IModelObject
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.autoscalefont?view=office-pia"/>
-  public object AutoScaleFont { get; set; }
+  public object AutoScaleFont { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

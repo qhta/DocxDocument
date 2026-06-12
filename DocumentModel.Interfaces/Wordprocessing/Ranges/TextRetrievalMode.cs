@@ -12,7 +12,7 @@ public interface ITextRetrievalMode : IModelObject
   /// Returns or sets the view for the TextRetrievalMode object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.viewtype?view=word-pia"/>
-  public ViewType ViewType { get; set; }
+  public ViewType ViewType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns a read-only TextRetrievalMode object that represents options related to retrieving text from the
   /// specified Range object.
@@ -23,11 +23,11 @@ public interface ITextRetrievalMode : IModelObject
   /// True if the text retrieved from the specified range includes hidden text.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includehiddentext?view=word-pia"/>
-  public bool IncludeHiddenText { get; set; }
+  public bool IncludeHiddenText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// True if the text retrieved from the specified range includes field codes.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includefieldcodes?view=word-pia"/>
-  public bool IncludeFieldCodes { get; set; }
+  public bool IncludeFieldCodes { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

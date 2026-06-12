@@ -8,9 +8,9 @@ public partial class PathGradientFill : GradientFill
  /// <summary>
  ///   Type of path used for the gradient fill.
  /// </summary>
- public PathShade? Path { get; set; }
+ public PathShade? Path { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  ///   Rectangle that limits the area affected by the gradient fill.
  /// </summary>
- public RelativeRectangleType? FillToRectangle { get; set; }
+ public RelativeRectangleType? FillToRectangle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -7,11 +7,11 @@ public struct RowSpacing
   /// <summary>
   /// Specifies the interpretation of Val property.
   /// </summary>
-  public RowSpacingRule Rule { get; set; }
+  public RowSpacingRule Rule { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Specifies numeric value for Exactly and Multiply rules.
   /// </summary>
-  public UInt16? Value { get; set; }
+  public UInt16? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Default constructor - Rule set to Single.
   /// </summary>

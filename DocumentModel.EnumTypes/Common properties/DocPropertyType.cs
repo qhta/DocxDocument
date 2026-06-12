@@ -1,4 +1,5 @@
 ﻿using Qhta.Collections;
+using Qhta.TextUtils;
 using Qhta.TypeUtils;
 
 namespace DocumentModel.Properties;
@@ -130,24 +131,21 @@ public static class DocPropertyTypeExtensions
   {
     if (value == null) return null;
 
-    return type switch
-    {
-      DocPropertyType.Number => value is int ? value.ToString() : null,
-      DocPropertyType.Boolean => value is bool ? value.ToString() : null,
-      DocPropertyType.Date => value is DateTime dt ? dt.ToString("o") : null,
-      DocPropertyType.String => value is string s ? s : null,
-      DocPropertyType.Float => value is float f ? f.ToString(CultureInfo.InvariantCulture) :
-        value is double d ? d.ToString(CultureInfo.InvariantCulture) : null,
-      DocPropertyType.Unknown =>
-        value is int ? value.ToString() : 
-        value is bool ? value.ToString() : 
-        value is DateTime dt ? dt.ToString("o") : 
-        value is float f ? f.ToString(CultureInfo.InvariantCulture) : 
-        value is double d ? d.ToString(CultureInfo.InvariantCulture) :
-        value is string s ? s :
-        null,  
-      _ => null
-    };
+    if (value is string s)
+      return s;
+    if (value is int i)
+      return i.ToString();
+    if (value is bool b)
+      return b.ToString().ToLower();
+    if (value is DateTime dt) 
+      return dt.ToString("o");
+    if (value is float f)
+      return f.ToString(CultureInfo.InvariantCulture);
+    if (value is double d)
+      return d.ToString(CultureInfo.InvariantCulture);
+
+    var serializedString = JsonSerializer.Serialize(value);
+    return serializedString;
   }
 
   /// <summary>
@@ -155,27 +153,48 @@ public static class DocPropertyTypeExtensions
   /// </summary>
   /// <param name="type">The DocPropertyType value to use for conversion.</param>
   /// <param name="value">The string value to convert.</param>
+  /// <param name="propertyType">The target .NET type for the conversion.</param>
   /// <returns>The corresponding .NET object if conversion is successful; otherwise, null.</returns>
-  public static object? ConvertStringToObject(this DocPropertyType type, string? value)
+  public static object? ConvertStringToObject(this DocPropertyType type, string? value, Type propertyType)
   {
     if (value == null) return null;
-    return type switch
+
+    propertyType = propertyType.GetNotNullableType();
+    if (propertyType == typeof(string))
+      return value;
+    if (propertyType == typeof(int))
     {
-      DocPropertyType.Number => int.TryParse(value, out var intValue) ? intValue : (int?)null,
-      DocPropertyType.Boolean => bool.TryParse(value, out var boolValue) ? boolValue : (bool?)null,
-      DocPropertyType.Date => DateTime.TryParse(value, out var dateValue) ? dateValue : (DateTime?)null,
-      DocPropertyType.String => value,
-      DocPropertyType.Float => float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var floatValue) ? floatValue :
-        double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var doubleValue) ? doubleValue : (double?)null,
-      DocPropertyType.Unknown =>
-        int.TryParse(value, out var intValue) ? intValue : 
-        bool.TryParse(value, out var boolValue) ? boolValue :
-        DateTime.TryParse(value, out var dateValue) ? dateValue :  
-        float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var floatValue) ? floatValue :
-        double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var doubleValue) ? doubleValue : 
-        value,
-      _ => null
-    };
+      if (int.TryParse(value, out var intValue))
+        return intValue;
+      throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
+    }
+    if (propertyType == typeof(bool))
+    {
+      value = value.TitleCase();
+      if (bool.TryParse(value, out var boolValue))
+        return boolValue;
+      throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
+    }
+    if (propertyType == typeof(DateTime))
+    {
+      if (DateTime.TryParse(value, out var dateValue))
+        return dateValue;
+      throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
+    }
+    if (propertyType == typeof(float))
+    {
+      if (float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var floatValue))
+        return floatValue;
+      throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
+    }
+    if (propertyType == typeof(double))
+    {
+      if (double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out var doubleValue))
+        return doubleValue;
+      throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
+    }
+    var deserializedObject = JsonSerializer.Deserialize(value, propertyType);
+    return deserializedObject;
   }
 
   /// <summary>

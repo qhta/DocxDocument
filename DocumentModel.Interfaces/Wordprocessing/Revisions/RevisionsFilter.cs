@@ -12,14 +12,14 @@ public partial interface IRevisionsFilter: IModelObject
   /// changes applied. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.view?view=word-pia"/>
-  public RevisionsView View { get; set; }
+  public RevisionsView View { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets a RevisionsMarkup constant that specifies the extent of reviewer markup displayed in the
   /// document. Read/write.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.markup?view=word-pia"/>
-  public RevisionsMarkup Markup { get; set; }
+  public RevisionsMarkup Markup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Reviewers object that represents the collection of reviewers of one or more documents.

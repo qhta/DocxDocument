@@ -10,11 +10,11 @@ public partial interface IHeadingStyle : IModelObject
   /// Returns or sets the style associated with the heading style entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle.style?view=word-pia"/>
-  public object Style { get; set; }
+  public object Style { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the outline level associated with the heading style entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle.level?view=word-pia"/>
-  public short Level { get; set; }
+  public short Level { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

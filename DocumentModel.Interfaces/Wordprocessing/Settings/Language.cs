@@ -45,7 +45,7 @@ public interface ILanguage : IModelObject
   /// Returns or sets the default writing style for the language.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.defaultwritingstyle?view=word-pia"/>
-  public string DefaultWritingStyle { get; set; }
+  public string DefaultWritingStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Returns the list of available writing styles for the language.
   /// </summary>
@@ -55,6 +55,6 @@ public interface ILanguage : IModelObject
   /// Returns or sets the type of spelling dictionary used for the language.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.spellingdictionarytype?view=word-pia"/>
-  public DictionaryType SpellingDictionaryType { get; set; }
+  public DictionaryType SpellingDictionaryType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }

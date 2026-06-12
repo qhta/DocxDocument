@@ -22,25 +22,25 @@ public partial interface IHTMLDivision : IModelObject
   /// Returns or sets the left indent value, in points, for the HTML division.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.leftindent?view=word-pia"/>
-  public float LeftIndent { get; set; }
+  public float LeftIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the right indent value, in points, for the HTML division.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.rightindent?view=word-pia"/>
-  public float RightIndent { get; set; }
+  public float RightIndent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the spacing, in points, before the HTML division.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.spacebefore?view=word-pia"/>
-  public float SpaceBefore { get; set; }
+  public float SpaceBefore { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the spacing, in points, after the HTML division.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.spaceafter?view=word-pia"/>
-  public float SpaceAfter { get; set; }
+  public float SpaceAfter { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the HTML divisions collection that contains this HTML division.

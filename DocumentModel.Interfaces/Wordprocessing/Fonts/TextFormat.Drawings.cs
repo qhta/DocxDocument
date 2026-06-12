@@ -11,47 +11,47 @@ public partial interface ITextFormat
   /// Gets or sets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  public DMD.IShading? Shading { get; set; }
+  public DMD.IShading? Shading { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the glow formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  public DMD.IGlowFormat? Glow { get; set; }
+  public DMD.IGlowFormat? Glow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the reflection formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  public DMD.IReflectionFormat? Reflection { get; set; }
+  public DMD.IReflectionFormat? Reflection { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the shadow formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  public DMD.IShadowFormat? TextShadow { get; set; }
+  public DMD.IShadowFormat? TextShadow { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the fill formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  public DMD.IFillFormat? Fill { get; set; }
+  public DMD.IFillFormat? Fill { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the line formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  public DMD.ILineFormat? Line { get; set; }
+  public DMD.ILineFormat? Line { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the 3D formatting for the font.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  public DMD.IThreeDFormat? ThreeD { get; set; }
+  public DMD.IThreeDFormat? ThreeD { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the full text color formatting.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  public DMD.IColorFormat? TextColor { get; set; }
+  public DMD.IColorFormat? TextColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

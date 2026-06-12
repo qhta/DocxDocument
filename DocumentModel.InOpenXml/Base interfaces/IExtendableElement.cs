@@ -9,5 +9,5 @@ public interface IExtendableElement
   /// <summary>
   /// Extension list for future extensions of the element type.
   /// </summary>
-  public ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

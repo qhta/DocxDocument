@@ -10,9 +10,9 @@ public partial class InsertedMathControl : IdentifiedChange<DXW.InsertedMathCont
  /// <summary>
  /// Run properties for the inserted math control, specifying character-level formatting.
  /// </summary>
- public RunProperties? RunProperties { get; set; }
+ public RunProperties? RunProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
  /// <summary>
  /// Deleted math control revision information, tracking removed mathematical content related to the insertion.
  /// </summary>
- public DeletedMathControl? DeletedMathControl { get; set; }
+ public DeletedMathControl? DeletedMathControl { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

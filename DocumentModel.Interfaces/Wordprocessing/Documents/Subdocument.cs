@@ -10,7 +10,7 @@ public partial interface ISubdocument : IModelObject
   /// True if a subdocument in a master document is locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument.locked?view=word-pia"/>
-  public bool Locked { get; set; }
+  public bool Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.

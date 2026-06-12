@@ -22,13 +22,13 @@ public partial interface IColumns : IModelCollection<IColumn>
   /// Gets or sets the width of all columns in the collection, in points.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.width?view=word-pia"/>
-  public float Width { get; set; }
+  public float Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the columns.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
+  public IBorders Borders { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the shading formatting for the columns.
@@ -46,11 +46,11 @@ public partial interface IColumns : IModelCollection<IColumn>
   /// Gets or sets the preferred width of the columns.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.preferredwidth?view=word-pia"/>
-  public float PreferredWidth { get; set; }
+  public float PreferredWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the preferred width type for the columns.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.preferredwidthtype?view=word-pia"/>
-  public PreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

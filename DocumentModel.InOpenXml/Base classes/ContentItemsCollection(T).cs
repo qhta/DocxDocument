@@ -126,7 +126,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// <remarks>If this property returns <see langword="true"/>, access to the collection is thread-safe and can
   /// be shared among multiple threads without additional synchronization. If <see langword="false"/>, callers must
   /// implement their own synchronization to ensure thread safety when accessing the collection concurrently.</remarks>
-  public new bool IsSynchronized { get; set; }
+  public new bool IsSynchronized { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets an object that can be used to synchronize access to the collection.

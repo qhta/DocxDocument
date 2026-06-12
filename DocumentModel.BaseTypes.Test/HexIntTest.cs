@@ -399,25 +399,25 @@ public class HexIntTestData
 {
   [XmlElement("RevisionId")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexInt RevisionId { get; set; }
+  public HexInt RevisionId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DocumentHash")]
-  public HexInt DocumentHash { get; set; }
+  public HexInt DocumentHash { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ColorARGB")]
-  public HexInt ColorARGB { get; set; }
+  public HexInt ColorARGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("NegativeValue")]
-  public HexInt NegativeValue { get; set; }
+  public HexInt NegativeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("Zero")]
-  public HexInt Zero { get; set; }
+  public HexInt Zero { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MaxPositive")]
-  public HexInt MaxPositive { get; set; }
+  public HexInt MaxPositive { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MinNegative")]
-  public HexInt MinNegative { get; set; }
+  public HexInt MinNegative { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

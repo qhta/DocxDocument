@@ -13,7 +13,7 @@ public partial interface ISmartArtNode: IModelObject
   /// Gets or sets the `OrgChartLayout` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.orgchartlayout?view=office-pia"/>
-  public OrgChartLayoutType OrgChartLayout { get; set; }
+  public OrgChartLayoutType OrgChartLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `Shapes` property.
   /// </summary>

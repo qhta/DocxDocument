@@ -334,13 +334,13 @@ public class Base64BinaryTestDataClass
   [XmlElement("BinaryData")]
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public Base64Binary BinaryData { get; set; }
+  public Base64Binary BinaryData { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("DocumentHash")]
-  public Base64Binary DocumentHash { get; set; }
+  public Base64Binary DocumentHash { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ImageData")]
-  public Base64Binary ImageData { get; set; }
+  public Base64Binary ImageData { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
@@ -348,7 +348,7 @@ public class Base64BinaryTestDataClass
 /// </summary>
 public class Base64BinaryTestWrapper
 {
-  public Base64Binary? Data { get; set; }
+  public Base64Binary? Data { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

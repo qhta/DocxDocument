@@ -28,13 +28,13 @@ public partial interface IBookmark : IModelObject
   /// Gets or sets the starting character position of the bookmark.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.start?view=word-pia"/>
-  public int Start { get; set; }
+  public int Start { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the ending character position of the bookmark.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.end?view=word-pia"/>
-  public int End { get; set; }
+  public int End { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets a value indicating whether the bookmark is a table column bookmark.

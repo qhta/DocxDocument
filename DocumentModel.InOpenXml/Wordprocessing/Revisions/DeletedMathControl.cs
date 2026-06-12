@@ -10,5 +10,5 @@ public partial class DeletedMathControl : IdentifiedChange<DXW.DeletedMathContro
  /// <summary>
  /// Run properties for the deleted math control, specifying character-level formatting.
  /// </summary>
- public RunProperties? RunProperties { get; set; }
+ public RunProperties? RunProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

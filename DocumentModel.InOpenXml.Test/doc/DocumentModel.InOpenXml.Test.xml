@@ -583,6 +583,12 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.BuiltInProperties"/>.
             </summary>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.CreateSampleData">
+            <summary>
+            Creates a new instance of <see cref="T:DocumentModel.BuiltInProperties"/> populated with sample data for testing purposes.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.BuiltInProperties)">
             <summary>
             Updates the specified document with the provided built-in properties.
@@ -590,6 +596,21 @@
             <param name="document">The document to update with new built-in properties.</param>
             <param name="data">The built-in properties to apply to the document.</param>
             <returns>The updated built-in properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.BuiltInProperties)">
+            <summary>
+            Sets the built-in properties of the specified document to the provided data and returns the updated built-in properties from the document.  
+            </summary>
+            <param name="document">The document to update with new built-in properties.</param>
+            <param name="data">The built-in properties to apply to the document.</param>
+            <returns>The updated built-in properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the built-in properties from the specified document for comparison with expected data.
+            </summary>
+            <param name="document">The document from which to retrieve the built-in properties.</param>
+            <returns>The built-in properties of the specified document.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BuiltInPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>

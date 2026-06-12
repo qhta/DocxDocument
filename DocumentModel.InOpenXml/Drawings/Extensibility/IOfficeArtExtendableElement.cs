@@ -9,5 +9,5 @@ public interface IOfficeArtExtendableElement
   /// <summary>
   /// Extension list for future extensions of the element type.
   /// </summary>
-  public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
+  public OfficeArtExtensionList? OfficeArtExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

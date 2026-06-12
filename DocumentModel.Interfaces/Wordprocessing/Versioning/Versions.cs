@@ -11,5 +11,5 @@ public partial interface IVersions : IModelCollection<IVersion>
   /// Returns or sets the state of the option for automatically saving document versions.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.versions.autoversion?view=word-pia"/>
-  public AutoVersions AutoVersion { get; set; }
+  public AutoVersions AutoVersion { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

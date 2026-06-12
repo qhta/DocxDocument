@@ -16,13 +16,13 @@ public partial interface IMailMergeField : IModelObject
   /// Returns or sets whether the mail merge field is locked.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.locked?view=word-pia"/>
-  public bool Locked { get; set; }
+  public bool Locked { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the field code text for the mail merge field.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.code?view=word-pia"/>
-  public IRange Code { get; set; }
+  public IRange Code { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the next mail merge field in the document.

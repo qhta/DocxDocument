@@ -16,7 +16,7 @@ public partial interface IBuildingBlock : IModelObject
   /// Gets or sets the name of the building block.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the building block type that contains this building block.
@@ -28,7 +28,7 @@ public partial interface IBuildingBlock : IModelObject
   /// Gets or sets the description of the building block.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.description?view=word-pia"/>
-  public string Description { get; set; }
+  public string Description { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets the unique identifier of the building block.
@@ -46,11 +46,11 @@ public partial interface IBuildingBlock : IModelObject
   /// Gets or sets the content of the building block.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the insertion behavior options for the building block.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.insertoptions?view=word-pia"/>
-  public int InsertOptions { get; set; }
+  public int InsertOptions { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

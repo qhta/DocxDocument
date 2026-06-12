@@ -11,5 +11,5 @@ public partial class TableProperties : ExtBaseTableProperties<DXW.TablePropertie
  /// <summary>
  ///   Revision information for table properties, enabling tracking and management of property changes and historical settings.
  /// </summary>
- public TablePropertiesChange? TablePropertiesChange { get; set; }
+ public TablePropertiesChange? TablePropertiesChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

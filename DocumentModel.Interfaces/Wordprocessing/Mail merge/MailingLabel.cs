@@ -10,13 +10,13 @@ public partial interface IMailingLabel : IModelObject
   /// Returns or sets whether a bar code is printed by default on mailing labels.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.defaultprintbarcode?view=word-pia"/>
-  public bool DefaultPrintBarCode { get; set; }
+  public bool DefaultPrintBarCode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets the default printer tray used for laser labels.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.defaultlasertray?view=word-pia"/>
-  public PaperTray DefaultLaserTray { get; set; }
+  public PaperTray DefaultLaserTray { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns the custom labels collection.
@@ -28,11 +28,11 @@ public partial interface IMailingLabel : IModelObject
   /// Returns or sets the default mailing label name.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.defaultlabelname?view=word-pia"/>
-  public string DefaultLabelName { get; set; }
+  public string DefaultLabelName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Returns or sets whether labels are printed vertically.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.vertical?view=word-pia"/>
-  public bool Vertical { get; set; }
+  public bool Vertical { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

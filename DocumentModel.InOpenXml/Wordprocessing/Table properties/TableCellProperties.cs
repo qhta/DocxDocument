@@ -10,5 +10,5 @@ public partial class TableCellProperties : CurrentTableCellProperties<DXW.TableC
  /// <summary>
  /// Details about a single revision to a set of table cell properties in a WordprocessingML document.
  /// </summary>
- public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
+ public TableCellPropertiesChange? TableCellPropertiesChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

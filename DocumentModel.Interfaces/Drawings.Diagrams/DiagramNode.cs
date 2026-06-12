@@ -31,7 +31,7 @@ public partial interface IDiagramNode: IModelObject
   /// Gets or sets the `Layout` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.layout?view=office-pia"/>
-  public OrgChartLayoutType Layout { get; set; }
+  public OrgChartLayoutType Layout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the `TextShape` property.
   /// </summary>

@@ -15,7 +15,7 @@ public interface IAutoCaption : IModelObject
   /// Gets or sets a value indicating whether the caption label is inserted automatically.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.autoinsert?view=word-pia"/>
-  public bool AutoInsert { get; set; }
+  public bool AutoInsert { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Gets the index number of the auto caption entry in the collection.
   /// </summary>
@@ -25,6 +25,6 @@ public interface IAutoCaption : IModelObject
   /// Gets or sets the caption label associated with the auto caption entry.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.captionlabel?view=word-pia"/>
-  public ICaptionLabel CaptionLabel { get; set; }
+  public ICaptionLabel CaptionLabel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
 }
