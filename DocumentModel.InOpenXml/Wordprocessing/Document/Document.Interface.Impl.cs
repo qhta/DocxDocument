@@ -2,6 +2,10 @@
 
 public partial class Document: IDocument
 {
+
+  DMPr.IDocumentProperties IDocument.BuiltInDocumentProperties => new BuiltInPropertiesWrapper(BuiltInProperties);
+  DMPr.ICustomProperties? IDocument.CustomDocumentProperties => throw new NotImplementedException();
+
   string? IDocument.ActiveTheme => throw new NotImplementedException();
   string? IDocument.ActiveThemeDisplayName => throw new NotImplementedException();
   IWindow? IDocument.ActiveWindow => throw new NotImplementedException();
@@ -12,17 +16,6 @@ public partial class Document: IDocument
   IBibliography? IDocument.Bibliography => throw new NotImplementedException();
   IBookmarks? IDocument.Bookmarks => throw new NotImplementedException();
 
-  /// <summary>
-  /// Gets the built-in properties of the document.
-  /// This property allows access to built-in document properties through a collection interface.
-  /// </summary>
-  public BuiltInProperties BuiltInProperties
-  {
-    get => _builtInProperties ??= new BuiltInProperties(this);
-    set => UpdateField(ref _builtInProperties, value, nameof(BuiltInProperties));
-  }
-  private BuiltInProperties? _builtInProperties;
-  DMPr.IDocumentProperties IDocument.BuiltInDocumentProperties => new BuiltInPropertiesWrapper(BuiltInProperties);
   
   ICharacters? IDocument.Characters => throw new NotImplementedException();
   bool IDocument.ChartDataPointTrack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -36,7 +29,6 @@ public partial class Document: IDocument
   IContentControls? IDocument.ContentControls => throw new NotImplementedException();
   DMPr.IMetaProperties? IDocument.ContentTypeProperties => throw new NotImplementedException();
   int? IDocument.CurrentRsid => throw new NotImplementedException();
-  DMPr.ICustomProperties? IDocument.CustomDocumentProperties => throw new NotImplementedException();
   DMCX.ICustomXMLParts? IDocument.CustomXMLParts => throw new NotImplementedException();
   ITableStyle? IDocument.DefaultTableStyle => throw new NotImplementedException();
   float? IDocument.DefaultTabStop { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

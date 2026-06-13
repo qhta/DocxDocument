@@ -145,7 +145,7 @@ public static class DocPropertyTypeExtensions
       return d.ToString(CultureInfo.InvariantCulture);
 
     var serializedString = JsonSerializer.Serialize(value);
-    return serializedString;
+    return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(serializedString));
   }
 
   /// <summary>
@@ -193,7 +193,8 @@ public static class DocPropertyTypeExtensions
         return doubleValue;
       throw new InvalidOperationException($"Failed to convert '{value}' to {propertyType.Name}.");
     }
-    var deserializedObject = JsonSerializer.Deserialize(value, propertyType);
+    var decodedValue = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(value));
+    var deserializedObject = JsonSerializer.Deserialize(decodedValue, propertyType);
     return deserializedObject;
   }
 

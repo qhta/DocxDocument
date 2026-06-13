@@ -308,6 +308,18 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
   private CustomProperties? _CustomProperties;
 
+
+  /// <summary>
+  /// Gets the built-in properties of the document.
+  /// This property allows access to built-in document properties through a collection interface.
+  /// </summary>
+  public BuiltInProperties BuiltInProperties
+  {
+    get => _builtInProperties ??= new BuiltInProperties(this);
+    set => UpdateField(ref _builtInProperties, value, nameof(BuiltInProperties));
+  }
+  private BuiltInProperties? _builtInProperties;
+
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.
   /// </summary>
