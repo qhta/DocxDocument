@@ -21,11 +21,6 @@ public sealed partial class CustomProperty : DMPr.ICustomProperty, DMPr.IDocumen
  DMPr.DocPropertyType DMPr.IDocumentProperty.Type
  {
   get
-  {
-   if (this.Type != null && typeMapping.TryGetValue1(this.Type, out var mappedType))
-    return mappedType;
-   return 0;
-  }
 
   set
   {
