@@ -22,7 +22,7 @@ public static class DoubleConverterTest
   ];
 
   /// <summary>
-  ///   Runs all DoubleConverter tests for supported types and reports results Ito the console.
+  ///   Runs all DoubleConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -57,10 +57,10 @@ public static class DoubleConverterTest
   ];
 
   /// <summary>
-  ///   Tests round-trip conversion of Double values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Double values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test Double conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Double conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestDoubleConversion(Type openXmlType)
   {
@@ -69,21 +69,21 @@ public static class DoubleConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = DoubleConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"  {testValue} -> {openXmlValue.GetType()} : {openXmlValue}");
-        // Convert back Ito Double
+        // Convert back to Double
         var convertedBackValue = DoubleConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito Double returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Double returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

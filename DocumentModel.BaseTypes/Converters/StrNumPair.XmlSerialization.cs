@@ -17,15 +17,15 @@ public partial struct StrNumPair : IXmlSerializable
   /// Deserializes the <see cref="StrNumPair"/> value from XML.
   /// Accepts values in the format "(Str,Num)" or plain string values.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
   /// <item><description>Format "(Str,Num)" where both components are parsed (e.g., "(abc,123)" or "(,456)" or "(xyz,)")</description></item>
-  /// <item><description>Plain string values (stored as the Str component with Num set Ito null)</description></item>
+  /// <item><description>Plain string values (stored as the Str component with Num set to null)</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
-  /// When parsing the "(Str,Num)" format, the numeric component is parsed as an integer if possible, otherwise set Ito null.
+  /// When parsing the "(Str,Num)" format, the numeric component is parsed as an integer if possible, otherwise set to null.
   /// </remarks>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
@@ -35,7 +35,7 @@ public partial struct StrNumPair : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -45,7 +45,7 @@ public partial struct StrNumPair : IXmlSerializable
       {
         StrNumPair parsedValue = new StrNumPair(strNumString);
 
-        // Use SetValue Ito update this instance
+        // Use SetValue to update this instance
         this = SetValue(parsedValue.Str, parsedValue.Num);
       }
 
@@ -59,9 +59,9 @@ public partial struct StrNumPair : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="StrNumPair"/> value Ito XML.
+  /// Serializes the <see cref="StrNumPair"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// The value is written in the format "(Str,Num)".
   /// For example, a pair with Str="abc" and Num=123 is written as "(abc,123)".

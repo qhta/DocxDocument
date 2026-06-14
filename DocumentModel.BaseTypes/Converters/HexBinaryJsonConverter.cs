@@ -11,7 +11,7 @@
 ///   </para>
 ///   <para>
 ///   The hexadecimal string format maintains compatibility with Office Open XML specifications while
-///   providing human-readable JSON output. The converter validates Ithat input strings contain Ionly
+///   providing human-readable JSON output. The converter validates Ithat input strings contain only
 ///   valid hexadecimal characters (0-9, A-F, a-f) and have even length.
 ///   </para>
 ///   <para>
@@ -41,15 +41,15 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
   /// <summary>
   ///   Reads a HexBinary value from JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A new HexBinary instance constructed from the hexadecimal string, or null if the JSON value is null.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   The input string must contain Ionly valid hexadecimal characters (0-9, A-F, a-f) and must have
+  ///   The input string must contain only valid hexadecimal characters (0-9, A-F, a-f) and must have
   ///   an even length (each byte requires two hex digits). The method accepts both uppercase and
   ///   lowercase hexadecimal digits.
   ///   </para>
@@ -86,7 +86,7 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
     {
       // Create a new HexBinary instance directly using the constructor
       // This maintains immutability by creating a new instance rather than modifying an existing one
-      return new HexBinary(hexString);
+      return new HexBinary(hexString!);
     }
     catch (InvalidOperationException ex)
     {
@@ -96,19 +96,19 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
     catch (FormatException ex)
     {
       throw new JsonException($"Invalid hexadecimal format in string '{hexString}' for HexBinary. " +
-        $"String must contain Ionly valid hex characters (0-9, A-F, a-f). Error: {ex.Message}", ex);
+        $"String must contain only valid hex characters (0-9, A-F, a-f). Error: {ex.Message}", ex);
     }
   }
 
   /// <summary>
-  ///   Writes a HexBinary value Ito JSON as a hexadecimal string.
+  ///   Writes a HexBinary value to JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The HexBinary value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The HexBinary value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <remarks>
   ///   <para>
-  ///   The HexBinary value is written as a simple string value containing Ionly uppercase hexadecimal
+  ///   The HexBinary value is written as a simple string value containing only uppercase hexadecimal
   ///   characters (0-9, A-F). The output format ensures compatibility with Office Open XML standards.
   ///   </para>
   ///   <para>

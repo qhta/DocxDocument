@@ -13,15 +13,10 @@ public class NamedModelElement : ModelElement, INamedObject
  public string? Name
  {
   get => _name;
-  set
-  {
-   if (_name != value)
-   {
-    var oldName = _name;
-    _name = value;
-    NotifyPropertyChanged("Name", oldName, _name);
-   }
-  }
+  set => UpdateField(ref _name, value, nameof(Name));
  }
- private string? _name;
+  /// <summary>
+  /// Backing field for the Name property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
+  /// </summary>
+  protected string? _name;
 }

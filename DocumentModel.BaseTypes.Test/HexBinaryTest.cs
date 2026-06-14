@@ -30,14 +30,14 @@ public static class HexBinaryTest
   {
     Console.WriteLine("--- Testing HexBinary Basic Operations ---");
 
-    // Test string Ito HexBinary conversion
+    // Test string to HexBinary conversion
     HexBinary hex1 = "48656C6C6F"; // "Hello" in hex
-    Console.WriteLine($"\n✓ String Ito HexBinary: {hex1}");
+    Console.WriteLine($"\n✓ String to HexBinary: {hex1}");
 
-    // Test byte array Ito HexBinary conversion
+    // Test byte array to HexBinary conversion
     byte[] bytes = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
     HexBinary hex2 = bytes;
-    Console.WriteLine($"\n✓ Byte array Ito HexBinary: {hex2}");
+    Console.WriteLine($"\n✓ Byte array to HexBinary: {hex2}");
 
     // Test equality
     if (hex1.Equals(hex2))
@@ -45,13 +45,13 @@ public static class HexBinaryTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexBinary Ito string
+    // Test HexBinary to string
     string str = hex1;
-    Console.WriteLine($"\n✓ HexBinary Ito string: {str}");
+    Console.WriteLine($"\n✓ HexBinary to string: {str}");
 
-    // Test HexBinary Ito byte array
+    // Test HexBinary to byte array
     byte[] resultBytes = hex1;
-    Console.WriteLine($"\n✓ HexBinary Ito byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
+    Console.WriteLine($"\n✓ HexBinary to byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
 
     // Test Length property
     Console.WriteLine($"\n✓ Length: {hex1.Length} bytes");
@@ -76,7 +76,7 @@ public static class HexBinaryTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexBinaryTestDataClass));
     string xmlString;
 
@@ -139,7 +139,7 @@ public static class HexBinaryTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

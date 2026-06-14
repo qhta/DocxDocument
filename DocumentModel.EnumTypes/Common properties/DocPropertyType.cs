@@ -122,6 +122,24 @@ public static class DocPropertyTypeExtensions
   }
 
   /// <summary>
+  /// Converts the specified DocPropertyType to its corresponding .NET type.
+  /// </summary>
+  /// <param name="type">The DocPropertyType value to convert.</param>
+  /// <returns>The corresponding .NET type if supported; otherwise, null.</returns>
+  public static Type? ConvertToSystemType(this DocPropertyType type)
+  {
+    return type switch
+    {
+      DocPropertyType.Number => typeof(int),
+      DocPropertyType.Boolean => typeof(bool),
+      DocPropertyType.Date => typeof(DateTime),
+      DocPropertyType.String => typeof(string),
+      DocPropertyType.Float => typeof(float),
+      _ => null
+    };
+  }
+
+  /// <summary>
   /// Converts a given value to its string representation based on the specified DocPropertyType. 
   /// </summary>
   /// <param name="type">The DocPropertyType value to use for conversion.</param>
@@ -155,11 +173,11 @@ public static class DocPropertyTypeExtensions
   /// <param name="value">The string value to convert.</param>
   /// <param name="propertyType">The target .NET type for the conversion.</param>
   /// <returns>The corresponding .NET object if conversion is successful; otherwise, null.</returns>
-  public static object? ConvertStringToObject(this DocPropertyType type, string? value, Type propertyType)
+  public static object? ConvertStringToObject(this DocPropertyType type, string? value, Type? propertyType)
   {
     if (value == null) return null;
 
-    propertyType = propertyType.GetNotNullableType();
+    propertyType = propertyType?.GetNotNullableType() ?? typeof(object);
     if (propertyType == typeof(string))
       return value;
     if (propertyType == typeof(int))

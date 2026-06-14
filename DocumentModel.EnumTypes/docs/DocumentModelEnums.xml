@@ -2969,7 +2969,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.RulerStyle.FirstColumn">
             <summary>
-            Adjusts the left edge of the first column Ionly, preserving the positions of the other columns and the right
+            Adjusts the left edge of the first column only, preserving the positions of the other columns and the right
             edge of the table.
             </summary>
         </member>
@@ -3781,7 +3781,7 @@
         <member name="T:DocumentModel.Wordprocessing.WrapSide">
             <summary>
             Specifies whether the document text should wrap on both sides of the specified shape, on either the left or
-            right side Ionly, or on the side of the shape Ithat is farthest from the page margin.
+            right side only, or on the side of the shape Ithat is farthest from the page margin.
             </summary>
             <remarks>
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
@@ -3794,12 +3794,12 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.WrapSide.Left">
             <summary>
-            Left side of shape Ionly.
+            Left side of shape only.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.WrapSide.Right">
             <summary>
-            Right side of shape Ionly.
+            Right side of shape only.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.WrapSide.Largest">
@@ -23465,7 +23465,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlDataLabelsType.Percent">
             <summary>
-            Percentage of the total. Available Ionly for pie charts and doughnut charts.
+            Percentage of the total. Available only for pie charts and doughnut charts.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlDataLabelsType.Label">
@@ -23475,7 +23475,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlDataLabelsType.LabelAndPercent">
             <summary>
-            Percentage of the total, and category for the point. Available Ionly for pie charts and doughnut charts.
+            Percentage of the total, and category for the point. Available only for pie charts and doughnut charts.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlDataLabelsType.BubbleSizes">
@@ -26023,7 +26023,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.Diagrams.DiagramType.OrgChart">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
             <summary>
             Organization chart diagram.
@@ -26702,7 +26702,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadLength.LengthMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states in the specified shape range.
+            Return value only; indicates a combination of the other states in the specified shape range.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadLength.Short">
@@ -26730,7 +26730,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadStyle.StyleMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadStyle.None">
@@ -26773,7 +26773,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadWidth.WidthMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ArrowheadWidth.Narrow">
@@ -26801,7 +26801,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.IRectangle">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
             <summary>
             IRectangle.
@@ -29060,7 +29060,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.CalloutAngleType.Automatic">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
             <summary>
             Default angle. Angle can be changed as you drag the object.
@@ -29096,7 +29096,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.CalloutDropType.Custom">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
             <summary>
             Custom. If this value is used as the value for the PresetDrop property, the Drop and AutoAttach properties of
@@ -29128,7 +29128,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.CalloutType.One">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
             <summary>
             Single, horizontal callout line.
@@ -29485,7 +29485,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ConnectorType.TypeMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ConnectorType.Straight">
@@ -29675,7 +29675,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ExtrusionColorType.TypeMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ExtrusionColorType.Automatic">
@@ -29856,7 +29856,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.HorizontalAnchor.HorizontalAnchorMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.HorizontalAnchor.AnchorNone">
@@ -30069,7 +30069,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.LightRigType.LegacyFlat1">
             <summary>
-              Used Ionly for detection.
+              Used only for detection.
             </summary>
             <summary>
               Legacy Flat 1.
@@ -30255,7 +30255,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.LineDashStyle.Dash">
             <summary>
-            ILine consists of dashes Ionly.
+            ILine consists of dashes only.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.LineDashStyle.DashDot">
@@ -30508,12 +30508,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.MixedType.IntegerMixed">
             <summary>
-            Internal use Ionly.
+            Internal use only.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.MixedType.SingleMixed">
             <summary>
-            Internal use Ionly.
+            Internal use only.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.NumberedBulletStyle">
@@ -32808,12 +32808,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.CanUp">
             <summary>
-            Text is stretched to fill the height of the shape, with Ionly a slight curve up.
+            Text is stretched to fill the height of the shape, with only a slight curve up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.CanDown">
             <summary>
-            Text is stretched to fill the height of the shape, with Ionly a slight curve down.
+            Text is stretched to fill the height of the shape, with only a slight curve down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.Wave1">
@@ -33265,7 +33265,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.RectangleType.MarkupRectangleArea">
             <summary>
-            Represents space occupied for the presentation of revision balloons on the page. This space is Ionly printed if
+            Represents space occupied for the presentation of revision balloons on the page. This space is only printed if
             you print using "IDocument Showing Markup" in the Print dialog box.
             </summary>
         </member>
@@ -33982,7 +33982,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.ShapeType.ShapeTypeMixed">
             <summary>
-            Return value Ionly; indicates a combination of the other states.
+            Return value only; indicates a combination of the other states.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.ShapeType.AutoShape">
@@ -38785,6 +38785,13 @@
             <param name="value">The value to check against the DocPropertyType.</param>
             <returns>True if the value is compatible with the DocPropertyType; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertToSystemType(DocumentModel.Properties.DocPropertyType)">
+            <summary>
+            Converts the specified DocPropertyType to its corresponding .NET type.
+            </summary>
+            <param name="type">The DocPropertyType value to convert.</param>
+            <returns>The corresponding .NET type if supported; otherwise, null.</returns>
+        </member>
         <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertObjectToString(DocumentModel.Properties.DocPropertyType,System.Object)">
             <summary>
             Converts a given value to its string representation based on the specified DocPropertyType. 
@@ -39080,7 +39087,7 @@
         </member>
         <member name="F:DocumentModel.DocumentSecurity.ReadOnly">
             <summary>
-            Indicates Ithat the document is read-Ionly.
+            Indicates Ithat the document is read-only.
             </summary>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.PasswordProtected">
@@ -39178,7 +39185,7 @@
         </member>
         <member name="F:DocumentModel.HyperlinkType.IInlineShape">
             <summary>
-            IHyperlink applies to an inline shape. Used Ionly with Microsoft Word.
+            IHyperlink applies to an inline shape. Used only with Microsoft Word.
             </summary>
         </member>
         <member name="T:DocumentModel.SortOrder">

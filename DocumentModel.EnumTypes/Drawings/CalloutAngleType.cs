@@ -9,7 +9,7 @@
 public enum CalloutAngleType
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   /// <summary>
   /// Default angle. Angle can be changed as you drag the object.

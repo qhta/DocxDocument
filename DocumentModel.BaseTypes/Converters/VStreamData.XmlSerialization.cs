@@ -20,7 +20,7 @@ public partial struct VStreamData : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="VStreamData"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -40,7 +40,7 @@ public partial struct VStreamData : IXmlSerializable
   /// </para>
   /// <para>
   /// The version GUID is typically an OLE CLSID or custom format identifier Ithat
-  /// determines how Ito interpret the binary stream data.
+  /// determines how to interpret the binary stream data.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -60,7 +60,7 @@ public partial struct VStreamData : IXmlSerializable
       throw new XmlException($"Invalid version attribute value: {versionStr}. Expected a valid GUID format.");
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     byte[] data = Array.Empty<byte>();
 
@@ -102,9 +102,9 @@ public partial struct VStreamData : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="VStreamData"/> value Ito XML.
+  /// Serializes the <see cref="VStreamData"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// <para>The value is written in the following XML format:</para>
   /// <code>

@@ -6,13 +6,13 @@ namespace DocumentModel;
 public partial class BuiltInDocumentPropertiesWrapper : DMPr.IDocumentProperties
 {
 
-  private readonly BuiltInDocumentProperties _builtInProperties;
+  private readonly BaseBuiltInProperties _builtInProperties;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="BuiltInDocumentPropertiesWrapper"/> class that wraps the specified <see cref="BuiltInDocumentProperties"/> instance.
+  /// Initializes a new instance of the <see cref="BuiltInDocumentPropertiesWrapper"/> class that wraps the specified <see cref="BaseBuiltInProperties"/> instance.
   /// </summary>
   /// <param name="builtInProperties"></param>
-  public BuiltInDocumentPropertiesWrapper(BuiltInDocumentProperties builtInProperties)
+  public BuiltInDocumentPropertiesWrapper(BaseBuiltInProperties builtInProperties)
   {
     _builtInProperties = builtInProperties;
   }

@@ -1,6 +1,4 @@
-﻿using DocumentModel.Properties;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 public partial class BuiltInProperty : DMPr.IDocumentProperty
 {
@@ -14,17 +12,8 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   /// </summary>
   object? DMPr.IDocumentProperty.Value
   {
-    get
-    {
-      var valueString = this.Value;
-      var value = Type.ConvertStringToObject(valueString, PropertyInfo?.PropertyType ?? typeof(object));
-      return value;
-    }
-    set
-    {
-      var valueString = Type.ConvertObjectToString(value);
-      this.Value = valueString;
-    }
+    get => Value;
+    set => Value = value;
   }
 
   /// <summary>
@@ -34,7 +23,10 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   /// For built-in document properties, this property is read-only and returns the type of the property.
   /// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
   /// </summary>
-  DMPr.DocPropertyType DMPr.IDocumentProperty.Type { get => this.Type; set => this.Type = value; }
+  DMPr.DocPropertyType DMPr.IDocumentProperty.Type
+  {
+    get => this.ExpectedType; set => this.ExpectedType = value;
+  }
 
 
   /// <summary>

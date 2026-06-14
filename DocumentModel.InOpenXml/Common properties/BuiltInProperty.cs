@@ -5,6 +5,7 @@ namespace DocumentModel;
 ///   Abstract document Property.
 /// </summary>
 [XmlRoot("BuiltInProperty", Namespace = "DocumentModel")]
+[JsonConverter(typeof(BuiltInPropertyJsonConverter))]
 public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
 {
   /// <summary>
@@ -32,7 +33,7 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
   /// <summary>
   ///   Value of the property
   /// </summary>
-  public override String? Value
+  public override object? Value
   {
     get
     {
@@ -55,15 +56,15 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
   /// </summary>
   /// <param name="value">The string value to set for the built-in property.</param>
   /// <exception cref="InvalidOperationException">Thrown when the conversion or setting of the value fails.</exception>
-  internal void SetAttachedPropertyValue(string? value)
+  internal void SetAttachedPropertyValue(object? value)
   {
     if (PropertyInfo != null)
     {
       try
       {
         var docPropertyType = PropertyInfo.PropertyType!.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(value, PropertyInfo.PropertyType);
-        PropertyInfo?.SetValue(BaseObject, valueObject); //(value as Variant) ?? new Variant(value));
+        //var valueObject = docPropertyType.ConvertStringToObject(value, PropertyInfo.PropertyType);
+        PropertyInfo?.SetValue(BaseObject, value); //(value as Variant) ?? new Variant(value));
       }
       catch (Exception e)
       {
@@ -78,7 +79,7 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
   /// </summary>
   /// <returns>The string representation of the built-in property's value.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the conversion or retrieval of the value fails.</exception>
-  internal string? GetAttachedPropertyInfo()
+  internal object? GetAttachedPropertyInfo()
   {
     if (PropertyInfo != null)
     {
@@ -86,8 +87,7 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
       {
         var valueObject = PropertyInfo.GetValue(BaseObject);
         var docPropertyType = PropertyInfo.PropertyType!.ConvertToDocPropertyType();
-        var valueString = docPropertyType.ConvertObjectToString(valueObject);
-        return valueString;
+        return valueObject;
       } catch (Exception e)
       {
         throw new InvalidOperationException($"Failed to get the value of the built-in property '{PropertyInfo?.Name}'.",
@@ -97,15 +97,24 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
     return null;
   }
 
-  /// <summary>
-  /// Type of the property value. For built-in document properties, this property is read-only and returns the type of the property as defined in the PropertyInfo. Setting this property to a different type will throw an exception, as the type of built-in document property cannot be changed.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public override DMPr.DocPropertyType Type
-  {
-    get { return PropertyInfo?.PropertyType?.ConvertToDocPropertyType() ?? base.Type; }
-    set { base.Type = value; }
-  }
+  ///// <summary>
+  ///// Type of the property value. For built-in document properties, this property is read-only and returns the type of the property as defined in the PropertyInfo. Setting this property to a different type will throw an exception, as the type of built-in document property cannot be changed.
+  ///// </summary>
+
+  //public override DMPr.DocPropertyType Type
+  //{
+  //  get => PropertyInfo?.PropertyType?.ConvertToDocPropertyType() ?? base.Type;
+  //  set => base.Type = value;
+  //}
+
+  ///// <summary>
+  ///// Type of the property value. For built-in document properties, this property is read-only and returns the type of the property as defined in the PropertyInfo. Setting this property to a different type will throw an exception, as the type of built-in document property cannot be changed.
+  ///// </summary>
+  //[XmlIgnore]
+  //[JsonIgnore]
+  //public override Type? PropertyType
+  //{
+  //  get => PropertyInfo?.PropertyType ?? base.PropertyType;
+  //  set => base.PropertyType = value;
+  //}
 }

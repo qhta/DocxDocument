@@ -9,7 +9,7 @@
 public enum ArrowheadLength
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states in the specified shape range.
+  /// Return value only; indicates a combination of the other states in the specified shape range.
   /// </summary>
   LengthMixed = -2,
   /// <summary>

@@ -4,22 +4,6 @@
 /// <summary>
 ///   Represents a byte value encoded as a hexadecimal string (2 hex digits) for use in Office Open XML documents.
 /// </summary>
-/// <remarks>
-///   <para>
-///   HexByte provides a type-safe wrapper for byte values Ithat are represented as hexadecimal strings
-///   in Office Open XML documents. It stores an 8-bit unsigned integer value (0-255) Ithat can represent
-///   any byte value.
-///   </para>
-///   <para>
-///   The struct Iimplements <see cref="IConvertible"/> for seamless integration with .NET type conversion
-///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
-///   between HexByte and common numeric types (byte, ushort, uint, ulong) as well as string representations.
-///   </para>
-///   <para>
-///   <b>Office Availability:</b> Hexadecimal byte encoding is supported across all Office Open XML
-///   formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
-///   </para>
-/// </remarks>
 [JsonConverter(typeof(HexByteJsonConverter))]
 public partial record HexByte : IConvertible, IEquatable<HexByte>
 {
@@ -36,25 +20,56 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   Initializes a new instance of the <see cref="HexByte"/> struct from a hexadecimal string.
   /// </summary>
   /// <param name="str">
-  ///   A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a byte code.
-  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
+  ///   A hexadecimal string containing 2 hex digits (0-9, A-F, a-f) representing a byte code.
+  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65).
   /// </param>
   /// <remarks>
   ///   <para>
-  ///   The string is parsed as a hexadecimal number Ito obtain the byte code value.
-  ///   Valid input examples: "41" (65, 'A'), "20" (32, space), "03B1" (945, Greek alpha α).
+  ///   The string is parsed as a hexadecimal number to obtain the byte code value.
+  ///   Valid input examples: "41", "#20".
   ///   </para>
   /// </remarks>
   /// <exception cref="FormatException">
   ///   Thrown when the string is not a valid hexadecimal number.
   /// </exception>
   /// <exception cref="OverflowException">
-  ///   Thrown when the parsed value exceeds 65535 (ushort.MaxValue).
+  ///   Thrown when the parsed value exceeds 255 (byte.MaxValue).
   /// </exception>
   public HexByte(string str)
   {
     str = str.TrimStart('#');
     value = byte.Parse(str, NumberStyles.HexNumber);
+  }
+
+  /// <summary>
+  ///  Parses a hexadecimal string and returns a HexByte. The string should contain 2 hex digits, optionally prefixed with '#'.
+  /// </summary>
+  /// <param name="str">A hexadecimal string containing 2 hex digits, optionally prefixed with '#'.</param>
+  /// <returns>A HexByte instance representing the parsed value.</returns>
+  public static HexByte Parse(string? str)
+  {
+    return new HexByte(str ?? string.Empty);
+  }
+
+  /// <summary>
+  /// Attempts to parse a hexadecimal string and returns a boolean indicating success or failure. The result is stored in the out parameter.
+  /// </summary>
+  /// <param name="str">A hexadecimal string containing 2 hex digits, optionally prefixed with '#'.</param>
+  /// <param name="result">The resulting HexByte instance if parsing is successful; otherwise, null.</param>
+  /// <returns>True if parsing is successful; otherwise, false.</returns>
+  public static bool TryParse(string? str, out HexByte? result)
+  {
+    if (str != null)
+    {
+      str = str.TrimStart('#');
+      if (byte.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var byteValue))
+      {
+        result = new HexByte(byteValue);
+        return true;
+      }
+    }
+    result = null;
+    return false;
   }
 
   /// <summary>
@@ -79,7 +94,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   A character whose ASCII code point will be stored.
   /// </param>
   /// <remarks>
-  ///   This constructor converts a .NET character Ito its numeric ASCII value.
+  ///   This constructor converts a .NET character to its numeric ASCII value.
   ///   Example: new HexByte('A') stores value 65 (0x41).
   /// </remarks>
   public HexByte(Char value)
@@ -109,7 +124,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   A 32-bit signed integer (0-65535) representing a byte code.
   /// </param>
   /// <remarks>
-  ///   The value is cast Ito ushort. Values outside the range 0-65535 will be truncated.
+  ///   The value is cast to ushort. Values outside the range 0-65535 will be truncated.
   /// </remarks>
   public HexByte(int value)
   {
@@ -128,7 +143,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a Boolean value.
+  ///   Converts the HexByte value to a Boolean value.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -140,14 +155,14 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a byte.
+  ///   Converts the HexByte value to a byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
   ///   A byte representing the byte code, truncated if necessary.
   /// </returns>
   /// <remarks>
-  ///   Values greater than 255 will be truncated Ito their lower 8 bits.
+  ///   Values greater than 255 will be truncated to their lower 8 bits.
   /// </remarks>
   public byte ToByte(IFormatProvider? provider)
   {
@@ -155,11 +170,11 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a byte.
+  ///   Converts the HexByte value to a byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A byte corresponding Ito the Unicode code point stored in this HexByte.
+  ///   A byte corresponding to the Unicode code point stored in this HexByte.
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
@@ -167,11 +182,11 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a DateTime.
+  ///   Converts the HexByte value to a DateTime.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A DateTime value (delegates Ito the underlying ushort conversion).
+  ///   A DateTime value (delegates to the underlying ushort conversion).
   /// </returns>
   /// <exception cref="InvalidCastException">
   ///   This conversion is not supported and will typically throw an exception.
@@ -182,7 +197,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a decimal.
+  ///   Converts the HexByte value to a decimal.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -194,7 +209,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a double-precision floating-point number.
+  ///   Converts the HexByte value to a double-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -206,7 +221,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 16-bit signed integer.
+  ///   Converts the HexByte value to a 16-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -218,7 +233,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 32-bit signed integer.
+  ///   Converts the HexByte value to a 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -230,7 +245,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 64-bit signed integer.
+  ///   Converts the HexByte value to a 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -242,7 +257,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a signed byte.
+  ///   Converts the HexByte value to a signed byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -254,7 +269,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a single-precision floating-point number.
+  ///   Converts the HexByte value to a single-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -266,7 +281,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a string using the specified format provider.
+  ///   Converts the HexByte value to a string using the specified format provider.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
@@ -282,7 +297,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 16-bit unsigned integer.
+  ///   Converts the HexByte value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -294,7 +309,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 32-bit unsigned integer.
+  ///   Converts the HexByte value to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -306,7 +321,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito a 64-bit unsigned integer.
+  ///   Converts the HexByte value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -318,16 +333,16 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Converts the HexByte value Ito the specified target type.
+  ///   Converts the HexByte value to the specified target type.
   /// </summary>
-  /// <param name="targetType">The type Ito convert Ito.</param>
+  /// <param name="targetType">The type to convert to.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   An object of the specified target type.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   This method provides explicit conversions Ito common numeric types and string:
+  ///   This method provides explicit conversions to common numeric types and string:
   ///   <list type="bullet">
   ///   <item><description>UInt16, Int32, UInt32, UInt64: Direct numeric conversions</description></item>
   ///   <item><description>Int16, Byte, SByte: Conversions with potential truncation/overflow</description></item>
@@ -338,7 +353,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   </para>
   /// </remarks>
   /// <exception cref="InvalidCastException">
-  ///   Thrown when conversion Ito the target type is not supported.
+  ///   Thrown when conversion to the target type is not supported.
   /// </exception>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
@@ -370,7 +385,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a hexadecimal string Ito a HexByte.
+  ///   Implicitly converts a hexadecimal string to a HexByte.
   /// </summary>
   /// <param name="val">
   /// A hexadecimal string (2 hex digits).
@@ -386,7 +401,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a nullable HexByte Ito its hexadecimal string representation.
+  ///   Implicitly converts a nullable HexByte to its hexadecimal string representation.
   /// </summary>
   /// <param name="val">A nullable HexByte value.</param>
   /// <returns>
@@ -401,7 +416,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexByte Ito a 8-bit unsigned integer.
+  ///   Implicitly converts a HexByte to a 8-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexByte value.</param>
   /// <returns>The underlying byte value (0-255).</returns>
@@ -411,7 +426,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexByte Ito a 16-bit unsigned integer.
+  ///   Implicitly converts a HexByte to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexByte value.</param>
   /// <returns>The underlying ushort value (0-65535).</returns>
@@ -421,7 +436,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexByte Ito a 32-bit unsigned integer.
+  ///   Implicitly converts a HexByte to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexByte value.</param>
   /// <returns>The byte code as a uint (0-65535).</returns>
@@ -431,7 +446,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a nullable HexByte Ito a nullable 32-bit unsigned integer.
+  ///   Implicitly converts a nullable HexByte to a nullable 32-bit unsigned integer.
   /// </summary>
   /// <param name="val">A nullable HexByte value.</param>
   /// <returns>
@@ -443,7 +458,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexByte Ito a 64-bit unsigned integer.
+  ///   Implicitly converts a HexByte to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexByte value.</param>
   /// <returns>The byte code as a ulong (0-65535).</returns>
@@ -453,7 +468,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a 8-bit unsigned integer Ito a HexByte.
+  ///   Implicitly converts a 8-bit unsigned integer to a HexByte.
   /// </summary>
   /// <param name="val">A byte value (0-255).</param>
   /// <returns>A HexByte representing the byte value.</returns>
@@ -463,7 +478,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a 16-bit unsigned integer Ito a HexByte.
+  ///   Implicitly converts a 16-bit unsigned integer to a HexByte.
   /// </summary>
   /// <param name="val">A ushort value (0-65535).</param>
   /// <returns>A HexByte representing the byte code.</returns>
@@ -473,7 +488,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   }
 
   /// <summary>
-  ///   Implicitly converts a 32-bit unsigned integer Ito a HexByte.
+  ///   Implicitly converts a 32-bit unsigned integer to a HexByte.
   /// </summary>
   /// <param name="val">A uint value (must be 0-65535).</param>
   /// <returns>A HexByte representing the byte code.</returns>
@@ -483,12 +498,12 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   public static implicit operator HexByte(uint val)
   {
     if (val > ushort.MaxValue)
-      throw new InvalidCastException($"ValueType {val} out of range Ito cast Ito HexByte");
+      throw new InvalidCastException($"ValueType {val} out of range to cast to HexByte");
     return new HexByte((ushort)val);
   }
 
   /// <summary>
-  ///   Implicitly converts a 64-bit unsigned integer Ito a HexByte.
+  ///   Implicitly converts a 64-bit unsigned integer to a HexByte.
   /// </summary>
   /// <param name="val">A ulong value (must be 0-65535).</param>
   /// <returns>A HexByte representing the byte code.</returns>
@@ -498,12 +513,12 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   public static implicit operator HexByte(ulong val)
   {
     if (val > ushort.MaxValue)
-      throw new InvalidCastException($"ValueType {val} out of range Ito cast Ito HexByte");
+      throw new InvalidCastException($"ValueType {val} out of range to cast to HexByte");
     return new HexByte((ushort)val);
   }
 
   /// <summary>
-  ///   Converts this HexByte Ito its hexadecimal string representation.
+  ///   Converts this HexByte to its hexadecimal string representation.
   /// </summary>
   /// <returns>
   ///   A hexadecimal string of 2 digits.
@@ -515,7 +530,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
 
 
   /// <summary>
-  ///   Converts this HexByte Ito its string representation in a provided format.
+  ///   Converts this HexByte to its string representation in a provided format.
   /// </summary>
   /// <param name="format">format for string representation (e.g., "X2" for 2-digit hex).</param>
   /// <returns>
@@ -526,9 +541,9 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
     return value.ToString(format);
   }
   /// <summary>
-  ///   Determines whether this HexByte is equal Ito another HexByte.
+  ///   Determines whether this HexByte is equal to another HexByte.
   /// </summary>
-  /// <param name="other">The HexByte Ito compare with this instance.</param>
+  /// <param name="other">The HexByte to compare with this instance.</param>
   /// <returns>
   ///   <see langword="true"/> if the byte codes are equal; otherwise <see langword="false"/>.
   /// </returns>
@@ -543,7 +558,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   Returns a hash code for this HexByte.
   /// </summary>
   /// <returns>
-  ///   A 32-bit signed integer hash code equal Ito the byte code value.
+  ///   A 32-bit signed integer hash code equal to the byte code value.
   /// </returns>
   public override int GetHashCode()
   {

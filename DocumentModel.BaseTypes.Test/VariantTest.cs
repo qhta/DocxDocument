@@ -495,7 +495,7 @@ public static class VariantTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VariantTestData));
     string xmlString;
 
@@ -583,7 +583,7 @@ public static class VariantTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -685,8 +685,8 @@ public static class VariantTest
     Variant emptyBlob = new Variant(Array.Empty<byte>());
     Console.WriteLine($"  Empty byte[]: Length={(emptyBlob.Value as byte[])?.Length ?? 0}");
 
-    // Test string Ito number conversions
-    Console.WriteLine("\nTesting string Ito number conversions:");
+    // Test string to number conversions
+    Console.WriteLine("\nTesting string to number conversions:");
     Variant numString = new Variant("123");
     int parsedInt = numString.ToInt32();
     double parsedDouble = numString.ToDouble();

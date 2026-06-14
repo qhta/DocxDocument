@@ -6,7 +6,7 @@
 /// <remarks>
 /// <para>
 /// <see cref="VectorVariant"/> is part of the variant type system used in Office Open XML documents
-/// Ito represent ordered collections of values in custom properties, metadata, and data storage.
+/// to represent ordered collections of values in custom properties, metadata, and data storage.
 /// Unlike <see cref="ArrayVariant"/>, VectorVariant uses zero-based indexing and does not support
 /// custom bounds.
 /// </para>
@@ -17,7 +17,7 @@
 /// <item><description><b>Dynamic sizing:</b> Automatically grows as elements are added</description></item>
 /// <item><description><b>Zero-based indexing:</b> Standard .NET collection indexing starting at 0</description></item>
 /// <item><description><b>IList operations:</b> Supports insertion, removal, and indexed access</description></item>
-/// <item><description><b>XML serialization:</b> Designed for serialization Ito/from OpenXML format</description></item>
+/// <item><description><b>XML serialization:</b> Designed for serialization to/from OpenXML format</description></item>
 /// </list>
 /// </para>
 /// <para>
@@ -54,8 +54,8 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Gets the internal list of items cast from the base <see cref="Variant._value"/> field.
   /// </summary>
   /// <remarks>
-  /// This property provides direct access Ito the underlying <see cref="IList{T}"/> Ithat stores
-  /// the vector elements. The value is guaranteed Ito be a <see cref="IList{T}"/> of nullable objects
+  /// This property provides direct access to the underlying <see cref="IList{T}"/> Ithat stores
+  /// the vector elements. The value is guaranteed to be a <see cref="IList{T}"/> of nullable objects
   /// as initialized in the constructor.
   /// </remarks>
   private IList<object?> _items => (IList<object?>)_value;
@@ -66,7 +66,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </summary>
   /// <remarks>
   /// Creates an empty vector with no specific base type. The <see cref="VariantType"/> is set
-  /// Ito <see cref="VariantType.Vector"/>. Elements can be added using the <see cref="Add"/> method.
+  /// to <see cref="VariantType.Vector"/>. Elements can be added using the <see cref="Add"/> method.
   /// </remarks>
   public VectorVariant(): base (VariantType.Vector, new List<object?>())
   {
@@ -76,7 +76,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Initializes a new instance of the <see cref="VectorVariant"/> class with a specified base type.
   /// </summary>
   /// <param name="baseType">
-  /// The type of elements Ithat the vector is intended Ito contain (e.g., Int32, String, DateTime).
+  /// The type of elements Ithat the vector is intended to contain (e.g., Int32, String, DateTime).
   /// </param>
   /// <remarks>
   /// Creates an empty vector configured for the specified element type. The <see cref="BaseType"/>
@@ -93,7 +93,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </summary>
   /// <value>Always returns <see cref="VariantType.Vector"/>.</value>
   /// <remarks>
-  /// This property overrides the base class property Ito ensure the variant type is always Vector,
+  /// This property overrides the base class property to ensure the variant type is always Vector,
   /// regardless of the <see cref="BaseType"/> or contents.
   /// </remarks>
   [XmlIgnore] public new VariantType VariantType => VariantType.Vector;
@@ -115,7 +115,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </value>
   /// <remarks>
   /// <para>
-  /// This property is marked with <see cref="XmlIgnoreAttribute"/> Ito prevent direct XML serialization.
+  /// This property is marked with <see cref="XmlIgnoreAttribute"/> to prevent direct XML serialization.
   /// The vector's elements should be serialized individually through the collection interface.
   /// </para>
   /// </remarks>
@@ -132,7 +132,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <remarks>
   /// <para>
   /// The base type serves as metadata indicating what type of elements the vector is intended
-  /// Ito contain. This information can be used for:
+  /// to contain. This information can be used for:
   /// <list type="bullet">
   /// <item><description>Validation during serialization/deserialization</description></item>
   /// <item><description>ValueType conversion when reading/writing elements</description></item>
@@ -151,7 +151,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Returns an enumerator Ithat iterates through the vector elements.
   /// </summary>
   /// <returns>
-  /// An <see cref="IEnumerator{T}"/> of nullable objects Ithat can be used Ito iterate through the collection.
+  /// An <see cref="IEnumerator{T}"/> of nullable objects Ithat can be used to iterate through the collection.
   /// </returns>
   /// <remarks>
   /// The enumerator returns elements in the order they were added (or as modified through list operations).
@@ -166,10 +166,10 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Returns an enumerator Ithat iterates through the vector elements.
   /// </summary>
   /// <returns>
-  /// An <see cref="IEnumerator"/> Ithat can be used Ito iterate through the collection.
+  /// An <see cref="IEnumerator"/> Ithat can be used to iterate through the collection.
   /// </returns>
   /// <remarks>
-  /// This is the non-generic version of <see cref="GetEnumerator()"/>, provided Ito satisfy
+  /// This is the non-generic version of <see cref="GetEnumerator()"/>, provided to satisfy
   /// the <see cref="IEnumerable"/> interface contract.
   /// </remarks>
   IEnumerator IEnumerable.GetEnumerator()
@@ -178,14 +178,14 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   }
 
   /// <summary>
-  /// Adds an element Ito the end of the vector.
+  /// Adds an element to the end of the vector.
   /// </summary>
   /// <param name="item">
-  /// The element Ito add Ito the vector. The value can be <see langword="null"/>.
+  /// The element to add to the vector. The value can be <see langword="null"/>.
   /// </param>
   /// <remarks>
   /// <para>
-  /// The element is appended Ito the end of the vector, increasing the <see cref="Count"/> by 1.
+  /// The element is appended to the end of the vector, increasing the <see cref="Count"/> by 1.
   /// Null values are permitted and stored as-is.
   /// </para>
   /// <para>
@@ -216,12 +216,12 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <summary>
   /// Determines whether the vector contains a specific element.
   /// </summary>
-  /// <param name="item">The element Ito locate in the vector. The value can be <see langword="null"/>.</param>
+  /// <param name="item">The element to locate in the vector. The value can be <see langword="null"/>.</param>
   /// <returns>
   /// <see langword="true"/> if the element is found in the vector; otherwise, <see langword="false"/>.
   /// </returns>
   /// <remarks>
-  /// The comparison uses the <see cref="object.Equals(object)"/> method Ito determine equality.
+  /// The comparison uses the <see cref="object.Equals(object)"/> method to determine equality.
   /// For null values, reference equality is used.
   /// </remarks>
   public bool Contains(object? item)
@@ -230,7 +230,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   }
 
   /// <summary>
-  /// Copies the elements of the vector Ito an array, starting at a particular array index.
+  /// Copies the elements of the vector to an array, starting at a particular array index.
   /// </summary>
   /// <param name="array">
   /// The one-dimensional array Ithat is the destination of the elements copied from the vector.
@@ -240,9 +240,9 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// The zero-based index in <paramref name="array"/> at which copying begins.
   /// </param>
   /// <remarks>
-  /// Elements are copied in order from index 0 Ito <see cref="Count"/> - 1.
+  /// Elements are copied in order from index 0 to <see cref="Count"/> - 1.
   /// The destination array must have sufficient space from <paramref name="arrayIndex"/>
-  /// Ito accommodate all elements.
+  /// to accommodate all elements.
   /// </remarks>
   /// <exception cref="ArgumentNullException">
   /// Thrown when <paramref name="array"/> is <see langword="null"/>.
@@ -251,7 +251,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Thrown when <paramref name="arrayIndex"/> is less than 0.
   /// </exception>
   /// <exception cref="ArgumentException">
-  /// Thrown when the destination array does not have enough space Ito accommodate all elements.
+  /// Thrown when the destination array does not have enough space to accommodate all elements.
   /// </exception>
   public void CopyTo(object?[] array, int arrayIndex)
   {
@@ -261,7 +261,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <summary>
   /// Removes the first occurrence of a specific element from the vector.
   /// </summary>
-  /// <param name="item">The element Ito remove from the vector. The value can be <see langword="null"/>.</param>
+  /// <param name="item">The element to remove from the vector. The value can be <see langword="null"/>.</param>
   /// <returns>
   /// <see langword="true"/> if the element was successfully removed from the vector;
   /// otherwise, <see langword="false"/>. This method also returns <see langword="false"/>
@@ -269,11 +269,11 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </returns>
   /// <remarks>
   /// <para>
-  /// If the element appears multiple times in the vector, Ionly the first occurrence is removed.
+  /// If the element appears multiple times in the vector, only the first occurrence is removed.
   /// All subsequent elements are shifted down one position, and the <see cref="Count"/> is decreased by 1.
   /// </para>
   /// <para>
-  /// The comparison uses the <see cref="object.Equals(object)"/> method Ito locate the element.
+  /// The comparison uses the <see cref="object.Equals(object)"/> method to locate the element.
   /// </para>
   /// </remarks>
   public bool Remove(object? item)
@@ -291,11 +291,11 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   public int Count => _items.Count;
 
   /// <summary>
-  /// Gets a value indicating whether the vector is read-Ionly.
+  /// Gets a value indicating whether the vector is read-only.
   /// </summary>
   /// <value>Always returns <see langword="false"/> as this vector is modifiable.</value>
   /// <remarks>
-  /// This property is provided Ito satisfy the <see cref="ICollection{T}"/> interface contract.
+  /// This property is provided to satisfy the <see cref="ICollection{T}"/> interface contract.
   /// Elements can be added, removed, and modified through the various collection methods.
   /// </remarks>
   public bool IsReadOnly => false;
@@ -303,7 +303,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <summary>
   /// Determines the index of a specific element in the vector.
   /// </summary>
-  /// <param name="item">The element Ito locate in the vector. The value can be <see langword="null"/>.</param>
+  /// <param name="item">The element to locate in the vector. The value can be <see langword="null"/>.</param>
   /// <returns>
   /// The zero-based index of the first occurrence of <paramref name="item"/> in the vector,
   /// if found; otherwise, -1.
@@ -314,7 +314,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// of the first occurrence.
   /// </para>
   /// <para>
-  /// The comparison uses the <see cref="object.Equals(object)"/> method Ito locate the element.
+  /// The comparison uses the <see cref="object.Equals(object)"/> method to locate the element.
   /// </para>
   /// </remarks>
   public int IndexOf(object? item)
@@ -329,12 +329,12 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// The zero-based index at which <paramref name="item"/> should be inserted.
   /// </param>
   /// <param name="item">
-  /// The element Ito insert into the vector. The value can be <see langword="null"/>.
+  /// The element to insert into the vector. The value can be <see langword="null"/>.
   /// </param>
   /// <remarks>
   /// <para>
-  /// If <paramref name="index"/> equals <see cref="Count"/>, the element is added Ito the end of the vector.
-  /// All elements at and after the insertion point are shifted one position Ito the right,
+  /// If <paramref name="index"/> equals <see cref="Count"/>, the element is added to the end of the vector.
+  /// All elements at and after the insertion point are shifted one position to the right,
   /// and the <see cref="Count"/> is increased by 1.
   /// </para>
   /// <para>
@@ -352,15 +352,15 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <summary>
   /// Removes the element at the specified index from the vector.
   /// </summary>
-  /// <param name="index">The zero-based index of the element Ito remove.</param>
+  /// <param name="index">The zero-based index of the element to remove.</param>
   /// <remarks>
   /// <para>
-  /// All elements after the removed element are shifted one position Ito the left,
+  /// All elements after the removed element are shifted one position to the left,
   /// and the <see cref="Count"/> is decreased by 1.
   /// </para>
   /// </remarks>
   /// <exception cref="ArgumentOutOfRangeException">
-  /// Thrown when <paramref name="index"/> is less than 0 or greater than or equal Ito <see cref="Count"/>.
+  /// Thrown when <paramref name="index"/> is less than 0 or greater than or equal to <see cref="Count"/>.
   /// </exception>
   public void RemoveAt(int index)
   {
@@ -370,20 +370,20 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <summary>
   /// Gets or sets the element at the specified index.
   /// </summary>
-  /// <param name="index">The zero-based index of the element Ito get or set.</param>
+  /// <param name="index">The zero-based index of the element to get or set.</param>
   /// <value>The element at the specified index. Can be <see langword="null"/>.</value>
   /// <remarks>
   /// <para>
-  /// This indexer provides direct access Ito elements by their position in the vector.
-  /// Valid indices range from 0 Ito <see cref="Count"/> - 1.
+  /// This indexer provides direct access to elements by their position in the vector.
+  /// Valid indices range from 0 to <see cref="Count"/> - 1.
   /// </para>
   /// <para>
   /// When setting a value, no type checking is performed against the <see cref="BaseType"/> property.
-  /// Null values can be assigned Ito any position.
+  /// Null values can be assigned to any position.
   /// </para>
   /// </remarks>
   /// <exception cref="ArgumentOutOfRangeException">
-  /// Thrown when <paramref name="index"/> is less than 0 or greater than or equal Ito <see cref="Count"/>.
+  /// Thrown when <paramref name="index"/> is less than 0 or greater than or equal to <see cref="Count"/>.
   /// </exception>
   public object? this[int index]
   {
@@ -391,13 +391,13 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
     set => _items[index] = value;
   }
   /// <summary>
-  /// Determines whether the specified <see cref="VectorVariant"/> is equal Ito the current instance.
+  /// Determines whether the specified <see cref="VectorVariant"/> is equal to the current instance.
   /// </summary>
   /// <param name="other">
-  /// The <see cref="VectorVariant"/> Ito compare with the current instance. Can be <see langword="null"/>.
+  /// The <see cref="VectorVariant"/> to compare with the current instance. Can be <see langword="null"/>.
   /// </param>
   /// <returns>
-  /// <see langword="true"/> if the specified <see cref="VectorVariant"/> is equal Ito the current instance;
+  /// <see langword="true"/> if the specified <see cref="VectorVariant"/> is equal to the current instance;
   /// otherwise, <see langword="false"/>.
   /// </returns>
   /// <remarks>
@@ -445,7 +445,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   /// <remarks>
-  /// This method delegates Ito the base class implementation of <see cref="object.GetHashCode"/>.
+  /// This method delegates to the base class implementation of <see cref="object.GetHashCode"/>.
   /// For consistent hash code generation Ithat considers the vector's contents, consider
   /// implementing a custom hash code calculation based on the elements.
   /// </remarks>
@@ -455,11 +455,11 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito a string representation using the specified format provider.
+  /// Converts the value of this instance to a string representation using the specified format provider.
   /// </summary>
   /// <param name="provider">
   /// An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.
-  /// Can be <see langword="null"/> Ito use the current culture.
+  /// Can be <see langword="null"/> to use the current culture.
   /// </param>
   /// <returns>
   /// A string representation of the vector in the format "(element1, element2, ...)".
@@ -489,14 +489,14 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito a string representation.
+  /// Converts the value of this instance to a string representation.
   /// </summary>
   /// <returns>
   /// A string representation of the vector in the format "Vector [of BaseType] = [element1 element2 ...]".
   /// </returns>
   /// <remarks>
   /// This method calls <see cref="ToString(IFormatProvider)"/> with <see cref="CultureInfo.InvariantCulture"/>
-  /// Ito ensure consistent string representation across different cultures.
+  /// to ensure consistent string representation across different cultures.
   /// </remarks>
   public override string? ToString()
   {

@@ -1,6 +1,4 @@
-﻿using DocumentModel.Properties;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 /// <summary>
 /// Collection of all document properties;
 /// </summary>
@@ -36,7 +34,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(item.Value, property.PropertyType);
+        var valueObject = item.Value;
         property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
           new[] { item }, Array.Empty<object>()));
@@ -59,7 +57,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(item.Value, property.PropertyType);
+        var valueObject = item.Value;
         property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
           new[] { item }, Array.Empty<object>()));
@@ -136,7 +134,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        if ((string?)property.GetValue(this) == item.Value)
+        if (property.GetValue(this) == item.Value)
           return true;
       }
     }
@@ -199,9 +197,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
       var value = property.GetValue(this);
       if (value != null)
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueString = docPropertyType.ConvertObjectToString(value);
-        yield return new BuiltInProperty { Name = property.Name, Value = valueString };
+        yield return new BuiltInProperty { Name = property.Name, Value = value };
       }
     }
   }
@@ -214,16 +210,16 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
   /// </summary>
   public override event NotifyCollectionChangedEventHandler? CollectionChanged;
 
-  ///// <summary>
-  ///// Copies the elements of the collection of document properties to an array, starting at a particular array index.
-  ///// </summary>
-  ///// <param name="array">The destination array.</param>
-  ///// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  //public override void CopyTo(BuiltInProperty[] array, int arrayIndex)
-  //{
-  //  var tempArray = this.ToArray();
-  //  Array.Copy(tempArray, 0, array, arrayIndex, tempArray.Length);
-  //}
+  /// <summary>
+  /// Copies the elements of the collection of document properties to an array, starting at a particular array index.
+  /// </summary>
+  /// <param name="array">The destination array.</param>
+  /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
+  public override void CopyTo(BuiltInProperty[] array, int arrayIndex)
+  {
+    var tempArray = this.ToArray();
+    Array.Copy(tempArray, 0, array, arrayIndex, tempArray.Length);
+  }
 
   /// <summary>
   /// Tries to get a property from this instance by its name.
@@ -237,9 +233,8 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
   {
     if (KnownProperties.TryGetValue(propertyName, out var property))
     {
-      var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-      var valueString = docPropertyType.ConvertObjectToString(property.GetValue(this));
-      builtInProperty = new BuiltInProperty { Name = propertyName, Value = valueString };
+      var valueObject = property.GetValue(this);
+      builtInProperty = new BuiltInProperty { Name = propertyName, Value = valueObject };
       return true;
     }
     builtInProperty = null!;
@@ -257,7 +252,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     if (KnownProperties.TryGetValue(propertyName, out var property))
     {
       var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-      var valueObject = docPropertyType.ConvertStringToObject(builtInProperty.Value, property.PropertyType);
+      var valueObject = builtInProperty.Value;
       property.SetValue(this, valueObject);
       return true;
     }
@@ -280,9 +275,8 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     {
       if (KnownProperties.TryGetValue(propertyName, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueString = docPropertyType.ConvertObjectToString(property.GetValue(this));
-        return new BuiltInProperty { Name = propertyName, Value = valueString };
+        var valueObject = property.GetValue(this);
+        return new BuiltInProperty { Name = propertyName, Value = valueObject };
       }
       throw new ArgumentException($"DocumentProperty with name '{propertyName}' does not exist in {GetType().Name}.");
     }
@@ -290,8 +284,7 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     {
       if (KnownProperties.TryGetValue(propertyName, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
-        var valueObject = docPropertyType.ConvertStringToObject(value.Value, property.PropertyType);
+        var valueObject = value;
         property.SetValue(this, valueObject);
         return;
       }

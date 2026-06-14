@@ -15,7 +15,7 @@ public partial class ListOf<T> : IXmlSerializable
   /// Deserializes the <see cref="List{T}"/> value from XML.
   /// Accepts space-separated values (or comma/semicolon-separated for string types).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
@@ -26,7 +26,7 @@ public partial class ListOf<T> : IXmlSerializable
   /// </list>
   /// <para>The string is split using appropriate separators based on the element type.</para>
   /// <para>Empty entries are automatically removed.</para>
-  /// <para>Each token is converted Ito type T using <see cref="Convert.ChangeType(object, Type)"/>.</para>
+  /// <para>Each token is converted to type T using <see cref="Convert.ChangeType(object, Type)"/>.</para>
   /// </remarks>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
@@ -36,7 +36,7 @@ public partial class ListOf<T> : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -66,9 +66,9 @@ public partial class ListOf<T> : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="List{T}"/> value Ito XML.
+  /// Serializes the <see cref="List{T}"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// The value is written as a space-separated string with items separated by spaces.
   /// For example, a list containing 1, 2, 3 is written as "1 2 3".

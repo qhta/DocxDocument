@@ -10,8 +10,8 @@
 /// functionality for parsing and formatting percentage strings with "%" suffix.
 /// </para>
 /// <para>
-/// The BytePercent type also supports conversion Ito/from hexadecimal format (0x00-0xFF scale) which is
-/// commonly used in color representations where byte percentages need Ito be converted Ito 0-255 range.
+/// The BytePercent type also supports conversion to/from hexadecimal format (0x00-0xFF scale) which is
+/// commonly used in color representations where byte percentages need to be converted to 0-255 range.
 /// </para>
 /// <para>
 /// <b>Usage Examples:</b>
@@ -21,7 +21,7 @@
 /// BytePercent percent2 = new BytePercent("75%");     // 75%
 /// BytePercent percent3 = 100;                        // Implicit conversion
 /// 
-/// // Convert Ito string
+/// // Convert to string
 /// string str = percent1.ToString(CultureInfo.InvariantCulture);                  // "50%"
 /// string hex = percent1.ToHexString();               // "80" (128 in hex)
 /// 
@@ -44,7 +44,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// <summary>
   /// Initializes a new instance of the <see cref="BytePercent"/> structure from a string representation.
   /// </summary>
-  /// <param name="val">The string Ito parse. Can optionally include "%" suffix.</param>
+  /// <param name="val">The string to parse. Can optionally include "%" suffix.</param>
   /// <remarks>
   /// <para>
   /// The string can be provided with or without the "%" suffix. Both "50" and "50%" are valid inputs
@@ -76,8 +76,8 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// </summary>
   /// <param name="value">The byte value representing the percentage (0-100).</param>
   /// <remarks>
-  /// Values are typically in the range 0-100 representing 0% Ito 100%, though the byte type
-  /// allows values up Ito 255.
+  /// Values are typically in the range 0-100 representing 0% to 100%, though the byte type
+  /// allows values up to 255.
   /// </remarks>
   public BytePercent(byte value)
   {
@@ -97,7 +97,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent Boolean value.
+  /// Converts the value of this instance to an equivalent Boolean value.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns><see langword="true"/> if the value is not zero; otherwise, <see langword="false"/>.</returns>
@@ -107,20 +107,20 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 8-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 8-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>An 8-bit unsigned integer equivalent Ito the value of this instance.</returns>
+  /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider)
   {
     return (byte)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent Unicode character.
+  /// Converts the value of this instance to an equivalent Unicode character.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A Unicode character equivalent Ito the value of this instance.</returns>
+  /// <returns>A Unicode character equivalent to the value of this instance.</returns>
   public char ToChar(IFormatProvider? provider)
   {
     return ((IConvertible)value).ToChar(provider);
@@ -138,77 +138,77 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent <see cref="Decimal"/> number.
+  /// Converts the value of this instance to an equivalent <see cref="Decimal"/> number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A <see cref="Decimal"/> number equivalent Ito the value of this instance.</returns>
+  /// <returns>A <see cref="Decimal"/> number equivalent to the value of this instance.</returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
     return value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent double-precision floating-point number.
+  /// Converts the value of this instance to an equivalent double-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A double-precision floating-point number equivalent Ito the value of this instance.</returns>
+  /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
     return value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 16-bit signed integer.
+  /// Converts the value of this instance to an equivalent 16-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider)
   {
     return (short)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit signed integer.
+  /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
     return value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit signed integer.
+  /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 64-bit signed integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
     return value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 8-bit signed integer.
+  /// Converts the value of this instance to an equivalent 8-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>An 8-bit signed integer equivalent Ito the value of this instance.</returns>
+  /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
     return (sbyte)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent single-precision floating-point number.
+  /// Converts the value of this instance to an equivalent single-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A single-precision floating-point number equivalent Ito the value of this instance.</returns>
+  /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
     return value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito its equivalent string representation.
+  /// Converts the value of this instance to its equivalent string representation.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The string representation of the value of this instance without "%" suffix.</returns>
@@ -218,45 +218,45 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 16-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 16-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 16-bit unsigned integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
     return (ushort)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 32-bit unsigned integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
     return (uint)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A 64-bit unsigned integer equivalent Ito the value of this instance.</returns>
+  /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
     return (ulong)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an <see cref="Object"/> of the specified <see cref="Type"/> 
+  /// Converts the value of this instance to an <see cref="Object"/> of the specified <see cref="Type"/> 
   /// Ithat has an equivalent value, using the specified culture-specific formatting information.
   /// </summary>
-  /// <param name="targetType">The <see cref="Type"/> Ito which the value of this instance is converted.</param>
+  /// <param name="targetType">The <see cref="Type"/> to which the value of this instance is converted.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>An <see cref="Object"/> instance of type <paramref name="targetType"/> whose value is equivalent Ito the value of this instance.</returns>
+  /// <returns>An <see cref="Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
   /// <remarks>
   /// <para>
-  /// This method supports conversion Ito the following types:
+  /// This method supports conversion to the following types:
   /// <list type="bullet">
   /// <item><description><see cref="UInt16"/>, <see cref="UInt32"/>, <see cref="UInt64"/> - Returns the byte value as unsigned integer</description></item>
   /// <item><description><see cref="Int16"/>, <see cref="Int32"/>, <see cref="Int64"/> - Returns the byte value as signed integer</description></item>
@@ -306,9 +306,9 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a string to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="val">The string Ito convert. Can optionally include "%" suffix.</param>
+  /// <param name="val">The string to convert. Can optionally include "%" suffix.</param>
   /// <returns>A new BytePercent instance parsed from the string.</returns>
   /// <exception cref="FormatException">Thrown when the string cannot be parsed as a valid byte value.</exception>
   public static implicit operator BytePercent(string val)
@@ -317,100 +317,100 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="BytePercent"/> value Ito a 16-bit unsigned integer.
+  /// Implicitly converts a <see cref="BytePercent"/> value to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The BytePercent value Ito convert.</param>
-  /// <returns>The underlying byte value cast Ito UInt16.</returns>
+  /// <param name="val">The BytePercent value to convert.</param>
+  /// <returns>The underlying byte value cast to UInt16.</returns>
   public static implicit operator ushort(BytePercent val)
   {
     return (ushort)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="BytePercent"/> value Ito a 32-bit unsigned integer.
+  /// Implicitly converts a <see cref="BytePercent"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The BytePercent value Ito convert.</param>
-  /// <returns>The underlying byte value cast Ito UInt32.</returns>
+  /// <param name="val">The BytePercent value to convert.</param>
+  /// <returns>The underlying byte value cast to UInt32.</returns>
   public static implicit operator uint(BytePercent val)
   {
     return (uint)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="BytePercent"/> value Ito a 32-bit signed integer.
+  /// Implicitly converts a <see cref="BytePercent"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="val">The BytePercent value Ito convert.</param>
-  /// <returns>The underlying byte value cast Ito Int32.</returns>
+  /// <param name="val">The BytePercent value to convert.</param>
+  /// <returns>The underlying byte value cast to Int32.</returns>
   public static implicit operator Int32(BytePercent val)
   {
     return val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="BytePercent"/> value Ito a 64-bit unsigned integer.
+  /// Implicitly converts a <see cref="BytePercent"/> value to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The BytePercent value Ito convert.</param>
-  /// <returns>The underlying byte value cast Ito UInt64.</returns>
+  /// <param name="val">The BytePercent value to convert.</param>
+  /// <returns>The underlying byte value cast to UInt64.</returns>
   public static implicit operator ulong(BytePercent val)
   {
     return (ulong)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a 16-bit unsigned integer to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="val">The unsigned integer value Ito convert.</param>
+  /// <param name="val">The unsigned integer value to convert.</param>
   /// <returns>A new BytePercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast Ito byte.</remarks>
+  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
   public static implicit operator BytePercent(ushort val)
   {
     return new BytePercent((byte)val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="val">The unsigned integer value Ito convert.</param>
+  /// <param name="val">The unsigned integer value to convert.</param>
   /// <returns>A new BytePercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast Ito byte.</remarks>
+  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
   public static implicit operator BytePercent(uint val)
   {
     return new BytePercent((byte)val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="val">The signed integer value Ito convert.</param>
+  /// <param name="val">The signed integer value to convert.</param>
   /// <returns>A new BytePercent instance with the converted value.</returns>
-  /// <remarks>Values less than 0 or greater than 255 will overflow when cast Ito byte.</remarks>
+  /// <remarks>Values less than 0 or greater than 255 will overflow when cast to byte.</remarks>
   public static implicit operator BytePercent(Int32 val)
   {
     return new BytePercent((byte)val);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a 64-bit unsigned integer to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="val">The unsigned long value Ito convert.</param>
+  /// <param name="val">The unsigned long value to convert.</param>
   /// <returns>A new BytePercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast Ito byte.</remarks>
+  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
   public static implicit operator BytePercent(ulong val)
   {
     return new BytePercent((byte)val);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="BytePercent"/> value Ito a <see cref="HexBinary"/> value.
+  /// Implicitly converts a <see cref="BytePercent"/> value to a <see cref="HexBinary"/> value.
   /// </summary>
-  /// <param name="value">The BytePercent value Ito convert.</param>
+  /// <param name="value">The BytePercent value to convert.</param>
   /// <returns>A new HexBinary instance Icreated from the string representation of the BytePercent value.</returns>
   public static implicit operator HexBinary(BytePercent value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
-  /// Implicitly converts a <see cref="HexBinary"/> value Ito a <see cref="BytePercent"/> value.
+  /// Implicitly converts a <see cref="HexBinary"/> value to a <see cref="BytePercent"/> value.
   /// </summary>
-  /// <param name="value">The HexBinary value Ito convert.</param>
+  /// <param name="value">The HexBinary value to convert.</param>
   /// <returns>A new BytePercent instance parsed from the HexBinary string representation.</returns>
   public static implicit operator BytePercent(HexBinary value) => new BytePercent(value.ToString());
 
@@ -422,7 +422,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// <summary>
   /// Parses a string representation of a percentage and returns a corresponding BytePercent instance.
   /// </summary>
-  /// <param name="str">The string containing the percentage Ito parse. The string should be in a format recognized by the Percent type,
+  /// <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
   /// such as "50%" or "0.5".</param>
   /// <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
   public static BytePercent Parse(string str)
@@ -431,7 +431,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Attempts Ito parse a string representation of a percentage into a <see cref="BytePercent"/> instance.
+  /// Attempts to parse a string representation of a percentage into a <see cref="BytePercent"/> instance.
   /// </summary>
   /// <param name="str">The string representation of the percentage.</param>
   /// <param name="result">The resulting <see cref="Percent"/> instance if parsing is successful.</param>
@@ -451,11 +451,11 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
   
   /// <summary>
-  /// Converts the value of this instance Ito its equivalent string representation with "%" suffix.
+  /// Converts the value of this instance to its equivalent string representation with "%" suffix.
   /// </summary>
   /// <returns>A string representation of the percentage value (e.g., "50%").</returns>
   /// <remarks>
-  /// The returned string includes the "%" suffix Ito clearly indicate the value is a percentage.
+  /// The returned string includes the "%" suffix to clearly indicate the value is a percentage.
   /// For string output without the suffix, use <see cref="ToString(IFormatProvider)"/>.
   /// </remarks>
   public override string ToString()
@@ -464,7 +464,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts value Ito string using unit.
+  /// Converts value to string using unit.
   /// Unit can be determined as "%" suffix or null.
   /// </summary>
   public string ToString(string? unit)
@@ -473,7 +473,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts value Ito string using unit and specific precision (fractional digits count).
+  /// Converts value to string using unit and specific precision (fractional digits count).
   /// Unit can be determined as "%" suffix or null.
   /// </summary>
   public string ToString(int precision, string? unit)
@@ -482,8 +482,8 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts value Ito string using unit, specific precision (fractional digits count),
-  /// and format provider Ito determine digits separator.
+  /// Converts value to string using unit, specific precision (fractional digits count),
+  /// and format provider to determine digits separator.
   /// Fixed format is used.
   /// Unit can be determined as "%" suffix or null.
   /// </summary>
@@ -499,8 +499,8 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts value Ito string using unit
-  /// and format provider Ito determine digits separator.
+  /// Converts value to string using unit
+  /// and format provider to determine digits separator.
   /// Unit can be determined as "%" suffix or null.
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
@@ -520,10 +520,10 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// <summary>
   /// Creates a new BytePercent instance from a hexadecimal string representation.
   /// </summary>
-  /// <remarks>The input string is interpreted as a hexadecimal byte and mapped Ito a percentage value in the
-  /// range 0 Ito 100. The method rounds the result Ito the nearest integer percentage.</remarks>
-  /// <param name="str">A string containing a hexadecimal value Ito convert. The string must represent a value between 0x00 and 0xFF.</param>
-  /// <returns>A BytePercent instance corresponding Ito the percentage value derived from the specified hexadecimal string.</returns>
+  /// <remarks>The input string is interpreted as a hexadecimal byte and mapped to a percentage value in the
+  /// range 0 to 100. The method rounds the result to the nearest integer percentage.</remarks>
+  /// <param name="str">A string containing a hexadecimal value to convert. The string must represent a value between 0x00 and 0xFF.</param>
+  /// <returns>A BytePercent instance corresponding to the percentage value derived from the specified hexadecimal string.</returns>
   public static BytePercent FromHexString(string str)
   {
     byte byteValue = Convert.ToByte(str, 16);
@@ -531,7 +531,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito its equivalent hexadecimal string representation.
+  /// Converts the value of this instance to its equivalent hexadecimal string representation.
   /// </summary>
   /// <returns>A string representation of the hexadecimal value (e.g., "32").</returns>
   public string ToHexString()
@@ -542,10 +542,10 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   #endregion
 
   /// <summary>
-  /// Indicates whether the current object is equal Ito another object of the same type.
+  /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
-  /// <param name="other">An object Ito compare with this object.</param>
-  /// <returns><see langword="true"/> if the current object is equal Ito the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+  /// <param name="other">An object to compare with this object.</param>
+  /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(BytePercent other)
   {
     return value == other.value;
@@ -555,7 +555,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// Compares the current instance with another object of the same type and returns an integer Ithat indicates 
   /// whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
   /// </summary>
-  /// <param name="other">An object Ito compare with this instance.</param>
+  /// <param name="other">An object to compare with this instance.</param>
   /// <returns>
   /// A value Ithat indicates the relative order of the objects being compared:
   /// <list type="bullet">

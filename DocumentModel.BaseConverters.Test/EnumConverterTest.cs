@@ -23,7 +23,7 @@ public static class EnumConverterTest
   ];
 
   /// <summary>
-  ///   Runs all EnumConverter tests for supported types and reports results Ito the console.
+  ///   Runs all EnumConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -44,7 +44,7 @@ public static class EnumConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of Enum values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Enum values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
   /// <param name="modelType">The model type</param>
@@ -67,13 +67,13 @@ public static class EnumConverterTest
     int valueIndex = 0;
     foreach (var testValue in testValues)
     {
-      // Convert Ito OpenXml
+      // Convert to OpenXml
       var openXmlValue = EnumTypeConverter.ConvertTo((Enum)testValue, openXmlType);
       if (openXmlValue == null)
       {
         if (valueIndex == 0)
           Console.WriteLine();
-        Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+        Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
         return false;
       }
 
@@ -85,15 +85,15 @@ public static class EnumConverterTest
         ?? openXmlValue.ToString();
       if (valueIndex == 0)
         Console.WriteLine();
-      Console.WriteLine($"Converted {testValue} Ito OpenXml value {outputText}");
+      Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}");
 
-      // Convert back Ito Enum
+      // Convert back to Enum
       var convertedBackValue = EnumTypeConverter.ConvertFrom(openXmlValue, modelType);
       if (convertedBackValue == null)
       {
         if (valueIndex == 0)
           Console.WriteLine();
-        Console.WriteLine($"Conversion back Ito Enum returned null for OpenXml value {openXmlValue}");
+        Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
         return false;
       }
       if (!testValue.Equals(convertedBackValue))

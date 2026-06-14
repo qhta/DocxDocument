@@ -17,7 +17,7 @@ public partial struct HexColor : IXmlSerializable
   /// Deserializes the <see cref="HexColor"/> value from XML.
   /// Accepts 6-digit hexadecimal string values representing RGB colors.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
@@ -34,7 +34,7 @@ public partial struct HexColor : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -44,7 +44,7 @@ public partial struct HexColor : IXmlSerializable
       {
         HexColor parsedValue = new HexColor(rgbString);
 
-        // Use Unsafe.AsRef Ito update the readonly field
+        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
       }
 
@@ -58,9 +58,9 @@ public partial struct HexColor : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="HexColor"/> value Ito XML.
+  /// Serializes the <see cref="HexColor"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// The value is written as a 6-digit hexadecimal string in the format RRGGBB.
   /// For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".

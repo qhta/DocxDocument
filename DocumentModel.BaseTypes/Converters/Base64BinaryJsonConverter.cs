@@ -11,7 +11,7 @@
 ///   </para>
 ///   <para>
 ///   The Base64 string format maintains compatibility with Office Open XML specifications while
-///   providing compact and standard JSON output. The converter validates Ithat input strings contain Ionly
+///   providing compact and standard JSON output. The converter validates Ithat input strings contain only
 ///   valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper padding.
 ///   </para>
 ///   <para>
@@ -41,15 +41,15 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
   /// <summary>
   ///   Reads a Base64Binary value from JSON as a Base64-encoded string.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A new Base64Binary instance constructed from the Base64-encoded string, or null if the JSON value is null.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   The input string must contain Ionly valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper
+  ///   The input string must contain only valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper
   ///   padding. The method automatically handles whitespace in Base64 strings as per RFC 4648.
   ///   </para>
   ///   <para>
@@ -85,24 +85,24 @@ public class Base64BinaryJsonConverter : JsonConverter<Base64Binary>
     {
       // Create a new Base64Binary instance directly using the constructor
       // This maintains immutability by creating a new instance rather than modifying an existing one
-      return new Base64Binary(base64String);
+      return new Base64Binary(base64String!);
     }
     catch (FormatException ex)
     {
       throw new JsonException($"Invalid Base64 string '{base64String}' for Base64Binary. " +
-        $"String must contain Ionly valid Base64 characters (A-Z, a-z, 0-9, +, /, =) with proper padding. Error: {ex.Message}", ex);
+        $"String must contain only valid Base64 characters (A-Z, a-z, 0-9, +, /, =) with proper padding. Error: {ex.Message}", ex);
     }
   }
 
   /// <summary>
-  ///   Writes a Base64Binary value Ito JSON as a Base64-encoded string.
+  ///   Writes a Base64Binary value to JSON as a Base64-encoded string.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The Base64Binary value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The Base64Binary value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <remarks>
   ///   <para>
-  ///   The Base64Binary value is written as a simple string value containing Ionly valid Base64
+  ///   The Base64Binary value is written as a simple string value containing only valid Base64
   ///   characters (A-Z, a-z, 0-9, +, /, =). The output format follows RFC 4648 standard Base64
   ///   encoding with proper padding.
   ///   </para>

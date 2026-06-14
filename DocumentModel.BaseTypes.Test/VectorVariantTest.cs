@@ -91,7 +91,7 @@ public static class VectorVariantTest
     Console.WriteLine("\nTesting CopyTo:");
     object?[] destArray = new object?[10];
     intVector.CopyTo(destArray, 2);
-    Console.WriteLine($"\n✓ Copied Ito destination array starting at index 2");
+    Console.WriteLine($"\n✓ Copied to destination array starting at index 2");
 
     // Test VariantType property
     Console.WriteLine($"\nTesting VariantType: {intVector.VariantType}");
@@ -337,7 +337,7 @@ public static class VectorVariantTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VectorVariantTestData));
     string xmlString;
 
@@ -412,7 +412,7 @@ public static class VectorVariantTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

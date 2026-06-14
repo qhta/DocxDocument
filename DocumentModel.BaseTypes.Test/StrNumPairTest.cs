@@ -29,7 +29,7 @@ public static class StrNumPairTest
   
   static bool TestStrNumPairBasicOperations()
   {
-    Console.WriteLine("--- Testing StrNumPair Basic Operations ---");      // Test string-Ionly constructor
+    Console.WriteLine("--- Testing StrNumPair Basic Operations ---");      // Test string-only constructor
     StrNumPair pair1 = new StrNumPair("test");
     Console.WriteLine($"\n✓ String constructor: {pair1} (Str='{pair1.Str}', Num={pair1.Num})");
 
@@ -70,8 +70,8 @@ public static class StrNumPairTest
 
     string? backToString = fromString;
     int? backToInt = fromInt;
-    Console.WriteLine($"\n✓ Back Ito string: '{backToString}'");
-    Console.WriteLine($"\n✓ Back Ito int: {backToInt}");
+    Console.WriteLine($"\n✓ Back to string: '{backToString}'");
+    Console.WriteLine($"\n✓ Back to int: {backToInt}");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -92,8 +92,8 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test format "(,Num)" with Ionly number
-    Console.WriteLine("\nTesting format \"(,Num)\" with Ionly number:");
+    // Test format "(,Num)" with only number
+    Console.WriteLine("\nTesting format \"(,Num)\" with only number:");
     StrNumPair pair2 = new StrNumPair("(,456)");
     Console.WriteLine($"  \"(,456)\" → {pair2} (Str='{pair2.Str}', Num={pair2.Num})");
     if (pair2.Str != null || pair2.Num != 456)
@@ -102,8 +102,8 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test format "(Str,)" with Ionly string
-    Console.WriteLine("\nTesting format \"(Str,)\" with Ionly string:");
+    // Test format "(Str,)" with only string
+    Console.WriteLine("\nTesting format \"(Str,)\" with only string:");
     StrNumPair pair3 = new StrNumPair("(xyz,)");
     Console.WriteLine($"  \"(xyz,)\" → {pair3} (Str='{pair3.Str}', Num={pair3.Num})");
     if (pair3.Str != "xyz" || pair3.Num != null)
@@ -207,7 +207,7 @@ public static class StrNumPairTest
     Console.WriteLine($"  ParsedFormat: {testData.ParsedFormat}");
     Console.WriteLine();
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(StrNumPairTestData));
     string xmlString;
 
@@ -309,7 +309,7 @@ public static class StrNumPairTest
     Console.WriteLine($"  ParsedFormat: {testData.ParsedFormat}");
     Console.WriteLine();
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

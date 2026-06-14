@@ -30,7 +30,7 @@ public static class SByteConverterTest
   ];
 
   /// <summary>
-  ///   Runs all SByteConverter tests for supported types and reports results Ito the console.
+  ///   Runs all SByteConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -64,7 +64,7 @@ public static class SByteConverterTest
     SByte.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid SByte value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid SByte value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (SByte min, SByte max)> typeRanges = new()
   {
@@ -81,10 +81,10 @@ public static class SByteConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of SByte values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of SByte values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test SByte conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test SByte conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestSByteConversion(Type openXmlType)
   {
@@ -92,11 +92,11 @@ public static class SByteConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = SByteConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         var (min, max) = typeRanges[openXmlType];
@@ -106,11 +106,11 @@ public static class SByteConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito SByte
+        // Convert back to SByte
         var convertedBackValue = SByteConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito SByte returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to SByte returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

@@ -19,7 +19,7 @@ public enum RulerStyle
   /// </summary>
   Proportional = 1,
   /// <summary>
-  /// Adjusts the left edge of the first column Ionly, preserving the positions of the other columns and the right
+  /// Adjusts the left edge of the first column only, preserving the positions of the other columns and the right
   /// edge of the table.
   /// </summary>
   FirstColumn = 2,

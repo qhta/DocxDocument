@@ -26,13 +26,13 @@ public static class HexLongTest
   
   static bool TestHexLongBasicOperations()
   {
-    Console.WriteLine("--- Testing HexLong Basic Operations ---");      // Test string Ito HexLong conversion
+    Console.WriteLine("--- Testing HexLong Basic Operations ---");      // Test string to HexLong conversion
     HexLong hexInt1 = "0000007B"; // 123 in hex
-    Console.WriteLine($"\n✓ String Ito HexLong: {hexInt1} = {hexInt1.ToInt32(null)}");
+    Console.WriteLine($"\n✓ String to HexLong: {hexInt1} = {hexInt1.ToInt32(null)}");
 
-    // Test int Ito HexLong conversion
+    // Test int to HexLong conversion
     HexLong hexInt2 = 123;
-    Console.WriteLine($"\n✓ Int Ito HexLong: {hexInt2}");
+    Console.WriteLine($"\n✓ Int to HexLong: {hexInt2}");
 
     // Test equality
     if (hexInt1.Equals(hexInt2))
@@ -40,13 +40,13 @@ public static class HexLongTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexLong Ito string
+    // Test HexLong to string
     string str = hexInt1.ToString();
-    Console.WriteLine($"\n✓ HexLong Ito string: {str}");
+    Console.WriteLine($"\n✓ HexLong to string: {str}");
 
-    // Test HexLong Ito int
+    // Test HexLong to int
     int value = hexInt1;
-    Console.WriteLine($"\n✓ HexLong Ito int: {value}");
+    Console.WriteLine($"\n✓ HexLong to int: {value}");
 
     // Test negative values
     HexLong negative = -1;
@@ -99,7 +99,7 @@ public static class HexLongTest
     Console.WriteLine($"  MinNegative: {testData.MinNegative} ({testData.MinNegative.ToInt32(null)})");
     Console.WriteLine();
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexLongTestData));
     string xmlString;
 
@@ -196,7 +196,7 @@ public static class HexLongTest
     Console.WriteLine($"  MinNegative: {testData.MinNegative}");
     Console.WriteLine();
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -378,7 +378,7 @@ public static class HexLongTest
       int value = hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test HexBinary conversion performance
     sw.Restart();
@@ -387,7 +387,7 @@ public static class HexLongTest
       HexBinary binary = (HexBinary)hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Conversion Ito HexBinary x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Conversion to HexBinary x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();

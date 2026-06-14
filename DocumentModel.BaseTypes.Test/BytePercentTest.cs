@@ -28,13 +28,13 @@ public static class BytePercentTest
   
   static bool TestBytePercentBasicOperations()
   {
-    Console.WriteLine("--- Testing BytePercent Basic Operations ---"); // Test string Ito BytePercent conversion
+    Console.WriteLine("--- Testing BytePercent Basic Operations ---"); // Test string to BytePercent conversion
     BytePercent pct1 = "50%";
-    Console.WriteLine($"\n✓ String Ito BytePercent: {pct1} = {(byte)pct1}");
+    Console.WriteLine($"\n✓ String to BytePercent: {pct1} = {(byte)pct1}");
 
-    // Test byte Ito BytePercent conversion
+    // Test byte to BytePercent conversion
     BytePercent pct2 = (byte)50;
-    Console.WriteLine($"\n✓ Byte Ito BytePercent: {pct2}");
+    Console.WriteLine($"\n✓ Byte to BytePercent: {pct2}");
 
     //// Test equality
     //if (pct1.CompareTo(pct2) == 0)
@@ -42,13 +42,13 @@ public static class BytePercentTest
     //else
     //  Console.WriteLine("✗ Equality test FAILED");
 
-    // Test BytePercent Ito string with %
+    // Test BytePercent to string with %
     string str = pct1.ToString();
-    Console.WriteLine($"\n✓ BytePercent Ito string: {str}");
+    Console.WriteLine($"\n✓ BytePercent to string: {str}");
 
-    // Test BytePercent Ito byte
+    // Test BytePercent to byte
     byte value = (byte)pct1;
-    Console.WriteLine($"\n✓ BytePercent Ito byte: {value}");
+    Console.WriteLine($"\n✓ BytePercent to byte: {value}");
 
     // Test hash code
     Console.WriteLine($"\n✓ Hash code: {pct1.GetHashCode()}");
@@ -75,7 +75,7 @@ public static class BytePercentTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(BytePercentTestData));
     string xmlString;
     using (var stringWriter = new StringWriter())
@@ -176,7 +176,7 @@ public static class BytePercentTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -395,7 +395,7 @@ public static class BytePercentTest
       byte value = (byte)pct1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito byte x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to byte x {iterations}: {sw.ElapsedMilliseconds}ms");
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
     return true;

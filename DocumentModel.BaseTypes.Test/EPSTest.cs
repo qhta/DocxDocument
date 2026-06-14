@@ -32,60 +32,60 @@ public static class EPSTest
   /// representations, and comparisons.
   /// </summary>
   /// <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
-  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information Ito the
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
   /// console for each test and returns false if any test fails.</remarks>
   /// <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
   static bool TestEPSBasicOperations()
   {
     Console.WriteLine("--- Testing EPS Basic Operations ---");
-    // Test string Ito EPS conversion (plain number)
+    // Test string to EPS conversion (plain number)
     long eps1Val = 7315200;
     var eps1Str = eps1Val.ToString();
     EPS eps1 = eps1Str;
     var longEPS = (long)eps1;
-    Console.WriteLine($"\n✓ String Ito EPS: {eps1} = {longEPS} EPS");
+    Console.WriteLine($"\n✓ String to EPS: {eps1} = {longEPS} EPS");
     if (longEPS != 7315200)
     {
-      Console.WriteLine("✗ String Ito EPS conversion FAILED");
+      Console.WriteLine("✗ String to EPS conversion FAILED");
       return false;
     }
-    // Test string Ito EPS conversion (with unit)
+    // Test string to EPS conversion (with unit)
     EPS eps2 = "1in";
     var inchEPS = eps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit Ito EPS: {eps2} ({inchEPS}in)");
+    Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS}in)");
     if (inchEPS != 1.0)
     {
-      Console.WriteLine("✗ String with unit Ito EPS conversion FAILED");
+      Console.WriteLine("✗ String with unit to EPS conversion FAILED");
       return false;
     }
 
-    // Test integer Ito EPS conversion
+    // Test integer to EPS conversion
     EPS eps3 = eps1Val;
     var intEPS = (int)eps3;
-    Console.WriteLine($"\n✓ Int Ito EPS: {intEPS}");
+    Console.WriteLine($"\n✓ Int to EPS: {intEPS}");
     if (intEPS != eps1Val)
     {
-      Console.WriteLine("✗ Int Ito EPS conversion FAILED");
+      Console.WriteLine("✗ Int to EPS conversion FAILED");
       return false;
     }
 
-    // Test EPS Ito string
+    // Test EPS to string
     string strEPS = eps1.ToString();
-    Console.WriteLine($"\n✓ EPS Ito string: {strEPS}");
+    Console.WriteLine($"\n✓ EPS to string: {strEPS}");
     if (strEPS != eps1Str)
     {
-      Console.WriteLine("✗ EPS Ito string conversion FAILED");
+      Console.WriteLine("✗ EPS to string conversion FAILED");
       return false;
     }
 
-    // Test EPS Ito various integer types
+    // Test EPS to various integer types
     int int32Val = (int)eps1;
     long int64Val = (long)eps1;
     uint uint32Val = (uint)eps1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
     if (int32Val != eps1Val || int64Val != eps1Val || uint32Val != eps1Val)
     {
-      Console.WriteLine("✗ EPS Ito numeric conversions FAILED");
+      Console.WriteLine("✗ EPS to numeric conversions FAILED");
       return false;
     }
 
@@ -102,9 +102,9 @@ public static class EPSTest
   /// Tests the accuracy and correctness of conversions between EPS and various length units, including inches,
   /// millimeters, centimeters, points, and twips.
   /// </summary>
-  /// <remarks>This method performs a series of unit conversion tests and outputs the results Ito the console. It
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method Ito validate Ithat EPS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate Ithat EPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEPSUnitConversions()
   {
@@ -178,7 +178,7 @@ public static class EPSTest
     EPS roundTrip = new EPS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} EPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back Ito EPS: {(long)roundTrip} EPS");
+    Console.WriteLine($"  Back to EPS: {(long)roundTrip} EPS");
     if (original.CompareTo(roundTrip) != 0)
     {
       Console.WriteLine("✗ Round-trip conversion FAILED");
@@ -211,13 +211,13 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests the XML serialization and deserialization process for an EPSTestData object Ito verify data integrity.
+  /// Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
   /// </summary>
-  /// <remarks>This method creates a sample EPSTestData instance, serializes it Ito XML, and then deserializes it
-  /// Ito ensure Ithat the original and deserialized data are equivalent. The serialized XML is written Ito the console for
-  /// inspection. Use this method Ito validate Ithat changes Ito the EPSTestData structure or serialization logic do not
+  /// <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
+  /// to ensure Ithat the original and deserialized data are equivalent. The serialized XML is written to the console for
+  /// inspection. Use this method to validate Ithat changes to the EPSTestData structure or serialization logic do not
   /// break XML compatibility.</remarks>
-  /// <returns>true if the EPSTestData object is successfully serialized Ito XML and deserialized back with matching data;
+  /// <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
   /// otherwise, false.</returns>
   static bool TestEPSXmlSerialization()
   {
@@ -225,7 +225,7 @@ public static class EPSTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(EPSTestData));
     string xmlString;
 
@@ -261,11 +261,11 @@ public static class EPSTest
 
   
   /// <summary>
-  /// Tests the serialization and deserialization of EPS test data Ito and from JSON format.
+  /// Tests the serialization and deserialization of EPS test data to and from JSON format.
   /// </summary>
-  /// <remarks>This method creates a sample EPS test data object, serializes it Ito a JSON string, and then
-  /// deserializes it back Ito an object. It outputs the serialized JSON Ito the console for inspection and verifies Ithat
-  /// the deserialized data matches the original. Use this method Ito validate Ithat EPS data can be accurately
+  /// <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
+  /// deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies Ithat
+  /// the deserialized data matches the original. Use this method to validate Ithat EPS data can be accurately
   /// round-tripped using JSON serialization.</remarks>
   /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
   /// verified; otherwise, false.</returns>
@@ -275,7 +275,7 @@ public static class EPSTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -299,7 +299,7 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Shows the original EPS test data values in a readable format Ito the console for verification before serialization.
+  /// Shows the original EPS test data values in a readable format to the console for verification before serialization.
   /// </summary>
   /// <param name="testData"></param>
   private static void ShowOriginalData(EPSTestData testData)
@@ -325,9 +325,9 @@ public static class EPSTest
   /// <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
   /// LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
   /// LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
-  /// message is written Ito the console and the method returns false.</remarks>
-  /// <param name="deserializedData">The deserialized EPSTestData instance Ito verify. If null, the verification fails.</param>
-  /// <param name="testData">The expected EPSTestData instance Ito compare against.</param>
+  /// message is written to the console and the method returns false.</remarks>
+  /// <param name="deserializedData">The deserialized EPSTestData instance to verify. If null, the verification fails.</param>
+  /// <param name="testData">The expected EPSTestData instance to compare against.</param>
   /// <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
   private static bool VerifyDeserializedData(EPSTestData? deserializedData, EPSTestData testData)
   {
@@ -378,7 +378,7 @@ public static class EPSTest
   /// Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
   /// </summary>
   /// <remarks>This method is intended for use in test scenarios Ithat require consistent and repeatable
-  /// typographic settings. All values are specified in EPS units and may need Ito be converted for use in other
+  /// typographic settings. All values are specified in EPS units and may need to be converted for use in other
   /// measurement systems.</remarks>
   /// <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
   /// properties.</returns>
@@ -404,9 +404,9 @@ public static class EPSTest
   /// Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
   /// values, precision, parsing, formatting, comparison, and implicit conversions.
   /// </summary>
-  /// <remarks>This method outputs the results of each test Ito the console for verification. It covers scenarios
+  /// <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
   /// such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
-  /// from different JSON formats, and conversion between numeric types. Use this method Ito validate the correctness and
+  /// from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
   /// robustness of the EPS type implementation.</remarks>
   /// <returns>true if all EPS edge case tests are completed successfully.</returns>
   static bool TestEPSEdgeCases()
@@ -423,7 +423,7 @@ public static class EPSTest
     Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
     Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
-    // Test eighth-point precision (unique Ito EPS - finest granularity)
+    // Test eighth-point precision (unique to EPS - finest granularity)
     Console.WriteLine("\nTesting eighth-point precision (finest granularity):");
     EPS oneEighth = 1;
     EPS twoEighths = 2;
@@ -529,7 +529,7 @@ public static class EPSTest
 
   /// <summary>
   /// Tests the performance of various operations on the EPS type, including construction from strings and integers,
-  /// conversion Ito different units, and JSON serialization/deserialization.
+  /// conversion to different units, and JSON serialization/deserialization.
   /// </summary>
   /// <returns>true if all EPS performance tests are completed successfully.</returns>
   static bool TestEPSPerformance()
@@ -668,7 +668,7 @@ public static class EPSTest
       Int64 value = ep1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();

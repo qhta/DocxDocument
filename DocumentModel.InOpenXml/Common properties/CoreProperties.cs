@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// </summary>
 [OpenXmlType(typeof(PackageProperties))]
 [XmlRoot("CoreProperties", Namespace = "DocumentModel")]
-public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingDocumentAware
+public partial class CoreProperties : BaseBuiltInProperties
 {
   private PackageProperties? _PackageProperties;
 
@@ -171,7 +171,7 @@ public partial class CoreProperties :BuiltInDocumentProperties, IWordprocessingD
   /// <summary>
   ///   Provides a registry of known core property definitions for this type.
   /// </summary>
-  public new static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(CoreProperties));
+  public static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(CoreProperties));
 
   private static KnownProperties? _KnownProperties;
 

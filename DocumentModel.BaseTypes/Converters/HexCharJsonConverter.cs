@@ -20,10 +20,10 @@
 ///   <para>
 ///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
-///   contain Ionly valid hexadecimal characters.
+///   contain only valid hexadecimal characters.
 ///   </para>
 ///   <para>
-///   <b>Usage Context:</b> This converter is automatically applied Ito HexChar properties when the type
+///   <b>Usage Context:</b> This converter is automatically applied to HexChar properties when the type
 ///   is used in JSON serialization, ensuring consistent hexadecimal string representation across all
 ///   JSON operations in Office Open XML document processing.
 ///   </para>
@@ -33,15 +33,15 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
   /// <summary>
   ///   Reads a HexChar value from JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A HexChar value constructed from the hexadecimal string, or a default HexChar if the value is null or empty.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   The input string must contain Ionly valid hexadecimal characters (0-9, A-F, a-f) and should be
+  ///   The input string must contain only valid hexadecimal characters (0-9, A-F, a-f) and should be
   ///   2 or 4 characters long. The method accepts both uppercase and lowercase hexadecimal digits.
   ///   </para>
   ///   <para>
@@ -71,7 +71,7 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
 
     try
     {
-      return new HexChar(str);
+      return new HexChar(str!);
     }
     catch (Exception ex)
     {
@@ -80,14 +80,14 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
   }
 
   /// <summary>
-  ///   Writes a HexChar value Ito JSON as a hexadecimal string.
+  ///   Writes a HexChar value to JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The HexChar value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The HexChar value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <remarks>
   ///   <para>
-  ///   The HexChar value is written as a simple string value containing Ionly uppercase hexadecimal characters.
+  ///   The HexChar value is written as a simple string value containing only uppercase hexadecimal characters.
   ///   The output format is automatically selected based on the value range:
   ///   <list type="bullet">
   ///   <item><description>Values 0-255: 2-digit format (e.g., "00", "41", "FF")</description></item>

@@ -28,14 +28,14 @@ public static class Base64BinaryTest
   {
     Console.WriteLine("--- Testing Base64Binary Basic Operations ---");
 
-    // Test string Ito Base64Binary conversion
+    // Test string to Base64Binary conversion
     Base64Binary base1 = "SGVsbG8="; // "Hello" in Base64Binary
-    Console.WriteLine($"\n✓ String Ito Base64Binary: {base1}");
+    Console.WriteLine($"\n✓ String to Base64Binary: {base1}");
 
-    // Test byte array Ito Base64Binary conversion
+    // Test byte array to Base64Binary conversion
     byte[] bytes = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
     Base64Binary base2 = bytes;
-    Console.WriteLine($"\n✓ Byte array Ito Base64Binary: {base2}");
+    Console.WriteLine($"\n✓ Byte array to Base64Binary: {base2}");
 
     // Test equality
     if (base1.Equals(base2))
@@ -43,13 +43,13 @@ public static class Base64BinaryTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test Base64Binary Ito string
+    // Test Base64Binary to string
     string str = base1;
-    Console.WriteLine($"\n✓ Base64Binary Ito string: {str}");
+    Console.WriteLine($"\n✓ Base64Binary to string: {str}");
 
-    // Test Base64Binary Ito byte array
+    // Test Base64Binary to byte array
     byte[] resultBytes = base1;
-    Console.WriteLine($"\n✓ Base64Binary Ito byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
+    Console.WriteLine($"\n✓ Base64Binary to byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
 
     // Test Length property
     Console.WriteLine($"\n✓ Length: {base1.Length} bytes");
@@ -73,7 +73,7 @@ public static class Base64BinaryTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(Base64BinaryTestDataClass));
     string xmlString;
 
@@ -156,7 +156,7 @@ public static class Base64BinaryTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

@@ -30,17 +30,17 @@ public static class HexRgbTest
   
   static bool TestHexRgbBasicOperations()
   {
-    Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string Ito HexRgb conversion
+    Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string to HexRgb conversion
     HexColor color1 = new HexColor("FF0000");
-    Console.WriteLine($"\n✓ String Ito HexRgb: {color1} = Red({color1.R}), Green({color1.G}), Blue({color1.B})");
+    Console.WriteLine($"\n✓ String to HexRgb: {color1} = Red({color1.R}), Green({color1.G}), Blue({color1.B})");
 
-    // Test UInt32 Ito HexRgb conversion
+    // Test UInt32 to HexRgb conversion
     HexColor color2 = new HexColor(0xFF0000U);
-    Console.WriteLine($"\n✓ UInt32 Ito HexRgb: {color2}");
+    Console.WriteLine($"\n✓ UInt32 to HexRgb: {color2}");
 
     // Test byte components constructor
     HexColor color3 = new HexColor(255, 0, 0);
-    Console.WriteLine($"\n✓ Byte components Ito HexRgb: {color3}");
+    Console.WriteLine($"\n✓ Byte components to HexRgb: {color3}");
 
     // Test equality
     if (color1.Equals(color2) && color2.Equals(color3))
@@ -48,9 +48,9 @@ public static class HexRgbTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexRgb Ito string
+    // Test HexRgb to string
     string str = color1.ToString();
-    Console.WriteLine($"\n✓ HexRgb Ito string: {str}");
+    Console.WriteLine($"\n✓ HexRgb to string: {str}");
 
     // Test component access
     Console.WriteLine($"\n✓ Component access: R={color1.R}, G={color1.G}, B={color1.B}");
@@ -75,7 +75,7 @@ public static class HexRgbTest
 
     HexColor fromUInt = uintVal;
     HexColor fromInt = intVal;
-    Console.WriteLine($"\n✓ Back Ito HexRgb: fromUInt={fromUInt}, fromInt={fromInt}");
+    Console.WriteLine($"\n✓ Back to HexRgb: fromUInt={fromUInt}, fromInt={fromInt}");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -300,7 +300,7 @@ public static class HexRgbTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexRgbTestData));
     string xmlString;
 
@@ -385,7 +385,7 @@ public static class HexRgbTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -468,7 +468,7 @@ public static class HexRgbTest
     HexColor backToHexRgb = hexColor;
     Console.WriteLine($"  Original HexRgb: {color}");
     Console.WriteLine($"  As HexInt: {hexColor}");
-    Console.WriteLine($"  Back Ito HexRgb: {backToHexRgb}");
+    Console.WriteLine($"  Back to HexRgb: {backToHexRgb}");
     Console.WriteLine($"  Are equal: {color.Equals(backToHexRgb)}");
 
     // Test Deserialization from different formats
@@ -664,7 +664,7 @@ public static class HexRgbTest
       UInt32 value = color1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito UInt32 x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to UInt32 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();

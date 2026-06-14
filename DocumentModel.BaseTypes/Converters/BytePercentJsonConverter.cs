@@ -38,8 +38,8 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// <summary>
   /// Reads a BytePercent value from JSON as a string or number.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   /// A new BytePercent instance constructed from the JSON value.
@@ -102,7 +102,7 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
           return new BytePercent((byte)intValue);
         }
 
-        throw new JsonException($"Cannot convert JSON number Ito BytePercent. Value must be in byte range (0-255).");
+        throw new JsonException($"Cannot convert JSON number to BytePercent. Value must be in byte range (0-255).");
       }
       catch (FormatException ex)
       {
@@ -114,14 +114,14 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   }
 
   /// <summary>
-  /// Writes a BytePercent value Ito JSON as a numeric string without "%" suffix.
+  /// Writes a BytePercent value to JSON as a numeric string without "%" suffix.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The BytePercent value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The BytePercent value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <remarks>
   /// <para>
-  /// The BytePercent value is written as a simple string value containing Ionly the numeric
+  /// The BytePercent value is written as a simple string value containing only the numeric
   /// value without the "%" suffix. This follows Office Open XML conventions for percentage
   /// values.
   /// </para>

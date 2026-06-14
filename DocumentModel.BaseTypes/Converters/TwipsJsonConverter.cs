@@ -10,18 +10,18 @@
 public class TwipsJsonConverter : JsonConverter<Twips>
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="Twips"/> value.
+  /// Reads and converts JSON to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="Twips"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
   /// <item><description>The string value cannot be parsed as a valid twips measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
-  /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
+  /// <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
   /// </exception>
@@ -89,9 +89,9 @@ public class TwipsJsonConverter : JsonConverter<Twips>
   /// <summary>
   /// Writes a <see cref="Twips"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="Twips"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="Twips"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the twips value as a numeric string without unit suffix.
   /// For example, a value of 1440 twips is written as "1440".

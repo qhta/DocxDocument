@@ -1,10 +1,12 @@
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel;
 /// <summary>
 ///   Custom-defined document property.
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
 [XmlRoot("CustomProperty", Namespace = "DocumentModel")]
-public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>, INamedObject
+public sealed partial class CustomProperty : DocumentProperty, INamedObject
 {
 
   /// <summary>
@@ -14,16 +16,19 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   {
   }
 
+  private DXCP.CustomDocumentProperty? _OpenXmlCustomProperty;
+  
+
   /// <summary>
   /// Initialization constructor.
   /// </summary>
   /// <param name = "propertiesCollection">Collection that contains this property</param>
-  /// <param name = "openXmlCustomDocumentProperty">Element from the Open XML SDK representing a custom document property.</param>
-  public CustomProperty(CustomProperties propertiesCollection, DXCP.CustomDocumentProperty openXmlCustomDocumentProperty) : this()
+  /// <param name = "openXmlOpenXmlCustomProperty">Element from the Open XML SDK representing a custom document property.</param>
+  public CustomProperty(CustomProperties propertiesCollection, DXCP.CustomDocumentProperty openXmlOpenXmlCustomProperty) : this()
   {
     SetCollection(propertiesCollection);
-    SetUpdatableElement(openXmlCustomDocumentProperty);
-    LoadData(openXmlCustomDocumentProperty);
+    _OpenXmlCustomProperty = openXmlOpenXmlCustomProperty;
+    LoadData(openXmlOpenXmlCustomProperty);
   }
 
   /// <summary>
@@ -35,9 +40,9 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// from the current object.</returns>
   public DXCP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {
-    _UpdatableElement ??= new DXCP.CustomDocumentProperty();
-    UpdateData(_UpdatableElement);
-    return _UpdatableElement!;
+    _OpenXmlCustomProperty ??= new DXCP.CustomDocumentProperty();
+    UpdateData(_OpenXmlCustomProperty);
+    return _OpenXmlCustomProperty!;
   }
 
   /// <summary>
@@ -48,12 +53,12 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   public int? PropertyId { get => _PropertyId; set => UpdateField(ref _PropertyId, value, nameof(PropertyId)); }
   private int? _PropertyId;
 
-  /// <summary>
-  ///   Property name. Should be unique within the document properties.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
-  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-  private string? _Name;
+  ///// <summary>
+  /////   Property name. Should be unique within the document properties.
+  ///// </summary>
+  //[OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
+  //public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+  //private string? _Name;
 
   /// <summary>
   /// Format identifier (FormatId) for the custom document property in OpenXml.
@@ -99,33 +104,111 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   private string? _LinkTarget;
 
   /// <summary>
+  ///   Value of the property
+  /// </summary>
+  public override object? Value
+  {
+    get
+    {
+      if (_OpenXmlCustomProperty == null)
+        return base.Value;
+      return GetAttachedPropertyInfo();
+    }
+    set
+    {
+      base.Value = value;
+      if (_OpenXmlCustomProperty != null)
+        SetAttachedPropertyValue(value);
+    }
+  }
+
+  /// <summary>
+  /// Sets the value of the built-in property using the provided string value.
+  /// The method converts the string value to the appropriate type based on the PropertyInfo and sets it on the BaseObject.
+  /// If the conversion or setting of the value fails, an InvalidOperationException is thrown with details about the failure.
+  /// </summary>
+  /// <param name="value">The string value to set for the built-in property.</param>
+  /// <exception cref="InvalidOperationException">Thrown when the conversion or setting of the value fails.</exception>
+  internal void SetAttachedPropertyValue(object? value)
+  {
+    if (_OpenXmlCustomProperty != null)
+    {
+      try
+      {
+        var valElement = VariantConverter.CreateOpenXmlElement(value);
+        var openXmlElement = _OpenXmlCustomProperty.FirstChild;
+        if (openXmlElement != null)
+          openXmlElement.Remove();
+        _OpenXmlCustomProperty.Append(valElement);
+      }
+      catch (Exception e)
+      {
+        throw new InvalidOperationException(
+          $"Failed to set the value of the custom property '{Name}'.", e);
+      }
+    }
+  }
+
+  /// <summary>
+  /// Gets the value of the built-in property as a string by retrieving the value from the BaseObject using the PropertyInfo and converting it to a string representation.
+  /// </summary>
+  /// <returns>The string representation of the built-in property's value.</returns>
+  /// <exception cref="InvalidOperationException">Thrown when the conversion or retrieval of the value fails.</exception>
+  internal object? GetAttachedPropertyInfo()
+  {
+    if (_OpenXmlCustomProperty != null)
+    {
+      try
+      {
+        var openXmlElement = (_OpenXmlCustomProperty)?.FirstChild;
+        if (openXmlElement != null)
+        {
+          var vtVariant = VariantConverter.GetVariant(openXmlElement);
+          var value = vtVariant.Value;
+          return value;
+        }
+        return null;
+      }
+      catch (Exception e)
+      {
+        throw new InvalidOperationException($"Failed to get the value of the custom property '{Name}'.",
+          e);
+      }
+    }
+    return null;
+  }
+
+
+
+  /// <summary>
   /// Value of the custom document property.
   /// </summary>
   [OpenXmlUpdateData(nameof(UpdateValueInOpenXml))]
   [OpenXmlLoadData(nameof(LoadValueFromOpenXml))]
-  public Variant? Value
+  [XmlIgnore]
+  [JsonIgnore]
+  public Variant? VariantValue
   {
     get
     {
-      var value = _Value;
+      var value = new Variant(base.Value);
       var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty)?.FirstChild;
       if (openXmlElement != null)
       {
-        _Value = value;
+        var vtVariant = openXmlElement.AsVTVariant();
+        if (vtVariant != null)
+          value = VariantConverter.GetVariant(vtVariant!);
       }
-
       return value;
     }
 
     set
     {
+      var _Value = new Variant(base.Value);
       if (value != _Value)
       {
-        _Value = value;
-#pragma warning disable IDE0019
-        var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty);
-#pragma warning restore IDE0019
-        if (openXmlElement != null)
+        base.Value = value;
+        if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
         {
           openXmlElement.RemoveAllChildren();
           if (value != null)
@@ -136,7 +219,6 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
       }
     }
   }
-  private Variant? _Value;
 
   /// <summary>
   /// Needed to set the value in OpenXml element.
@@ -159,49 +241,7 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
     if (firstChild != null)
     {
       var variant = VariantConverter.GetVariant(firstChild);
-      _Value = variant;
+      base.Value = variant;
     }
   }
-
-  /// <summary>
-  /// Type of the custom document property.
-  /// </summary>
-  [NotMapped]
-  public string? Type
-  {
-    get
-    {
-      var type = _Type;
-      if (type == null && _Value != null)
-      {
-        type = _Value.ValueType;
-        _Type = type;
-      }
-
-      return type?.Name;
-    }
-
-    set
-    {
-      if (value != _Type?.Name)
-      {
-        var type = _Type;
-        if (value != null)
-          type = TypeHelper.GetType(value);
-        if (type != null && _Value != null && _Value.ValueType != type)
-        {
-          var convertedValue = _Value.ConvertTo(type);
-          _Value = convertedValue;
-          if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
-          {
-            openXmlElement.RemoveAllChildren();
-            openXmlElement.AppendChild(convertedValue.AsVTVariant());
-          }
-        }
-
-        NotifyPropertyChanged(nameof(Value));
-      }
-    }
-  }
-  private Type? _Type;
 }

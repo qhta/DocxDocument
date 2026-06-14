@@ -19,7 +19,7 @@ public static class TSBooleanConverterTest
   ];
 
   /// <summary>
-  ///   Runs all BooleanConverter tests for supported types and reports results Ito the console.
+  ///   Runs all BooleanConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -40,10 +40,10 @@ public static class TSBooleanConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of boolean values Ito and from the specified Open XML boolean type.
-  ///   Handles special cases for empty types where false is converted Ito null.
+  ///   Tests round-trip conversion of boolean values to and from the specified Open XML boolean type.
+  ///   Handles special cases for empty types where false is converted to null.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test boolean conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test boolean conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestTSBooleanConversion(Type openXmlType)
   {

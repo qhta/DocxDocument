@@ -59,9 +59,9 @@ public static class StringListTest
     StringList list3 = "one,two,three"!;
     Console.WriteLine($"\n✓ Implicit from string: {list3}");
 
-    // Test implicit conversion Ito string
+    // Test implicit conversion to string
     string? backToString = list3;
-    Console.WriteLine($"\n✓ Back Ito string: '{backToString}'");
+    Console.WriteLine($"\n✓ Back to string: '{backToString}'");
 
     // Test Count property
     Console.WriteLine($"\n✓ Count property: {list2.Count}");
@@ -357,7 +357,7 @@ public static class StringListTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(StringListTestData));
     string xmlString;
 
@@ -431,7 +431,7 @@ public static class StringListTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -463,7 +463,7 @@ public static class StringListTest
       SingleItem = new StringList("single"),
       MultipleItems = new StringList("one,two,three"),
       ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/Ito/file"),
+      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
       Numbers = new StringList("1,2,3,4,5")
     };
   }
@@ -488,7 +488,7 @@ public static class StringListTest
     Console.WriteLine("Testing null handling:");
     StringList? nullList = null;
     string? nullToString = nullList;
-    Console.WriteLine($"  Null list Ito string: {(nullToString == null ? "null" : $"'{nullToString}'")}");
+    Console.WriteLine($"  Null list to string: {(nullToString == null ? "null" : $"'{nullToString}'")}");
 
     StringList? fromNull = (string?)null;
     Console.WriteLine($"  From null string: {(fromNull == null ? "null" : $"'{fromNull}'")}");
@@ -639,7 +639,7 @@ public static class StringListTest
       SingleItem = new StringList("single"),
       MultipleItems = new StringList("one,two,three"),
       ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/Ito/file"),
+      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
       Numbers = new StringList("1,2,3,4,5")
     };
 

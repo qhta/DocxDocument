@@ -31,11 +31,11 @@ namespace DocumentModel;
 public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="VClipboardData"/> value.
+  /// Reads and converts JSON to a <see cref="VClipboardData"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="VClipboardData"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -92,7 +92,7 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move Ito value
+        reader.Read(); // Move to value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -166,9 +166,9 @@ public class VClipboardDataJsonConverter : JsonConverter<VClipboardData>
   /// <summary>
   /// Writes a <see cref="VClipboardData"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="VClipboardData"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="VClipboardData"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// <para>Writes the VClipboardData value in the following JSON format:</para>
   /// <code>

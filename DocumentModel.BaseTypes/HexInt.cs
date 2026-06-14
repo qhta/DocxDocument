@@ -6,7 +6,7 @@
 /// <remarks>
 ///   <para>
 ///   HexInt provides a type-safe wrapper for integer values Ithat are represented as hexadecimal strings
-///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 Ito 2,147,483,647)
+///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 to 2,147,483,647)
 ///   Ithat is formatted as an 8-character uppercase hexadecimal string.
 ///   </para>
 ///   <para>
@@ -41,9 +41,22 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   private readonly uint value;
 
   /// <summary>
-  /// Converts the specified hexadecimal string Ito its <see cref="HexInt"/> equivalent.
+  /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
   /// </summary>
-  /// <param name="str">The hexadecimal string Ito convert.</param>
+  /// <param name="str">The hexadecimal string to convert.</param>
+  /// <returns>A <see cref="HexInt"/> value representing the hexadecimal string.</returns>
+  /// <exception cref="FormatException">Thrown when the string is not a valid hexadecimal number.</exception>
+  public static HexInt Parse(string str)
+  {
+    str = str.TrimStart('#');
+    if (string.IsNullOrEmpty(str) || str.Length > 8)
+      throw new FormatException("Input string must be a hexadecimal string with up to 8 characters.");
+    return new HexInt(uint.Parse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture));
+  }
+  /// <summary>
+  /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
+  /// </summary>
+  /// <param name="str">The hexadecimal string to convert.</param>
   /// <param name="result">The resulting HexInt value.</param>
   /// <returns>True if the conversion was successful; otherwise, false.</returns>
   public static bool TryParse(string str, out HexInt result)
@@ -65,12 +78,12 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a hexadecimal string.
   /// </summary>
   /// <param name="str">
-  ///   A hexadecimal string containing up Ito 8 hex digits (0-9, A-F, a-f) representing a 32-bit integer.
+  ///   A hexadecimal string containing up to 8 hex digits (0-9, A-F, a-f) representing a 32-bit integer.
   ///   May begin with an optional '#' character.
   /// </param>
   /// <remarks>
   ///   <para>
-  ///   The string is parsed as a hexadecimal number Ito obtain the integer value.
+  ///   The string is parsed as a hexadecimal number to obtain the integer value.
   ///   Leading zeros are optional. Valid input examples: "7B" (123), "FFFFFFFF" (-1), "00000001" (1).
   ///   </para>
   /// </remarks>
@@ -90,7 +103,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a 32-bit signed integer.
   /// </summary>
   /// <param name="value">
-  ///   A 32-bit signed integer value (-2,147,483,648 Ito 2,147,483,647).
+  ///   A 32-bit signed integer value (-2,147,483,648 to 2,147,483,647).
   /// </param>
   /// <remarks>
   ///   This is the primary constructor Ithat directly stores the integer value.
@@ -105,10 +118,10 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a 32-bit unsigned integer.
   /// </summary>
   /// <param name="value">
-  ///   A 32-bit unsigned integer value (0 Ito 4,294,967,295).
+  ///   A 32-bit unsigned integer value (0 to 4,294,967,295).
   /// </param>
   /// <remarks>
-  ///   Values greater than 2,147,483,647 will be interpreted as negative numbers when cast Ito signed int.
+  ///   Values greater than 2,147,483,647 will be interpreted as negative numbers when cast to signed int.
   ///   Example: new HexInt(0xFFFFFFFF) results in -1.
   /// </remarks>
   public HexInt(uint value)
@@ -123,7 +136,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   A 64-bit unsigned integer value. Only the lower 32 bits are used.
   /// </param>
   /// <remarks>
-  ///   The value is truncated Ito 32 bits. Values exceeding the int32 range will wrap around.
+  ///   The value is truncated to 32 bits. Values exceeding the int32 range will wrap around.
   ///   Example: new HexInt(0x100000001UL) results in 1.
   /// </remarks>
   public HexInt(ulong value)
@@ -144,7 +157,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a Boolean value.
+  ///   Converts the HexInt value to a Boolean value.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -156,14 +169,14 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a byte.
+  ///   Converts the HexInt value to a byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
   ///   A byte representing the lower 8 bits of the integer value.
   /// </returns>
   /// <remarks>
-  ///   Values outside the range 0-255 will be truncated Ito their lower 8 bits.
+  ///   Values outside the range 0-255 will be truncated to their lower 8 bits.
   /// </remarks>
   public byte ToByte(IFormatProvider? provider)
   {
@@ -171,11 +184,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a character.
+  ///   Converts the HexInt value to a character.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A character corresponding Ito the Unicode code point represented by the integer value.
+  ///   A character corresponding to the Unicode code point represented by the integer value.
   /// </returns>
   public char ToChar(IFormatProvider? provider)
   {
@@ -183,11 +196,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a DateTime.
+  ///   Converts the HexInt value to a DateTime.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
-  ///   A DateTime value (delegates Ito the underlying int conversion).
+  ///   A DateTime value (delegates to the underlying int conversion).
   /// </returns>
   /// <exception cref="InvalidCastException">
   ///   This conversion is not supported and will typically throw an exception.
@@ -198,7 +211,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a decimal.
+  ///   Converts the HexInt value to a decimal.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -210,7 +223,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a double-precision floating-point number.
+  ///   Converts the HexInt value to a double-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -222,11 +235,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 16-bit signed integer.
+  ///   Converts the HexInt value to a 16-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
-  ///   A 16-bit signed integer. Values outside the range -32,768 Ito 32,767 will be truncated.
+  ///   A 16-bit signed integer. Values outside the range -32,768 to 32,767 will be truncated.
   /// </returns>
   public short ToInt16(IFormatProvider? provider)
   {
@@ -234,7 +247,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 32-bit signed integer.
+  ///   Converts the HexInt value to a 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -246,7 +259,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 64-bit signed integer.
+  ///   Converts the HexInt value to a 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -258,11 +271,11 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a signed byte.
+  ///   Converts the HexInt value to a signed byte.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
-  ///   A signed byte. Values outside the range -128 Ito 127 will be truncated.
+  ///   A signed byte. Values outside the range -128 to 127 will be truncated.
   /// </returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
@@ -270,7 +283,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a single-precision floating-point number.
+  ///   Converts the HexInt value to a single-precision floating-point number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -282,7 +295,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a string using the specified format provider.
+  ///   Converts the HexInt value to a string using the specified format provider.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
@@ -298,7 +311,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 16-bit unsigned integer.
+  ///   Converts the HexInt value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -310,7 +323,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 32-bit unsigned integer.
+  ///   Converts the HexInt value to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -322,7 +335,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito a 64-bit unsigned integer.
+  ///   Converts the HexInt value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> (not used).</param>
   /// <returns>
@@ -334,16 +347,16 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Converts the HexInt value Ito the specified target type.
+  ///   Converts the HexInt value to the specified target type.
   /// </summary>
-  /// <param name="targetType">The type Ito convert Ito.</param>
+  /// <param name="targetType">The type to convert to.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> for culture-specific formatting.</param>
   /// <returns>
   ///   An object of the specified target type.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   This method provides explicit conversions Ito common numeric types and string:
+  ///   This method provides explicit conversions to common numeric types and string:
   ///   <list type="bullet">
   ///   <item><description>UInt16, Int32, UInt32, Int64, UInt64: Numeric conversions</description></item>
   ///   <item><description>Int16, Byte, SByte: Conversions with potential truncation</description></item>
@@ -354,7 +367,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   </para>
   /// </remarks>
   /// <exception cref="InvalidCastException">
-  ///   Thrown when conversion Ito the target type is not supported.
+  ///   Thrown when conversion to the target type is not supported.
   /// </exception>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
@@ -392,9 +405,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 
   #region Implicit Conversions
   /// <summary>
-  ///   Implicitly converts a hexadecimal string Ito a HexInt.
+  ///   Implicitly converts a hexadecimal string to a HexInt.
   /// </summary>
-  /// <param name="str">A hexadecimal string (up Ito 8 hex digits).
+  /// <param name="str">A hexadecimal string (up to 8 hex digits).
   ///   May begin with an optional '#' character.
   /// </param>
   /// <returns>A HexInt representing the parsed integer value.</returns>
@@ -407,7 +420,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt Ito a 16-bit unsigned integer.
+  ///   Implicitly converts a HexInt to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexInt value.</param>
   /// <returns>The lower 16 bits as ushort.</returns>
@@ -417,7 +430,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt Ito a 32-bit unsigned integer.
+  ///   Implicitly converts a HexInt to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexInt value.</param>
   /// <returns>The value reinterpreted as a uint.</returns>
@@ -427,7 +440,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt Ito a 32-bit signed integer.
+  ///   Implicitly converts a HexInt to a 32-bit signed integer.
   /// </summary>
   /// <param name="val">A HexInt value.</param>
   /// <returns>The underlying int32 value.</returns>
@@ -437,7 +450,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt Ito a 64-bit unsigned integer.
+  ///   Implicitly converts a HexInt to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="val">A HexInt value.</param>
   /// <returns>The value as a ulong.</returns>
@@ -447,9 +460,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a 16-bit unsigned integer Ito a HexInt.
+  ///   Implicitly converts a 16-bit unsigned integer to a HexInt.
   /// </summary>
-  /// <param name="val">A ushort value (0 Ito 65,535).</param>
+  /// <param name="val">A ushort value (0 to 65,535).</param>
   /// <returns>A HexInt representing the value.</returns>
   public static implicit operator HexInt(ushort val)
   {
@@ -457,9 +470,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a 32-bit unsigned integer Ito a HexInt.
+  ///   Implicitly converts a 32-bit unsigned integer to a HexInt.
   /// </summary>
-  /// <param name="val">A uint value (0 Ito 4,294,967,295).</param>
+  /// <param name="val">A uint value (0 to 4,294,967,295).</param>
   /// <returns>A HexInt representing the value.</returns>
   public static implicit operator HexInt(uint val)
   {
@@ -467,9 +480,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a 32-bit signed integer Ito a HexInt.
+  ///   Implicitly converts a 32-bit signed integer to a HexInt.
   /// </summary>
-  /// <param name="val">An int value (-2,147,483,648 Ito 2,147,483,647).</param>
+  /// <param name="val">An int value (-2,147,483,648 to 2,147,483,647).</param>
   /// <returns>A HexInt representing the value.</returns>
   public static implicit operator HexInt(Int32 val)
   {
@@ -477,7 +490,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a 64-bit unsigned integer Ito a HexInt.
+  ///   Implicitly converts a 64-bit unsigned integer to a HexInt.
   /// </summary>
   /// <param name="val">A ulong value. Only the lower 32 bits are used.</param>
   /// <returns>A HexInt representing the truncated value.</returns>
@@ -487,28 +500,28 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Implicitly converts a HexInt Ito a HexBinary.
+  ///   Implicitly converts a HexInt to a HexBinary.
   /// </summary>
   /// <param name="value">A HexInt value.</param>
   /// <returns>A HexBinary containing the 8-character hexadecimal representation.</returns>
   /// <remarks>
-  ///   Example: HexInt(123) converts Ito HexBinary("0000007B").
+  ///   Example: HexInt(123) converts to HexBinary("0000007B").
   /// </remarks>
   public static implicit operator HexBinary(HexInt value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
-  ///   Implicitly converts a HexBinary Ito a HexInt.
+  ///   Implicitly converts a HexBinary to a HexInt.
   /// </summary>
   /// <param name="value">A HexBinary value containing a hexadecimal string.</param>
   /// <returns>A HexInt parsed from the hexadecimal string.</returns>
   /// <remarks>
-  ///   Example: HexBinary("0000007B") converts Ito HexInt(123).
+  ///   Example: HexBinary("0000007B") converts to HexInt(123).
   /// </remarks>
   public static implicit operator HexInt(HexBinary value) => new HexInt(value.ToString());
 
   #endregion
   /// <summary>
-  ///   Converts this HexInt Ito its 8-character uppercase hexadecimal string representation.
+  ///   Converts this HexInt to its 8-character uppercase hexadecimal string representation.
   /// </summary>
   /// <returns>
   ///   An 8-character hexadecimal string with leading zeros (e.g., "0000007B", "FFFFFFFF").
@@ -530,9 +543,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   /// <summary>
-  ///   Determines whether this HexInt is equal Ito another HexInt.
+  ///   Determines whether this HexInt is equal to another HexInt.
   /// </summary>
-  /// <param name="other">The HexInt Ito compare with this instance.</param>
+  /// <param name="other">The HexInt to compare with this instance.</param>
   /// <returns>
   ///   <see langword="true"/> if the integer values are equal; otherwise <see langword="false"/>.
   /// </returns>
@@ -545,7 +558,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   Returns a hash code for this HexInt.
   /// </summary>
   /// <returns>
-  ///   A 32-bit signed integer hash code equal Ito the underlying integer value.
+  ///   A 32-bit signed integer hash code equal to the underlying integer value.
   /// </returns>
   public override int GetHashCode()
   {

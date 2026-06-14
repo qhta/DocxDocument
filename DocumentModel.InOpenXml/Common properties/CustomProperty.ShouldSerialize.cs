@@ -8,5 +8,4 @@ public partial class CustomProperty
   public bool ShouldSerializeName() => !String.IsNullOrEmpty(Name);
   public bool ShouldSerializeFormatId() => FormatId is not null;
   public bool ShouldSerializeLinkTarget() => !String.IsNullOrEmpty(LinkTarget);
-  public bool ShouldSerializeValue() => Value is not null;
 }

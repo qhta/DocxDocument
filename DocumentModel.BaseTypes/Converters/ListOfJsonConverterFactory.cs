@@ -8,7 +8,7 @@ public class ListOfJsonConverterFactory : JsonConverterFactory
   /// <summary>
   /// Determines whether the converter can convert the specified type.
   /// </summary>
-  /// <param name="typeToConvert">The type Ito check.</param>
+  /// <param name="typeToConvert">The type to check.</param>
   /// <returns><see langword="true"/> if the type is a <see cref="List{T}"/> type; otherwise, <see langword="false"/>.</returns>
   public override bool CanConvert(Type typeToConvert)
   {
@@ -22,8 +22,8 @@ public class ListOfJsonConverterFactory : JsonConverterFactory
   /// <summary>
   /// Creates a converter instance for the specified type.
   /// </summary>
-  /// <param name="typeToConvert">The type Ito create a converter for.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="typeToConvert">The type to create a converter for.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="JsonConverter"/> instance for the specified type.</returns>
   public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
   {

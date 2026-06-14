@@ -110,7 +110,7 @@ public static class SimpleValueConverterTest
   };
 
   /// <summary>
-  ///   Runs all TestSimpleValueConversion tests for supported types and reports results Ito the console.
+  ///   Runs all TestSimpleValueConversion tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -144,12 +144,12 @@ public static class SimpleValueConverterTest
 
   /// <summary>
   /// Tests conversion between a model type and another type expression.
-  /// Uses sample values Ito verify correct conversion in both directions.
+  /// Uses sample values to verify correct conversion in both directions.
   /// </summary>
-  /// <param name="modelType">The model type Ito convert from and back</param>
-  /// <param name="otherType">Target type Ito convert Ito</param>
+  /// <param name="modelType">The model type to convert from and back</param>
+  /// <param name="otherType">Target type to convert to</param>
   /// <param name="baseType">Base type for test. If null, the model type is used.</param>
-  /// <param name="testValues">Optional test values Ito use for the conversion tests</param>
+  /// <param name="testValues">Optional test values to use for the conversion tests</param>
   /// <returns></returns>
   public static bool TestSimpleValueConversion
     (Type modelType, Type otherType, Type? baseType = null, object[]? testValues = null)
@@ -201,12 +201,12 @@ public static class SimpleValueConverterTest
         if (testValue is Int32 intValue && testedOtherType == typeof(DX.Int16Value) &&
             (intValue < Int16.MinValue || intValue > Int16.MaxValue))
         {
-          Debug.WriteLine("Expected exception for Int32 Ito Int16Value conversion");
+          Debug.WriteLine("Expected exception for Int32 to Int16Value conversion");
         }
         else if (modelType == typeof(Twips) &&
                  (testedOtherType == typeof(DX.UInt32Value) || testedOtherType == typeof(DXM.ColumnSpacing)) && (Int64)(Twips)testValue < 0)
         {
-          Debug.WriteLine("Expected exception for negative Twips Ito UInt32Value conversion");
+          Debug.WriteLine("Expected exception for negative Twips to UInt32Value conversion");
         }
         else
         {
@@ -223,10 +223,10 @@ public static class SimpleValueConverterTest
 
   /// <summary>
   /// Tests conversion between a model type and another type expression.
-  /// Uses sample values Ito verify correct conversion in both directions.
+  /// Uses sample values to verify correct conversion in both directions.
   /// </summary>
-  /// <param name="modelType">The model type Ito convert from and back</param>
-  /// <param name="otherType">Target type Ito convert Ito</param>
+  /// <param name="modelType">The model type to convert from and back</param>
+  /// <param name="otherType">Target type to convert to</param>
   /// <returns></returns>
   public static bool? TestOpenXmlLeafElementConversion(Type modelType, Type otherType)
   {

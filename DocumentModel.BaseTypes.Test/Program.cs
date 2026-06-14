@@ -9,7 +9,7 @@ class Program
 {
   static void Main(string[] args)
   {
-    // Set culture Ito invariant Ito ensure consistent formatting across tests
+    // Set culture to invariant to ensure consistent formatting across tests
     CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
     // Ensure Unicode characters display correctly
     Console.OutputEncoding = System.Text.Encoding.UTF8;

@@ -12,10 +12,10 @@
 ///   <para>
 ///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
-///   contain Ionly valid hexadecimal characters.
+///   contain only valid hexadecimal characters.
 ///   </para>
 ///   <para>
-///   <b>Usage Context:</b> This converter is automatically applied Ito HexByte properties when the type
+///   <b>Usage Context:</b> This converter is automatically applied to HexByte properties when the type
 ///   is used in JSON serialization, ensuring consistent hexadecimal string representation across all
 ///   JSON operations in Office Open XML document processing.
 ///   </para>
@@ -25,15 +25,15 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
   /// <summary>
   ///   Reads a HexByte value from JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A HexByte value constructed from the hexadecimal string, or a default HexByte if the value is null or empty.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   The input string must contain Ionly valid hexadecimal characters (0-9, A-F, a-f) and should be
+  ///   The input string must contain only valid hexadecimal characters (0-9, A-F, a-f) and should be
   ///   2 characters long. The method accepts both uppercase and lowercase hexadecimal digits.
   ///   </para>
   /// </remarks>
@@ -54,7 +54,7 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
 
     try
     {
-      return new HexByte(str);
+      return new HexByte(str!);
     }
     catch (Exception ex)
     {
@@ -63,10 +63,10 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
   }
 
   /// <summary>
-  ///   Writes a HexByte value Ito JSON as a hexadecimal string.
+  ///   Writes a HexByte value to JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The HexByte value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The HexByte value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   public override void Write(Utf8JsonWriter writer, HexByte value, JsonSerializerOptions options)
   {

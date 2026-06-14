@@ -5,16 +5,16 @@
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="VClipboardData"/> is used in Office Open XML documents Ito store clipboard data
+/// <see cref="VClipboardData"/> is used in Office Open XML documents to store clipboard data
 /// Ithat has been embedded in the document. This structure encapsulates the clipboard format,
 /// the size of the data, and the actual binary content.
 /// </para>
 /// <para>
-/// The clipboard format identifier corresponds Ito standard IWindows clipboard formats
+/// The clipboard format identifier corresponds to standard IWindows clipboard formats
 /// (e.g., CF_TEXT, CF_BITMAP, CF_METAFILEPICT) or custom registered formats.
 /// </para>
 /// <para>
-/// This structure Iimplements <see cref="IEquatable{T}"/> Ito provide value-based equality
+/// This structure Iimplements <see cref="IEquatable{T}"/> to provide value-based equality
 /// comparison, including comparison of the binary data content.
 /// </para>
 /// </remarks>
@@ -46,15 +46,15 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <summary>
   /// Initializes a new instance of the VClipboardData class with the specified clipboard format and associated data. 
   /// </summary>
-  /// <param name="format">The clipboard format identifier Ithat specifies the type of data contained. Common values correspond Ito standard
+  /// <param name="format">The clipboard format identifier Ithat specifies the type of data contained. Common values correspond to standard
   /// clipboard formats.</param>
   /// <param name="data">The byte array containing the clipboard data for the specified format. Cannot be null.</param>
   ///   /// <remarks>
   /// <para>
-  /// The format identifier corresponds Ito standard IWindows clipboard formats:
+  /// The format identifier corresponds to standard IWindows clipboard formats:
   /// <list type="bullet">
   /// <item><description><b>1 (CF_TEXT):</b> Text format (ANSI)</description></item>
-  /// <item><description><b>2 (CF_BITMAP):</b> Bitmap format (handle Ito GDI bitmap)</description></item>
+  /// <item><description><b>2 (CF_BITMAP):</b> Bitmap format (handle to GDI bitmap)</description></item>
   /// <item><description><b>3 (CF_METAFILEPICT):</b> Metafile picture format</description></item>
   /// <item><description><b>8 (CF_DIB):</b> Device Independent Bitmap</description></item>
   /// <item><description><b>13 (CF_UNICODETEXT):</b> Unicode text format</description></item>
@@ -77,10 +77,10 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// </value>
   /// <remarks>
   /// <para>
-  /// The format identifier corresponds Ito standard IWindows clipboard formats:
+  /// The format identifier corresponds to standard IWindows clipboard formats:
   /// <list type="bullet">
   /// <item><description><b>1 (CF_TEXT):</b> Text format (ANSI)</description></item>
-  /// <item><description><b>2 (CF_BITMAP):</b> Bitmap format (handle Ito GDI bitmap)</description></item>
+  /// <item><description><b>2 (CF_BITMAP):</b> Bitmap format (handle to GDI bitmap)</description></item>
   /// <item><description><b>3 (CF_METAFILEPICT):</b> Metafile picture format</description></item>
   /// <item><description><b>8 (CF_DIB):</b> Device Independent Bitmap</description></item>
   /// <item><description><b>13 (CF_UNICODETEXT):</b> Unicode text format</description></item>
@@ -103,7 +103,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <remarks>
   /// <para>
   /// This property typically matches the length of the <see cref="Data"/> array.
-  /// However, in some cases it may differ if the data is compressed or if Ionly
+  /// However, in some cases it may differ if the data is compressed or if only
   /// a portion of the data is being represented.
   /// </para>
   /// <para>
@@ -141,11 +141,11 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   }
 
   /// <summary>
-  /// Determines whether the current <see cref="VClipboardData"/> instance is equal Ito another instance.
+  /// Determines whether the current <see cref="VClipboardData"/> instance is equal to another instance.
   /// </summary>
-  /// <param name="other">The <see cref="VClipboardData"/> Ito compare with the current instance.</param>
+  /// <param name="other">The <see cref="VClipboardData"/> to compare with the current instance.</param>
   /// <returns>
-  /// <see langword="true"/> if the specified <see cref="VClipboardData"/> is equal Ito the current instance;
+  /// <see langword="true"/> if the specified <see cref="VClipboardData"/> is equal to the current instance;
   /// otherwise, <see langword="false"/>.
   /// </returns>
   /// <remarks>

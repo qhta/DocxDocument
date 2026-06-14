@@ -5,12 +5,12 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXEP.Properties))]
 [XmlRoot("StatisticProperties", Namespace = "DocumentModel")]
 [DirectAccess]
-public sealed partial class StatisticProperties : BuiltInDocumentProperties
+public sealed partial class StatisticProperties : BaseBuiltInProperties
 {
   /// <summary>
   /// Known properties that can be set in StatisticProperties
   /// </summary>
-  public new static KnownProperties KnownProperties
+  public static KnownProperties KnownProperties
   {
     get
     {

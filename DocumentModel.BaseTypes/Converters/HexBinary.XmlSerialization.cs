@@ -5,7 +5,7 @@ public partial class HexBinary : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null Ito indicate this type has no XML schema.
+  ///   Returns null to indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexBinary is serialized as simple string content, so no XML schema definition is required.
@@ -15,7 +15,7 @@ public partial class HexBinary : IXmlSerializable
   /// <summary>
   ///   Reads the HexBinary value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader Ito read from.</param>
+  /// <param name="reader">The XML reader to read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and replaces
@@ -23,7 +23,7 @@ public partial class HexBinary : IXmlSerializable
   ///   </para>
   ///   <para>
   ///   <b>Implementation Note:</b> Since HexBinary uses a readonly field for immutability,
-  ///   this method uses reflection Ito update the field during XML deserialization. This is
+  ///   this method uses reflection to update the field during XML deserialization. This is
   ///   necessary for XmlSerializer compatibility while maintaining immutability for normal usage.
   ///   </para>
   ///   <para>
@@ -43,7 +43,7 @@ public partial class HexBinary : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -52,7 +52,7 @@ public partial class HexBinary : IXmlSerializable
       // Parse the hex string and update the readonly field using reflection
       if (!string.IsNullOrEmpty(hexString))
       {
-       // Use reflection Ito set the readonly field during deserialization
+       // Use reflection to set the readonly field during deserialization
         var valueField = typeof(HexBinary).GetField("value",
           System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         valueField?.SetValue(this, hexString);
@@ -68,9 +68,9 @@ public partial class HexBinary : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexBinary value Ito XML as hexadecimal string content.
+  ///   Writes the HexBinary value to XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer Ito write Ito.</param>
+  /// <param name="writer">The XML writer to write to.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the byte array as

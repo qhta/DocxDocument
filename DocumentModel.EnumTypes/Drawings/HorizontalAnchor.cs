@@ -9,7 +9,7 @@
 public enum HorizontalAnchor
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   HorizontalAnchorMixed = -2,
   /// <summary>

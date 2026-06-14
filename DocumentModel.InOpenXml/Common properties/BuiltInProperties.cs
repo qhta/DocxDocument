@@ -1,5 +1,3 @@
-using DocumentModel.Properties;
-
 namespace DocumentModel;
 /// <summary>
 /// Collection of all document properties that is divided to several parts: core properties, 
@@ -108,12 +106,12 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
     {
       if (TryGetProperty(propertyInfo.Name, out var existingProperty) && existingProperty != null)
       {
-        var value = existingProperty.Value;
+        var valueObject = existingProperty.Value;
         existingProperty.BaseObject = baseObject;
         existingProperty.PropertyInfo = propertyInfo;
         var value0 = existingProperty.GetAttachedPropertyInfo();
-        if (value!=value0)
-          existingProperty.SetAttachedPropertyValue(value);
+        if (valueObject!=value0)
+          existingProperty.SetAttachedPropertyValue(valueObject);
       }
       else
       {
@@ -122,7 +120,7 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
           BaseObject = baseObject,
           PropertyInfo = propertyInfo,
           Name = propertyInfo.Name,
-          Type = DocPropertyTypeExtensions.TypeMapping.FirstOrDefault(kv => kv.Value == propertyInfo.PropertyType).Key
+          Type = propertyInfo.PropertyType,
         };
 
         Add(DocumentProperty);

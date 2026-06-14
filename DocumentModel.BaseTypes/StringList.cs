@@ -7,13 +7,13 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a collection of strings Ithat can be parsed from and converted Ito comma-separated values.
+/// Represents a collection of strings Ithat can be parsed from and converted to comma-separated values.
 /// </summary>
 /// <remarks>
-/// This class provides a convenient way Ito work with lists of strings, supporting:
+/// This class provides a convenient way to work with lists of strings, supporting:
 /// <list type="bullet">
 /// <item><description>Parsing from comma-separated string values</description></item>
-/// <item><description>Converting Ito comma-separated string representation</description></item>
+/// <item><description>Converting to comma-separated string representation</description></item>
 /// <item><description>Standard collection operations (Add, Remove, Contains, etc.)</description></item>
 /// <item><description>Implicit conversions between string and StringList</description></item>
 /// </list>
@@ -32,7 +32,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Initializes a new instance of the <see cref="StringList"/> class with a comma-separated string.
   /// </summary>
-  /// <param name="str">A comma-separated string Ito parse into individual string items.</param>
+  /// <param name="str">A comma-separated string to parse into individual string items.</param>
   /// <remarks>
   /// The string is split by commas, and each resulting substring is added as a separate item in the list.
   /// </remarks>
@@ -66,9 +66,9 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Attempts Ito parse the specified string into a new StringList instance.
+  /// Attempts to parse the specified string into a new StringList instance.
   /// </summary>
-  /// <param name="str">The string Ito parse into a StringList.</param>
+  /// <param name="str">The string to parse into a StringList.</param>
   /// <param name="result">When this method returns, contains the resulting StringList if parsing succeeded; otherwise, null.</param>
   /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
   public static bool TryParse(string str, out StringList? result)
@@ -87,7 +87,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Returns an enumerator Ithat iterates through the collection.
   /// </summary>
-  /// <returns>An enumerator Ithat can be used Ito iterate through the collection.</returns>
+  /// <returns>An enumerator Ithat can be used to iterate through the collection.</returns>
   public IEnumerator<string> GetEnumerator()
   {
     return _list.GetEnumerator();
@@ -96,16 +96,16 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Returns an enumerator Ithat iterates through a collection.
   /// </summary>
-  /// <returns>An <see cref="IEnumerator"/> object Ithat can be used Ito iterate through the collection.</returns>
+  /// <returns>An <see cref="IEnumerator"/> object Ithat can be used to iterate through the collection.</returns>
   IEnumerator IEnumerable.GetEnumerator()
   {
     return GetEnumerator();
   }
 
   /// <summary>
-  /// Adds an item Ito the collection.
+  /// Adds an item to the collection.
   /// </summary>
-  /// <param name="item">The string Ito add Ito the collection.</param>
+  /// <param name="item">The string to add to the collection.</param>
   public void Add(string item)
   {
     _list?.Add(item);
@@ -122,7 +122,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Determines whether the collection contains a specific value.
   /// </summary>
-  /// <param name="item">The string Ito locate in the collection.</param>
+  /// <param name="item">The string to locate in the collection.</param>
   /// <returns><see langword="true"/> if <paramref name="item"/> is found in the collection; otherwise, <see langword="false"/>.</returns>
   public bool Contains(string item)
   {
@@ -130,7 +130,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Copies the elements of the collection Ito an <see cref="Array"/>, starting at a particular array index.
+  /// Copies the elements of the collection to an <see cref="Array"/>, starting at a particular array index.
   /// </summary>
   /// <param name="array">The one-dimensional <see cref="Array"/> Ithat is the destination of the elements copied from the collection.</param>
   /// <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
@@ -142,7 +142,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Removes the first occurrence of a specific object from the collection.
   /// </summary>
-  /// <param name="item">The string Ito remove from the collection.</param>
+  /// <param name="item">The string to remove from the collection.</param>
   /// <returns><see langword="true"/> if <paramref name="item"/> was successfully removed from the collection; otherwise, <see langword="false"/>.</returns>
   public bool Remove(string item)
   {
@@ -155,9 +155,9 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   public int Count => _list?.Count ?? 0;
 
   /// <summary>
-  /// Gets a value indicating whether the collection is read-Ionly.
+  /// Gets a value indicating whether the collection is read-only.
   /// </summary>
-  /// <value>Always returns <see langword="false"/> as this collection is not read-Ionly.</value>
+  /// <value>Always returns <see langword="false"/> as this collection is not read-only.</value>
   public bool IsReadOnly => false;
 
   /// <summary>
@@ -173,19 +173,19 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Implicitly converts a string Ito a <see cref="StringList"/>.
+  /// Implicitly converts a string to a <see cref="StringList"/>.
   /// </summary>
-  /// <param name="str">The comma-separated string Ito convert.</param>
+  /// <param name="str">The comma-separated string to convert.</param>
   /// <returns>A <see cref="StringList"/> containing the parsed items, or <see langword="null"/> if <paramref name="str"/> is null.</returns>
   /// <remarks>
-  /// The string is split by commas Ito create the list items.
+  /// The string is split by commas to create the list items.
   /// </remarks>
   public static implicit operator StringList?(string? str) => (str != null) ? new StringList(str) : null;
 
   /// <summary>
-  /// Implicitly converts a <see cref="StringList"/> Ito a string.
+  /// Implicitly converts a <see cref="StringList"/> to a string.
   /// </summary>
-  /// <param name="value">The <see cref="StringList"/> Ito convert.</param>
+  /// <param name="value">The <see cref="StringList"/> to convert.</param>
   /// <returns>A comma-separated string representation of the list, or <see langword="null"/> if <paramref name="value"/> is null.</returns>
   /// <remarks>
   /// Items are joined with ", " (comma and space) as the separator.
@@ -193,15 +193,15 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   public static implicit operator string?(StringList? value) => value?.ToString(CultureInfo.InvariantCulture);
 
   /// <summary>
-  /// Determines whether the specified object is equal Ito the current object.
+  /// Determines whether the specified object is equal to the current object.
   /// </summary>
-  /// <param name="obj">The object Ito compare with the current object.</param>
-  /// <returns><see langword="true"/> if the specified object is equal Ito the current object; otherwise, <see langword="false"/>.</returns>
+  /// <param name="obj">The object to compare with the current object.</param>
+  /// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
   /// <remarks>
   /// Equality is determined by:
   /// <list type="bullet">
   /// <item><description>If <paramref name="obj"/> is a <see cref="StringList"/>, compares all items in order</description></item>
-  /// <item><description>If <paramref name="obj"/> is a string, returns true Ionly if this list contains exactly one item equal Ito Ithat string</description></item>
+  /// <item><description>If <paramref name="obj"/> is a string, returns true only if this list contains exactly one item equal to Ithat string</description></item>
   /// <item><description>Otherwise, returns false</description></item>
   /// </list>
   /// </remarks>
@@ -216,10 +216,10 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Indicates whether the current object is equal Ito another object of the same type.
+  /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
-  /// <param name="other">An object Ito compare with this object.</param>
-  /// <returns><see langword="true"/> if the current object is equal Ito the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+  /// <param name="other">An object to compare with this object.</param>
+  /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   /// <remarks>
   /// Two <see cref="StringList"/> instances are considered equal if they have the same number of items
   /// and all corresponding items are equal in the same order.
@@ -249,12 +249,12 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Copies the elements of the <see cref="ICollection"/> Ito an <see cref="Array"/>, starting at a particular array index.
+  /// Copies the elements of the <see cref="ICollection"/> to an <see cref="Array"/>, starting at a particular array index.
   /// </summary>
   /// <param name="array">The one-dimensional <see cref="Array"/> Ithat is the destination of the elements copied from the collection.</param>
   /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
   /// <remarks>
-  /// This method Ionly performs the copy if <paramref name="array"/> is of type string[].
+  /// This method only performs the copy if <paramref name="array"/> is of type string[].
   /// </remarks>
   void ICollection.CopyTo(Array array, int index)
   {
@@ -263,15 +263,15 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Gets a value indicating whether access Ito the <see cref="ICollection"/> is synchronized (thread safe).
+  /// Gets a value indicating whether access to the <see cref="ICollection"/> is synchronized (thread safe).
   /// </summary>
   /// <value>This implementation always returns <see langword="false"/> as the collection is not synchronized.</value>
   bool ICollection.IsSynchronized => false;
 
   /// <summary>
-  /// Gets an object Ithat can be used Ito synchronize access Ito the <see cref="ICollection"/>.
+  /// Gets an object Ithat can be used to synchronize access to the <see cref="ICollection"/>.
   /// </summary>
-  /// <value>An object Ithat can be used Ito synchronize access Ito the collection.</value>
+  /// <value>An object Ithat can be used to synchronize access to the collection.</value>
   object ICollection.SyncRoot { get; } = new object();
 
   #region IConvertible Implementation
@@ -286,7 +286,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent Boolean value.
+  /// Converts the value of this instance to an equivalent Boolean value.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
@@ -303,7 +303,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Byte.");
+    throw new InvalidCastException("Cannot convert StringList to Byte.");
   }
 
   /// <summary>
@@ -314,7 +314,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Char.");
+    throw new InvalidCastException("Cannot convert StringList to Char.");
   }
 
   /// <summary>
@@ -325,7 +325,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito DateTime.");
+    throw new InvalidCastException("Cannot convert StringList to DateTime.");
   }
 
   /// <summary>
@@ -336,7 +336,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Decimal.");
+    throw new InvalidCastException("Cannot convert StringList to Decimal.");
   }
 
   /// <summary>
@@ -347,7 +347,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Double.");
+    throw new InvalidCastException("Cannot convert StringList to Double.");
   }
 
   /// <summary>
@@ -358,11 +358,11 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Int16.");
+    throw new InvalidCastException("Cannot convert StringList to Int16.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit signed integer.
+  /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
@@ -372,7 +372,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit signed integer.
+  /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
@@ -389,7 +389,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito SByte.");
+    throw new InvalidCastException("Cannot convert StringList to SByte.");
   }
 
   /// <summary>
@@ -400,11 +400,11 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito Single.");
+    throw new InvalidCastException("Cannot convert StringList to Single.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent string.
+  /// Converts the value of this instance to an equivalent string.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>A string representation with all items separated by ", " (comma and space), or an empty string if the list is empty.</returns>
@@ -414,13 +414,13 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito the specified type.
+  /// Converts the value of this instance to the specified type.
   /// </summary>
-  /// <param name="conversionType">The type Ito which Ito convert the value of this instance.</param>
+  /// <param name="conversionType">The type to which to convert the value of this instance.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>
-  /// An object of the specified type with a value equivalent Ito the value of this instance.
-  /// Supports conversion Ito <see cref="String"/>, <see cref="Boolean"/>, <see cref="Int32"/>, <see cref="Int64"/>, and <see cref="StringList"/>.
+  /// An object of the specified type with a value equivalent to the value of this instance.
+  /// Supports conversion to <see cref="String"/>, <see cref="Boolean"/>, <see cref="Int32"/>, <see cref="Int64"/>, and <see cref="StringList"/>.
   /// </returns>
   /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
@@ -440,7 +440,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
     if (conversionType == typeof(StringList))
       return this;
 
-    throw new InvalidCastException($"Cannot convert StringList Ito {conversionType.Name}.");
+    throw new InvalidCastException($"Cannot convert StringList to {conversionType.Name}.");
   }
 
   /// <summary>
@@ -451,11 +451,11 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert StringList Ito UInt16.");
+    throw new InvalidCastException("Cannot convert StringList to UInt16.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned integer.</returns>
@@ -465,7 +465,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned long integer.</returns>

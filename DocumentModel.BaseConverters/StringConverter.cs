@@ -265,7 +265,7 @@ public static class StringConverter
   /// Parses a string into a <see cref="Uri"/> instance compatible with the requested target type.
   /// </summary>
   /// <param name="value">The textual URI to parse.</param>
-  /// <param name="targetType">The requested URI type (currently informational Ionly).</param>
+  /// <param name="targetType">The requested URI type (currently informational only).</param>
   /// <returns>A new <see cref="Uri"/> matching <paramref name="value"/>, or null when <paramref name="value"/> is null.</returns>
   /// <exception cref="UriFormatException">Thrown when <paramref name="value"/> is not a valid URI.</exception>
   public static Uri? ConvertToUri(string? value, Type targetType)

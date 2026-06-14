@@ -9,11 +9,11 @@
 public enum MixedType
 {
   /// <summary>
-  /// Internal use Ionly.
+  /// Internal use only.
   /// </summary>
   IntegerMixed = 32768,
   /// <summary>
-  /// Internal use Ionly.
+  /// Internal use only.
   /// </summary>
   SingleMixed = int.MinValue
 }

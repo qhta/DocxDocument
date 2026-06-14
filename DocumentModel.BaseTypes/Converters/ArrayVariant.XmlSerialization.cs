@@ -26,7 +26,7 @@ public partial class ArrayVariant : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="ArrayVariant"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -85,7 +85,7 @@ public partial class ArrayVariant : IXmlSerializable
       reader.Read();
       return;
     }
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     // Read array items
     int currentIndex = lowerBounds;
@@ -101,13 +101,13 @@ public partial class ArrayVariant : IXmlSerializable
         }
         else
         {
-          reader.Read(); // Move Ito content
+          reader.Read(); // Move to content
 
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
           {
             string itemValue = reader.Value;
             
-            // Convert string Ito appropriate type
+            // Convert string to appropriate type
             try
             {
               object? convertedValue = ConvertFromString(itemValue, baseType);
@@ -115,7 +115,7 @@ public partial class ArrayVariant : IXmlSerializable
             }
             catch (Exception ex)
             {
-              throw new XmlException($"Failed Ito convert value '{itemValue}' Ito type {baseType}: {ex.Message}", ex);
+              throw new XmlException($"Failed to convert value '{itemValue}' to type {baseType}: {ex.Message}", ex);
             }
 
             reader.Read(); // Move past text
@@ -146,9 +146,9 @@ public partial class ArrayVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="ArrayVariant"/> value Ito XML.
+  /// Serializes the <see cref="ArrayVariant"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// <para>The value is written in the following XML format:</para>
   /// <code>
@@ -196,9 +196,9 @@ public partial class ArrayVariant : IXmlSerializable
   #region Helper Methods
 
   /// <summary>
-  /// Converts a string value Ito the specified variant type.
+  /// Converts a string value to the specified variant type.
   /// </summary>
-  /// <param name="value">The string value Ito convert.</param>
+  /// <param name="value">The string value to convert.</param>
   /// <param name="variantType">The target variant type.</param>
   /// <returns>The converted object, or null if conversion fails.</returns>
   private static object? ConvertFromString(string value, VariantType variantType)
@@ -227,9 +227,9 @@ public partial class ArrayVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Converts an object value Ito its string representation based on the variant type.
+  /// Converts an object value to its string representation based on the variant type.
   /// </summary>
-  /// <param name="value">The object Ito convert.</param>
+  /// <param name="value">The object to convert.</param>
   /// <param name="variantType">The variant type of the value.</param>
   /// <returns>The string representation, or null if the value is null.</returns>
   private static string? ConvertToString(object? value, VariantType variantType)

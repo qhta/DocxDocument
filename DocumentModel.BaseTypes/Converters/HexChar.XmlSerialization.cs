@@ -5,7 +5,7 @@ public partial record HexChar : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null Ito indicate this type has no XML schema.
+  ///   Returns null to indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexChar is serialized as simple string content, so no XML schema definition is required.
@@ -15,14 +15,14 @@ public partial record HexChar : IXmlSerializable
   /// <summary>
   ///   Reads the HexChar value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader Ito read from.</param>
+  /// <param name="reader">The XML reader to read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and parses it
   ///   into the internal ushort value. Empty elements result in a zero value.
   ///   </para>
   ///   <para>
-  ///   Since HexChar is a struct with a readonly field, this method uses unsafe code Ito update
+  ///   Since HexChar is a struct with a readonly field, this method uses unsafe code to update
   ///   the field during XML deserialization. This is necessary for XmlSerializer compatibility
   ///   while maintaining immutability for normal usage.
   ///   </para>
@@ -58,7 +58,7 @@ public partial record HexChar : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -67,10 +67,10 @@ public partial record HexChar : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         str = str.TrimStart('#');
-        // Parse the hex string Ito ushort
+        // Parse the hex string to ushort
         ushort parsedValue = ushort.Parse(str, NumberStyles.HexNumber);
 
-        // Use Unsafe.AsRef Ito update the readonly field
+        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
@@ -84,9 +84,9 @@ public partial record HexChar : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexChar value Ito XML as hexadecimal string content.
+  ///   Writes the HexChar value to XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer Ito write Ito.</param>
+  /// <param name="writer">The XML writer to write to.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the character code as
@@ -101,7 +101,7 @@ public partial record HexChar : IXmlSerializable
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Zero values are written as "00", not as empty elements, Ito maintain consistency
+  ///   Zero values are written as "00", not as empty elements, to maintain consistency
   ///   with Office Open XML character code representations.
   ///   </para>
   ///   <para>

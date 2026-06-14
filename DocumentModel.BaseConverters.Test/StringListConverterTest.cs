@@ -9,7 +9,7 @@ namespace DocumentModel.BaseConverters.Test;
 public static class StringListConverterTest
 {
   /// <summary>
-  ///   Runs all StringListConverter tests and reports results Ito the console.
+  ///   Runs all StringListConverter tests and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -59,7 +59,7 @@ public static class StringListConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value Ito and from <see cref="DX.StringValue"/>.
+  ///   Tests round-trip conversion of a string value to and from <see cref="DX.StringValue"/>.
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestStringValue()
@@ -71,7 +71,7 @@ public static class StringListConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value Ito and from an Open XML type with a string property (e.g., <see cref="DXW.Name"/>).
+  ///   Tests round-trip conversion of a string value to and from an Open XML type with a string property (e.g., <see cref="DXW.Name"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestStringType()
@@ -83,7 +83,7 @@ public static class StringListConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value Ito and from an OpenXmlLeafTextElement (e.g., <see cref="DXW.Text"/>).
+  ///   Tests round-trip conversion of a string value to and from an OpenXmlLeafTextElement (e.g., <see cref="DXW.Text"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestOpenXmlLeafTextElement()
@@ -95,7 +95,7 @@ public static class StringListConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value Ito and from an OpenXmlLeafElement with a 'Val' property (e.g., <see cref="DXW.Color"/>).
+  ///   Tests round-trip conversion of a string value to and from an OpenXmlLeafElement with a 'Val' property (e.g., <see cref="DXW.Color"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestOpenXmlLeafElement()
@@ -108,7 +108,7 @@ public static class StringListConverterTest
   }
 
   /// <summary>
-  ///   Tests conversion of null and empty string values Ito and from <see cref="DX.StringValue"/>.
+  ///   Tests conversion of null and empty string values to and from <see cref="DX.StringValue"/>.
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestNullAndEmpty()

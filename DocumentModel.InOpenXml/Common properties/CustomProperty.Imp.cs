@@ -20,44 +20,37 @@ public sealed partial class CustomProperty : DMPr.ICustomProperty, DMPr.IDocumen
  /// </summary>
  DMPr.DocPropertyType DMPr.IDocumentProperty.Type
  {
-  get
-
-  set
-  {
-   if (value != 0 && typeMapping.TryGetValue2(value, out var mappedType))
-    this.Type = mappedType;
-   else
-    this.Type = null;
-  }
+   get => this.ExpectedType;
+   set => this.ExpectedType = value;
  }
 
- /// <summary>
- /// Mapping between DocPropertyType enumeration values and actual .NET types.
- /// This mapping is used to determine the expected type of the Value property based on the Type property.
- /// </summary>
- public static readonly BiDiDictionary<DMPr.DocPropertyType, string> typeMapping = new()
- {
-  {
-   DMPr.DocPropertyType.Number,
-   "Integer"
-  },
-  {
-   DMPr.DocPropertyType.Boolean,
-   "Boolean"
-  },
-  {
-   DMPr.DocPropertyType.Date,
-   "Date"
-  },
-  {
-   DMPr.DocPropertyType.String,
-   "String"
-  },
-  {
-   DMPr.DocPropertyType.Float,
-   "Float"
-  },
- };
+ ///// <summary>
+ ///// Mapping between DocPropertyType enumeration values and actual .NET types.
+ ///// This mapping is used to determine the expected type of the Value property based on the Type property.
+ ///// </summary>
+ //public static readonly BiDiDictionary<DMPr.DocPropertyType, string> typeMapping = new()
+ //{
+ // {
+ //  DMPr.DocPropertyType.Number,
+ //  "Integer"
+ // },
+ // {
+ //  DMPr.DocPropertyType.Boolean,
+ //  "Boolean"
+ // },
+ // {
+ //  DMPr.DocPropertyType.Date,
+ //  "Date"
+ // },
+ // {
+ //  DMPr.DocPropertyType.String,
+ //  "String"
+ // },
+ // {
+ //  DMPr.DocPropertyType.Float,
+ //  "Float"
+ // },
+ //};
  /// <summary>
  /// Determine if the value of the custom document property is linked to the content of the container document. This property applies only to custom document properties.
  /// For built-in document properties, the value of this property is False.

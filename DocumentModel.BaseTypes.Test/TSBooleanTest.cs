@@ -240,7 +240,7 @@ public static class TSBooleanTest
       int numeric = (int)testValue;
     }
     sw.Stop();
-    Console.WriteLine($"Cast Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Cast to int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     var testObj = CreateTestData();
     sw.Restart();

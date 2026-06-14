@@ -280,7 +280,7 @@ public static class VClipboardDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VClipboardDataTestData));
     string xmlString;
 
@@ -352,7 +352,7 @@ public static class VClipboardDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

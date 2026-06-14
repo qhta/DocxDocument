@@ -14,7 +14,7 @@ public partial struct Degrees : IXmlSerializable
   /// Deserializes the <see cref="Degrees"/> value from XML.
   /// Accepts both plain numeric values and values with a trailing Degrees sign (°).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
@@ -31,7 +31,7 @@ public partial struct Degrees : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -40,10 +40,10 @@ public partial struct Degrees : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
           str = str.TrimEnd('°');
-        // Parse the Degrees string Ito double
+        // Parse the Degrees string to double
         var parsedValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
 
-        // Use Unsafe.AsRef Ito update the readonly field
+        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
@@ -57,9 +57,9 @@ public partial struct Degrees : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="Degrees"/> value Ito XML.
+  /// Serializes the <see cref="Degrees"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// The value is written using the default string representation of the <see cref="Degrees"/> structure.
   /// </remarks>

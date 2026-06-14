@@ -64,14 +64,14 @@ public static class ConverterBase
 
   /// <summary>
   /// Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
-  /// instance property if Ionly one exists.
+  /// instance property if only one exists.
   /// </summary>
   /// <remarks>If the specified type does not declare a property named "Val", and declares exactly one public
   /// instance property, that property is returned. If there are no public instance properties or more than one (other
   /// than "Val"), the method returns <see langword="null"/>.</remarks>
   /// <param name="type">The type to search for a public instance property named "Val" or a single declared public instance property.</param>
   /// <returns>A <see cref="PropertyInfo"/> representing the "Val" property, or the single declared public instance property if
-  /// Ionly one exists; otherwise, <see langword="null"/>.</returns>
+  /// only one exists; otherwise, <see langword="null"/>.</returns>
   public static PropertyInfo? GetValProperty(this Type type)
   {
     var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);

@@ -21,10 +21,10 @@ where DocumentPropertyType: DocumentProperty
   /// <returns>An enumerator that can be used to iterate through the collection.</returns>
   public abstract IEnumerator<DocumentPropertyType> GetEnumerator();
 
-  //IEnumerator IEnumerable.GetEnumerator()
-  //{
-  //  return GetEnumerator();
-  //}
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
 
   /// <summary>
   /// Adds a document property to the collection. If a property with the same name already exists, it will be replaced.
@@ -43,14 +43,14 @@ where DocumentPropertyType: DocumentProperty
   /// <returns>True if the property is found; otherwise, false.</returns> 
   public abstract bool Contains(DocumentPropertyType item);
 
-  ///// <summary>
-  ///// Copies the elements of the collection to an array, starting at a particular array index.
-  ///// The method copies the document properties from the collection into the specified array, beginning at the specified index.
-  ///// This allows for efficient copying of the collection's contents into an array for further processing or manipulation.
-  ///// </summary>
-  ///// <param name="array">The destination array.</param>
-  ///// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  //public abstract void CopyTo(DocumentPropertyType[] array, int arrayIndex);
+  /// <summary>
+  /// Copies the elements of the collection to an array, starting at a particular array index.
+  /// The method copies the document properties from the collection into the specified array, beginning at the specified index.
+  /// This allows for efficient copying of the collection's contents into an array for further processing or manipulation.
+  /// </summary>
+  /// <param name="array">The destination array.</param>
+  /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
+  public abstract void CopyTo(DocumentPropertyType[] array, int arrayIndex);
 
   /// <summary>
   /// Removes a specific document property from the collection.

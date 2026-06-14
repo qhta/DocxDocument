@@ -24,7 +24,7 @@ public static class TwipsConverterTest
   ];
 
   /// <summary>
-  ///   Runs all TwipsConverter tests for supported types and reports results Ito the console.
+  ///   Runs all TwipsConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -60,7 +60,7 @@ public static class TwipsConverterTest
     Int64.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid Twips value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid Twips value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (Twips min, Twips max)> typeRanges = new()
   {
@@ -71,10 +71,10 @@ public static class TwipsConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of Twips values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Twips values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test Twips conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Twips conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestTwipsConversion(Type openXmlType)
   {
@@ -82,11 +82,11 @@ public static class TwipsConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = TwipsConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         if (openXmlValue.ToString()!=testValue.ToString())
@@ -101,11 +101,11 @@ public static class TwipsConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito Twips
+        // Convert back to Twips
         var convertedBackValue = TwipsConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
-          Console.WriteLine($"Conversion back Ito Twips returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Twips returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

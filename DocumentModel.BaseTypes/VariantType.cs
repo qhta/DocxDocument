@@ -8,7 +8,7 @@
 public enum VariantType
 {
   /// <summary>
-  ///   For uninitialized Variant Ionly
+  ///   For uninitialized Variant only
   /// </summary>
   Empty,
 

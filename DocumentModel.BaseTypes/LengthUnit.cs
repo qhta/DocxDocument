@@ -8,7 +8,7 @@ namespace DocumentModel.BaseTypes.Interfaces;
 public enum LengthUnit
 {
   /// <summary>
-  /// Represents the twips unit of length, where 1 twip is equal Ito 1/20 of a point.
+  /// Represents the twips unit of length, where 1 twip is equal to 1/20 of a point.
   /// </summary>
   [EnumMember(Value = "twips")]
   Twips,

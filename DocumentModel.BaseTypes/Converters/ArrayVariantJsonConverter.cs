@@ -11,11 +11,11 @@
 public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
 {
   /// <summary>
-  /// Reads and converts JSON Ito an <see cref="ArrayVariant"/> value.
+  /// Reads and converts JSON to an <see cref="ArrayVariant"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>An <see cref="ArrayVariant"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -23,7 +23,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   /// <item><description>The JSON structure is invalid or missing required properties.</description></item>
   /// <item><description>The baseType value is not a valid <see cref="VariantType"/>.</description></item>
   /// <item><description>The bounds values are not valid integers.</description></item>
-  /// <item><description>Array items cannot be converted Ito the specified base type.</description></item>
+  /// <item><description>Array items cannot be converted to the specified base type.</description></item>
   /// </list>
   /// </exception>
   /// <remarks>
@@ -76,7 +76,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move Ito value
+        reader.Read(); // Move to value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -176,7 +176,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
         }
         catch (Exception ex)
         {
-          throw new JsonException($"Failed Ito convert item Ito type {baseType.Value}: {ex.Message}", ex);
+          throw new JsonException($"Failed to convert item to type {baseType.Value}: {ex.Message}", ex);
         }
       }
     }
@@ -187,9 +187,9 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   /// <summary>
   /// Writes an <see cref="ArrayVariant"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="ArrayVariant"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="ArrayVariant"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// <para>Writes the ArrayVariant value in the following JSON format:</para>
   /// <code>
@@ -270,9 +270,9 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   }
 
   /// <summary>
-  /// Converts a JSON value Ito the specified variant type.
+  /// Converts a JSON value to the specified variant type.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
+  /// <param name="value">The value to convert.</param>
   /// <param name="variantType">The target variant type.</param>
   /// <returns>The converted value.</returns>
   private static object? ConvertJsonValue(object? value, VariantType variantType)
@@ -303,10 +303,10 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
   }
 
   /// <summary>
-  /// Writes a value Ito JSON based on its type.
+  /// Writes a value to JSON based on its type.
   /// </summary>
   /// <param name="writer">The JSON writer.</param>
-  /// <param name="value">The value Ito write.</param>
+  /// <param name="value">The value to write.</param>
   /// <param name="variantType">The variant type of the value.</param>
   private static void WriteJsonValue(Utf8JsonWriter writer, object? value, VariantType variantType)
   {

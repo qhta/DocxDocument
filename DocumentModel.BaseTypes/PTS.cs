@@ -3,11 +3,11 @@
 /// <summary>
 /// Represents a measurement in typographic points.
 /// A point is defined as 1/72 of an inch, commonly used for typography adjustments.
-/// Supports conversions Ito/from millimeters, centimeters, inches, and points.
+/// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
 /// IPoints provide finer precision than inches for typographic measurements in desktop publishing and word processing.
-/// This supports implicit conversions Ito/from various integer types and string representations with unit suffixes.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 point = 1/72 inch.
 /// </remarks>
 [JsonConverter(typeof(PTSJsonConverter))]
@@ -30,17 +30,17 @@ public partial class PTS : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="PTS"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+  /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
   /// <item><description>"100" - interpreted as half-points</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points (will be converted Ito 24 half-points)</description></item>
-  /// <item><description>"1in" - inches (will be converted Ito 144 half-points)</description></item>
+  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
+  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
   /// </list>
-  /// <para>Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
   public PTS(string str)
   {
@@ -106,18 +106,18 @@ public partial class PTS : UniversalMeasure
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
-  /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
+  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be in a format recognized by the parser.</param>
+  /// <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static PTS Parse(string value) => new PTS(value);
 
   /// <summary>
-  /// Converts a length value from the specified unit Ito an equivalent length measure.
+  /// Converts a length value from the specified unit to an equivalent length measure.
   /// </summary>
-  /// <remarks>Use this method Ito create an ILengthMeasure instance from a raw numeric value and its associated
-  /// unit. Ensure Ithat the provided unit is valid Ito avoid conversion errors.</remarks>
-  /// <param name="value">The numeric value representing the length Ito convert.</param>
+  /// <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+  /// unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+  /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
   public static PTS ConvertFrom(double value, LengthUnit unit) => unit switch
@@ -135,12 +135,12 @@ public partial class PTS : UniversalMeasure
   #region Parsing Methods
 
   /// <summary>
-  /// Attempts Ito parse the specified string representation of a length measure and returns a value Ithat indicates
+  /// Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
   /// whether the parsing succeeded.
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
-  /// langword="false"/> and sets <paramref name="result"/> Ito <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure Ito parse.</param>
+  /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+  /// <param name="value">The string representation of the length measure to parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -163,9 +163,9 @@ public partial class PTS : UniversalMeasure
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string Ito a <see cref="PTS"/> value.
+  /// Implicitly converts a string to a <see cref="PTS"/> value.
   /// </summary>
-  /// <param name="value">The string Ito convert.</param>
+  /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="PTS"/> value parsed from the string.</returns>
   public static implicit operator PTS(string value)
   {
@@ -173,9 +173,9 @@ public partial class PTS : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PTS"/> value Ito a string.
+  /// Implicitly converts a <see cref="PTS"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="PTS"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="PTS"/> value to convert.</param>
   /// <returns>A string representation of the PTS value.</returns>
   public static implicit operator string(PTS value)
   {
@@ -183,9 +183,9 @@ public partial class PTS : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer Ito a <see cref="PTS"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="PTS"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit signed integer Ito convert.</param>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
   /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
   public static implicit operator PTS(Int32 value)
   {
@@ -193,9 +193,9 @@ public partial class PTS : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer Ito a <see cref="PTS"/> value.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="PTS"/> value.
   /// </summary>
-  /// <param name="value">The 64-bit signed integer Ito convert.</param>
+  /// <param name="value">The 64-bit signed integer to convert.</param>
   /// <returns>A <see cref="PTS"/> value representing the integer.</returns>
   public static implicit operator PTS(Int64 value)
   {
@@ -203,11 +203,11 @@ public partial class PTS : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number Ito a PTS instance.
+  /// Implicitly converts a double-precision floating-point number to a PTS instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of double values into contexts where PTS are
   /// required, facilitating operations Ithat involve measurements in PTS.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement in PTS.</param>
+  /// <param name="value">The value to convert, representing a measurement in PTS.</param>
   public static implicit operator PTS(Double value)
   {
     return new PTS(value);

@@ -9,8 +9,8 @@ public static class HPSTest
   /// Runs a comprehensive suite of tests for the HPS Serialization Test Program, including validation of basic
   /// operations, unit conversions, serialization formats, edge cases, and performance.
   /// </summary>
-  /// <remarks>This method writes the test program title Ito the console and executes multiple test methods in
-  /// sequence. Each test method must succeed for the overall test run Ito be considered successful.</remarks>
+  /// <remarks>This method writes the test program title to the console and executes multiple test methods in
+  /// sequence. Each test method must succeed for the overall test run to be considered successful.</remarks>
   /// <returns>true if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
@@ -33,60 +33,60 @@ public static class HPSTest
   /// representations, and comparisons.
   /// </summary>
   /// <remarks>This method verifies the correctness of the HPS class by testing string and numeric conversions,
-  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information Ito the
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
   /// console for each test and returns false if any test fails.</remarks>
   /// <returns>true if all basic HPS operations pass successfully; otherwise, false.</returns>
   static bool TestHPSBasicOperations()
   {
     Console.WriteLine("--- Testing HPS Basic Operations ---");
-    // Test string Ito HPS conversion (plain number)
+    // Test string to HPS conversion (plain number)
     long hps1Val = 7315200;
     var hps1Str = hps1Val.ToString();
     HPS hps1 = hps1Str;
     var longHPS = (long)hps1;
-    Console.WriteLine($"\n✓ String Ito HPS: {hps1} = {longHPS} HPS");
+    Console.WriteLine($"\n✓ String to HPS: {hps1} = {longHPS} HPS");
     if (longHPS != 7315200)
     {
-      Console.WriteLine("✗ String Ito HPS conversion FAILED");
+      Console.WriteLine("✗ String to HPS conversion FAILED");
       return false;
     }
-    // Test string Ito HPS conversion (with unit)
+    // Test string to HPS conversion (with unit)
     HPS hps2 = "1in";
     var inchHPS = hps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit Ito HPS: {hps2} ({inchHPS}in)");
+    Console.WriteLine($"\n✓ String with unit to HPS: {hps2} ({inchHPS}in)");
     if (inchHPS != 1.0)
     {
-      Console.WriteLine("✗ String with unit Ito HPS conversion FAILED");
+      Console.WriteLine("✗ String with unit to HPS conversion FAILED");
       return false;
     }
 
-    // Test integer Ito HPS conversion
+    // Test integer to HPS conversion
     HPS hps3 = hps1Val;
     var intHPS = (int)hps3;
-    Console.WriteLine($"\n✓ Int Ito HPS: {intHPS}");
+    Console.WriteLine($"\n✓ Int to HPS: {intHPS}");
     if (intHPS != hps1Val)
     {
-      Console.WriteLine("✗ Int Ito HPS conversion FAILED");
+      Console.WriteLine("✗ Int to HPS conversion FAILED");
       return false;
     }
 
-    // Test HPS Ito string
+    // Test HPS to string
     string strHPS = hps1.ToString();
-    Console.WriteLine($"\n✓ HPS Ito string: {strHPS}");
+    Console.WriteLine($"\n✓ HPS to string: {strHPS}");
     if (strHPS != hps1Str)
     {
-      Console.WriteLine("✗ HPS Ito string conversion FAILED");
+      Console.WriteLine("✗ HPS to string conversion FAILED");
       return false;
     }
 
-    // Test HPS Ito various integer types
+    // Test HPS to various integer types
     int int32Val = (int)hps1;
     long int64Val = (long)hps1;
     uint uint32Val = (uint)hps1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
     if (int32Val != hps1Val || int64Val != hps1Val || uint32Val != hps1Val)
     {
-      Console.WriteLine("✗ HPS Ito numeric conversions FAILED");
+      Console.WriteLine("✗ HPS to numeric conversions FAILED");
       return false;
     }
 
@@ -103,9 +103,9 @@ public static class HPSTest
   /// Tests the accuracy and correctness of conversions between HPS and various length units, including inches,
   /// millimeters, centimeters, points, and twips.
   /// </summary>
-  /// <remarks>This method performs a series of unit conversion tests and outputs the results Ito the console. It
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method Ito validate Ithat HPS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate Ithat HPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestHPSUnitConversions()
   {
@@ -180,7 +180,7 @@ public static class HPSTest
     HPS roundTrip = new HPS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} HPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back Ito HPS: {(long)roundTrip} HPS");
+    Console.WriteLine($"  Back to HPS: {(long)roundTrip} HPS");
     if (original.CompareTo(roundTrip) != 0)
     {
       Console.WriteLine("✗ Round-trip conversion FAILED");
@@ -225,7 +225,7 @@ public static class HPSTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HPSTestData));
     string xmlString;
 
@@ -264,9 +264,9 @@ public static class HPSTest
   /// Displays the original formatting values from the specified HPSTestData instance in a readable format.
   /// </summary>
   /// <remarks>This method outputs various formatting properties, such as font size, line height, letter
-  /// spacing, word spacing, superscript and subscript offsets, border width, and value thresholds, Ito the console.
-  /// Measurements are shown in both their original units and converted Ito points where applicable.</remarks>
-  /// <param name="testData">The HPSTestData instance containing the formatting values Ito display.</param>
+  /// spacing, word spacing, superscript and subscript offsets, border width, and value thresholds, to the console.
+  /// Measurements are shown in both their original units and converted to points where applicable.</remarks>
+  /// <param name="testData">The HPSTestData instance containing the formatting values to display.</param>
   private static void ShowOriginalData(HPSTestData testData)
   {
     Console.WriteLine($"Original data:");
@@ -287,10 +287,10 @@ public static class HPSTest
   /// Determines whether the deserialized HPSTestData object matches the expected test data values.
   /// </summary>
   /// <remarks>If deserializedData is null, the method returns false. Each property of deserializedData is
-  /// compared Ito the corresponding property in testData, and the method returns false on the first mismatch.</remarks>
-  /// <param name="deserializedData">The HPSTestData instance obtained from deserialization Ito verify. This parameter can be null.</param>
+  /// compared to the corresponding property in testData, and the method returns false on the first mismatch.</remarks>
+  /// <param name="deserializedData">The HPSTestData instance obtained from deserialization to verify. This parameter can be null.</param>
   /// <param name="testData">The original HPSTestData instance containing the expected values for comparison.</param>
-  /// <returns>true if all properties of the deserialized data are equal Ito the corresponding properties in the test data;
+  /// <returns>true if all properties of the deserialized data are equal to the corresponding properties in the test data;
   /// otherwise, false.</returns>
   private static bool VerifyDeserializedData(HPSTestData? deserializedData, HPSTestData testData)
   {
@@ -337,10 +337,10 @@ public static class HPSTest
   }
 
   /// <summary>
-  /// Tests the serialization and deserialization of HPS data Ito and from JSON format.
+  /// Tests the serialization and deserialization of HPS data to and from JSON format.
   /// </summary>
-  /// <remarks>This method creates a test object, serializes it Ito JSON, and then deserializes it back Ito verify
-  /// the integrity of the data. It outputs the serialized JSON string Ito the console for inspection.</remarks>
+  /// <remarks>This method creates a test object, serializes it to JSON, and then deserializes it back to verify
+  /// the integrity of the data. It outputs the serialized JSON string to the console for inspection.</remarks>
   /// <returns>true if the JSON serialization and deserialization process is successful; otherwise, false.</returns>
   static bool TestHPSJsonSerialization()
   {
@@ -350,7 +350,7 @@ public static class HPSTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -404,7 +404,7 @@ public static class HPSTest
   /// Tests a comprehensive set of edge cases for the HPS (Half-IPoint Size) type, including zero, boundary values,
   /// precision, string parsing, unit conversions, deserialization, and implicit conversions.
   /// </summary>
-  /// <remarks>This method outputs detailed results Ito the console, providing insights into the behavior of the
+  /// <remarks>This method outputs detailed results to the console, providing insights into the behavior of the
   /// HPS type under various scenarios. It is intended for use in validating the correctness and robustness of HPS
   /// handling, especially when dealing with different input formats, units, and conversions.</remarks>
   /// <returns>true if all edge case tests complete successfully; otherwise, false.</returns>
@@ -426,7 +426,7 @@ public static class HPSTest
       Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
       Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
-      // Test half-point precision (unique Ito HPS)
+      // Test half-point precision (unique to HPS)
       Console.WriteLine("\nTesting half-point precision:");
       HPS oneHalfPoint = 1;
       HPS twoHPS = 2;
@@ -536,11 +536,11 @@ public static class HPSTest
   }
 
   /// <summary>
-  /// Measures and reports the performance of various operations related Ito the HPS class, including construction,
+  /// Measures and reports the performance of various operations related to the HPS class, including construction,
   /// string conversion, unit conversion, JSON serialization, deserialization, comparison, and hashing.
   /// </summary>
   /// <remarks>This method executes multiple iterations of each tested operation and outputs the elapsed time
-  /// for each Ito the console. It is intended Ito help identify performance bottlenecks in the HPS class and related
+  /// for each to the console. It is intended to help identify performance bottlenecks in the HPS class and related
   /// serialization routines. If an exception occurs during testing, the method reports the failure and returns
   /// false.</remarks>
   /// <returns>true if all performance tests complete successfully; otherwise, false.</returns>
@@ -683,7 +683,7 @@ public static class HPSTest
         Int64 value = hp1;
       }
       sw.Stop();
-      Console.WriteLine($"Implicit conversion Ito Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"Implicit conversion to Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       Console.WriteLine("\n✓ Performance tests completed");
       Console.WriteLine();

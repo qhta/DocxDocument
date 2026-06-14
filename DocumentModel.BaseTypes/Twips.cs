@@ -3,11 +3,11 @@
 /// <summary>
 /// Represents a measurement in twips (twentieth of a point).
 /// A twip is 1/1440 of an inch, commonly used in word processing and document formatting.
-/// Supports conversions Ito/from millimeters, centimeters, inches, and points.
+/// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
 /// <remarks>
 /// Twips provide a precise, integer-based unit for document measurements.
-/// This supports implicit conversions Ito/from various integer types and string representations with unit suffixes.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
 public sealed partial class Twips: UniversalMeasure
@@ -27,7 +27,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+  /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
@@ -37,7 +37,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <item><description>"12pt" - points</description></item>
   /// <item><description>"1in" - inches</description></item>
   /// </list>
-  /// <para>Commas in the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
   public Twips(string str)
   {
@@ -147,10 +147,10 @@ public sealed partial class Twips: UniversalMeasure
   public static Twips FromInch(double inches) => new Twips($"{inches}in");
 
   /// <summary>
-  /// Converts a length value from the specified unit Ito a standardized length measure.
+  /// Converts a length value from the specified unit to a standardized length measure.
   /// </summary>
   /// <remarks>Supported units include Twips, IPoints, Millimeters, Centimeters, and Inches.</remarks>
-  /// <param name="value">The numeric length value Ito convert, expressed in the unit specified by the unit parameter.</param>
+  /// <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object Ithat Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
@@ -171,19 +171,19 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
-  /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
+  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be in a format recognized by the parser.</param>
+  /// <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static Twips Parse(string value) => new Twips(value);
 
   /// <summary>
-  /// Attempts Ito parse the specified string representation of a length measure and returns a value Ithat indicates
+  /// Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
   /// whether the parsing succeeded.
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
-  /// langword="false"/> and sets <paramref name="result"/> Ito <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure Ito parse.</param>
+  /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+  /// <param name="value">The string representation of the length measure to parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -205,9 +205,9 @@ public sealed partial class Twips: UniversalMeasure
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a string to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The string Ito convert.</param>
+  /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="Twips"/> value parsed from the string.</returns>
   public static implicit operator Twips(string value)
   {
@@ -215,9 +215,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Twips"/> value Ito a string.
+  /// Implicitly converts a <see cref="Twips"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="Twips"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="Twips"/> value to convert.</param>
   /// <returns>A string representation of the twips value.</returns>
   public static implicit operator string(Twips value)
   {
@@ -225,9 +225,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit signed integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 16-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 16-bit signed integer Ito convert.</param>
+  /// <param name="value">The 16-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
   public static implicit operator Twips(Int16 value)
   {
@@ -235,9 +235,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit signed integer Ito convert.</param>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
   public static implicit operator Twips(Int32 value)
   {
@@ -245,9 +245,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 64-bit signed integer Ito convert.</param>
+  /// <param name="value">The 64-bit signed integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
   public static implicit operator Twips(Int64 value)
   {
@@ -255,9 +255,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 16-bit unsigned integer Ito convert.</param>
+  /// <param name="value">The 16-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
   public static implicit operator Twips(UInt16 value)
   {
@@ -265,9 +265,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit unsigned integer Ito convert.</param>
+  /// <param name="value">The 32-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
   public static implicit operator Twips(UInt32 value)
   {
@@ -275,9 +275,9 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer Ito a <see cref="Twips"/> value.
+  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Twips"/> value.
   /// </summary>
-  /// <param name="value">The 64-bit unsigned integer Ito convert.</param>
+  /// <param name="value">The 64-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
   public static implicit operator Twips(UInt64 value)
   {
@@ -285,114 +285,114 @@ public sealed partial class Twips: UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number Ito a Twips instance.
+  /// Implicitly converts a double-precision floating-point number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
   /// required, facilitating operations Ithat involve measurements in twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Double value)
   {
     return new Twips(value);
   }
 
   /// <summary>
-  /// Implicitly converts a single-precision floating-point number Ito a Twips instance.
+  /// Implicitly converts a single-precision floating-point number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
   /// required, facilitating operations Ithat involve measurements in twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Single value)
   {
     return new Twips(value);
   }
 
   /// <summary>
-  /// Implicitly converts a decimal number Ito a Twips instance.
+  /// Implicitly converts a decimal number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
   /// required, facilitating operations Ithat involve measurements in twips.</remarks>
-  /// <param name="value">The value Ito convert, representing a measurement in twips.</param>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Decimal value)
   {
     return new Twips(value);
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 16-bit signed integer.
+  /// Implicitly converts a Twips instance to a 16-bit signed integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Int16(Twips value)
   {
     return (Int16?)value.IntValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 32-bit signed integer.
+  /// Implicitly converts a Twips instance to a 32-bit signed integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Int32(Twips value)
   {
     return (Int32?)value.IntValue?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 64-bit signed integer.
+  /// Implicitly converts a Twips instance to a 64-bit signed integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Int64(Twips value)
   {
     return (Int64?)value.IntValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 16-bit unsigned integer.
+  /// Implicitly converts a Twips instance to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator UInt16(Twips value)
   {
     return (UInt16?)value.UIntValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 32-bit unsigned integer.
+  /// Implicitly converts a Twips instance to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator UInt32(Twips value)
   {
     return (UInt32?)value?.UIntValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a 64-bit unsigned integer.
+  /// Implicitly converts a Twips instance to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator UInt64(Twips value)
   {
     return value?.UIntValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a double-precision floating-point number.
+  /// Implicitly converts a Twips instance to a double-precision floating-point number.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Double(Twips value)
   {
     return value?.DoubleValue ?? 0;
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a Single-precision floating-point number.
+  /// Implicitly converts a Twips instance to a Single-precision floating-point number.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Single(Twips value)
   {
     return (Single)(value?.DoubleValue ?? 0);
   }
 
   /// <summary>
-  /// Implicitly converts a Twips instance Ito a Decimal-precision floating-point number.
+  /// Implicitly converts a Twips instance to a Decimal-precision floating-point number.
   /// </summary>
-  /// <param name="value">The Twips value Ito convert.</param>
+  /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Decimal(Twips value)
   {
     return value?.DecimalValue ?? 0;

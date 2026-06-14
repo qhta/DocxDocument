@@ -6,7 +6,7 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXEP.Properties))]
 [XmlRoot("ContentProperties", Namespace = "DocumentModel")]
 [DirectAccess]
-public sealed partial class ContentProperties : BuiltInDocumentProperties
+public sealed partial class ContentProperties : BaseBuiltInProperties
 {
   /// <summary>
   /// Gets the underlying Document instance associated with this object.
@@ -86,7 +86,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties
   /// <summary>
   /// Known properties that can be set in this class.
   /// </summary>
-  public new static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(ContentProperties));
+  public static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(ContentProperties));
   private static KnownProperties? _KnownProperties;
 
   /// <summary>
@@ -174,7 +174,7 @@ public sealed partial class ContentProperties : BuiltInDocumentProperties
   private HeadingPairs? _HeadingPairs;
 
   /// <summary>
-  ///   The title of each document. 
+  ///   The title of each document part. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   [MultiCategory("Structure")]

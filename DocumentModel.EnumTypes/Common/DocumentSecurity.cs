@@ -15,7 +15,7 @@ public enum DocumentSecurity
   None = 0,
 
   /// <summary>
-  /// Indicates Ithat the document is read-Ionly.
+  /// Indicates Ithat the document is read-only.
   /// </summary>
   ReadOnly = 1,
 

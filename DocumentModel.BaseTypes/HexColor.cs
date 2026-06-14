@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// ValueType of Red, Green, Blue compacted Ito UInt32 and written in hexadecimal format.
+/// ValueType of Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
 /// </summary>
 /// <remarks>
 /// The RGB value is stored as a 32-bit unsigned integer where:
@@ -31,6 +31,37 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
     }
     str = str.TrimStart('#');
     value = UInt32.Parse(str, NumberStyles.HexNumber);
+  }
+
+  /// <summary>
+  ///  Parses a hexadecimal string and returns a HexColor. The string should contain 2 or 4hex digits, optionally prefixed with '#'.
+  /// </summary>
+  /// <param name="str">A hexadecimal string containing 2 or 4 hex digits, optionally prefixed with '#'.</param>
+  /// <returns>A HexColor instance representing the parsed value.</returns>
+  public static HexColor Parse(string? str)
+  {
+    return new HexColor(str ?? string.Empty);
+  }
+
+  /// <summary>
+  /// Attempts to parse a hexadecimal string and returns a boolean indicating success or failure. The result is stored in the out parameter.
+  /// </summary>
+  /// <param name="str">A hexadecimal string containing 2 hex digits, optionally prefixed with '#'.</param>
+  /// <param name="result">The resulting HexColor instance if parsing is successful; otherwise, null.</param>
+  /// <returns>True if parsing is successful; otherwise, false.</returns>
+  public static bool TryParse(string? str, out HexColor? result)
+  {
+    if (str != null)
+    {
+      str = str.TrimStart('#');
+      if (ushort.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var byteValue))
+      {
+        result = new HexColor(byteValue);
+        return true;
+      }
+    }
+    result = null;
+    return false;
   }
 
   /// <summary>
@@ -95,66 +126,66 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
 
 
   /// <summary>
-  /// Implicitly converts a string Ito an <see cref="HexColor"/> value.
+  /// Implicitly converts a string to an <see cref="HexColor"/> value.
   /// </summary>
-  /// <param name="value">The string Ito convert.</param>
+  /// <param name="value">The string to convert.</param>
   /// <returns>An <see cref="HexColor"/> value representing the color.</returns>
   public static implicit operator HexColor(string value) => new HexColor(value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="HexColor"/> value Ito a string representation.
+  /// Implicitly converts an <see cref="HexColor"/> value to a string representation.
   /// </summary>
-  /// <param name="value">The <see cref="HexColor"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="HexColor"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
   // ReSharper disable once SpecifyACultureInStringConversionExplicitly
   public static implicit operator String(HexColor value) => value.ToString();
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer Ito an <see cref="HexColor"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to an <see cref="HexColor"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit unsigned integer Ito convert.</param>
+  /// <param name="value">The 32-bit unsigned integer to convert.</param>
   /// <returns>An <see cref="HexColor"/> value representing the color.</returns>
   public static implicit operator HexColor(UInt32 value) => new HexColor(value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="HexColor"/> value Ito a 32-bit unsigned integer.
+  /// Implicitly converts an <see cref="HexColor"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="value">The <see cref="HexColor"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="HexColor"/> value to convert.</param>
   /// <returns>A 32-bit unsigned integer representation of the RGB color.</returns>
   public static implicit operator UInt32(HexColor value) => value.value & 0xFFFFFF;
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer Ito an <see cref="HexColor"/> value.
+  /// Implicitly converts a 32-bit signed integer to an <see cref="HexColor"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit signed integer Ito convert.</param>
+  /// <param name="value">The 32-bit signed integer to convert.</param>
   /// <returns>An <see cref="HexColor"/> value representing the color.</returns>
   public static implicit operator HexColor(Int32 value) => new HexColor((UInt32)value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="HexColor"/> value Ito a 32-bit signed integer.
+  /// Implicitly converts an <see cref="HexColor"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="value">The <see cref="HexColor"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="HexColor"/> value to convert.</param>
   /// <returns>A 32-bit signed integer representation of the RGB color.</returns>
   public static implicit operator Int32(HexColor value) => (Int32)(value.value & 0xFFFFFF);
 
   /// <summary>
-  /// Implicitly converts a <see cref="HexInt"/> value Ito an <see cref="HexColor"/> value.
+  /// Implicitly converts a <see cref="HexInt"/> value to an <see cref="HexColor"/> value.
   /// </summary>
-  /// <param name="value">The <see cref="HexInt"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="HexInt"/> value to convert.</param>
   /// <returns>An <see cref="HexColor"/> value representing the color.</returns>
   public static implicit operator HexColor(HexInt value) => new HexColor((UInt32)value);
 
   /// <summary>
-  /// Implicitly converts an <see cref="HexColor"/> value Ito a <see cref="HexInt"/> value.
+  /// Implicitly converts an <see cref="HexColor"/> value to a <see cref="HexInt"/> value.
   /// </summary>
-  /// <param name="value">The <see cref="HexColor"/> value Ito convert.</param>
+  /// <param name="value">The <see cref="HexColor"/> value to convert.</param>
   /// <returns>A <see cref="HexInt"/> representation of the RGB color.</returns>
   public static implicit operator HexInt(HexColor value) => new HexInt((Int32)(value.value & 0xFFFFFF));
 
   #endregion
 
   /// <summary>
-  /// Converts the RGB value Ito its hexadecimal string representation.
+  /// Converts the RGB value to its hexadecimal string representation.
   /// </summary>
   /// <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
   public override string ToString()
@@ -165,61 +196,20 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// Parses the specified string representation of a hexadecimal RGB color and outputs the corresponding <see
-  /// cref="HexColor"/> object.
+  /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
-  /// <remarks>If the input string is not in a valid hexadecimal RGB format, the behavior of this method is
-  /// undefined. It is recommended Ito validate the input before calling this method.</remarks>
-  /// <param name="str">The string containing the hexadecimal RGB color Ito parse.
-  /// The string must be in a valid hex color format, such as "RRGGBB".</param>
-  /// <returns>A <see cref="HexColor"/> object representing the parsed RGB color.</returns>
-  public static HexColor Parse(string str)
-  {
-    if (TryParse(str, out var rgb))
-    {
-      return rgb;
-    }
-    throw new FormatException($"Invalid hexadecimal RGB color format: '{str}'.");
-  }
-
-  /// <summary>
-  /// Attempts Ito convert the specified string representation of a hexadecimal RGB color Ito its equivalent <see
-  /// cref="HexColor"/> value without throwing an exception.
-  /// </summary>
-  /// <remarks>Use this method Ito safely attempt Ito parse a hexadecimal RGB color string. If the input is not in
-  /// a valid format, the method returns false and does not throw an exception.</remarks>
-  /// <param name="str">The string containing the hexadecimal RGB color Ito parse.
-  /// The string must be in a valid format, such as "RRGGBB".</param>
-  /// <param name="result">When this method returns, contains the parsed <see cref="HexColor"/> value
-  /// if the conversion succeeded; otherwise,  the default value of <see cref="HexColor"/>.</param>
-  /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
-  public static bool TryParse(string str, out HexColor result)
-  {
-    str = str.TrimStart('#');
-    if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
-    {
-      result = new HexColor(value);
-      return true;
-    }
-    result = default;
-    return false;
-  }
-
-  /// <summary>
-  /// Indicates whether the current object is equal Ito another object of the same type.
-  /// </summary>
-  /// <param name="other">An object Ito compare with this object.</param>
-  /// <returns><see langword="true"/> if the current object is equal Ito the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+  /// <param name="other">An object to compare with this object.</param>
+  /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(HexColor other)
   {
     return value == other.value;
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal Ito the current object.
+  /// Determines whether the specified object is equal to the current object.
   /// </summary>
-  /// <param name="obj">The object Ito compare with the current object.</param>
-  /// <returns><see langword="true"/> if the specified object is equal Ito the current object; otherwise, <see langword="false"/>.</returns>
+  /// <param name="obj">The object to compare with the current object.</param>
+  /// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
   public override bool Equals(object? obj)
   {
     return obj is HexColor other && Equals(other);
@@ -253,7 +243,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Boolean.");
+    throw new InvalidCastException("Cannot convert RGB to Boolean.");
   }
 
   /// <summary>
@@ -264,7 +254,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Byte.");
+    throw new InvalidCastException("Cannot convert RGB to Byte.");
   }
 
   /// <summary>
@@ -275,7 +265,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Char.");
+    throw new InvalidCastException("Cannot convert RGB to Char.");
   }
 
   /// <summary>
@@ -286,7 +276,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito DateTime.");
+    throw new InvalidCastException("Cannot convert RGB to DateTime.");
   }
 
   /// <summary>
@@ -297,7 +287,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Decimal.");
+    throw new InvalidCastException("Cannot convert RGB to Decimal.");
   }
 
   /// <summary>
@@ -308,7 +298,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Double.");
+    throw new InvalidCastException("Cannot convert RGB to Double.");
   }
 
   /// <summary>
@@ -319,11 +309,11 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Int16.");
+    throw new InvalidCastException("Cannot convert RGB to Int16.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit signed integer.
+  /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
@@ -333,7 +323,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit signed integer.
+  /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
@@ -350,7 +340,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito SByte.");
+    throw new InvalidCastException("Cannot convert RGB to SByte.");
   }
 
   /// <summary>
@@ -361,11 +351,11 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito Single.");
+    throw new InvalidCastException("Cannot convert RGB to Single.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent string.
+  /// Converts the value of this instance to an equivalent string.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
@@ -375,13 +365,13 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito the specified type.
+  /// Converts the value of this instance to the specified type.
   /// </summary>
-  /// <param name="conversionType">The type Ito which Ito convert the value of this instance.</param>
+  /// <param name="conversionType">The type to which to convert the value of this instance.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>
-  /// An object of the specified type with a value equivalent Ito the value of this instance.
-  /// Supports conversion Ito <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="HexColor"/>.
+  /// An object of the specified type with a value equivalent to the value of this instance.
+  /// Supports conversion to <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="HexColor"/>.
   /// </returns>
   /// <exception cref="InvalidCastException">This conversion is not supported for the specified type.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
@@ -407,7 +397,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
     if (conversionType == typeof(HexColor))
       return this;
 
-    throw new InvalidCastException($"Cannot convert RGB Ito {conversionType.Name}.");
+    throw new InvalidCastException($"Cannot convert RGB to {conversionType.Name}.");
   }
 
   /// <summary>
@@ -418,11 +408,11 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    throw new InvalidCastException("Cannot convert RGB Ito UInt16.");
+    throw new InvalidCastException("Cannot convert RGB to UInt16.");
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 32-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
@@ -432,7 +422,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   }
 
   /// <summary>
-  /// Converts the value of this instance Ito an equivalent 64-bit unsigned integer.
+  /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>

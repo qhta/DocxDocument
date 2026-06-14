@@ -21,7 +21,7 @@ public partial class Variant : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="Variant"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -94,7 +94,7 @@ public partial class Variant : IXmlSerializable
     }
     else 
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     object? value = null;
 
@@ -103,14 +103,14 @@ public partial class Variant : IXmlSerializable
     {
       string content = reader.Value;
 
-      // Convert string content Ito appropriate type
+      // Convert string content to appropriate type
       try
       {
         value = ParseValueFromString(parsedType, content, valueType);
       }
       catch (Exception ex)
       {
-        throw new XmlException($"Failed Ito parse Variant value for type {parsedType}: {ex.Message}", ex);
+        throw new XmlException($"Failed to parse Variant value for type {parsedType}: {ex.Message}", ex);
       }
 
       reader.Read(); // Move past text
@@ -138,9 +138,9 @@ public partial class Variant : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="Variant"/> value Ito XML.
+  /// Serializes the <see cref="Variant"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// <para>The value is written in the following XML format:</para>
   /// <code>
@@ -300,7 +300,7 @@ public partial class Variant : IXmlSerializable
   }
 
   /// <summary>
-  /// Converts a value Ito its string representation for XML serialization.
+  /// Converts a value to its string representation for XML serialization.
   /// </summary>
   private static string? ConvertValueToString(VariantType variantType, object value)
   {

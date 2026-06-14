@@ -314,13 +314,15 @@ public abstract class _AbstractTestClass
   /// <returns></returns>
   protected JsonSerializerOptions CreateJsonSerializerOptions()
   {
-    var options = new JsonSerializerOptions
-    {
-      DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-      WriteIndented = true
-    };
+    return JsonSerializationHelper.GetJsonSerializerOptions();
 
-    return options;
+    //var options = new JsonSerializerOptions
+    //{
+    //  DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+    //  WriteIndented = true
+    //};
+
+    //return options;
   }
 
 }

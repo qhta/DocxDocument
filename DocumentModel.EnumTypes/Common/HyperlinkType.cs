@@ -17,7 +17,7 @@ public enum HyperlinkType
   /// </summary>
   IShape,
   /// <summary>
-  /// IHyperlink applies to an inline shape. Used Ionly with Microsoft Word.
+  /// IHyperlink applies to an inline shape. Used only with Microsoft Word.
   /// </summary>
   IInlineShape
 }

@@ -25,7 +25,7 @@ public enum LineDashStyle
   /// </summary>
   RoundDot = 3,
   /// <summary>
-  /// ILine consists of dashes Ionly.
+  /// ILine consists of dashes only.
   /// </summary>
   Dash = 4,
   /// <summary>

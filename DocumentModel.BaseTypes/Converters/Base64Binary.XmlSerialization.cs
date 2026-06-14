@@ -19,11 +19,11 @@ public partial class Base64Binary : IXmlSerializable
   /// <summary>
   ///   Deserializes a Base64Binary value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read the Base64-encoded content from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read the Base64-encoded content from.</param>
   /// <remarks>
   ///   <para>
   ///   Reads the Base64-encoded string content from the current XML element and converts it
-  ///   Ito the underlying byte array representation.
+  ///   to the underlying byte array representation.
   ///   </para>
   ///   <para>
   ///   This method handles:
@@ -41,19 +41,19 @@ public partial class Base64Binary : IXmlSerializable
   {
     var content = reader.ReadElementContentAsString();
     byte[] result = Convert.FromBase64String(content);
-    // Use reflection Ito set the readonly field during deserialization
+    // Use reflection to set the readonly field during deserialization
     var valueField = typeof(Base64Binary).GetField("value",
       System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
     valueField?.SetValue(this, result);
   }
 
   /// <summary>
-  ///   Serializes this Base64Binary value Ito XML.
+  ///   Serializes this Base64Binary value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write the Base64-encoded content Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write the Base64-encoded content to.</param>
   /// <remarks>
   ///   <para>
-  ///   Converts the underlying byte array Ito a Base64-encoded string and writes it as
+  ///   Converts the underlying byte array to a Base64-encoded string and writes it as
   ///   the text content of the current XML element.
   ///   </para>
   ///   <para>

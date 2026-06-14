@@ -51,18 +51,18 @@ namespace DocumentModel;
 public class VariantJsonConverter : JsonConverter<Variant>
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="Variant"/> value.
+  /// Reads and converts JSON to a <see cref="Variant"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="Variant"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON structure is invalid or missing required properties.</description></item>
   /// <item><description>The type value is not a valid VariantType.</description></item>
-  /// <item><description>The value cannot be converted Ito the specified type.</description></item>
+  /// <item><description>The value cannot be converted to the specified type.</description></item>
   /// <item><description>The valueType cannot be resolved for Enum or Object types.</description></item>
   /// </list>
   /// </exception>
@@ -125,7 +125,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move Ito value
+        reader.Read(); // Move to value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -193,7 +193,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
       }
       catch (Exception ex)
       {
-        throw new JsonException($"Failed Ito parse Variant value for type {variantType.Value}: {ex.Message}", ex);
+        throw new JsonException($"Failed to parse Variant value for type {variantType.Value}: {ex.Message}", ex);
       }
     }
     else if (variantType.Value == VariantType.Null)
@@ -207,9 +207,9 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// <summary>
   /// Writes a <see cref="Variant"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="Variant"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="Variant"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// <para>Writes the Variant value in the following JSON format:</para>
   /// <code>
@@ -314,7 +314,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
 
       case VariantType.Char:
         string? charStr = element.GetString();
-        if (string.IsNullOrEmpty(charStr) || charStr.Length != 1)
+        if (string.IsNullOrEmpty(charStr) || charStr!.Length != 1)
           throw new JsonException("Char value must be a single character");
         return charStr[0];
 
@@ -328,7 +328,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
         string? dateStr = element.GetString();
         if (string.IsNullOrEmpty(dateStr))
           throw new JsonException("Date value cannot be empty");
-        return DateOnly.Parse(dateStr);
+        return DateOnly.Parse(dateStr!);
 
       case VariantType.DateTime:
         return element.GetDateTime();
@@ -340,7 +340,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
         string? hexStr = element.GetString();
         if (string.IsNullOrEmpty(hexStr))
           throw new JsonException("HexInt value cannot be empty");
-        return new HexInt(hexStr);
+        return new HexInt(hexStr!);
 
       case VariantType.Enum:
         if (valueType == null)
@@ -381,7 +381,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
         return JsonSerializer.Deserialize<Variant>(variantJson);
 
       case VariantType.Object:
-        // For objects, try Ito deserialize based on valueType
+        // For objects, try to deserialize based on valueType
         if (valueType != null)
         {
           string? objJson = element.GetRawText();
@@ -403,7 +403,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
   }
 
   /// <summary>
-  /// Writes a variant value Ito JSON in the appropriate format.
+  /// Writes a variant value to JSON in the appropriate format.
   /// </summary>
   private static void WriteValueToJson(Utf8JsonWriter writer, VariantType variantType, object? value, JsonSerializerOptions options)
   {

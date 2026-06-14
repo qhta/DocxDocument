@@ -30,7 +30,7 @@ public static class UInt64ConverterTest
   ];
 
   /// <summary>
-  ///   Runs all UInt64Converter tests for supported types and reports results Ito the console.
+  ///   Runs all UInt64Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -64,7 +64,7 @@ public static class UInt64ConverterTest
     UInt64.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid UInt64 value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid UInt64 value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (UInt64 min, UInt64 max)> typeRanges = new()
   {
@@ -81,10 +81,10 @@ public static class UInt64ConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of UInt64 values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of UInt64 values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test UInt64 conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test UInt64 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestUInt64Conversion(Type openXmlType)
   {
@@ -92,11 +92,11 @@ public static class UInt64ConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = UInt64Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         var (min, max) = typeRanges[openXmlType];
@@ -106,11 +106,11 @@ public static class UInt64ConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito UInt64
+        // Convert back to UInt64
         var convertedBackValue = UInt64Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito UInt64 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to UInt64 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

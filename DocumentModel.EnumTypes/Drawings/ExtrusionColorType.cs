@@ -11,7 +11,7 @@
 public enum ExtrusionColorType
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   TypeMixed = -2,
   /// <summary>

@@ -17,8 +17,8 @@ public enum FontCharset
   /// <summary>
   /// Symbol character set, 
   /// This value specifies Ithat the characters in the Unicode private use area
-  /// (U+FF00 Ito U+FFFF) of the font should be used Ito display characters 
-  /// in the range U+0000 Ito U+00FF.
+  /// (U+FF00 to U+FFFF) of the font should be used to display characters 
+  /// in the range U+0000 to U+00FF.
   /// </summary>
   Symbol = 0x02,
   /// <summary>

@@ -7,18 +7,18 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="VStreamData"/> is used in Office Open XML documents Ito store versioned binary streams
+/// <see cref="VStreamData"/> is used in Office Open XML documents to store versioned binary streams
 /// such as embedded objects, OLE data, or other binary content Ithat requires version tracking.
 /// This structure encapsulates a version identifier (GUID) and the actual binary data content.
 /// </para>
 /// <para>
 /// The version GUID uniquely identifies the format or version of the stream data, allowing
-/// applications Ito properly interpret and process the binary content. This is particularly
+/// applications to properly interpret and process the binary content. This is particularly
 /// important for maintaining compatibility across different versions of embedded objects
 /// and OLE content.
 /// </para>
 /// <para>
-/// This structure Iimplements <see cref="IEquatable{T}"/> Ito provide value-based equality
+/// This structure Iimplements <see cref="IEquatable{T}"/> to provide value-based equality
 /// comparison, including comparison of both the version GUID and binary data content.
 /// </para>
 /// </remarks>
@@ -59,7 +59,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// <list type="bullet">
   /// <item><description><b>Format identification:</b> Identifies the format or type of the binary data</description></item>
   /// <item><description><b>IVersion tracking:</b> Distinguishes between different versions of the same data format</description></item>
-  /// <item><description><b>Compatibility:</b> Enables applications Ito determine if they can process the data</description></item>
+  /// <item><description><b>Compatibility:</b> Enables applications to determine if they can process the data</description></item>
   /// <item><description><b>OLE support:</b> Matches OLE object CLSIDs for embedded objects</description></item>
   /// </list>
   /// </para>
@@ -86,7 +86,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// </value>
   /// <remarks>
   /// <para>
-  /// The version GUID typically corresponds Ito:
+  /// The version GUID typically corresponds to:
   /// <list type="bullet">
   /// <item><description><b>OLE CLSIDs:</b> Class identifiers for embedded OLE objects (e.g., {00020810-0000-0000-C000-000000000046} for Excel)</description></item>
   /// <item><description><b>Custom format IDs:</b> IApplication-specific identifiers for proprietary formats</description></item>
@@ -98,7 +98,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// identifier, which may occur for generic binary data or when version tracking is not required.
   /// </para>
   /// <para>
-  /// This property is nullable Ito support scenarios where the version information might be absent
+  /// This property is nullable to support scenarios where the version information might be absent
   /// or unknown during deserialization or construction.
   /// </para>
   /// </remarks>
@@ -136,11 +136,11 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   public byte[] Data => data;
 
   /// <summary>
-  /// Determines whether the current <see cref="VStreamData"/> instance is equal Ito another instance.
+  /// Determines whether the current <see cref="VStreamData"/> instance is equal to another instance.
   /// </summary>
-  /// <param name="other">The <see cref="VStreamData"/> Ito compare with the current instance.</param>
+  /// <param name="other">The <see cref="VStreamData"/> to compare with the current instance.</param>
   /// <returns>
-  /// <see langword="true"/> if the specified <see cref="VStreamData"/> is equal Ito the current instance;
+  /// <see langword="true"/> if the specified <see cref="VStreamData"/> is equal to the current instance;
   /// otherwise, <see langword="false"/>.
   /// </returns>
   /// <remarks>

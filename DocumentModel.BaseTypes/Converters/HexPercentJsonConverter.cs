@@ -12,8 +12,8 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
   /// <summary>
   ///   Reads a HexPercent value from JSON.
   /// </summary>
-  /// <param name="reader">The JSON reader Ito read from.</param>
-  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
+  /// <param name="reader">The JSON reader to read from.</param>
+  /// <param name="typeToConvert">The type of object to convert to.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <exception cref="JsonException">
   ///   Thrown when the JSON token is not a string or when the string cannot be parsed as a valid
@@ -33,7 +33,7 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
 
     try
     {
-      return new HexPercent(str);
+      return new HexPercent(str!);
     }
     catch (Exception ex)
     {
@@ -42,10 +42,10 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
   }
 
   /// <summary>
-  ///   Writes a HexPercent value Ito JSON.
+  ///   Writes a HexPercent value to JSON.
   /// </summary>
-  /// <param name="writer">The JSON writer Ito write Ito.</param>
-  /// <param name="value">The HexPercent value Ito write.</param>
+  /// <param name="writer">The JSON writer to write to.</param>
+  /// <param name="value">The HexPercent value to write.</param>
   /// <param name="options">The JSON serializer options.</param>
   public override void Write(Utf8JsonWriter writer, HexPercent value, JsonSerializerOptions options)
   {

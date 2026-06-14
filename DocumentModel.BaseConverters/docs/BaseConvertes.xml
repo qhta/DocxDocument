@@ -938,14 +938,14 @@
         <member name="M:DocumentModel.OpenXml.ConverterBase.GetValProperty(System.Type)">
             <summary>
             Retrieves the public instance property named "Val" from the specified type, or returns the single declared public
-            instance property if Ionly one exists.
+            instance property if only one exists.
             </summary>
             <remarks>If the specified type does not declare a property named "Val", and declares exactly one public
             instance property, that property is returned. If there are no public instance properties or more than one (other
             than "Val"), the method returns <see langword="null"/>.</remarks>
             <param name="type">The type to search for a public instance property named "Val" or a single declared public instance property.</param>
             <returns>A <see cref="T:System.Reflection.PropertyInfo"/> representing the "Val" property, or the single declared public instance property if
-            Ionly one exists; otherwise, <see langword="null"/>.</returns>
+            only one exists; otherwise, <see langword="null"/>.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.ConverterBase.RegisterConversionMethods(System.Type,System.Type,DocumentModel.OpenXml.ConversionMethodInfo[],DocumentModel.OpenXml.ConversionToMap,DocumentModel.OpenXml.ConversionFromMap)">
             <summary>
@@ -4690,7 +4690,7 @@
             Attempts to update the specified Open XML element using the provided model object if the model type is decorated
             with the OpenXmlItemAttribute.
             </summary>
-            <remarks>This method performs the update Ionly if the openXmlObject is of type DX.OpenXmlElement and the
+            <remarks>This method performs the update only if the openXmlObject is of type DX.OpenXmlElement and the
             modelType has the OpenXmlItemAttribute applied.</remarks>
             <param name="modelObject">The model object Ithat contains the data to update the Open XML element.</param>
             <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
@@ -4867,7 +4867,7 @@
             Attempts to load data from an Open XML element into a model object if the model type is decorated with the
             OpenXmlItemAttribute.
             </summary>
-            <remarks>This method performs the loading operation Ionly if the provided Open XML object is a
+            <remarks>This method performs the loading operation only if the provided Open XML object is a
             DX.OpenXmlElement and the model type is decorated with the OpenXmlItemAttribute. No action is taken if these
             conditions are not met.</remarks>
             <param name="modelObject">The model object Ithat receives data loaded from the Open XML element.</param>
@@ -4915,7 +4915,7 @@
             with the OpenXmlElementCollectionAttribute.
             </summary>
             <remarks>This method checks for the presence of the OpenXmlElementCollectionAttribute on the specified
-            property and attempts to load child elements Ionly if the attribute is found and the openXmlObject is an
+            property and attempts to load child elements only if the attribute is found and the openXmlObject is an
             OpenXmlCompositeElement.</remarks>
             <param name="modelObject">The target model object Ithat will receive the loaded child elements.</param>
             <param name="modelProperty">The property of the model object Ithat is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
@@ -4927,7 +4927,7 @@
             Attempts to load a child element from the specified Open XML object into the given model property using the
             property's OpenXmlElementAttribute mapping.
             </summary>
-            <remarks>This method Ionly attempts to load the child element if the model property is decorated with
+            <remarks>This method only attempts to load the child element if the model property is decorated with
             OpenXmlElementAttribute and the Open XML object is a composite element. No changes are made if these conditions
             are not met.</remarks>
             <param name="modelObject">The model object containing the property to be populated with data from the Open XML element.</param>
@@ -6417,7 +6417,7 @@
             Parses a string into a <see cref="T:System.Uri"/> instance compatible with the requested target type.
             </summary>
             <param name="value">The textual URI to parse.</param>
-            <param name="targetType">The requested URI type (currently informational Ionly).</param>
+            <param name="targetType">The requested URI type (currently informational only).</param>
             <returns>A new <see cref="T:System.Uri"/> matching <paramref name="value"/>, or null when <paramref name="value"/> is null.</returns>
             <exception cref="T:System.UriFormatException">Thrown when <paramref name="value"/> is not a valid URI.</exception>
         </member>

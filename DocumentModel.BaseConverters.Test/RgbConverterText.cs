@@ -29,7 +29,7 @@ public static class RgbConverterTest
   ];
 
   /// <summary>
-  ///   Runs all RgbConverter tests for supported types and reports results Ito the console.
+  ///   Runs all RgbConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -58,7 +58,7 @@ public static class RgbConverterTest
     UInt32.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid RGB value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid RGB value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (uint min, uint max)> typeRanges = new()
   {
@@ -76,10 +76,10 @@ public static class RgbConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of RGB values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of RGB values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test RGB conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test RGB conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestRgbConversion(Type openXmlType)
   {
@@ -88,11 +88,11 @@ public static class RgbConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = HexColorConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         if (openXmlValue is DX.StringValue strVal)
@@ -129,11 +129,11 @@ public static class RgbConverterTest
         //  Console.WriteLine("Out-of-range value did not throw an exception. ");
         //  return false; // Expected exception for out-of-range value
         //}
-        // Convert back Ito RGB
+        // Convert back to RGB
         var convertedBackValue = HexColorConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
-          Console.WriteLine($"Conversion back Ito RGB returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to RGB returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

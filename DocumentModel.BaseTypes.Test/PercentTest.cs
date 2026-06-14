@@ -30,13 +30,13 @@ public static class PercentTest
   
   static bool TestPercentBasicOperations()
   {
-    Console.WriteLine("--- Testing Percent Basic Operations ---");      // Test string Ito Percent conversion
+    Console.WriteLine("--- Testing Percent Basic Operations ---");      // Test string to Percent conversion
     Percent pct1 = "50%";
-    Console.WriteLine($"\n✓ String Ito Percent: {pct1} = {(double)pct1}");
+    Console.WriteLine($"\n✓ String to Percent: {pct1} = {(double)pct1}");
 
-    // Test double Ito Percent conversion
+    // Test double to Percent conversion
     Percent pct2 = new Percent("50%");
-    Console.WriteLine($"\n✓ Double Ito Percent: {pct2}");
+    Console.WriteLine($"\n✓ Double to Percent: {pct2}");
 
     // Test equality
     if (pct1.Equals(pct2))
@@ -44,13 +44,13 @@ public static class PercentTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test Percent Ito string with %
+    // Test Percent to string with %
     string str = pct1.ToString();
-    Console.WriteLine($"\n✓ Percent Ito string: {str}");
+    Console.WriteLine($"\n✓ Percent to string: {str}");
 
-    // Test Percent Ito double
+    // Test Percent to double
     double value = pct1.ToDouble(null);
-    Console.WriteLine($"\n✓ Percent Ito double: {value}");
+    Console.WriteLine($"\n✓ Percent to double: {value}");
 
     // Test hash code
     Console.WriteLine($"\n✓ Hash code: {pct1.GetHashCode()}");
@@ -100,7 +100,7 @@ public static class PercentTest
     Console.WriteLine($"  NegativePercent: {testData.NegativePercent}");
     Console.WriteLine();
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(PercentTestData));
     string xmlString;
 
@@ -178,7 +178,7 @@ public static class PercentTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -444,7 +444,7 @@ public static class PercentTest
       int value = (int)pct1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();

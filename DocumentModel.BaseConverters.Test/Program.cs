@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Entry point for the DocumentModel BaseConverters test suite. Runs all converter tests and reports results Ito the console.
+///   Entry point for the DocumentModel BaseConverters test suite. Runs all converter tests and reports results to the console.
 /// </summary>
 internal class Program
 {

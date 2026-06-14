@@ -32,6 +32,8 @@ global using DMW = DocumentModel.Wordprocessing;
 global using DMWD = DocumentModel.Wordprocessing.Drawings;
 global using DMWV = DocumentModel.Wordprocessing.Vml;
 global using DocumentModel.OpenXml;
+global using DocumentModel.Properties;
+
 global using DMT = DocumentModel.Themes;
 global using DMH = DocumentModel.HTML;
 

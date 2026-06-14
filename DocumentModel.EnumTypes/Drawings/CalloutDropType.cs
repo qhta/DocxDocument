@@ -9,7 +9,7 @@
 public enum CalloutDropType
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   /// <summary>
   /// Custom. If this value is used as the value for the PresetDrop property, the Drop and AutoAttach properties of

@@ -53,7 +53,7 @@ public static class VStreamDataTest
     // Test constructor with null data (should become empty array)
     Console.WriteLine("\nTesting construction with null data:");
     VStreamData nullDataStream = new VStreamData(versionGuid, null!);
-    Console.WriteLine($"\n✓ Created with null data (converted Ito empty): Size={nullDataStream.Data.Length}");
+    Console.WriteLine($"\n✓ Created with null data (converted to empty): Size={nullDataStream.Data.Length}");
 
     // Test constructor with OLE CLSID
     Console.WriteLine("\nTesting construction with OLE CLSID:");
@@ -311,7 +311,7 @@ public static class VStreamDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(VStreamDataTestData));
     string xmlString;
 
@@ -384,7 +384,7 @@ public static class VStreamDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

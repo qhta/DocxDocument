@@ -31,7 +31,7 @@ public static class HexIntConverterTest
   ];
 
   /// <summary>
-  ///   Runs all HexIntConverter tests for supported types and reports results Ito the console.
+  ///   Runs all HexIntConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -62,7 +62,7 @@ public static class HexIntConverterTest
     UInt32.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid HexInt value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid HexInt value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (HexInt min, HexInt max)> typeRanges = new()
   {
@@ -80,10 +80,10 @@ public static class HexIntConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of HexInt values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of HexInt values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test HexInt conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test HexInt conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestHexIntConversion(Type openXmlType)
   {
@@ -92,11 +92,11 @@ public static class HexIntConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = HexIntConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         if (openXmlValue is DX.StringValue strVal)
@@ -133,11 +133,11 @@ public static class HexIntConverterTest
         //  Console.WriteLine("Out-of-range value did not throw an exception. ");
         //  return false; // Expected exception for out-of-range value
         //}
-        // Convert back Ito HexInt
+        // Convert back to HexInt
         var convertedBackValue = HexIntConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito HexInt returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to HexInt returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

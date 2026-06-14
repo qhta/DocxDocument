@@ -28,18 +28,18 @@ public static class HexCharTest
   
   static bool TestHexCharBasicOperations()
   {
-    Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string Ito HexChar conversion (ASCII)
+    Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string to HexChar conversion (ASCII)
     HexChar hexChar1 = "41"; // 'A' in hex
     Console.WriteLine(
-      $"\n✓ String Ito HexChar (ASCII): {hexChar1} = {(char)hexChar1.ToUInt16(null)} ({hexChar1.ToUInt16(null)})");
+      $"\n✓ String to HexChar (ASCII): {hexChar1} = {(char)hexChar1.ToUInt16(null)} ({hexChar1.ToUInt16(null)})");
 
-    // Test string Ito HexChar conversion (Extended)
+    // Test string to HexChar conversion (Extended)
     HexChar hexChar2 = "03B1"; // Greek alpha α
-    Console.WriteLine($"\n✓ String Ito HexChar (Unicode): {hexChar2} = char({hexChar2.ToUInt16(null)})");
+    Console.WriteLine($"\n✓ String to HexChar (Unicode): {hexChar2} = char({hexChar2.ToUInt16(null)})");
 
-    // Test ushort Ito HexChar conversion
+    // Test ushort to HexChar conversion
     HexChar hexChar3 = (ushort)65;
-    Console.WriteLine($"\n✓ UShort Ito HexChar: {hexChar3}");
+    Console.WriteLine($"\n✓ UShort to HexChar: {hexChar3}");
 
     // Test equality
     if (hexChar1.Equals(hexChar3))
@@ -47,13 +47,13 @@ public static class HexCharTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexChar Ito string
+    // Test HexChar to string
     string? str = hexChar1;
-    Console.WriteLine($"\n✓ HexChar Ito string: {str}");
+    Console.WriteLine($"\n✓ HexChar to string: {str}");
 
-    // Test HexChar Ito ushort
+    // Test HexChar to ushort
     ushort value = hexChar1;
-    Console.WriteLine($"\n✓ HexChar Ito ushort: {value}");
+    Console.WriteLine($"\n✓ HexChar to ushort: {value}");
 
     // Test hash code
     Console.WriteLine($"\n✓ Hash code: {hexChar1.GetHashCode()}");
@@ -76,7 +76,7 @@ public static class HexCharTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(HexCharTestData));
     string xmlString;
     using (var stringWriter = new StringWriter())
@@ -115,7 +115,7 @@ public static class HexCharTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -324,7 +324,7 @@ public static class HexCharTest
       ushort value = hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito ushort x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to ushort x {iterations}: {sw.ElapsedMilliseconds}ms");
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
     return true;

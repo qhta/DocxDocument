@@ -30,7 +30,7 @@ public static class UInt16ConverterTest
   ];
 
   /// <summary>
-  ///   Runs all UInt16Converter tests for supported types and reports results Ito the console.
+  ///   Runs all UInt16Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -64,7 +64,7 @@ public static class UInt16ConverterTest
     UInt16.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid UInt16 value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid UInt16 value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (UInt16 min, UInt16 max)> typeRanges = new()
   {
@@ -81,10 +81,10 @@ public static class UInt16ConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of UInt16 values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of UInt16 values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test UInt16 conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test UInt16 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestUInt16Conversion(Type openXmlType)
   {
@@ -92,11 +92,11 @@ public static class UInt16ConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = UInt16Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         var (min, max) = typeRanges[openXmlType];
@@ -106,11 +106,11 @@ public static class UInt16ConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito UInt16
+        // Convert back to UInt16
         var convertedBackValue = UInt16Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito UInt16 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to UInt16 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

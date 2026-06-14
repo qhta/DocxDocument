@@ -13,6 +13,42 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// </summary>
   private readonly UInt64 value;
 
+
+  /// <summary>
+  /// Converts the specified hexadecimal string to its <see cref="HexLong"/> equivalent.
+  /// </summary>
+  /// <param name="str">The hexadecimal string to convert.</param>
+  /// <returns>A <see cref="HexLong"/> value representing the hexadecimal string.</returns>
+  /// <exception cref="FormatException">Thrown when the string is not a valid hexadecimal number.</exception>
+  public static HexLong Parse(string str)
+  {
+    str = str.TrimStart('#');
+    if (string.IsNullOrEmpty(str) || str.Length > 16)
+      throw new FormatException("Input string must be a hexadecimal string with up to 16 characters.");
+    return new HexLong(UInt64.Parse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture));
+  }
+
+  /// <summary>
+  /// Converts the specified hexadecimal string to its <see cref="HexLong"/> equivalent.
+  /// </summary>
+  /// <param name="str">The hexadecimal string to convert.</param>
+  /// <param name="result">The resulting HexLong value.</param>
+  /// <returns>True if the conversion was successful; otherwise, false.</returns>
+  public static bool TryParse(string str, out HexLong result)
+  {
+    str = str.TrimStart('#');
+    result = default;
+    if (string.IsNullOrEmpty(str) || str.Length > 16)
+      return false;
+
+    if (UInt64.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var intValue))
+    {
+      result = new HexLong(intValue);
+      return true;
+    }
+    return false;
+  }
+
   /// <summary>
   /// Initializes a new instance from a hexadecimal string.
   /// </summary>
@@ -70,7 +106,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a boolean (true if nonzero).
+  /// Converts the value to a boolean (true if nonzero).
   /// </summary>
   public bool ToBoolean(IFormatProvider? provider)
   {
@@ -78,7 +114,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a byte (truncates if necessary).
+  /// Converts the value to a byte (truncates if necessary).
   /// </summary>
   public byte ToByte(IFormatProvider? provider)
   {
@@ -86,7 +122,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a char.
+  /// Converts the value to a char.
   /// </summary>
   public char ToChar(IFormatProvider? provider)
   {
@@ -94,7 +130,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a DateTime.
+  /// Converts the value to a DateTime.
   /// </summary>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
@@ -102,7 +138,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a decimal.
+  /// Converts the value to a decimal.
   /// </summary>
   public decimal ToDecimal(IFormatProvider? provider)
   {
@@ -110,7 +146,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a double.
+  /// Converts the value to a double.
   /// </summary>
   public double ToDouble(IFormatProvider? provider)
   {
@@ -118,7 +154,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 16-bit signed integer (truncates if necessary).
+  /// Converts the value to a 16-bit signed integer (truncates if necessary).
   /// </summary>
   public short ToInt16(IFormatProvider? provider)
   {
@@ -126,7 +162,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 32-bit signed integer (truncates if necessary).
+  /// Converts the value to a 32-bit signed integer (truncates if necessary).
   /// </summary>
   public int ToInt32(IFormatProvider? provider)
   {
@@ -134,7 +170,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 64-bit signed integer.
+  /// Converts the value to a 64-bit signed integer.
   /// </summary>
   public long ToInt64(IFormatProvider? provider)
   {
@@ -142,7 +178,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a signed byte (truncates if necessary).
+  /// Converts the value to a signed byte (truncates if necessary).
   /// </summary>
   public sbyte ToSByte(IFormatProvider? provider)
   {
@@ -150,7 +186,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a single-precision floating point number.
+  /// Converts the value to a single-precision floating point number.
   /// </summary>
   public float ToSingle(IFormatProvider? provider)
   {
@@ -158,7 +194,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a string using the specified format provider.
+  /// Converts the value to a string using the specified format provider.
   /// </summary>
   public string ToString(IFormatProvider? provider)
   {
@@ -166,7 +202,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 16-bit unsigned integer (truncates if necessary).
+  /// Converts the value to a 16-bit unsigned integer (truncates if necessary).
   /// </summary>
   public ushort ToUInt16(IFormatProvider? provider)
   {
@@ -174,7 +210,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 32-bit unsigned integer (truncates if necessary).
+  /// Converts the value to a 32-bit unsigned integer (truncates if necessary).
   /// </summary>
   public UInt32 ToUInt32(IFormatProvider? provider)
   {
@@ -182,7 +218,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito a 64-bit unsigned integer.
+  /// Converts the value to a 64-bit unsigned integer.
   /// </summary>
   public ulong ToUInt64(IFormatProvider? provider)
   {
@@ -190,7 +226,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Converts the value Ito the specified type.
+  /// Converts the value to the specified type.
   /// </summary>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
@@ -227,7 +263,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
 
   #region Implicit Conversions
   /// <summary>
-  /// Implicitly converts a hexadecimal string Ito a HexLong.
+  /// Implicitly converts a hexadecimal string to a HexLong.
   /// </summary>
   public static implicit operator HexLong(string str)
   {
@@ -235,7 +271,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a HexLong Ito a 16-bit unsigned integer.
+  /// Implicitly converts a HexLong to a 16-bit unsigned integer.
   /// </summary>
   public static implicit operator ushort(HexLong val)
   {
@@ -243,7 +279,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a HexLong Ito a 32-bit unsigned integer.
+  /// Implicitly converts a HexLong to a 32-bit unsigned integer.
   /// </summary>
   public static implicit operator uint(HexLong val)
   {
@@ -251,7 +287,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a HexLong Ito a 64-bit signed integer.
+  /// Implicitly converts a HexLong to a 64-bit signed integer.
   /// </summary>
   public static implicit operator Int64(HexLong val)
   {
@@ -259,7 +295,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a HexLong Ito a 64-bit unsigned integer.
+  /// Implicitly converts a HexLong to a 64-bit unsigned integer.
   /// </summary>
   public static implicit operator ulong(HexLong val)
   {
@@ -267,7 +303,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer Ito a HexLong.
+  /// Implicitly converts a 16-bit unsigned integer to a HexLong.
   /// </summary>
   public static implicit operator HexLong(ushort val)
   {
@@ -275,7 +311,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer Ito a HexLong.
+  /// Implicitly converts a 32-bit unsigned integer to a HexLong.
   /// </summary>
   public static implicit operator HexLong(uint val)
   {
@@ -283,7 +319,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer Ito a HexLong.
+  /// Implicitly converts a 64-bit signed integer to a HexLong.
   /// </summary>
   public static implicit operator HexLong(Int64 val)
   {
@@ -291,7 +327,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer Ito a HexLong.
+  /// Implicitly converts a 64-bit unsigned integer to a HexLong.
   /// </summary>
   public static implicit operator HexLong(UInt64 val)
   {
@@ -299,12 +335,12 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Implicitly converts a HexLong Ito a HexBinary.
+  /// Implicitly converts a HexLong to a HexBinary.
   /// </summary>
   public static implicit operator HexBinary(HexLong value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>
-  /// Implicitly converts a HexBinary Ito a HexLong.
+  /// Implicitly converts a HexBinary to a HexLong.
   /// </summary>
   public static implicit operator HexLong(HexBinary value) => new HexLong(value.ToString());
 
@@ -318,7 +354,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   }
 
   /// <summary>
-  /// Determines whether this instance is equal Ito another HexLong.
+  /// Determines whether this instance is equal to another HexLong.
   /// </summary>
   public bool Equals(HexLong other)
   {

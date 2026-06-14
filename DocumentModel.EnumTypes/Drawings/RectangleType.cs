@@ -43,7 +43,7 @@ public enum RectangleType
   /// </summary>
   System = 7,
   /// <summary>
-  /// Represents space occupied for the presentation of revision balloons on the page. This space is Ionly printed if
+  /// Represents space occupied for the presentation of revision balloons on the page. This space is only printed if
   /// you print using "IDocument Showing Markup" in the Print dialog box.
   /// </summary>
   MarkupRectangleArea = 8,

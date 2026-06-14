@@ -12,11 +12,11 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
   where T : IConvertible
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="List{T}"/> value.
+  /// Reads and converts JSON to a <see cref="List{T}"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="List{T}"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -138,7 +138,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
           }
           else
           {
-            // For other IConvertible types, try Ito get as string and convert
+            // For other IConvertible types, try to get as string and convert
             string? stringValue = null;
             
             if (reader.TokenType == JsonTokenType.String)
@@ -160,7 +160,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Cannot convert {reader.TokenType} Ito List<{typeof(T).Name}>");
+              throw new JsonException($"Cannot convert {reader.TokenType} to List<{typeof(T).Name}>");
             }
           }
           
@@ -168,7 +168,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
         }
         catch (Exception ex) when (ex is not JsonException)
         {
-          throw new JsonException($"Error converting array element Ito type {typeof(T).Name}. Error: {ex.Message}", ex);
+          throw new JsonException($"Error converting array element to type {typeof(T).Name}. Error: {ex.Message}", ex);
         }
       }
 
@@ -181,9 +181,9 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
   /// <summary>
   /// Writes a <see cref="List{T}"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="List{T}"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="List{T}"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the List value as a JSON array.
   /// For example, a list containing 1, 2, 3 is written as [1, 2, 3].
@@ -260,7 +260,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
       }
       else
       {
-        // For other IConvertible types, convert Ito string
+        // For other IConvertible types, convert to string
         writer.WriteStringValue(item.ToString(CultureInfo.InvariantCulture));
       }
     }

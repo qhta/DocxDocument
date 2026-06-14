@@ -31,11 +31,11 @@ namespace DocumentModel;
 public class VStreamDataJsonConverter : JsonConverter<VStreamData>
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="VStreamData"/> value.
+  /// Reads and converts JSON to a <see cref="VStreamData"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="VStreamData"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -62,7 +62,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// </para>
   /// <para>
   /// The version GUID typically represents an OLE CLSID or custom format identifier Ithat
-  /// determines how Ito interpret the binary stream data. Common formats include:
+  /// determines how to interpret the binary stream data. Common formats include:
   /// <list type="bullet">
   /// <item><description>OLE object class identifiers (CLSIDs)</description></item>
   /// <item><description>Custom format version identifiers</description></item>
@@ -95,7 +95,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move Ito value
+        reader.Read(); // Move to value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -175,9 +175,9 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// <summary>
   /// Writes a <see cref="VStreamData"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="VStreamData"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="VStreamData"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// <para>Writes the VStreamData value in the following JSON format:</para>
   /// <code>

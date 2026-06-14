@@ -24,7 +24,7 @@ public static class Int32ConverterTest
   ];
 
   /// <summary>
-  ///   Runs all Int32Converter tests for supported types and reports results Ito the console.
+  ///   Runs all Int32Converter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -58,7 +58,7 @@ public static class Int32ConverterTest
     Int32.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid Int32 value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid Int32 value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (Int32 min, Int32 max)> typeRanges = new()
   {
@@ -75,10 +75,10 @@ public static class Int32ConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of Int32 values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Int32 values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test Int32 conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Int32 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestInt32Conversion(Type openXmlType)
   {
@@ -86,11 +86,11 @@ public static class Int32ConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = OpenXml.Int32Converter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         var (min, max) = typeRanges[openXmlType];
@@ -100,11 +100,11 @@ public static class Int32ConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito Int32
+        // Convert back to Int32
         var convertedBackValue = OpenXml.Int32Converter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito Int32 returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Int32 returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

@@ -22,7 +22,7 @@ public static class DecimalConverterTest
   ];
 
   /// <summary>
-  ///   Runs all DecimalConverter tests for supported types and reports results Ito the console.
+  ///   Runs all DecimalConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -57,10 +57,10 @@ public static class DecimalConverterTest
   ];
 
   /// <summary>
-  ///   Tests round-trip conversion of Decimal values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of Decimal values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test Decimal conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test Decimal conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestDecimalConversion(Type openXmlType)
   {
@@ -69,21 +69,21 @@ public static class DecimalConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = DecimalConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"  {testValue} -> {openXmlValue.GetType()} : {openXmlValue}");
-        // Convert back Ito Decimal
+        // Convert back to Decimal
         var convertedBackValue = DecimalConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito Decimal returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Decimal returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

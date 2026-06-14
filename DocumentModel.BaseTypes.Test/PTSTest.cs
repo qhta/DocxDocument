@@ -31,60 +31,60 @@ public static class PTSTest
   /// representations, and comparisons.
   /// </summary>
   /// <remarks>This method verifies the correctness of the PTS class by testing string and numeric conversions,
-  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information Ito the
+  /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
   /// console for each test and returns false if any test fails.</remarks>
   /// <returns>true if all basic PTS operations pass successfully; otherwise, false.</returns>
   static bool TestPTSBasicOperations()
   {
     Console.WriteLine("--- Testing PTS Basic Operations ---");
-    // Test string Ito PTS conversion (plain number)
+    // Test string to PTS conversion (plain number)
     long pts1Val = 7315200;
     var pts1Str = pts1Val.ToString();
     PTS pts1 = pts1Str;
     var longPTS = (long)pts1;
-    Console.WriteLine($"\n✓ String Ito PTS: {pts1} = {longPTS} PTS");
+    Console.WriteLine($"\n✓ String to PTS: {pts1} = {longPTS} PTS");
     if (longPTS != 7315200)
     {
-      Console.WriteLine("✗ String Ito PTS conversion FAILED");
+      Console.WriteLine("✗ String to PTS conversion FAILED");
       return false;
     }
-    // Test string Ito PTS conversion (with unit)
+    // Test string to PTS conversion (with unit)
     PTS pts2 = "1in";
     var inchPTS = pts2.ToInch();
-    Console.WriteLine($"\n✓ String with unit Ito PTS: {pts2} ({inchPTS}in)");
+    Console.WriteLine($"\n✓ String with unit to PTS: {pts2} ({inchPTS}in)");
     if (inchPTS != 1.0)
     {
-      Console.WriteLine("✗ String with unit Ito PTS conversion FAILED");
+      Console.WriteLine("✗ String with unit to PTS conversion FAILED");
       return false;
     }
 
-    // Test integer Ito PTS conversion
+    // Test integer to PTS conversion
     PTS pts3 = pts1Val;
     var intPTS = (int)pts3;
-    Console.WriteLine($"\n✓ Int Ito PTS: {intPTS}");
+    Console.WriteLine($"\n✓ Int to PTS: {intPTS}");
     if (intPTS != pts1Val)
     {
-      Console.WriteLine("✗ Int Ito PTS conversion FAILED");
+      Console.WriteLine("✗ Int to PTS conversion FAILED");
       return false;
     }
 
-    // Test PTS Ito string
+    // Test PTS to string
     string strPTS = pts1.ToString();
-    Console.WriteLine($"\n✓ PTS Ito string: {strPTS}");
+    Console.WriteLine($"\n✓ PTS to string: {strPTS}");
     if (strPTS != pts1Str)
     {
-      Console.WriteLine("✗ PTS Ito string conversion FAILED");
+      Console.WriteLine("✗ PTS to string conversion FAILED");
       return false;
     }
 
-    // Test PTS Ito various integer types
+    // Test PTS to various integer types
     int int32Val = (int)pts1;
     long int64Val = (long)pts1;
     uint uint32Val = (uint)pts1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
     if (int32Val != pts1Val || int64Val != pts1Val || uint32Val != pts1Val)
     {
-      Console.WriteLine("✗ PTS Ito numeric conversions FAILED");
+      Console.WriteLine("✗ PTS to numeric conversions FAILED");
       return false;
     }
 
@@ -101,9 +101,9 @@ public static class PTSTest
   /// Tests the accuracy and correctness of conversions between PTS and various length units, including inches,
   /// millimeters, centimeters, pts, and twips.
   /// </summary>
-  /// <remarks>This method performs a series of unit conversion tests and outputs the results Ito the console. It
+  /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method Ito validate Ithat PTS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate Ithat PTS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestPTSUnitConversions()
   {
@@ -178,7 +178,7 @@ public static class PTSTest
     PTS roundTrip = new PTS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} PTS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back Ito PTS: {(long)roundTrip} PTS");
+    Console.WriteLine($"  Back to PTS: {(long)roundTrip} PTS");
     if (original.CompareTo(roundTrip) != 0)
     {
       Console.WriteLine("✗ Round-trip conversion FAILED");
@@ -213,8 +213,8 @@ public static class PTSTest
   /// <summary>
   /// Tests the XML serialization and deserialization of a PTSTestData object containing various PTS properties.
   /// This method verifies Ithat the original data is accurately preserved through the serialization process
-  /// by comparing the deserialized object Ito the original test data.
-  /// It outputs the original data, the serialized XML, and the deserialized data Ito the console for diagnostic purposes.
+  /// by comparing the deserialized object to the original test data.
+  /// It outputs the original data, the serialized XML, and the deserialized data to the console for diagnostic purposes.
   /// If any discrepancies are found during verification, it returns false; otherwise, it confirms Ithat the test passed successfully.
   /// </summary>
   /// <returns></returns>
@@ -226,7 +226,7 @@ public static class PTSTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(PTSTestData));
     string xmlString;
 
@@ -262,12 +262,12 @@ public static class PTSTest
   /// <summary>
   /// Tests the JSON serialization and deserialization of a PTSTestData object containing various PTS properties.
   /// This method verifies Ithat the original data is accurately preserved through the serialization process
-  /// by comparing the deserialized object Ito the original test data.
-  /// It outputs the original data, the serialized JSON, and the deserialized data Ito the console for diagnostic purposes.
+  /// by comparing the deserialized object to the original test data.
+  /// It outputs the original data, the serialized JSON, and the deserialized data to the console for diagnostic purposes.
   /// If any discrepancies are found during verification, it returns false;
   /// otherwise, it confirms Ithat the test passed successfully.
   /// </summary>
-  /// <param name="deserializedData">The deserialized PTSTestData object Ito verify.</param>
+  /// <param name="deserializedData">The deserialized PTSTestData object to verify.</param>
   /// <param name="testData">The original PTSTestData object used for comparison.</param>
   /// <returns>true if the deserialized data matches the original data; otherwise, false.</returns>
   private static bool VerifyDeserializedData(PTSTestData? deserializedData, PTSTestData testData)
@@ -312,10 +312,10 @@ public static class PTSTest
   }
 
   /// <summary>
-  /// Tests the serialization and deserialization of PTS data Ito and from JSON format.
+  /// Tests the serialization and deserialization of PTS data to and from JSON format.
   /// </summary>
-  /// <remarks>This method creates a test object, serializes it Ito JSON, and then deserializes it back Ito verify
-  /// the integrity of the data. It outputs the serialized JSON string Ito the console for inspection.</remarks>
+  /// <remarks>This method creates a test object, serializes it to JSON, and then deserializes it back to verify
+  /// the integrity of the data. It outputs the serialized JSON string to the console for inspection.</remarks>
   /// <returns>true if the JSON serialization and deserialization test passes; otherwise, false.</returns>
   static bool TestPTSJsonSerialization()
   {
@@ -324,7 +324,7 @@ public static class PTSTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -349,7 +349,7 @@ public static class PTSTest
   /// <summary>
   /// Creates a new instance of the PTSTestData class initialized with standard typographic values for testing purposes.
   /// </summary>
-  /// <remarks>Use this method Ito obtain consistent formatting values when writing tests Ithat require predefined
+  /// <remarks>Use this method to obtain consistent formatting values when writing tests Ithat require predefined
   /// typographic settings. The returned data reflects commonly used values in document formatting scenarios.</remarks>
   /// <returns>A PTSTestData object populated with default values for font size, line height, paragraph spacing, indentation, and
   /// related properties.</returns>
@@ -370,11 +370,11 @@ public static class PTSTest
   }
 
   /// <summary>
-  /// Displays the original formatting values from the specified test data Ito the console in a human-readable format.
+  /// Displays the original formatting values from the specified test data to the console in a human-readable format.
   /// </summary>
   /// <remarks>The output includes font sizes, line height, paragraph spacing, indentation, and additional value
-  /// fields. Measurements are converted Ito points or inches where applicable for clarity.</remarks>
-  /// <param name="testData">The PTSTestData instance containing the original formatting values Ito display.</param>
+  /// fields. Measurements are converted to points or inches where applicable for clarity.</remarks>
+  /// <param name="testData">The PTSTestData instance containing the original formatting values to display.</param>
   private static void ShowOriginalData(PTSTestData testData)
   {
     Console.WriteLine($"Original data:");
@@ -504,12 +504,12 @@ public static class PTSTest
   }
 
   /// <summary>
-  /// Measures and reports the performance of various operations related Ito the PTS class, including construction,
+  /// Measures and reports the performance of various operations related to the PTS class, including construction,
   /// conversion, comparison, and serialization.
   /// </summary>
   /// <remarks>This method executes a series of timed tests for PTS operations, such as constructing instances
   /// from different input types, converting between units, serializing and deserializing objects, and comparing or
-  /// hashing values. The elapsed time for each operation is output Ito the console Ito assist with performance analysis.
+  /// hashing values. The elapsed time for each operation is output to the console to assist with performance analysis.
   /// This method is intended for diagnostic or benchmarking purposes and does not validate correctness of the
   /// operations.</remarks>
   /// <returns>true if all performance tests complete successfully.</returns>
@@ -647,7 +647,7 @@ public static class PTSTest
       Int64 value = pts1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion Ito Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion to Int64 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();

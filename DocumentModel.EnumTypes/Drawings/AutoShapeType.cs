@@ -9,7 +9,7 @@
 public enum AutoShapeType
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   /// <summary>
   /// IRectangle.

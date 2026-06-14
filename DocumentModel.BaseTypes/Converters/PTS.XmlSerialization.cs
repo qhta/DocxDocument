@@ -17,7 +17,7 @@ public partial class PTS : IXmlSerializable
   /// Deserializes the <see cref="PTS"/> value from XML.
   /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
@@ -38,7 +38,7 @@ public partial class PTS : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -62,9 +62,9 @@ public partial class PTS : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="PTS"/> value Ito XML.
+  /// Serializes the <see cref="PTS"/> value to XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
   /// The value is written as a plain numeric string representing points without unit suffix.
   /// </remarks>

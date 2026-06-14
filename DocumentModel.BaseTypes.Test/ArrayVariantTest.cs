@@ -89,7 +89,7 @@ public static class ArrayVariantTests
     Console.WriteLine("\nTesting CopyTo:");
     object?[] destArray = new object?[10];
     intArray.CopyTo(destArray, 2);
-    Console.WriteLine($"\n✓ Copied Ito destination array starting at index 2");
+    Console.WriteLine($"\n✓ Copied to destination array starting at index 2");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -135,7 +135,7 @@ public static class ArrayVariantTests
     dateArray[1] = new DateTime(2024, 12, 31);
     Console.WriteLine($"\n✓ DateTime: [{dateArray[0]}, {dateArray[1]}]");
 
-    Console.WriteLine("\nTesting type change (Int32 Ito String):");
+    Console.WriteLine("\nTesting type change (Int32 to String):");
     ArrayVariant changeArray = new ArrayVariant(VariantType.Int32, 3);
     changeArray[0] = 10;
     changeArray[1] = 20;
@@ -326,7 +326,7 @@ public static class ArrayVariantTests
   
   static bool TestArrayVariantResizing()
   {
-    Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size Ionly
+    Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size only
     Console.WriteLine("Testing resize with size:");
     ArrayVariant arr = new ArrayVariant(VariantType.Int32, 3);
     arr[0] = 10;
@@ -410,7 +410,7 @@ public static class ArrayVariantTests
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(ArrayVariantTestData));
     string xmlString;
 
@@ -530,7 +530,7 @@ public static class ArrayVariantTests
     ShowOriginalData(testData); 
     Console.WriteLine();
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -718,7 +718,7 @@ public static class ArrayVariantTests
       resizeArr.Resize(20);
     }
     sw.Stop();
-    Console.WriteLine($"Resize (10 Ito 20) x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Resize (10 to 20) x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization
     var testObj = new ArrayVariantTestData

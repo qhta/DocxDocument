@@ -63,9 +63,9 @@ public static class ListOfTest
     ListOf<int> intList5 = "10 20 30 40"!;
     Console.WriteLine($"\n✓ Implicit from string: {intList5.InnerText}");
 
-    // Test implicit conversion Ito string
+    // Test implicit conversion to string
     string? backToString = intList5;
-    Console.WriteLine($"\n✓ Back Ito string: '{backToString}'");
+    Console.WriteLine($"\n✓ Back to string: '{backToString}'");
 
     // Test InnerText property
     Console.WriteLine($"\n✓ InnerText getter: '{intList2.InnerText}'");
@@ -223,7 +223,7 @@ public static class ListOfTest
     Console.WriteLine("\nTesting InnerText setter:");
     ListOf<int> intList4 = new ListOf<int>();
     intList4.InnerText = "100 200 300";
-    Console.WriteLine($"  After setting InnerText Ito \"100 200 300\": Count={intList4.Count}");
+    Console.WriteLine($"  After setting InnerText to \"100 200 300\": Count={intList4.Count}");
     if (intList4.Count != 3 || !intList4.Contains(200))
     {
       Console.WriteLine("✗ Parsing FAILED");
@@ -265,7 +265,7 @@ public static class ListOfTest
     Console.WriteLine($"  BoolList: '{testData.BoolList.InnerText}' (Count={testData.BoolList.Count})");
     Console.WriteLine();
 
-    // Serialize Ito XML
+    // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(ListOfTestData));
     string xmlString;
 
@@ -345,7 +345,7 @@ public static class ListOfTest
 
     ShowOriginalData(testData);
 
-    // Serialize Ito JSON
+    // Serialize to JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,

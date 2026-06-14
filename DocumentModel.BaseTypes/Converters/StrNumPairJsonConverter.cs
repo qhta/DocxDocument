@@ -10,17 +10,17 @@
 public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
 {
   /// <summary>
-  /// Reads and converts JSON Ito a <see cref="StrNumPair"/> value.
+  /// Reads and converts JSON to a <see cref="StrNumPair"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
-  /// <param name="typeToConvert">The type Ito convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+  /// <param name="typeToConvert">The type to convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <returns>A <see cref="StrNumPair"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The JSON token is a number but cannot be converted Ito a 32-bit integer.</description></item>
+  /// <item><description>The JSON token is a number but cannot be converted to a 32-bit integer.</description></item>
   /// <item><description>The JSON token is an object but doesn't have the expected structure.</description></item>
   /// <item><description>The JSON token is none of the expected types (string, number, or object).</description></item>
   /// </list>
@@ -29,8 +29,8 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
   /// Accepts the following input formats:
   /// <list type="bullet">
   /// <item><description>String tokens in format "(Str,Num)" (e.g., "(abc,123)", "(,456)", "(xyz,)")</description></item>
-  /// <item><description>Plain string tokens (stored as Str component with Num set Ito null)</description></item>
-  /// <item><description>Numeric tokens as integer values (stored as Num component with Str set Ito null)</description></item>
+  /// <item><description>Plain string tokens (stored as Str component with Num set to null)</description></item>
+  /// <item><description>Numeric tokens as integer values (stored as Num component with Str set to null)</description></item>
   /// <item><description>Object tokens with "str" and/or "num" properties</description></item>
   /// </list>
   /// </remarks>
@@ -124,9 +124,9 @@ public class StrNumPairJsonConverter : JsonConverter<StrNumPair>
   /// <summary>
   /// Writes a <see cref="StrNumPair"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
-  /// <param name="value">The <see cref="StrNumPair"/> value Ito serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+  /// <param name="value">The <see cref="StrNumPair"/> value to serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the StrNumPair value as a string in the format "(Str,Num)".
   /// For example, a pair with Str="abc" and Num=123 is written as "(abc,123)".

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the security features or restrictions Ithat can be applied Ito a document.
+/// Specifies the security features or restrictions Ithat can be applied to a document.
 /// </summary>
 /// <remarks>This enumeration is bitwise-combinable.
 /// It decodes ExtendedFileProperties.DocumentSecurity int value.</remarks>
@@ -15,7 +15,7 @@ public enum DocumentSecurity
   None = 0,
 
   /// <summary>
-  /// Indicates Ithat the document is read-Ionly.
+  /// Indicates Ithat the document is read-only.
   /// </summary>
   ReadOnly = 1,
 

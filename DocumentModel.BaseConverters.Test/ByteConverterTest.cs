@@ -30,7 +30,7 @@ public static class ByteConverterTest
   ];
 
   /// <summary>
-  ///   Runs all ByteConverter tests for supported types and reports results Ito the console.
+  ///   Runs all ByteConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -64,7 +64,7 @@ public static class ByteConverterTest
     Byte.MaxValue
   ];
   /// <summary>
-  ///   IDictionary mapping Open XML types Ito their valid byte value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types to their valid byte value ranges (min, max) for conversion tests.
   /// </summary>
   public static Dictionary<Type, (Byte min, Byte max)> typeRanges = new()
   {
@@ -81,10 +81,10 @@ public static class ByteConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of byte values Ito and from the specified Open XML numeric type.
+  ///   Tests round-trip conversion of byte values to and from the specified Open XML numeric type.
   ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type Ito test byte conversion for.</param>
+  /// <param name="openXmlType">The Open XML type to test byte conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestByteConversion(Type openXmlType)
   {
@@ -92,11 +92,11 @@ public static class ByteConverterTest
     {
       try
       {
-        // Convert Ito OpenXml
+        // Convert to OpenXml
         var openXmlValue = ByteConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion Ito OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
         var (min, max) = typeRanges[openXmlType];
@@ -106,11 +106,11 @@ public static class ByteConverterTest
           return false; // Expected exception for out-of-range value
         }
 
-        // Convert back Ito Int16
+        // Convert back to Int16
         var convertedBackValue = ByteConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back Ito Byte returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to Byte returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

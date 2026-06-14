@@ -173,7 +173,7 @@ public static partial class OpenXmlModelConverter
   /// Attempts to update the specified Open XML element using the provided model object if the model type is decorated
   /// with the OpenXmlItemAttribute.
   /// </summary>
-  /// <remarks>This method performs the update Ionly if the openXmlObject is of type DX.OpenXmlElement and the
+  /// <remarks>This method performs the update only if the openXmlObject is of type DX.OpenXmlElement and the
   /// modelType has the OpenXmlItemAttribute applied.</remarks>
   /// <param name="modelObject">The model object Ithat contains the data to update the Open XML element.</param>
   /// <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
@@ -603,7 +603,7 @@ public static partial class OpenXmlModelConverter
   /// Attempts to load data from an Open XML element into a model object if the model type is decorated with the
   /// OpenXmlItemAttribute.
   /// </summary>
-  /// <remarks>This method performs the loading operation Ionly if the provided Open XML object is a
+  /// <remarks>This method performs the loading operation only if the provided Open XML object is a
   /// DX.OpenXmlElement and the model type is decorated with the OpenXmlItemAttribute. No action is taken if these
   /// conditions are not met.</remarks>
   /// <param name="modelObject">The model object Ithat receives data loaded from the Open XML element.</param>
@@ -732,7 +732,7 @@ public static partial class OpenXmlModelConverter
   /// with the OpenXmlElementCollectionAttribute.
   /// </summary>
   /// <remarks>This method checks for the presence of the OpenXmlElementCollectionAttribute on the specified
-  /// property and attempts to load child elements Ionly if the attribute is found and the openXmlObject is an
+  /// property and attempts to load child elements only if the attribute is found and the openXmlObject is an
   /// OpenXmlCompositeElement.</remarks>
   /// <param name="modelObject">The target model object Ithat will receive the loaded child elements.</param>
   /// <param name="modelProperty">The property of the model object Ithat is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
@@ -755,7 +755,7 @@ public static partial class OpenXmlModelConverter
   /// Attempts to load a child element from the specified Open XML object into the given model property using the
   /// property's OpenXmlElementAttribute mapping.
   /// </summary>
-  /// <remarks>This method Ionly attempts to load the child element if the model property is decorated with
+  /// <remarks>This method only attempts to load the child element if the model property is decorated with
   /// OpenXmlElementAttribute and the Open XML object is a composite element. No changes are made if these conditions
   /// are not met.</remarks>
   /// <param name="modelObject">The model object containing the property to be populated with data from the Open XML element.</param>

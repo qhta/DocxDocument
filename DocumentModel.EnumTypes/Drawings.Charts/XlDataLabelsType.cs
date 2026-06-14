@@ -19,7 +19,7 @@ public enum XlDataLabelsType
   /// </summary>
   Value = 2,
   /// <summary>
-  /// Percentage of the total. Available Ionly for pie charts and doughnut charts.
+  /// Percentage of the total. Available only for pie charts and doughnut charts.
   /// </summary>
   Percent = 3,
   /// <summary>
@@ -27,7 +27,7 @@ public enum XlDataLabelsType
   /// </summary>
   Label = 4,
   /// <summary>
-  /// Percentage of the total, and category for the point. Available Ionly for pie charts and doughnut charts.
+  /// Percentage of the total, and category for the point. Available only for pie charts and doughnut charts.
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>

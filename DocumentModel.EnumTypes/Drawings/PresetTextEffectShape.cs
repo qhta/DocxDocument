@@ -84,11 +84,11 @@ public enum PresetTextEffectShape
   /// </summary>
   CurveDown = 18,
   /// <summary>
-  /// Text is stretched to fill the height of the shape, with Ionly a slight curve up.
+  /// Text is stretched to fill the height of the shape, with only a slight curve up.
   /// </summary>
   CanUp = 19,
   /// <summary>
-  /// Text is stretched to fill the height of the shape, with Ionly a slight curve down.
+  /// Text is stretched to fill the height of the shape, with only a slight curve down.
   /// </summary>
   CanDown = 20,
   /// <summary>

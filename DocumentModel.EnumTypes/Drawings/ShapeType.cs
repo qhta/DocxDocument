@@ -9,7 +9,7 @@
 public enum ShapeType
 {
   /// <summary>
-  /// Return value Ionly; indicates a combination of the other states.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   ShapeTypeMixed = -2,
   /// <summary>

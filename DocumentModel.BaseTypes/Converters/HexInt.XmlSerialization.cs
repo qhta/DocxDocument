@@ -5,7 +5,7 @@ public partial struct HexInt : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null Ito indicate this type has no XML schema.
+  ///   Returns null to indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexInt is serialized as simple string content, so no XML schema definition is required.
@@ -15,14 +15,14 @@ public partial struct HexInt : IXmlSerializable
   /// <summary>
   ///   Reads the HexInt value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader Ito read from.</param>
+  /// <param name="reader">The XML reader to read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and parses it
   ///   into the internal int value. Empty elements result in a zero value.
   ///   </para>
   ///   <para>
-  ///   Since HexInt is a readonly struct with a readonly field, this method uses unsafe code Ito update
+  ///   Since HexInt is a readonly struct with a readonly field, this method uses unsafe code to update
   ///   the field during XML deserialization. This is necessary for XmlSerializer compatibility
   ///   while maintaining immutability for normal usage.
   ///   </para>
@@ -65,7 +65,7 @@ public partial struct HexInt : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move Ito content
+    reader.Read(); // Move to content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -74,10 +74,10 @@ public partial struct HexInt : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         str = str.TrimStart('#');
-        // Parse the hex string Ito int
+        // Parse the hex string to int
         uint parsedValue = uint.Parse(str, NumberStyles.HexNumber);
 
-        // Use Unsafe.AsRef Ito update the readonly field
+        // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
       }
 
@@ -91,9 +91,9 @@ public partial struct HexInt : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexInt value Ito XML as hexadecimal string content.
+  ///   Writes the HexInt value to XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer Ito write Ito.</param>
+  /// <param name="writer">The XML writer to write to.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the integer value as
@@ -104,12 +104,12 @@ public partial struct HexInt : IXmlSerializable
   ///   The format is always 8 characters with leading zeros, regardless of the actual value:
   ///   <list type="bullet">
   ///   <item><description><b>Fixed format:</b> Always 8 uppercase hex characters (e.g., "0000007B", "FFFFFFFF")</description></item>
-  ///   <item><description><b>Leading zeros:</b> Always included Ito maintain consistent 8-character format</description></item>
+  ///   <item><description><b>Leading zeros:</b> Always included to maintain consistent 8-character format</description></item>
   ///   <item><description><b>Uppercase:</b> Always uses uppercase A-F for hex digits</description></item>
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   All values including zero are written with the full 8-character format Ito maintain
+  ///   All values including zero are written with the full 8-character format to maintain
   ///   consistency with Office Open XML integer identifier representations.
   ///   </para>
   ///   <para>
