@@ -166,9 +166,10 @@ public static class ObjectToStringConverter
   private static Decimal? StringToDecimal(string? str) => String.IsNullOrEmpty(str) ? null : Decimal.Parse(str);
 
   private static string? DateTimeObjectToString(object? val) => DateTimeToString((DateTime?)val);
+
   private static object? StringToDateTimeObject(string? str) => StringToDateTime(str);
   private static string? DateTimeToString(DateTime? val) => val?.ToString("o");
-  private static DateTime? StringToDateTime(string? str) => String.IsNullOrEmpty(str) ? null : DateTime.Parse(str);
+  private static DateTime? StringToDateTime(string? str) => String.IsNullOrEmpty(str) ? null : DateTime.Parse(str, null, System.Globalization.DateTimeStyles.RoundtripKind);
 
   private static string? HexBinaryObjectToString(object? val) => HexBinaryToString((HexBinary?)val);
   private static object? StringToHexBinaryObject(string? str) => StringToHexBinary(str);

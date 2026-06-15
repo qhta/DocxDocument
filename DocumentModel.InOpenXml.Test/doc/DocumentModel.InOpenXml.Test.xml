@@ -763,6 +763,12 @@
             Comprehensive test for DocumentModel.CustomProperties.
             </summary>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateSampleData">
+            <summary>
+            Creates a sample CustomProperties object with various property types.
+            </summary>
+            <returns>A populated CustomProperties object.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
             <summary>
             Updates the specified document with new custom property data and returns the updated collection of custom

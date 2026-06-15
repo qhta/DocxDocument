@@ -6,36 +6,37 @@
 public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
 {
 
-  ///// <summary>
-  ///// Creates a sample CustomProperties object with various property types.
-  ///// </summary>
-  ///// <returns>A populated CustomProperties object.</returns>
-  //protected override CustomProperties CreateSampleData()
-  //{
-  //  var props = new CustomProperties();
-  //  props.Add(new CustomProperty
-  //  {
-  //    Name = "CustomString",
-  //    Value = "Test String"
-  //  });
-  //  props.Add(new CustomProperty
-  //  {
-  //    Name = "CustomInt",
-  //    Value = 123
-  //  });
-  //  props.Add(new CustomProperty
-  //  {
-  //    Name = "CustomBool",
-  //    Value = true
-  //  });
-  //  props.Add(new CustomProperty
-  //  {
-  //    Name = "CustomDate",
-  //    Value = DateTime.Parse("2026-01-17T10:00:00Z")
-  //  });
-
-  //  return props;
-  //}
+  /// <summary>
+  /// Creates a sample CustomProperties object with various property types.
+  /// </summary>
+  /// <returns>A populated CustomProperties object.</returns>
+  protected override CustomProperties CreateSampleData()
+  {
+    var props = new CustomProperties
+    {
+      new CustomProperty
+      {
+        Name = "CustomString",
+        Value = "Test String"
+      },
+      new CustomProperty
+      {
+        Name = "CustomInt",
+        Value = 123
+      },
+      new CustomProperty
+      {
+        Name = "CustomBool",
+        Value = true
+      },
+      new CustomProperty
+      {
+        Name = "CustomDate",
+        Value = DateTime.Now
+      }
+    };
+    return props;
+  }
 
   /// <summary>
   /// Updates the specified document with new custom property data and returns the updated collection of custom

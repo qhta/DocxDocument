@@ -47,6 +47,8 @@ public static class TestHelper
   /// langword="false"/>.</returns>
   public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, string firstName, string secondName, out string? message)
   {
+    if (comparedType.Name=="Variant")
+      Debug.Assert(true);
     bool result;
     message = null;
     if (obj1 == null && obj2 == null) return true;

@@ -1054,7 +1054,7 @@ public static partial class OpenXmlModelConverter
       if (value is Variant variant && targetType == typeof(DX.OpenXmlElement))
         return VariantConverter.CreateOpenXmlElement(variant);
       if (value is DX.OpenXmlElement openXmlVariant && targetType == typeof(Variant))
-        return VariantConverter.GetVariant(openXmlVariant);
+        return VariantConverter.CreateVariant(openXmlVariant);
       if (value is string uriString && targetType == typeof(Uri))
         return new Uri(uriString);
       if (value is Uri uri && targetType == typeof(string))

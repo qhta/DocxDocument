@@ -7859,7 +7859,7 @@
             <returns>The value contained in the element, converted to the appropriate .NET type.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown when the element type is not supported.</exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.VariantConverter.GetVariant(DocumentFormat.OpenXml.OpenXmlElement)">
+        <member name="M:DocumentModel.OpenXml.VariantConverter.CreateVariant(DocumentFormat.OpenXml.OpenXmlElement)">
             <summary>
             Converts an OpenXml element to a Variant object.
             </summary>

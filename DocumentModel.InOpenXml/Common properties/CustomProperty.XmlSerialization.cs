@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="BuiltInProperty"/> class.
+/// Provides XML serialization support for the <see cref="CustomProperty"/> class.
 /// </summary>
-public partial class BuiltInProperty : IXmlSerializable
+public partial class CustomProperty : IXmlSerializable
 {
-  static BuiltInProperty()
+  static CustomProperty()
   {
     // Register known types for XML serialization
-    TypeToStringConverter.RegisterType(typeof(BuiltInProperty));
+    TypeToStringConverter.RegisterType(typeof(CustomProperty));
   }
 
   /// <summary>
@@ -20,6 +20,9 @@ public partial class BuiltInProperty : IXmlSerializable
   {
     // Read attributes
     string? name = reader.GetAttribute("name");
+    string? propertyIdStr = reader.GetAttribute("propertyId");
+    string? formatIdStr = reader.GetAttribute("formatId");
+
     string? typename = reader.GetAttribute("type");
     Type? type = null;
     if (typename!= null)
@@ -36,10 +39,15 @@ public partial class BuiltInProperty : IXmlSerializable
  
     var str = reader.Value;
     var value = ObjectToStringConverter.ConvertFromString(str, type ?? typeof(object));
-    var builtInProperty = new BuiltInProperty { Name = name, Value = value, Type = type };
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _name) = builtInProperty.Name;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = builtInProperty.Type;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = builtInProperty.Value;
+    var CustomProperty = new CustomProperty
+    {
+      PropertyId = propertyIdStr != null ? int.Parse(propertyIdStr) : null,
+      FormatId = formatIdStr != null ? Guid.Parse(formatIdStr) : (Guid?)null,
+      Name = name, Value = value, Type = type
+    };
+    System.Runtime.CompilerServices.Unsafe.AsRef(in _name) = CustomProperty.Name;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = CustomProperty.Type;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = CustomProperty.Value;
     if (reader.NodeType == XmlNodeType.Text) reader.Read(); // Move past text node
     if (reader.NodeType == XmlNodeType.EndElement) reader.Read(); // Move past end element
 
@@ -49,6 +57,9 @@ public partial class BuiltInProperty : IXmlSerializable
   {
     // Write attributes
     writer.WriteAttributeString("name", Name);
+    writer.WriteAttributeString("propertyId", PropertyId.ToString());
+    writer.WriteAttributeString("formatId", FormatId.ToString());
+
 
     var type = Value?.GetType() ?? Type;
     if (type != null)

@@ -33,18 +33,27 @@ public abstract partial class DocumentProperty : NamedModelElement
   protected object? _value;
 
   /// <summary>
-  ///   Expected value type
+  /// Expected value type. Only five types of values are supported: String, Boolean, Integer, Float and DateTime.
+  /// This property is declared to provide conformance to Word's custom document properties,
+  /// which only support these five types of values.
   /// </summary>
-  [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-  public virtual DMPr.DocPropertyType ExpectedType
+  [XmlIgnore]
+  [JsonIgnore]
+  public virtual DMPr.DocumentPropertyType ExpectedType
   {
-    [DebuggerStepThrough] get => _ExpectedType;
-    [DebuggerStepThrough] set => UpdateField(ref _ExpectedType, value, nameof(ExpectedType));
+    [DebuggerStepThrough]
+    get => _ExpectedType ??Type?.ConvertToDocumentPropertyType() ?? DocumentPropertyType.Unknown;
+    [DebuggerStepThrough]
+    set
+    {
+      UpdateField(ref _ExpectedType, value, nameof(ExpectedType)); 
+      Type = value.ConvertToSystemType();
+    }
   }
-  private DMPr.DocPropertyType _ExpectedType;
+  private DMPr.DocumentPropertyType? _ExpectedType;
 
   /// <summary>
-  /// Expected value type as a System.Type. This property is not serialized and is used internally to determine the type of the value for conversion purposes.
+  /// Value type. It is determined by the actual type of the Value property. This property is used to determine how to serialize and deserialize the Value property, as well as to perform type checking when setting the Value property. The Type property is not serialized directly; instead, it is inferred from the Value property during serialization and deserialization processes.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]

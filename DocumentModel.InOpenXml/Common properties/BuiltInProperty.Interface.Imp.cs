@@ -23,7 +23,7 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   /// For built-in document properties, this property is read-only and returns the type of the property.
   /// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
   /// </summary>
-  DMPr.DocPropertyType DMPr.IDocumentProperty.Type
+  DMPr.DocumentPropertyType DMPr.IDocumentProperty.Type
   {
     get => this.ExpectedType; set => this.ExpectedType = value;
   }

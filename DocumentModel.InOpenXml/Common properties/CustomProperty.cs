@@ -6,7 +6,8 @@ namespace DocumentModel;
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
 [XmlRoot("CustomProperty", Namespace = "DocumentModel")]
-public sealed partial class CustomProperty : DocumentProperty, INamedObject
+[JsonConverter(typeof(CustomPropertyJsonConverter))]
+public sealed partial class CustomProperty : DocumentProperty
 {
 
   /// <summary>
@@ -52,13 +53,6 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.PropertyId))]
   public int? PropertyId { get => _PropertyId; set => UpdateField(ref _PropertyId, value, nameof(PropertyId)); }
   private int? _PropertyId;
-
-  ///// <summary>
-  /////   Property name. Should be unique within the document properties.
-  ///// </summary>
-  //[OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
-  //public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-  //private string? _Name;
 
   /// <summary>
   /// Format identifier (FormatId) for the custom document property in OpenXml.
@@ -117,6 +111,7 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
     set
     {
       base.Value = value;
+      base.Type = value?.GetType();
       if (_OpenXmlCustomProperty != null)
         SetAttachedPropertyValue(value);
     }
@@ -163,8 +158,9 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
         var openXmlElement = (_OpenXmlCustomProperty)?.FirstChild;
         if (openXmlElement != null)
         {
-          var vtVariant = VariantConverter.GetVariant(openXmlElement);
+          var vtVariant = VariantConverter.CreateVariant(openXmlElement);
           var value = vtVariant.Value;
+          base.Type = value?.GetType();
           return value;
         }
         return null;
@@ -197,7 +193,7 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
       {
         var vtVariant = openXmlElement.AsVTVariant();
         if (vtVariant != null)
-          value = VariantConverter.GetVariant(vtVariant!);
+          value = VariantConverter.CreateVariant(vtVariant!);
       }
       return value;
     }
@@ -208,6 +204,7 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
       if (value != _Value)
       {
         base.Value = value;
+        base.Type = value?.GetType();
         if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
         {
           openXmlElement.RemoveAllChildren();
@@ -240,8 +237,9 @@ public sealed partial class CustomProperty : DocumentProperty, INamedObject
     var firstChild = openXmlElement.FirstChild;
     if (firstChild != null)
     {
-      var variant = VariantConverter.GetVariant(firstChild);
-      base.Value = variant;
+      var value = VariantConverter.GetValue(firstChild);
+      base.Value = value;
+      base.Type = value?.GetType();
     }
   }
 }

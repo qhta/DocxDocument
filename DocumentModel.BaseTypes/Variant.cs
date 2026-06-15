@@ -792,8 +792,8 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       case VariantType.DateTime:
         if (value is string)
           return Convert.ToDateTime((string)value);
-        if (value is DateTime dt)
-          return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
+        //if (value is DateTime dt)
+        //  return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, dt.Second);
         return Convert.ToDateTime(value);
 
       case VariantType.Boolean:

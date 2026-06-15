@@ -128,9 +128,10 @@ public static class VariantConverter
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
-        return GetVariant(vtVariant.FirstChild);
+        return CreateVariant(vtVariant.FirstChild);
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
   }
+
 
   /// <summary>
   /// Converts an OpenXml element to a Variant object.
@@ -138,7 +139,7 @@ public static class VariantConverter
   /// <param name="openXmlElement">The OpenXml element to convert.</param>
   /// <returns>A Variant object representing the element values and type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
-  public static Variant GetVariant(DX.OpenXmlElement openXmlElement)
+  public static Variant CreateVariant(DX.OpenXmlElement openXmlElement)
   {
     if (openXmlElement is DXVT.VTBool vBool)
       return new Variant(VariantType.Boolean, Boolean.Parse(vBool.Text));
@@ -251,7 +252,7 @@ public static class VariantConverter
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild != null)
-        return new Variant(VariantType.Variant, GetVariant(vtVariant.FirstChild));
+        return new Variant(VariantType.Variant, CreateVariant(vtVariant.FirstChild));
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
 
     throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");

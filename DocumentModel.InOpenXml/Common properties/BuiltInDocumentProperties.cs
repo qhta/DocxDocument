@@ -33,7 +33,6 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
         var valueObject = item.Value;
         property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
@@ -56,7 +55,6 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
         var valueObject = item.Value;
         property.SetValue(this, valueObject);
         CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
@@ -115,8 +113,6 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
       {
         if (property.GetValue(this) != null)
           return true;
-        else
-          return false;
       }
     }
     return false;
@@ -251,7 +247,6 @@ public partial class BuiltInDocumentProperties : DocumentProperties<BuiltInPrope
   {
     if (KnownProperties.TryGetValue(propertyName, out var property))
     {
-      var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
       var valueObject = builtInProperty.Value;
       property.SetValue(this, valueObject);
       return true;

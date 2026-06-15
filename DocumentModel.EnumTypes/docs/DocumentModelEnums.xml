@@ -38721,104 +38721,87 @@
             Treat property test values as separate criteria.
             </summary>
         </member>
-        <member name="T:DocumentModel.Properties.DocPropertyType">
+        <member name="T:DocumentModel.Properties.DocumentPropertyType">
             <summary>
             Specifies the data type for a document property.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.Unknown">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.Unknown">
             <summary>
             Unknown or unspecified type. This value is used when the type of the document property cannot be determined or is not set.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.Number">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.Integer">
             <summary>
             Integer value.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.Boolean">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.Boolean">
             <summary>
             Boolean value.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.Date">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.DateTime">
             <summary>
             Date value.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.String">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.String">
             <summary>
             String value.
             </summary>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyType.Float">
+        <member name="F:DocumentModel.Properties.DocumentPropertyType.Float">
             <summary>
             Floating point value.
             </summary>
         </member>
-        <member name="T:DocumentModel.Properties.DocPropertyTypeExtensions">
+        <member name="T:DocumentModel.Properties.DocumentPropertyTypeExtensions">
             <summary>
-            Extension methods for DocPropertyType enumeration to provide compatibility checks and type mappings between DocPropertyType values and actual .NET types. These methods allow for determining if a given .NET type is compatible with a specific DocPropertyType, and vice versa, as well as checking if a value is compatible with a DocPropertyType. The TypeMapping dictionary provides a direct mapping between DocPropertyType values and their corresponding .NET types, facilitating type validation and conversion in the context of document properties.
+            Extension methods for DocumentPropertyType enumeration to provide compatibility checks and type mappings between DocumentPropertyType values and actual .NET types. These methods allow for determining if a given .NET type is compatible with a specific DocumentPropertyType, and vice versa, as well as checking if a value is compatible with a DocumentPropertyType. The TypeMapping dictionary provides a direct mapping between DocumentPropertyType values and their corresponding .NET types, facilitating type validation and conversion in the context of document properties.
             </summary>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.IsCompatibleWith(DocumentModel.Properties.DocPropertyType,System.Type)">
+        <member name="M:DocumentModel.Properties.DocumentPropertyTypeExtensions.IsCompatibleWith(DocumentModel.Properties.DocumentPropertyType,System.Type)">
             <summary>
-            Checks if the given .NET type is compatible with the specified DocPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocPropertyType value. For example, DocPropertyType.Number is compatible with int, DocPropertyType.Boolean is compatible with bool, and so on. The method returns true if the provided .NET type is assignable from the expected type for the given DocPropertyType, and false otherwise.  
+            Checks if the given .NET type is compatible with the specified DocumentPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocumentPropertyType value. For example, DocumentPropertyType.Number is compatible with int, DocumentPropertyType.Boolean is compatible with bool, and so on. The method returns true if the provided .NET type is assignable from the expected type for the given DocumentPropertyType, and false otherwise.  
             </summary>
-            <param name="type">The DocPropertyType value to check compatibility for.</param>
-            <param name="other">The .NET type to check against the DocPropertyType.</param>
-            <returns>True if the .NET type is compatible with the DocPropertyType; otherwise, false.</returns>
+            <param name="type">The DocumentPropertyType value to check compatibility for.</param>
+            <param name="other">The .NET type to check against the DocumentPropertyType.</param>
+            <returns>True if the .NET type is compatible with the DocumentPropertyType; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.IsCompatibleWith(System.Type,DocumentModel.Properties.DocPropertyType)">
+        <member name="M:DocumentModel.Properties.DocumentPropertyTypeExtensions.IsCompatibleWith(System.Type,DocumentModel.Properties.DocumentPropertyType)">
             <summary>
-            Checks if the given .NET type is compatible with the specified DocPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocPropertyType value. For example, DocPropertyType.Number is compatible with int, DocPropertyType.Boolean is compatible with bool, and so on. The method returns true if the provided .NET type is assignable from the expected type for the given DocPropertyType, and false otherwise.
+            Checks if the given .NET type is compatible with the specified DocumentPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocumentPropertyType value. For example, DocumentPropertyType.Number is compatible with int, DocumentPropertyType.Boolean is compatible with bool, and so on. The method returns true if the provided .NET type is assignable from the expected type for the given DocumentPropertyType, and false otherwise.
             </summary>
             <param name="type">The .NET type to check compatibility for.</param>
-            <param name="other">The DocPropertyType value to check against the .NET type.</param>
-            <returns>True if the .NET type is compatible with the DocPropertyType; otherwise, false.</returns>
+            <param name="other">The DocumentPropertyType value to check against the .NET type.</param>
+            <returns>True if the .NET type is compatible with the DocumentPropertyType; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.IsCompatible(DocumentModel.Properties.DocPropertyType,System.Object)">
+        <member name="M:DocumentModel.Properties.DocumentPropertyTypeExtensions.IsCompatible(DocumentModel.Properties.DocumentPropertyType,System.Object)">
             <summary>
-            Checks if the given value is compatible with the specified DocPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocPropertyType value. For example, DocPropertyType.Number is compatible with int values, DocPropertyType.Boolean is compatible with bool values, and so on. The method returns true if the provided value is of a type that is compatible with the expected type for the given DocPropertyType, and false otherwise. If the value is null, it returns false as well.
+            Checks if the given value is compatible with the specified DocumentPropertyType. This method uses a switch expression to determine compatibility based on the expected .NET type for each DocumentPropertyType value. For example, DocumentPropertyType.Number is compatible with int values, DocumentPropertyType.Boolean is compatible with bool values, and so on. The method returns true if the provided value is of a type that is compatible with the expected type for the given DocumentPropertyType, and false otherwise. If the value is null, it returns false as well.
             </summary>
-            <param name="type">The DocPropertyType value to check compatibility for.</param>
-            <param name="value">The value to check against the DocPropertyType.</param>
-            <returns>True if the value is compatible with the DocPropertyType; otherwise, false.</returns>
+            <param name="type">The DocumentPropertyType value to check compatibility for.</param>
+            <param name="value">The value to check against the DocumentPropertyType.</param>
+            <returns>True if the value is compatible with the DocumentPropertyType; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertToSystemType(DocumentModel.Properties.DocPropertyType)">
+        <member name="M:DocumentModel.Properties.DocumentPropertyTypeExtensions.ConvertToSystemType(DocumentModel.Properties.DocumentPropertyType)">
             <summary>
-            Converts the specified DocPropertyType to its corresponding .NET type.
+            Converts the specified DocumentPropertyType to its corresponding .NET type.
             </summary>
-            <param name="type">The DocPropertyType value to convert.</param>
+            <param name="type">The DocumentPropertyType value to convert.</param>
             <returns>The corresponding .NET type if supported; otherwise, null.</returns>
         </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertObjectToString(DocumentModel.Properties.DocPropertyType,System.Object)">
+        <member name="M:DocumentModel.Properties.DocumentPropertyTypeExtensions.ConvertToDocumentPropertyType(System.Type)">
             <summary>
-            Converts a given value to its string representation based on the specified DocPropertyType. 
-            </summary>
-            <param name="type">The DocPropertyType value to use for conversion.</param>
-            <param name="value">The value to convert to a string.</param>
-            <returns>The string representation of the value if compatible with the DocPropertyType; otherwise, null.</returns>
-        </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertStringToObject(DocumentModel.Properties.DocPropertyType,System.String,System.Type)">
-            <summary>
-            Converts a given string value to its corresponding .NET type based on the specified DocPropertyType. 
-            </summary>
-            <param name="type">The DocPropertyType value to use for conversion.</param>
-            <param name="value">The string value to convert.</param>
-            <param name="propertyType">The target .NET type for the conversion.</param>
-            <returns>The corresponding .NET object if conversion is successful; otherwise, null.</returns>
-        </member>
-        <member name="M:DocumentModel.Properties.DocPropertyTypeExtensions.ConvertToDocPropertyType(System.Type)">
-            <summary>
-            Converts a given .NET type to its corresponding DocPropertyType based on the TypeMapping dictionary. 
+            Converts a given .NET type to its corresponding DocumentPropertyType based on the TypeMapping dictionary. 
             </summary>
             <param name="type">The .NET type to convert.</param>
-            <returns>The corresponding DocPropertyType value if found; otherwise, DocPropertyType.Unknown.</returns>
+            <returns>The corresponding DocumentPropertyType value if found; otherwise, DocumentPropertyType.Unknown.</returns>
         </member>
-        <member name="F:DocumentModel.Properties.DocPropertyTypeExtensions.TypeMapping">
+        <member name="F:DocumentModel.Properties.DocumentPropertyTypeExtensions.TypeMapping">
             <summary>
-            Mapping between DocPropertyType enumeration values and actual .NET types.
+            Mapping between DocumentPropertyType enumeration values and actual .NET types.
             This mapping is used to determine the expected type of the Value property based on the Type property.
             </summary>
         </member>

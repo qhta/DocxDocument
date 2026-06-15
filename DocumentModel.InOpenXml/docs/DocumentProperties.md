@@ -115,7 +115,7 @@ Sample **app.xml** file:
   <HeadingPairs>
     <vt:vector size="2" baseType="variant">
       <vt:variant>
-        <vt:lpstr>Tytuł</vt:lpstr>
+        <vt:lpstr>Title</vt:lpstr>
       </vt:variant>
       <vt:variant>
         <vt:i4>1</vt:i4>
@@ -207,27 +207,52 @@ are automatically registered as known properties.
 and accessing them by their names. 
 It also provides an enumerator, which allows for iterating over all the properties in the set, which have non-null values.
 
+### BaseBuiltInPropertiesCollection class
+
+Due to Xml and Json serialization requirements, **BaseBuiltInProperties** class cannot implement the **IEnumerable\<DocumentProperty\>** interface directly.
+Instead, it implements **DocumentProperties** methods and properties, and redirects the calls to the underlying collection of properties, 
+which is implemented in a separate **BuiltInPropertiesCollection** class.
+
+Each of the specific built-in properties classes (**CoreProperties**, **ContentProperties** and **StatisticProperties**)
+serialize their properties directly as public properties, which are decorated with the appropriate attributes for XML and JSON serialization.
+
+## BuiltInProperties and BuiltInProperty classes
+
+**BuiltInProperties** class is a wrapper around the three sets of built-in properties: **CoreProperties**, **ContentProperties** and **StatisticProperties**.
+It provides a unified interface for working with all built-in properties, and allows for accessing and modifying the properties in a consistent way.
+
+**BuiltInProperties** class implements the **IElementCollection\<BuiltInProperty>** interface,
+which allows for iterating over all the built-in properties in the document.
+Only properties with non-null values are included in the collection.
+
+Adding, updating and deleting built-in properties is done by accessing the corresponding properties in the **CoreProperties**, **ContentProperties** or **StatisticProperties** classes,
+
+**BuiltInProperty** class represents a single built-in property, and is used to store the name, value and type of the property.
+Serialization of **Type** and **Value** properties of **BuiltInProperty** class is implemented using two helper converters:
+**TypeConverter** and **ValueConverter**, defined in **DocumentModel.BaseTypes** assembly.
+
 ## AbstractDocumentProperties\<T> class
 
-**BuiltInProperties** class inherit from the **AbstractDocumentProperties\<T>** class,
+**BaseBuiltInPropertiesCollection** class inherits from the **AbstractDocumentProperties\<T>** class,
 which is an abstract class that provides common functionality for working with two types of document properties:
 **BuiltInProperties** and **CustomProperties**. 
 The first type represents a collection of **BuiltInProperty** items, 
 while the second type represents a collection of **CustomProperty** items.
 
-Both types of properties derive from **DocumentProperty** class, 
+Both types of properties (**BuiltInProperty** and **CustomProperty**) derive from **DocumentProperty** class, 
 which declares common properties for both types of properties, such as **Name**, **Value**, and **Type**.
 
 The **Name** property is declared in **NamedModelElement** class, which is a base class for all named elements in the document model.
 It provides a set accessor for the name of the property, which notifies the document model about the change of the property name.
 
-The **Value** property is declared in the **DocumentProperty** class, and is of type string.
-The **Type** property is also declared in the **DocumentProperty** class, and is of type **DocPropertyType** enum, 
-which represents the allowed data type of the property value.
-Five types of property values are supported: **String**, **Number** (integer 32-bit), **Boolean**, **Date** (DateTime), and **Float** (single or double precision).
+The **Value** property is declared in the **DocumentProperty** class, and is of type object.
+The **Type** property is also declared in the **DocumentProperty** class, and is of type **Type**.
 
-DocumentProperty values must be converted to the appropriate type when working with the property value,
-which is done in the **DocPropertyTypeExtensions** class, in its **ConvertObjectToString** and **ConvertStringToObject** methods.
-Float type conversion is implemented using invariant culture
-and Date type conversion is implemented using "o" format, which allows for round-trip date and time conversion.
-Those properties which are of unsupported types, are converted using JSON serialization and Base64 encoding, which allows for storing complex objects in a string format.
+The **DocumentProperty** class declares also an **ExpectedType** property, 
+which represents the allowed data type of the property value.
+Five types of property values are supported: **String**, **Integer** (32-bit), **Boolean**, **DateTime** (DateTime), and **Float** (single precision).
+They are represented by the **DocumentPropertyType** enum, which provides a mapping between the .NET types and the property types.
+The **ExpectedType** property is declared to provide conformance to Word's custom document properties,
+which only support these five types of values. This property is tigtly related to the **Type** property.
+If the **Type** property is set to a type that is not supported by Word's custom document properties,
+the **ExpectedType** property will return the corresponding **DocumentPropertyType.Unknown** value.

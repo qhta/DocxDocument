@@ -40,7 +40,7 @@ public partial class BaseBuiltInPropertiesCollection : AbstractDocumentPropertie
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
+        var docPropertyType = property.PropertyType.ConvertToDocumentPropertyType();
         var valueObject = item.Value;
         property.SetValue(Owner, valueObject);
         CollectionChanged?.Invoke(Owner, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
@@ -63,7 +63,7 @@ public partial class BaseBuiltInPropertiesCollection : AbstractDocumentPropertie
     {
       if (KnownProperties.TryGetValue(item.Name, out var property))
       {
-        var docPropertyType = property.PropertyType.ConvertToDocPropertyType();
+        var docPropertyType = property.PropertyType.ConvertToDocumentPropertyType();
         var valueObject = item.Value;
         property.SetValue(Owner, valueObject);
         CollectionChanged?.Invoke(Owner, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add,
