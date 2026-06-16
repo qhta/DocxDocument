@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// Collection of all document properties that is divided to built-in properties and custom properties.
 /// </summary>
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
+[JsonConverter(typeof(DocumentPropertiesJsonConverter))]
 public partial class DocumentProperties : ModelElement, IWordprocessingDocumentAware,
   IElementCollection<DocumentProperty>
 {
@@ -149,7 +150,16 @@ public partial class DocumentProperties : ModelElement, IWordprocessingDocumentA
     {
       if (builtInProperty.Name != null)
       {
-        BuiltInProperties.Add(builtInProperty);
+        if (!BuiltInProperties.TryAdd(builtInProperty))
+        {
+          var newCustomProperty = new CustomProperty
+          {
+            Name = builtInProperty.Name,
+            ValueType = builtInProperty.ValueType,
+            Value = builtInProperty.Value,
+          };
+          CustomProperties.Add(newCustomProperty);
+        }
       }
       else
         throw new InvalidOperationException($"BuiltInProperty must have a name.");
@@ -238,25 +248,11 @@ public partial class DocumentProperties : ModelElement, IWordprocessingDocumentA
   {
     foreach (var property in BuiltInProperties)
       if (property.Value != null)
-        yield return new DocumentProperty
-        {
-          PropertyId = property.PropertyId,
-          Name = property.Name,
-          Value = property.Value,
-          Type = property.Type,
-          LinkTarget = property.LinkTarget
-        };
+        yield return property;
 
     foreach (var property in CustomProperties)
       if (property.Value != null)
-        yield return new DocumentProperty
-        {
-          PropertyId = property.PropertyId,
-          Name = property.Name,
-          Value = property.Value,
-          Type = property.Type,
-          LinkTarget = property.LinkTarget
-        };
+        yield return property;
   }
 
   /// <summary>

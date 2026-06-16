@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 using Qhta.OpenXmlTools;
 
 namespace DocumentModel;
@@ -6,7 +8,7 @@ namespace DocumentModel;
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
 [XmlRoot("CustomProperty", Namespace = "DocumentModel")]
-[JsonConverter(typeof(CustomPropertyJsonConverter))]
+[JsonConverter(typeof(DocumentPropertyJsonConverter<CustomProperty>))]
 public sealed partial class CustomProperty : DocumentProperty
 {
 
@@ -97,7 +99,7 @@ public sealed partial class CustomProperty : DocumentProperty
     set
     {
       base.Value = value;
-      base.Type = value?.GetType();
+      base.ValueType = value?.GetType();
       if (_OpenXmlCustomProperty != null)
         SetAttachedPropertyValue(value);
     }
@@ -146,7 +148,7 @@ public sealed partial class CustomProperty : DocumentProperty
         {
           var vtVariant = VariantConverter.CreateVariant(openXmlElement);
           var value = vtVariant.Value;
-          base.Type = value?.GetType();
+          base.ValueType = value?.GetType();
           return value;
         }
         return null;
@@ -190,7 +192,7 @@ public sealed partial class CustomProperty : DocumentProperty
       if (value != _Value)
       {
         base.Value = value;
-        base.Type = value?.GetType();
+        base.ValueType = value?.GetType();
         if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
         {
           openXmlElement.RemoveAllChildren();
@@ -212,6 +214,10 @@ public sealed partial class CustomProperty : DocumentProperty
     openXmlElement.RemoveAllChildren();
     if (Value != null)
       openXmlElement.AppendChild(Value.AsVTVariant());
+    else if (ExpectedType != DocumentPropertyType.Unknown)
+    {
+      openXmlElement.AppendChild(new DXVT.VTVector() { BaseType = _documentPropertyTypeToVectorBaseValues[ExpectedType] });
+    }
   }
 
   /// <summary>
@@ -223,9 +229,26 @@ public sealed partial class CustomProperty : DocumentProperty
     var firstChild = openXmlElement.FirstChild;
     if (firstChild != null)
     {
-      var value = VariantConverter.GetValue(firstChild);
-      base.Value = value;
-      base.Type = value?.GetType();
+      if (firstChild is DXVT.VTVector vtVector && vtVector.BaseType?.Value != null)
+      {
+        ExpectedType = _documentPropertyTypeToVectorBaseValues.GetValue1(vtVector.BaseType.Value!);
+      }
+      else
+      {
+        var value = VariantConverter.GetValue(firstChild);
+        base.Value = value;
+        base.ValueType = value?.GetType();
+      }
     }
   }
+
+  private static BiDiDictionary<DocumentPropertyType, DXVT.VectorBaseValues> _documentPropertyTypeToVectorBaseValues
+  = new BiDiDictionary<DocumentPropertyType, DXVT.VectorBaseValues>
+  {
+    { DocumentPropertyType.String, DXVT.VectorBaseValues.Lpwstr },
+    { DocumentPropertyType.Integer, DXVT.VectorBaseValues.FourBytesSignedInteger },
+    { DocumentPropertyType.Boolean, DXVT.VectorBaseValues.Bool },
+    { DocumentPropertyType.DateTime, DXVT.VectorBaseValues.Filetime },
+    { DocumentPropertyType.Float, DXVT.VectorBaseValues.FourBytesReal }
+  };
 }

@@ -5,8 +5,8 @@ namespace DocumentModel;
 ///   Abstract document Property.
 /// </summary>
 [XmlRoot("BuiltInProperty", Namespace = "DocumentModel")]
-[JsonConverter(typeof(BuiltInPropertyJsonConverter))]
-public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
+[JsonConverter(typeof(DocumentPropertyJsonConverter<BuiltInProperty>))]
+public partial class BuiltInProperty : DocumentProperty
 {
   /// <summary>
   /// Default constructor needed for serialization.

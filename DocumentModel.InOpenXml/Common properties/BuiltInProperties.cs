@@ -127,6 +127,8 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
         existingProperty.BaseObject = baseObject;
         existingProperty.PropertyInfo = propertyInfo;
         var value0 = existingProperty.GetAttachedPropertyInfo();
+        existingProperty.ExpectedType = propertyInfo.PropertyType.ConvertToDocumentPropertyType();
+        existingProperty.ValueType = propertyInfo.PropertyType; 
         if (valueObject!=value0)
           existingProperty.SetAttachedPropertyValue(valueObject);
       }
@@ -137,7 +139,8 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
           BaseObject = baseObject,
           PropertyInfo = propertyInfo,
           Name = propertyInfo.Name,
-          Type = propertyInfo.PropertyType,
+          ValueType = propertyInfo.PropertyType,
+          ExpectedType = propertyInfo.PropertyType.ConvertToDocumentPropertyType()
         };
 
         Add(DocumentProperty);

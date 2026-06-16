@@ -53,7 +53,12 @@ public class CustomPropertiesTest : _AbstractModelTestClass<CustomProperties>
       {
         Name = "EmptyPropertyWithLink",
         LinkTarget = "SomeLinkTarget"
-      }
+      },
+      new CustomProperty
+      {
+        Name = "EmptyPropertyWithExpectedType",
+        ExpectedType = DocumentPropertyType.Float
+      },
     };
     return props;
   }

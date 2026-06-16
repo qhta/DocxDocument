@@ -4,13 +4,13 @@ namespace DocumentModel;
 ///   Abstract document Property.
 /// </summary>
 [XmlRoot("DocumentProperty", Namespace = "DocumentModel")]
-[JsonConverter(typeof(DocumentPropertyJsonConverter))]
-public partial class DocumentProperty : NamedModelElement
+//[JsonConverter(typeof(DocumentPropertyJsonConverter<DocumentProperty>))]
+public abstract partial class DocumentProperty : NamedModelElement
 {
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
-  public DocumentProperty()
+  protected DocumentProperty()
   {
   }
 
@@ -41,43 +41,36 @@ public partial class DocumentProperty : NamedModelElement
   /// </summary>
   protected object? _value;
 
-  ///// <summary>
-  ///// Expected value type. Only five types of values are supported: String, Boolean, Integer, Float and DateTime.
-  ///// This property is declared to provide conformance to Word's custom document properties,
-  ///// which only support these five types of values.
-  ///// </summary>
-  //[XmlIgnore]
-  //[JsonIgnore]
-  //public virtual DMPr.DocumentPropertyType ExpectedType
-  //{
-  //  [DebuggerStepThrough]
-  //  get => _expectedType ?? Type?.ConvertToDocumentPropertyType() ?? DocumentPropertyType.Unknown;
-  //  [DebuggerStepThrough]
-  //  set
-  //  {
-  //    UpdateField(ref _expectedType, value, nameof(ExpectedType)); 
-  //    Type = value.ConvertToSystemType();
-  //  }
-  //}
-  ///// <summary>
-  ///// Backing field for the ExpectedType property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
-  ///// </summary>
-  //protected DMPr.DocumentPropertyType? _expectedType;
+  /// <summary>
+  /// Expected value type. Only five types of values are supported: String, Boolean, Integer, Float and DateTime.
+  /// This property is declared to provide conformance to Word's custom document properties,
+  /// which only support these five types of values.
+  /// </summary>
+
+  public virtual DMPr.DocumentPropertyType ExpectedType
+  {
+    [DebuggerStepThrough] get => _expectedType ?? Value?.GetType()?.ConvertToDocumentPropertyType() ?? DMPr.DocumentPropertyType.Unknown;
+    [DebuggerStepThrough] set => UpdateField(ref _expectedType, value, nameof(ExpectedType));
+  }
+  /// <summary>
+  /// Backing field for the ExpectedType property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
+  /// </summary>
+  protected DMPr.DocumentPropertyType? _expectedType;
 
   /// <summary>
   /// Value type. It is determined by the actual type of the Value property. This property is used to determine how to serialize and deserialize the Value property, as well as to perform type checking when setting the Value property. The Type property is not serialized directly; instead, it is inferred from the Value property during serialization and deserialization processes.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public virtual Type? Type
+  public virtual Type? ValueType
   {
-    [DebuggerStepThrough] get => _type;
-    [DebuggerStepThrough] set => UpdateField(ref _type, value, nameof(Type));
+    [DebuggerStepThrough] get => _valueType ?? Value?.GetType();
+    [DebuggerStepThrough] set => UpdateField(ref _valueType, value, nameof(ValueType));
   }
   /// <summary>
-  /// Backing field for the Type property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
+  /// Backing field for the ValueType property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
   /// </summary>
-  protected Type? _type;
+  protected Type? _valueType;
 
   /// <summary>
   /// Link target for the custom document property in OpenXml.

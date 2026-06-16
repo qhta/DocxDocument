@@ -5,5 +5,5 @@ namespace DocumentModel;
 public partial class DocumentProperty
 {
   public bool ShouldSerializeValue() => Value is not null;
-  public bool ShouldSerializeType() => Type != null;
+  public bool ShouldSerializeType() => ValueType != null;
 }

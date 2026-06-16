@@ -313,6 +313,9 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// Gets the built-in properties of the document.
   /// This property allows access to all built-in document properties through a single collection interface.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public BuiltInProperties BuiltInProperties
   {
     get => _builtInProperties ??= new BuiltInProperties(this);

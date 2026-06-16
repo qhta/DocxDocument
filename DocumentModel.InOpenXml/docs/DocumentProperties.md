@@ -250,24 +250,39 @@ such as adding, removing, and iterating over the elements in the collection, and
 
 ## DocumentProperty abstract class
 
-Both types of properties (**BuiltInProperty** and **CustomProperty**) derive from **DocumentProperty** class, 
+Both types of properties (**BuiltInProperty** and **CustomProperty**) derive from **DocumentProperty** abstractclass, 
 which declares common properties for both types of properties, such as **Name**, **Value**, and **Type**.
 
 The **Name** property is declared in **NamedModelElement** class, which is a base class for all named elements in the document model.
 It provides a set accessor for the name of the property, which notifies the document model about the change of the property name.
 
 The **Value** property is declared in the **DocumentProperty** class, and is of type object.
-The **Type** property is also declared in the **DocumentProperty** class, and is of type **Type**.
+The **ValueType** property is also declared in the **DocumentProperty** class, and is of type **Type**.
 
 The **DocumentProperty** class declares also an **ExpectedType** property, 
 which represents the allowed data type of the property value.
 Five types of property values are supported: **String**, **Integer** (32-bit), **Boolean**, **DateTime** (DateTime), and **Float** (single precision).
 They are represented by the **DocumentPropertyType** enum, which provides a mapping between the .NET types and the property types.
 The **ExpectedType** property is declared to provide conformance to Word's custom document properties,
-which only support these five types of values. This property is tigtly related to the **Type** property.
-If the **Type** property is set to a type that is not supported by Word's custom document properties,
+which only support these five types of values. 
+This property is tigtly related to the **ValueType** property.
+If the **ValueType** property is set to a type that is not supported by Word's custom document properties,
 the **ExpectedType** property will return the corresponding **DocumentPropertyType.Unknown** value.
+On ther other hand, the **ExpectedType** property can be set independently of the **ValueType** property.
 
-## DocumentPropertiesCollection\<T> abstract class
+### Serialization of document properties
 
-Both **BuiltInPropertiesCollection** and **CustomPropertiesCollection** classes derive from **DocumentPropertiesCollection\<T>** abstract class,
+Serialization of both built-in and custom properties is implemented using JSON and XML. 
+For JSON serialization, there is a special converter declared as **DocumentPropertyJsonConverter\<T>** class, 
+which works with both **BuiltInProperty** and **CustomProperty** classes, and handles the conversion of the property values to and from their JSON representations.
+which handle the conversion of the property values to and from their JSON representations.
+Analogously , for XML serialization, there are special converter methods declared in **DocumentProperty** class,
+
+The **ValueType** property is serialized as a string representation of the .NET type.
+If the **ValueType** property is set to a type that is supported by Word's custom document properties,
+the **ExpectedType** property is serialized as a string representation of the **DocumentPropertyType** enum.
+
+The **Value** property is serialized in the string representation. 
+If the value is of a type that is supported by Word's custom document properties, 
+it is serialized using JSON serialization and packing the resulting JSON string into a Base64 string, 
+which is the format used by Word for storing custom property values in the OpenXml document.

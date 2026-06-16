@@ -23,12 +23,6 @@ public partial class DocumentProperties : IXmlSerializable
 
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
-    if (reader.IsEmptyElement)
-    {
-      reader.Read();
-      return;
-    }
-
     reader.Read();
     while (reader.NodeType != XmlNodeType.EndElement)
     {
@@ -57,24 +51,7 @@ public partial class DocumentProperties : IXmlSerializable
     foreach (var property in this)
     {
       writer.WriteStartElement("DocumentProperty");
-      if (property.PropertyId != null)
-        writer.WriteAttributeString("propertyId", property.PropertyId.ToString());
-      writer.WriteAttributeString("name", property.Name);
-      if (property.LinkTarget != null)
-        writer.WriteAttributeString("linkTarget", property.LinkTarget);
-
-      var type = property.Value?.GetType() ?? property.Type;
-      if (type != null)
-      {
-        TypeToStringConverter.RegisterType(type);
-        writer.WriteAttributeString("type", type.Name);
-      }
-
-      if (property.Value is not null)
-      {
-        var str = ObjectToStringConverter.ConvertToString(property.Value);
-        writer.WriteValue(str);
-      }
+        (property as IXmlSerializable)?.WriteXml(writer);
       writer.WriteEndElement();
     }
   }

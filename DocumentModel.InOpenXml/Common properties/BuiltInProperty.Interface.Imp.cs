@@ -7,10 +7,15 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   /// </summary>
   string DMPr.IDocumentProperty.Name { get => this.Name ?? string.Empty; set => this.Name = value; }
 
+  ///// <summary>
+  ///// Document property type. The actual type of the value is determined by the Type property. This property is used to determine how to serialize and deserialize the Value property, as well as to perform type checking when setting the Value property. The Type property is not serialized directly; instead, it is inferred from the Value property during serialization and deserialization processes.
+  ///// </summary>
+  //DocumentPropertyType DMPr.IDocumentProperty.Type { get => ExpectedType; set => ExpectedType = value; }
+
   /// <summary>
   /// Value of the document property, which can be of any type. The actual type of the value is determined by the Type property.
   /// </summary>
-  object? DMPr.IDocumentProperty.Value
+  object? DMPr.IDocumentProperty.ValueType
   {
     get => Value;
     set => Value = value;
@@ -35,5 +40,6 @@ public partial class BuiltInProperty : DMPr.IDocumentProperty
   public void Delete()
   {
     Value = null;
+    (Collection as BuiltInProperties)?.Remove(this);
   }
 }
