@@ -19,7 +19,7 @@ public enum XlPivotFieldOrientation
   /// </summary>
   DataField = 4,
   /// <summary>
-  /// Specifies Ithat the field is hidden.
+  /// Specifies that the field is hidden.
   /// </summary>
   Hidden = 0,
   /// <summary>

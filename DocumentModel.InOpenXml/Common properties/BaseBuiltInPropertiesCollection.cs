@@ -2,7 +2,7 @@
 /// <summary>
 /// Collection of all document properties;
 /// </summary>
-public partial class BaseBuiltInPropertiesCollection : AbstractDocumentProperties<BuiltInProperty>
+public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollection<BuiltInProperty>
 {
   /// <summary>
   /// Initializes a new instance of the DocumentProperties class with the specified known properties.

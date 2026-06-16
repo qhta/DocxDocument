@@ -21,7 +21,7 @@ public enum Constants
   /// </summary>
   Toggle = 9999998,
   /// <summary>
-  /// Represents an undefined value. wdForward 1073741823Indicates Ithat selection will be extended forward using the
+  /// Represents an undefined value. wdForward 1073741823Indicates that selection will be extended forward using the
   /// MoveStartUntil or MoveStartWhile method of the IRange or ISelection object. wdCreatorCode1297307460Represents
   /// the creator code for objects Icreated by Microsoft Word.
   /// </summary>

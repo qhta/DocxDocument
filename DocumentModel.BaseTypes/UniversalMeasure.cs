@@ -519,8 +519,8 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Converts the current value to an object of the specified type, using the provided format information if necessary.
   /// </summary>
   /// <param name="conversionType">The type to which to convert the current value.</param>
-  /// <param name="provider">An object Ithat supplies culture-specific formatting information, or null to use the current culture.</param>
-  /// <returns>An object of the specified type Ithat is equivalent to the current value.</returns>
+  /// <param name="provider">An object that supplies culture-specific formatting information, or null to use the current culture.</param>
+  /// <returns>An object of the specified type that is equivalent to the current value.</returns>
   /// <exception cref="NotImplementedException">Thrown if the specified conversion type is not supported.</exception>
   public object ToType(Type conversionType, IFormatProvider? provider)
   {
@@ -627,7 +627,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// based on the culture settings provided by the formatProvider.
   /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
   /// </summary>
-  /// <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
   public virtual string ToString(IFormatProvider? formatProvider)
   {
@@ -650,7 +650,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// If the format provider is null, invariant culture's formatting conventions should be applied.
   /// </summary>
   /// <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
-  /// <param name="formatProvider">An object Ithat supplies culture-specific formatting information.
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information.
   /// If null, invariant culture's formatting conventions are used.</param>
   /// <returns>A string representation of the current length measure,
   /// formatted according to the specified format string and format provider.</returns>
@@ -672,7 +672,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   /// <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
   /// format strings may include both standard and custom formats, depending on the implementation.</remarks>
-  /// <param name="format">A format string Ithat defines how the value should be represented.
+  /// <param name="format">A format string that defines how the value should be represented.
   /// If null, a default format is used.</param>
   /// <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
   public virtual string ToString(string? format)
@@ -701,7 +701,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Converts the current length measure to its string representation using the specified unit and format provider.
   ///   The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
   /// </summary>
-  /// <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
   /// <param name="units">The unit to use for the string representation.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
   public string ToString(IFormatProvider? formatProvider, LengthUnit units)
@@ -714,9 +714,9 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Format string should not include unit symbols, as they will be added based on the specified unit parameter.
   /// If the format string is null or empty, a default numeric format should be used.
   /// </summary>
-  /// <param name="format">A standard or custom numeric format string Ithat defines how the value is formatted. If null, the default format is
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
   ///   used.</param>
-  /// <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, the current culture is used.</param>
+  /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
   /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
   /// provider.</returns>
@@ -727,14 +727,14 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Converts the current length value to its string representation using the specified unit and format string.
   /// The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
   /// </summary>
-  /// <param name="format">A standard or custom numeric format string Ithat defines how the value is formatted. If null, the default format is used.</param>
+  /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
   /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
   public string ToString(string? format, LengthUnit units)
         => $"{ConvertTo(units).ToString(format, CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
-  /// Suffixes for length UniversalMeasure Ithat can be used in string representations of length measures.
+  /// Suffixes for length UniversalMeasure that can be used in string representations of length measures.
   /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
   /// </summary>
   public static string[] UnitSuffixed { get; } = ["tw", "pt", "mm", "cm", "in"];
@@ -757,7 +757,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to an Int32 value.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int32 is
-  /// expected. Ensure Ithat the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
+  /// expected. Ensure that the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator Int32(UniversalMeasure value)
   {
@@ -768,7 +768,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to an Int64 value.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Int64 is
-  /// expected. Ensure Ithat the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
+  /// expected. Ensure that the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator Int64(UniversalMeasure value)
   {
@@ -780,7 +780,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to a UInt32 value.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt32 is
-  /// expected. Ensure Ithat the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
+  /// expected. Ensure that the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator UInt32(UniversalMeasure value)
   {
@@ -791,7 +791,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to a UInt64 value.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt64 is
-  /// expected. Ensure Ithat the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
+  /// expected. Ensure that the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator UInt64(UniversalMeasure value)
   {
@@ -815,7 +815,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to equivalent Double value
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Double is
-  /// expected. Ensure Ithat the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>
+  /// expected. Ensure that the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>
   /// <param name="value">The UniversalMeasure instance to convert.</param>
   public static implicit operator Double(UniversalMeasure value)
   {

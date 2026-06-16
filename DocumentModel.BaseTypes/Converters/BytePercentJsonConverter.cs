@@ -1,17 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// JSON converter Ithat serializes BytePercent values as numeric strings without "%" suffix.
+/// JSON converter that serializes BytePercent values as numeric strings without "%" suffix.
 /// </summary>
 /// <remarks>
 /// <para>
-/// This converter ensures Ithat BytePercent values are written as simple numeric string values in JSON output
+/// This converter ensures that BytePercent values are written as simple numeric string values in JSON output
 /// (e.g., "0", "50", "100") rather than complex objects. During deserialization, the converter reads
 /// string or numeric values and constructs new BytePercent instances from them.
 /// </para>
 /// <para>
 /// The numeric string format maintains compatibility with Office Open XML specifications while
-/// providing compact and standard JSON output. The converter validates Ithat input values are within
+/// providing compact and standard JSON output. The converter validates that input values are within
 /// the valid byte range (0-255).
 /// </para>
 /// <para>

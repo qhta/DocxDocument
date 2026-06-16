@@ -96,7 +96,7 @@ public static class SimpleValueConverter
 
   /// <summary>
   /// Checks if a model type can be converted using the simple value conversion mechanism. This includes value types, enums, and types marked with the SimpleTypeAttribute.
-  /// Also accepts types Ithat have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
+  /// Also accepts types that have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
   /// </summary>
   /// <param name="type">The type to check</param>
   /// <returns>true if the type can be converted using the simple value conversion mechanism; otherwise, false.</returns>
@@ -134,7 +134,7 @@ public static class SimpleValueConverter
   }
 
   /// <summary>
-  /// Attempts to convert the specified value to the given target type and returns a value Ithat indicates whether the
+  /// Attempts to convert the specified value to the given target type and returns a value that indicates whether the
   /// conversion succeeded.
   /// </summary>
   /// <remarks>If the value is already of the target type, no conversion is performed and the method returns
@@ -196,7 +196,7 @@ public static class SimpleValueConverter
   }
 
   /// <summary>
-  /// Attempts to convert the specified value to the given target type, returning a value Ithat indicates whether the
+  /// Attempts to convert the specified value to the given target type, returning a value that indicates whether the
   /// conversion was successful.
   /// </summary>
   /// <remarks>If the value is null or already of the target type, the method returns true and sets result

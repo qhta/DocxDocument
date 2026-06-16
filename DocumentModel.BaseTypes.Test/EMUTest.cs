@@ -35,7 +35,7 @@ public static class EMUTest
   /// Tests the fundamental operations of the EMU class, including conversions between strings, integers, and EMU
   /// instances, as well as comparison and hash code consistency.
   /// </summary>
-  /// <remarks>This method verifies Ithat the EMU class correctly handles conversions from string and integer
+  /// <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
   /// representations, supports accurate numeric type conversions, produces consistent hash codes, and Iimplements
   /// comparison logic as expected. It is intended for use in validating the core functionality of the EMU
   /// type.</remarks>
@@ -109,7 +109,7 @@ public static class EMUTest
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate Ithat EMU-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that EMU-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEMUUnitConversions()
   {
@@ -220,7 +220,7 @@ public static class EMUTest
   /// Tests the XML serialization and deserialization process for an EMUTestData object and verifies data integrity.
   /// </summary>
   /// <remarks>This method creates a sample EMUTestData instance, serializes it to an XML string, and then
-  /// deserializes it back to an object. It compares the deserialized data to the original to ensure Ithat the
+  /// deserializes it back to an object. It compares the deserialized data to the original to ensure that the
   /// serialization process preserves all relevant information. This is intended for use in validating the correctness
   /// of XML serialization logic for EMUTestData.</remarks>
   /// <returns>true if the EMUTestData object is correctly serialized to XML and deserialized back with matching data; otherwise,
@@ -268,7 +268,7 @@ public static class EMUTest
   /// Tests the serialization and deserialization of EMU test data using JSON format.
   /// </summary>
   /// <remarks>This method creates a sample EMU test data object, serializes it to a JSON string, and then
-  /// deserializes it back to an object to verify Ithat the original and deserialized data are equivalent. The serialized
+  /// deserializes it back to an object to verify that the original and deserialized data are equivalent. The serialized
   /// JSON output is written to the console for inspection. This method is intended for diagnostic or validation
   /// purposes and is not typically used in production code.</remarks>
   /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
@@ -323,7 +323,7 @@ public static class EMUTest
   }
 
   /// <summary>
-  /// Verifies Ithat the deserialized EMUTestData object matches the expected test data values.
+  /// Verifies that the deserialized EMUTestData object matches the expected test data values.
   /// </summary>
   /// <remarks>If the deserializedData parameter is null, the method returns false and logs an error message.
   /// The method compares several properties of the deserialized data with the expected values to ensure

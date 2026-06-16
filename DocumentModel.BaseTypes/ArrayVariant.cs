@@ -7,8 +7,8 @@ using System.Xml.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a variant Ithat contains an array of elements with a specified base type and bounds.
-/// This class provides a dynamic, resizable array container Ithat can hold elements of any variant type
+/// Represents a variant that contains an array of elements with a specified base type and bounds.
+/// This class provides a dynamic, resizable array container that can hold elements of any variant type
 /// defined in the Office Open XML specification.
 /// </summary>
 /// <remarks>
@@ -72,7 +72,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// <summary>
   /// Initializes a new instance of the <see cref="ArrayVariant"/> class with the specified base type and array size.
   /// </summary>
-  /// <param name="baseType">The type of elements Ithat the array will contain (e.g., Int32, String, DateTime).</param>
+  /// <param name="baseType">The type of elements that the array will contain (e.g., Int32, String, DateTime).</param>
   /// <param name="size">The number of elements in the array. Must be non-negative.</param>
   /// <remarks>
   /// Creates a zero-based array where <see cref="LowerBounds"/> = 0 and <see cref="UpperBounds"/> = size - 1.
@@ -111,7 +111,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// </summary>
   /// <remarks>
   /// When the base type is changed, the array is resized and existing elements are converted
-  /// to the new type if possible. Elements Ithat cannot be converted are set to their default values.
+  /// to the new type if possible. Elements that cannot be converted are set to their default values.
   /// This operation preserves the array's bounds but may lose data during type conversion.
   /// </remarks>
   public VariantType BaseType
@@ -125,7 +125,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   }
 
   /// <summary>
-  /// Gets the .NET CLR type Ithat corresponds to the current <see cref="BaseType"/>.
+  /// Gets the .NET CLR type that corresponds to the current <see cref="BaseType"/>.
   /// </summary>
   /// <remarks>
   /// This property provides the actual .NET type used for the internal array storage,
@@ -209,7 +209,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// or greater than <see cref="UpperBounds"/>.
   /// </exception>
   /// <exception cref="InvalidCastException">
-  /// Thrown when setting a value Ithat cannot be converted to the array's <see cref="ItemType"/>.
+  /// Thrown when setting a value that cannot be converted to the array's <see cref="ItemType"/>.
   /// </exception>
   public object? this[int index]
   {
@@ -223,10 +223,10 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   }
 
   /// <summary>
-  /// Returns an enumerator Ithat iterates through the array elements.
+  /// Returns an enumerator that iterates through the array elements.
   /// </summary>
   /// <returns>
-  /// An <see cref="IEnumerator"/> Ithat can be used to iterate through the collection,
+  /// An <see cref="IEnumerator"/> that can be used to iterate through the collection,
   /// returning elements in index order from <see cref="LowerBounds"/> to <see cref="UpperBounds"/>.
   /// </returns>
   /// <remarks>
@@ -247,7 +247,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// <param name="item">The element to add to the array. Can be <see langword="null"/> if the element type permits it.</param>
   /// <remarks>
   /// <para>
-  /// This method maintains an internal fill counter Ithat tracks the next available index.
+  /// This method maintains an internal fill counter that tracks the next available index.
   /// Elements are added sequentially starting from <see cref="LowerBounds"/>.
   /// </para>
   /// <para>
@@ -305,7 +305,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// Copies the elements of the array to a specified destination array, starting at a particular array index.
   /// </summary>
   /// <param name="array">
-  /// The one-dimensional array Ithat is the destination of the elements copied from this collection.
+  /// The one-dimensional array that is the destination of the elements copied from this collection.
   /// The array must have zero-based indexing.
   /// </param>
   /// <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
@@ -402,7 +402,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// The new number of elements in the array. Must be non-negative.
   /// </param>
   /// <param name="baseType">
-  /// The new type of elements Ithat the array will contain (e.g., Int32, String, DateTime).
+  /// The new type of elements that the array will contain (e.g., Int32, String, DateTime).
   /// </param>
   /// <remarks>
   /// <para>
@@ -410,7 +410,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// creating a zero-based array with the specified element type.
   /// </para>
   /// <para>
-  /// Existing elements are converted to the new type if possible. Elements Ithat cannot be converted
+  /// Existing elements are converted to the new type if possible. Elements that cannot be converted
   /// are set to their default values for the new type. This operation may result in data loss
   /// if the types are incompatible.
   /// </para>
@@ -456,7 +456,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// The new inclusive upper bound of the array index. Must be greater than or equal to <paramref name="lowerBounds"/>.
   /// </param>
   /// <param name="baseType">
-  /// The new type of elements Ithat the array will contain (e.g., Int32, String, DateTime).
+  /// The new type of elements that the array will contain (e.g., Int32, String, DateTime).
   /// </param>
   /// <remarks>
   /// <para>
@@ -523,7 +523,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// </para>
   /// <para>
   /// Two <see cref="ArrayVariant"/> instances are considered equal only if all these components match.
-  /// Note Ithat element comparison uses reference equality (==), not <see cref="object.Equals(object)"/>.
+  /// Note that element comparison uses reference equality (==), not <see cref="object.Equals(object)"/>.
   /// </para>
   /// </remarks>
   public bool Equals(ArrayVariant? other)
@@ -552,7 +552,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// Converts the value of this instance to a string representation using the specified format provider.
   /// </summary>
   /// <param name="provider">
-  /// An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.
+  /// An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.
   /// Can be <see langword="null"/> to use the current culture.
   /// </param>
   /// <returns>
@@ -564,7 +564,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// Null elements appear as empty strings.
   /// </para>
   /// <para>
-  /// If a <paramref name="provider"/> is specified, it is used for formatting elements Ithat implement
+  /// If a <paramref name="provider"/> is specified, it is used for formatting elements that implement
   /// <see cref="IFormattable"/>. For other elements, the standard <see cref="object.ToString( )"/> method is used.
   /// </para>
   /// <para>

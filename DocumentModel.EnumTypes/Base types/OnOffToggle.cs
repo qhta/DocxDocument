@@ -1,26 +1,26 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// On-off enumeration for properties Ithat can be enabled, disabled, or toggled.
+/// On-off enumeration for properties that can be enabled, disabled, or toggled.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum OnOffToggle
 {
   ///// <summary>
-  ///// Property is undefined, allowing for default behavior or inheritance from parent elements. This value indicates Ithat the property has not been explicitly set to on, off, or toggle, and the system should determine the effective value based on context or defaults.
+  ///// Property is undefined, allowing for default behavior or inheritance from parent elements. This value indicates that the property has not been explicitly set to on, off, or toggle, and the system should determine the effective value based on context or defaults.
   ///// </summary>
   //Undefined = 0,
   /// <summary>
-  /// Property is enabled or turned on, indicating Ithat the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+  /// Property is enabled or turned on, indicating that the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings that may apply when the property is undefined.
   /// </summary>
   On = 1,
   /// <summary>
-  /// Property is disabled or turned off, indicating Ithat the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+  /// Property is disabled or turned off, indicating that the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings that may apply when the property is undefined.
   /// </summary>
   Off = 2,
   /// <summary>
-  /// Property is toggled, indicating Ithat the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows for dynamic changes to the property state without needing to specify the exact desired state.
+  /// Property is toggled, indicating that the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows for dynamic changes to the property state without needing to specify the exact desired state.
   /// </summary>
   Toggle = 3,
 }

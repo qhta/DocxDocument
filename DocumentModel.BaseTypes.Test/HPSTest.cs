@@ -105,7 +105,7 @@ public static class HPSTest
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate Ithat HPS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that HPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestHPSUnitConversions()
   {
@@ -214,7 +214,7 @@ public static class HPSTest
 
   /// <summary>
   /// Tests the serialization and deserialization of HPS values within an XML format using the XmlSerializer. This test
-  /// ensures Ithat HPS values are correctly preserved during the XML serialization and deserialization process.
+  /// ensures that HPS values are correctly preserved during the XML serialization and deserialization process.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestHPSXmlSerialization()

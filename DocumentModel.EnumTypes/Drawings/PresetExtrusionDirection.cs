@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
+/// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
 /// the extrusion).
 /// </summary>
 /// <remarks>
@@ -10,7 +10,7 @@
 public enum PresetExtrusionDirection
 {
   /// <summary>
-  /// Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
+  /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
   /// the extrusion).
   /// </summary>
   /// <summary>

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies how the trendline Ithat smoothes out fluctuations in the data is calculated.
+/// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltrendlinetype?view=office-pia` for Office interop details.

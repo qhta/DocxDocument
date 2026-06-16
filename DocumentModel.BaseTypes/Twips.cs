@@ -121,28 +121,28 @@ public sealed partial class Twips: UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value in twips.
+  /// Creates an instance of an <see cref="Twips"/> that represents the specified value in twips.
   /// </summary>
   public static Twips FromTwips(double twips) => new Twips($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="Twips"/> Ithat represents the specified value in points.
+  /// Creates an instance of an <see cref="Twips"/> that represents the specified value in points.
   /// </summary>
   public static Twips FromPT(double points) => new Twips($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat represents a length specified in millimeters.
+  /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
   public static Twips FromMM(double millimeters) => new Twips($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static Twips FromCM(double centimeters) => new Twips($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static Twips FromInch(double inches) => new Twips($"{inches}in");
 
@@ -152,7 +152,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <remarks>Supported units include Twips, IPoints, Millimeters, Centimeters, and Inches.</remarks>
   /// <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
-  /// <returns>An object Ithat Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+  /// <returns>An object that Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
   public static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
   {
@@ -173,12 +173,12 @@ public sealed partial class Twips: UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-  /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
   public static Twips Parse(string value) => new Twips(value);
 
   /// <summary>
-  /// Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+  /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
   /// whether the parsing succeeded.
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -288,7 +288,7 @@ public sealed partial class Twips: UniversalMeasure
   /// Implicitly converts a double-precision floating-point number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// required, facilitating operations that involve measurements in twips.</remarks>
   /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Double value)
   {
@@ -299,7 +299,7 @@ public sealed partial class Twips: UniversalMeasure
   /// Implicitly converts a single-precision floating-point number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// required, facilitating operations that involve measurements in twips.</remarks>
   /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Single value)
   {
@@ -310,7 +310,7 @@ public sealed partial class Twips: UniversalMeasure
   /// Implicitly converts a decimal number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
-  /// required, facilitating operations Ithat involve measurements in twips.</remarks>
+  /// required, facilitating operations that involve measurements in twips.</remarks>
   /// <param name="value">The value to convert, representing a measurement in twips.</param>
   public static implicit operator Twips(Decimal value)
   {

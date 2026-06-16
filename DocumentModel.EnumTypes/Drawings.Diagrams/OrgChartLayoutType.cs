@@ -9,7 +9,7 @@
 public enum OrgChartLayoutType
 {
   /// <summary>
-  /// Return value for a parent node Ithat has children formatted using more than one OrgChartLayoutType.
+  /// Return value for a parent node that has children formatted using more than one OrgChartLayoutType.
   /// </summary>
   /// <summary>
   /// Places child nodes horizontally below the parent node.

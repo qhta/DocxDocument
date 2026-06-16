@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes HexPercent values.
+///   JSON converter that serializes HexPercent values.
 /// </summary>
 public class HexPercentJsonConverter : JsonConverter<HexPercent>
 {

@@ -49,7 +49,7 @@ public static partial class OpenXmlModelConverter
   }
 
   /// <summary>
-  /// Generic version of ConvertTo Ithat converts a model object to an Open XML element of the specified type.
+  /// Generic version of ConvertTo that converts a model object to an Open XML element of the specified type.
   /// </summary>
   /// <typeparam name="ModelElementType"></typeparam>
   /// <typeparam name="OpenXmlElementType"></typeparam>
@@ -79,7 +79,7 @@ public static partial class OpenXmlModelConverter
   /// Converts an OpenXML element to an instance of the specified model type.
   /// </summary>
   /// <remarks>The returned object is Icreated using the default constructor of the specified model type. Ensure
-  /// Ithat <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
+  /// that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
   /// <paramref name="openXmlObject"/>.</remarks>
   /// <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
   /// <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
@@ -122,7 +122,7 @@ public static partial class OpenXmlModelConverter
   }
 
   /// <summary>
-  /// Generic version of ConvertFrom Ithat converts an OpenXML element to an instance of the specified model type.
+  /// Generic version of ConvertFrom that converts an OpenXML element to an instance of the specified model type.
   /// </summary>
   /// <typeparam name="ModelElementType"></typeparam>
   /// <typeparam name="OpenXmlElementType"></typeparam>
@@ -152,7 +152,7 @@ public static partial class OpenXmlModelConverter
   /// element properties.
   /// </summary>
   /// <remarks>This method iterates through all public instance properties of the model object and updates each
-  /// property using the provided Open XML element and type. All properties are processed individually. Ensure Ithat the
+  /// property using the provided Open XML element and type. All properties are processed individually. Ensure that the
   /// model object and Open XML element are compatible for synchronization.</remarks>
   /// <param name="modelObject">The model object whose properties will be updated based on the Open XML element. Cannot be null.</param>
   /// <param name="openXmlObject">The Open XML element or other object containing the data to synchronize with the model object. Cannot be null.</param>
@@ -175,7 +175,7 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   /// <remarks>This method performs the update only if the openXmlObject is of type DX.OpenXmlElement and the
   /// modelType has the OpenXmlItemAttribute applied.</remarks>
-  /// <param name="modelObject">The model object Ithat contains the data to update the Open XML element.</param>
+  /// <param name="modelObject">The model object that contains the data to update the Open XML element.</param>
   /// <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
   /// <param name="modelType">The type of the model object, which is checked for the presence of the OpenXmlItemAttribute.</param>
   public static void TryUpdateUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
@@ -311,9 +311,9 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   /// <remarks>This method checks for the OpenXmlElementCollectionAttribute on the specified property and, if
   /// found, updates the child element collection accordingly. Use this method to apply attribute-driven updates to
-  /// model properties Ithat represent Open XML element collections.</remarks>
+  /// model properties that represent Open XML element collections.</remarks>
   /// <param name="modelObject">The object containing the property to be updated.</param>
-  /// <param name="modelProperty">The property information for the model property Ithat may be updated.</param>
+  /// <param name="modelProperty">The property information for the model property that may be updated.</param>
   /// <param name="openXmlObject">The OpenXmlElement representing the current state of the Open XML object.</param>
   /// <param name="openXmlType">The type of the Open XML object being processed.</param>
   /// <returns>true if the property was updated using the OpenXmlElementCollectionAttribute; otherwise, false.</returns>
@@ -389,10 +389,10 @@ public static partial class OpenXmlModelConverter
   /// update method is available.
   /// </summary>
   /// <remarks>This method relies on the OpenXmlPropertyMap to retrieve the appropriate update method for the
-  /// specified property. It is important Ithat the update method accepts exactly one parameter.</remarks>
-  /// <param name="modelObject">The object Ithat contains the property to be updated.</param>
-  /// <param name="modelProperty">The property information of the model object Ithat is to be updated.</param>
-  /// <param name="openXmlObject">The Open XML object Ithat contains the data to update the model property.</param>
+  /// specified property. It is important that the update method accepts exactly one parameter.</remarks>
+  /// <param name="modelObject">The object that contains the property to be updated.</param>
+  /// <param name="modelProperty">The property information of the model object that is to be updated.</param>
+  /// <param name="openXmlObject">The Open XML object that contains the data to update the model property.</param>
   /// <param name="openXmlType">The type of the Open XML object, used to determine the appropriate update method.</param>
   /// <returns>true if the property was successfully updated; otherwise, false.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the update method has an invalid number of parameters.</exception>
@@ -560,7 +560,7 @@ public static partial class OpenXmlModelConverter
   /// <summary>
   /// Loads data to model object from OpenXml object. This method will try to find a load method for the specified types and invoke it if available.
   /// </summary>
-  /// <param name="modelObject">The target model object Ithat will receive the loaded data.</param>
+  /// <param name="modelObject">The target model object that will receive the loaded data.</param>
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
   public static void LoadData(object modelObject, object openXmlObject)
   {
@@ -578,10 +578,10 @@ public static partial class OpenXmlModelConverter
   /// Attempts to load data into the specified model object by invoking a corresponding load method for the given Open
   /// XML type.
   /// </summary>
-  /// <remarks>This method uses reflection to locate and invoke a load method on the model object Ithat matches
+  /// <remarks>This method uses reflection to locate and invoke a load method on the model object that matches
   /// the provided Open XML type. The load method must accept exactly one parameter of the Open XML object's type. If no
   /// suitable method is found, the operation returns false.</remarks>
-  /// <param name="modelObject">The target model object Ithat will receive the loaded data. This object must define a load method compatible with
+  /// <param name="modelObject">The target model object that will receive the loaded data. This object must define a load method compatible with
   /// the specified Open XML type.</param>
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
   /// <param name="openXmlType">The type of the Open XML object, used to identify the appropriate load method on the model object.</param>
@@ -606,7 +606,7 @@ public static partial class OpenXmlModelConverter
   /// <remarks>This method performs the loading operation only if the provided Open XML object is a
   /// DX.OpenXmlElement and the model type is decorated with the OpenXmlItemAttribute. No action is taken if these
   /// conditions are not met.</remarks>
-  /// <param name="modelObject">The model object Ithat receives data loaded from the Open XML element.</param>
+  /// <param name="modelObject">The model object that receives data loaded from the Open XML element.</param>
   /// <param name="openXmlObject">The Open XML object to be loaded into the model object. Must be of type DX.OpenXmlElement.</param>
   /// <param name="modelType">The type of the model object, used to determine if the OpenXmlItemAttribute is present.</param>
   public static void TryLoadUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
@@ -622,7 +622,7 @@ public static partial class OpenXmlModelConverter
   /// Attempts to load writable properties from the specified Open XML object into the provided model object, based on
   /// the given types.
   /// </summary>
-  /// <remarks>Only properties Ithat are writable and not marked with the NotMapped attribute are considered for
+  /// <remarks>Only properties that are writable and not marked with the NotMapped attribute are considered for
   /// loading. This method iterates through the model's properties and attempts to assign values from the Open XML
   /// object where applicable.</remarks>
   /// <param name="modelObject">The target model object whose properties will be populated.</param>
@@ -686,7 +686,7 @@ public static partial class OpenXmlModelConverter
   /// as necessary to match the model property's type. The conversion process ensures compatibility between Open XML
   /// values and the model's expected types.</remarks>
   /// <param name="modelObject">The target object whose property will be set with the value retrieved from the Open XML object.</param>
-  /// <param name="modelProperty">The property information of the model object Ithat is to be assigned a value from the Open XML object.</param>
+  /// <param name="modelProperty">The property information of the model object that is to be assigned a value from the Open XML object.</param>
   /// <param name="openXmlObject">The Open XML object from which the value is extracted for mapping to the model property.</param>
   /// <returns>true if the value was successfully loaded and assigned to the model property; otherwise, false.</returns>
   public static bool TryLoadUsingPropertyMapping(object modelObject, PropertyInfo modelProperty, object openXmlObject)
@@ -728,14 +728,14 @@ public static partial class OpenXmlModelConverter
 
 
   /// <summary>
-  /// Attempts to load child elements from an OpenXmlCompositeElement into a model object's property Ithat is decorated
+  /// Attempts to load child elements from an OpenXmlCompositeElement into a model object's property that is decorated
   /// with the OpenXmlElementCollectionAttribute.
   /// </summary>
   /// <remarks>This method checks for the presence of the OpenXmlElementCollectionAttribute on the specified
   /// property and attempts to load child elements only if the attribute is found and the openXmlObject is an
   /// OpenXmlCompositeElement.</remarks>
-  /// <param name="modelObject">The target model object Ithat will receive the loaded child elements.</param>
-  /// <param name="modelProperty">The property of the model object Ithat is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
+  /// <param name="modelObject">The target model object that will receive the loaded child elements.</param>
+  /// <param name="modelProperty">The property of the model object that is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
   /// <param name="openXmlObject">The OpenXmlCompositeElement instance containing the child elements to be loaded.</param>
   /// <returns>true if the child elements were successfully loaded into the model object's property; otherwise, false.</returns>
   public static bool TryLoadUsingElementCollectionAttribute
@@ -759,7 +759,7 @@ public static partial class OpenXmlModelConverter
   /// OpenXmlElementAttribute and the Open XML object is a composite element. No changes are made if these conditions
   /// are not met.</remarks>
   /// <param name="modelObject">The model object containing the property to be populated with data from the Open XML element.</param>
-  /// <param name="modelProperty">The property of the model object Ithat is decorated with the OpenXmlElementAttribute, indicating the mapping to the
+  /// <param name="modelProperty">The property of the model object that is decorated with the OpenXmlElementAttribute, indicating the mapping to the
   /// Open XML element.</param>
   /// <param name="openXmlObject">The Open XML object from which the child element is loaded. Must be an instance of DX.OpenXmlCompositeElement to
   /// succeed.</param>
@@ -782,8 +782,8 @@ public static partial class OpenXmlModelConverter
   /// <remarks>This method locates and invokes a loading method based on the property type and Open XML type.
   /// The loading method must accept exactly one parameter, which is enforced by an assertion.</remarks>
   /// <param name="modelObject">The instance of the model object containing the property to be populated.</param>
-  /// <param name="modelProperty">The property information for the model property Ithat will receive the loaded data.</param>
-  /// <param name="openXmlObject">The Open XML object Ithat provides the data to be loaded into the model property.</param>
+  /// <param name="modelProperty">The property information for the model property that will receive the loaded data.</param>
+  /// <param name="openXmlObject">The Open XML object that provides the data to be loaded into the model property.</param>
   /// <returns>true if the data was successfully loaded into the model property; otherwise, false.</returns>
   public static bool TryLoadUsingTypeLoadDataMethod
     (object modelObject, PropertyInfo modelProperty, object openXmlObject)

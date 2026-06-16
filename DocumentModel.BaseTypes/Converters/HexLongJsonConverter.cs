@@ -5,11 +5,11 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes HexLong values as 8-character hexadecimal strings.
+///   JSON converter that serializes HexLong values as 8-character hexadecimal strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexLong values are written as hexadecimal string values in JSON output
+///   This converter ensures that HexLong values are written as hexadecimal string values in JSON output
 ///   (e.g., "0000007B", "FFFFFFFF") rather than numeric values or complex objects. During deserialization,
 ///   the converter reads string values and constructs HexLong instances from them.
 ///   </para>
@@ -20,7 +20,7 @@ namespace DocumentModel;
 ///   </para>
 ///   <para>
 ///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+///   uppercase and lowercase hex digits are accepted, and the converter validates that input strings
 ///   contain only valid hexadecimal characters.
 ///   </para>
 ///   <para>

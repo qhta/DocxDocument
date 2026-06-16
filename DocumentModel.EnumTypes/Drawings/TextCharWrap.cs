@@ -21,7 +21,7 @@ public enum TextCharWrap
   /// </summary>
   StandardCharWrap = 1,
   /// <summary>
-  /// Specifies text wrapping Ithat adheres to restrictions imposed by some languages such as Chinese and Japanese
+  /// Specifies text wrapping that adheres to restrictions imposed by some languages such as Chinese and Japanese
   /// alphabets.
   /// </summary>
   StrictCharWrap = 2,

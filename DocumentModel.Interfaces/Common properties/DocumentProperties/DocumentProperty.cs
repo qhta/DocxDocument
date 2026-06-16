@@ -19,12 +19,12 @@ public partial interface IDocumentProperty: IModelObject
   /// </remarks>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.value?view=office-pia"/>
   public object? Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-  /// <summary>
-  /// Returns or sets the document property type.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia"/>
-  [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-  public DocumentPropertyType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  ///// <summary>
+  ///// Returns or sets the document property type.
+  ///// </summary>
+  ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia"/>
+  //[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+  //public DocumentPropertyType Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Determine if the value of the custom document property is linked to the content of the container document.
   /// </summary>

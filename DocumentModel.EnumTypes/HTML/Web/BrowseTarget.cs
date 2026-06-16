@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the document item Ithat the Next or Previous method locates, and places the insertion point before
+/// Specifies the document item that the Next or Previous method locates, and places the insertion point before
 /// the next or previous instance of the item.
 /// </summary>
 /// <remarks>

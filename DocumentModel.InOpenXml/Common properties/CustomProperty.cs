@@ -51,30 +51,17 @@ public sealed partial class CustomProperty : DocumentProperty
   ///   In OpenXml property identifiers start from 2.
   /// </summary>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.PropertyId))]
-  public int? PropertyId { get => _PropertyId; set => UpdateField(ref _PropertyId, value, nameof(PropertyId)); }
-  private int? _PropertyId;
+  public override int? PropertyId { get => base.PropertyId; set => base.PropertyId = value; }
 
   /// <summary>
   /// Format identifier (FormatId) for the custom document property in OpenXml.
   /// </summary>
-  /// <remarks>
-  /// <para>
-  /// The <b>FormatId</b> is a GUID string that specifies the data type of the custom property value,
-  /// such as string, integer, boolean, or date. This identifier allows applications to interpret
-  /// the property's value correctly.
-  /// </para>
-  /// <para>
-  /// Common FormatId value is:
-  /// <c>{D5CDD505-2E9C-101B-9397-08002B2CF9AE}</c> - which is used for most types (string, int, double, date, bool, etc.).
-  ///    The actual type is determined by the value element (e.g., &lt;vt:lpwstr&gt;, &lt;vt:i4&gt;, &lt;vt:filetime&gt;)
-  /// </para>
-  /// <para>
-  /// For more information, see:
-  /// <see href="https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.customproperties.customdocumentproperty.formatid"/>
-  /// </para>
-  /// </remarks>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.FormatId))]
-  public Guid? FormatId { get => _FormatId; set => UpdateField(ref _FormatId, value, nameof(FormatId)); }
+  public Guid? FormatId { get => _FormatId;
+    // ReSharper disable once ValueParameterNotUsed
+    set { /* this setter is intentionally left blank */}
+  }
+
   private Guid? _FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE");
 
   /// <summary>
@@ -94,8 +81,7 @@ public sealed partial class CustomProperty : DocumentProperty
   /// </para>
   /// </remarks>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.LinkTarget))]
-  public string? LinkTarget { get => _LinkTarget; set => UpdateField(ref _LinkTarget, value, nameof(LinkTarget)); }
-  private string? _LinkTarget;
+  public override string? LinkTarget { get => base.LinkTarget; set => base.LinkTarget = value; }
 
   /// <summary>
   ///   Value of the property

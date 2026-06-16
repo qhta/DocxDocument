@@ -10,11 +10,11 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a generic list of values Ithat Iimplements XSD list semantics.
+/// Represents a generic list of values that Iimplements XSD list semantics.
 /// </summary>
 /// <typeparam name="T">The type of elements in the list. Must implement <see cref="IConvertible"/>.</typeparam>
 /// <remarks>
-/// <para>This class provides a list implementation Ithat can be serialized to and from text using space-separated values (or comma/semicolon for strings).</para>
+/// <para>This class provides a list implementation that can be serialized to and from text using space-separated values (or comma/semicolon for strings).</para>
 /// <para>The class supports:</para>
 /// <list type="bullet">
 /// <item><description>Parsing from text with appropriate separators (space for numeric types, comma/semicolon for strings)</description></item>
@@ -247,7 +247,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent Boolean value.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
@@ -257,7 +257,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
@@ -268,7 +268,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
@@ -279,7 +279,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
@@ -290,7 +290,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
@@ -301,7 +301,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
@@ -312,7 +312,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
@@ -323,7 +323,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
@@ -333,7 +333,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
@@ -343,7 +343,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
@@ -354,7 +354,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
@@ -365,7 +365,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent string.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A string representation with all items separated by spaces, or an empty string if the list is empty.</returns>
   public string ToString(IFormatProvider? provider)
   {
@@ -376,7 +376,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// Converts the value of this instance to the specified type.
   /// </summary>
   /// <param name="conversionType">The type to which to convert the value of this instance.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>
   /// An object of the specified type with a value equivalent to the value of this instance.
   /// Supports conversion to <see cref="String"/> and <see cref="Boolean"/>.
@@ -405,7 +405,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// This conversion is not supported for list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
@@ -416,7 +416,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned integer.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
@@ -426,7 +426,7 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned long integer.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {

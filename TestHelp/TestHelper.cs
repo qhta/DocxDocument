@@ -59,7 +59,7 @@ public static class TestHelper
     {
       result = object.Equals(obj1, obj2);
       if (!result)
-        message = $"Enum values differ: {firstName}={obj1} vs {secondName}={obj2}";
+        message = $"Enum values differ -> {firstName}={obj1} vs {secondName}={obj2}";
       return result;
     }
     if (comparedType.Implements(typeof(IEquatable<T>)))
@@ -82,7 +82,7 @@ public static class TestHelper
         {
           result = Comparer.Equals(obj1Value, obj2Value);
           if (!result)
-            message = $"Property {propName} values differ: {firstName}={obj1Value} vs {secondName}={obj2Value}";
+            message = $"Property {propName} values differ -> {firstName}={obj1Value} vs {secondName}={obj2Value}";
           return result;
         }
         else
@@ -107,7 +107,7 @@ public static class TestHelper
               continue;
             if (obj2Value is null && obj1Value is IEnumerable enumerable1 && !enumerable1.Cast<object>().Any())
               continue;
-            message = $"Property {propName} values differ: {nestedMessage}";
+            message = $"Property {propName} values differ -> {nestedMessage}";
             return false;
           }
         }
@@ -119,7 +119,7 @@ public static class TestHelper
       string? obj1String = obj1?.ToString();
       string? obj2String = obj2?.ToString();
       result = string.Equals(obj1String, obj2String);
-      message = result ? null : $"String values differ: '{obj1String}' vs '{obj2String}'";
+      message = result ? null : $"String values differ -> '{obj1String}' vs '{obj2String}'";
       return result;
     }
     if (comparedType.IsEnumerable(out var itemType) && obj1 is IEnumerable obj1Enumerable
@@ -135,7 +135,7 @@ public static class TestHelper
         var item2 = enumerator2.Current;
         if (!CompareTestData(itemType, item1, item2, firstName, secondName, out var internalMessage))
         {
-          message = $"{itemType.Name}[{itemCount}] differ: {internalMessage}";
+          message = $"{itemType.Name}[{itemCount}] differ -> {internalMessage}";
           result = false;
           break;
         }
@@ -175,7 +175,7 @@ public static class TestHelper
           throw new InvalidOperationException($"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
         result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
         if (!result)
-          message = $"Objects of type {comparedType.Name} differ: {firstName}={obj1} vs {secondName}={obj2}";
+          message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
         if (!result)
           return false;
       }

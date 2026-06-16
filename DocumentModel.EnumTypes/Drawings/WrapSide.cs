@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Specifies whether the document text should wrap on both sides of the specified shape, on either the left or
-/// right side only, or on the side of the shape Ithat is farthest from the page margin.
+/// right side only, or on the side of the shape that is farthest from the page margin.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
@@ -22,7 +22,7 @@ public enum WrapSide
   /// </summary>
   Right = 2,
   /// <summary>
-  /// Side of the shape Ithat is farthest from the page margin.
+  /// Side of the shape that is farthest from the page margin.
   /// </summary>
   Largest = 3
 }

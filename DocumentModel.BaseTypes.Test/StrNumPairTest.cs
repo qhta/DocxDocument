@@ -132,7 +132,7 @@ public static class StrNumPairTest
       return false;
     }
 
-    // Test string Ithat starts with "(" but doesn't end with ")"
+    // Test string that starts with "(" but doesn't end with ")"
     Console.WriteLine("\nTesting malformed format:");
     StrNumPair pair6 = new StrNumPair("(incomplete");
     Console.WriteLine($"  \"(incomplete\" → {pair6} (Str='{pair6.Str}', Num={pair6.Num})");

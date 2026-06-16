@@ -123,7 +123,7 @@
             Converts a nullable Open XML EmptyType element to a Boolean value.
             </summary>
             <param name="openXmlElement">The Open XML EmptyType element to convert. If null, the method returns null.</param>
-            <returns>A Boolean value Ithat is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
+            <returns>A Boolean value that is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
             otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.BooleanConverter.ConvertToEmptyType(System.Nullable{System.Boolean},System.Type)">
@@ -133,7 +133,7 @@
             </summary>
             <param name="value">The nullable Boolean value to convert. If null or <see langword="false"/>, the method returns null.</param>
             <param name="targetType">The type of DXW.EmptyType to instantiate if <paramref name="value"/> is <see langword="true"/>. Must be a type
-            Ithat derives from DXW.EmptyType and has a parameterless constructor.</param>
+            that derives from DXW.EmptyType and has a parameterless constructor.</param>
             <returns>A new instance of the specified DXW.EmptyType if <paramref name="value"/> is <see langword="true"/>; otherwise,
             null.</returns>
         </member>
@@ -388,7 +388,7 @@
             Converts the specified string representation of a logical value to its nullable Boolean equivalent.
             </summary>
             <remarks>If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="true"/>.
-            Any other input Ithat does not match the accepted values results in <see langword="null"/>.</remarks>
+            Any other input that does not match the accepted values results in <see langword="null"/>.</remarks>
             <param name="value">The string to convert. Accepts "true", "false", "1", or "0" (case-insensitive).</param>
             <returns>A nullable Boolean value: <see langword="true"/> if <paramref name="value"/> is "true" or "1"; <see
             langword="false"/> if <paramref name="value"/> is "false" or "0"; otherwise, <see langword="null"/>.</returns>
@@ -1583,7 +1583,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.GetEnumValue``2(DocumentFormat.OpenXml.OpenXmlLeafElement)">
             <summary>
-            Retrieves an EnumValue from the specified OpenXmlElement Ithat has a "Val" property of OpenXml EnumValue type.
+            Retrieves an EnumValue from the specified OpenXmlElement that has a "Val" property of OpenXml EnumValue type.
             </summary>
             <typeparam name="OpenXmlEnumType">The OpenXml enum type.</typeparam>
             <typeparam name="ModelEnumType">The model enum type.</typeparam>
@@ -1701,7 +1701,7 @@
             <summary>
             Creates an Open XML element instance corresponding to the specified enumeration value and target type.
             </summary>
-            <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' Ithat holds the
+            <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' that holds the
             underlying enumeration value. If neither property is found, or if the value is missing, an exception is
             thrown.</remarks>
             <param name="enumVal">The enumeration value to convert to an Open XML element. May be null.</param>
@@ -1715,7 +1715,7 @@
             <summary>
             Gets the model enum value from the specified OpenXmlElement based on the provided model type.
             </summary>
-            <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' Ithat holds the
+            <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' that holds the
             underlying enumeration value. If neither property is found, or if the value is missing, an exception is
             thrown.</remarks>
             <param name="openXmlElement">The OpenXmlElement instance from which to extract the enumeration value. Can be null.</param>
@@ -1737,12 +1737,12 @@
             Converts an Open XML value to its corresponding enumeration value of the specified model type.
             </summary>
             <remarks>This method supports conversion from common Open XML enum representation to model enum type. The
-            caller should ensure Ithat the model type is an enumeration and Ithat the Open XML value is compatible with the
+            caller should ensure that the model type is an enumeration and that the Open XML value is compatible with the
             expected type.</remarks>
             <param name="openXmlValue">The Open XML value to convert. This can be an OpenXmlLeafElement, an EnumValue, or another supported Open XML
             representation. Can be null.</param>
             <param name="modelType">The target enumeration type to convert to. Must be a valid enum type.</param>
-            <returns>An enumeration value of the specified model type Ithat corresponds to the provided Open XML value, or null if the
+            <returns>An enumeration value of the specified model type that corresponds to the provided Open XML value, or null if the
             input value is null.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the provided value cannot be converted to the specified model type.</exception>
         </member>
@@ -1932,10 +1932,10 @@
             Attempts to convert the specified value to the specified target type.
             </summary>
             <remarks>This method utilizes a predefined conversion map to determine how to convert the value to the
-            target type. It is important to ensure Ithat the target type is compatible with the provided value to avoid
+            target type. It is important to ensure that the target type is compatible with the provided value to avoid
             conversion failures.</remarks>
             <param name="value">The object to convert. This can be null, in which case the conversion will not be performed.</param>
-            <param name="targetType">The type to which the value should be converted. This must be a valid type Ithat the conversion supports.</param>
+            <param name="targetType">The type to which the value should be converted. This must be a valid type that the conversion supports.</param>
             <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
             null.</param>
             <returns>true if the conversion was successful; otherwise, false.</returns>
@@ -4439,20 +4439,20 @@
         </member>
         <member name="T:DocumentModel.OpenXml.IUpdatable">
             <summary>
-            Interface for types Ithat can provide an Open XML element for updating purposes.
+            Interface for types that can provide an Open XML element for updating purposes.
             Implementing this interface allows a type to specify how it can be represented as an Open XML element,
             which can be used for synchronization or updating operations in the context of Open XML document manipulation.
             </summary>
         </member>
         <member name="M:DocumentModel.OpenXml.IUpdatable.GetUpdatableElement">
             <summary>
-            Gets an Open XML element Ithat can be used for updating the state of the implementing object.
+            Gets an Open XML element that can be used for updating the state of the implementing object.
             The returned object may be null if there is no relevant Open XML element to provide.
             </summary>
         </member>
         <member name="M:DocumentModel.OpenXml.IUpdatable.SetUpdatableElement(System.Object)">
             <summary>
-            Sets an Open XML element Ithat can be used for updating the state of the implementing object.
+            Sets an Open XML element that can be used for updating the state of the implementing object.
             </summary>
         </member>
         <member name="M:DocumentModel.OpenXml.IUpdatable.UpdateData(System.Object)">
@@ -4473,7 +4473,7 @@
         </member>
         <member name="T:DocumentModel.OpenXml.IWordprocessingDocumentAware">
             <summary>
-            Defines a contract for types Ithat provide access to a WordprocessingDocument instance.
+            Defines a contract for types that provide access to a WordprocessingDocument instance.
             </summary>
             <remarks>Implement this interface to enable components to interact with a WordprocessingDocument, such as for
             reading or modifying Open XML WordprocessingML documents. The interface does not specify ownership or lifetime
@@ -4644,7 +4644,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertTo``2(``0)">
             <summary>
-            Generic version of ConvertTo Ithat converts a model object to an Open XML element of the specified type.
+            Generic version of ConvertTo that converts a model object to an Open XML element of the specified type.
             </summary>
             <typeparam name="ModelElementType"></typeparam>
             <typeparam name="OpenXmlElementType"></typeparam>
@@ -4656,7 +4656,7 @@
             Converts an OpenXML element to an instance of the specified model type.
             </summary>
             <remarks>The returned object is Icreated using the default constructor of the specified model type. Ensure
-            Ithat <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
+            that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
             <paramref name="openXmlObject"/>.</remarks>
             <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
             <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
@@ -4665,7 +4665,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFrom``2(``1)">
             <summary>
-            Generic version of ConvertFrom Ithat converts an OpenXML element to an instance of the specified model type.
+            Generic version of ConvertFrom that converts an OpenXML element to an instance of the specified model type.
             </summary>
             <typeparam name="ModelElementType"></typeparam>
             <typeparam name="OpenXmlElementType"></typeparam>
@@ -4678,7 +4678,7 @@
             element properties.
             </summary>
             <remarks>This method iterates through all public instance properties of the model object and updates each
-            property using the provided Open XML element and type. All properties are processed individually. Ensure Ithat the
+            property using the provided Open XML element and type. All properties are processed individually. Ensure that the
             model object and Open XML element are compatible for synchronization.</remarks>
             <param name="modelObject">The model object whose properties will be updated based on the Open XML element. Cannot be null.</param>
             <param name="openXmlObject">The Open XML element or other object containing the data to synchronize with the model object. Cannot be null.</param>
@@ -4692,7 +4692,7 @@
             </summary>
             <remarks>This method performs the update only if the openXmlObject is of type DX.OpenXmlElement and the
             modelType has the OpenXmlItemAttribute applied.</remarks>
-            <param name="modelObject">The model object Ithat contains the data to update the Open XML element.</param>
+            <param name="modelObject">The model object that contains the data to update the Open XML element.</param>
             <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
             <param name="modelType">The type of the model object, which is checked for the presence of the OpenXmlItemAttribute.</param>
         </member>
@@ -4762,9 +4762,9 @@
             </summary>
             <remarks>This method checks for the OpenXmlElementCollectionAttribute on the specified property and, if
             found, updates the child element collection accordingly. Use this method to apply attribute-driven updates to
-            model properties Ithat represent Open XML element collections.</remarks>
+            model properties that represent Open XML element collections.</remarks>
             <param name="modelObject">The object containing the property to be updated.</param>
-            <param name="modelProperty">The property information for the model property Ithat may be updated.</param>
+            <param name="modelProperty">The property information for the model property that may be updated.</param>
             <param name="openXmlObject">The OpenXmlElement representing the current state of the Open XML object.</param>
             <param name="openXmlType">The type of the Open XML object being processed.</param>
             <returns>true if the property was updated using the OpenXmlElementCollectionAttribute; otherwise, false.</returns>
@@ -4802,10 +4802,10 @@
             update method is available.
             </summary>
             <remarks>This method relies on the OpenXmlPropertyMap to retrieve the appropriate update method for the
-            specified property. It is important Ithat the update method accepts exactly one parameter.</remarks>
-            <param name="modelObject">The object Ithat contains the property to be updated.</param>
-            <param name="modelProperty">The property information of the model object Ithat is to be updated.</param>
-            <param name="openXmlObject">The Open XML object Ithat contains the data to update the model property.</param>
+            specified property. It is important that the update method accepts exactly one parameter.</remarks>
+            <param name="modelObject">The object that contains the property to be updated.</param>
+            <param name="modelProperty">The property information of the model object that is to be updated.</param>
+            <param name="openXmlObject">The Open XML object that contains the data to update the model property.</param>
             <param name="openXmlType">The type of the Open XML object, used to determine the appropriate update method.</param>
             <returns>true if the property was successfully updated; otherwise, false.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the update method has an invalid number of parameters.</exception>
@@ -4845,7 +4845,7 @@
             <summary>
             Loads data to model object from OpenXml object. This method will try to find a load method for the specified types and invoke it if available.
             </summary>
-            <param name="modelObject">The target model object Ithat will receive the loaded data.</param>
+            <param name="modelObject">The target model object that will receive the loaded data.</param>
             <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingTypeLoadDataMethod(System.Object,System.Object,System.Type)">
@@ -4853,10 +4853,10 @@
             Attempts to load data into the specified model object by invoking a corresponding load method for the given Open
             XML type.
             </summary>
-            <remarks>This method uses reflection to locate and invoke a load method on the model object Ithat matches
+            <remarks>This method uses reflection to locate and invoke a load method on the model object that matches
             the provided Open XML type. The load method must accept exactly one parameter of the Open XML object's type. If no
             suitable method is found, the operation returns false.</remarks>
-            <param name="modelObject">The target model object Ithat will receive the loaded data. This object must define a load method compatible with
+            <param name="modelObject">The target model object that will receive the loaded data. This object must define a load method compatible with
             the specified Open XML type.</param>
             <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
             <param name="openXmlType">The type of the Open XML object, used to identify the appropriate load method on the model object.</param>
@@ -4870,7 +4870,7 @@
             <remarks>This method performs the loading operation only if the provided Open XML object is a
             DX.OpenXmlElement and the model type is decorated with the OpenXmlItemAttribute. No action is taken if these
             conditions are not met.</remarks>
-            <param name="modelObject">The model object Ithat receives data loaded from the Open XML element.</param>
+            <param name="modelObject">The model object that receives data loaded from the Open XML element.</param>
             <param name="openXmlObject">The Open XML object to be loaded into the model object. Must be of type DX.OpenXmlElement.</param>
             <param name="modelType">The type of the model object, used to determine if the OpenXmlItemAttribute is present.</param>
         </member>
@@ -4879,7 +4879,7 @@
             Attempts to load writable properties from the specified Open XML object into the provided model object, based on
             the given types.
             </summary>
-            <remarks>Only properties Ithat are writable and not marked with the NotMapped attribute are considered for
+            <remarks>Only properties that are writable and not marked with the NotMapped attribute are considered for
             loading. This method iterates through the model's properties and attempts to assign values from the Open XML
             object where applicable.</remarks>
             <param name="modelObject">The target model object whose properties will be populated.</param>
@@ -4905,20 +4905,20 @@
             as necessary to match the model property's type. The conversion process ensures compatibility between Open XML
             values and the model's expected types.</remarks>
             <param name="modelObject">The target object whose property will be set with the value retrieved from the Open XML object.</param>
-            <param name="modelProperty">The property information of the model object Ithat is to be assigned a value from the Open XML object.</param>
+            <param name="modelProperty">The property information of the model object that is to be assigned a value from the Open XML object.</param>
             <param name="openXmlObject">The Open XML object from which the value is extracted for mapping to the model property.</param>
             <returns>true if the value was successfully loaded and assigned to the model property; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingElementCollectionAttribute(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
-            Attempts to load child elements from an OpenXmlCompositeElement into a model object's property Ithat is decorated
+            Attempts to load child elements from an OpenXmlCompositeElement into a model object's property that is decorated
             with the OpenXmlElementCollectionAttribute.
             </summary>
             <remarks>This method checks for the presence of the OpenXmlElementCollectionAttribute on the specified
             property and attempts to load child elements only if the attribute is found and the openXmlObject is an
             OpenXmlCompositeElement.</remarks>
-            <param name="modelObject">The target model object Ithat will receive the loaded child elements.</param>
-            <param name="modelProperty">The property of the model object Ithat is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
+            <param name="modelObject">The target model object that will receive the loaded child elements.</param>
+            <param name="modelProperty">The property of the model object that is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
             <param name="openXmlObject">The OpenXmlCompositeElement instance containing the child elements to be loaded.</param>
             <returns>true if the child elements were successfully loaded into the model object's property; otherwise, false.</returns>
         </member>
@@ -4931,7 +4931,7 @@
             OpenXmlElementAttribute and the Open XML object is a composite element. No changes are made if these conditions
             are not met.</remarks>
             <param name="modelObject">The model object containing the property to be populated with data from the Open XML element.</param>
-            <param name="modelProperty">The property of the model object Ithat is decorated with the OpenXmlElementAttribute, indicating the mapping to the
+            <param name="modelProperty">The property of the model object that is decorated with the OpenXmlElementAttribute, indicating the mapping to the
             Open XML element.</param>
             <param name="openXmlObject">The Open XML object from which the child element is loaded. Must be an instance of DX.OpenXmlCompositeElement to
             succeed.</param>
@@ -4944,8 +4944,8 @@
             <remarks>This method locates and invokes a loading method based on the property type and Open XML type.
             The loading method must accept exactly one parameter, which is enforced by an assertion.</remarks>
             <param name="modelObject">The instance of the model object containing the property to be populated.</param>
-            <param name="modelProperty">The property information for the model property Ithat will receive the loaded data.</param>
-            <param name="openXmlObject">The Open XML object Ithat provides the data to be loaded into the model property.</param>
+            <param name="modelProperty">The property information for the model property that will receive the loaded data.</param>
+            <param name="openXmlObject">The Open XML object that provides the data to be loaded into the model property.</param>
             <returns>true if the data was successfully loaded into the model property; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingPropertyLoadDataMethod(System.Object,System.Reflection.PropertyInfo,System.Object)">
@@ -5050,7 +5050,7 @@
             Adds a child element to the specified parent element, inserting it in the order defined by the schema for the parent element.
             </summary>
             <remarks>If the parent element defines a specific order for its child elements, the child is inserted
-            according to Ithat order. If the child element already has a parent, it is removed from its current parent before
+            according to that order. If the child element already has a parent, it is removed from its current parent before
             being added to the new parent. If the schema does not define an order, the child is appended to the end of the
             parent's children.</remarks>
             <param name="parentElement">The parent OpenXmlElement to which the child element will be added. This parameter cannot be null.</param>
@@ -5069,7 +5069,7 @@
         </member>
         <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.NamespaceAliases">
             <summary>
-            Gets a dictionary Ithat maps namespace URIs to their corresponding aliases for Open XML word processing
+            Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
             documents.
             </summary>
             <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
@@ -5087,7 +5087,7 @@
         </member>
         <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.UnknownOrder">
             <summary>
-            Represents a sentinel value indicating Ithat the order is unknown or not defined.
+            Represents a sentinel value indicating that the order is unknown or not defined.
             </summary>
             <remarks>This constant is set to <see cref="F:System.Int32.MaxValue"/> and can be used in scenarios where a valid
             order cannot be determined or is not applicable. It is commonly used to signal an undefined or unspecified
@@ -5110,7 +5110,7 @@
             <param name="order">The list of child order entries to search for a matching entry.</param>
             <param name="element">The OpenXmlElement whose namespace URI and local name are used to identify the corresponding child order entry.</param>
             <returns>The zero-based index of the matching child order entry if found; otherwise, a predefined constant indicating
-            Ithat the order is unknown.</returns>
+            that the order is unknown.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.LoadSchema">
             <summary>
@@ -5327,7 +5327,7 @@
             <summary>
             Provides methods for mapping model element properties to their corresponding OpenXML properties.
             </summary>
-            <remarks>This class is intended for use when working with custom model elements Ithat are mapped to OpenXML
+            <remarks>This class is intended for use when working with custom model elements that are mapped to OpenXML
             types. It assists in resolving the correct OpenXML property based on model property metadata. All members are static
             and thread safe.</remarks>
         </member>
@@ -5340,7 +5340,7 @@
             case-sensitive and limited to public instance properties.</remarks>
             <param name="modelProperty">The property of the model element for which to find the corresponding OpenXML property. Must not be null.</param>
             <param name="openXmlType">The OpenXML type to search for the property mapping. Must not be null.</param>
-            <returns>A PropertyInfo object representing the OpenXML property Ithat corresponds to the specified model element property.</returns>
+            <returns>A PropertyInfo object representing the OpenXML property that corresponds to the specified model element property.</returns>
             <exception cref="T:System.ArgumentException">Thrown if no corresponding OpenXML property is found for the specified model element property.</exception>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlPropertyMap.GetUpdateDataMethod(System.Reflection.PropertyInfo,System.Type)">
@@ -5394,7 +5394,7 @@
             </summary>
             <param name="modelType">The type of the model element for which to obtain the mapped OpenXML type. Cannot be null.</param>
             <remarks>Corresponding OpenXML types are determined by the OpenXmlTypeAttribute applied to model element types.</remarks>
-            <returns>The OpenXML type Ithat is mapped to the specified model element type, or null if not found.</returns>
+            <returns>The OpenXML type that is mapped to the specified model element type, or null if not found.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlTypeMap.GetUpdateDataMethod(System.Type,System.Type)">
             <summary>
@@ -6156,7 +6156,7 @@
         <member name="M:DocumentModel.OpenXml.SimpleValueConverter.IsSimpleValueType(System.Type)">
             <summary>
             Checks if a model type can be converted using the simple value conversion mechanism. This includes value types, enums, and types marked with the SimpleTypeAttribute.
-            Also accepts types Ithat have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
+            Also accepts types that have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
             </summary>
             <param name="type">The type to check</param>
             <returns>true if the type can be converted using the simple value conversion mechanism; otherwise, false.</returns>
@@ -6172,7 +6172,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.SimpleValueConverter.TryConvertTo(System.Object,System.Type,System.Object@)">
             <summary>
-            Attempts to convert the specified value to the given target type and returns a value Ithat indicates whether the
+            Attempts to convert the specified value to the given target type and returns a value that indicates whether the
             conversion succeeded.
             </summary>
             <remarks>If the value is already of the target type, no conversion is performed and the method returns
@@ -6194,7 +6194,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.SimpleValueConverter.TryConvertFrom(System.Object,System.Type,System.Object@)">
             <summary>
-            Attempts to convert the specified value to the given target type, returning a value Ithat indicates whether the
+            Attempts to convert the specified value to the given target type, returning a value that indicates whether the
             conversion was successful.
             </summary>
             <remarks>If the value is null or already of the target type, the method returns true and sets result
@@ -6573,7 +6573,7 @@
         </member>
         <member name="M:DocumentModel.OpenXml.TSBooleanConverter.ConvertToTrueFalseBlankValue(DocumentModel.TSBoolean)">
             <summary>
-            Creates a <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue"/> Ithat mirrors the supplied <see cref="T:DocumentModel.TSBoolean"/> state.
+            Creates a <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue"/> that mirrors the supplied <see cref="T:DocumentModel.TSBoolean"/> state.
             </summary>
             <param name="value">The tri-state value to serialize.</param>
             <returns>A new <see cref="T:DocumentFormat.OpenXml.TrueFalseBlankValue"/> instance representing the same logical state.</returns>
@@ -7588,7 +7588,7 @@
             Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
             type of the child element. If the child element does not exist and a non-null value is provided, it is Icreated and
             appended to the composite element.</remarks>
-            <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type Ithat supports assignment of a twips value.</typeparam>
+            <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type that supports assignment of a twips value.</typeparam>
             <param name="openXmlElement">The OpenXmlCompositeElement to which the twips value will be applied. This element must be capable of containing
             the specified leaf element type.</param>
             <param name="value">The twips value to set. If null, the existing child element of the specified type will be removed.</param>
@@ -7596,13 +7596,13 @@
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.GetObject``2(DocumentFormat.OpenXml.OpenXmlCompositeElement)">
             <summary>
-            Retrieves an instance of the specified object type Ithat is constructed from the first child element of the given
+            Retrieves an instance of the specified object type that is constructed from the first child element of the given
             OpenXmlCompositeElement, if such a child exists.
             </summary>
-            <remarks>ObjectType must define a public constructor Ithat takes a single OpenXmlElement parameter. If
+            <remarks>ObjectType must define a public constructor that takes a single OpenXmlElement parameter. If
             openXmlElement does not contain a child of type ElementType, or if openXmlElement is null, the method returns
             null.</remarks>
-            <typeparam name="ObjectType">The type of the object to create. Must be a reference type with a constructor Ithat accepts an OpenXmlElement as a
+            <typeparam name="ObjectType">The type of the object to create. Must be a reference type with a constructor that accepts an OpenXmlElement as a
             parameter.</typeparam>
             <typeparam name="ElementType">The type of OpenXmlElement to search for as a child of the provided OpenXmlCompositeElement.</typeparam>
             <param name="openXmlElement">The OpenXmlCompositeElement from which to retrieve the child element. Can be null.</param>
@@ -7611,14 +7611,14 @@
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.AddChildElement(DocumentFormat.OpenXml.OpenXmlCompositeElement,DocumentFormat.OpenXml.OpenXmlElement)">
             <summary>
-            Adds the specified child element to the given OpenXmlCompositeElement, ensuring Ithat the child is detached from
+            Adds the specified child element to the given OpenXmlCompositeElement, ensuring that the child is detached from
             any existing parent before being appended.
             </summary>
-            <remarks>If the child element is already part of another parent, it will be removed from Ithat parent
+            <remarks>If the child element is already part of another parent, it will be removed from that parent
             before being added to the specified composite element. This method modifies the document structure by reparenting
             the child element as needed.</remarks>
             <param name="openXmlElement">The OpenXmlCompositeElement to which the child element will be added. Cannot be null.</param>
-            <param name="childElement">The OpenXmlElement to add as a child. If this element already has a parent, it will be removed from Ithat parent
+            <param name="childElement">The OpenXmlElement to add as a child. If this element already has a parent, it will be removed from that parent
             before being appended. Cannot be null.</param>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.ElementsOfType(DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
@@ -7631,7 +7631,7 @@
             <param name="openXmlElement">The OpenXmlCompositeElement instance from which to retrieve child elements. Cannot be null.</param>
             <param name="childElementType">The Type used to filter child elements. Only elements matching this type will be included in the result. Cannot be
             null.</param>
-            <returns>An IEnumerable of DX.OpenXmlElement containing the child elements Ithat match the specified type. The collection
+            <returns>An IEnumerable of DX.OpenXmlElement containing the child elements that match the specified type. The collection
             will be empty if no matching elements are found.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.ElementOfType(DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
@@ -7639,7 +7639,7 @@
             Retrieves the first child element of the specified type from the given composite OpenXml element.
             </summary>
             <remarks>This method searches the immediate children of the provided composite element and returns the
-            first element Ithat matches the specified type. If the element has no children or none match the specified type,
+            first element that matches the specified type. If the element has no children or none match the specified type,
             null is returned.</remarks>
             <param name="openXmlElement">The composite OpenXml element from which to retrieve the child element. Cannot be null.</param>
             <param name="childElementType">The type of the child element to retrieve. Must be a valid OpenXml element type.</param>
@@ -8027,12 +8027,12 @@
         </member>
         <member name="T:DocumentModel.IChildItem">
             <summary>
-            Interface fo model elements Ithat are child items of a parent object.
+            Interface fo model elements that are child items of a parent object.
             </summary>
         </member>
         <member name="P:DocumentModel.IChildItem.Parent">
             <summary>
-            Parent element Ithat contains this item.
+            Parent element that contains this item.
             </summary>
         </member>
         <member name="M:DocumentModel.IChildItem.SetParent(System.Object)">
@@ -8048,18 +8048,18 @@
         </member>
         <member name="P:DocumentModel.ICollectionItem.Collection">
             <summary>
-            Collection Ithat contains this item.
+            Collection that contains this item.
             </summary>
         </member>
         <member name="M:DocumentModel.ICollectionItem.SetCollection(System.Object)">
             <summary>
-            Sets the collection Ithat contains this item.
+            Sets the collection that contains this item.
             </summary>
             <param name="collection"></param>
         </member>
         <member name="T:DocumentModel.IDirectAccessElement">
             <summary>
-            Interface for elements Ithat support direct access to their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
+            Interface for elements that support direct access to their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
             </summary>
         </member>
         <member name="P:DocumentModel.IDirectAccessElement.HasDirectAccess">
@@ -8069,7 +8069,7 @@
         </member>
         <member name="T:DocumentModel.IEmptyCheckable">
             <summary>
-            Interface for types Ithat can be checked for emptiness, allowing clients to determine i
+            Interface for types that can be checked for emptiness, allowing clients to determine i
             f the object is considered empty based on its internal state or content.
             </summary>
         </member>
@@ -8081,7 +8081,7 @@
         </member>
         <member name="T:DocumentModel.IFilteringCollection">
             <summary>
-            Interface for collections Ithat support filtering of items. Implementing classes should provide logic to determine whether an item should be accepted or rejected based on specific criteria.
+            Interface for collections that support filtering of items. Implementing classes should provide logic to determine whether an item should be accepted or rejected based on specific criteria.
             </summary>
         </member>
         <member name="M:DocumentModel.IFilteringCollection.AcceptItem(System.Object)">
@@ -8116,13 +8116,13 @@
         </member>
         <member name="T:DocumentModel.ILoadable">
             <summary>
-            Interface for types Ithat can be loaded, allowing clients to check if the object has been Loaded and to set its Loaded state.
+            Interface for types that can be loaded, allowing clients to check if the object has been Loaded and to set its Loaded state.
             </summary>
         </member>
         <member name="P:DocumentModel.ILoadable.IsLoading">
             <summary>
             Checks if the object has been Loaded since it was last saved or loaded.
-            This method should return true if any changes have been made to the object's state Ithat would require saving.
+            This method should return true if any changes have been made to the object's state that would require saving.
             </summary>
             <returns></returns>
         </member>
@@ -8130,7 +8130,7 @@
             <summary>
             Sets the loading state of the component.
             </summary>
-            <param name="isLoading">true to indicate Ithat the component is loading; otherwise, false.</param>
+            <param name="isLoading">true to indicate that the component is loading; otherwise, false.</param>
         </member>
         <member name="M:DocumentModel.ILoadable.LoadData">
             <summary>
@@ -8140,14 +8140,14 @@
         </member>
         <member name="T:DocumentModel.IModifiable">
             <summary>
-            Interface for types Ithat can track modifications, allowing clients to check if the object has been modified and to set its modified state.
+            Interface for types that can track modifications, allowing clients to check if the object has been modified and to set its modified state.
             This is useful for scenarios such as document editing, where changes need to be tracked for saving or undo functionality.
             </summary>
         </member>
         <member name="P:DocumentModel.IModifiable.IsModified">
             <summary>
             Checks if the object has been modified since it was last saved or loaded.
-            This method should return true if any changes have been made to the object's state Ithat would require saving.
+            This method should return true if any changes have been made to the object's state that would require saving.
             </summary>
             <returns></returns>
         </member>

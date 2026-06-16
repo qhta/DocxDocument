@@ -183,7 +183,7 @@ public enum PatternType
   /// </summary>
   Plaid = 42,
   /// <summary>
-  /// Circles Ithat use foreground and background colors to make them appear three-dimensional, oriented in rows
+  /// Circles that use foreground and background colors to make them appear three-dimensional, oriented in rows
   /// across the shape.
   /// </summary>
   Sphere = 43,

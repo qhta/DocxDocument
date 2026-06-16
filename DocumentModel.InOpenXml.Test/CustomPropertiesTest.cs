@@ -1,9 +1,11 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using DocumentModel.Properties;
+
+namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.CustomProperties.
 /// </summary>
-public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
+public class CustomPropertiesTest : _AbstractModelTestClass<CustomProperties>
 {
 
   /// <summary>
@@ -11,6 +13,14 @@ public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
   /// </summary>
   /// <returns>A populated CustomProperties object.</returns>
   protected override CustomProperties CreateSampleData()
+    => CreateCustomProperties();
+
+
+  /// <summary>
+  /// Creates a sample CustomProperties object with various property types.
+  /// </summary>
+  /// <returns>A populated CustomProperties object.</returns>
+  public static CustomProperties CreateCustomProperties()
   {
     var props = new CustomProperties
     {
@@ -32,7 +42,17 @@ public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
       new CustomProperty
       {
         Name = "CustomDate",
-        Value = DateTime.Now
+        Value = DateTime.Now,
+      },
+      new CustomProperty
+      {
+        Name = "CustomFloat",
+        Value = 123.45f,
+      },
+      new CustomProperty
+      {
+        Name = "EmptyPropertyWithLink",
+        LinkTarget = "SomeLinkTarget"
       }
     };
     return props;
@@ -46,6 +66,16 @@ public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
   /// <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
   /// <returns>The updated collection of custom properties from the document after the new data has been added.</returns>
   protected override CustomProperties UpdateDataInDocument(Document document, CustomProperties data)
+    => UpdateCustomProperties(document, data);
+
+  /// <summary>
+  /// Updates the specified document with new custom property data and returns the updated collection of custom
+  /// properties.
+  /// </summary>
+  /// <param name="document">The document to update with the new custom property data. Cannot be null.</param>
+  /// <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
+  /// <returns>The updated collection of custom properties from the document after the new data has been added.</returns>
+  public static CustomProperties UpdateCustomProperties(Document document, CustomProperties data)
   {
     data.Add(new CustomProperty { Name = "CustomTitle", Value = "Updated Title" });
     return document.CustomProperties;

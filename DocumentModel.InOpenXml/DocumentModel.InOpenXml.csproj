@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Remove="Base classes\ContentItemsCollection.cs" />
     <Compile Remove="Base classes\LazyLoadElementCollection%28T,C%29.cs" />
+    <Compile Remove="Common properties\BuiltInDocumentProperties.cs" />
     <Compile Remove="Common properties\CoreProperties.DocumentProperties.Impl.cs" />
     <Compile Remove="Drawings\Colors\DrawingColor.cs" />
     <Compile Remove="Drawings\Colors\DrawingColorBase.cs" />

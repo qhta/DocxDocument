@@ -5,9 +5,9 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexInt provides a type-safe wrapper for integer values Ithat are represented as hexadecimal strings
+///   HexInt provides a type-safe wrapper for integer values that are represented as hexadecimal strings
 ///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 to 2,147,483,647)
-///   Ithat is formatted as an 8-character uppercase hexadecimal string.
+///   that is formatted as an 8-character uppercase hexadecimal string.
 ///   </para>
 ///   <para>
 ///   This type is commonly used in Office documents for:
@@ -106,7 +106,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   ///   A 32-bit signed integer value (-2,147,483,648 to 2,147,483,647).
   /// </param>
   /// <remarks>
-  ///   This is the primary constructor Ithat directly stores the integer value.
+  ///   This is the primary constructor that directly stores the integer value.
   ///   Example: new HexInt(123) stores value 123 (0x0000007B).
   /// </remarks>
   public HexInt(int value)

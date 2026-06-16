@@ -238,7 +238,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public bool ToBoolean(IFormatProvider? provider)
@@ -249,7 +249,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
@@ -260,7 +260,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
@@ -271,7 +271,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
@@ -282,7 +282,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
@@ -293,7 +293,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
@@ -304,7 +304,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
@@ -315,7 +315,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
@@ -325,7 +325,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
@@ -335,7 +335,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
@@ -346,7 +346,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
@@ -357,7 +357,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the value of this instance to an equivalent string.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
   public string ToString(IFormatProvider? provider)
   {
@@ -368,7 +368,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// Converts the value of this instance to the specified type.
   /// </summary>
   /// <param name="conversionType">The type to which to convert the value of this instance.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>
   /// An object of the specified type with a value equivalent to the value of this instance.
   /// Supports conversion to <see cref="String"/>, <see cref="Int32"/>, <see cref="Int64"/>, <see cref="UInt32"/>, <see cref="UInt64"/>, <see cref="HexInt"/>, and <see cref="HexColor"/>.
@@ -403,7 +403,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// This conversion is not supported for RGB color types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
@@ -414,7 +414,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
@@ -424,7 +424,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {

@@ -10,16 +10,16 @@ namespace DocumentModel.HTML;
 public enum HTMLProjectState
 {
   /// <summary>
-  /// IDocument is locked. In a Microsoft Office host application or Microsoft Script IEditor, indicates Ithat the
+  /// IDocument is locked. In a Microsoft Office host application or Microsoft Script IEditor, indicates that the
   /// Refresh toolbar is displayed in the host application.
   /// </summary>
   DocumentLocked = 1,
   /// <summary>
-  /// Project is locked. In the Microsoft Script IEditor, indicates Ithat the Refresh toolbar is displayed.
+  /// Project is locked. In the Microsoft Script IEditor, indicates that the Refresh toolbar is displayed.
   /// </summary>
   ProjectLocked,
   /// <summary>
-  /// IDocument is unlocked. In a Microsoft Office host application or Microsoft Script IEditor, indicates Ithat the
+  /// IDocument is unlocked. In a Microsoft Office host application or Microsoft Script IEditor, indicates that the
   /// Refresh toolbar is not displayed at all.
   /// </summary>
   DocumentProjectUnlocked

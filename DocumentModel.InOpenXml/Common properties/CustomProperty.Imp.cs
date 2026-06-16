@@ -11,18 +11,18 @@ public sealed partial class CustomProperty : DMPr.ICustomProperty, DMPr.IDocumen
  /// </summary>
  object? DMPr.IDocumentProperty.Value { get => this.Value; set => this.Value = (value as Variant) ?? new Variant(value); }
 
- /// <summary>
- /// Expected value type. According to the documentation, this property can be of any type.
- /// However, in practice, it is typically an enumeration that indicates the type of the value assigned to the Value property.
- /// The possible values for this property are defined in the DocPropertyType enumeration, which includes types such as String, Number, Date, and Boolean.
- /// For built-in document properties, this property is read-only and returns the type of the property.
- /// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
- /// </summary>
- DMPr.DocumentPropertyType DMPr.IDocumentProperty.Type
- {
-   get => this.ExpectedType;
-   set => this.ExpectedType = value;
- }
+ ///// <summary>
+ ///// Expected value type. According to the documentation, this property can be of any type.
+ ///// However, in practice, it is typically an enumeration that indicates the type of the value assigned to the Value property.
+ ///// The possible values for this property are defined in the DocPropertyType enumeration, which includes types such as String, Number, Date, and Boolean.
+ ///// For built-in document properties, this property is read-only and returns the type of the property.
+ ///// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
+ ///// </summary>
+ //DMPr.DocumentPropertyType DMPr.IDocumentProperty.Type
+ //{
+ //  get => this.ExpectedType;
+ //  set => this.ExpectedType = value;
+ //}
 
  ///// <summary>
  ///// Mapping between DocPropertyType enumeration values and actual .NET types.

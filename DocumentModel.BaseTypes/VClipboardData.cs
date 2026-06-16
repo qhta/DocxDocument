@@ -6,7 +6,7 @@
 /// <remarks>
 /// <para>
 /// <see cref="VClipboardData"/> is used in Office Open XML documents to store clipboard data
-/// Ithat has been embedded in the document. This structure encapsulates the clipboard format,
+/// that has been embedded in the document. This structure encapsulates the clipboard format,
 /// the size of the data, and the actual binary content.
 /// </para>
 /// <para>
@@ -46,7 +46,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <summary>
   /// Initializes a new instance of the VClipboardData class with the specified clipboard format and associated data. 
   /// </summary>
-  /// <param name="format">The clipboard format identifier Ithat specifies the type of data contained. Common values correspond to standard
+  /// <param name="format">The clipboard format identifier that specifies the type of data contained. Common values correspond to standard
   /// clipboard formats.</param>
   /// <param name="data">The byte array containing the clipboard data for the specified format. Cannot be null.</param>
   ///   /// <remarks>
@@ -160,7 +160,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// <para>
   /// The comparison of the <see cref="Data"/> arrays is performed element-by-element using
   /// <see cref="Enumerable.SequenceEqual{TSource}(IEnumerable{TSource}, IEnumerable{TSource})"/>,
-  /// ensuring Ithat both the length and content match exactly.
+  /// ensuring that both the length and content match exactly.
   /// </para>
   /// </remarks>
   public bool Equals(VClipboardData other)
@@ -183,7 +183,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// </list>
   /// </para>
   /// <para>
-  /// This implementation ensures Ithat equal <see cref="VClipboardData"/> instances
+  /// This implementation ensures that equal <see cref="VClipboardData"/> instances
   /// produce the same hash code, satisfying the hash code contract.
   /// </para>
   /// <para>

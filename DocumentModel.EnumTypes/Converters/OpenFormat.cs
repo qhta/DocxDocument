@@ -45,7 +45,7 @@ public enum OpenFormat
   /// </summary>
   EncodedText = 5,
   /// <summary>
-  /// A Microsoft Word format Ithat is backward compatible with earlier versions of Microsoft Word.
+  /// A Microsoft Word format that is backward compatible with earlier versions of Microsoft Word.
   /// </summary>
   AllWord = 6,
   /// <summary>

@@ -9,7 +9,7 @@ public static partial class EnumTypeConverter
   #region Strongly-typed conversion
 
   /// <summary>
-  /// Retrieves an EnumValue from the specified OpenXmlElement Ithat has a "Val" property of OpenXml EnumValue type.
+  /// Retrieves an EnumValue from the specified OpenXmlElement that has a "Val" property of OpenXml EnumValue type.
   /// </summary>
   /// <typeparam name="OpenXmlEnumType">The OpenXml enum type.</typeparam>
   /// <typeparam name="ModelEnumType">The model enum type.</typeparam>
@@ -352,7 +352,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an Open XML element instance corresponding to the specified enumeration value and target type.
   /// </summary>
-  /// <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' Ithat holds the
+  /// <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' that holds the
   /// underlying enumeration value. If neither property is found, or if the value is missing, an exception is
   /// thrown.</remarks>
   /// <param name="enumVal">The enumeration value to convert to an Open XML element. May be null.</param>
@@ -390,7 +390,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Gets the model enum value from the specified OpenXmlElement based on the provided model type.
   /// </summary>
-  /// <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' Ithat holds the
+  /// <remarks>The method expects the OpenXmlElement to have a property named 'Value' or 'Val' that holds the
   /// underlying enumeration value. If neither property is found, or if the value is missing, an exception is
   /// thrown.</remarks>
   /// <param name="openXmlElement">The OpenXmlElement instance from which to extract the enumeration value. Can be null.</param>
@@ -440,12 +440,12 @@ public static partial class EnumTypeConverter
   /// Converts an Open XML value to its corresponding enumeration value of the specified model type.
   /// </summary>
   /// <remarks>This method supports conversion from common Open XML enum representation to model enum type. The
-  /// caller should ensure Ithat the model type is an enumeration and Ithat the Open XML value is compatible with the
+  /// caller should ensure that the model type is an enumeration and that the Open XML value is compatible with the
   /// expected type.</remarks>
   /// <param name="openXmlValue">The Open XML value to convert. This can be an OpenXmlLeafElement, an EnumValue, or another supported Open XML
   /// representation. Can be null.</param>
   /// <param name="modelType">The target enumeration type to convert to. Must be a valid enum type.</param>
-  /// <returns>An enumeration value of the specified model type Ithat corresponds to the provided Open XML value, or null if the
+  /// <returns>An enumeration value of the specified model type that corresponds to the provided Open XML value, or null if the
   /// input value is null.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the provided value cannot be converted to the specified model type.</exception>
   public static Enum? ConvertFromOpenXml(object? openXmlValue, Type modelType)

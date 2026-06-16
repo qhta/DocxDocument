@@ -27,7 +27,7 @@ public enum MergeCmd
   /// </summary>
   Subtract,
   /// <summary>
-  /// IBreaks a shape into smaller parts or create new shapes from intersecting lines or from shapes Ithat overlap.
+  /// IBreaks a shape into smaller parts or create new shapes from intersecting lines or from shapes that overlap.
   /// </summary>
   Fragment
 }

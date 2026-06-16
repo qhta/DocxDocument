@@ -9,24 +9,24 @@
 public enum TextTabAlign
 {
   /// <summary>
-  /// Specifies Ithat mixed text alignment against tab stops is used.
+  /// Specifies that mixed text alignment against tab stops is used.
   /// </summary>
   /// <summary>
-  /// Specifies Ithat the following text starts immediately after the designated tab stop.
+  /// Specifies that the following text starts immediately after the designated tab stop.
   /// </summary>
   Left = 0,
   /// <summary>
-  /// Specifies Ithat the following text up to next tab or line break is centered on the designated tab stop.
+  /// Specifies that the following text up to next tab or line break is centered on the designated tab stop.
   /// </summary>
   Center = 1,
   /// <summary>
-  /// Specifies Ithat the following text up to the next tab or line break is rendered flush right to the designated
+  /// Specifies that the following text up to the next tab or line break is rendered flush right to the designated
   /// tab stop.
   /// </summary>
   Right = 2,
   /// <summary>
-  /// Specifies Ithat the following text is searched for the first occurrence of the character representing the
-  /// decimal point. The text up to the next tab or line break is then aligned such Ithat the decimal point starts at
+  /// Specifies that the following text is searched for the first occurrence of the character representing the
+  /// decimal point. The text up to the next tab or line break is then aligned such that the decimal point starts at
   /// the designated tab stop.
   /// </summary>
   Decimal = 3

@@ -31,6 +31,14 @@ public partial class BuiltInProperty : DocumentProperty, DMPr.IDocumentProperty
   public PropertyInfo? PropertyInfo { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
+  /// Gets or sets the link target for the property. This property is ignored during XML and JSON serialization, and is not mapped to any database column. It serves as a reference to the target of the property, which can be used for internal linking or referencing within the document model.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public override string? LinkTarget { get => base.LinkTarget; set => base.LinkTarget = value; }
+
+  /// <summary>
   ///   Value of the property
   /// </summary>
   public override object? Value

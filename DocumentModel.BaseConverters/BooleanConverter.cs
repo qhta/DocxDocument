@@ -45,7 +45,7 @@ public static class BooleanConverter
   /// Converts a nullable Open XML EmptyType element to a Boolean value.
   /// </summary>
   /// <param name="openXmlElement">The Open XML EmptyType element to convert. If null, the method returns null.</param>
-  /// <returns>A Boolean value Ithat is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
+  /// <returns>A Boolean value that is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
   /// otherwise, <see langword="false"/>.</returns>
   private static Boolean ConvertFromEmptyType(DXW.EmptyType? openXmlElement)
   {
@@ -60,7 +60,7 @@ public static class BooleanConverter
   /// </summary>
   /// <param name="value">The nullable Boolean value to convert. If null or <see langword="false"/>, the method returns null.</param>
   /// <param name="targetType">The type of DXW.EmptyType to instantiate if <paramref name="value"/> is <see langword="true"/>. Must be a type
-  /// Ithat derives from DXW.EmptyType and has a parameterless constructor.</param>
+  /// that derives from DXW.EmptyType and has a parameterless constructor.</param>
   /// <returns>A new instance of the specified DXW.EmptyType if <paramref name="value"/> is <see langword="true"/>; otherwise,
   /// null.</returns>
   private static DXW.EmptyType? ConvertToEmptyType(Boolean? value, Type targetType)
@@ -639,7 +639,7 @@ public static class BooleanConverter
   /// Converts the specified string representation of a logical value to its nullable Boolean equivalent.
   /// </summary>
   /// <remarks>If <paramref name="value"/> is <see langword="null"/>, the method returns <see langword="true"/>.
-  /// Any other input Ithat does not match the accepted values results in <see langword="null"/>.</remarks>
+  /// Any other input that does not match the accepted values results in <see langword="null"/>.</remarks>
   /// <param name="value">The string to convert. Accepts "true", "false", "1", or "0" (case-insensitive).</param>
   /// <returns>A nullable Boolean value: <see langword="true"/> if <paramref name="value"/> is "true" or "1"; <see
   /// langword="false"/> if <paramref name="value"/> is "false" or "0"; otherwise, <see langword="null"/>.</returns>

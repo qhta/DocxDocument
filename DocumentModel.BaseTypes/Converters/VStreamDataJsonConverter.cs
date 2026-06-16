@@ -61,7 +61,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// </list>
   /// </para>
   /// <para>
-  /// The version GUID typically represents an OLE CLSID or custom format identifier Ithat
+  /// The version GUID typically represents an OLE CLSID or custom format identifier that
   /// determines how to interpret the binary stream data. Common formats include:
   /// <list type="bullet">
   /// <item><description>OLE object class identifiers (CLSIDs)</description></item>

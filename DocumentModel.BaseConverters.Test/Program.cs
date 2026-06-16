@@ -6,7 +6,7 @@
 internal class Program
 {
   /// <summary>
-  ///   Main method Ithat executes all converter tests and prints the results. Exits early if any test fails.
+  ///   Main method that executes all converter tests and prints the results. Exits early if any test fails.
   /// </summary>
   /// <param name="args">Command-line arguments (not used).</param>
   static void Main(string[] args)

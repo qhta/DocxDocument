@@ -6,7 +6,7 @@ namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// Represents a variant value Ithat can hold any supported type, similar to a COM VARIANT.
+/// Represents a variant value that can hold any supported type, similar to a COM VARIANT.
 /// </summary>
 [JsonConverter(typeof(VariantJsonConverter))]
 [SimpleType]
@@ -811,8 +811,8 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         return null;
 
       case VariantType.HexInt:
-        if (value is string hstr)
-          return new HexInt(hstr);
+        if (value is string hStr)
+          return new HexInt(hStr);
         if (value is int int32)
           return (HexInt)int32;
         if (value is ushort uint16)

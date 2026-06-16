@@ -78,7 +78,7 @@
             Tests the fundamental operations of the EMU class, including conversions between strings, integers, and EMU
             instances, as well as comparison and hash code consistency.
             </summary>
-            <remarks>This method verifies Ithat the EMU class correctly handles conversions from string and integer
+            <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
             representations, supports accurate numeric type conversions, produces consistent hash codes, and Iimplements
             comparison logic as expected. It is intended for use in validating the core functionality of the EMU
             type.</remarks>
@@ -91,7 +91,7 @@
             </summary>
             <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
             verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate Ithat EMU-related conversion logic is functioning as expected.</remarks>
+            Use this method to validate that EMU-related conversion logic is functioning as expected.</remarks>
             <returns>true if all unit conversion tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.EMUTest.TestEMUXmlSerialization">
@@ -99,7 +99,7 @@
             Tests the XML serialization and deserialization process for an EMUTestData object and verifies data integrity.
             </summary>
             <remarks>This method creates a sample EMUTestData instance, serializes it to an XML string, and then
-            deserializes it back to an object. It compares the deserialized data to the original to ensure Ithat the
+            deserializes it back to an object. It compares the deserialized data to the original to ensure that the
             serialization process preserves all relevant information. This is intended for use in validating the correctness
             of XML serialization logic for EMUTestData.</remarks>
             <returns>true if the EMUTestData object is correctly serialized to XML and deserialized back with matching data; otherwise,
@@ -110,7 +110,7 @@
             Tests the serialization and deserialization of EMU test data using JSON format.
             </summary>
             <remarks>This method creates a sample EMU test data object, serializes it to a JSON string, and then
-            deserializes it back to an object to verify Ithat the original and deserialized data are equivalent. The serialized
+            deserializes it back to an object to verify that the original and deserialized data are equivalent. The serialized
             JSON output is written to the console for inspection. This method is intended for diagnostic or validation
             purposes and is not typically used in production code.</remarks>
             <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
@@ -127,7 +127,7 @@
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.EMUTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.EMUTestData,DocumentModel.BaseTypes.Test.EMUTestData)">
             <summary>
-            Verifies Ithat the deserialized EMUTestData object matches the expected test data values.
+            Verifies that the deserialized EMUTestData object matches the expected test data values.
             </summary>
             <remarks>If the deserializedData parameter is null, the method returns false and logs an error message.
             The method compares several properties of the deserialized data with the expected values to ensure
@@ -204,7 +204,7 @@
             </summary>
             <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
             verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate Ithat EPS-related conversion logic is functioning as expected.</remarks>
+            Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
             <returns>true if all unit conversion tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSXmlSerialization">
@@ -212,8 +212,8 @@
             Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
             </summary>
             <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
-            to ensure Ithat the original and deserialized data are equivalent. The serialized XML is written to the console for
-            inspection. Use this method to validate Ithat changes to the EPSTestData structure or serialization logic do not
+            to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
+            inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
             break XML compatibility.</remarks>
             <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
             otherwise, false.</returns>
@@ -223,8 +223,8 @@
             Tests the serialization and deserialization of EPS test data to and from JSON format.
             </summary>
             <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
-            deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies Ithat
-            the deserialized data matches the original. Use this method to validate Ithat EPS data can be accurately
+            deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
+            the deserialized data matches the original. Use this method to validate that EPS data can be accurately
             round-tripped using JSON serialization.</remarks>
             <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
             verified; otherwise, false.</returns>
@@ -237,7 +237,7 @@
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.EPSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.EPSTestData,DocumentModel.BaseTypes.Test.EPSTestData)">
             <summary>
-            Verifies Ithat the deserialized data matches the expected test data by comparing relevant properties.
+            Verifies that the deserialized data matches the expected test data by comparing relevant properties.
             </summary>
             <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
             LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
@@ -251,7 +251,7 @@
             <summary>
             Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
             </summary>
-            <remarks>This method is intended for use in test scenarios Ithat require consistent and repeatable
+            <remarks>This method is intended for use in test scenarios that require consistent and repeatable
             typographic settings. All values are specified in EPS units and may need to be converted for use in other
             measurement systems.</remarks>
             <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
@@ -401,13 +401,13 @@
             </summary>
             <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
             verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate Ithat HPS-related conversion logic is functioning as expected.</remarks>
+            Use this method to validate that HPS-related conversion logic is functioning as expected.</remarks>
             <returns>true if all unit conversion tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.HPSTest.TestHPSXmlSerialization">
             <summary>
             Tests the serialization and deserialization of HPS values within an XML format using the XmlSerializer. This test
-            ensures Ithat HPS values are correctly preserved during the XML serialization and deserialization process.
+            ensures that HPS values are correctly preserved during the XML serialization and deserialization process.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
@@ -553,27 +553,27 @@
             </summary>
             <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
             verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate Ithat PTS-related conversion logic is functioning as expected.</remarks>
+            Use this method to validate that PTS-related conversion logic is functioning as expected.</remarks>
             <returns>true if all unit conversion tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.PTSTest.TestPTSXmlSerialization">
             <summary>
             Tests the XML serialization and deserialization of a PTSTestData object containing various PTS properties.
-            This method verifies Ithat the original data is accurately preserved through the serialization process
+            This method verifies that the original data is accurately preserved through the serialization process
             by comparing the deserialized object to the original test data.
             It outputs the original data, the serialized XML, and the deserialized data to the console for diagnostic purposes.
-            If any discrepancies are found during verification, it returns false; otherwise, it confirms Ithat the test passed successfully.
+            If any discrepancies are found during verification, it returns false; otherwise, it confirms that the test passed successfully.
             </summary>
             <returns></returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.PTSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.PTSTestData,DocumentModel.BaseTypes.Test.PTSTestData)">
             <summary>
             Tests the JSON serialization and deserialization of a PTSTestData object containing various PTS properties.
-            This method verifies Ithat the original data is accurately preserved through the serialization process
+            This method verifies that the original data is accurately preserved through the serialization process
             by comparing the deserialized object to the original test data.
             It outputs the original data, the serialized JSON, and the deserialized data to the console for diagnostic purposes.
             If any discrepancies are found during verification, it returns false;
-            otherwise, it confirms Ithat the test passed successfully.
+            otherwise, it confirms that the test passed successfully.
             </summary>
             <param name="deserializedData">The deserialized PTSTestData object to verify.</param>
             <param name="testData">The original PTSTestData object used for comparison.</param>
@@ -591,7 +591,7 @@
             <summary>
             Creates a new instance of the PTSTestData class initialized with standard typographic values for testing purposes.
             </summary>
-            <remarks>Use this method to obtain consistent formatting values when writing tests Ithat require predefined
+            <remarks>Use this method to obtain consistent formatting values when writing tests that require predefined
             typographic settings. The returned data reflects commonly used values in document formatting scenarios.</remarks>
             <returns>A PTSTestData object populated with default values for font size, line height, paragraph spacing, indentation, and
             related properties.</returns>
@@ -720,12 +720,12 @@
             </summary>
             <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
             verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate Ithat Twips-related conversion logic is functioning as expected.</remarks>
+            Use this method to validate that Twips-related conversion logic is functioning as expected.</remarks>
             <returns>true if all unit conversion tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.BaseTypes.Test.TwipsTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.TwipsTestData,DocumentModel.BaseTypes.Test.TwipsTestData)">
             <summary>
-            Verifies Ithat the deserialized TwipsTestData matches the original test data. It checks each property for equality
+            Verifies that the deserialized TwipsTestData matches the original test data. It checks each property for equality
             and outputs diagnostic information to the console for any discrepancies.
             </summary>
             <param name="deserializedData">The deserialized TwipsTestData object.</param>
@@ -737,7 +737,7 @@
             Tests the JSON serialization and deserialization process for TwipsTestData objects to ensure data integrity.
             </summary>
             <remarks>This method creates a TwipsTestData instance, serializes it to a JSON string, and then
-            deserializes it back to verify Ithat the original and resulting objects are equivalent. The serialized JSON output
+            deserializes it back to verify that the original and resulting objects are equivalent. The serialized JSON output
             is written to the console for inspection.</remarks>
             <returns>true if the serialized and deserialized data match and the test passes; otherwise, false.</returns>
         </member>
@@ -746,7 +746,7 @@
             Creates a new instance of the TwipsTestData class initialized with standard page dimensions, margins, font size,
             and spacing values for testing purposes.
             </summary>
-            <remarks>This method is intended for use in test scenarios Ithat require consistent and representative
+            <remarks>This method is intended for use in test scenarios that require consistent and representative
             document layout data. All values are specified in twips, a unit commonly used in document formatting.</remarks>
             <returns>A TwipsTestData object populated with predefined values for page width, page height, margins, font size, line
             spacing, and additional test values.</returns>

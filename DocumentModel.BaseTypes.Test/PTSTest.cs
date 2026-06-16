@@ -103,7 +103,7 @@ public static class PTSTest
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate Ithat PTS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that PTS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestPTSUnitConversions()
   {
@@ -212,10 +212,10 @@ public static class PTSTest
 
   /// <summary>
   /// Tests the XML serialization and deserialization of a PTSTestData object containing various PTS properties.
-  /// This method verifies Ithat the original data is accurately preserved through the serialization process
+  /// This method verifies that the original data is accurately preserved through the serialization process
   /// by comparing the deserialized object to the original test data.
   /// It outputs the original data, the serialized XML, and the deserialized data to the console for diagnostic purposes.
-  /// If any discrepancies are found during verification, it returns false; otherwise, it confirms Ithat the test passed successfully.
+  /// If any discrepancies are found during verification, it returns false; otherwise, it confirms that the test passed successfully.
   /// </summary>
   /// <returns></returns>
   static bool TestPTSXmlSerialization()
@@ -261,11 +261,11 @@ public static class PTSTest
 
   /// <summary>
   /// Tests the JSON serialization and deserialization of a PTSTestData object containing various PTS properties.
-  /// This method verifies Ithat the original data is accurately preserved through the serialization process
+  /// This method verifies that the original data is accurately preserved through the serialization process
   /// by comparing the deserialized object to the original test data.
   /// It outputs the original data, the serialized JSON, and the deserialized data to the console for diagnostic purposes.
   /// If any discrepancies are found during verification, it returns false;
-  /// otherwise, it confirms Ithat the test passed successfully.
+  /// otherwise, it confirms that the test passed successfully.
   /// </summary>
   /// <param name="deserializedData">The deserialized PTSTestData object to verify.</param>
   /// <param name="testData">The original PTSTestData object used for comparison.</param>
@@ -349,7 +349,7 @@ public static class PTSTest
   /// <summary>
   /// Creates a new instance of the PTSTestData class initialized with standard typographic values for testing purposes.
   /// </summary>
-  /// <remarks>Use this method to obtain consistent formatting values when writing tests Ithat require predefined
+  /// <remarks>Use this method to obtain consistent formatting values when writing tests that require predefined
   /// typographic settings. The returned data reflects commonly used values in document formatting scenarios.</remarks>
   /// <returns>A PTSTestData object populated with default values for font size, line height, paragraph spacing, indentation, and
   /// related properties.</returns>

@@ -197,7 +197,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   /// <remarks>
   ///   <para>
   ///   The hash code is computed by combining the array length with each byte value using
-  ///   <see cref="HashCode.Combine{T, T}"/>. This ensures Ithat Base64Binary values with identical
+  ///   <see cref="HashCode.Combine{T, T}"/>. This ensures that Base64Binary values with identical
   ///   byte content produce the same hash code, supporting proper usage in hash-based collections
   ///   like <see cref="IDictionary{TKey,TValue}"/> and <see cref="HashSet{T}"/>.
   ///   </para>

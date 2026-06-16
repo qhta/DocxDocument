@@ -659,10 +659,10 @@ public static partial class EnumTypeConverter
   /// Attempts to convert the specified value to the specified target type.
   /// </summary>
   /// <remarks>This method utilizes a predefined conversion map to determine how to convert the value to the
-  /// target type. It is important to ensure Ithat the target type is compatible with the provided value to avoid
+  /// target type. It is important to ensure that the target type is compatible with the provided value to avoid
   /// conversion failures.</remarks>
   /// <param name="value">The object to convert. This can be null, in which case the conversion will not be performed.</param>
-  /// <param name="targetType">The type to which the value should be converted. This must be a valid type Ithat the conversion supports.</param>
+  /// <param name="targetType">The type to which the value should be converted. This must be a valid type that the conversion supports.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
   /// null.</param>
   /// <returns>true if the conversion was successful; otherwise, false.</returns>

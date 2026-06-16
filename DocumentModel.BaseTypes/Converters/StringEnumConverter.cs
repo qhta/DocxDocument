@@ -4,11 +4,11 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes enum values as string names rather than numeric values.
+///   JSON converter that serializes enum values as string names rather than numeric values.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat enum values are written as their string names (e.g., "Dark1", "Accent2")
+///   This converter ensures that enum values are written as their string names (e.g., "Dark1", "Accent2")
 ///   in JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
 ///   reads string values and parses them back to the appropriate enum type, supporting both exact
 ///   matches and case-insensitive parsing.
@@ -16,15 +16,15 @@ namespace DocumentModel;
 ///   <para>
 ///   String-based enum serialization provides several benefits:
 ///   <list type="bullet">
-///   <item><description>Human-readable JSON output Ithat's easier to debug and maintain</description></item>
+///   <item><description>Human-readable JSON output that's easier to debug and maintain</description></item>
 ///   <item><description>Better compatibility when enum values are reordered or new values are added</description></item>
-///   <item><description>Self-documenting JSON Ithat clearly indicates the meaning of each value</description></item>
-///   <item><description>Simplified integration with external systems Ithat expect string enum values</description></item>
+///   <item><description>Self-documenting JSON that clearly indicates the meaning of each value</description></item>
+///   <item><description>Simplified integration with external systems that expect string enum values</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
 ///   This converter is applied using the <c>[JsonConverter(typeof(StringEnumConverter))]</c> attribute
-///   on enum types Ithat should be serialized as strings. It handles nullable enum types and provides
+///   on enum types that should be serialized as strings. It handles nullable enum types and provides
 ///   appropriate error messages when invalid string values are encountered during deserialization.
 ///   </para>
 ///   <para>
@@ -65,7 +65,7 @@ public class StringEnumConverter : JsonConverterFactory
   /// </summary>
   /// <param name="typeToConvert">The enum type to create a converter for.</param>
   /// <param name="options">The JSON serializer options.</param>
-  /// <returns>A converter instance Ithat handles the specified enum type.</returns>
+  /// <returns>A converter instance that handles the specified enum type.</returns>
   public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
   {
     var underlyingType = Nullable.GetUnderlyingType(typeToConvert);
@@ -80,7 +80,7 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Inner converter Ithat handles non-nullable enum types.
+  ///   Inner converter that handles non-nullable enum types.
   /// </summary>
   /// <typeparam name="TEnum">The enum type to convert.</typeparam>
   private class StringEnumConverterInner<TEnum> : JsonConverter<TEnum>
@@ -136,7 +136,7 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Inner converter Ithat handles nullable enum types.
+  ///   Inner converter that handles nullable enum types.
   /// </summary>
   /// <typeparam name="TEnum">The enum type to convert.</typeparam>
   private class NullableStringEnumConverter<TEnum> : JsonConverter<TEnum?>

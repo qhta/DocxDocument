@@ -6,8 +6,8 @@
     <members>
         <member name="T:DocumentModel.ArrayVariant">
             <summary>
-            Represents a variant Ithat contains an array of elements with a specified base type and bounds.
-            This class provides a dynamic, resizable array container Ithat can hold elements of any variant type
+            Represents a variant that contains an array of elements with a specified base type and bounds.
+            This class provides a dynamic, resizable array container that can hold elements of any variant type
             defined in the Office Open XML specification.
             </summary>
             <remarks>
@@ -65,7 +65,7 @@
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.ArrayVariant"/> class with the specified base type and array size.
             </summary>
-            <param name="baseType">The type of elements Ithat the array will contain (e.g., Int32, String, DateTime).</param>
+            <param name="baseType">The type of elements that the array will contain (e.g., Int32, String, DateTime).</param>
             <param name="size">The number of elements in the array. Must be non-negative.</param>
             <remarks>
             Creates a zero-based array where <see cref="P:DocumentModel.ArrayVariant.LowerBounds"/> = 0 and <see cref="P:DocumentModel.ArrayVariant.UpperBounds"/> = size - 1.
@@ -98,13 +98,13 @@
             </summary>
             <remarks>
             When the base type is changed, the array is resized and existing elements are converted
-            to the new type if possible. Elements Ithat cannot be converted are set to their default values.
+            to the new type if possible. Elements that cannot be converted are set to their default values.
             This operation preserves the array's bounds but may lose data during type conversion.
             </remarks>
         </member>
         <member name="P:DocumentModel.ArrayVariant.ItemType">
             <summary>
-            Gets the .NET CLR type Ithat corresponds to the current <see cref="P:DocumentModel.ArrayVariant.BaseType"/>.
+            Gets the .NET CLR type that corresponds to the current <see cref="P:DocumentModel.ArrayVariant.BaseType"/>.
             </summary>
             <remarks>
             This property provides the actual .NET type used for the internal array storage,
@@ -174,15 +174,15 @@
             or greater than <see cref="P:DocumentModel.ArrayVariant.UpperBounds"/>.
             </exception>
             <exception cref="T:System.InvalidCastException">
-            Thrown when setting a value Ithat cannot be converted to the array's <see cref="P:DocumentModel.ArrayVariant.ItemType"/>.
+            Thrown when setting a value that cannot be converted to the array's <see cref="P:DocumentModel.ArrayVariant.ItemType"/>.
             </exception>
         </member>
         <member name="M:DocumentModel.ArrayVariant.GetEnumerator">
             <summary>
-            Returns an enumerator Ithat iterates through the array elements.
+            Returns an enumerator that iterates through the array elements.
             </summary>
             <returns>
-            An <see cref="T:System.Collections.IEnumerator"/> Ithat can be used to iterate through the collection,
+            An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the collection,
             returning elements in index order from <see cref="P:DocumentModel.ArrayVariant.LowerBounds"/> to <see cref="P:DocumentModel.ArrayVariant.UpperBounds"/>.
             </returns>
             <remarks>
@@ -200,7 +200,7 @@
             <param name="item">The element to add to the array. Can be <see langword="null"/> if the element type permits it.</param>
             <remarks>
             <para>
-            This method maintains an internal fill counter Ithat tracks the next available index.
+            This method maintains an internal fill counter that tracks the next available index.
             Elements are added sequentially starting from <see cref="P:DocumentModel.ArrayVariant.LowerBounds"/>.
             </para>
             <para>
@@ -244,7 +244,7 @@
             Copies the elements of the array to a specified destination array, starting at a particular array index.
             </summary>
             <param name="array">
-            The one-dimensional array Ithat is the destination of the elements copied from this collection.
+            The one-dimensional array that is the destination of the elements copied from this collection.
             The array must have zero-based indexing.
             </param>
             <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
@@ -320,7 +320,7 @@
             The new number of elements in the array. Must be non-negative.
             </param>
             <param name="baseType">
-            The new type of elements Ithat the array will contain (e.g., Int32, String, DateTime).
+            The new type of elements that the array will contain (e.g., Int32, String, DateTime).
             </param>
             <remarks>
             <para>
@@ -328,7 +328,7 @@
             creating a zero-based array with the specified element type.
             </para>
             <para>
-            Existing elements are converted to the new type if possible. Elements Ithat cannot be converted
+            Existing elements are converted to the new type if possible. Elements that cannot be converted
             are set to their default values for the new type. This operation may result in data loss
             if the types are incompatible.
             </para>
@@ -368,7 +368,7 @@
             The new inclusive upper bound of the array index. Must be greater than or equal to <paramref name="lowerBounds"/>.
             </param>
             <param name="baseType">
-            The new type of elements Ithat the array will contain (e.g., Int32, String, DateTime).
+            The new type of elements that the array will contain (e.g., Int32, String, DateTime).
             </param>
             <remarks>
             <para>
@@ -413,7 +413,7 @@
             </para>
             <para>
             Two <see cref="T:DocumentModel.ArrayVariant"/> instances are considered equal only if all these components match.
-            Note Ithat element comparison uses reference equality (==), not <see cref="M:System.Object.Equals(System.Object)"/>.
+            Note that element comparison uses reference equality (==), not <see cref="M:System.Object.Equals(System.Object)"/>.
             </para>
             </remarks>
         </member>
@@ -422,7 +422,7 @@
             Converts the value of this instance to a string representation using the specified format provider.
             </summary>
             <param name="provider">
-            An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.
+            An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
             Can be <see langword="null"/> to use the current culture.
             </param>
             <returns>
@@ -434,7 +434,7 @@
             Null elements appear as empty strings.
             </para>
             <para>
-            If a <paramref name="provider"/> is specified, it is used for formatting elements Ithat implement
+            If a <paramref name="provider"/> is specified, it is used for formatting elements that implement
             <see cref="T:System.IFormattable"/>. For other elements, the standard <see cref="M:System.Object.ToString"/> method is used.
             </para>
             <para>
@@ -694,7 +694,7 @@
             <remarks>
               <para>
               The hash code is computed by combining the array length with each byte value using
-              <see cref="M:System.HashCode.Combine``2(``0,``1)"/>. This ensures Ithat Base64Binary values with identical
+              <see cref="M:System.HashCode.Combine``2(``0,``1)"/>. This ensures that Base64Binary values with identical
               byte content produce the same hash code, supporting proper usage in hash-based collections
               like <see cref="T:System.Collections.Generic.IDictionary`2"/> and <see cref="T:System.Collections.Generic.HashSet`1"/>.
               </para>
@@ -760,7 +760,7 @@
             </summary>
             <remarks>
             <para>
-            This structure provides a type-safe representation of percentage values Ithat are stored as byte values
+            This structure provides a type-safe representation of percentage values that are stored as byte values
             in Office Open XML specifications. It supports conversion between different numeric formats and provides
             functionality for parsing and formatting percentage strings with "%" suffix.
             </para>
@@ -838,28 +838,28 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if the value is not zero; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToChar(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent Unicode character.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A Unicode character equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToDateTime(System.IFormatProvider)">
             <summary>
             This conversion is not supported. Calling this method always throws <see cref="T:System.InvalidCastException"/>.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This conversion is not supported. No value is returned.</returns>
             <exception cref="T:System.InvalidCastException">Always thrown as this conversion is not supported.</exception>
         </member>
@@ -867,86 +867,86 @@
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToDouble(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent double-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToSByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToSingle(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent single-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToString(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to its equivalent string representation.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The string representation of the value of this instance without "%" suffix.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToUInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToUInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.ToType(System.Type,System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            Ithat has an equivalent value, using the specified culture-specific formatting information.
+            that has an equivalent value, using the specified culture-specific formatting information.
             </summary>
             <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
             <remarks>
             <para>
@@ -1053,7 +1053,7 @@
             </summary>
             <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
             such as "50%" or "0.5".</param>
-            <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
+            <returns>A Percent instance that represents the value specified by the input string.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.TryParse(System.String,DocumentModel.BytePercent@)">
             <summary>
@@ -1124,12 +1124,12 @@
         </member>
         <member name="M:DocumentModel.BytePercent.CompareTo(DocumentModel.BytePercent)">
             <summary>
-            Compares the current instance with another object of the same type and returns an integer Ithat indicates 
+            Compares the current instance with another object of the same type and returns an integer that indicates 
             whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
             </summary>
             <param name="other">An object to compare with this instance.</param>
             <returns>
-            A value Ithat indicates the relative order of the objects being compared:
+            A value that indicates the relative order of the objects being compared:
             <list type="bullet">
             <item><description>Less than zero: This instance precedes <paramref name="other"/> in the sort order.</description></item>
             <item><description>Zero: This instance occurs in the same position in the sort order as <paramref name="other"/>.</description></item>
@@ -1282,17 +1282,17 @@
         </member>
         <member name="T:DocumentModel.Base64BinaryJsonConverter">
             <summary>
-              JSON converter Ithat serializes Base64Binary values as Base64-encoded strings.
+              JSON converter that serializes Base64Binary values as Base64-encoded strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat Base64Binary values are written as simple string values in JSON output
+              This converter ensures that Base64Binary values are written as simple string values in JSON output
               (e.g., "SGVsbG8=", "/9j/4AAQ") rather than complex objects or byte arrays. During deserialization,
               the converter reads string values and constructs new Base64Binary instances from them.
               </para>
               <para>
               The Base64 string format maintains compatibility with Office Open XML specifications while
-              providing compact and standard JSON output. The converter validates Ithat input strings contain only
+              providing compact and standard JSON output. The converter validates that input strings contain only
               valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper padding.
               </para>
               <para>
@@ -1381,17 +1381,17 @@
         </member>
         <member name="T:DocumentModel.BytePercentJsonConverter">
             <summary>
-            JSON converter Ithat serializes BytePercent values as numeric strings without "%" suffix.
+            JSON converter that serializes BytePercent values as numeric strings without "%" suffix.
             </summary>
             <remarks>
             <para>
-            This converter ensures Ithat BytePercent values are written as simple numeric string values in JSON output
+            This converter ensures that BytePercent values are written as simple numeric string values in JSON output
             (e.g., "0", "50", "100") rather than complex objects. During deserialization, the converter reads
             string or numeric values and constructs new BytePercent instances from them.
             </para>
             <para>
             The numeric string format maintains compatibility with Office Open XML specifications while
-            providing compact and standard JSON output. The converter validates Ithat input values are within
+            providing compact and standard JSON output. The converter validates that input values are within
             the valid byte range (0-255).
             </para>
             <para>
@@ -1555,114 +1555,114 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToChar(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent Unicode character.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A Unicode character equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToDateTime(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToDecimal(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToDouble(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent double-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToSByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToSingle(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent single-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToString(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to its equivalent string representation using the specified format provider.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The string representation of the value of this instance as specified by the provider.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToUInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToUInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.ToType(System.Type,System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            Ithat has an equivalent value, using the specified culture-specific formatting information.
+            that has an equivalent value, using the specified culture-specific formatting information.
             </summary>
             <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.op_Implicit(System.String)~DocumentModel.Degrees">
@@ -1755,7 +1755,7 @@
             </summary>
             <param name="str">The string containing the DrawingAngle to parse. The string should be in a format recognized by the DrawingAngle type,
             such as "50°" or "0.5".</param>
-            <returns>A DrawingAngle instance Ithat represents the value specified by the input string.</returns>
+            <returns>A DrawingAngle instance that represents the value specified by the input string.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.TryParse(System.String,DocumentModel.Degrees@)">
             <summary>
@@ -1792,7 +1792,7 @@
             and format provider to determine digit separator. Fixed format is used.
             </summary>
             <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
         </member>
@@ -1800,7 +1800,7 @@
             <summary>
             Converts value to string using the specified unit and format provider to determine digit separator.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
         </member>
@@ -1973,28 +1973,28 @@
         </member>
         <member name="M:DocumentModel.EMU.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EMU"/> Ithat represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.EMU"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EMU"/> Ithat represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.EMU"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromMM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat represents a length specified in millimeters.
+            Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromCM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.FromInch(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
         <member name="M:DocumentModel.EMU.Parse(System.String)">
@@ -2003,22 +2003,22 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.EMU.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-            unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-            <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.EMU.TryParse(System.String,DocumentModel.EMU@)">
             <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -2061,7 +2061,7 @@
             Implicitly converts a double-precision floating-point number to a EMU instance.
             </summary>
             <remarks>This conversion allows for seamless integration of double values into contexts where EMU are
-            required, facilitating operations Ithat involve measurements in EMU.</remarks>
+            required, facilitating operations that involve measurements in EMU.</remarks>
             <param name="value">The value to convert, representing a measurement in EMU.</param>
         </member>
         <member name="T:DocumentModel.EMUJsonConverter">
@@ -2206,28 +2206,28 @@
         </member>
         <member name="M:DocumentModel.EPS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EPS"/> Ithat represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.EPS"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EPS"/> Ithat represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.EPS"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromMM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat represents a length specified in millimeters.
+            Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromCM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.FromInch(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
         <member name="M:DocumentModel.EPS.Parse(System.String)">
@@ -2236,22 +2236,22 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.EPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-            unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-            <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.EPS.TryParse(System.String,DocumentModel.EPS@)">
             <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -2294,7 +2294,7 @@
             Implicitly converts a double-precision floating-point number to a EPS instance.
             </summary>
             <remarks>This conversion allows for seamless integration of double values into contexts where EPS are
-            required, facilitating operations Ithat involve measurements in EPS.</remarks>
+            required, facilitating operations that involve measurements in EPS.</remarks>
             <param name="value">The value to convert, representing a measurement in EPS.</param>
         </member>
         <member name="T:DocumentModel.EPSJsonConverter">
@@ -2351,7 +2351,7 @@
             <remarks>
               <para>
               HexBinary provides a type-safe wrapper for hexadecimal string values used throughout Office Open XML
-              documents. Unlike raw strings, HexBinary enforces Ithat all characters are valid hexadecimal digits
+              documents. Unlike raw strings, HexBinary enforces that all characters are valid hexadecimal digits
               and provides convenient conversion to and from byte arrays for binary data operations.
               </para>
               <para>
@@ -2472,7 +2472,7 @@
         <member name="M:DocumentModel.HexBinary.StringToBytes(System.String)">
             <summary>
             Converts a hexadecimal string to its corresponding byte array representation.
-            Removes any dashes and validates Ithat the string length is even.
+            Removes any dashes and validates that the string length is even.
             </summary>
             <param name="val">String to convert</param>
             <returns>Array of bytes</returns>
@@ -2612,17 +2612,17 @@
         </member>
         <member name="T:DocumentModel.HexBinaryJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexBinary values as hexadecimal strings.
+              JSON converter that serializes HexBinary values as hexadecimal strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat HexBinary values are written as simple string values in JSON output
+              This converter ensures that HexBinary values are written as simple string values in JSON output
               (e.g., "A1B2C3", "DEADBEEF") rather than complex objects or byte arrays. During deserialization,
               the converter reads string values and constructs new HexBinary instances from them.
               </para>
               <para>
               The hexadecimal string format maintains compatibility with Office Open XML specifications while
-              providing human-readable JSON output. The converter validates Ithat input strings contain only
+              providing human-readable JSON output. The converter validates that input strings contain only
               valid hexadecimal characters (0-9, A-F, a-f) and have even length.
               </para>
               <para>
@@ -2843,7 +2843,7 @@
               A 16-bit unsigned integer (0-65535) representing a byte code.
             </param>
             <remarks>
-              This is the primary constructor Ithat directly stores the byte code value.
+              This is the primary constructor that directly stores the byte code value.
               It can represent any Unicode byte in the Basic Multilingual Plane.
             </remarks>
         </member>
@@ -3168,17 +3168,17 @@
         </member>
         <member name="T:DocumentModel.HexByteJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexByte values as hexadecimal strings.
+              JSON converter that serializes HexByte values as hexadecimal strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat HexByte values are written as hexadecimal string values in JSON output
+              This converter ensures that HexByte values are written as hexadecimal string values in JSON output
               (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
               reads string values and constructs HexByte instances from them.
               </para>
               <para>
               All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-              uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
               contain only valid hexadecimal characters.
               </para>
               <para>
@@ -3222,8 +3222,8 @@
             </summary>
             <remarks>
               <para>
-              HexChar provides a type-safe wrapper for character values Ithat are represented as hexadecimal strings
-              in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) Ithat can represent
+              HexChar provides a type-safe wrapper for character values that are represented as hexadecimal strings
+              in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) that can represent
               any Unicode character in the Basic Multilingual Plane (BMP).
               </para>
               <para>
@@ -3409,7 +3409,7 @@
               A 16-bit unsigned integer (0-65535) representing a character code.
             </param>
             <remarks>
-              This is the primary constructor Ithat directly stores the character code value.
+              This is the primary constructor that directly stores the character code value.
               It can represent any Unicode character in the Basic Multilingual Plane.
             </remarks>
         </member>
@@ -3735,11 +3735,11 @@
         </member>
         <member name="T:DocumentModel.HexCharJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexChar values as hexadecimal strings.
+              JSON converter that serializes HexChar values as hexadecimal strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat HexChar values are written as hexadecimal string values in JSON output
+              This converter ensures that HexChar values are written as hexadecimal string values in JSON output
               (e.g., "41", "03B1") rather than numeric values or complex objects. During deserialization, the converter
               reads string values and constructs HexChar instances from them.
               </para>
@@ -3753,7 +3753,7 @@
               </para>
               <para>
               All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-              uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
               contain only valid hexadecimal characters.
               </para>
               <para>
@@ -4021,7 +4021,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4029,7 +4029,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4037,7 +4037,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4045,7 +4045,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4053,7 +4053,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4061,7 +4061,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4069,7 +4069,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4077,21 +4077,21 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
         </member>
         <member name="M:DocumentModel.HexColor.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
         </member>
         <member name="M:DocumentModel.HexColor.ToSByte(System.IFormatProvider)">
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4099,7 +4099,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4107,7 +4107,7 @@
             <summary>
             Converts the value of this instance to an equivalent string.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
         </member>
         <member name="M:DocumentModel.HexColor.ToType(System.Type,System.IFormatProvider)">
@@ -4115,7 +4115,7 @@
             Converts the value of this instance to the specified type.
             </summary>
             <param name="conversionType">The type to which to convert the value of this instance.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>
             An object of the specified type with a value equivalent to the value of this instance.
             Supports conversion to <see cref="T:System.String"/>, <see cref="T:System.Int32"/>, <see cref="T:System.Int64"/>, <see cref="T:System.UInt32"/>, <see cref="T:System.UInt64"/>, <see cref="T:DocumentModel.HexInt"/>, and <see cref="T:DocumentModel.HexColor"/>.
@@ -4126,7 +4126,7 @@
             <summary>
             This conversion is not supported for RGB color types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -4134,14 +4134,14 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
         </member>
         <member name="M:DocumentModel.HexColor.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>
         </member>
         <member name="T:DocumentModel.HexColorJsonConverter">
@@ -4198,9 +4198,9 @@
             </summary>
             <remarks>
               <para>
-              HexInt provides a type-safe wrapper for integer values Ithat are represented as hexadecimal strings
+              HexInt provides a type-safe wrapper for integer values that are represented as hexadecimal strings
               in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 to 2,147,483,647)
-              Ithat is formatted as an 8-character uppercase hexadecimal string.
+              that is formatted as an 8-character uppercase hexadecimal string.
               </para>
               <para>
               This type is commonly used in Office documents for:
@@ -4368,7 +4368,7 @@
               A 32-bit signed integer value (-2,147,483,648 to 2,147,483,647).
             </param>
             <remarks>
-              This is the primary constructor Ithat directly stores the integer value.
+              This is the primary constructor that directly stores the integer value.
               Example: new HexInt(123) stores value 123 (0x0000007B).
             </remarks>
         </member>
@@ -4700,11 +4700,11 @@
         </member>
         <member name="T:DocumentModel.HexIntJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexInt values as 8-character hexadecimal strings.
+              JSON converter that serializes HexInt values as 8-character hexadecimal strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat HexInt values are written as hexadecimal string values in JSON output
+              This converter ensures that HexInt values are written as hexadecimal string values in JSON output
               (e.g., "0000007B", "FFFFFFFF") rather than numeric values or complex objects. During deserialization,
               the converter reads string values and constructs HexInt instances from them.
               </para>
@@ -4715,7 +4715,7 @@
               </para>
               <para>
               All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-              uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
               contain only valid hexadecimal characters.
               </para>
               <para>
@@ -5130,11 +5130,11 @@
         </member>
         <member name="T:DocumentModel.HexLongJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexLong values as 8-character hexadecimal strings.
+              JSON converter that serializes HexLong values as 8-character hexadecimal strings.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat HexLong values are written as hexadecimal string values in JSON output
+              This converter ensures that HexLong values are written as hexadecimal string values in JSON output
               (e.g., "0000007B", "FFFFFFFF") rather than numeric values or complex objects. During deserialization,
               the converter reads string values and constructs HexLong instances from them.
               </para>
@@ -5145,7 +5145,7 @@
               </para>
               <para>
               All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-              uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
               contain only valid hexadecimal characters.
               </para>
               <para>
@@ -5254,7 +5254,7 @@
             </summary>
             <remarks>
             <para>
-            This structure provides a type-safe representation of percentage values Ithat are stored as byte values
+            This structure provides a type-safe representation of percentage values that are stored as byte values
             in Office Open XML specifications. It supports conversion between different numeric formats and provides
             functionality for parsing and formatting percentage strings with "%" suffix.
             </para>
@@ -5327,21 +5327,21 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if the value is not zero; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToChar(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent Unicode character.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A Unicode cha
             racter equivalent to the value of this instance.</returns>
         </member>
@@ -5349,7 +5349,7 @@
             <summary>
             This conversion is not supported. Calling this method always throws <see cref="T:System.InvalidCastException"/>.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This conversion is not supported. No value is returned.</returns>
             <exception cref="T:System.InvalidCastException">Always thrown as this conversion is not supported.</exception>
         </member>
@@ -5357,86 +5357,86 @@
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToDouble(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent double-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToSByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToSingle(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent single-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToString(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to its equivalent string representation.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The string representation of the value of this instance without "%" suffix.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToUInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToUInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.ToType(System.Type,System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            Ithat has an equivalent value, using the specified culture-specific formatting information.
+            that has an equivalent value, using the specified culture-specific formatting information.
             </summary>
             <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
             <remarks>
             <para>
@@ -5484,7 +5484,7 @@
             </summary>
             <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
             such as "50%" or "0.5".</param>
-            <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
+            <returns>A Percent instance that represents the value specified by the input string.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.TryParse(System.String,DocumentModel.HexPercent@)">
             <summary>
@@ -5555,12 +5555,12 @@
         </member>
         <member name="M:DocumentModel.HexPercent.CompareTo(DocumentModel.HexPercent)">
             <summary>
-            Compares the current instance with another object of the same type and returns an integer Ithat indicates 
+            Compares the current instance with another object of the same type and returns an integer that indicates 
             whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
             </summary>
             <param name="other">An object to compare with this instance.</param>
             <returns>
-            A value Ithat indicates the relative order of the objects being compared:
+            A value that indicates the relative order of the objects being compared:
             <list type="bullet">
             <item><description>Less than zero: This instance precedes <paramref name="other"/> in the sort order.</description></item>
             <item><description>Zero: This instance occurs in the same position in the sort order as <paramref name="other"/>.</description></item>
@@ -5576,7 +5576,7 @@
         </member>
         <member name="T:DocumentModel.HexPercentJsonConverter">
             <summary>
-              JSON converter Ithat serializes HexPercent values.
+              JSON converter that serializes HexPercent values.
             </summary>
         </member>
         <member name="M:DocumentModel.HexPercentJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
@@ -5695,28 +5695,28 @@
         </member>
         <member name="M:DocumentModel.HPS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.HPS"/> Ithat represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.HPS"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.HPS"/> Ithat represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.HPS"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromMM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat represents a length specified in millimeters.
+            Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromCM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.FromInch(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.Parse(System.String)">
@@ -5725,22 +5725,22 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.HPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-            unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-            <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.HPS.TryParse(System.String,DocumentModel.HPS@)">
             <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -5783,7 +5783,7 @@
             Implicitly converts a double-precision floating-point number to a HPS instance.
             </summary>
             <remarks>This conversion allows for seamless integration of double values into contexts where HPS are
-            required, facilitating operations Ithat involve measurements in HPS.</remarks>
+            required, facilitating operations that involve measurements in HPS.</remarks>
             <param name="value">The value to convert, representing a measurement in HPS.</param>
         </member>
         <member name="T:DocumentModel.HPSJsonConverter">
@@ -5835,11 +5835,11 @@
         </member>
         <member name="T:DocumentModel.ListOf`1">
             <summary>
-            Represents a generic list of values Ithat Iimplements XSD list semantics.
+            Represents a generic list of values that Iimplements XSD list semantics.
             </summary>
             <typeparam name="T">The type of elements in the list. Must implement <see cref="T:System.IConvertible"/>.</typeparam>
             <remarks>
-            <para>This class provides a list implementation Ithat can be serialized to and from text using space-separated values (or comma/semicolon for strings).</para>
+            <para>This class provides a list implementation that can be serialized to and from text using space-separated values (or comma/semicolon for strings).</para>
             <para>The class supports:</para>
             <list type="bullet">
             <item><description>Parsing from text with appropriate separators (space for numeric types, comma/semicolon for strings)</description></item>
@@ -6018,14 +6018,14 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.ListOf`1.ToByte(System.IFormatProvider)">
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6033,7 +6033,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6041,7 +6041,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6049,7 +6049,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6057,7 +6057,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6065,7 +6065,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6073,21 +6073,21 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list.</returns>
         </member>
         <member name="M:DocumentModel.ListOf`1.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list.</returns>
         </member>
         <member name="M:DocumentModel.ListOf`1.ToSByte(System.IFormatProvider)">
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6095,7 +6095,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6103,7 +6103,7 @@
             <summary>
             Converts the value of this instance to an equivalent string.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A string representation with all items separated by spaces, or an empty string if the list is empty.</returns>
         </member>
         <member name="M:DocumentModel.ListOf`1.ToType(System.Type,System.IFormatProvider)">
@@ -6111,7 +6111,7 @@
             Converts the value of this instance to the specified type.
             </summary>
             <param name="conversionType">The type to which to convert the value of this instance.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>
             An object of the specified type with a value equivalent to the value of this instance.
             Supports conversion to <see cref="T:System.String"/> and <see cref="T:System.Boolean"/>.
@@ -6122,7 +6122,7 @@
             <summary>
             This conversion is not supported for list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -6130,14 +6130,14 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list as an unsigned integer.</returns>
         </member>
         <member name="M:DocumentModel.ListOf`1.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list as an unsigned long integer.</returns>
         </member>
         <member name="T:DocumentModel.ListOfJsonConverter`1">
@@ -6360,114 +6360,114 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToChar(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent Unicode character.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A Unicode character equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToDateTime(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToDecimal(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToDouble(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent double-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToSByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToSingle(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent single-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToString(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to its equivalent string representation using the specified format provider.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The string representation of the value of this instance as specified by the provider.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToUInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToUInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.ToType(System.Type,System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            Ithat has an equivalent value, using the specified culture-specific formatting information.
+            that has an equivalent value, using the specified culture-specific formatting information.
             </summary>
             <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.op_Implicit(System.String)~DocumentModel.Percent">
@@ -6567,7 +6567,7 @@
             </summary>
             <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
             such as "50%" or "0.5".</param>
-            <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
+            <returns>A Percent instance that represents the value specified by the input string.</returns>
         </member>
         <member name="M:DocumentModel.Percent.TryParse(System.String,DocumentModel.Percent@)">
             <summary>
@@ -6604,7 +6604,7 @@
             and format provider to determine digit separator. Fixed format is used.
             </summary>
             <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
         </member>
@@ -6612,7 +6612,7 @@
             <summary>
             Converts value to string using the specified unit and format provider to determine digit separator.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
         </member>
@@ -6798,114 +6798,114 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToChar(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent Unicode character.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A Unicode character equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToDateTime(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToDecimal(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToDouble(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent double-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToSByte(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 8-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToSingle(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent single-precision floating-point number.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToString(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to its equivalent string representation using the specified format provider.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The string representation of the value of this instance as specified by the provider.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToUInt16(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 16-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToUInt32(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.ToType(System.Type,System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            Ithat has an equivalent value, using the specified culture-specific formatting information.
+            that has an equivalent value, using the specified culture-specific formatting information.
             </summary>
             <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.op_Implicit(System.String)~DocumentModel.Percentage">
@@ -6998,7 +6998,7 @@
             </summary>
             <param name="str">The string containing the Percentage to parse. The string should be in a format recognized by the Percentage type,
             such as "50%" or "0.5".</param>
-            <returns>A Percentage instance Ithat represents the value specified by the input string.</returns>
+            <returns>A Percentage instance that represents the value specified by the input string.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.TryParse(System.String,DocumentModel.Percentage@)">
             <summary>
@@ -7035,7 +7035,7 @@
             and format provider to determine digit separator. Fixed format is used.
             </summary>
             <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
         </member>
@@ -7043,7 +7043,7 @@
             <summary>
             Converts value to string using the specified unit and format provider to determine digit separator.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
             <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
             <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
         </member>
@@ -7268,28 +7268,28 @@
         </member>
         <member name="M:DocumentModel.PTS.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.PTS"/> Ithat represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.PTS"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.PTS"/> Ithat represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.PTS"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromMM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat represents a length specified in millimeters.
+            Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromCM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.FromInch(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
         <member name="M:DocumentModel.PTS.Parse(System.String)">
@@ -7298,22 +7298,22 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-            unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
             <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-            <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.PTS@)">
             <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -7356,7 +7356,7 @@
             Implicitly converts a double-precision floating-point number to a PTS instance.
             </summary>
             <remarks>This conversion allows for seamless integration of double values into contexts where PTS are
-            required, facilitating operations Ithat involve measurements in PTS.</remarks>
+            required, facilitating operations that involve measurements in PTS.</remarks>
             <param name="value">The value to convert, representing a measurement in PTS.</param>
         </member>
         <member name="T:DocumentModel.PTSJsonConverter">
@@ -7407,11 +7407,11 @@
         </member>
         <member name="T:DocumentModel.StringEnumConverter">
             <summary>
-              JSON converter Ithat serializes enum values as string names rather than numeric values.
+              JSON converter that serializes enum values as string names rather than numeric values.
             </summary>
             <remarks>
               <para>
-              This converter ensures Ithat enum values are written as their string names (e.g., "Dark1", "Accent2")
+              This converter ensures that enum values are written as their string names (e.g., "Dark1", "Accent2")
               in JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
               reads string values and parses them back to the appropriate enum type, supporting both exact
               matches and case-insensitive parsing.
@@ -7419,15 +7419,15 @@
               <para>
               String-based enum serialization provides several benefits:
               <list type="bullet">
-              <item><description>Human-readable JSON output Ithat's easier to debug and maintain</description></item>
+              <item><description>Human-readable JSON output that's easier to debug and maintain</description></item>
               <item><description>Better compatibility when enum values are reordered or new values are added</description></item>
-              <item><description>Self-documenting JSON Ithat clearly indicates the meaning of each value</description></item>
-              <item><description>Simplified integration with external systems Ithat expect string enum values</description></item>
+              <item><description>Self-documenting JSON that clearly indicates the meaning of each value</description></item>
+              <item><description>Simplified integration with external systems that expect string enum values</description></item>
               </list>
               </para>
               <para>
               This converter is applied using the <c>[JsonConverter(typeof(StringEnumConverter))]</c> attribute
-              on enum types Ithat should be serialized as strings. It handles nullable enum types and provides
+              on enum types that should be serialized as strings. It handles nullable enum types and provides
               appropriate error messages when invalid string values are encountered during deserialization.
               </para>
               <para>
@@ -7463,11 +7463,11 @@
             </summary>
             <param name="typeToConvert">The enum type to create a converter for.</param>
             <param name="options">The JSON serializer options.</param>
-            <returns>A converter instance Ithat handles the specified enum type.</returns>
+            <returns>A converter instance that handles the specified enum type.</returns>
         </member>
         <member name="T:DocumentModel.StringEnumConverter.StringEnumConverterInner`1">
             <summary>
-              Inner converter Ithat handles non-nullable enum types.
+              Inner converter that handles non-nullable enum types.
             </summary>
             <typeparam name="TEnum">The enum type to convert.</typeparam>
         </member>
@@ -7493,7 +7493,7 @@
         </member>
         <member name="T:DocumentModel.StringEnumConverter.NullableStringEnumConverter`1">
             <summary>
-              Inner converter Ithat handles nullable enum types.
+              Inner converter that handles nullable enum types.
             </summary>
             <typeparam name="TEnum">The enum type to convert.</typeparam>
         </member>
@@ -7524,7 +7524,7 @@
             Provides XML serialization support for the <see cref="T:DocumentModel.StringList"/> class.
             </summary>
             <summary>
-            Represents a collection of strings Ithat can be parsed from and converted to comma-separated values.
+            Represents a collection of strings that can be parsed from and converted to comma-separated values.
             </summary>
             <remarks>
             This class provides a convenient way to work with lists of strings, supporting:
@@ -7603,15 +7603,15 @@
         </member>
         <member name="M:DocumentModel.StringList.GetEnumerator">
             <summary>
-            Returns an enumerator Ithat iterates through the collection.
+            Returns an enumerator that iterates through the collection.
             </summary>
-            <returns>An enumerator Ithat can be used to iterate through the collection.</returns>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
         </member>
         <member name="M:DocumentModel.StringList.System#Collections#IEnumerable#GetEnumerator">
             <summary>
-            Returns an enumerator Ithat iterates through a collection.
+            Returns an enumerator that iterates through a collection.
             </summary>
-            <returns>An <see cref="T:System.Collections.IEnumerator"/> object Ithat can be used to iterate through the collection.</returns>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.</returns>
         </member>
         <member name="M:DocumentModel.StringList.Add(System.String)">
             <summary>
@@ -7635,7 +7635,7 @@
             <summary>
             Copies the elements of the collection to an <see cref="T:System.Array"/>, starting at a particular array index.
             </summary>
-            <param name="array">The one-dimensional <see cref="T:System.Array"/> Ithat is the destination of the elements copied from the collection.</param>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from the collection.</param>
             <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
         </member>
         <member name="M:DocumentModel.StringList.Remove(System.String)">
@@ -7658,7 +7658,7 @@
         </member>
         <member name="M:DocumentModel.StringList.ToString">
             <summary>
-            Returns a string Ithat represents the current object.
+            Returns a string that represents the current object.
             </summary>
             <returns>A comma-separated string containing all items in the collection, separated by ", " (comma and space).</returns>
             <remarks>
@@ -7695,7 +7695,7 @@
             Equality is determined by:
             <list type="bullet">
             <item><description>If <paramref name="obj"/> is a <see cref="T:DocumentModel.StringList"/>, compares all items in order</description></item>
-            <item><description>If <paramref name="obj"/> is a string, returns true only if this list contains exactly one item equal to Ithat string</description></item>
+            <item><description>If <paramref name="obj"/> is a string, returns true only if this list contains exactly one item equal to that string</description></item>
             <item><description>Otherwise, returns false</description></item>
             </list>
             </remarks>
@@ -7724,7 +7724,7 @@
             <summary>
             Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, starting at a particular array index.
             </summary>
-            <param name="array">The one-dimensional <see cref="T:System.Array"/> Ithat is the destination of the elements copied from the collection.</param>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from the collection.</param>
             <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
             <remarks>
             This method only performs the copy if <paramref name="array"/> is of type string[].
@@ -7738,9 +7738,9 @@
         </member>
         <member name="P:DocumentModel.StringList.System#Collections#ICollection#SyncRoot">
             <summary>
-            Gets an object Ithat can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
             </summary>
-            <value>An object Ithat can be used to synchronize access to the collection.</value>
+            <value>An object that can be used to synchronize access to the collection.</value>
         </member>
         <member name="M:DocumentModel.StringList.GetTypeCode">
             <summary>
@@ -7752,14 +7752,14 @@
             <summary>
             Converts the value of this instance to an equivalent Boolean value.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:DocumentModel.StringList.ToByte(System.IFormatProvider)">
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7767,7 +7767,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7775,7 +7775,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7783,7 +7783,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7791,7 +7791,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7799,7 +7799,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7807,21 +7807,21 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list.</returns>
         </member>
         <member name="M:DocumentModel.StringList.ToInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit signed integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list.</returns>
         </member>
         <member name="M:DocumentModel.StringList.ToSByte(System.IFormatProvider)">
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7829,7 +7829,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7837,7 +7837,7 @@
             <summary>
             Converts the value of this instance to an equivalent string.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>A string representation with all items separated by ", " (comma and space), or an empty string if the list is empty.</returns>
         </member>
         <member name="M:DocumentModel.StringList.ToType(System.Type,System.IFormatProvider)">
@@ -7845,7 +7845,7 @@
             Converts the value of this instance to the specified type.
             </summary>
             <param name="conversionType">The type to which to convert the value of this instance.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>
             An object of the specified type with a value equivalent to the value of this instance.
             Supports conversion to <see cref="T:System.String"/>, <see cref="T:System.Boolean"/>, <see cref="T:System.Int32"/>, <see cref="T:System.Int64"/>, and <see cref="T:DocumentModel.StringList"/>.
@@ -7856,7 +7856,7 @@
             <summary>
             This conversion is not supported for string list types.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
         </member>
@@ -7864,14 +7864,14 @@
             <summary>
             Converts the value of this instance to an equivalent 32-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list as an unsigned integer.</returns>
         </member>
         <member name="M:DocumentModel.StringList.ToUInt64(System.IFormatProvider)">
             <summary>
             Converts the value of this instance to an equivalent 64-bit unsigned integer.
             </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
             <returns>The number of items in the list as an unsigned long integer.</returns>
         </member>
         <member name="T:DocumentModel.StringListJsonConverter">
@@ -7927,10 +7927,10 @@
             Provides XML serialization support for the <see cref="T:DocumentModel.StrNumPair"/> structure.
             </summary>
             <summary>
-            Represents a value Ithat can be either a string or a number.
+            Represents a value that can be either a string or a number.
             </summary>
             <remarks>
-            This struct provides a way to represent values Ithat may be expressed as either text or numeric form,
+            This struct provides a way to represent values that may be expressed as either text or numeric form,
             commonly used in document models where formatting or content can accept multiple representations.
             </remarks>
         </member>
@@ -8246,28 +8246,28 @@
         </member>
         <member name="M:DocumentModel.Twips.FromTwips(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.Twips"/> Ithat represents the specified value in twips.
+            Creates an instance of an <see cref="T:DocumentModel.Twips"/> that represents the specified value in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromPT(System.Double)">
             <summary>
-            Creates an instance of an <see cref="T:DocumentModel.Twips"/> Ithat represents the specified value in points.
+            Creates an instance of an <see cref="T:DocumentModel.Twips"/> that represents the specified value in points.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromMM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat represents a length specified in millimeters.
+            Creates a new instance of an object that represents a length specified in millimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromCM(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
             centimeters.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.FromInch(System.Double)">
             <summary>
-            Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+            Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -8277,7 +8277,7 @@
             <remarks>Supported units include Twips, IPoints, Millimeters, Centimeters, and Inches.</remarks>
             <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
             <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
-            <returns>An object Ithat Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+            <returns>An object that Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
             <exception cref="T:System.ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
         </member>
         <member name="M:DocumentModel.Twips.Parse(System.String)">
@@ -8286,12 +8286,12 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.Twips.TryParse(System.String,DocumentModel.Twips@)">
             <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
             whether the parsing succeeded.
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -8362,7 +8362,7 @@
             Implicitly converts a double-precision floating-point number to a Twips instance.
             </summary>
             <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
-            required, facilitating operations Ithat involve measurements in twips.</remarks>
+            required, facilitating operations that involve measurements in twips.</remarks>
             <param name="value">The value to convert, representing a measurement in twips.</param>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.Single)~DocumentModel.Twips">
@@ -8370,7 +8370,7 @@
             Implicitly converts a single-precision floating-point number to a Twips instance.
             </summary>
             <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
-            required, facilitating operations Ithat involve measurements in twips.</remarks>
+            required, facilitating operations that involve measurements in twips.</remarks>
             <param name="value">The value to convert, representing a measurement in twips.</param>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.Decimal)~DocumentModel.Twips">
@@ -8378,7 +8378,7 @@
             Implicitly converts a decimal number to a Twips instance.
             </summary>
             <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
-            required, facilitating operations Ithat involve measurements in twips.</remarks>
+            required, facilitating operations that involve measurements in twips.</remarks>
             <param name="value">The value to convert, representing a measurement in twips.</param>
         </member>
         <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int16">
@@ -8550,7 +8550,7 @@
             <summary>
             Returns the string representation of the current object.
             </summary>
-            <returns>A string Ithat represents the current value, or null if the value is not set.</returns>
+            <returns>A string that represents the current value, or null if the value is not set.</returns>
         </member>
         <member name="M:DocumentModel.UriString.Equals(DocumentModel.UriString)">
             <summary>
@@ -8599,7 +8599,7 @@
             Provides XML serialization support for the <see cref="T:DocumentModel.Variant"/> class.
             </summary>
             <summary>
-            Represents a variant value Ithat can hold any supported type, similar to a COM VARIANT.
+            Represents a variant value that can hold any supported type, similar to a COM VARIANT.
             </summary>
         </member>
         <member name="M:DocumentModel.Variant.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -9133,7 +9133,7 @@
             <remarks>
             <para>
             <see cref="T:DocumentModel.VClipboardData"/> is used in Office Open XML documents to store clipboard data
-            Ithat has been embedded in the document. This structure encapsulates the clipboard format,
+            that has been embedded in the document. This structure encapsulates the clipboard format,
             the size of the data, and the actual binary content.
             </para>
             <para>
@@ -9225,7 +9225,7 @@
             <summary>
             Initializes a new instance of the VClipboardData class with the specified clipboard format and associated data. 
             </summary>
-            <param name="format">The clipboard format identifier Ithat specifies the type of data contained. Common values correspond to standard
+            <param name="format">The clipboard format identifier that specifies the type of data contained. Common values correspond to standard
             clipboard formats.</param>
             <param name="data">The byte array containing the clipboard data for the specified format. Cannot be null.</param>
               /// <remarks>
@@ -9332,7 +9332,7 @@
             <para>
             The comparison of the <see cref="P:DocumentModel.VClipboardData.Data"/> arrays is performed element-by-element using
             <see cref="M:System.Linq.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})"/>,
-            ensuring Ithat both the length and content match exactly.
+            ensuring that both the length and content match exactly.
             </para>
             </remarks>
         </member>
@@ -9352,7 +9352,7 @@
             </list>
             </para>
             <para>
-            This implementation ensures Ithat equal <see cref="T:DocumentModel.VClipboardData"/> instances
+            This implementation ensures that equal <see cref="T:DocumentModel.VClipboardData"/> instances
             produce the same hash code, satisfying the hash code contract.
             </para>
             <para>
@@ -9462,7 +9462,7 @@
             Provides XML serialization support for the <see cref="T:DocumentModel.VectorVariant"/> class.
             </summary>
             <summary>
-            Represents a variant Ithat contains a dynamic vector (list) of elements with a specified base type.
+            Represents a variant that contains a dynamic vector (list) of elements with a specified base type.
             </summary>
             <remarks>
             <para>
@@ -9580,7 +9580,7 @@
             Gets the internal list of items cast from the base <see cref="F:DocumentModel.Variant._value"/> field.
             </summary>
             <remarks>
-            This property provides direct access to the underlying <see cref="T:System.Collections.Generic.IList`1"/> Ithat stores
+            This property provides direct access to the underlying <see cref="T:System.Collections.Generic.IList`1"/> that stores
             the vector elements. The value is guaranteed to be a <see cref="T:System.Collections.Generic.IList`1"/> of nullable objects
             as initialized in the constructor.
             </remarks>
@@ -9599,7 +9599,7 @@
             Initializes a new instance of the <see cref="T:DocumentModel.VectorVariant"/> class with a specified base type.
             </summary>
             <param name="baseType">
-            The type of elements Ithat the vector is intended to contain (e.g., Int32, String, DateTime).
+            The type of elements that the vector is intended to contain (e.g., Int32, String, DateTime).
             </param>
             <remarks>
             Creates an empty vector configured for the specified element type. The <see cref="P:DocumentModel.VectorVariant.BaseType"/>
@@ -9659,7 +9659,7 @@
             </list>
             </para>
             <para>
-            Note Ithat the base type is not strictly enforced by the VectorVariant class itself;
+            Note that the base type is not strictly enforced by the VectorVariant class itself;
             elements of different types can be added. ValueType enforcement depends on the usage context
             and serialization implementation.
             </para>
@@ -9667,10 +9667,10 @@
         </member>
         <member name="M:DocumentModel.VectorVariant.GetEnumerator">
             <summary>
-            Returns an enumerator Ithat iterates through the vector elements.
+            Returns an enumerator that iterates through the vector elements.
             </summary>
             <returns>
-            An <see cref="T:System.Collections.Generic.IEnumerator`1"/> of nullable objects Ithat can be used to iterate through the collection.
+            An <see cref="T:System.Collections.Generic.IEnumerator`1"/> of nullable objects that can be used to iterate through the collection.
             </returns>
             <remarks>
             The enumerator returns elements in the order they were added (or as modified through list operations).
@@ -9679,10 +9679,10 @@
         </member>
         <member name="M:DocumentModel.VectorVariant.System#Collections#IEnumerable#GetEnumerator">
             <summary>
-            Returns an enumerator Ithat iterates through the vector elements.
+            Returns an enumerator that iterates through the vector elements.
             </summary>
             <returns>
-            An <see cref="T:System.Collections.IEnumerator"/> Ithat can be used to iterate through the collection.
+            An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the collection.
             </returns>
             <remarks>
             This is the non-generic version of <see cref="M:DocumentModel.VectorVariant.GetEnumerator"/>, provided to satisfy
@@ -9734,7 +9734,7 @@
             Copies the elements of the vector to an array, starting at a particular array index.
             </summary>
             <param name="array">
-            The one-dimensional array Ithat is the destination of the elements copied from the vector.
+            The one-dimensional array that is the destination of the elements copied from the vector.
             The array must have zero-based indexing.
             </param>
             <param name="arrayIndex">
@@ -9905,7 +9905,7 @@
             <returns>A 32-bit signed integer hash code.</returns>
             <remarks>
             This method delegates to the base class implementation of <see cref="M:System.Object.GetHashCode"/>.
-            For consistent hash code generation Ithat considers the vector's contents, consider
+            For consistent hash code generation that considers the vector's contents, consider
             implementing a custom hash code calculation based on the elements.
             </remarks>
         </member>
@@ -9914,7 +9914,7 @@
             Converts the value of this instance to a string representation using the specified format provider.
             </summary>
             <param name="provider">
-            An <see cref="T:System.IFormatProvider"/> Ithat supplies culture-specific formatting information.
+            An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
             Can be <see langword="null"/> to use the current culture.
             </param>
             <returns>
@@ -9985,7 +9985,7 @@
             The JSON object may have the following properties:
             <list type="bullet">
             <item><description><c>baseType</c>: (optional) A string representing a valid <see cref="T:DocumentModel.VariantType"/> enum value</description></item>
-            <item><description><c>items</c>: An array of values. If baseType is specified, values should match Ithat type</description></item>
+            <item><description><c>items</c>: An array of values. If baseType is specified, values should match that type</description></item>
             </list>
             </para>
             <para>
@@ -10072,7 +10072,7 @@
             <remarks>
             <para>
             <see cref="T:DocumentModel.VStreamData"/> is used in Office Open XML documents to store versioned binary streams
-            such as embedded objects, OLE data, or other binary content Ithat requires version tracking.
+            such as embedded objects, OLE data, or other binary content that requires version tracking.
             This structure encapsulates a version identifier (GUID) and the actual binary data content.
             </para>
             <para>
@@ -10131,7 +10131,7 @@
             Empty elements result in an empty byte array.
             </para>
             <para>
-            The version GUID is typically an OLE CLSID or custom format identifier Ithat
+            The version GUID is typically an OLE CLSID or custom format identifier that
             determines how to interpret the binary stream data.
             </para>
             </remarks>
@@ -10170,7 +10170,7 @@
             Initializes a new instance of the <see cref="T:DocumentModel.VStreamData"/> struct with the specified version GUID and binary data.
             </summary>
             <param name="guid">
-            The GUID Ithat identifies the version or format of the stream data.
+            The GUID that identifies the version or format of the stream data.
             Use <see cref="F:System.Guid.Empty"/> for unversioned or unknown format data.
             </param>
             <param name="data">
@@ -10198,7 +10198,7 @@
         </member>
         <member name="P:DocumentModel.VStreamData.Version">
             <summary>
-            Gets the version GUID Ithat identifies the format or version of the stream data.
+            Gets the version GUID that identifies the format or version of the stream data.
             </summary>
             <value>
             A <see cref="T:System.Guid"/> representing the version identifier, or <see langword="null"/> if not specified.
@@ -10209,11 +10209,11 @@
             <list type="bullet">
             <item><description><b>OLE CLSIDs:</b> Class identifiers for embedded OLE objects (e.g., {00020810-0000-0000-C000-000000000046} for Excel)</description></item>
             <item><description><b>Custom format IDs:</b> IApplication-specific identifiers for proprietary formats</description></item>
-            <item><description><b>IVersion markers:</b> Identifiers Ithat distinguish between format versions</description></item>
+            <item><description><b>IVersion markers:</b> Identifiers that distinguish between format versions</description></item>
             </list>
             </para>
             <para>
-            A value of <see cref="F:System.Guid.Empty"/> indicates Ithat the stream data has no specific version
+            A value of <see cref="F:System.Guid.Empty"/> indicates that the stream data has no specific version
             identifier, which may occur for generic binary data or when version tracking is not required.
             </para>
             <para>
@@ -10273,7 +10273,7 @@
             <para>
             The comparison of the <see cref="P:DocumentModel.VStreamData.Data"/> arrays is performed element-by-element using
             <see cref="M:System.Linq.Enumerable.SequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})"/>,
-            ensuring Ithat both the length and content match exactly.
+            ensuring that both the length and content match exactly.
             </para>
             <para>
             <b>Performance Note:</b> For large data arrays, equality comparison may be expensive
@@ -10297,7 +10297,7 @@
             </list>
             </para>
             <para>
-            This implementation ensures Ithat equal <see cref="T:DocumentModel.VStreamData"/> instances
+            This implementation ensures that equal <see cref="T:DocumentModel.VStreamData"/> instances
             produce the same hash code, satisfying the hash code contract for use in
             hash-based collections like <see cref="T:System.Collections.Generic.IDictionary`2"/> and
             <see cref="T:System.Collections.Generic.HashSet`1"/>.
@@ -10370,7 +10370,7 @@
             </list>
             </para>
             <para>
-            The version GUID typically represents an OLE CLSID or custom format identifier Ithat
+            The version GUID typically represents an OLE CLSID or custom format identifier that
             determines how to interpret the binary stream data. Common formats include:
             <list type="bullet">
             <item><description>OLE object class identifiers (CLSIDs)</description></item>
@@ -10445,7 +10445,7 @@
         </member>
         <member name="T:DocumentModel.SimpleTypeAttribute">
             <summary>
-            Attribute to indicate Ithat a class or struct represents a simple type in the model.
+            Attribute to indicate that a class or struct represents a simple type in the model.
             </summary>
         </member>
         <member name="T:DocumentModel.TSBoolean">
@@ -10762,8 +10762,8 @@
             Converts the current value to an object of the specified type, using the provided format information if necessary.
             </summary>
             <param name="conversionType">The type to which to convert the current value.</param>
-            <param name="provider">An object Ithat supplies culture-specific formatting information, or null to use the current culture.</param>
-            <returns>An object of the specified type Ithat is equivalent to the current value.</returns>
+            <param name="provider">An object that supplies culture-specific formatting information, or null to use the current culture.</param>
+            <returns>An object of the specified type that is equivalent to the current value.</returns>
             <exception cref="T:System.NotImplementedException">Thrown if the specified conversion type is not supported.</exception>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToUInt16(System.IFormatProvider)">
@@ -10799,7 +10799,7 @@
             based on the culture settings provided by the formatProvider.
             If the formatProvider is null, the method should use invariant culture's formatting conventions.
             </summary>
-            <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
             <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,System.IFormatProvider)">
@@ -10811,7 +10811,7 @@
             If the format provider is null, invariant culture's formatting conventions should be applied.
             </summary>
             <param name="format">A standard or custom numeric format string. If null or empty, a default numeric format is used.</param>
-            <param name="formatProvider">An object Ithat supplies culture-specific formatting information.
+            <param name="formatProvider">An object that supplies culture-specific formatting information.
             If null, invariant culture's formatting conventions are used.</param>
             <returns>A string representation of the current length measure,
             formatted according to the specified format string and format provider.</returns>
@@ -10822,7 +10822,7 @@
             </summary>
             <remarks>If the format string is not recognized or is invalid, a FormatException may be thrown. Supported
             format strings may include both standard and custom formats, depending on the implementation.</remarks>
-            <param name="format">A format string Ithat defines how the value should be represented.
+            <param name="format">A format string that defines how the value should be represented.
             If null, a default format is used.</param>
             <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
@@ -10839,7 +10839,7 @@
             Converts the current length measure to its string representation using the specified unit and format provider.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
             <param name="units">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
@@ -10851,9 +10851,9 @@
             Format string should not include unit symbols, as they will be added based on the specified unit parameter.
             If the format string is null or empty, a default numeric format should be used.
             </summary>
-            <param name="format">A standard or custom numeric format string Ithat defines how the value is formatted. If null, the default format is
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is
               used.</param>
-            <param name="formatProvider">An object Ithat supplies culture-specific formatting information. If null, the current culture is used.</param>
+            <param name="formatProvider">An object that supplies culture-specific formatting information. If null, the current culture is used.</param>
             <param name="units">The unit of length to use when formatting the value.</param>
             <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
             provider.</returns>
@@ -10863,13 +10863,13 @@
             Converts the current length value to its string representation using the specified unit and format string.
             The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
             </summary>
-            <param name="format">A standard or custom numeric format string Ithat defines how the value is formatted. If null, the default format is used.</param>
+            <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
             <param name="units">The unit of length to use when formatting the value.</param>
             <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.UnitSuffixed">
             <summary>
-            Suffixes for length UniversalMeasure Ithat can be used in string representations of length measures.
+            Suffixes for length UniversalMeasure that can be used in string representations of length measures.
             The order of the suffixes corresponds to the order of the LengthUnit enum values.
             </summary>
         </member>
@@ -10885,7 +10885,7 @@
             Implicitly converts a UniversalMeasure instance to an Int32 value.
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where an Int32 is
-            expected. Ensure Ithat the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
+            expected. Ensure that the UniversalMeasure value is within the range of Int32 to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Int64">
@@ -10893,7 +10893,7 @@
             Implicitly converts a UniversalMeasure instance to an Int64 value.
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Int64 is
-            expected. Ensure Ithat the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
+            expected. Ensure that the UniversalMeasure value is within the range of Int64 to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.UInt32">
@@ -10901,7 +10901,7 @@
             Implicitly converts a UniversalMeasure instance to a UInt32 value.
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt32 is
-            expected. Ensure Ithat the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
+            expected. Ensure that the UniversalMeasure value is within the range of UInt32 to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.UInt64">
@@ -10909,7 +10909,7 @@
             Implicitly converts a UniversalMeasure instance to a UInt64 value.
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a UInt64 is
-            expected. Ensure Ithat the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
+            expected. Ensure that the UniversalMeasure value is within the range of UInt64 to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Decimal">
@@ -10926,7 +10926,7 @@
             Implicitly converts a UniversalMeasure instance to equivalent Double value
             </summary>
             <remarks>This conversion allows for seamless integration of UniversalMeasure values in contexts where a Double is
-            expected. Ensure Ithat the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>
+            expected. Ensure that the UniversalMeasure value is within the range of Double to avoid overflow.</remarks>
             <param name="value">The UniversalMeasure instance to convert.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.CompareTo(DocumentModel.UniversalMeasure)">

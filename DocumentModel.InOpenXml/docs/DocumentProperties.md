@@ -231,13 +231,24 @@ Adding, updating and deleting built-in properties is done by accessing the corre
 Serialization of **Type** and **Value** properties of **BuiltInProperty** class is implemented using two helper converters:
 **TypeConverter** and **ValueConverter**, defined in **DocumentModel.BaseTypes** assembly.
 
-## AbstractDocumentProperties\<T> class
+## CustomProperties and CustomProperty classes
 
-**BaseBuiltInPropertiesCollection** class inherits from the **AbstractDocumentProperties\<T>** class,
-which is an abstract class that provides common functionality for working with two types of document properties:
-**BuiltInProperties** and **CustomProperties**. 
-The first type represents a collection of **BuiltInProperty** items, 
-while the second type represents a collection of **CustomProperty** items.
+Along with the built-in properties, the document model also supports custom properties, which are user-defined properties that can have any name and value type.
+Custom properties are represented by the **CustomProperties** class, which provides methods for working with a collection of **CustomProperty** items.
+
+**CustomProperty** class declares additional properties to **BuiltInProperty** class.
+These properties include **PropertyId**, **FormatId**, **LinkTarget**, and **VariantValue**.
+* **PropertyId** is a unique identifier for the custom property, which is used to reference the custom property within the document. This is typically an integer value that is incremented for each new custom property added to the document. The first property should have PropertyId = 2.
+* **FormatId** is a unique identifier for the custom property, which is always "D5CDD505-2E9C-101B-9397-08002B2CF9AE".
+* **LinkTarget** is an optional property that specifies a target for the custom property, such as a hyperlink or a reference to another part of the document. This can be used to create relationships between custom properties and other elements in the document.
+* **VariantValue** is a property that is used internally to store and retrieve the value of the custom property in a way that is compatible with the OpenXml SDK, and is not intended to be used directly by users of the document model. However, due to OpenXml conversion requirements, this property must have _public_ access.
+
+**CustomProperties** class provides methods for adding, retrieving, updating, and deleting custom properties in the document.
+It derives from **ModelElementCollection\<CustomProperty, DXCP.Properties, DXCP.CustomDocumentProperty>** class, 
+which provides common functionality for working with collections of model elements, 
+such as adding, removing, and iterating over the elements in the collection, and also provides methods for converting between the model elements and the corresponding OpenXml elements.
+
+## DocumentProperty abstract class
 
 Both types of properties (**BuiltInProperty** and **CustomProperty**) derive from **DocumentProperty** class, 
 which declares common properties for both types of properties, such as **Name**, **Value**, and **Type**.
@@ -256,3 +267,7 @@ The **ExpectedType** property is declared to provide conformance to Word's custo
 which only support these five types of values. This property is tigtly related to the **Type** property.
 If the **Type** property is set to a type that is not supported by Word's custom document properties,
 the **ExpectedType** property will return the corresponding **DocumentPropertyType.Unknown** value.
+
+## DocumentPropertiesCollection\<T> abstract class
+
+Both **BuiltInPropertiesCollection** and **CustomPropertiesCollection** classes derive from **DocumentPropertiesCollection\<T>** abstract class,

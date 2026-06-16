@@ -6,8 +6,8 @@
 /// </summary>
 /// <remarks>
 ///   <para>
-///   HexChar provides a type-safe wrapper for character values Ithat are represented as hexadecimal strings
-///   in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) Ithat can represent
+///   HexChar provides a type-safe wrapper for character values that are represented as hexadecimal strings
+///   in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) that can represent
 ///   any Unicode character in the Basic Multilingual Plane (BMP).
 ///   </para>
 ///   <para>
@@ -141,7 +141,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   ///   A 16-bit unsigned integer (0-65535) representing a character code.
   /// </param>
   /// <remarks>
-  ///   This is the primary constructor Ithat directly stores the character code value.
+  ///   This is the primary constructor that directly stores the character code value.
   ///   It can represent any Unicode character in the Basic Multilingual Plane.
   /// </remarks>
   public HexChar(ushort value)

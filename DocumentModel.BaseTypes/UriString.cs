@@ -24,7 +24,7 @@ public readonly partial struct UriString : IEquatable<UriString>
   /// <summary>
   /// Returns the string representation of the current object.
   /// </summary>
-  /// <returns>A string Ithat represents the current value, or null if the value is not set.</returns>
+  /// <returns>A string that represents the current value, or null if the value is not set.</returns>
   public override string? ToString()
   {
     return value;

@@ -16,7 +16,7 @@ public enum FontCharset
   Default = 0x01,
   /// <summary>
   /// Symbol character set, 
-  /// This value specifies Ithat the characters in the Unicode private use area
+  /// This value specifies that the characters in the Unicode private use area
   /// (U+FF00 to U+FFFF) of the font should be used to display characters 
   /// in the range U+0000 to U+00FF.
   /// </summary>

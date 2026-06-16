@@ -1,17 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes Base64Binary values as Base64-encoded strings.
+///   JSON converter that serializes Base64Binary values as Base64-encoded strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat Base64Binary values are written as simple string values in JSON output
+///   This converter ensures that Base64Binary values are written as simple string values in JSON output
 ///   (e.g., "SGVsbG8=", "/9j/4AAQ") rather than complex objects or byte arrays. During deserialization,
 ///   the converter reads string values and constructs new Base64Binary instances from them.
 ///   </para>
 ///   <para>
 ///   The Base64 string format maintains compatibility with Office Open XML specifications while
-///   providing compact and standard JSON output. The converter validates Ithat input strings contain only
+///   providing compact and standard JSON output. The converter validates that input strings contain only
 ///   valid Base64 characters (A-Z, a-z, 0-9, +, /, =) and proper padding.
 ///   </para>
 ///   <para>

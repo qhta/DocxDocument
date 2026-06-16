@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
+
 namespace DocumentModel;
 
 /// <summary>
@@ -24,16 +26,19 @@ public sealed class CustomPropertyJsonConverter : JsonConverter<DM.CustomPropert
     var propertyIdStr = root.GetProperty("PropertyId").GetString();
     if (!string.IsNullOrEmpty(propertyIdStr)) p.PropertyId = Int32.Parse(propertyIdStr);
 
-    var formatIdStr = root.GetProperty("FormatId").GetString();
-    if (!string.IsNullOrEmpty(formatIdStr)) p.FormatId = Guid.Parse(formatIdStr);
-
-    var TypeName = root.GetProperty("Type").GetString();
+    string? typeName = null;
+    if (root.TryGetProperty("Type", out var typeNameEl))
+      typeName = typeNameEl.ToString();
     Type? targetType = null;
 
-    if (!String.IsNullOrEmpty(TypeName))
+    if (!String.IsNullOrEmpty(typeName))
     {
-      targetType = TypeToStringConverter.ResolveType(TypeName);
+      targetType = TypeToStringConverter.ResolveType(typeName);
     }
+    var linkTarget = root.TryGetProperty("LinkTarget", out var linkTargetEl)
+      ? linkTargetEl.GetString()
+      : null;
+    p.LinkTarget = linkTarget;
 
     if (root.TryGetProperty("Value", out var valueEl))
     {
@@ -45,6 +50,10 @@ public sealed class CustomPropertyJsonConverter : JsonConverter<DM.CustomPropert
         var value = ObjectToStringConverter.ConvertFromString(str!, targetType);
         p.Value = value;
       }
+    }
+    else if (targetType!=null)
+    {
+      p.Type = targetType;
     }
 
     return p;
@@ -60,7 +69,6 @@ public sealed class CustomPropertyJsonConverter : JsonConverter<DM.CustomPropert
   {
     writer.WriteStartObject();
     writer.WriteString("PropertyId",value.PropertyId?.ToString());
-    writer.WriteString("FormatId", value.FormatId?.ToString());
     writer.WriteString("Name", value.Name);
     var type = value.Value?.GetType() ?? value.Type;
     if (type!=null)
@@ -68,11 +76,10 @@ public sealed class CustomPropertyJsonConverter : JsonConverter<DM.CustomPropert
       TypeToStringConverter.RegisterType(type);
       writer.WriteString("Type", type.Name);
     }
-    writer.WritePropertyName("Value");
-
-    if (value.Value is null) writer.WriteNullValue();
-    else 
+    if (!string.IsNullOrEmpty(value.LinkTarget)) writer.WriteString("LinkTarget", value.LinkTarget);
+    if (value.Value!=null)
     {
+      writer.WritePropertyName("Value");
       var str = ObjectToStringConverter.ConvertToString(value.Value);
       JsonSerializer.Serialize(writer, str, typeof(string), options);
     }

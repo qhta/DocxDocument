@@ -6,7 +6,7 @@
 /// <remarks>
 ///   <para>
 ///   HexBinary provides a type-safe wrapper for hexadecimal string values used throughout Office Open XML
-///   documents. Unlike raw strings, HexBinary enforces Ithat all characters are valid hexadecimal digits
+///   documents. Unlike raw strings, HexBinary enforces that all characters are valid hexadecimal digits
 ///   and provides convenient conversion to and from byte arrays for binary data operations.
 ///   </para>
 ///   <para>
@@ -94,7 +94,7 @@ public partial class HexBinary : IEquatable<HexBinary>
 
   /// <summary>
   /// Converts a hexadecimal string to its corresponding byte array representation.
-  /// Removes any dashes and validates Ithat the string length is even.
+  /// Removes any dashes and validates that the string length is even.
   /// </summary>
   /// <param name="val">String to convert</param>
   /// <returns>Array of bytes</returns>

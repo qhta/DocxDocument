@@ -1,17 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes HexByte values as hexadecimal strings.
+///   JSON converter that serializes HexByte values as hexadecimal strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexByte values are written as hexadecimal string values in JSON output
+///   This converter ensures that HexByte values are written as hexadecimal string values in JSON output
 ///   (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
 ///   reads string values and constructs HexByte instances from them.
 ///   </para>
 ///   <para>
 ///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+///   uppercase and lowercase hex digits are accepted, and the converter validates that input strings
 ///   contain only valid hexadecimal characters.
 ///   </para>
 ///   <para>

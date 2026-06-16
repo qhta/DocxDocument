@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines a contract for types Ithat provide access to a WordprocessingDocument instance.
+/// Defines a contract for types that provide access to a WordprocessingDocument instance.
 /// </summary>
 /// <remarks>Implement this interface to enable components to interact with a WordprocessingDocument, such as for
 /// reading or modifying Open XML WordprocessingML documents. The interface does not specify ownership or lifetime

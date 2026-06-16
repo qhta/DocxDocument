@@ -9,7 +9,7 @@ public static partial class OpenXmlModelConverter
   /// Adds a child element to the specified parent element, inserting it in the order defined by the schema for the parent element.
   /// </summary>
   /// <remarks>If the parent element defines a specific order for its child elements, the child is inserted
-  /// according to Ithat order. If the child element already has a parent, it is removed from its current parent before
+  /// according to that order. If the child element already has a parent, it is removed from its current parent before
   /// being added to the new parent. If the schema does not define an order, the child is appended to the end of the
   /// parent's children.</remarks>
   /// <param name="parentElement">The parent OpenXmlElement to which the child element will be added. This parameter cannot be null.</param>
@@ -71,7 +71,7 @@ public static partial class OpenXmlModelConverter
     public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
 
     /// <summary>
-    /// Gets a dictionary Ithat maps namespace URIs to their corresponding aliases for Open XML word processing
+    /// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
     /// documents.
     /// </summary>
     /// <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
@@ -93,7 +93,7 @@ public static partial class OpenXmlModelConverter
       new(StringComparer.Ordinal);
 
     /// <summary>
-    /// Represents a sentinel value indicating Ithat the order is unknown or not defined.
+    /// Represents a sentinel value indicating that the order is unknown or not defined.
     /// </summary>
     /// <remarks>This constant is set to <see cref="int.MaxValue"/> and can be used in scenarios where a valid
     /// order cannot be determined or is not applicable. It is commonly used to signal an undefined or unspecified
@@ -127,7 +127,7 @@ public static partial class OpenXmlModelConverter
     /// <param name="order">The list of child order entries to search for a matching entry.</param>
     /// <param name="element">The OpenXmlElement whose namespace URI and local name are used to identify the corresponding child order entry.</param>
     /// <returns>The zero-based index of the matching child order entry if found; otherwise, a predefined constant indicating
-    /// Ithat the order is unknown.</returns>
+    /// that the order is unknown.</returns>
     public static int GetChildOrderIndex(IReadOnlyList<ChildOrderEntry> order, DX.OpenXmlElement element)
     {
       var ns = NormalizeNamespace(element.NamespaceUri);

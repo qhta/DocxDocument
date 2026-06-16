@@ -1,17 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   JSON converter Ithat serializes HexBinary values as hexadecimal strings.
+///   JSON converter that serializes HexBinary values as hexadecimal strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures Ithat HexBinary values are written as simple string values in JSON output
+///   This converter ensures that HexBinary values are written as simple string values in JSON output
 ///   (e.g., "A1B2C3", "DEADBEEF") rather than complex objects or byte arrays. During deserialization,
 ///   the converter reads string values and constructs new HexBinary instances from them.
 ///   </para>
 ///   <para>
 ///   The hexadecimal string format maintains compatibility with Office Open XML specifications while
-///   providing human-readable JSON output. The converter validates Ithat input strings contain only
+///   providing human-readable JSON output. The converter validates that input strings contain only
 ///   valid hexadecimal characters (0-9, A-F, a-f) and have even length.
 ///   </para>
 ///   <para>

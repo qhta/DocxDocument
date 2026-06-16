@@ -138,7 +138,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent Boolean value.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
@@ -148,7 +148,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 8-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider)
   {
@@ -158,7 +158,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent Unicode character.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A Unicode character equivalent to the value of this instance.</returns>
   public char ToChar(IFormatProvider? provider)
   {
@@ -166,10 +166,10 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
-  /// Converts the value of this instance to an equivalent <see cref="DateTime"/>.
+  /// Converts the value of this instance to an equivalent <see cref="System.DateTime"/>.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
-  /// <returns>A <see cref="DateTime"/> equivalent to the value of this instance.</returns>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+  /// <returns>A <see cref="System.DateTime"/> equivalent to the value of this instance.</returns>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
     throw new NotSupportedException("Conversion from Percent to DateTime is not supported.");
@@ -178,7 +178,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent <see cref="decimal"/> number.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
@@ -188,7 +188,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent double-precision floating-point number.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
@@ -198,7 +198,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 16-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider)
   {
@@ -208,7 +208,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
@@ -218,7 +218,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
@@ -228,7 +228,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 8-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
@@ -238,7 +238,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent single-precision floating-point number.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
@@ -248,7 +248,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation using the specified format provider.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
@@ -258,7 +258,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 16-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
@@ -268,7 +268,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
@@ -278,7 +278,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
@@ -287,10 +287,10 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
 
   /// <summary>
   /// Converts the value of this instance to an <see cref="object"/> of the specified <see cref="Type"/> 
-  /// Ithat has an equivalent value, using the specified culture-specific formatting information.
+  /// that has an equivalent value, using the specified culture-specific formatting information.
   /// </summary>
   /// <param name="targetType">The <see cref="Type"/> to which the value of this instance is converted.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>An <see cref="object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
@@ -469,7 +469,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// </summary>
   /// <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
   /// such as "50%" or "0.5".</param>
-  /// <returns>A Percent instance Ithat represents the value specified by the input string.</returns>
+  /// <returns>A Percent instance that represents the value specified by the input string.</returns>
   public static Percent Parse(string str)
   {
     return new Percent(str);
@@ -530,7 +530,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// and format provider to determine digit separator. Fixed format is used.
   /// </summary>
   /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
   /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
   public string ToString(int precision, IFormatProvider provider, string? unit)
@@ -547,7 +547,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <summary>
   /// Converts value to string using the specified unit and format provider to determine digit separator.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
   /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)

@@ -152,18 +152,18 @@ public static class ObjectToStringConverter
 
   private static string? SingleObjectToString(object? val) => SingleToString((Single?)val);
   private static object? StringToSingleObject(string? str) => StringToSingle(str);
-  private static string? SingleToString(Single? val) => val?.ToString("R");
-  private static Single? StringToSingle(string? str) => String.IsNullOrEmpty(str) ? null : Single.Parse(str);
+  private static string? SingleToString(Single? val) => val?.ToString("R", System.Globalization.CultureInfo.InvariantCulture);
+  private static Single? StringToSingle(string? str) => String.IsNullOrEmpty(str) ? null : Single.Parse(str, System.Globalization.CultureInfo.InvariantCulture);
 
   private static string? DoubleObjectToString(object? val) => DoubleToString((Double?)val);
   private static object? StringToDoubleObject(string? str) => StringToDouble(str);
-  private static string? DoubleToString(Double? val) => val?.ToString("R");
-  private static Double? StringToDouble(string? str) => String.IsNullOrEmpty(str) ? null : Double.Parse(str);
+  private static string? DoubleToString(Double? val) => val?.ToString("R", System.Globalization.CultureInfo.InvariantCulture);
+  private static Double? StringToDouble(string? str) => String.IsNullOrEmpty(str) ? null : Double.Parse(str, System.Globalization.CultureInfo.InvariantCulture);
 
   private static string? DecimalObjectToString(object? val) => DecimalToString((Decimal?)val);
   private static object? StringToDecimalObject(string? str) => StringToDecimal(str);
-  private static string? DecimalToString(Decimal? val) => val?.ToString("R");
-  private static Decimal? StringToDecimal(string? str) => String.IsNullOrEmpty(str) ? null : Decimal.Parse(str);
+  private static string? DecimalToString(Decimal? val) => val?.ToString("R", System.Globalization.CultureInfo.InvariantCulture);
+  private static Decimal? StringToDecimal(string? str) => String.IsNullOrEmpty(str) ? null : Decimal.Parse(str, System.Globalization.CultureInfo.InvariantCulture);
 
   private static string? DateTimeObjectToString(object? val) => DateTimeToString((DateTime?)val);
 

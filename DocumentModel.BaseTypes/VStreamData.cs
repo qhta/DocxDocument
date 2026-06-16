@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// <remarks>
 /// <para>
 /// <see cref="VStreamData"/> is used in Office Open XML documents to store versioned binary streams
-/// such as embedded objects, OLE data, or other binary content Ithat requires version tracking.
+/// such as embedded objects, OLE data, or other binary content that requires version tracking.
 /// This structure encapsulates a version identifier (GUID) and the actual binary data content.
 /// </para>
 /// <para>
@@ -47,7 +47,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// Initializes a new instance of the <see cref="VStreamData"/> struct with the specified version GUID and binary data.
   /// </summary>
   /// <param name="guid">
-  /// The GUID Ithat identifies the version or format of the stream data.
+  /// The GUID that identifies the version or format of the stream data.
   /// Use <see cref="Guid.Empty"/> for unversioned or unknown format data.
   /// </param>
   /// <param name="data">
@@ -79,7 +79,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   }
 
   /// <summary>
-  /// Gets the version GUID Ithat identifies the format or version of the stream data.
+  /// Gets the version GUID that identifies the format or version of the stream data.
   /// </summary>
   /// <value>
   /// A <see cref="Guid"/> representing the version identifier, or <see langword="null"/> if not specified.
@@ -90,11 +90,11 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// <list type="bullet">
   /// <item><description><b>OLE CLSIDs:</b> Class identifiers for embedded OLE objects (e.g., {00020810-0000-0000-C000-000000000046} for Excel)</description></item>
   /// <item><description><b>Custom format IDs:</b> IApplication-specific identifiers for proprietary formats</description></item>
-  /// <item><description><b>IVersion markers:</b> Identifiers Ithat distinguish between format versions</description></item>
+  /// <item><description><b>IVersion markers:</b> Identifiers that distinguish between format versions</description></item>
   /// </list>
   /// </para>
   /// <para>
-  /// A value of <see cref="Guid.Empty"/> indicates Ithat the stream data has no specific version
+  /// A value of <see cref="Guid.Empty"/> indicates that the stream data has no specific version
   /// identifier, which may occur for generic binary data or when version tracking is not required.
   /// </para>
   /// <para>
@@ -154,7 +154,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// <para>
   /// The comparison of the <see cref="Data"/> arrays is performed element-by-element using
   /// <see cref="Enumerable.SequenceEqual{TSource}(IEnumerable{TSource}, IEnumerable{TSource})"/>,
-  /// ensuring Ithat both the length and content match exactly.
+  /// ensuring that both the length and content match exactly.
   /// </para>
   /// <para>
   /// <b>Performance Note:</b> For large data arrays, equality comparison may be expensive
@@ -181,7 +181,7 @@ public readonly partial struct VStreamData : IEquatable<VStreamData>
   /// </list>
   /// </para>
   /// <para>
-  /// This implementation ensures Ithat equal <see cref="VStreamData"/> instances
+  /// This implementation ensures that equal <see cref="VStreamData"/> instances
   /// produce the same hash code, satisfying the hash code contract for use in
   /// hash-based collections like <see cref="IDictionary{TKey,TValue}"/> and
   /// <see cref="HashSet{T}"/>.

@@ -140,39 +140,39 @@ public enum AutoShapeType
   /// </summary>
   RightBrace = 32,
   /// <summary>
-  /// Block arrow Ithat points right.
+  /// Block arrow that points right.
   /// </summary>
   RightArrow = 33,
   /// <summary>
-  /// Block arrow Ithat points left.
+  /// Block arrow that points left.
   /// </summary>
   LeftArrow = 34,
   /// <summary>
-  /// Block arrow Ithat points up.
+  /// Block arrow that points up.
   /// </summary>
   UpArrow = 35,
   /// <summary>
-  /// Block arrow Ithat points down.
+  /// Block arrow that points down.
   /// </summary>
   DownArrow = 36,
   /// <summary>
-  /// Block arrow with arrowheads Ithat point both left and right.
+  /// Block arrow with arrowheads that point both left and right.
   /// </summary>
   LeftRightArrow = 37,
   /// <summary>
-  /// Block arrow Ithat points up and down.
+  /// Block arrow that points up and down.
   /// </summary>
   UpDownArrow = 38,
   /// <summary>
-  /// Block arrows Ithat point up, down, left, and right.
+  /// Block arrows that point up, down, left, and right.
   /// </summary>
   QuadArrow = 39,
   /// <summary>
-  /// Block arrow with arrowheads Ithat point left, right, and up.
+  /// Block arrow with arrowheads that point left, right, and up.
   /// </summary>
   LeftRightUpArrow = 40,
   /// <summary>
-  /// Block arrow Ithat follows a curved 90-degree angle.
+  /// Block arrow that follows a curved 90-degree angle.
   /// </summary>
   BentArrow = 41,
   /// <summary>
@@ -180,35 +180,35 @@ public enum AutoShapeType
   /// </summary>
   UTurnArrow = 42,
   /// <summary>
-  /// Block arrow with arrowheads Ithat point left and up.
+  /// Block arrow with arrowheads that point left and up.
   /// </summary>
   LeftUpArrow = 43,
   /// <summary>
-  /// Block arrow Ithat follows a sharp 90-degree angle. IPoints up by default.
+  /// Block arrow that follows a sharp 90-degree angle. IPoints up by default.
   /// </summary>
   BentUpArrow = 44,
   /// <summary>
-  /// Block arrow Ithat curves right.
+  /// Block arrow that curves right.
   /// </summary>
   CurvedRightArrow = 45,
   /// <summary>
-  /// Block arrow Ithat curves left.
+  /// Block arrow that curves left.
   /// </summary>
   CurvedLeftArrow = 46,
   /// <summary>
-  /// Block arrow Ithat curves up.
+  /// Block arrow that curves up.
   /// </summary>
   CurvedUpArrow = 47,
   /// <summary>
-  /// Block arrow Ithat curves down.
+  /// Block arrow that curves down.
   /// </summary>
   CurvedDownArrow = 48,
   /// <summary>
-  /// Block arrow Ithat points right with stripes at the tail.
+  /// Block arrow that points right with stripes at the tail.
   /// </summary>
   StripedRightArrow = 49,
   /// <summary>
-  /// Notched block arrow Ithat points right.
+  /// Notched block arrow that points right.
   /// </summary>
   NotchedRightArrow = 50,
   /// <summary>
@@ -220,35 +220,35 @@ public enum AutoShapeType
   /// </summary>
   Chevron = 52,
   /// <summary>
-  /// Callout with arrow Ithat points right.
+  /// Callout with arrow that points right.
   /// </summary>
   RightArrowCallout = 53,
   /// <summary>
-  /// Callout with arrow Ithat points left.
+  /// Callout with arrow that points left.
   /// </summary>
   LeftArrowCallout = 54,
   /// <summary>
-  /// Callout with arrow Ithat points up.
+  /// Callout with arrow that points up.
   /// </summary>
   UpArrowCallout = 55,
   /// <summary>
-  /// Callout with arrow Ithat points down.
+  /// Callout with arrow that points down.
   /// </summary>
   DownArrowCallout = 56,
   /// <summary>
-  /// Callout with arrowheads Ithat point both left and right.
+  /// Callout with arrowheads that point both left and right.
   /// </summary>
   LeftRightArrowCallout = 57,
   /// <summary>
-  /// Callout with arrows Ithat point up and down.
+  /// Callout with arrows that point up and down.
   /// </summary>
   UpDownArrowCallout = 58,
   /// <summary>
-  /// Callout with arrows Ithat point up, down, left, and right.
+  /// Callout with arrows that point up, down, left, and right.
   /// </summary>
   QuadArrowCallout = 59,
   /// <summary>
-  /// Block arrow Ithat follows a curved 180-degree angle.
+  /// Block arrow that follows a curved 180-degree angle.
   /// </summary>
   CircularArrow = 60,
   /// <summary>
@@ -404,11 +404,11 @@ public enum AutoShapeType
   /// </summary>
   DownRibbon = 98,
   /// <summary>
-  /// Ribbon banner Ithat curves up.
+  /// Ribbon banner that curves up.
   /// </summary>
   CurvedUpRibbon = 99,
   /// <summary>
-  /// Ribbon banner Ithat curves down.
+  /// Ribbon banner that curves down.
   /// </summary>
   CurvedDownRibbon = 100,
   /// <summary>

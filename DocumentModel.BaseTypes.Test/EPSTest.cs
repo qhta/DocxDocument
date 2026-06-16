@@ -104,7 +104,7 @@ public static class EPSTest
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate Ithat EPS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestEPSUnitConversions()
   {
@@ -214,8 +214,8 @@ public static class EPSTest
   /// Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
   /// </summary>
   /// <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
-  /// to ensure Ithat the original and deserialized data are equivalent. The serialized XML is written to the console for
-  /// inspection. Use this method to validate Ithat changes to the EPSTestData structure or serialization logic do not
+  /// to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
+  /// inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
   /// break XML compatibility.</remarks>
   /// <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
   /// otherwise, false.</returns>
@@ -264,8 +264,8 @@ public static class EPSTest
   /// Tests the serialization and deserialization of EPS test data to and from JSON format.
   /// </summary>
   /// <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
-  /// deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies Ithat
-  /// the deserialized data matches the original. Use this method to validate Ithat EPS data can be accurately
+  /// deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
+  /// the deserialized data matches the original. Use this method to validate that EPS data can be accurately
   /// round-tripped using JSON serialization.</remarks>
   /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
   /// verified; otherwise, false.</returns>
@@ -320,7 +320,7 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Verifies Ithat the deserialized data matches the expected test data by comparing relevant properties.
+  /// Verifies that the deserialized data matches the expected test data by comparing relevant properties.
   /// </summary>
   /// <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
   /// LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
@@ -377,7 +377,7 @@ public static class EPSTest
   /// <summary>
   /// Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
   /// </summary>
-  /// <remarks>This method is intended for use in test scenarios Ithat require consistent and repeatable
+  /// <remarks>This method is intended for use in test scenarios that require consistent and repeatable
   /// typographic settings. All values are specified in EPS units and may need to be converted for use in other
   /// measurement systems.</remarks>
   /// <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset

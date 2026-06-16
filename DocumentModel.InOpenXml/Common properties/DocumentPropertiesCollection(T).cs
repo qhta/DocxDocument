@@ -5,22 +5,22 @@ namespace DocumentModel;
 /// and BaseCustomDocumentProperties.
 /// </summary>
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
-public abstract partial class AbstractDocumentProperties<DocumentPropertyType>: 
-  ModelElement<DX.OpenXmlElement>, IDocumentProperties<DocumentPropertyType>
-where DocumentPropertyType: DocumentProperty
+public abstract partial class DocumentPropertiesCollection<T>: 
+  ModelElement<DX.OpenXmlElement>, IDocumentProperties<T>
+where T: DocumentProperty
 {
   /// <summary>
   /// Attempts to add a document property to the collection.
   /// </summary>
   /// <param name="item">The document property to add.</param>
   /// <returns>True if the property was added successfully; otherwise, false.</returns>
-  public abstract bool TryAdd(DocumentPropertyType item);
+  public abstract bool TryAdd(T item);
 
   /// <summary>
   /// Returns an enumerator that iterates through the collection of document properties.  
   /// </summary>
   /// <returns>An enumerator that can be used to iterate through the collection.</returns>
-  public abstract IEnumerator<DocumentPropertyType> GetEnumerator();
+  public abstract IEnumerator<T> GetEnumerator();
 
   IEnumerator IEnumerable.GetEnumerator()
   {
@@ -31,7 +31,7 @@ where DocumentPropertyType: DocumentProperty
   /// Adds a document property to the collection. If a property with the same name already exists, it will be replaced.
   /// </summary>
   /// <param name="item">The document property to add.</param>
-  public abstract void Add(DocumentPropertyType item);
+  public abstract void Add(T item);
 
   /// <summary>
   /// Removes all document properties from the collection by setting their values to null. The properties themselves are not removed from the collection, but their values are cleared, effectively resetting the collection to an empty state.
@@ -42,7 +42,7 @@ where DocumentPropertyType: DocumentProperty
   /// </summary>
   /// <param name="item">The document property to locate in the collection.</param>
   /// <returns>True if the property is found; otherwise, false.</returns> 
-  public abstract bool Contains(DocumentPropertyType item);
+  public abstract bool Contains(T item);
 
   /// <summary>
   /// Copies the elements of the collection to an array, starting at a particular array index.
@@ -51,7 +51,7 @@ where DocumentPropertyType: DocumentProperty
   /// </summary>
   /// <param name="array">The destination array.</param>
   /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  public abstract void CopyTo(DocumentPropertyType[] array, int arrayIndex);
+  public abstract void CopyTo(T[] array, int arrayIndex);
 
   /// <summary>
   /// Removes a specific document property from the collection.
@@ -61,7 +61,7 @@ where DocumentPropertyType: DocumentProperty
   /// </summary>
   /// <param name="item">The document property to remove from the collection.</param>
   /// <returns>True if the property was successfully removed; otherwise, false.</returns>
-  public abstract bool Remove(DocumentPropertyType item);
+  public abstract bool Remove(T item);
   /// <summary>
   /// Gets the number of document properties in the collection.
   /// </summary>

@@ -44,7 +44,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
   /// The JSON object may have the following properties:
   /// <list type="bullet">
   /// <item><description><c>baseType</c>: (optional) A string representing a valid <see cref="VariantType"/> enum value</description></item>
-  /// <item><description><c>items</c>: An array of values. If baseType is specified, values should match Ithat type</description></item>
+  /// <item><description><c>items</c>: An array of values. If baseType is specified, values should match that type</description></item>
   /// </list>
   /// </para>
   /// <para>

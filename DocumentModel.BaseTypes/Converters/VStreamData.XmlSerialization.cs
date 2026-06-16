@@ -39,7 +39,7 @@ public partial struct VStreamData : IXmlSerializable
   /// Empty elements result in an empty byte array.
   /// </para>
   /// <para>
-  /// The version GUID is typically an OLE CLSID or custom format identifier Ithat
+  /// The version GUID is typically an OLE CLSID or custom format identifier that
   /// determines how to interpret the binary stream data.
   /// </para>
   /// </remarks>

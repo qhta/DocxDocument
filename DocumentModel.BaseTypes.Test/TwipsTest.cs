@@ -104,7 +104,7 @@ public static class TwipsTest
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate Ithat Twips-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that Twips-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
   static bool TestTwipsUnitConversions()
   {
@@ -250,7 +250,7 @@ public static class TwipsTest
   }
 
   /// <summary>
-  /// Verifies Ithat the deserialized TwipsTestData matches the original test data. It checks each property for equality
+  /// Verifies that the deserialized TwipsTestData matches the original test data. It checks each property for equality
   /// and outputs diagnostic information to the console for any discrepancies.
   /// </summary>
   /// <param name="deserializedData">The deserialized TwipsTestData object.</param>
@@ -301,7 +301,7 @@ public static class TwipsTest
   /// Tests the JSON serialization and deserialization process for TwipsTestData objects to ensure data integrity.
   /// </summary>
   /// <remarks>This method creates a TwipsTestData instance, serializes it to a JSON string, and then
-  /// deserializes it back to verify Ithat the original and resulting objects are equivalent. The serialized JSON output
+  /// deserializes it back to verify that the original and resulting objects are equivalent. The serialized JSON output
   /// is written to the console for inspection.</remarks>
   /// <returns>true if the serialized and deserialized data match and the test passes; otherwise, false.</returns>
   static bool TestTwipsJsonSerialization()
@@ -338,7 +338,7 @@ public static class TwipsTest
   /// Creates a new instance of the TwipsTestData class initialized with standard page dimensions, margins, font size,
   /// and spacing values for testing purposes.
   /// </summary>
-  /// <remarks>This method is intended for use in test scenarios Ithat require consistent and representative
+  /// <remarks>This method is intended for use in test scenarios that require consistent and representative
   /// document layout data. All values are specified in twips, a unit commonly used in document formatting.</remarks>
   /// <returns>A TwipsTestData object populated with predefined values for page width, page height, margins, font size, line
   /// spacing, and additional test values.</returns>

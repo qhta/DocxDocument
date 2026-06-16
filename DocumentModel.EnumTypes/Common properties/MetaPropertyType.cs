@@ -37,7 +37,7 @@ public enum MetaPropertyType
   /// </summary>
   DateTime,
   /// <summary>
-  /// Represents a value from two or more choices Ithat is written-in by the user.
+  /// Represents a value from two or more choices that is written-in by the user.
   /// </summary>
   FillInChoice,
   /// <summary>
@@ -61,7 +61,7 @@ public enum MetaPropertyType
   /// </summary>
   MultiChoice,
   /// <summary>
-  /// Represents a collection of choices Ithat require the user to write-in a value.
+  /// Represents a collection of choices that require the user to write-in a value.
   /// </summary>
   MultiChoiceFillIn,
   /// <summary>

@@ -236,7 +236,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.Constants.Undefined">
             <summary>
-            Represents an undefined value. wdForward 1073741823Indicates Ithat selection will be extended forward using the
+            Represents an undefined value. wdForward 1073741823Indicates that selection will be extended forward using the
             MoveStartUntil or MoveStartWhile method of the IRange or ISelection object. wdCreatorCode1297307460Represents
             the creator code for objects Icreated by Microsoft Word.
             </summary>
@@ -868,7 +868,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.OpenFormat.AllWord">
             <summary>
-            A Microsoft Word format Ithat is backward compatible with earlier versions of Microsoft Word.
+            A Microsoft Word format that is backward compatible with earlier versions of Microsoft Word.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.OpenFormat.WebPages">
@@ -2817,7 +2817,7 @@
         </member>
         <member name="T:DocumentModel.Wordprocessing.XlTrendlineType">
             <summary>
-            Specifies how the trendline Ithat smoothes out fluctuations in the data is calculated.
+            Specifies how the trendline that smoothes out fluctuations in the data is calculated.
             </summary>
             <remarks>
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltrendlinetype?view=office-pia` for Office interop details.
@@ -2883,36 +2883,36 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.ParagraphAlignment.Left">
             <summary>
-            Specifies Ithat the leftmost character of each line is aligned to the left margin, and the right edge of each line
+            Specifies that the leftmost character of each line is aligned to the left margin, and the right edge of each line
             is ragged. This is the default alignment for paragraphs with left-to-right text direction.
             </summary>
             <summary>
-            Specifies Ithat the leftmost character of each line is aligned to the left margin, and the right edge of each
+            Specifies that the leftmost character of each line is aligned to the left margin, and the right edge of each
             line is ragged. This is the default alignment for paragraphs with left-to-right text direction.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.ParagraphAlignment.Center">
             <summary>
-            Specifies Ithat the center of each line of text is aligned to the midpoint of the right and left text box
+            Specifies that the center of each line of text is aligned to the midpoint of the right and left text box
             margins, and the left and right edges of each line are ragged.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.ParagraphAlignment.Right">
             <summary>
-            Specifies Ithat the rightmost character of each line is aligned to the right margin, and the left edge of each
+            Specifies that the rightmost character of each line is aligned to the right margin, and the left edge of each
             line is ragged. This is the default alignment for paragraphs with right-to-left text direction.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.ParagraphAlignment.Justify">
             <summary>
-            Specifies Ithat the first and last characters of each line (except the last) are aligned to the left and right
+            Specifies that the first and last characters of each line (except the last) are aligned to the left and right
             margins, and lines are filled by adding or subtracting space between and within words. The last line of the
             paragraph is aligned to the left margin if text direction is left-to-right, or to the right margin if text
-            direction is right-to-left. msoAlignDistribute5 Specifies Ithat the first and last characters of each line
+            direction is right-to-left. msoAlignDistribute5 Specifies that the first and last characters of each line
             (except the last) are aligned to the left and right margins, and lines are filled by adding or subtracting the
             same amount from each character. The last line of public enum class ParagraphAlignment ďľ‰ Expand table the
             paragraph is aligned to the left margin if text direction is left-to- right, or to the right margin if text
-            direction is right-to-left. msoAlignThaiDistribute6 Specifies Ithat the first and last characters of each line
+            direction is right-to-left. msoAlignThaiDistribute6 Specifies that the first and last characters of each line
             (except the last) are aligned to the left and right margins, and lines are filled by adding or subtracting
             space between (but not within) words. The last line of the paragraph is aligned to the left margin.
             msoAlignJustifyLow7 Specifies the alignment or adjustment of kashida length in Arabic text. Kashida are
@@ -2921,7 +2921,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.ParagraphAlignment.Distribute">
             <summary>
-            Specifies Ithat the first and last characters of each line (except the last) are aligned to the left
+            Specifies that the first and last characters of each line (except the last) are aligned to the left
             and right margins,  and lines are filled by adding or subtracting the same amount from each character.
             The last line of the paragraph is aligned to the left margin if text direction is left-to-right,
             or to the right margin if text direction is right-to-left.
@@ -3781,7 +3781,7 @@
         <member name="T:DocumentModel.Wordprocessing.WrapSide">
             <summary>
             Specifies whether the document text should wrap on both sides of the specified shape, on either the left or
-            right side only, or on the side of the shape Ithat is farthest from the page margin.
+            right side only, or on the side of the shape that is farthest from the page margin.
             </summary>
             <remarks>
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
@@ -3804,7 +3804,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.WrapSide.Largest">
             <summary>
-            Side of the shape Ithat is farthest from the page margin.
+            Side of the shape that is farthest from the page margin.
             </summary>
         </member>
         <member name="T:DocumentModel.Wordprocessing.WrapType">
@@ -3915,7 +3915,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.HelpType.UsingHelp">
             <summary>
-            Displays a list of Help topics Ithat describe how to use Help.
+            Displays a list of Help topics that describe how to use Help.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.HelpType.Ichitaro">
@@ -3958,7 +3958,7 @@
         </member>
         <member name="T:DocumentModel.Wordprocessing.BrowseTarget">
             <summary>
-            Specifies the document item Ithat the Next or Previous method locates, and places the insertion point before
+            Specifies the document item that the Next or Previous method locates, and places the insertion point before
             the next or previous instance of the item.
             </summary>
             <remarks>
@@ -23789,7 +23789,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlPivotFieldOrientation.Hidden">
             <summary>
-            Specifies Ithat the field is hidden.
+            Specifies that the field is hidden.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.Charts.XlPivotFieldOrientation.PageField">
@@ -25610,7 +25610,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.Diagrams.OrgChartLayoutType.Standard">
             <summary>
-            Return value for a parent node Ithat has children formatted using more than one OrgChartLayoutType.
+            Return value for a parent node that has children formatted using more than one OrgChartLayoutType.
             </summary>
             <summary>
             Places child nodes horizontally below the parent node.
@@ -26454,8 +26454,8 @@
         </member>
         <member name="F:DocumentModel.Drawings.TextChangeCase.Sentence">
             <summary>
-            Display the text as sentence case characters. Sentence case specifies Ithat the first letter of the sentence is
-            capitalized and Ithat all others should be lowercase (with some exceptions such as proper nouns, and acronyms).
+            Display the text as sentence case characters. Sentence case specifies that the first letter of the sentence is
+            capitalized and that all others should be lowercase (with some exceptions such as proper nouns, and acronyms).
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextChangeCase.Lower">
@@ -26470,14 +26470,14 @@
         </member>
         <member name="F:DocumentModel.Drawings.TextChangeCase.Title">
             <summary>
-            Display the text as title case characters. Title case specifies Ithat the first letter of each word is
-            capitalized and Ithat all others should be lowercase. In some cases short articles, prepositions, and
+            Display the text as title case characters. Title case specifies that the first letter of each word is
+            capitalized and that all others should be lowercase. In some cases short articles, prepositions, and
             conjunctions are not capitalized.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextChangeCase.Toggle">
             <summary>
-            Indicates Ithat lowercase text should be converted to uppercase and Ithat uppercase text should be converted to
+            Indicates that lowercase text should be converted to uppercase and that uppercase text should be converted to
             lowercase text.
             </summary>
         </member>
@@ -26613,12 +26613,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.Wordprocessing.VerticalAlignment.Inside">
             <summary>
-            Indicates Ithat the element is located inside the specified boundary or region.
+            Indicates that the element is located inside the specified boundary or region.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.Wordprocessing.VerticalAlignment.Outside">
             <summary>
-            Indicates Ithat the element is positioned outside the defined area or boundary.
+            Indicates that the element is positioned outside the defined area or boundary.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.AlignCmd">
@@ -26964,47 +26964,47 @@
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.RightArrow">
             <summary>
-            Block arrow Ithat points right.
+            Block arrow that points right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftArrow">
             <summary>
-            Block arrow Ithat points left.
+            Block arrow that points left.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.UpArrow">
             <summary>
-            Block arrow Ithat points up.
+            Block arrow that points up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.DownArrow">
             <summary>
-            Block arrow Ithat points down.
+            Block arrow that points down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftRightArrow">
             <summary>
-            Block arrow with arrowheads Ithat point both left and right.
+            Block arrow with arrowheads that point both left and right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.UpDownArrow">
             <summary>
-            Block arrow Ithat points up and down.
+            Block arrow that points up and down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.QuadArrow">
             <summary>
-            Block arrows Ithat point up, down, left, and right.
+            Block arrows that point up, down, left, and right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftRightUpArrow">
             <summary>
-            Block arrow with arrowheads Ithat point left, right, and up.
+            Block arrow with arrowheads that point left, right, and up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.BentArrow">
             <summary>
-            Block arrow Ithat follows a curved 90-degree angle.
+            Block arrow that follows a curved 90-degree angle.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.UTurnArrow">
@@ -27014,42 +27014,42 @@
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftUpArrow">
             <summary>
-            Block arrow with arrowheads Ithat point left and up.
+            Block arrow with arrowheads that point left and up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.BentUpArrow">
             <summary>
-            Block arrow Ithat follows a sharp 90-degree angle. IPoints up by default.
+            Block arrow that follows a sharp 90-degree angle. IPoints up by default.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedRightArrow">
             <summary>
-            Block arrow Ithat curves right.
+            Block arrow that curves right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedLeftArrow">
             <summary>
-            Block arrow Ithat curves left.
+            Block arrow that curves left.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedUpArrow">
             <summary>
-            Block arrow Ithat curves up.
+            Block arrow that curves up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedDownArrow">
             <summary>
-            Block arrow Ithat curves down.
+            Block arrow that curves down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.StripedRightArrow">
             <summary>
-            Block arrow Ithat points right with stripes at the tail.
+            Block arrow that points right with stripes at the tail.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.NotchedRightArrow">
             <summary>
-            Notched block arrow Ithat points right.
+            Notched block arrow that points right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.Pentagon">
@@ -27064,42 +27064,42 @@
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.RightArrowCallout">
             <summary>
-            Callout with arrow Ithat points right.
+            Callout with arrow that points right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftArrowCallout">
             <summary>
-            Callout with arrow Ithat points left.
+            Callout with arrow that points left.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.UpArrowCallout">
             <summary>
-            Callout with arrow Ithat points up.
+            Callout with arrow that points up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.DownArrowCallout">
             <summary>
-            Callout with arrow Ithat points down.
+            Callout with arrow that points down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.LeftRightArrowCallout">
             <summary>
-            Callout with arrowheads Ithat point both left and right.
+            Callout with arrowheads that point both left and right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.UpDownArrowCallout">
             <summary>
-            Callout with arrows Ithat point up and down.
+            Callout with arrows that point up and down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.QuadArrowCallout">
             <summary>
-            Callout with arrows Ithat point up, down, left, and right.
+            Callout with arrows that point up, down, left, and right.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CircularArrow">
             <summary>
-            Block arrow Ithat follows a curved 180-degree angle.
+            Block arrow that follows a curved 180-degree angle.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.FlowchartProcess">
@@ -27294,12 +27294,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedUpRibbon">
             <summary>
-            Ribbon banner Ithat curves up.
+            Ribbon banner that curves up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.CurvedDownRibbon">
             <summary>
-            Ribbon banner Ithat curves down.
+            Ribbon banner that curves down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.AutoShapeType.VerticalScroll">
@@ -29583,7 +29583,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.DateTimeFormat.Auto">
             <summary>
-            Specifies Ithat the Office application will determine the format.
+            Specifies that the Office application will determine the format.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.DiagramBuildStep">
@@ -29922,12 +29922,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.HyperlinkColor.HLink">
             <summary>
-              IHyperlink color. Indicates Ithat the standard hyperlink color is applied.
+              IHyperlink color. Indicates that the standard hyperlink color is applied.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.HyperlinkColor.Tx">
             <summary>
-              Text color. Indicates Ithat the hyperlink uses the surrounding text color.
+              Text color. Indicates that the hyperlink uses the surrounding text color.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.IodGroup">
@@ -30495,7 +30495,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.MergeCmd.Fragment">
             <summary>
-            IBreaks a shape into smaller parts or create new shapes from intersecting lines or from shapes Ithat overlap.
+            IBreaks a shape into smaller parts or create new shapes from intersecting lines or from shapes that overlap.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.MixedType">
@@ -31064,7 +31064,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.PatternType.Sphere">
             <summary>
-            Circles Ithat use foreground and background colors to make them appear three-dimensional, oriented in rows
+            Circles that use foreground and background colors to make them appear three-dimensional, oriented in rows
             across the shape.
             </summary>
         </member>
@@ -31655,7 +31655,7 @@
         </member>
         <member name="T:DocumentModel.Drawings.PresetExtrusionDirection">
             <summary>
-            Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
+            Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
             the extrusion).
             </summary>
             <remarks>
@@ -31664,7 +31664,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.PresetExtrusionDirection.BottomRight">
             <summary>
-            Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
+            Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
             the extrusion).
             </summary>
             <summary>
@@ -32758,12 +32758,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.ArchUpCurve">
             <summary>
-            Text is an arch Ithat curves up.
+            Text is an arch that curves up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.ArchDownCurve">
             <summary>
-            Text is an arch Ithat curves down.
+            Text is an arch that curves down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.CircleCurve">
@@ -32778,12 +32778,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.ArchUpPour">
             <summary>
-            Text is a 3-D arch Ithat curves up.
+            Text is a 3-D arch that curves up.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.ArchDownPour">
             <summary>
-            Text is a 3-D arch Ithat curves down.
+            Text is a 3-D arch that curves down.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.CirclePour">
@@ -32828,12 +32828,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.DoubleWave1">
             <summary>
-            Text follows a line Ithat curves up, then down, then up and down again.
+            Text follows a line that curves up, then down, then up and down again.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.DoubleWave2">
             <summary>
-            Text follows a line Ithat curves down, then up, then down and up again.
+            Text follows a line that curves down, then up, then down and up again.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.Inflate">
@@ -32850,7 +32850,7 @@
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.InflateBottom">
             <summary>
             IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
-            Ithat curves downward.
+            that curves downward.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.DeflateBottom">
@@ -32862,7 +32862,7 @@
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.InflateTop">
             <summary>
             IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
-            Ithat curves upward.
+            that curves upward.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.PresetTextEffectShape.DeflateTop">
@@ -33238,7 +33238,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.RectangleType.MarkupRectangleButton">
             <summary>
-            Represents a space occupied by the more (...) indicator Ithat appears in a comment balloon when there is
+            Represents a space occupied by the more (...) indicator that appears in a comment balloon when there is
             additional text for the comment.
             </summary>
         </member>
@@ -33249,7 +33249,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.RectangleType.LineBetweenColumnRectangle">
             <summary>
-            Represents a region corresponding to a line Ithat separates columns.
+            Represents a region corresponding to a line that separates columns.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.RectangleType.ISelection">
@@ -34671,7 +34671,7 @@
         </member>
         <member name="F:DocumentModel.Drawings.TextCharWrap.StrictCharWrap">
             <summary>
-            Specifies text wrapping Ithat adheres to restrictions imposed by some languages such as Chinese and Japanese
+            Specifies text wrapping that adheres to restrictions imposed by some languages such as Chinese and Japanese
             alphabets.
             </summary>
         </member>
@@ -34731,30 +34731,30 @@
         </member>
         <member name="F:DocumentModel.Drawings.TextFontAlign.Auto">
             <summary>
-            Specifies Ithat there is a mix of text alignments used with the object.
+            Specifies that there is a mix of text alignments used with the object.
             </summary>
             <summary>
-            Specifies Ithat the text alignment will be determined by the Office application.
+            Specifies that the text alignment will be determined by the Office application.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextFontAlign.Top">
             <summary>
-            Specifies Ithat the font is aligned to the top of the object.
+            Specifies that the font is aligned to the top of the object.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextFontAlign.Center">
             <summary>
-            Specifies Ithat the font is aligned to the center of the object.
+            Specifies that the font is aligned to the center of the object.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextFontAlign.Baseline">
             <summary>
-            Specifies Ithat the font is aligned to the baseline of the object.
+            Specifies that the font is aligned to the baseline of the object.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextFontAlign.Bottom">
             <summary>
-            Specifies Ithat the font is aligned to the bottom of the object.
+            Specifies that the font is aligned to the bottom of the object.
             </summary>
         </member>
         <member name="T:DocumentModel.Drawings.TextFontAlignment">
@@ -34812,27 +34812,27 @@
         </member>
         <member name="F:DocumentModel.Drawings.TextTabAlign.Left">
             <summary>
-            Specifies Ithat mixed text alignment against tab stops is used.
+            Specifies that mixed text alignment against tab stops is used.
             </summary>
             <summary>
-            Specifies Ithat the following text starts immediately after the designated tab stop.
+            Specifies that the following text starts immediately after the designated tab stop.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextTabAlign.Center">
             <summary>
-            Specifies Ithat the following text up to next tab or line break is centered on the designated tab stop.
+            Specifies that the following text up to next tab or line break is centered on the designated tab stop.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextTabAlign.Right">
             <summary>
-            Specifies Ithat the following text up to the next tab or line break is rendered flush right to the designated
+            Specifies that the following text up to the next tab or line break is rendered flush right to the designated
             tab stop.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextTabAlign.Decimal">
             <summary>
-            Specifies Ithat the following text is searched for the first occurrence of the character representing the
-            decimal point. The text up to the next tab or line break is then aligned such Ithat the decimal point starts at
+            Specifies that the following text is searched for the first occurrence of the character representing the
+            decimal point. The text up to the next tab or line break is then aligned such that the decimal point starts at
             the designated tab stop.
             </summary>
         </member>
@@ -36612,17 +36612,17 @@
         </member>
         <member name="T:DocumentModel.OnOff">
             <summary>
-            On-off enumeration for properties Ithat can be enabled or disabled
+            On-off enumeration for properties that can be enabled or disabled
             </summary>
         </member>
         <member name="F:DocumentModel.OnOff.On">
             <summary>
-            Property is enabled or turned on, indicating Ithat the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+            Property is enabled or turned on, indicating that the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings that may apply when the property is undefined.
             </summary>
         </member>
         <member name="F:DocumentModel.OnOff.Off">
             <summary>
-            Property is disabled or turned off, indicating Ithat the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+            Property is disabled or turned off, indicating that the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings that may apply when the property is undefined.
             </summary>
         </member>
         <member name="T:DocumentModel.OnOffTools">
@@ -36648,22 +36648,22 @@
         </member>
         <member name="T:DocumentModel.OnOffToggle">
             <summary>
-            On-off enumeration for properties Ithat can be enabled, disabled, or toggled.
+            On-off enumeration for properties that can be enabled, disabled, or toggled.
             </summary>
         </member>
         <member name="F:DocumentModel.OnOffToggle.On">
             <summary>
-            Property is enabled or turned on, indicating Ithat the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+            Property is enabled or turned on, indicating that the associated feature or behavior is active. This value explicitly sets the property to an active state, overriding any default or inherited settings that may apply when the property is undefined.
             </summary>
         </member>
         <member name="F:DocumentModel.OnOffToggle.Off">
             <summary>
-            Property is disabled or turned off, indicating Ithat the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings Ithat may apply when the property is undefined.
+            Property is disabled or turned off, indicating that the associated feature or behavior is inactive. This value explicitly sets the property to an inactive state, overriding any default or inherited settings that may apply when the property is undefined.
             </summary>
         </member>
         <member name="F:DocumentModel.OnOffToggle.Toggle">
             <summary>
-            Property is toggled, indicating Ithat the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows for dynamic changes to the property state without needing to specify the exact desired state.
+            Property is toggled, indicating that the state of the property should be switched from its current value. When this value is used, the system will determine the new state by inverting the current state of the property (e.g., if it is currently on, it will be turned off, and vice versa). This allows for dynamic changes to the property state without needing to specify the exact desired state.
             </summary>
         </member>
         <member name="T:DocumentModel.OnOffToggleTools">
@@ -38850,7 +38850,7 @@
         </member>
         <member name="F:DocumentModel.Properties.MetaPropertyType.FillInChoice">
             <summary>
-            Represents a value from two or more choices Ithat is written-in by the user.
+            Represents a value from two or more choices that is written-in by the user.
             </summary>
         </member>
         <member name="F:DocumentModel.Properties.MetaPropertyType.Guid">
@@ -38880,7 +38880,7 @@
         </member>
         <member name="F:DocumentModel.Properties.MetaPropertyType.MultiChoiceFillIn">
             <summary>
-            Represents a collection of choices Ithat require the user to write-in a value.
+            Represents a collection of choices that require the user to write-in a value.
             </summary>
         </member>
         <member name="F:DocumentModel.Properties.MetaPropertyType.Note">
@@ -39058,34 +39058,34 @@
         </member>
         <member name="T:DocumentModel.DocumentSecurity">
             <summary>
-            Specifies the security features or restrictions Ithat can be applied to a document.
+            Specifies the security features or restrictions that can be applied to a document.
             </summary>
             <remarks>This enumeration is bitwise-combinable.
             It decodes ExtendedFileProperties.DocumentSecurity int value.</remarks>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.None">
             <summary>
-            Indicates Ithat no value is specified or Ithat no options are selected.
+            Indicates that no value is specified or that no options are selected.
             </summary>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.ReadOnly">
             <summary>
-            Indicates Ithat the document is read-only.
+            Indicates that the document is read-only.
             </summary>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.PasswordProtected">
             <summary>
-            Indicates Ithat the document is protected by a password.
+            Indicates that the document is protected by a password.
             </summary>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.RestrictedEditing">
             <summary>
-            Indicates Ithat the document is restricted for editing.
+            Indicates that the document is restricted for editing.
             </summary>
         </member>
         <member name="F:DocumentModel.DocumentSecurity.LockedForAnnotations">
             <summary>
-            Indicates Ithat the document is locked for annotations.
+            Indicates that the document is locked for annotations.
             </summary>
         </member>
         <member name="T:DocumentModel.HyperlinkAction">
@@ -39225,7 +39225,7 @@
         </member>
         <member name="T:DocumentModel.CustomUI.BackstageGroupStyle">
             <summary>
-            Specifies constants Ithat define the styles of the groups on the File tab.
+            Specifies constants that define the styles of the groups on the File tab.
             </summary>
             <remarks>
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.backstagegroupstyle?view=office-pia` for Office interop details.
@@ -39480,18 +39480,18 @@
         </member>
         <member name="F:DocumentModel.CustomXml.CustomXMLValidationErrorType.SchemaGenerated">
             <summary>
-            Specifies Ithat where there is a non-empty schema collection available for the custom XML part and validation
+            Specifies that where there is a non-empty schema collection available for the custom XML part and validation
             is in effect, any changes to the part will cause validation errors.
             </summary>
         </member>
         <member name="F:DocumentModel.CustomXml.CustomXMLValidationErrorType.AutomaticallyCleared">
             <summary>
-            Specifies Ithat the error will clear itself whenever any change is made to the node it is bound to.
+            Specifies that the error will clear itself whenever any change is made to the node it is bound to.
             </summary>
         </member>
         <member name="F:DocumentModel.CustomXml.CustomXMLValidationErrorType.Manual">
             <summary>
-            Specifies Ithat the error will not be cleared until the Delete() method is called.
+            Specifies that the error will not be cleared until the Delete() method is called.
             </summary>
         </member>
         <member name="T:DocumentModel.CustomXml.XMLNodeType">
@@ -40814,18 +40814,18 @@
         </member>
         <member name="F:DocumentModel.HTML.HTMLProjectState.DocumentLocked">
             <summary>
-            IDocument is locked. In a Microsoft Office host application or Microsoft Script IEditor, indicates Ithat the
+            IDocument is locked. In a Microsoft Office host application or Microsoft Script IEditor, indicates that the
             Refresh toolbar is displayed in the host application.
             </summary>
         </member>
         <member name="F:DocumentModel.HTML.HTMLProjectState.ProjectLocked">
             <summary>
-            Project is locked. In the Microsoft Script IEditor, indicates Ithat the Refresh toolbar is displayed.
+            Project is locked. In the Microsoft Script IEditor, indicates that the Refresh toolbar is displayed.
             </summary>
         </member>
         <member name="F:DocumentModel.HTML.HTMLProjectState.DocumentProjectUnlocked">
             <summary>
-            IDocument is unlocked. In a Microsoft Office host application or Microsoft Script IEditor, indicates Ithat the
+            IDocument is unlocked. In a Microsoft Office host application or Microsoft Script IEditor, indicates that the
             Refresh toolbar is not displayed at all.
             </summary>
         </member>

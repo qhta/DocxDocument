@@ -1,10 +1,10 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a value Ithat can be either a string or a number.
+/// Represents a value that can be either a string or a number.
 /// </summary>
 /// <remarks>
-/// This struct provides a way to represent values Ithat may be expressed as either text or numeric form,
+/// This struct provides a way to represent values that may be expressed as either text or numeric form,
 /// commonly used in document models where formatting or content can accept multiple representations.
 /// </remarks>
 [JsonConverter(typeof(StrNumPairJsonConverter))]

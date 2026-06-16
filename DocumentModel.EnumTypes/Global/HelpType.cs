@@ -49,7 +49,7 @@ public enum HelpType
   /// </summary>
   Search = 9,
   /// <summary>
-  /// Displays a list of Help topics Ithat describe how to use Help.
+  /// Displays a list of Help topics that describe how to use Help.
   /// </summary>
   UsingHelp = 10,
   /// <summary>

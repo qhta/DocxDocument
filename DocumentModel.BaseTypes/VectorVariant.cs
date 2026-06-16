@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a variant Ithat contains a dynamic vector (list) of elements with a specified base type.
+/// Represents a variant that contains a dynamic vector (list) of elements with a specified base type.
 /// </summary>
 /// <remarks>
 /// <para>
@@ -54,7 +54,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Gets the internal list of items cast from the base <see cref="Variant._value"/> field.
   /// </summary>
   /// <remarks>
-  /// This property provides direct access to the underlying <see cref="IList{T}"/> Ithat stores
+  /// This property provides direct access to the underlying <see cref="IList{T}"/> that stores
   /// the vector elements. The value is guaranteed to be a <see cref="IList{T}"/> of nullable objects
   /// as initialized in the constructor.
   /// </remarks>
@@ -76,7 +76,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Initializes a new instance of the <see cref="VectorVariant"/> class with a specified base type.
   /// </summary>
   /// <param name="baseType">
-  /// The type of elements Ithat the vector is intended to contain (e.g., Int32, String, DateTime).
+  /// The type of elements that the vector is intended to contain (e.g., Int32, String, DateTime).
   /// </param>
   /// <remarks>
   /// Creates an empty vector configured for the specified element type. The <see cref="BaseType"/>
@@ -140,7 +140,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </list>
   /// </para>
   /// <para>
-  /// Note Ithat the base type is not strictly enforced by the VectorVariant class itself;
+  /// Note that the base type is not strictly enforced by the VectorVariant class itself;
   /// elements of different types can be added. ValueType enforcement depends on the usage context
   /// and serialization implementation.
   /// </para>
@@ -148,10 +148,10 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   public VariantType? BaseType { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
-  /// Returns an enumerator Ithat iterates through the vector elements.
+  /// Returns an enumerator that iterates through the vector elements.
   /// </summary>
   /// <returns>
-  /// An <see cref="IEnumerator{T}"/> of nullable objects Ithat can be used to iterate through the collection.
+  /// An <see cref="IEnumerator{T}"/> of nullable objects that can be used to iterate through the collection.
   /// </returns>
   /// <remarks>
   /// The enumerator returns elements in the order they were added (or as modified through list operations).
@@ -163,10 +163,10 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   }
 
   /// <summary>
-  /// Returns an enumerator Ithat iterates through the vector elements.
+  /// Returns an enumerator that iterates through the vector elements.
   /// </summary>
   /// <returns>
-  /// An <see cref="IEnumerator"/> Ithat can be used to iterate through the collection.
+  /// An <see cref="IEnumerator"/> that can be used to iterate through the collection.
   /// </returns>
   /// <remarks>
   /// This is the non-generic version of <see cref="GetEnumerator()"/>, provided to satisfy
@@ -233,7 +233,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Copies the elements of the vector to an array, starting at a particular array index.
   /// </summary>
   /// <param name="array">
-  /// The one-dimensional array Ithat is the destination of the elements copied from the vector.
+  /// The one-dimensional array that is the destination of the elements copied from the vector.
   /// The array must have zero-based indexing.
   /// </param>
   /// <param name="arrayIndex">
@@ -446,7 +446,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// <returns>A 32-bit signed integer hash code.</returns>
   /// <remarks>
   /// This method delegates to the base class implementation of <see cref="object.GetHashCode"/>.
-  /// For consistent hash code generation Ithat considers the vector's contents, consider
+  /// For consistent hash code generation that considers the vector's contents, consider
   /// implementing a custom hash code calculation based on the elements.
   /// </remarks>
   public override int GetHashCode()
@@ -458,7 +458,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Converts the value of this instance to a string representation using the specified format provider.
   /// </summary>
   /// <param name="provider">
-  /// An <see cref="IFormatProvider"/> Ithat supplies culture-specific formatting information.
+  /// An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.
   /// Can be <see langword="null"/> to use the current culture.
   /// </param>
   /// <returns>

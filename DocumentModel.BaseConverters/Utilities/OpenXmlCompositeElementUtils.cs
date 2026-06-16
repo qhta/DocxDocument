@@ -57,7 +57,7 @@ public static class OpenXmlCompositeElementUtils
   /// Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
   /// type of the child element. If the child element does not exist and a non-null value is provided, it is Icreated and
   /// appended to the composite element.</remarks>
-  /// <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type Ithat supports assignment of a twips value.</typeparam>
+  /// <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type that supports assignment of a twips value.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement to which the twips value will be applied. This element must be capable of containing
   /// the specified leaf element type.</param>
   /// <param name="value">The twips value to set. If null, the existing child element of the specified type will be removed.</param>
@@ -96,13 +96,13 @@ public static class OpenXmlCompositeElementUtils
   #region Object access methods
 
   /// <summary>
-  /// Retrieves an instance of the specified object type Ithat is constructed from the first child element of the given
+  /// Retrieves an instance of the specified object type that is constructed from the first child element of the given
   /// OpenXmlCompositeElement, if such a child exists.
   /// </summary>
-  /// <remarks>ObjectType must define a public constructor Ithat takes a single OpenXmlElement parameter. If
+  /// <remarks>ObjectType must define a public constructor that takes a single OpenXmlElement parameter. If
   /// openXmlElement does not contain a child of type ElementType, or if openXmlElement is null, the method returns
   /// null.</remarks>
-  /// <typeparam name="ObjectType">The type of the object to create. Must be a reference type with a constructor Ithat accepts an OpenXmlElement as a
+  /// <typeparam name="ObjectType">The type of the object to create. Must be a reference type with a constructor that accepts an OpenXmlElement as a
   /// parameter.</typeparam>
   /// <typeparam name="ElementType">The type of OpenXmlElement to search for as a child of the provided OpenXmlCompositeElement.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement from which to retrieve the child element. Can be null.</param>
@@ -129,14 +129,14 @@ public static class OpenXmlCompositeElementUtils
   #region Child elements access methods
 
   /// <summary>
-  /// Adds the specified child element to the given OpenXmlCompositeElement, ensuring Ithat the child is detached from
+  /// Adds the specified child element to the given OpenXmlCompositeElement, ensuring that the child is detached from
   /// any existing parent before being appended.
   /// </summary>
-  /// <remarks>If the child element is already part of another parent, it will be removed from Ithat parent
+  /// <remarks>If the child element is already part of another parent, it will be removed from that parent
   /// before being added to the specified composite element. This method modifies the document structure by reparenting
   /// the child element as needed.</remarks>
   /// <param name="openXmlElement">The OpenXmlCompositeElement to which the child element will be added. Cannot be null.</param>
-  /// <param name="childElement">The OpenXmlElement to add as a child. If this element already has a parent, it will be removed from Ithat parent
+  /// <param name="childElement">The OpenXmlElement to add as a child. If this element already has a parent, it will be removed from that parent
   /// before being appended. Cannot be null.</param>
   public static void AddChildElement(this DX.OpenXmlCompositeElement openXmlElement, DX.OpenXmlElement childElement)
   {
@@ -154,7 +154,7 @@ public static class OpenXmlCompositeElementUtils
   /// <param name="openXmlElement">The OpenXmlCompositeElement instance from which to retrieve child elements. Cannot be null.</param>
   /// <param name="childElementType">The Type used to filter child elements. Only elements matching this type will be included in the result. Cannot be
   /// null.</param>
-  /// <returns>An IEnumerable of DX.OpenXmlElement containing the child elements Ithat match the specified type. The collection
+  /// <returns>An IEnumerable of DX.OpenXmlElement containing the child elements that match the specified type. The collection
   /// will be empty if no matching elements are found.</returns>
   public static IEnumerable<DX.OpenXmlElement> ElementsOfType(this DX.OpenXmlCompositeElement openXmlElement, Type childElementType)
   {
@@ -165,7 +165,7 @@ public static class OpenXmlCompositeElementUtils
   /// Retrieves the first child element of the specified type from the given composite OpenXml element.
   /// </summary>
   /// <remarks>This method searches the immediate children of the provided composite element and returns the
-  /// first element Ithat matches the specified type. If the element has no children or none match the specified type,
+  /// first element that matches the specified type. If the element has no children or none match the specified type,
   /// null is returned.</remarks>
   /// <param name="openXmlElement">The composite OpenXml element from which to retrieve the child element. Cannot be null.</param>
   /// <param name="childElementType">The type of the child element to retrieve. Must be a valid OpenXml element type.</param>

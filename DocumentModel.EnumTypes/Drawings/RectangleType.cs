@@ -21,7 +21,7 @@ public enum RectangleType
   /// </summary>
   MarkupRectangle = 2,
   /// <summary>
-  /// Represents a space occupied by the more (...) indicator Ithat appears in a comment balloon when there is
+  /// Represents a space occupied by the more (...) indicator that appears in a comment balloon when there is
   /// additional text for the comment.
   /// </summary>
   MarkupRectangleButton = 3,
@@ -30,7 +30,7 @@ public enum RectangleType
   /// </summary>
   PageBorderRectangle = 4,
   /// <summary>
-  /// Represents a region corresponding to a line Ithat separates columns.
+  /// Represents a region corresponding to a line that separates columns.
   /// </summary>
   LineBetweenColumnRectangle = 5,
   /// <summary>

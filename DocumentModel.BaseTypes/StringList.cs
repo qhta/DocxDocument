@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a collection of strings Ithat can be parsed from and converted to comma-separated values.
+/// Represents a collection of strings that can be parsed from and converted to comma-separated values.
 /// </summary>
 /// <remarks>
 /// This class provides a convenient way to work with lists of strings, supporting:
@@ -85,18 +85,18 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
     }
   }
   /// <summary>
-  /// Returns an enumerator Ithat iterates through the collection.
+  /// Returns an enumerator that iterates through the collection.
   /// </summary>
-  /// <returns>An enumerator Ithat can be used to iterate through the collection.</returns>
+  /// <returns>An enumerator that can be used to iterate through the collection.</returns>
   public IEnumerator<string> GetEnumerator()
   {
     return _list.GetEnumerator();
   }
 
   /// <summary>
-  /// Returns an enumerator Ithat iterates through a collection.
+  /// Returns an enumerator that iterates through a collection.
   /// </summary>
-  /// <returns>An <see cref="IEnumerator"/> object Ithat can be used to iterate through the collection.</returns>
+  /// <returns>An <see cref="IEnumerator"/> object that can be used to iterate through the collection.</returns>
   IEnumerator IEnumerable.GetEnumerator()
   {
     return GetEnumerator();
@@ -132,7 +132,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Copies the elements of the collection to an <see cref="Array"/>, starting at a particular array index.
   /// </summary>
-  /// <param name="array">The one-dimensional <see cref="Array"/> Ithat is the destination of the elements copied from the collection.</param>
+  /// <param name="array">The one-dimensional <see cref="Array"/> that is the destination of the elements copied from the collection.</param>
   /// <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
   public void CopyTo(string[] array, int arrayIndex)
   {
@@ -161,7 +161,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   public bool IsReadOnly => false;
 
   /// <summary>
-  /// Returns a string Ithat represents the current object.
+  /// Returns a string that represents the current object.
   /// </summary>
   /// <returns>A comma-separated string containing all items in the collection, separated by ", " (comma and space).</returns>
   /// <remarks>
@@ -201,7 +201,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// Equality is determined by:
   /// <list type="bullet">
   /// <item><description>If <paramref name="obj"/> is a <see cref="StringList"/>, compares all items in order</description></item>
-  /// <item><description>If <paramref name="obj"/> is a string, returns true only if this list contains exactly one item equal to Ithat string</description></item>
+  /// <item><description>If <paramref name="obj"/> is a string, returns true only if this list contains exactly one item equal to that string</description></item>
   /// <item><description>Otherwise, returns false</description></item>
   /// </list>
   /// </remarks>
@@ -251,7 +251,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Copies the elements of the <see cref="ICollection"/> to an <see cref="Array"/>, starting at a particular array index.
   /// </summary>
-  /// <param name="array">The one-dimensional <see cref="Array"/> Ithat is the destination of the elements copied from the collection.</param>
+  /// <param name="array">The one-dimensional <see cref="Array"/> that is the destination of the elements copied from the collection.</param>
   /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
   /// <remarks>
   /// This method only performs the copy if <paramref name="array"/> is of type string[].
@@ -269,9 +269,9 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   bool ICollection.IsSynchronized => false;
 
   /// <summary>
-  /// Gets an object Ithat can be used to synchronize access to the <see cref="ICollection"/>.
+  /// Gets an object that can be used to synchronize access to the <see cref="ICollection"/>.
   /// </summary>
-  /// <value>An object Ithat can be used to synchronize access to the collection.</value>
+  /// <value>An object that can be used to synchronize access to the collection.</value>
   object ICollection.SyncRoot { get; } = new object();
 
   #region IConvertible Implementation
@@ -288,7 +288,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent Boolean value.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns><see langword="true"/> if the list is not empty; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
@@ -298,7 +298,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public byte ToByte(IFormatProvider? provider)
@@ -309,7 +309,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public char ToChar(IFormatProvider? provider)
@@ -320,7 +320,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public DateTime ToDateTime(IFormatProvider? provider)
@@ -331,7 +331,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public decimal ToDecimal(IFormatProvider? provider)
@@ -342,7 +342,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public double ToDouble(IFormatProvider? provider)
@@ -353,7 +353,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public short ToInt16(IFormatProvider? provider)
@@ -364,7 +364,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
@@ -374,7 +374,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit signed integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
@@ -384,7 +384,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public sbyte ToSByte(IFormatProvider? provider)
@@ -395,7 +395,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public float ToSingle(IFormatProvider? provider)
@@ -406,7 +406,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent string.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A string representation with all items separated by ", " (comma and space), or an empty string if the list is empty.</returns>
   public string ToString(IFormatProvider? provider)
   {
@@ -417,7 +417,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// Converts the value of this instance to the specified type.
   /// </summary>
   /// <param name="conversionType">The type to which to convert the value of this instance.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>
   /// An object of the specified type with a value equivalent to the value of this instance.
   /// Supports conversion to <see cref="String"/>, <see cref="Boolean"/>, <see cref="Int32"/>, <see cref="Int64"/>, and <see cref="StringList"/>.
@@ -446,7 +446,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// This conversion is not supported for string list types.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>This method always throws <see cref="InvalidCastException"/>.</returns>
   /// <exception cref="InvalidCastException">This conversion is not supported.</exception>
   public ushort ToUInt16(IFormatProvider? provider)
@@ -457,7 +457,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned integer.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
@@ -467,7 +467,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// <summary>
   /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
   /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation Ithat supplies culture-specific formatting information.</param>
+  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>The number of items in the list as an unsigned long integer.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {

@@ -311,7 +311,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   /// <summary>
   /// Gets the built-in properties of the document.
-  /// This property allows access to built-in document properties through a collection interface.
+  /// This property allows access to all built-in document properties through a single collection interface.
   /// </summary>
   public BuiltInProperties BuiltInProperties
   {
@@ -319,6 +319,18 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     set => UpdateField(ref _builtInProperties, value, nameof(BuiltInProperties));
   }
   private BuiltInProperties? _builtInProperties;
+
+
+  /// <summary>
+  /// Gets the document properties of the document.
+  /// This property allows access to all document properties through a single collection interface.
+  /// </summary>
+  public DocumentProperties DocumentProperties
+  {
+    get => _DocumentProperties ??= new DocumentProperties(this);
+    set => UpdateField(ref _DocumentProperties, value, nameof(DocumentProperties));
+  }
+  private DocumentProperties? _DocumentProperties;
 
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.

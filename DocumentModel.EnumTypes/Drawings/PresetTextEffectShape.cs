@@ -44,11 +44,11 @@ public enum PresetTextEffectShape
   /// </summary>
   RingOutside = 8,
   /// <summary>
-  /// Text is an arch Ithat curves up.
+  /// Text is an arch that curves up.
   /// </summary>
   ArchUpCurve = 9,
   /// <summary>
-  /// Text is an arch Ithat curves down.
+  /// Text is an arch that curves down.
   /// </summary>
   ArchDownCurve = 10,
   /// <summary>
@@ -60,11 +60,11 @@ public enum PresetTextEffectShape
   /// </summary>
   ButtonCurve = 12,
   /// <summary>
-  /// Text is a 3-D arch Ithat curves up.
+  /// Text is a 3-D arch that curves up.
   /// </summary>
   ArchUpPour = 13,
   /// <summary>
-  /// Text is a 3-D arch Ithat curves down.
+  /// Text is a 3-D arch that curves down.
   /// </summary>
   ArchDownPour = 14,
   /// <summary>
@@ -100,11 +100,11 @@ public enum PresetTextEffectShape
   /// </summary>
   Wave2 = 22,
   /// <summary>
-  /// Text follows a line Ithat curves up, then down, then up and down again.
+  /// Text follows a line that curves up, then down, then up and down again.
   /// </summary>
   DoubleWave1 = 23,
   /// <summary>
-  /// Text follows a line Ithat curves down, then up, then down and up again.
+  /// Text follows a line that curves down, then up, then down and up again.
   /// </summary>
   DoubleWave2 = 24,
   /// <summary>
@@ -118,7 +118,7 @@ public enum PresetTextEffectShape
   Deflate = 26,
   /// <summary>
   /// IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
-  /// Ithat curves downward.
+  /// that curves downward.
   /// </summary>
   InflateBottom = 27,
   /// <summary>
@@ -128,7 +128,7 @@ public enum PresetTextEffectShape
   DeflateBottom = 28,
   /// <summary>
   /// IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
-  /// Ithat curves upward.
+  /// that curves upward.
   /// </summary>
   InflateTop = 29,
   /// <summary>

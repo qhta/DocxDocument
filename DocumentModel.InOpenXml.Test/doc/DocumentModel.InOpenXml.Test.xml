@@ -769,7 +769,22 @@
             </summary>
             <returns>A populated CustomProperties object.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateCustomProperties">
+            <summary>
+            Creates a sample CustomProperties object with various property types.
+            </summary>
+            <returns>A populated CustomProperties object.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
+            <summary>
+            Updates the specified document with new custom property data and returns the updated collection of custom
+            properties.
+            </summary>
+            <param name="document">The document to update with the new custom property data. Cannot be null.</param>
+            <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
+            <returns>The updated collection of custom properties from the document after the new data has been added.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.UpdateCustomProperties(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
             <summary>
             Updates the specified document with new custom property data and returns the updated collection of custom
             properties.
@@ -787,6 +802,54 @@
             inspection or further processing.</remarks>
             <param name="document">The document from which to extract the custom file properties XML. Must not be null.</param>
             <returns>A string containing the XML markup of the custom file properties part if present; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.DocumentPropertiesTest">
+            <summary>
+            Provides comprehensive serialization tests for <see cref="T:DocumentModel.DocumentProperties"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.Run">
+            <summary>
+            Runs all tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.CreateSampleData">
+            <summary>
+            Creates a new instance of <see cref="T:DocumentModel.DocumentProperties"/> populated with sample data for testing purposes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.DocumentProperties)">
+            <summary>
+            Updates the specified document with the provided built-in properties.
+            </summary>
+            <param name="document">The document to update with new built-in properties.</param>
+            <param name="data">The built-in properties to apply to the document.</param>
+            <returns>The updated built-in properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.DocumentProperties)">
+            <summary>
+            Sets the built-in properties of the specified document to the provided data and returns the updated built-in properties from the document.  
+            </summary>
+            <param name="document">The document to update with new built-in properties.</param>
+            <param name="data">The built-in properties to apply to the document.</param>
+            <returns>The updated built-in properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the built-in properties from the specified document for comparison with expected data.
+            </summary>
+            <param name="document">The document from which to retrieve the built-in properties.</param>
+            <returns>The built-in properties of the specified document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML markup representing the extended file properties from the specified Wordprocessing document.
+            </summary>
+            <param name="document">The document from which to extract the extended file properties as XML. Must not be null and must contain a valid
+            WordprocessingDocument with an ExtendedFilePropertiesPart.</param>
+            <returns>A string containing the XML markup of the extended file properties for the specified document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.DocumentSettingsTest">
             <summary>

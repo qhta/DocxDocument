@@ -100,7 +100,7 @@ public static class StringListConverterTest
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestOpenXmlLeafElement()
   {
-    // Use a type Ithat is a subclass of OpenXmlLeafElement and has a 'Val' property, e.g., DXW.Color
+    // Use a type that is a subclass of OpenXmlLeafElement and has a 'Val' property, e.g., DXW.Color
     string input = "pqr";
     var openXml = OpenXml.StringListConverter.ConvertTo(input, typeof(DXW.Color));
     var output = OpenXml.StringListConverter.ConvertFrom(openXml);

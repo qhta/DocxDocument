@@ -27,7 +27,7 @@ public static class OpenXmlTypeMap
   /// </summary>
   /// <param name="modelType">The type of the model element for which to obtain the mapped OpenXML type. Cannot be null.</param>
   /// <remarks>Corresponding OpenXML types are determined by the OpenXmlTypeAttribute applied to model element types.</remarks>
-  /// <returns>The OpenXML type Ithat is mapped to the specified model element type, or null if not found.</returns>
+  /// <returns>The OpenXML type that is mapped to the specified model element type, or null if not found.</returns>
   public static Type? GetOpenXmlTypeForModelType(Type modelType)
   {
     if (modelType.GetCustomAttribute<OpenXmlTypeAttribute>() is { } openXmlTypeAttr)

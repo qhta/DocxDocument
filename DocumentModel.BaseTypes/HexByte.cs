@@ -109,7 +109,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   ///   A 16-bit unsigned integer (0-65535) representing a byte code.
   /// </param>
   /// <remarks>
-  ///   This is the primary constructor Ithat directly stores the byte code value.
+  ///   This is the primary constructor that directly stores the byte code value.
   ///   It can represent any Unicode byte in the Basic Multilingual Plane.
   /// </remarks>
   public HexByte(ushort value)

@@ -65,7 +65,7 @@ public enum DateTimeFormat
   /// </summary>
   ShortTime12WithSeconds = 13,
   /// <summary>
-  /// Specifies Ithat the Office application will determine the format.
+  /// Specifies that the Office application will determine the format.
   /// </summary>
   Auto = 14
 }

@@ -7,12 +7,12 @@ namespace DocumentModel;
 public interface ICollectionItem
 {
   /// <summary>
-  /// Collection Ithat contains this item.
+  /// Collection that contains this item.
   /// </summary>
   public object? Collection { get; }
 
   /// <summary>
-  /// Sets the collection Ithat contains this item.
+  /// Sets the collection that contains this item.
   /// </summary>
   /// <param name="collection"></param>
   public void SetCollection(object? collection);

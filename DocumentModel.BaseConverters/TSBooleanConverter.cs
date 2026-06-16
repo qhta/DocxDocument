@@ -37,7 +37,7 @@ public static class TSBooleanConverter
   }
 
   /// <summary>
-  /// Creates a <see cref="DX.TrueFalseBlankValue"/> Ithat mirrors the supplied <see cref="TSBoolean"/> state.
+  /// Creates a <see cref="DX.TrueFalseBlankValue"/> that mirrors the supplied <see cref="TSBoolean"/> state.
   /// </summary>
   /// <param name="value">The tri-state value to serialize.</param>
   /// <returns>A new <see cref="DX.TrueFalseBlankValue"/> instance representing the same logical state.</returns>

@@ -1,6 +1,6 @@
 namespace DocumentModel;
 /// <summary>
-/// Collection of all document properties that is divided to several parts: core properties, 
+/// Collection of all document properties that is divided to three parts: core properties, 
 /// content properties, and statistic properties. 
 /// </summary>
 [XmlRoot("BuiltInProperties", Namespace = "DocumentModel")]
@@ -53,26 +53,43 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
-  void IWordprocessingDocumentAware.Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+  /// <summary>
+  /// Attaches the collection of built-in properties to the provided WordprocessingDocument. This method sets the WordprocessingDocument property of the collection to the provided document, allowing the collection to interact with the document's properties. It does not load or update any property values; it simply establishes the association between the collection and the document. To load or update property values, use the AttachAndLoad or AttachAndUpdate methods, respectively.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach to the collection.</param>
+  public void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-
   }
-  void IWordprocessingDocumentAware.AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+
+  /// <summary>
+  /// Attaches the collection of built-in properties to the provided WordprocessingDocument and loads the property values from the document. This method sets the WordprocessingDocument property of the collection to the provided document and then calls the AttachAndLoad method on each of the subordinate properties (core, content, and statistic) to load their values from the document. This allows the collection to be populated with the current property values from the associated WordprocessingDocument.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach and load the properties from.</param>
+  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
     CoreProperties.AttachAndLoad(wordprocessingDocument);
     ContentProperties.AttachAndLoad(wordprocessingDocument);
     StatisticProperties.AttachAndLoad(wordprocessingDocument);
   }
-  void IWordprocessingDocumentAware.AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+
+  /// <summary>
+  /// Attaches the collection of built-in properties to the provided WordprocessingDocument and updates the property values in the document based on the current state of the collection. This method sets the WordprocessingDocument property of the collection to the provided document and then calls the AttachAndUpdate method on each of the subordinate properties (core, content, and statistic) to update their values in the document based on the current values in the collection. This allows any changes made to the properties in the collection to be reflected in the associated WordprocessingDocument.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach and update the properties in.</param>
+  public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
     CoreProperties.AttachAndUpdate(wordprocessingDocument);
     ContentProperties.AttachAndUpdate(wordprocessingDocument);
     StatisticProperties.AttachAndUpdate(wordprocessingDocument);
   }
-  void IWordprocessingDocumentAware.Detach()
+
+  /// <summary>
+  /// Detaches the collection of built-in properties from the associated WordprocessingDocument. This method sets the WordprocessingDocument property of the collection to null and calls the Detach method on each of the subordinate properties (core, content, and statistic) to clear their associations with the document. After calling this method, the collection will no longer be associated with any WordprocessingDocument, and any changes made to the properties in the collection will not affect any document until it is attached again.
+  /// </summary>
+  public void Detach()
   {
     WordprocessingDocument = null;
     CoreProperties.Detach();
@@ -217,8 +234,9 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
 
   /// <summary>
   /// Returns an enumerator that iterates through the collection of built-in properties.
+  /// First, it iterates through the core properties, then the content properties, and finally the statistic properties, yielding each built-in property as it goes. This allows for enumeration of all built-in properties in a single sequence, regardless of their categorization in the subordinate properties.
   /// </summary>
-  /// <returns></returns>
+  /// <returns>An enumerator that can be used to iterate through the collection.</returns>
   public IEnumerator<BuiltInProperty> GetEnumerator()
   {
     foreach (var property in CoreProperties)
@@ -232,7 +250,7 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   /// <summary>
   /// Returns an enumerator that iterates through the collection of built-in properties.
   /// </summary>
-  /// <returns></returns>
+  /// <returns>An enumerator that can be used to iterate through the collection.</returns>
   IEnumerator IEnumerable.GetEnumerator()
   {
     return GetEnumerator();
@@ -262,7 +280,7 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   /// </summary>
   /// <param name="array">The destination array.</param>
   /// <param name="arrayIndex">The zero-based index in the array at which copying begins.</param>
-  /// <exception cref="NotImplementedException"></exception>
+  /// <exception cref="ArgumentException">Thrown when the destination array has insufficient space to copy the elements.</exception>
   public void CopyTo(BuiltInProperty[] array, int arrayIndex)
   {
     var tempList = new List<BuiltInProperty>();
@@ -279,7 +297,7 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   /// </summary>
   /// <param name="index">The name of the built-in property.</param>
   /// <returns>The built-in property with the specified name.</returns>
-  /// <exception cref="ArgumentException"></exception>
+  /// <exception cref="ArgumentException">Thrown when a built-in property with the specified name does not exist.</exception>
   public BuiltInProperty this[string index]
   {
     get
@@ -307,9 +325,9 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   /// <summary>
   /// Attempts to get the built-in property with the specified name. The method checks for the existence of the property in the core properties, content properties, and statistic properties, and returns true if found, along with the property value in the out parameter. If a property with the specified name does not exist in any of the subordinate properties, it returns false and sets the out parameter to null.
   /// </summary>
-  /// <param name="index"></param>
-  /// <param name="property"></param>
-  /// <returns></returns>
+  /// <param name="index">The name of the built-in property.</param>
+  /// <param name="property">When this method returns, contains the built-in property with the specified name, if found; otherwise, null.</param>
+  /// <returns>True if the built-in property with the specified name is found; otherwise, false.</returns>
   public bool TryGetProperty(string index, out BuiltInProperty? property)
   {
     if (CoreProperties.TryGetProperty(index, out property))
@@ -319,6 +337,23 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
     if (StatisticProperties.TryGetProperty(index, out property))
       return true;
     property = null!;
+    return false;
+  }
+
+  /// <summary>
+  /// Attempts to set the built-in property with the specified name. The method checks for the existence of the property in the core properties, content properties, and statistic properties, and updates the value if found, returning true. If a property with the specified name does not exist in any of the subordinate properties, it returns false.
+  /// </summary>
+  /// <param name="index">The name of the built-in property.</param>
+  /// <param name="property">The built-in property to set.</param>
+  /// <returns>True if the built-in property with the specified name is found and updated; otherwise, false.</returns>
+  public bool TrySetProperty(string index, BuiltInProperty property)
+  {
+    if (CoreProperties.TrySetProperty(index, property))
+      return true;
+    if (ContentProperties.TrySetProperty(index, property))
+      return true;
+    if (StatisticProperties.TrySetProperty(index, property))
+      return true;
     return false;
   }
 }

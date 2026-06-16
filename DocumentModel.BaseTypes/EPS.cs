@@ -79,28 +79,28 @@ public partial class EPS : UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value in twips.
+  /// Creates an instance of an <see cref="EPS"/> that represents the specified value in twips.
   /// </summary>
   public static EPS FromTwips(double twips) => new EPS($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="EPS"/> Ithat represents the specified value in points.
+  /// Creates an instance of an <see cref="EPS"/> that represents the specified value in points.
   /// </summary>
   public static EPS FromPT(double points) => new EPS($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat represents a length specified in millimeters.
+  /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
   public static EPS FromMM(double millimeters) => new EPS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static EPS FromCM(double centimeters) => new EPS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static EPS FromInch(double inches) => new EPS($"{inches}in");
 
@@ -109,18 +109,18 @@ public partial class EPS : UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string Ithat represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-  /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
+  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
   public static EPS Parse(string value) => new EPS(value);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
   /// </summary>
   /// <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-  /// unit. Ensure Ithat the provided unit is valid to avoid conversion errors.</remarks>
+  /// unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-  /// <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
+  /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
   public static EPS ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
@@ -136,7 +136,7 @@ public partial class EPS : UniversalMeasure
   #region Parsing Methods
 
   /// <summary>
-  /// Attempts to parse the specified string representation of a length measure and returns a value Ithat indicates
+  /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
   /// whether the parsing succeeded.
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
@@ -207,7 +207,7 @@ public partial class EPS : UniversalMeasure
   /// Implicitly converts a double-precision floating-point number to a EPS instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of double values into contexts where EPS are
-  /// required, facilitating operations Ithat involve measurements in EPS.</remarks>
+  /// required, facilitating operations that involve measurements in EPS.</remarks>
   /// <param name="value">The value to convert, representing a measurement in EPS.</param>
   public static implicit operator EPS(Double value)
   {
