@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using System.Xml.Serialization;
+using System.Reflection;
 
 namespace DocumentModel.XmlSerialization;
 
@@ -12,7 +13,7 @@ public static class XmlSerializationHelper
   /// <param name="data">The object to serialize.</param>
   /// <param name="modelTypes">Array of model types to include in the serializer.</param>
   /// <returns>Serialized XML text.</returns>
-  public static string SerializeObjectToXml(object data, Type[] modelTypes)
+  public static string SerializeObjectToXml(object data, Type[]? modelTypes = null)
   {
     var xmlSerializer = CreateXmlSerializer(data, modelTypes, out var namespaces);
     using (var stringWriter = new StringWriter())
@@ -41,11 +42,30 @@ public static class XmlSerializationHelper
   /// <summary>
   /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
   /// </summary>
+  /// <param name="dataType">The type of the object to serialize.</param>
+  /// <param name="namespaces">Output parameter for XML namespaces.</param>
+  /// <returns>XmlSerializer instance.</returns>
+  public static XmlSerializer CreateXmlSerializer(Type dataType, out XmlSerializerNamespaces namespaces)
+    => CreateXmlSerializer(dataType, null, out namespaces);
+
+
+  /// <summary>
+  /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
+  /// </summary>
+  /// <param name="data">The object to serialize.</param>
+  /// <param name="namespaces">Output parameter for XML namespaces.</param>
+  /// <returns>XmlSerializer instance.</returns>
+  public static XmlSerializer CreateXmlSerializer(object data, out XmlSerializerNamespaces namespaces)
+    => CreateXmlSerializer(data.GetType(), null, out namespaces);
+
+  /// <summary>
+  /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
+  /// </summary>
   /// <param name="data">The object to serialize.</param>
   /// <param name="modelTypes">Array of model types to include in the serializer.</param>
   /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(object data, Type[] modelTypes, out XmlSerializerNamespaces namespaces)
+  public static XmlSerializer CreateXmlSerializer(object data, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
   => CreateXmlSerializer(data.GetType(), modelTypes, out namespaces);
 
   /// <summary>
@@ -55,55 +75,174 @@ public static class XmlSerializationHelper
   /// <param name="modelTypes">Array of model types to include in the serializer.</param>
   /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(Type rootType, Type[] modelTypes, out XmlSerializerNamespaces namespaces)
+  public static XmlSerializer CreateXmlSerializer(Type rootType, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
   {
     var UniqueTypeNames = new HashSet<string>();
-    var overrides = new XmlAttributeOverrides();
+    XmlAttributeOverrides overrides = new XmlAttributeOverrides();
     //var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
     //  .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
     //            && !t.Implements(typeof(System.Collections.IDictionary))
     //  && t.GetConstructor([]) != null).ToArray();
 
-    List<Type> visitedTypes = new List<Type>();
-    foreach (var t in modelTypes)
+    var knownTypes = new HashSet<Type>();
+    if (modelTypes == null)
     {
-      //Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
-      GetXmlAttributeOverrides(t);
+      GetKnownTypes(rootType, knownTypes, new List<Type>());
+      modelTypes = knownTypes.ToArray();
+    }
+
+    //if (modelTypes != null)
+    {
+      foreach (var t in modelTypes)
+      {
+        //Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
+        GetXmlAttributeOverrides(t, new List<Type>());
+      }
     }
 
     namespaces = new XmlSerializerNamespaces();
+    namespaces.Add("", "DocumentModel");
     namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+    namespaces.Add("w", "DocumentModel.Wordprocessing");
     namespaces.Add("d", "DocumentModel.Drawings");
     namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
     namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
     namespaces.Add("m", "DocumentModel.Math");
 
-    var xmlSerializer = new XmlSerializer(rootType, overrides, modelTypes, null, null);
-    return xmlSerializer;
+    var rootNamespace = GetXmlNamespace(rootType);
+    if (!string.IsNullOrEmpty(rootNamespace))
+      AddNamespaceIfMissing(namespaces, rootNamespace!);
 
-    void GetXmlAttributeOverrides(Type? b)
+    foreach (var type in modelTypes)
     {
-      if (b != null && b != typeof(object))
+      var typeNamespace = GetXmlNamespace(type);
+      if (!string.IsNullOrEmpty(typeNamespace))
+        AddNamespaceIfMissing(namespaces, typeNamespace!);
+    }
+
+    var xmlRootAttribute = GetXmlRootAttribute(rootType);
+    return new XmlSerializer(rootType, overrides, modelTypes, xmlRootAttribute, null);
+    
+    static void GetKnownTypes(Type? aType, HashSet<Type> knownTypes, List<Type> visitedTypes)
+    {
+      if (aType != null && aType != typeof(object))
       {
-        if (visitedTypes.Contains(b))
+        if (visitedTypes.Contains(aType))
           return;
-        visitedTypes.Add(b);
-        if ((b.FullName ?? "").Contains("<>"))
+        visitedTypes.Add(aType);
+        if ((aType.FullName ?? "").Contains("<>"))
           return;
-        if (b.IsGenericType /*&& b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>)*/)
+        if (aType.IsGenericType /*&& aType.GetGenericTypeDefinition() == typeof(DM.ModelElement<>)*/)
         {
-          var arg = b.GetGenericArguments()[0];
+          var arg = aType.GetGenericArguments()[0];
+          if (arg.Name.Contains("<>"))
+            return;
+          if (!string.IsNullOrEmpty(arg.Namespace))
+          {
+            knownTypes.Add(aType);
+          }
+        }
+        else
+        {
+          knownTypes.Add(aType);
+        }
+        foreach (var iEnumerable in aType.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
+        {
+          var arg = iEnumerable.GetGenericArguments()[0];
+          if (arg.Name.Contains("<>"))
+            continue;
+          if (!string.IsNullOrEmpty(arg.Namespace))
+          {
+            knownTypes.Add(aType);
+          }
+        }
+        //Debug.WriteLine($"GetKnownTypes for {aType.BaseType?.FullName}");
+        GetKnownTypes(aType.BaseType, knownTypes, visitedTypes);
+      }
+    }
+
+    static string? GetXmlNamespace(Type type)
+    {
+      var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
+      if (!string.IsNullOrEmpty(xmlRoot?.Namespace))
+        return xmlRoot.Namespace;
+      return type.Namespace;
+    }
+
+    static XmlRootAttribute? GetXmlRootAttribute(Type type)
+    {
+      var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
+      if (xmlRoot != null)
+      {
+        if (!string.IsNullOrEmpty(xmlRoot.Namespace))
+          return null;
+
+        return new XmlRootAttribute(xmlRoot.ElementName)
+        {
+          Namespace = type.Namespace,
+          DataType = xmlRoot.DataType,
+          IsNullable = xmlRoot.IsNullable,
+        };
+      }
+
+      if (!string.IsNullOrEmpty(type.Namespace))
+        return new XmlRootAttribute(type.Name) { Namespace = type.Namespace };
+
+      return null;
+    }
+
+    static void AddNamespaceIfMissing(XmlSerializerNamespaces serializerNamespaces, string xmlNamespace)
+    {
+      if (serializerNamespaces.ToArray().Any(pair => pair.Namespace == xmlNamespace))
+        return;
+
+      var prefix = CreatePrefix(xmlNamespace, serializerNamespaces);
+      serializerNamespaces.Add(prefix, xmlNamespace);
+    }
+
+    static string CreatePrefix(string xmlNamespace, XmlSerializerNamespaces serializerNamespaces)
+    {
+      var basePrefix = xmlNamespace
+        .Split('.')
+        .LastOrDefault()?.ToLowerInvariant() ?? "ns";
+
+      basePrefix = new string(basePrefix.Where(char.IsLetter).ToArray());
+      if (string.IsNullOrEmpty(basePrefix))
+        basePrefix = "ns";
+
+      var usedPrefixes = serializerNamespaces.ToArray().Select(item => item.Name).ToHashSet();
+      if (!usedPrefixes.Contains(basePrefix))
+        return basePrefix;
+
+      int index = 1;
+      while (usedPrefixes.Contains($"{basePrefix}{index}"))
+        index++;
+      return $"{basePrefix}{index}";
+    }
+
+    void GetXmlAttributeOverrides(Type? aType,List<Type> visitedTypes)
+    {
+      if (aType != null && aType != typeof(object))
+      {
+        if (visitedTypes.Contains(aType))
+          return;
+        visitedTypes.Add(aType);
+        if ((aType.FullName ?? "").Contains("<>"))
+          return;
+        if (aType.IsGenericType /*&& aType.GetGenericTypeDefinition() == typeof(DM.ModelElement<>)*/)
+        {
+          var arg = aType.GetGenericArguments()[0];
           if (arg.Name.Contains("<>"))
             return;
           if (!string.IsNullOrEmpty(arg.Namespace))
           {
             var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
             if (UniqueTypeNames.Add(unique))
-              overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
+              overrides.Add(aType, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
           }
         }
-        //Debug.WriteLine($"GetXmlAttributeOverrides2 for {b.BaseType?.FullName}");
-        GetXmlAttributeOverrides(b.BaseType);
+        //Debug.WriteLine($"GetXmlAttributeOverrides2 for {aType.BaseType?.FullName}");
+        GetXmlAttributeOverrides(aType.BaseType, visitedTypes);
       }
     }
   }

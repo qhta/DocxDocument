@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using DocumentModel.XmlSerialization;
+
+namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.Numbering.
@@ -37,7 +39,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testData = CreateSampleData();
-    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(testData, out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))

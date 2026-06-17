@@ -143,7 +143,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <returns>An XML string representing the current state of the document.</returns>
   public string GetModelXml()
   {
-    return XmlSerializationHelper.SerializeObjectToXml(this, [typeof(BuiltInProperties)]);
+    return XmlSerializationHelper.SerializeObjectToXml(this);
   }
 
   /// <summary>

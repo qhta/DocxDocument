@@ -1704,13 +1704,6 @@
             <param name="namespaces">Output parameter for XML namespaces.</param>
             <returns>XmlSerializer instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetXmlNamespaceForType(System.Type)">
-            <summary>
-            Gets XML namespace for a model type based on its CLR namespace.
-            </summary>
-            <param name="type">Type for which XML namespace is generated.</param>
-            <returns>XML namespace string.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">
             <summary>
             Adds an XML type override for a closed generic AbstractColor{T}"/> type.

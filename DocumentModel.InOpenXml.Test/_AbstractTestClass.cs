@@ -2,6 +2,8 @@
 
 using DocumentFormat.OpenXml.Packaging;
 
+using DocumentModel.XmlSerialization;
+
 using Qhta.OpenXmlTools;
 
 namespace DocumentModel.InOpenXml.Test;
@@ -96,7 +98,7 @@ public abstract class _AbstractTestClass
   /// object.</returns>
   protected DataType? DeserializeFromXml<DataType>(string xml)
   {
-    var xmlSerializer = new XmlSerializer(typeof(DataType));
+    var xmlSerializer = CreateXmlSerializer(typeof(DataType), out _);
     using (var stringReader = new StringReader(xml))
     {
       return (DataType?)xmlSerializer.Deserialize(stringReader);
@@ -224,68 +226,7 @@ public abstract class _AbstractTestClass
   /// <returns>XmlSerializer instance.</returns>
   protected XmlSerializer CreateXmlSerializer(Type rootType, out XmlSerializerNamespaces namespaces) 
   { 
-    var UniqueTypeNames = new HashSet<string>();
-    var overrides = new XmlAttributeOverrides();
-    //var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
-    //  .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
-    //            && !t.Implements(typeof(System.Collections.IDictionary))
-    //  && t.GetConstructor([]) != null).ToArray();
-    var modelTypes = new[] { typeof(DocumentModel.BuiltInProperty) };
-
-    List<Type> visitedTypes = new List<Type>();
-    foreach (var t in modelTypes)
-    {
-      //Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
-      GetXmlAttributeOverrides(t);
-    }
-
-    namespaces = new XmlSerializerNamespaces();
-    namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-    namespaces.Add("d", "DocumentModel.Drawings");
-    namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
-    namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
-    namespaces.Add("m", "DocumentModel.Math");
-
-    var xmlSerializer = new XmlSerializer(rootType, overrides, modelTypes, null, null);
-    return xmlSerializer;
-
-    void GetXmlAttributeOverrides(Type? b)
-    {
-      if (b != null && b != typeof(object))
-      {
-        if (visitedTypes.Contains(b))
-          return;
-        visitedTypes.Add(b);
-        if ((b.FullName ?? "").Contains("<>"))
-          return;
-        if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
-        {
-          var arg = b.GetGenericArguments()[0];
-          if (arg.Name.Contains("<>"))
-            return;
-          if (!string.IsNullOrEmpty(arg.Namespace))
-          {
-            var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
-            if (UniqueTypeNames.Add(unique))
-              overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
-          }
-        }
-        //Debug.WriteLine($"GetXmlAttributeOverrides2 for {b.BaseType?.FullName}");
-        GetXmlAttributeOverrides(b.BaseType);
-      }
-    }
-  }
-  /// <summary>
-  /// Gets XML namespace for a model type based on its CLR namespace.
-  /// </summary>
-  /// <param name="type">Type for which XML namespace is generated.</param>
-  /// <returns>XML namespace string.</returns>
-  private string GetXmlNamespaceForType(Type type)
-  {
-    var typeNamespace = type.Namespace ?? "DocumentModel";
-    if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
-      return "urn:docmodel:" + typeNamespace.Substring("DocumentModel.".Length).ToLowerInvariant().Replace('.', ':');
-    return "urn:docmodel:global";
+    return XmlSerializationHelper.CreateXmlSerializer(rootType, out namespaces);
   }
 
   /// <summary>
@@ -315,14 +256,6 @@ public abstract class _AbstractTestClass
   protected JsonSerializerOptions CreateJsonSerializerOptions()
   {
     return JsonSerializationHelper.GetJsonSerializerOptions();
-
-    //var options = new JsonSerializerOptions
-    //{
-    //  DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-    //  WriteIndented = true
-    //};
-
-    //return options;
   }
 
 }
