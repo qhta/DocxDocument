@@ -964,9 +964,27 @@
             successful if an exception is thrown and unsuccessful otherwise.</remarks>
             <returns>true if the method throws an exception as expected when an invalid index type is used; otherwise, false.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.FontEmbeddingTestClass">
+            <summary>
+            Test of font embedding functionality in DocumentModel, including reading and serializing the font table from a Word document.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.FontEmbeddingTestClass.Run">
+            <summary>
+            Executes the test including EmbedFont tests, 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.FontEmbeddingTestClass.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Gets the OpenXml representation of the font table from the specified document.
+            </summary>
+            <param name="document">The document from which to retrieve the OpenXml representation.</param>
+            <returns>The OpenXml representation of the font table.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.FontTableTestClass">
             <summary>
-            Comprehensive test for DocumentModel.Fonts.
+            Comprehensive test for DocumentModel.FontTable.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.CreateSampleData">

@@ -11674,14 +11674,9 @@
               Defines the FontFamilyValues enumeration.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.FontFamily.Decorative">
+        <member name="F:DocumentModel.Wordprocessing.FontFamily.Auto">
             <summary>
-              Novelty Font.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.FontFamily.Modern">
-            <summary>
-              Monospace Font.
+              No Font Family.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.FontFamily.Roman">
@@ -11689,19 +11684,24 @@
               Proportional Font With Serifs.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.FontFamily.Script">
-            <summary>
-              Script Font.
-            </summary>
-        </member>
         <member name="F:DocumentModel.Wordprocessing.FontFamily.Swiss">
             <summary>
               Proportional Font Without Serifs.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.FontFamily.Auto">
+        <member name="F:DocumentModel.Wordprocessing.FontFamily.Modern">
             <summary>
-              No Font Family.
+              Monospace Font.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Wordprocessing.FontFamily.Script">
+            <summary>
+              Script Font.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Wordprocessing.FontFamily.Decorative">
+            <summary>
+              Novelty Font.
             </summary>
         </member>
         <member name="T:DocumentModel.Wordprocessing.FontPitch">

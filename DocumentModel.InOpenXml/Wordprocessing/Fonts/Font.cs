@@ -12,8 +12,8 @@ public partial class Font : ModelElement<DXW.Font>
  /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Name))]
- public string? FontName { get => _fontName; set => UpdateField(ref _fontName, value, nameof(FontName)); }
- private string? _fontName;
+ public string? Name { get => _name; set => UpdateField(ref _name, value, nameof(Name)); }
+ private string? _name;
 
  /// <summary>
  /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.
@@ -46,13 +46,6 @@ public partial class Font : ModelElement<DXW.Font>
  private FontFamily? _fontFamily;
 
  /// <summary>
- /// Indicates whether the font is not a TrueType font.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.NotTrueType))]
- public bool? NotTrueType { get => _NotTrueType; set => UpdateField(ref _NotTrueType, value, nameof(NotTrueType)); }
- private bool? _NotTrueType;
-
- /// <summary>
  /// Pitch of the font (e.g., fixed, variable).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Pitch))]
@@ -67,36 +60,43 @@ public partial class Font : ModelElement<DXW.Font>
  private HexBinary? _FontSignature;
 
  /// <summary>
- /// Reference to an embedded font part containing the regular (non-bold, non-italic) form of the font,
- /// used for embedding font data within the document package.
+ /// Indicates whether the font is not a TrueType font.
  /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.EmbedRegularFont))]
- public FontRelationshipType? EmbedRegularFont { get => _EmbedRegularFont; set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont)); }
- private FontRelationshipType? _EmbedRegularFont;
+ [OpenXmlProperty(nameof(DXW.Font.NotTrueType))]
+ public bool? NotTrueType { get => _NotTrueType; set => UpdateField(ref _NotTrueType, value, nameof(NotTrueType)); }
+ private bool? _NotTrueType;
+
+  /// <summary>
+  /// Reference to an embedded font part containing the regular (non-bold, non-italic) form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedRegularFont))]
+ public EmbedFont? EmbedRegularFont { get => _EmbedRegularFont; set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont)); }
+ private EmbedFont? _EmbedRegularFont;
 
  /// <summary>
  /// Reference to an embedded font part containing the bold form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldFont))]
- public FontRelationshipType? EmbedBoldFont { get => _EmbedBoldFont; set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont)); }
- private FontRelationshipType? _EmbedBoldFont;
+ public EmbedFont? EmbedBoldFont { get => _EmbedBoldFont; set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont)); }
+ private EmbedFont? _EmbedBoldFont;
 
  /// <summary>
  /// Reference to an embedded font part containing the italic form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedItalicFont))]
- public FontRelationshipType? EmbedItalicFont { get => _EmbedItalicFont; set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont)); }
- private FontRelationshipType? _EmbedItalicFont;
+ public EmbedFont? EmbedItalicFont { get => _EmbedItalicFont; set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont)); }
+ private EmbedFont? _EmbedItalicFont;
 
  /// <summary>
  /// Reference to an embedded font part containing the bold italic form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldItalicFont))]
- public FontRelationshipType? EmbedBoldItalicFont { get => _EmbedBoldItalicFont; set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont)); }
- private FontRelationshipType? _EmbedBoldItalicFont;
+ public EmbedFont? EmbedBoldItalicFont { get => _EmbedBoldItalicFont; set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont)); }
+ private EmbedFont? _EmbedBoldItalicFont;
 
  /// <summary>
  /// Loads the character set from the specified font source and updates the Charset property accordingly.

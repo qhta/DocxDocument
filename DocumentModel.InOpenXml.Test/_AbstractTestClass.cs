@@ -2,8 +2,6 @@
 
 using DocumentFormat.OpenXml.Packaging;
 
-using DocumentModel.XmlSerialization;
-
 using Qhta.OpenXmlTools;
 
 namespace DocumentModel.InOpenXml.Test;

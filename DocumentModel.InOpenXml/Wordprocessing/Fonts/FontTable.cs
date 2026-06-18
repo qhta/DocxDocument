@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Fonts))]
 [XmlRoot("FontTable")]
-public  sealed class FontTable : ModelElementCollection<Font, DXW.Fonts, DXW.Font>
+public  sealed class FontTable : ModelElementCollection<Font, DXW.Fonts, DXW.Font>, IWordprocessingDocumentAware
 {
   /// <summary>
   /// Default constructor.
@@ -20,6 +20,7 @@ public  sealed class FontTable : ModelElementCollection<Font, DXW.Fonts, DXW.Fon
   /// <param name="document">The document to attach to.</param>
   public FontTable(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetFontTable())
   {
+    WordprocessingDocument = document.WordprocessingDocument;
   }
 
 }

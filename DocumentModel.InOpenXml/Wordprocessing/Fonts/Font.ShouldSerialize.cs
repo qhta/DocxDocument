@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Font
 {
-  public bool ShouldSerializeFontName() => !String.IsNullOrEmpty(FontName);
+  public bool ShouldSerializeFontName() => !String.IsNullOrEmpty(Name);
   public bool ShouldSerializeAliases() => Aliases is not null && ShouldSerialize(Aliases);
   public bool ShouldSerializePanose() => Panose is not null && ShouldSerialize(Panose);
   public bool ShouldSerializeCharset() => Charset is not null && ShouldSerialize(Charset);

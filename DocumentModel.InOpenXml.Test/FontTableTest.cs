@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
-/// Comprehensive test for DocumentModel.Fonts.
+/// Comprehensive test for DocumentModel.FontTable.
 /// </summary>
 public class FontTableTestClass: _AbstractModelTestClass<FontTable>
 {
@@ -12,37 +12,39 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
   /// <returns>A populated Fonts object.</returns>
   protected override FontTable CreateSampleData()
   {
-    var fonts = new FontTable();
-    fonts.Add(new Font
+    var fonts = new FontTable
     {
-      FontName = "Arial",
-      Aliases = "Helvetica,Swiss",
-      FontFamily = FontFamily.Swiss,
-      Pitch = FontPitch.Variable,
-      Charset = FontCharset.EastEurope,
-      Panose = "020B0604020202020204",
-      FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
-    });
-    fonts.Add(new Font
-    {
-      FontName = "Times New Roman",
-      Aliases = "Times",
-      FontFamily = FontFamily.Roman,
-      Pitch = FontPitch.Variable,
-      Charset = FontCharset.Ansi,
-      Panose = "02020603050405020304",
-      FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
-    });
-    fonts.Add(new Font
-    {
-      FontName = "Courier New",
-      Aliases = "Courier",
-      FontFamily = FontFamily.Modern,
-      Pitch = FontPitch.Fixed,
-      Panose = "02070309020205020404",
-      FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000",
-      NotTrueType = true,
-    });
+      new Font
+      {
+        Name = "Arial",
+        Aliases = "Helvetica,Swiss",
+        FontFamily = FontFamily.Swiss,
+        Pitch = FontPitch.Variable,
+        Charset = FontCharset.EastEurope,
+        Panose = "020B0604020202020204",
+        FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
+      },
+      new Font
+      {
+        Name = "Times New Roman",
+        Aliases = "Times",
+        FontFamily = FontFamily.Roman,
+        Pitch = FontPitch.Variable,
+        Charset = FontCharset.Ansi,
+        Panose = "02020603050405020304",
+        FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
+      },
+      new Font
+      {
+        Name = "Courier New",
+        Aliases = "Courier",
+        FontFamily = FontFamily.Modern,
+        Pitch = FontPitch.Fixed,
+        Panose = "02070309020205020404",
+        FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000",
+        NotTrueType = true,
+      }
+    };
     return fonts;
   }
 
@@ -56,7 +58,7 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
   {
     Font newFont = new Font
     {
-      FontName = "Verdana",
+      Name = "Verdana",
       Aliases = "Geneva",
       FontFamily = FontFamily.Swiss,
       Pitch = FontPitch.Variable,

@@ -17,6 +17,7 @@ global using System.Xml.Schema;
 
 global using DocumentModel.OpenXml;
 global using DocumentModel.Wordprocessing;
+global using DocumentModel.XmlSerialization;
 
 global using Qhta.TypeUtils;
 global using Qhta.TextUtils;
