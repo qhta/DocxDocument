@@ -58,7 +58,14 @@ public class FontEmbeddingTestClass: _AbstractTestClass
         Console.WriteLine($"✗ {TestName} {testMethodName} failed: 'Times New Roman' font does not have font data for the embedded regular font.");
         return false;
       }
+      var fontFileName = Path.Combine(TestFileDir, $"Times.ttf");
 
+      var fontData = (byte[])timesNewRomanFont.EmbedRegularFont.FontData;
+      using (var memStream = new MemoryStream(fontData)) 
+        using (var stream = new FileStream(fontFileName, FileMode.Create, FileAccess.Write))
+        {
+          memStream.CopyTo(stream);
+        }
     }
     Console.WriteLine($"✓ {TestName} {testMethodName} passed\n");
     return true;

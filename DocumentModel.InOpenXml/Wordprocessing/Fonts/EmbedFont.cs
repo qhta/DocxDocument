@@ -58,6 +58,7 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
       throw new ApplicationException("The Id property is null in LoadFontData.");
     if (FontKey == null)
       throw new ApplicationException("The FontKey property is null in LoadFontData.");
+
     var mainPart = WordprocessingDocument.MainDocumentPart;
     var fontTablePart = mainPart?.FontTablePart;
     if (fontTablePart == null)
@@ -143,12 +144,19 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
   /// <param name="key">The key used for the obfuscation or de-obfuscation process.</param>
   private void ObfuscateDeobfuscate(byte[] data, Guid key)
   {
-    var guidBytes = key.ToByteArray();
+    // We cannot use Guid.ToByteArray() here because the obfuscation algorithm in the specification is based on the string representation of the GUID without dashes, which has a different byte order than the byte array returned by ToByteArray(). Therefore, we need to manually convert the GUID to a byte array in the correct order for the obfuscation algorithm.
+    var guidStringArray = key.ToString("N");
+    var guidBytes = new byte[16];
+    for (int i = 0; i < 16; i++)
+    {
+      guidBytes[i] = Convert.ToByte(guidStringArray.Substring(i * 2, 2), 16);
+    }
     var revertedGuidBytes = new byte[guidBytes.Length];
     for (int i = 0; i < guidBytes.Length; i++)
     {
       revertedGuidBytes[i] = guidBytes[^(i + 1)];
     }
+
     for (int dataIndex = 0; dataIndex < data.Length && dataIndex < 32; dataIndex++)
     {
       int keyIndex = dataIndex % 16;
