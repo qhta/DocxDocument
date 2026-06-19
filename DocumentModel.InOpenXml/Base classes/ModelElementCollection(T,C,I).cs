@@ -58,7 +58,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       }
       else
       {
-        //Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
+        //Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Typeface}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
         modelObject = Activator.CreateInstance<ItemType>();
         modelObject.LoadData(openXmlElement);
       }

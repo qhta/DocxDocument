@@ -56,7 +56,8 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
+  /// Attach this instance to the specified wordprocessingDocument.
+  /// Data is loaded from the wordprocessingDocument's ExtendedFileProperties part.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)

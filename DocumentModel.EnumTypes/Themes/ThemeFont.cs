@@ -7,16 +7,6 @@ namespace DocumentModel.Wordprocessing;
 public enum ThemeFont
 {
   /// <summary>
-  ///   Major East Asian Theme Font.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorEastAsia))]
-  MajorEastAsia,
-  /// <summary>
-  ///   Major Complex Script Theme Font.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorBidi))]
-  MajorBidi,
-  /// <summary>
   ///   Major ASCII Theme Font.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorAscii))]
@@ -27,15 +17,15 @@ public enum ThemeFont
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorHighAnsi))]
   MajorHighAnsi,
   /// <summary>
-  ///   Minor East Asian Theme Font.
+  ///   Major East Asian Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorEastAsia))]
-  MinorEastAsia,
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorEastAsia))]
+  MajorEastAsia,
   /// <summary>
-  ///   Minor Complex Script Theme Font.
+  ///   Major Complex Script Theme Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorBidi))]
-  MinorBidi,
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MajorBidi))]
+  MajorComplexScript,
   /// <summary>
   ///   Minor ASCII Theme Font.
   /// </summary>
@@ -45,5 +35,17 @@ public enum ThemeFont
   ///   Minor High ANSI Theme Font.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorHighAnsi))]
-  MinorHighAnsi
+  MinorHighAnsi,
+  /// <summary>
+  ///   Minor East Asian Theme Font.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorEastAsia))]
+  MinorEastAsia,
+  /// <summary>
+  ///   Minor Complex Script Theme Font.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues.MinorBidi))]
+  MinorComplexScript,
+
+
 }

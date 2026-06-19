@@ -12,8 +12,8 @@ public partial class Font : ModelElement<DXW.Font>
  /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Name))]
- public string? Name { get => _name; set => UpdateField(ref _name, value, nameof(Name)); }
- private string? _name;
+ public string? Typeface { get => _typeface; set => UpdateField(ref _typeface, value, nameof(Typeface)); }
+ private string? _typeface;
 
  /// <summary>
  /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.

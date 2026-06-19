@@ -16,7 +16,7 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
     {
       new Font
       {
-        Name = "Arial",
+        Typeface = "Arial",
         Aliases = "Helvetica,Swiss",
         FontFamily = FontFamily.Swiss,
         Pitch = FontPitch.Variable,
@@ -26,7 +26,7 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
       },
       new Font
       {
-        Name = "Times New Roman",
+        Typeface = "Times New Roman",
         Aliases = "Times",
         FontFamily = FontFamily.Roman,
         Pitch = FontPitch.Variable,
@@ -36,7 +36,7 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
       },
       new Font
       {
-        Name = "Courier New",
+        Typeface = "Courier New",
         Aliases = "Courier",
         FontFamily = FontFamily.Modern,
         Pitch = FontPitch.Fixed,
@@ -58,7 +58,7 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
   {
     Font newFont = new Font
     {
-      Name = "Verdana",
+      Typeface = "Verdana",
       Aliases = "Geneva",
       FontFamily = FontFamily.Swiss,
       Pitch = FontPitch.Variable,

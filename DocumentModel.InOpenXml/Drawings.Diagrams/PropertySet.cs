@@ -14,7 +14,7 @@ public partial class PropertySet : ModelElement<DXDD.PropertySet>
  private string? _PresentationElementId;
 
  /// <summary>
- ///   Presentation Name
+ ///   Presentation Typeface
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.PropertySet.PresentationName))]
  public string? PresentationName { get => _PresentationName; set => UpdateField(ref _PresentationName, value, nameof(PresentationName)); }

@@ -1,7 +1,8 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Json converter for serializing and deserializing document properties. This converter handles the conversion of DocumentProperty objects to and from JSON format, ensuring that the Name and Value properties are correctly represented in the JSON structure. The converter also takes into account the expected type of the Value property based on the Name of the property, using a mapping to determine the appropriate type for deserialization.
+/// Json converter for serializing and deserializing document properties. This converter handles the conversion
+/// of DocumentProperty objects to and from JSON format, ensuring that the Name and Value properties are correctly represented in the JSON structure. The converter also takes into account the expected type of the Value property based on the Name of the property, using a mapping to determine the appropriate type for deserialization.
 /// </summary>
 public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : DocumentProperty, new()
 {

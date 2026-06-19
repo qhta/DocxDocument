@@ -4117,16 +4117,6 @@
               Defines the ThemeFontValues enumeration.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MajorEastAsia">
-            <summary>
-              Major East Asian Theme Font.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MajorBidi">
-            <summary>
-              Major Complex Script Theme Font.
-            </summary>
-        </member>
         <member name="F:DocumentModel.Wordprocessing.ThemeFont.MajorAscii">
             <summary>
               Major ASCII Theme Font.
@@ -4137,14 +4127,14 @@
               Major High ANSI Theme Font.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorEastAsia">
+        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MajorEastAsia">
             <summary>
-              Minor East Asian Theme Font.
+              Major East Asian Theme Font.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorBidi">
+        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MajorComplexScript">
             <summary>
-              Minor Complex Script Theme Font.
+              Major Complex Script Theme Font.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorAscii">
@@ -4155,6 +4145,16 @@
         <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorHighAnsi">
             <summary>
               Minor High ANSI Theme Font.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorEastAsia">
+            <summary>
+              Minor East Asian Theme Font.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Wordprocessing.ThemeFont.MinorComplexScript">
+            <summary>
+              Minor Complex Script Theme Font.
             </summary>
         </member>
         <member name="T:DocumentModel.Wordprocessing.IMEMode">
@@ -29754,12 +29754,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.FontCollectionIndex.Major">
             <summary>
-              Major IFont.
+              Major Font.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.FontCollectionIndex.Minor">
             <summary>
-              Minor IFont.
+              Minor Font.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.FontCollectionIndex.None">

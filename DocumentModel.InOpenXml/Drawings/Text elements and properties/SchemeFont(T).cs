@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings;
 public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElement where T : DXD.FontCollectionType
 {
   /// <summary>
-  ///   TextFormat configuration for Latin script text (e.g., English, Western European languages).
+  ///   TextFormat configuration for Latin script text (e.g., English and other languages based on Latin alphabet).
   /// </summary>
   [OpenXmlElement(typeof(DXD.LatinFont))]
   public TextFontType? LatinFont 

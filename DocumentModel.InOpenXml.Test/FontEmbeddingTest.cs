@@ -42,7 +42,7 @@ public class FontEmbeddingTestClass: _AbstractTestClass
         xmlString = stringWriter.ToString();
       }
       Console.WriteLine($"{TestName} Serialized XML:\n" + xmlString);
-      var timesNewRomanFont = testData.FirstOrDefault(f => f.Name == "Times New Roman");
+      var timesNewRomanFont = testData.FirstOrDefault(f => f.Typeface == "Times New Roman");
       if (timesNewRomanFont == null)
       {
         Console.WriteLine($"✗ {TestName} {testMethodName} failed: 'Times New Roman' font not found in font table.");

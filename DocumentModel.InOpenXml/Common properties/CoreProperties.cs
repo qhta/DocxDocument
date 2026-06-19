@@ -55,7 +55,8 @@ public partial class CoreProperties : BaseBuiltInProperties
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
+  /// Attach this instance to the specified wordprocessingDocument.
+  /// Data is loaded from the wordprocessingDocument's CoreProperties part.
   /// </summary>
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public sealed override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)

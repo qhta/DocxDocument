@@ -7,12 +7,12 @@
 public enum FontCollectionIndex
 {
   /// <summary>
-  ///   Major IFont.
+  ///   Major Font.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues.Major))]
   Major,
   /// <summary>
-  ///   Minor IFont.
+  ///   Minor Font.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues.Minor))]
   Minor,

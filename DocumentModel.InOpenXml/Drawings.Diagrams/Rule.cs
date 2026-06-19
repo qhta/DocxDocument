@@ -21,7 +21,7 @@ public partial class Rule : ModelElement<DXDD.Rule>
  private ConstraintRelationship? _For;
 
  /// <summary>
- ///   For Name
+ ///   For Typeface
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Rule.ForName))]
  public string? ForName { get => _ForName; set => UpdateField(ref _ForName, value, nameof(ForName)); }

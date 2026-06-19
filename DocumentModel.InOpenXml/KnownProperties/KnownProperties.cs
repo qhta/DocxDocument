@@ -58,7 +58,8 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  {
   if (!_knownTypeProperties.TryGetValue(ofType, out var _properties))
   {
-   _properties = ofType.GetProperties().Where(prop => prop.CanWrite //&& prop.Name != "Count" && prop.Name != "IsReadOnly" && prop.Name != "KnownProperties"
+   _properties = ofType.GetProperties().Where(prop => prop.CanWrite 
+      //&& prop.Name != "Count" && prop.Name != "IsReadOnly" && prop.Name != "KnownProperties"
    && prop.GetCustomAttribute<NotMappedAttribute>() == null).ToDictionary(item => item.Name, item => new PropertyModel(item));
    _knownTypeProperties.Add(ofType, _properties);
   }

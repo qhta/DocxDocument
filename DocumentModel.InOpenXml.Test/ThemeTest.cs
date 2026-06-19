@@ -227,7 +227,7 @@ public class ThemeTest : _AbstractTestClass
         },
         //FormatScheme = new FormatScheme
         //{
-        //  Name = "Office",
+        //  Typeface = "Office",
         //  FillStyleList =
         //  [
         //    new SolidFill { Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF } },

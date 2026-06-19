@@ -75,7 +75,7 @@
     //      ShowEnvelope = false,
     //      ShowXmlTags = true,
     //      StrictFirstAndLastChars = false,
-    //      StylePaneSortMethods = StylePaneSortMethods.Name,
+    //      StylePaneSortMethods = StylePaneSortMethods.Typeface,
     //      SummaryLength = new Percent(50),
     //      TrackRevisions = false,
     //      UICompatibleWith97To2003 = false,

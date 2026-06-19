@@ -33,7 +33,7 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  /// </summary>
  /// <remarks>
  ///   <para>
- ///   The <b>Name</b> property provides a human-readable identifier for the effect container, which can be used
+ ///   The Name of the property provides a human-readable identifier for the effect container, which can be used
  ///   for referencing, documentation, or semantic grouping of effects. Names help distinguish between different
  ///   effect containers within a document or drawing context.
  ///   </para>

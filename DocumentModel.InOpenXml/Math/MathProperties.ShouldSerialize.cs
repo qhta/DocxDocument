@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 
 public partial class MathProperties
 {
-  public bool ShouldSerializeMathFont() => !String.IsNullOrEmpty(MathFont);
+  public bool ShouldSerializeMathFont() => !String.IsNullOrEmpty(Typeface);
   public bool ShouldSerializeBreakBinary() => BreakBinary is not null;
   public bool ShouldSerializeBreakBinarySubtraction() => BreakBinarySubtraction is not null;
   public bool ShouldSerializeSmallFraction() => SmallFraction is not null;

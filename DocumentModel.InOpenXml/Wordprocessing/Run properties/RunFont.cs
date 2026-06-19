@@ -14,7 +14,7 @@
     /// <summary>
     /// Typeface name for the font to be used in the run.
     /// </summary>
-    public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+    public string? Typeface { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
     
     /// <summary>
     /// Theme font to be used for this font, allowing theme-based font selection.

@@ -1,13 +1,16 @@
 ﻿Fonts, that are used in the OpenXml document, are stored in the **FontTablePart** part. 
 Content of the **FontTablePart** part is represented by the **FontTable** class. 
 Each font is represented by the **Font** class. 
-The **Font** class has a property called **Name**, which contains the name of the font,
+The **Font** class has a property called **Typeface**, which contains the name of the font,
 and is used to identify the font in the document.
+
+The current font used in the document is determined by the **RunProperties** of the text, 
+specially by **RunFonts** element, which specifies font names for different scripts.
 
 # Font class
 
 The **Font** class has several properties that are used to identify the font and determine its similarity to other fonts.
-- **Name** - the base name of the font, which is used to identify the font in the document.
+- **Typeface** - the base name of the font, which is used to identify the font in the document.
 - **Aliases** - the list of alternative names for the font.
 - **Panose** - the Panose classification of the font.
 - **Charset** - the character set of the font.
@@ -123,8 +126,113 @@ The **EmbedFont** class has the following properties:
 ### Font data obfuscation
 
 The **FontKey** property is used to obfuscate the font data in the embedded font part. 
-The obfuscation process involves XORing the first 32 bytes of the font data with bytes derived from the **FontKey**. 
+The obfuscation process involves XORing the first 32 bytes of the font data with bytes derived from the **FontKey** (in reversed order).
 This ensures that the font data is not easily readable, providing a layer of protection for the embedded font.
 
 Font data is deobfuscated when the font is loaded from the embedded font part in OpenXml document to the **EmbedFont** instance, 
 and obfuscated when the font is saved to the embedded font part.
+
+# FontScheme class
+
+In addition to referencing individual fonts, the OpenXml document can also reference font schemes, 
+which are collections of font references for different usage scenarios.
+The font scheme is used in drawing elements, such as charts and diagrams, 
+but also in the main part of the document in the text elements, such as paragraphs and runs.
+
+The font scheme is stored in the **FontSchemePart** part, and is represented by the **FontScheme** class.
+The **FontScheme** class represents a font scheme, 
+which is a collection of font references divided into major and minor font types. 
+Major font types are used for headings and titles, 
+while minor font types are used for body text and other content.
+
+Both **MajorFont** and **MinorFont** classes derive from **SchemeFont** class,
+which have the following properties:
+- **LatinFont** - the font identification for Latin script.
+- **EastAsianFont** - the font identification for East Asian script.
+- **ComplexScriptFont** - the font identification for complex script, such as Arabic or Hebrew.
+- **SupplementalFonts** - the collection of supplemental font references for additional language and script support.
+
+The **LatinFont**, **EastAsianFont**, and **ComplexScriptFont** properties 
+have the same type of **TextFontType**, which is a simpler version of the **Font** class.
+It contains only:
+- **Typeface** property, which is the name of the font.
+- **Charset** property, which is a byte value that indicates the character set of the font.
+- **Panose** property, which is a 10-byte HexBinary value that describes the visual characteristics of the font.
+- **Pitch** property, which is an enum value that indicates the pitch of the font (auto, fixed, variable).
+
+The **SupplementalFonts** property is a collection of **SupplementalFont** instances, 
+which represent additional font references for specific scripts. 
+Each **SupplementalFont** instance has only two properties:
+- **Script** - the script identifier for the supplemental font, such as "Jpan" for Japanese, "Hans" for simplified Chinese, etc.
+- **Typeface** - the name of the font typeface.
+
+# Referencing fonts in the document
+
+Fonts are referenced in the document in the following classes:
+- **DocumentModel.Wordprocessing.RunFonts** - specifies the font names for different scripts in the run properties of the text.
+- **DocumentModel.Drawings.FontReference** - specifies the font reference for a text element in shapes and other drawing elements.
+- **DocumentModel.Math.MathProperties** - specifies the font reference for elements of mathematical equations, such as a math run or a math paragraph.
+
+## RunFonts class
+
+The **RunFonts** class has the following properties for specifying fonts for different scripts:
+- **Ascii** - the font name for Latin script.
+- **HighAnsi** - the font name for high ANSI characters (a superset of Latin script).
+- **EastAsia** - the font name for East Asian characters.
+- **ComplexScript** - the font name for complex script characters.
+- **AsciiTheme** - a theme index of a font used for Latin script,
+- **HighAnsiTheme** - a theme index of a font used for high ANSI characters,
+- **EastAsiaTheme** - a theme index of a font used for East Asian characters,
+- **ComplexScriptTheme** - a theme index of a font used for complex script characters,
+- **Hint** - a hint for font substitution, which can be used to specify the preferred font type (using the special algorithm described below).
+
+The **Ascii**, **HighAnsi**, **EastAsia**, and **ComplexScript** properties of the **RunFonts** class
+are simply strings that identify the font by the name in the document.
+
+The **AsciiTheme**, **HighAnsiTheme**, **EastAsiaTheme**, and **ComplexScriptTheme** properties 
+are enums that specify the theme index of the font used for different scripts. 
+The **ThemeFont** enum type has the following values:
+- **MajorAscii** - refers to the major Ascii font in font scheme.
+- **MajorHighAnsi** - refers to the major font for high ANSI characters in font scheme.
+- **MajorEastAsia** - refers to the major font for East Asian characters in font scheme.
+- **MajorComplexScript** - refers to the major font for complex script characters in font scheme.
+- **MinorAscii** - refers to the minor Ascii font in font scheme.
+- **MinorHighAnsi** - refers to the minor font for high ANSI characters in font scheme.
+- **MinorEastAsia** - refers to the minor font for East Asian characters in font scheme.
+- **MinorComplexScript** - refers to the minor font for complex script characters in font scheme.
+
+The **Hint** property of the **RunFonts** class can have the following values:
+- **Default** - no hint is provided, and the font is determined based on the Unicode code point of the character.
+- **EastAsia** - the font should be determined using East Asian font slot for characters that fall into East Asian classification, regardless of their Unicode code point.
+- **ComplexScript** - the font should be determined using Complex Script font slot for characters that fall into Complex Script classification, regardless of their Unicode code point.
+
+The font is determined for each of the characters in the text using the two-step algorithm:
+1. Use the table of Unicode code points to decide the classification of the character, based on its Unicode code point.
+2. If, after the first step, the character falls into East Asian classification and the value of the **Hint** property
+is **EastAsia**, then the character should use East Asian font slot
+	a. Otherwise, if this run has **ComplexScript** or **RightToLeft** properties set, then the character should use Complex Script font slot, regardless of its Unicode code point.
+		i. Otherwise, the character is decided using the font slot that is corresponding to the classification in the range table.
+				
+Note that **Hint** value of **ComplexScript** is not used in the above algorithm. 
+Instead, the Complex Script font slot is used for runs that have **ComplexScript** (\<w:cs>) or **RightToLeft** (\<w:rtl>) properties set, 
+regardless of the value of the **Hint** property. 
+Additionally, the **ComplexScript** (\<w:cs>) property also causes the Complex Script formatting
+(\<w:bCs>, \<w:iCs>, etc.) to be applied to the run instead of the regular formatting (\<w:b>, \<w:i>, etc.),
+
+## Drawings.FontReference class
+
+When a font is referenced in a drawing element, such as a shape, 
+it is represented by the **FontReference** class,
+which is an element of the **DocumentModel.Drawings.ShapeStyle** class. 
+The **FontReference** type has an **Index** property, 
+which is an enum value that indicates the font type for the drawing element. 
+It allows to select only **Major** or **Minor** font types from the font scheme, 
+and does not allow to specify the font by name.
+
+## MathProperties class
+
+When a font is referenced in a mathematical equation, a **MathProperties** class is used.
+The **MathProperties** class has a property called **Typeface**, 
+which specifies the default math font to be used in the document. 
+If this element is omitted, font substitution should be used 
+to determine the most appropriate font for use throughout the document.  

@@ -90,7 +90,7 @@ public partial class MainWindow : Window
 
       //var dockItem = new DockItem
       //{
-      //  Name = windowName,
+      //  Typeface = windowName,
       //  Header = header,
       //  State = DockState.Float,
       //  CanFloatMaximize = true,

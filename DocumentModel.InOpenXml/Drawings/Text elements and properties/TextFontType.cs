@@ -7,11 +7,11 @@ namespace DocumentModel.Drawings;
 public partial class TextFontType : ModelElement<DXD.TextFontType>
 {
  /// <summary>
- ///   Typeface name for the font.
+ ///   Name name for the font.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextFontType.Typeface))]
- public string? Typeface { get => _Typeface; set => UpdateField(ref _Typeface, value, nameof(Typeface)); }
- private string? _Typeface;
+ public string? Typeface { get => _typeface; set => UpdateField(ref _typeface, value, nameof(Typeface)); }
+ private string? _typeface;
 
  /// <summary>
  ///   Panose classification for the font.
@@ -24,8 +24,8 @@ public partial class TextFontType : ModelElement<DXD.TextFontType>
  ///   Pitch family value indicating similar font family.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextFontType.PitchFamily))]
- public HexByte? PitchFamily { get => _PitchFamily; set => UpdateField(ref _PitchFamily, value, nameof(PitchFamily)); }
- private HexByte? _PitchFamily;
+ public HexByte? Pitch { get => _pitch; set => UpdateField(ref _pitch, value, nameof(Pitch)); }
+ private HexByte? _pitch;
 
  /// <summary>
  ///   Character set value indicating similar character set.
