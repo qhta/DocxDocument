@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
 [XmlRoot("Color", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Color : DMWD.WordAbstractColor<DXW.Color>
+public partial class Color : Color<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.

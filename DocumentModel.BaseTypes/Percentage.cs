@@ -1,14 +1,32 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Represents a Percentage value stored as a double-precision floating-point number.
+/// Represents a percentage value stored as a long integer value, where the value is scaled by 100000 to preserve precision.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-/// When converted to/from integers, the value is treated as a whole number counted in 1/100000.
+/// The following conversion rules apply:
+/// <list type="bullet">
+/// <item>
+/// Numeric conversion to/from integer types (e.g., int, long, ushort, uint) treats the value as a raw integer representing the scaled percentage.
+/// For example, a value of 5000 corresponds to 5% and 10000 corresponds to 10%.</item>
+/// <item>
+/// Numeric conversion to/from floating-point types (e.g., float, double, decimal) treats the value as a scaled percentage.
+/// For example, a value of 0.5 corresponds to 50% and 1.0 corresponds to 100%.
+/// </item>
+/// <item>
+/// String conversion with the "%" suffix represents percentage scale.
+/// For example, a raw value of 5000 corresponds to "5%", and a raw value of 10000 corresponds to "10%".
+/// </item>
+/// <item>
+/// String conversion without the "%" suffix represents the value as a raw integer number and is not scaled.
+/// For example, a string value of "30000" corresponds to a raw value of 30000, and "60000" corresponds to a raw value of 60000.
+/// Use of decimal separator in string input without the "%" suffix is not supported and will result in a parsing error, as it is treated as a raw integer value.
+/// </item>
+/// </list>
 /// </summary>
 [JsonConverter(typeof(PercentageJsonConverter))]
 public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>, IComparable<Percentage>, IComparable<object>
 {
-  private readonly double value;
+  private readonly long value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Percentage"/> struct from a string value.
@@ -22,11 +40,12 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
-      value = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) / 100.0;
+      var doubleValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+      this.value = (long)(doubleValue * 100000);
     }
     else
     {
-      value = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+      this.value = long.Parse(str);
     }
   }
 
@@ -36,7 +55,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The int value representing the Percentage.</param>
   public Percentage(int value)
   {
-    this.value = value / 100.0;
+    this.value = value;
   }
 
   /// <summary>
@@ -45,7 +64,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The int value representing the Percentage.</param>
   public Percentage(Int64 value)
   {
-    this.value = value / 100.0;
+    this.value = value;
   }
 
   /// <summary>
@@ -54,7 +73,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The double value representing the Percentage.</param>
   public Percentage(double value)
   {
-    this.value = value;
+    this.value = (long)(value * 100000);
   }
 
   /// <summary>
@@ -63,7 +82,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The double value representing the Percentage.</param>
   public Percentage(decimal value)
   {
-    this.value = (double)value;
+    this.value = (long)(value * 100000);
   }
 
 
@@ -73,7 +92,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The UInt64 value representing the Percentage.</param>
   public Percentage(UInt64 value)
   {
-    this.value = value / 100.0;
+    this.value = (long)(value * 100000);
   }
 
   /// <summary>
@@ -86,7 +105,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
-      var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture)/100.0;
+      var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture) / 100.0;
       return new Percentage(val);
     }
     else
@@ -154,7 +173,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public Decimal ToDecimal(IFormatProvider? provider)
   {
-    return (decimal)(value);
+    return (decimal)(value / 100000.0);
   }
 
   /// <summary>
@@ -164,7 +183,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return (double)value;
+    return (double)(value / 100000.0);
   }
 
   /// <summary>
@@ -214,7 +233,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return (float)value;
+    return (float)(value / 100000.0);
   }
 
   /// <summary>
@@ -224,7 +243,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider);
+    return (value / 100000.0).ToString(provider)+"%";
   }
 
   /// <summary>
@@ -283,11 +302,11 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (targetType == typeof(SByte))
       return (sbyte)value;
     if (targetType == typeof(Single))
-      return (float)(value);
+      return (float)(value / 100000.0);
     if (targetType == typeof(Double))
-      return (double)value;
+      return (double)(value / 100000.0);
     if (targetType == typeof(double))
-      return (double)value;
+      return (double)(value / 100000.0);
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Percentage))
@@ -317,7 +336,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 16-bit unsigned integer representation of the Percentage value.</returns>
   public static implicit operator ushort(Percentage val)
   {
-    return (ushort)(val.value * 100);
+    return (ushort)(val.value);
   }
 
   /// <summary>
@@ -327,7 +346,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit unsigned integer representation of the Percentage value.</returns>
   public static implicit operator uint(Percentage val)
   {
-    return (uint)(val.value * 100);
+    return (uint)(val.value);
   }
 
   /// <summary>
@@ -337,7 +356,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit signed integer representation of the Percentage value.</returns>
   public static implicit operator Int32(Percentage val)
   {
-    return (int)(val.value * 100);
+    return (int)(val.value);
   }
 
   /// <summary>
@@ -347,7 +366,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 64-bit signed integer representation of the Percentage value.</returns>
   public static implicit operator Int64(Percentage val)
   {
-    return (long)(val.value * 100);
+    return (long)(val.value);
   }
 
   /// <summary>
@@ -357,7 +376,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 64-bit unsigned integer representation of the Percentage value.</returns>
   public static implicit operator ulong(Percentage val)
   {
-    return (ulong)(val.value * 100);
+    return (ulong)(val.value);
   }
 
   /// <summary>
@@ -367,7 +386,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A double representation of the Percentage value.</returns>
   public static implicit operator decimal(Percentage val)
   {
-    return (decimal)val.value;
+    return (decimal)(val.value / 100000.0);
   }
 
   /// <summary>
@@ -377,7 +396,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A double representation of the Percentage value.</returns>
   public static implicit operator Double(Percentage val)
   {
-    return (Double)val.value;
+    return (Double)(val.value / 100000.0);
   }
 
   /// <summary>
@@ -417,7 +436,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
   public static implicit operator Percentage(ulong val)
   {
-    return new Percentage((double)val);
+    return new Percentage(val);
   }
 
   #endregion
@@ -461,7 +480,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return (value * 100).ToString(CultureInfo.InvariantCulture) + "%";
+    return (value / 100000.0).ToString(CultureInfo.InvariantCulture) + "%";
   }
 
   /// <summary>
@@ -496,12 +515,15 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
     string format = $"F{precision}";
-    if (unit != null)
+    if (unit == "%")
     {
-      if (unit.EndsWith("%"))
-        return (value*100).ToString(format, provider) + unit;
+      return (value / 100000.0).ToString(format, provider) + unit;
     }
-    return value.ToString(provider);
+    else if (String.IsNullOrEmpty(unit))
+    {
+      return (value).ToString(provider);
+    }
+    throw new NotSupportedException($"The unit '{unit}' is not supported.");
   }
 
   /// <summary>
@@ -512,12 +534,15 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)
   {
-    if (unit != null)
+    if (unit == "%")
     {
-      if (unit.EndsWith("%"))
-        return (value*100).ToString(provider) + unit;
+      return (value / 100000.0).ToString(provider) + unit;
     }
-    return value.ToString(provider);
+    else if (String.IsNullOrEmpty(unit))
+    {
+      return (value).ToString(provider);
+    }
+    throw new NotSupportedException($"The unit '{unit}' is not supported.");
   }
 
   #endregion
@@ -574,11 +599,11 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (other is Byte byteValue)
       return this.CompareTo(byteValue);
     if (other is Single singleValue)
-      return this.CompareTo((double)singleValue);
+      return this.CompareTo((double)singleValue * 100000.0);
     if (other is decimal decimalValue)
-      return this.CompareTo((double)decimalValue);
+      return this.CompareTo((double)decimalValue * 100000.0);
     if (other is double doubleValue)
-      return this.CompareTo((double)doubleValue);
+      return this.CompareTo((double)doubleValue * 100000.0);
     if (other is String str)
       return this.CompareTo(Percentage.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");

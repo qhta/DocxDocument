@@ -14,9 +14,9 @@ public partial class SchemeColor : IColor
     {
       if (_RGB != null)
         return _RGB;
-      if (this.Val is null)
+      if (this.Index is null)
         return null;
-      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
+      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
       return (ColorScheme as ISchemeBaseColor)?.RGB;
     }
 
@@ -110,7 +110,7 @@ public partial class SchemeColor : IColor
         return;
       if (Enum.TryParse<SchemeColors>(value, out var schemeColor))
       {
-        this.Val = schemeColor;
+        this.Index = schemeColor;
         return;
       }
 

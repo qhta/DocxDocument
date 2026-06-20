@@ -49,8 +49,8 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SystemColor),
       typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.Drawings.RgbColorHex),
-      typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor),
+      typeof(DocumentModel.Wordprocessing.RgbColorHex),
+      typeof(DocumentModel.Wordprocessing.SchemeColor),
     }.OrderBy(t => t.FullName).ToList();
 
     if (!discovered.SequenceEqual(expected))
@@ -284,32 +284,32 @@ public class ColorTypesTest : _AbstractTestClass
     if (colorType == typeof(DocumentModel.Drawings.HslColor))
       return new HslColor
       {
-        HueValue = new Degrees(120),
-        SatValue = new Percentage(60),
-        LumValue = new Percentage(45),
+        Hue = new Degrees(120),
+        Saturation = new Percentage(60),
+        Luminance = new Percentage(45),
         Tint = new Percentage(10),
         Shade = new Percentage(5),
       };
 
     if (colorType == typeof(DocumentModel.Drawings.PresetColor))
-      return new DocumentModel.Drawings.PresetColor { Val = PresetColors.Red, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.PresetColor { Index = PresetColors.Red, Tint = new Percentage(10), Shade = new Percentage(5), };
     if (colorType == typeof(DocumentModel.Drawings.RgbColorModelHex))
-      return new DocumentModel.Drawings.RgbColorModelHex { Val = (HexColor)0x336699, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.RgbColorModelHex { Value = (HexColor)0x336699, Tint = new Percentage(10), Shade = new Percentage(5), };
     if (colorType == typeof(DocumentModel.Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage
       {
-        Red = new Percentage(20),
+        R = new Percentage(20),
         Green = new Percentage(40),
         Blue = new Percentage(60),
         Tint = new Percentage(10),
         Shade = new Percentage(5),
       };
     if (colorType == typeof(DocumentModel.Drawings.SchemeColor))
-      return new DocumentModel.Drawings.SchemeColor { Val = SchemeColors.Accent3, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.SchemeColor { Index = SchemeColors.Accent3, Tint = new Percentage(10), Shade = new Percentage(5), };
     if (colorType == typeof(DocumentModel.Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {
-        Val = SystemColors.WindowText,
+        Index = SystemColors.WindowText,
         LastColor = (HexColor)0x112233,
         Tint = new Percentage(10),
         Shade = new Percentage(5),
@@ -322,19 +322,19 @@ public class ColorTypesTest : _AbstractTestClass
         ThemeTint = 40,
         ThemeShade = 20,
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.RgbColorHex))
-      return new DocumentModel.Wordprocessing.Drawings.RgbColorHex
+    if (colorType == typeof(DocumentModel.Wordprocessing.RgbColorHex))
+      return new DocumentModel.Wordprocessing.RgbColorHex
       {
-        Val = (HexColor)0x336699,
-        Tint = 10000,
-        Shade = 5000,
+        Value = (HexColor)0x336699,
+        Tint = new DMD.Percentage(10000),
+        Shade = new DMD.Percentage(5000),
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor))
-      return new DocumentModel.Wordprocessing.Drawings.SchemeColor
+    if (colorType == typeof(DocumentModel.Wordprocessing.SchemeColor))
+      return new DocumentModel.Wordprocessing.SchemeColor
       {
-        Val = SchemeColors.Accent3,
-        Tint = 10000,
-        Shade = 5000,
+        Index = DMD.SchemeColors.Accent3,
+        Tint = new DMD.Percentage(10000),
+        Shade = new DMD.Percentage(5000),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }
@@ -374,18 +374,18 @@ public class ColorTypesTest : _AbstractTestClass
         ColorScheme = new ColorScheme
         {
           Name = "Office",
-          Dark1Color = new SystemColor() { Val = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
-          Light1Color = new SystemColor() { Val = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
-          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x0E2841 },
-          Light2Color = new RgbColorModelHex { Val = (HexColor)0xE8E8E8 },
-          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x156082 },
-          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xE97132 },
-          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xE97132 },
-          Accent4Color = new RgbColorModelHex { Val = (HexColor)0x0F9ED5 },
-          Accent5Color = new RgbColorModelHex { Val = (HexColor)0xA02B93 },
-          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x4EA72E },
-          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0467886 },
-          FollowedHyperlink = new RgbColorModelHex { Val = (HexColor)0x96607D },
+          Dark1Color = new SystemColor() { Index = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
+          Light1Color = new SystemColor() { Index = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
+          Dark2Color = new RgbColorModelHex { Value = (HexColor)0x0E2841 },
+          Light2Color = new RgbColorModelHex { Value = (HexColor)0xE8E8E8 },
+          Accent1Color = new RgbColorModelHex { Value = (HexColor)0x156082 },
+          Accent2Color = new RgbColorModelHex { Value = (HexColor)0xE97132 },
+          Accent3Color = new RgbColorModelHex { Value = (HexColor)0xE97132 },
+          Accent4Color = new RgbColorModelHex { Value = (HexColor)0x0F9ED5 },
+          Accent5Color = new RgbColorModelHex { Value = (HexColor)0xA02B93 },
+          Accent6Color = new RgbColorModelHex { Value = (HexColor)0x4EA72E },
+          Hyperlink = new RgbColorModelHex { Value = (HexColor)0x0467886 },
+          FollowedHyperlink = new RgbColorModelHex { Value = (HexColor)0x96607D },
         }
       }
     };

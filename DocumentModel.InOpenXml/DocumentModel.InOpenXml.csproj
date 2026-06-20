@@ -27,15 +27,10 @@
     <Compile Remove="Common properties\BuiltInDocumentProperties.cs" />
     <Compile Remove="Common properties\CoreProperties.DocumentProperties.Impl.cs" />
     <Compile Remove="Drawings\Colors\DrawingColor.cs" />
-    <Compile Remove="Drawings\Colors\DrawingColorBase.cs" />
-    <Compile Remove="Drawings\Colors\DrawingColorBase.ShouldSerialize.cs" />
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.cs" />
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.ShouldSerialize.cs" />
     <Compile Remove="Math\Argument.cs" />
     <Compile Remove="Math\Argument.ShouldSerialize.cs" />
-    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.cs" />
-    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.ShouldSerialize.cs" />
-    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorClass.cs" />
     <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
@@ -57,9 +52,9 @@
     <Compile Include="Drawings\Colors\RgbColorModelPercentage.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelHex.Imp.cs" />
     <Compile Include="Drawings\Colors\SystemColor.Imp.cs" />
-    <Compile Include="Wordprocessing.Drawings\Colors\RgbColorModelHex.Imp.cs" />
-    <Compile Include="Wordprocessing.Drawings\Colors\SchemeColor.Imp.cs" />
-    <Compile Include="Wordprocessing\Common\Color.Imp.cs" />
+    <Compile Include="Wordprocessing\Colors\RgbColorModelHex.Imp.cs" />
+    <Compile Include="Wordprocessing\Colors\SchemeColor.Imp.cs" />
+    <Compile Include="Wordprocessing\Colors\Color.Imp.cs" />
     <Compile Include="Wordprocessing\Run properties\BaseRunProperties.TextFormat.Imp.cs" />
   </ItemGroup>
   <ItemGroup>

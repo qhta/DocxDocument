@@ -1,5 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
 
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>

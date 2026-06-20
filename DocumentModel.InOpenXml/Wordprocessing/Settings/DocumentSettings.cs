@@ -308,12 +308,12 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// </remarks>
   [MultiCategory("Conformance")]
   [OpenXmlElement(typeof(DXW.ColorSchemeMapping))]
-  public DMWD.ColorSchemeMapping? ColorSchemeMapping
+  public ColorSchemeMapping? ColorSchemeMapping
   {
-    get => _ColorSchemeMapping ??= GetElement<DMWD.ColorSchemeMapping?, DXW.ColorSchemeMapping>(_UpdatableElement);
+    get => _ColorSchemeMapping ??= GetElement<ColorSchemeMapping?, DXW.ColorSchemeMapping>(_UpdatableElement);
     set => UpdateField(ref _ColorSchemeMapping, value, nameof(ColorSchemeMapping));
   }
-  private DMWD.ColorSchemeMapping? _ColorSchemeMapping;
+  private ColorSchemeMapping? _ColorSchemeMapping;
 
   /// <summary>
   /// Specifies that the user was resolving conflicting edits when the document was saved.

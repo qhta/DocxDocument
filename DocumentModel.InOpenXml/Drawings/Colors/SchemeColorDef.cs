@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [XmlRoot("SchemeColorDef", Namespace = "DocumentModel.Drawings")]
 [OpenXmlType(typeof(DXD.Color2Type))]
-public class SchemeColorDef : ModelElement<DXD.Color2Type>, IColorHolder
+public class SchemeColorDef : DrawingsColorBase<DXD.Color2Type>, IColorHolder
 {
   //  /// <summary>
   //  /// <para>RGB Color Model - Percentage Variant.</para>

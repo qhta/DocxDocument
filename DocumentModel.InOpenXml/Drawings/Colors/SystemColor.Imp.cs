@@ -14,9 +14,9 @@ public partial class SystemColor : IColor
     {
       if (LastColor is not null)
         return LastColor;
-      if (this.Val is null)
+      if (this.Index is null)
         return null;
-      var systemColor = this.Val.Value switch
+      var systemColor = this.Index.Value switch
       {
         SystemColors.ScrollBar => global::System.Drawing.SystemColors.ScrollBar,
         SystemColors.Background => global::System.Drawing.SystemColors.Desktop,
@@ -142,7 +142,7 @@ public partial class SystemColor : IColor
         return;
       if (Enum.TryParse<SystemColors>(value, out var SystemColor))
       {
-        this.Val = SystemColor;
+        this.Index = SystemColor;
         return;
       }
 

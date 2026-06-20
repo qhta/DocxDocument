@@ -1,13 +1,13 @@
 namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a color using a predefined color name with optional transformations.
-/// This is the preset color variant used in Office Open XML DrawingML, allowing colors to be 
+/// This class allows colors to be 
 /// specified by name (e.g., "Red", "Blue", "AliceBlue") from a standard palette, with optional 
 /// modifications like tint, shade, alpha transparency, and hue/saturation/luminance adjustments.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetColor))]
 [XmlRoot("PresetColor", Namespace = "DocumentModel.Drawings")]
-public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseColor, IDrawingColor
+public partial class PresetColor : Color<DXD.PresetColor>, ISchemeBaseColor, IDrawingColor
 {
 
   /// <summary>
@@ -28,8 +28,8 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
   /// </para>
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.PresetColor.Val))]
-  public PresetColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(RGB)); }
-  private PresetColors? _val;
+  public PresetColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
+  private PresetColors? _index;
 
   /// <summary>
   /// Tint value to lighten the color.
@@ -37,11 +37,11 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
   /// <remarks>
   /// <para>
   /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100000 = 100% tint (fully white)</description></item>
+  /// <item><description>50,000 = 50% tint (color mixed 50/50 with white)</description></item>
+  /// <item><description>100,000 = 100% tint (fully white)</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -59,11 +59,11 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
   /// <remarks>
   /// <para>
   /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100000 = 100% shade (fully black)</description></item>
+  /// <item><description>50,000 = 50% shade (color mixed 50/50 with black)</description></item>
+  /// <item><description>100,000 = 100% shade (fully black)</description></item>
   /// </list>
   /// </para>
   /// <para>

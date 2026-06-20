@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents an RGB color using hexadecimal notation with optional color transformations.
 /// This is one of several color model variants used in Office Open XML DrawingML, 
@@ -47,8 +47,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXO10W.RgbColorModelHex))]
-[XmlRoot("RgbColorModelHex", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class RgbColorHex : WordAbstractColor<DXO10W.RgbColorModelHex>, ISchemeBaseColor
+[XmlRoot("RgbColorHex", Namespace = "DocumentModel.Wordprocessing")]
+public partial class RgbColorHex : Color<DXO10W.RgbColorModelHex>, DMD.ISchemeBaseColor
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.
@@ -58,8 +58,8 @@ public partial class RgbColorHex : WordAbstractColor<DXO10W.RgbColorModelHex>, I
   /// Common values include 0xFF0000 (red), 0x00FF00 (green), 0x0000FF (blue), 0x000000 (black), and 0xFFFFFF (white).
   /// </remarks>
   [OpenXmlProperty(nameof(DXO10W.RgbColorModelHex.Val))]
-  public HexColor? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-  private HexColor? _Val;
+  public HexColor? Value { get => _value; set => UpdateField(ref _value, value, nameof(Value)); }
+  private HexColor? _value;
 
   /// <summary>
   /// Tint value to lighten the color.
@@ -80,8 +80,8 @@ public partial class RgbColorHex : WordAbstractColor<DXO10W.RgbColorModelHex>, I
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Tint))]
-  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private Percentage? _Tint;
+  public DMD.Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  private DMD.Percentage? _Tint;
 
   /// <summary>
   /// Shade value to darken the color.
@@ -101,7 +101,7 @@ public partial class RgbColorHex : WordAbstractColor<DXO10W.RgbColorModelHex>, I
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Shade))]
-  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private Percentage? _Shade;
+  public DMD.Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  private DMD.Percentage? _Shade;
 
 }

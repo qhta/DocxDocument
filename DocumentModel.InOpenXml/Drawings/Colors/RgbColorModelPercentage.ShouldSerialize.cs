@@ -4,9 +4,8 @@ namespace DocumentModel.Drawings;
 
 public partial class RgbColorModelPercentage
 {
-  public bool ShouldSerializeRed() => Red is not null;
-  public bool ShouldSerializeGreen() => Green is not null;
-  public bool ShouldSerializeBlue() => Blue is not null;
-  public bool ShouldSerializeTint() => Tint is not null;
-  public bool ShouldSerializeShade() => Shade is not null;
+  public new bool ShouldSerializeRed() => false;
+  public new bool ShouldSerializeGreen() => false;
+  public new bool ShouldSerializeBlue() => false;
+
 }

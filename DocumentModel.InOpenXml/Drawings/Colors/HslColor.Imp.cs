@@ -11,11 +11,11 @@ public partial class HslColor : IColor
  {
   get
   {
-   if (HueValue is null || SatValue is null || LumValue is null)
+   if (Hue is null || Saturation is null || Luminance is null)
     return null;
-   var h = NormalizeHue(HueValue.Value / 60000.0);
-   var s = Clamp01(SatValue.Value / 100000.0);
-   var l = Clamp01(LumValue.Value / 100000.0);
+   var h = NormalizeHue(Hue.Value / 60000.0);
+   var s = Clamp01(Saturation.Value / 100000.0);
+   var l = Clamp01(Luminance.Value / 100000.0);
    var c = (1.0 - System.Math.Abs(2.0 * l - 1.0)) * s;
    var x = c * (1.0 - System.Math.Abs((h / 60.0) % 2.0 - 1.0));
    var m = l - c / 2.0;
@@ -38,9 +38,9 @@ public partial class HslColor : IColor
   {
    if (value is null)
    {
-    HueValue = null;
-    SatValue = null;
-    LumValue = null;
+    Hue = null;
+    Saturation = null;
+    Luminance = null;
     return;
    }
 
@@ -62,9 +62,9 @@ public partial class HslColor : IColor
    else
     h = 60.0 * (((r - g) / delta) + 4.0);
    h = NormalizeHue(h);
-   HueValue = (Int32)System.Math.Round(h * 60000.0);
-   SatValue = (Int32)System.Math.Round(Clamp01(s) * 100000.0);
-   LumValue = (Int32)System.Math.Round(Clamp01(l) * 100000.0);
+   Hue = (Int32)System.Math.Round(h * 60000.0);
+   Saturation = (Int32)System.Math.Round(Clamp01(s) * 100,000.0);
+   Luminance = (Int32)System.Math.Round(Clamp01(l) * 100,000.0);
   }
  }
  private static double Clamp01(double value) => value < 0.0 ? 0.0 : value > 1.0 ? 1.0 : value;

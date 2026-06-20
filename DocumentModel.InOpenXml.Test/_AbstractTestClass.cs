@@ -190,7 +190,7 @@ public abstract class _AbstractTestClass
       return stringWriter.ToString();
     }
   }
- 
+
 
   /// <summary>
   /// Deserializes XML to an object of the specified type.
@@ -200,11 +200,18 @@ public abstract class _AbstractTestClass
   /// <returns>Deserialized instance or null.</returns>
   protected object? DeserializeObjectFromXml(Type dataType, string xml)
   {
-    var xmlSerializer = new XmlSerializer(dataType);
-    using (var stringReader = new StringReader(xml))
+    try
     {
-      return xmlSerializer.Deserialize(stringReader);
+      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(dataType, out _);
+      using (var stringReader = new StringReader(xml))
+        return xmlSerializer.Deserialize(stringReader);
     }
+    catch (Exception e)
+    {
+      Debug.WriteLine(e.GetInternalMessages());
+      throw;
+    }
+
   }
 
   /// <summary>
@@ -222,8 +229,8 @@ public abstract class _AbstractTestClass
   /// <param name="rootType">The root type for the XmlSerializer.</param>
   /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  protected XmlSerializer CreateXmlSerializer(Type rootType, out XmlSerializerNamespaces namespaces) 
-  { 
+  protected XmlSerializer CreateXmlSerializer(Type rootType, out XmlSerializerNamespaces namespaces)
+  {
     return XmlSerializationHelper.CreateXmlSerializer(rootType, out namespaces);
   }
 

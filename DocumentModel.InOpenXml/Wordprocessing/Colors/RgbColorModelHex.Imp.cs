@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing.Drawings;
+﻿namespace DocumentModel.Wordprocessing;
 
 public partial class RgbColorHex : IColor
 {
@@ -8,7 +8,7 @@ public partial class RgbColorHex : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32? RGB { get => this.Val is null ? null : (UInt32)this.Val!; set => this.Val = value; }
+  public UInt32? RGB { get => this.Value is null ? null : (UInt32)this.Value!; set => this.Value = value; }
 
   /// <summary>
   /// Red component of the color as percentage value.
@@ -21,13 +21,13 @@ public partial class RgbColorHex : IColor
   [JsonIgnore]
   double? IColor.Red
   {
-    get => this.Val is null ? null : (double)(((this.Val >> 16) & 0xFF) / 255.0);
+    get => this.Value is null ? null : (double)(((this.Value >> 16) & 0xFF) / 255.0);
     set
     {
       if (value is null)
         return;
       var red = (UInt32)System.Math.Round((double)value * 255.0);
-      this.Val = (UInt32)(this.Val ?? 0) & 0x00FFFF | (red << 16);
+      this.Value = (UInt32)(this.Value ?? 0) & 0x00FFFF | (red << 16);
     }
   }
 
@@ -42,13 +42,13 @@ public partial class RgbColorHex : IColor
   [JsonIgnore]
   double? IColor.Green
   {
-    get => this.Val is null ? null : (double)(((this.Val >> 8) & 0xFF) / 255.0);
+    get => this.Value is null ? null : (double)(((this.Value >> 8) & 0xFF) / 255.0);
     set
     {
       if (value is null)
         return;
       var green = (UInt32)System.Math.Round((double)value * 255.0);
-      this.Val = (UInt32)(this.Val ?? 0) & 0xFF00FF | (green << 8);
+      this.Value = (UInt32)(this.Value ?? 0) & 0xFF00FF | (green << 8);
     }
   }
 
@@ -63,13 +63,13 @@ public partial class RgbColorHex : IColor
   [JsonIgnore]
   double? IColor.Blue
   {
-    get => this.Val is null ? null : (double)((this.Val & 0xFF) / 255.0);
+    get => this.Value is null ? null : (double)((this.Value & 0xFF) / 255.0);
     set
     {
       if (value is null)
         return;
       var blue = (UInt32)System.Math.Round((double)value * 255.0);
-      this.Val = (UInt32)(this.Val ?? 0) & 0xFFFF00 | blue;
+      this.Value = (UInt32)(this.Value ?? 0) & 0xFFFF00 | blue;
     }
   }
 
@@ -82,9 +82,9 @@ public partial class RgbColorHex : IColor
   {
     get
     {
-      if (this.Val is not null)
+      if (this.Value is not null)
       {
-        var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.Val.Value) == true);
+        var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.Value.Value) == true);
         return presetColorField?.Name;
       }
 
@@ -97,7 +97,7 @@ public partial class RgbColorHex : IColor
         return;
       if (Enum.TryParse<PresetColors>(value, out var presetColor))
       {
-        this.Val = (UInt32)presetColor;
+        this.Value = (UInt32)presetColor;
         return;
       }
 

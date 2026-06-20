@@ -3275,97 +3275,6 @@
             Replace all occurrences.
             </summary>
         </member>
-        <member name="T:DocumentModel.Wordprocessing.SchemeColor">
-            <summary>
-            Defines the SchemeColor enumeration.
-            Used in types such as ColorType, SchemeColor, SolidColorFillProperties.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.BackgroundColor">
-            <summary>
-              bg1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.TextColor">
-            <summary>
-              tx1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.AdditionalBackgroundColor">
-            <summary>
-              bg2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.AdditionalTextColor">
-            <summary>
-              tx2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor1">
-            <summary>
-              accent1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor2">
-            <summary>
-              accent2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor3">
-            <summary>
-              accent3.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor4">
-            <summary>
-              accent4.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor5">
-            <summary>
-              accent5.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.ExtraSchemeColor6">
-            <summary>
-              accent6.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.HyperlinkColor">
-            <summary>
-              hlink.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.FollowedHyperlinkColor">
-            <summary>
-              folHlink.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.MainDarkColor1">
-            <summary>
-              dk1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.MainLightColor1">
-            <summary>
-              lt1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.MainDarkColor2">
-            <summary>
-              dk2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.MainLightColor2">
-            <summary>
-              lt2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.Wordprocessing.SchemeColor.AutoColor">
-            <summary>
-              phClr.
-            </summary>
-        </member>
         <member name="T:DocumentModel.Wordprocessing.ShapePosition">
             <summary>
             Specifies the relative position of the specified shape.
@@ -24109,6 +24018,96 @@
               landscape.
             </summary>
         </member>
+        <member name="T:DocumentModel.Drawings.SchemeColors">
+            <summary>
+              Scheme Color
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Auto">
+            <summary>
+              Style Color.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Dark1">
+            <summary>
+              Dark Color 1.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Light1">
+            <summary>
+              Light Color 1.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Dark2">
+            <summary>
+              Dark Color 2.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Light2">
+            <summary>
+              Light Color 2.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent1">
+            <summary>
+              Accent Color 1.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent2">
+            <summary>
+              Accent Color 2.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent3">
+            <summary>
+              Accent Color 3.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent4">
+            <summary>
+              Accent Color 4.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent5">
+            <summary>
+              Accent Color 5.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Accent6">
+            <summary>
+              Accent Color 6.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Hyperlink">
+            <summary>
+              Hyperlink Color.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.FollowedHyperlink">
+            <summary>
+              Followed IHyperlink Color.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Text1">
+            <summary>
+              Text Color 1.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Background1">
+            <summary>
+              Background Color 2.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Text2">
+            <summary>
+              Text Color 2.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.Drawings.SchemeColors.Background2">
+            <summary>
+              Background Color 1.
+            </summary>
+        </member>
         <member name="T:DocumentModel.Drawings.ChartElementType">
             <summary>
             Specifies whether and how to display chart elements.
@@ -34218,12 +34217,12 @@
         </member>
         <member name="F:DocumentModel.Drawings.SystemColors.ActiveBorder">
             <summary>
-              Active IBorder System Color.
+              Active Border System Color.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.SystemColors.InactiveBorder">
             <summary>
-              Inactive IBorder System Color.
+              Inactive Border System Color.
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.SystemColors.ApplicationWorkspace">
@@ -38195,96 +38194,6 @@
         <member name="F:DocumentModel.PresetColors.Auto">
             <summary>
             Automatic color, not defined in Open XML standard, but used in Word to represent "automatic color". It is not a real color and should not be used for any other purpose.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.SchemeColors">
-            <summary>
-              Scheme Color
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.PhColor">
-            <summary>
-              IStyle Color.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Dark1">
-            <summary>
-              Dark Color 1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Light1">
-            <summary>
-              Light Color 1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Dark2">
-            <summary>
-              Dark Color 2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Light2">
-            <summary>
-              Light Color 2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent1">
-            <summary>
-              Accent Color 1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent2">
-            <summary>
-              Accent Color 2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent3">
-            <summary>
-              Accent Color 3.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent4">
-            <summary>
-              Accent Color 4.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent5">
-            <summary>
-              Accent Color 5.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Accent6">
-            <summary>
-              Accent Color 6.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Hyperlink">
-            <summary>
-              IHyperlink Color.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.FollowedHyperlink">
-            <summary>
-              Followed IHyperlink Color.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Text1">
-            <summary>
-              Text Color 1.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Background1">
-            <summary>
-              Background Color 2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Text2">
-            <summary>
-              Text Color 2.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.SchemeColors.Background2">
-            <summary>
-              Background Color 1.
             </summary>
         </member>
         <member name="T:DocumentModel.XlColorIndex">

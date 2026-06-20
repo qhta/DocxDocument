@@ -25,7 +25,7 @@ internal class Program
     ////if (!Exec(new RsidsTest())) return;
     ////if (!Exec(new DocumentVariablesTestClass())) return;
     //if (!Exec(new FontTableTestClass())) return;
-    if (!Exec(new FontEmbeddingTestClass())) return;
+    //if (!Exec(new FontEmbeddingTestClass())) return;
     //if (!Exec(new LatentStylesTest())) return;
     //if (!Exec(new StyleDefinitionsTest())) return;
     //if (!Exec(new BaseRunPropertiesTest())) return;
@@ -38,8 +38,8 @@ internal class Program
     //if (!Exec(new BaseTableCellPropertiesTest())) return;
     //if (!Exec(new BaseTableRowPropertiesTest())) return;
     //if (!Exec(new BaseTablePropertiesTest())) return;
-    //if (!Exec(new ColorTypesTest())) return;
-    //if (!Exec(new ThemeTest())) return;
+    if (!Exec(new ColorTypesTest())) return;
+    if (!Exec(new ThemeTest())) return;
     //if (!new Exec()new Test())) return;
 
     Console.WriteLine("All tests passed.");

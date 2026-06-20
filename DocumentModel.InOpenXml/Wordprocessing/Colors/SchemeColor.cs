@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a color that references a theme color scheme with optional transformations.
 /// This class enables dynamic color theming in Word documents by referencing colors from the 
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SchemeColor))]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
+public partial class SchemeColor : Color<DXO10W.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
@@ -35,8 +35,8 @@ public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlProperty(nameof(DXO10W.SchemeColor.Val))]
-  public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-  private SchemeColors? _val;
+  public DMD.SchemeColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
+  private DMD.SchemeColors? _index;
 
   /// <summary>
   /// Tint value to lighten the color.
@@ -57,8 +57,8 @@ public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Tint))]
-  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private Percentage? _Tint;
+  public DMD.Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  private DMD.Percentage? _Tint;
 
   /// <summary>
   /// Shade value to darken the color.
@@ -78,7 +78,7 @@ public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Shade))]
-  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private Percentage? _Shade;
+  public DMD.Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  private DMD.Percentage? _Shade;
 
 }

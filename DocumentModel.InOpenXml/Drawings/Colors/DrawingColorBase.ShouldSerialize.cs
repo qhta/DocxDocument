@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings;
 
 #pragma warning disable CS1591
 
-public partial class DrawingColorBase<T> 
+public partial class DrawingsColorBase<T> 
 {
   public bool ShouldSerializeTint() => Tint is not null;
   public bool ShouldSerializeShade() => Shade is not null;

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Scheme Color
 /// </summary>
@@ -7,10 +7,10 @@
 public enum SchemeColors
 {
   /// <summary>
-  ///   IStyle Color.
+  ///   Style Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.PhColor))]
-  PhColor = 0,
+  Auto = 0,
   /// <summary>
   ///   Dark Color 1.
   /// </summary>
@@ -62,7 +62,7 @@ public enum SchemeColors
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Accent6))]
   Accent6 = 10,
   /// <summary>
-  ///   IHyperlink Color.
+  ///   Hyperlink Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.Hyperlink))]
   Hyperlink = 11,

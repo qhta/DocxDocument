@@ -541,7 +541,7 @@ public static class TestHelper
     var messages = new List<string>();
     while (internalException != null)
     {
-      messages.Add($"   Inner Exception: {internalException.Message}");
+      messages.AddRange(internalException.GetInternalMessages().Split('\n'));
       internalException = internalException.InnerException;
     }
     return messages.Count > 0 ? string.Join("\n", messages) : "No inner exceptions";
@@ -652,23 +652,23 @@ public static class TestHelper
     return "urn:docmodel:global";
   }
 
-  /// <summary>
-  /// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
-  /// </summary>
-  /// <param name="overrides">Override collection to populate.</param>
-  /// <param name="type">Closed generic abstract color type to override.</param>
-  /// <param name="xmlTypeName">Unique XML type name.</param>
-  /// <param name="xmlNamespace">XML namespace for the type.</param>
-  private static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
-  {
-    var attrs = new XmlAttributes
-    {
-      XmlType = new XmlTypeAttribute
-      {
-        TypeName = xmlTypeName,
-        Namespace = xmlNamespace
-      }
-    };
-    overrides.Add(type, attrs);
-  }
+  ///// <summary>
+  ///// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
+  ///// </summary>
+  ///// <param name="overrides">Override collection to populate.</param>
+  ///// <param name="type">Closed generic abstract color type to override.</param>
+  ///// <param name="xmlTypeName">Unique XML type name.</param>
+  ///// <param name="xmlNamespace">XML namespace for the type.</param>
+  //private static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
+  //{
+  //  var attrs = new XmlAttributes
+  //  {
+  //    XmlType = new XmlTypeAttribute
+  //    {
+  //      TypeName = xmlTypeName,
+  //      Namespace = xmlNamespace
+  //    }
+  //  };
+  //  overrides.Add(type, attrs);
+  //}
 }

@@ -5,7 +5,7 @@
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues))]
-public enum SchemeColor
+public enum SchemeColors
 {
   /// <summary>
   ///   bg1.

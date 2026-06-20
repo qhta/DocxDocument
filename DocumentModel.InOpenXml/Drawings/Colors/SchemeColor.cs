@@ -7,15 +7,15 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.SchemeColor))]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Drawings")]
-public partial class SchemeColor : AbstractColor<DXD.SchemeColor>, IDrawingColor
+public partial class SchemeColor : Color<DXD.SchemeColor>, IDrawingColor
 {
 
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
-  public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-  private SchemeColors? _val;
+  public SchemeColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
+  private SchemeColors? _index;
 
   /// <summary>
   /// Tint value to lighten the color.
@@ -23,11 +23,11 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>, IDrawingColor
   /// <remarks>
   /// <para>
   /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100000 = 100% tint (fully white)</description></item>
+  /// <item><description>50,000 = 50% tint (color mixed 50/50 with white)</description></item>
+  /// <item><description>100,000 = 100% tint (fully white)</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -45,11 +45,11 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>, IDrawingColor
   /// <remarks>
   /// <para>
   /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100000 = 100% shade (fully black)</description></item>
+  /// <item><description>50,000 = 50% shade (color mixed 50/50 with black)</description></item>
+  /// <item><description>100,000 = 100% shade (fully black)</description></item>
   /// </list>
   /// </para>
   /// <para>

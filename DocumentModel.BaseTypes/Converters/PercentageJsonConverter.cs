@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="Percentage"/> structure.
@@ -38,7 +38,7 @@ public class PercentageJsonConverter : JsonConverter<Percentage>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value for PerHundredThousand, but got null");
+        throw new JsonException($"Expected string value for Percentage, but got null");
 
       try
       {
@@ -46,7 +46,7 @@ public class PercentageJsonConverter : JsonConverter<Percentage>
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid PerHundredThousand string '{value}'. " +
+        throw new JsonException($"Invalid Percentage string '{value}'. " +
           $"String must be a valid number with optional '%' suffix. Error: {ex.Message}", ex);
       }
     }

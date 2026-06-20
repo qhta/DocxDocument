@@ -1,13 +1,33 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Represents a DrawingAngle value stored as a double-precision floating-point number.
-/// Supports implicit conversions to/from numeric types and string representations with optional "°" suffix.
+/// Represents a drawing angle value stored as a long integer, where the value is scaled by 60000 to preserve precision.
+/// Supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
+/// The following conversion rules apply:
+/// <list type="bullet">
+/// <item>
+/// Numeric conversion to/from integer types (e.g., int, long, ushort, uint) treats the value as a raw integer representing the scaled angle.
+/// For example, a value of 30000 corresponds to raw value of 30000 (0.5 degree) and 60000 corresponds to raw value of 60000 (1 degree).
+/// </item>
+/// <item>
+/// Numeric conversion to/from floating-point types (e.g., float, double, decimal) treats the value as a scaled angle in degrees.
+/// For example, a value of 0.5 corresponds to raw 30000 integer value, and 1.0 corresponds to raw 60000 integer value.
+/// </item>
+/// <item>
+/// String conversion with the "°" suffix represents degree scale.
+/// For example, a raw value of 30000 corresponds to "0.5°", and a raw value of 60000 corresponds to "1°".
+/// </item>
+/// <item>
+/// String conversion without the "°" suffix represents the value as a raw integer number and is not scaled.
+/// For example, a string value of "30000" corresponds to a raw value of 30000, and "60000" corresponds to a raw value of 60000.
+/// Use of decimal separator in string input without the "°" suffix is not supported and will result in a parsing error, as it is treated as a raw integer value.
+/// </item>
+/// </list>
 /// </summary>
 [JsonConverter(typeof(DegreesJsonConverter))]
 public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, IComparable<Degrees>, IComparable<object>
 {
-  private readonly double value;
+  private readonly long value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from a string value.
@@ -18,14 +38,22 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// </remarks>
   public Degrees(string str)
   {
-    str = str.TrimEnd('°');
-    value = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    if (str.EndsWith("°"))
+    {
+      str = str.TrimEnd('°');
+      var doubleValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+      this.value = (long)(doubleValue * 60000);
+    }
+    else
+    {
+      this.value = long.Parse(str);
+    }
   }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from an int value.
   /// </summary>
-  /// <param name="value">The int value representing the DrawingAngle.</param>
+  /// <param name="value">The int value representing the Degrees.</param>
   public Degrees(int value)
   {
     this.value = value;
@@ -35,7 +63,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from an Int64 value.
   /// </summary>
-  /// <param name="value">The int value representing the DrawingAngle.</param>
+  /// <param name="value">The int value representing the Degrees.</param>
   public Degrees(Int64 value)
   {
     this.value = value;
@@ -44,29 +72,29 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from a double value.
   /// </summary>
-  /// <param name="value">The double value representing the DrawingAngle.</param>
+  /// <param name="value">The double value representing the Degrees.</param>
   public Degrees(double value)
   {
-    this.value = value;
+    this.value = (long)(value * 60000);
   }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from a decimal value.
   /// </summary>
-  /// <param name="value">The double value representing the DrawingAngle.</param>
+  /// <param name="value">The double value representing the Degrees.</param>
   public Degrees(decimal value)
   {
-    this.value = (double)value;
+    this.value = (long)(value * 60000);
   }
 
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from an UInt64 value.
   /// </summary>
-  /// <param name="value">The UInt64 value representing the DrawingAngle.</param>
+  /// <param name="value">The UInt64 value representing the Degrees.</param>
   public Degrees(UInt64 value)
   {
-    this.value = value;
+    this.value = (long)(value * 60000);
   }
 
   #region IConvertible Implementation
@@ -87,7 +115,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from DrawingAngle to Boolean is not supported.");
+    throw new NotSupportedException("Conversion from Degrees to Boolean is not supported.");
   }
 
   /// <summary>
@@ -107,7 +135,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A Unicode character equivalent to the value of this instance.</returns>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from DrawingAngle to Char is not supported.");
+    throw new NotSupportedException("Conversion from Degrees to Char is not supported.");
   }
 
   /// <summary>
@@ -117,7 +145,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A <see cref="System.DateTime"/> equivalent to the value of this instance.</returns>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from DrawingAngle to DateTime is not supported.");
+    throw new NotSupportedException("Conversion from Degrees to DateTime is not supported.");
   }
 
   /// <summary>
@@ -127,7 +155,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public Decimal ToDecimal(IFormatProvider? provider)
   {
-    return (decimal)(value);
+    return (decimal)(value / 60000.0);
   }
 
   /// <summary>
@@ -137,7 +165,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return (double)value;
+    return (double)(value / 60000.0);
   }
 
   /// <summary>
@@ -187,7 +215,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return (float)value;
+    return (float)(value / 60000.0);
   }
 
   /// <summary>
@@ -197,7 +225,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider);
+    return (value / 60000.0).ToString(provider) + "°";
   }
 
   /// <summary>
@@ -256,11 +284,11 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (targetType == typeof(SByte))
       return (sbyte)value;
     if (targetType == typeof(Single))
-      return (float)(value);
+      return (float)(value / 60000.0);
     if (targetType == typeof(Double))
-      return (double)value;
+      return (double)(value / 60000.0);
     if (targetType == typeof(double))
-      return (double)value;
+      return (double)(value / 60000.0);
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Degrees))
@@ -287,7 +315,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the DrawingAngle value.</returns>
+  /// <returns>A 16-bit unsigned integer representation of the Degrees value.</returns>
   public static implicit operator ushort(Degrees val)
   {
     return (ushort)(val.value);
@@ -297,7 +325,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a 32-bit unsigned integer.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the DrawingAngle value.</returns>
+  /// <returns>A 32-bit unsigned integer representation of the Degrees value.</returns>
   public static implicit operator uint(Degrees val)
   {
     return (uint)(val.value);
@@ -307,7 +335,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a 32-bit signed integer.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the DrawingAngle value.</returns>
+  /// <returns>A 32-bit signed integer representation of the Degrees value.</returns>
   public static implicit operator Int32(Degrees val)
   {
     return (int)(val.value);
@@ -318,7 +346,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a 64-bit signed integer.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the DrawingAngle value.</returns>
+  /// <returns>A 64-bit signed integer representation of the Degrees value.</returns>
   public static implicit operator Int64(Degrees val)
   {
     return (long)(val.value);
@@ -328,7 +356,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a 64-bit unsigned integer.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the DrawingAngle value.</returns>
+  /// <returns>A 64-bit unsigned integer representation of the Degrees value.</returns>
   public static implicit operator ulong(Degrees val)
   {
     return (ulong)(val.value);
@@ -338,27 +366,27 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a <see cref="Degrees"/> value to a decimal value.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A double representation of the DrawingAngle value.</returns>
+  /// <returns>A double representation of the Degrees value.</returns>
   public static implicit operator decimal(Degrees val)
   {
-    return (decimal)val.value;
+    return (decimal)(val.value / 60000.0);
   }
 
   /// <summary>
   /// Implicitly converts a <see cref="Degrees"/> value to a double value.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A double representation of the DrawingAngle value.</returns>
+  /// <returns>A double representation of the Degrees value.</returns>
   public static implicit operator Double(Degrees val)
   {
-    return (Double)val.value;
+    return (Double)(val.value / 60000.0);
   }
 
   /// <summary>
   /// Implicitly converts a 16-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  /// <returns>A <see cref="Degrees"/>Degrees instance.</returns>
   public static implicit operator Degrees(ushort val)
   {
     return new Degrees(val);
@@ -368,7 +396,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a 32-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  /// <returns>A <see cref="Degrees"/>Degrees instance.</returns>
   public static implicit operator Degrees(double val)
   {
     return new Degrees(val);
@@ -378,7 +406,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a 32-bit signed integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  /// <returns>A <see cref="Degrees"/>Degrees instance.</returns>
   public static implicit operator Degrees(Int32 val)
   {
     return new Degrees(val);
@@ -388,10 +416,10 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// Implicitly converts a 64-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  /// <returns>A <see cref="Degrees"/>Degrees instance.</returns>
   public static implicit operator Degrees(ulong val)
   {
-    return new Degrees((double)val);
+    return new Degrees(val);
   }
 
   #endregion
@@ -399,20 +427,20 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   #region String Conversions
 
   /// <summary>
-  /// Parses a string representation of a DrawingAngle and returns a corresponding DrawingAngle instance.
+  /// Parses a string representation of a Degrees and returns a corresponding Degrees instance.
   /// </summary>
-  /// <param name="str">The string containing the DrawingAngle to parse. The string should be in a format recognized by the DrawingAngle type,
+  /// <param name="str">The string containing the Degrees to parse. The string should be in a format recognized by the Degrees type,
   /// such as "50°" or "0.5".</param>
-  /// <returns>A DrawingAngle instance that represents the value specified by the input string.</returns>
+  /// <returns>A Degrees instance that represents the value specified by the input string.</returns>
   public static Degrees Parse(string str)
   {
     return new Degrees(str);
   }
 
   /// <summary>
-  /// Attempts to parse a string representation of a DrawingAngle into a <see cref="Degrees"/> instance.
+  /// Attempts to parse a string representation of a Degrees into a <see cref="Degrees"/> instance.
   /// </summary>
-  /// <param name="str">The string representation of the DrawingAngle.</param>
+  /// <param name="str">The string representation of the Degrees.</param>
   /// <param name="result">The resulting <see cref="Degrees"/> instance if parsing is successful.</param>
   /// <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
   public static bool TryParse(string str, out Degrees result)
@@ -435,7 +463,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>The string representation of the value with a "°" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return value.ToString(CultureInfo.InvariantCulture) + "°";
+    return (value / 60000.0).ToString(CultureInfo.InvariantCulture) + "°";
   }
 
   /// <summary>
@@ -470,11 +498,15 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
     string format = $"F{precision}";
-    if (unit != null)
+    if (unit == "°")
     {
-      return (value).ToString(format, provider) + unit;
+      return (value / 60000.0).ToString(format, provider) + unit;
     }
-    return value.ToString(provider);
+    else if (String.IsNullOrEmpty(unit))
+    {
+      return (value).ToString(provider);
+    }
+    throw new NotSupportedException($"The unit '{unit}' is not supported.");
   }
 
   /// <summary>
@@ -485,11 +517,15 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)
   {
-    if (unit != null)
+    if (unit == "°")
     {
-      return (value).ToString(provider) + unit;
+      return (value / 60000.0).ToString(provider) + unit;
     }
-    return value.ToString(provider);
+    else if (String.IsNullOrEmpty(unit))
+    {
+      return (value).ToString(provider);
+    }
+    throw new NotSupportedException($"The unit '{unit}' is not supported.");
   }
 
   #endregion
@@ -527,8 +563,8 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <exception cref="ArgumentException">Thrown when the comparison is invalid.</exception>
   public int CompareTo(object? other)
   {
-    if (other is Degrees DrawingAngle)
-      return CompareTo(DrawingAngle);
+    if (other is Degrees Degrees)
+      return CompareTo(Degrees);
     if (other is Int32 int32value)
       return this.CompareTo(int32value);
     if (other is UInt32 uint32value)
@@ -546,11 +582,11 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (other is Byte byteValue)
       return this.CompareTo(byteValue);
     if (other is Single singleValue)
-      return this.CompareTo((double)singleValue);
+      return this.CompareTo((double)singleValue * 60000.0);
     if (other is decimal decimalValue)
-      return this.CompareTo((double)decimalValue);
+      return this.CompareTo((double)decimalValue * 60000.0);
     if (other is double doubleValue)
-      return this.CompareTo((double)doubleValue);
+      return this.CompareTo((double)doubleValue * 60000.0);
     if (other is String str)
       return this.CompareTo(Degrees.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");

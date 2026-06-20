@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing.Drawings;
+﻿namespace DocumentModel.Wordprocessing;
 
 public partial class SchemeColor : IColor
 {
@@ -14,10 +14,10 @@ public partial class SchemeColor : IColor
     {
       if (_RGB != null)
         return _RGB;
-      if (this.Val is null)
+      if (this.Index is null)
         return null;
-      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
-      return (ColorScheme as ISchemeBaseColor)?.RGB;
+      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
+      return (ColorScheme as DMD.ISchemeBaseColor)?.RGB;
     }
 
     set => _RGB = value;
@@ -97,7 +97,7 @@ public partial class SchemeColor : IColor
     {
       if (this.RGB is not null)
       {
-        var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
+        var schemeColorField = typeof(DMD.SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
         return schemeColorField?.Name;
       }
 
@@ -108,9 +108,9 @@ public partial class SchemeColor : IColor
     {
       if (value is null)
         return;
-      if (Enum.TryParse<SchemeColors>(value, out var schemeColor))
+      if (Enum.TryParse<DMD.SchemeColors>(value, out var schemeColor))
       {
-        this.Val = schemeColor;
+        this.Index = schemeColor;
         return;
       }
 

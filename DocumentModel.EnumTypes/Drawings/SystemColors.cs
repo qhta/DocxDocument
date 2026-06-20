@@ -57,12 +57,12 @@ public enum SystemColors
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.CaptionText))]
   CaptionText,
   /// <summary>
-  ///   Active IBorder System Color.
+  ///   Active Border System Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.ActiveBorder))]
   ActiveBorder,
   /// <summary>
-  ///   Inactive IBorder System Color.
+  ///   Inactive Border System Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SystemColorValues.InactiveBorder))]
   InactiveBorder,

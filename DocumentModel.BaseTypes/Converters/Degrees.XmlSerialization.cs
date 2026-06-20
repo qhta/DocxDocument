@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 
 public partial struct Degrees : IXmlSerializable
 {
@@ -41,10 +41,10 @@ public partial struct Degrees : IXmlSerializable
       {
           str = str.TrimEnd('°');
         // Parse the Degrees string to double
-        var parsedValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
-
+        var doubleValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+        var longValue =(long)(doubleValue * 60000);
         // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = longValue;
       }
 
       reader.Read(); // Move past text

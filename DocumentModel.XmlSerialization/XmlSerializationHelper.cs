@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Diagnostics;
+using System.Xml;
 using System.Xml.Serialization;
 using System.Reflection;
 
@@ -77,8 +78,6 @@ public static class XmlSerializationHelper
   /// <returns>XmlSerializer instance.</returns>
   public static XmlSerializer CreateXmlSerializer(Type rootType, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
   {
-    var UniqueTypeNames = new HashSet<string>();
-    XmlAttributeOverrides overrides = new XmlAttributeOverrides();
     //var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
     //  .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
     //            && !t.Implements(typeof(System.Collections.IDictionary))
@@ -88,16 +87,28 @@ public static class XmlSerializationHelper
     if (modelTypes == null)
     {
       GetKnownTypes(rootType, knownTypes, new List<Type>());
+      var openXmlElementTypes = knownTypes.Where(t => t.FullName!.Contains("DocumentFormat")).ToArray();
+      if (openXmlElementTypes.Any())
+        Debug.WriteLine($"Found OpenXmlElement types: {string.Join("\n", openXmlElementTypes.Select(t => t.FullName))}");
+      //var systemTypes = knownTypes.Where(t => t.Namespace!.StartsWith("System")).ToArray();
+      //if (systemTypes.Any())
+      //  Debug.WriteLine($"Found System types: {string.Join("\n", systemTypes.Select(t => t.FullName))}");
+      //var modelElementTypes = knownTypes.Where(t => t.Name.StartsWith("ModelElement")).ToArray();
+      //if (modelElementTypes.Any())
+      //  Debug.WriteLine($"Found ModelElement types: {string.Join("\n", modelElementTypes.Select(t => t.FullName))}");
       modelTypes = knownTypes.ToArray();
     }
+    Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNames(modelTypes);
+    Debug.WriteLine($"Ambiguous type names:\n{string.Join("\n",
+      ambiguousTypeNames.Select(item => $"{item.Key}:{item.Value.Count}:\n  {String.Join("\n  ", item.Value.Select(t => t.FullName))}"))}");
 
-    //if (modelTypes != null)
+    XmlAttributeOverrides? xmlAttributeOverrides = null;
+    if (ambiguousTypeNames.Any())
     {
-      foreach (var t in modelTypes)
-      {
-        //Debug.WriteLine($"GetXmlAttributeOverrides for {t.FullName}");
-        GetXmlAttributeOverrides(t, new List<Type>());
-      }
+      var ambiguousTypes = ambiguousTypeNames.SelectMany(item => item.Value).ToArray();
+      xmlAttributeOverrides = GetXmlAttributeOverrides(ambiguousTypes);
+      Debug.WriteLine($"XmlAttributeOverrides:\n{string.Join("\n",
+        ambiguousTypes.Select(t => $"{xmlAttributeOverrides[t]?.XmlType?.TypeName} -> {t.FullName}"))}");
     }
 
     namespaces = new XmlSerializerNamespaces();
@@ -121,51 +132,172 @@ public static class XmlSerializationHelper
     }
 
     var xmlRootAttribute = GetXmlRootAttribute(rootType);
-    return new XmlSerializer(rootType, overrides, modelTypes, xmlRootAttribute, null);
-    
+    return new XmlSerializer(rootType, xmlAttributeOverrides, modelTypes, xmlRootAttribute, null);
+
     static void GetKnownTypes(Type? aType, HashSet<Type> knownTypes, List<Type> visitedTypes)
     {
       if (aType != null && aType != typeof(object))
       {
         if (visitedTypes.Contains(aType))
           return;
+        //Debug.WriteLine($"GetKnownTypes for {aType.FullName}");
         visitedTypes.Add(aType);
         if ((aType.FullName ?? "").Contains("<>"))
           return;
-        if (aType.IsGenericType /*&& aType.GetGenericTypeDefinition() == typeof(DM.ModelElement<>)*/)
+        if (aType.Namespace == null)
+          return;
+        if (aType.Namespace.StartsWith("System"))
+          return;
+        if (aType == typeof(ValueType))
+          return;
+        if (aType.IsGenericType)
         {
           var arg = aType.GetGenericArguments()[0];
           if (arg.Name.Contains("<>"))
             return;
-          if (!string.IsNullOrEmpty(arg.Namespace))
+          if (arg.Namespace == null)
+            return;
+          if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
           {
             knownTypes.Add(aType);
+            //Debug.WriteLine($"Skipping known arg type: {arg.FullName}");
           }
+          else
+            if (!string.IsNullOrEmpty(arg.Namespace))
+            {
+              if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
+              {
+                Debug.WriteLine($"Skipped known arg type: {arg.FullName}");
+              }
+              else
+                knownTypes.Add(arg);
+            }
         }
         else
         {
-          knownTypes.Add(aType);
-        }
-        foreach (var iEnumerable in aType.GetInterfaces().Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
-        {
-          var arg = iEnumerable.GetGenericArguments()[0];
-          if (arg.Name.Contains("<>"))
-            continue;
-          if (!string.IsNullOrEmpty(arg.Namespace))
+          if (aType.Namespace.StartsWith("System") || aType.Namespace.StartsWith("DocumentFormat"))
           {
+            Debug.WriteLine($"Skipped known type: {aType.FullName}");
+          }
+          else
             knownTypes.Add(aType);
+        }
+        if (aType != typeof(string))
+        {
+          foreach (var iEnumerable in aType.GetInterfaces()
+                     .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
+          {
+            var arg = iEnumerable.GetGenericArguments()[0];
+            if (arg.Name.Contains("<>"))
+              continue;
+            if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme")
+            {
+              //Debug.WriteLine($"Continue known arg type: {arg.FullName}");
+              continue;
+            }
+            if (!string.IsNullOrEmpty(arg.Namespace))
+            {
+              knownTypes.Add(arg);
+            }
+          }
+
+          //Debug.WriteLine($"GetKnownTypes for {aType.BaseType?.FullName}");
+          GetKnownTypes(aType.BaseType, knownTypes, visitedTypes);
+          foreach (var property in aType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+          {
+            if (property.CanWrite && property.GetCustomAttribute<XmlIgnoreAttribute>() == null)
+            {
+              GetKnownTypes(property.PropertyType, knownTypes, visitedTypes);
+            }
           }
         }
-        //Debug.WriteLine($"GetKnownTypes for {aType.BaseType?.FullName}");
-        GetKnownTypes(aType.BaseType, knownTypes, visitedTypes);
+        foreach (XmlIncludeAttribute xmlInclude in aType.GetCustomAttributes<XmlIncludeAttribute>())
+        {
+          GetKnownTypes(xmlInclude.Type, knownTypes, visitedTypes);
+        }
       }
+    }
+
+    Dictionary<string, List<Type>> GetTypeNames(Type[] types)
+    {
+      Dictionary<string, List<Type>> typeNames = new Dictionary<string, List<Type>>();
+      foreach (var aType in types)
+      {
+
+        var aName = aType.Name;
+        if (aType.IsGenericType)
+        {
+          var k = aName.IndexOf('`');
+          if (k >= 0)
+            aName = aName.Substring(0, k);
+          k = 0;
+          foreach (var arg in aType.GetGenericArguments())
+          {
+            if (arg.Name.Contains("<>"))
+              continue;
+
+            k++;
+            if (k == 1)
+              aName += $"_of_{arg.Name}";
+            else
+              aName += $"_and_{arg.Name}";
+          }
+        }
+        if (!typeNames.ContainsKey(aName))
+          typeNames[aName] = new List<Type>();
+        typeNames[aName].Add(aType);
+      }
+      List<string> singletonNames = typeNames.Where(kvp => kvp.Value.Count <= 1).Select(kvp => kvp.Key).ToList();
+      foreach (var name in singletonNames)
+        typeNames.Remove(name);
+      return typeNames;
+    }
+
+    XmlAttributeOverrides GetXmlAttributeOverrides(IEnumerable<Type> types)
+    {
+      XmlAttributeOverrides overrides = new XmlAttributeOverrides();
+      foreach (var aType in types)
+      {
+        if (aType != typeof(object))
+        {
+          // IXmlSerializable types provide their own XML contract and cannot
+          // be overridden with XmlType metadata.
+          if (typeof(IXmlSerializable).IsAssignableFrom(aType))
+            continue;
+
+          Debug.WriteLine($"GetXmlAttributeOverrides for {aType.FullName}");
+
+          var aName = aType.Namespace+"."+aType.Name;
+          if (aType.IsGenericType)
+          {
+            var k = aName.IndexOf('`');
+            if (k >= 0)
+              aName = aName.Substring(0, k);
+            k = 0;
+            foreach (var arg in aType.GetGenericArguments())
+            {
+              if (arg.Name.Contains("<>"))
+                continue;
+
+              k++;
+              if (k == 1)
+                aName += $"_of_{arg.Namespace}.{arg.Name}";
+              else
+                aName += $"_and_{arg.Namespace}.{arg.Name}";
+            }
+          }
+          aName = aName.Replace(".","_");
+          overrides.Add(aType, new XmlAttributes { XmlType = new XmlTypeAttribute { TypeName = aName } });
+        }
+      }
+      return overrides;
     }
 
     static string? GetXmlNamespace(Type type)
     {
       var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
       if (!string.IsNullOrEmpty(xmlRoot?.Namespace))
-        return xmlRoot.Namespace;
+        return xmlRoot?.Namespace;
       return type.Namespace;
     }
 
@@ -220,31 +352,8 @@ public static class XmlSerializationHelper
       return $"{basePrefix}{index}";
     }
 
-    void GetXmlAttributeOverrides(Type? aType,List<Type> visitedTypes)
-    {
-      if (aType != null && aType != typeof(object))
-      {
-        if (visitedTypes.Contains(aType))
-          return;
-        visitedTypes.Add(aType);
-        if ((aType.FullName ?? "").Contains("<>"))
-          return;
-        if (aType.IsGenericType /*&& aType.GetGenericTypeDefinition() == typeof(DM.ModelElement<>)*/)
-        {
-          var arg = aType.GetGenericArguments()[0];
-          if (arg.Name.Contains("<>"))
-            return;
-          if (!string.IsNullOrEmpty(arg.Namespace))
-          {
-            var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
-            if (UniqueTypeNames.Add(unique))
-              overrides.Add(aType, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
-          }
-        }
-        //Debug.WriteLine($"GetXmlAttributeOverrides2 for {aType.BaseType?.FullName}");
-        GetXmlAttributeOverrides(aType.BaseType, visitedTypes);
-      }
-    }
+
+
   }
   /// <summary>
   /// Gets XML namespace for a model type based on its CLR namespace.

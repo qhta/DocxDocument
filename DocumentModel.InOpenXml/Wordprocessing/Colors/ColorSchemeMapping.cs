@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Specific DXW.ColorSchemeMapping mapping class.
 /// </summary>

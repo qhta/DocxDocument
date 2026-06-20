@@ -164,7 +164,7 @@ public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExte
  {
   return colorIndex switch
   {
-   SchemeColors.PhColor => null,
+   SchemeColors.Auto => null,
    SchemeColors.Dark1 => Dark1Color,
    SchemeColors.Light1 => Light1Color,
    SchemeColors.Dark2 => Dark2Color,

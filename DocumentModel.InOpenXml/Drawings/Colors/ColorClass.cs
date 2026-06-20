@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorType))]
 [XmlRoot("ColorClass", Namespace = "DocumentModel.Drawings")]
-public class ColorClass : AbstractColor<DXD.ColorType>
+public class ColorClass : Color<DXD.ColorType>
 {
 }

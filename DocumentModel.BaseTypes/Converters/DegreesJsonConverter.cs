@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="Degrees"/> structure.

@@ -9,12 +9,12 @@ public partial class PresetColor : IColor
  [JsonIgnore]
  public UInt32? RGB
  {
-  get => this.Val is null ? null : (UInt32)this.Val!;
+  get => this.Index is null ? null : (UInt32)this.Index!;
   set
   {
    if (value == null)
    {
-    this.Val = null;
+    this.Index = null;
     return;
    }
 
@@ -33,7 +33,7 @@ public partial class PresetColor : IColor
    var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => ((UInt32)f.GetValue(null)!).Equals(value) == true);
    if (_presetColorLookup.TryGetValue(value.Value, out var presetColor))
    {
-    this.Val = presetColor!;
+    this.Index = presetColor!;
     return;
    }
    else
@@ -119,7 +119,7 @@ public partial class PresetColor : IColor
     return;
    if (Enum.TryParse<PresetColors>(value, out var presetColor))
    {
-    this.Val = presetColor;
+    this.Index = presetColor;
     return;
    }
 

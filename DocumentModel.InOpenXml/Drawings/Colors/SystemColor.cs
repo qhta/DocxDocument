@@ -6,15 +6,15 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.SystemColor))]
 [XmlRoot("SystemColor", Namespace = "DocumentModel.Drawings")]
-public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseColor, IDrawingColor
+public partial class SystemColor : Color<DXD.SystemColor>, ISchemeBaseColor, IDrawingColor
 {
 
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SystemColor.Val))]
-  public SystemColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-  private SystemColors? _val;
+  public SystemColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
+  private SystemColors? _index;
 
   /// <summary>
   /// Gets or sets the last known RGB value for this system color, used as a fallback.
@@ -39,7 +39,7 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// </list>
   /// </para>
   /// <para>
-  /// When rendering a document, applications should prefer the live system color (via <see cref = "Val"/>)
+  /// When rendering a document, applications should prefer the live system color (via <see cref = "Index"/>)
   /// but fall back to <see cref = "LastColor"/> if the system color cannot be resolved.
   /// This ensures the best possible appearance in all environments while maintaining a reasonable
   /// fallback for non-Windows or incompatible systems.
@@ -55,11 +55,11 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// <remarks>
   /// <para>
   /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100000 = 100% tint (fully white)</description></item>
+  /// <item><description>50,000 = 50% tint (color mixed 50/50 with white)</description></item>
+  /// <item><description>100,000 = 100% tint (fully white)</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -77,11 +77,11 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// <remarks>
   /// <para>
   /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100000, where:
+  /// Values range from 0 to 100,000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100000 = 100% shade (fully black)</description></item>
+  /// <item><description>50,000 = 50% shade (color mixed 50/50 with black)</description></item>
+  /// <item><description>100,000 = 100% shade (fully black)</description></item>
   /// </list>
   /// </para>
   /// <para>

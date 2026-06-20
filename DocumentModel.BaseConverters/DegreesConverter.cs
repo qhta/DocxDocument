@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentModel.Drawings;
+
+namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Degrees value to/from Open XML.
