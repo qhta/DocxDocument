@@ -432,7 +432,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public DMD.Theme Theme
   {
     get => _Theme ??= new DMD.Theme(this);
-    set => Theme.CopyFrom(value);
+    set => UpdateField(ref _Theme, value, nameof(Theme));
   }
   private DMD.Theme? _Theme;
 

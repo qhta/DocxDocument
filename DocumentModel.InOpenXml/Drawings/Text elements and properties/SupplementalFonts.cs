@@ -17,4 +17,6 @@ public class SupplementalFonts : ModelElementCollection<SupplementalFont, DXD.Fo
   /// <param name="parent">The parent ModelElement that owns this SupplementalFonts instance. Cannot be null.</param>
   /// <param name="openXmlCollection">The OpenXml collection of supplemental fonts.</param>
   public SupplementalFonts(ModelElement parent, DXD.FontCollectionType? openXmlCollection) : base(parent, openXmlCollection) { }
+
+
 }

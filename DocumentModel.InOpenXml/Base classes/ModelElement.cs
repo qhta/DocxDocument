@@ -33,6 +33,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   protected ModelElement(ModelElement parent) : this()
   {
     SetParent(parent);
+    if (this is IWordprocessingDocumentAware wordprocessingDocumentAware 
+        && parent is IWordprocessingDocumentAware parentWordprocessingDocumentAware)
+    {
+      if (parentWordprocessingDocumentAware.WordprocessingDocument != null)
+        wordprocessingDocumentAware.Attach(parentWordprocessingDocumentAware.WordprocessingDocument);
+    }
   }
 
   /// <summary>

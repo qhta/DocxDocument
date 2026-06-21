@@ -285,56 +285,56 @@ public class ColorTypesTest : _AbstractTestClass
       return new HslColor
       {
         Hue = new Degrees(120),
-        Saturation = new Percentage(60),
-        Luminance = new Percentage(45),
-        Tint = new Percentage(10),
-        Shade = new Percentage(5),
+        Saturation = new Percentage("60%"),
+        Luminance = new Percentage("45%"),
+        Tint = new Percentage("10%"),
+        Shade = new Percentage("5%"),
       };
 
     if (colorType == typeof(DocumentModel.Drawings.PresetColor))
-      return new DocumentModel.Drawings.PresetColor { Index = PresetColors.Red, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.PresetColor { Index = PresetColors.Red, Tint = new Percentage("10%"), Shade = new Percentage("5%"), };
     if (colorType == typeof(DocumentModel.Drawings.RgbColorModelHex))
-      return new DocumentModel.Drawings.RgbColorModelHex { Value = (HexColor)0x336699, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.RgbColorModelHex { Value = (HexColor)0x336699, Tint = new Percentage("10%"), Shade = new Percentage("5%"), };
     if (colorType == typeof(DocumentModel.Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage
       {
-        R = new Percentage(20),
-        Green = new Percentage(40),
-        Blue = new Percentage(60),
-        Tint = new Percentage(10),
-        Shade = new Percentage(5),
+        R = new Percentage("20%"),
+        Green = new Percentage("40%"),
+        Blue = new Percentage("60%"),
+        Tint = new Percentage("10%"),
+        Shade = new Percentage("5%"),
       };
     if (colorType == typeof(DocumentModel.Drawings.SchemeColor))
-      return new DocumentModel.Drawings.SchemeColor { Index = SchemeColors.Accent3, Tint = new Percentage(10), Shade = new Percentage(5), };
+      return new DocumentModel.Drawings.SchemeColor { Index = SchemeColors.Accent3, Tint = new Percentage("10%"), Shade = new Percentage("5%"), };
     if (colorType == typeof(DocumentModel.Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {
         Index = SystemColors.WindowText,
         LastColor = (HexColor)0x112233,
-        Tint = new Percentage(10),
-        Shade = new Percentage(5),
+        Tint = new Percentage("10%"),
+        Shade = new Percentage("5%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.Color))
       return new DocumentModel.Wordprocessing.Color
       {
         Val = (HexColor)0x445566,
         ThemeColor = ThemeColors.Text1,
-        ThemeTint = 40,
-        ThemeShade = 20,
+        ThemeTint = new HexPercent("40%"),
+        ThemeShade = new HexPercent("20%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.RgbColorHex))
       return new DocumentModel.Wordprocessing.RgbColorHex
       {
         Value = (HexColor)0x336699,
-        Tint = new DMD.Percentage(10000),
-        Shade = new DMD.Percentage(5000),
+        Tint = new Percentage("10%"),
+        Shade = new Percentage("5%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.SchemeColor))
       return new DocumentModel.Wordprocessing.SchemeColor
       {
         Index = DMD.SchemeColors.Accent3,
-        Tint = new DMD.Percentage(10000),
-        Shade = new DMD.Percentage(5000),
+        Tint = new Percentage("10%"),
+        Shade = new Percentage("5%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }
@@ -453,12 +453,12 @@ public class ColorTypesTest : _AbstractTestClass
       storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
     }
 
-    var xmlSerializer = new XmlSerializer(typeof(Theme));
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(Theme), out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, storedData);
+      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine("Theme loaded from document:\n" + xmlString);

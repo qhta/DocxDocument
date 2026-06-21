@@ -43,14 +43,51 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   /// <summary>
   ///   Collection of supplemental fonts for additional language and script support beyond the primary font definitions.
   /// </summary>
-  public SupplementalFonts? SupplementalFonts 
+  [OpenXmlUpdateData(nameof(UpdateSupplementalFonts))]
+  [OpenXmlLoadData(nameof(LoadSupplementalFonts))]
+
+  public SupplementalFonts? SupplementalFonts
   {
     get => _SupplementalFonts ??= new SupplementalFonts(this, _UpdatableElement);
     set => UpdateField(ref _SupplementalFonts, value, nameof(SupplementalFonts));
   }
   private SupplementalFonts? _SupplementalFonts;
 
+  /// <summary>
+  ///  Updates the supplemental fonts collection in the OpenXml element based on the current state of the SupplementalFonts property in the model. This method is called during the update process to synchronize the model with the underlying OpenXml representation.
+  /// </summary>
+  /// <param name="openXmlElement"></param>
+  public void UpdateSupplementalFonts(DX.OpenXmlElement openXmlElement)
+  {
+    openXmlElement.RemoveAllChildren<DXD.SupplementalFont>();
+    if (SupplementalFonts == null)
+      return;
+    if (SupplementalFonts.Count > 0)
+    {
+      foreach (var modelItem in SupplementalFonts)
+      {
+        var openXmlItem = OpenXmlModelConverter.ConvertTo(modelItem, typeof(DXD.SupplementalFont));
+        if (openXmlItem is DXD.SupplementalFont supplementalFont)
+          openXmlElement.AppendChild(supplementalFont);
+      }
+    }
+  }
 
+  /// <summary>
+  /// Loads the supplemental fonts collection from the specified OpenXml element, populating the SupplementalFonts property in the model based on the child elements of type DXD.SupplementalFont found in the OpenXml element. This method is called during the loading process to synchronize the model with the underlying OpenXml representation.
+  /// </summary>
+  /// <param name="openXmlElement"></param>
+  public void LoadSupplementalFonts(DX.OpenXmlElement openXmlElement)
+  {
+    SupplementalFonts?.Clear();
+    var openXmlItems = openXmlElement.Elements<DXD.SupplementalFont>();
+    foreach (var openXmlItem in openXmlItems)
+    {
+      var modelItem = OpenXmlModelConverter.ConvertTo(openXmlItem, typeof(DMD.SupplementalFont));
+      if (modelItem is DMD.SupplementalFont supplementalFont)
+        SupplementalFonts?.Add(supplementalFont);
+    }
+  }
   /// <summary>
   ///   List of extension elements for the scheme font, supporting extensibility and application-specific font data.
   /// </summary>

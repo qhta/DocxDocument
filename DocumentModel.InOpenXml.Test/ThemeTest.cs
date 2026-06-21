@@ -63,12 +63,12 @@ public class ThemeTest : _AbstractTestClass
       storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
     }
 
-    var xmlSerializer = new XmlSerializer(typeof(Theme));
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(Theme), out var namespaces);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, storedData);
+      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine("Theme loaded from document:\n" + xmlString);

@@ -88,8 +88,8 @@ public static class XmlSerializationHelper
     {
       GetKnownTypes(rootType, knownTypes, new List<Type>());
       var openXmlElementTypes = knownTypes.Where(t => t.FullName!.Contains("DocumentFormat")).ToArray();
-      if (openXmlElementTypes.Any())
-        Debug.WriteLine($"Found OpenXmlElement types: {string.Join("\n", openXmlElementTypes.Select(t => t.FullName))}");
+      //if (openXmlElementTypes.Any())
+      //  Debug.WriteLine($"Found OpenXmlElement types: {string.Join("\n", openXmlElementTypes.Select(t => t.FullName))}");
       //var systemTypes = knownTypes.Where(t => t.Namespace!.StartsWith("System")).ToArray();
       //if (systemTypes.Any())
       //  Debug.WriteLine($"Found System types: {string.Join("\n", systemTypes.Select(t => t.FullName))}");
@@ -99,16 +99,16 @@ public static class XmlSerializationHelper
       modelTypes = knownTypes.ToArray();
     }
     Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNames(modelTypes);
-    Debug.WriteLine($"Ambiguous type names:\n{string.Join("\n",
-      ambiguousTypeNames.Select(item => $"{item.Key}:{item.Value.Count}:\n  {String.Join("\n  ", item.Value.Select(t => t.FullName))}"))}");
+    //Debug.WriteLine($"Ambiguous type names:\n{string.Join("\n",
+    //  ambiguousTypeNames.Select(item => $"{item.Key}:{item.Value.Count}:\n  {String.Join("\n  ", item.Value.Select(t => t.FullName))}"))}");
 
     XmlAttributeOverrides? xmlAttributeOverrides = null;
     if (ambiguousTypeNames.Any())
     {
       var ambiguousTypes = ambiguousTypeNames.SelectMany(item => item.Value).ToArray();
       xmlAttributeOverrides = GetXmlAttributeOverrides(ambiguousTypes);
-      Debug.WriteLine($"XmlAttributeOverrides:\n{string.Join("\n",
-        ambiguousTypes.Select(t => $"{xmlAttributeOverrides[t]?.XmlType?.TypeName} -> {t.FullName}"))}");
+      //Debug.WriteLine($"XmlAttributeOverrides:\n{string.Join("\n",
+      //  ambiguousTypes.Select(t => $"{xmlAttributeOverrides[t]?.XmlType?.TypeName} -> {t.FullName}"))}");
     }
 
     namespaces = new XmlSerializerNamespaces();
@@ -132,7 +132,15 @@ public static class XmlSerializationHelper
     }
 
     var xmlRootAttribute = GetXmlRootAttribute(rootType);
-    return new XmlSerializer(rootType, xmlAttributeOverrides, modelTypes, xmlRootAttribute, null);
+    try
+    {
+      return new XmlSerializer(rootType, xmlAttributeOverrides, modelTypes, xmlRootAttribute, null);
+    }
+    catch (Exception e)
+    {
+      Debug.WriteLine(e);
+      throw;
+    }
 
     static void GetKnownTypes(Type? aType, HashSet<Type> knownTypes, List<Type> visitedTypes)
     {
@@ -157,7 +165,7 @@ public static class XmlSerializationHelper
             return;
           if (arg.Namespace == null)
             return;
-          if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
+          if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat") || arg.IsInterface)
           {
             knownTypes.Add(aType);
             //Debug.WriteLine($"Skipping known arg type: {arg.FullName}");
@@ -167,7 +175,7 @@ public static class XmlSerializationHelper
             {
               if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
               {
-                Debug.WriteLine($"Skipped known arg type: {arg.FullName}");
+                //Debug.WriteLine($"Skipped known arg type: {arg.FullName}");
               }
               else
                 knownTypes.Add(arg);
@@ -175,9 +183,9 @@ public static class XmlSerializationHelper
         }
         else
         {
-          if (aType.Namespace.StartsWith("System") || aType.Namespace.StartsWith("DocumentFormat"))
+          if (aType.Namespace.StartsWith("System") || aType.Namespace.StartsWith("DocumentFormat") || aType.IsInterface)
           {
-            Debug.WriteLine($"Skipped known type: {aType.FullName}");
+            //Debug.WriteLine($"Skipped known type: {aType.FullName}");
           }
           else
             knownTypes.Add(aType);
@@ -190,7 +198,7 @@ public static class XmlSerializationHelper
             var arg = iEnumerable.GetGenericArguments()[0];
             if (arg.Name.Contains("<>"))
               continue;
-            if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme")
+            if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme" || arg.IsInterface)
             {
               //Debug.WriteLine($"Continue known arg type: {arg.FullName}");
               continue;
@@ -265,7 +273,7 @@ public static class XmlSerializationHelper
           if (typeof(IXmlSerializable).IsAssignableFrom(aType))
             continue;
 
-          Debug.WriteLine($"GetXmlAttributeOverrides for {aType.FullName}");
+          //Debug.WriteLine($"GetXmlAttributeOverrides for {aType.FullName}");
 
           var aName = aType.Namespace+"."+aType.Name;
           if (aType.IsGenericType)
