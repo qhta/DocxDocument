@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.SystemColor))]
 [XmlRoot("SystemColor", Namespace = "DocumentModel.Drawings")]
-public partial class SystemColor : Color<DXD.SystemColor>, ISchemeBaseColor, IDrawingColor
+public partial class SystemColor : DrawingsColorBase<DXD.SystemColor>, ISchemeBaseColor, IDrawingColor
 {
 
   /// <summary>
@@ -49,46 +49,4 @@ public partial class SystemColor : Color<DXD.SystemColor>, ISchemeBaseColor, IDr
   public HexColor? LastColor { get => _LastColor; set => UpdateField(ref _LastColor, value, nameof(LastColor)); }
   private HexColor? _LastColor;
 
-  /// <summary>
-  /// Tint value to lighten the color.
-  /// </summary>
-  /// <remarks>
-  /// <para>
-  /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100,000, where:
-  /// <list type="bullet">
-  /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50,000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100,000 = 100% tint (fully white)</description></item>
-  /// </list>
-  /// </para>
-  /// <para>
-  /// If the value is <see langword="null"/>, no tint is applied. 
-  /// Tint and shade are mutually exclusive; typically only one should be set.
-  /// </para>
-  /// </remarks>
-  [OpenXmlElement(typeof(DXD.Tint))]
-  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private Percentage? _Tint;
-
-  /// <summary>
-  /// Shade value to darken the color.
-  /// </summary>
-  /// <remarks>
-  /// <para>
-  /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100,000, where:
-  /// <list type="bullet">
-  /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50,000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100,000 = 100% shade (fully black)</description></item>
-  /// </list>
-  /// </para>
-  /// <para>
-  /// Shade and tint are mutually exclusive; typically only one should be set.
-  /// </para>
-  /// </remarks>
-  [OpenXmlElement(typeof(DXD.Shade))]
-  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private Percentage? _Shade;
 }
