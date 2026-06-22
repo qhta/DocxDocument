@@ -12,6 +12,7 @@ public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExte
  /// The name should be unique within the context of the document's theme and is typically defined in the theme part of the document.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ColorScheme.Name))]
+  [XmlAttribute("name")]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
  private string? _Name;
 

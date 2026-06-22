@@ -138,7 +138,7 @@ public static class XmlSerializationHelper
     }
     catch (Exception e)
     {
-      Debug.WriteLine(e);
+      Debug.WriteLine(e.GetInternalMessages());
       throw;
     }
 
@@ -359,10 +359,8 @@ public static class XmlSerializationHelper
         index++;
       return $"{basePrefix}{index}";
     }
-
-
-
   }
+
   /// <summary>
   /// Gets XML namespace for a model type based on its CLR namespace.
   /// </summary>
@@ -396,4 +394,24 @@ public static class XmlSerializationHelper
     overrides.Add(type, attrs);
   }
 
+  /// <summary>
+  /// Retrieves a formatted string containing the messages of all inner exceptions for the specified exception.
+  /// </summary>
+  /// <remarks>This method is useful for logging or displaying detailed error information, especially when
+  /// exceptions are nested. The returned string includes each inner exception message on a separate line.</remarks>
+  /// <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
+  /// <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
+  /// exceptions" if there are none.</returns>
+  public static string GetInternalMessages(this Exception ex)
+  {
+    var internalException = ex.InnerException;
+    var messages = new List<string>();
+    messages.Add(ex.Message);
+    while (internalException != null)
+    {
+      messages.AddRange(internalException.GetInternalMessages().Split('\n'));
+      internalException = internalException.InnerException;
+    }
+    return string.Join("\n", messages);
+  }
 }

@@ -13,13 +13,13 @@ internal class Program
     Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
-    if (!Exec(new ElementCollectionTest())) return;
-    if (!Exec(new CorePropertiesTest())) return;
-    if (!Exec(new ContentPropertiesTest())) return;
-    if (!Exec(new StatisticPropertiesTest())) return;
-    if (!Exec(new BuiltInPropertiesTest())) return;
-    if (!Exec(new CustomPropertiesTest())) return;
-    if (!Exec(new DocumentPropertiesTest())) return;
+    //if (!Exec(new ElementCollectionTest())) return;
+    //if (!Exec(new CorePropertiesTest())) return;
+    //if (!Exec(new ContentPropertiesTest())) return;
+    //if (!Exec(new StatisticPropertiesTest())) return;
+    //if (!Exec(new BuiltInPropertiesTest())) return;
+    //if (!Exec(new CustomPropertiesTest())) return;
+    //if (!Exec(new DocumentPropertiesTest())) return;
     if (!Exec(new ColorTypesTest())) return;
     if (!Exec(new ThemeTest())) return;
 

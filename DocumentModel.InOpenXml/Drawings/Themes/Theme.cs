@@ -50,6 +50,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   ///   Name of the theme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Theme.Name))]
+  [XmlAttribute("name")]
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
   private string? _Name;
 
@@ -57,6 +58,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   ///   Identifier for the theme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Theme.ThemeId))]
+  [XmlAttribute("id")]
   public string? ThemeId { get => _ThemeId; set => UpdateField(ref _ThemeId, value, nameof(ThemeId)); }
   private string? _ThemeId;
 
