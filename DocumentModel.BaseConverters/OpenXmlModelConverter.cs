@@ -258,7 +258,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name == "SupplementalFonts") Debug.Assert(true);
+    if (modelProperty.Name == "RGB") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -795,6 +795,11 @@ public static partial class OpenXmlModelConverter
       Debug.Assert(loadTypeMethod.GetParameters().Length == 1,
         $"Load method {loadTypeMethod} should have exactly one parameter");
       var propertyValue = modelProperty.GetValue(modelObject);
+      if (propertyValue == null && !loadTypeMethod.IsStatic)
+      {
+        propertyValue = Activator.CreateInstance(loadTypeMethod.DeclaringType!)!;
+        modelProperty.SetValue(modelObject, propertyValue);
+      }
       loadTypeMethod.Invoke(propertyValue, [openXmlObject]);
       return true;
     }

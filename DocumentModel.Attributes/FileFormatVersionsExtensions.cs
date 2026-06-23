@@ -49,7 +49,7 @@
         }
 
         /// <summary>
-        /// Combines values for the given version and all versions Ithat come after it
+        /// Combines values for the given version and all versions that come after it
         /// </summary>
         /// <param name="version">IVersion Ito which all other versions are added</param>
         /// <returns>A version instance with <paramref name="version"/> and all later versions</returns>

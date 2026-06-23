@@ -673,11 +673,12 @@
             </summary>
             <returns>Collection of discovered IColor implementation types.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateSampleColor(System.Type)">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateSampleColor(System.Type,DocumentModel.Drawings.ColorModel)">
             <summary>
             Creates representative sample data for each IColor implementation type.
             </summary>
             <param name="colorType">The concrete color implementation type.</param>
+            <param name="colorModel">The color model associated with the color type.</param>
             <returns>A populated color instance.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateDocumentWithInitializedThemePart">
@@ -707,7 +708,9 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.ChangeTwoWordColorsInDocument(System.String)">
             <summary>
-            Changes colors of two specific run texts in the specified document package.
+            Changes colors of two specific run texts in the specified document.
+            First copies the document to a temporary file to avoid modifying the original.
+            Temporary file has a name like "Colors test updated.docx" in the same directory as the original.
             Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
             </summary>
             <param name="filePath">Path to the .docx/.zip OpenXml package.</param>

@@ -186,6 +186,8 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <summary>
   /// Checks if the current model element has direct access to its underlying OpenXmlElement, based on the presence of the DirectAccessAttribute and the non-null state of the _openXmlElement field.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   public bool HasDirectAccess => _UpdatableElement != null 
                                  && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
 }

@@ -29408,7 +29408,7 @@
               Followed IHyperlink Theme Color Reference.
             </summary>
         </member>
-        <member name="T:DocumentModel.Drawings.ColorType">
+        <member name="T:DocumentModel.Drawings.ColorTypeEnum">
             <summary>
             Specifies the color type.
             </summary>
@@ -29416,7 +29416,7 @@
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` for Office interop details.
             </remarks>
         </member>
-        <member name="F:DocumentModel.Drawings.ColorType.RGB">
+        <member name="F:DocumentModel.Drawings.ColorTypeEnum.RGB">
             <summary>
             Not supported.
             </summary>
@@ -29424,22 +29424,22 @@
             Color is determined by values of red, green, and blue.
             </summary>
         </member>
-        <member name="F:DocumentModel.Drawings.ColorType.Scheme">
+        <member name="F:DocumentModel.Drawings.ColorTypeEnum.Scheme">
             <summary>
             Color is defined by an application-specific scheme.
             </summary>
         </member>
-        <member name="F:DocumentModel.Drawings.ColorType.CMYK">
+        <member name="F:DocumentModel.Drawings.ColorTypeEnum.CMYK">
             <summary>
             Color is determined by values of cyan, magenta, yellow, and black.
             </summary>
         </member>
-        <member name="F:DocumentModel.Drawings.ColorType.CMS">
+        <member name="F:DocumentModel.Drawings.ColorTypeEnum.CMS">
             <summary>
             Color Management System color type.
             </summary>
         </member>
-        <member name="F:DocumentModel.Drawings.ColorType.Ink">
+        <member name="F:DocumentModel.Drawings.ColorTypeEnum.Ink">
             <summary>
             Not supported.
             </summary>

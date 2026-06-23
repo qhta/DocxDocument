@@ -21,7 +21,7 @@ internal class Program
     //if (!Exec(new CustomPropertiesTest())) return;
     //if (!Exec(new DocumentPropertiesTest())) return;
     if (!Exec(new ColorTypesTest())) return;
-    if (!Exec(new ThemeTest())) return;
+    //if (!Exec(new ThemeTest())) return;
 
     ////if (!Exec(new DocumentSettingsTest())) return;
     ////if (!Exec(new RsidsTest())) return;

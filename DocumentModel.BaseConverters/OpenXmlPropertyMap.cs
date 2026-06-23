@@ -23,10 +23,13 @@ public static class OpenXmlPropertyMap
   /// <exception cref="ArgumentException">Thrown if no corresponding OpenXML property is found for the specified model element property.</exception>
   public static PropertyInfo? GetOpenXmlProperty(PropertyInfo modelProperty, Type openXmlType)
   {
-    var openXmlPropertyName =
+    var (type, openXmlPropertyName) =
       modelProperty.GetCustomAttribute<OpenXmlPropertyAttribute>() is { } openXmlPropertyAttribute ?
-        openXmlPropertyAttribute.PropertyName : modelProperty.Name;
-    var result = openXmlType.GetProperty(openXmlPropertyName, BindingFlags.Public | BindingFlags.Instance);
+        (openXmlPropertyAttribute.Type, openXmlPropertyAttribute.PropertyName) : (openXmlType, modelProperty.Name);
+    type ??= openXmlType;
+    if (type != openXmlType)
+      return null;
+    var result = type.GetProperty(openXmlPropertyName, BindingFlags.Public | BindingFlags.Instance);
     return result;
   }
 

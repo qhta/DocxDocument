@@ -16,7 +16,7 @@ public partial class ColorStyle //: OfficeArtExtendableElement
   /// <summary>
   /// Color used in the color style.
   /// </summary>
-  public DMD.ColorClass? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public DMD.ColorType? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
   /// <summary>
   /// Collection of color style variations for additional customization.
   /// </summary>

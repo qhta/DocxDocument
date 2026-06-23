@@ -5,6 +5,4 @@ namespace DocumentModel.Drawings;
 public partial class SchemeColor
 {
   public bool ShouldSerializeVal() => Index is not null;
-  public bool ShouldSerializeTint() => Tint is not null;
-  public bool ShouldSerializeShade() => Shade is not null;
 }

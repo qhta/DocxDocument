@@ -4,6 +4,12 @@ namespace DocumentModel.Drawings;
 
 public partial class DrawingsColorBase<T> 
 {
+  public bool ShouldSerializeModel() => Model is not null;
+  public bool ShouldSerializeRGB() => RGB is not null;
+  public bool ShouldSerializeSchemeColor() => SchemeColor is not null;
+  public bool ShouldSerializePresetColor() => PresetColor is not null;
+  public bool ShouldSerializeSystemColor() => SystemColor is not null;
+  public bool ShouldSerializeLastColor() => LastColor is not null;
   public bool ShouldSerializeTint() => Tint is not null;
   public bool ShouldSerializeShade() => Shade is not null;
   public bool ShouldSerializeComplement() => Complement is not null;

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the model method name Ithat is used to convert the property to its Open XML representation.
+/// Specifies the model method name that is used to convert the property to its Open XML representation.
 /// </summary>
 /// <param name="methodName">The name of the method to be called to convert the property to Open XML.
 /// Cannot be null or empty.</param>

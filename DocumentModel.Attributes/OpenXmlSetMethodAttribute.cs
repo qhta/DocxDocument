@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the model method name Ithat is used to set data in model property.
+/// Specifies the model method name that is used to set data in model property.
 /// </summary>
 /// <param name="methodName">The name of the method to be called to set data in model property.
 /// Cannot be null or empty.</param>

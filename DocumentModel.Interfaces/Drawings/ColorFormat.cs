@@ -22,7 +22,7 @@ public partial interface IColorFormat : IModelObject
   /// Gets the type of color.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.type?view=word-pia"/>
-  public ColorType Type { get; }
+  public ColorTypeEnum Type { get; }
 
   /// <summary>
   /// Gets or sets the name of the color.

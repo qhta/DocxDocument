@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum ColorType
+public enum ColorTypeEnum
 {
   /// <summary>
   /// Not supported.

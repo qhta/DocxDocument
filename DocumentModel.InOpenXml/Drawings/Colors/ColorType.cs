@@ -1,70 +1,62 @@
 namespace DocumentModel.Drawings;
 /// <summary>
-/// Represents an objects that can hold a color value, such as a fill or a line. Can contain any drawing color type, including RGB, HSL, system, scheme, or preset colors. Provides methods for loading and updating color information from Open XML elements, enabling seamless integration with the Open XML SDK for Office document manipulation.
+///   Base type for a color for drawing elements.
+///   All drawing color types derive from class..
 /// </summary>
-public partial interface IColorHolder
+[OpenXmlType(typeof(DXD.ColorType))]
+[XmlRoot("ColorType", Namespace = "DocumentModel.Drawings")]
+[OpenXmlLoadData(nameof(LoadColorFromOpenXml))]
+[OpenXmlUpdateData(nameof(UpdateColorInOpenXml))]
+public class ColorType : DrawingsColorBase<DXD.ColorType>
 {
-
-  /// <summary>
-  /// Color that is held by this instance. 
-  /// </summary>
-  ColorType? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
-  ///// <summary>
-  ///// Gets the RGB color value represented by this instance, if available.
-  ///// </summary>
-  //public UInt32? RGB { get; }
-
 
   /// <summary>
   /// Loads the color information from the specified Open XML element.
   /// </summary>
   /// <param name="openXmlElement">The OpenXmlElement to load the color information from.</param>
-  public static IColor? LoadColorFromOpenXml(DX.OpenXmlElement openXmlElement)
+  public void LoadColorFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
     foreach (var element in openXmlElement.ChildElements)
     {
-      ColorType? color = null;
       if (element is DXD.RgbColorModelPercentage rgbPercentage)
       {
-        color = new ColorType{ Model = ColorModel.RGBPercentage};
+        Model = ColorModel.RGBPercentage;
+        LoadData(rgbPercentage);
       }
       if (element is DXD.RgbColorModelHex rgbHex)
       {
-        color = new ColorType{ Model = ColorModel.RGBHex};
+        Model = ColorModel.RGBHex;
+        LoadData(rgbHex);
       }
       if (element is DXD.HslColor hslColor)
       {
-        color = new ColorType { Model = ColorModel.HSL};
+        Model = ColorModel.HSL;
+        LoadData(hslColor);
       }
       if (element is DXD.SystemColor systemColor)
       {
-        color = new ColorType { Model = ColorModel.System};
+        Model = ColorModel.System;
+        LoadData(systemColor);
       }
       if (element is DXD.PresetColor presetColor)
       {
-        color = new ColorType { Model = ColorModel.Preset};
+        Model = ColorModel.Preset;
+        LoadData(presetColor);
       }
       if (element is DXD.SchemeColor schemeColor)
       {
-        color = new ColorType { Model = ColorModel.Scheme };
-      }
-      if (color!=null)
-      {
-        OpenXmlModelConverter.TryLoadModelProperties(color, element, color.GetType(), element.GetType());
-        return (IColor)color;
+        Model = ColorModel.Scheme;
+        LoadData(schemeColor);
       }
     }
-    return null;
   }
 
   /// <summary>
   /// Updates the color information within the specified OpenXmlElement.
   /// </summary>
-  /// <param name="color">Color data to update in OpenXmlElement</param>
   /// <param name="openXmlElement">The OpenXmlElement whose color properties will be updated. Cannot be null.</param>
   /// <exception cref="NotImplementedException">Thrown in all cases as the method is not yet implemented.</exception>
-  public static void UpdateColorInOpenXml(ColorType? color, DX.OpenXmlElement openXmlElement)
+  public void UpdateColorInOpenXml(DX.OpenXmlElement openXmlElement)
   {
     foreach (var element in openXmlElement.Elements())
     {
@@ -82,27 +74,27 @@ public partial interface IColorHolder
         scheme.Remove();
     }
 
-    if (color is IUpdatable updatableColor)
+    if (this is IUpdatable updatableColor)
     {
       var updatableElement = updatableColor.GetUpdatableElement() as DX.OpenXmlElement;
       if (updatableElement == null)
       {
-        if (color.Model == ColorModel.RGBPercentage)
+        if (Model == ColorModel.RGBPercentage)
           updatableElement = new DXD.RgbColorModelPercentage();
-        else if (color.Model == ColorModel.RGBHex)
+        else if (Model == ColorModel.RGBHex)
           updatableElement = new DXD.RgbColorModelHex();
-        else if (color.Model == ColorModel.HSL)
+        else if (Model == ColorModel.HSL)
           updatableElement = new DXD.HslColor();
-        else if (color.Model == ColorModel.System)
+        else if (Model == ColorModel.System)
           updatableElement = new DXD.SystemColor();
-        else if (color.Model == ColorModel.Preset)
+        else if (Model == ColorModel.Preset)
           updatableElement = new DXD.PresetColor();
-        else if (color.Model == ColorModel.Scheme)
+        else if (Model == ColorModel.Scheme)
           updatableElement = new DXD.SchemeColor();
         else
-          throw new ApplicationException($"Unsupported color model: {color.Model}");
+          throw new ApplicationException("Unsupported color model.");
         openXmlElement.Append(updatableElement!);
-        OpenXmlModelConverter.TryUpdateModelProperties(color, updatableElement, updatableElement.GetType(), color.GetType());
+        OpenXmlModelConverter.TryUpdateModelProperties(this, updatableElement!, updatableElement.GetType(), this.GetType());
       }
       else
       {
@@ -110,4 +102,34 @@ public partial interface IColorHolder
       }
     }
   }
+
+  ///// <summary>
+  ///// Updates the color properties based on the provided Open XML element. This method is called whenever a property value changes,
+  ///// </summary>
+  ///// <param name="element"></param>
+  //protected void UpdateData(DX.OpenXmlElement element)
+  //{
+  //  if (element is DXD.RgbColorModelHex rgbHex)
+  //    UpdateRgbColorModelHex(rgbHex);
+  //  else
+  //  if (element is DXD.RgbColorModelPercentage rgbPercentage)
+  //    UpdateRgbColorModelPercentage(rgbPercentage);
+    
+  //}
+
+  //private void UpdateRgbColorModelHex(DXD.RgbColorModelHex element)
+  //{
+
+  //}
+
+  //private void UpdateRgbColorModelPercentage(DXD.RgbColorModelPercentage element)
+  //{
+  //}
+
+  //private void UpdateHslColor(DXD.HslColor element)
+  //{
+
+  //}
+
+
 }

@@ -46,6 +46,8 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   /// <summary>
   /// Specifies whether the collection has direct access to its underlying OpenXmlCompositeElement, indicating that it can manipulate the XML content directly without lazy loading. This property is set to true when the collection is initialized with an OpenXmlCompositeElement and false otherwise.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
   public bool HasDirectAccess { get; private set; }
 
   /// <summary>

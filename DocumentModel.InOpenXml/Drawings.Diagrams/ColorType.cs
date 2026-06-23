@@ -3,8 +3,8 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the ColorsType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorsType))]
-[XmlRoot("ColorType", Namespace = "DocumentModel.Drawings.Diagrams")]
-public abstract partial class ColorType<T> : ModelElement<T> where T : DXDD.ColorsType
+[XmlRoot("Color", Namespace = "DocumentModel.Drawings.Diagrams")]
+public abstract partial class ColorType<T> : DrawingsColorBase<T> where T : DXDD.ColorsType
 {
  /// <summary>
  ///   Color Application Method Type

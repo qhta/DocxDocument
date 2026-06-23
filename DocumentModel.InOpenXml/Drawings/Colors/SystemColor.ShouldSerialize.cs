@@ -6,6 +6,5 @@ public partial class SystemColor
 {
   public bool ShouldSerializeVal() => Index is not null;
   public bool ShouldSerializeLastColor() => LastColor is not null;
-  public bool ShouldSerializeTint() => Tint is not null;
-  public bool ShouldSerializeShade() => Shade is not null;
+
 }
