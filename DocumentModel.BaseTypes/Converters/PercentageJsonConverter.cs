@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="Percentage"/> structure.

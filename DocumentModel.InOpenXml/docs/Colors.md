@@ -1,55 +1,244 @@
-﻿Colors used in the DocumentModel have various representations: 
-- **Color\<T>** - abstract class that represents a model of a color based on an OpenXmlElement.
-- **AnyColor** - a concrete implementation of Color\<T> that can represent any color model. 
-- **Wordprocessing.Color** - a specific implementation of Color\<T> for WordprocessingML colors.
-- **Drawings.RgbColorModelHex** - a specific implementation of Color\<T> for RGB colors in hexadecimal model in DrawingsML 
-- **Drawings.RgbColorModelPercentage** - a specific implementation of Color\<T> for RGB colors in percentage model in DrawingsML.
-- **Drawings.SchemeColor** - a specific implementation of Color\<T> for scheme colors in DrawingsML.
-- **Drawings.SystemColor** - a specific implementation of Color\<T> for system colors in DrawingsML.
-- **Drawings.PresetColor** - a specific implementation of Color\<T> for preset colors in DrawingsML.
-- **Drawings.HslColorModel** - a specific implementation of Color\<T> for HSL colors in DrawingsML.
-- **Wordprocessing.RgbColorModelHex** - a specific implementation of Color\<T> for RGB colors in hexadecimal model in WordprocessingML.
-- **Wordprocessing.SchemeColor** - a specific implementation of Color\<T> for scheme colors in WordprocessingML.
+﻿OpenXml SDK provides a set of classes to represent colors in different color models, including RGB, HSL, scheme colors, system colors, and preset colors. 
 
-# Drawings color classes
+# OpenXml color classes
 
-The Drawings color classes represent different color models and allow for flexible color specifications in drawings, charts, and other graphical elements.
-Many of their properties use two base types of values: **Drawings.Percentage** and **Drawings.Degree**.
+Most of OpenXml color classes are located in the **DocumentFormat.OpenXml.Drawing** namespace, while some are in the **DocumentFormat.OpenXml.Wordprocessing** namespace.
+The classes are as follows:
+- **Drawing.ColorType** - represents an OpenXmlCompositeElement that can contain one of six color models in DrawingsML:
+	1. **Drawing.RgbColorModelHex** - RGB color in hexadecimal model
+	2. **Drawing.RgbColorModelPercentage** - RGB color in percentage model
+	3. **Drawing.HslColorModel** - HSL color in percentage model
+	4. **Drawing.SystemColor** - system color
+	5. **Drawing.PresetColor** - preset color
+	6. **Drawing.SchemeColor** - scheme color
+- **Wordprocessing.Color** - it is an OpenXmlLeafElement that represents a color in WordprocessingML, widely used for text and shading colors.
+- **Office2010.Word.RgbColorModelHex** - RGB color in hexadecimal model, used in WordprocessingML, closely mimicking the DrawingsML RGBColorModelHex class.
+- **Office2010.Word.SchemeColor** - scheme color, used in WordprocessingML, closely mimicking the DrawingsML SchemeColor class.
 
-All Drawings color classes are based on the **Drawings.ColorBase\<T>** abstract class, which provides common properties and methods for color manipulation, such as tint and shade adjustments.
+## DrawingModel.ColorType definition classes
+
+The six available ColorType components define various color models in the following classes.
+
+### RgbColorModelHex class
+
+The **Drawing.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
+The **Val** property has the format "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
+
+### RgbColorModelPercentage class
+
+The **Drawing.RgbColorModelPercentage** class represents a color in the RGB color model using percentage notation.
+Three properties **RedPortion**, **GreenPortion**, and **BluePortion** represent the red, green, and blue components of the color, respectively. 
+The values are of Int32 type and are in the range from 0 to 100,000, where 0 means no contribution of that color component and 100,000 means full (100%) contribution of that color component.
+
+### HslColorModel class
+
+The **Drawing.HslColorModel** class represents a color in the HSL color model using degree and percentage notation.
+The **HueValue** property is a degree value that ranges from 0 to 360 degrees, where 0 degree represents red, 120 degrees represents green, and 240 degrees represents blue. 
+The value of hue is stored as an Int32 type in the range from 0 to 21,600,000, where 1 degree is represented as 60,000 units.
+
+The **SatValue** and **LumValue** properties are percentage values that represent the saturation and luminance components of the color, respectively.
+
+### PresetColor class
+
+The **Drawing.PresetColor** class represents a color using a predefined color name. 
+The **Val** property is an enumeration of the standard preset color names, such as "AliceBlue", "AntiqueWhite", "Aqua", etc. A set of 190 preset color names and values is defined in the **Drawing.PresetColors** enumeration.
+
+### SystemColor class
+
+The **Drawing.SystemColor** class represents a color that is defined in the system color table of the operating system.
+The **Val** property is an enumeration of the standard system color names, such as "ActiveBorder", "ActiveCaption", "AppWorkspace", etc. A set of 16 system color names is defined in the **Drawing.SystemColors** enumeration.	
+The **LastColor** property is an optional property that represents the last color value used in the system color table. It is a hexadecimal RGB value in the format "RRGGBB".
+It can be helpful when the document is viewed on a system with a different color scheme.
+
+### SchemeColor class
+
+The **Drawing.SchemeColor** class have a **Val** property, which is a **SchemeColorValues** enumeration of the standard themed colors, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.
+The actual color values are defined in the **Drawing.ColorScheme** class, which is a part of the document theme.
+
+### Drawing color transformation elements
+
+All the drawing color classes can contain several optional elements that can be used to transform the color value. Classes of these elementsare the following:
+- **Drawing.Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
+- **Drawing.AlphaOffset** - specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
+- **Drawing.AlphaModulation** - specifies a more or less opaque version of its input color. An alpha modulate never increases the alpha beyond 100%. A 200% alpha modulate makes a input color twice as opaque as before. A 50% alpha modulate makes a input color half as opaque as before.
+- **Drawing.Blue** - specifies the input color with the specific blue component, but with the red and green color components unchanged.
+- **Drawing.BlueOffset** - specifies specifies the input color with its blue component shifted, but with its red and green color components unchanged.
+- **Drawing.BlueModulation** - specifies the input color with its blue component modulated by the given percentage. A 50% blue modulate reduces the blue component by half. A 200% blue modulate doubles the blue component.
+- **Drawing.Green** - specifies the input color with the specific green component, but with the red and blue color components unchanged.
+- **Drawing.GreenOffset** - specifies the input color with its green component shifted, but with its red and blue color components unchanged.
+- **Drawing.GreenModulation** - specifies the input color with its green component modulated by the given percentage. A 50% green modulate reduces the green component by half. A 200% green modulate doubles the green component.
+- **Drawing.Red** - specifies the input color with the specific red component, but with the green and blue color components unchanged.
+- **Drawing.RedOffset** - specifies the input color with its red component shifted, but with its green and blue color components unchanged.
+- **Drawing.RedModulation** - specifies the input color with its red component modulated by the given percentage. A 50% red modulate reduces the red component by half. A 200% red modulate doubles the red component.
+- **Drawing.Hue** - specifies the input color with the specific hue component, but with the saturation and luminance components unchanged.
+- **Drawing.HueOffset** - specifies the input color with its hue component shifted, but with its saturation and luminance components unchanged.
+- **Drawing.HueModulation** - specifies the input color with its hue component modulated by the given percentage. A 50% hue modulate reduces the hue component by half. A 200% hue modulate doubles the hue component.
+- **Drawing.Saturation** - specifies the input color with the specific saturation component, but with the hue and luminance components unchanged.
+- **Drawing.SaturationOffset** - specifies the input color with its saturation component shifted, but with its hue and luminance components unchanged.
+- **Drawing.SaturationModulation** - specifies the input color with its saturation component modulated by the given percentage. A 50% saturation modulate reduces the saturation component by half. A 200% saturation modulate doubles the saturation component.
+- **Drawing.Luminance** - specifies the input color with the specific luminance component, but with the hue and saturation components unchanged.
+- **Drawing.LuminanceOffset** - specifies the input color with its luminance component shifted, but with its hue and saturation components unchanged.
+- **Drawing.LuminanceModulation** - specifies the input color with its luminance component modulated by the given percentage. A 50% luminance modulate reduces the luminance component by half. A 200% luminance modulate doubles the luminance component.
+- **Drawing.Tint** - specifies the input color with a tint applied. A tint is a percentage of white added to the color, lightening it. A 10% tint is 10% of the input color combined with 90% white.
+- **Drawing.Shade** - specifies the input color with a shade applied. A shade is a percentage of black added to the color, darkening it. A 10% shade is 10% of the input color combined with 90% black.
+- **Drawing.Complement** - specifies the input color with its complement (opposite) color applied. The complement color is the color directly opposite on the color wheel. For example, the complement of red is cyan, green is magenta, and blue is yellow.
+- **Drawing.Inverse** - specifies the input color with its inverse color applied. The inverse color is calculated by inverting each RGB component (255 - value). For example, the inverse of red (255,0,0) is cyan (0,255,255).
+- **Drawing.Gray** - specifies the input color with its grayscale version applied. The grayscale value is calculated based on the perceived luminance of the original color, resulting in a shade of gray that represents the brightness of the color.
+- **Drawing.Gamma** - specifies the input color with gamma correction applied. Gamma correction adjusts the brightness of the color to account for the nonlinear response of display devices. A gamma value of 2.2 is commonly used for standard displays.
+- **Drawing.InverseGamma** - specifies the input color with inverse gamma correction applied. Inverse gamma correction reverses the gamma correction process, converting display-corrected RGB values back to linear RGB values.
+
+Note that:
+1. The above color transformation elements can be combined in a single color definition to achieve complex color effects. The order of application of these transformations is important, as it can affect the final resulting color.
+2. In the **Drawing.RgbColorModelPercentage**, the **Red**, **Green**, and **Blue** transformation elements are independent of the **RedPortion**, **GreenPortion**, and **BluePortion** properties. 
+The **RedPortion**, **GreenPortion**, and **BluePortion** properties define the base color value, while the **Red**, **Green**, and **Blue** transformation elements can be used to modify the base color by applying additional adjustments.
+3. Analogously, in the **Drawing.HslColorModel**, the **Hue**, **Saturation**, and **Luminance** transformation elements are independent of the **HueValue**, **SatValue**, and **LumValue** properties.
+
+## Definition of themed colors
+
+A **Drawing.Theme** class, stored in the document theme part, defines a color scheme that can be used throughout the document.
+A **Drawing.ColorScheme** class defines 12 common colors that can be used in the whole document, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.
+These colors are defined in the following classes:
+- **Dark1Color**
+- **Light1Color**
+- **Dark2Color**
+- **Light2Color**
+- **Accent1Color**
+- **Accent2Color**
+- **Accent3Color**
+- **Accent4Color**
+- **Accent5Color**
+- **Accent6Color**
+- **HyperlinkColor**
+- **FollowedHyperlinkColor**
+
+The above scheme definition classes are derived from a **Color2Type** abstract class which can contain one of the five color models in DrawingsML:
+1. **Drawing.RgbColorModelHex** - RGB color in hexadecimal model
+2. **Drawing.RgbColorModelPercentage** - RGB color in percentage model
+3. **Drawing.HslColorModel** - HSL color in percentage model
+4. **Drawing.SystemColor** - system color
+5. **Drawing.PresetColor** - preset color
+
+Obviously, the **Drawing.SchemeColor** class can't be used in a **Color2Type** class.
+
+## Using the drawing color classes
+
+The **Drawing.ColorType**, which can contain the six above mentioned DrawingML specific color models, is a base class for the following specific classes:
+- **Drawing.BackgroundColor** - represents a background color for a pattern fill.
+- **Drawing.BulletColor** - specifies the color to be used on bullet characters within a given paragraph.
+- **Drawing.ColorFrom** - specifies a color getting removed (source color) in a color change effect.
+- **Drawing.ColorTo** - specifies a color getting applied (target color) in a color change effect.
+- **Drawing.ContourColor** - represents a contour color for a shape or object.
+- **Drawing.ExtrusionColor** - represents an extrusion color for a 3D shape.
+- **Drawing.ForegroundColor** - represents a foreground color for a pattern fill.
+- **Drawing.Highlight** - represents a highlight color for text or objects.
+
+Moreover, the following classes in DrawingsML, although not derived from **Drawing.ColorType**, can also contain one of the six DrawingML specific color models:
+- **Drawing.AlphaInverse** - represents an alpha inverse effect that can be applied to images in DrawingsML.
+- **Drawing.ColorReplacement** - represents a solid color replacement effect that can be applied to images in DrawingsML.
+- **Drawing.ColorTransform** - represents a color transformation effect that can be applied to images in DrawingsML.
+- **Drawing.Duotone** - represents a duotone effect that can be applied to images in DrawingsML. The duotone effect uses two colors through a linear interpolation to create a two-tone image effect.
+- **Drawing.Glow** - represents a glow effect that can be applied to shapes and text in DrawingsML.
+- **Drawing.GradientStop** - represents a gradient stop, which defines a position of a color within a gradient fill.
+- **Drawing.InnerShadow** - represents an inner shadow effect that can be applied within the edges of a shape or text in DrawingsML.
+- **Drawing.OuterShadow** - represents an outer shadow effect that can be applied outside the edges of a shape or text in DrawingsML.
+- **Drawing.PresetShadow** - represents a preset shadow effect that can be applied to shapes and text in DrawingsML.
+- **Drawing.SolidFill** - represents a solid color fill that can be applied to shapes and text in DrawingsML.
+- **Drawing.CustomColor** - represents a custom color that can be defined within a custom color list to define extra colors that can be appended to a theme. This is useful within corporate scenarios where there is a set corporate color palette from which to work.
+- **Drawing.EffectReference** - represents a reference to an effect style within a style effect list while defining a color that can be applied to shapes and text in DrawingsML.
+- **Drawing.FillReference** - represents a reference to a fill style within a fillstyle list while defining a fill style or background style that can be applied to shapes and text in DrawingsML.
+- **Drawing.LineReference** - represents a reference to a line style within a fill style list while defining a color that can be applied to lines and borders in DrawingsML.
+- **Drawing.FontReference** - represents a reference to a themed font style within a font theme while defining a color that can be applied to the font.
+- **Drawing.TableCellTextStyle** - defines the text properties associated with the text contained within a table cell in DrawingML.
+
+The same six DrawingML specific color model components can be also used in the Drawing.Diagrams classes:
+- **Drawing.Diagrams.FillColorList** - specifies a list of colors to be used for fills in a diagram.
+- **Drawing.Diagrams.LineColorList** - specifies a list of colors to be used for lines in a diagram.
+- **Drawing.Diagrams.EffectColorList** - specifies a list of colors to be used for effects in a diagram.
+- **Drawing.Diagrams.TextEffectColorList** - specifies a list of colors to be used for text effects in a diagram.
+- **Drawing.Diagrams.TextFillColorList** - specifies a list of colors to be used for text fills in a diagram.
+- **Drawing.Diagrams.TextLineColorList** - specifies a list of colors to be used for text lines in a diagram.
+
+## Colors in WordprocessingML
+
+The WordprocessingML defines three color models that can be used in text and shading colors.
+
+Note that the WordprocessingML color model classes properties are expressed in percentage values, but with a different scale than the DrawingML color model classes.
+The "100%" value in WordprocessingML color model classes is expressed as 100, while the "100%" value in DrawingML color model classes is expressed as 100,000.
+
+### Wordprocessing.Color class
+
+The **Wordprocessing.Color** class specifies colors with the following properties:
+- **Val** - specifies the color value in hexadecimal format (RRGGBB).
+- **ThemeColor** - specifies the color value based on a drawing theme defined color. 
+- **ThemeTint** - specifies the tint of the theme color.
+- **ThemeShade** - specifies the shade of the theme color.
+
+A **Wordprocessing.ThemeColorValues** enumeration is wider than **Drawing.SchemeColorValues** enumeration having four additional colors:
+- **Text1Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
+- **Background1Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
+- **Text2Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
+- **Background2Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
+
+The **ThemeTint** and **ThemeShade** properties are percentage values that can be used to lighten or darken the theme color, respectively.
+They are expressed as two-digit hexadecimal numbers, where "00" means no change, "FF" means full tint (white), and "FF" means full shade (black).
+
+### Office2010.Word.RgbColorModelHex class
+
+The **Office2010.Word.RgbColorModelHex** class is a complex type that specifies a color using the RGB color model. 
+Red, green, and blue are expressed as a sequence of hex digits, RRGGBB. 
+
+### Office2010.Word.SchemeColor class
+
+The **Office2010.Word.SchemeColor** class has a **Val** property, which is a **Office2010.Word.SchemeColorValues** enumeration of the standard themed colors.
+It is similar to the **Wordprocessing.ThemeColorValues** class, but with addition of **AutoColor** value.
+
+### Office2010.Word color transformation elements
+
+Both **Office2010.Word.RgbColorModelHex** and **Office2010.Word.SchemeColor** types optionally specify a list of color transforms applied to the base color:
+- **Tint** - specifies that defined color has a specific tint (as positive fixed percentage), but with its color unchanged.
+- **Shade** - specifies that defined color has a specific shade (as positive fixed percentage), but with its color unchanged.
+- **Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
+- **HueModulation** - specifies that defined color has a specific hue modulation (as positive fixed percentage).A 50% hue modulate decreases the angular hue value by half. A 200% hue modulate doubles the angular hue value.
+- **Saturation** - specifies that defined color has a specific saturationbut, with its hue and luminance unchanged.
+- **SaturationOffset** - specifies that defined color has a specific saturation offset (as positive fixed percentage). A 10% saturation offset increases the saturation value by 10%. A -10% saturation offset decreases the saturation value by 10%.
+- **SaturationModulation** - specifies that defined color has a specific saturation modulation (as positive fixed percentage). A 50% saturation modulate decreases the saturation value by half. A 200% saturation modulate doubles the saturation value.
+- **Luminance** - specifies that defined color has a specific luminance, but with its hue and saturation unchanged.
+- **LuminanceOffset** - specifies that defined color has a specific luminance offset (as positive fixed percentage). A 10% luminance offset increases the luminance value by 10%. A -10% luminance offset decreases the luminance value by 10%.
+- **LuminanceModulation** - specifies that defined color has a specific luminance modulation (as positive fixed percentage). A 50% luminance modulate decreases the luminance value by half. A 200% luminance modulate doubles the luminance value.
+
+# Specifying colors in the DocumentModel
+
+DocumentModel reduces the complexity of color specification.
+
+First, it defines universal Percentage and Degree types for all color properties, which are used in all color models, 
+despite the source color class namespace.
+
+## Percentage and Degree types
+
+Most of color model class properties use two base types of values: **Percentage** and **Degree**.
 
 ## Drawings.Percentage class
 
-All percentage values in the Drawings classes are represented by **Drawings.Percentage** class, 
-which stores the value as a long integer value, where the value is scaled by 100,000 to preserve precision.
-This class supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-The following conversion rules apply:
-- Numeric conversion to/from integer types (e.g., int, long, ushort, uint) treats the value as a raw integer representing the scaled percentage.
-For example, a value of 5000 corresponds to 5% and 10000 corresponds to 10%.</item>
-- Numeric conversion to/from floating-point types (e.g., float, double, decimal) treats the value as a scaled percentage.
-For example, a value of 0.5 corresponds to 50% and 1.0 corresponds to 100%.
-- String conversion with the "%" suffix represents percentage scale.
-For example, a raw value of 5000 corresponds to "5%", and a raw value of 10000 corresponds to "10%".
-- String conversion without the "%" suffix represents the value as a raw integer number and is not scaled.
-For example, a string value of "30000" corresponds to a raw value of 30000, and "60000" corresponds to a raw value of 60000.
-Use of decimal separator in string input without the "%" suffix is not supported and will result in a parsing error, as it is treated as a raw integer value.
+All percentage values in the DocumentModel classes are represented by **Percentage** class, 
+which stores the value as an integer value, where the value is scaled by 1000 to preserve precision. 
+So, a value of 100% is represented internally as 100,000, a value of 50% is represented as 50,000, 
+and a value of 0.5% is represented as 500.
 
-## Drawings.Degree class
+The **Percentage** class supports implicit conversions to/from numeric types and string representations 
+with an optional "%" suffix. Conversions from numeric types hides internal scaling, 
+so that a value of 100% can be assigned as 100, and a value of 0.5% can be assigned as 0.5.
 
-A **Hue** property in the HSL color model is represented by **Drawings.Degree** class, which stores the value as a long integer value, where the value is scaled by 60,000 to preserve precision.
+## Degree class
+
+A **Hue** property in the HSL color model is represented by **Degree** class, 
+which stores the value as an integer value, where the value is scaled by 60,000 to preserve precision.
+So, a value of 180 degrees is represented internally as 10,800,000, a value of 0.5 degrees is represented as 30,000, and a value of 0.5 degrees is represented as 30,000.
+
 This class supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
-The following conversion rules apply:
-- Numeric conversion to/from integer types (e.g., int, long, ushort, uint) treats the value as a raw integer representing the scaled angle.
-For example, a value of 30000 corresponds to raw value of 30000 (0.5 degree) and 60000 corresponds to raw value of 60000 (1 degree).
-- Numeric conversion to/from floating-point types (e.g., float, double, decimal) treats the value as a scaled angle in degrees.
-For example, a value of 0.5 corresponds to raw 30000 integer value, and 1.0 corresponds to raw 60000 integer value.
-- String conversion with the "°" suffix represents degree scale.
-For example, a raw value of 30000 corresponds to "0.5°", and a raw value of 60000 corresponds to "1°".
-- String conversion without the "°" suffix represents the value as a raw integer number and is not scaled.
-For example, a string value of "30000" corresponds to a raw value of 30000, and "60000" corresponds to a raw value of 60000.
-Use of decimal separator in string input without the "°" suffix is not supported and will result in a parsing error, as it is treated as a raw integer value.
+Conversions from numeric types hides internal scaling, 
+so that a value of 180 degrees can be assigned as 180, and a value of 0.5 degrees can be assigned as 0.5.
 
-## Drawings.DrawingsColorBase<T> class
+## Drawings.DrawingsColorBase\<T> class
 
 The **Drawings.DrawingsColorBase\<T>** class is an abstract base class for all color models in the Drawings namespace.
 It provides common properties and methods for color manipulation, such as tint and shade adjustments.

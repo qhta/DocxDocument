@@ -80,8 +80,8 @@ public partial class RgbColorHex : Color<DXO10W.RgbColorModelHex>, DMD.ISchemeBa
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Tint))]
-  public DMD.Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private DMD.Percentage? _Tint;
+  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  private Percentage? _Tint;
 
   /// <summary>
   /// Shade value to darken the color.
@@ -101,7 +101,7 @@ public partial class RgbColorHex : Color<DXO10W.RgbColorModelHex>, DMD.ISchemeBa
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Shade))]
-  public DMD.Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private DMD.Percentage? _Shade;
+  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  private Percentage? _Shade;
 
 }

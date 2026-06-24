@@ -526,26 +526,30 @@ public class ColorTypesTest : _AbstractTestClass
 
     foreach (var run in body.Descendants<DocumentFormat.OpenXml.Wordprocessing.Run>())
     {
-      var runText = string.Concat(run.Elements<DocumentFormat.OpenXml.Wordprocessing.Text>().Select(t => t.Text));
-      if (string.IsNullOrEmpty(runText))
+      var runText = run.Elements<DocumentFormat.OpenXml.Wordprocessing.Text>().FirstOrDefault();
+      if (runText == null)
         continue;
 
-      if (!redUpdated && runText == "RED")
+      if (!redUpdated && runText.Text == "RED")
       {
+        runText.Text = "BLUE";
         var runProperties = run.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>() ?? run.PrependChild(new DocumentFormat.OpenXml.Wordprocessing.RunProperties());
         var color = runProperties.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>() ?? runProperties.AppendChild(new DocumentFormat.OpenXml.Wordprocessing.Color());
-        color.Val = GetRandomHexColor().ToString();
+        color.Val = "0000FF";
         color.ThemeColor = null;
         color.ThemeTint = null;
         color.ThemeShade = null;
         redUpdated = true;
       }
-      else if (!accentUpdated && runText == "ACCENT1")
+      else if (!accentUpdated && runText.Text == "ACCENT1")
       {
+        runText.Text = "ACCENT2";
         var runProperties = run.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>() ?? run.PrependChild(new DocumentFormat.OpenXml.Wordprocessing.RunProperties());
         var color = runProperties.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>() ?? runProperties.AppendChild(new DocumentFormat.OpenXml.Wordprocessing.Color());
         color.Val = null;
         color.ThemeColor = DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues.Accent2;
+        color.ThemeTint = null;
+        color.ThemeShade = null;
         accentUpdated = true;
       }
 

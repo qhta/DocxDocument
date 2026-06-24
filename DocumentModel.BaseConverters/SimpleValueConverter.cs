@@ -1,6 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
 
-using DocumentModel.Drawings;
+using DocumentModel;
 
 namespace DocumentModel.OpenXml;
 

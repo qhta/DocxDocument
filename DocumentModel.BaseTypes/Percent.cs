@@ -1,13 +1,13 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a percentage value stored as a double-precision floating-point number.
+/// Represents a percentage value stored as a decimal number.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
 /// </summary>
 [JsonConverter(typeof(PercentJsonConverter))]
 public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
 {
-  private readonly int value;
+  private readonly decimal value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Percent"/> struct from a string value.
@@ -19,7 +19,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public Percent(string str)
   {
     str = str.TrimEnd('%');
-    value = int.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    value = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -28,7 +28,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The byte value representing the percentage.</param>
   public Percent(byte value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -37,7 +37,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The SByte value representing the percentage.</param>
   public Percent(sbyte value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -46,7 +46,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Int16 value representing the percentage.</param>
   public Percent(Int16 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -55,7 +55,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Int32 value representing the percentage.</param>
   public Percent(Int32 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
 
@@ -65,7 +65,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The int value representing the percentage.</param>
   public Percent(Int64 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -74,7 +74,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt16 value representing the percentage.</param>
   public Percent(UInt16 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -83,7 +83,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt32 value representing the percentage.</param>
   public Percent(UInt32 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
 
@@ -93,7 +93,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt value representing the percentage.</param>
   public Percent(UInt64 value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -102,7 +102,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Decimal value representing the percentage.</param>
   public Percent(Decimal value)
   {
-    this.value = (int)value;
+    this.value = value;
   }
 
 
@@ -112,7 +112,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Single value representing the percentage.</param>
   public Percent(Single value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   /// <summary>
@@ -121,7 +121,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Double value representing the percentage.</param>
   public Percent(Double value)
   {
-    this.value = (int)value;
+    this.value = (decimal)value;
   }
 
   #region IConvertible Implementation
