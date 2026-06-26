@@ -214,61 +214,6 @@ public abstract partial class ContentItemsCollection : ModelElement,
   /// Gets the mapping between model element types and their corresponding OpenXml element types.
   /// </summary>
   public abstract Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping { get; }
-
-  ///// <summary>
-  ///// Adds an item to the collection without waiting for synchronization. This method is intended for internal use when loading data from the data source, and it bypasses the synchronization checks to allow for efficient population of the collection.
-  ///// </summary>
-  ///// <param name="item">The item to add to the collection.</param>
-  //private void Append(ItemType item)
-  //{
-  //  Items.Add(item);
-  //}
-
-  ///// <summary>
-  ///// Returns or assigns the item at the specified index.
-  ///// </summary>
-  ///// <param name = "index">The zero-based index.</param>
-  //public override ItemType this[int index]
-  //{
-  //  get
-  //  {
-  //    if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
-  //    {
-  //      if (HasDirectAccess)
-  //      {
-  //        var childElements = openXmlElement.Elements().Where(AcceptItem).ToArray();
-  //        if (index < 0 || index >= childElements.Length)
-  //          throw new ArgumentOutOfRangeException(nameof(index),
-  //            $"Index {index} is out of range for the collection with {childElements.Length} items.");
-
-  //        var openXmlChildElement = childElements[index];
-  //        if (OpenXmlElement2ModelTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
-  //          throw new InvalidOperationException(
-  //            $"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
-
-  //        var modelItem = OpenXmlModelConverter.ConvertFrom(openXmlChildElement, modelItemType);
-  //        if (modelItem != null && !modelItemType.IsInstanceOfType(modelItem))
-  //          throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
-
-  //        return (ItemType)modelItem!;
-  //      }
-
-  //      while (!IsSynchronized && index > Items.Count - 1)
-  //      {
-  //        //Debug.WriteLine($"Waiting for synchronization to access item at index {index}  in {GetType().Name}. Current count: {Items.Count}");
-  //        Task.Delay(1).Wait();
-  //      }
-  //    }
-  //    return Items[index];
-  //  }
-  //  set
-  //  {
-  //    while (!IsSynchronized)
-  //      Task.Delay(1).Wait();
-  //    Items[index] = value;
-  //  }
-  //}
-
   /// <summary>
   /// Gets an enumerator that iterates through the collection, yielding each item in the collection. The enumerator retrieves items from the underlying OpenXml composite element, converting them to the appropriate model type based on the defined type mapping. Only items accepted by the AcceptItem method are included in the enumeration.
   /// </summary>

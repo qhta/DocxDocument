@@ -20,15 +20,15 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public override bool Run()
   {
-    Console.WriteLine("=== IColor Implementations Test ===\n");
-    //if (!TestTypeDiscovery()) return false;
-    //if (!TestXmlSerialization()) return false;
-    //if (!TestJsonSerialization()) return false;
-    //if (!TestIColorAccessors()) return false;
-    //if (!TestEdgeCases()) return false;
-    //if (!StoreThemeInDocument()) return false;
-    if (!ChangeTwoWordColorsInDocument()) return false;
-    Console.WriteLine("All IColor implementation tests passed.\n");
+    Console.WriteLine("=== Color Implementations Test ===\n");
+    if (!TestTypeDiscovery()) return false;
+    if (!TestXmlSerialization()) return false;
+    if (!TestJsonSerialization()) return false;
+    if (!TestColorAccessors()) return false;
+    if (!TestEdgeCases()) return false;
+    if (!StoreThemeInDocument()) return false;
+    if (!ChangeColorsInDocument()) return false;
+    Console.WriteLine("All Color implementation tests passed.\n");
     return true;
   }
 
@@ -38,7 +38,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if discovery is correct; otherwise, false.</returns>
   private bool TestTypeDiscovery()
   {
-    Console.WriteLine("--- IColor Type Discovery ---");
+    Console.WriteLine("--- Color Type Discovery ---");
     var discovered = GetIColorTypes().OrderBy(item => item.Type.FullName).ToList();
     var expected = new List<(Type Type, ColorModel Model)>
     {
@@ -56,7 +56,7 @@ public class ColorTypesTest : _AbstractTestClass
     if (!discovered.SequenceEqual(expected))
 
     {
-      Console.WriteLine("✗ IColor type discovery FAILED");
+      Console.WriteLine("✗ Color type discovery FAILED");
       Console.WriteLine("Discovered:");
       foreach (var item in discovered) Console.WriteLine($"  {item}");
       Console.WriteLine("Expected:");
@@ -64,7 +64,7 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    Console.WriteLine("✓ IColor type discovery passed\n");
+    Console.WriteLine("✓ Color type discovery passed\n");
     return true;
   }
 
@@ -170,9 +170,9 @@ public class ColorTypesTest : _AbstractTestClass
   /// Tests common IColor accessors for all implementations.
   /// </summary>
   /// <returns>True if all accessor tests pass; otherwise, false.</returns>
-  private bool TestIColorAccessors()
+  private bool TestColorAccessors()
   {
-    Console.WriteLine("--- IColor Accessors ---");
+    Console.WriteLine("--- Color Accessors ---");
     var document = CreateDocumentWithInitializedThemePart();
     foreach (var item in GetIColorTypes())
     {
@@ -214,7 +214,7 @@ public class ColorTypesTest : _AbstractTestClass
       }
     }
 
-    Console.WriteLine("✓ IColor accessor tests passed\n");
+    Console.WriteLine("✓ Color accessor tests passed\n");
     return true;
   }
 
@@ -507,9 +507,9 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   /// <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
   /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
-  private bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test.docx")
+  private bool ChangeColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test.docx")
   {
-    Console.WriteLine("\n--- Two Word Colors in Document ---");
+    Console.WriteLine("\n--- Change Colors in Document ---");
 
     if (!File.Exists(filePath))
     {
@@ -550,6 +550,8 @@ public class ColorTypesTest : _AbstractTestClass
           var color = runProperties.Color;
           if (color == null)
             throw new ApplicationException("Color not found.");
+          if (color.Val!="FF0000")
+            throw new ApplicationException($"Unexpected color value for RED run: {color.Val}");
           color.Val = "0000FF";
           color.ThemeColor = null;
           color.ThemeTint = null;
@@ -565,6 +567,9 @@ public class ColorTypesTest : _AbstractTestClass
           var color = runProperties.Color;
           if (color == null)
             throw new ApplicationException("Color not found.");
+          if (color.ThemeColor != ThemeColors.Accent1)
+            throw new ApplicationException($"Unexpected color value for ACCENT1 run: {color.ThemeColor}");
+
           color.Val = null;
           color.ThemeColor = ThemeColors.Accent2;
           color.ThemeTint = null;
@@ -586,7 +591,7 @@ public class ColorTypesTest : _AbstractTestClass
 
     var result = redUpdated && accentUpdated;
     if (result)
-      Console.WriteLine("✓  Two Word Colors in Document passed");
+      Console.WriteLine("✓  Change Colors in Document passed");
 
     return result;
   }

@@ -222,8 +222,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       openXmlType = Activator.CreateInstance<OpenXmlType>();
       openXmlParentElement?.AppendChild(openXmlType);
     }
-    var modelElement = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlType)!;
-    return modelElement;
+    var modelValue = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlType)!;
+    if (modelValue is ModelElement modelElement)
+      modelElement.SetParent(this);
+    if (modelValue is IUpdatable updatable)
+      updatable.SetUpdatableElement(openXmlType);
+    return modelValue;
   }
 
   /// <summary>
@@ -237,7 +241,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (openXmlValue == null)
       return default;
 
-    return (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
+    var modelValue = (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
+    if (modelValue is ModelElement modelElement)
+      modelElement.SetParent(this);
+    if (modelValue is IUpdatable updatable)
+      updatable.SetUpdatableElement(openXmlValue);
+    return modelValue;
   }
 
 

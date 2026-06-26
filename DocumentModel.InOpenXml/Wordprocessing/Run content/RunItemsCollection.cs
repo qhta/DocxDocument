@@ -52,6 +52,7 @@ public class RunItemsCollection: ContentItemsCollection
     { typeof(DXW.DeletedText), typeof(DMW.DeletedText) },
     { typeof(DXW.FieldCode), typeof(DMW.FieldCode) },
     { typeof(DXW.DeletedFieldCode), typeof(DMW.DeletedFieldCode) },
+    { typeof(DX.AlternateContent), typeof(DM.AlternateContent) }
   };
 
   private static readonly Dictionary<Type, Type[]> _ModelType2OpenXmlElementMapping = new()
@@ -89,6 +90,7 @@ public class RunItemsCollection: ContentItemsCollection
     { typeof(DMW.DeletedText), [typeof(DXW.DeletedText)] },
     { typeof(DMW.FieldCode), [typeof(DXW.FieldCode)] },
     { typeof(DMW.DeletedFieldCode), [typeof(DXW.DeletedFieldCode)] },
+    { typeof(DM.AlternateContent), [typeof(DX.AlternateContent)] }
   };
 
   /// <summary>
