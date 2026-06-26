@@ -89,40 +89,82 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [XmlArray("Items")]
   [XmlArrayItem("Break", typeof(DMW.Break))]
   [XmlArrayItem("Drawing", typeof(DMW.Drawing))]
-  //[XmlArrayItem("NoBreakHyphen", typeof(DMW.NoBreakHyphen))]
-  //[XmlArrayItem("SoftHyphen", typeof(DMW.SoftHyphen))]
-  //[XmlArrayItem("DayShort", typeof(DMW.DayShort))]
-  //[XmlArrayItem("MonthShort", typeof(DMW.MonthShort))]
-  //[XmlArrayItem("YearShort", typeof(DMW.YearShort))]
-  //[XmlArrayItem("DayLong", typeof(DMW.DayLong))]
-  //[XmlArrayItem("MonthLong", typeof(DMW.MonthLong))]
-  //[XmlArrayItem("YearLong", typeof(DMW.YearLong))]
-  //[XmlArrayItem("AnnotationReferenceMark", typeof(DMW.AnnotationReferenceMark))]
-  //[XmlArrayItem("FootnoteReferenceMark", typeof(DMW.FootnoteReferenceMark))]
-  //[XmlArrayItem("EndnoteReferenceMark", typeof(DMW.EndnoteReferenceMark))]
-  //[XmlArrayItem("SeparatorMark", typeof(DMW.SeparatorMark))]
-  //[XmlArrayItem("ContinuationSeparatorMark", typeof(DMW.ContinuationSeparatorMark))]
-  //[XmlArrayItem("PageNumber", typeof(DMW.PageNumber))]
-  //[XmlArrayItem("CarriageReturn", typeof(DMW.CarriageReturn))]
+  [XmlArrayItem("NoBreakHyphen", typeof(DMW.NoBreakHyphen))]
+  [XmlArrayItem("SoftHyphen", typeof(DMW.SoftHyphen))]
+  [XmlArrayItem("DayShort", typeof(DMW.DayShort))]
+  [XmlArrayItem("MonthShort", typeof(DMW.MonthShort))]
+  [XmlArrayItem("YearShort", typeof(DMW.YearShort))]
+  [XmlArrayItem("DayLong", typeof(DMW.DayLong))]
+  [XmlArrayItem("MonthLong", typeof(DMW.MonthLong))]
+  [XmlArrayItem("YearLong", typeof(DMW.YearLong))]
+  [XmlArrayItem("AnnotationReferenceMark", typeof(DMW.AnnotationReferenceMark))]
+  [XmlArrayItem("FootnoteReferenceMark", typeof(DMW.FootnoteReferenceMark))]
+  [XmlArrayItem("EndnoteReferenceMark", typeof(DMW.EndnoteReferenceMark))]
+  [XmlArrayItem("SeparatorMark", typeof(DMW.SeparatorMark))]
+  [XmlArrayItem("ContinuationSeparatorMark", typeof(DMW.ContinuationSeparatorMark))]
+  [XmlArrayItem("PageNumber", typeof(DMW.PageNumber))]
+  [XmlArrayItem("CarriageReturn", typeof(DMW.CarriageReturn))]
   [XmlArrayItem("TabChar", typeof(DMW.TabChar))]
   [XmlArrayItem("LastRenderedPageBreak", typeof(DMW.LastRenderedPageBreak))]
   [XmlArrayItem("FieldChar", typeof(DMW.FieldChar))]
-  //[XmlArrayItem("FootnoteReference", typeof(DMW.FootnoteReference))]
-  //[XmlArrayItem("EndnoteReference", typeof(DMW.EndnoteReference))]
-  //[XmlArrayItem("CommentReference", typeof(DMW.CommentReference))]
-  //[XmlArrayItem("EmbeddedObject", typeof(DMW.EmbeddedObject))]
-  //[XmlArrayItem("Picture", typeof(DMW.Picture))]
-  //[XmlArrayItem("PositionalTab", typeof(DMW.PositionalTab))]
-  //[XmlArrayItem("RunProperties", typeof(DMW.RunProperties))]
-  //[XmlArrayItem("Ruby", typeof(DMW.Ruby))]
-  //[XmlArrayItem("SymbolChar", typeof(DMW.SymbolChar))]
-  [XmlArrayItem("Text", typeof(DMW.Text))]
-  //[XmlArrayItem("DeletedText", typeof(DMW.DeletedText))]
-  //[XmlArrayItem("FieldCode", typeof(DMW.FieldCode))]
-  //[XmlArrayItem("DeletedFieldCode", typeof(DMW.DeletedFieldCode))]
+  [XmlArrayItem("FootnoteReference", typeof(DMW.FootnoteReference))]
+  [XmlArrayItem("EndnoteReference", typeof(DMW.EndnoteReference))]
+  [XmlArrayItem("CommentReference", typeof(DMW.CommentReference))]
+  [XmlArrayItem("EmbeddedObject", typeof(DMW.EmbeddedObject))]
+  [XmlArrayItem("Picture", typeof(DMW.Picture))]
+  [XmlArrayItem("PositionalTab", typeof(DMW.PositionalTab))]
+  [XmlArrayItem("RunProperties", typeof(DMW.RunProperties))]
+  [XmlArrayItem("Ruby", typeof(DMW.Ruby))]
+  [XmlArrayItem("SymbolChar", typeof(DMW.SymbolChar))]
+  [XmlArrayItem("Text", typeof(DMW.RunText))]
+  [XmlArrayItem("DeletedText", typeof(DMW.DeletedText))]
+  [XmlArrayItem("FieldCode", typeof(DMW.FieldCode))]
+  [XmlArrayItem("DeletedFieldCode", typeof(DMW.DeletedFieldCode))]
   public RunItemsCollection Items
   {
     get => _Items ??= new RunItemsCollection(this, _UpdatableElement);
   }
   private RunItemsCollection? _Items;
+
+  /// <summary>
+  /// This property provides access to the collection of text elements within the run. 
+  /// </summary>
+  public RunTexts TextItems
+  {
+    get => _TextItems ??= new RunTexts(this, Items);
+  }
+  private RunTexts? _TextItems;
+
+  /// <summary>
+  ///  Gets or sets the concatenated text content of the run, combining all text elements within the run's items collection.
+  /// Setting this property will update the text content of the run accordingly.
+  /// </summary>
+  public string Text
+  {
+    get => GetText();
+    set => SetText(value);
+  }
+
+  /// <summary>
+  /// Gets the concatenated text content of the run, combining all text elements within the run's items collection.
+  /// </summary>
+  /// <returns>The concatenated text content of the run.</returns>
+  public string GetText()
+  {
+    return String.Concat(TextItems.Select(item=>item.Text));
+  }
+
+  /// <summary>
+  /// Sets the text content of the run by updating the text of the first textual element found in the run's items collection.
+  /// </summary>
+  /// <param name="value">The text content to set</param>
+  public void SetText(string value)
+  {
+    var firstTextualElement = Items.OfType<DMW.ITextualElement>().FirstOrDefault();
+    if (firstTextualElement != null)
+    {
+      firstTextualElement.Text = value;
+    }
+  }
+
 }

@@ -3,8 +3,10 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a collection of paragraph elements in a WordprocessingML document.
 /// This class provides access to and management of <see cref = "Paragraph"/> objects, enabling advanced organization and manipulation of paragraph structures within the document.
 /// </summary>
-[OpenXmlType(typeof(Paragraph))]
-[XmlRoot("Paragraphs", Namespace = "DocumentModel.Wordprocessing")]
-public class Paragraphs : ElementCollection<Paragraph>
+public class Paragraphs : ContentItemsQuery<Paragraph>
 {
+  /// <summary>
+  /// Default constructor for the Paragraphs class, initializing a new instance of the Paragraphs collection.
+  /// </summary>
+  public Paragraphs(ModelElement parent, ContentItemsCollection baseCollection) : base(parent, baseCollection) { }
 }

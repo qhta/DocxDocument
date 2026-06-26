@@ -1,6 +1,8 @@
 
 using DocumentModel.XmlSerialization;
 
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
@@ -461,4 +463,17 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     set => Numbering.CopyFrom(value);
   }
   private Numbering? _Numbering;
+
+  /// <summary>
+  ///   Main document body.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public Body Body
+  {
+    get => _Body ??= new Body(this, WordprocessingDocument?.GetBody());
+    set => UpdateField(ref _Body, value, nameof(Body));
+  }
+  private Body? _Body;
 }

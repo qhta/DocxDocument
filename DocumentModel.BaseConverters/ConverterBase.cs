@@ -76,15 +76,16 @@ public static class ConverterBase
   {
     var allProps = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
     if (allProps.Length == 1)
-        return allProps[0];
+      return allProps[0];
     if (type == typeof(DX.OpenXmlElement))
       return null;
     var baseType = type.BaseType;
-    if (baseType!= null)
+    if (baseType != null)
       return baseType.GetValProperty();
     return null;
- }
+  }
 
+  private static readonly object syncObject = new object();
   /// <summary>
   /// Registers conversion methods for the specified model type using the provided converter type and supported
   /// conversions.
@@ -104,43 +105,47 @@ public static class ConverterBase
   (Type converterType, Type modelType, ConversionMethodInfo[] supportedConversions, ConversionToMap conversionToMap,
     ConversionFromMap conversionFromMap)
   {
-    foreach (var item in supportedConversions)
+    lock (syncObject)
     {
-      var fromMethod = converterType.GetMethod(item.ConvertFromMethod,
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      var toMethod = converterType.GetMethod(item.ConvertToMethod,
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      try
+      foreach (var item in supportedConversions)
       {
-        if (fromMethod != null)
+        var fromMethod = converterType.GetMethod(item.ConvertFromMethod,
+          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        var toMethod = converterType.GetMethod(item.ConvertToMethod,
+          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        try
         {
-          conversionFromMap[(item.TargetType, modelType)] = (value, targetType) =>
+          if (fromMethod != null)
           {
-            var parameters = fromMethod.GetParameters();
-            if (parameters.Length == 1)
-              return fromMethod.Invoke(null, [value])!;
-            Debug.Assert(parameters.Length == 2);
-            return fromMethod.Invoke(null, [value, targetType])!;
-          };
-        }
-        if (toMethod != null)
-        {
-          conversionToMap[(modelType, item.TargetType)] = (value, targetType) =>
-          {
-            var parameters = toMethod.GetParameters();
-            if (parameters.Length == 1)
-              return toMethod.Invoke(null, [value])!;
-            Debug.Assert(parameters.Length == 2);
-            return toMethod.Invoke(null, [value, targetType])!;
-          };
-        }
-      }
-      catch (TargetInvocationException ex)
-      {
-        if (ex.InnerException != null)
-          throw ex.InnerException;
+            conversionFromMap[(item.TargetType, modelType)] = (value, targetType) =>
+            {
+              var parameters = fromMethod.GetParameters();
+              if (parameters.Length == 1)
+                return fromMethod.Invoke(null, [value])!;
 
-        throw;
+              Debug.Assert(parameters.Length == 2);
+              return fromMethod.Invoke(null, [value, targetType])!;
+            };
+          }
+          if (toMethod != null)
+          {
+            conversionToMap[(modelType, item.TargetType)] = (value, targetType) =>
+            {
+              var parameters = toMethod.GetParameters();
+              if (parameters.Length == 1)
+                return toMethod.Invoke(null, [value])!;
+
+              Debug.Assert(parameters.Length == 2);
+              return toMethod.Invoke(null, [value, targetType])!;
+            };
+          }
+        } catch (TargetInvocationException ex)
+        {
+          if (ex.InnerException != null)
+            throw ex.InnerException;
+
+          throw;
+        }
       }
     }
   }
@@ -283,7 +288,9 @@ public static class ConverterBase
     result = value;
     if (value == null) return true;
 
+    targetType = targetType.GetNotNullableType();
     var sourceType = value.GetType();
+    sourceType = sourceType.GetNotNullableType();
     if (sourceType == targetType)
       return true;
 

@@ -5,6 +5,13 @@
 /// </summary>
 public static partial class OpenXmlModelConverter
 {
+  /// <summary>
+  /// Initializes the OpenXmlModelConverter by setting up necessary mappings and delegates for type conversions.
+  /// </summary>
+  public static void Init()
+  {
+    SimpleValueConverter.Init();
+  }
 
   /// <summary>
   /// Represents a collection of delegates to convert a type from OpenXml.
@@ -141,8 +148,8 @@ public static partial class OpenXmlModelConverter
       return result;
 
     var modelObject = Activator.CreateInstance(modelType)!;
-    if (openXmlObject is DX.OpenXmlElement openXmlElement)
-      LoadData(modelObject, openXmlElement);
+    if (openXmlObject != null)
+      LoadData(modelObject, openXmlObject);
     return (ModelElementType?)modelObject;
   }
 

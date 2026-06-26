@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.Paragraph))]
 [SpecificClass]
+[DirectAccess(true)]
 public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent, 
   ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
 {
@@ -15,6 +16,24 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   /// <remarks>This constructor creates a new paragraph element using the default settings. Use this constructor
   /// when you want to create a new paragraph in a document without copying from an existing one.</remarks>
   public Paragraph() : base() { }
+
+  /// <summary>
+  /// Initializes a new instance of the Run class with the specified parent object.
+  /// </summary>
+  /// <param name = "parent">The parent object that will contain this Run instance. This parameter establishes the hierarchical relationship
+  /// within the object model and cannot be null.</param>
+  /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
+  public Paragraph(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement)
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement.  
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the run.</param>
+  public Paragraph(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
+  {
+  }
 
   private DXW.Paragraph _paragraph => _UpdatableElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
 
@@ -149,9 +168,13 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   [XmlArrayItem("CustomXmlMoveToRangeStart", typeof(DMW.CustomXmlMoveToRangeStart))]
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(DMW.CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(DMW.CustomXmlConflictDeletionRangeStart))]
-  public ParagraphItemsCollection Items
-  {
-    get => _Items ??= new ParagraphItemsCollection(this, _UpdatableElement);
-  }
+  public ParagraphItemsCollection Items => _Items ??= new ParagraphItemsCollection(this, _UpdatableElement);
   private ParagraphItemsCollection? _Items;
+
+  /// <summary>
+  /// Gets a collection of runs within the paragraph, providing access to all run elements contained in the paragraph's items.
+  /// This property retrieves a collection of runs by filtering the items in the paragraph to include only those that are of type <see cref="DMW.Run"/>.
+  /// </summary>
+  public DMW.Runs Runs => _Runs ??= new DMW.Runs(this, Items);
+  private DMW.Runs? _Runs;
 }

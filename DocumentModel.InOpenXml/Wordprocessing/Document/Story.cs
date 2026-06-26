@@ -20,7 +20,7 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   /// </summary>
   /// <param name="parent">The parent ModelElement to associate with this story. Cannot be null. </param>
   /// <param name="openXmlElement">The OpenXmlCollectionType element that provides the underlying XML data for the story.</param>
-  protected Story(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement) { }
+  protected Story(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement): base(parent, openXmlElement) { }
 
   /// <summary>
   /// Initializes a new instance of the Story class using the specified OpenXmlCollectionType element.
@@ -68,36 +68,16 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(CustomXmlConflictDeletionRangeStart))]
 
-  public StoryItemsCollection Items
-  {
-    get => _Items ??= new StoryItemsCollection(this, _UpdatableElement);
-  }
+  public StoryItemsCollection Items => _Items ??= new StoryItemsCollection(this, _UpdatableElement);
+
   private StoryItemsCollection? _Items;
 
 
   /// <summary>
-  /// Updates the Open XML composite element to reflect the current state of the collection.
+  /// Gets a collection of paragraphs within the story, providing access to all paragraph elements contained in the story's items.
+  /// This property retrieves a collection of paragraphs by filtering the items in the story to include only those that are of type <see cref="DMW.Paragraph"/>.
   /// </summary>
-  /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
-  {
-    SetUpdatableElement(openXmlModeledCollection);
-    var children = openXmlModeledCollection.Elements().ToArray();
-    foreach (var child in children)
-    {
-      child.Remove();
-    }
-    foreach (var item in Items)
-    {
-      if (item is IUpdatable updatable)
-      {
-        var updatableElement = updatable.GetUpdatableElement();
-        if (updatableElement is DX.OpenXmlElement openXmlElement)
-        {
-          item.UpdateData(openXmlElement);
-          openXmlModeledCollection.AppendChild(openXmlElement);
-        }
-      }
-    }
-  }
+  public DMW.Paragraphs Paragraphs => _Paragraphs ??= new DMW.Paragraphs(this, Items);
+  private DMW.Paragraphs? _Paragraphs;
+
 }

@@ -1,17 +1,16 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a textual element within a text run in WordprocessingML documents.
-/// This class is used for inline text content, such as <see cref = "RunText"/> and <see cref = "FieldCode"/>, and provides properties for the text value and deletion status.
+/// This interface is used for inline text content, such as <see cref = "RunText"/> and <see cref = "FieldCode"/>,
+/// and provides properties for the text value and deletion status.
 /// </summary>
-[XmlRoot("TextualElement", Namespace = "DocumentModel.Wordprocessing")]
-public abstract partial class TextualElement<T> : ModelElement<T>, ITextualElement, IRunContent where T : DX.OpenXmlElement
+public interface ITextualElement
 {
   /// <summary>
   /// Indicates whether this textual element is deleted.
   /// </summary>
   [DefaultValue(false)]
-  public bool IsDeleted { get => _IsDeleted; set => UpdateField(ref _IsDeleted, value, nameof(IsDeleted)); }
-  private bool _IsDeleted;
+  public bool IsDeleted { get; set; }
 
   /// <summary>
   /// The text value represented by this element.

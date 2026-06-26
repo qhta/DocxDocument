@@ -4623,6 +4623,11 @@
             Provides conversion methods for complex types between model objects and Open XML types.
             </summary>
         </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.Init">
+            <summary>
+            Initializes the OpenXmlModelConverter by setting up necessary mappings and delegates for type conversions.
+            </summary>
+        </member>
         <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFromOpenXmlDelegates">
             <summary>
             Represents a collection of delegates to convert a type from OpenXml.
@@ -6144,6 +6149,12 @@
             <summary>
             Static constructor to initialize the conversion maps.
             </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.SimpleValueConverter.Init">
+            <summary>
+            Initializes the conversion maps by registering specific converters for each supported type. This method should be called once during application startup to ensure that all conversions are properly set up.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
         </member>
         <member name="F:DocumentModel.OpenXml.SimpleValueConverter.BaseTypeMappings">
             <summary>

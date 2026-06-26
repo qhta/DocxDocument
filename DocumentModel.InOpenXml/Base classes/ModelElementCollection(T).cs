@@ -41,6 +41,8 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   {
     DataSource = openXmlElement;
     HasDirectAccess = openXmlElement != null;
+    IsLazyLoadEnabled = this.GetType().GetCustomAttribute<LazyLoadAttribute>()?.IsEnabled == true &&
+                        this is ILazyLoadable;
   }
 
   /// <summary>
@@ -118,7 +120,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsLazyLoadEnabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public bool IsLazyLoadEnabled { [DebuggerStepThrough] get; set; }
 
   /// <summary>
   /// Data source for lazy loading. 
@@ -126,7 +128,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public object? DataSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public object? DataSource { [DebuggerStepThrough] get; set; }
 
 
   /// <summary>
@@ -137,6 +139,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
     if (IsLazyLoadEnabled)
     {
       IsLazyLoadEnabled = false;
+      OpenXmlModelConverter.Init();
       if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
       {
         //Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");

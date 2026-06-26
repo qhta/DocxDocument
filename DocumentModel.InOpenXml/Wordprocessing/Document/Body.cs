@@ -29,4 +29,5 @@ public class Body : AbstractBody<DXW.Body>
   public Body(DXW.Body openXmlBody) : base(openXmlBody)
   {
   }
+
 }

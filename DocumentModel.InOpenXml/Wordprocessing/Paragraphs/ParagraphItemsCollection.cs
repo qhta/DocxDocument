@@ -3,7 +3,7 @@
 /// <summary>
 /// Specific collection of Paragraph items in a Wordprocessing document, extending the generic ContentItemsCollection to handle ModelElement types. This collection is designed to accept any item and provides a mapping between OpenXml element types and model element types for proper data loading and synchronization within the document model.
 /// </summary>
-public class ParagraphItemsCollection: ContentItemsCollection<ModelElement>
+public class ParagraphItemsCollection: ContentItemsCollection
 {
   /// <summary>
   /// Initializing constructor.
@@ -16,9 +16,9 @@ public class ParagraphItemsCollection: ContentItemsCollection<ModelElement>
   }
 
   /// <summary>
-  /// Static mapping between OpenXml element types and their corresponding model element types. This bidirectional dictionary allows for easy conversion and lookup between the two type systems, facilitating the loading and updating of model elements based on their OpenXml representations.
+  /// Static mapping between OpenXml element types and their corresponding model element types. 
   /// </summary>
-  private static readonly BiDiDictionary<Type, Type> _ModelElementTypeMapping = new()
+  private static readonly Dictionary<Type, Type> _OpenXmlElement2ModelTypeMapping = new()
   {
     { typeof(DXM.Accent), typeof(DMM.Accent) },
     { typeof(DXM.Bar), typeof(DMM.Bar) },
@@ -80,13 +80,81 @@ public class ParagraphItemsCollection: ContentItemsCollection<ModelElement>
     { typeof(DXW.CustomXmlMoveFromRangeStart), typeof(DMW.CustomXmlMoveFromRangeStart) },
     { typeof(DXW.CustomXmlMoveToRangeStart), typeof(DMW.CustomXmlMoveToRangeStart) },
     { typeof(DXO10W.CustomXmlConflictInsertionRangeStart), typeof(DMW.CustomXmlConflictInsertionRangeStart) },
-    { typeof(DXO10W.CustomXmlConflictDeletionRangeStart), typeof(DMW.CustomXmlConflictDeletionRangeStart) },  };
+    { typeof(DXO10W.CustomXmlConflictDeletionRangeStart), typeof(DMW.CustomXmlConflictDeletionRangeStart) },
+  };
+
+  private static readonly Dictionary<Type, Type[]> _ModelType2OpenXmlElementMapping = new()
+  {
+    { typeof(DMM.Accent), [typeof(DXM.Accent)] },
+    { typeof(DMM.Bar), [typeof(DXM.Bar)] },
+    { typeof(DMM.BorderBox), [typeof(DXM.BorderBox)] },
+    { typeof(DMM.Box), [typeof(DXM.Box)] },
+    { typeof(DMM.Delimiter), [typeof(DXM.Delimiter)] },
+    { typeof(DMM.EquationArray), [typeof(DXM.EquationArray)] },
+    { typeof(DMM.Fraction), [typeof(DXM.Fraction)] },
+    { typeof(DMM.Function), [typeof(DXM.MathFunction)] },
+    { typeof(DMM.GroupChar), [typeof(DXM.GroupChar)] },
+    { typeof(DMM.LimitLower), [typeof(DXM.LimitLower)] },
+    { typeof(DMM.LimitUpper), [typeof(DXM.LimitUpper)] },
+    { typeof(DMM.Matrix), [typeof(DXM.Matrix)] },
+    { typeof(DMM.Nary), [typeof(DXM.Nary)] },
+    { typeof(DMM.OfficeMath), [typeof(DXM.OfficeMath)] },
+    { typeof(DMM.Paragraph), [typeof(DXM.Paragraph)] },
+    { typeof(DMM.Phantom), [typeof(DXM.Phantom)] },
+    { typeof(DMM.Run), [typeof(DXM.Run)] },
+    { typeof(DMM.Radical), [typeof(DXM.Radical)] },
+    { typeof(DMM.PreSubSuper), [typeof(DXM.PreSubSuper)] },
+    { typeof(DMM.Subscript), [typeof(DXM.Subscript)] },
+    { typeof(DMM.SubSuperscript), [typeof(DXM.SubSuperscript)] },
+    { typeof(DMM.Superscript), [typeof(DXM.Superscript)] },
+    { typeof(DMW.BidirectionalOverride), [typeof(DXW.BidirectionalOverride)] },
+    { typeof(DMW.BookmarkStart), [typeof(DXW.BookmarkStart)] },
+    { typeof(DMW.ContentPart), [typeof(DXW.ContentPart)] },
+    { typeof(DMW.CustomXmlRun), [typeof(DXW.CustomXmlRun)] },
+    { typeof(DMW.BidirectionalEmbedding), [typeof(DXW.BidirectionalEmbedding)] },
+    { typeof(DMW.Hyperlink), [typeof(DXW.Hyperlink)] },
+    { typeof(DMW.CustomXmlInsRangeEnd), [typeof(DXW.CustomXmlInsRangeEnd)] },
+    { typeof(DMW.CustomXmlDelRangeEnd), [typeof(DXW.CustomXmlDelRangeEnd)] },
+    { typeof(DMW.CustomXmlMoveFromRangeEnd), [typeof(DXW.CustomXmlMoveFromRangeEnd)] },
+    { typeof(DMW.CustomXmlMoveToRangeEnd), [typeof(DXW.CustomXmlMoveToRangeEnd)] },
+    { typeof(DMW.CustomXmlConflictInsertionRangeEnd), [typeof(DXO10W.CustomXmlConflictInsertionRangeEnd)] },
+    { typeof(DMW.CustomXmlConflictDeletionRangeEnd), [typeof(DXO10W.CustomXmlConflictDeletionRangeEnd)] },
+    { typeof(DMW.BookmarkEnd), [typeof(DXW.BookmarkEnd)] },
+    { typeof(DMW.CommentRangeStart), [typeof(DXW.CommentRangeStart)] },
+    { typeof(DMW.CommentRangeEnd), [typeof(DXW.CommentRangeEnd)] },
+    { typeof(DMW.MoveFromRangeEnd), [typeof(DXW.MoveFromRangeEnd)] },
+    { typeof(DMW.MoveToRangeEnd), [typeof(DXW.MoveToRangeEnd)] },
+    { typeof(DMW.MoveFromRangeStart), [typeof(DXW.MoveFromRangeStart)] },
+    { typeof(DMW.MoveToRangeStart), [typeof(DXW.MoveToRangeStart)] },
+    { typeof(DMW.PermEnd), [typeof(DXW.PermEnd)] },
+    { typeof(DMW.PermStart), [typeof(DXW.PermStart)] },
+    { typeof(DMW.ParagraphProperties), [typeof(DXW.ParagraphProperties)] },
+    { typeof(DMW.ProofError), [typeof(DXW.ProofError)] },
+    { typeof(DMW.Run), [typeof(DXW.Run)] },
+    { typeof(DMW.SubDocumentReference), [typeof(DXW.SubDocumentReference)] },
+    { typeof(DMW.InsertedRun), [typeof(DXW.InsertedRun)] },
+    { typeof(DMW.DeletedRun), [typeof(DXW.DeletedRun)] },
+    { typeof(DMW.MoveFromRun), [typeof(DXW.MoveFromRun)] },
+    { typeof(DMW.MoveToRun), [typeof(DXW.MoveToRun)] },
+    { typeof(DMW.RunConflictInsertion), [typeof(DXO10W.RunConflictInsertion)] },
+    { typeof(DMW.RunConflictDeletion), [typeof(DXO10W.RunConflictDeletion)] },
+    { typeof(DMW.SdtRun), [typeof(DXW.SdtRun)] },
+    { typeof(DMW.SimpleField), [typeof(DXW.SimpleField)] },
+    { typeof(DMW.CustomXmlInsRangeStart), [typeof(DXW.CustomXmlInsRangeStart)] },
+    { typeof(DMW.CustomXmlDelRangeStart), [typeof(DXW.CustomXmlDelRangeStart)] },
+    { typeof(DMW.CustomXmlMoveFromRangeStart), [typeof(DXW.CustomXmlMoveFromRangeStart)] },
+    { typeof(DMW.CustomXmlMoveToRangeStart), [typeof(DXW.CustomXmlMoveToRangeStart)] },
+    { typeof(DMW.CustomXmlConflictInsertionRangeStart), [typeof(DXO10W.CustomXmlConflictInsertionRangeStart)] },
+    { typeof(DMW.CustomXmlConflictDeletionRangeStart), [typeof(DXO10W.CustomXmlConflictDeletionRangeStart)] },
+  };
+  
+  /// <summary>
+  /// Gets the mapping between OpenXml element types and their corresponding model element types.
+  /// </summary>  
+  public override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
 
   /// <summary>
-  /// Gets the mapping between model element types and their corresponding mapped types.  
+  /// Gets the mapping between model element types and their corresponding OpenXml element types.
   /// </summary>
-  /// <remarks>This property provides a bidirectional dictionary that associates each model element type with
-  /// its mapped type. The mapping enables conversion or lookup operations between the two type systems, which is useful
-  /// for scenarios such as serialization, deserialization, or type resolution in modeling frameworks.</remarks>
-  public override BiDiDictionary<Type, Type> ModelElementTypeMapping => _ModelElementTypeMapping;
+  public override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
 }

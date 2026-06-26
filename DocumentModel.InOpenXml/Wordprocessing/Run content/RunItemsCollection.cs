@@ -3,7 +3,7 @@
 /// <summary>
 /// Specific collection of Run items in a Wordprocessing document, extending the generic ContentItemsCollection to handle ModelElement types. This collection is designed to accept any item and provides a mapping between OpenXml element types and model element types for proper data loading and synchronization within the document model.
 /// </summary>
-public class RunItemsCollection: ContentItemsCollection<ModelElement>
+public class RunItemsCollection: ContentItemsCollection
 {
   /// <summary>
   /// Initializing constructor.
@@ -15,9 +15,9 @@ public class RunItemsCollection: ContentItemsCollection<ModelElement>
   }
 
   /// <summary>
-  /// Static mapping between OpenXml element types and their corresponding model element types. This bidirectional dictionary allows for easy conversion and lookup between the two type systems, facilitating the loading and updating of model elements based on their OpenXml representations.
+  /// Static mapping from OpenXml element types to model element types. 
   /// </summary>
-  private static readonly BiDiDictionary<Type, Type> _ModelElementTypeMapping = new()
+  private static readonly Dictionary<Type, Type> _OpenXmlElement2ModelTypeMapping = new()
   {
     { typeof(DXW.Break), typeof(DMW.Break) },
     { typeof(DXW.Drawing), typeof(DMW.Drawing) },
@@ -48,18 +48,58 @@ public class RunItemsCollection: ContentItemsCollection<ModelElement>
     { typeof(DXW.RunProperties), typeof(DMW.RunProperties) },
     { typeof(DXW.Ruby), typeof(DMW.Ruby) },
     { typeof(DXW.SymbolChar), typeof(DMW.SymbolChar) },
-    { typeof(DXW.Text), typeof(DMW.Text) },
+    { typeof(DXW.Text), typeof(DMW.RunText) },
     { typeof(DXW.DeletedText), typeof(DMW.DeletedText) },
     { typeof(DXW.FieldCode), typeof(DMW.FieldCode) },
     { typeof(DXW.DeletedFieldCode), typeof(DMW.DeletedFieldCode) },
   };
+
+  private static readonly Dictionary<Type, Type[]> _ModelType2OpenXmlElementMapping = new()
+  {
+    { typeof(DMW.Break), [typeof(DXW.Break)] },
+    { typeof(DMW.Drawing), [typeof(DXW.Drawing)] },
+    { typeof(DMW.NoBreakHyphen), [typeof(DXW.NoBreakHyphen)] },
+    { typeof(DMW.SoftHyphen), [typeof(DXW.SoftHyphen)] },
+    { typeof(DMW.DayShort), [typeof(DXW.DayShort)] },
+    { typeof(DMW.MonthShort), [typeof(DXW.MonthShort)] },
+    { typeof(DMW.YearShort), [typeof(DXW.YearShort)] },
+    { typeof(DMW.DayLong), [typeof(DXW.DayLong)] },
+    { typeof(DMW.MonthLong), [typeof(DXW.MonthLong)] },
+    { typeof(DMW.YearLong), [typeof(DXW.YearLong)] },
+    { typeof(DMW.AnnotationReferenceMark), [typeof(DXW.AnnotationReferenceMark)] },
+    { typeof(DMW.FootnoteReferenceMark), [typeof(DXW.FootnoteReferenceMark)] },
+    { typeof(DMW.EndnoteReferenceMark), [typeof(DXW.EndnoteReferenceMark)] },
+    { typeof(DMW.SeparatorMark), [typeof(DXW.SeparatorMark)] },
+    { typeof(DMW.ContinuationSeparatorMark), [typeof(DXW.ContinuationSeparatorMark)] },
+    { typeof(DMW.PageNumber), [typeof(DXW.PageNumber)] },
+    { typeof(DMW.CarriageReturn), [typeof(DXW.CarriageReturn)] },
+    { typeof(DMW.TabChar), [typeof(DXW.TabChar)] },
+    { typeof(DMW.LastRenderedPageBreak), [typeof(DXW.LastRenderedPageBreak)] },
+    { typeof(DMW.FieldChar), [typeof(DXW.FieldChar)] },
+    { typeof(DMW.FootnoteReference), [typeof(DXW.FootnoteReference)] },
+    { typeof(DMW.EndnoteReference), [typeof(DXW.EndnoteReference)] },
+    { typeof(DMW.CommentReference), [typeof(DXW.CommentReference)] },
+    { typeof(DMW.EmbeddedObject), [typeof(DXW.EmbeddedObject)] },
+    { typeof(DMW.Picture), [typeof(DXW.Picture)] },
+    { typeof(DMW.PositionalTab), [typeof(DXW.PositionalTab)] },
+    { typeof(DMW.RunProperties), [typeof(DXW.RunProperties)] },
+    { typeof(DMW.Ruby), [typeof(DXW.Ruby)] },
+    { typeof(DMW.SymbolChar), [typeof(DXW.SymbolChar)] },
+    { typeof(DMW.RunText), [typeof(DXW.Text)] },
+    { typeof(DMW.DeletedText), [typeof(DXW.DeletedText)] },
+    { typeof(DMW.FieldCode), [typeof(DXW.FieldCode)] },
+    { typeof(DMW.DeletedFieldCode), [typeof(DXW.DeletedFieldCode)] },
+  };
+
   /// <summary>
-  /// Gets the mapping between model element types and their corresponding mapped types.  
+  /// Gets the mapping from OpenXml element types to model element types for this collection.
   /// </summary>
-  /// <remarks>This property provides a bidirectional dictionary that associates each model element type with
-  /// its mapped type. The mapping enables conversion or lookup operations between the two type systems, which is useful
-  /// for scenarios such as serialization, deserialization, or type resolution in modeling frameworks.</remarks>
-  public override BiDiDictionary<Type, Type> ModelElementTypeMapping => _ModelElementTypeMapping;
+  public override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
+
+  /// <summary>
+  /// Gets the mapping from model element types to OpenXml element types for this collection.
+  /// </summary>
+  public override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
 
   /// <summary>
   /// Checks if the specified item is acceptable for this collection.

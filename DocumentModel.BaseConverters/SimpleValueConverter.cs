@@ -61,26 +61,50 @@ public static class SimpleValueConverter
   /// </summary>
   static SimpleValueConverter()
   {
-    foreach (var kvp in specificConverters)
+    Init();
+  }
+
+  private static bool IsInitialized;
+
+  /// <summary>
+  /// Initializes the conversion maps by registering specific converters for each supported type. This method should be called once during application startup to ensure that all conversions are properly set up.
+  /// </summary>
+  /// <exception cref="InvalidOperationException"></exception>
+  public static void Init()
+  {
+    if (IsInitialized)
+      return;
+    IsInitialized = true;
+    try
     {
-      var converterType = kvp.Value;
-      var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
-        BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-      if (conversionToMapField != null && conversionFromMapField != null)
+      foreach (var kvp in specificConverters)
       {
-        var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
-        var conversionFromMap = (ConversionFromMap)conversionFromMapField.GetValue(null)!;
-        ConversionToMap.Append(conversionToMap);
-        ConversionFromMap.Append(conversionFromMap);
+        var converterType = kvp.Value;
+        //Debug.WriteLine($"SimpleValueConverter: Initializing converter for {converterType.Name}");
+        var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
+          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
+          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+        if (conversionToMapField != null && conversionFromMapField != null)
+        {
+          var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
+          var conversionFromMap = (ConversionFromMap)conversionFromMapField.GetValue(null)!;
+          ConversionToMap.Append(conversionToMap);
+          ConversionFromMap.Append(conversionFromMap);
+        }
+        else
+        {
+          throw new InvalidOperationException(
+            $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
+        }
       }
-      else
-      {
-        throw new InvalidOperationException(
-          $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
-      }
+    } catch (Exception ex)
+    {
+      Debug.WriteLine(ex);
+      throw;
     }
+
+
   }
 
   /// <summary>
@@ -211,13 +235,18 @@ public static class SimpleValueConverter
   /// <returns>true if the conversion was successful or the value was null; otherwise, false.</returns>
   public static bool TryConvertFrom(object? value, Type targetType, out object? result)
   {
-    result = value;
     if (value == null)
+    {
+      result = null;
       return true;
+    }
 
     var sourceType = value.GetType();
     if (sourceType == targetType)
+    {
+      result = value;
       return true;
+    }
 
     if (BaseTypeMappings.TryGetValue(targetType, out var newSourceType))
     {
@@ -246,8 +275,8 @@ public static class SimpleValueConverter
       return true;
     }
 
-    var sourceType = value.GetType();
     var targetType = typeof(ModelElementType);
+    targetType = targetType.GetNotNullableType();
 
     if (BaseTypeMappings.TryGetValue(targetType, out var newSourceType))
     {
@@ -257,6 +286,7 @@ public static class SimpleValueConverter
         return true;
       }
     }
+
     if (ConverterBase.TryConvertFrom(value, targetType, ConversionFromMap, out var anyResult))
     {
       result = (ModelElementType?)anyResult;
