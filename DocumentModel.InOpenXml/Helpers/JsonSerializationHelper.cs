@@ -17,6 +17,8 @@ public static class JsonSerializationHelper
       WriteIndented = true
     };
     //options.Converters.Add(new BuiltInPropertyJsonConverter());
+    //options.Converters.Add(new ElementCollectionJsonConverterFactory());
+    options.Converters.Add(new CollectionWithExtraPropsConverterFactory());
     return options;
   }
 }

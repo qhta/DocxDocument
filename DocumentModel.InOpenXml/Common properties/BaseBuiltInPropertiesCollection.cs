@@ -5,6 +5,11 @@
 public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollection<BuiltInProperty>
 {
   /// <summary>
+  /// Default constructor needed for serialization.
+  /// </summary>
+  public BaseBuiltInPropertiesCollection() { }
+
+  /// <summary>
   /// Initializes a new instance of the DocumentProperties class with the specified known properties.
   /// </summary>
   /// <param name="owner">The owner of the document properties.</param>
@@ -19,14 +24,14 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// Object that contains the properties in this collection.
   /// It is used to set the property values in this collection by setting the value of the property on the owner object.
   /// </summary>
-  public BaseBuiltInProperties Owner { get; private set; }
+  public BaseBuiltInProperties? Owner { get; private set; }
 
   /// <summary>
   /// Known properties that can be set in the owner of DocumentProperties.
   /// The known properties are defined in the derived classes of DocumentProperties
   /// and are used to determine which properties can be added, removed, or checked for existence in the owner.
   /// </summary>
-  public KnownProperties KnownProperties { get; private set; }
+  public KnownProperties? KnownProperties { get; private set; }
 
 
   /// <summary>
@@ -38,7 +43,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     if (item.Name != null)
     {
-      if (KnownProperties.TryGetValue(item.Name, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(item.Name, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocumentPropertyType();
         var valueObject = item.Value;
@@ -61,7 +66,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     if (item.Name != null)
     {
-      if (KnownProperties.TryGetValue(item.Name, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(item.Name, out var property))
       {
         var docPropertyType = property.PropertyType.ConvertToDocumentPropertyType();
         var valueObject = item.Value;
@@ -71,7 +76,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
       }
       else
       {
-        throw new ArgumentException($"DocumentProperty with name '{item.Name}' does not exist in {Owner.GetType().Name}.");
+        throw new ArgumentException($"DocumentProperty with name '{item.Name}' does not exist in {Owner?.GetType().Name ?? "unknown owner"}.");
       }
     }
     else
@@ -86,9 +91,12 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// </summary>
   public override void Clear()
   {
-    foreach (var property in KnownProperties.Values)
+    if (KnownProperties != null)
     {
-      property.SetValue(Owner, null);
+      foreach (var property in KnownProperties.Values)
+      {
+        property.SetValue(Owner, null);
+      }
     }
     CollectionChanged?.Invoke(Owner, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
   }
@@ -101,7 +109,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// <returns>True if the property exists; otherwise, false.</returns>
   public bool ContainsPropertyName(string propertyName)
   {
-    if (KnownProperties.TryGetValue(propertyName, out var property))
+    if (KnownProperties != null && KnownProperties.TryGetValue(propertyName, out var property))
     {
       return true;
     }
@@ -118,7 +126,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     if (item.Name != null)
     {
-      if (KnownProperties.TryGetValue(item.Name, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(item.Name, out var property))
       {
         if (property.GetValue(Owner) != null)
           return true;
@@ -139,7 +147,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     if (item.Name != null)
     {
-      if (KnownProperties.TryGetValue(item.Name, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(item.Name, out var property))
       {
         if (property.GetValue(Owner) == item.Value)
           return true;
@@ -158,7 +166,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     if (item.Name != null)
     {
-      if (KnownProperties.TryGetValue(item.Name, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(item.Name, out var property))
       {
         property.SetValue(Owner, null);
         CollectionChanged?.Invoke(Owner, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove,
@@ -177,10 +185,13 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
     get
     {
       var count = 0;
-      foreach (var property in KnownProperties.Values)
+      if (KnownProperties != null)
       {
-        if (property.GetValue(Owner) != null)
-          count++;
+        foreach (var property in KnownProperties.Values)
+        {
+          if (property.GetValue(Owner) != null)
+            count++;
+        }
       }
       return count;
     }
@@ -199,12 +210,15 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// <returns>An enumerator that can be used to iterate through the collection of document properties.</returns>
   public override IEnumerator<BuiltInProperty> GetEnumerator()
   {
-    foreach (var property in KnownProperties.Values)
+    if (KnownProperties != null)
     {
-      var value = property.GetValue(Owner);
-      if (value != null)
+      foreach (var property in KnownProperties.Values)
       {
-        yield return new BuiltInProperty { Name = property.Name, Value = value };
+        var value = property.GetValue(Owner);
+        if (value != null)
+        {
+          yield return new BuiltInProperty { Name = property.Name, Value = value };
+        }
       }
     }
   }
@@ -238,7 +252,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// <returns>True if the property was found; otherwise, false.</returns>
   public bool TryGetProperty(string propertyName, out BuiltInProperty builtInProperty)
   {
-    if (KnownProperties.TryGetValue(propertyName, out var property))
+    if (KnownProperties != null && KnownProperties.TryGetValue(propertyName, out var property))
     {
       var value = property.GetValue(Owner);
       builtInProperty = new BuiltInProperty { Name = propertyName, Value = value };
@@ -256,7 +270,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   /// <returns>True if the property was set; otherwise, false.</returns>
   public bool TrySetProperty(string propertyName, BuiltInProperty builtInProperty)
   {
-    if (KnownProperties.TryGetValue(propertyName, out var property))
+    if (KnownProperties != null && KnownProperties.TryGetValue(propertyName, out var property))
     {
       var valueObject = builtInProperty.Value;
       property.SetValue(Owner, valueObject);
@@ -279,7 +293,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
   {
     get
     {
-      if (KnownProperties.TryGetValue(propertyName, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(propertyName, out var property))
       {
         var valueObject =property.GetValue(Owner);
         return new BuiltInProperty { Name = propertyName, Value = valueObject };
@@ -288,7 +302,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
     }
     set
     {
-      if (KnownProperties.TryGetValue(propertyName, out var property))
+      if (KnownProperties != null && KnownProperties.TryGetValue(propertyName, out var property))
       {
         var valueObject = value;
         property.SetValue(Owner, valueObject);

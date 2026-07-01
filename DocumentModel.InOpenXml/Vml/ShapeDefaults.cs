@@ -109,7 +109,8 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Fill.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Fill))]
+  
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Fill))]
   public Fill? Fill
   {
     get => _Fill ??= GetProperty<Fill?>(GetUpdatableElement()?.Fill);
@@ -120,7 +121,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   ImageData.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.ImageData))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.ImageData))]
   public ImageData? ImageData
   {
     get => _ImageData ??= GetProperty<ImageData?>(GetUpdatableElement()?.ImageData);
@@ -131,7 +132,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Stroke.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Stroke))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Stroke))]
   public Stroke? Stroke
   {
     get => _Stroke ??= GetProperty<Stroke?>(GetUpdatableElement()?.Stroke);
@@ -142,7 +143,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   TextBox.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.TextBox))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.TextBox))]
   public TextBox? TextBox
   {
     get => _TextBox ??= GetProperty<TextBox?>(GetUpdatableElement()?.TextBox);
@@ -153,7 +154,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Shadow.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Shadow))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Shadow))]
   public Shadow? Shadow
   {
     get => _Shadow ??= GetProperty<Shadow?>(GetUpdatableElement()?.Shadow);
@@ -164,7 +165,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Skew.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Skew))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Skew))]
   public Skew? Skew
   {
     get => _Skew ??= GetProperty<Skew?>(GetUpdatableElement()?.Skew);
@@ -175,7 +176,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Extrusion.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Extrusion))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Extrusion))]
   public Extrusion? Extrusion
   {
     get => _Extrusion ??= GetProperty<Extrusion?>(GetUpdatableElement()?.Extrusion);
@@ -186,7 +187,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Callout.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Callout))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Callout))]
   public Callout? Callout
   {
     get => _Callout ??= GetProperty<Callout?>(GetUpdatableElement()?.Callout);
@@ -197,7 +198,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Shape Protections.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Lock))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Lock))]
   public Lock? Lock
   {
     get => _Lock ??= GetProperty<Lock?>(GetUpdatableElement()?.Lock);
@@ -208,7 +209,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Most Recently Used Colors.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.ColorMostRecentlyUsed))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.ColorMostRecentlyUsed))]
   public ColorMostRecentlyUsed? ColorMostRecentlyUsed
   {
     get => _ColorMostRecentlyUsed ??= GetProperty<ColorMostRecentlyUsed?>(GetUpdatableElement()?.ColorMostRecentlyUsed);
@@ -219,7 +220,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   UI Default Colors.
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.ColorMenu))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.ColorMenu))]
   public ColorMenu? ColorMenu
   {
     get => _ColorMenu ??= GetProperty<ColorMenu?>(GetUpdatableElement()?.ColorMenu);
@@ -230,7 +231,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   VML Extension Handling Behavior
   /// </summary>
-  [XmlIgnore, OpenXmlProperty(nameof(DXVO.ShapeDefaults.Extension))]
+  [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Extension))]
   public ExtensionHandlingBehavior? Extension
   {
     get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);

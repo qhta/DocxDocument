@@ -32,6 +32,15 @@ public partial class BuiltInDocumentPropertiesWrapper : DMPr.IDocumentProperties
   }
 
   /// <summary>
+  /// This method is needed by XmlSerializer
+  /// </summary>
+  /// <param name="item"></param>
+  public void Add(object item)
+  {
+    throw new NotSupportedException();
+  }
+
+  /// <summary>
   /// Gets or sets the document property with the specified name. 
   /// </summary>
   /// <param name="Index">The name of the document property.</param>

@@ -524,25 +524,25 @@ public static class TestHelper
     }
   }
 
-  /// <summary>
-  /// Retrieves a formatted string containing the messages of all inner exceptions for the specified exception.
-  /// </summary>
-  /// <remarks>This method is useful for logging or displaying detailed error information, especially when
-  /// exceptions are nested. The returned string includes each inner exception message on a separate line.</remarks>
-  /// <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
-  /// <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
-  /// exceptions" if there are none.</returns>
-  public static string GetInternalMessages(this Exception ex)
-  {
-    var internalException = ex.InnerException;
-    var messages = new List<string>();
-    while (internalException != null)
-    {
-      messages.AddRange(internalException.GetInternalMessages().Split('\n'));
-      internalException = internalException.InnerException;
-    }
-    return messages.Count > 0 ? string.Join("\n", messages) : "No inner exceptions";
-  }
+  ///// <summary>
+  ///// Retrieves a formatted string containing the messages of all inner exceptions for the specified exception.
+  ///// </summary>
+  ///// <remarks>This method is useful for logging or displaying detailed error information, especially when
+  ///// exceptions are nested. The returned string includes each inner exception message on a separate line.</remarks>
+  ///// <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
+  ///// <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
+  ///// exceptions" if there are none.</returns>
+  //public static string GetInternalMessages(this Exception ex)
+  //{
+  //  var internalException = ex.InnerException;
+  //  var messages = new List<string>();
+  //  while (internalException != null)
+  //  {
+  //    messages.AddRange(internalException.GetInternalMessages().Split('\n'));
+  //    internalException = internalException.InnerException;
+  //  }
+  //  return messages.Count > 0 ? string.Join("\n", messages) : "No inner exceptions";
+  //}
 
 
   /// <summary>

@@ -3,8 +3,11 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Reflection;
 
-namespace DocumentModel.XmlSerialization;
+namespace DocumentModel;
 
+/// <summary>
+/// Provides helper methods for XML serialization and deserialization of objects, including handling of type overrides for generic types and management of XML namespaces.
+/// </summary>
 public static class XmlSerializationHelper
 {
 
@@ -86,19 +89,28 @@ public static class XmlSerializationHelper
   /// <returns>XmlSerializer instance.</returns>
   public static XmlSerializer CreateXmlSerializer(Type rootType, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
   {
+
+    //var atype = typeof(DocumentModel.Vml.Arc);
+
     if (modelTypes == null)
       modelTypes = typeof(DocumentModel.Wordprocessing.Document).Assembly.GetTypes()
-        .Where(t => t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
-                  && !t.Implements(typeof(System.Collections.IDictionary))
-        && t.GetConstructor([]) != null).ToArray();
+        .Where(t => 
+                    t.IsClass && !t.IsAbstract && !t.IsGenericType
+                    && t.BaseType!=typeof(System.Attribute)
+                    && !t.Name.EndsWith("EventArgs")
+                    && !t.Name.EndsWith("Wrapper")
+                    && !t.Implements(typeof(System.Collections.IDictionary))
+                    && !t.IsInterface
+        /*&& t.GetConstructor([]) != null*/).ToArray();
 
-    var knownTypes = new HashSet<Type>();
-    if (modelTypes == null)
-    {
-      GetKnownTypes(rootType, knownTypes, new List<Type>());
-      var openXmlElementTypes = knownTypes.Where(t => t.FullName!.Contains("DocumentFormat")).ToArray();
-      modelTypes = knownTypes.ToArray();
-    }
+
+    //var knownTypes = new HashSet<Type>();
+    //if (modelTypes == null)
+    //{
+    //  GetKnownTypes(rootType, knownTypes, new List<Type>());
+    //  var openXmlElementTypes = knownTypes.Where(t => t.FullName!.Contains("DocumentFormat")).ToArray();
+    //  modelTypes = knownTypes.ToArray();
+    //}
     Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNames(modelTypes);
     //Debug.WriteLine($"Ambiguous type names:\n{string.Join("\n",
     //  ambiguousTypeNames.Select(item => $"{item.Key}:{item.Value.Count}:\n  {String.Join("\n  ", item.Value.Select(t => t.FullName))}"))}");
@@ -233,7 +245,10 @@ public static class XmlSerializationHelper
       Dictionary<string, List<Type>> typeNames = new Dictionary<string, List<Type>>();
       foreach (var aType in types)
       {
-
+        if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Office2010.Word.Glow]")
+          Debug.Assert(true);
+        if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Drawing.Glow]")
+          Debug.Assert(true);
         var aName = aType.Name;
         if (aType.IsGenericType)
         {

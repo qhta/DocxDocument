@@ -8,6 +8,14 @@ public partial class BaseBuiltInProperties : ModelElement<DX.OpenXmlElement>
   private BaseBuiltInPropertiesCollection _propertiesCollection;
 
   /// <summary>
+  /// Default constructor needed by XmlSerializer
+  /// </summary>
+  protected BaseBuiltInProperties()
+  {
+    _propertiesCollection = new();
+  }
+
+  /// <summary>
   /// Initializes a new instance of the DocumentProperties class with the specified known properties.
   /// </summary>
   /// <param name="knownProperties"></param>

@@ -17,11 +17,16 @@ namespace DocumentModel
   /// <returns>True if the type is or derives from <c>ElementCollection&lt;T&gt;</c>; otherwise, false.</returns>
   public override bool CanConvert(Type typeToConvert)
   {
+    typeToConvert = typeToConvert.GetNotNullableType();
    // Check if typeToConvert inherits from ElementCollection<T>
    if (!typeToConvert.IsGenericType)
     return false;
    var genericDef = typeToConvert.GetGenericTypeDefinition();
-   return genericDef == typeof(ElementCollection<>) || typeToConvert.BaseType != null && typeToConvert.BaseType.IsGenericType && typeToConvert.BaseType.GetGenericTypeDefinition() == typeof(ElementCollection<>);
+   Debug.WriteLine($"genericDef = {genericDef.FullName}");
+   if (genericDef == typeof(ElementCollection<>))
+    return true;
+   var result = genericDef == typeof(ElementCollection<>) || typeToConvert.BaseType != null && typeToConvert.BaseType.IsGenericType && typeToConvert.BaseType.GetGenericTypeDefinition() == typeof(ElementCollection<>);
+   return result;
   }
 
   /// <summary>

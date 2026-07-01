@@ -1,6 +1,4 @@
-﻿using DocumentModel.XmlSerialization;
-
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 /// Provides XML serialization support for the <see cref = "DrawingsColorBase"/> structure.
 /// </summary>

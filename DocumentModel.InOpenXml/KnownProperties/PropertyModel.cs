@@ -1,15 +1,10 @@
-using System.Reflection;
-
-using Qhta.TextUtils;
-using Qhta.TypeUtils;
-
 namespace DocumentModel;
 /// <summary>
 /// Information about a property that is compatible with PropertyDescriptor.
 /// </summary>
-[XmlRoot("PropertyModel", Namespace = "DocumentModel")]
 public partial class PropertyModel : PropertyDescriptor
 {
+
   /// <summary>
   /// Underlying reflected property information that this model represents. 
   /// </summary>

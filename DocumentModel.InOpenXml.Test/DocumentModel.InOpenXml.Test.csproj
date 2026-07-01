@@ -30,7 +30,6 @@
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.InOpenXml\DocumentModel.InOpenXml.csproj" />
-    <ProjectReference Include="..\DocumentModel.XmlSerialization\DocumentModel.XmlSerialization.csproj" />
     <ProjectReference Include="..\TestHelp\TestHelp.csproj" />
   </ItemGroup>
 

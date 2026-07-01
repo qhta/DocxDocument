@@ -36,6 +36,7 @@
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.ShouldSerialize.cs" />
     <Compile Remove="Math\Argument.cs" />
     <Compile Remove="Math\Argument.ShouldSerialize.cs" />
+    <Compile Remove="Vml\Rules.JsonConversion.cs" />
     <Compile Remove="Wordprocessing\Colors\Color.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Colors\RgbColorModelHex.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Colors\SchemeColor.ShouldSerialize.cs" />
@@ -82,6 +83,5 @@
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
-    <ProjectReference Include="..\DocumentModel.XmlSerialization\DocumentModel.XmlSerialization.csproj" />
   </ItemGroup>
 </Project>

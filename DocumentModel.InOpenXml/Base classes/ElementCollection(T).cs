@@ -6,6 +6,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "ItemType">The type of elements contained in the collection.</typeparam>
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
+
 public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>,
   IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
   where ItemType : notnull
