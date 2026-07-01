@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an alpha bi-level effect, which applies a threshold to the alpha channel of an image or shape.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaBiLevel))]
+[DataContract]
 [XmlRoot("AlphaBiLevel", Namespace = "DocumentModel.Drawings")]
 public partial class AlphaBiLevel : ModelElement<DXD.AlphaBiLevel>
 {

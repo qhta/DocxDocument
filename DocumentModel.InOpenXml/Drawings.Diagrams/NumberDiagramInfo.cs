@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Diagram1;
 ///   Defines the NumberDiagramInfo Class.
 /// </summary>
 [OpenXmlType(typeof(DXO19DD1.NumberDiagramInfo))]
+[DataContract]
 [XmlRoot("NumberDiagramInfo", Namespace = "DocumentModel.Drawings.Diagram1")]
 public partial class NumberDiagramInfo : ModelElement<DXO19DD1.NumberDiagramInfo>
 {

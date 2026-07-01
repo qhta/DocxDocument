@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for recommending write protection, cryptographic provider and algorithm details, password hash and salt, and extensibility options, enabling configuration and management of document write protection. Write protection restricts editing and saving the document under the same file name, but is not intended as a security feature.
 /// </summary>
 [OpenXmlType(typeof(DXW.WriteProtection))]
+[DataContract]
 [XmlRoot("WriteProtection", Namespace = "DocumentModel.Wordprocessing")]
 public partial class WriteProtection : ModelElement<DXW.WriteProtection>
 {

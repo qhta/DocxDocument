@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for identifying the text box, accessing its content, and managing associated OfficeArt extensions, enabling advanced text box configuration and extensibility.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDS.TextBoxInfo2))]
+[DataContract]
 [XmlRoot("TextBoxInfo2", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class TextBoxInfo2 : ModelElement<DXO10WDS.TextBoxInfo2>, DMD.IOfficeArtExtendableElement
 {

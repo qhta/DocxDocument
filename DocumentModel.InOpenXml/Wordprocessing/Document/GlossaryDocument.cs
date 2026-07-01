@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for the document background and the list of glossary document entries, enabling advanced management, organization, and reuse of building blocks, autotext, and other reusable document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.GlossaryDocument))]
+[DataContract]
 [XmlRoot("GlossaryDocument", Namespace = "DocumentModel.Wordprocessing")]
 public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
 {

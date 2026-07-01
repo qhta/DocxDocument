@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for conditional formatting type, paragraph and run properties, and conditional formatting for tables, rows, and cells, enabling advanced styling and formatting options based on table style rules.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableStyleProperties))]
+[DataContract]
 [XmlRoot("TableStyleProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableStyleProperties : ModelElement<DXW.TableStyleProperties>
 {

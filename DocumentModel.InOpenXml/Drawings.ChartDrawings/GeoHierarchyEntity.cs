@@ -26,6 +26,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   domain-specific hierarchies tailored to particular analytical or business requirements.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoHierarchyEntity))]
+[DataContract]
 [XmlRoot("GeoHierarchyEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoHierarchyEntity : ModelElement<DXO16DCD.GeoHierarchyEntity>
 {

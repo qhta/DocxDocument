@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for tracking the state of spell checking and grammar checking, enabling applications to determine the proofing status of document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.ProofState))]
+[DataContract]
 [XmlRoot("ProofState", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ProofState : ModelElement<DXW.ProofState>
 {

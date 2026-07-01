@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for specifying the extrusion color using either an RGB value or a scheme color, enabling flexible color customization for 3D effects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.ExtrusionColor))]
+[DataContract]
 [XmlRoot("ExtrusionColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class ExtrusionColor : ModelElement<DXO10W.ExtrusionColor>
 {

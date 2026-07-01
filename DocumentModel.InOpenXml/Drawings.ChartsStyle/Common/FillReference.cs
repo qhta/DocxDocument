@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 ///    FillReference in ChartsStyle extends FillReference in Drawings with StyleColor.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.FillReference))]
+[DataContract]
 [XmlRoot("FillReference", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class FillReference : DocumentModel.Drawings.FillReference
 {

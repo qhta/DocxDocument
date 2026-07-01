@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides options for two lines in one, bracket display, vertical text rotation, and compression, enabling advanced formatting for East Asian scripts.
 /// </summary>
 [OpenXmlType(typeof(DXW.EastAsianLayout))]
+[DataContract]
 [XmlRoot("EastAsianLayout", Namespace = "DocumentModel.Wordprocessing")]
 public partial class EastAsianLayout : ModelElement<DXW.EastAsianLayout>
 {

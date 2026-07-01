@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   which can then itself be referenced by content.
 /// </summary>
 [OpenXmlType(typeof(DXW.AbstractNum))]
+[DataContract]
 [XmlRoot("AbstractNumbering", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
 {

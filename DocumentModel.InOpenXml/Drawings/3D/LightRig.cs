@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a light rig configuration, including preset, direction, and rotation for 3D scenes or objects.
 /// </summary>
 [OpenXmlType(typeof(DXD.LightRig))]
+[DataContract]
 [XmlRoot("LightRig", Namespace = "DocumentModel.Drawings")]
 public partial class LightRig : ModelElement<DXD.LightRig>
 {

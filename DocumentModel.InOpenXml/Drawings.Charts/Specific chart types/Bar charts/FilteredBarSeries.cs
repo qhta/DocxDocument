@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered bar series for a chart, containing a reference to a bar chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredBarSeries))]
+[DataContract]
 [XmlRoot("FilteredBarSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredBarSeries : ModelElement<DXO13DC.FilteredBarSeries>
 {

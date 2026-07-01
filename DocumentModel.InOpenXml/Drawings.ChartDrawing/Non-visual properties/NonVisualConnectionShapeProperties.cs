@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a connection shape in chart drawings, including shape locks and connection endpoints.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualConnectionShapeProperties))]
+[DataContract]
 [XmlRoot("NonVisualConnectionShapeProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualConnectionShapeProperties : ModelElement<DXDCD.NonVisualConnectionShapeProperties> //, IExtendableElement
 {

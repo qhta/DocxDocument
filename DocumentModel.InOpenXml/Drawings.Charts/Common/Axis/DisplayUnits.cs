@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the DisplayUnits Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DisplayUnits))]
+[DataContract]
 [XmlRoot("DisplayUnits", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DisplayUnits : ModelElement<DXDC.DisplayUnits>
 {

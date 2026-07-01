@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered category title for a chart, including the axis data source type.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredCategoryTitle))]
+[DataContract]
 [XmlRoot("FilteredCategoryTitle", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredCategoryTitle : ModelElement<DXO13DC.FilteredCategoryTitle>
 {

@@ -1,13 +1,12 @@
 using DocumentModel.BaseConverters;
 
-using InvalidOperationException = Qhta.TestHelper.InvalidOperationException;
-
 #pragma warning disable CS0659
 namespace DocumentModel;
 
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
+[DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
   ICollectionItem, IModifiable, IUpdatable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,

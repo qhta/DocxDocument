@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic marker effect, which simulates a marker drawing style with adjustable transparency and size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticMarker))]
+[DataContract]
 [XmlRoot("ArtisticMarker", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticMarker : ModelElement<DXO10D.ArtisticMarker>
 {

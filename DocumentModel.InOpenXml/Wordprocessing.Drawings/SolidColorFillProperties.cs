@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   Defines the SolidColorFillProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SolidColorFillProperties))]
+[DataContract]
 [XmlRoot("SolidColorFillProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class SolidColorFillProperties : ModelElement<DXO10W.SolidColorFillProperties>
 {

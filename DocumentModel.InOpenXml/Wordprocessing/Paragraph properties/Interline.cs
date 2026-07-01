@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the spacing settings between lines in a paragraph for a WordprocessingML document.
 /// This class provides properties for specifying the spacing value and the rule used to determine line spacing, enabling advanced control over paragraph layout and readability.
 /// </summary>
+[DataContract]
 [XmlRoot("Interline", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Interline : ModelElement
 {

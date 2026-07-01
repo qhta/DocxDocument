@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a reference to a level in a data source.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.LevelReference))]
+[DataContract]
 [XmlRoot("LevelReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LevelReference : ModelElement<DXO13DC.LevelReference>
 {

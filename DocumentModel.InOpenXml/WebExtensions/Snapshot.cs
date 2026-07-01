@@ -3,6 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the Snapshot Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.Snapshot))]
+[DataContract]
 [XmlRoot("Snapshot", Namespace = "DocumentModel.WebExtensions")]
 public class Snapshot : ModelElement<DXO13WE.Snapshot>
 {

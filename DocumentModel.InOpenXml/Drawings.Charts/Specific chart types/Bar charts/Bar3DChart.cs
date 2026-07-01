@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a 3D bar chart, including direction, grouping, color variation, series, labels, gap settings, shape, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Bar3DChart))]
+[DataContract]
 [XmlRoot("Bar3DChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Bar3DChart : ModelElement<DXDC.Bar3DChart>
 {

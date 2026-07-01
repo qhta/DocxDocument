@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a polar adjust handle, providing guides and limits for radial and angular adjustments of a shape.
 /// </summary>
 [OpenXmlType(typeof(DXD.AdjustHandlePolar))]
+[DataContract]
 [XmlRoot("AdjustHandlePolar", Namespace = "DocumentModel.Drawings")]
 public partial class AdjustHandlePolar : ModelElement<DXD.AdjustHandlePolar>
 {

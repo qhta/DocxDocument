@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered radar series for a chart, containing a reference to a radar chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredRadarSeries))]
+[DataContract]
 [XmlRoot("FilteredRadarSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredRadarSeries : ModelElement<DXO13DC.FilteredRadarSeries>
 {

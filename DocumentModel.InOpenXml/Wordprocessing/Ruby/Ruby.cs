@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A phonetic guide is a run of content with base text at the normal baseline and phonetic guide text displayed above it. This construct is typically used to map words in one language to another phonetically, enabling pronunciation aids for East Asian scripts and other language learning scenarios.
 /// </summary>
 [OpenXmlType(typeof(DXW.Ruby))]
+[DataContract]
 [XmlRoot("Ruby", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Ruby : ModelElement<DXW.Ruby>, IRunContent, IRubyContent
 {

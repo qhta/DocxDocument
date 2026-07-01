@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series in a surface chart, including index, order, text, shape properties, picture options, axis data, values, 3D bubble option, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SurfaceChartSeries))]
+[DataContract]
 [XmlRoot("SurfaceChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SurfaceChartSeries : ModelElement<DXDC.SurfaceChartSeries>
 {

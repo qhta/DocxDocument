@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 ///   Defines the OEmbedShared Class.
 /// </summary>
 [OpenXmlType(typeof(DXODY21OE.OEmbedShared))]
+[DataContract]
 [XmlRoot("OEmbedShared", Namespace = "DocumentModel.Drawings.Office.OEmbed")]
 public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
 {

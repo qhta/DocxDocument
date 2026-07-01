@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the bar function, consisting of a base argument and an overbar or underbar, as in ¯a and _𝑎.
 /// </summary>
 [OpenXmlType(typeof(DXM.Bar))]
+[DataContract]
 [XmlRoot("Bar", Namespace = "DocumentModel.Math")]
 public partial class Bar : ModelElement<DXM.Bar>, ICommonMathContent
 {

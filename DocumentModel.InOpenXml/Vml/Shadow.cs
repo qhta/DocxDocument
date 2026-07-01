@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the Shadow Class.
 /// </summary>
 [OpenXmlType(typeof(DXV.Shadow))]
+[DataContract]
 [XmlRoot("Shadow", Namespace = "DocumentModel.Vml")]
 public partial class Shadow : ModelElement<DXV.Shadow>
 {

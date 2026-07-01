@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a 3D Area Chart, including grouping, color variation, series, labels, drop lines, gap depth, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Area3DChart))]
+[DataContract]
 [XmlRoot("Area3DChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Area3DChart : ModelElement<DXDC.Area3DChart>
 {

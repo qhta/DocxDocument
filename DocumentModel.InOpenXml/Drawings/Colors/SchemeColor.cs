@@ -7,6 +7,7 @@ namespace DocumentModel.Drawings;
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
 [OpenXmlType(typeof(DXD.SchemeColor))]
+[DataContract]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Drawings")]
 public partial class SchemeColor: DrawingsColorBase<DXD.SchemeColor>, IDrawingColor
 {

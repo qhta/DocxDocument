@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Else.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DiagramChooseElse))]
+[DataContract]
 [XmlRoot("DiagramChooseElse", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class DiagramChooseElse : ModelElement<DXDD.DiagramChooseElse>
 {

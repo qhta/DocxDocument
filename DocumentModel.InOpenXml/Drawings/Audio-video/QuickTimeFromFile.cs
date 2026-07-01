@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a QuickTime video sourced from a file, including a reference to the linked relationship.
 /// </summary>
 [OpenXmlType(typeof(DXD.QuickTimeFromFile))]
+[DataContract]
 [XmlRoot("QuickTimeFromFile", Namespace = "DocumentModel.Drawings")]
 public partial class QuickTimeFromFile : ModelElement<DXD.QuickTimeFromFile>, IExtendableElement
 {

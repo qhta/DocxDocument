@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents sketch type properties for a line, indicating the presence of various sketch styles.
 /// </summary>
 [OpenXmlType(typeof(DXO21DSS.LineSketchTypeProperties))]
+[DataContract]
 [XmlRoot("LineSketchTypeProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LineSketchTypeProperties : ModelElement<DXO21DSS.LineSketchTypeProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   which did not support the full richness of the numbering properties supported by WordprocessingML.
 /// </summary>
 [OpenXmlType(typeof(DXW.LegacyNumbering))]
+[DataContract]
 [XmlRoot("LegacyNumbering", Namespace = "DocumentModel.Wordprocessing")]
 public partial class LegacyNumbering : ModelElement<DXW.LegacyNumbering>
 {

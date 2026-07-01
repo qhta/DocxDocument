@@ -11,6 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   still providing the underlying data structure, and support extensibility through custom extensions.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Axis))]
+[DataContract]
 [XmlRoot("Axis", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Axis : ModelElement<DXO16DCD.Axis>
 {

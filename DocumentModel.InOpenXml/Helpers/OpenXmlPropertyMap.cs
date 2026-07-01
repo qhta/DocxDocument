@@ -5,7 +5,6 @@ namespace DocumentModel;
 /// <remarks>This class is intended for use when working with custom model elements that are mapped to OpenXML
 /// types. It assists in resolving the correct OpenXML property based on model property metadata. All members are static
 /// and thread safe.</remarks>
-[XmlRoot("OpenXmlPropertyMap", Namespace = "DocumentModel")]
 public static class OpenXmlPropertyMap
 {
  //  private static readonly Dictionary<(Type, string), (Type, string)> propertyMap = new()

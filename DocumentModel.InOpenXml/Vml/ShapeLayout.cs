@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Layout Properties.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ShapeLayout))]
+[DataContract]
 [XmlRoot("ShapeLayout", Namespace = "DocumentModel.Vml")]
 public partial class ShapeLayout : ModelElement<DXVO.ShapeLayout>
 {

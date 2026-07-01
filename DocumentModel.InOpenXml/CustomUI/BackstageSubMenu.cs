@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.BackstageSubMenu))]
+[DataContract]
 [XmlRoot("BackstageSubMenu", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageSubMenu : ModelElement<DXO10CUI.BackstageSubMenu>
 {

@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// A numbering level definition is identical to a numbering level override definition, except it is defined as part of a numbering definition instance using the abstractNum element rather than as part of an abstract numbering definition using the num element.
 /// </remarks>
 [OpenXmlType(typeof(DXW.Level))]
+[DataContract]
 [XmlRoot("NumberingLevel", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingLevel : ModelElement<DXW.Level>
 {

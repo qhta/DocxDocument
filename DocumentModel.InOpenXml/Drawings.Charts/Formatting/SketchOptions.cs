@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Defines options for the sketch mode configuration of a chart.
 /// </summary>
 [OpenXmlType(typeof(DXO10DC.SketchOptions))]
+[DataContract]
 [XmlRoot("SketchOptions", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SketchOptions : ModelElement<DXO10DC.SketchOptions>
 {

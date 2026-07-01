@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a character bullet, including the bullet character and additional extension options.
 /// </summary>
 [OpenXmlType(typeof(DXD.CharacterBullet))]
+[DataContract]
 [XmlRoot("CharacterBullet", Namespace = "DocumentModel.Drawings")]
 public partial class CharacterBullet : ModelElement<DXD.CharacterBullet>, IExtendableElement
 {

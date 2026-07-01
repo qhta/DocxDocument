@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents visual properties for a shape, including geometry, fill, outline, effects, 2D and 3D transforms, and extension lists.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeProperties))]
+[DataContract]
 [XmlRoot("ShapeProperties", Namespace = "DocumentModel.Drawings")]
 public partial class ShapeProperties : ModelElement<DXD.ShapeProperties>
 {

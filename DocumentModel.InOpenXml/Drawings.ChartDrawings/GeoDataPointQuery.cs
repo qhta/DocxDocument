@@ -25,6 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   data according to geographic boundaries and hierarchies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointQuery))]
+[DataContract]
 [XmlRoot("GeoDataPointQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoDataPointQuery : ModelElement<DXO16DCD.GeoDataPointQuery>
 {

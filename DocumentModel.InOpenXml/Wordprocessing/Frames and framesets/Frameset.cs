@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "ElementCollection{IFramesetItem}"/> and provides properties for advisory information, nested frameset size, splitter properties, and layout, enabling advanced configuration and management of frameset structures within documents.
 /// </summary>
 [OpenXmlType(typeof(ModelElement))]
+[DataContract]
 [XmlRoot("Frameset", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Frameset : ModelElementCollection<ModelElement, DXW.Frameset, DX.OpenXmlElement>, IFramesetItem
 {

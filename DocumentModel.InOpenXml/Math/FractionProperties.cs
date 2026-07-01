@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Fraction Properties.
 /// </summary>
 [OpenXmlType(typeof(DXM.FractionProperties))]
+[DataContract]
 [XmlRoot("FractionProperties", Namespace = "DocumentModel.Math")]
 public partial class FractionProperties : ModelElement<DXM.FractionProperties>
 {

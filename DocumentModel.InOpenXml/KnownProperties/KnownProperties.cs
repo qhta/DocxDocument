@@ -5,7 +5,6 @@ namespace DocumentModel;
 /// <summary>
 /// Collection of known document properties, i.e. document properties which can be included in the document
 /// </summary>
-[XmlRoot("KnownProperties", Namespace = "DocumentModel")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public class KnownProperties : Dictionary<string, PropertyModel>

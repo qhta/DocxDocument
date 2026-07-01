@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   The delimiter may have more than one element, with a designated separator character between each element. 
 /// </summary>
 [OpenXmlType(typeof(DXM.Delimiter))]
+[DataContract]
 [XmlRoot("Delimiter", Namespace = "DocumentModel.Math")]
 public partial class Delimiter : ModelElement<DXM.Delimiter> //, IElementCollection<Argument>, ICommonMathContent
 {

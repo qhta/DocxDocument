@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the DiagramDefinitionExtension Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DiagramDefinitionExtension))]
+[DataContract]
 [XmlRoot("DiagramDefinitionExtension", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class DiagramDefinitionExtension : Extension<DXDD.DiagramDefinitionExtension>
 {

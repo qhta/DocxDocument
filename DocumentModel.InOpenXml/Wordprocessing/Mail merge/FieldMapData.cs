@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for field type, data source column name, mapped merge field name, column index, language ID, and dynamic address ordering, enabling advanced configuration of mail merge field mappings.
 /// </summary>
 [OpenXmlType(typeof(DXW.FieldMapData))]
+[DataContract]
 [XmlRoot("FieldMapData", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FieldMapData : ModelElement<DXW.FieldMapData>
 {

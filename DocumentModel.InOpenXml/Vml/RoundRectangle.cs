@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Rounded Rectangle.
 /// </summary>
 [OpenXmlType(typeof(DXV.RoundRectangle))]
+[DataContract]
 [XmlRoot("RoundRectangle", Namespace = "DocumentModel.Vml")]
 public partial class RoundRectangle : ModelElement<DXV.RoundRectangle>, IEmbeddedObjectContent
 {

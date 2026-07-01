@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Enables advanced text layout, formatting, and styling for shapes, text boxes, and graphical elements.
 /// </summary>
 [OpenXmlType(typeof(DXOD.TextBody))]
+[DataContract]
 [XmlRoot("TextBody", Namespace = "DocumentModel.Drawings.Office")]
 public partial class TextBody : ModelElement<DXOD.TextBody>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the ImageData Class.
 /// </summary>
 [OpenXmlType(typeof(DXV.ImageData))]
+[DataContract]
 [XmlRoot("ImageData", Namespace = "DocumentModel.Vml")]
 public partial class ImageData : ModelElement<DXV.ImageData>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the Upper-Limit object, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitUpper))]
+[DataContract]
 [XmlRoot("LimitUpper", Namespace = "DocumentModel.Math")]
 public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathContent
 {

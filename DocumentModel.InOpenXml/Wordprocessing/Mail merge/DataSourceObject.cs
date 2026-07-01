@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for UDL connection strings, data source table names, file references, delimiters, source types, header row configuration, field mapping, and recipient data references, enabling advanced configuration and management of mail merge data sources.
 /// </summary>
 [OpenXmlType(typeof(DXW.DataSourceObject))]
+[DataContract]
 [XmlRoot("DataSourceObject", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
 {

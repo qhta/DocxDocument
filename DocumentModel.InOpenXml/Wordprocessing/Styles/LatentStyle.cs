@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for style name, locking, UI priority, visibility, and primary style settings, enabling advanced management and customization of latent styles.
 /// </summary>
 [OpenXmlType(typeof(DXW.LatentStyleExceptionInfo))]
+[DataContract]
 [XmlRoot("LatentStyleExceptionInfo", Namespace = "DocumentModel.Wordprocessing")]
 public partial class LatentStyle : ModelElement<DXW.LatentStyleExceptionInfo>
 {

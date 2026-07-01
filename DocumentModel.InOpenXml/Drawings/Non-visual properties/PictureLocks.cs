@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents locking options for a picture, restricting user actions such as grouping, selection, rotation, resizing, cropping, and editing.
 /// </summary>
 [OpenXmlType(typeof(DXD.PictureLocks))]
+[DataContract]
 [XmlRoot("PictureLocks", Namespace = "DocumentModel.Drawings")]
 public partial class PictureLocks : ModelElement<DXD.PictureLocks>, IExtendableElement
 {

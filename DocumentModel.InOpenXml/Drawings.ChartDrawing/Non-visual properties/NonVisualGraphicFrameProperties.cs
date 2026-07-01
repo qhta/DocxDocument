@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a graphic frame in chart drawings, including general drawing properties and frame-specific drawing settings.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualGraphicFrameProperties))]
+[DataContract]
 [XmlRoot("NonVisualGraphicFrameProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualGraphicFrameProperties : ModelElement<DXDCD.NonVisualGraphicFrameProperties>
 {

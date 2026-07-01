@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for specifying the position and color of the gradient stop, enabling precise control over color transitions in gradient effects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.GradientStop))]
+[DataContract]
 [XmlRoot("GradientStop", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class GradientStop : ModelElement<DXO10W.GradientStop>
 {

@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.TaskGroupCategory))]
+[DataContract]
 [XmlRoot("TaskGroupCategory", Namespace = "DocumentModel.CustomUI")]
 public partial class TaskGroupCategory : ModelElement<DXO10CUI.TaskGroupCategory>
 {

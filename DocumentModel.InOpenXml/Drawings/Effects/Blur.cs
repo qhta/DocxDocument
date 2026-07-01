@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a blur effect, allowing the application of a blur with a specified radius and optional bounds growth.
 /// </summary>
 [OpenXmlType(typeof(DXD.Blur))]
+[DataContract]
 [XmlRoot("Blur", Namespace = "DocumentModel.Drawings")]
 public partial class Blur : ModelElement<DXD.Blur>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents properties for importing external content into a WordprocessingML document.
 /// This class provides a property to control whether style definitions in the imported content are overridden by identical styles in the host document, enabling advanced management of style conflicts during content import operations.
 /// </summary>
+[DataContract]
 [XmlRoot("AltChunkProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AltChunkProperties
 {

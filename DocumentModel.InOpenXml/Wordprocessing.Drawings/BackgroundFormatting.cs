@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for configuring fill, visual effects, and effect graphs applied to the background, enabling advanced visual customization.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDC.BackgroundFormatting))]
+[DataContract]
 [XmlRoot("BackgroundFormatting", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class BackgroundFormatting : ModelElement<DXO10WDC.BackgroundFormatting>
 {

@@ -22,6 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   geocoding results, and location search operations.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocations))]
+[DataContract]
 [XmlRoot("GeoLocations", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoLocations : ModelElementCollection<GeoLocation, DXO16DCD.GeoLocations, DXO16DCD.GeoLocation>
 {

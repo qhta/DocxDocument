@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
 ///   Enables loading, saving, and manipulating document-level metadata, content, and configuration for Open XML word processing documents.
 /// </summary>
+[DataContract]
 [XmlRoot("Document", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Document : ModelElement, IWordprocessingDocumentAware, IDisposable, IModifiable
 {

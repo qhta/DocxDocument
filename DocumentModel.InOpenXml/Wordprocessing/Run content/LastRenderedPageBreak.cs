@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   when this document was last saved by an application which paginates its content. 
 /// </summary>
 [OpenXmlType(typeof(DXW.LastRenderedPageBreak))]
+[DataContract]
 [XmlRoot("LastRenderedPageBreak", Namespace = "DocumentModel.Wordprocessing")]
 public class LastRenderedPageBreak : ModelElement<DXW.LastRenderedPageBreak>, IRunContent
 {

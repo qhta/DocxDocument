@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the BubbleChartSeries Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BubbleChartSeries))]
+[DataContract]
 [XmlRoot("BubbleChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BubbleChartSeries : ModelElement<DXDC.BubbleChartSeries>
 {

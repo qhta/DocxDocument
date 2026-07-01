@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a command to draw a straight line to a specified point.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineTo))]
+[DataContract]
 [XmlRoot("LineTo", Namespace = "DocumentModel.Drawings")]
 public partial class LineTo : ModelElement<DXD.LineTo>
 {

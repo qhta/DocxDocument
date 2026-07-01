@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   polygons, identification, copyright attributions) needed for accurate map visualization, supporting features such
 ///   as region coloring, boundary rendering, geographic selection, and spatial analysis.
 /// </remarks>
+[DataContract]
 [XmlRoot("GeoDataEntityQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoDataEntityQueryResults : ModelElementCollection<GeoDataEntityQueryResult, DXO16DCD.GeoDataEntityQueryResults, DXO16DCD.GeoDataEntityQueryResult>
 {

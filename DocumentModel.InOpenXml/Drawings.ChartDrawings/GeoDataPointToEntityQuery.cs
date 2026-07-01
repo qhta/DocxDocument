@@ -26,6 +26,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   where geographic associations are known and explicit rather than derived from coordinates.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQuery))]
+[DataContract]
 [XmlRoot("GeoDataPointToEntityQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoDataPointToEntityQuery : ModelElement<DXO16DCD.GeoDataPointToEntityQuery>
 {

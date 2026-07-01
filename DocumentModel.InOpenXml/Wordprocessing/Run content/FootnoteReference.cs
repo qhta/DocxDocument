@@ -7,6 +7,7 @@
 /// the document content. It links the main document text to the corresponding footnote entry, allowing applications to
 /// display or process footnotes appropriately. This element is typically used when parsing or generating
 /// WordprocessingML documents that include footnotes.</remarks>
+[DataContract]
 [XmlRoot("FootnoteReference", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.FootnoteReference))]
 public class FootnoteReference: ModelElement<DXW.FootnoteReference>

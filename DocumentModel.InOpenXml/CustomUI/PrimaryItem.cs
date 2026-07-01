@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.PrimaryItem))]
+[DataContract]
 [XmlRoot("PrimaryItem", Namespace = "DocumentModel.CustomUI")]
 public partial class PrimaryItem : ModelElement<DXO10CUI.PrimaryItem>
 {

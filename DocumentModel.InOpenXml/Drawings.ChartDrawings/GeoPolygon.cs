@@ -22,6 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   provides information about the polygon's complexity and detail level.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoPolygon))]
+[DataContract]
 [XmlRoot("GeoPolygon", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoPolygon : ModelElement<DXO16DCD.GeoPolygon>
 {

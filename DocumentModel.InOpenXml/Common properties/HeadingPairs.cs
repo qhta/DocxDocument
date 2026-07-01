@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HeadingPair))]
+[DataContract]
 [XmlRoot("HeadingPairs", Namespace = "DocumentModel")]
 public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<HeadingPairs>
 {

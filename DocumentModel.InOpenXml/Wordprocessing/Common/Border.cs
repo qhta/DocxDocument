@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for border style, color, width, spacing, shadow, and frame effect, enabling advanced formatting and visual separation of document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.BorderType))]
+[DataContract]
 [XmlRoot("Border", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Border : ModelElement<DXW.BorderType>
 {

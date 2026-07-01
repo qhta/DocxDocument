@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   This class provides comprehensive shadow effect capabilities, including blur, distance, direction, scaling, skewing, alignment, and color options, enabling sophisticated shadow rendering for text.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.Shadow))]
+[DataContract]
 [XmlRoot("Shadow", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Shadow : ModelElement<DXO10W.Shadow>
 {

@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Implemented by types such as <see cref = "BookmarkStart"/>, <see cref = "CommentRangeStart"/>, <see cref = "MoveFromRangeStart"/>, and <see cref = "MoveToRangeStart"/>.
 ///   Provides properties for linking paired range elements, tracking annotation metadata, and managing the placement of custom XML elements within the document.
 /// </summary>
+[DataContract]
 [XmlRoot("MarkupStartRangeElement", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class MarkupStartRangeElement<T1, T2> : ModelElement<T1>, IIdentifiedChange, IMarkupElement where T1 : DX.OpenXmlElement where T2 : DX.OpenXmlElement
 {

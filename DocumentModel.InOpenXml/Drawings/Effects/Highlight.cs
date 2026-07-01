@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Defines the Highlight class.
 /// </summary>
 [OpenXmlType(typeof(DXD.Highlight))]
+[DataContract]
 [XmlRoot("Highlight", Namespace = "DocumentModel.Drawings")]
 public partial class Highlight : ModelElement<DXD.Highlight>
 {

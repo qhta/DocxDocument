@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a category axis for a chart, including axis ID, scaling, position, gridlines, title, formatting, tick marks, labels, crossing, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.CategoryAxis))]
+[DataContract]
 [XmlRoot("CategoryAxis", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class CategoryAxis : AbstractAxis<DXDC.CategoryAxis>
 {

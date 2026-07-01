@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MaxValueColorEndPosition Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MaxValueColorEndPosition))]
+[DataContract]
 [XmlRoot("MaxValueColorEndPosition", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MaxValueColorEndPosition : ModelElement<DXO16DCD.MaxValueColorEndPosition>
 {

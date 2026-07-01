@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows specifying different types of data sources, such as references or literals for numbers and strings, to define the values displayed along a chart axis.
 /// </summary>
 [OpenXmlType(typeof(DXDC.AxisDataSourceType))]
+[DataContract]
 [XmlRoot("AxisDataSourceType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AxisDataSourceType : ModelElement<DXDC.AxisDataSourceType>
 {

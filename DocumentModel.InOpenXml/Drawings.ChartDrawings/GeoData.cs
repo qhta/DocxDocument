@@ -23,6 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   geographic boundaries.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoData))]
+[DataContract]
 [XmlRoot("GeoData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoData : ModelElement<DXO16DCD.GeoData>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// that are not applied to <see cref = "ExtBaseRunProperties"/>.
 /// Provides support for revision tracking, conflict handling, and Office Math indication on paragraph marks.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseParagraphMarkRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class BaseParagraphMarkRunProperties<T> : ExtBaseRunProperties<T> where T : DX.OpenXmlCompositeElement
 {

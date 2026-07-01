@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a numeric data point in a chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumericPoint))]
+[DataContract]
 [XmlRoot("NumericPoints", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumericPoints : ModelElement<DXDC.NumericPoint>
 {

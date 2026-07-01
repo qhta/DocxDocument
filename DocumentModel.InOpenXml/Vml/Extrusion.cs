@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   3D Extrusion.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Extrusion))]
+[DataContract]
 [XmlRoot("Extrusion", Namespace = "DocumentModel.Vml")]
 public partial class Extrusion : ModelElement<DXVO.Extrusion>
 {

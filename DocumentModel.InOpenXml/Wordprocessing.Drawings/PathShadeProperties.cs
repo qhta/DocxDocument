@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for the gradient path type and the rectangle area to which the fill is applied, enabling advanced gradient effects and precise control over fill positioning.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.PathShadeProperties))]
+[DataContract]
 [XmlRoot("PathShadeProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperties>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series in a line chart, including index, order, text, shape properties, marker, picture options, data points, labels, Trendline, error bars, axis data, values, smoothing, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.LineChartSeries))]
+[DataContract]
 [XmlRoot("LineChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LineChartSeries : ModelElement<DXDC.LineChartSeries>
 {

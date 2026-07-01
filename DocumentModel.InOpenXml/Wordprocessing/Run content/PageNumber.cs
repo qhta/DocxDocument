@@ -10,6 +10,7 @@ namespace DocumentModel.Wordprocessing;
 ///  regardless of the languages specified in the parent run’s lang property .
 /// </summary>
 [OpenXmlType(typeof(DXW.PageNumber))]
+[DataContract]
 [XmlRoot("PageNumber", Namespace = "DocumentModel.Wordprocessing")]
 public class PageNumber : ModelElement<DXW.PageNumber>, IRunContent
 {

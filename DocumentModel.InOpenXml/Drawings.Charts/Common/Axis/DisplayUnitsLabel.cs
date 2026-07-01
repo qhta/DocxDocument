@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Display Units Label.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DisplayUnitsLabel))]
+[DataContract]
 [XmlRoot("DisplayUnitsLabel", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DisplayUnitsLabel : ModelElement<DXDC.DisplayUnitsLabel>
 {

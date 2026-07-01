@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   often with the purpose of visually grouping items.
 /// </summary>
 [OpenXmlType(typeof(DXM.GroupChar))]
+[DataContract]
 [XmlRoot("GroupChar", Namespace = "DocumentModel.Math")]
 public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
 {

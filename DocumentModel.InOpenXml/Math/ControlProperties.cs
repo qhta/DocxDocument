@@ -8,6 +8,7 @@ namespace DocumentModel.Math;
 ///   ControlProperties contains the formatting differences between the control character and the paragraph formatting.
 /// </summary>
 [OpenXmlType(typeof(DXM.ControlProperties))]
+[DataContract]
 [XmlRoot("ControlProperties", Namespace = "DocumentModel.Math")]
 public partial class ControlProperties : ModelElement<DXM.ControlProperties>
 {

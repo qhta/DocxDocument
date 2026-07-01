@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents default shape properties, including shape, body, list, and style settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeDefault))]
+[DataContract]
 [XmlRoot("ShapeDefault", Namespace = "DocumentModel.Drawings")]
 public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableElement
 {

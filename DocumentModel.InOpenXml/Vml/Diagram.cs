@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   VML Diagram.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Diagram))]
+[DataContract]
 [XmlRoot("Diagram", Namespace = "DocumentModel.Vml")]
 public partial class Diagram : ModelElement<DXVO.Diagram>
 {

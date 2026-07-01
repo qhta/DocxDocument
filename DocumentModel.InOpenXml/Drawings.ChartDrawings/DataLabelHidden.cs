@@ -15,6 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   control over label visibility without requiring individual DataLabel definitions for every data point.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabelHidden))]
+[DataContract]
 [XmlRoot("DataLabelHidden", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class DataLabelHidden : ModelElement<DXO16DCD.DataLabelHidden>
 {

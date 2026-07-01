@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying the shading pattern, foreground color, and background color, enabling advanced visual effects for graphical objects.
 /// </summary>
 [OpenXmlType(typeof(DXW.Shading))]
+[DataContract]
 [XmlRoot("Shading", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Shading : ModelElement<DXW.Shading>
 {

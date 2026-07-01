@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a graphic object, containing graphic data.
 /// </summary>
 [OpenXmlType(typeof(DXD.Graphic))]
+[DataContract]
 [XmlRoot("Graphic", Namespace = "DocumentModel.Drawings")]
 public partial class Graphic : ModelElement<DXD.Graphic>
 {

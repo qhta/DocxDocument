@@ -5,6 +5,7 @@ namespace DocumentModel.Vml;
 ///   Embedded OLE Object.
 /// </summary>
 [OpenXmlType(typeof(DXVO.OleObject))]
+[DataContract]
 [XmlRoot("OleObject", Namespace = "DocumentModel.Vml")]
 public partial class OleObject : ModelElement<DXVO.OleObject>, IEmbeddedObjectContent
 {

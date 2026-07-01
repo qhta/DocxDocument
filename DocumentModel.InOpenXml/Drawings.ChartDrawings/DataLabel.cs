@@ -18,6 +18,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   precise values need to be emphasized.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabel))]
+[DataContract]
 [XmlRoot("DataLabel", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class DataLabel : ModelElement<DXO16DCD.DataLabel>
 {

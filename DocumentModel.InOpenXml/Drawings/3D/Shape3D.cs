@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines properties for a 3-D shape, including depth, extrusion, contour, material, bevels, and color settings.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Shape3D))]
+[DataContract]
 [XmlRoot("Shape3D", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Shape3D : ModelElement<DXDD.Shape3D>, IExtendableElement
 {

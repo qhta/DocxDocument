@@ -3,6 +3,7 @@ namespace DocumentModel;
 ///   This set of properties is evaluated on document change.
 /// </summary>
 [OpenXmlType(typeof(DXEP.Properties))]
+[DataContract]
 [XmlRoot("StatisticProperties", Namespace = "DocumentModel")]
 [DirectAccess]
 public sealed partial class StatisticProperties : BaseBuiltInProperties

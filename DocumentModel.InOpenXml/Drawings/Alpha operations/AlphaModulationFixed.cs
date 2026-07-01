@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an alpha modulation effect with a fixed amount, used to adjust the transparency of an image or shape.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaModulationFixed))]
+[DataContract]
 [XmlRoot("AlphaModulationFixed", Namespace = "DocumentModel.Drawings")]
 public partial class AlphaModulationFixed : ModelElement<DXD.AlphaModulationFixed>
 {

@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   or preserving address resolution results for consistent map chart rendering across document sessions.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQueryResult))]
+[DataContract]
 [XmlRoot("GeoLocationQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoLocationQueryResult : ModelElement<DXO16DCD.GeoLocationQueryResult>
 {

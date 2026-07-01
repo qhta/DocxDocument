@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a reference to a line style, including style matrix index and color information in multiple color models.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineReference))]
+[DataContract]
 [XmlRoot("LineReference", Namespace = "DocumentModel.Drawings")]
 public partial class LineReference : ModelElement<DXD.LineReference>
 {

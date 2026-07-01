@@ -4,7 +4,6 @@ namespace DocumentModel;
 /// <summary>
 ///   Provides utility methods for resolving and working with .NET types by name at runtime.
 /// </summary>
-[XmlRoot("TypeHelper", Namespace = "DocumentModel")]
 public static class TypeHelper
 {
  /// <summary>

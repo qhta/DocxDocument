@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic film grain effect, which simulates the appearance of film grain with adjustable transparency and grain size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticFilmGrain))]
+[DataContract]
 [XmlRoot("ArtisticFilmGrain", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticFilmGrain : ModelElement<DXO10D.ArtisticFilmGrain>
 {

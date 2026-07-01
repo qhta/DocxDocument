@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MinorTickMarksTickMarks Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MinorTickMarksTickMarks))]
+[DataContract]
 [XmlRoot("MinorTickMarksTickMarks", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MinorTickMarksTickMarks : ModelElement<DXO16DCD.MinorTickMarksTickMarks>
 {

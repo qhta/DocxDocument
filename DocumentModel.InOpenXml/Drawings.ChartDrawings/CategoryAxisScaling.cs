@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   is specified depending on the axis type.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.CategoryAxisScaling))]
+[DataContract]
 [XmlRoot("CategoryAxisScaling", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class CategoryAxisScaling : ModelElement<DXO16DCD.CategoryAxisScaling>
 {

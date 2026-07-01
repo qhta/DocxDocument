@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class extends <see cref = "SectionPropertiesContent"/> and provides properties for footnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of footnote behavior and formatting within document sections.
 /// </summary>
 [OpenXmlType(typeof(DXW.FootnoteProperties))]
+[DataContract]
 [XmlRoot("FootnoteProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FootnoteProperties : ModelElement<DXW.FootnoteProperties>, ISectionPropertiesContent
 {

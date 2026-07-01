@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Defines properties for a 3D scene, including camera, lighting, and backdrop configuration.
 /// </summary>
 [OpenXmlType(typeof(DXD.Scene3DType))]
+[DataContract]
 [XmlRoot("Scene3DType", Namespace = "DocumentModel.Drawings")]
 public partial class Scene3DType : ModelElement<DXD.Scene3DType>, IExtendableElement
 {

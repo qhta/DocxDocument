@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// These properties are typically used in cases involving legacy documents, as well as cases where two existing independent tables are merged, in order to prevent the look of the second table from being superseded by the first table.
 /// </summary>
 [OpenXmlType(typeof(DXW.TablePropertyExceptions))]
+[DataContract]
 [XmlRoot("TablePropertyExceptions", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TablePropertyExceptions : CurrentTableProperties<DXW.TablePropertyExceptions>
 {

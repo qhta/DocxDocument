@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the ColorsType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorsType))]
+[DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorType : Drawings.ColorType
 {

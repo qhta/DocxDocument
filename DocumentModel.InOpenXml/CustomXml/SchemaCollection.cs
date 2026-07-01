@@ -3,6 +3,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of schema elements that can be accessed and managed as a group.
 /// </summary>
 [OpenXmlType(typeof(Schema))]
+[DataContract]
 [XmlRoot("SchemaCollection", Namespace = "DocumentModel.CustomXml")]
 public class SchemaCollection : ElementCollection<Schema>
 {

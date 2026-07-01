@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the HighLowLines Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.HighLowLines))]
+[DataContract]
 [XmlRoot("HighLowLines", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class HighLowLines : ModelElement<DXDC.HighLowLines>
 {

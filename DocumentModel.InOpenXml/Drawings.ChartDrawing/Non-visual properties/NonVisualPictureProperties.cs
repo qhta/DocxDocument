@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a picture in chart drawings, including general drawing properties and picture-specific drawing settings.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualPictureProperties))]
+[DataContract]
 [XmlRoot("NonVisualPictureProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualPictureProperties : ModelElement<DXDCD.NonVisualPictureProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "BidirectionalElement"/> and is functionally equivalent to using LRO/RLO and PDF characters in Unicode text, enabling advanced control of text directionality within document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.BidirectionalOverride))]
+[DataContract]
 [XmlRoot("BidirectionalOverride", Namespace = "DocumentModel.Wordprocessing")]
 public class BidirectionalOverride : BidirectionalElement<DXW.BidirectionalOverride>
 {

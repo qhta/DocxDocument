@@ -5,7 +5,6 @@ namespace DocumentModel;
 ///   Provides a centralized configuration for JSON serialization options used throughout the document model.
 ///   Configures indentation, null value handling, and custom converters for element collections.
 /// </summary>
-[XmlRoot("JsonConfig", Namespace = "DocumentModel")]
 public static class JsonConfig
 {
  /// <summary>

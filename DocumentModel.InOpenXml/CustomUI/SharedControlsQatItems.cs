@@ -13,6 +13,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.SharedControlsQatItems))]
+[DataContract]
 [XmlRoot("SharedControlsQatItems", Namespace = "DocumentModel.CustomUI")]
 public class SharedControlsQatItems : ModelElement<DXO10CUI.SharedControlsQatItems>
 {

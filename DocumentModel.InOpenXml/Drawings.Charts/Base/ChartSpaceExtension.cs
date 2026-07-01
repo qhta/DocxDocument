@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the ChartSpaceExtension Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ChartSpaceExtension))]
+[DataContract]
 [XmlRoot("ChartSpaceExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartSpaceExtension : Extension<DXDC.ChartSpaceExtension>
 {

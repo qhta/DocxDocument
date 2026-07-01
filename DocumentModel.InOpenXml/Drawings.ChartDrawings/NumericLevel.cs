@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the NumericLevel Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.NumericLevel))]
+[DataContract]
 [XmlRoot("NumericLevel", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class NumericLevel : ModelElement<DXO16DCD.NumericLevel>
 {

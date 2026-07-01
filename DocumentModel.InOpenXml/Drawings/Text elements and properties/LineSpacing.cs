@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents line spacing settings for text, allowing specification as a percentage or in points.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineSpacing))]
+[DataContract]
 [XmlRoot("LineSpacing", Namespace = "DocumentModel.Drawings")]
 public partial class LineSpacing : ModelElement<DXD.LineSpacing>
 {

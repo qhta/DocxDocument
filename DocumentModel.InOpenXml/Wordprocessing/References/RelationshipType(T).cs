@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// <typeparam name = "T">The type of the underlying relationship element represented by this class. Must be a type derived from
 /// DXW.RelationshipType.</typeparam>
 [OpenXmlType(typeof(DXW.RelationshipType))]
+[DataContract]
 [XmlRoot("RelationshipType", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class RelationshipType<T> : ModelElement<T> where T : DXW.RelationshipType
 {

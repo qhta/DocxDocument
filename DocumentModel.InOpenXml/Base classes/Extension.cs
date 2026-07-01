@@ -3,6 +3,7 @@ namespace DocumentModel;
 ///   Represents an extension element for adding additional information to other elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.Extension))]
+[DataContract]
 [XmlRoot("Extension", Namespace = "DocumentModel")]
 public partial class Extension<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -16,6 +17,7 @@ public partial class Extension<T> : ModelElement<T> where T : DX.OpenXmlElement
 /// <summary>
 /// Concrete class for Extension, representing an extension element for adding additional information to other elements without specifying a particular type parameter.
 /// </summary>
+[DataContract]
 [XmlRoot("Extension", Namespace = "DocumentModel")]
 public class Extension : Extension<DXD.Extension>
 {

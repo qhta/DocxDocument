@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic light screen effect, which simulates a grid-like light screen with adjustable transparency and grid size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticLightScreen))]
+[DataContract]
 [XmlRoot("ArtisticLightScreen", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticLightScreen : ModelElement<DXO10D.ArtisticLightScreen>
 {

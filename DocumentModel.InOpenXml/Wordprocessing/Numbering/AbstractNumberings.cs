@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of AbstractNum elements.
 /// </summary>
+[DataContract]
 [XmlRoot("AbstractNumberings", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AbstractNumberings : ModelElementCollection<AbstractNumbering, DXW.Numbering, DXW.AbstractNum>
 {

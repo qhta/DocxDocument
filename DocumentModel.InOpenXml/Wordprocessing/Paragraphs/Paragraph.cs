@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a paragraph element in a WordprocessingML document.
 /// This class extends multiple content and collection Interop, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
+[DataContract]
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.Paragraph))]
 [SpecificClass]

@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   If AccentProperties is omitted, the default accent is U+0302 (COMBINING CIRCUMFLEX ACCENT).
 /// </summary>
 [OpenXmlType(typeof(DXM.Accent))]
+[DataContract]
 [XmlRoot("Accent", Namespace = "DocumentModel.Math")]
 public partial class Accent : ModelElement<DXM.Accent>, ICommonMathContent
 {

@@ -21,6 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   elements receive custom treatment. Extension support enables future enhancements to format override capabilities.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.FormatOverride))]
+[DataContract]
 [XmlRoot("FormatOverride", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class FormatOverride : ModelElement<DXO16DCD.FormatOverride>
 {

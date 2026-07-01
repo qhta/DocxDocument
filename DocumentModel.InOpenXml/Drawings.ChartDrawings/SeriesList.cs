@@ -7,6 +7,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// The SeriesList class provides a structured way to manage multiple series within a chart,
 /// allowing for easy access and manipulation of each series' properties and data.
 /// </summary>
+[DataContract]
 [XmlRoot("SeriesList", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class SeriesList : ModelElementCollection<Series>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Fill Overlay Effect.
 /// </summary>
 [OpenXmlType(typeof(DXD.FillOverlay))]
+[DataContract]
 [XmlRoot("FillOverlay", Namespace = "DocumentModel.Drawings")]
 public partial class FillOverlay : ModelElement<DXD.FillOverlay>
 {

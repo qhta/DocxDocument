@@ -8,6 +8,7 @@ namespace DocumentModel;
 ///   Represents a collection of model items, which are created from OpenXml elements,
 ///   which are the child elements of a parent OpenXml element.
 /// </summary>
+[DataContract]
 [XmlRoot("ModelItemsCollection", Namespace = "DocumentModel")]
 
 public abstract partial class ModelItemsCollection<ItemType>: ElementCollection<ItemType>

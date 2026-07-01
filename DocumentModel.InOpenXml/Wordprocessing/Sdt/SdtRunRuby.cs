@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class represents a collection of ruby content elements and provides properties for structured document tag configuration and end character formatting, enabling advanced handling of ruby annotations in structured document tags.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtRunRuby))]
+[DataContract]
 [XmlRoot("SdtRunRuby", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtRunRuby : ModelElement<DXW.SdtRunRuby>, IRubyContent
 {

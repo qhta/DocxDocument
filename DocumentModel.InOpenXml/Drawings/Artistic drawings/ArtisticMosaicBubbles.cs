@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic mosaic bubbles effect, which simulates a mosaic pattern with bubble-like textures and adjustable transparency and pressure.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticMosaicBubbles))]
+[DataContract]
 [XmlRoot("ArtisticMosaicBubbles", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticMosaicBubbles : ModelElement<DXO10D.ArtisticMosaicBubbles>
 {

@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// This class provides properties for default shape properties and layout, enabling consistent formatting and positioning of VML shapes in document headers and footers.
 /// </summary>
 [OpenXmlType(typeof(DXW.HeaderShapeDefaults))]
+[DataContract]
 [XmlRoot("HeaderShapeDefaults", Namespace = "DocumentModel.Wordprocessing.Vml")]
 public partial class HeaderShapeDefaults: ModelElement<DXW.HeaderShapeDefaults>
 {

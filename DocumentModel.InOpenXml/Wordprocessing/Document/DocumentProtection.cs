@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for editing restrictions, formatting limitations, enforcement, cryptographic settings, password protection, and hashing details, enabling advanced security and access control for document editing and formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocumentProtection))]
+[DataContract]
 [XmlRoot("DocumentProtection", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocumentProtection : ModelElement<DXW.DocumentProtection>
 {

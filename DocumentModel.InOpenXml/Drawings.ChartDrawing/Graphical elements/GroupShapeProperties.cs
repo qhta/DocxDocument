@@ -19,6 +19,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.GroupShapeProperties))]
+[DataContract]
 [XmlRoot("GroupShapeProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class GroupShapeProperties : ModelElement<DXDCD.GroupShapeProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring the main document type, data source, queries, destination, email settings, error reporting, and Office Data Source Object (ODSO) settings, enabling advanced mail merge operations and customization.
 /// </summary>
 [OpenXmlType(typeof(DXW.MailMerge))]
+[DataContract]
 [XmlRoot("MailMerge", Namespace = "DocumentModel.Wordprocessing")]
 public partial class MailMerge : ModelElement<DXW.MailMerge>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents an outer shadow effect, including blur, offset, direction, scaling, skew, alignment, rotation, and color options.
 /// </summary>
 [OpenXmlType(typeof(DXD.OuterShadow))]
+[DataContract]
 [XmlRoot("OuterShadow", Namespace = "DocumentModel.Drawings")]
 public partial class OuterShadow : ModelElement<DXD.OuterShadow>
 {

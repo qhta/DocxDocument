@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a stock chart, including series, labels, drop lines, high-low lines, up-down bars, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StockChart))]
+[DataContract]
 [XmlRoot("StockChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StockChart : ModelElement<DXDC.StockChart>
 {

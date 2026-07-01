@@ -22,6 +22,7 @@ namespace DocumentModel;
 ///   versions, even when some applications must use fallback representations.
 /// </remarks>
 [OpenXmlType(typeof(DX.AlternateContentFallback))]
+[DataContract]
 [XmlRoot("AlternateContentFallback", Namespace = "DocumentModel")]
 public class AlternateContentFallback : ModelElement<DX.AlternateContentFallback> //IElementCollection<CollectionItem>
 {

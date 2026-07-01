@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 ///   EffectReference in ChartsStyle extends EffectReference in Drawings with StyleColor.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.EffectReference))]
+[DataContract]
 [XmlRoot("EffectReference", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class EffectReference : DocumentModel.Drawings.EffectReference
 {

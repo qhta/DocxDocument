@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Enables hierarchical organization, transformation, and formatting of grouped shapes in Office drawings.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShape))]
+[DataContract]
 [XmlRoot("GroupShape", Namespace = "DocumentModel.Drawings.Office")]
 public partial class GroupShape : ModelElement<DXOD.GroupShape>
 {

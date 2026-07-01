@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the StringDimension Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.StringDimension))]
+[DataContract]
 [XmlRoot("StringDimension", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class StringDimension : ModelElementCollection<StringLevel, DXO16DCD.StringDimension, DXO16DCD.StringLevel>
 {

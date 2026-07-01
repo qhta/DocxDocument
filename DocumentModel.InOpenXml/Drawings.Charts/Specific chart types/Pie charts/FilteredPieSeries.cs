@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered pie series for a chart, containing a reference to a pie chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredPieSeries))]
+[DataContract]
 [XmlRoot("FilteredPieSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredPieSeries : ModelElement<DXO13DC.FilteredPieSeries>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Camera settings for 3D effects in drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.Camera))]
+[DataContract]
 [XmlRoot("Camera", Namespace = "DocumentModel.Drawings")]
 public partial class Camera : ModelElement<DXD.Camera>
 {

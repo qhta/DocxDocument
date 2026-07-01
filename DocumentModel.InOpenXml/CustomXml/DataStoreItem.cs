@@ -10,6 +10,7 @@ namespace DocumentModel.CustomXml;
 ///   define the structure and validation rules for the contained XML data. This functionality enables
 ///   data-driven documents, content control binding, and integration with external data sources.
 /// </remarks>
+[DataContract]
 [XmlRoot("DataStoreItem", Namespace = "DocumentModel.CustomXml")]
 public partial class DataStoreItem
 {

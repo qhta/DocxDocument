@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the SeriesElementVisibilities Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.SeriesElementVisibilities))]
+[DataContract]
 [XmlRoot("SeriesElementVisibilities", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class SeriesElementVisibilities : ModelElement<DXO16DCD.SeriesElementVisibilities>
 {

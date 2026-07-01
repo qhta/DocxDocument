@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for identifying the fit text run and specifying the target width in twips, allowing advanced text layout control in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.FitText))]
+[DataContract]
 [XmlRoot("FitText", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FitText : ModelElement<DXW.FitText>
 {

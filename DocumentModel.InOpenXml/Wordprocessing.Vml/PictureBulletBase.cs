@@ -6,6 +6,7 @@ using DocumentModel.Vml;
 /// This class provides properties for various VML shapes and image elements that can be used as the visual representation of a picture bullet, enabling advanced customization of list bullets using images and vector graphics.
 /// </summary>
 [OpenXmlType(typeof(DXW.PictureBulletBase))]
+[DataContract]
 [XmlRoot("PictureBulletBase", Namespace = "DocumentModel.Wordprocessing.Vml")]
 public partial class PictureBulletBase : ModelElement<DXW.PictureBulletBase>
 {

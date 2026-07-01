@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents font settings for text, including typeface, Panose classification, pitch family, and character set.
 /// </summary>
 [OpenXmlType(typeof(DXD.TextFontType))]
+[DataContract]
 [XmlRoot("TextFontType", Namespace = "DocumentModel.Drawings")]
 public partial class TextFontType : ModelElement<DXD.TextFontType>
 {

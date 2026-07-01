@@ -19,6 +19,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   support enables future enhancements to data point functionality without schema changes.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataPoint))]
+[DataContract]
 [XmlRoot("DataPoint", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class DataPoint : ModelElement<DXO16DCD.DataPoint>
 {

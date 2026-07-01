@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   chart's data model.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartStringValue))]
+[DataContract]
 [XmlRoot("ChartStringValue", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ChartStringValue : ModelElement<DXO16DCD.ChartStringValue>
 {

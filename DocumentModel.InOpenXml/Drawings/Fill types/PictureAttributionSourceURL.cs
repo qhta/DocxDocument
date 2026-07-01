@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a picture attribution source URL, providing an identifier for the attribution source.
 /// </summary>
 [OpenXmlType(typeof(DXO19D.PictureAttributionSourceURL))]
+[DataContract]
 [XmlRoot("PictureAttributionSourceURL", Namespace = "DocumentModel.Drawings")]
 public partial class PictureAttributionSourceURL : ModelElement<DXO19D.PictureAttributionSourceURL>
 {

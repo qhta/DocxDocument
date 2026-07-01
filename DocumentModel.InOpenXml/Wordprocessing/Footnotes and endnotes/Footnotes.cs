@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "Footnote"/> objects, enabling advanced organization, referencing, and formatting of footnotes throughout the document.
 /// </summary>
 [OpenXmlType(typeof(Footnote))]
+[DataContract]
 [XmlRoot("Footnotes", Namespace = "DocumentModel.Wordprocessing")]
 public class Footnotes : ElementCollection<Footnote> //, DXW.Footnotes, DXW.Footnote>
 {

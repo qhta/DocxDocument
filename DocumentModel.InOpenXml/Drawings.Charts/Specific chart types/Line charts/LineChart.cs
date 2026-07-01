@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a line chart, including grouping, color variation, series, labels, drop lines, high-low lines, up-down bars, marker and smoothing options, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.LineChart))]
+[DataContract]
 [XmlRoot("LineChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LineChart : ModelElement<DXDC.LineChart>, AbstractChart
 {

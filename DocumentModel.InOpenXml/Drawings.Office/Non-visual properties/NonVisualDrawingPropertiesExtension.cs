@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 ///   Enables extensibility for custom or future Office features by associating extra data with non-visual drawing properties.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualDrawingPropertiesExtension))]
+[DataContract]
 [XmlRoot("NonVisualDrawingPropertiesExtension", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualDrawingPropertiesExtension : NonVisualDrawingProperties<DXD.NonVisualDrawingPropertiesExtension>, IExtension
 {

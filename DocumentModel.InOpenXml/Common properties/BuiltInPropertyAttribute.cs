@@ -4,7 +4,6 @@ namespace DocumentModel;
 /// </summary>
 /// <param name = "name">Name of the built-in property.</param>
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-[XmlRoot("BuiltInPropertyAttribute", Namespace = "DocumentModel")]
 public class BuiltInPropertyAttribute(string name) : Attribute
 {
  /// <summary>

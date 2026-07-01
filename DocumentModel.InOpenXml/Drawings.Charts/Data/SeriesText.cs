@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines either a reference to a string data source or a direct numeric value used as text.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SeriesText))]
+[DataContract]
 [XmlRoot("SeriesText", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SeriesText : ModelElement<DXDC.SeriesText>
 {

@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Describes a variation of a color style, allowing adjustments to tint, shade, alpha, hue, saturation, luminance, and color channels for chart elements.
 /// </summary>
+[DataContract]
 [XmlRoot("ColorStyleVariation", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class ColorStyleVariation : CollectionItem
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a 2D point with X and Y coordinates.
 /// </summary>
 [OpenXmlType(typeof(DXD.Point2DType))]
+[DataContract]
 [XmlRoot("Point2DType", Namespace = "DocumentModel.Drawings")]
 public partial class Point2DType : ModelElement<DXD.Point2DType>
 {

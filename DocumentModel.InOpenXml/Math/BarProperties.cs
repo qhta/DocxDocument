@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   If this element is omitted, the bar assumes its default location of top (the mathematical overbar). 
 /// </summary>
 [OpenXmlType(typeof(DXM.BarProperties))]
+[DataContract]
 [XmlRoot("BarProperties", Namespace = "DocumentModel.Math")]
 public partial class BarProperties : ModelElement<DXM.BarProperties>
 {

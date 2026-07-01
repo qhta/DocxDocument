@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This extension allows specifying full references, level references, and formula references for hierarchical data.
 /// </summary>
 [OpenXmlType(typeof(DXDC.MultiLvlStrRefExtension))]
+[DataContract]
 [XmlRoot("MultiLevelStrRefExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class MultiLevelStrRefExtension : Extension<DXDC.MultiLvlStrRefExtension>
 {

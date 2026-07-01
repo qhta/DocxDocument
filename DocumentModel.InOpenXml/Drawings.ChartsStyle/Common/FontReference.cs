@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 ///    FontReference in ChartsStyle extends FontReference in Drawings with StyleColor.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.FontReference))]
+[DataContract]
 [XmlRoot("FontReference", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class FontReference : DocumentModel.Drawings.FontReference
 {

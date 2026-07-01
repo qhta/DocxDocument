@@ -16,6 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   theme colors throughout the chart's visual elements.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ColorMappingType))]
+[DataContract]
 [XmlRoot("ColorMappingType", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ColorMappingType : ModelElement<DXO16DCD.ColorMappingType>
 {

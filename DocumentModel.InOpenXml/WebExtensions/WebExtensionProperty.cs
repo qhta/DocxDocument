@@ -3,6 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the WebExtensionProperty Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtensionProperty))]
+[DataContract]
 [XmlRoot("WebExtensionProperty", Namespace = "DocumentModel.WebExtensions")]
 public class WebExtensionProperty : ModelElement<DXO13WE.WebExtensionProperty>
 {

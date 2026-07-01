@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents hidden 3D scene properties, including camera, lighting, and backdrop configuration.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.HiddenScene3D))]
+[DataContract]
 [XmlRoot("HiddenScene3D", Namespace = "DocumentModel.Drawings")]
 public partial class HiddenScene3D : ModelElement<DXO10D.HiddenScene3D>, IExtendableElement
 {

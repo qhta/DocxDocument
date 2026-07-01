@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.VBA;
 ///   Defines the DocEvents Class.
 /// </summary>
 [OpenXmlType(typeof(DXOW.DocEvents))]
+[DataContract]
 [XmlRoot("DocEvents", Namespace = "DocumentModel.Wordprocessing.VBA")]
 public class DocEvents : ModelElement<DXOW.DocEvents>
 {

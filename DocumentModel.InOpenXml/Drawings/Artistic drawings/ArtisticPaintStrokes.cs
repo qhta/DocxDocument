@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic paint strokes effect, which simulates painted strokes with adjustable transparency and intensity.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPaintStrokes))]
+[DataContract]
 [XmlRoot("ArtisticPaintStrokes", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPaintStrokes : ModelElement<DXO10D.ArtisticPaintStrokes>
 {

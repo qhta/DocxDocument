@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a collection of numbering level override elements in a WordprocessingML document.
 /// </summary>
 [OpenXmlType(typeof(NumberingLevelOverride))]
+[DataContract]
 [XmlRoot("NumberingLevelOverrides", Namespace = "DocumentModel.Wordprocessing")]
 public class NumberingLevelOverrides : ModelElementCollection<NumberingLevelOverride, DXW.NumberingInstance, DXW.LevelOverride>
 {

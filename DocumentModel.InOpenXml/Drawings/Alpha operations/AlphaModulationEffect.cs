@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an alpha modulation effect, which modulates the alpha channel of an image or shape using an effect container.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaModulationEffect))]
+[DataContract]
 [XmlRoot("AlphaModulationEffect", Namespace = "DocumentModel.Drawings")]
 public partial class AlphaModulationEffect : ModelElement<DXD.AlphaModulationEffect>
 {

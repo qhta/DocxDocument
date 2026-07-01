@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///  Grid Column Definition.
 /// </summary>
 [OpenXmlType(typeof(DXW.GridColumn))]
+[DataContract]
 [XmlRoot("GridColumn", Namespace = "DocumentModel.Wordprocessing")]
 public partial class GridColumn : ModelElement<DXW.GridColumn>
 {

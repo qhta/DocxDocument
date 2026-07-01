@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for SDT configuration and end character formatting, enabling advanced management and customization of SDT elements.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtElement))]
+[DataContract]
 [XmlRoot("SdtElement", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtElement : ModelElement<DXW.SdtElement>
 {

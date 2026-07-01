@@ -12,6 +12,7 @@ namespace DocumentModel.CustomXml;
 ///   XML data without requiring external schema resolution.
 /// </remarks>
 [OpenXmlType(typeof(Schema))]
+[DataContract]
 [XmlRoot("SchemaLibrary", Namespace = "DocumentModel.CustomXml")]
 public class SchemaLibrary : ModelElementCollection<Schema, DXCXSR.SchemaLibrary, DXCXSR.Schema>
 {

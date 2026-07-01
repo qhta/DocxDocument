@@ -5,7 +5,6 @@ namespace DocumentModel;
 /// <param name = "propertyName">Name of the property that was changed.</param>
 /// <param name = "oldValue">Old value of the property.</param>
 /// <param name = "newValue">New value of the property.</param>
-[XmlRoot("PropertyValueChangedEventArgs", Namespace = "DocumentModel")]
 public class PropertyValueChangedEventArgs(string propertyName, object? oldValue, object? newValue) : PropertyChangedEventArgs(propertyName)
 {
  /// <summary>

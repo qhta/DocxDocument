@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic paint brush effect, which simulates a paint brush style with adjustable transparency and brush size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPaintBrush))]
+[DataContract]
 [XmlRoot("ArtisticPaintBrush", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPaintBrush : ModelElement<DXO10D.ArtisticPaintBrush>
 {

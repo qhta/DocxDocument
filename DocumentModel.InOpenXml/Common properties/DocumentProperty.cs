@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
+[DataContract]
 [XmlRoot("DocumentProperty", Namespace = "DocumentModel")]
 //[JsonConverter(typeof(DocumentPropertyJsonConverter<DocumentProperty>))]
 public abstract partial class DocumentProperty : NamedModelElement

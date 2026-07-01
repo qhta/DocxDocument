@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HyperlinkInfo))]
+[DataContract]
 [XmlRoot("HyperlinkList", Namespace = "DocumentModel")]
 public class HyperlinkList : ElementCollection<HyperlinkInfo>
 {

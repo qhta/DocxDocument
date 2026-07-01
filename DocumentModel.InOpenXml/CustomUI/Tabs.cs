@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Tabs))]
+[DataContract]
 [XmlRoot("Tabs", Namespace = "DocumentModel.CustomUI")]
 public class Tabs : ModelElement<DXO10CUI.Tabs>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This height is used to determine the resulting height of the table row, which can be absolute or relative depending on its attribute values.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableRowHeight))]
+[DataContract]
 [XmlRoot("TableRowHeight", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableRowHeight : ModelElement<DXW.TableRowHeight>
 {

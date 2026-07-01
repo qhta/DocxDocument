@@ -13,6 +13,7 @@ namespace DocumentModel.CustomXml;
 ///   and enabling both self-contained documents and documents that reference standard industry schemas.
 /// </remarks>
 [OpenXmlType(typeof(SchemaReference))]
+[DataContract]
 [XmlRoot("SchemaReferences", Namespace = "DocumentModel.CustomXml")]
 public class SchemaReferences : ElementCollection<SchemaReference>
 {

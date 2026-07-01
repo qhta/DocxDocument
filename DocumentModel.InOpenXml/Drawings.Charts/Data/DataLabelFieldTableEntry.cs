@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Each entry defines a custom field used in data labels, including its unique identifier, formula, and cached values.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.DataLabelFieldTableEntry))]
+[DataContract]
 [XmlRoot("DataLabelFieldTableEntry", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelFieldTableEntry : ModelElement<DXO13DC.DataLabelFieldTableEntry>
 {

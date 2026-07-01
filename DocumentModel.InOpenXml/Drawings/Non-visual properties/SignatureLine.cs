@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a signature line, including identification, provider, signer information, instructions, and display options.
 /// </summary>
 [OpenXmlType(typeof(DXO13D.SignatureLine))]
+[DataContract]
 [XmlRoot("SignatureLine", Namespace = "DocumentModel.Drawings")]
 public partial class SignatureLine : ModelElement<DXO13D.SignatureLine>
 {

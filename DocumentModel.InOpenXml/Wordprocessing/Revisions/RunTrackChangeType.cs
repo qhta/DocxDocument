@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Implements <see cref = "IElementCollection{IParagraphContent}"/> and <see cref = "ICommonContent"/>.
 /// </summary>
 [OpenXmlType(typeof(DXW.RunTrackChangeType))]
+[DataContract]
 [XmlRoot("RunTrackChangeType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RunTrackChangeType : TrackChangeType<DXW.RunTrackChangeType>
 {

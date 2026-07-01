@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Backstage))]
+[DataContract]
 [XmlRoot("Backstage", Namespace = "DocumentModel.CustomUI")]
 public partial class Backstage : ModelElement<DXO10CUI.Backstage>
 {

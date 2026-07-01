@@ -13,6 +13,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Ribbon))]
+[DataContract]
 [XmlRoot("Ribbon", Namespace = "DocumentModel.CustomUI")]
 public partial class Ribbon : ModelElement<DXO10CUI.Ribbon>
 {

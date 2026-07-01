@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Group-Character Properties.
 /// </summary>
 [OpenXmlType(typeof(DXM.GroupCharProperties))]
+[DataContract]
 [XmlRoot("GroupCharProperties", Namespace = "DocumentModel.Math")]
 public partial class GroupCharProperties : ModelElement<DXM.GroupCharProperties>
 {

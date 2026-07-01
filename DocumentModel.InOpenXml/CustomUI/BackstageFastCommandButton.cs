@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:button.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.BackstageFastCommandButton))]
+[DataContract]
 [XmlRoot("BackstageFastCommandButton", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageFastCommandButton : ModelElement<DXO10CUI.BackstageFastCommandButton>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic pencil grayscale effect, which simulates a pencil sketch in grayscale with adjustable transparency and brush size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPencilGrayscale))]
+[DataContract]
 [XmlRoot("ArtisticPencilGrayscale", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPencilGrayscale : ModelElement<DXO10D.ArtisticPencilGrayscale>
 {

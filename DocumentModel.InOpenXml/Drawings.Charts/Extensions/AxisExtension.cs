@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents an extension for an axis, providing additional numbering format options.
 /// </summary>
+[DataContract]
 [XmlRoot("AxisExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AxisExtension<T> : Extension<T> where T : DX.OpenXmlElement
 {

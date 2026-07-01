@@ -11,6 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   as scripted interactions and document workflow management.
 /// </remarks>
 [OpenXmlType(typeof(DXO10DCD.ApplicationNonVisualDrawingProperties))]
+[DataContract]
 [XmlRoot("ApplicationNonVisualDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ApplicationNonVisualDrawingProperties : ModelElement<DXO10DCD.ApplicationNonVisualDrawingProperties>
 {

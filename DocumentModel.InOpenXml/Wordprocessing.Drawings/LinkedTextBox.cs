@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   Provides properties for identifying and sequencing linked text boxes, as well as extension data for OfficeArt compatibility.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDS.LinkedTextBox))]
+[DataContract]
 [XmlRoot("LinkedTextBox", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class LinkedTextBox : ModelElement<DXO10WDS.LinkedTextBox>, DMD.IOfficeArtExtendableElement
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 ///   Picture.
 /// </summary>
 [OpenXmlType(typeof(DXDP.NonVisualDrawingProperties))]
+[DataContract]
 [XmlRoot("Picture", Namespace = "DocumentModel.Drawings.Pictures")]
 public partial class Picture : ModelElement<DXDP.NonVisualDrawingProperties>
 {

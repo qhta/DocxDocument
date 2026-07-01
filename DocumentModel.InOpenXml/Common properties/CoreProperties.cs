@@ -5,6 +5,7 @@ namespace DocumentModel;
 /// and Open Packaging Conventions
 /// </summary>
 [OpenXmlType(typeof(PackageProperties))]
+[DataContract]
 [XmlRoot("CoreProperties", Namespace = "DocumentModel")]
 public partial class CoreProperties : BaseBuiltInProperties
 {

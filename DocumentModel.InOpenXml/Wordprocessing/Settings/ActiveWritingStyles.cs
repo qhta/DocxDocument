@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Collection of active writing styles applied to the document.
 /// </summary>
 [OpenXmlType(typeof(ActiveWritingStyle))]
+[DataContract]
 [XmlRoot("ActiveWritingStyles", Namespace = "DocumentModel.Wordprocessing")]
 public class ActiveWritingStyles : ModelElementCollection<ActiveWritingStyle, DXW.Settings, DXW.ActiveWritingStyle>
 {

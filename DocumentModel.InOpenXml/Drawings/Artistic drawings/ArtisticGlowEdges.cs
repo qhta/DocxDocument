@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic glow edges effect, which simulates glowing edges with adjustable transparency and smoothness.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticGlowEdges))]
+[DataContract]
 [XmlRoot("ArtisticGlowEdges", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticGlowEdges : ModelElement<DXO10D.ArtisticGlowEdges>
 {

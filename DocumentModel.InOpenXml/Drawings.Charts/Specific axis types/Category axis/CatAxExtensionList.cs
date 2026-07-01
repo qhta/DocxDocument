@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a collection of category axis extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.CatAxExtensionList))]
+[DataContract]
 [XmlRoot("CatAxExtensionList", Namespace = "DocumentModel.Drawings.Charts")]
 public class CatAxExtensionList : ModelElementCollection<CatAxisExtension>
 {

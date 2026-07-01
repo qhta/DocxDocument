@@ -19,6 +19,7 @@ namespace DocumentModel.Drawings;
 ///   </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.ArcTo))]
+[DataContract]
 [XmlRoot("ArcTo", Namespace = "DocumentModel.Drawings")]
 public partial class ArcTo : ModelElement<DXD.ArcTo>
 {

@@ -36,6 +36,7 @@ namespace DocumentModel.Math;
 ///   </list>
 /// </summary>
 [OpenXmlType(typeof(DXM.ArgumentProperties))]
+[DataContract]
 [XmlRoot("ArgumentProperties", Namespace = "DocumentModel.Math")]
 public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
 {

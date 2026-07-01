@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   (such as a formula or equation). If borderBoxPr is omitted then the default behavior of borderBox is a rectangular border 
 /// </summary>
 [OpenXmlType(typeof(DXM.BorderBox))]
+[DataContract]
 [XmlRoot("BorderBox", Namespace = "DocumentModel.Math")]
 public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes the transformation properties for a graphic frame in chart drawing, including rotation, flipping, offset, and extents for precise visual positioning and scaling.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.Transform))]
+[DataContract]
 [XmlRoot("Transform", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class Transform : ModelElement<DXDCD.Transform>
 {

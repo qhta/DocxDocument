@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   3D back wall formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BackWall))]
+[DataContract]
 [XmlRoot("BackWall", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BackWall : ModelElement<DXDC.BackWall>
 {

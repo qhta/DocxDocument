@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a 3D line chart, including grouping, color variation, series, labels, drop lines, gap depth, axis identifiers, and extension list.
 /// </summary>
+[DataContract]
 [XmlRoot("Line3DChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Line3DChart : ModelElement<DXDC.Line3DChart>
 {

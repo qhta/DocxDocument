@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Major Gridlines.
 /// </summary>
 [OpenXmlType(typeof(DXDC.MajorGridlines))]
+[DataContract]
 [XmlRoot("MajorGridlines", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class MajorGridlines : ModelElement<DXDC.MajorGridlines>
 {

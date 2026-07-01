@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains common properties for table formatting, including alignment, indentation, cell margins, cell spacing, borders, and shading.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableProperties))]
+[DataContract]
 [XmlRoot("BaseTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class BaseTableProperties<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -53,6 +54,7 @@ public partial class BaseTableProperties<T> : ModelElement<T> where T : DX.OpenX
 /// <summary>
 /// Concrete class of BaseTableProperties for the Open XML SDK TableProperties element.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class BaseTableProperties : BaseTableProperties<DXW.TableProperties>
 {

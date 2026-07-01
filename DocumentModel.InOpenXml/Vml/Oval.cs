@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Oval.
 /// </summary>
 [OpenXmlType(typeof(DXV.Oval))]
+[DataContract]
 [XmlRoot("Oval", Namespace = "DocumentModel.Vml")]
 public partial class Oval : ModelElement<DXV.Oval>, IEmbeddedObjectContent
 {

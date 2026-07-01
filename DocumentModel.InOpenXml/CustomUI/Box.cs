@@ -24,6 +24,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Box))]
+[DataContract]
 [XmlRoot("Box", Namespace = "DocumentModel.CustomUI")]
 public partial class Box : ModelElement<DXO10CUI.Box>
 {

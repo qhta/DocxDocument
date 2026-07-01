@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to table properties and grid definitions, enabling configuration and management of table structure, formatting, and layout within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Table))]
+[DataContract]
 [XmlRoot("Table", Namespace = "DocumentModel.Wordprocessing")]
 [SpecificClass]
 public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent

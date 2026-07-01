@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Color change effect for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorChange))]
+[DataContract]
 [XmlRoot("ColorChange", Namespace = "DocumentModel.Drawings")]
 public partial class ColorChange : ModelElement<DXD.ColorChange>
 {

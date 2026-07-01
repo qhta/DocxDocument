@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 ///   Defines the ScriptLink Class.
 /// </summary>
 [OpenXmlType(typeof(DXOY21SL.ScriptLink))]
+[DataContract]
 [XmlRoot("ScriptLink", Namespace = "DocumentModel.Drawings.Office.ScriptLink")]
 public partial class ScriptLink : ModelElement<DXOY21SL.ScriptLink>
 {

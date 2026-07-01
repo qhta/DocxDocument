@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for filtering by style type, usage, visibility, formatting, and alternate names, enabling advanced style pane customization and management.
 /// </summary>
 [OpenXmlType(typeof(DXW.StylePaneFormatFilter))]
+[DataContract]
 [XmlRoot("StylePaneFormatFilter", Namespace = "DocumentModel.Wordprocessing")]
 public partial class StylePaneFormatFilter : ModelElement<DXW.StylePaneFormatFilter>
 {

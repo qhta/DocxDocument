@@ -2,7 +2,6 @@ namespace DocumentModel;
 /// <summary>
 /// Information about a property that is compatible with PropertyDescriptor.
 /// </summary>
-[XmlRoot("TypeModel", Namespace = "DocumentModel")]
 public class TypeModel
 {
  /// <summary>

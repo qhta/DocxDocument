@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a foreground mark defined by two coordinate points, typically used to specify areas to retain during background removal processing.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ForegroundMark))]
+[DataContract]
 [XmlRoot("ForegroundMark", Namespace = "DocumentModel.Drawings")]
 public partial class ForegroundMark : ModelElement<DXO10D.ForegroundMark>
 {

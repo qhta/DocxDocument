@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Includes a shape identifier and an associated URI for extension identification.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.CompatExtension))]
+[DataContract]
 [XmlRoot("CompatExtension", Namespace = "DocumentModel.Drawings")]
 public partial class CompatExtension : ModelElement<DXO10D.CompatExtension>, IExtension
 {

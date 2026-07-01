@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a 2D transformation for grouped objects, including rotation, flipping, offset, extents, and child transformation settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.TransformGroup))]
+[DataContract]
 [XmlRoot("TransformGroup", Namespace = "DocumentModel.Drawings")]
 public partial class TransformGroup : ModelElement<DXD.TransformGroup>
 {

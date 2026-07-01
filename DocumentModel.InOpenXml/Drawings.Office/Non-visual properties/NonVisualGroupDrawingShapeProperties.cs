@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Specific DXOD.NonVisualGroupDrawingShapeProperties mapping type
 /// </summary>
 [OpenXmlType(typeof(DXOD.NonVisualGroupDrawingShapeProperties))]
+[DataContract]
 [XmlRoot("NonVisualGroupDrawingShapeProperties", Namespace = "DocumentModel.Drawings.Office")]
 public class NonVisualGroupDrawingShapeProperties : DMD.NonVisualGroupDrawingShapeProperties<DXOD.NonVisualGroupDrawingShapeProperties>
 {

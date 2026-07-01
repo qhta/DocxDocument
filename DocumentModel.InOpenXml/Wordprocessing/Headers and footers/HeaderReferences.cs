@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "HeaderReference"/> objects, enabling advanced organization and referencing of document headers for different sections and page types.
 /// </summary>
 [OpenXmlType(typeof(HeaderReference))]
+[DataContract]
 [XmlRoot("HeaderReferences", Namespace = "DocumentModel.Wordprocessing")]
 public class HeaderReferences : ElementCollection<HeaderReference>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a soft edge effect, allowing adjustment of the edge radius for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXD.SoftEdge))]
+[DataContract]
 [XmlRoot("SoftEdge", Namespace = "DocumentModel.Drawings")]
 public partial class SoftEdge : ModelElement<DXD.SoftEdge>
 {

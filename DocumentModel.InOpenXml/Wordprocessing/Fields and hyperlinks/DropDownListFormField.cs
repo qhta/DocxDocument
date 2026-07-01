@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the selected item, default item index, and the collection of list entries, enabling advanced configuration and management of interactive drop-down lists within forms and documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.DropDownListFormField))]
+[DataContract]
 [XmlRoot("DropDownListFormField", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormField>
 {

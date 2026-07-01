@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Provides access to and management of <see cref = "DivElement"/> objects, enabling advanced organization and manipulation of HTML-like div structures within the document body or settings.
 /// </summary>
 [OpenXmlType(typeof(DivElement))]
+[DataContract]
 [XmlRoot("DivElements", Namespace = "DocumentModel.Wordprocessing")]
 public class DivElements : ElementCollection<DivElement>
 {

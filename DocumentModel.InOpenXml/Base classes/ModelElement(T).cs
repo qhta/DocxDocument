@@ -4,6 +4,7 @@ namespace DocumentModel;
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based elements.
 /// </summary>
 /// <typeparam name = "OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
+[DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement<OpenXmlType> : ModelElement, 
   IWordprocessingDocumentAware, IUpdatable, IDirectAccessElement

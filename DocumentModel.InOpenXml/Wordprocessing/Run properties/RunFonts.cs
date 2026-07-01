@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents font selection and theme font mapping for a text run in WordprocessingML documents.
 /// This class enables specification of font names and theme fonts for ASCII, High ANSI, East Asian, and complex script character ranges, as well as font type hints for advanced font selection and rendering.
 /// </summary>
+[DataContract]
 [XmlRoot("RunFonts", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RunFonts: ModelElement<DXW.RunFonts>
 {

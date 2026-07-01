@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents the legend that identifies data series and categories in a chart visualization.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.Legend))]
+[DataContract]
 [XmlRoot("Legend", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Legend : ModelElement<DXO16DCD.Legend> //: ExtendableElement
 {

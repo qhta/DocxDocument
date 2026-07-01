@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Its behavior is identical to a break character with null type and clear attributes, ending the current line and continuing on the next available line.
 /// </summary>
 [OpenXmlType(typeof(DXW.CarriageReturn))]
+[DataContract]
 [XmlRoot("CarriageReturn", Namespace = "DocumentModel.Wordprocessing")]
 public class CarriageReturn : ModelElement<DXW.CarriageReturn>, IRunContent
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a bi-level effect, which applies a threshold to convert an image or shape to strictly two levels (e.g., black and white).
 /// </summary>
 [OpenXmlType(typeof(DXD.BiLevel))]
+[DataContract]
 [XmlRoot("BiLevel", Namespace = "DocumentModel.Drawings")]
 public partial class BiLevel : ModelElement<DXD.BiLevel>
 {

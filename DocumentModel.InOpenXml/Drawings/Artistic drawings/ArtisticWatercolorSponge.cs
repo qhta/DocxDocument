@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic watercolor sponge effect, which simulates a watercolor texture with adjustable transparency and brush size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticWatercolorSponge))]
+[DataContract]
 [XmlRoot("ArtisticWatercolorSponge", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticWatercolorSponge : ModelElement<DXO10D.ArtisticWatercolorSponge>
 {

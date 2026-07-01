@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the Protection Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Protection))]
+[DataContract]
 [XmlRoot("Protection", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Protection : ModelElement<DXDC.Protection>
 {

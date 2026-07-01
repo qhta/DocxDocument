@@ -18,6 +18,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.ButtonGroup))]
+[DataContract]
 [XmlRoot("ButtonGroup", Namespace = "DocumentModel.CustomUI")]
 public partial class ButtonGroup : ModelElement<DXO10CUI.ButtonGroup>
 {

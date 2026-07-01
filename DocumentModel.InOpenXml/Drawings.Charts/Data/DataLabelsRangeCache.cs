@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   The cache is used to optimize access to the values referenced by a data labels range formula.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.DataLabelsRangeChache))]
+[DataContract]
 [XmlRoot("DataLabelsRangeCache", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelsRangeCache : ModelElement<DXO13DC.DataLabelsRangeChache>
 {

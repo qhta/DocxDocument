@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 /// This class provides configuration for the angle and scaling of the linear gradient, enabling precise control over gradient direction and behavior.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.LinearShadeProperties))]
+[DataContract]
 [XmlRoot("LinearShadeProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LinearShadeProperties : ModelElement<DXO10W.LinearShadeProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for specifying the behavior type, enabling advanced control over how document parts are inserted and managed within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Behaviors))]
+[DataContract]
 [XmlRoot("Behaviors", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Behaviors : ModelElement<DXW.Behaviors>
 {

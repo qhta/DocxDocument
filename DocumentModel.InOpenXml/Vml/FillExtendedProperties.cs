@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Fill Extended Properties.
 /// </summary>
 [OpenXmlType(typeof(DXVO.FillExtendedProperties))]
+[DataContract]
 [XmlRoot("FillExtendedProperties", Namespace = "DocumentModel.Vml")]
 public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProperties>
 {

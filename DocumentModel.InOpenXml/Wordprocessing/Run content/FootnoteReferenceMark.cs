@@ -6,6 +6,7 @@
 /// <remarks>A footnote reference mark is used to indicate the location in the document where a footnote is referenced.
 /// This element is typically rendered as a superscripted number in the document text. The actual footnote content is stored
 /// separately and linked to this reference mark.</remarks>
+[DataContract]
 [XmlRoot("FootnoteReferenceMark", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.FootnoteReferenceMark))]
 public class FootnoteReferenceMark: ModelElement<DXW.FootnoteReferenceMark>

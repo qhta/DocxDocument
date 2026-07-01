@@ -8,6 +8,7 @@ namespace DocumentModel.Vml;
 /// This class enables advanced customization and management of VML shapes, including hyperlinks, CSS references, coordinate space, borders, fill, stroke, shadow, text, image data, and more.
 /// </summary>
 [OpenXmlType(typeof(DXV.Shapetype))]
+[DataContract]
 [XmlRoot("ShapeType", Namespace = "DocumentModel.Vml")]
 public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectContent
 {

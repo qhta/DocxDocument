@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Line.
 /// </summary>
 [OpenXmlType(typeof(DXV.Line))]
+[DataContract]
 [XmlRoot("Line", Namespace = "DocumentModel.Vml")]
 public partial class Line : ModelElement<DXV.Line>, IEmbeddedObjectContent
 {

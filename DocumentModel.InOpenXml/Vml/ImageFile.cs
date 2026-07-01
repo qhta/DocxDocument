@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Image File.
 /// </summary>
 [OpenXmlType(typeof(DXV.ImageFile))]
+[DataContract]
 [XmlRoot("ImageFile", Namespace = "DocumentModel.Vml")]
 public partial class ImageFile : ModelElement<DXV.ImageFile>, IEmbeddedObjectContent
 {

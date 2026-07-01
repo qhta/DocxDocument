@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:imageControl.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.ImageControl))]
+[DataContract]
 [XmlRoot("ImageControl", Namespace = "DocumentModel.CustomUI")]
 public partial class ImageControl : ModelElement<DXO10CUI.ImageControl>
 {

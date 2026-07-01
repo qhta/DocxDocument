@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for referencing a document part to be used as placeholder text, enabling advanced customization of placeholder content for SDTs.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtPlaceholder))]
+[DataContract]
 [XmlRoot("SdtPlaceholder", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtPlaceholder : ModelElement<DXW.SdtPlaceholder>
 {

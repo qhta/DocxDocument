@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AbstractParagraphProperties"/> and is used to specify formatting, layout, and other paragraph-level settings that apply to paragraphs at a particular numbering level, enabling advanced list and outline formatting.
 /// </summary>
 [OpenXmlType(typeof(DX.OpenXmlElement))]
+[DataContract]
 [XmlRoot("NumberingLevelParagraphProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingLevelParagraphProperties : BaseParagraphProperties<DXW.PreviousParagraphProperties>
 {

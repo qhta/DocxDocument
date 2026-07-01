@@ -8,6 +8,7 @@ namespace DocumentModel.Math;
 ///   (see the plcHide documentation for more information). 
 /// </summary>
 [OpenXmlType(typeof(MatrixRow))]
+[DataContract]
 [XmlRoot("Matrix", Namespace = "DocumentModel.Math")]
 public partial class Matrix : ModelElementCollection<MatrixRow, DXM.Matrix, DXM.MatrixRow>, IArgumentCollection, ICommonMathContent
 {

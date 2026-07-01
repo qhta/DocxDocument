@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This extension allows custom properties for individual data labels.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DLblExtension))]
+[DataContract]
 [XmlRoot("DataLabelExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelExtension : Extension<DXDC.DLblExtension>
 {

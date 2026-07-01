@@ -2,7 +2,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Provides data for source-related events.
 /// </summary>
-[XmlRoot("SourceEventArgs", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SourceEventArgs : EventArgs
 {
  /// <summary>

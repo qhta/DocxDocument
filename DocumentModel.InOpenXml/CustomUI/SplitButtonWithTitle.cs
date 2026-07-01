@@ -13,6 +13,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.SplitButtonWithTitle))]
+[DataContract]
 [XmlRoot("SplitButtonWithTitle", Namespace = "DocumentModel.CustomUI")]
 public partial class SplitButtonWithTitle : ModelElement<DXO10CUI.SplitButtonWithTitle>
 {

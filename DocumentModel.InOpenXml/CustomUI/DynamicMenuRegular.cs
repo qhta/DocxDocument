@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:dynamicMenu.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.DynamicMenuRegular))]
+[DataContract]
 [XmlRoot("DynamicMenuRegular", Namespace = "DocumentModel.CustomUI")]
 public partial class DynamicMenuRegular : ModelElement<DXO10CUI.DynamicMenuRegular>
 {

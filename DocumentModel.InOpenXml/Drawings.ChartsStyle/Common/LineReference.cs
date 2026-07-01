@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 ///    LineReference in ChartsStyle extends LineReference in Drawings with StyleColor.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.LineReference))]
+[DataContract]
 [XmlRoot("LineReference", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class LineReference : DocumentModel.Drawings.LineReference
 {

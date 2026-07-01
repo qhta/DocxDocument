@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables fine-grained control over user interaction with content parts in Office drawings.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ContentPartLocks))]
+[DataContract]
 [XmlRoot("ContentPartLocks", Namespace = "DocumentModel.Drawings")]
 public partial class ContentPartLocks : ModelElement<DXO10D.ContentPartLocks>, IOfficeArtExtendableElement
 {

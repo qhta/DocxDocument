@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the NumericDimension Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.NumericDimension))]
+[DataContract]
 [XmlRoot("NumericDimension", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class NumericDimension : ModelElementCollection<NumericLevel, DXO16DCD.NumericDimension, DXO16DCD.NumericLevel>
 {

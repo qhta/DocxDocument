@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlValueColorEndPositionElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlValueColorEndPositionElement))]
+[DataContract]
 [XmlRoot("OpenXmlValueColorEndPositionElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class OpenXmlValueColorEndPositionElement : ModelElement<DXO16DCD.OpenXmlValueColorEndPositionElement>
 {

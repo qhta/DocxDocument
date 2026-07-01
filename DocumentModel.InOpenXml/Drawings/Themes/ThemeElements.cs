@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents the main elements of a theme, including color scheme, font scheme, and format scheme.
 /// </summary>
 [OpenXmlType(typeof(DXD.ThemeElements))]
+[DataContract]
 [XmlRoot("ThemeElements", Namespace = "DocumentModel.Drawings")]
 public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendableElement
 {

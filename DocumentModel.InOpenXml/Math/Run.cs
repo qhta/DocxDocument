@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   This element specifies a run of mathematical text.
 /// </summary>
 [OpenXmlType(typeof(DXM.Run))]
+[DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Math")]
 public partial class Run : ModelElement<DXM.Run>, IBidirectionalContent, IMathArgumentContent, IOfficeMathContent, IMathParagraphContent
 {

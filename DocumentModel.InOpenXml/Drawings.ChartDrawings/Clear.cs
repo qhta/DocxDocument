@@ -15,6 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   essential for creating interactive map charts that accurately represent data in geographic context.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Clear))]
+[DataContract]
 [XmlRoot("Clear", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Clear : ModelElement<DXO16DCD.Clear>
 {

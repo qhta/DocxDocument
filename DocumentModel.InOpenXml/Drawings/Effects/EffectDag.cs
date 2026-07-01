@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings;
 ///   </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.EffectDag))]
+[DataContract]
 [XmlRoot("EffectDag", Namespace = "DocumentModel.Drawings")]
 public partial class EffectDag : ModelElement<DXD.EffectDag>
 {

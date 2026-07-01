@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:toggleButton.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.VisibleToggleButton))]
+[DataContract]
 [XmlRoot("VisibleToggleButton", Namespace = "DocumentModel.CustomUI")]
 public partial class VisibleToggleButton : ModelElement<DXO10CUI.VisibleToggleButton>
 {

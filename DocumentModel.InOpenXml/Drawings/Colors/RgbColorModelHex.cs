@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 /// with optional modifications like tint, shade, alpha transparency, and hue/saturation/luminance adjustments.
 /// </summary>
 [OpenXmlType(typeof(DXD.RgbColorModelHex))]
+[DataContract]
 [XmlRoot("RgbColorModelHex", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelHex : DrawingsColorBase<DXD.RgbColorModelHex>, ISchemeBaseColor, IDrawingColor
 {

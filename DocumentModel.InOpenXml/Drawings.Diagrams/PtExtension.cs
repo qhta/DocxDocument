@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the PtExtension class.
 /// </summary>
 [OpenXmlType(typeof(DXD.PtExtension))]
+[DataContract]
 [XmlRoot("PtExtension", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class PtExtension : Extension<DXD.PtExtension>
 {

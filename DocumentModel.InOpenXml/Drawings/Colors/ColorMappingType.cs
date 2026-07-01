@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Provides configuration for mapping theme colors to specific uses in shapes, text, and backgrounds, and supports extensibility for additional color mapping data.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorMappingType))]
+[DataContract]
 [XmlRoot("ColorMappingType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ColorMappingType : DMD.ColorMap<DXD.ColorMappingType>, IExtendableElement
 {

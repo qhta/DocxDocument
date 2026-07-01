@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   3D side wall formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SideWall))]
+[DataContract]
 [XmlRoot("SideWall", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SideWall : ModelElement<DXDC.SideWall>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the PivotSource Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PivotSource))]
+[DataContract]
 [XmlRoot("PivotSource", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PivotSource : ModelElement<DXDC.PivotSource>
 {

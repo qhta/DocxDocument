@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents the background color, supporting multiple color models and types for flexible color specification.
 /// </summary>
 [OpenXmlType(typeof(DXD.BackgroundColor))]
+[DataContract]
 [XmlRoot("BackgroundColor", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundColor : ColorHolder<DXD.BackgroundColor>
 {

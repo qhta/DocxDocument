@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   applying the same information to all the contents of the run. .
 /// </summary>
 [OpenXmlType(typeof(DXW.Run))]
+[DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
 public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,

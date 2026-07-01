@@ -22,6 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   map-based visualizations where users can navigate between different levels of geographic detail.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntities))]
+[DataContract]
 [XmlRoot("GeoChildEntities", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoChildEntities : ModelElementCollection<GeoHierarchyEntity, DXO16DCD.GeoChildEntities, DXO16DCD.GeoHierarchyEntity>
 {

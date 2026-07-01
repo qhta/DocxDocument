@@ -3,6 +3,7 @@ namespace DocumentModel.CustomUI;
 ///   Defines the BackstageDropDown Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.BackstageDropDown))]
+[DataContract]
 [XmlRoot("BackstageDropDown", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageDropDown : ModelElement<DXO10CUI.BackstageDropDown>
 {

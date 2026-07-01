@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlUpdateData(nameof(UpdateLevels))]
 [OpenXmlLoadData(nameof(LoadLevels))]
+[DataContract]
 [XmlRoot("NumberingLevels", Namespace = "DocumentModel.Wordprocessing")]
 public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.AbstractNum, DXW.Level>
 {

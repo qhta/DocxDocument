@@ -12,6 +12,7 @@ namespace DocumentModel.Math;
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
 [OpenXmlType(typeof(DXM.EquationArray))]
+[DataContract]
 [XmlRoot("EquationArray", Namespace = "DocumentModel.Math")]
 public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
 {

@@ -15,6 +15,7 @@ namespace DocumentModel.Math;
 ///   The contents of an oMath block do not differ between display zone containers and independent inline math zones.
 /// </summary>
 [OpenXmlType(typeof(DXM.OfficeMath))]
+[DataContract]
 [XmlRoot("OfficeMath", Namespace = "DocumentModel.Math")]
 public class OfficeMath : ModelElement<DXM.OfficeMath>, /*IElementCollection<IOfficeMathContent>, */ ICommonMathContent, IMathParagraphContent
 {

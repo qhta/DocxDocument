@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes style settings for a shape in chart drawings, including references to line, fill, effect, and font formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.Style))]
+[DataContract]
 [XmlRoot("Style", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class Style : ModelElement<DXDCD.Style>
 {

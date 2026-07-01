@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for vertical size adjustment, including the reference point and percentage height relative to another element.
 /// </summary>
 [OpenXmlType(typeof(DXO10WD.RelativeHeight))]
+[DataContract]
 [XmlRoot("RelativeHeight", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class RelativeHeight : ModelElement<DXO10WD.RelativeHeight>
 {

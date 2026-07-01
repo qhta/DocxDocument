@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an audio CD time type, specifying the track number and time position on an audio CD.
 /// </summary>
 [OpenXmlType(typeof(DXD.AudioCDTimeType))]
+[DataContract]
 [XmlRoot("AudioCDTimeType", Namespace = "DocumentModel.Drawings")]
 public partial class AudioCDTimeType : ModelElement<DXD.AudioCDTimeType>
 {

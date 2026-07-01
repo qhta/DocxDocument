@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for controlling page usage, virtual page dimensions, and font size scaling, enabling consistent rendering and layout preservation when displaying ink annotations or drawings.
 /// </summary>
 [OpenXmlType(typeof(DXW.ReadModeInkLockDown))]
+[DataContract]
 [XmlRoot("ReadModeInkLockDown", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class ReadModeInkLockDown : ModelElement<DXW.ReadModeInkLockDown>
 {

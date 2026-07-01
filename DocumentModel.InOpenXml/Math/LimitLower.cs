@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   and reduced-size text immediately below it. Examples of limLow include lim and max.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitLower))]
+[DataContract]
 [XmlRoot("LimitLower", Namespace = "DocumentModel.Math")]
 public partial class LimitLower : ModelElement<DXM.LimitLower>, ICommonMathContent
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "IFramesetItem"/> and provides properties for frame size, name, source file, margins, scrollbar visibility, resize restrictions, and file linking, enabling advanced configuration and management of frames within framesets.
 /// </summary>
 [OpenXmlType(typeof(DXW.Frame))]
+[DataContract]
 [XmlRoot("Frame", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
 {

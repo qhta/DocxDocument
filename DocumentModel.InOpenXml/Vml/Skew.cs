@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Skew Transform.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Skew))]
+[DataContract]
 [XmlRoot("Skew", Namespace = "DocumentModel.Vml")]
 public partial class Skew : ModelElement<DXVO.Skew>
 {

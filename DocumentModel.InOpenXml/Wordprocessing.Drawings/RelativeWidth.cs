@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for horizontal size adjustment, including the reference object and percentage width relative to another element.
 /// </summary>
 [OpenXmlType(typeof(DXO10WD.RelativeWidth))]
+[DataContract]
 [XmlRoot("RelativeWidth", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class RelativeWidth : ModelElement<DXO10WD.RelativeWidth>
 {

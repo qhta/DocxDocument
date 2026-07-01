@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an area chart, including grouping, color variation, series, labels, drop lines, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.AreaChart))]
+[DataContract]
 [XmlRoot("AreaChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AreaChart : ModelElement<DXDC.AreaChart>
 {

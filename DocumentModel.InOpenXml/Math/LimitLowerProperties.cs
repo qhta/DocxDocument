@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Lower Limit Properties.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitLowerProperties))]
+[DataContract]
 [XmlRoot("LimitLowerProperties", Namespace = "DocumentModel.Math")]
 public partial class LimitLowerProperties : ModelElement<DXM.LimitLowerProperties>
 {

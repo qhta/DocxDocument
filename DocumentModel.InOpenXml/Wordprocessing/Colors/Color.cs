@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AnyColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
+[DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Color : AnyColor<DXW.Color>
 {

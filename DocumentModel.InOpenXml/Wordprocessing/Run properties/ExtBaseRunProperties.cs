@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Extended base interface for run properties, containing additional character-level formatting properties not applied to <see cref = "BaseRunProperties{T}"/>.
 /// Includes support for complex script, right-to-left text, highlighting, OpenType features, and Office 2010+ advanced effects.
 /// </summary>
+[DataContract]
 [XmlRoot("ExtBaseRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ExtBaseRunProperties<T> : BaseRunProperties<T> where T : DX.OpenXmlCompositeElement
 {

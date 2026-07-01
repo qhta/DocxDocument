@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic chalk sketch effect, which simulates a chalk drawing with adjustable transparency and pressure.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticChalkSketch))]
+[DataContract]
 [XmlRoot("ArtisticChalkSketch", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticChalkSketch : ModelElement<DXO10D.ArtisticChalkSketch>
 {

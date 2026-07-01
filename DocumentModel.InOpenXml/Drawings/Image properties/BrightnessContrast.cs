@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents brightness and contrast adjustment settings for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.BrightnessContrast))]
+[DataContract]
 [XmlRoot("BrightnessContrast", Namespace = "DocumentModel.Drawings")]
 public partial class BrightnessContrast : ModelElement<DXO10D.BrightnessContrast>, IExtendableElement
 {

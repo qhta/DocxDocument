@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the FilteredSurfaceSeries Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredSurfaceSeries))]
+[DataContract]
 [XmlRoot("FilteredSurfaceSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredSurfaceSeries : ModelElement<DXDC.SurfaceChartSeries>
 {

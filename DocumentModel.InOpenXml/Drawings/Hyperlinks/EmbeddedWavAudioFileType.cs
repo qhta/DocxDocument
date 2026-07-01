@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents an embedded WAV audio file in a drawing object.
 /// </summary>
 [OpenXmlType(typeof(DXD.EmbeddedWavAudioFileType))]
+[DataContract]
 [XmlRoot("EmbeddedWavAudioFileType", Namespace = "DocumentModel.Drawings")]
 public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudioFileType>
 {

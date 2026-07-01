@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Diagram to Animate.
 /// </summary>
 [OpenXmlType(typeof(DXD.Diagram))]
+[DataContract]
 [XmlRoot("Diagram", Namespace = "DocumentModel.Drawings")]
 public partial class Diagram : ModelElement<DXD.Diagram>
 {

@@ -11,6 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.TextBody))]
+[DataContract]
 [XmlRoot("TextBody", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class TextBody : ModelElement<DXDCD.TextBody>
 {

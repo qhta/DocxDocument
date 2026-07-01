@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:editBox.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.BackstageEditBox))]
+[DataContract]
 [XmlRoot("BackstageEditBox", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageEditBox : ModelElement<DXO10CUI.BackstageEditBox>
 {

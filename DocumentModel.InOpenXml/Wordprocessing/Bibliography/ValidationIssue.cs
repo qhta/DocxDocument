@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a validation issue found in bibliography sources.
 /// </summary>
+[DataContract]
 [XmlRoot("ValidationIssue", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ValidationIssue : ModelElement //<DXW.ValidationIssue>
 {

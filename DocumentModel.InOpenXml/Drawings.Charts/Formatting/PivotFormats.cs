@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Pivot chart format persistence data.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PivotFormats))]
+[DataContract]
 [XmlRoot("PivotFormats", Namespace = "DocumentModel.Drawings.Charts")]
 public class PivotFormats : ModelElementCollection<PivotFormat, DXDC.PivotFormats, DXDC.PivotFormat>
 {

@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   serves as a line break point, or receives the correct spacing for the mathematical differential. 
 /// </summary>
 [OpenXmlType(typeof(DXM.BoxProperties))]
+[DataContract]
 [XmlRoot("BoxProperties", Namespace = "DocumentModel.Math")]
 public partial class BoxProperties : ModelElement<DXM.BoxProperties>
 {

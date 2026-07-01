@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Collection of all document properties that is divided to built-in properties and custom properties.
 /// </summary>
+[DataContract]
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
 [JsonConverter(typeof(DocumentPropertiesJsonConverter))]
 public partial class DocumentProperties : ModelElement, IWordprocessingDocumentAware,

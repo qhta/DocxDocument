@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series axis for a chart, including tick label and mark skipping, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SeriesAxis))]
+[DataContract]
 [XmlRoot("SeriesAxis", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SeriesAxis : ModelElement<DXDC.SeriesAxis>
 {

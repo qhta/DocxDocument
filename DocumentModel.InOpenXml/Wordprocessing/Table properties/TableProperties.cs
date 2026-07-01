@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   but can be overridden by individual table-level exception, row, and cell level properties as defined by each property.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableProperties))]
+[DataContract]
 [XmlRoot("TableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableProperties : ExtBaseTableProperties<DXW.TableProperties>
 {

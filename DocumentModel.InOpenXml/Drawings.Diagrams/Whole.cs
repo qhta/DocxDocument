@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Whole E2O Formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Whole))]
+[DataContract]
 [XmlRoot("Whole", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Whole : ModelElement<DXDD.Whole>
 {

@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// Represents the set of 3D properties for a drawing element in a Wordprocessing document.
 /// This class provides configuration for extrusion height, contour width, preset material, bevel effects, and color settings, enabling advanced 3D appearance and rendering for graphical objects.
 /// </summary>
+[DataContract]
 [XmlRoot("Properties3D", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Properties3D : IDrawingProperty
 {

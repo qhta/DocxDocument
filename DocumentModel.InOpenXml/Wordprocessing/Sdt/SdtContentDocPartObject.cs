@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for filtering document parts by gallery and category, and for indicating built-in document parts, enabling advanced customization and management of document part selection in SDTs.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtContentDocPartObject))]
+[DataContract]
 [XmlRoot("SdtContentDocPartObject", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtContentDocPartObject : ModelElement<DXW.SdtContentDocPartObject>
 {

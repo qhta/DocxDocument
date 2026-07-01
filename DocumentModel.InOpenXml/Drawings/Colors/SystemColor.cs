@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 /// theme and accessibility settings, providing better integration with the desktop environment.
 /// </summary>
 [OpenXmlType(typeof(DXD.SystemColor))]
+[DataContract]
 [XmlRoot("SystemColor", Namespace = "DocumentModel.Drawings")]
 public partial class SystemColor : DrawingsColorBase<DXD.SystemColor>, ISchemeBaseColor, IDrawingColor
 {

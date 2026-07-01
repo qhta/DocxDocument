@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   providing powerful data visualization capabilities across the Office suite.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Chart))]
+[DataContract]
 [XmlRoot("Chart", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Chart : ModelElement<DXO16DCD.Chart>
 {

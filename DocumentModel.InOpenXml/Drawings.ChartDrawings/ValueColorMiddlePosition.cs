@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the ValueColorMiddlePosition Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ValueColorMiddlePosition))]
+[DataContract]
 [XmlRoot("ValueColorMiddlePosition", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ValueColorMiddlePosition : ModelElement<DXO16DCD.ValueColorMiddlePosition>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// Collection of all document properties that is divided to three parts: core properties, 
 /// content properties, and statistic properties. 
 /// </summary>
+[DataContract]
 [XmlRoot("BuiltInProperties", Namespace = "DocumentModel")]
 public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAware, IElementCollection<BuiltInProperty>
 {

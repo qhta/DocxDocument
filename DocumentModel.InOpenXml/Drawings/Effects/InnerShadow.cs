@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents an inner shadow effect, including blur, offset, direction, and color options.
 /// </summary>
 [OpenXmlType(typeof(DXD.InnerShadow))]
+[DataContract]
 [XmlRoot("InnerShadow", Namespace = "DocumentModel.Drawings")]
 public partial class InnerShadow : ModelElement<DXD.InnerShadow>
 {

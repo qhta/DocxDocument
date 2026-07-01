@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows configuration of label content, formatting, position, and display options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DataLabel))]
+[DataContract]
 [XmlRoot("DataLabel", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabel : ModelElement<DXDC.DataLabel>
 {

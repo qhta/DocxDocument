@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for div identification, blockquote and body flags, margins, borders, and child div elements, enabling advanced configuration and management of HTML div structures within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Div))]
+[DataContract]
 [XmlRoot("DivElement", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DivElement : ModelElement<DXW.Div>
 {

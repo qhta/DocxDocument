@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Specifies a solid color fill. The shape is filled entirely with the specified color. 
 /// </summary>
 [OpenXmlType(typeof(DXD.SolidFill))]
+[DataContract]
 [XmlRoot("SolidFill", Namespace = "DocumentModel.Drawings")]
 public partial class SolidFill : Fill<DXD.SolidFill>
 {

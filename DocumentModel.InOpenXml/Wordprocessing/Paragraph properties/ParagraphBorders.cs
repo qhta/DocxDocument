@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring borders on all sides of a paragraph, as well as between identical paragraphs and between facing pages, enabling advanced formatting and visual separation of paragraph content.
 /// </summary>
 [OpenXmlType(typeof(DXW.ParagraphBorders))]
+[DataContract]
 [XmlRoot("ParagraphBorders", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphBorders : ModelElement<DXW.ParagraphBorders>
 {

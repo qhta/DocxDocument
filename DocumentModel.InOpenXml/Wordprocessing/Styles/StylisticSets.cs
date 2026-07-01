@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "StyleSet"/> elements, enabling advanced configuration and organization of stylistic sets for document formatting.
 /// </summary>
 [OpenXmlType(typeof(StyleSet))]
+[DataContract]
 [XmlRoot("StylisticSets", Namespace = "DocumentModel.Wordprocessing")]
 public class StylisticSets : ModelElementCollection<StyleSet, DXO10W.StylisticSets, DXO10W.StyleSet>
 {

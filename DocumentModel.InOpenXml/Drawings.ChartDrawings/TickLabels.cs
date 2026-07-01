@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the TickLabels Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.TickLabels))]
+[DataContract]
 [XmlRoot("TickLabels", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class TickLabels : ModelElement<DXO16DCD.TickLabels>
 {

@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for configuring the camera and lighting rig, enabling advanced 3D rendering and visualization of graphical objects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.Scene3D))]
+[DataContract]
 [XmlRoot("Scene3D", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Scene3D : ModelElement<DXO10W.Scene3D>, IDrawingProperty
 {

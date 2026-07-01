@@ -18,6 +18,7 @@ namespace DocumentModel;
 ///   3D model support and contain a 3D shape, while a fallback provides a 2D image for older applications.
 /// </remarks>
 [OpenXmlType(typeof(DX.AlternateContentChoice))]
+[DataContract]
 [XmlRoot("AlternateContentChoice", Namespace = "DocumentModel")]
 public partial class AlternateContentChoice : ModelElement<DX.AlternateContentChoice> //, IElementCollection<ModelElement>
 {

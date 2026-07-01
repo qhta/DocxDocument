@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class enables advanced 3D formatting and appearance customization in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.BevelType))]
+[DataContract]
 [XmlRoot("BevelType", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class BevelType : ModelElement<DXO10W.BevelType>
 {

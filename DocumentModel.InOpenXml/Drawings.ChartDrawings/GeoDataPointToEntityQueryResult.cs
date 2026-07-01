@@ -23,6 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   association is specified, supporting responsive map chart rendering while minimizing external service dependencies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQueryResult))]
+[DataContract]
 [XmlRoot("GeoDataPointToEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoDataPointToEntityQueryResult : ModelElement<DXO16DCD.GeoDataPointToEntityQueryResult>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for referencing numbering levels, numbering definition instances, previous numbering changes, and inserted numbering properties, enabling advanced list and outline numbering management and revision tracking.
 /// </summary>
 [OpenXmlType(typeof(DXW.NumberingProperties))]
+[DataContract]
 [XmlRoot("NumberingProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingProperties : ModelElement<DXW.NumberingProperties>
 {

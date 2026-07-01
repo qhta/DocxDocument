@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlSolidColorFillPropertiesElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlSolidColorFillPropertiesElement))]
+[DataContract]
 [XmlRoot("OpenXmlSolidColorFillPropertiesElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class OpenXmlSolidColorFillPropertiesElement : ModelElement<DXO16DCD.OpenXmlSolidColorFillPropertiesElement>
 {

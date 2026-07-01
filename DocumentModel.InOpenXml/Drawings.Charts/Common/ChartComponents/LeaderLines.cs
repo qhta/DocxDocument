@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Leader Lines.
 /// </summary>
 [OpenXmlType(typeof(DXDC.LeaderLines))]
+[DataContract]
 [XmlRoot("LeaderLines", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LeaderLines : ModelElement<DXDC.LeaderLines>
 {

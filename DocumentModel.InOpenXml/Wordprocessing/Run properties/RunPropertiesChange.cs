@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class annotates <see cref = "PreviousRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for text runs.
 /// </summary>
 [OpenXmlType(typeof(DXW.RunPropertiesChange))]
+[DataContract]
 [XmlRoot("RunPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RunPropertiesChange : IdentifiedChange<DXW.RunPropertiesChange>
 {

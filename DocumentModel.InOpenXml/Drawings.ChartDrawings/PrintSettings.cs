@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the PrintSettings Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.PrintSettings))]
+[DataContract]
 [XmlRoot("PrintSettings", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class PrintSettings : ModelElement<DXO16DCD.PrintSettings>
 {

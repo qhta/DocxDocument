@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents an extension for line properties, providing additional configuration or metadata.
 /// </summary>
 [OpenXmlType(typeof(DXD.LinePropertiesExtension))]
+[DataContract]
 [XmlRoot("LinePropertiesExtension", Namespace = "DocumentModel.Drawings")]
 public partial class LinePropertiesExtension : ModelElement<DXD.LinePropertiesExtension>, IExtension
 {

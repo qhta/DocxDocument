@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for page number format, starting page number, chapter heading style, and chapter separator character, enabling advanced configuration of page numbering and chapter formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.PageNumberType))]
+[DataContract]
 [XmlRoot("PageNumberType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISectionPropertiesContent
 {

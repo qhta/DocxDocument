@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the RelationshipIdType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.RelationshipIdType))]
+[DataContract]
 [XmlRoot("RelationshipIdType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class RelationshipIdType : ModelElement<DXDC.RelationshipIdType>
 {

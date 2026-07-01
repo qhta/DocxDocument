@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables advanced visual effects for lines, such as hand-drawn or artistic styles, by configuring geometry and sketch parameters.
 /// </summary>
 [OpenXmlType(typeof(DXO21DSS.LineSketchStyleProperties))]
+[DataContract]
 [XmlRoot("LineSketchStyleProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LineSketchStyleProperties : ModelElement<DXO21DSS.LineSketchStyleProperties>, IOfficeArtExtendableElement
 {

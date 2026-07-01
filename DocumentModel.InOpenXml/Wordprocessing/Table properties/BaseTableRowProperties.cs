@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains common properties for table row formatting, layout, and behavior, including height, splitting, header status, alignment, cell spacing, grid columns, preferred widths, HTML div association, and conditional formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableRowProperties))]
+[DataContract]
 [XmlRoot("BaseTableRowProperties", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class BaseTableRowProperties<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -101,6 +102,7 @@ public abstract partial class BaseTableRowProperties<T> : ModelElement<T> where 
 /// <summary>
 /// Concrete class for BaseTableRowProperties.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseTableRowProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class BaseTableRowProperties : BaseTableRowProperties<DXW.TableRowProperties>
 {

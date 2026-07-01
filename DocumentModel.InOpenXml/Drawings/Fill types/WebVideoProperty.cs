@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents properties for an embedded web video, including HTML markup and display dimensions.
 /// </summary>
 [OpenXmlType(typeof(DXO13WD.WebVideoProperty))]
+[DataContract]
 [XmlRoot("WebVideoProperty", Namespace = "DocumentModel.Drawings")]
 public partial class WebVideoProperty : ModelElement<DXO13WD.WebVideoProperty>
 {

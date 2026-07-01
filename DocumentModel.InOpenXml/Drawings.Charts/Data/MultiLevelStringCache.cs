@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a cache of multi-level string values for a chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.MultiLevelStringCache))]
+[DataContract]
 [XmlRoot("MultiLevelStringCache", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class MultiLevelStringCache : ModelElement<DXDC.MultiLevelStringCache>
 {

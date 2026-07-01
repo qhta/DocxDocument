@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic pastels smooth effect, which simulates a smooth pastel drawing style with adjustable transparency and brush size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPastelsSmooth))]
+[DataContract]
 [XmlRoot("ArtisticPastelsSmooth", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPastelsSmooth : ModelElement<DXO10D.ArtisticPastelsSmooth>
 {

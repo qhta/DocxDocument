@@ -19,6 +19,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.ContextMenu))]
+[DataContract]
 [XmlRoot("ContextMenu", Namespace = "DocumentModel.CustomUI")]
 public partial class ContextMenu : ModelElement<DXO10CUI.ContextMenu>
 {

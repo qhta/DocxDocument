@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents properties for a text paragraph, including margins, indentation, alignment, tab size, line breaks, font alignment, spacing, and other formatting options.
 /// </summary>
 [OpenXmlType(typeof(DXD.ParagraphProperties))]
+[DataContract]
 [XmlRoot("ParagraphProperties", Namespace = "DocumentModel.Drawings")]
 public partial class ParagraphProperties : ModelElement<DXD.ParagraphProperties>
 {

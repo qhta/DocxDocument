@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the shape properties used when the fill is inverted.
 /// </summary>
 [OpenXmlType(typeof(DXO10DC.InvertSolidFillFormat))]
+[DataContract]
 [XmlRoot("InvertSolidFillFormat", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class InvertSolidFillFormat : ModelElement<DXO10DC.InvertSolidFillFormat>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the visual appearance, size, and shape properties of the marker.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Marker))]
+[DataContract]
 [XmlRoot("Marker", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Marker : ModelElement<DXDC.Marker>
 {

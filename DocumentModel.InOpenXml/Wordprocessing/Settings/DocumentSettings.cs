@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Enables advanced configuration and management of Wordprocessing document features.
 /// </summary>
 [OpenXmlType(typeof(DXW.Settings))]
+[DataContract]
 [XmlRoot("DocumentSettings", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess]
 public sealed partial class DocumentSettings: ModelElement<DXW.Settings>

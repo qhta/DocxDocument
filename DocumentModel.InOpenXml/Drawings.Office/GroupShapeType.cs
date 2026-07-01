@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the GroupShapeType Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShapeType))]
+[DataContract]
 [XmlRoot("GroupShapeType", Namespace = "DocumentModel.Drawings.Office")]
 public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   All drawing color types derive from class..
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorType))]
+[DataContract]
 [XmlRoot("ColorType", Namespace = "DocumentModel.Drawings")]
 [OpenXmlLoadData(nameof(LoadColorFromOpenXmlStatic))]
 [OpenXmlUpdateData(nameof(UpdateColorInOpenXmlStatic))]

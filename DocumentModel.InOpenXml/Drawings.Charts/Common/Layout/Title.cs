@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Title.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Title))]
+[DataContract]
 [XmlRoot("Title", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Title : ModelElement<DXDC.Title>
 {

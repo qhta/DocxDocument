@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes the ending anchor point for a shape in chart drawings, including horizontal and vertical position settings.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.ToAnchor))]
+[DataContract]
 [XmlRoot("ToAnchor", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public class ToAnchor : MarkerType<DXDCD.ToAnchor>
 {

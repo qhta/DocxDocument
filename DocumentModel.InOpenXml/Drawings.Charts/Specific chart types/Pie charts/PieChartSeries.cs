@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series in a pie chart, including index, order, text, shape properties, picture options, explosion, data points, labels, axis data, values, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PieChartSeries))]
+[DataContract]
 [XmlRoot("PieChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PieChartSeries : ModelElement<DXDC.PieChartSeries>
 {

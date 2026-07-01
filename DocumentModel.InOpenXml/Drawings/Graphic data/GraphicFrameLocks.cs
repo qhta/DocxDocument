@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents locking options for a graphic frame, restricting user actions such as grouping, selection, movement, and resizing.
 /// </summary>
 [OpenXmlType(typeof(DXD.GraphicFrameLocks))]
+[DataContract]
 [XmlRoot("GraphicFrameLocks", Namespace = "DocumentModel.Drawings")]
 public partial class GraphicFrameLocks : ModelElement<DXD.GraphicFrameLocks>, IExtendableElement
 {

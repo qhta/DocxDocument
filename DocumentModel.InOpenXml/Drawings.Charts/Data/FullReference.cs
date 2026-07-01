@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a full reference to a data source range.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FullReference))]
+[DataContract]
 [XmlRoot("FullReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FullReference : ModelElement<DXO13DC.FullReference>
 {

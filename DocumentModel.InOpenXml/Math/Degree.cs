@@ -6,6 +6,7 @@ namespace DocumentModel.Math;
 ///   When omitted, the square root function, as in √x, is assumed.
 /// </summary>
 [OpenXmlType(typeof(DXM.Degree))]
+[DataContract]
 [XmlRoot("Degree", Namespace = "DocumentModel.Math")]
 public partial class Degree : OfficeMathArgumentType<DXM.Degree>
 {

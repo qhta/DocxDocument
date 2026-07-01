@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a tint effect, allowing adjustment of hue and amount for color modification.
 /// </summary>
 [OpenXmlType(typeof(DXD.TintEffect))]
+[DataContract]
 [XmlRoot("TintEffect", Namespace = "DocumentModel.Drawings")]
 public partial class TintEffect : ModelElement<DXD.TintEffect>
 {

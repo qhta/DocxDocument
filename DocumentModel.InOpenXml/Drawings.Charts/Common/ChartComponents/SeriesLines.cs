@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// They are not used in other types of charts, such as line charts or pie charts.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SeriesLines))]
+[DataContract]
 [XmlRoot("SeriesLines", Namespace = "DocumentModel.Drawings.Charts")]
 public class SeriesLines : ChartLinesType<DXDC.SeriesLines>
 {

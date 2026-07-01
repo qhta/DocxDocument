@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents an extension for a bubble chart, providing additional series filtering capabilities.
 /// </summary>
+[DataContract]
 [XmlRoot("BubbleChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BubbleChartExtension : Extension
 {

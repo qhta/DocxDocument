@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MajorGridlinesGridlines Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MajorGridlinesGridlines))]
+[DataContract]
 [XmlRoot("MajorGridlinesGridlines", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MajorGridlinesGridlines : ModelElement<DXO16DCD.MajorGridlinesGridlines>
 {

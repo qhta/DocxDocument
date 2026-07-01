@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes HeightMeasure values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
+[DataContract]
 [XmlRoot("HeightMeasureJsonConverter", Namespace = "DocumentModel.Wordprocessing")]
 public class HeightMeasureJsonConverter : JsonConverter<DMW.HeightMeasure>
 {

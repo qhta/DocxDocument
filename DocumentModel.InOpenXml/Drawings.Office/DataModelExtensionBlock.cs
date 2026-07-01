@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the DataModelExtensionBlock Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.DataModelExtensionBlock))]
+[DataContract]
 [XmlRoot("DataModelExtensionBlock", Namespace = "DocumentModel.Drawings.Office")]
 public partial class DataModelExtensionBlock : ModelElement<DXOD.DataModelExtensionBlock>
 {

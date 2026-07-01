@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the GroupShapeNonVisualProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShapeNonVisualProperties))]
+[DataContract]
 [XmlRoot("GroupShapeNonVisualProperties", Namespace = "DocumentModel.Drawings.Office")]
 public partial class GroupShapeNonVisualProperties : ModelElement<DXOD.GroupShapeNonVisualProperties>
 {

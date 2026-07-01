@@ -27,6 +27,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the hierarchical path from detailed to broader regions), data aggregation (rolling up values from child entities
 ///   to parent entities), and geographic context display (showing which larger regions contain a selected area).
 /// </remarks>
+[DataContract]
 [XmlRoot("GeoParentEntitiesQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoParentEntitiesQueryResults : ModelElementCollection<GeoParentEntitiesQueryResult, DXO16DCD.GeoParentEntitiesQueryResults, DXO16DCD.GeoParentEntitiesQueryResult>
 {

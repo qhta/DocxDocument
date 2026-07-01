@@ -18,6 +18,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   clarity, allowing charts to be tailored to specific audiences and use cases.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabelVisibilities))]
+[DataContract]
 [XmlRoot("DataLabelVisibilities", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class DataLabelVisibilities : ModelElement<DXO16DCD.DataLabelVisibilities>
 {

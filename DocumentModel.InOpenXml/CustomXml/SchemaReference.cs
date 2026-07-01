@@ -11,6 +11,7 @@ namespace DocumentModel.CustomXml;
 ///   enabling validation and structure definition for custom XML data. The referenced schema may be
 ///   resolved from the document's <see cref = "SchemaLibrary"/> or from external schema sources.
 /// </remarks>
+[DataContract]
 [XmlRoot("SchemaReference", Namespace = "DocumentModel.CustomXml")]
 public partial class SchemaReference : CollectionItem
 {

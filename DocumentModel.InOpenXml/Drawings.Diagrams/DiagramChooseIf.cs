@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   If.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DiagramChooseIf))]
+[DataContract]
 [XmlRoot("DiagramChooseIf", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class DiagramChooseIf : ModelElement<DXDD.DiagramChooseIf>
 {

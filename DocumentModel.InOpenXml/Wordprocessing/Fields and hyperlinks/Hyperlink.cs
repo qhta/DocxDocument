@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "IParagraphContent"/>, <see cref = "ISdtRunContent"/>, <see cref = "IBidirectionalContent"/>, and <see cref = "IMathArgumentContent"/>, enabling advanced linking, navigation, and integration of hyperlinks within paragraphs, structured document tags, bidirectional content, and mathematical arguments.
 /// </summary>
 [OpenXmlType(typeof(DXW.Hyperlink))]
+[DataContract]
 [XmlRoot("Hyperlink", Namespace = "DocumentModel.Wordprocessing")]
 public class Hyperlink : Hyperlink<DXW.Hyperlink>
 {

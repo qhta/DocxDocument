@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AbstractParagraphProperties"/> and is used to store the state of paragraph formatting before a tracked change, enabling comparison and revision management in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.PreviousParagraphProperties))]
+[DataContract]
 [XmlRoot("PreviousParagraphProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PreviousParagraphProperties : BaseParagraphProperties<DXW.PreviousParagraphProperties>
 {

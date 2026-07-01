@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class stores the number of points, the actual string points, and any extension data associated with the string cache.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StringCache))]
+[DataContract]
 [XmlRoot("StringCache", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StringCache : ModelElement<DXDC.StringCache>
 {

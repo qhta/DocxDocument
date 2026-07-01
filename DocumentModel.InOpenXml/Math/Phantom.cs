@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   and suppressing part of the glyph for spacing considerations.
 /// </summary>
 [OpenXmlType(typeof(DXM.Phantom))]
+[DataContract]
 [XmlRoot("Phantom", Namespace = "DocumentModel.Math")]
 public partial class Phantom : ModelElement<DXM.Phantom>, ICommonMathContent
 {

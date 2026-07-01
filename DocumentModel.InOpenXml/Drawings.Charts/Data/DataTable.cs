@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows configuration of border visibility, legend keys, and visual properties for the data table.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DataTable))]
+[DataContract]
 [XmlRoot("DataTable", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataTable : ModelElement<DXDC.DataTable>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a move bookmark type for tracked move revisions in a WordprocessingML document.
 /// This class extends <see cref = "IdentifiedChange"/>, <see cref = "MarkupRangeElement"/>, and <see cref = "ICommonContent"/>, providing properties for the bookmark name, author, date, and column range. Used to group and identify content that has been moved as part of a single named move, enabling revision tracking and review of content relocations within tables and other structures.
 /// </summary>
+[DataContract]
 [XmlRoot("MoveBookmarkType", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class MoveBookmarkType<T1, T2> : MarkupStartRangeElement<T1, T2>, ICommonContent where T1 : DXW.MoveBookmarkType where T2 : DX.OpenXmlElement
 {

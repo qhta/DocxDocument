@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a combo box list item in a structured document tag (SDT) in a Wordprocessing document.
 /// This class provides properties for the display text and value of the list item, enabling advanced customization and management of combo box options in SDTs.
 /// </summary>
+[DataContract]
 [XmlRoot("SdtListItem", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtListItem : ModelElement
 {

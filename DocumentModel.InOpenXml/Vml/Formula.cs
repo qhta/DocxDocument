@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Single Formula.
 /// </summary>
 [OpenXmlType(typeof(DXV.Formula))]
+[DataContract]
 [XmlRoot("Formula", Namespace = "DocumentModel.Vml")]
 public partial class Formula : ModelElement<DXV.Formula>
 {

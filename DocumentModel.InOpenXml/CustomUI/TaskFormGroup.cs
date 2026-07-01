@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.TaskFormGroup))]
+[DataContract]
 [XmlRoot("TaskFormGroup", Namespace = "DocumentModel.CustomUI")]
 public partial class TaskFormGroup : ModelElement<DXO10CUI.TaskFormGroup>
 {

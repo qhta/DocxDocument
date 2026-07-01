@@ -4,6 +4,7 @@ namespace DocumentModel.Vml;
 /// This class provides properties for border style, width, and shadow effect, enabling advanced formatting and visual separation of document content.
 /// </summary>
 [OpenXmlType(typeof(DXVW.BorderType))]
+[DataContract]
 [XmlRoot("Border", Namespace = "DocumentModel.Vml")]
 public partial class Border : ModelElement<DXVW.BorderType>
 {

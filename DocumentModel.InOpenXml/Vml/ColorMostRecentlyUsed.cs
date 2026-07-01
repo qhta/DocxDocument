@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Most Recently Used Colors.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ColorMostRecentlyUsed))]
+[DataContract]
 [XmlRoot("ColorMostRecentlyUsed", Namespace = "DocumentModel.Vml")]
 public partial class ColorMostRecentlyUsed : ModelElement<DXVO.ColorMostRecentlyUsed>
 {

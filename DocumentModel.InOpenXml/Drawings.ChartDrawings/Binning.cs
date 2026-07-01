@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   accommodate various data distributions and analysis requirements.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Binning))]
+[DataContract]
 [XmlRoot("Binning", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Binning : ModelElement<DXO16DCD.Binning>
 {

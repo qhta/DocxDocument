@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring the top, left, bottom, and right borders, enabling advanced formatting and appearance control for HTML div elements.
 /// </summary>
 [OpenXmlType(typeof(DXW.DivBorder))]
+[DataContract]
 [XmlRoot("DivBorders", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DivBorders : ModelElement<DXW.DivBorder>
 {

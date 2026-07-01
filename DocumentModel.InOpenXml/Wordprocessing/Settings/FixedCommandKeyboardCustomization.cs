@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the command name, command index, and argument, enabling configuration and management of keyboard shortcuts for fixed commands.
 /// </summary>
 [OpenXmlType(typeof(DXOW.FixedCommandKeyboardCustomization))]
+[DataContract]
 [XmlRoot("FixedCommandKeyboardCustomization", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FixedCommandKeyboardCustomization : ModelElement<DXOW.FixedCommandKeyboardCustomization>
 {

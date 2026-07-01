@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an alpha inset or outset effect, which modifies the transparency of an image or shape based on a specified radius.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaOutset))]
+[DataContract]
 [XmlRoot("AlphaOutset", Namespace = "DocumentModel.Drawings")]
 public partial class AlphaOutset : ModelElement<DXD.AlphaOutset>
 {

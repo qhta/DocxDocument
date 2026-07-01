@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered series title for a chart, including the chart text.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredSeriesTitle))]
+[DataContract]
 [XmlRoot("FilteredSeriesTitle", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredSeriesTitle : ModelElement<DXO13DC.FilteredSeriesTitle>
 {

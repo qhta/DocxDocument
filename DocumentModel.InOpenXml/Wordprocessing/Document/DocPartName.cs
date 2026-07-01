@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the entry name value and a flag indicating whether the entry is built-in, enabling advanced management and identification of reusable document parts.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocPartName))]
+[DataContract]
 [XmlRoot("DocPartName", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocPartName : ModelElement<DXW.DocPartName>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Defines the color map for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorMap))]
+[DataContract]
 [XmlRoot("ColorMap", Namespace = "DocumentModel.Drawings")]
 public abstract partial class ColorMap<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -95,6 +96,7 @@ public abstract partial class ColorMap<T> : ModelElement<T> where T : DX.OpenXml
 /// Specific DXD.ColorMap mapping type.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorMap))]
+[DataContract]
 [XmlRoot("ColorMap", Namespace = "DocumentModel.Drawings")]
 public class ColorMap : ColorMap<DXD.ColorMap>
 {

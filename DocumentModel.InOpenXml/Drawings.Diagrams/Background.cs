@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Background Formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Background))]
+[DataContract]
 [XmlRoot("Background", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Background : ModelElement<DXDD.Background>
 {

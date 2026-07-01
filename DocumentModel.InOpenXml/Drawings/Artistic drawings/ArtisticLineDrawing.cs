@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic line drawing effect, which simulates a hand-drawn line style with adjustable transparency and pencil size.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticLineDrawing))]
+[DataContract]
 [XmlRoot("ArtisticLineDrawing", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticLineDrawing : ModelElement<DXO10D.ArtisticLineDrawing>
 {

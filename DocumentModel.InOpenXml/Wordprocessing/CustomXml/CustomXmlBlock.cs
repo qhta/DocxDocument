@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// The attributes on this element specify the name and namespace UriString of the custom XML element.
 /// </summary>
 [OpenXmlType(typeof(DXW.CustomXmlBlock))]
+[DataContract]
 [XmlRoot("CustomXmlBlock", Namespace = "DocumentModel.Wordprocessing")]
 public class CustomXmlBlock : ModelElement<DXW.CustomXmlBlock>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a text paragraph, including properties, runs, breaks, fields, math, and end run formatting.
 /// </summary>
 [OpenXmlType(typeof(DXD.Paragraph))]
+[DataContract]
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Drawings")]
 public partial class Paragraph : ModelElement<DXD.Paragraph>
 {

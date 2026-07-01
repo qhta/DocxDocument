@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Subscript Function.
 /// </summary>
 [OpenXmlType(typeof(DXM.Subscript))]
+[DataContract]
 [XmlRoot("Subscript", Namespace = "DocumentModel.Math")]
 public partial class Subscript : ModelElement<DXM.Subscript>, ICommonMathContent
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the Transform2D Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10DCD.Transform2D))]
+[DataContract]
 [XmlRoot("Transform2D", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Transform2D : ModelElement<DXO10DCD.Transform2D>
 {

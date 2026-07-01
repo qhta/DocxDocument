@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring left, right, start, and end indentation, as well as first line and hanging indentation, in both point and character units. Enables advanced control over paragraph layout and text alignment.
 /// </summary>
 [OpenXmlType(typeof(DXW.Indentation))]
+[DataContract]
 [XmlRoot("Indentation", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Indentation : ModelElement<DXW.Indentation>
 {

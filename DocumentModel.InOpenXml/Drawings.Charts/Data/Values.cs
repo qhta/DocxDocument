@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the data source for the values, which can be either a reference to a range or a set of literal values.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Values))]
+[DataContract]
 [XmlRoot("Values", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Values : ModelElement<DXDC.Values>
 {

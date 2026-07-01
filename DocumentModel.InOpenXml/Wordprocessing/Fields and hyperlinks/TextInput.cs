@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the form field type, default value, maximum length, and formatting, enabling advanced configuration and management of interactive text input fields within forms and documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.TextInput))]
+[DataContract]
 [XmlRoot("TextInput", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TextInput : ModelElement<DXW.TextInput>
 {

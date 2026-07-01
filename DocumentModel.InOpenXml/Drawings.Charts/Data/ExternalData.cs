@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the relationship to the external data source and whether it should update automatically.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ExternalData))]
+[DataContract]
 [XmlRoot("ExternalData", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ExternalData : ModelElement<DXDC.ExternalData>
 {

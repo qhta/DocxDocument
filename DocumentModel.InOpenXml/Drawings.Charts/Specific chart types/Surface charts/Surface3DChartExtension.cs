@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a 3D surface chart, providing additional series filtering capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Surface3DChartExtension))]
+[DataContract]
 [XmlRoot("Surface3DChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Surface3DChartExtension : Extension<DXDC.Surface3DChartExtension>
 {

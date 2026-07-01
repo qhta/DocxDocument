@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents base data for a numeric data source type.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberDataType))]
+[DataContract]
 [XmlRoot("NumberDataType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberDataType : ModelElement<DXDC.NumberDataType>
 {

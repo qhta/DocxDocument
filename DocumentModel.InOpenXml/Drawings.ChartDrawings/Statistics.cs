@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the Statistics Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.Statistics))]
+[DataContract]
 [XmlRoot("Statistics", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Statistics : ModelElement<DXO16DCD.Statistics>
 {

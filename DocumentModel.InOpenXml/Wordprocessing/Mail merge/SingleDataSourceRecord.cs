@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for record inclusion and a unique hash code, enabling advanced configuration and management of individual recipient records in mail merge operations.
 /// </summary>
 [OpenXmlType(typeof(DXOW.SingleDataSourceRecord))]
+[DataContract]
 [XmlRoot("SingleDataSourceRecord", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SingleDataSourceRecord : ModelElement<DXOW.SingleDataSourceRecord>
 {

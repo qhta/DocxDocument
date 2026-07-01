@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Category.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleDisplayCategory))]
+[DataContract]
 [XmlRoot("StyleDisplayCategory", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class StyleDisplayCategory : ModelElement<DXDD.StyleDisplayCategory>
 {

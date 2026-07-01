@@ -6,6 +6,7 @@ namespace DocumentModel.Packaging;
 /// This class provides a property for the relationship ID, enabling advanced linking and referencing of document parts, external files, or resources within the document structure.
 /// </summary>
 [OpenXmlType(typeof(DXPP.ReferenceRelationship))]
+[DataContract]
 [XmlRoot("ReferenceRelationship", Namespace = "DocumentModel.Packaging")]
 public abstract partial class ReferenceRelationship<T> : ModelElement where T : DXPP.ReferenceRelationship
 {

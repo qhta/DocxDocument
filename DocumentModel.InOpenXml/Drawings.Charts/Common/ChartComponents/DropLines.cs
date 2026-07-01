@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Drop Lines.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DropLines))]
+[DataContract]
 [XmlRoot("DropLines", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DropLines : ModelElement<DXDC.DropLines>
 {

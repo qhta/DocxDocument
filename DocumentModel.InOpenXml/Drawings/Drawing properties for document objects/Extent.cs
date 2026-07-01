@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents the extent (width and height) for 2D drawings, measured in English Metric Units (EMUs).
 /// </summary>
 [OpenXmlType(typeof(DXDW.Extent))]
+[DataContract]
 [XmlRoot("Extent", Namespace = "DocumentModel.Drawings")]
 public partial class Extent : ModelElement<DXDW.Extent>
 {

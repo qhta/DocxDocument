@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows configuration of index, marker, shape, and additional options for each data point.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DataPoint))]
+[DataContract]
 [XmlRoot("DataPoint", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataPoint : ModelElement<DXDC.DataPoint>
 {

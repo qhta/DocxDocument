@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents line formatting properties, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXD.LinePropertiesType))]
+[DataContract]
 [XmlRoot("LineProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LineProperties : ElementCollection<ModelElement>, ILinePropertiesExtendableElement
 {

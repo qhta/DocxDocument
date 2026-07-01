@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the RichTextBody Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.RichTextBody))]
+[DataContract]
 [XmlRoot("RichTextBody", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class RichTextBody : ModelElement<DXO16DCD.RichTextBody>
 {

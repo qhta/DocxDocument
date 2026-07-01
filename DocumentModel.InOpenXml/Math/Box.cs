@@ -6,6 +6,7 @@ namespace DocumentModel.Math;
 ///   If boxPr is omitted, all properties will be “false” by default.
 /// </summary>
 [OpenXmlType(typeof(DXM.Box))]
+[DataContract]
 [XmlRoot("Box", Namespace = "DocumentModel.Math")]
 public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
 {

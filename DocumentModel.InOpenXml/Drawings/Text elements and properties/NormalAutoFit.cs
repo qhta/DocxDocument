@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents normal autofit settings for text, including font scaling and line space reduction.
 /// </summary>
 [OpenXmlType(typeof(DXD.NormalAutoFit))]
+[DataContract]
 [XmlRoot("NormalAutoFit", Namespace = "DocumentModel.Drawings")]
 public partial class NormalAutoFit : ModelElement<DXD.NormalAutoFit>
 {

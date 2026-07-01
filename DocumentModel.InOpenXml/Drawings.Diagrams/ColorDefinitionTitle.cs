@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Title.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorDefinitionTitle))]
+[DataContract]
 [XmlRoot("ColorDefinitionTitle", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorDefinitionTitle : ModelElement<DXDD.ColorDefinitionTitle>
 {

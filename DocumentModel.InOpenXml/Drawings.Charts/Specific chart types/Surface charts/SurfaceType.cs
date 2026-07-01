@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the surface type for a chart, including thickness, shape properties, picture options, and extensibility.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SurfaceType))]
+[DataContract]
 [XmlRoot("SurfaceType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SurfaceType : ModelElement<DXDC.SurfaceType>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents background blur properties, including an optional list of OfficeArt extensions for additional customization.
 /// </summary>
 [OpenXmlType(typeof(DXO21DL.BackgroundBlurProperties))]
+[DataContract]
 [XmlRoot("BackgroundBlurProperties", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundBlurProperties : ModelElement<DXO21DL.BackgroundBlurProperties>, IOfficeArtExtendableElement
 {

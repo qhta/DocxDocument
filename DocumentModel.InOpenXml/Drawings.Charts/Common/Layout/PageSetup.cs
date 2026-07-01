@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Page Setup.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PageSetup))]
+[DataContract]
 [XmlRoot("PageSetup", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PageSetup : ModelElement<DXDC.PageSetup>
 {

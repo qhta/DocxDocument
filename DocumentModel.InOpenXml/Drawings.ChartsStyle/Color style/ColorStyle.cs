@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Describes a color style configuration for chart elements, supporting various color models and style variations.
 /// </summary>
+[DataContract]
 [XmlRoot("ColorStyle", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class ColorStyle //: OfficeArtExtendableElement
 {

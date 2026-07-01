@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
 [JsonConverter(typeof(HeightMeasureJsonConverter))]
+[DataContract]
 [XmlRoot("HeightMeasure", Namespace = "DocumentModel.Wordprocessing")]
 public sealed partial class HeightMeasure : UniversalMeasure, IComparable<HeightMeasure>, IEquatable<HeightMeasure>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a theme, including its name, identifier, theme elements, object defaults, color schemes, custom colors, and extension lists.
 /// </summary>
 [OpenXmlType(typeof(DXD.Theme))]
+[DataContract]
 [XmlRoot("Theme", Namespace = "DocumentModel.Drawings")]
 public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExtendableElement
 {

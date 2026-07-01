@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the FilteredAreaSeries Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredAreaSeries))]
+[DataContract]
 [XmlRoot("FilteredAreaSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredAreaSeries : ModelElement<DXO13DC.FilteredAreaSeries>
 {

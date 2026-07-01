@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the Shape Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.Shape))]
+[DataContract]
 [XmlRoot("Shape", Namespace = "DocumentModel.Drawings.Office")]
 public partial class Shape : ModelElement<DXOD.Shape>
 {

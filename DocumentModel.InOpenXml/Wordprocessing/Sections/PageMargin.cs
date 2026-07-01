@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for top, right, bottom, left margins, header and footer spacing, and gutter spacing, enabling advanced configuration of page layout and printing options.
 /// </summary>
 [OpenXmlType(typeof(DXW.PageMargin))]
+[DataContract]
 [XmlRoot("PageMargin", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PageMargin : ModelElement<DXW.PageMargin>, ISectionPropertiesContent
 {

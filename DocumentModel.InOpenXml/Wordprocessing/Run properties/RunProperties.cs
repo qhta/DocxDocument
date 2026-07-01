@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Corresponds to the DocumentFormat.OpenXml.Wordprocessing.RunProperties class and contains all properties for comprehensive run formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.RunProperties))]
+[DataContract]
 [XmlRoot("RunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
 {

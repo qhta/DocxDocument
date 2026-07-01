@@ -13,6 +13,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   positioning, and text formatting to match the chart's overall design.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.AxisUnitsLabel))]
+[DataContract]
 [XmlRoot("AxisUnitsLabel", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class AxisUnitsLabel : ModelElement<DXO16DCD.AxisUnitsLabel>
 {

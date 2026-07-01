@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents default formatting properties for text runs, including outline, fill, effects, highlight, underline, font, hyperlink, and text direction settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.DefaultRunProperties))]
+[DataContract]
 [XmlRoot("DefaultRunProperties", Namespace = "DocumentModel.Drawings")]
 public partial class DefaultRunProperties : ModelElement<DXD.DefaultRunProperties>, IExtendableElement
 {

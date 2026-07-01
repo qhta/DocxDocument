@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   within the parent WordprocessingML document.
 /// </summary>
 [OpenXmlType(typeof(DXW.NumberingInstance))]
+[DataContract]
 [XmlRoot("NumberingInstance", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingInstance : ModelElement<DXW.NumberingInstance>
 {

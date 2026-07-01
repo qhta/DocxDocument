@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Defines the color temperature effect for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ColorTemperature))]
+[DataContract]
 [XmlRoot("ColorTemperature", Namespace = "DocumentModel.Drawings")]
 public partial class ColorTemperature : ModelElement<DXO10D.ColorTemperature>, IExtendableElement
 {

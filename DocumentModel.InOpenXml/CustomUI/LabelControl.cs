@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:labelControl.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.LabelControl))]
+[DataContract]
 [XmlRoot("LabelControl", Namespace = "DocumentModel.CustomUI")]
 public partial class LabelControl : ModelElement<DXO10CUI.LabelControl>
 {

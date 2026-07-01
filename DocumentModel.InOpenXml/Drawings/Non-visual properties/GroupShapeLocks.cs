@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents locking options for a group shape, restricting user actions such as grouping, ungrouping, selection, rotation, movement, and resizing.
 /// </summary>
 [OpenXmlType(typeof(DXD.GroupShapeLocks))]
+[DataContract]
 [XmlRoot("GroupShapeLocks", Namespace = "DocumentModel.Drawings")]
 public partial class GroupShapeLocks : ModelElement<DXD.GroupShapeLocks>, IExtendableElement
 {

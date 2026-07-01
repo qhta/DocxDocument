@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a line chart series, providing additional filtering and labeling options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.LineSerExtension))]
+[DataContract]
 [XmlRoot("LineSerExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LineSerExtension : Extension<DXDC.LineSerExtension>
 {

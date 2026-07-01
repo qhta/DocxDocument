@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.ContextualTabs))]
+[DataContract]
 [XmlRoot("ContextualTabs", Namespace = "DocumentModel.CustomUI")]
 public class ContextualTabs : ModelElement<DXO10CUI.ContextualTabs>
 {

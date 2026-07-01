@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This start marker is matched with the appropriately paired end marker by matching the value of the Id attribute from the associated bookmarkEnd element.
 /// </summary>
 [OpenXmlType(typeof(DXW.BookmarkStart))]
+[DataContract]
 [XmlRoot("BookmarkStart", Namespace = "DocumentModel.Wordprocessing")]
 [SpecificClass]
 public partial class BookmarkStart: MarkupStartRangeElement<DXW.BookmarkStart, DXW.BookmarkEnd>

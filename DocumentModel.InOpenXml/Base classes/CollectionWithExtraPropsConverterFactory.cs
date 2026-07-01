@@ -20,15 +20,15 @@ public sealed class CollectionWithExtraPropsConverterFactory : JsonConverterFact
   /// <exception cref="InvalidOperationException"></exception>
   public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
   {
-    Debug.WriteLine($"Creating converter for {typeToConvert}");
+    //Debug.WriteLine($"Creating converter for {typeToConvert}");
     var itemType = GetElementCollectionItemType(typeToConvert)
       ?? throw new InvalidOperationException("Not an ElementCollection<T> type.");
 
-    var interfaces = typeToConvert.GetInterfaces().Where(intf => intf.Name.StartsWith("ICollection")).ToArray();
-    foreach (var @interface in interfaces)
-    {
-      Debug.WriteLine($"  Interface: {@interface}");
-    }
+    //var interfaces = typeToConvert.GetInterfaces().Where(intf => intf.Name.StartsWith("ICollection")).ToArray();
+    //foreach (var @interface in interfaces)
+    //{
+    //  Debug.WriteLine($"  Interface: {@interface}");
+    //}
 
     var converterType = typeof(CollectionWithExtraPropsConverter<,>)
           .MakeGenericType(typeToConvert, itemType);

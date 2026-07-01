@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for footnote placement, numbering format, starting value, restart location, and special footnote references, enabling advanced configuration and management of footnote behavior and formatting across the entire document.
 /// </summary>
 [OpenXmlType(typeof(DXW.FootnoteDocumentWideProperties))]
+[DataContract]
 [XmlRoot("FootnoteDocumentWideProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteDocumentWideProperties>
 {

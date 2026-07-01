@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series in a scatter chart, including index, order, text, shape properties, marker, data points, labels, Trendline, error bars, X and Y values, smoothing, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ScatterChartSeries))]
+[DataContract]
 [XmlRoot("ScatterChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ScatterChartSeries : ModelElement<DXDC.ScatterChartSeries>
 {

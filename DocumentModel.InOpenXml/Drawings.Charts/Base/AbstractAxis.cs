@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Abstract representation of an axis type. All specific axis types implement this class.
 /// </summary>
+[DataContract]
 [XmlRoot("AbstractAxis", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AbstractAxis<T> : ModelElement<T>, AbstractAxis where T : DX.OpenXmlCompositeElement
 {

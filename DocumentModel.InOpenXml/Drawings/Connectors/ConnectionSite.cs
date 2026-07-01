@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a shape connection site, defining the angle and position where a connector attaches to a shape.
 /// </summary>
 [OpenXmlType(typeof(DXD.ConnectionSite))]
+[DataContract]
 [XmlRoot("ConnectionSite", Namespace = "DocumentModel.Drawings")]
 public partial class ConnectionSite : ModelElement<DXD.ConnectionSite>
 {

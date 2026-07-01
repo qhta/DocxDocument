@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Clipping Path.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ClipPath))]
+[DataContract]
 [XmlRoot("ClipPath", Namespace = "DocumentModel.Vml")]
 public partial class ClipPath : ModelElement<DXVO.ClipPath>
 {

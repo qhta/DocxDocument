@@ -7,6 +7,7 @@ namespace DocumentModel.Drawings;
 /// Represents an extension for a blip (binary large image or picture), providing additional properties and metadata for enhanced image handling.
 /// </summary>
 [OpenXmlType(typeof(DXD.Extension))]
+[DataContract]
 [XmlRoot("BlipExtension", Namespace = "DocumentModel.Drawings")]
 public partial class BlipExtension : ModelElement<DXD.Extension>, IExtension
 {

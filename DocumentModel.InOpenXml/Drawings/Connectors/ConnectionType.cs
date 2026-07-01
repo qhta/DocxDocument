@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a connection type for connectors, defining an identifier and index for the connection.
 /// </summary>
 [OpenXmlType(typeof(DXD.ConnectionType))]
+[DataContract]
 [XmlRoot("ConnectionType", Namespace = "DocumentModel.Drawings")]
 public partial class ConnectionType : ModelElement<DXD.ConnectionType>
 {

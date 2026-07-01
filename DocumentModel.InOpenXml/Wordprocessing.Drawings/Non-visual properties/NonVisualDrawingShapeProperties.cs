@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for text box behavior, shape locking, and extension data, enabling control over shape interaction and extensibility.
 /// </summary>
 [OpenXmlType(typeof(DXOD.NonVisualDrawingShapeProperties))]
+[DataContract]
 [XmlRoot("NonVisualDrawingShapeProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class NonVisualDrawingShapeProperties : DMD.NonVisualDrawingShapeProperties<DXOD.NonVisualDrawingShapeProperties>
 {

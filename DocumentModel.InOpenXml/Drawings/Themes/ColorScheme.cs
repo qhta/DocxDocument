@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Defines the color scheme for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorScheme))]
+[DataContract]
 [XmlRoot("ColorScheme", Namespace = "DocumentModel.Drawings")]
 public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExtendableElement
 {

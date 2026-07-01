@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   The fraction object is also used to represent the stack function, which places one element above another, with no fraction bar. .
 /// </summary>
 [OpenXmlType(typeof(DXM.Fraction))]
+[DataContract]
 [XmlRoot("Fraction", Namespace = "DocumentModel.Math")]
 public partial class Fraction : ModelElement<DXM.Fraction>, ICommonMathContent
 {

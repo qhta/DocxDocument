@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a pie chart, providing additional series filtering capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PieChartExtension))]
+[DataContract]
 [XmlRoot("PieChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PieChartExtension : Extension<DXDC.PieChartExtension>
 {

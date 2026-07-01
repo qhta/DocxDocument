@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies all of the comments defined in the current WordprocessingML document.
 /// This class provides properties for collections of comments, extended comments, comment identifiers, and extensible comments, enabling advanced tracking, organization, and management of comment metadata and content throughout the document.
 /// </summary>
+[DataContract]
 [XmlRoot("DocComments", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocComments : ModelElement
 {

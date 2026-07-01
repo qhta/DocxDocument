@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section.
 /// </summary>
 [OpenXmlElement(typeof(DXW.SectionProperties))]
+[DataContract]
 [XmlRoot("BaseSectionProperties", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class BaseSectionProperties<T> : ModelElement<T> where T : DX.OpenXmlCompositeElement
 {
@@ -180,6 +181,7 @@ public abstract partial class BaseSectionProperties<T> : ModelElement<T> where T
 /// <summary>
 /// Concrete class of <see cref = "BaseSectionProperties{T}"/> representing the section properties for a section in a Wordprocessing document.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseSectionProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class BaseSectionProperties : BaseSectionProperties<DXW.SectionProperties>
 {

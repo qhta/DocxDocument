@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered scatter series for a chart, containing a reference to a scatter chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredScatterSeries))]
+[DataContract]
 [XmlRoot("FilteredScatterSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredScatterSeries : ModelElement<DXO13DC.FilteredScatterSeries>
 {

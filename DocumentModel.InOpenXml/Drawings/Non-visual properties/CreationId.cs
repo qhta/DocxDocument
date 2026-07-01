@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a unique creation identifier for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXO16D.CreationId))]
+[DataContract]
 [XmlRoot("CreationId", Namespace = "DocumentModel.Drawings")]
 public partial class CreationId : ModelElement<DXO16D.CreationId>
 {

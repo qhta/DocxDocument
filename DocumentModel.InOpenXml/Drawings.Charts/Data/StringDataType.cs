@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents base data for a string data source type.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StringDataType))]
+[DataContract]
 [XmlRoot("StringDataType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StringDataType : ModelElement<DXDC.StringDataType>
 {

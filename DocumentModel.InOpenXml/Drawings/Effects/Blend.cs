@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a blend effect, allowing the combination of effects using a specified blend mode.
 /// </summary>
 [OpenXmlType(typeof(DXD.Blend))]
+[DataContract]
 [XmlRoot("Blend", Namespace = "DocumentModel.Drawings")]
 public partial class Blend : ModelElement<DXD.Blend>
 {

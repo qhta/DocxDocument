@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:checkBox.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.BackstageMenuCheckBox))]
+[DataContract]
 [XmlRoot("BackstageMenuCheckBox", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageMenuCheckBox : ModelElement<DXO10CUI.BackstageMenuCheckBox>
 {

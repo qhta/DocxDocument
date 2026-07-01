@@ -2,6 +2,7 @@
 /// <summary>
 /// Collection of all document properties;
 /// </summary>
+[DataContract]
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
 public partial class BaseBuiltInProperties : ModelElement<DX.OpenXmlElement>
 {

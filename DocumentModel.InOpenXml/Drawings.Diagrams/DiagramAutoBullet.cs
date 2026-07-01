@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 ///   Defines the DiagramAutoBullet Class.
 /// </summary>
 [OpenXmlType(typeof(DXO19DD1.DiagramAutoBullet))]
+[DataContract]
 [XmlRoot("DiagramAutoBullet", Namespace = "DocumentModel.Drawings.Diagram1")]
 public partial class DiagramAutoBullet : ModelElement<DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.DiagramAutoBullet>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a filtered line series, containing a reference to a line chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredLineSeriesExtension))]
+[DataContract]
 [XmlRoot("FilteredLineSeriesExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredLineSeriesExtension : Extension<DXO13DC.FilteredLineSeriesExtension>
 {

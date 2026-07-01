@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents locking options for a connection shape, allowing restriction of various editing and formatting actions.
 /// </summary>
 [OpenXmlType(typeof(DXD.ConnectionShapeLocks))]
+[DataContract]
 [XmlRoot("ConnectionShapeLocks", Namespace = "DocumentModel.Drawings")]
 public partial class ConnectionShapeLocks : ModelElement<DXD.ConnectionShapeLocks>
 {

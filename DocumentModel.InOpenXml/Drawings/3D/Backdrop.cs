@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a backdrop plane in 3D drawing space, defined by an anchor point, normal vector, and up vector.
 /// </summary>
 [OpenXmlType(typeof(DXD.Backdrop))]
+[DataContract]
 [XmlRoot("Backdrop", Namespace = "DocumentModel.Drawings")]
 public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
 {

@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.ComboBox))]
+[DataContract]
 [XmlRoot("ComboBox", Namespace = "DocumentModel.CustomUI")]
 public partial class ComboBox : ModelElement<DXO10CUI.ComboBox>
 {

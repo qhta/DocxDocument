@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Properties.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextProperties))]
+[DataContract]
 [XmlRoot("TextProperties", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class TextProperties : ModelElement<DXDD.TextProperties>
 {

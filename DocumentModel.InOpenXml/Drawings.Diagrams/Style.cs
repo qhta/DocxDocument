@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Shape Style.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Style))]
+[DataContract]
 [XmlRoot("Style", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Style : ModelElement<DXDD.Style>
 {

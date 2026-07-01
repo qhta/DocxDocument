@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Digital Signature Line.
 /// </summary>
 [OpenXmlType(typeof(DXVO.SignatureLine))]
+[DataContract]
 [XmlRoot("SignatureLine", Namespace = "DocumentModel.Vml")]
 public partial class SignatureLine : ModelElement<DXVO.SignatureLine>
 {

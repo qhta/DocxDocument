@@ -7,6 +7,7 @@
 /// the document content. It links the main document text to the corresponding endnote entry, allowing applications to
 /// display or process endnotes appropriately. This element is typically used when parsing or generating
 /// WordprocessingML documents that include endnotes.</remarks>
+[DataContract]
 [XmlRoot("EndnoteReference", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.EndnoteReference))]
 public class EndnoteReference: ModelElement<DXW.EndnoteReference>

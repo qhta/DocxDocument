@@ -3,6 +3,7 @@ namespace DocumentModel;
 ///   Defines the ClassificationLabel Class.
 /// </summary>
 [OpenXmlType(typeof(DXO21MLMD.ClassificationLabel))]
+[DataContract]
 [XmlRoot("ClassificationLabel", Namespace = "DocumentModel")]
 public partial class ClassificationLabel : ModelElement<DXO21MLMD.ClassificationLabel>
 {

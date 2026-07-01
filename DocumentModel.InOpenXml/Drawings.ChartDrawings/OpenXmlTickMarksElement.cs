@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlTickMarksElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlTickMarksElement))]
+[DataContract]
 [XmlRoot("OpenXmlTickMarksElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class OpenXmlTickMarksElement : ModelElement<DXO16DCD.OpenXmlTickMarksElement>
 {

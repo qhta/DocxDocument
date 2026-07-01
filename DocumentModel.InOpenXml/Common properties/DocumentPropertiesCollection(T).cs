@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// Collection of abstract document properties. The derived classes are BaseBuiltInDocumentProperties
 /// and BaseCustomDocumentProperties.
 /// </summary>
+[DataContract]
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
 public abstract partial class DocumentPropertiesCollection<T>: 
   ModelElement<DX.OpenXmlElement>, IDocumentProperties<T>

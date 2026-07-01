@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a stock chart, providing additional series extension capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StockChartExtension))]
+[DataContract]
 [XmlRoot("StockChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StockChartExtension : Extension<DXDC.StockChartExtension>
 {

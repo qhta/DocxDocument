@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Superscript Function.
 /// </summary>
 [OpenXmlType(typeof(DXM.Superscript))]
+[DataContract]
 [XmlRoot("Superscript", Namespace = "DocumentModel.Math")]
 public partial class Superscript : ModelElement<DXM.Superscript>, ICommonMathContent
 {

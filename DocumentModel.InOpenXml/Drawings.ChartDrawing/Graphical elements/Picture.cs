@@ -12,6 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.Picture))]
+[DataContract]
 [XmlRoot("Picture", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class Picture : ModelElement<DXDCD.Picture>
 {

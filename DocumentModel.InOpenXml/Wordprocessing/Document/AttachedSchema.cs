@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents an attached XML schema reference in a WordprocessingML document, enabling association of custom XML schemas with the document for validation and data binding.
 /// </summary>
 [OpenXmlType(typeof(DXW.AttachedSchema))]
+[DataContract]
 [XmlRoot("AttachedSchema", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
 {

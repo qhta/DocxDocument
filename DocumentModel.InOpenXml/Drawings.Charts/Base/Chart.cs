@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a chart, including title, formatting, 3D view and wall settings, plot area, legend, visibility, blank cell display, and data label options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Chart))]
+[DataContract]
 [XmlRoot("Chart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Chart : ModelElement<DXDC.Chart>
 {

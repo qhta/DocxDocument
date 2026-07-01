@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the NonVisualContentPartProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10DCD.NonVisualContentPartProperties))]
+[DataContract]
 [XmlRoot("NonVisualContentPartProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class NonVisualContentPartProperties : ModelElement<DXO10DCD.NonVisualContentPartProperties>
 {

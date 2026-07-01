@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows referencing a cell range for data labels and storing cached values for efficient access and rendering.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.DataLabelsRange))]
+[DataContract]
 [XmlRoot("DataLabelsRange", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelsRange : ModelElement<DXO13DC.DataLabelsRange>
 {

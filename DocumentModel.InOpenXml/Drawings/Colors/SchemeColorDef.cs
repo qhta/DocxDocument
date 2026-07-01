@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// A specific color type that represents a scheme color definition, which is used to define colors based on a color scheme in drawing elements. This class serves as a base for specific scheme color definitions that can be used in themes and color schemes within the document model. It allows for the representation of colors that are defined by a scheme, enabling consistent color usage across different drawing elements that reference the same scheme color definition.
 /// </summary>
+[DataContract]
 [XmlRoot("SchemeColorDef", Namespace = "DocumentModel.Drawings")]
 [OpenXmlType(typeof(DXD.Color2Type))]
 public class SchemeColorDef : ColorHolder<DXD.Color2Type>

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "SectionPropertiesContent"/> and provides properties for grid type, line pitch, and character pitch, enabling advanced control over text layout, alignment, and grid-based formatting in East Asian and other grid-based document scenarios.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocGrid))]
+[DataContract]
 [XmlRoot("DocGrid", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocGrid : ModelElement<DXW.DocGrid>, ISectionPropertiesContent
 {

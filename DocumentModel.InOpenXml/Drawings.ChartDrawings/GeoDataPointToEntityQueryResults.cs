@@ -27,6 +27,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   and mapping requirements.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQueryResults))]
+[DataContract]
 [XmlRoot("GeoDataPointToEntityQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoDataPointToEntityQueryResults : ModelElementCollection<GeoDataPointToEntityQueryResult, DXO16DCD.GeoDataPointToEntityQueryResults, DXO16DCD.GeoDataPointToEntityQueryResult>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a miter line join, specifying the miter limit for the join.
 /// </summary>
 [OpenXmlType(typeof(DXD.Miter))]
+[DataContract]
 [XmlRoot("Miter", Namespace = "DocumentModel.Drawings")]
 public partial class Miter : ModelElement<DXD.Miter>
 {

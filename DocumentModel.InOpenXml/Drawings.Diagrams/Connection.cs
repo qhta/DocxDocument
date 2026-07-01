@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Connection.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Connection))]
+[DataContract]
 [XmlRoot("Connection", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Connection : ModelElement<DXDD.Connection>
 {

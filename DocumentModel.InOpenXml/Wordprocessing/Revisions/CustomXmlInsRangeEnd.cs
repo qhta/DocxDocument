@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the CustomXmlInsRangeEnd Class.
 /// </summary>
 [OpenXmlType(typeof(DXW.CustomXmlInsRangeEnd))]
+[DataContract]
 [XmlRoot("CustomXmlInsRangeEnd", Namespace = "DocumentModel.Wordprocessing")]
 public class CustomXmlInsRangeEnd : MarkupEndRangeElement<DXW.CustomXmlInsRangeEnd, DXW.CustomXmlInsRangeStart>
 {

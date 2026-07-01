@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Layout.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Layout))]
+[DataContract]
 [XmlRoot("Layout", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Layout : ModelElement<DXDC.Layout>
 {

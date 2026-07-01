@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies the presence of a simple field at the current location in a WordprocessingML document.
 /// The semantics of this field are defined via its field codes. Simple fields provide a way to insert dynamic content, such as references, calculations, or dates, using a single field code instruction.
 /// </summary>
+[DataContract]
 [XmlRoot("SimpleField", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class SimpleField<T> : ModelElement<T>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent where T : DX.OpenXmlElement
 {

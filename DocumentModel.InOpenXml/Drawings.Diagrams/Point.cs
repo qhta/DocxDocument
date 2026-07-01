@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Point.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Point))]
+[DataContract]
 [XmlRoot("Point", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Point : ModelElement<DXDD.Point>
 {

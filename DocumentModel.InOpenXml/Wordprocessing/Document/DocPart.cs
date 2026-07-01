@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "DMPack.OpenXmlPart"/> and provides properties for entry properties and content, enabling advanced management, organization, and reuse of document parts such as building blocks, autotext, and other glossary entries.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocPart))]
+[DataContract]
 [XmlRoot("DocPart", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocPart : ModelElement<DXW.DocPart>
 {

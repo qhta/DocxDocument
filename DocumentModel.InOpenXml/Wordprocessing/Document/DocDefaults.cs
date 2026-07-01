@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for specifying the default character-level and paragraph-level formatting applied to all runs and paragraphs in the document unless overridden by more specific formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocDefaults))]
+[DataContract]
 [XmlRoot("DocDefaults", Namespace = "DocumentModel.Wordprocessing")]
 public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
 {

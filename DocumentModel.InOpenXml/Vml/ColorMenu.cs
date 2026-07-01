@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   UI Default Colors.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ColorMenu))]
+[DataContract]
 [XmlRoot("ColorMenu", Namespace = "DocumentModel.Vml")]
 public partial class ColorMenu : ModelElement<DXVO.ColorMenu>
 {

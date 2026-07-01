@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 /// connector properties, supporting complex diagram scenarios and future connector enhancements.
 /// </summary>
 [OpenXmlType(typeof(ConnectorLockingExtension))]
+[DataContract]
 [XmlRoot("ConnectorLockingExtensionList", Namespace = "DocumentModel.Drawings")]
 public class ConnectorLockingExtensionList : ModelElementCollection<ConnectorLockingExtension, DXD.ConnectorLockingExtensionList, DXD.ConnectorLockingExtension>
 {

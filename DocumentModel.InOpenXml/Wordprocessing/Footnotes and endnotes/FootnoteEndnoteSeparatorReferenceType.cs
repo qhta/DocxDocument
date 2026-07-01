@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides a property for the footnote or endnote ID, enabling advanced management and referencing of separator elements for visual separation and formatting of footnote and endnote content.
 /// </summary>
 [OpenXmlType(typeof(DXW.FootnoteEndnoteSeparatorReferenceType))]
+[DataContract]
 [XmlRoot("FootnoteEndnoteSeparatorReferenceType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FootnoteEndnoteSeparatorReferenceType : ModelElement<DXW.FootnoteEndnoteSeparatorReferenceType>
 {

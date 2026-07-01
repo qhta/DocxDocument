@@ -66,6 +66,7 @@ namespace DocumentModel;
 /// </para>
 /// </remarks>
 [OpenXmlType(typeof(ClassificationExtension))]
+[DataContract]
 [XmlRoot("ClassificationExtensionList", Namespace = "DocumentModel")]
 public class ClassificationExtensionList : ModelElementCollection<ClassificationExtension, DXO21MLMD.ClassificationExtensionList, DXO21MLMD.ClassificationExtension>
 {

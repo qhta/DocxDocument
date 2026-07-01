@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlGridlinesElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlGridlinesElement))]
+[DataContract]
 [XmlRoot("OpenXmlGridlinesElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class OpenXmlGridlinesElement : ModelElement<DXO16DCD.OpenXmlGridlinesElement>
 {

@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///  then the document is non-conformant.
 /// </summary>
 [OpenXmlType(typeof(DXW.DeletedFieldCode))]
+[DataContract]
 [XmlRoot("DeletedFieldCode", Namespace = "DocumentModel.Wordprocessing")]
 public class DeletedFieldCode : TextualElement<DXW.FieldCode>
 {

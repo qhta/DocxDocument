@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class enables specification of language settings for spell checking, grammar checking, and text processing in multilingual documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.Languages))]
+[DataContract]
 [XmlRoot("Languages", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Languages : ModelElement<DXW.Languages>
 {

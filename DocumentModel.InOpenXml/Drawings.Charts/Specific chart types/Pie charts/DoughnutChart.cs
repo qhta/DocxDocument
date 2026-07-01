@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a doughnut chart, including color variation, series, labels, first slice angle, hole size, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DoughnutChart))]
+[DataContract]
 [XmlRoot("DoughnutChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DoughnutChart : ModelElement<DXDC.DoughnutChart>
 {

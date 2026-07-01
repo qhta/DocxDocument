@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the index and visual properties of the band.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BandFormat))]
+[DataContract]
 [XmlRoot("BandFormat", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BandFormat : ModelElement<DXDC.BandFormat>
 {

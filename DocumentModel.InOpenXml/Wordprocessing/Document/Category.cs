@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the category name and associated gallery, enabling advanced organization and classification of document entries for templates, building blocks, and other reusable content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Category))]
+[DataContract]
 [XmlRoot("Category", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Category : ModelElement<DXW.Category>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes the size and positioning of a shape anchored relative to other elements in chart drawings, including anchor points and contained graphical elements.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.RelativeAnchorSize))]
+[DataContract]
 [XmlRoot("RelativeAnchorSize", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class RelativeAnchorSize : ModelElement<DXDCD.RelativeAnchorSize>
 {

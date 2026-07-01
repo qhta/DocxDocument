@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to document default paragraph and run properties, latent style information, and defined styles, enabling advanced style management and formatting for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Styles))]
+[DataContract]
 [XmlRoot("Styles", Namespace = "DocumentModel.Wordprocessing")]
 public sealed partial class Styles : ModelElement<DXW.Styles>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a reference to multi-level string data for a chart axis or series.
 /// </summary>
 [OpenXmlType(typeof(DXDC.MultiLevelStringReference))]
+[DataContract]
 [XmlRoot("MultiLevelStringReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class MultiLevelStringReference : ModelElement<DXDC.MultiLevelStringReference>
 {

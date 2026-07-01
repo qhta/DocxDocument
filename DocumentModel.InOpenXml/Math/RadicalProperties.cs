@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the Radical object rad, including the hidden or shown state of the degree deg.
 /// </summary>
 [OpenXmlType(typeof(DXM.RadicalProperties))]
+[DataContract]
 [XmlRoot("RadicalProperties", Namespace = "DocumentModel.Math")]
 public partial class RadicalProperties : ModelElement<DXM.RadicalProperties>
 {

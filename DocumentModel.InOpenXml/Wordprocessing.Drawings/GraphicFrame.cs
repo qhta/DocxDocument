@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to non-visual properties, transformation settings, and the contained graphic, enabling advanced layout and rendering of graphical content such as images, charts, or diagrams within the document.
 /// </summary>
 [OpenXmlType(typeof(DXD.GraphicFrame))]
+[DataContract]
 [XmlRoot("GraphicFrame", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class GraphicFrame : ModelElement<DXD.GraphicFrame>, IOfficeArtExtendableElement
 {

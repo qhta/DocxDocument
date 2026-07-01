@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to child shape defaults and shape layout settings, enabling consistent formatting and layout for VML shapes throughout the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.ShapeDefaults))]
+[DataContract]
 [XmlRoot("ShapeDefaults", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class ShapeDefaults : ModelElement<DXW.ShapeDefaults>
 {

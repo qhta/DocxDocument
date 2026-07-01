@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Defines the formatting properties for a pivot chart element.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PivotFormat))]
+[DataContract]
 [XmlRoot("PivotFormat", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PivotFormat : ModelElement<DXDC.PivotFormat>
 {

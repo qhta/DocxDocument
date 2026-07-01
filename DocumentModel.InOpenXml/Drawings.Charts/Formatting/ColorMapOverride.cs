@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows mapping specific theme colors (like Background1, Text1, Accents) to new color scheme indices.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ColorMapOverride))]
+[DataContract]
 [XmlRoot("ColorMapOverride", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ColorMapOverride : ModelElement<DXDC.ColorMapOverride>
 {

@@ -18,6 +18,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   label collections provide flexibility for emphasizing or suppressing specific values.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabels))]
+[DataContract]
 [XmlRoot("DataLabels", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class DataLabels : ModelElementCollection<DataLabel, DXO16DCD.DataLabels, DXO16DCD.DataLabel>
 {

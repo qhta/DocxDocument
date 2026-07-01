@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic glass effect, which simulates a glass-like appearance with adjustable transparency and scaling.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticGlass))]
+[DataContract]
 [XmlRoot("ArtisticGlass", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticGlass : ModelElement<DXO10D.ArtisticGlass>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Each <see cref = "DataPoint"/> in the collection defines the value, formatting, and visual properties for a single entry in the chart, such as a bar, line, or marker.
 ///   This class enables grouping and management of multiple data points within a chart series.
 /// </summary>
+[DataContract]
 [XmlRoot("DataPoints", Namespace = "DocumentModel.Drawings.Charts")]
 public class DataPoints : ModelElementCollection<DataPoint>
 {

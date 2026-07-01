@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Describes the layout properties for chart markers, including symbol type and size settings.
 /// </summary>
+[DataContract]
 [XmlRoot("MarkerLayoutProperties", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class MarkerLayoutProperties
 {

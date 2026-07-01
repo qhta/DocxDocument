@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables advanced customization and extensibility of theme definitions, including theme family metadata and URI association.
 /// </summary>
 [OpenXmlType(typeof(DXD.OfficeStyleSheetExtension))]
+[DataContract]
 [XmlRoot("OfficeStyleSheetExtension", Namespace = "DocumentModel.Drawings")]
 public partial class OfficeStyleSheetExtension : ModelElement<DXD.OfficeStyleSheetExtension>, IExtension
 {

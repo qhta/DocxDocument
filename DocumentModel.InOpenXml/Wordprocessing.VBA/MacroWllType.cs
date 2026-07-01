@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.VBA;
 /// This class provides a property for the macro name, enabling identification and management of macro WLL types in VBA-enabled documents.
 /// </summary>
 [OpenXmlType(typeof(DXOW.MacroWllType))]
+[DataContract]
 [XmlRoot("MacroWllType", Namespace = "DocumentModel.Wordprocessing.VBA")]
 public class MacroWllType : ModelElement<DXOW.MacroWllType>
 {

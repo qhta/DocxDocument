@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:hyperlink.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.Hyperlink))]
+[DataContract]
 [XmlRoot("Hyperlink", Namespace = "DocumentModel.CustomUI")]
 public partial class Hyperlink : ModelElement<DXO10CUI.Hyperlink>
 {

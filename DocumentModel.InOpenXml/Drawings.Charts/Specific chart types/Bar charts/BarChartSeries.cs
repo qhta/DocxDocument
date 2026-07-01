@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a series in a bar chart, including index, order, text, shape properties, inversion, picture options, data points, labels, Trendline, error bars, axis data, values, shape, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BarChartSeries))]
+[DataContract]
 [XmlRoot("BarChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BarChartSeries : ModelElement<DXDC.BarChartSeries>
 {

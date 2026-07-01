@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the LayoutVariablePropertySetType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.LayoutVariablePropertySetType))]
+[DataContract]
 [XmlRoot("LayoutVariablePropertySetType", Namespace = "DocumentModel.Drawings.Diagrams")]
 public abstract partial class LayoutVariablePropertySetType<T> : ModelElement<T> where T : DXDD.LayoutVariablePropertySetType
 {
@@ -74,6 +75,7 @@ public abstract partial class LayoutVariablePropertySetType<T> : ModelElement<T>
 /// Concrete LayoutVariablePropertySetType class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.LayoutVariablePropertySetType))]
+[DataContract]
 [XmlRoot("LayoutVariablePropertySetType", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class LayoutVariablePropertySetType : LayoutVariablePropertySetType<DXDD.LayoutVariablePropertySetType>
 {

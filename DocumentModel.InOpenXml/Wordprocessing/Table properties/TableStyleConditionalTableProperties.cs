@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides common formatting options for tables, such as alignment, indentation, cell margins, cell spacing, borders, and shading, used in table styles for conditional formatting scenarios.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableStyleConditionalFormattingTableProperties))]
+[DataContract]
 [XmlRoot("TableStyleConditionalTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class TableStyleConditionalTableProperties : BaseTableProperties<DXW.TableStyleConditionalFormattingTableProperties>
 {

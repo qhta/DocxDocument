@@ -2,7 +2,6 @@ namespace DocumentModel;
 /// <summary>
 /// Provides methods for performing deep comparison of objects by recursively comparing their public properties.
 /// </summary>
-[XmlRoot("DeepComparer", Namespace = "DocumentModel")]
 public static class DeepComparer
 {
  /// <summary>

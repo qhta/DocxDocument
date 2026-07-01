@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the style set identifier and value, enabling management and configuration of style sets for document formatting.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.StyleSet))]
+[DataContract]
 [XmlRoot("StyleSet", Namespace = "DocumentModel.Wordprocessing")]
 public partial class StyleSet : ModelElement<DXO10W.StyleSet>
 {

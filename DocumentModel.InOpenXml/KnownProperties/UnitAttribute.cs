@@ -5,7 +5,6 @@ namespace DocumentModel;
 ///   The attribute is inherited and cannot be applied multiple times to the same member.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-[XmlRoot("UnitAttribute", Namespace = "DocumentModel")]
 public class UnitAttribute : Attribute
 {
  /// <summary>

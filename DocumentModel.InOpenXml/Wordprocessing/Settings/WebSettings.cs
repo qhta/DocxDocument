@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for framesets, div elements, encoding, browser optimization, VML reliance, PNG support, CSS usage, file organization, file naming, display settings, and target screen size, enabling advanced configuration and management of web publishing options.
 /// </summary>
 [OpenXmlType(typeof(DXW.WebSettings))]
+[DataContract]
 [XmlRoot("WebSettings", Namespace = "DocumentModel.Wordprocessing")]
 public partial class WebSettings : ModelElement<DXW.WebSettings>
 {

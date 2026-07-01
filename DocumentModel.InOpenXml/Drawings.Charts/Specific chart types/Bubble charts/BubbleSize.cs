@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the size values for bubbles in a bubble chart, including references and literals.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BubbleSize))]
+[DataContract]
 [XmlRoot("BubbleSize", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BubbleSize : ModelElement<DXDC.BubbleSize>
 {

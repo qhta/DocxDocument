@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a filtered bubble series for a chart, containing a reference to a bubble chart series.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FilteredBubbleSeries))]
+[DataContract]
 [XmlRoot("FilteredBubbleSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FilteredBubbleSeries : ModelElement<DXO13DC.FilteredBubbleSeries>
 {

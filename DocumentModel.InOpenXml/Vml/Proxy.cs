@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Reference.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Proxy))]
+[DataContract]
 [XmlRoot("Proxy", Namespace = "DocumentModel.Vml")]
 public partial class Proxy : ModelElement<DXVO.Proxy>
 {

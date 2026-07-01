@@ -11,6 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.GraphicFrame))]
+[DataContract]
 [XmlRoot("GraphicFrame", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class GraphicFrame : ModelElement<DXDCD.GraphicFrame>
 {

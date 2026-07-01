@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for durable identifiers, UTC date information, intelligent placeholder status, and extension data, enabling advanced tracking, management, and extensibility of comment metadata and behaviors in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXO21WCE.CommentExtensible))]
+[DataContract]
 [XmlRoot("CommentExtensible", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CommentExtensible : ModelElement<DXO21WCE.CommentExtensible>
 {

@@ -21,6 +21,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.LayoutContainer))]
+[DataContract]
 [XmlRoot("LayoutContainer", Namespace = "DocumentModel.CustomUI")]
 public partial class LayoutContainer : ModelElement<DXO10CUI.LayoutContainer>
 {

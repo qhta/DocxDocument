@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlFormulaElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlFormulaElement))]
+[DataContract]
 [XmlRoot("OpenXmlFormulaElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class OpenXmlFormulaElement : ModelElement<DXO16DCD.OpenXmlFormulaElement>
 {

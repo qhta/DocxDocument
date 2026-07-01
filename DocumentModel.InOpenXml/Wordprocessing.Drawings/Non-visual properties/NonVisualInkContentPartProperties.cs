@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for comment status, content part locks, and extension data, enabling control over editing restrictions and extensibility for ink content parts.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.NonVisualInkContentPartProperties))]
+[DataContract]
 [XmlRoot("NonVisualInkContentPartProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class NonVisualInkContentPartProperties : ModelElement<DXO10W.WordNonVisualContentPartShapeProperties>
 {

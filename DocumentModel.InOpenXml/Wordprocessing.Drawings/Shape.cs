@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to visual and non-visual properties, styling, text box information, and linking for shapes embedded in the document.
 /// </summary>
 [OpenXmlType(typeof(DXD.Shape))]
+[DataContract]
 [XmlRoot("Shape", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Shape : ModelElement<DXD.Shape>, DMD.IOfficeArtExtendableElement
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying distances from text, anchor settings, and alignment, enabling precise control over table placement and layout within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.TablePositionProperties))]
+[DataContract]
 [XmlRoot("TablePositionProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TablePositionProperties : ModelElement<DXW.TablePositionProperties>
 {

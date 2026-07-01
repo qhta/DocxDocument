@@ -2,6 +2,7 @@ namespace DocumentModel.WebExtensions.UI;
 /// <summary>
 ///   Defines the WebExtensionTaskPane Class.
 /// </summary>
+[DataContract]
 [XmlRoot("WebExtensionTaskPane", Namespace = "DocumentModel.WebExtensions.UI")]
 public class WebExtensionTaskPane : CollectionItem
 {

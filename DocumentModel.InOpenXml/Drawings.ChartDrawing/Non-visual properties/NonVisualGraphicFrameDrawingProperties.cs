@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a graphic frame in chart drawings, including locking options that restrict editing or manipulation of the frame.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualGraphicFrameDrawingProperties))]
+[DataContract]
 [XmlRoot("NonVisualGraphicFrameDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualGraphicFrameDrawingProperties : ModelElement<DXDCD.NonVisualGraphicFrameDrawingProperties> //, IExtendableElement
 {

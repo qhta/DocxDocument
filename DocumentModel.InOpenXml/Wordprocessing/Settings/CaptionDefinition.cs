@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for caption type name, placement, chapter numbering, heading style, label inclusion, numbering format, and separator, enabling advanced configuration and management of captions.
 /// </summary>
 [OpenXmlType(typeof(DXW.Caption))]
+[DataContract]
 [XmlRoot("CaptionDefinition", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CaptionDefinition : ModelElement<DXW.Caption>
 {

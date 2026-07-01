@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the PlotArea Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.PlotArea))]
+[DataContract]
 [XmlRoot("PlotArea", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class PlotArea : ModelElement<DXO16DCD.PlotArea>
 {

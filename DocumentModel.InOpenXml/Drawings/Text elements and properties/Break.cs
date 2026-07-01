@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a text line break within a drawing, optionally including run properties for the break.
 /// </summary>
 [OpenXmlType(typeof(DXW.Break))]
+[DataContract]
 [XmlRoot("Break", Namespace = "DocumentModel.Drawings")]
 public partial class Break : ModelElement<DXW.Break>
 {

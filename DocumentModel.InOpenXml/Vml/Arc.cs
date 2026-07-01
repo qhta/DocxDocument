@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Arc Segment.
 /// </summary>
 [OpenXmlType(typeof(DXV.Arc))]
+[DataContract]
 [XmlRoot("Arc", Namespace = "DocumentModel.Vml")]
 public partial class Arc : ModelElement<DXV.Arc>, IEmbeddedObjectContent
 {

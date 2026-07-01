@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents table style conditional formatting properties for a table cell in a Wordprocessing document.
 /// This class provides properties for borders, shading, text wrapping, margins, and vertical alignment, enabling advanced styling and formatting options for table cells based on conditional formatting rules.
 /// </summary>
+[DataContract]
 [XmlRoot("TableStyleConditionalCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableStyleConditionalCellProperties : ModelElement //<DXO10W.TableStyleConditionalCellProperties>
 {

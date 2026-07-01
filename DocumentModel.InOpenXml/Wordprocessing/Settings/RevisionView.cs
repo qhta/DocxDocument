@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the visibility settings for annotation types in a Wordprocessing document.
 /// This class provides properties for controlling the display of markup areas, comments, content revisions, formatting revisions, and ink annotations, enabling advanced configuration of revision and annotation visibility.
 /// </summary>
+[DataContract]
 [XmlRoot("RevisionView", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RevisionView
 {

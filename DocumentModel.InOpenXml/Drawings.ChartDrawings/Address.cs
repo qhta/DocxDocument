@@ -12,6 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   different regions and mapping services.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Address))]
+[DataContract]
 [XmlRoot("Address", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Address : ModelElement<DXO16DCD.Address>
 {

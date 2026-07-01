@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 /// modifications like tint, shade, alpha transparency, and hue/saturation/luminance adjustments.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetColor))]
+[DataContract]
 [XmlRoot("PresetColor", Namespace = "DocumentModel.Drawings")]
 public partial class PresetColor : DrawingsColorBase<DXD.PresetColor>, ISchemeBaseColor, IDrawingColor
 {

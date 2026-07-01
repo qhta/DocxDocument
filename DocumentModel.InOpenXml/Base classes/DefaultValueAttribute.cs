@@ -3,7 +3,6 @@ namespace DocumentModel;
 /// Replaces system DefaultValueAttribute, which is recognized by XmlSerializer.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
-[XmlRoot("DefaultValueAttribute", Namespace = "DocumentModel")]
 public class DefaultValueAttribute(object? Value) : System.Attribute
 {
  /// <summary>

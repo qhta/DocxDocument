@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a single contributor (author, editor, etc.).
 /// </summary>
 [OpenXmlType(typeof(DXB.Person))]
+[DataContract]
 [XmlRoot("Contributor", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Contributor : ModelElement<DXB.Person>
 {

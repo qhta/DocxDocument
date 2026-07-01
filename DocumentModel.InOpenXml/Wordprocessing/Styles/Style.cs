@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for style name, type, base style, next paragraph style, update and visibility flags, paragraph and font formatting, and parent application, enabling advanced style management and formatting for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Style))]
+[DataContract]
 [XmlRoot("Style", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Style : ModelElement<DXW.Style>
 {

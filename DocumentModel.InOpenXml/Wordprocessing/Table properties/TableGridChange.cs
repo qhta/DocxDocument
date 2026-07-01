@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for annotation identification and previous table grid configuration, enabling tracking and management of grid revisions.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableGridChange))]
+[DataContract]
 [XmlRoot("TableGridChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableGridChange : ModelElement<DXW.TableGridChange>
 {

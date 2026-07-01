@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   management in map-based chart visualizations.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoEntity))]
+[DataContract]
 [XmlRoot("GeoEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoEntity : ModelElement<DXO16DCD.GeoEntity>
 {

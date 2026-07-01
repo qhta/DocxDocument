@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This abstract base class supports loading and updating relationship data for external resources such as templates, images, or other linked files.
 /// </summary>
 [OpenXmlType(typeof(DXW.RelationshipType))]
+[DataContract]
 [XmlRoot("ExternalFile", Namespace = "DocumentModel.Wordprocessing")]
 //[OpenXmlUpdateData(nameof(ModelElement.UpdateData))]
 public abstract partial class ExternalFile<T> : RelationshipType<DXW.RelationshipType>

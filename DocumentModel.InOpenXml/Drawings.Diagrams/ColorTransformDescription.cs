@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Description.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorTransformDescription))]
+[DataContract]
 [XmlRoot("ColorTransformDescription", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorTransformDescription : ModelElement<DXDD.ColorTransformDescription>
 {

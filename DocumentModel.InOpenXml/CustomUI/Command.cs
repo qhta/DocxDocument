@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:command.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.Command))]
+[DataContract]
 [XmlRoot("Command", Namespace = "DocumentModel.CustomUI")]
 public partial class Command : ModelElement<DXO10CUI.Command>
 {

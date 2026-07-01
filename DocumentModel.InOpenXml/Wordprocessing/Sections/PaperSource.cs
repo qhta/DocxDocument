@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying printer tray codes for the first page and non-first pages, enabling advanced configuration of paper source selection during printing.
 /// </summary>
 [OpenXmlType(typeof(DXW.PaperSource))]
+[DataContract]
 [XmlRoot("PaperSource", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PaperSource : ModelElement<DXW.PaperSource>, ISectionPropertiesContent
 {

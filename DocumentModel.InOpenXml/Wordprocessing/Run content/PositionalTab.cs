@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// An absolute position tab advances the position on the current line of text to a specified alignment and base, regardless of custom tab stops or default tab stop width. If the alignment location cannot be found on the current line, the tab advances to that location on the next available line.
 /// </summary>
 [OpenXmlType(typeof(DXW.PositionalTab))]
+[DataContract]
 [XmlRoot("PositionalTab", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PositionalTab : ModelElement<DXW.PositionalTab>, IRunContent
 {

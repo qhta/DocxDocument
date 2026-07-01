@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This extension allows specifying whether categories are auto-generated.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StrDataExtension))]
+[DataContract]
 [XmlRoot("StrDataExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StrDataExtension : Extension<DXDC.StrDataExtension>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Apply 3D shape properties.
 /// </summary>
 [OpenXmlType(typeof(DXD.Shape3DType))]
+[DataContract]
 [XmlRoot("Shape3DType", Namespace = "DocumentModel.Drawings")]
 public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableElement
 {

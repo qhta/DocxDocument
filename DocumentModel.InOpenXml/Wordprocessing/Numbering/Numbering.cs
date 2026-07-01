@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Numbering Definitions.
 /// </summary>
 [OpenXmlType(typeof(DXW.Numbering))]
+[DataContract]
 [XmlRoot("Numbering", Namespace = "DocumentModel.Wordprocessing")]
 public sealed partial class Numbering : ModelElement<DXW.Numbering>
 {

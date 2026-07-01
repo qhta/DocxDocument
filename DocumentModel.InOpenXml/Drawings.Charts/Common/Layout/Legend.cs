@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Describes legend data and formatting for a chart, including position, entries, layout, overlay, shape formatting, text formatting, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Legend))]
+[DataContract]
 [XmlRoot("Legend", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Legend : ModelElement<DXDC.Legend> //: ExtendableElement
 {

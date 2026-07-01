@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a reference to a font, including its identifier and color information in various color models.
 /// </summary>
 [OpenXmlType(typeof(DXD.FontReference))]
+[DataContract]
 [XmlRoot("FontReference", Namespace = "DocumentModel.Drawings")]
 public partial class FontReference : ModelElement<DXD.FontReference>
 {

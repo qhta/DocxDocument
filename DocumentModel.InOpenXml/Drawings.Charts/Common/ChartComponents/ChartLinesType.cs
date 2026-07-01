@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the ChartLinesType Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ChartLinesType))]
+[DataContract]
 [XmlRoot("ChartLinesType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartLinesType<T> : ModelElement<T> where T : DXDC.ChartLinesType
 {
@@ -18,6 +19,7 @@ public partial class ChartLinesType<T> : ModelElement<T> where T : DXDC.ChartLin
 ///  Concrete implementation of ChartLinesType for the DXDC.ChartLinesType.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ChartLinesType))]
+[DataContract]
 [XmlRoot("ChartLinesType", Namespace = "DocumentModel.Drawings.Charts")]
 public class ChartLinesType : ModelElement<DXDC.ChartLinesType>
 {

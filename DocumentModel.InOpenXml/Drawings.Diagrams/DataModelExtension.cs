@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 ///   Defines the DataModelExtension class.
 /// </summary>
 [OpenXmlType(typeof(DXD.DataModelExtension))]
+[DataContract]
 [XmlRoot("DataModelExtension", Namespace = "DocumentModel.Drawings")]
 public partial class DataModelExtension : Extension<DXD.DataModelExtension>
 {

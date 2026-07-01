@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   which was performed on the contents of the current WordprocessingML document. 
 /// </summary>
 [OpenXmlType(typeof(DXW.ActiveWritingStyle))]
+[DataContract]
 [XmlRoot("ActiveWritingStyle", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ActiveWritingStyle : ModelElement<DXW.ActiveWritingStyle>
 {

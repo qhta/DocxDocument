@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Provides information about a bibliography style.
 /// </summary>
+[DataContract]
 [XmlRoot("BibliographyStyleInfo", Namespace = "DocumentModel.Wordprocessing")]
 public partial class BibliographyStyleInfo : ModelElement
 {

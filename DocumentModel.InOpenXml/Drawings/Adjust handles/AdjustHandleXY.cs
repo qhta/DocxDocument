@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an XY adjust handle, providing guides and limits for horizontal and vertical adjustments of a shape.
 /// </summary>
 [OpenXmlType(typeof(DXD.AdjustHandleXY))]
+[DataContract]
 [XmlRoot("AdjustHandleXY", Namespace = "DocumentModel.Drawings")]
 public partial class AdjustHandleXY : ModelElement<DXD.AdjustHandleXY>
 {

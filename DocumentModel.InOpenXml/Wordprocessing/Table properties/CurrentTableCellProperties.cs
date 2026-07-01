@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains properties for conditional formatting, preferred width, grid span, merge states, borders, text direction, fit text, cell mark visibility, and revision tracking for table cells.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableCellProperties))]
+[DataContract]
 [XmlRoot("CurrentTableCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CurrentTableCellProperties<T> : BaseTableCellProperties<T> where T : DX.OpenXmlElement
 {

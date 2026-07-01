@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Constraint.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Constraint))]
+[DataContract]
 [XmlRoot("Constraint", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Constraint : ModelElement<DXDD.Constraint>
 {

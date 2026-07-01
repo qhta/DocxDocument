@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for table cells.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtCell))]
+[DataContract]
 [XmlRoot("SdtCell", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtCell : ModelElement<DXW.SdtCell>, ITableRowContent, ISdtCellContent
 {

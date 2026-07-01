@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a scatter chart, providing additional series filtering capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ScatterChartExtension))]
+[DataContract]
 [XmlRoot("ScatterChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ScatterChartExtension : Extension<DXDC.ScatterChartExtension>
 {

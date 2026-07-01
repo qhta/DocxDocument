@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Down Bars.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DownBars))]
+[DataContract]
 [XmlRoot("DownBars", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DownBars : ModelElement<DXDC.DownBars>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for the miter limit, which determines how sharp a mitered corner can be before it is beveled.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.LineJoinMiterProperties))]
+[DataContract]
 [XmlRoot("LineJoinMiterProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class LineJoinMiterProperties : ModelElement<DXO10W.LineJoinMiterProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for specifying the type and direction of the light rig, as well as sphere coordinates for advanced lighting control, enabling realistic rendering of 3D objects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.LightRig))]
+[DataContract]
 [XmlRoot("LightRig", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class LightRig : ModelElement<DXO10W.LightRig>
 {

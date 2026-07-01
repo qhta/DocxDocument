@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for the section title and options to restrict insertion or deletion of sections, enabling advanced configuration and management of repeated sections in structured document tags.
 /// </summary>
 [OpenXmlType(typeof(DXO13W.SdtRepeatedSection))]
+[DataContract]
 [XmlRoot("SdtRepeatedSection", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtRepeatedSection : ModelElement<DXO13W.SdtRepeatedSection>
 {

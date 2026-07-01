@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a pattern fill, including preset pattern type and foreground/background colors.
 /// </summary>
 [OpenXmlType(typeof(DXD.PatternFill))]
+[DataContract]
 [XmlRoot("PatternFill", Namespace = "DocumentModel.Drawings")]
 public partial class PatternFill : ModelElement<DXD.PatternFill>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables advanced color referencing and theming for shapes, lines, and graphical elements in Office documents.
 /// </summary>
 [OpenXmlType(typeof(DXD.FillReference))]
+[DataContract]
 [XmlRoot("FillReference", Namespace = "DocumentModel.Drawings")]
 public partial class FillReference : ModelElement<DXD.FillReference>
 {

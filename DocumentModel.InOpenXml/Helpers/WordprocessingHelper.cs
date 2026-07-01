@@ -2,7 +2,6 @@ namespace DocumentModel;
 /// <summary>
 /// Provides helper methods for creating and manipulating Wordprocessing documents using OpenXml.
 /// </summary>
-[XmlRoot("WordprocessingHelper", Namespace = "DocumentModel")]
 public static class WordprocessingHelper
 {
   /// <summary>

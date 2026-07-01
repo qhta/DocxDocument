@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Supports camera tool settings, signature lines, object properties, live feed properties, and extension URI association.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualPicturePropertiesExtension))]
+[DataContract]
 [XmlRoot("NonVisualPicturePropertiesExtension", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonVisualPicturePropertiesExtension>, IExtension
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Range permissions are special bookmarks used to control which users or groups can edit a particular region of a document when document protection is enabled and set to read-only or comments. This start marker is matched with the appropriately paired end marker by matching the value of the Id attribute from the associated permEnd element.
 /// </summary>
 [OpenXmlType(typeof(DXW.PermStart))]
+[DataContract]
 [XmlRoot("PermStart", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PermStart : MarkupStartRangeElement<DXW.PermStart, DXW.PermEnd>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic cutout effect, which simulates a cutout style with adjustable transparency and number of shades.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticCutout))]
+[DataContract]
 [XmlRoot("ArtisticCutout", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticCutout : ModelElement<DXO10D.ArtisticCutout>
 {

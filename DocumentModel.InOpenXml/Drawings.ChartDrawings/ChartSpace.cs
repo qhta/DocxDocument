@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   needed to render, edit, and reproduce the chart accurately.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartSpace))]
+[DataContract]
 [XmlRoot("ChartSpace", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ChartSpace : ModelElement<DXO16DCD.ChartSpace>
 {

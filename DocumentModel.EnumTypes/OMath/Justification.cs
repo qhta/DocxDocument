@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Math.JustificationValues))]
-public enum Justification
+public enum MathJustification
 {
   /// <summary>
   ///   Left Justification.

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a bevel effect, defining the width, height, and preset style for 3D effects on shapes.
 /// </summary>
 [OpenXmlType(typeof(DXD.BevelType))]
+[DataContract]
 [XmlRoot("Bevel", Namespace = "DocumentModel.Drawings")]
 public partial class Bevel : ModelElement<DXD.BevelType>
 {

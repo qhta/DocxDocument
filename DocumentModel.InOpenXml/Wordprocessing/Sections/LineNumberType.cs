@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for line number increments, starting value, distance between text and line numbers, and restart settings, enabling advanced configuration of line numbering behavior and appearance.
 /// </summary>
 [OpenXmlType(typeof(DXW.LineNumberType))]
+[DataContract]
 [XmlRoot("LineNumberType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class LineNumberType : ModelElement<DXW.LineNumberType>, ISectionPropertiesContent
 {

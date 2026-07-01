@@ -11,6 +11,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.ConnectionShape))]
+[DataContract]
 [XmlRoot("ConnectionShape", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class ConnectionShape : ModelElement<DXDCD.ConnectionShape>
 {

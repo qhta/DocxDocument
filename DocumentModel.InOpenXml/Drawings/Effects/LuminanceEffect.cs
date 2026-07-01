@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a luminance effect, allowing adjustment of brightness and contrast for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXD.LuminanceEffect))]
+[DataContract]
 [XmlRoot("LuminanceEffect", Namespace = "DocumentModel.Drawings")]
 public partial class LuminanceEffect : ModelElement<DXD.LuminanceEffect>
 {

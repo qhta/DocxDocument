@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents an extension for shape properties, providing additional or hidden formatting and configuration options.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapePropertiesExtension))]
+[DataContract]
 [XmlRoot("ShapePropertiesExtension", Namespace = "DocumentModel.Drawings")]
 public partial class ShapePropertiesExtension : ModelElement<DXD.ShapePropertiesExtension>, IExtension
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a bibliographic source (reference).
 /// </summary>
 [OpenXmlType(typeof(DXB.Source))]
+[DataContract]
 [XmlRoot("Source", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Source : ModelElement<DXB.Source>
 {

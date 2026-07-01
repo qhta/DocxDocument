@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   Examples of n-ary objects are: integral, sum, product.
 /// </summary>
 [OpenXmlType(typeof(DXM.Nary))]
+[DataContract]
 [XmlRoot("Nary", Namespace = "DocumentModel.Math")]
 public partial class Nary : ModelElement<DXM.Nary>, ICommonMathContent
 {

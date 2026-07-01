@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the Stroke Class.
 /// </summary>
 [OpenXmlType(typeof(DXV.Stroke))]
+[DataContract]
 [XmlRoot("Stroke", Namespace = "DocumentModel.Vml")]
 public partial class Stroke : ModelElement<DXV.Stroke>
 {

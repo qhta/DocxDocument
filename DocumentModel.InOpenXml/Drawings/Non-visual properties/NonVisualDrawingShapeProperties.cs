@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.NonVisualDrawingShapeProperties))]
+[DataContract]
 [XmlRoot("NonVisualDrawingShapeProperties", Namespace = "DocumentModel.Drawings")]
 public abstract partial class NonVisualDrawingShapeProperties<T> : ModelElement<DXOD.NonVisualDrawingShapeProperties>, IExtendableElement where T : DX.OpenXmlElement
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   It is often applied using a form of linear format. 
 /// </summary>
 [OpenXmlType(typeof(DXM.MathFunction))]
+[DataContract]
 [XmlRoot("Function", Namespace = "DocumentModel.Math")]
 public partial class Function : ModelElement<DXM.MathFunction>, ICommonMathContent
 {

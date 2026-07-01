@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.VBA;
 /// This class provides access to document events and additional macro data, enabling advanced automation and extensibility for VBA-enabled documents.
 /// </summary>
 [OpenXmlType(typeof(DXOW.VbaSuppData))]
+[DataContract]
 [XmlRoot("VbaSuppData", Namespace = "DocumentModel.Wordprocessing.VBA")]
 public class VbaSuppData : ModelElement<DXOW.VbaSuppData>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the Callout Class.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Callout))]
+[DataContract]
 [XmlRoot("Callout", Namespace = "DocumentModel.Vml")]
 public partial class Callout : ModelElement<DXVO.Callout>
 {

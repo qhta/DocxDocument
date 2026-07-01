@@ -39691,27 +39691,27 @@
               Bottom Alignment.
             </summary>
         </member>
-        <member name="T:DocumentModel.Math.Justification">
+        <member name="T:DocumentModel.Math.MathJustification">
             <summary>
               Defines the JustificationValues enumeration.
             </summary>
         </member>
-        <member name="F:DocumentModel.Math.Justification.Left">
+        <member name="F:DocumentModel.Math.MathJustification.Left">
             <summary>
               Left Justification.
             </summary>
         </member>
-        <member name="F:DocumentModel.Math.Justification.Right">
+        <member name="F:DocumentModel.Math.MathJustification.Right">
             <summary>
               Right.
             </summary>
         </member>
-        <member name="F:DocumentModel.Math.Justification.Center">
+        <member name="F:DocumentModel.Math.MathJustification.Center">
             <summary>
               Center (Equation).
             </summary>
         </member>
-        <member name="F:DocumentModel.Math.Justification.CenterGroup">
+        <member name="F:DocumentModel.Math.MathJustification.CenterGroup">
             <summary>
               Centered as Group (Equations).
             </summary>

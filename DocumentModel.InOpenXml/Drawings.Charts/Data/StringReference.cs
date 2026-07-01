@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class defines the formula used to retrieve the string data, the cache of string values, and any extension lists.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StringReference))]
+[DataContract]
 [XmlRoot("StringReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StringReference : ModelElement<DXDC.StringReference>
 {

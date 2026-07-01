@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for black and white rendering, group transformations, fill settings, visual effects, and 3D scene properties, enabling advanced layout and appearance control for grouped drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShapeProperties))]
+[DataContract]
 [XmlRoot("GroupShapeProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class GroupShapeProperties : ModelElement<DXOD.GroupShapeProperties>, IExtendableElement
 {

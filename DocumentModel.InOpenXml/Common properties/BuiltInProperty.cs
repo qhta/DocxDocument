@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
+[DataContract]
 [XmlRoot("BuiltInProperty", Namespace = "DocumentModel")]
 [JsonConverter(typeof(DocumentPropertyJsonConverter<BuiltInProperty>))]
 public partial class BuiltInProperty : DocumentProperty

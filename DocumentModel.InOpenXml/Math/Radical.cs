@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the radical object, consisting of a radical, a base e and an optional degree deg.
 /// </summary>
 [OpenXmlType(typeof(DXM.Radical))]
+[DataContract]
 [XmlRoot("Radical", Namespace = "DocumentModel.Math")]
 public partial class Radical : ModelElement<DXM.Radical>, ICommonMathContent
 {

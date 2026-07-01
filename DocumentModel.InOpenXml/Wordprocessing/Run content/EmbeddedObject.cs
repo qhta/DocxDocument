@@ -7,6 +7,7 @@
 /// identifier of the embedded object. The anchor identifier property is only available in Office 2010 and later
 /// versions. This class is typically used when working with documents that include objects embedded from external
 /// sources.</remarks>
+[DataContract]
 [XmlRoot("EmbeddedObject", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.EmbeddedObject))]
 public class EmbeddedObject: ModelElement<DXW.EmbeddedObject>

@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the Lock Class.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Lock))]
+[DataContract]
 [XmlRoot("Lock", Namespace = "DocumentModel.Vml")]
 public partial class Lock : ModelElement<DXVO.Lock>
 {

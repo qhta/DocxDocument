@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Color Transform Definitions.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorsDefinition))]
+[DataContract]
 [XmlRoot("ColorDefinition", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorDefinition : ModelElement<DXDD.ColorsDefinition>
 {

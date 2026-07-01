@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// contributing to the overall data representation and visualization of subtotals
 /// in the chart's layout and formatting.
 /// </summary>
+[DataContract]
 [XmlRoot("Subtotals", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class Subtotals : Collection<UInt32>
 {

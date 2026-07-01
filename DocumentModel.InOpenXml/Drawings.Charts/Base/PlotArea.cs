@@ -32,6 +32,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDC.PlotArea))]
+[DataContract]
 [XmlRoot("PlotArea", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PlotArea : ModelElement<DXDC.PlotArea>
 {

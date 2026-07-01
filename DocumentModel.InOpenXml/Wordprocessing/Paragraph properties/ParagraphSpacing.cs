@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents line spacing settings for a paragraph in a WordprocessingML document.
 /// This class provides properties for specifying spacing in twentieths of a point, line units, and automatic spacing, enabling advanced control over paragraph layout and readability.
 /// </summary>
+[DataContract]
 [XmlRoot("ParagraphSpacing", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphSpacing : ModelElement //<DXW.SpacingBeforeOrAfter>
 {

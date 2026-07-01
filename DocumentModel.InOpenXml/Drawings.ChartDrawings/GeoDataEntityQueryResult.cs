@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   external mapping service is unavailable.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataEntityQueryResult))]
+[DataContract]
 [XmlRoot("GeoDataEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoDataEntityQueryResult : ModelElement<DXO16DCD.GeoDataEntityQueryResult>
 {

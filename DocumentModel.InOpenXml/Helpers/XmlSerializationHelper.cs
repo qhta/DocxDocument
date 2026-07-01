@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Reflection;
+﻿
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
 
 namespace DocumentModel;
 
@@ -93,17 +91,7 @@ public static class XmlSerializationHelper
     //var atype = typeof(DocumentModel.Vml.Arc);
 
     if (modelTypes == null)
-      modelTypes = typeof(DocumentModel.Wordprocessing.Document).Assembly.GetTypes()
-        .Where(t => 
-                    t.IsClass && !t.IsAbstract && !t.IsGenericType
-                    && t.BaseType!=typeof(System.Attribute)
-                    && !t.Name.EndsWith("EventArgs")
-                    && !t.Name.EndsWith("Wrapper")
-                    && !t.Implements(typeof(System.Collections.IDictionary))
-                    && !t.IsInterface
-        /*&& t.GetConstructor([]) != null*/).ToArray();
-
-
+      modelTypes = GetKnownTypes();
     //var knownTypes = new HashSet<Type>();
     //if (modelTypes == null)
     //{
@@ -146,9 +134,11 @@ public static class XmlSerializationHelper
     }
 
     var xmlRootAttribute = GetXmlRootAttribute(rootType);
+
+   var supportedTypes = modelTypes.Where(t => !t.IsGenericType).ToArray();
     try
     {
-      return new XmlSerializer(rootType, xmlAttributeOverrides, modelTypes, xmlRootAttribute, null);
+      return new XmlSerializer(rootType, xmlAttributeOverrides, supportedTypes, xmlRootAttribute, null);
     }
     catch (Exception e)
     {
@@ -156,89 +146,105 @@ public static class XmlSerializationHelper
       throw;
     }
 
-    static void GetKnownTypes(Type? aType, HashSet<Type> knownTypes, List<Type> visitedTypes)
+    static Type[] GetKnownTypes()
     {
-      if (aType != null && aType != typeof(object))
-      {
-        if (visitedTypes.Contains(aType))
-          return;
-        //Debug.WriteLine($"GetKnownTypes for {aType.FullName}");
-        visitedTypes.Add(aType);
-        if ((aType.FullName ?? "").Contains("<>"))
-          return;
-        if (aType.Namespace == null)
-          return;
-        if (aType.Namespace.StartsWith("System"))
-          return;
-        if (aType == typeof(ValueType))
-          return;
-        if (aType.IsGenericType)
-        {
-          var arg = aType.GetGenericArguments()[0];
-          if (arg.Name.Contains("<>"))
-            return;
-          if (arg.Namespace == null)
-            return;
-          if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat") || arg.IsInterface)
-          {
-            knownTypes.Add(aType);
-            //Debug.WriteLine($"Skipping known arg type: {arg.FullName}");
-          }
-          else
-            if (!string.IsNullOrEmpty(arg.Namespace))
-            {
-              if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
-              {
-                //Debug.WriteLine($"Skipped known arg type: {arg.FullName}");
-              }
-              else
-                knownTypes.Add(arg);
-            }
-        }
-        else
-        {
-          if (aType.Namespace.StartsWith("System") || aType.Namespace.StartsWith("DocumentFormat") || aType.IsInterface)
-          {
-            //Debug.WriteLine($"Skipped known type: {aType.FullName}");
-          }
-          else
-            knownTypes.Add(aType);
-        }
-        if (aType != typeof(string))
-        {
-          foreach (var iEnumerable in aType.GetInterfaces()
-                     .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
-          {
-            var arg = iEnumerable.GetGenericArguments()[0];
-            if (arg.Name.Contains("<>"))
-              continue;
-            if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme" || arg.IsInterface)
-            {
-              //Debug.WriteLine($"Continue known arg type: {arg.FullName}");
-              continue;
-            }
-            if (!string.IsNullOrEmpty(arg.Namespace))
-            {
-              knownTypes.Add(arg);
-            }
-          }
-
-          //Debug.WriteLine($"GetKnownTypes for {aType.BaseType?.FullName}");
-          GetKnownTypes(aType.BaseType, knownTypes, visitedTypes);
-          foreach (var property in aType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
-          {
-            if (property.CanWrite && property.GetCustomAttribute<XmlIgnoreAttribute>() == null)
-            {
-              GetKnownTypes(property.PropertyType, knownTypes, visitedTypes);
-            }
-          }
-        }
-        foreach (XmlIncludeAttribute xmlInclude in aType.GetCustomAttributes<XmlIncludeAttribute>())
-        {
-          GetKnownTypes(xmlInclude.Type, knownTypes, visitedTypes);
-        }
-      }
+      var dataContractTypes = typeof(DocumentModel.Wordprocessing.Document).Assembly.GetTypes()
+        .Where(t => t.GetCustomAttribute<DataContractAttribute>() != null).ToList();
+      dataContractTypes.AddRange(GetGenericBaseTypes(dataContractTypes));
+      return dataContractTypes.Distinct().ToArray();
     }
+
+    static Type[] GetGenericBaseTypes(IEnumerable<Type> types)
+    {
+      var baseGenericTypes = types.Where(t => t.BaseType != null && t.BaseType.IsGenericType).Select(t => t.BaseType!).ToList();
+      if (baseGenericTypes.Any())
+        baseGenericTypes.AddRange(GetGenericBaseTypes(baseGenericTypes));
+      return baseGenericTypes.ToArray();
+    }
+
+    //static void GetKnownTypes(Type? aType, HashSet<Type> knownTypes, List<Type> visitedTypes)
+    //{
+    //  if (aType != null && aType != typeof(object))
+    //  {
+    //    if (visitedTypes.Contains(aType))
+    //      return;
+    //    //Debug.WriteLine($"GetKnownTypes for {aType.FullName}");
+    //    visitedTypes.Add(aType);
+    //    if ((aType.FullName ?? "").Contains("<>"))
+    //      return;
+    //    if (aType.Namespace == null)
+    //      return;
+    //    if (aType.Namespace.StartsWith("System"))
+    //      return;
+    //    if (aType == typeof(ValueType))
+    //      return;
+    //    if (aType.IsGenericType)
+    //    {
+    //      var arg = aType.GetGenericArguments()[0];
+    //      if (arg.Name.Contains("<>"))
+    //        return;
+    //      if (arg.Namespace == null)
+    //        return;
+    //      if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat") || arg.IsInterface)
+    //      {
+    //        knownTypes.Add(aType);
+    //        //Debug.WriteLine($"Skipping known arg type: {arg.FullName}");
+    //      }
+    //      else
+    //        if (!string.IsNullOrEmpty(arg.Namespace))
+    //        {
+    //          if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat"))
+    //          {
+    //            //Debug.WriteLine($"Skipped known arg type: {arg.FullName}");
+    //          }
+    //          else
+    //            knownTypes.Add(arg);
+    //        }
+    //    }
+    //    else
+    //    {
+    //      if (aType.Namespace.StartsWith("System") || aType.Namespace.StartsWith("DocumentFormat") || aType.IsInterface)
+    //      {
+    //        //Debug.WriteLine($"Skipped known type: {aType.FullName}");
+    //      }
+    //      else
+    //        knownTypes.Add(aType);
+    //    }
+    //    if (aType != typeof(string))
+    //    {
+    //      foreach (var iEnumerable in aType.GetInterfaces()
+    //                 .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
+    //      {
+    //        var arg = iEnumerable.GetGenericArguments()[0];
+    //        if (arg.Name.Contains("<>"))
+    //          continue;
+    //        if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme" || arg.IsInterface)
+    //        {
+    //          //Debug.WriteLine($"Continue known arg type: {arg.FullName}");
+    //          continue;
+    //        }
+    //        if (!string.IsNullOrEmpty(arg.Namespace))
+    //        {
+    //          knownTypes.Add(arg);
+    //        }
+    //      }
+
+    //      //Debug.WriteLine($"GetKnownTypes for {aType.BaseType?.FullName}");
+    //      GetKnownTypes(aType.BaseType, knownTypes, visitedTypes);
+    //      foreach (var property in aType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+    //      {
+    //        if (property.CanWrite && property.GetCustomAttribute<XmlIgnoreAttribute>() == null)
+    //        {
+    //          GetKnownTypes(property.PropertyType, knownTypes, visitedTypes);
+    //        }
+    //      }
+    //    }
+    //    foreach (XmlIncludeAttribute xmlInclude in aType.GetCustomAttributes<XmlIncludeAttribute>())
+    //    {
+    //      GetKnownTypes(xmlInclude.Type, knownTypes, visitedTypes);
+    //    }
+    //  }
+    //}
 
     Dictionary<string, List<Type>> GetTypeNames(Type[] types)
     {

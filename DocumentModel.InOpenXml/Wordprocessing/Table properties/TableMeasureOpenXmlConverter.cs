@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class ensures that the conversion logic for TableWidth is properly integrated into the OpenXmlModelConverter framework,
 /// allowing seamless translation between the DocumentModel representation and the Open XML SDK representation of table width properties.
 /// </summary>
+[DataContract]
 [XmlRoot("TableMeasureOpenXmlConverter", Namespace = "DocumentModel.Wordprocessing")]
 public static class TableMeasureOpenXmlConverter
 {

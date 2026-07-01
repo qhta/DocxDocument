@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the SeriesLayoutProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.SeriesLayoutProperties))]
+[DataContract]
 [XmlRoot("SeriesLayoutProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class SeriesLayoutProperties : ModelElement<DXO16DCD.SeriesLayoutProperties>
 {

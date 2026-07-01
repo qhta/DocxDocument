@@ -26,6 +26,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Group))]
+[DataContract]
 [XmlRoot("Group", Namespace = "DocumentModel.CustomUI")]
 public partial class Group : ModelElement<DXO10CUI.Group>
 {

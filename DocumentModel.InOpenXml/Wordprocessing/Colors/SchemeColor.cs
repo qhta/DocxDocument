@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SchemeColor))]
+[DataContract]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class SchemeColor : AnyColor<DXO10W.SchemeColor>
 {

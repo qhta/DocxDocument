@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides configuration for text layout, rotation, paragraph spacing, overflow behavior, insets, columns, anchoring, auto-fit, 3D settings, and extension data.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDS.TextBodyProperties))]
+[DataContract]
 [XmlRoot("TextBodyProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class TextBodyProperties : ModelElement<DXO10WDS.TextBodyProperties>
 {

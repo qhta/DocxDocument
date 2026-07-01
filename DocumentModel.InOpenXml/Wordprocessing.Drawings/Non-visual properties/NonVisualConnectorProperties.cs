@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   Provides access to connection locks, start and end connection information, and extension data for connectors, as defined in DrawingML and WordprocessingML schemas.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDS.NonVisualConnectorProperties))]
+[DataContract]
 [XmlRoot("NonVisualConnectorProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class NonVisualConnectorProperties : ModelElement<DXO10WDS.NonVisualConnectorProperties>, IExtendableElement
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an image effect, including visibility, a variety of artistic effects, image adjustments, and extension options.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ImageEffect))]
+[DataContract]
 [XmlRoot("ImageEffect", Namespace = "DocumentModel.Drawings")]
 public partial class ImageEffect : ModelElement<DXO10D.ImageEffect>, IExtendableElement
 {

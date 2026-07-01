@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Data Model.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DataModel))]
+[DataContract]
 [XmlRoot("DataModel", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class DataModel : ModelElement<DXDD.DataModel>
 {

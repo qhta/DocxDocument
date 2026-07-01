@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic pencil sketch effect, which simulates a pencil sketch style with adjustable transparency and pressure.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPencilSketch))]
+[DataContract]
 [XmlRoot("ArtisticPencilSketch", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPencilSketch : ModelElement<DXO10D.ArtisticPencilSketch>
 {

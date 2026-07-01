@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the NumericValue Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.NumericValue))]
+[DataContract]
 [XmlRoot("NumericValue", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class NumericValue : ModelElement<DXO16DCD.NumericValue>
 {

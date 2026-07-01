@@ -9,6 +9,7 @@
 /// designed for use with OpenXML document models, enabling seamless integration with color attributes in
 /// WordprocessingML and other OpenXML schemas. The class also provides methods for converting to and from
 /// OpenXML-specific color representations.</remarks>
+[DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Vml")]
 public partial class Color : ModelElement
 {

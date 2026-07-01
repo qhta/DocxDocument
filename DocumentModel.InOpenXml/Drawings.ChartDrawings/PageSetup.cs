@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the PageSetup Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.PageSetup))]
+[DataContract]
 [XmlRoot("PageSetup", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class PageSetup : ModelElement<DXO16DCD.PageSetup>
 {

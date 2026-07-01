@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an extension for connector locking, allowing additional properties or graphics to be associated with a connector lock.
 /// </summary>
 [OpenXmlType(typeof(DXD.ConnectorLockingExtension))]
+[DataContract]
 [XmlRoot("ConnectorLockingExtension", Namespace = "DocumentModel.Drawings")]
 public partial class ConnectorLockingExtension : ModelElement<DXD.ConnectorLockingExtension>, IExtension
 {

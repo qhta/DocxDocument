@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for specifying the contour color using either an RGB value or a scheme color, enabling flexible color customization.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.ContourColor))]
+[DataContract]
 [XmlRoot("ContourColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class ContourColor : ModelElement<DXO10W.ContourColor>
 {

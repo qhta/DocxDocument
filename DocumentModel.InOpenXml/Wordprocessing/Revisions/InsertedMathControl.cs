@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for author, date, annotation identifier, run formatting, and deleted math control, enabling tracking and management of mathematical content insertions within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.InsertedMathControl))]
+[DataContract]
 [XmlRoot("InsertedMathControl", Namespace = "DocumentModel.Wordprocessing")]
 public partial class InsertedMathControl : IdentifiedChange<DXW.InsertedMathControl>
 {

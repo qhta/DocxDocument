@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 ///   Represents formatting properties applied to the last run in a paragraph, including outline, fill, effects, highlight, underline, font, hyperlink, and text direction settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.EndParagraphRunProperties))]
+[DataContract]
 [XmlRoot("EndParagraphRunProperties", Namespace = "DocumentModel.Drawings")]
 public partial class EndParagraphRunProperties : ModelElement<DXD.EndParagraphRunProperties>, IExtendableElement
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class represents a collection of structured document tag run content and provides properties for tag configuration and end character formatting, enabling advanced handling of inline-level structured document tags.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtRun))]
+[DataContract]
 [XmlRoot("SdtRun", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtRun : ModelElement<DXW.SdtRun>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {

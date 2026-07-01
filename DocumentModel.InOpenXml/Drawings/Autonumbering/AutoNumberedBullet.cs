@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an auto-numbered bullet, specifying the numbering scheme and starting value for bullet lists.
 /// </summary>
 [OpenXmlType(typeof(DXD.AutoNumberedBullet))]
+[DataContract]
 [XmlRoot("AutoNumberedBullet", Namespace = "DocumentModel.Drawings")]
 public partial class AutoNumberedBullet : ModelElement<DXD.AutoNumberedBullet>
 {

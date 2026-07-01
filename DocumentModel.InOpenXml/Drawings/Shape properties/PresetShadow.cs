@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a preset shadow effect, including type, distance, direction, and color options.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetShadow))]
+[DataContract]
 [XmlRoot("PresetShadow", Namespace = "DocumentModel.Drawings")]
 public partial class PresetShadow : ModelElement<DXD.PresetShadow>
 {

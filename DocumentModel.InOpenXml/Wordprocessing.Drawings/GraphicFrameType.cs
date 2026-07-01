@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to non-visual properties, transformation settings, the contained graphic, and extension data, enabling advanced layout, rendering, and extensibility for graphical content.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDC.GraphicFrameType))]
+[DataContract]
 [XmlRoot("GraphicFrameType", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class GraphicFrameType : ModelElement<DXO10WDC.GraphicFrameType>
 {

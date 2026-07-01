@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Up Bars.
 /// </summary>
 [OpenXmlType(typeof(DXDC.UpBars))]
+[DataContract]
 [XmlRoot("UpBars", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class UpBars : ModelElement<DXDC.UpBars>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "SdtListItem"/> elements, enabling advanced customization of drop-down list options.
 /// </summary>
 [OpenXmlType(typeof(SdtListItem))]
+[DataContract]
 [XmlRoot("SdtListItems", Namespace = "DocumentModel.Wordprocessing")]
 public class SdtListItems : ElementCollection<SdtListItem>
 {

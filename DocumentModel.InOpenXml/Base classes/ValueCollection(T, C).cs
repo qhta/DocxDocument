@@ -5,6 +5,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "ItemType">Specifies the type of items contained in the value collection.</typeparam>
 /// <typeparam name = "OpenXmlCollectionType">Specifies the type of the OpenXml collection element being wrapped and synchronized.</typeparam>
+[DataContract]
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>, IWordprocessingDocumentAware where ItemType : notnull where OpenXmlCollectionType : DX.OpenXmlElement
 {

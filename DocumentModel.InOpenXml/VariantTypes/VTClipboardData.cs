@@ -4,6 +4,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Clipboard Data.
 /// </summary>
+[DataContract]
 [XmlRoot("VTClipboardData", Namespace = "DocumentModel.VariantTypes")]
 public partial class VTClipboardData : ModelElement
 {

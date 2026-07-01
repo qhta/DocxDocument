@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "Comment"/> objects, enabling advanced tracking, organization, and collaborative review of comments throughout the document.
 /// </summary>
 [OpenXmlType(typeof(Comment))]
+[DataContract]
 [XmlRoot("Comments", Namespace = "DocumentModel.Wordprocessing")]
 public class Comments : ModelElementCollection<Comment, DXW.Comments, DXW.Comment>
 {

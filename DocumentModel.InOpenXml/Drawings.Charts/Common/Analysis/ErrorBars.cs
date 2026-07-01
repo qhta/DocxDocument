@@ -17,6 +17,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </list>
 /// </remarks>
 [OpenXmlElement(typeof(DXDC.ErrorBars))]
+[DataContract]
 [XmlRoot("ErrorBars", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ErrorBars : ModelElement<DXDC.ErrorBars>
 {

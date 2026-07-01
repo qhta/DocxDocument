@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:control.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.ControlCloneQat))]
+[DataContract]
 [XmlRoot("ControlCloneQat", Namespace = "DocumentModel.CustomUI")]
 public partial class ControlCloneQat : ModelElement<DXO10CUI.ControlCloneQat>
 {

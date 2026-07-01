@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   without embedding the actual content data directly within the chart definition.
 /// </remarks>
 [OpenXmlType(typeof(DXO10DCD.ContentPart))]
+[DataContract]
 [XmlRoot("ContentPart", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ContentPart : ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtendableElement
 {

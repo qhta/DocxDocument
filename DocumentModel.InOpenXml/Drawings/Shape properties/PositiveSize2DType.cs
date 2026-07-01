@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a positive 2D size, defined by its length and width.
 /// </summary>
 [OpenXmlType(typeof(DXD.PositiveSize2DType))]
+[DataContract]
 [XmlRoot("PositiveSize2DType", Namespace = "DocumentModel.Drawings")]
 public partial class PositiveSize2DType : ModelElement<DXD.PositiveSize2DType>
 {

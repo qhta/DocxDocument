@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic cement effect, which simulates a cement texture with adjustable transparency and crack spacing.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticCement))]
+[DataContract]
 [XmlRoot("ArtisticCement", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticCement : ModelElement<DXO10D.ArtisticCement>
 {

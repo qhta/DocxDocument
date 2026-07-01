@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a set of literal numeric values for a chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberLiteral))]
+[DataContract]
 [XmlRoot("NumberLiteral", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberLiteral : ModelElement<DXDC.NumberLiteral>
 {

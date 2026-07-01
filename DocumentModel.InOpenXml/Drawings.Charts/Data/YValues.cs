@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the Y values for a chart series, including references and literals.
 /// </summary>
 [OpenXmlType(typeof(DXDC.YValues))]
+[DataContract]
 [XmlRoot("YValues", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class YValues : ModelElement<DXDC.YValues>
 {

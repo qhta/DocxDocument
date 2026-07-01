@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a reference to numeric values for a chart, including formula, numbering cache, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberReference))]
+[DataContract]
 [XmlRoot("NumberReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberReference : ModelElement<DXDC.NumberReference>
 {

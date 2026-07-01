@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This extension allows adding new properties or behaviors to data labels, such as advanced formatting or layout options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DLblExtension))]
+[DataContract]
 [XmlRoot("DataLabelsExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelsExtension : Extension<DXDC.DLblExtension>
 {

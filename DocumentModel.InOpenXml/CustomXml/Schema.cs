@@ -12,6 +12,7 @@ namespace DocumentModel.CustomXml;
 ///   documents to reference standard industry schemas or custom validation rules.
 /// </remarks>
 [OpenXmlTypeAttribute(typeof(DXCXSR.Schema))]
+[DataContract]
 [XmlRoot("Schema", Namespace = "DocumentModel.CustomXml")]
 public partial class Schema : ModelElement<DXCXSR.Schema>
 {

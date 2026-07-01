@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   3D view settings.
 /// </summary>
 [OpenXmlType(typeof(DXDC.View3D))]
+[DataContract]
 [XmlRoot("View3D", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class View3D : ModelElement<DXDC.View3D>
 {

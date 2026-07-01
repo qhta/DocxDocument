@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents background properties, including black and white rendering modes and target screen size for display.
 /// </summary>
 [OpenXmlType(typeof(DXO13D.BackgroundProperties))]
+[DataContract]
 [XmlRoot("BackgroundProperties", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundProperties : ModelElement<DXO13D.BackgroundProperties>
 {

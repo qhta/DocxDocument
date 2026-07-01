@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// Describes the properties for formatting and layout of text bodies in chart elements, including rotation, overflow, insets, columns, anchoring, and 3D effects.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.TextBodyProperties))]
+[DataContract]
 [XmlRoot("TextBodyProperties", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class TextBodyProperties : ModelElement<DXO13DCS.TextBodyProperties>
 {

@@ -6,6 +6,7 @@ namespace DocumentModel;
 /// backward compatibility with older Office versions.
 /// </summary>
 [OpenXmlType(typeof(OfficeArtExtension))]
+[DataContract]
 [XmlRoot("OfficeArtExtensionList", Namespace = "DocumentModel")]
 public class OfficeArtExtensionList : ModelElementCollection<OfficeArtExtension, DXOD.OfficeArtExtensionList, DXD.Extension>
 {

@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a collection of automatic caption definitions for Wordprocessing documents.
 /// </summary>
+[DataContract]
 [XmlRoot("AutoCaptions")]
 [OpenXmlType(typeof(AutoCaption))]
 public class AutoCaptions : ModelElementCollection<AutoCaption, DXW.AutoCaptions, DXW.AutoCaption>

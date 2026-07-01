@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents grammar settings for a Wordprocessing document.
 /// This class is intended for configuration and management of grammar checking options and related proofing settings.
 /// </summary>
+[DataContract]
 [XmlRoot("GrammarSettings", Namespace = "DocumentModel.Wordprocessing")]
 public class GrammarSettings
 {

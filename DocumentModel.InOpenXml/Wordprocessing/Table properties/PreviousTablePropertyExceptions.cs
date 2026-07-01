@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the previous version of <see cref = "TablePropertyExceptions"/>, enabling tracking and management of historical table property exception settings.
 /// </summary>
 [OpenXmlType(typeof(DXW.PreviousTablePropertyExceptions))]
+[DataContract]
 [XmlRoot("PreviousTablePropertyExceptions", Namespace = "DocumentModel.Wordprocessing")]
 public class PreviousTablePropertyExceptions : CurrentTableProperties<DXW.PreviousTablePropertyExceptions>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to background formatting, whole formatting, shapes, pictures, groups, graphic frames, and extension data, enabling advanced layout and rendering of graphical objects within the document.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDC.WordprocessingCanvas))]
+[DataContract]
 [XmlRoot("WordprocessingCanvas", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class WordprocessingCanvas : ModelElement<DXO10WDC.WordprocessingCanvas>
 {

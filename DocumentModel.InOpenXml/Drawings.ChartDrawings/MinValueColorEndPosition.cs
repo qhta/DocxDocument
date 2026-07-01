@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MinValueColorEndPosition Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MinValueColorEndPosition))]
+[DataContract]
 [XmlRoot("MinValueColorEndPosition", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MinValueColorEndPosition : ModelElement<DXO16DCD.MinValueColorEndPosition>
 {

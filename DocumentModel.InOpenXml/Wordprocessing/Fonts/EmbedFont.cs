@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This relationship is used to link font definitions in the document to their corresponding embedded font data parts, allowing for proper rendering of fonts that are not available on the user's system.
 /// </summary>
 [OpenXmlType(typeof(DXW.FontRelationshipType))]
+[DataContract]
 [XmlRoot("EmbeddedFont", Namespace = "DocumentModel.Wordprocessing")]
 public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
 {

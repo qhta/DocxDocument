@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Handle.
 /// </summary>
 [OpenXmlType(typeof(DXV.ShapeHandle))]
+[DataContract]
 [XmlRoot("ShapeHandle", Namespace = "DocumentModel.Vml")]
 public partial class ShapeHandle : ModelElement<DXV.ShapeHandle>
 {

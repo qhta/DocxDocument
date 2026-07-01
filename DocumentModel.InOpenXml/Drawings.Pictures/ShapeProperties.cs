@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Pictures;
 ///   Enables advanced configuration and rendering of shapes and images in Office documents.
 /// </summary>
 [OpenXmlType(typeof(DXDP.ShapeProperties))]
+[DataContract]
 [XmlRoot("ShapeProperties", Namespace = "DocumentModel.Drawings.Pictures")]
 public partial class ShapeProperties : ModelElement<DXDP.ShapeProperties>
 {

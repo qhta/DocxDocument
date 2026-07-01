@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties such as ctrlPr that can be stored on the Superscript object.
 /// </summary>
 [OpenXmlType(typeof(DXM.SuperscriptProperties))]
+[DataContract]
 [XmlRoot("SuperscriptProperties", Namespace = "DocumentModel.Math")]
 public partial class SuperscriptProperties : ModelElement<DXM.SuperscriptProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows configuration of how pictures are applied to different parts of a chart, as well as the format and stacking behavior of the images.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PictureOptions))]
+[DataContract]
 [XmlRoot("PictureOptions", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PictureOptions : ModelElement<DXDC.PictureOptions>
 {

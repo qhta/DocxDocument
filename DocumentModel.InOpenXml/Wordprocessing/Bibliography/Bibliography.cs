@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   to the Microsoft.Office.Interop.Word.Bibliography class.
 /// </remarks>
 [OpenXmlNotMapped]
+[DataContract]
 [XmlRoot("Bibliography", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Bibliography : ModelElement
 {

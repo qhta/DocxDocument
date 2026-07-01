@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a single string data point in a chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StringPoint))]
+[DataContract]
 [XmlRoot("StringPoint", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StringPoint : ModelElement<DXDC.StringPoint>
 {

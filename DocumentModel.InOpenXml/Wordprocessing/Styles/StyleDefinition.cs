@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for style type, identifiers, inheritance, UI settings, revision tracking, and formatting options, enabling advanced style management and customization for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Style))]
+[DataContract]
 [XmlRoot("StyleDef", Namespace = "DocumentModel.Wordprocessing")]
 public partial class StyleDefinition : ModelElement<DXW.Style>
 {

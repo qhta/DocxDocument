@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Pictures;
 ///   Supports DPI settings, rotation, image source, cropping, tiling, and stretching for advanced picture fill effects.
 /// </summary>
 [OpenXmlType(typeof(DXDP.BlipFill))]
+[DataContract]
 [XmlRoot("BlipFill", Namespace = "DocumentModel.Drawings.Pictures")]
 public partial class BlipFill : ModelElement<DXDP.BlipFill>
 {

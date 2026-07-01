@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Represents a style entry containing references to line, fill, effect, font, shape, and text formatting properties for chart elements.
 /// </summary>
+[DataContract]
 [XmlRoot("StyleEntry", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class StyleEntry
 {

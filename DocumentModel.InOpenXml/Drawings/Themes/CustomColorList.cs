@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Supports extensibility through an extension list for application-specific or future color data.
 /// </summary>
 [OpenXmlType(typeof(CustomColor))]
+[DataContract]
 [XmlRoot("CustomColorList", Namespace = "DocumentModel.Drawings")]
 public partial class CustomColorList : ModelElementCollection<CustomColor, DXD.CustomColorList, DXD.CustomColor>, IExtendableElement
 {

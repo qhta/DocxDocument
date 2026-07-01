@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the text body structure containing body properties and list styles for chart elements.
 /// </summary>
 [OpenXmlType(typeof(DXDC.TextBodyType))]
+[DataContract]
 [XmlRoot("TextBodyType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class TextBodyType : ModelElement<DXDC.TextBodyType>
 {

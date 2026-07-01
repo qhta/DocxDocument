@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a video sourced from a file, including a reference to the linked relationship.
 /// </summary>
 [OpenXmlType(typeof(DXD.VideoFromFile))]
+[DataContract]
 [XmlRoot("VideoFromFile", Namespace = "DocumentModel.Drawings")]
 public partial class VideoFromFile : ModelElement<DXD.VideoFromFile>, IExtendableElement
 {

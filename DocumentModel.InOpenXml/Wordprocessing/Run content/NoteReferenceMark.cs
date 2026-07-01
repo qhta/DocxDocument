@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   If a reference mark is specified within a run which is not part of an endnote, 
 ///   footnote or annotation, then that reference mark can be ignored.
 /// </summary>
+[DataContract]
 [XmlRoot("NoteReferenceMark", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class NoteReferenceMark<T> : ModelElement<T>, IRunContent where T : DX.OpenXmlElement
 {

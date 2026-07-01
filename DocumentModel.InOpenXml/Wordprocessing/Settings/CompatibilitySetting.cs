@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the setting name, UriString, and value, enabling advanced configuration and management of compatibility options for document processing and rendering.
 /// </summary>
 [OpenXmlType(typeof(DXW.CompatibilitySetting))]
+[DataContract]
 [XmlRoot("CompatibilitySetting", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CompatibilitySetting : ModelElement<DXW.CompatibilitySetting>
 {

@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is :.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.BackstageItemType))]
+[DataContract]
 [XmlRoot("BackstageItemType", Namespace = "DocumentModel.CustomUI")]
 public abstract partial class BackstageItemType : ModelElement<DXO10CUI.BackstageItemType>
 {

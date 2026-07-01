@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows configuration of body properties, list styles, and paragraph formatting for text displayed in charts, such as titles, labels, or legends.
 /// </summary>
 [OpenXmlType(typeof(DXDC.TextProperties))]
+[DataContract]
 [XmlRoot("TextProperties", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class TextProperties : ModelElement<DXDC.TextProperties>
 {

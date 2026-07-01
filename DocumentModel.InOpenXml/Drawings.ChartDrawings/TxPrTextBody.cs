@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the TxPrTextBody Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.TxPrTextBody))]
+[DataContract]
 [XmlRoot("TxPrTextBody", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class TxPrTextBody : ModelElement<DXO16DCD.TxPrTextBody>
 {

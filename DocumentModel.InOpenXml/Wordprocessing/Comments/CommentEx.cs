@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for the paragraph identifier of the last paragraph in the comment, the parent comment's last paragraph identifier, and the completion status, enabling advanced tracking and management of comment threads and resolution status.
 /// </summary>
 [OpenXmlType(typeof(DXO13W.CommentEx))]
+[DataContract]
 [XmlRoot("CommentEx", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CommentEx : ModelElement<DXO13W.CommentEx>
 {

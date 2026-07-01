@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the PtExtensionList Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.PtExtensionList))]
+[DataContract]
 [XmlRoot("PtExtensionList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public class PtExtensionList : ModelElementCollection<PtExtension, DXDD.PtExtensionList, DXD.PtExtension>
 {

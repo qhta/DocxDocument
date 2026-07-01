@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a 3D line chart, providing additional series extension capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Line3DChartExtension))]
+[DataContract]
 [XmlRoot("Line3DChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Line3DChartExtension : Extension<DXDC.Line3DChartExtension>
 {

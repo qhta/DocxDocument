@@ -16,6 +16,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   scatter plots, and more complex visualizations that require both numeric and categorical data.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Data))]
+[DataContract]
 [XmlRoot("Data", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Data : ModelElement<DXO16DCD.Data>
 {

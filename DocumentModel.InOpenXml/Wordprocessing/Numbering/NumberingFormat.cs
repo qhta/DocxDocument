@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying the standard numbering format type and a custom number format using XSLT syntax, enabling advanced customization of list and outline numbering styles.
 /// </summary>
 [OpenXmlType(typeof(DXW.NumberingFormat))]
+[DataContract]
 [XmlRoot("NumberingFormat", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingFormat : ModelElement<DXW.NumberingFormat>
 {

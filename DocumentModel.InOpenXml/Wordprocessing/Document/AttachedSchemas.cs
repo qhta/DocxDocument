@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "Schema"/> objects, enabling advanced integration and validation of custom XML data using external or supplementary XML schemas.
 /// </summary>
 [OpenXmlType(typeof(DMW.AttachedSchema))]
+[DataContract]
 [XmlRoot("AttachedSchemas", Namespace = "DocumentModel.Wordprocessing")]
 public class AttachedSchemas : ModelElementCollection<AttachedSchema, DXW.Settings, DXW.AttachedSchema>
 {

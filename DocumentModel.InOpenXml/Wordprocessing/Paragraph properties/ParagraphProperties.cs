@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "AbstractParagraphProperties"/> and provides properties for paragraph mark run formatting, section properties, and tracked changes to paragraph properties, enabling advanced formatting, layout, and revision management for paragraphs.
 /// </summary>
 [OpenXmlType(typeof(DXW.ParagraphProperties))]
+[DataContract]
 [XmlRoot("ParagraphProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphProperties : BaseParagraphProperties<DXW.ParagraphProperties>
 {

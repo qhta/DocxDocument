@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// Named model element that implements the INamedObject interface,
 /// allowing it to have a name property and raise events when the name changes.
 /// </summary>
+[DataContract]
 [XmlRoot("NamedModelElement", Namespace = "DocumentModel")]
 public class NamedModelElement : ModelElement, INamedObject
 {

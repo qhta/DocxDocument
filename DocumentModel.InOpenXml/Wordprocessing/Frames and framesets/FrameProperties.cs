@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for drop caps, frame size, padding, text wrapping, positioning, alignment, height rules, and anchor locking, enabling advanced configuration and management of frames within document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.FrameProperties))]
+[DataContract]
 [XmlRoot("FrameProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FrameProperties : ModelElement<DXW.FrameProperties> //, IFrameProperties
 {

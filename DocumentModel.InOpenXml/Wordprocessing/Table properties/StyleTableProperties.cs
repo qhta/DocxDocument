@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for row and column band sizes, enabling advanced table styling and formatting options.
 /// </summary>
 [OpenXmlType(typeof(DXW.StyleTableProperties))]
+[DataContract]
 [XmlRoot("StyleTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class StyleTableProperties : BaseTableProperties<DXW.StyleTableProperties>
 {

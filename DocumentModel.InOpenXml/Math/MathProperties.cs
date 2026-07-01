@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the document-level properties for all math in the document.
 /// </summary>
 [OpenXmlType(typeof(DXM.MathProperties))]
+[DataContract]
 [XmlRoot("MathProperties", Namespace = "DocumentModel.Math")]
 public partial class MathProperties : ModelElement<DXM.MathProperties>
 {
@@ -95,8 +96,8 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   and the entire block is centered with respect to column margins. 
   ///   If this element is omitted, the mathematical text is centered as a group. 
   /// </summary>
-  public Justification? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
-  private Justification? _DefaultJustification;
+  public MathJustification? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
+  private MathJustification? _DefaultJustification;
 
   /// <summary>
   ///   Specifies the spacing before a math paragraph, in twips. 

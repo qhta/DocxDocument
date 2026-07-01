@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "TableStyleProperties"/> elements, enabling advanced conditional formatting and styling for tables based on style rules.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableStyleConditionalFormattingTableProperties))]
+[DataContract]
 [XmlRoot("TableStyleConditionalProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class TableStyleConditionalProperties : ModelElementCollection<TableStyleProperties, DXW.TableStyleConditionalFormattingTableProperties, DX.OpenXmlElement>
 {

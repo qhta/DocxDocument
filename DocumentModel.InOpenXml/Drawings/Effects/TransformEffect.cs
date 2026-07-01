@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a transform effect, allowing adjustment of scaling, skew, and shift for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXD.TransformEffect))]
+[DataContract]
 [XmlRoot("TransformEffect", Namespace = "DocumentModel.Drawings")]
 public partial class TransformEffect : ModelElement<DXD.TransformEffect>
 {

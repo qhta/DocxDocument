@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This element enables the native use of other interchange formats by referencing a custom XML part within the document package. The relationship type must be http://purl.oclc.org/ooxml/officeDocument/relationships/customXml with TargetMode set to Internal. If the content type is not supported, applications should continue processing and may indicate that unknown content was not imported.
 /// </summary>
 [OpenXmlType(typeof(DXW.ContentPart))]
+[DataContract]
 [XmlRoot("ContentPart", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ContentPart : ModelElement<DXW.ContentPart>, IRunContent, DMM.IMathArgumentContent
 {

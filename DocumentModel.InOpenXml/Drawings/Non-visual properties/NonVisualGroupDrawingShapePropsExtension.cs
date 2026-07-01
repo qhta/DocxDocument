@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables extensibility for custom or future Office features by associating extra data with group shapes.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
+[DataContract]
 [XmlRoot("NonVisualGroupDrawingShapePropsExtension", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD.NonVisualGroupDrawingShapePropsExtension>, IExtension
 {

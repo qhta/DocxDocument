@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 /// Represents a blip (binary large image or picture), providing references and effects for embedded or linked images in a drawing.
 /// </summary>
 [OpenXmlType(typeof(DXD.Blip))]
+[DataContract]
 [XmlRoot("Blip", Namespace = "DocumentModel.Drawings")]
 public partial class Blip : ModelElement<DXD.Blip>, IExtendableElement
 {

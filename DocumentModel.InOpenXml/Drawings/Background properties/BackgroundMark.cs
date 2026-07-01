@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a background mark defined by two coordinate points, typically used to specify a rectangular region or line in the background.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.BackgroundMark))]
+[DataContract]
 [XmlRoot("BackgroundMark", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundMark : ModelElement<DXO10D.BackgroundMark>
 {

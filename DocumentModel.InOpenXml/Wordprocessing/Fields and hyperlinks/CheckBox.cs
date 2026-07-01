@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for form field size, automatic sizing, default state, and checked state, enabling advanced configuration and management of interactive checkbox fields within forms and documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.CheckBox))]
+[DataContract]
 [XmlRoot("CheckBox", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CheckBox : ModelElement<DXW.CheckBox>
 {

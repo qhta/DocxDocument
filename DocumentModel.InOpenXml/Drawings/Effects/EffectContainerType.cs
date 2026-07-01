@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents metadata describing a container for visual effects in DrawingML.
 /// </summary>
 [OpenXmlType(typeof(DXD.EffectContainerType))]
+[DataContract]
 [XmlRoot("EffectContainerType", Namespace = "DocumentModel.Drawings")]
 public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
 {

@@ -9,6 +9,7 @@ namespace DocumentModel.Drawings;
 /// Depending on the autofit options within the txBody element the text might not entirely reside within this shape text rectangle. 
 /// </remarks>
 [OpenXmlType(typeof(DXD.Rectangle))]
+[DataContract]
 [XmlRoot("Rectangle", Namespace = "DocumentModel.Drawings")]
 public partial class Rectangle : ModelElement<DXD.Rectangle>
 {

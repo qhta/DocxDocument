@@ -22,6 +22,7 @@ namespace DocumentModel;
 /// </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.ExtensionList))]
+[DataContract]
 [XmlRoot("ExtensionList", Namespace = "DocumentModel")]
 public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>
 {

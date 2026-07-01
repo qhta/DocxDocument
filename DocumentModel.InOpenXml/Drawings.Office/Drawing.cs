@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the Drawing Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.Drawing))]
+[DataContract]
 [XmlRoot("Drawing", Namespace = "DocumentModel.Drawings.Office")]
 public partial class Drawing : ModelElement<DXOD.Drawing>
 {

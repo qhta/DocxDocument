@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the TextPath Class.
 /// </summary>
 [OpenXmlType(typeof(DXV.TextPath))]
+[DataContract]
 [XmlRoot("TextPath", Namespace = "DocumentModel.Vml")]
 public partial class TextPath : ModelElement<DXV.TextPath>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for column width and spacing before the following column, enabling advanced configuration of multi-column layouts within document sections.
 /// </summary>
 [OpenXmlType(typeof(DXW.Column))]
+[DataContract]
 [XmlRoot("TextColumn", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TextColumn : ModelElement<DXW.Column>
 {

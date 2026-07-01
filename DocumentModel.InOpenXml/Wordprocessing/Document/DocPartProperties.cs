@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for entry name, associated style, categorization, types, behaviors, description, and unique identifier, enabling advanced management, classification, and configuration of reusable document parts such as building blocks and autotext entries.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocPartProperties))]
+[DataContract]
 [XmlRoot("DocPartProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocPartProperties : ModelElement<DXW.DocPartProperties>
 {

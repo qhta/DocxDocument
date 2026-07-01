@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   List of Shape Paths.
 /// </summary>
 [OpenXmlType(typeof(Path))]
+[DataContract]
 [XmlRoot("PathList", Namespace = "DocumentModel.Drawings")]
 public class PathList : ModelElementCollection<Path, DXD.PathList, DXD.Path>
 {

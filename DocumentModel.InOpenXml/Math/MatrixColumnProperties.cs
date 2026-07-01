@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the properties of the matrix column mn, including the number of columns and the type of justification.
 /// </summary>
 [OpenXmlType(typeof(DXM.MatrixColumnProperties))]
+[DataContract]
 [XmlRoot("MatrixColumnProperties", Namespace = "DocumentModel.Math")]
 public partial class MatrixColumnProperties : ModelElement<DXM.MatrixColumnProperties>
 {

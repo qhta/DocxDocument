@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides options for alignment, font size, distance between guide and base text, base text size, language, and field cache status, enabling advanced formatting and localization of ruby annotations.
 /// </summary>
 [OpenXmlType(typeof(DXW.RubyProperties))]
+[DataContract]
 [XmlRoot("RubyProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RubyProperties : ModelElement<DXW.RubyProperties>
 {

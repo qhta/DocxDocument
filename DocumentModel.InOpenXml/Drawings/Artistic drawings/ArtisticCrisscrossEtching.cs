@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic crisscross etching effect, which simulates a textured etching with adjustable transparency and pressure.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticCrisscrossEtching))]
+[DataContract]
 [XmlRoot("ArtisticCrisscrossEtching", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticCrisscrossEtching : ModelElement<DXO10D.ArtisticCrisscrossEtching>
 {

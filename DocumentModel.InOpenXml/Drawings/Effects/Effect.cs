@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a reference to a visual effect that can be applied to drawing objects.
 /// </summary>
 [OpenXmlType(typeof(DXD.Effect))]
+[DataContract]
 [XmlRoot("Effect", Namespace = "DocumentModel.Drawings")]
 public partial class Effect : ModelElement<DXD.Effect>
 {

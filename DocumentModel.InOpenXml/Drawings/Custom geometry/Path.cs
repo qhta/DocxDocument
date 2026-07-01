@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a shape path, including dimensions, fill and stroke options, and path commands for drawing geometry.
 /// </summary>
 [OpenXmlType(typeof(DXD.Path))]
+[DataContract]
 [XmlRoot("Path", Namespace = "DocumentModel.Drawings")]
 public partial class Path : ModelElement<DXD.Path>
 {

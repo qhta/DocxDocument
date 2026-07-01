@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables linking shapes, images, or other drawing elements to external or internal targets with advanced navigation and interaction options.
 /// </summary>
 [OpenXmlType(typeof(DXD.HyperlinkType))]
+[DataContract]
 [XmlRoot("HyperlinkType", Namespace = "DocumentModel.Drawings")]
 public partial class HyperlinkType : ModelElement<DXD.HyperlinkType>, IExtendableHyperlinkElement
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a supplemental font for a specific script, including script identifier and typeface.
 /// </summary>
 [OpenXmlType(typeof(DXD.SupplementalFont))]
+[DataContract]
 [XmlRoot("SupplementalFont", Namespace = "DocumentModel.Drawings")]
 public partial class SupplementalFont : ModelElement<DXD.SupplementalFont>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for splitter width, color, border visibility, and border style, enabling advanced customization of the appearance and behavior of frameset splitters within document layouts.
 /// </summary>
 [OpenXmlType(typeof(DXW.FramesetSplitbar))]
+[DataContract]
 [XmlRoot("FramesetSplitbar", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FramesetSplitbar : ModelElement<DXW.FramesetSplitbar>
 {

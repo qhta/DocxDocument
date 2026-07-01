@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a 3D surface chart, including wireframe, color variation, series, band formats, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Surface3DChart))]
+[DataContract]
 [XmlRoot("Surface3DChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Surface3DChart : ModelElement<DXDC.Surface3DChart>
 {

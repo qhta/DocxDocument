@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This extension allows specifying full references, level references, and formula references for numeric chart data.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumRefExtension))]
+[DataContract]
 [XmlRoot("NumRefExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumRefExtension : Extension<DXDC.NumRefExtension>
 {

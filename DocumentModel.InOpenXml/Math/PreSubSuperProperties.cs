@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   which consists of a base e and a subscript and superscript placed to the left of the base, as in {_1^2}A. 
 /// </summary>
 [OpenXmlType(typeof(DXM.PreSubSuperProperties))]
+[DataContract]
 [XmlRoot("PreSubSuperProperties", Namespace = "DocumentModel.Math")]
 public partial class PreSubSuperProperties : ModelElement<DXM.PreSubSuperProperties>
 {

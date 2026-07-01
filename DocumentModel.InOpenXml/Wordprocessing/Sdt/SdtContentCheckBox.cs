@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for checked state, checked symbol, and unchecked symbol, enabling advanced customization and management of checkbox controls in SDTs.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SdtContentCheckBox))]
+[DataContract]
 [XmlRoot("SdtContentCheckBox", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox>
 {

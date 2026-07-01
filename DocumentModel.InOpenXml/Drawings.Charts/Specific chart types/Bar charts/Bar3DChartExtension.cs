@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a 3D bar chart, providing additional series filtering and metadata.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Bar3DChartExtension))]
+[DataContract]
 [XmlRoot("Bar3DChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Bar3DChartExtension : Extension<DXDC.Bar3DChartExtension>
 {

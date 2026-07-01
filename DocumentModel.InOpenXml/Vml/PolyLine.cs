@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Multiple Path Line.
 /// </summary>
 [OpenXmlType(typeof(DXV.PolyLine))]
+[DataContract]
 [XmlRoot("PolyLine", Namespace = "DocumentModel.Vml")]
 public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectContent
 {

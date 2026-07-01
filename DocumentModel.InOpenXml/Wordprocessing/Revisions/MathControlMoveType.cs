@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for author, date, and annotation identifier, enabling tracking and management of mathematical content moves within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.MathControlMoveType))]
+[DataContract]
 [XmlRoot("MathControlMoveType", Namespace = "DocumentModel.Wordprocessing")]
 public class MathControlMoveType : IdentifiedChange<DXW.MathControlMoveType>
 {

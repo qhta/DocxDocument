@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the UpDownBars Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.UpDownBars))]
+[DataContract]
 [XmlRoot("UpDownBars", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class UpDownBars : ModelElement<DXDC.UpDownBars>
 {

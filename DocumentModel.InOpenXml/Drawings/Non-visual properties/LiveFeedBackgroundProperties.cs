@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents background properties for a live feed, including normal, removed, blur, custom, and extension settings.
 /// </summary>
 [OpenXmlType(typeof(DXO21DL.LiveFeedBackgroundProperties))]
+[DataContract]
 [XmlRoot("LiveFeedBackgroundProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LiveFeedBackgroundProperties : ModelElement<DXO21DL.LiveFeedBackgroundProperties>
 {

@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of NumberingInstance elements
 /// </summary>
+[DataContract]
 [XmlRoot("NumberingInstances", Namespace = "DocumentModel.Wordprocessing")]
 public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.Numbering, DXW.NumberingInstance>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties such as ctrlPr that can be stored on the Pre-Sub-Superscript objects Pre. 
 /// </summary>
 [OpenXmlType(typeof(DXM.PreSubSuper))]
+[DataContract]
 [XmlRoot("PreSubSuper", Namespace = "DocumentModel.Math")]
 public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathContent
 {

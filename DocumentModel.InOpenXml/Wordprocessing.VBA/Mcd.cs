@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.VBA;
 /// This class provides properties for macro name, display name, menu help text, and encryption-related values, enabling storage and management of supplementary macro information for VBA-enabled documents.
 /// </summary>
 [OpenXmlType(typeof(DXOW.Mcd))]
+[DataContract]
 [XmlRoot("Mcd", Namespace = "DocumentModel.Wordprocessing.VBA")]
 public class Mcd : ModelElement<DXOW.Mcd>
 {

@@ -15,6 +15,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the title to match the chart's overall design while maintaining readability and visual hierarchy.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartTitle))]
+[DataContract]
 [XmlRoot("ChartTitle", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ChartTitle : ModelElement<DXO16DCD.ChartTitle>
 {

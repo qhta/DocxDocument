@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MajorTickMarksTickMarks Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MajorTickMarksTickMarks))]
+[DataContract]
 [XmlRoot("MajorTickMarksTickMarks", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MajorTickMarksTickMarks : ModelElement<DXO16DCD.MajorTickMarksTickMarks>
 {

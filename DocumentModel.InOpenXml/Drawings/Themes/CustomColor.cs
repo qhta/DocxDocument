@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Custom color.
 /// </summary>
 [OpenXmlType(typeof(DXD.CustomColor))]
+[DataContract]
 [XmlRoot("CustomColor", Namespace = "DocumentModel.Drawings")]
 public partial class CustomColor : ColorHolder<DXD.CustomColor>
 {

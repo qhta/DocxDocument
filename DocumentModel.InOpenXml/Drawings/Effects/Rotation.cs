@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents rotation parameters, including latitude, longitude, and revolution values.
 /// </summary>
 [OpenXmlType(typeof(DXD.Rotation))]
+[DataContract]
 [XmlRoot("Rotation", Namespace = "DocumentModel.Drawings")]
 public partial class Rotation : ModelElement<DXD.Rotation>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a radar chart, providing additional series filtering capabilities.
 /// </summary>
 [OpenXmlType(typeof(DXDC.RadarChartExtension))]
+[DataContract]
 [XmlRoot("RadarChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class RadarChartExtension : Extension<DXDC.RadarChartExtension>
 {

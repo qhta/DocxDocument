@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Ink.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Ink))]
+[DataContract]
 [XmlRoot("Ink", Namespace = "DocumentModel.Vml")]
 public partial class Ink : ModelElement<DXVO.Ink>
 {

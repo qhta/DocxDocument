@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the ValueColors Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ValueColors))]
+[DataContract]
 [XmlRoot("ValueColors", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ValueColors : ModelElement<DXO16DCD.ValueColors>
 {

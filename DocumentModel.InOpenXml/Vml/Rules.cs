@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Rule Set.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Rules))]
+[DataContract]
 [XmlRoot("Rules", Namespace = "DocumentModel.Vml")]
 public partial class Rules : ModelElementCollection<Rule, DXVO.Rules, DXVO.Rule>
 {

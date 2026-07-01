@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   3D floor formatting.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Floor))]
+[DataContract]
 [XmlRoot("Floor", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Floor : ModelElement<DXDC.Floor>
 {

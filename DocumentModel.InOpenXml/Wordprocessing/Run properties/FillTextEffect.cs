@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class enables advanced text fill formatting in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.FillTextEffect))]
+[DataContract]
 [XmlRoot("FillTextEffect", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents default text properties for a shape, including shape, body, list, and style settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.TextDefault))]
+[DataContract]
 [XmlRoot("TextDefault", Namespace = "DocumentModel.Drawings")]
 public partial class TextDefault : ModelElement<DXD.TextDefault>, IExtendableElement
 {

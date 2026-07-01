@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a shape in chart drawings, including text box indication, locking options, and extension data.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualShapeDrawingProperties))]
+[DataContract]
 [XmlRoot("NonVisualShapeDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualShapeDrawingProperties : ModelElement<DXDCD.NonVisualShapeDrawingProperties> //: ExtendableElement
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring visual appearance flags, such as row and column banding, header and footer rows, and other style options, enabling advanced table styling and formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableLook))]
+[DataContract]
 [XmlRoot("TableLook", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableLook : ModelElement<DXW.TableLook>
 {

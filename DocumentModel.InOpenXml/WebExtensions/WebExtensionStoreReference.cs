@@ -3,6 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the WebExtensionStoreReference Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtensionStoreReference))]
+[DataContract]
 [XmlRoot("WebExtensionStoreReference", Namespace = "DocumentModel.WebExtensions")]
 public class WebExtensionStoreReference : ModelElement<DXO13WE.WebExtensionStoreReference>
 {

@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   type of the data.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.AxisUnits))]
+[DataContract]
 [XmlRoot("AxisUnits", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class AxisUnits : ModelElement<DXO16DCD.AxisUnits>
 {

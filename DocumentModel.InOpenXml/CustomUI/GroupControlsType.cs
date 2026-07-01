@@ -20,6 +20,7 @@ namespace DocumentModel.CustomUI;
 ///   <item><description><see cref="T:DocumentFormat.OpenXml.Office2010.CustomUI.RadioGroup"/> <c>&lt;mso14:radioGroup&gt;</c></description></item>
 /// </list>
 /// </remark>
+[DataContract]
 [XmlRoot("GroupControlsType", Namespace = "DocumentModel.CustomUI")]
 public abstract class GroupControlsType
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 /// This class provides properties for specifying the left, top, right, and bottom boundaries of the fill area, allowing precise control over the fill's position and dimensions within the drawing.
 /// </summary>
 [OpenXmlType(typeof(DXD.FillToRectangle))]
+[DataContract]
 [XmlRoot("FillToRectangle", Namespace = "DocumentModel.Drawings")]
 public partial class FillToRectangle : ModelElement<DXD.FillToRectangle>
 {

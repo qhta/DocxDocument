@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a rectangle defined by relative offsets for each side, used for specifying areas within a parent element.
 /// </summary>
 [OpenXmlType(typeof(DXD.RelativeRectangleType))]
+[DataContract]
 [XmlRoot("RelativeRectangleType", Namespace = "DocumentModel.Drawings")]
 public partial class RelativeRectangleType : ModelElement<DXD.RelativeRectangleType>
 {

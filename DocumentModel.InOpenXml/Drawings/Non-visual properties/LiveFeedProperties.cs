@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables configuration of live video backgrounds and extensibility for additional live feed features in Office documents.
 /// </summary>
 [OpenXmlType(typeof(DXO21DL.LiveFeedProperties))]
+[DataContract]
 [XmlRoot("LiveFeedProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LiveFeedProperties : ModelElement<DXO21DL.LiveFeedProperties>, IOfficeArtExtendableElement
 {

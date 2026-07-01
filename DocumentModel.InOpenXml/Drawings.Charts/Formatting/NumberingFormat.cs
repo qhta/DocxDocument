@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the number formatting options for chart values or labels.
 ///   This class allows specifying a custom format code and whether the format is linked to the source data.
 /// </summary>
+[DataContract]
 [XmlRoot("NumberingFormat", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberingFormat<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -24,6 +25,7 @@ public partial class NumberingFormat<T> : ModelElement<T> where T : DX.OpenXmlEl
 /// Represents the numbering format for a document element in the DocumentFormat.OpenXml.Drawing.Charts namespace.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberingFormat))]
+[DataContract]
 [XmlRoot("NumberingFormat", Namespace = "DocumentModel.Drawings.Charts")]
 public class NumberingFormat : NumberingFormat<DXDC.NumberingFormat>
 {
@@ -33,6 +35,7 @@ public class NumberingFormat : NumberingFormat<DXDC.NumberingFormat>
 /// Represents the numbering format for a document element in the DocumentFormat.OpenXml.Office2013.Drawing.Charts namespace.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.NumberingFormat))]
+[DataContract]
 [XmlRoot("NumberingFormat3", Namespace = "DocumentModel.Drawings.Charts")]
 public class NumberingFormat3 : NumberingFormat<DXO13DC.NumberingFormat>
 {

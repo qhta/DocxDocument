@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class represents a collection of structured document tag row content and provides properties for tag configuration and end character formatting, enabling advanced handling of structured document tags for table rows.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtRow))]
+[DataContract]
 [XmlRoot("SdtRow", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtRow : ModelElement<DXW.SdtRow>, ITableContent, ISdtRowContent
 {

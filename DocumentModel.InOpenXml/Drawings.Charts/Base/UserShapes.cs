@@ -13,6 +13,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDC.UserShapes))]
+[DataContract]
 [XmlRoot("UserShapes", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class UserShapes : ModelElement<DXDC.UserShapes>
 {

@@ -19,6 +19,7 @@ namespace DocumentModel;
 ///   offering high-fidelity and simplified versions, or supporting different rendering engines with appropriate
 ///   content variants.
 /// </remarks>
+[DataContract]
 [XmlRoot("AlternateContent", Namespace = "DocumentModel")]
 public partial class AlternateContent : ModelElement
 {

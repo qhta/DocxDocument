@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for run formatting, inserted math control, and deleted math control, enabling revision tracking and management of mathematical content moves away from the current location within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.MoveFromMathControl))]
+[DataContract]
 [XmlRoot("MoveFromMathControl", Namespace = "DocumentModel.Wordprocessing")]
 public partial class MoveFromMathControl : ModelElement<DXW.MoveFromMathControl>
 {

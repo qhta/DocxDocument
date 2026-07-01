@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Represents a 3-D scene, including camera, lighting, backdrop, and extension information.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.Scene3D))]
+[DataContract]
 [XmlRoot("Scene3D", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Scene3D : ModelElement<DXO10W.Scene3D>, IExtendableElement
 {

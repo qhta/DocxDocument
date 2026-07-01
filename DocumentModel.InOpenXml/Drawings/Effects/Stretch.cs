@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a stretch effect, specifying a fill rectangle for stretching content within a shape or element.
 /// </summary>
 [OpenXmlType(typeof(DXD.Stretch))]
+[DataContract]
 [XmlRoot("Stretch", Namespace = "DocumentModel.Drawings")]
 public partial class Stretch : ModelElement<DXD.Stretch>
 {

@@ -7,6 +7,7 @@ namespace DocumentModel;
 ///   Custom-defined document property.
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
+[DataContract]
 [XmlRoot("CustomProperty", Namespace = "DocumentModel")]
 [JsonConverter(typeof(DocumentPropertyJsonConverter<CustomProperty>))]
 public sealed partial class CustomProperty : DocumentProperty

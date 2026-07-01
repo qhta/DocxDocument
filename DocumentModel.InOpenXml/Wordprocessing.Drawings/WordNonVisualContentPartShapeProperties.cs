@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to drawing properties and ink content part properties, enabling configuration and management of non-visual aspects for content part shapes.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.WordNonVisualContentPartShapeProperties))]
+[DataContract]
 [XmlRoot("WordNonVisualContentPartShapeProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class WordNonVisualContentPartShapeProperties : ModelElement<DXO10W.WordNonVisualContentPartShapeProperties>
 {

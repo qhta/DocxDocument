@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a group shape in chart drawings, including locking options and extension data for group-level settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualGroupShapeDrawingProperties))]
+[DataContract]
 [XmlRoot("NonVisualGroupShapeDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualGroupShapeDrawingProperties : ModelElement<DXD.NonVisualGroupShapeDrawingProperties>
 {

@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a 2D transformation, including rotation, flipping, offset, and extents for a drawing element.
 /// </summary>
+[DataContract]
 [XmlRoot("Transform2D", Namespace = "DocumentModel.Drawings")]
 public abstract partial class Transform2D<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -45,6 +46,7 @@ public abstract partial class Transform2D<T> : ModelElement<T> where T : DX.Open
 /// Specific DXD.Transform2D mapping type.
 /// </summary>
 [OpenXmlType(typeof(DXD.Transform2D))]
+[DataContract]
 [XmlRoot("Transform2D", Namespace = "DocumentModel.Drawings")]
 public class Transform2D : Transform2D<DXD.Transform2D>
 {

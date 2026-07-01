@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for configuring the top, left, start, bottom, right, end, inside horizontal, and inside vertical borders, enabling advanced formatting and appearance control for table edges and internal lines.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableBorders))]
+[DataContract]
 [XmlRoot("TableBorders", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableBorders : ModelElement<DXW.TableBorders>
 {

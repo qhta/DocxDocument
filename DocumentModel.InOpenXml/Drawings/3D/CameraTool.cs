@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Camera tool settings for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.CameraTool))]
+[DataContract]
 [XmlRoot("CameraTool", Namespace = "DocumentModel.Drawings")]
 public partial class CameraTool : ModelElement<DXO10D.CameraTool>
 {

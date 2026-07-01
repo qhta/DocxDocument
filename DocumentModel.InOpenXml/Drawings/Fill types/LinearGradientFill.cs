@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Linear Gradient Fill.
 /// </summary>
+[DataContract]
 [XmlRoot("LinearGradientFill", Namespace = "DocumentModel.Drawings")]
 public partial class LinearGradientFill : GradientFill
 {

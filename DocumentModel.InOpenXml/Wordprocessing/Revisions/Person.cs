@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for contact information, author name, and presence information, enabling tracking and management of user metadata for collaborative editing and revision history.
 /// </summary>
 [OpenXmlType(typeof(DXO13W.Person))]
+[DataContract]
 [XmlRoot("Person", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Person : ModelElement<DXO13W.Person>, ICollectionItem
 {

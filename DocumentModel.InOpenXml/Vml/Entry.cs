@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Regroup Entry.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Entry))]
+[DataContract]
 [XmlRoot("Entry", Namespace = "DocumentModel.Vml")]
 public partial class Entry : ModelElement<DXVO.Entry>
 {

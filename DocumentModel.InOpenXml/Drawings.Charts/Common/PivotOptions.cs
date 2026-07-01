@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Defines the PivotOptions Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10DC.PivotOptions))]
+[DataContract]
 [XmlRoot("PivotOptions", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PivotOptions : ModelElement<DXO10DC.PivotOptions>
 {

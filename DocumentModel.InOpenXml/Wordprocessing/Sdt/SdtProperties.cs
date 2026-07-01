@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides configuration for identity, data binding, appearance, content type, behavior, locking, and specialized controls, enabling advanced management and customization of SDTs at block, inline, row, or cell level.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtProperties))]
+[DataContract]
 [XmlRoot("SdtProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtProperties : ModelElement<DXW.SdtProperties>, IStoryContent
 {

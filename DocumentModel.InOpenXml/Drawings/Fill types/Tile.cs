@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents tiling options for a fill, including offset, scaling, flipping, and alignment.
 /// </summary>
 [OpenXmlType(typeof(DXD.Tile))]
+[DataContract]
 [XmlRoot("Tile", Namespace = "DocumentModel.Drawings")]
 public partial class Tile : ModelElement<DXD.Tile>
 {

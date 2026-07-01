@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents character-level formatting properties for text, including font, style, language, spacing, underline, strike, and outline settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.TextCharacterPropertiesType))]
+[DataContract]
 [XmlRoot("TextCharacterPropertiesType", Namespace = "DocumentModel.Drawings")]
 public partial class TextCharacterPropertiesType : ModelElement<DXD.TextCharacterPropertiesType>
 {

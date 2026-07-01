@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Indicates that text is not rendered in 3D scene.
 /// </summary>
 [OpenXmlType(typeof(DXD.FlatText))]
+[DataContract]
 [XmlRoot("FlatText", Namespace = "DocumentModel.Drawings")]
 public partial class FlatText : ModelElement<DXD.FlatText>
 {

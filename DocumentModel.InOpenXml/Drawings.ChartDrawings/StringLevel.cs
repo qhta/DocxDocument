@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the StringLevel Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.StringLevel))]
+[DataContract]
 [XmlRoot("StringLevel", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class StringLevel : ModelElement<DXO16DCD.StringLevel>
 {

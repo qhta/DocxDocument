@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// The Id attribute on this element is used to link the corresponding comment anchor range start element and comment reference, enabling advanced management and referencing of comment ranges within the document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.CommentRangeEnd))]
+[DataContract]
 [XmlRoot("CommentRangeEnd", Namespace = "DocumentModel.Wordprocessing")]
 public class CommentRangeEnd : MarkupEndRangeElement<DXW.CommentRangeEnd, DXW.CommentRangeStart>, ICommonContent
 {

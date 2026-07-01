@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(ZoomJsonConverter))]
 [OpenXmlType(typeof(DXW.Zoom))]
+[DataContract]
 [XmlRoot("Zoom", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
 {

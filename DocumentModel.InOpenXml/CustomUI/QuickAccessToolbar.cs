@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.QuickAccessToolbar))]
+[DataContract]
 [XmlRoot("QuickAccessToolbar", Namespace = "DocumentModel.CustomUI")]
 public partial class QuickAccessToolbar : ModelElement<DXO10CUI.QuickAccessToolbar>
 {

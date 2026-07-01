@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Plus or Minus base class.
 /// </summary>
+[DataContract]
 [XmlRoot("PlusMinus", Namespace = "DocumentModel.Drawings.Charts")]
 public abstract partial class PlusMinus<T> : ModelElement<T> where T : DX.OpenXmlElement
 {

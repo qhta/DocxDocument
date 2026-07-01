@@ -25,6 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   countries, or cities within regions for quick navigation through geographic hierarchies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntitiesQueryResult))]
+[DataContract]
 [XmlRoot("GeoParentEntitiesQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoParentEntitiesQueryResult : ModelElement<DXO16DCD.GeoParentEntitiesQueryResult>
 {

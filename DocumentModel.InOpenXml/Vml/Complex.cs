@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Complex.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Complex))]
+[DataContract]
 [XmlRoot("Complex", Namespace = "DocumentModel.Vml")]
 public partial class Complex : ModelElement<DXVO.Complex>
 {

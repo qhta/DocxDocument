@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying the font and symbol value used to display the checkbox, enabling advanced customization of checkbox appearance in forms and documents.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.CheckBoxSymbolType))]
+[DataContract]
 [XmlRoot("CheckBoxSymbolType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType>
 {

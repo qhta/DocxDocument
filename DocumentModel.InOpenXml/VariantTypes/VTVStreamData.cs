@@ -4,6 +4,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Binary Versioned Stream.
 /// </summary>
+[DataContract]
 [XmlRoot("VTVStreamData", Namespace = "DocumentModel.VariantTypes")]
 public partial class VTVStreamData : ModelElement
 {

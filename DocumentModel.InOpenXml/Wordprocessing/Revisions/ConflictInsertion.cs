@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "TrackChangeType"/> and is used to indicate that content has been inserted in conflict with edits made by other users, enabling revision tracking and review of conflicting insertions.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.ConflictInsertion))]
+[DataContract]
 [XmlRoot("ConflictInsertion", Namespace = "DocumentModel.Wordprocessing")]
 public class ConflictInsertion : TrackChangeType<DXO10W.ConflictInsertion>
 {

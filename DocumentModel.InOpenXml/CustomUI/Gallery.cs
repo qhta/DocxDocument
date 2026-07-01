@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Gallery))]
+[DataContract]
 [XmlRoot("Gallery", Namespace = "DocumentModel.CustomUI")]
 public partial class Gallery : ModelElement<DXO10CUI.Gallery>
 {

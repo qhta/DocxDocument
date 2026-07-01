@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables interactive behaviors and multimedia feedback for shapes and images in Office documents when the object is clicked.
 /// </summary>
 [OpenXmlType(typeof(DXD.HyperlinkOnClick))]
+[DataContract]
 [XmlRoot("HyperlinkOnClick", Namespace = "DocumentModel.Drawings")]
 public partial class HyperlinkOnClick : ModelElement<DXD.HyperlinkOnClick>, IExtendableHyperlinkElement
 {

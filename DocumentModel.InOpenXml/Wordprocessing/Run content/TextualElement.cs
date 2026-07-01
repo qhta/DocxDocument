@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a textual element within a text run in WordprocessingML documents.
 /// This class is used for inline text content, such as <see cref = "RunText"/> and <see cref = "FieldCode"/>, and provides properties for the text value and deletion status.
 /// </summary>
+[DataContract]
 [XmlRoot("TextualElement", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class TextualElement<T> : ModelElement<T>, ITextualElement, IRunContent where T : DX.OpenXmlElement
 {

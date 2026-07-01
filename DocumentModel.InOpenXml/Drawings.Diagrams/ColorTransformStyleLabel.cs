@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Style Label.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorTransformStyleLabel))]
+[DataContract]
 [XmlRoot("ColorTransformStyleLabel", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorTransformStyleLabel : ModelElement<DXDD.ColorTransformStyleLabel>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the matrix m, including the justification of the matrix and the layout of elements within the matrix.
 /// </summary>
 [OpenXmlType(typeof(DXM.MatrixProperties))]
+[DataContract]
 [XmlRoot("MatrixProperties", Namespace = "DocumentModel.Math")]
 public partial class MatrixProperties : ModelElement<DXM.MatrixProperties>
 {

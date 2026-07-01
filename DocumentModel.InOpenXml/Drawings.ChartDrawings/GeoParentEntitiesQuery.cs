@@ -23,6 +23,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   geographic hierarchies, complementing child entity queries to provide complete hierarchical exploration capabilities.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntitiesQuery))]
+[DataContract]
 [XmlRoot("GeoParentEntitiesQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoParentEntitiesQuery : ModelElement<DXO16DCD.GeoParentEntitiesQuery>
 {

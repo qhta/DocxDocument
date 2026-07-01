@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:editBox.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.EditBox))]
+[DataContract]
 [XmlRoot("EditBox", Namespace = "DocumentModel.CustomUI")]
 public partial class EditBox : ModelElement<DXO10CUI.EditBox>
 {

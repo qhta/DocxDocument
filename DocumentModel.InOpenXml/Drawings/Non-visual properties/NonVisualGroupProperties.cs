@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Defines the NonVisualGroupProperties class.
 /// </summary>
 [OpenXmlType(typeof(DXO13D.NonVisualGroupProperties))]
+[DataContract]
 [XmlRoot("NonVisualGroupProperties", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualGroupProperties : ModelElement<DXO13D.NonVisualGroupProperties>
 {

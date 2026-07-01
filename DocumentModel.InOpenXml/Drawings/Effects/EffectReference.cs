@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a reference to various color models and color types used in drawing effects.
 /// </summary>
 [OpenXmlType(typeof(DXD.EffectReference))]
+[DataContract]
 [XmlRoot("EffectReference", Namespace = "DocumentModel.Drawings")]
 public partial class EffectReference : ModelElement<DXD.EffectReference>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "SectionPropertiesContent"/> and provides properties for endnote placement, numbering format, starting value, and numbering restart location, enabling advanced configuration and management of endnote behavior and formatting within document sections.
 /// </summary>
 [OpenXmlType(typeof(DXW.EndnoteProperties))]
+[DataContract]
 [XmlRoot("EndnoteProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class EndnoteProperties : ModelElement<DXW.EndnoteProperties>, ISectionPropertiesContent
 {

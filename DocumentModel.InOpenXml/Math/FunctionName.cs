@@ -6,6 +6,7 @@ namespace DocumentModel.Math;
 ///   For example, function names are sin and cos.
 /// </summary>
 [OpenXmlType(typeof(DXM.FunctionName))]
+[DataContract]
 [XmlRoot("FunctionName", Namespace = "DocumentModel.Math")]
 public partial class FunctionName : OfficeMathArgumentType<DXM.FunctionName>
 {

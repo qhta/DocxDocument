@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Abstract base class for changes that have an identifier, author, and date.
 /// </summary>
 /// <typeparam name = "T"></typeparam>
+[DataContract]
 [XmlRoot("IdentifiedChange", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class IdentifiedChange<T> : ModelElement<T>, IIdentifiedChange where T : DX.OpenXmlElement
 {

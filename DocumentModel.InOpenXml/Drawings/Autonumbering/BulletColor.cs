@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 /// Represents a specified color for bullets, supporting multiple color models and extension options.
 /// </summary>
 [OpenXmlType(typeof(DXD.BulletColor))]
+[DataContract]
 [XmlRoot("BulletColor", Namespace = "DocumentModel.Drawings")]
 public partial class BulletColor : ColorHolder<DXD.BulletColor>, IExtendableElement
 {

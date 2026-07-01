@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   For Each.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ForEach))]
+[DataContract]
 [XmlRoot("ForEach", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ForEach : ModelElement<DXDD.ForEach>
 {

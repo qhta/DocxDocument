@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the properties of the array object, including the vertical justification of the object and layout inside the object. 
 /// </summary>
 [OpenXmlType(typeof(DXM.EquationArrayProperties))]
+[DataContract]
 [XmlRoot("EquationArrayProperties", Namespace = "DocumentModel.Math")]
 public partial class EquationArrayProperties : ModelElement<DXM.EquationArrayProperties>
 {

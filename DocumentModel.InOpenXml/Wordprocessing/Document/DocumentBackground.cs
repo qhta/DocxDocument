@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// The document background is the image or fill for the entire page surface, appearing behind all other document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocumentBackground))]
+[DataContract]
 [XmlRoot("DocumentBackground", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
 {

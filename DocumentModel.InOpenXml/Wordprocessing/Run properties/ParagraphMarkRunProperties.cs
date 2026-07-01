@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "BaseParagraphMarkRunProperties"/> and provides support for revision tracking of paragraph mark formatting changes.
 /// </summary>
 [OpenXmlType(typeof(DXW.ParagraphMarkRunProperties))]
+[DataContract]
 [XmlRoot("ParagraphMarkRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphMarkRunProperties : BaseParagraphMarkRunProperties<DXW.ParagraphMarkRunProperties>
 {

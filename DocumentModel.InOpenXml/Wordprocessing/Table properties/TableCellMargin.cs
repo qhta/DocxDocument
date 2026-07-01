@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   within the table cell's properties.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableCellMargin))]
+[DataContract]
 [XmlRoot("TableCellMargin", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableCellMargin : ModelElement<DXW.TableCellMargin>
 {

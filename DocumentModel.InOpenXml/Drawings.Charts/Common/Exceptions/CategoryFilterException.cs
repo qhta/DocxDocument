@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an exception to a category filter in a chart, including references, shape properties, explosion, inversion, 3D bubble option, marker, and data label.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.CategoryFilterException))]
+[DataContract]
 [XmlRoot("CategoryFilterException", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class CategoryFilterException : ModelElement<DXO13DC.CategoryFilterException>
 {

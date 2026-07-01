@@ -5,6 +5,7 @@ namespace DocumentModel;
 /// <typeparam name = "ItemType">Type of the model element contained in the collection.</typeparam>
 /// <typeparam name = "OpenXmlCollectionType">Type of the Open XML composite element representing the collection.</typeparam>
 /// <typeparam name = "OpenXmlItemType">Type of the Open XML element representing individual items.</typeparam>
+[DataContract]
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> : 
   ValueCollection<ItemType, OpenXmlCollectionType> 

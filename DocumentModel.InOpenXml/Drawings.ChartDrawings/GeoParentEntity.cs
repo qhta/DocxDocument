@@ -25,6 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   cache storage and quick hierarchical relationship lookups.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntity))]
+[DataContract]
 [XmlRoot("GeoParentEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoParentEntity : ModelElement<DXO16DCD.GeoParentEntity>
 {

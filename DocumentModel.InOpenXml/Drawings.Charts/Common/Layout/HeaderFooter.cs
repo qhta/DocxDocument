@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Header and Footer.
 /// </summary>
 [OpenXmlType(typeof(DXDC.HeaderFooter))]
+[DataContract]
 [XmlRoot("HeaderFooter", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class HeaderFooter : ModelElement<DXDC.HeaderFooter>
 {

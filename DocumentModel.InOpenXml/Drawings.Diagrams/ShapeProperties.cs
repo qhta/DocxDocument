@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Shape Properties.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ShapeProperties))]
+[DataContract]
 [XmlRoot("ShapeProperties", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ShapeProperties : ModelElement<DXDD.ShapeProperties>
 {

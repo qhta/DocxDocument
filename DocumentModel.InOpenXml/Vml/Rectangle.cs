@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Rectangle.
 /// </summary>
 [OpenXmlType(typeof(DXV.Rectangle))]
+[DataContract]
 [XmlRoot("Rectangle", Namespace = "DocumentModel.Vml")]
 public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectContent
 {

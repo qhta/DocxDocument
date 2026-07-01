@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.DropDownRegular))]
+[DataContract]
 [XmlRoot("DropDownRegular", Namespace = "DocumentModel.CustomUI")]
 public partial class DropDownRegular : ModelElement<DXO10CUI.DropDownRegular>
 {

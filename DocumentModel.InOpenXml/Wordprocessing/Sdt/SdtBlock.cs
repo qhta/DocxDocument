@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for SDT configuration and end character formatting, enabling advanced management and customization of structured document tags for block-level content.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtBlock))]
+[DataContract]
 [XmlRoot("SdtBlock", Namespace = "DocumentModel.Wordprocessing")]
 [SpecificClass]
 public partial class SdtBlock : ModelElement<DXW.SdtBlock>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent

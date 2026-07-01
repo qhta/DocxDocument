@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the ShapeProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ShapeProperties))]
+[DataContract]
 [XmlRoot("ShapeProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ShapeProperties : ModelElement<DXO16DCD.ShapeProperties>
 {

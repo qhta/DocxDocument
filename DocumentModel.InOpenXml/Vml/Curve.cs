@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Bezier Curve.
 /// </summary>
 [OpenXmlType(typeof(DXV.Curve))]
+[DataContract]
 [XmlRoot("Curve", Namespace = "DocumentModel.Vml")]
 public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Manual Layout.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ManualLayout))]
+[DataContract]
 [XmlRoot("ManualLayout", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ManualLayout : ModelElement<DXDC.ManualLayout>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to grid definitions and change tracking, enabling management of column structure and historical grid revisions.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableGrid))]
+[DataContract]
 [XmlRoot("TableGrid", Namespace = "DocumentModel.Wordprocessing")]
 public sealed partial class TableGrid : BaseTableGrid<DXW.TableGrid>
 {

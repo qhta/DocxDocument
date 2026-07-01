@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Style Label Description.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleLabelDescription))]
+[DataContract]
 [XmlRoot("StyleLabelDescription", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class StyleLabelDescription : ModelElement<DXDD.StyleLabelDescription>
 {

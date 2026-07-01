@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an alpha replace effect, which sets the alpha channel of an image or shape to a specified value.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaReplace))]
+[DataContract]
 [XmlRoot("AlphaReplace", Namespace = "DocumentModel.Drawings")]
 public partial class AlphaReplace : ModelElement<DXD.AlphaReplace>
 {

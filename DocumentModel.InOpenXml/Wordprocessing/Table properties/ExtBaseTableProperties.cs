@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Provides extended base table properties for WordprocessingML tables, including additional formatting and metadata not present in <see cref = "CurrentTableProperties{T}"/>.
 /// </summary>
+[DataContract]
 [XmlRoot("ExtBaseTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ExtBaseTableProperties<T> : CurrentTableProperties<T> where T : DX.OpenXmlElement
 {

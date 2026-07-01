@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Shape Group.
 /// </summary>
 [OpenXmlType(typeof(DXV.Group))]
+[DataContract]
 [XmlRoot("Group", Namespace = "DocumentModel.Vml")]
 public partial class Group : ModelElementCollection<ModelElement, DXV.Group, DX.OpenXmlElement>, IEmbeddedObjectContent
 {

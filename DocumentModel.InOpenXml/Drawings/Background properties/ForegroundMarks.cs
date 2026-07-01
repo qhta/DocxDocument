@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a collection of foreground marks, which indicate areas to retain during background removal processing.
 /// </summary>
 [OpenXmlType(typeof(ForegroundMark))]
+[DataContract]
 [XmlRoot("ForegroundMarks", Namespace = "DocumentModel.Drawings")]
 public class ForegroundMarks : ElementCollection<ForegroundMark>
 {

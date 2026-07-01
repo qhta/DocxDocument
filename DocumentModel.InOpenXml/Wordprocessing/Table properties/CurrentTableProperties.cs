@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains properties for preferred table width, layout, and conditional formatting settings, enabling advanced configuration and management of table appearance and behavior.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableProperties))]
+[DataContract]
 [XmlRoot("CurrentTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CurrentTableProperties<T> : BaseTableProperties<T> where T : DX.OpenXmlElement
 {

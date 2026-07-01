@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for a single data source record, enabling advanced configuration and management of recipient data for mail merge processes.
 /// </summary>
 [OpenXmlType(typeof(SingleDataSourceRecord))]
+[DataContract]
 [XmlRoot("MailMergeRecipients", Namespace = "DocumentModel.Wordprocessing")]
 public class MailMergeRecipients : ModelElementCollection<SingleDataSourceRecord, DXOW.MailMergeRecipients, DXOW.SingleDataSourceRecord>
 {

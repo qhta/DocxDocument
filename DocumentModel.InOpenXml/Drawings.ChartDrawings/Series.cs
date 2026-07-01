@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the Series Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.Series))]
+[DataContract]
 [XmlRoot("Series", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Series : ModelElement<DXO16DCD.Series>
 {

@@ -21,6 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   making it practical to work with large geographic datasets while maintaining responsive chart interactions.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQuery))]
+[DataContract]
 [XmlRoot("GeoChildEntitiesQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoChildEntitiesQuery : ModelElement<DXO16DCD.GeoChildEntitiesQuery>
 {

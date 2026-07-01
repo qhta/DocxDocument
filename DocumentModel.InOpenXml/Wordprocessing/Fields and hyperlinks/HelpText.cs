@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the type and value of help text, enabling advanced user guidance and contextual assistance for interactive form fields within documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.HelpText))]
+[DataContract]
 [XmlRoot("HelpText", Namespace = "DocumentModel.Wordprocessing")]
 public partial class HelpText : ModelElement<DXW.HelpText>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for z-ordering, display options, border positioning, and individual borders for each page edge, enabling advanced configuration of page border appearance and behavior.
 /// </summary>
 [OpenXmlType(typeof(DXW.PageBorders))]
+[DataContract]
 [XmlRoot("PageBorders", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PageBorders : ModelElement<DXW.PageBorders>, ISectionPropertiesContent
 {

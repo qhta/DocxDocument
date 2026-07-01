@@ -2,6 +2,7 @@ namespace DocumentModel;
 /// <summary>
 ///   IHyperlink info as HyperlinkList item.
 /// </summary>
+[DataContract]
 [XmlRoot("HyperlinkInfo", Namespace = "DocumentModel")]
 public class HyperlinkInfo : CollectionItem
 {

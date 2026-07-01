@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows defining formatting properties, list styles, and paragraph content for text elements.
 /// </summary>
 [OpenXmlType(typeof(DXDC.RichText))]
+[DataContract]
 [XmlRoot("RichText", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class RichText : ModelElement<DXDC.RichText>
 {

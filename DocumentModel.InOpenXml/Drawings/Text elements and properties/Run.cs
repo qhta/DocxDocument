@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a text run, including character properties and the text string.
 /// </summary>
 [OpenXmlType(typeof(DXD.Run))]
+[DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Drawings")]
 public partial class Run : ModelElement<DXD.Run>
 {

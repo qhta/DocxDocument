@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Diagram Relationship Table.
 /// </summary>
 [OpenXmlType(typeof(DXVO.RelationTable))]
+[DataContract]
 [XmlRoot("RelationTable", Namespace = "DocumentModel.Vml")]
 public partial class RelationTable : ModelElement<DXVO.RelationTable>
 {

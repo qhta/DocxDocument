@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a section in a Word document.
 /// </summary>
+[DataContract]
 [XmlRoot("Section", Namespace = "DocumentModel.Wordprocessing")]
 public class Section : ModelElement
 {

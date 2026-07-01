@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a list of shape adjust handles, providing access to both XY and polar adjustment handles for shape manipulation.
 /// </summary>
 [OpenXmlType(typeof(DXD.AdjustHandleList))]
+[DataContract]
 [XmlRoot("AdjustHandleList", Namespace = "DocumentModel.Drawings")]
 public partial class AdjustHandleList : ModelElement<DXD.AdjustHandleList>
 {

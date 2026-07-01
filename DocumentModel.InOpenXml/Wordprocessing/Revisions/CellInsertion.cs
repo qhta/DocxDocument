@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "TrackChangeType"/> and is used to indicate that a table cell has been inserted as part of tracked changes, enabling revision tracking and review of cell insertions in tables.
 /// </summary>
 [OpenXmlType(typeof(DXW.CellDeletion))]
+[DataContract]
 [XmlRoot("CellInsertion", Namespace = "DocumentModel.Wordprocessing")]
 public class CellInsertion : TrackChangeType<DXW.CellDeletion>
 {

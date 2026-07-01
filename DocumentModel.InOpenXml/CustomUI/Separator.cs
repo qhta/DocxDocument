@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:separator.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.Separator))]
+[DataContract]
 [XmlRoot("Separator", Namespace = "DocumentModel.CustomUI")]
 public partial class Separator : ModelElement<DXO10CUI.Separator>
 {

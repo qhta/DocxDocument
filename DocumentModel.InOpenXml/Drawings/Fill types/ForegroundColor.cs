@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a foreground color, supporting multiple color models for fill formatting.
 /// </summary>
 [OpenXmlType(typeof(DXD.ForegroundColor))]
+[DataContract]
 [XmlRoot("ForegroundColor", Namespace = "DocumentModel.Drawings")]
 public partial class ForegroundColor : ModelElement<DXD.ForegroundColor>
 {

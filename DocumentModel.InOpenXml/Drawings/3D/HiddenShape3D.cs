@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents hidden 3D shape properties, including depth, extrusion, contour, material, bevels, and color settings.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.HiddenShape3D))]
+[DataContract]
 [XmlRoot("HiddenShape3D", Namespace = "DocumentModel.Drawings")]
 public partial class HiddenShape3D : ModelElement<DXO10D.HiddenShape3D>, IExtendableElement
 {

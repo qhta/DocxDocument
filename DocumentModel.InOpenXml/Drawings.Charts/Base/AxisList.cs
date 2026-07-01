@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// It enables enumeration and manipulation of individual axis elements, such as X, Y, or Z axes, depending on the
 /// context. The specific behavior and supported operations may depend on the implementation of the ModelElementCollection
 /// class.</remarks>
+[DataContract]
 [XmlRoot("AxisList", Namespace = "DocumentModel.Drawings.Charts")]
 public class AxisList : ElementCollection<AbstractAxis>
 {

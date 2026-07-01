@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for specifying the language and the set of restricted characters, enabling advanced control over line breaking and kinsoku shori rules for East Asian and other scripts.
 /// </summary>
 [OpenXmlType(typeof(DXW.NoLineBreaksAfterKinsoku))]
+[DataContract]
 [XmlRoot("NoLineBreaksAfterKinsoku", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NoLineBreaksAfterKinsoku : ModelElement<DXW.NoLineBreaksAfterKinsoku>
 {

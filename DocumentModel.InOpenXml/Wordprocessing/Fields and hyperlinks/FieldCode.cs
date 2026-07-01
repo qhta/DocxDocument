@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 
 [OpenXmlType(typeof(DXW.FieldCode))]
+[DataContract]
 [XmlRoot("FieldCode", Namespace = "DocumentModel.Wordprocessing")]
 public class FieldCode : TextualElement<DXW.DeletedFieldCode>
 {

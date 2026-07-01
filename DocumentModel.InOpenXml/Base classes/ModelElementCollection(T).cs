@@ -6,6 +6,7 @@ namespace DocumentModel;
 ///   Supports initialization from an existing collection and advanced collection management for WordprocessingML or other OpenXml-based elements.
 /// </summary>
 /// <typeparam name = "ItemType">Specifies the type of model elements contained in the collection.</typeparam>
+[DataContract]
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 [LazyLoad]
 public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>, IDirectAccessElement

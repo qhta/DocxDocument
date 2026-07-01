@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the X values for a chart series, including multi-level string references, number references, literals, and string references.
 /// </summary>
 [OpenXmlType(typeof(DXDC.XValues))]
+[DataContract]
 [XmlRoot("XValues", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class XValues : ModelElement<DXDC.XValues>
 {

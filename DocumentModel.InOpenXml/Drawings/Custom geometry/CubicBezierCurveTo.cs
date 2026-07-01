@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   The curve is defined by a collection of adjustment points.
 /// </summary>
 [OpenXmlType(typeof(DXD.CubicBezierCurveTo))]
+[DataContract]
 [XmlRoot("CubicBezierCurveTo", Namespace = "DocumentModel.Drawings")]
 public partial class CubicBezierCurveTo : ModelElement<DXD.CubicBezierCurveTo>
 {

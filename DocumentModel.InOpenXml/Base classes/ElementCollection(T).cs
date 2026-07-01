@@ -5,6 +5,7 @@ namespace DocumentModel;
 /// Represents a collection of model elements.
 /// </summary>
 /// <typeparam name = "ItemType">The type of elements contained in the collection.</typeparam>
+[DataContract]
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
 
 public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>,

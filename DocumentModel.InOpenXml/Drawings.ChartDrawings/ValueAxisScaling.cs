@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the ValueAxisScaling Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ValueAxisScaling))]
+[DataContract]
 [XmlRoot("ValueAxisScaling", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ValueAxisScaling : ModelElement<DXO16DCD.ValueAxisScaling>
 {

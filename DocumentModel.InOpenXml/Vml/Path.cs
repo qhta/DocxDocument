@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the Path Class.
 /// </summary>
 [OpenXmlType(typeof(DXV.Path))]
+[DataContract]
 [XmlRoot("Path", Namespace = "DocumentModel.Vml")]
 public partial class Path : ModelElement<DXV.Path>
 {

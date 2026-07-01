@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables embedding or linking audio content in Office documents, supporting extensibility for additional audio properties.
 /// </summary>
 [OpenXmlType(typeof(DXD.AudioFromFile))]
+[DataContract]
 [XmlRoot("AudioFromFile", Namespace = "DocumentModel.Drawings")]
 public partial class AudioFromFile : ModelElement<DXD.AudioFromFile>, IExtendableElement
 {

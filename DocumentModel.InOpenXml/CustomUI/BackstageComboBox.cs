@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.BackstageComboBox))]
+[DataContract]
 [XmlRoot("BackstageComboBox", Namespace = "DocumentModel.CustomUI")]
 public partial class BackstageComboBox : ModelElement<DXO10CUI.BackstageComboBox>
 {

@@ -27,6 +27,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   rather than explicit coordinates, automatically converting these references into mappable geographic positions.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQuery))]
+[DataContract]
 [XmlRoot("GeoLocationQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoLocationQuery : ModelElement<DXO16DCD.GeoLocationQuery>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// Collection of Values.
 /// </summary>
 /// <typeparam name = "ItemType">The type of items in the collection.</typeparam>
+[DataContract]
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
 public abstract class ValueCollection<ItemType> : ModelElement, IValueCollection<ItemType>, IEquatable<ValueCollection<ItemType>>, ICollection, IList
 {

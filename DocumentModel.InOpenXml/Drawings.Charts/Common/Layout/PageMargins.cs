@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Page Margins.
 /// </summary>
 [OpenXmlType(typeof(DXDC.PageMargins))]
+[DataContract]
 [XmlRoot("PageMargins", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class PageMargins : ModelElement<DXDC.PageMargins>
 {

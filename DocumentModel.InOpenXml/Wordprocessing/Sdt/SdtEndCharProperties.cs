@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for configuring run properties applied to the end character, enabling advanced formatting and appearance control for SDT delimiters.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtEndCharProperties))]
+[DataContract]
 [XmlRoot("SdtEndCharProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class SdtEndCharProperties : RunProperties
 {

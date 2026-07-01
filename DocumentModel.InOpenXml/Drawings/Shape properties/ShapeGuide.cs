@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a shape guide, defining a named formula used for shape geometry calculations.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeGuide))]
+[DataContract]
 [XmlRoot("ShapeGuide", Namespace = "DocumentModel.Drawings")]
 public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
 {

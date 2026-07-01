@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and provides properties for the attribute UriString, name, and value, enabling advanced storage and management of custom metadata or schema-specific attributes within custom XML parts.
 /// </summary>
 [OpenXmlType(typeof(DXW.CustomXmlAttribute))]
+[DataContract]
 [XmlRoot("CustomXmlAttribute", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
 {

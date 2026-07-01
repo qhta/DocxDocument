@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a bubble chart series, providing additional formatting, filtering, and labeling options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BubbleSerExtension))]
+[DataContract]
 [XmlRoot("BubbleSerExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BubbleSerExtension : Extension<DXDC.BubbleSerExtension>
 {

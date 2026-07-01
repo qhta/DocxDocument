@@ -21,6 +21,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.BottomItemsGroupControls))]
+[DataContract]
 [XmlRoot("BottomItemsGroupControls", Namespace = "DocumentModel.CustomUI")]
 public class BottomItemsGroupControls : ModelElement<DXO10CUI.BottomItemsGroupControls>
 {

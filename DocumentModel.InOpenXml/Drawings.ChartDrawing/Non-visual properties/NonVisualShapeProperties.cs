@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a shape in chart drawings, including general drawing properties and shape-specific drawing settings.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualShapeProperties))]
+[DataContract]
 [XmlRoot("NonVisualShapeProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualShapeProperties : ModelElement<DXDCD.NonVisualShapeProperties>
 {

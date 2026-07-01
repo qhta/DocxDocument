@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the NumberFormat Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.NumberFormat))]
+[DataContract]
 [XmlRoot("NumberFormat", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class NumberFormat : ModelElement<DXO16DCD.NumberFormat>
 {

@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   (such as "Georgia" the country vs. "Georgia" the U.S. state), ensuring the correct entity data is retrieved.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataEntityQuery))]
+[DataContract]
 [XmlRoot("GeoDataEntityQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoDataEntityQuery : ModelElement<DXO16DCD.GeoDataEntityQuery>
 {

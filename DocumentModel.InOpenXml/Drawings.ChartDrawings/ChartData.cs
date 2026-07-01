@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   data source management and future extensibility.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartData))]
+[DataContract]
 [XmlRoot("ChartData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ChartData : ModelElement<DXO16DCD.ChartData>
 {

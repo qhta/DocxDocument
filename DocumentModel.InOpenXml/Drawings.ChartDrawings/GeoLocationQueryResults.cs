@@ -26,6 +26,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   all potential matches for comprehensive address resolution.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQueryResults))]
+[DataContract]
 [XmlRoot("GeoLocationQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoLocationQueryResults : ModelElementCollection<GeoLocationQueryResult, DXO16DCD.GeoLocationQueryResults, DXO16DCD.GeoLocationQueryResult>
 {

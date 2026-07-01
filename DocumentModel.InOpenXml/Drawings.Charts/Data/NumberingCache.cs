@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a cache of numeric values for a chart data source.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberingCache))]
+[DataContract]
 [XmlRoot("NumberingCache", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberingCache : ModelElement<DXDC.NumberingCache>
 {

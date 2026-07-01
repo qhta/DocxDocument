@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a specialized reference for an endnote separator in a WordprocessingML document.
 /// This class extends <see cref = "CollectionItem"/> and <see cref = "FootnoteEndnoteSeparatorReferenceType"/>, providing a property for the target endnote. Enables advanced management and referencing of endnote separators for visual separation and formatting of endnote content.
 /// </summary>
+[DataContract]
 [XmlRoot("EndnoteSeparator", Namespace = "DocumentModel.Wordprocessing")]
 public partial class EndnoteSeparator : FootnoteEndnoteSeparatorReferenceType
 {

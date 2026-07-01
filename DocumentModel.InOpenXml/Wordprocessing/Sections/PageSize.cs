@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for page width, height, orientation, printer paper code, and paper size, enabling advanced configuration of page layout and printing options.
 /// </summary>
 [OpenXmlType(typeof(DXW.PageSize))]
+[DataContract]
 [XmlRoot("PageSize", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesContent
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "TabStop"/> objects, enabling advanced control over tab alignment, leader characters, and tab stop positions within paragraphs.
 /// </summary>
 [OpenXmlType(typeof(DXW.Tabs))]
+[DataContract]
 [XmlRoot("Tabs", Namespace= "urn:docmodel:wordprocessing")]
 public sealed class Tabs : ModelElementCollection<TabStop, DXW.Tabs, DXW.TabStop>
 {

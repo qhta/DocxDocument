@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for an area chart series, providing additional filtering and labeling options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.AreaSerExtension))]
+[DataContract]
 [XmlRoot("AreaSerExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AreaSerExtension : Extension<DXDC.AreaSerExtension>
 {

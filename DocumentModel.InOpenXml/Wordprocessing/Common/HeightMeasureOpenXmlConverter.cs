@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class ensures that the conversion logic for HeightMeasure is properly integrated into the OpenXmlModelConverter framework,
 /// allowing seamless translation between the DocumentModel representation and the Open XML SDK representation of table height properties.
 /// </summary>
+[DataContract]
 [XmlRoot("HeightMeasureOpenXmlConverter", Namespace = "DocumentModel.Wordprocessing")]
 public static class HeightMeasureOpenXmlConverter
 {

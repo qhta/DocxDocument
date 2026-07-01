@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class annotates <see cref = "PreviousParagraphMarkRunProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph mark formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.ParagraphMarkRunPropertiesChange))]
+[DataContract]
 [XmlRoot("ParagraphMarkRunPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphMarkRunPropertiesChange : IdentifiedChange<DXW.ParagraphMarkRunPropertiesChange>
 {

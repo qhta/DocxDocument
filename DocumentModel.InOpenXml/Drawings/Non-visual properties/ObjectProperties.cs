@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents properties for an embedded object, including its identifier, ActiveX status, and link type.
 /// </summary>
 [OpenXmlType(typeof(DXO13D.ObjectProperties))]
+[DataContract]
 [XmlRoot("ObjectProperties", Namespace = "DocumentModel.Drawings")]
 public partial class ObjectProperties : ModelElement<DXO13D.ObjectProperties>
 {

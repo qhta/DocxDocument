@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   and the amount of space that is considered when laying out text and objects around phantoms.
 /// </summary>
 [OpenXmlType(typeof(DXM.PhantomProperties))]
+[DataContract]
 [XmlRoot("PhantomProperties", Namespace = "DocumentModel.Math")]
 public partial class PhantomProperties : ModelElement<DXM.PhantomProperties>
 {

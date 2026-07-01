@@ -4,6 +4,7 @@ namespace DocumentModel.WebExtensions;
 /// integration with web-based services.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtension))]
+[DataContract]
 [XmlRoot("WebExtension", Namespace = "DocumentModel.WebExtensions")]
 public class WebExtension : Extension
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents custom geometry for a shape, including adjustment values, guides, handles, connection sites, text rectangle, and paths.
 /// </summary>
 [OpenXmlType(typeof(DXD.CustomGeometry))]
+[DataContract]
 [XmlRoot("CustomGeometry", Namespace = "DocumentModel.Drawings")]
 public partial class CustomGeometry : ModelElement<DXD.CustomGeometry>
 {

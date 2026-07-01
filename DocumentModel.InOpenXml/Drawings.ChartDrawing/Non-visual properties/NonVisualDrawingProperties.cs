@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes non-visual properties for a drawing element in chart drawings, including identifiers, names, descriptions, visibility, hyperlinks, and extension data.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualDrawingProperties))]
+[DataContract]
 [XmlRoot("NonVisualDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class NonVisualDrawingProperties : ModelElement<DXDCD.NonVisualDrawingProperties>
 {

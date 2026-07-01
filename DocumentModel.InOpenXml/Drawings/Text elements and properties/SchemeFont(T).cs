@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Abstract base class for font scheme definitions in DrawingML, providing configuration for Latin, East Asian, and complex script fonts, as well as supplemental fonts and extensibility.
 ///   Used to define font mappings for different language scripts in document themes and styles.
 /// </summary>
+[DataContract]
 [XmlRoot("SchemeFont", Namespace = "DocumentModel.Drawings")]
 [DirectAccess]
 public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElement where T : DXD.FontCollectionType

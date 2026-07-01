@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes a marker type in chart drawings, including relative X and Y coordinate settings for positioning within the drawing canvas.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.MarkerType))]
+[DataContract]
 [XmlRoot("MarkerType", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class MarkerType<T> : ModelElement<DXDCD.MarkerType> where T : DXDCD.MarkerType
 {

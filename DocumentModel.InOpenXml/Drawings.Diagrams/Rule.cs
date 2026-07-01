@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Rule.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Rule))]
+[DataContract]
 [XmlRoot("Rule", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Rule : ModelElement<DXDD.Rule>
 {

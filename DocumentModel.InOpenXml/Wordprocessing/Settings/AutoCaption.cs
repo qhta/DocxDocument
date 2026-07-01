@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for the object identifier and the caption used for automatic captioning, enabling configuration and management of automatic captions for document objects.
 /// </summary>
 [OpenXmlType(typeof(DXW.AutoCaption))]
+[DataContract]
 [XmlRoot("AutoCaption", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AutoCaption : ModelElement<DXW.AutoCaption>
 {

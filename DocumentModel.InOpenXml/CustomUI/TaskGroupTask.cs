@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:task.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.TaskGroupTask))]
+[DataContract]
 [XmlRoot("TaskGroupTask", Namespace = "DocumentModel.CustomUI")]
 public partial class TaskGroupTask : ModelElement<DXO10CUI.TaskGroupTask>
 {

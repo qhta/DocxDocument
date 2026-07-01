@@ -22,6 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   if the source is unavailable.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ExternalData))]
+[DataContract]
 [XmlRoot("ExternalData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ExternalData : ModelElement<DXO16DCD.ExternalData>
 {

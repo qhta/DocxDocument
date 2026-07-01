@@ -7,6 +7,7 @@ namespace DocumentModel.Math;
 ///  and whether empty limits display a placeholder character or are hidden (using the subHide and supHide elements). 
 /// </summary>
 [OpenXmlType(typeof(DXM.NaryProperties))]
+[DataContract]
 [XmlRoot("NaryProperties", Namespace = "DocumentModel.Math")]
 public partial class NaryProperties : ModelElement<DXM.NaryProperties>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides access to non-visual properties and group properties, enabling configuration and management of grouped graphical content.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDG.WordprocessingGroupType))]
+[DataContract]
 [XmlRoot("WordprocessingGroupType", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public abstract partial class WordprocessingGroupType<T> : ModelElement<T> where T : DXO10WDG.WordprocessingGroupType
 {

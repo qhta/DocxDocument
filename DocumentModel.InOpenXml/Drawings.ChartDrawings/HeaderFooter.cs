@@ -20,6 +20,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   professional appearance with appropriate page decoration that aids in document organization and identification.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.HeaderFooter))]
+[DataContract]
 [XmlRoot("HeaderFooter", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class HeaderFooter : ModelElement<DXO16DCD.HeaderFooter>
 {

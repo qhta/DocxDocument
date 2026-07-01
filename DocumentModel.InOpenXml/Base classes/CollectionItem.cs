@@ -2,6 +2,7 @@ namespace DocumentModel;
 /// <summary>
 /// Abstract model element that is part of a collection.
 /// </summary>
+[DataContract]
 [XmlRoot("CollectionItem", Namespace = "DocumentModel")]
 public abstract class CollectionItem : ModelElement, ICollectionItem
 {

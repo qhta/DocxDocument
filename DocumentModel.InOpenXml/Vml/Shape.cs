@@ -6,6 +6,7 @@ namespace DocumentModel.Vml;
 ///   Shape Definition.
 /// </summary>
 [OpenXmlType(typeof(DXV.Shape))]
+[DataContract]
 [XmlRoot("Shape", Namespace = "DocumentModel.Vml")]
 public partial class Shape : ModelElement<DXV.Shape>, IEmbeddedObjectContent
 {

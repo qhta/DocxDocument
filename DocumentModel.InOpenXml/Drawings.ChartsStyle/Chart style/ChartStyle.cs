@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Represents the overall style configuration for a chart, including axes, areas, data points, labels, and other chart elements.
 /// </summary>
+[DataContract]
 [XmlRoot("ChartStyle", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class ChartStyle //: OfficeArtExtendableElement
 {

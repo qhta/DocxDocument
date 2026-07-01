@@ -20,6 +20,7 @@ namespace DocumentModel;
 ///   a namespace UriString) and the actual content items to display when that choice is selected.
 /// </remarks>
 [OpenXmlType(typeof(AlternateContentChoice))]
+[DataContract]
 [XmlRoot("AlternateContentChoiceCollection", Namespace = "DocumentModel")]
 public class AlternateContentChoiceCollection : ElementCollection<AlternateContentChoice>
 {

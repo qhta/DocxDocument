@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Chart Space.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ChartSpace))]
+[DataContract]
 [XmlRoot("ChartSpace", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartSpace : ModelElement<DXDC.ChartSpace>
 {

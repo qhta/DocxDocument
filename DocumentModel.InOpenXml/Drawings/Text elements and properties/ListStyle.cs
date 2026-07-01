@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents a list style, including default and per-level paragraph formatting for multi-level lists.
 /// </summary>
+[DataContract]
 [XmlRoot("ListStyle", Namespace = "DocumentModel.Drawings")]
 public partial class ListStyle : ModelElement, IExtendableElement
 {

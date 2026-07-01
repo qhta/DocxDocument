@@ -4,6 +4,7 @@ namespace DocumentModel.Vml;
 ///   New Shape Defaults.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ShapeDefaults))]
+[DataContract]
 [XmlRoot("ShapeDefaults", Namespace = "DocumentModel.Vml")]
 public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
 {

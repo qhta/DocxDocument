@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Color Transform Category.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorTransformCategory))]
+[DataContract]
 [XmlRoot("ColorTransformCategory", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class ColorTransformCategory : ModelElement<DXDD.ColorTransformCategory>
 {

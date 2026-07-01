@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for configuring blur radius, opacity, position, distance, direction, scaling, skew, and alignment, enabling advanced visual effects for graphical objects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.Reflection))]
+[DataContract]
 [XmlRoot("Reflection", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Reflection : ModelElement<DXO10W.Reflection>, IDrawingProperty
 {

@@ -4,6 +4,7 @@ namespace DocumentModel;
 ///   These properties extend the set of core properties which are common to all packages.
 /// </summary>
 [OpenXmlType(typeof(DXEP.Properties))]
+[DataContract]
 [XmlRoot("ContentProperties", Namespace = "DocumentModel")]
 [DirectAccess]
 public sealed partial class ContentProperties : BaseBuiltInProperties

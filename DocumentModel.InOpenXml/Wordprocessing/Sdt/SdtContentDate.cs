@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the last known date, display format, language ID, XML data storage format, and calendar type, enabling advanced customization and management of date input and display in SDTs.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtContentDate))]
+[DataContract]
 [XmlRoot("SdtContentDate", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtContentDate : ModelElement<DXW.SdtContentDate>
 {

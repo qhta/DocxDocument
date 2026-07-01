@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Property Set.
 /// </summary>
 [OpenXmlType(typeof(DXDD.PropertySet))]
+[DataContract]
 [XmlRoot("PropertySet", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class PropertySet : ModelElement<DXDD.PropertySet>
 {

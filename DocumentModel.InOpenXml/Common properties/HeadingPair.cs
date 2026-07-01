@@ -3,6 +3,7 @@ namespace DocumentModel;
 ///   Represents a heading pair, indicating the conceptual grouping of document sections and the number of parts in each group.
 ///   Used in document property metadata to describe logical document structure for navigation and summary purposes.
 /// </summary>
+[DataContract]
 [XmlRoot("HeadingPair", Namespace = "DocumentModel")]
 public partial class HeadingPair : ModelElement, IEquatable<HeadingPair>, ICollectionItem
 {

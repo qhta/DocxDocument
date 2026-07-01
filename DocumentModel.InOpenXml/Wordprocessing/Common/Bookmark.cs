@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a bookmark in a WordprocessingML document.
 /// This class extends <see cref = "CollectionItem"/> and provides properties for the bookmark start and end elements, enabling advanced referencing, navigation, and content marking within the document.
 /// </summary>
+[DataContract]
 [XmlRoot("Bookmark", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Bookmark : CollectionItem
 {

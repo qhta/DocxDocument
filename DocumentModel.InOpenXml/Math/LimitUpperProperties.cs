@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Upper Limit Properties.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitUpperProperties))]
+[DataContract]
 [XmlRoot("LimitUpperProperties", Namespace = "DocumentModel.Math")]
 public partial class LimitUpperProperties : ModelElement<DXM.LimitUpperProperties>
 {

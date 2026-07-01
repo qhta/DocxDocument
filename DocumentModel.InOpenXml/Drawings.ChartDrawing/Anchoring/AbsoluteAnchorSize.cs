@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// Describes the size and positioning of a shape anchored absolutely within a chart drawing, including anchor points, extent, and contained graphical elements.
 /// </summary>
 [OpenXmlType(typeof(DXDCD.AbsoluteAnchorSize))]
+[DataContract]
 [XmlRoot("AbsoluteAnchorSize", Namespace = "DocumentModel.Drawings.ChartDrawing")]
 public partial class AbsoluteAnchorSize : ModelElement<DXDCD.AbsoluteAnchorSize>
 {

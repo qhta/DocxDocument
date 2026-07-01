@@ -21,6 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   to render the chart using cached data when updates aren't possible.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoCache))]
+[DataContract]
 [XmlRoot("GeoCache", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoCache : ModelElement<DXO16DCD.GeoCache>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic texturizer effect, which simulates a textured appearance with adjustable transparency and scaling.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticTexturizer))]
+[DataContract]
 [XmlRoot("ArtisticTexturizer", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticTexturizer : ModelElement<DXO10D.ArtisticTexturizer>
 {

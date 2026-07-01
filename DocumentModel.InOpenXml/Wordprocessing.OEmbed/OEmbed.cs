@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// This class provides properties for specifying the oEmbed URL, media type, and picture locking behavior for embedded content.
 /// </summary>
 [OpenXmlType(typeof(DXOWY20OE.OEmbed))]
+[DataContract]
 [XmlRoot("OEmbed", Namespace = "DocumentModel.Wordprocessing.OEmbed")]
 public partial class OEmbed : ModelElement<DXOWY20OE.OEmbed>
 {

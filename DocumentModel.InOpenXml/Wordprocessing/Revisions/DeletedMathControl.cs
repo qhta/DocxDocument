@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for author, date, annotation identifier, and run formatting, enabling tracking and management of mathematical content deletions within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.DeletedMathControl))]
+[DataContract]
 [XmlRoot("DeletedMathControl", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DeletedMathControl : IdentifiedChange<DXW.DeletedMathControl>
 {

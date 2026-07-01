@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Effect Color List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextEffectColorList))]
+[DataContract]
 [XmlRoot("TextEffectColorList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class TextEffectColorList : ColorHolder<DXDD.TextEffectColorList>
 {

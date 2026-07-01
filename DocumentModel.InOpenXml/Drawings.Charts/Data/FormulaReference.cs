@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a formula reference to a data source.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.FormulaReference))]
+[DataContract]
 [XmlRoot("FormulaReference", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class FormulaReference : ModelElement<DXO13DC.FormulaReference>
 {

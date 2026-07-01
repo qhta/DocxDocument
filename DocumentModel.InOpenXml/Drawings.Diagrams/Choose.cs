@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Choose Element.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Choose))]
+[DataContract]
 [XmlRoot("Choose", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Choose : ModelElement<DXDD.Choose>
 {

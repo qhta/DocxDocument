@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows specifying either a reference to an external data source or literal values provided directly.
 /// </summary>
 [OpenXmlType(typeof(DXDC.NumberDataSourceType))]
+[DataContract]
 [XmlRoot("NumberDataSourceType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class NumberDataSourceType : ModelElement<DXDC.NumberDataSourceType>
 {

@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   performance constraints.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoPolygons))]
+[DataContract]
 [XmlRoot("GeoPolygons", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoPolygons : ModelElementCollection<GeoPolygon, DXO16DCD.GeoPolygons, DXO16DCD.GeoPolygon>
 {

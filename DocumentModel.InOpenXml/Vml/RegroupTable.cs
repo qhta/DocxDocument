@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape Grouping History.
 /// </summary>
 [OpenXmlType(typeof(DXVO.RegroupTable))]
+[DataContract]
 [XmlRoot("RegroupTable", Namespace = "DocumentModel.Vml")]
 public partial class RegroupTable : ModelElement<DXVO.RegroupTable>
 {

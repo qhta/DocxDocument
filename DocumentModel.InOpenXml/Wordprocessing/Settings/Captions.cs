@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents caption information for a WordprocessingML document, including caption definitions and automatic captioning rules.
 /// </summary>
 [OpenXmlType(typeof(DXW.Captions))]
+[DataContract]
 [XmlRoot("Captions", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Captions : ModelElement<DXW.Captions>
 {

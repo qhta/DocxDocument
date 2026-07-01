@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Algorithm.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Algorithm))]
+[DataContract]
 [XmlRoot("Algorithm", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Algorithm : ModelElement<DXDD.Algorithm>
 {

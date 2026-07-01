@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a style that defines a set of effects and 3D properties for a drawing element.
 /// </summary>
 [OpenXmlType(typeof(DXD.EffectStyle))]
+[DataContract]
 [XmlRoot("EffectStyle", Namespace = "DocumentModel.Drawings")]
 public partial class EffectStyle : ModelElement<DXD.EffectStyle>, IExtendableElement
 {

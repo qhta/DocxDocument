@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base interface for all RunProperties classes, containing common character-level formatting properties for text runs in WordprocessingML documents.
 /// Provides control over fonts, bold, italic, size, caps, underline, color, spacing, alignment, and other essential run formatting features.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
 public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelElement<OpenXmlElementType> where OpenXmlElementType : DX.OpenXmlCompositeElement
@@ -377,6 +378,7 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
 /// <summary>
 /// Concrete class for BaseRunProperties
 /// </summary>
+[DataContract]
 [XmlRoot("BaseRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class BaseRunProperties : BaseRunProperties<DXW.RunPropertiesBaseStyle>
 {

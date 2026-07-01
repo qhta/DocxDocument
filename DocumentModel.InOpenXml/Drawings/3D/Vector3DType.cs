@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a 3D vector with distances along the X, Y, and Z axes.
 /// </summary>
 [OpenXmlType(typeof(DXD.Vector3DType))]
+[DataContract]
 [XmlRoot("Vector3DType", Namespace = "DocumentModel.Drawings")]
 public partial class Vector3DType : ModelElement<DXD.Vector3DType>
 {

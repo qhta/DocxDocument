@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for form field name, enabled state, calculation behavior, macros, help and status text, and specific form field types (checkbox, drop-down list, text input), enabling advanced configuration and management of interactive form fields within documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.FormFieldData))]
+[DataContract]
 [XmlRoot("FormFieldData", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
 public partial class FormFieldData : ModelElement<DXW.FormFieldData>

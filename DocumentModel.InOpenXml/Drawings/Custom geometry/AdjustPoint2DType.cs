@@ -13,6 +13,7 @@ namespace DocumentModel.Drawings;
 /// and the coordinate points for x grow to the right and for y grow down.
 /// </remarks>
 [OpenXmlType(typeof(DXD.AdjustPoint2DType))]
+[DataContract]
 [XmlRoot("AdjustPoint2DType", Namespace = "DocumentModel.Drawings")]
 public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
 {

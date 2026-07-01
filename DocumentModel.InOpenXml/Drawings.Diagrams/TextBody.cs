@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Body.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextBody))]
+[DataContract]
 [XmlRoot("TextBody", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class TextBody : ModelElement<DXDD.TextBody>
 {

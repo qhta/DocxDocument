@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class provides configuration for trendline type, order, period, display options, and visual properties.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Trendline))]
+[DataContract]
 [XmlRoot("Trendline", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Trendline : ModelElement<DXDC.Trendline>
 {

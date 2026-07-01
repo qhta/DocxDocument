@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Defines the fill properties of a shape.
 /// </summary>
 [OpenXmlType(typeof(DXV.Fill))]
+[DataContract]
 [XmlRoot("Fill", Namespace = "DocumentModel.Vml")]
 public partial class Fill : ModelElement<DXV.Fill>
 {

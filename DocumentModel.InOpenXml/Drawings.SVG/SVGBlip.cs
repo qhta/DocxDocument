@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.SVG;
 ///   Defines the SVGBlip Class.
 /// </summary>
 [OpenXmlType(typeof(DXO19DS.SVGBlip))]
+[DataContract]
 [XmlRoot("SVGBlip", Namespace = "DocumentModel.Drawings.SVG")]
 public partial class SVGBlip : ModelElement<DXO19DS.SVGBlip>
 {

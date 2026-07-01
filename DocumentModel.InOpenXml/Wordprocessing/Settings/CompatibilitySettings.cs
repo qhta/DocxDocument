@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents compatibility settings for a Wordprocessing document.
 /// This class provides properties for emulating legacy behaviors, adjusting layout, formatting, printing, and other document features to ensure compatibility with various versions of word processing applications.
 /// </summary>
+[DataContract]
 [XmlRoot("CompatibilitySettings", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.Compatibility))]
 [DirectAccess]

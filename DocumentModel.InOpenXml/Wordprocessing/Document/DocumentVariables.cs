@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "DocumentVariable"/> objects, enabling advanced storage, retrieval, and organization of custom metadata or automation variables within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.DocumentVariables))]
+[DataContract]
 [XmlRoot("DocumentVariables", Namespace = "DocumentModel.Wordprocessing")]
 public sealed class DocumentVariables : ModelElementCollection<DocumentVariable, DXW.DocumentVariables, DXW.DocumentVariable>
 {

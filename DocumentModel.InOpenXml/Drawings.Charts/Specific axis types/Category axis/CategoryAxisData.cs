@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents the data for a category axis, including multi-level string references, number references, literals, and string references.
 /// </summary>
 [OpenXmlType(typeof(DXDC.CategoryAxisData))]
+[DataContract]
 [XmlRoot("CategoryAxisData", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class CategoryAxisData : ModelElement<DXDC.CategoryAxisData>
 {

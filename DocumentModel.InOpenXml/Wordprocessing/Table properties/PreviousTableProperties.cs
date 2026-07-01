@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class contains the table property settings that were previously in place before a specific set of revisions by one author. These properties affect the appearance of all rows and cells within the parent table, but can be overridden by individual table-level exception, row, and cell level properties as defined by each property.
 /// </summary>
 [OpenXmlType(typeof(DXW.PreviousTableProperties))]
+[DataContract]
 [XmlRoot("PreviousTableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class PreviousTableProperties : ExtBaseTableProperties<DXW.PreviousTableProperties>
 {

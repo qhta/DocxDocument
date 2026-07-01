@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   The trendline label provides additional information, formatting, and layout options for displaying the trendline's equation, name, or other details on the chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.TrendlineLabel))]
+[DataContract]
 [XmlRoot("TrendlineLabel", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class TrendlineLabel : ModelElement<DXDC.TrendlineLabel>
 {

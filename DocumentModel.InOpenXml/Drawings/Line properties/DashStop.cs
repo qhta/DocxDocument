@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a stop in a custom dash pattern, defining the length of a dash and the following space.
 /// </summary>
 [OpenXmlType(typeof(DXD.DashStop))]
+[DataContract]
 [XmlRoot("DashStop", Namespace = "DocumentModel.Drawings")]
 public partial class DashStop : ModelElement<DXD.DashStop>
 {

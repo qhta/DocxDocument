@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents text content in a chart, supporting references, rich text, and literals.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ChartText))]
+[DataContract]
 [XmlRoot("ChartText", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartText : ModelElement<DXDC.ChartText>
 {

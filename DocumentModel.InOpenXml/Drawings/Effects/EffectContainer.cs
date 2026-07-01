@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a container for visual effects applied to DrawingML objects.
 /// </summary>
 [OpenXmlType(typeof(DXD.EffectContainer))]
+[DataContract]
 [XmlRoot("EffectContainer", Namespace = "DocumentModel.Drawings")]
 public partial class EffectContainer : ModelElement<DXD.EffectContainer>
 {

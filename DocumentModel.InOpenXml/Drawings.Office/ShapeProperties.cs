@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Enables advanced configuration and rendering of shapes and graphical elements in Office drawings.
 /// </summary>
 [OpenXmlType(typeof(DXOD.ShapeProperties))]
+[DataContract]
 [XmlRoot("ShapeProperties", Namespace = "DocumentModel.Drawings.Office")]
 public partial class ShapeProperties : ModelElement<DXOD.ShapeProperties>
 {

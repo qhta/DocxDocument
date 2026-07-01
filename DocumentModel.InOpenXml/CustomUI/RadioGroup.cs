@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.RadioGroup))]
+[DataContract]
 [XmlRoot("RadioGroup", Namespace = "DocumentModel.CustomUI")]
 public partial class RadioGroup : ModelElement<DXO10CUI.RadioGroup>
 {

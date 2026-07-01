@@ -26,6 +26,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   cohesive structure suitable for efficient caching and retrieval in map-based chart applications.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocation))]
+[DataContract]
 [XmlRoot("GeoLocation", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoLocation : ModelElement<DXO16DCD.GeoLocation>
 {

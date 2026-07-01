@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for configuring the glow radius and color, enabling visual emphasis and styling for graphical objects.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.Glow))]
+[DataContract]
 [XmlRoot("Glow", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class Glow : ModelElement<DXO10W.Glow>, IDrawingProperty
 {

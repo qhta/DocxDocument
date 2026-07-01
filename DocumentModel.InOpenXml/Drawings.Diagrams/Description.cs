@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Description.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Description))]
+[DataContract]
 [XmlRoot("Description", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Description : ModelElement<DXDD.Description>
 {

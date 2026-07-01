@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   This class allows defining string data directly within the chart definition, rather than referencing an external source.
 /// </summary>
 [OpenXmlType(typeof(DXDC.StringLiteral))]
+[DataContract]
 [XmlRoot("StringLiteral", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class StringLiteral : ModelElement<DXDC.StringLiteral>
 {

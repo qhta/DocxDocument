@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class extends <see cref = "CollectionItem"/> and enables stable references to comments for tracking, synchronization, and platform transitions. It supports paragraph-level tracking and global identification for collaborative editing and document operations.
 /// </summary>
 [OpenXmlType(typeof(DXO19WC.CommentId))]
+[DataContract]
 [XmlRoot("CommentId", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CommentId : ModelElement<DXO19WC.CommentId>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the TextData Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.TextData))]
+[DataContract]
 [XmlRoot("TextData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class TextData : ModelElement<DXO16DCD.TextData>
 {

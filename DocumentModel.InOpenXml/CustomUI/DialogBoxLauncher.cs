@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.DialogBoxLauncher))]
+[DataContract]
 [XmlRoot("DialogBoxLauncher", Namespace = "DocumentModel.CustomUI")]
 public partial class DialogBoxLauncher : ModelElement<DXO10CUI.DialogBoxLauncher>
 {

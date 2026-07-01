@@ -22,6 +22,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   a state for repeated access, or maintaining city-level data for quick navigation within regional hierarchies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQueryResult))]
+[DataContract]
 [XmlRoot("GeoChildEntitiesQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class GeoChildEntitiesQueryResult : ModelElement<DXO16DCD.GeoChildEntitiesQueryResult>
 {

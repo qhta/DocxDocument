@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the properties of the math run r.
 /// </summary>
 [OpenXmlType(typeof(DXM.RunProperties))]
+[DataContract]
 [XmlRoot("RunProperties", Namespace = "DocumentModel.Math")]
 public partial class RunProperties : ModelElement<DXM.RunProperties>
 {

@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   The cache is used to optimize access to custom data label fields and their values.
 /// </summary>
 [OpenXmlType(typeof(DXO13DC.DataLabelFieldTableCache))]
+[DataContract]
 [XmlRoot("DataLabelFieldTableCache", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DataLabelFieldTableCache : ModelElement<DXO13DC.DataLabelFieldTableCache>
 {

@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   minimizing external service dependencies and network traffic.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQueryResults))]
+[DataContract]
 [XmlRoot("GeoChildEntitiesQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class GeoChildEntitiesQueryResults : ModelElementCollection<GeoChildEntitiesQueryResult, DXO16DCD.GeoChildEntitiesQueryResults, DXO16DCD.GeoChildEntitiesQueryResult>
 {

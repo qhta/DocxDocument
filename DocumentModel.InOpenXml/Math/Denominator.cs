@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the denominator of a fraction.
 /// </summary>
 [OpenXmlType(typeof(DXM.Denominator))]
+[DataContract]
 [XmlRoot("Denominator", Namespace = "DocumentModel.Math")]
 public partial class Denominator : OfficeMathArgumentType<DXM.Denominator>
 {

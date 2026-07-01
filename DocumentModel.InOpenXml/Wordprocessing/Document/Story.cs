@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies the content of the document or part of the document.
 /// This class extends <see cref = "ModelElementCollection{StoryContent}"/> and contains block-level markup, allowing elements such as paragraphs, tables, and other block content to exist as siblings within the document structure.
 /// </summary>
+[DataContract]
 [XmlRoot("Story", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DX.OpenXmlCompositeElement))]
 [DirectAccess(true)]

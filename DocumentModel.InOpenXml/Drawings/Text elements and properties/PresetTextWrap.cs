@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a preset text wrap, including the wrap shape and optional adjustment values.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetTextWarp))]
+[DataContract]
 [XmlRoot("PresetTextWrap", Namespace = "DocumentModel.Drawings")]
 public partial class PresetTextWrap : ModelElement<DXD.PresetTextWarp>
 {

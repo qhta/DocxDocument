@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Enables advanced grouping, layering, and organization of shapes and graphical content in Office drawings.
 /// </summary>
 [OpenXmlType(typeof(DXOD.ShapeTree))]
+[DataContract]
 [XmlRoot("ShapeTree", Namespace = "DocumentModel.Drawings.Office")]
 public partial class ShapeTree : ModelElement<DXOD.ShapeTree>
 {

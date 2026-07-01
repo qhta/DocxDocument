@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a reference to a section header or footer in a WordprocessingML document.
 /// This class extends <see cref = "IParagraphContent"/> and <see cref = "ISectionPropertiesContent"/>, providing properties for the type of header or footer and the relationship ID to the part where it is defined. Enables advanced management and referencing of headers and footers for different sections and page types.
 /// </summary>
+[DataContract]
 [XmlRoot("HeaderFooterReferenceType", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class HeaderFooterReferenceType<T> : ModelElement<T>, IParagraphContent, ISectionPropertiesContent where T : DX.OpenXmlElement
 {

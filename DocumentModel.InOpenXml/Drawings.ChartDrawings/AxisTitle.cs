@@ -12,6 +12,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   chart's overall design and ensure readability.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.AxisTitle))]
+[DataContract]
 [XmlRoot("AxisTitle", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class AxisTitle : ModelElement<DXO16DCD.AxisTitle>
 {

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for underline style, color, theme color, and theme color tint/shade, enabling advanced underline customization for character-level formatting.
 /// </summary>
 [OpenXmlType(typeof(DXW.Underline))]
+[DataContract]
 [XmlRoot("Underline", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Underline : ModelElement<DXW.Underline>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents the space after a paragraph, allowing specification as a percentage or in points.
 /// </summary>
 [OpenXmlType(typeof(DXD.SpaceAfter))]
+[DataContract]
 [XmlRoot("SpaceAfter", Namespace = "DocumentModel.Drawings")]
 public partial class SpaceAfter : ModelElement<DXD.SpaceAfter>
 {

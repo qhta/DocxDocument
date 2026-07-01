@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Legend Entry.
 /// </summary>
 [OpenXmlType(typeof(DXDC.LegendEntry))]
+[DataContract]
 [XmlRoot("LegendEntry", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class LegendEntry : ModelElement<DXDC.LegendEntry>
 {

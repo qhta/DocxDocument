@@ -3,6 +3,7 @@ namespace DocumentModel.Packaging;
 ///   Represents an external relationship to a resource outside the package, as defined by the Open Packaging Conventions (OPC).
 /// </summary>
 [OpenXmlType(typeof(DXPP.ExternalRelationship))]
+[DataContract]
 [XmlRoot("ExternalRelationship", Namespace = "DocumentModel.Packaging")]
 public abstract class ExternalRelationship : ReferenceRelationship<DXPP.ExternalRelationship>
 {

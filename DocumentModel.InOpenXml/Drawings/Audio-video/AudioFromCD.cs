@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents audio sourced from a CD, including start and end times and optional extension data.
 /// </summary>
 [OpenXmlType(typeof(DXD.AudioFromCD))]
+[DataContract]
 [XmlRoot("AudioFromCD", Namespace = "DocumentModel.Drawings")]
 public partial class AudioFromCD : ModelElement<DXD.AudioFromCD>
 {

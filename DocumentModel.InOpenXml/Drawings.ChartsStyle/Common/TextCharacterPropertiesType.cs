@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// Describes character-level formatting properties for text in chart elements, including font, style, language, effects, and hyperlinks.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.TextCharacterPropertiesType))]
+[DataContract]
 [XmlRoot("TextCharacterPropertiesType", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class TextCharacterPropertiesType : ModelElement<DXO13DCS.TextCharacterPropertiesType>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic photocopy effect, which simulates a photocopied appearance with adjustable transparency and detail.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticPhotocopy))]
+[DataContract]
 [XmlRoot("ArtisticPhotocopy", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticPhotocopy : ModelElement<DXO10D.ArtisticPhotocopy>
 {

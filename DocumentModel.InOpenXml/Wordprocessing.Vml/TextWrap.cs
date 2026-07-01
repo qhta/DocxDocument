@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// This class specifies how text flows around shapes, including wrapping type, side, and positioning anchors.
 /// </summary>
 [OpenXmlType(typeof(DXVW.TextWrap))]
+[DataContract]
 [XmlRoot("TextWrap", Namespace = "DocumentModel.Wordprocessing.Vml")]
 public partial class TextWrap : ModelElement<DXVW.TextWrap>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a value axis for a chart, including crossing behavior, major and minor units, display units, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ValueAxis))]
+[DataContract]
 [XmlRoot("ValueAxis", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ValueAxis : AbstractAxis<DXDC.ValueAxis>
 {

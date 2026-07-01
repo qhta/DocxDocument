@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Scaling.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Scaling))]
+[DataContract]
 [XmlRoot("Scaling", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Scaling : ModelElement<DXDC.Scaling>
 {

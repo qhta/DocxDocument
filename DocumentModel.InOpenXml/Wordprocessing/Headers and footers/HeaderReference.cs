@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "HeaderFooterReferenceType"/> and is used to associate a section with a specific header, enabling advanced management and referencing of headers for different sections and page types.
 /// </summary>
 [OpenXmlType(typeof(DXW.HeaderReference))]
+[DataContract]
 [XmlRoot("HeaderReference", Namespace = "DocumentModel.Wordprocessing")]
 public class HeaderReference : HeaderFooterReferenceType<DXW.HeaderReference>
 {

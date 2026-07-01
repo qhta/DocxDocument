@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the Sub-Superscript object, including the alignment of scripts.
 /// </summary>
 [OpenXmlType(typeof(DXM.SubSuperscriptProperties))]
+[DataContract]
 [XmlRoot("SubSuperscriptProperties", Namespace = "DocumentModel.Math")]
 public partial class SubSuperscriptProperties : ModelElement<DXM.SubSuperscriptProperties>
 {

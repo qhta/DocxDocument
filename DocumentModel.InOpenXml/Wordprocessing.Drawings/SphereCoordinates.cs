@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for latitude, longitude, and revolution, enabling precise control over 3D placement and rotation.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SphereCoordinates))]
+[DataContract]
 [XmlRoot("SphereCoordinates", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class SphereCoordinates : ModelElement<DXO10W.SphereCoordinates>
 {

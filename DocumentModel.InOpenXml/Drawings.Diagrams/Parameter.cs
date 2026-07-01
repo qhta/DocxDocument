@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Parameter.
 /// </summary>
 [OpenXmlType(typeof(DXDD.Parameter))]
+[DataContract]
 [XmlRoot("Parameter", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class Parameter : ModelElement<DXDD.Parameter>
 {

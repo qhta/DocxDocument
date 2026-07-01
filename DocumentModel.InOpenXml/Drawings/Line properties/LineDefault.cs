@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents default line properties, including shape, body, list, and style settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineDefault))]
+[DataContract]
 [XmlRoot("LineDefault", Namespace = "DocumentModel.Drawings")]
 public partial class LineDefault : ModelElement<DXD.LineDefault>, IExtendableElement
 {

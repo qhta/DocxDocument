@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a command to move the current path to a specified point without drawing a line.
 /// </summary>
 [OpenXmlType(typeof(DXD.MoveTo))]
+[DataContract]
 [XmlRoot("MoveTo", Namespace = "DocumentModel.Drawings")]
 public partial class MoveTo : ModelElement<DXD.MoveTo>
 {

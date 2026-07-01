@@ -7,6 +7,7 @@ namespace DocumentModel.Drawings;
 /// Thus, the new application can then attach an update type to the text field id for continual updating.
 /// </summary>
 [OpenXmlType(typeof(DXD.Field))]
+[DataContract]
 [XmlRoot("Field", Namespace = "DocumentModel.Drawings")]
 public partial class Field : ModelElement<DXD.Field>
 {

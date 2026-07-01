@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Shape ID Map.
 /// </summary>
 [OpenXmlType(typeof(DXVO.ShapeIdMap))]
+[DataContract]
 [XmlRoot("ShapeIdMap", Namespace = "DocumentModel.Vml")]
 public partial class ShapeIdMap : ModelElement<DXVO.ShapeIdMap>
 {

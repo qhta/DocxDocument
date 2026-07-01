@@ -25,6 +25,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   cultural localization and efficient data management.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Geography))]
+[DataContract]
 [XmlRoot("Geography", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class Geography : ModelElement<DXO16DCD.Geography>
 {

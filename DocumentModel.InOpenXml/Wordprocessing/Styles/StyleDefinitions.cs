@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to paragraph, character, table, and numbering styles, enabling advanced formatting and style management for document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Style))]
+[DataContract]
 [XmlRoot("DefinedStyles", Namespace = "DocumentModel.Wordprocessing")]
 //[DirectAccess]
 public partial class StyleDefinitions : ModelElementCollection<StyleDefinition, DXW.Styles, DXW.Style>

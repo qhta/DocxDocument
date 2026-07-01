@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a radar chart, including style, color variation, series, labels, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.RadarChart))]
+[DataContract]
 [XmlRoot("RadarChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class RadarChart : ModelElement<DXDC.RadarChart>, AbstractChart
 {

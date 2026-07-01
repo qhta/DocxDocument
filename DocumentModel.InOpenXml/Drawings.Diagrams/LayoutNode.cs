@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Layout Node.
 /// </summary>
 [OpenXmlType(typeof(DXDD.LayoutNode))]
+[DataContract]
 [XmlRoot("LayoutNode", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class LayoutNode : ModelElement<DXDD.LayoutNode>
 {

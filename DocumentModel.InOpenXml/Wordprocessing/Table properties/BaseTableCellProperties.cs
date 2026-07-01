@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains common properties for table cell formatting, including shading, text wrapping, margins, and vertical alignment.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableCellProperties))]
+[DataContract]
 [XmlRoot("BaseTableCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class BaseTableCellProperties<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -44,6 +45,7 @@ public partial class BaseTableCellProperties<T> : ModelElement<T> where T : DX.O
 /// <summary>
 /// Concrete implementation of BaseTableCellProperties for the default Open XML SDK TableCellProperties class.
 /// </summary>
+[DataContract]
 [XmlRoot("BaseTableCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class BaseTableCellProperties : BaseTableCellProperties<DXW.TableCellProperties>
 {

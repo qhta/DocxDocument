@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SolidColorFillProperties))]
+[DataContract]
 [XmlRoot("SolidColorFillProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class SolidColorFillProperties : ModelElement<DXO10W.SolidColorFillProperties>
 {

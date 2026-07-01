@@ -36,6 +36,7 @@ namespace DocumentModel.Drawings;
 ///   </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.Anchor))]
+[DataContract]
 [XmlRoot("Anchor", Namespace = "DocumentModel.Drawings")]
 public partial class Anchor : ModelElement<DXD.Anchor>
 {

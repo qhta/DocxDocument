@@ -7,6 +7,7 @@ namespace DocumentModel.Math;
 ///   The oMath containers of a display math zone are not themselves considered inline math zones.
 /// </summary>
 [OpenXmlType(typeof(DXM.Paragraph))]
+[DataContract]
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Math")]
 public partial class Paragraph : ModelElement<DXM.Paragraph>, ICommonMathContent
 {

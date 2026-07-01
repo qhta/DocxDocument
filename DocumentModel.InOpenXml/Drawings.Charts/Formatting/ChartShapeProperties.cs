@@ -23,6 +23,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDC.ChartShapeProperties))]
+[DataContract]
 [XmlRoot("ChartShapeProperties", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartShapeProperties : ModelElement<DXDC.ChartShapeProperties>
 {

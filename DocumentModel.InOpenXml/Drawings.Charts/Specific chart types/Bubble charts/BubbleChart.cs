@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Represents a bubble chart, including color variation, series, labels, 3D bubbles, scale, negative bubble display, size representation, axis identifiers, and extension list.
 /// </summary>
+[DataContract]
 [XmlRoot("BubbleChart", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class BubbleChart : ModelElement<DXDC.BubbleChart>
 {

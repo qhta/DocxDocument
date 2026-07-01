@@ -21,6 +21,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   styling where most elements follow consistent rules while specific elements receive targeted customization.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.FormatOverrides))]
+[DataContract]
 [XmlRoot("FormatOverrides", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public class FormatOverrides : ModelElementCollection<FormatOverride, DXO16DCD.FormatOverrides, DXO16DCD.FormatOverride>
 {

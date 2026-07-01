@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the provider and user identifiers, enabling tracking and management of user presence and collaboration metadata.
 /// </summary>
 [OpenXmlType(typeof(DXO13W.PresenceInfo))]
+[DataContract]
 [XmlRoot("PresenceInfo", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PresenceInfo : ModelElement<DXO13W.PresenceInfo>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Document Background.
 /// </summary>
 [OpenXmlType(typeof(DXV.Background))]
+[DataContract]
 [XmlRoot("Background", Namespace = "DocumentModel.Vml")]
 public partial class Background : ModelElement<DXV.Background>
 {

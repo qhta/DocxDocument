@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   This color mapping is defined in the same manner as the other mappings within this document.
 /// </summary>
 [OpenXmlType(typeof(DXD.OverrideColorMapping))]
+[DataContract]
 [XmlRoot("OverrideColorMapping", Namespace = "DocumentModel.Drawings")]
 public partial class OverrideColorMapping : ModelElement<DXD.OverrideColorMapping> //: ExtendableElement
 {

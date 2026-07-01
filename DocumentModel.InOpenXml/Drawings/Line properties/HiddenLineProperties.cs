@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents hidden line properties for a drawing element, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.HiddenLineProperties))]
+[DataContract]
 [XmlRoot("HiddenLineProperties", Namespace = "DocumentModel.Drawings")]
 public partial class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProperties>, ILinePropertiesExtendableElement
 {

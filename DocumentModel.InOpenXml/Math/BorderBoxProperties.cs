@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the properties of the Border Box object, which dictate the types of lines that can be drawn as part of the border. 
 /// </summary>
 [OpenXmlType(typeof(DXM.BorderBoxProperties))]
+[DataContract]
 [XmlRoot("BorderBoxProperties", Namespace = "DocumentModel.Math")]
 public partial class BorderBoxProperties : ModelElement<DXM.BorderBoxProperties>
 {

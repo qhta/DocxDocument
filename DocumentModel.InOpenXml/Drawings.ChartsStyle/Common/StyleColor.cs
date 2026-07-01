@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// Represents a style color configuration for chart elements, supporting value, tint, shade, alpha, hue, saturation, luminance, color channels, and various color effects.
 /// </summary>
 [OpenXmlType(typeof(DXO13DCS.StyleColor))]
+[DataContract]
 [XmlRoot("StyleColor", Namespace = "DocumentModel.Drawings.ChartsStyle")]
 public partial class StyleColor : ModelElement<DXO13DCS.StyleColor>
 {

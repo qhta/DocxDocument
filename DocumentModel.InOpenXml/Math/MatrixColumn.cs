@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies a single column in a matrix.
 /// </summary>
 [OpenXmlType(typeof(DXM.MatrixColumn))]
+[DataContract]
 [XmlRoot("MatrixColumn", Namespace = "DocumentModel.Math")]
 public partial class MatrixColumn : ModelElement<DXM.MatrixColumn>
 {

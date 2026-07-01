@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents the space before a paragraph, allowing specification as a percentage or in points.
 /// </summary>
 [OpenXmlType(typeof(DXD.SpaceBefore))]
+[DataContract]
 [XmlRoot("SpaceBefore", Namespace = "DocumentModel.Drawings")]
 public partial class SpaceBefore : ModelElement<DXD.SpaceBefore>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a hue, saturation, and luminance (HSL) effect for color adjustment.
 /// </summary>
 [OpenXmlType(typeof(DXD.Hsl))]
+[DataContract]
 [XmlRoot("Hsl", Namespace = "DocumentModel.Drawings")]
 public partial class Hsl : ModelElement<DXD.Hsl>
 {

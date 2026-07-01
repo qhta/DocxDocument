@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents background removal properties, including marquee boundaries and collections of foreground and background marks for image processing.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.BackgroundRemoval))]
+[DataContract]
 [XmlRoot("BackgroundRemoval", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundRemoval : ModelElement<DXO10D.BackgroundRemoval>
 {

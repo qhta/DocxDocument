@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for specifying the layout type, enabling control over table rendering and structure (such as fixed or auto layout).
 /// </summary>
 [OpenXmlType(typeof(DXW.TableLayout))]
+[DataContract]
 [XmlRoot("TableLayout", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableLayout : ModelElement<DXW.TableLayout>
 {

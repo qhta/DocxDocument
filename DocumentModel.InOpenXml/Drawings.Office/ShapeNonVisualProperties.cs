@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the ShapeNonVisualProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.ShapeNonVisualProperties))]
+[DataContract]
 [XmlRoot("ShapeNonVisualProperties", Namespace = "DocumentModel.Drawings.Office")]
 public partial class ShapeNonVisualProperties : ModelElement<DXOD.ShapeNonVisualProperties>
 {

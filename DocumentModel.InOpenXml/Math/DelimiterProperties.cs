@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   and the properties that affect the shape of the delimiters.
 /// </summary>
 [OpenXmlType(typeof(DXM.DelimiterProperties))]
+[DataContract]
 [XmlRoot("DelimiterProperties", Namespace = "DocumentModel.Math")]
 public partial class DelimiterProperties : ModelElement<DXM.DelimiterProperties>
 {

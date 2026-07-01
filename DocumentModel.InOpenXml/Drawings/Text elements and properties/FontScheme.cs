@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a font scheme, including its name and definitions for major and minor fonts.
 /// </summary>
 [OpenXmlType(typeof(DXD.FontScheme))]
+[DataContract]
 [XmlRoot("FontScheme", Namespace = "DocumentModel.Drawings")]
 public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableElement
 {

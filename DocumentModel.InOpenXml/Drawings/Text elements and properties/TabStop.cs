@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a tab stop in text, including its position and alignment.
 /// </summary>
 [OpenXmlType(typeof(DXD.TabStop))]
+[DataContract]
 [XmlRoot("TabStop", Namespace = "DocumentModel.Drawings")]
 public partial class TabStop : ModelElement<DXD.TabStop>
 {

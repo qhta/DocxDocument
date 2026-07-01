@@ -6,7 +6,6 @@ namespace DocumentModel;
 /// <summary>
 ///   Represents a collection of model elements associated with an OpenXml element, which loads separate elements on demand.
 /// </summary>
-[XmlRoot("ContentItemsQuery", Namespace = "DocumentModel")]
 [LazyLoad]
 public abstract partial class ContentItemsQuery<ItemType> : ModelElement, ICollection<ItemType>
   //ILazyLoadable,

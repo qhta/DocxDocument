@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic diffused glow effect, which simulates a soft glowing appearance with adjustable transparency and intensity.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticGlowDiffused))]
+[DataContract]
 [XmlRoot("ArtisticGlowDiffused", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticGlowDiffused : ModelElement<DXO10D.ArtisticGlowDiffused>
 {

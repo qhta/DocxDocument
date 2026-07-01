@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// This class provides properties for configuring outline, visual effects, and effect graphs, enabling consistent and advanced appearance for the whole drawing object.
 /// </summary>
 [OpenXmlType(typeof(DXO10WDC.WholeFormatting))]
+[DataContract]
 [XmlRoot("WholeFormatting", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class WholeFormatting : ModelElement<DXO10WDC.WholeFormatting>
 {

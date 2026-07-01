@@ -1,12 +1,7 @@
-using System.Runtime.CompilerServices;
-
-using Qhta.OpenXmlTools;
-
 namespace DocumentModel;
 /// <summary>
 /// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.
 /// </summary>
-[XmlRoot("VariantUtils", Namespace = "DocumentModel")]
 public static class VariantUtils
 {
   /// <summary>

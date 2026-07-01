@@ -20,6 +20,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDC.AreaChartSeries))]
+[DataContract]
 [XmlRoot("AreaChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class AreaChartSeries : ModelElement<DXDC.AreaChartSeries>
 {

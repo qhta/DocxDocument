@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Gradient stops.
 /// </summary>
 [OpenXmlType(typeof(DXD.GradientStop))]
+[DataContract]
 [XmlRoot("GradientStop", Namespace = "DocumentModel.Drawings")]
 public partial class GradientStop : ModelElement<DXD.GradientStop>
 {

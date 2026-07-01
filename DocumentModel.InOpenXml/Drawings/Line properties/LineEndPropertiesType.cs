@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents properties for the line end, including type, width, and length of the line head or end.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineEndPropertiesType))]
+[DataContract]
 [XmlRoot("LineEndPropertiesType", Namespace = "DocumentModel.Drawings")]
 public partial class LineEndPropertiesType : ModelElement<DXD.LineEndPropertiesType>
 {

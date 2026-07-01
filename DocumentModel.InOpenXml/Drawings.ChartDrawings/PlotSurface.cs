@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the PlotSurface Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.PlotSurface))]
+[DataContract]
 [XmlRoot("PlotSurface", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class PlotSurface : ModelElement<DXO16DCD.PlotSurface>
 {

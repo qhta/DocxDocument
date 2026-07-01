@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Text Line Color List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextLineColorList))]
+[DataContract]
 [XmlRoot("TextLineColorList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class TextLineColorList : ColorHolder<DXDD.TextLineColorList>
 {

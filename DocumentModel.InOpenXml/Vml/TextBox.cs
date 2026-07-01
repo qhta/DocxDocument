@@ -5,6 +5,7 @@ namespace DocumentModel.Vml;
 /// Represents a VML text box element with styling and content properties.
 /// </summary>
 [OpenXmlType(typeof(DXV.TextBox))]
+[DataContract]
 [XmlRoot("TextBox", Namespace = "DocumentModel.Vml")]
 public partial class TextBox : ModelElement<DXV.TextBox>
 {

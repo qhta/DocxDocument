@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes TableMeasure values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
+[DataContract]
 [XmlRoot("TableMeasureJsonConverter", Namespace = "DocumentModel.Wordprocessing")]
 public class TableMeasureJsonConverter : JsonConverter<DMW.TableMeasure>
 {

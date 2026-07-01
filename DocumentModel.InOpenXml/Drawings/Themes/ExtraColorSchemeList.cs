@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a collection of extra color schemes for use in document themes.
 /// </summary>
 [OpenXmlType(typeof(ExtraColorScheme))]
+[DataContract]
 [XmlRoot("ExtraColorSchemeList", Namespace = "DocumentModel.Drawings")]
 public partial class ExtraColorSchemeList : ModelElementCollection<ExtraColorScheme, DXD.ExtraColorSchemeList, DXD.ExtraColorScheme>, IExtendableElement
 {

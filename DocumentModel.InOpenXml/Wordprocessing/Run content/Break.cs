@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A break is a special character used to override normal line breaking, with behavior determined by its type and clear attribute values. This enables advanced control over text flow, line, and page breaks within document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.Break))]
+[DataContract]
 [XmlRoot("Break", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Break : ModelElement<DXW.Break>, IRunContent
 {

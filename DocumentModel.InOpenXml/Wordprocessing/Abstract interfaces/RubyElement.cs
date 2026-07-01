@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for Ruby elements.
 /// </summary>
+[DataContract]
 [XmlRoot("RubyElement", Namespace = "DocumentModel.Wordprocessing")]
 public partial class RubyElement : ModelElement //<DXW.RubyElement>
 {

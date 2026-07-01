@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CollectionItem"/> and <see cref = "ElementCollection{CommentContent}"/>, providing properties for unique identification, author attribution, initials, creation/modification date, paragraph identifier, and durable identifier. Enables advanced tracking, management, and collaborative review of comments, supporting rich text, threaded discussions, and persistent references across document versions and platforms.
 /// </summary>
 [OpenXmlType(typeof(DXW.Comment))]
+[DataContract]
 [XmlRoot("Comment", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Comment : ModelElement<DXW.Comment>
 {

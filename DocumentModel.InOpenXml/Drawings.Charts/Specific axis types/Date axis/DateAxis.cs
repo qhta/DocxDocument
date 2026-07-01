@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a date axis for a chart, including text properties, labeling, time units, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DateAxis))]
+[DataContract]
 [XmlRoot("DateAxis", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DateAxis : AbstractAxis<DXDC.DateAxis>
 {

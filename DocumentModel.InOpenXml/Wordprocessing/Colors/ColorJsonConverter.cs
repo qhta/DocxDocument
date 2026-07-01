@@ -6,6 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes Color values as strings for compatibility with Office Open XML conventions.
 /// </remarks>
+[DataContract]
 [XmlRoot("ColorJsonConverter", Namespace = "DocumentModel.Wordprocessing")]
 public class ColorJsonConverter : JsonConverter<DMW.Color>
 {

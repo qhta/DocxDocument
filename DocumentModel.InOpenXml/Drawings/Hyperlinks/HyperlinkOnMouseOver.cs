@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   Enables interactive behaviors and multimedia feedback for shapes and images in Office documents.
 /// </summary>
 [OpenXmlType(typeof(DXD.HyperlinkOnMouseOver))]
+[DataContract]
 [XmlRoot("HyperlinkOnMouseOver", Namespace = "DocumentModel.Drawings")]
 public partial class HyperlinkOnMouseOver : ModelElement<DXD.HyperlinkOnMouseOver>, IExtendableHyperlinkElement
 {

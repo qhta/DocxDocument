@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the MinorGridlinesGridlines Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MinorGridlinesGridlines))]
+[DataContract]
 [XmlRoot("MinorGridlinesGridlines", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class MinorGridlinesGridlines : ModelElement<DXO16DCD.MinorGridlinesGridlines>
 {

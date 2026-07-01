@@ -21,6 +21,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.GroupBox))]
+[DataContract]
 [XmlRoot("GroupBox", Namespace = "DocumentModel.CustomUI")]
 public partial class GroupBox : ModelElement<DXO10CUI.GroupBox>
 {

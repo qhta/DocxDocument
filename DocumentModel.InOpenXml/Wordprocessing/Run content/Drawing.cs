@@ -8,6 +8,7 @@
 /// are positioned relative to the page or paragraph and can float, while inline drawings are placed directly within the
 /// text flow. This class provides access to the underlying Open XML drawing structure and allows manipulation of
 /// drawing properties within a WordprocessingML document.</remarks>
+[DataContract]
 [XmlRoot("Drawing", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.Drawing))]
 public class Drawing: ModelElement<DXW.Drawing>

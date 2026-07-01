@@ -2,6 +2,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents the properties of a text body in a drawing, including layout, overflow, wrapping, insets, columns, anchoring, and 3D effects.
 /// </summary>
+[DataContract]
 [XmlRoot("BodyProperties", Namespace = "DocumentModel.Drawings")]
 public partial class BodyProperties : ModelElement, IExtendableElement
 {

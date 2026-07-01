@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 /// This class provides configuration for gradient stops, linear shading, and path shading, enabling advanced gradient effects and color transitions.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.GradientFillProperties))]
+[DataContract]
 [XmlRoot("GradientFillProperties", Namespace = "DocumentModel.Drawings")]
 public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillProperties>
 {

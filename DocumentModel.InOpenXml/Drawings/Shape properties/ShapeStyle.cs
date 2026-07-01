@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a style for a shape, including references to line, fill, effect, and font formatting.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeStyle))]
+[DataContract]
 [XmlRoot("ShapeStyle", Namespace = "DocumentModel.Drawings")]
 public abstract partial class ShapeStyle<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
@@ -39,6 +40,7 @@ public abstract partial class ShapeStyle<T> : ModelElement<T> where T : DX.OpenX
 /// Specifies DXD.ShapeStyle mapping type.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeStyle))]
+[DataContract]
 [XmlRoot("ShapeStyle", Namespace = "DocumentModel.Drawings")]
 public class ShapeStyle : ShapeStyle<DXD.ShapeStyle>
 {

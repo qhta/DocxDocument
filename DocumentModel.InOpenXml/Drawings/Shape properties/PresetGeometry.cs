@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a preset geometry for a shape, including the preset type and optional adjustment values.
 /// </summary>
 [OpenXmlType(typeof(DXD.PresetGeometry))]
+[DataContract]
 [XmlRoot("PresetGeometry", Namespace = "DocumentModel.Drawings")]
 public partial class PresetGeometry : ModelElement<DXD.PresetGeometry>
 {

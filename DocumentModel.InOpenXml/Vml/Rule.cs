@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// Represents a VML rule, including rule type, alignment, shape reference, and proxies.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Rule))]
+[DataContract]
 [XmlRoot("Rule", Namespace = "DocumentModel.Vml")]
 public partial class Rule : ModelElement<DXVO.Rule>
 {

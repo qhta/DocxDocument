@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the ParentLabelLayout Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ParentLabelLayout))]
+[DataContract]
 [XmlRoot("ParentLabelLayout", Namespace = "DocumentModel.Drawings.ChartDrawings")]
 public partial class ParentLabelLayout : ModelElement<DXO16DCD.ParentLabelLayout>
 {

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents image properties for a drawing element, including image layers, adjustments, effects, and extensions.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ImageProperties))]
+[DataContract]
 [XmlRoot("ImageProperties", Namespace = "DocumentModel.Drawings")]
 public partial class ImageProperties : ModelElement<DXO10D.ImageProperties>, IExtendableElement
 {

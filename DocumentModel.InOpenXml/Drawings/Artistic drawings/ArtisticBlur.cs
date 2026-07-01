@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents an artistic blur effect, which applies a blur to an image or shape with a specified radius.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticBlur))]
+[DataContract]
 [XmlRoot("ArtisticBlur", Namespace = "DocumentModel.Drawings")]
 public partial class ArtisticBlur : ModelElement<DXO10D.ArtisticBlur>
 {
