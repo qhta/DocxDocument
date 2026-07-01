@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 [OpenXmlType(typeof(DXDD.EffectColorList))]
 [XmlRoot("EffectColorList", Namespace = "DocumentModel.Drawings.Diagrams")]
-public partial class EffectColorList : ColorsType
+public partial class EffectColorList : ColorHolder<DXDD.EffectColorList>  
 {
 
 }

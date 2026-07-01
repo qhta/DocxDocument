@@ -31,7 +31,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     base.AttachAndLoad(wordprocessingDocument);
     var numbering = wordprocessingDocument.GetNumbering();
-    SetUpdatableElement(numbering);
+    SetUpdatableObject(numbering);
     LoadData(numbering);
   }
 
@@ -43,7 +43,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var numbering = wordprocessingDocument.GetNumbering();
-    SetUpdatableElement(numbering);
+    SetUpdatableObject(numbering);
     UpdateData(numbering);
   }
 

@@ -23,7 +23,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// <param name = "document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document) : this()
   {
-    SetParent(document);
+    Parent = document;
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
@@ -33,7 +33,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// </summary>
   /// <returns>An object representing the updatable Open XML package properties, or <see langword="null"/> if no properties are
   /// available.</returns>
-  public override object? GetUpdatableElement()
+  public override object? GetUpdatableObject()
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetPackageProperties();
@@ -44,7 +44,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   ///   Assigns the wrapped OpenXml element instance.
   /// </summary>
   /// <param name = "element">The OpenXml element to assign.</param>
-  public override void SetUpdatableElement(object? element)
+  public new void SetUpdatableObject(object? element)
   {
     if (element == null)
       _PackageProperties = null;
@@ -61,13 +61,26 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public sealed override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    base.AttachAndLoad(wordprocessingDocument);
-    var core = wordprocessingDocument.GetCoreProperties(false);
-    if (core != null)
+    var packageProperties = wordprocessingDocument.GetCoreProperties(false);
+    if (packageProperties != null)
     {
-      SetUpdatableElement(core);
-      LoadData(core);
+      SetUpdatableObject(packageProperties);
+      LoadData(packageProperties);
     }
+  }
+
+  /// <summary>
+  /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
+  /// </summary>
+  public override bool UpdateData()
+  {
+    var updatableObject = GetUpdatableObject();
+    if (updatableObject != null)
+    {
+      UpdateData(updatableObject);
+      return true;
+    }
+    return false;
   }
 
   /// <summary>

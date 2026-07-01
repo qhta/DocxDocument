@@ -10,7 +10,7 @@ namespace DocumentModel;
 /// </summary>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
-  ICollectionItem, IModifiable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
+  ICollectionItem, IModifiable, IUpdatable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
   IPropertiesProvider, IModelObject
 {
   static ModelElement()
@@ -32,7 +32,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <param name="parent"></param>
   protected ModelElement(ModelElement parent) : this()
   {
-    SetParent(parent);
+    Parent = parent;
     if (this is IWordprocessingDocumentAware wordprocessingDocumentAware 
         && parent is IWordprocessingDocumentAware parentWordprocessingDocumentAware)
     {
@@ -50,11 +50,15 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var modelType = otherInstance.GetType();
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      var value = modelProperty.GetValue(otherInstance);
-      modelProperty.SetValue(this, value);
+      var thisValue = modelProperty.GetValue(this);
+      var otherValue = modelProperty.GetValue(otherInstance);
+      if (thisValue is ModelElement thisElement && otherValue is ModelElement otherElement)
+        thisElement.CopyFrom(otherElement);
+      else
+        modelProperty.SetValue(this, otherValue);
     }
 
-    var updatableElement = GetUpdatableElement();
+    var updatableElement = GetUpdatableObject();
     if (updatableElement != null)
       UpdateData(updatableElement);
   }
@@ -216,17 +220,17 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     where ModelType : ModelElement<OpenXmlType>
     where OpenXmlType : DX.OpenXmlElement
   {
-    var openXmlType = openXmlParentElement?.Elements<OpenXmlType>().FirstOrDefault();
-    if (openXmlType == null)
+    var openXmlElement = openXmlParentElement?.Elements<OpenXmlType>().FirstOrDefault();
+    if (openXmlElement == null)
     {
-      openXmlType = Activator.CreateInstance<OpenXmlType>();
-      openXmlParentElement?.AppendChild(openXmlType);
+      openXmlElement = Activator.CreateInstance<OpenXmlType>();
+      openXmlParentElement?.AppendChild(openXmlElement);
     }
-    var modelValue = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlType)!;
+    var modelValue = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlElement)!;
     if (modelValue is ModelElement modelElement)
-      modelElement.SetParent(this);
+      modelElement.Parent = this;
     if (modelValue is IUpdatable updatable)
-      updatable.SetUpdatableElement(openXmlType);
+      updatable.SetUpdatableObject(openXmlElement);
     return modelValue;
   }
 
@@ -243,21 +247,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
     var modelValue = (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
     if (modelValue is ModelElement modelElement)
-      modelElement.SetParent(this);
+      modelElement.Parent = this;
     if (modelValue is IUpdatable updatable)
-      updatable.SetUpdatableElement(openXmlValue);
+      updatable.SetUpdatableObject(openXmlValue);
     return modelValue;
   }
 
-
-  //protected FieldType? GetField<FieldType>(ref FieldType? fieldValue)
-  //{
-  //  if (this.GetType().GetCustomAttribute<DirectAccessAttribute>() != null)
-  //  {
-
-  //  }
-  //  return fieldValue;
-  //}
 
   /// <summary>
   /// Updates the specified field with a new value and raises a property change notification if the value has changed.
@@ -278,7 +273,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     {
       var oldValue = fieldValue;
       if (fieldValue is IChildItem oldChild && oldChild.Parent == this)
-        oldChild.SetParent(null);
+        oldChild.Parent = null;
       DXPP.WordprocessingDocument? oldWordprocessingDocument = null;
       if (fieldValue is IWordprocessingDocumentAware oldWDAValue && oldWDAValue.WordprocessingDocument != null)
       {
@@ -290,7 +285,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
       fieldValue = newValue;
       if (fieldValue is IChildItem newChild && newChild.Parent == null)
-        newChild.SetParent(this);
+        newChild.Parent = this;
       if (!IsLoading && newValue is IWordprocessingDocumentAware newWDAValue && oldWordprocessingDocument != null)
         newWDAValue.AttachAndUpdate(oldWordprocessingDocument);
       if (newValue is INotifyCollectionChanged collection)
@@ -298,7 +293,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       if (newValue is INotifyPropertyChanged notificator)
         notificator.PropertyChanged += ChildPropertyChanged;
       if (newValue is INotificationSource source)
-        source.SetPropertyName(propertyName);
+        source.PropertyName = propertyName;
       if (IsNotificationEnabled)
         NotifyPropertyChanged(propertyName, oldValue, newValue);
 
@@ -307,7 +302,10 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         {
           var wordprocessingDocument = wordprocessingDocumentAware.WordprocessingDocument;
           if (wordprocessingDocument != null)
+          {
             wordprocessingDocumentAware.AttachAndUpdate(wordprocessingDocument);
+            var themePart = wordprocessingDocument.MainDocumentPart?.ThemePart;
+          }
         }
     }
 
@@ -318,15 +316,10 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <summary>
   /// Property name to be used when the object raise PropertyChanged event.
   /// </summary>
-  public string? PropertyName => _PropertyName;
-
-  private string? _PropertyName;
-
-  /// <summary>
-  /// Sets the property name.
-  /// </summary>
-  /// <param name = "propertyName">Property name to set (null erases property name)</param>
-  public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public string? PropertyName { get; set; }
 
   /// <summary>
   /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
@@ -472,7 +465,13 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <exception cref="NotImplementedException"></exception>
   public virtual bool LoadData()
   {
-    throw new NotImplementedException("LoadData() must be implemented in derived classes.");
+    var updatedObject = GetUpdatableObject();
+    if (updatedObject != null)
+    {
+      LoadData(updatedObject);
+      return true;
+    }
+    return false;
   }
 
   /// <summary>
@@ -482,7 +481,13 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <exception cref="NotImplementedException"></exception>
   public virtual bool UpdateData()
   {
-    throw new NotImplementedException("UpdateData() must be implemented in derived classes.");
+    var updatedObject = GetUpdatableObject();
+    if (updatedObject != null)
+    {
+      UpdateData(updatedObject);
+      return true;
+    }
+    return false;
   }
 
   /// <summary>
@@ -493,7 +498,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// data loading behavior.</remarks>
   /// <param name = "openXmlObject">The Open XML element or other object containing the data to load into the model element.
   /// Must be compatible with the current model element type.</param>
-  public void LoadData(object openXmlObject)
+  public virtual void LoadData(object openXmlObject)
   {
     SetLoading(true);
     OpenXmlModelConverter.LoadData(this, openXmlObject);
@@ -523,31 +528,38 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <param name = "propertyName">The name of the property to update. This value cannot be null.</param>
   public virtual void UpdatePropertyData(string propertyName)
   {
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement == null)
+    var updatableObject = GetUpdatableObject();
+    if (updatableObject == null)
       return;
 
     var modelProperty = this.GetType().GetProperty(propertyName);
     if (modelProperty == null)
       return;
 
-    var openXmlType = updatableElement.GetType()!;
+    var openXmlType = updatableObject.GetType()!;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty == null)
       return;
 
-    OpenXmlModelConverter.UpdateOpenXmlProperty(this, modelProperty, updatableElement, openXmlProperty);
+    OpenXmlModelConverter.UpdateOpenXmlProperty(this, modelProperty, updatableObject, openXmlProperty);
   }
 
   /// <summary>
-  /// Retrieves the Open XML element that can be updated by the derived class.  
+  /// Gets the underlying Open XML element that can be updated by this model element. This method returns the object that represents the data source for this model, which may be an OpenXmlElement or another type of object. If no updatable element is associated with this model, the method returns null.
   /// </summary>
-  /// <remarks>Derived classes should override this method to return the Open XML element that supports
-  /// modification. The returned object is typically used to apply changes to the document structure or
-  /// content.</remarks>
-  /// <returns>An object representing the updatable Open XML element. The specific type and structure depend on the
-  /// implementation in the derived class.</returns>
-  public virtual object? GetUpdatableElement() => null;
+  /// <returns></returns>
+  public virtual object? GetUpdatableObject() => _UpdatableObject;
+
+  /// <summary>
+  /// Sets the underlying Open XML element that can be updated by this model element. This method allows the model to be associated with a specific data source, which may be an OpenXmlElement or another type of object. If null is passed, the model will not have an updatable element.
+  /// </summary>
+  /// <param name="element">The Open XML element or other object to associate with this model element. Can be null to clear the current association.</param>
+  public virtual void SetUpdatableObject(object? element) => _UpdatableObject = element;
+
+  /// <summary>
+  /// Gets or sets the underlying Open XML element that can be updated by this model element.
+  /// </summary>
+  private object? _UpdatableObject;
 
   /// <summary>
   /// Parent object that contains this item.
@@ -555,22 +567,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public object? Parent
-  {
-    [DebuggerStepThrough]
-    get => _Parent;
-  }
-
-  /// <summary>
-  /// Sets the parent object to be used by the instance.
-  /// </summary>
-  /// <param name = "parent">The parent object to assign. Can be null to clear the current parent.</param>
-  public void SetParent(object? parent)
-  {
-    _Parent = parent;
-  }
-
-  private object? _Parent;
+  public object? Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Optional collection that contains this item.

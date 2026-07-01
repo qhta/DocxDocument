@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.ContourColor))]
 [XmlRoot("ContourColor", Namespace = "DocumentModel.Drawings")]
-public partial class ContourColor : DrawingsColorBase<DXD.ContourColor>
+public partial class ContourColor : ColorHolder<DXD.ContourColor>
 {
 
 }

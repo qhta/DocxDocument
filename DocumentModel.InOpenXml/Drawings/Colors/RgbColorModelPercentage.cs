@@ -14,33 +14,45 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// Red component as a percentage value.
   /// </summary>
   /// <remarks>
-  /// Specifies the amount of red in the color where 0 is no red and 100,000 is maximum red (100%).
+  /// Specifies the amount of red in the color where 0 is no red and 100% is maximum red.
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no red), 50,000 (50% red), 100,000 (full red).
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
-  public Percentage R { get => base.Red ?? 0; set => base.Red = value; }
+  public Percentage R
+  {
+    get => _Red ??= GetProperty<Percentage>(GetUpdatableElement()?.RedPortion);
+    set => UpdateField(ref _Red, value, nameof(R));
+  }
+  private Percentage? _Red;
 
   /// <summary>
   /// Green component as a percentage value.
   /// </summary>
   /// <remarks>
-  /// Specifies the amount of green in the color where 0 is no green and 100,000 is maximum green (100%).
+  /// Specifies the amount of green in the color where 0 is no green and 100%0 is maximum green.
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no green), 50,000 (50% green), 100,000 (full green).
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
-  public Percentage G { get => base.Green ?? 0; set => base.Green = value; }
+  public Percentage G
+  {
+    get => _Green ??= GetProperty<Percentage>(GetUpdatableElement()?.GreenPortion);
+    set => UpdateField(ref _Green, value, nameof(G));
+  }
+  private Percentage? _Green;
 
   /// <summary>
   /// Blue component as a percentage value.
   /// </summary>
   /// <remarks>
-  /// Specifies the amount of blue in the color where 0 is no blue and 100,000 is maximum blue (100%).
+  /// Specifies the amount of blue in the color where 0 is no blue and 100% is maximum blue.
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no blue), 50,000 (50% blue), 100,000 (full blue).
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
-  public Percentage B { get => base.Blue ?? 0; set => base.Blue = value; }
+  public Percentage B
+  {
+    get => _Blue ??= GetProperty<Percentage>(GetUpdatableElement()?.BluePortion);
+    set => UpdateField(ref _Blue, value, nameof(B));
+  }
+  private Percentage? _Blue;
 
 }

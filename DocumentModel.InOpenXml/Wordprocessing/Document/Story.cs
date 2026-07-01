@@ -68,7 +68,7 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(CustomXmlConflictDeletionRangeStart))]
 
-  public StoryItemsCollection Items => _Items ??= new StoryItemsCollection(this, _UpdatableElement);
+  public StoryItemsCollection Items => _Items ??= new StoryItemsCollection(this, GetUpdatableElement());
 
   private StoryItemsCollection? _Items;
 

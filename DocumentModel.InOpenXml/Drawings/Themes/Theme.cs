@@ -30,7 +30,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   {
     base.AttachAndLoad(wordprocessingDocument);
     var theme = wordprocessingDocument.GetTheme();
-    SetUpdatableElement(theme);
+    SetUpdatableObject(theme);
     LoadData(theme);
   }
 
@@ -42,7 +42,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var theme = wordprocessingDocument.GetTheme();
-    SetUpdatableElement(theme);
+    SetUpdatableObject(theme);
     UpdateData(theme);
   }
 

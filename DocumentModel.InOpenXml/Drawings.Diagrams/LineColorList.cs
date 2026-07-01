@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 [OpenXmlType(typeof(DXDD.LineColorList))]
 [XmlRoot("LineColorList", Namespace = "DocumentModel.Drawings.Diagrams")]
-public partial class LineColorList : ColorsType
+public partial class LineColorList : ColorHolder<DXDD.LineColorList>
 {
 
 }

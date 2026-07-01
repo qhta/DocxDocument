@@ -13,7 +13,7 @@ public class FieldCode : TextualElement<DXW.DeletedFieldCode>
   /// <returns>The text content of this element.</returns>
   public override string? GetText()
   {
-    return _UpdatableElement?.Text;
+    return GetUpdatableElement()?.Text;
   }
 
   /// <summary>
@@ -22,14 +22,15 @@ public class FieldCode : TextualElement<DXW.DeletedFieldCode>
   /// <param name="text">The text content to set.</param>
   public override void SetText(string? text)
   {
-    if (_UpdatableElement != null)
+    var updatableElement = GetUpdatableElement();
+    if (updatableElement != null)
     {
       if (text != null && text.Length > 0)
-        _UpdatableElement.Text = text;
+        updatableElement.Text = text;
       else
       {
-        _UpdatableElement.Remove();
-        _UpdatableElement = null;
+        updatableElement.Remove();
+        SetUpdatableObject(null);
       }
     }
   }

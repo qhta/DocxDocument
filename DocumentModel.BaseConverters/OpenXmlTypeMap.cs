@@ -61,7 +61,7 @@ public static class OpenXmlTypeMap
   /// <returns>A method info is found; otherwise, null.</returns>
   public static MethodInfo? GetUpdateDataMethod(Type modelType, Type openXmlType)
   {
-    var methodName = modelType.GetCustomAttribute<OpenXmlUpdateDataAttribute>()?.MethodName;
+    var methodName = modelType.GetCustomAttribute<OpenXmlUpdateDataAttribute>(true)?.MethodName;
     if (methodName != null)
     {
       var methodInfo = modelType
@@ -86,7 +86,7 @@ public static class OpenXmlTypeMap
   public static MethodInfo? GetLoadDataMethod(Type modelType, Type openXmlType)
   {
 
-    var methodName = modelType.GetCustomAttribute<OpenXmlLoadDataAttribute>()?.MethodName;
+    var methodName = modelType.GetCustomAttribute<OpenXmlLoadDataAttribute>(true)?.MethodName;
     if (methodName != null)
     {
       var methodInfo = modelType.GetMethod(methodName, 

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.BulletColor))]
 [XmlRoot("BulletColor", Namespace = "DocumentModel.Drawings")]
-public partial class BulletColor : DrawingsColorBase<DXD.BulletColor>, IExtendableElement
+public partial class BulletColor : ColorHolder<DXD.BulletColor>, IExtendableElement
 {
  /// <summary>
  /// List of extensions for the bullet color.

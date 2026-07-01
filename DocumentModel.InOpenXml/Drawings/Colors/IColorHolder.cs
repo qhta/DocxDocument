@@ -64,7 +64,7 @@ public partial interface IColorHolder
   /// <param name="color">Color data to update in OpenXmlElement</param>
   /// <param name="openXmlElement">The OpenXmlElement whose color properties will be updated. Cannot be null.</param>
   /// <exception cref="NotImplementedException">Thrown in all cases as the method is not yet implemented.</exception>
-  public static void UpdateColorInOpenXml(ColorType? color, DX.OpenXmlElement openXmlElement)
+  public static void UpdateColorInOpenXml(object? color, DX.OpenXmlElement openXmlElement)
   {
     foreach (var element in openXmlElement.Elements())
     {
@@ -84,23 +84,23 @@ public partial interface IColorHolder
 
     if (color is IUpdatable updatableColor)
     {
-      var updatableElement = updatableColor.GetUpdatableElement() as DX.OpenXmlElement;
+      var updatableElement = updatableColor.GetUpdatableObject() as DX.OpenXmlElement;
       if (updatableElement == null)
       {
-        if (color.Model == ColorModel.RGBPercentage)
+        if (color is RgbColorModelPercentage)
           updatableElement = new DXD.RgbColorModelPercentage();
-        else if (color.Model == ColorModel.RGBHex)
+        else if (color is RgbColorModelHex)
           updatableElement = new DXD.RgbColorModelHex();
-        else if (color.Model == ColorModel.HSL)
+        else if (color is HslColor)
           updatableElement = new DXD.HslColor();
-        else if (color.Model == ColorModel.System)
+        else if (color is SystemColor)
           updatableElement = new DXD.SystemColor();
-        else if (color.Model == ColorModel.Preset)
+        else if (color is PresetColor)
           updatableElement = new DXD.PresetColor();
-        else if (color.Model == ColorModel.Scheme)
+        else if (color is SchemeColor)
           updatableElement = new DXD.SchemeColor();
         else
-          throw new ApplicationException($"Unsupported color model: {color.Model}");
+          throw new ApplicationException($"Unsupported color model: {color.GetType()}");
         openXmlElement.Append(updatableElement!);
         OpenXmlModelConverter.TryUpdateModelProperties(color, updatableElement, updatableElement.GetType(), color.GetType());
       }

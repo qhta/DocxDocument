@@ -4,6 +4,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.Duotone))]
 [XmlRoot("Duotone", Namespace = "DocumentModel.Drawings")]
-public partial class Duotone : DrawingsColorBase<DXD.Duotone>
+public partial class Duotone : ColorHolder<DXD.Duotone>
 {
 }

@@ -40,10 +40,11 @@ public partial class StyleDefinitions : ModelElementCollection<StyleDefinition, 
   /// representing each defined style.
   /// </summary>
   /// <returns></returns>
-  public override DX.OpenXmlElement? GetUpdatableElement()
+  public override object? GetUpdatableObject()
   {
-    return Styles?.GetUpdatableElement() as DXW.Styles;
+    return Styles?.GetUpdatableObject() as DXW.Styles;
   }
+
 
   /// <summary>
   /// Updates the styles in the specified OpenXml element by removing all existing styles and adding new styles defined

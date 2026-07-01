@@ -99,7 +99,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetUpdatableElement(null);
+    SetUpdatableObject(null);
   }
 
   /// <summary>
@@ -133,16 +133,16 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Returns the wrapped OpenXml collection element instance, or null if not set.
   /// </summary>
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  public override OpenXmlCollectionType? GetUpdatableElement()
+  public override object? GetUpdatableObject()
   {
-    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableElement() as OpenXmlCollectionType;
+    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableObject() as OpenXmlCollectionType;
   }
 
   /// <summary>
   ///   Assigns the wrapped OpenXml collection element instance.
   /// </summary>
   /// <param name = "element">The OpenXml collection element to assign.</param>
-  public void SetUpdatableElement(OpenXmlCollectionType? element)
+  public void SetUpdatableObject(OpenXmlCollectionType? element)
   {
     if (element is null)
       _openXmlCollection = null;

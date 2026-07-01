@@ -8,21 +8,21 @@
 public interface IUpdatable
 {
   /// <summary>
-  /// Gets an Open XML element that can be used for updating the state of the implementing object.
-  /// The returned object may be null if there is no relevant Open XML element to provide.
+  /// Gets an object that can be used for updating the state of the implementing object.
+  /// The returned object may be null if there is no relevant object to provide.
   /// </summary>
-  public object? GetUpdatableElement();
+  public object? GetUpdatableObject();
 
   /// <summary>
-  /// Sets an Open XML element that can be used for updating the state of the implementing object.
+  /// Sets an object that can be used for updating the state of the implementing object.
   /// </summary>
-  public void SetUpdatableElement(object? element);
+  public void SetUpdatableObject(object? element);
 
   /// <summary>
-  /// Updates the specified Open XML element with new data or changes.
+  /// Updates the specified object with new data or changes.
   /// </summary>
-  /// <param name="openXmlElement">The Open XML element to update. Cannot be null.</param>
-  public void UpdateData(object openXmlElement);
+  /// <param name="updatableObject">The object to update. Cannot be null.</param>
+  public void UpdateData(object updatableObject);
 }
 
 /// <summary>
@@ -35,8 +35,8 @@ public static class UpdatableExtensions
   /// </summary>
   public static void UpdateData(this IUpdatable updatable)
   {
-    var updatableElement = updatable.GetUpdatableElement();
-    if (updatableElement != null)
-      updatable.UpdateData(updatableElement);
+    var updatableObject = updatable.GetUpdatableObject();
+    if (updatableObject != null)
+      updatable.UpdateData(updatableObject);
   }
 }

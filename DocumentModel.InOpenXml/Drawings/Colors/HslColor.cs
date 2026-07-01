@@ -6,23 +6,49 @@ namespace DocumentModel.Drawings;
 [XmlRoot("HslColor", Namespace = "DocumentModel.Drawings")]
 public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColor, IDrawingColor
 {
-  
+
   /// <summary>
-  /// Base hue value.
+  /// Hue component as a degrees value.
   /// </summary>
+  /// <remarks>
+  /// Specifies the hue angle in degrees (0-360), in the precision of 1/60000th of a degree.
+  /// Hue represents the color's position on the color wheel: 0=red, 60=yellow, 120=green, 180=cyan, 240=blue, 300=magenta.
+  /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
-  public Degrees H { get => base.Hue ?? 0; set => base.Hue = value; }
-
+  public Degrees H
+  {
+    get => _Hue ??= GetProperty<Degrees>(GetUpdatableElement()?.HueValue);
+    set => UpdateField(ref _Hue, value, nameof(H));
+  }
+  private Degrees? _Hue;
 
   /// <summary>
-  /// Base saturation value.
+  /// Absolute saturation value in the HSL color space.
   /// </summary>
+  /// <remarks>
+  /// Specifies the color saturation in the precision of 1/1000 percent, where 0 is grayscale and 100% is fully saturated.
+  /// Saturation determines the intensity or vividness of the color.
+  /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.SatValue))]
-  public Percentage S { get => base.Saturation ?? 1.0; set => base.Saturation = value; }
+  public Percentage S
+  {
+    get => _Saturation ??= GetProperty<Percentage>(GetUpdatableElement()?.SatValue);
+    set => UpdateField(ref _Saturation, value, nameof(S));
+  }
+  private Percentage? _Saturation;
 
   /// <summary>
-  /// Base luminance value.
+  /// Absolute luminance value in the HSL color space.
   /// </summary>
+  /// <remarks>
+  /// Specifies the brightness in the precision of 1/1000 percent, where 0 is black, 50% is the color at normal brightness (50%), 
+  /// and 100% is white. Luminance determines how light or dark the color appears.
+  /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.LumValue))]
-  public Percentage L { get => base.Luminance ?? 0; set => base.Luminance = value; }
+  public Percentage L
+  {
+    get => _Luminance ??= GetProperty<Percentage>(GetUpdatableElement()?.LumValue);
+    set => UpdateField(ref _Luminance, value, nameof(L));
+  }
+  private Percentage? _Luminance;
 }

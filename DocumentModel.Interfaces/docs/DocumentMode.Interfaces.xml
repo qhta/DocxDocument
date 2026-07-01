@@ -100,23 +100,18 @@
             </summary>
         </member>
         <member name="P:DocumentModel.IColor.RGB">
-            <summary>
-            Gets or sets the RGB value represented by this property.
+            <summary>A value of the color as uint. The value is in the format 0xRRGGBB,
+            where RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.Red">
+        <member name="P:DocumentModel.IColor.RGBComponents">
             <summary>
-            Red component of the color as a percentage value.
+            Red, green, and blue components of the color as a tuple of double values between 0 and 1.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.Green">
+        <member name="P:DocumentModel.IColor.HSLComponents">
             <summary>
-            Green component of the color as a percentage value.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.IColor.Blue">
-            <summary>
-            Blue component of the color as a percentage value.
+            Hue, saturation, and luminance components of the color as a tuple of double values between 0 and 1.
             </summary>
         </member>
         <member name="P:DocumentModel.IColor.Name">

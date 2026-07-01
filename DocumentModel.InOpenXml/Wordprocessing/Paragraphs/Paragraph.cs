@@ -35,7 +35,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   {
   }
 
-  private DXW.Paragraph _paragraph => _UpdatableElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
+  private DXW.Paragraph _paragraph => GetUpdatableElement() as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
 
   /// <summary>
   /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
@@ -168,7 +168,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   [XmlArrayItem("CustomXmlMoveToRangeStart", typeof(DMW.CustomXmlMoveToRangeStart))]
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(DMW.CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(DMW.CustomXmlConflictDeletionRangeStart))]
-  public ParagraphItemsCollection Items => _Items ??= new ParagraphItemsCollection(this, _UpdatableElement);
+  public ParagraphItemsCollection Items => _Items ??= new ParagraphItemsCollection(this, GetUpdatableElement());
   private ParagraphItemsCollection? _Items;
 
   /// <summary>

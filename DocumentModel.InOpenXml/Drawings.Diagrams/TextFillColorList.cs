@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 [OpenXmlType(typeof(DXDD.TextFillColorList))]
 [XmlRoot("TextFillColorList", Namespace = "DocumentModel.Drawings.Diagrams")]
-public partial class TextFillColorList : ColorsType
+public partial class TextFillColorList : ColorHolder<DXDD.TextFillColorList>
 {
 
 }

@@ -5,56 +5,26 @@
 /// </summary>
 public interface IColor
 {
-  /// <summary>
-  /// Gets or sets the RGB value represented by this property.
+  /// <summary>A value of the color as uint. The value is in the format 0xRRGGBB,
+  /// where RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
   /// </summary>
   public UInt32? RGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
-  /// Red component of the color as a percentage value.
+  /// Red, green, and blue components of the color as a tuple of double values between 0 and 1.
   /// </summary>
-  public double? Red { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public (double R, double G, double B) RGBComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
 
   /// <summary>
-  /// Green component of the color as a percentage value.
+  /// Hue, saturation, and luminance components of the color as a tuple of double values between 0 and 1.
   /// </summary>
-  public double? Green { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
-  /// <summary>
-  /// Blue component of the color as a percentage value.
-  /// </summary>
-  public double? Blue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public (double H, double S, double L) HSLComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
   /// The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
   /// </summary>
   public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
-  ///// <summary>
-  ///// Gets or sets the theme tint represented by this property.
-  ///// </summary>
-  ///// <remarks>
-  ///// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  ///// <list type="bullet">
-  ///// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  ///// <item>Modify the luminance factor as follows:  L′ = Tint_percentage + (1 − Tint_percentage)</item>
-  ///// <item>Convert the resultant HSL color to RGB</item>
-  ///// </list> 
-  ///// </remarks> 
-  //public double? Tint { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
-  ///// <summary>
-  ///// Gets or sets the theme shade represented by this property.
-  ///// </summary>
-  ///// <remarks>
-  ///// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  ///// <list type="bullet">
-  ///// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  ///// <item>Modify the luminance factor as follows:  L′ =L* Shade_percentage </item>
-  ///// <item>Convert the resultant HSL color to RGB</item>
-  ///// </list>
-  ///// </remarks>  
-  //public double? Shade { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
+  
 }

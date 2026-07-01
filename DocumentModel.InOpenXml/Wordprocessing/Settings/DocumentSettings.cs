@@ -42,7 +42,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   {
     base.Attach(wordprocessingDocument);
     var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    SetUpdatableElement(documentSettings);
+    SetUpdatableObject(documentSettings);
   }
 
   /// <summary>
@@ -55,7 +55,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle))]
   public ActiveWritingStyles ActiveWritingStyles
   {
-    get => _ActiveWritingStyles ??= new ActiveWritingStyles(this, _UpdatableElement);
+    get => _ActiveWritingStyles ??= new ActiveWritingStyles(this, GetUpdatableElement());
     set => UpdateField(ref _ActiveWritingStyles, value, nameof(ActiveWritingStyles));
   }
   private ActiveWritingStyles? _ActiveWritingStyles;
@@ -70,7 +70,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AlignBorderAndEdges))]
   public bool? AlignBorderAndEdges
   {
-    get => _AlignBorderAndEdges ??= GetElement<bool?, DXW.AlignBorderAndEdges>(_UpdatableElement);
+    get => _AlignBorderAndEdges ??= GetElement<bool?, DXW.AlignBorderAndEdges>(GetUpdatableElement());
     set => UpdateField(ref _AlignBorderAndEdges, value, nameof(AlignBorderAndEdges));
   }
   private bool? _AlignBorderAndEdges;
@@ -85,7 +85,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AlwaysMergeEmptyNamespace))]
   public bool? AlwaysMergeEmptyNamespace
   {
-    get => _AlwaysMergeEmptyNamespace ??= GetElement<bool?, DXW.AlwaysMergeEmptyNamespace>(_UpdatableElement);
+    get => _AlwaysMergeEmptyNamespace ??= GetElement<bool?, DXW.AlwaysMergeEmptyNamespace>(GetUpdatableElement());
     set => UpdateField(ref _AlwaysMergeEmptyNamespace, value, nameof(AlwaysMergeEmptyNamespace));
   }
   private bool? _AlwaysMergeEmptyNamespace;
@@ -100,7 +100,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AlwaysShowPlaceholderText))]
   public bool? AlwaysShowPlaceholderText
   {
-    get => _AlwaysShowPlaceholderText ??= GetElement<bool?, DXW.AlwaysShowPlaceholderText>(_UpdatableElement);
+    get => _AlwaysShowPlaceholderText ??= GetElement<bool?, DXW.AlwaysShowPlaceholderText>(GetUpdatableElement());
     set => UpdateField(ref _AlwaysShowPlaceholderText, value, nameof(AlwaysShowPlaceholderText));
   }
   private bool? _AlwaysShowPlaceholderText;
@@ -115,7 +115,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElementCollection(typeof(DXW.AttachedSchema))]
   public AttachedSchemas? AttachedSchemas
   {
-    get => _AttachedSchemas ??= new AttachedSchemas(this, _UpdatableElement);
+    get => _AttachedSchemas ??= new AttachedSchemas(this, GetUpdatableElement());
     set => UpdateField(ref _AttachedSchemas, value, nameof(AttachedSchemas));
   }
   private AttachedSchemas? _AttachedSchemas;
@@ -130,7 +130,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AttachedTemplate))]
   public AttachedTemplate? AttachedTemplate
   {
-    get => _AttachedTemplate ??= GetElement<AttachedTemplate?, DXW.AttachedTemplate>(_UpdatableElement);
+    get => _AttachedTemplate ??= GetElement<AttachedTemplate?, DXW.AttachedTemplate>(GetUpdatableElement());
     set => UpdateField(ref _AttachedTemplate, value, nameof(AttachedTemplate));
   }
   private AttachedTemplate? _AttachedTemplate;
@@ -145,7 +145,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AutoFormatOverride))]
   public bool? AutoFormatOverride
   {
-    get => _AutoFormatOverride ??= GetElement<bool?, DXW.AutoFormatOverride>(_UpdatableElement);
+    get => _AutoFormatOverride ??= GetElement<bool?, DXW.AutoFormatOverride>(GetUpdatableElement());
     set => UpdateField(ref _AutoFormatOverride, value, nameof(AutoFormatOverride));
   }
   private bool? _AutoFormatOverride;
@@ -160,7 +160,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.AutoHyphenation))]
   public bool? AutoHyphenation
   {
-    get => _AutoHyphenation ??= GetElement<bool?, DXW.AutoHyphenation>(_UpdatableElement);
+    get => _AutoHyphenation ??= GetElement<bool?, DXW.AutoHyphenation>(GetUpdatableElement());
     set => UpdateField(ref _AutoHyphenation, value, nameof(AutoHyphenation));
   }
   private bool? _AutoHyphenation;
@@ -175,7 +175,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.BookFoldPrinting))]
   public bool? BookFoldPrinting
   {
-    get => _BookFoldPrinting ??= GetElement<bool?, DXW.BookFoldPrinting>(_UpdatableElement);
+    get => _BookFoldPrinting ??= GetElement<bool?, DXW.BookFoldPrinting>(GetUpdatableElement());
     set => UpdateField(ref _BookFoldPrinting, value, nameof(BookFoldPrinting));
   }
   private bool? _BookFoldPrinting;
@@ -190,7 +190,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.BookFoldPrintingSheets))]
   public short? BookFoldPrintingSheets
   {
-    get => _BookFoldPrintingSheets ??= GetElement<short?, DXW.BookFoldPrintingSheets>(_UpdatableElement);
+    get => _BookFoldPrintingSheets ??= GetElement<short?, DXW.BookFoldPrintingSheets>(GetUpdatableElement());
     set => UpdateField(ref _BookFoldPrintingSheets, value, nameof(BookFoldPrintingSheets));
   }
   private short? _BookFoldPrintingSheets;
@@ -205,7 +205,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.BookFoldReversePrinting))]
   public bool? BookFoldReversePrinting
   {
-    get => _BookFoldReversePrinting ??= GetElement<bool?, DXW.BookFoldReversePrinting>(_UpdatableElement);
+    get => _BookFoldReversePrinting ??= GetElement<bool?, DXW.BookFoldReversePrinting>(GetUpdatableElement());
     set => UpdateField(ref _BookFoldReversePrinting, value, nameof(BookFoldReversePrinting));
   }
   private bool? _BookFoldReversePrinting;
@@ -220,7 +220,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.BordersDoNotSurroundFooter))]
   public bool? BordersDoNotSurroundFooter
   {
-    get => _BordersDoNotSurroundFooter ??= GetElement<bool?, DXW.BordersDoNotSurroundFooter>(_UpdatableElement);
+    get => _BordersDoNotSurroundFooter ??= GetElement<bool?, DXW.BordersDoNotSurroundFooter>(GetUpdatableElement());
     set => UpdateField(ref _BordersDoNotSurroundFooter, value, nameof(BordersDoNotSurroundFooter));
   }
   private bool? _BordersDoNotSurroundFooter;
@@ -235,7 +235,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.BordersDoNotSurroundHeader))]
   public bool? BordersDoNotSurroundHeader
   {
-    get => _BordersDoNotSurroundHeader ??= GetElement<bool?, DXW.BordersDoNotSurroundHeader>(_UpdatableElement);
+    get => _BordersDoNotSurroundHeader ??= GetElement<bool?, DXW.BordersDoNotSurroundHeader>(GetUpdatableElement());
     set => UpdateField(ref _BordersDoNotSurroundHeader, value, nameof(BordersDoNotSurroundHeader));
   }
   private bool? _BordersDoNotSurroundHeader;
@@ -250,7 +250,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.Captions))]
   public Captions? Captions
   {
-    get => _Captions ??= GetElement<Captions?, DXW.Captions>(_UpdatableElement);
+    get => _Captions ??= GetElement<Captions?, DXW.Captions>(GetUpdatableElement());
     set => UpdateField(ref _Captions, value, nameof(Captions));
   }
   private Captions? _Captions;
@@ -265,7 +265,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.CharacterSpacingControl))]
   public CharacterSpacing? CharacterSpacingControl
   {
-    get => _CharacterSpacingControl ??= GetElement<CharacterSpacing?, DXW.CharacterSpacingControl>(_UpdatableElement);
+    get => _CharacterSpacingControl ??= GetElement<CharacterSpacing?, DXW.CharacterSpacingControl>(GetUpdatableElement());
     set => UpdateField(ref _CharacterSpacingControl, value, nameof(CharacterSpacingControl));
   }
   private CharacterSpacing? _CharacterSpacingControl;
@@ -280,7 +280,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXO13W.ChartTrackingRefBased))]
   public bool? ChartTrackingRefBased
   {
-    get => _ChartTrackingRefBased ??= GetElement<bool?, DXO13W.ChartTrackingRefBased>(_UpdatableElement);
+    get => _ChartTrackingRefBased ??= GetElement<bool?, DXO13W.ChartTrackingRefBased>(GetUpdatableElement());
     set => UpdateField(ref _ChartTrackingRefBased, value, nameof(ChartTrackingRefBased));
   }
   private bool? _ChartTrackingRefBased;
@@ -295,7 +295,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ClickAndTypeStyle))]
   public string? ClickAndTypeStyle
   {
-    get => _ClickAndTypeStyle ??= GetElement<string?, DXW.ClickAndTypeStyle>(_UpdatableElement);
+    get => _ClickAndTypeStyle ??= GetElement<string?, DXW.ClickAndTypeStyle>(GetUpdatableElement());
     set => UpdateField(ref _ClickAndTypeStyle, value, nameof(ClickAndTypeStyle));
   }
   private string? _ClickAndTypeStyle;
@@ -310,7 +310,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ColorSchemeMapping))]
   public ColorSchemeMapping? ColorSchemeMapping
   {
-    get => _ColorSchemeMapping ??= GetElement<ColorSchemeMapping?, DXW.ColorSchemeMapping>(_UpdatableElement);
+    get => _ColorSchemeMapping ??= GetElement<ColorSchemeMapping?, DXW.ColorSchemeMapping>(GetUpdatableElement());
     set => UpdateField(ref _ColorSchemeMapping, value, nameof(ColorSchemeMapping));
   }
   private ColorSchemeMapping? _ColorSchemeMapping;
@@ -325,7 +325,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXO10W.ConflictMode))]
   public bool? ConflictMode
   {
-    get => _ConflictMode ??= GetElement<bool?, DXO10W.ConflictMode>(_UpdatableElement);
+    get => _ConflictMode ??= GetElement<bool?, DXO10W.ConflictMode>(GetUpdatableElement());
     set => UpdateField(ref _ConflictMode, value, nameof(ConflictMode));
   }
   private bool? _ConflictMode;
@@ -340,7 +340,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ConsecutiveHyphenLimit))]
   public ushort? ConsecutiveHyphenLimit
   {
-    get => _ConsecutiveHyphenLimit ??= GetElement<ushort?, DXW.ConsecutiveHyphenLimit>(_UpdatableElement);
+    get => _ConsecutiveHyphenLimit ??= GetElement<ushort?, DXW.ConsecutiveHyphenLimit>(GetUpdatableElement());
     set => UpdateField(ref _ConsecutiveHyphenLimit, value, nameof(ConsecutiveHyphenLimit));
   }
   private ushort? _ConsecutiveHyphenLimit;
@@ -355,7 +355,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DecimalSymbol))]
   public string? DecimalSymbol
   {
-    get => _DecimalSymbol ??= GetElement<string?, DXW.DecimalSymbol>(_UpdatableElement);
+    get => _DecimalSymbol ??= GetElement<string?, DXW.DecimalSymbol>(GetUpdatableElement());
     set => UpdateField(ref _DecimalSymbol, value, nameof(DecimalSymbol));
   }
   private string? _DecimalSymbol;
@@ -370,7 +370,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXO10W.DefaultImageDpi))]
   public int? DefaultImageDpi
   {
-    get => _DefaultImageDpi ??= GetElement<int?, DXO10W.DefaultImageDpi>(_UpdatableElement);
+    get => _DefaultImageDpi ??= GetElement<int?, DXO10W.DefaultImageDpi>(GetUpdatableElement());
     set => UpdateField(ref _DefaultImageDpi, value, nameof(DefaultImageDpi));
   }
   private int? _DefaultImageDpi;
@@ -385,7 +385,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DefaultTableStyle))]
   public string? DefaultTableStyle
   {
-    get => _DefaultTableStyle ??= GetElement<string?, DXW.DefaultTableStyle>(_UpdatableElement);
+    get => _DefaultTableStyle ??= GetElement<string?, DXW.DefaultTableStyle>(GetUpdatableElement());
     set => UpdateField(ref _DefaultTableStyle, value, nameof(DefaultTableStyle));
   }
   private string? _DefaultTableStyle;
@@ -400,7 +400,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DefaultTabStop))]
   public Twips? DefaultTabStop
   {
-    get => _DefaultTabStop ??= GetElement<short?, DXW.DefaultTabStop>(_UpdatableElement);
+    get => _DefaultTabStop ??= GetElement<short?, DXW.DefaultTabStop>(GetUpdatableElement());
     set => UpdateField(ref _DefaultTabStop, value, nameof(DefaultTabStop));
   }
   private Twips? _DefaultTabStop;
@@ -415,7 +415,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXO10W.DiscardImageEditingData))]
   public bool? DiscardImageEditingData
   {
-    get => _DiscardImageEditingData ??= GetElement<bool?, DXO10W.DiscardImageEditingData>(_UpdatableElement);
+    get => _DiscardImageEditingData ??= GetElement<bool?, DXO10W.DiscardImageEditingData>(GetUpdatableElement());
     set => UpdateField(ref _DiscardImageEditingData, value, nameof(DiscardImageEditingData));
   }
   private bool? _DiscardImageEditingData;
@@ -430,7 +430,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DisplayBackgroundShape))]
   public bool? DisplayBackgroundShape
   {
-    get => _DisplayBackgroundShape ??= GetElement<bool?, DXW.DisplayBackgroundShape>(_UpdatableElement);
+    get => _DisplayBackgroundShape ??= GetElement<bool?, DXW.DisplayBackgroundShape>(GetUpdatableElement());
     set => UpdateField(ref _DisplayBackgroundShape, value, nameof(DisplayBackgroundShape));
   }
   private bool? _DisplayBackgroundShape;
@@ -445,7 +445,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DisplayHorizontalDrawingGrid))]
   public int? DisplayHorizontalDrawingGrid
   {
-    get => _DisplayHorizontalDrawingGrid ??= GetElement<int?, DXW.DisplayHorizontalDrawingGrid>(_UpdatableElement);
+    get => _DisplayHorizontalDrawingGrid ??= GetElement<int?, DXW.DisplayHorizontalDrawingGrid>(GetUpdatableElement());
     set => UpdateField(ref _DisplayHorizontalDrawingGrid, value, nameof(DisplayHorizontalDrawingGrid));
   }
   private int? _DisplayHorizontalDrawingGrid;
@@ -460,7 +460,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DisplayVerticalDrawingGrid))]
   public int? DisplayVerticalDrawingGrid
   {
-    get => _DisplayVerticalDrawingGrid ??= GetElement<int?, DXW.DisplayVerticalDrawingGrid>(_UpdatableElement);
+    get => _DisplayVerticalDrawingGrid ??= GetElement<int?, DXW.DisplayVerticalDrawingGrid>(GetUpdatableElement());
     set => UpdateField(ref _DisplayVerticalDrawingGrid, value, nameof(DisplayVerticalDrawingGrid));
   }
   private int? _DisplayVerticalDrawingGrid;
@@ -475,7 +475,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXO10W.DocumentId))]
   public HexInt? DocumentId
   {
-    get => _DocumentId ??= GetElement<HexInt?, DXO10W.DocumentId>(_UpdatableElement);
+    get => _DocumentId ??= GetElement<HexInt?, DXO10W.DocumentId>(GetUpdatableElement());
     set => UpdateField(ref _DocumentId, value, nameof(DocumentId));
   }
   private HexInt? _DocumentId;
@@ -490,7 +490,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DocumentProtection))]
   public DocumentProtection? DocumentProtection
   {
-    get => _DocumentProtection ??= GetElement<DocumentProtection?, DXW.DocumentProtection>(_UpdatableElement);
+    get => _DocumentProtection ??= GetElement<DocumentProtection?, DXW.DocumentProtection>(GetUpdatableElement());
     set => UpdateField(ref _DocumentProtection, value, nameof(DocumentProtection));
   }
   private DocumentProtection? _DocumentProtection;
@@ -505,7 +505,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DocumentType))]
   public DocumentType? DocumentType
   {
-    get => _DocumentType ??= GetElement<DocumentType?, DXW.DocumentType>(_UpdatableElement);
+    get => _DocumentType ??= GetElement<DocumentType?, DXW.DocumentType>(GetUpdatableElement());
     set => UpdateField(ref _DocumentType, value, nameof(DocumentType));
   }
   private DocumentType? _DocumentType;
@@ -520,7 +520,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotAutoCompressPictures))]
   public bool? DoNotAutoCompressPictures
   {
-    get => _DoNotAutoCompressPictures ??= GetElement<bool?, DXW.DoNotAutoCompressPictures>(_UpdatableElement);
+    get => _DoNotAutoCompressPictures ??= GetElement<bool?, DXW.DoNotAutoCompressPictures>(GetUpdatableElement());
     set => UpdateField(ref _DoNotAutoCompressPictures, value, nameof(DoNotAutoCompressPictures));
   }
   private bool? _DoNotAutoCompressPictures;
@@ -535,7 +535,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotDemarcateInvalidXml))]
   public bool? DoNotDemarcateInvalidXml
   {
-    get => _DoNotDemarcateInvalidXml ??= GetElement<bool?, DXW.DoNotDemarcateInvalidXml>(_UpdatableElement);
+    get => _DoNotDemarcateInvalidXml ??= GetElement<bool?, DXW.DoNotDemarcateInvalidXml>(GetUpdatableElement());
     set => UpdateField(ref _DoNotDemarcateInvalidXml, value, nameof(DoNotDemarcateInvalidXml));
   }
   private bool? _DoNotDemarcateInvalidXml;
@@ -550,7 +550,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotDisplayPageBoundaries))]
   public bool? DoNotDisplayPageBoundaries
   {
-    get => _DoNotDisplayPageBoundaries ??= GetElement<bool?, DXW.DoNotDisplayPageBoundaries>(_UpdatableElement);
+    get => _DoNotDisplayPageBoundaries ??= GetElement<bool?, DXW.DoNotDisplayPageBoundaries>(GetUpdatableElement());
     set => UpdateField(ref _DoNotDisplayPageBoundaries, value, nameof(DoNotDisplayPageBoundaries));
   }
   private bool? _DoNotDisplayPageBoundaries;
@@ -565,7 +565,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotHyphenateCaps))]
   public bool? DoNotHyphenateCaps
   {
-    get => _DoNotHyphenateCaps ??= GetElement<bool?, DXW.DoNotHyphenateCaps>(_UpdatableElement);
+    get => _DoNotHyphenateCaps ??= GetElement<bool?, DXW.DoNotHyphenateCaps>(GetUpdatableElement());
     set => UpdateField(ref _DoNotHyphenateCaps, value, nameof(DoNotHyphenateCaps));
   }
   private bool? _DoNotHyphenateCaps;
@@ -580,7 +580,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotIncludeSubdocsInStats))]
   public bool? DoNotIncludeSubdocsInStats
   {
-    get => _DoNotIncludeSubdocsInStats ??= GetElement<bool?, DXW.DoNotIncludeSubdocsInStats>(_UpdatableElement);
+    get => _DoNotIncludeSubdocsInStats ??= GetElement<bool?, DXW.DoNotIncludeSubdocsInStats>(GetUpdatableElement());
     set => UpdateField(ref _DoNotIncludeSubdocsInStats, value, nameof(DoNotIncludeSubdocsInStats));
   }
   private bool? _DoNotIncludeSubdocsInStats;
@@ -595,7 +595,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotShadeFormData))]
   public bool? DoNotShadeFormData
   {
-    get => _DoNotShadeFormData ??= GetElement<bool?, DXW.DoNotShadeFormData>(_UpdatableElement);
+    get => _DoNotShadeFormData ??= GetElement<bool?, DXW.DoNotShadeFormData>(GetUpdatableElement());
     set => UpdateField(ref _DoNotShadeFormData, value, nameof(DoNotShadeFormData));
   }
   private bool? _DoNotShadeFormData;
@@ -610,7 +610,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotTrackFormatting))]
   public bool? DoNotTrackFormatting
   {
-    get => _DoNotTrackFormatting ??= GetElement<bool?, DXW.DoNotTrackFormatting>(_UpdatableElement);
+    get => _DoNotTrackFormatting ??= GetElement<bool?, DXW.DoNotTrackFormatting>(GetUpdatableElement());
     set => UpdateField(ref _DoNotTrackFormatting, value, nameof(DoNotTrackFormatting));
   }
   private bool? _DoNotTrackFormatting;
@@ -625,7 +625,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotTrackMoves))]
   public bool? DoNotTrackMoves
   {
-    get => _DoNotTrackMoves ??= GetElement<bool?, DXW.DoNotTrackMoves>(_UpdatableElement);
+    get => _DoNotTrackMoves ??= GetElement<bool?, DXW.DoNotTrackMoves>(GetUpdatableElement());
     set => UpdateField(ref _DoNotTrackMoves, value, nameof(DoNotTrackMoves));
   }
   private bool? _DoNotTrackMoves;
@@ -641,7 +641,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   public bool? DoNotUseMarginsForDrawingGridOrigin
   {
     get => _DoNotUseMarginsForDrawingGridOrigin ??=
-      GetElement<bool?, DXW.DoNotUseMarginsForDrawingGridOrigin>(_UpdatableElement);
+      GetElement<bool?, DXW.DoNotUseMarginsForDrawingGridOrigin>(GetUpdatableElement());
     set => UpdateField(ref _DoNotUseMarginsForDrawingGridOrigin, value, nameof(DoNotUseMarginsForDrawingGridOrigin));
   }
   private bool? _DoNotUseMarginsForDrawingGridOrigin;
@@ -656,7 +656,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotValidateAgainstSchema))]
   public bool? DoNotValidateAgainstSchema
   {
-    get => _DoNotValidateAgainstSchema ??= GetElement<bool?, DXW.DoNotValidateAgainstSchema>(_UpdatableElement);
+    get => _DoNotValidateAgainstSchema ??= GetElement<bool?, DXW.DoNotValidateAgainstSchema>(GetUpdatableElement());
     set => UpdateField(ref _DoNotValidateAgainstSchema, value, nameof(DoNotValidateAgainstSchema));
   }
   private bool? _DoNotValidateAgainstSchema;
@@ -671,7 +671,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DrawingGridHorizontalOrigin))]
   public Twips? DrawingGridHorizontalOrigin
   {
-    get => _DrawingGridHorizontalOrigin ??= GetElement<Twips?, DXW.DrawingGridHorizontalOrigin>(_UpdatableElement);
+    get => _DrawingGridHorizontalOrigin ??= GetElement<Twips?, DXW.DrawingGridHorizontalOrigin>(GetUpdatableElement());
     set => UpdateField(ref _DrawingGridHorizontalOrigin, value, nameof(DrawingGridHorizontalOrigin));
   }
   private Twips? _DrawingGridHorizontalOrigin;
@@ -686,7 +686,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DrawingGridHorizontalSpacing))]
   public Twips? DrawingGridHorizontalSpacing
   {
-    get => _DrawingGridHorizontalSpacing ??= GetElement<Twips?, DXW.DrawingGridHorizontalSpacing>(_UpdatableElement);
+    get => _DrawingGridHorizontalSpacing ??= GetElement<Twips?, DXW.DrawingGridHorizontalSpacing>(GetUpdatableElement());
     set => UpdateField(ref _DrawingGridHorizontalSpacing, value, nameof(DrawingGridHorizontalSpacing));
   }
   private Twips? _DrawingGridHorizontalSpacing;
@@ -701,7 +701,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DrawingGridVerticalOrigin))]
   public Twips? DrawingGridVerticalOrigin
   {
-    get => _DrawingGridVerticalOrigin ??= GetElement<Twips?, DXW.DrawingGridVerticalOrigin>(_UpdatableElement);
+    get => _DrawingGridVerticalOrigin ??= GetElement<Twips?, DXW.DrawingGridVerticalOrigin>(GetUpdatableElement());
     set => UpdateField(ref _DrawingGridVerticalOrigin, value, nameof(DrawingGridVerticalOrigin));
   }
   private Twips? _DrawingGridVerticalOrigin;
@@ -716,7 +716,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DrawingGridVerticalSpacing))]
   public Twips? DrawingGridVerticalSpacing
   {
-    get => _DrawingGridVerticalSpacing ??= GetElement<Twips?, DXW.DrawingGridVerticalSpacing>(_UpdatableElement);
+    get => _DrawingGridVerticalSpacing ??= GetElement<Twips?, DXW.DrawingGridVerticalSpacing>(GetUpdatableElement());
     set => UpdateField(ref _DrawingGridVerticalSpacing, value, nameof(DrawingGridVerticalSpacing));
   }
   private Twips? _DrawingGridVerticalSpacing;
@@ -731,7 +731,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.EmbedSystemFonts))]
   public bool? EmbedSystemFonts
   {
-    get => _EmbedSystemFonts ??= GetElement<bool?, DXW.EmbedSystemFonts>(_UpdatableElement);
+    get => _EmbedSystemFonts ??= GetElement<bool?, DXW.EmbedSystemFonts>(GetUpdatableElement());
     set => UpdateField(ref _EmbedSystemFonts, value, nameof(EmbedSystemFonts));
   }
   private bool? _EmbedSystemFonts;
@@ -746,7 +746,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.EmbedTrueTypeFonts))]
   public bool? EmbedTrueTypeFonts
   {
-    get => _EmbedTrueTypeFonts ??= GetElement<bool?, DXW.EmbedTrueTypeFonts>(_UpdatableElement);
+    get => _EmbedTrueTypeFonts ??= GetElement<bool?, DXW.EmbedTrueTypeFonts>(GetUpdatableElement());
     set => UpdateField(ref _EmbedTrueTypeFonts, value, nameof(EmbedTrueTypeFonts));
   }
   private bool? _EmbedTrueTypeFonts;
@@ -759,7 +759,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties
   {
     get => _EndnoteDocumentWideProperties ??=
-      GetElement<EndnoteDocumentWideProperties?, DXW.EndnoteDocumentWideProperties>(_UpdatableElement);
+      GetElement<EndnoteDocumentWideProperties?, DXW.EndnoteDocumentWideProperties>(GetUpdatableElement());
     set => UpdateField(ref _EndnoteDocumentWideProperties, value, nameof(EndnoteDocumentWideProperties));
   }
   private EndnoteDocumentWideProperties? _EndnoteDocumentWideProperties;
@@ -774,7 +774,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.EvenAndOddHeaders))]
   public bool? EvenAndOddHeaders
   {
-    get => _EvenAndOddHeaders ??= GetElement<bool?, DXW.EvenAndOddHeaders>(_UpdatableElement);
+    get => _EvenAndOddHeaders ??= GetElement<bool?, DXW.EvenAndOddHeaders>(GetUpdatableElement());
     set => UpdateField(ref _EvenAndOddHeaders, value, nameof(EvenAndOddHeaders));
   }
   private bool? _EvenAndOddHeaders;
@@ -787,7 +787,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties
   {
     get => _FootnoteDocumentWideProperties ??=
-      GetElement<FootnoteDocumentWideProperties?, DXW.FootnoteDocumentWideProperties>(_UpdatableElement);
+      GetElement<FootnoteDocumentWideProperties?, DXW.FootnoteDocumentWideProperties>(GetUpdatableElement());
     set => UpdateField(ref _FootnoteDocumentWideProperties, value, nameof(FootnoteDocumentWideProperties));
   }
   private FootnoteDocumentWideProperties? _FootnoteDocumentWideProperties;
@@ -802,7 +802,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ForceUpgrade))]
   public bool? ForceUpgrade
   {
-    get => _ForceUpgrade ??= GetElement<bool?, DXW.ForceUpgrade>(_UpdatableElement);
+    get => _ForceUpgrade ??= GetElement<bool?, DXW.ForceUpgrade>(GetUpdatableElement());
     set => UpdateField(ref _ForceUpgrade, value, nameof(ForceUpgrade));
   }
   private bool? _ForceUpgrade;
@@ -817,7 +817,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.FormsDesign))]
   public bool? FormsDesign
   {
-    get => _FormsDesign ??= GetElement<bool?, DXW.FormsDesign>(_UpdatableElement);
+    get => _FormsDesign ??= GetElement<bool?, DXW.FormsDesign>(GetUpdatableElement());
     set => UpdateField(ref _FormsDesign, value, nameof(FormsDesign));
   }
   private bool? _FormsDesign;
@@ -832,7 +832,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.GutterAtTop))]
   public bool? GutterAtTop
   {
-    get => _GutterAtTop ??= GetElement<bool?, DXW.GutterAtTop>(_UpdatableElement);
+    get => _GutterAtTop ??= GetElement<bool?, DXW.GutterAtTop>(GetUpdatableElement());
     set => UpdateField(ref _GutterAtTop, value, nameof(GutterAtTop));
   }
   private bool? _GutterAtTop;
@@ -844,7 +844,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
   public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
   {
-    get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(_UpdatableElement);
+    get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(GetUpdatableElement());
     set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
   }
   private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
@@ -859,7 +859,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.HideGrammaticalErrors))]
   public bool? HideGrammaticalErrors
   {
-    get => _HideGrammaticalErrors ??= GetElement<bool?, DXW.HideGrammaticalErrors>(_UpdatableElement);
+    get => _HideGrammaticalErrors ??= GetElement<bool?, DXW.HideGrammaticalErrors>(GetUpdatableElement());
     set => UpdateField(ref _HideGrammaticalErrors, value, nameof(HideGrammaticalErrors));
   }
   private bool? _HideGrammaticalErrors;
@@ -874,7 +874,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.HideSpellingErrors))]
   public bool? HideSpellingErrors
   {
-    get => _HideSpellingErrors ??= GetElement<bool?, DXW.HideSpellingErrors>(_UpdatableElement);
+    get => _HideSpellingErrors ??= GetElement<bool?, DXW.HideSpellingErrors>(GetUpdatableElement());
     set => UpdateField(ref _HideSpellingErrors, value, nameof(HideSpellingErrors));
   }
   private bool? _HideSpellingErrors;
@@ -889,7 +889,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.HyphenationZone))]
   public Twips? HyphenationZone
   {
-    get => _HyphenationZone ??= GetElement<Twips?, DXW.HyphenationZone>(_UpdatableElement);
+    get => _HyphenationZone ??= GetElement<Twips?, DXW.HyphenationZone>(GetUpdatableElement());
     set => UpdateField(ref _HyphenationZone, value, nameof(HyphenationZone));
   }
   private Twips? _HyphenationZone;
@@ -904,7 +904,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.IgnoreMixedContent))]
   public bool? IgnoreMixedContent
   {
-    get => _IgnoreMixedContent ??= GetElement<bool?, DXW.IgnoreMixedContent>(_UpdatableElement);
+    get => _IgnoreMixedContent ??= GetElement<bool?, DXW.IgnoreMixedContent>(GetUpdatableElement());
     set => UpdateField(ref _IgnoreMixedContent, value, nameof(IgnoreMixedContent));
   }
   private bool? _IgnoreMixedContent;
@@ -919,7 +919,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.LinkStyles))]
   public bool? LinkStyles
   {
-    get => _LinkStyles ??= GetElement<bool?, DXW.LinkStyles>(_UpdatableElement);
+    get => _LinkStyles ??= GetElement<bool?, DXW.LinkStyles>(GetUpdatableElement());
     set => UpdateField(ref _LinkStyles, value, nameof(LinkStyles));
   }
   private bool? _LinkStyles;
@@ -934,7 +934,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ListSeparator))]
   public string? ListSeparator
   {
-    get => _ListSeparator ??= GetElement<string?, DXW.ListSeparator>(_UpdatableElement);
+    get => _ListSeparator ??= GetElement<string?, DXW.ListSeparator>(GetUpdatableElement());
     set => UpdateField(ref _ListSeparator, value, nameof(ListSeparator));
   }
   private string? _ListSeparator;
@@ -949,7 +949,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.MirrorMargins))]
   public bool? MirrorMargins
   {
-    get => _MirrorMargins ??= GetElement<bool?, DXW.MirrorMargins>(_UpdatableElement);
+    get => _MirrorMargins ??= GetElement<bool?, DXW.MirrorMargins>(GetUpdatableElement());
     set => UpdateField(ref _MirrorMargins, value, nameof(MirrorMargins));
   }
   private bool? _MirrorMargins;
@@ -962,7 +962,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku
   {
     get => _NoLineBreaksAfterKinsoku ??=
-      GetElement<NoLineBreaksAfterKinsoku?, DXW.NoLineBreaksAfterKinsoku>(_UpdatableElement);
+      GetElement<NoLineBreaksAfterKinsoku?, DXW.NoLineBreaksAfterKinsoku>(GetUpdatableElement());
     set => UpdateField(ref _NoLineBreaksAfterKinsoku, value, nameof(NoLineBreaksAfterKinsoku));
   }
   private NoLineBreaksAfterKinsoku? _NoLineBreaksAfterKinsoku;
@@ -975,7 +975,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku
   {
     get => _NoLineBreaksBeforeKinsoku ??=
-      GetElement<NoLineBreaksBeforeKinsoku?, DXW.NoLineBreaksBeforeKinsoku>(_UpdatableElement);
+      GetElement<NoLineBreaksBeforeKinsoku?, DXW.NoLineBreaksBeforeKinsoku>(GetUpdatableElement());
     set => UpdateField(ref _NoLineBreaksBeforeKinsoku, value, nameof(NoLineBreaksBeforeKinsoku));
   }
   private NoLineBreaksBeforeKinsoku? _NoLineBreaksBeforeKinsoku;
@@ -990,7 +990,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.NoPunctuationKerning))]
   public bool? NoPunctuationKerning
   {
-    get => _NoPunctuationKerning ??= GetElement<bool?, DXW.NoPunctuationKerning>(_UpdatableElement);
+    get => _NoPunctuationKerning ??= GetElement<bool?, DXW.NoPunctuationKerning>(GetUpdatableElement());
     set => UpdateField(ref _NoPunctuationKerning, value, nameof(NoPunctuationKerning));
   }
   private bool? _NoPunctuationKerning;
@@ -1005,7 +1005,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXO13W.PersistentDocumentId))]
   public Guid? PersistentDocumentId
   {
-    get => _PersistentDocumentId ??= GetElement<Guid?, DXO13W.PersistentDocumentId>(_UpdatableElement);
+    get => _PersistentDocumentId ??= GetElement<Guid?, DXO13W.PersistentDocumentId>(GetUpdatableElement());
     set => UpdateField(ref _PersistentDocumentId, value, nameof(PersistentDocumentId));
   }
   private Guid? _PersistentDocumentId;
@@ -1020,7 +1020,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.PrintFormsData))]
   public bool? PrintFormsData
   {
-    get => _PrintFormsData ??= GetElement<bool?, DXW.PrintFormsData>(_UpdatableElement);
+    get => _PrintFormsData ??= GetElement<bool?, DXW.PrintFormsData>(GetUpdatableElement());
     set => UpdateField(ref _PrintFormsData, value, nameof(PrintFormsData));
   }
   private bool? _PrintFormsData;
@@ -1035,7 +1035,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.PrintFractionalCharacterWidth))]
   public bool? PrintFractionalCharacterWidth
   {
-    get => _PrintFractionalCharacterWidth ??= GetElement<bool?, DXW.PrintFractionalCharacterWidth>(_UpdatableElement);
+    get => _PrintFractionalCharacterWidth ??= GetElement<bool?, DXW.PrintFractionalCharacterWidth>(GetUpdatableElement());
     set => UpdateField(ref _PrintFractionalCharacterWidth, value, nameof(PrintFractionalCharacterWidth));
   }
   private bool? _PrintFractionalCharacterWidth;
@@ -1050,7 +1050,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.PrintPostScriptOverText))]
   public bool? PrintPostScriptOverText
   {
-    get => _PrintPostScriptOverText ??= GetElement<bool?, DXW.PrintPostScriptOverText>(_UpdatableElement);
+    get => _PrintPostScriptOverText ??= GetElement<bool?, DXW.PrintPostScriptOverText>(GetUpdatableElement());
     set => UpdateField(ref _PrintPostScriptOverText, value, nameof(PrintPostScriptOverText));
   }
   private bool? _PrintPostScriptOverText;
@@ -1065,7 +1065,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.PrintTwoOnOne))]
   public bool? PrintTwoOnOne
   {
-    get => _PrintTwoOnOne ??= GetElement<bool?, DXW.PrintTwoOnOne>(_UpdatableElement);
+    get => _PrintTwoOnOne ??= GetElement<bool?, DXW.PrintTwoOnOne>(GetUpdatableElement());
     set => UpdateField(ref _PrintTwoOnOne, value, nameof(PrintTwoOnOne));
   }
   private bool? _PrintTwoOnOne;
@@ -1080,7 +1080,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.ProofState))]
   public ProofState? ProofState
   {
-    get => _ProofState ??= GetElement<ProofState?, DXW.ProofState>(_UpdatableElement);
+    get => _ProofState ??= GetElement<ProofState?, DXW.ProofState>(GetUpdatableElement());
     set => UpdateField(ref _ProofState, value, nameof(ProofState));
   }
   private ProofState? _ProofState;
@@ -1092,7 +1092,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.ReadModeInkLockDown))]
   public DMWD.ReadModeInkLockDown? ReadModeInkLockDown
   {
-    get => _ReadModeInkLockDown ??= GetElement<DMWD.ReadModeInkLockDown?, DXW.ReadModeInkLockDown>(_UpdatableElement);
+    get => _ReadModeInkLockDown ??= GetElement<DMWD.ReadModeInkLockDown?, DXW.ReadModeInkLockDown>(GetUpdatableElement());
     set => UpdateField(ref _ReadModeInkLockDown, value, nameof(ReadModeInkLockDown));
   }
   private DMWD.ReadModeInkLockDown? _ReadModeInkLockDown;
@@ -1107,7 +1107,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.RemoveDateAndTime))]
   public bool? RemoveDateAndTime
   {
-    get => _RemoveDateAndTime ??= GetElement<bool?, DXW.RemoveDateAndTime>(_UpdatableElement);
+    get => _RemoveDateAndTime ??= GetElement<bool?, DXW.RemoveDateAndTime>(GetUpdatableElement());
     set => UpdateField(ref _RemoveDateAndTime, value, nameof(RemoveDateAndTime));
   }
   private bool? _RemoveDateAndTime;
@@ -1122,7 +1122,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.RemovePersonalInformation))]
   public bool? RemovePersonalInformation
   {
-    get => _RemovePersonalInformation ??= GetElement<bool?, DXW.RemovePersonalInformation>(_UpdatableElement);
+    get => _RemovePersonalInformation ??= GetElement<bool?, DXW.RemovePersonalInformation>(GetUpdatableElement());
     set => UpdateField(ref _RemovePersonalInformation, value, nameof(RemovePersonalInformation));
   }
   private bool? _RemovePersonalInformation;
@@ -1137,7 +1137,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.RevisionView))]
   public RevisionView? RevisionView
   {
-    get => _RevisionView ??= GetElement<RevisionView?, DXW.RevisionView>(_UpdatableElement);
+    get => _RevisionView ??= GetElement<RevisionView?, DXW.RevisionView>(GetUpdatableElement());
     set => UpdateField(ref _RevisionView, value, nameof(RevisionView));
   }
   private RevisionView? _RevisionView;
@@ -1152,7 +1152,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SaveFormsData))]
   public bool? SaveFormsData
   {
-    get => _SaveFormsData ??= GetElement<bool?, DXW.SaveFormsData>(_UpdatableElement);
+    get => _SaveFormsData ??= GetElement<bool?, DXW.SaveFormsData>(GetUpdatableElement());
     set => UpdateField(ref _SaveFormsData, value, nameof(SaveFormsData));
   }
   private bool? _SaveFormsData;
@@ -1167,7 +1167,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SaveInvalidXml))]
   public bool? SaveInvalidXml
   {
-    get => _SaveInvalidXml ??= GetElement<bool?, DXW.SaveInvalidXml>(_UpdatableElement);
+    get => _SaveInvalidXml ??= GetElement<bool?, DXW.SaveInvalidXml>(GetUpdatableElement());
     set => UpdateField(ref _SaveInvalidXml, value, nameof(SaveInvalidXml));
   }
   private bool? _SaveInvalidXml;
@@ -1182,7 +1182,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SavePreviewPicture))]
   public bool? SavePreviewPicture
   {
-    get => _SavePreviewPicture ??= GetElement<bool?, DXW.SavePreviewPicture>(_UpdatableElement);
+    get => _SavePreviewPicture ??= GetElement<bool?, DXW.SavePreviewPicture>(GetUpdatableElement());
     set => UpdateField(ref _SavePreviewPicture, value, nameof(SavePreviewPicture));
   }
   private bool? _SavePreviewPicture;
@@ -1197,7 +1197,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SaveSubsetFonts))]
   public bool? SaveSubsetFonts
   {
-    get => _SaveSubsetFonts ??= GetElement<bool?, DXW.SaveSubsetFonts>(_UpdatableElement);
+    get => _SaveSubsetFonts ??= GetElement<bool?, DXW.SaveSubsetFonts>(GetUpdatableElement());
     set => UpdateField(ref _SaveSubsetFonts, value, nameof(SaveSubsetFonts));
   }
   private bool? _SaveSubsetFonts;
@@ -1209,7 +1209,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.SaveThroughXslt))]
   public SaveThroughXslt? SaveThroughXslt
   {
-    get => _SaveThroughXslt ??= GetElement<SaveThroughXslt?, DXW.SaveThroughXslt>(_UpdatableElement);
+    get => _SaveThroughXslt ??= GetElement<SaveThroughXslt?, DXW.SaveThroughXslt>(GetUpdatableElement());
     set => UpdateField(ref _SaveThroughXslt, value, nameof(SaveThroughXslt));
   }
   private SaveThroughXslt? _SaveThroughXslt;
@@ -1221,7 +1221,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SaveXmlDataOnly))]
   public bool? SaveXmlDataOnly
   {
-    get => _SaveXmlDataOnly ??= GetElement<bool?, DXW.SaveXmlDataOnly>(_UpdatableElement);
+    get => _SaveXmlDataOnly ??= GetElement<bool?, DXW.SaveXmlDataOnly>(GetUpdatableElement());
     set => UpdateField(ref _SaveXmlDataOnly, value, nameof(SaveXmlDataOnly));
   }
   private bool? _SaveXmlDataOnly;
@@ -1233,7 +1233,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
   public DMCX.SchemaLibrary? SchemaLibrary
   {
-    get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(_UpdatableElement);
+    get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
     set => UpdateField(ref _SchemaLibrary, value, nameof(SchemaLibrary));
   }
   private DMCX.SchemaLibrary? _SchemaLibrary;
@@ -1246,7 +1246,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [Obsolete]
   public DMWD.ShapeDefaults? ShapeDefaults
   {
-    get => _ShapeDefaults ??= GetElement<DMWD.ShapeDefaults?, DXW.ShapeDefaults>(_UpdatableElement);
+    get => _ShapeDefaults ??= GetElement<DMWD.ShapeDefaults?, DXW.ShapeDefaults>(GetUpdatableElement());
     set => UpdateField(ref _ShapeDefaults, value, nameof(ShapeDefaults));
   }
   private DMWD.ShapeDefaults? _ShapeDefaults;
@@ -1261,7 +1261,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ShowEnvelope))]
   public bool? ShowEnvelope
   {
-    get => _ShowEnvelope ??= GetElement<bool?, DXW.ShowEnvelope>(_UpdatableElement);
+    get => _ShowEnvelope ??= GetElement<bool?, DXW.ShowEnvelope>(GetUpdatableElement());
     set => UpdateField(ref _ShowEnvelope, value, nameof(ShowEnvelope));
   }
   private bool? _ShowEnvelope;
@@ -1276,7 +1276,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ShowXmlTags))]
   public bool? ShowXmlTags
   {
-    get => _ShowXmlTags ??= GetElement<bool?, DXW.ShowXmlTags>(_UpdatableElement);
+    get => _ShowXmlTags ??= GetElement<bool?, DXW.ShowXmlTags>(GetUpdatableElement());
     set => UpdateField(ref _ShowXmlTags, value, nameof(ShowXmlTags));
   }
   private bool? _ShowXmlTags;
@@ -1291,7 +1291,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.StrictFirstAndLastChars))]
   public bool? StrictFirstAndLastChars
   {
-    get => _StrictFirstAndLastChars ??= GetElement<bool?, DXW.StrictFirstAndLastChars>(_UpdatableElement);
+    get => _StrictFirstAndLastChars ??= GetElement<bool?, DXW.StrictFirstAndLastChars>(GetUpdatableElement());
     set => UpdateField(ref _StrictFirstAndLastChars, value, nameof(StrictFirstAndLastChars));
   }
   private bool? _StrictFirstAndLastChars;
@@ -1303,7 +1303,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
-    get => _StylePaneFormatFilter ??= GetElement<StylePaneFormatFilter?, DXW.StylePaneFormatFilter>(_UpdatableElement);
+    get => _StylePaneFormatFilter ??= GetElement<StylePaneFormatFilter?, DXW.StylePaneFormatFilter>(GetUpdatableElement());
     set => UpdateField(ref _StylePaneFormatFilter, value, nameof(StylePaneFormatFilter));
   }
   private StylePaneFormatFilter? _StylePaneFormatFilter;
@@ -1318,7 +1318,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.StylePaneSortMethods))]
   public StylePaneSortMethods? StylePaneSortMethods
   {
-    get => _StylePaneSortMethods ??= GetElement<StylePaneSortMethods?, DXW.StylePaneSortMethods>(_UpdatableElement);
+    get => _StylePaneSortMethods ??= GetElement<StylePaneSortMethods?, DXW.StylePaneSortMethods>(GetUpdatableElement());
     set => UpdateField(ref _StylePaneSortMethods, value, nameof(StylePaneSortMethods));
   }
   private StylePaneSortMethods? _StylePaneSortMethods;
@@ -1338,7 +1338,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.SummaryLength))]
   public Percent? SummaryLength
   {
-    get => _SummaryLength ??= GetElement<Percent?, DXW.SummaryLength>(_UpdatableElement);
+    get => _SummaryLength ??= GetElement<Percent?, DXW.SummaryLength>(GetUpdatableElement());
     set => UpdateField(ref _SummaryLength, value, nameof(SummaryLength));
   }
   private Percent? _SummaryLength;
@@ -1350,7 +1350,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.ThemeFontLanguages))]
   public Languages? ThemeFontLanguages
   {
-    get => _ThemeFontLanguages ??= GetElement<Languages?, DXW.ThemeFontLanguages>(_UpdatableElement);
+    get => _ThemeFontLanguages ??= GetElement<Languages?, DXW.ThemeFontLanguages>(GetUpdatableElement());
     set => UpdateField(ref _ThemeFontLanguages, value, nameof(ThemeFontLanguages));
   }
   private Languages? _ThemeFontLanguages;
@@ -1365,7 +1365,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.TrackRevisions))]
   public bool? TrackRevisions
   {
-    get => _TrackRevisions ??= GetElement<bool?, DXW.TrackRevisions>(_UpdatableElement);
+    get => _TrackRevisions ??= GetElement<bool?, DXW.TrackRevisions>(GetUpdatableElement());
     set => UpdateField(ref _TrackRevisions, value, nameof(TrackRevisions));
   }
   private bool? _TrackRevisions;
@@ -1380,7 +1380,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.UICompatibleWith97To2003))]
   public bool? UICompatibleWith97To2003
   {
-    get => _UICompatibleWith97To2003 ??= GetElement<bool?, DXW.UICompatibleWith97To2003>(_UpdatableElement);
+    get => _UICompatibleWith97To2003 ??= GetElement<bool?, DXW.UICompatibleWith97To2003>(GetUpdatableElement());
     set => UpdateField(ref _UICompatibleWith97To2003, value, nameof(UICompatibleWith97To2003));
   }
   private bool? _UICompatibleWith97To2003;
@@ -1395,7 +1395,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.UpdateFieldsOnOpen))]
   public bool? UpdateFieldsOnOpen
   {
-    get => _UpdateFieldsOnOpen ??= GetElement<bool?, DXW.UpdateFieldsOnOpen>(_UpdatableElement);
+    get => _UpdateFieldsOnOpen ??= GetElement<bool?, DXW.UpdateFieldsOnOpen>(GetUpdatableElement());
     set => UpdateField(ref _UpdateFieldsOnOpen, value, nameof(UpdateFieldsOnOpen));
   }
   private bool? _UpdateFieldsOnOpen;
@@ -1410,7 +1410,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.UseXsltWhenSaving))]
   public bool? UseXsltWhenSaving
   {
-    get => _UseXsltWhenSaving ??= GetElement<bool?, DXW.UseXsltWhenSaving>(_UpdatableElement);
+    get => _UseXsltWhenSaving ??= GetElement<bool?, DXW.UseXsltWhenSaving>(GetUpdatableElement());
     set => UpdateField(ref _UseXsltWhenSaving, value, nameof(UseXsltWhenSaving));
   }
   private bool? _UseXsltWhenSaving;
@@ -1425,7 +1425,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.View))]
   public ViewType? View
   {
-    get => _View ??= GetElement<ViewType?, DXW.View>(_UpdatableElement);
+    get => _View ??= GetElement<ViewType?, DXW.View>(GetUpdatableElement());
     set => UpdateField(ref _View, value, nameof(View));
   }
   private ViewType? _View;
@@ -1440,7 +1440,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.WriteProtection))]
   public WriteProtection? WriteProtection
   {
-    get => _WriteProtection ??= GetElement<WriteProtection?, DXW.WriteProtection>(_UpdatableElement);
+    get => _WriteProtection ??= GetElement<WriteProtection?, DXW.WriteProtection>(GetUpdatableElement());
     set => UpdateField(ref _WriteProtection, value, nameof(WriteProtection));
   }
   private WriteProtection? _WriteProtection;
@@ -1455,7 +1455,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.Zoom))]
   public Zoom? Zoom
   {
-    get => _Zoom ??= GetElement<Zoom?, DXW.Zoom>(_UpdatableElement);
+    get => _Zoom ??= GetElement<Zoom?, DXW.Zoom>(GetUpdatableElement());
     set => UpdateField(ref _Zoom, value, nameof(Zoom));
   }
   private Zoom? _Zoom;
@@ -1467,7 +1467,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.MailMerge))]
   public MailMerge? MailMerge
   {
-    get => _MailMerge ??= GetElement<MailMerge?, DXW.MailMerge>(_UpdatableElement);
+    get => _MailMerge ??= GetElement<MailMerge?, DXW.MailMerge>(GetUpdatableElement());
     set => UpdateField(ref _MailMerge, value, nameof(MailMerge));
   }
   private MailMerge? _MailMerge;
@@ -1479,7 +1479,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXM.MathProperties))]
   public DMM.MathProperties? MathProperties
   {
-    get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(_UpdatableElement);
+    get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());
     set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
   }
   private DMM.MathProperties? _MathProperties;
@@ -1494,7 +1494,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.Compatibility))]
   public CompatibilitySettings? Compatibility
   {
-    get => _Compatibility ??= GetElement<CompatibilitySettings?, DXW.Compatibility>(_UpdatableElement);
+    get => _Compatibility ??= GetElement<CompatibilitySettings?, DXW.Compatibility>(GetUpdatableElement());
     set => UpdateField(ref _Compatibility, value, nameof(Compatibility));
   }
   private CompatibilitySettings? _Compatibility;
@@ -1509,9 +1509,10 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
     if (_Compatibility == null)
     {
       var openXmlCompatibility = new DXW.Compatibility();
-      if (_UpdatableElement != null)
+      var updatableElement = GetUpdatableElement();
+      if (updatableElement != null)
       {
-        _UpdatableElement.AppendChild(openXmlCompatibility);
+        updatableElement.AppendChild(openXmlCompatibility);
       }
       _Compatibility ??= new CompatibilitySettings(this, openXmlCompatibility);
     }

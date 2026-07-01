@@ -265,7 +265,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name == "RGB") Debug.Assert(true);
+    if (modelProperty.Name == "ColorScheme") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -304,7 +304,7 @@ public static partial class OpenXmlModelConverter
       openXmlProperty.SetValue(openXmlObject, openXmlValue);
       if (modelValue is IUpdatable updatable && openXmlValue is DX.OpenXmlElement)
       {
-        updatable.SetUpdatableElement(openXmlValue);
+        updatable.SetUpdatableObject(openXmlValue);
         updatable.UpdateData(openXmlValue);
       }
       return true;
@@ -642,6 +642,7 @@ public static partial class OpenXmlModelConverter
     bool loaded = false;
     foreach (var modelProperty in modelType.GetModelProperties())
     {
+      if (modelProperty.Name=="VariantValue") Debug.Assert(true);
       if (modelProperty.CanWrite && modelProperty.GetCustomAttribute<NotMappedAttribute>() == null)
       {
         if (LoadProperty(modelObject, modelProperty, openXmlObject)) loaded = true;
@@ -663,9 +664,6 @@ public static partial class OpenXmlModelConverter
     //                $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
 
     var propertyType = modelProperty.PropertyType.GetNotNullableType();
-    if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
-
-    if (modelProperty.Name == "DefinedStyles") Debug.Assert(true);
     if (propertyType.Implements(typeof(ILazyLoadable)) && openXmlObject is DX.OpenXmlCompositeElement openXmlCompositeElement)
     {
       var propertyValue = modelProperty.GetValue(modelObject);
@@ -804,11 +802,11 @@ public static partial class OpenXmlModelConverter
       var propertyValue = modelProperty.GetValue(modelObject);
       if (propertyValue == null && !loadTypeMethod.IsStatic)
       {
-        propertyValue = Activator.CreateInstance(loadTypeMethod.DeclaringType!)!;
+        propertyValue = Activator.CreateInstance(modelProperty.PropertyType!)!;
+        loadTypeMethod.Invoke(propertyValue, [openXmlObject]);
         modelProperty.SetValue(modelObject, propertyValue);
+        return true;
       }
-      loadTypeMethod.Invoke(propertyValue, [openXmlObject]);
-      return true;
     }
     return false;
   }
@@ -827,10 +825,21 @@ public static partial class OpenXmlModelConverter
     var loadPropertyMethod = OpenXmlPropertyMap.GetLoadDataMethod(modelProperty, openXmlType);
     if (loadPropertyMethod != null)
     {
-      Debug.Assert(loadPropertyMethod.GetParameters().Length == 1,
-        $"Load method {loadPropertyMethod} should have exactly one parameter");
-      loadPropertyMethod.Invoke(modelObject, [openXmlObject]);
-      return true;
+
+      if (loadPropertyMethod.GetParameters().Length == 1)
+      {
+        var propertyValue = loadPropertyMethod.Invoke(modelObject, [openXmlObject]);
+        if (loadPropertyMethod.ReturnType != typeof(void) && propertyValue != null)
+          modelProperty.SetValue(modelObject, propertyValue);
+        return true;
+      }
+      else
+      if (loadPropertyMethod.GetParameters().Length == 2)
+      {
+        var propertyValue = loadPropertyMethod.Invoke(modelObject, [modelProperty, openXmlObject]);
+        modelProperty.SetValue(modelObject, propertyValue);
+        return true;
+      }
     }
     return false;
   }

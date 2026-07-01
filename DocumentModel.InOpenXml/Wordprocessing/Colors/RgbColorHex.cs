@@ -48,7 +48,7 @@ namespace DocumentModel.Wordprocessing;
 /// </example>
 [OpenXmlType(typeof(DXO10W.RgbColorModelHex))]
 [XmlRoot("RgbColorHex", Namespace = "DocumentModel.Wordprocessing")]
-public partial class RgbColorHex : Color<DXO10W.RgbColorModelHex>, DMD.ISchemeBaseColor
+public partial class RgbColorHex : AnyColor<DXO10W.RgbColorModelHex>, DMD.ISchemeBaseColor
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.

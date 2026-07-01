@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.ColorReplacement))]
 [XmlRoot("ColorReplacement", Namespace = "DocumentModel.Drawings")]
-public partial class ColorReplacement : DrawingsColorBase<DXD.ColorReplacement>, IExtendableElement
+public partial class ColorReplacement : ColorHolder<DXD.ColorReplacement>, IExtendableElement
 {
 
  /// <summary>

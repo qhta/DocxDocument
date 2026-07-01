@@ -1,8 +1,3 @@
-using System.Text.Json;
-using System.Text.Json.Serialization.Metadata;
-using System.Xml;
-using System.Xml.Serialization;
-
 using DocumentModel.Drawings;
 
 using Path = System.IO.Path;
@@ -28,6 +23,7 @@ public class ColorTypesTest : _AbstractTestClass
     if (!TestEdgeCases()) return false;
     if (!StoreThemeInDocument()) return false;
     if (!ChangeColorsInDocument()) return false;
+
     Console.WriteLine("All Color implementation tests passed.\n");
     return true;
   }
@@ -39,19 +35,36 @@ public class ColorTypesTest : _AbstractTestClass
   private bool TestTypeDiscovery()
   {
     Console.WriteLine("--- Color Type Discovery ---");
-    var discovered = GetIColorTypes().OrderBy(item => item.Type.FullName).ToList();
-    var expected = new List<(Type Type, ColorModel Model)>
+    var discovered = GetIColorTypes();
+    var expected = new List<Type>
     {
-      (typeof(DocumentModel.Drawings.ColorType),ColorModel.HSL),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.Preset),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.RGBHex),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.RGBPercentage),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.Scheme),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.System),
-      (typeof(DocumentModel.Wordprocessing.Color), ColorModel.RGBHex),
-      (typeof(DocumentModel.Wordprocessing.RgbColorHex), ColorModel.RGBHex),
-      (typeof(DocumentModel.Wordprocessing.SchemeColor), ColorModel.Scheme),
-    }.OrderBy(item => item.Type.FullName).ToList();
+      typeof(DocumentModel.Drawings.AlphaInverse),
+      typeof(DocumentModel.Drawings.BackgroundColor),
+      typeof(DocumentModel.Drawings.BulletColor),
+      typeof(DocumentModel.Drawings.ColorReplacement),
+      typeof(DocumentModel.Drawings.ColorType),
+      typeof(DocumentModel.Drawings.ContourColor),
+      typeof(DocumentModel.Drawings.CustomColor),
+      typeof(DocumentModel.Drawings.Diagrams.ColorType),
+      typeof(DocumentModel.Drawings.Diagrams.EffectColorList),
+      typeof(DocumentModel.Drawings.Diagrams.FillColor),
+      typeof(DocumentModel.Drawings.Diagrams.LineColorList),
+      typeof(DocumentModel.Drawings.Diagrams.TextEffectColorList),
+      typeof(DocumentModel.Drawings.Diagrams.TextFillColorList),
+      typeof(DocumentModel.Drawings.Diagrams.TextLineColorList),
+      typeof(DocumentModel.Drawings.Duotone),
+      typeof(DocumentModel.Drawings.ExtrusionColor),
+      typeof(DocumentModel.Drawings.HslColor),
+      typeof(DocumentModel.Drawings.PresetColor),
+      typeof(DocumentModel.Drawings.RgbColorModelHex),
+      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+      typeof(DocumentModel.Drawings.SchemeColor),
+      typeof(DocumentModel.Drawings.SchemeColorDef),
+      typeof(DocumentModel.Drawings.SystemColor),
+      typeof(DocumentModel.Wordprocessing.Color),
+      typeof(DocumentModel.Wordprocessing.RgbColorHex),
+      typeof(DocumentModel.Wordprocessing.SchemeColor),
+    }.OrderBy(item => item.FullName).ToList();
 
     if (!discovered.SequenceEqual(expected))
 
@@ -67,6 +80,20 @@ public class ColorTypesTest : _AbstractTestClass
     Console.WriteLine("✓ Color type discovery passed\n");
     return true;
   }
+
+
+  private readonly List<Type> typesToTest = new List<Type>
+    {
+      typeof(DocumentModel.Drawings.HslColor),
+      typeof(DocumentModel.Drawings.PresetColor),
+      typeof(DocumentModel.Drawings.RgbColorModelHex),
+      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+      typeof(DocumentModel.Drawings.SchemeColor),
+      typeof(DocumentModel.Drawings.SystemColor),
+      typeof(DocumentModel.Wordprocessing.Color),
+      typeof(DocumentModel.Wordprocessing.RgbColorHex),
+      typeof(DocumentModel.Wordprocessing.SchemeColor),
+    }.OrderBy(item => item.FullName).ToList();
 
   /// <summary>
   /// Tests XML serialization and deserialization for all IColor implementations.
@@ -91,22 +118,22 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    foreach (var item in GetIColorTypes())
+    foreach (var type in typesToTest)
     {
-      var color = CreateSampleColor(item.Type, item.Model);
+      var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
       xmlString = SerializeObjectToXml(color);
-      Console.WriteLine($"\nSerialized XML ({item.Type.Name} {item.Model}):\n{xmlString}");
+      Console.WriteLine($"\nSerialized XML ({type.Name}):\n{xmlString}");
 
-      var deserialized = DeserializeObjectFromXml(item.Type, xmlString);
+      var deserialized = DeserializeObjectFromXml(color.GetType(), xmlString);
       if (deserialized == null)
       {
-        Console.WriteLine($"✗ Theme/Color XML Deserialization returned null for '{item.Type.Name} {item.Model}'");
+        Console.WriteLine($"✗ Theme/Color XML Deserialization returned null for '{type.Name}'");
         return false;
       }
       AttachToDocumentContext(deserialized, document);
 
-      if (!TestHelper.CompareTestData(item.Type, color, deserialized, "testColor", "deserialized", out message))
+      if (!TestHelper.CompareTestData(type, color, deserialized, "testColor", "deserialized", out message))
       {
         Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
         return false;
@@ -140,22 +167,22 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    foreach (var item in GetIColorTypes())
+    foreach (var type in typesToTest)
     {
-      var color = CreateSampleColor(item.Type, item.Model);
+      var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
       JsonString = SerializeToJson(color);
-      Console.WriteLine($"\nSerialized Json ({item.Type.Name} {item.Model}):\n{JsonString}");
+      Console.WriteLine($"\nSerialized Json ({type.Name}):\n{JsonString}");
 
       var deserialized = DeserializeFromJson(color.GetType(), JsonString);
       if (deserialized == null)
       {
-        Console.WriteLine($"✗ XTheme/Color ML Deserialization returned null for '{item.Type.Name} {item.Model}'");
+        Console.WriteLine($"✗ Theme/Color Json Deserialization returned null for '{type.Name}'");
         return false;
       }
       AttachToDocumentContext(deserialized, document);
 
-      if (!TestHelper.CompareTestData(item.Type, color, deserialized, "testColor", "deserialized", out message))
+      if (!TestHelper.CompareTestData(type, color, deserialized, "testColor", "deserialized", out message))
       {
         Console.WriteLine($"✗ Theme/Color Json Serialization/Deserialization test FAILED: {message}");
         return false;
@@ -174,11 +201,11 @@ public class ColorTypesTest : _AbstractTestClass
   {
     Console.WriteLine("--- Color Accessors ---");
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var item in GetIColorTypes())
+    foreach (var type in typesToTest)
     {
-      var testData = CreateSampleColor(item.Type, item.Model);
+      var testData = CreateSampleColor(type);
       AttachToDocumentContext(testData, document);
-      var iColorType = item.Type.GetInterfaces().First(i => i.Name == "IColor");
+      var iColorType = type.GetInterfaces().First(i => i.Name == "IColor");
 
       foreach (var propName in new[] { "Red", "Green", "Blue", "Name", "Tint", "Shade" })
       {
@@ -191,7 +218,7 @@ public class ColorTypesTest : _AbstractTestClass
         }
         catch (Exception ex)
         {
-          Console.WriteLine($"✗ Accessor '{item.Type.Name}.{propName}' get failed: {ex.Message}");
+          Console.WriteLine($"✗ Accessor '{type.Name}.{propName}' get failed: {ex.Message}");
           return false;
         }
       }
@@ -208,7 +235,7 @@ public class ColorTypesTest : _AbstractTestClass
         }
         catch (Exception ex)
         {
-          Console.WriteLine($"✗ Accessor '{item.Type.Name}.{propName}' set failed: {ex.Message}");
+          Console.WriteLine($"✗ Accessor '{type.Name}.{propName}' set failed: {ex.Message}");
           return false;
         }
       }
@@ -227,30 +254,30 @@ public class ColorTypesTest : _AbstractTestClass
     Console.WriteLine("--- Edge Cases ---");
     var jsonOptions = CreateJsonOptions();
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var item in GetIColorTypes())
+    foreach (var type in typesToTest)
     {
-      var empty = Activator.CreateInstance(item.Type);
+      var empty = Activator.CreateInstance(type);
       if (empty == null)
       {
-        Console.WriteLine($"✗ Could not create empty instance of '{item.Type.Name}'");
+        Console.WriteLine($"✗ Could not create empty instance of '{type.Name}'");
         return false;
       }
       AttachToDocumentContext(empty, document);
 
       var xml = SerializeObjectToXml(empty);
-      var xmlDeserialized = DeserializeObjectFromXml(item.Type, xml);
+      var xmlDeserialized = DeserializeObjectFromXml(type, xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine($"✗ Edge case XML deserialization failed for '{item.Type.Name}'");
+        Console.WriteLine($"✗ Edge case XML deserialization failed for '{type.Name}'");
         return false;
       }
       AttachToDocumentContext(xmlDeserialized, document);
 
-      var json = JsonSerializer.Serialize(empty, item.Type, jsonOptions);
-      var jsonDeserialized = JsonSerializer.Deserialize(json, item.Type, jsonOptions);
+      var json = JsonSerializer.Serialize(empty, type, jsonOptions);
+      var jsonDeserialized = JsonSerializer.Deserialize(json, type, jsonOptions);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine($"✗ Edge case JSON deserialization failed for '{item.Type.Name}'");
+        Console.WriteLine($"✗ Edge case JSON deserialization failed for '{type.Name}'");
         return false;
       }
       AttachToDocumentContext(jsonDeserialized, document);
@@ -264,75 +291,67 @@ public class ColorTypesTest : _AbstractTestClass
   /// Returns all non-abstract classes in the model assembly that implement an interface named IColor.
   /// </summary>
   /// <returns>Collection of discovered IColor implementation types.</returns>
-  private List<(Type Type, ColorModel Model)> GetIColorTypes()
+  private List<Type> GetIColorTypes()
   {
-    var expected = new List<(Type Type, ColorModel Model)>
-    {
-      (typeof(DocumentModel.Drawings.ColorType),ColorModel.HSL),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.Preset),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.RGBHex),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.RGBPercentage),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.Scheme),
-      (typeof(DocumentModel.Drawings.ColorType), ColorModel.System),
-      (typeof(DocumentModel.Wordprocessing.Color), ColorModel.RGBHex),
-      (typeof(DocumentModel.Wordprocessing.RgbColorHex), ColorModel.RGBHex),
-      (typeof(DocumentModel.Wordprocessing.SchemeColor), ColorModel.Scheme),
-    }.OrderBy(item => item.Type.FullName).ToList();
-    return expected;
+    var assembly = typeof(DocumentModel.Drawings.ColorType).Assembly;
+    var colorTypes = assembly.GetTypes()
+      .Where(t => !t.IsAbstract && t.GetInterfaces().Any(i => i.Name == "IColor"))
+      .OrderBy(item => item.FullName).ToList();
+
+    return colorTypes;
   }
 
   /// <summary>
   /// Creates representative sample data for each IColor implementation type.
   /// </summary>
   /// <param name="colorType">The concrete color implementation type.</param>
-  /// <param name="colorModel">The color model associated with the color type.</param>
   /// <returns>A populated color instance.</returns>
-  private object CreateSampleColor(Type colorType, ColorModel colorModel)
+  private object CreateSampleColor(Type colorType)
   {
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.HSL)
-      return new Drawings.ColorType
+    if (colorType == typeof(Drawings.HslColor))
+      return new DocumentModel.Drawings.HslColor
       {
-        Hue = new Degrees(120),
-        Saturation = new Percentage("60%"),
-        Luminance = new Percentage("45%"),
+        H = new Degrees(120),
+        S = new Percentage("60%"),
+        L = new Percentage("45%"),
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
       };
 
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.Preset)
-      return new DocumentModel.Drawings.ColorType
+    if (colorType == typeof(Drawings.PresetColor))
+      return new DocumentModel.Drawings.PresetColor
       {
-        PresetColor = PresetColors.Red,
+        Index = PresetColors.Red,
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
       };
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.RGBHex)
-      return new DocumentModel.Drawings.ColorType
+    if (colorType == typeof(Drawings.RgbColorModelHex))
+      return new DocumentModel.Drawings.RgbColorModelHex()
       {
         RGB = (HexColor)0x336699,
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
       };
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.RGBPercentage)
-      return new DocumentModel.Drawings.ColorType
+    if (colorType == typeof(Drawings.RgbColorModelPercentage))
+      return new DocumentModel.Drawings.RgbColorModelPercentage
       {
-        Red = new Percentage("20%"),
+        R = new Percentage("20%"),
         Green = new Percentage("40%"),
         Blue = new Percentage("60%"),
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
       };
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.Scheme)
-      return new DocumentModel.Drawings.ColorType
+    if (colorType == typeof(Drawings.SchemeColor))
+      return new DocumentModel.Drawings.SchemeColor
       {
-        SchemeColor = SchemeColors.Accent3,
+        Index = SchemeColors.Accent3,
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
       };
-    if (colorType == typeof(ColorType) && colorModel == ColorModel.System)
-      return new DocumentModel.Drawings.ColorType
+    if (colorType == typeof(Drawings.SystemColor))
+      return new DocumentModel.Drawings.SystemColor
       {
-        SystemColor = SystemColors.WindowText,
+        Index = SystemColors.WindowText,
         LastColor = (HexColor)0x112233,
         Tint = new Percentage("10%"),
         Shade = new Percentage("5%"),
@@ -340,10 +359,10 @@ public class ColorTypesTest : _AbstractTestClass
     if (colorType == typeof(DocumentModel.Wordprocessing.Color))
       return new DocumentModel.Wordprocessing.Color
       {
-        Val = (HexColor)0x445566,
+        Value = (HexColor)0x445566,
         ThemeColor = ThemeColors.Text1,
-        ThemeTint = new HexPercent("40%"),
-        ThemeShade = new HexPercent("20%"),
+        Tint = new HexPercent("40%"),
+        Shade = new HexPercent("20%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.RgbColorHex))
       return new DocumentModel.Wordprocessing.RgbColorHex
@@ -381,7 +400,7 @@ public class ColorTypesTest : _AbstractTestClass
   private void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
   {
     if (color is ModelElement modelElement)
-      modelElement.SetParent(document);
+      modelElement.Parent = document;
   }
 
   /// <summary>
@@ -389,29 +408,32 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   private Theme CreateThemeWithColorScheme()
   {
+
     var theme = new Theme
     {
       Name = "Office Theme",
-      ThemeElements = new ThemeElements
-      {
-        ColorScheme = new ColorScheme
-        {
-          Name = "Office",
-          Dark1Color = new ColorType() { SystemColor = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
-          Light1Color = new ColorType() { SystemColor = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
-          Dark2Color = new ColorType { RGB = (HexColor)0x0E2841 },
-          Light2Color = new ColorType { RGB = (HexColor)0xE8E8E8 },
-          Accent1Color = new ColorType { RGB = (HexColor)0x156082 },
-          Accent2Color = new ColorType { RGB = (HexColor)0xE97132 },
-          Accent3Color = new ColorType { RGB = (HexColor)0xE97132 },
-          Accent4Color = new ColorType { RGB = (HexColor)0x0F9ED5 },
-          Accent5Color = new ColorType { RGB = (HexColor)0xA02B93 },
-          Accent6Color = new ColorType { RGB = (HexColor)0x4EA72E },
-          Hyperlink = new ColorType { RGB = (HexColor)0x0467886 },
-          FollowedHyperlink = new ColorType { RGB = (HexColor)0x96607D },
-        }
-      }
+      ThemeElements = new ThemeElements()
     };
+
+    var colorScheme = new ColorScheme
+    {
+      Name = "Office",
+    };
+    theme.ThemeElements.ColorScheme = colorScheme;
+
+    colorScheme.Dark1Color = new SystemColor { Index = SystemColors.WindowText, LastColor = (HexColor)0x000000 };
+    colorScheme.Light1Color = new SystemColor { Index = SystemColors.Window, LastColor = (HexColor)0xFFFFFF };
+    colorScheme.Dark2Color = new RgbColorModelHex { Value = (HexColor)0x0E2841 };
+    colorScheme.Light2Color = new RgbColorModelHex { Value = (HexColor)0xE8E8E8 };
+    colorScheme.Accent1Color = new RgbColorModelHex { Value = (HexColor)0x156082 };
+    colorScheme.Accent2Color = new RgbColorModelHex { Value = (HexColor)0xE97132 }; 
+    colorScheme.Accent3Color = new RgbColorModelHex { Value = (HexColor)0xE97132 };
+    colorScheme.Accent4Color = new RgbColorModelHex { Value = (HexColor)0x0F9ED5 };
+    colorScheme.Accent5Color = new RgbColorModelHex { Value = (HexColor)0xA02B93 };
+    colorScheme.Accent6Color = new RgbColorModelHex { Value = (HexColor)0x4EA72E };
+    colorScheme.Hyperlink = new RgbColorModelHex { Value = (HexColor)0x0467886 };
+    colorScheme.FollowedHyperlink = new RgbColorModelHex { Value = (HexColor)0x96607D };
+
     return theme;
   }
 
@@ -527,18 +549,18 @@ public class ColorTypesTest : _AbstractTestClass
 
     foreach (var paragraph in body.Paragraphs)
     {
-      Debug.WriteLine($"Enumerated paragraph {paragraph.ParagraphId}");
-      int runIndex = 0;
+      //Debug.WriteLine($"Enumerated paragraph {paragraph.ParagraphId}");
+      //int runIndex = 0;
       foreach (var run in paragraph.Runs)
       {
-        Debug.WriteLine($"  Enumerated run[{runIndex}] Items count={run.Items.Count}");
-        runIndex++;
+        //Debug.WriteLine($"  Enumerated run[{runIndex}] Items count={run.Items.Count}");
+        //runIndex++;
         foreach (var item in run.Items)
         {
-          string? text = null;
-          if (item is RunText runText)
-            text = $"\"{runText.Text}\"";
-          Debug.WriteLine($"    Enumerated run item {item.GetType()} {text}");
+          //string? text = null;
+          //if (item is RunText runText)
+          //  text = $"\"{runText.Text}\"";
+          //Debug.WriteLine($"    Enumerated run item {item.GetType()} {text}");
 
         }
         if (!redUpdated && run.Text == "RED")
@@ -550,12 +572,12 @@ public class ColorTypesTest : _AbstractTestClass
           var color = runProperties.Color;
           if (color == null)
             throw new ApplicationException("Color not found.");
-          if (color.Val!="FF0000")
-            throw new ApplicationException($"Unexpected color value for RED run: {color.Val}");
-          color.Val = "0000FF";
+          if (color.Value != "FF0000")
+            throw new ApplicationException($"Unexpected color value for RED run: {color.Value}");
+          color.Value = "0000FF";
           color.ThemeColor = null;
-          color.ThemeTint = null;
-          color.ThemeShade = null;
+          color.Tint = null;
+          color.Shade = null;
           redUpdated = true;
         }
         else if (!accentUpdated && run.Text == "ACCENT1")
@@ -570,10 +592,10 @@ public class ColorTypesTest : _AbstractTestClass
           if (color.ThemeColor != ThemeColors.Accent1)
             throw new ApplicationException($"Unexpected color value for ACCENT1 run: {color.ThemeColor}");
 
-          color.Val = null;
+          color.Value = null;
           color.ThemeColor = ThemeColors.Accent2;
-          color.ThemeTint = null;
-          color.ThemeShade = null;
+          color.Tint = null;
+          color.Shade = null;
           accentUpdated = true;
         }
 

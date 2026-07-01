@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Color))]
 [XmlRoot("Color", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Color : Color<DXW.Color>
+public partial class Color : AnyColor<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
@@ -31,7 +31,7 @@ public partial class Color : Color<DXW.Color>
   /// <param name = "hexColor">The </param>
   public Color(UInt32 hexColor)
   {
-    Val = hexColor;
+    Value = hexColor;
   }
 
   /// <summary>
@@ -42,8 +42,8 @@ public partial class Color : Color<DXW.Color>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.Val))]
-  public HexColor? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-  private HexColor? _Val;
+  public HexColor? Value { get => _value; set => UpdateField(ref _value, value, nameof(Value)); }
+  private HexColor? _value;
 
   /// <summary>
   /// <para>Run Content Theme Color</para>
@@ -64,8 +64,8 @@ public partial class Color : Color<DXW.Color>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeTint))]
-  public HexPercent? ThemeTint { get => _ThemeTint; set => UpdateField(ref _ThemeTint, value, nameof(ThemeTint)); }
-  private HexPercent? _ThemeTint;
+  public HexPercent? Tint { get => _tint; set => UpdateField(ref _tint, value, nameof(Tint)); }
+  private HexPercent? _tint;
 
   /// <summary>
   /// <para>Run Content Theme Color Shade</para>
@@ -75,8 +75,8 @@ public partial class Color : Color<DXW.Color>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
-  public HexPercent? ThemeShade { get => _ThemeShade; set => UpdateField(ref _ThemeShade, value, nameof(ThemeShade)); }
-  private HexPercent? _ThemeShade;
+  public HexPercent? Shade { get => _shade; set => UpdateField(ref _shade, value, nameof(Shade)); }
+  private HexPercent? _shade;
 
   /// <summary>
   /// Implicitly converts a string to a <see cref = "Color"/> value.
@@ -109,13 +109,13 @@ public partial class Color : Color<DXW.Color>
     {
       var s = str.Trim();
       if (HexColor.TryParse(s, out var hexColor))
-        Val = hexColor;
+        Value = hexColor;
       else if (Enum.TryParse<ThemeColors>(s, true, out var themeColor))
         ThemeColor = themeColor;
       if (s.StartsWith("ThemeTint:", StringComparison.OrdinalIgnoreCase) && byte.TryParse(s.Substring("ThemeTint:".Length).Trim(), out var themeTint))
-        ThemeTint = themeTint;
+        Tint = themeTint;
       if (s.StartsWith("ThemeShade:", StringComparison.OrdinalIgnoreCase) && byte.TryParse(s.Substring("ThemeShade:".Length).Trim(), out var themeShade))
-        ThemeShade = themeShade;
+        Shade = themeShade;
     }
   }
 
@@ -126,14 +126,14 @@ public partial class Color : Color<DXW.Color>
   public override string? ToString()
   {
     var strings = new List<string>();
-    if (Val is not null)
-      strings.Add(Val.ToString()!);
+    if (Value is not null)
+      strings.Add(Value.ToString()!);
     if (ThemeColor is not null)
       strings.Add(ThemeColor.ToString()!);
-    if (ThemeTint is not null)
-      strings.Add($"ThemeTint:{ThemeTint}");
-    if (ThemeShade is not null)
-      strings.Add($"ThemeShade:{ThemeShade}");
+    if (Tint is not null)
+      strings.Add($"ThemeTint:{Tint}");
+    if (Shade is not null)
+      strings.Add($"ThemeShade:{Shade}");
     return String.Join(" ", strings);
   }
 
@@ -198,7 +198,7 @@ public partial class Color : Color<DXW.Color>
     if (val?.Value != null)
     {
       color ??= new DMW.Color();
-      color.Val = HexColorConverter.ConvertFrom(val);
+      color.Value = HexColorConverter.ConvertFrom(val);
     }
 
     if (themeColor?.Value != null)
@@ -210,13 +210,13 @@ public partial class Color : Color<DXW.Color>
     if (themeTint?.Value != null)
     {
       color ??= new DMW.Color();
-      color.ThemeTint = HexPercentConverter.ConvertFrom(themeTint)!;
+      color.Tint = HexPercentConverter.ConvertFrom(themeTint)!;
     }
 
     if (themeShade?.Value != null)
     {
       color ??= new DMW.Color();
-      color.ThemeShade = HexPercentConverter.ConvertFrom(themeShade)!;
+      color.Shade = HexPercentConverter.ConvertFrom(themeShade)!;
     }
 
     return color;
@@ -233,18 +233,18 @@ public partial class Color : Color<DXW.Color>
   public (DX.StringValue? val, DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue? themeShade) ToOpenXml()
   {
     DX.StringValue? val = null;
-    if (Val is not null)
-      val = HexColorConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
+    if (Value is not null)
+      val = HexColorConverter.ConvertTo(Value, typeof(DX.StringValue)) as DX.StringValue;
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
       // ReSharper disable once InvokeAsExtensionMember
       themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;
-    if (ThemeTint is not null)
-      themeTint = HexPercentConverter.ConvertTo(ThemeTint, typeof(DX.StringValue)) as DX.StringValue;
+    if (Tint is not null)
+      themeTint = HexPercentConverter.ConvertTo(Tint, typeof(DX.StringValue)) as DX.StringValue;
     DX.StringValue? themeShade = null;
-    if (ThemeShade is not null)
-      themeShade = HexPercentConverter.ConvertTo(ThemeShade, typeof(DX.StringValue)) as DX.StringValue;
+    if (Shade is not null)
+      themeShade = HexPercentConverter.ConvertTo(Shade, typeof(DX.StringValue)) as DX.StringValue;
     return (val, themeColor, themeTint, themeShade);
   }
 
@@ -260,7 +260,7 @@ public partial class Color : Color<DXW.Color>
       return null!;
     return new Color
     {
-      Val = value,
+      Value = value,
     };
   }
 
@@ -275,7 +275,7 @@ public partial class Color : Color<DXW.Color>
   {
     if (color is null)
       return null;
-    return color.Val;
+    return color.Value;
   }
 
   /// <summary>
@@ -290,7 +290,7 @@ public partial class Color : Color<DXW.Color>
       return null!;
     return new Color
     {
-      Val = value,
+      Value = value,
     };
   }
 
@@ -305,7 +305,7 @@ public partial class Color : Color<DXW.Color>
   {
     if (color is null)
       return null;
-    return color.Val;
+    return color.Value;
   }
 
 }

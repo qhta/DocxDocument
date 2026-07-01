@@ -57,7 +57,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       Console.WriteLine($"✗ {TestName} XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData<ModelDataType>(typeof(ModelDataType), testData, deserialized, "testData", "deserialized", out var message))
+    if (!CompareTestData(typeof(ModelDataType), testData, deserialized, "testData", "deserialized", out var message))
     {
       Console.WriteLine($"✗ {TestName} {testMethodName} FAILED: {message}");
       return false;
@@ -83,7 +83,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       Console.WriteLine($"✗ {TestName} JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
+    if (!CompareTestData(typeof(ModelDataType),testData, deserialized, "testData", "deserialized", out var message))
     {
       Console.WriteLine($"✗ {TestName} {testMethodName} FAILED: {message}");
       return false;
@@ -201,7 +201,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     }
     Console.WriteLine($"{TestName} {testMethodName} reloaded data is:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
+    if (!CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
       Console.WriteLine($"✗ {TestName} {testMethodName} FAILED: {message}");
       return false;
@@ -228,7 +228,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     {
       var storedData = SetDataToDocument(document, testData);
       updatedData = UpdateDataInDocument(document, storedData);
-      //if (TestHelper.CompareTestData(testData, updatedData, "storedData", "updatedData", out _))
+      //if (CompareTestData(testData, updatedData, "storedData", "updatedData", out _))
       //{
       //  Console.WriteLine($"✗ {TestName} {testMethodName} failed: updated data was not changed.");
       //  return false;
@@ -267,7 +267,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     }
     Console.WriteLine($"{TestName} {testMethodName} updated data is:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(updatedData, restoredData, "storedData", "updatedData", out var message))
+    if (!CompareTestData(updatedData, restoredData, "storedData", "updatedData", out var message))
     {
       Console.WriteLine($"✗ {TestName} {testMethodName} FAILED: {message}");
       return false;
@@ -331,4 +331,35 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// <returns>The OpenXml representation of the model collection.</returns>
   protected abstract string? GetOpenXmlFromDocument(Document document);
 
+  /// <summary>
+  /// Compares two objects of type T and returns a boolean indicating whether they are equal, along with an optional message describing the comparison result.
+  /// </summary>
+  /// <typeparam name="T">The type of the objects to compare.</typeparam>
+  /// <param name="obj1">The first object to compare.</param>
+  /// <param name="obj2">The second object to compare.</param>
+  /// <param name="firstName">The name of the first object.</param>
+  /// <param name="secondName">The name of the second object.</param>
+  /// <param name="message">An optional message describing the comparison result.</param>
+  /// <returns>A boolean indicating whether the objects are equal.</returns>
+  protected virtual bool CompareTestData<T>(T obj1, T obj2, string firstName, string secondName, out string? message)
+  {
+    return TestHelper.CompareTestData(obj1, obj2, firstName, secondName, out message);
+  }
+
+  /// <summary>
+  /// Compares two objects of type T and returns a boolean indicating whether they are equal, along with an optional message describing the comparison result.
+  /// </summary>
+  /// <typeparam name="T">The type of the objects to compare.</typeparam>
+  /// <param name="comparedType">The type to use for comparison.</param>
+  /// <param name="obj1">The first object to compare.</param>
+  /// <param name="obj2">The second object to compare.</param>
+  /// <param name="firstName">The name of the first object.</param>
+  /// <param name="secondName">The name of the second object.</param>
+  /// <param name="message">An optional message describing the comparison result.</param>
+  /// <returns>A boolean indicating whether the objects are equal.</returns>
+  protected virtual bool CompareTestData<T>
+    (Type comparedType, T obj1, T obj2, string firstName, string secondName, out string? message)
+  {
+    return TestHelper.CompareTestData(comparedType, obj1, obj2, firstName, secondName, out message);
+  }
 }

@@ -47,8 +47,6 @@ public static class TestHelper
   /// langword="false"/>.</returns>
   public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, string firstName, string secondName, out string? message)
   {
-    if (comparedType.Name=="Variant")
-      Debug.Assert(true);
     bool result;
     message = null;
     if (obj1 == null && obj2 == null) return true;
@@ -70,49 +68,48 @@ public static class TestHelper
       return result;
     }
 
-    foreach (var property in comparedType.GetProperties())
+    foreach (var property in comparedType.GetProperties()
+               .Where(p => p.CanWrite && p.GetIndexParameters().Length == 0 && !p.IsDefined(typeof(NotMappedAttribute), true)))
     {
-      if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
+      var propName = /*property.DeclaringType?.Name +"."+ */property.Name;
+      var obj1Value = property.GetValue(obj1);
+      var obj2Value = property.GetValue(obj2);
+
+      if (comparedType.IsValueType)
       {
-        var propName = /*property.DeclaringType?.Name +"."+ */property.Name;
-        var obj1Value = property.GetValue(obj1);
-        var obj2Value = property.GetValue(obj2);
+        result = Comparer.Equals(obj1Value, obj2Value);
+        if (!result)
+          message = $"Property {propName} values differ -> {firstName}={obj1Value} vs {secondName}={obj2Value}";
+        return result;
+      }
+      else
+      {
 
-        if (comparedType.IsValueType)
+        var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
+        if (equatableType.IsInstanceOfType(obj1Value))
         {
-          result = Comparer.Equals(obj1Value, obj2Value);
-          if (!result)
-            message = $"Property {propName} values differ -> {firstName}={obj1Value} vs {secondName}={obj2Value}";
-          return result;
+          var equalsMethod = equatableType.GetMethod("Equals", [property.PropertyType]);
+          result = (bool)equalsMethod!.Invoke(obj1Value, [obj2Value])!;
+          if (result)
+            continue;
         }
-        else
+        if (!CompareTestData(property.PropertyType, obj1Value, obj2Value, firstName, secondName, out var nestedMessage))
         {
-
-          var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
-          if (equatableType.IsInstanceOfType(obj1Value))
+          if (obj1Value is bool boolObj1Value)
           {
-            var equalsMethod = equatableType.GetMethod("Equals", [property.PropertyType]);
-            result = (bool)equalsMethod!.Invoke(obj1Value, [obj2Value])!;
-            if (result)
+            if (boolObj1Value == false && obj2Value is null)
               continue;
           }
-          if (!CompareTestData(property.PropertyType, obj1Value, obj2Value, firstName, secondName, out var nestedMessage))
-          {
-            if (obj1Value is bool boolObj1Value)
-            {
-              if (boolObj1Value == false && obj2Value is null)
-                continue;
-            }
-            if (obj1Value is null && obj2Value is IEnumerable enumerable2 && !enumerable2.Cast<object>().Any())
-              continue;
-            if (obj2Value is null && obj1Value is IEnumerable enumerable1 && !enumerable1.Cast<object>().Any())
-              continue;
-            message = $"Property {propName} values differ -> {nestedMessage}";
-            return false;
-          }
+          if (obj1Value is null && obj2Value is IEnumerable enumerable2 && !enumerable2.Cast<object>().Any())
+            continue;
+          if (obj2Value is null && obj1Value is IEnumerable enumerable1 && !enumerable1.Cast<object>().Any())
+            continue;
+          message = $"Property {propName} values differ -> {nestedMessage}";
+          return false;
         }
       }
     }
+
     result = true;
     if (comparedType == typeof(string))
     {
@@ -189,13 +186,13 @@ public static class TestHelper
   /// </summary>
   /// <param name="instance">The test data to modify.</param>
   /// <param name="index">Optional index number</param>
-  public static void PopulateTestData(object instance, int index=-1)
+  public static void PopulateTestData(object instance, int index = -1)
   {
     if (instance == null)
       throw new ArgumentNullException(nameof(instance));
     //Debug.WriteLine($"Populating test data for instance of type {instance.GetType().Name}");
     var properties = instance.GetType().GetProperties()
-      .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>()==null);
+      .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>() == null);
     foreach (var prop in properties)
     {
       var propType = prop.PropertyType.GetNotNullableType();
@@ -215,7 +212,7 @@ public static class TestHelper
       }
       else if (propType == typeof(UInt32))
       {
-        prop.SetValue(instance, (UInt32)Random.Shared.NextInt64(0,UInt32.MaxValue));
+        prop.SetValue(instance, (UInt32)Random.Shared.NextInt64(0, UInt32.MaxValue));
       }
       else if (propType == typeof(Int16))
       {
@@ -462,7 +459,7 @@ public static class TestHelper
   static HexBinary CreateHexBinary(int size)
   {
     size = size % 256; // Limit size to a reasonable range
-    var bytes = new byte[size+1];
+    var bytes = new byte[size + 1];
     for (int i = 0; i < size; i++)
     {
       bytes[i] = (byte)Random.Shared.Next(0, 256);
@@ -588,87 +585,4 @@ public static class TestHelper
   }
 
 
-  /// <summary>
-  /// Creates XML serializer overrides with separate XML namespaces for different DocumentModel namespaces.
-  /// Also resolves closed generic AbstractColor type name collisions.
-  /// </summary>
-  /// <returns>Prepared overrides used by XmlSerializer.</returns>
-  private static XmlAttributeOverrides CreateXmlSerializerOverrides(Assembly[] assemblies)
-  {
-    var overrides = new XmlAttributeOverrides();
-    foreach (var assembly in assemblies)
-    {
-
-
-      foreach (var type in assembly.GetTypes()
-                 .Where(t => t.Namespace?.StartsWith("DocumentModel", StringComparison.Ordinal) == true))
-      {
-        if (type.IsGenericTypeDefinition)
-          continue;
-        if (typeof(IXmlSerializable).IsAssignableFrom(type))
-          continue;
-
-        var xmlNamespace = GetXmlNamespaceForType(type);
-        if (string.IsNullOrEmpty(xmlNamespace))
-          continue;
-
-        var attrs = new XmlAttributes
-        {
-          XmlType = new XmlTypeAttribute
-          {
-            Namespace = xmlNamespace
-          }
-        };
-
-        if (type.IsGenericType)
-        {
-          var genericArgPart = string.Join("_", type.GetGenericArguments().Select(t => t.Name));
-          attrs.XmlType.TypeName = $"{type.Name}_{genericArgPart}";
-        }
-
-        overrides.Add(type, attrs);
-      }
-
-      //AddAbstractColorOverride(overrides, typeof(DMD.AbstractColor<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>),
-      //  "AbstractColorOfDrawingRgbColorModelHex", "urn:docmodel:drawings");
-      //AddAbstractColorOverride(overrides,
-      //  typeof(DMWD.WordAbstractColor<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>),
-      //  "AbstractColorOfWord2010RgbColorModelHex", "urn:docmodel:wordprocessing-drawings");
-
-    }
-    return overrides;
-  }
-
-  /// <summary>
-  /// Gets XML namespace for a model type based on its CLR namespace.
-  /// </summary>
-  /// <param name="type">Type for which XML namespace is generated.</param>
-  /// <returns>XML namespace string.</returns>
-  private static string GetXmlNamespaceForType(Type type)
-  {
-    var typeNamespace = type.Namespace ?? "DocumentModel";
-    if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
-      return "urn:docmodel:" + typeNamespace.Substring("DocumentModel.".Length).ToLowerInvariant().Replace('.', ':');
-    return "urn:docmodel:global";
-  }
-
-  ///// <summary>
-  ///// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
-  ///// </summary>
-  ///// <param name="overrides">Override collection to populate.</param>
-  ///// <param name="type">Closed generic abstract color type to override.</param>
-  ///// <param name="xmlTypeName">Unique XML type name.</param>
-  ///// <param name="xmlNamespace">XML namespace for the type.</param>
-  //private static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
-  //{
-  //  var attrs = new XmlAttributes
-  //  {
-  //    XmlType = new XmlTypeAttribute
-  //    {
-  //      TypeName = xmlTypeName,
-  //      Namespace = xmlNamespace
-  //    }
-  //  };
-  //  overrides.Add(type, attrs);
-  //}
 }

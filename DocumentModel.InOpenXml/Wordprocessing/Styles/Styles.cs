@@ -34,7 +34,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   {
     base.AttachAndLoad(wordprocessingDocument);
     var styles = wordprocessingDocument.GetStyles();
-    SetUpdatableElement(styles);
+    SetUpdatableObject(styles);
     LoadData(styles);
   }
 
@@ -46,7 +46,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var styles = wordprocessingDocument.GetStyles();
-    SetUpdatableElement(styles);
+    SetUpdatableObject(styles);
     UpdateData(styles);
   }
 
@@ -73,7 +73,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
   public LatentStyles LatentStyles
   {
-    get => _LatentStyles ??= new LatentStyles(this, _UpdatableElement?.LatentStyles);
+    get => _LatentStyles ??= new LatentStyles(this, GetUpdatableElement()?.LatentStyles);
     set => LatentStyles.CopyFrom(value);
   }
   private LatentStyles? _LatentStyles;
@@ -84,7 +84,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   [OpenXmlElementCollection(typeof(DXW.Style))]
   public StyleDefinitions StyleDefinitions
   {
-    get => _StyleDefinitions ??= new StyleDefinitions(this, _UpdatableElement);
+    get => _StyleDefinitions ??= new StyleDefinitions(this, GetUpdatableElement());
     set => StyleDefinitions.CopyFrom(value);
   }
   private StyleDefinitions? _StyleDefinitions;

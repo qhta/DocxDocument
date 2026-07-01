@@ -44,6 +44,14 @@ public static class XmlSerializationHelper
   /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
   /// </summary>
   /// <param name="dataType">The type of the object to serialize.</param>
+  /// <returns>XmlSerializer instance.</returns>
+  public static XmlSerializer CreateXmlSerializer(Type dataType)
+    => CreateXmlSerializer(dataType, null, out _);
+
+  /// <summary>
+  /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
+  /// </summary>
+  /// <param name="dataType">The type of the object to serialize.</param>
   /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
   public static XmlSerializer CreateXmlSerializer(Type dataType, out XmlSerializerNamespaces namespaces)
@@ -88,14 +96,6 @@ public static class XmlSerializationHelper
     {
       GetKnownTypes(rootType, knownTypes, new List<Type>());
       var openXmlElementTypes = knownTypes.Where(t => t.FullName!.Contains("DocumentFormat")).ToArray();
-      //if (openXmlElementTypes.Any())
-      //  Debug.WriteLine($"Found OpenXmlElement types: {string.Join("\n", openXmlElementTypes.Select(t => t.FullName))}");
-      //var systemTypes = knownTypes.Where(t => t.Namespace!.StartsWith("System")).ToArray();
-      //if (systemTypes.Any())
-      //  Debug.WriteLine($"Found System types: {string.Join("\n", systemTypes.Select(t => t.FullName))}");
-      //var modelElementTypes = knownTypes.Where(t => t.Name.StartsWith("ModelElement")).ToArray();
-      //if (modelElementTypes.Any())
-      //  Debug.WriteLine($"Found ModelElement types: {string.Join("\n", modelElementTypes.Select(t => t.FullName))}");
       modelTypes = knownTypes.ToArray();
     }
     Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNames(modelTypes);
@@ -119,6 +119,7 @@ public static class XmlSerializationHelper
     namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
     namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
     namespaces.Add("m", "DocumentModel.Math");
+    namespaces.Add("pr", "DocumentModel.Properties");
 
     var rootNamespace = GetXmlNamespace(rootType);
     if (!string.IsNullOrEmpty(rootNamespace))

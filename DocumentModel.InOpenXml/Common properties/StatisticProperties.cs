@@ -41,14 +41,14 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   /// <summary>
   /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
   /// </summary>
-  private new DXEP.Properties? _UpdatableElement => (DXEP.Properties?)base._UpdatableElement;
+  private DXEP.Properties? OpenXmlProperties => (DXEP.Properties?)base.GetUpdatableElement();
 
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable statistic properties for the current instance.
   /// </summary>
   /// <returns>An object representing the updatable Open XML statistic properties, or <see langword="null"/> if no properties are
   /// available.</returns>
-  public override object? GetUpdatableElement()
+  public override DXEP.Properties? GetUpdatableElement()
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetExtendedFileProperties(true);
@@ -66,7 +66,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
     var properties = wordprocessingDocument.GetExtendedFileProperties(true);
     if (properties != null)
     {
-      SetUpdatableElement(properties);
+      SetUpdatableObject(properties);
       LoadData(properties);
     }
   }
@@ -95,7 +95,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Pages))]
   public int? Pages
   {
-    get => _Pages ??= GetProperty<int?>(_UpdatableElement?.Pages);
+    get => _Pages ??= GetProperty<int?>(OpenXmlProperties?.Pages);
     set => UpdateField(ref _Pages, value, nameof(Pages));
   }
   private int? _Pages;
@@ -107,7 +107,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Words))]
   public int? Words
   {
-    get => _Words ??= GetProperty<int?>(_UpdatableElement?.Words);
+    get => _Words ??= GetProperty<int?>(OpenXmlProperties?.Words);
     set => UpdateField(ref _Words, value, nameof(Words));
   }
   private int? _Words;
@@ -119,7 +119,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Characters))]
   public int? Characters
   {
-    get => _Characters ??= GetProperty<int?>(_UpdatableElement?.Characters);
+    get => _Characters ??= GetProperty<int?>(OpenXmlProperties?.Characters);
     set => UpdateField(ref _Characters, value, nameof(Characters));
   }
   private int? _Characters;
@@ -131,7 +131,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Lines))]
   public int? Lines
   {
-    get => _Lines ??= GetProperty<int?>(_UpdatableElement?.Lines);
+    get => _Lines ??= GetProperty<int?>(OpenXmlProperties?.Lines);
     set => UpdateField(ref _Lines, value, nameof(Lines));
   }
   private int? _Lines;
@@ -143,7 +143,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Paragraphs))]
   public int? Paragraphs
   {
-    get => _Paragraphs ??= GetProperty<int?>(_UpdatableElement?.Paragraphs);
+    get => _Paragraphs ??= GetProperty<int?>(OpenXmlProperties?.Paragraphs);
     set => UpdateField(ref _Paragraphs, value, nameof(Paragraphs));
   }
   private int? _Paragraphs;
@@ -155,7 +155,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.CharactersWithSpaces))]
   public int? CharactersWithSpaces
   {
-    get => _CharactersWithSpaces ??= GetProperty<int?>(_UpdatableElement?.CharactersWithSpaces);
+    get => _CharactersWithSpaces ??= GetProperty<int?>(OpenXmlProperties?.CharactersWithSpaces);
     set => UpdateField(ref _CharactersWithSpaces, value, nameof(CharactersWithSpaces));
   }
   private int? _CharactersWithSpaces;
@@ -167,7 +167,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Slides))]
   public int? Slides
   {
-    get => _Slides ??= GetProperty<int?>(_UpdatableElement?.Slides);
+    get => _Slides ??= GetProperty<int?>(OpenXmlProperties?.Slides);
     set => UpdateField(ref _Slides, value, nameof(Slides));
   }
   private int? _Slides;
@@ -179,7 +179,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.Notes))]
   public int? Notes
   {
-    get => _Notes ??= GetProperty<int?>(_UpdatableElement?.Notes);
+    get => _Notes ??= GetProperty<int?>(OpenXmlProperties?.Notes);
     set => UpdateField(ref _Notes, value, nameof(Notes));
   }
   private int? _Notes;
@@ -191,7 +191,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.HiddenSlides))]
   public int? HiddenSlides
   {
-    get => _HiddenSlides ??= GetProperty<int?>(_UpdatableElement?.HiddenSlides);
+    get => _HiddenSlides ??= GetProperty<int?>(OpenXmlProperties?.HiddenSlides);
     set => UpdateField(ref _HiddenSlides, value, nameof(HiddenSlides));
   }
   private int? _HiddenSlides;
@@ -203,7 +203,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.MultimediaClips))]
   public int? MultimediaClips
   {
-    get => _MultimediaClips ??= GetProperty<int?>(_UpdatableElement?.MultimediaClips);
+    get => _MultimediaClips ??= GetProperty<int?>(OpenXmlProperties?.MultimediaClips);
     set => UpdateField(ref _MultimediaClips, value, nameof(MultimediaClips));
   }
   private int? _MultimediaClips;
@@ -216,7 +216,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   [OpenXmlProperty(nameof(DXEP.Properties.TotalTime))]
   public int? TotalTime
   {
-    get => _TotalTime ??= GetProperty<int?>(_UpdatableElement?.TotalTime);
+    get => _TotalTime ??= GetProperty<int?>(OpenXmlProperties?.TotalTime);
     set => UpdateField(ref _TotalTime, value, nameof(TotalTime));
   }
   private int? _TotalTime;

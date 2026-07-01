@@ -6,6 +6,6 @@ public partial class Color
 {
   public bool ShouldSerializeVal() => Val is not null && ShouldSerialize(Val);
   public bool ShouldSerializeThemeColor() => ThemeColor is not null && ShouldSerialize(ThemeColor);
-  public bool ShouldSerializeThemeTint() => ThemeTint is not null && ShouldSerialize(ThemeTint);
-  public bool ShouldSerializeThemeShade() => ThemeShade is not null && ShouldSerialize(ThemeShade);
+  public bool ShouldSerializeThemeTint() => Tint is not null && ShouldSerialize(Tint);
+  public bool ShouldSerializeThemeShade() => Shade is not null && ShouldSerialize(Shade);
 }

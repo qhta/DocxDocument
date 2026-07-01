@@ -105,7 +105,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetUpdatableElement(null);
+    SetUpdatableObject(null);
   }
 
   /// <summary>
@@ -139,9 +139,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Returns the OpenXml collection element instance for update operations, or null if not set.
   /// </summary>
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  public override DX.OpenXmlElement? GetUpdatableElement()
+  public override object? GetUpdatableObject()
   {
-    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableElement() as DX.OpenXmlElement;
+    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableObject();
   }
 
   /// <summary>
@@ -149,7 +149,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// </summary>
   /// <param name = "element"></param>
   /// <exception cref = "NotImplementedException"></exception>
-  public void SetUpdatableElement(object? element)
+  public override void SetUpdatableObject(object? element)
   {
     if (element is null)
       _openXmlCollection = null;
@@ -164,7 +164,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
-  public new void LoadData(object openXmlObject)
+  public override void LoadData(object openXmlObject)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {

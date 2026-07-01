@@ -43,7 +43,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [OpenXmlProperty(nameof(DXW.Run.RsidRunProperties))]
   public HexInt? RsidProps 
   {
-    get => _RsidProps ??= GetProperty<HexInt?>(_UpdatableElement?.RsidRunProperties);
+    get => _RsidProps ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunProperties);
     set => UpdateField(ref _RsidProps, value, nameof(RsidProps));
   }
   private HexInt? _RsidProps;
@@ -54,7 +54,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [OpenXmlProperty(nameof(DXW.Run.RsidRunDeletion))]
   public HexInt? RsidDel 
   {
-    get => _RsidDel ??= GetProperty<HexInt?>(_UpdatableElement?.RsidRunDeletion);
+    get => _RsidDel ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunDeletion);
     set => UpdateField(ref _RsidDel, value, nameof(RsidDel));
   }
   private HexInt? _RsidDel;
@@ -65,7 +65,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [OpenXmlProperty(nameof(DXW.Run.RsidRunAddition))]
   public HexInt? RsidAdd 
   {
-    get => _RsidAdd ??= GetProperty<HexInt?>(_UpdatableElement?.RsidRunAddition);
+    get => _RsidAdd ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunAddition);
     set => UpdateField(ref _RsidAdd, value, nameof(RsidAdd));
   }
   private HexInt? _RsidAdd;
@@ -78,7 +78,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [OpenXmlProperty(nameof(DXW.Run.RunProperties))]
   public RunProperties? RunProperties 
   {
-    get => _RunProperties ??= GetProperty<RunProperties?>(_UpdatableElement?.RunProperties);
+    get => _RunProperties ??= GetProperty<RunProperties?>(GetUpdatableElement()?.RunProperties);
     set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
   }
   private RunProperties? _RunProperties;
@@ -122,7 +122,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [XmlArrayItem("DeletedFieldCode", typeof(DMW.DeletedFieldCode))]
   public RunItemsCollection Items
   {
-    get => _Items ??= new RunItemsCollection(this, _UpdatableElement);
+    get => _Items ??= new RunItemsCollection(this, GetUpdatableElement());
   }
   private RunItemsCollection? _Items;
 

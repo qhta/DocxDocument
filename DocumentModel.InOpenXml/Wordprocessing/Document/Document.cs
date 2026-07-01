@@ -62,7 +62,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
     [DebuggerStepThrough]
-    get => _WordprocessingDocument; 
+    get => _WordprocessingDocument;
+    set => _WordprocessingDocument = value;
   }
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
@@ -253,10 +254,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   ///   Returns the updatable Open XML element associated with this document (the underlying <see cref = "DXPP.WordprocessingDocument"/>).
   /// </summary>
   /// <returns>The updatable Open XML element for this document.</returns>
-  public override object? GetUpdatableElement()
-  {
-    return WordprocessingDocument;
-  }
+  public override object? GetUpdatableObject() => WordprocessingDocument; 
 
   /// <summary>
   ///   Core document properties such as title, author, and subject.
@@ -434,7 +432,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public DMD.Theme Theme
   {
     get => _Theme ??= new DMD.Theme(this);
-    set => UpdateField(ref _Theme, value, nameof(Theme));
+    set => Theme.CopyFrom(value);
   }
   private DMD.Theme? _Theme;
 

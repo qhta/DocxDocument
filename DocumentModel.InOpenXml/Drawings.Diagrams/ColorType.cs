@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 [OpenXmlType(typeof(DXDD.ColorsType))]
 [XmlRoot("Color", Namespace = "DocumentModel.Drawings.Diagrams")]
-public abstract partial class ColorType<T> : DrawingsColorBase<T> where T : DXDD.ColorsType
+public partial class ColorType : Drawings.ColorType
 {
  /// <summary>
  ///   Color Application Method Type
@@ -19,13 +19,4 @@ public abstract partial class ColorType<T> : DrawingsColorBase<T> where T : DXDD
  [OpenXmlProperty(nameof(DXDD.ColorsType.HueDirection))]
  public HueDirection? HueDirection { get => _HueDirection; set => UpdateField(ref _HueDirection, value, nameof(HueDirection)); }
  private HueDirection? _HueDirection;
-}
-
-/// <summary>
-///   Defines the ColorsType Class.
-/// </summary>
-[OpenXmlType(typeof(DXDD.ColorsType))]
-[XmlRoot("ColorsType", Namespace = "DocumentModel.Drawings.Diagrams")]
-public partial class ColorsType : ColorType<DXDD.ColorsType>
-{
 }

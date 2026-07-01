@@ -32,7 +32,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
-    _UpdatableElement = (OpenXmlType?)openXmlElement;
+    SetUpdatableObject((OpenXmlType?)openXmlElement);
   }
 
 
@@ -42,29 +42,31 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
   protected ModelElement(DX.OpenXmlElement openXmlElement)
   {
-    _UpdatableElement = (OpenXmlType)openXmlElement;
+    SetUpdatableObject((OpenXmlType)openXmlElement);
   }
 
   /// <summary>
-  /// Copies data from the specified other instance to this instance.
+  /// Gets or sets the underlying Open XML element that can be updated by this model element.
+  /// It can be an OpenXmlElement or any other object that represents the data source for this model.
+  /// If null, no updates will be performed.
   /// </summary>
-  /// <param name = "otherInstance">The instance containing the model property values to copy.</param>
-  public override void CopyFrom(ModelElement otherInstance)
+  public virtual OpenXmlType? GetUpdatableElement()
   {
-    base.CopyFrom(otherInstance);
-
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
-      UpdateData(updatableElement);
+    return base.GetUpdatableObject() as OpenXmlType;
   }
 
-  /// <summary>
-  /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
-  /// </summary>
-  /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
-  /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
-  /// element.</remarks>
-  protected OpenXmlType? _UpdatableElement;
+  ///// <summary>
+  ///// Copies data from the specified other instance to this instance.
+  ///// </summary>
+  ///// <param name = "otherInstance">The instance containing the model property values to copy.</param>
+  //public override void CopyFrom(ModelElement otherInstance)
+  //{
+  //  base.CopyFrom(otherInstance);
+
+  //  var updatableElement = GetUpdatableElement();
+  //  if (updatableElement != null)
+  //    UpdateData(updatableElement);
+  //}
 
 
   /// <summary>
@@ -129,30 +131,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetUpdatableElement(null);
-  }
-
-  /// <summary>
-  ///   Assigns the wrapped OpenXml element instance.
-  /// </summary>
-  /// <param name = "element">The OpenXml element to assign.</param>
-  public virtual void SetUpdatableElement(object? element)
-  {
-    if (element == null)
-      _UpdatableElement = null;
-    else if (element is OpenXmlType openXmlElement)
-      _UpdatableElement = openXmlElement;
-    else
-      throw new ArgumentException($"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
-  }
-
-  /// <summary>
-  ///   Returns the OpenXml element instance for update operations, or null if not set.
-  /// </summary>
-  /// <returns>The OpenXml element instance, or null if not set.</returns>
-  public override object? GetUpdatableElement()
-  {
-    return _UpdatableElement;
+    SetUpdatableObject(null);
   }
 
   /// <summary>
@@ -160,13 +139,13 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool LoadData()
   {
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
+    var updatableObject = GetUpdatableElement();
+    if (updatableObject != null)
     {
-      LoadData(updatableElement);
+      LoadData(updatableObject);
       return true;
     }
-    return false;
+    return base.LoadData();
   }
 
   /// <summary>
@@ -174,13 +153,13 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool UpdateData()
   {
-    var updatableElement = GetUpdatableElement(); 
-    if (updatableElement != null)
+    var updatableObject = GetUpdatableElement();
+    if (updatableObject != null)
     {
-      UpdateData(updatableElement);
+      UpdateData(updatableObject);
       return true;
     }
-    return false;
+    return base.UpdateData();
   }
 
   /// <summary>
@@ -188,6 +167,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public bool HasDirectAccess => _UpdatableElement != null 
+  public bool HasDirectAccess => GetUpdatableElement() != null 
                                  && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
 }

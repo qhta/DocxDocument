@@ -284,9 +284,9 @@ public abstract partial class ContentItemsCollection : ModelElement,
     if (modelItem != null && !modelItemType.IsInstanceOfType(modelItem))
       throw new InvalidOperationException($"Converted model item is not compatible to {modelItemType}");
 
-    modelElement.SetParent(this.Parent);
+    modelElement.Parent = this.Parent;
     if (modelItem is IUpdatable updatableModelItem)
-      updatableModelItem.SetUpdatableElement(openXmlChildElement);
+      updatableModelItem.SetUpdatableObject(openXmlChildElement);
 
     return (ItemType)modelItem!;
   }

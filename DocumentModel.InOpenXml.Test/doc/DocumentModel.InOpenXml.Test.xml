@@ -673,12 +673,11 @@
             </summary>
             <returns>Collection of discovered IColor implementation types.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateSampleColor(System.Type,DocumentModel.Drawings.ColorModel)">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateSampleColor(System.Type)">
             <summary>
             Creates representative sample data for each IColor implementation type.
             </summary>
             <param name="colorType">The concrete color implementation type.</param>
-            <param name="colorModel">The color model associated with the color type.</param>
             <returns>A populated color instance.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateDocumentWithInitializedThemePart">
@@ -780,8 +779,7 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
             <summary>
-            Updates the specified document with new custom property data and returns the updated collection of custom
-            properties.
+            Updates the specified document with new custom property data and returns the updated collection of custom property data.
             </summary>
             <param name="document">The document to update with the new custom property data. Cannot be null.</param>
             <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
@@ -805,6 +803,25 @@
             inspection or further processing.</remarks>
             <param name="document">The document from which to extract the custom file properties XML. Must not be null.</param>
             <returns>A string containing the XML markup of the custom file properties part if present; otherwise, an empty string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the custom properties from the specified document.
+            </summary>
+            <param name="document">The document from which to retrieve the custom properties. Must not be null.</param>
+            <returns>The collection of custom properties from the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CompareTestData``1(``0,``0,System.String,System.String,System.String@)">
+            <summary>
+            Compares two instances of the specified type for equality, providing detailed information about any differences found.
+            </summary>
+            <typeparam name="T">The type of the objects to compare.</typeparam>
+            <param name="obj1">The first object to compare.</param>
+            <param name="obj2">The second object to compare.</param>
+            <param name="firstName">The name of the first object, used in the comparison message.</param>
+            <param name="secondName">The name of the second object, used in the comparison message.</param>
+            <param name="message">The message describing the differences found, if any.</param>
+            <returns>True if the objects are equal; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.DocumentPropertiesTest">
             <summary>
@@ -1580,6 +1597,31 @@
             </summary>
             <param name="document">The document from which to retrieve the OpenXml representation.</param>
             <returns>The OpenXml representation of the model collection.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.CompareTestData``1(``0,``0,System.String,System.String,System.String@)">
+            <summary>
+            Compares two objects of type T and returns a boolean indicating whether they are equal, along with an optional message describing the comparison result.
+            </summary>
+            <typeparam name="T">The type of the objects to compare.</typeparam>
+            <param name="obj1">The first object to compare.</param>
+            <param name="obj2">The second object to compare.</param>
+            <param name="firstName">The name of the first object.</param>
+            <param name="secondName">The name of the second object.</param>
+            <param name="message">An optional message describing the comparison result.</param>
+            <returns>A boolean indicating whether the objects are equal.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.CompareTestData``1(System.Type,``0,``0,System.String,System.String,System.String@)">
+            <summary>
+            Compares two objects of type T and returns a boolean indicating whether they are equal, along with an optional message describing the comparison result.
+            </summary>
+            <typeparam name="T">The type of the objects to compare.</typeparam>
+            <param name="comparedType">The type to use for comparison.</param>
+            <param name="obj1">The first object to compare.</param>
+            <param name="obj2">The second object to compare.</param>
+            <param name="firstName">The name of the first object.</param>
+            <param name="secondName">The name of the second object.</param>
+            <param name="message">An optional message describing the comparison result.</param>
+            <returns>A boolean indicating whether the objects are equal.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test._AbstractTestClass">
             <summary>

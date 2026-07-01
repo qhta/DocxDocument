@@ -28,16 +28,16 @@ public class NumberingLevelOverrides : ModelElementCollection<NumberingLevelOver
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- public NumberingInstance? Numbering { get => Parent as NumberingInstance; set => SetParent(value); }
+ public NumberingInstance? Numbering { get => Parent as NumberingInstance; set => Parent = value; }
 
  /// <summary>
  /// Gets updatable element for this collection of numbering instance,
  /// which is the <see cref = "DXW.NumberingInstance"/> element that contains the individual <see cref = "DXW.NumberingLevelOverride"/> elements.
  /// </summary>
  /// <returns></returns>
- public override DX.OpenXmlElement? GetUpdatableElement()
+ public override object? GetUpdatableObject()
  {
-  return Numbering?.GetUpdatableElement() as DXW.NumberingInstance;
+  return Numbering?.GetUpdatableObject() as DXW.NumberingInstance;
  }
 
  /// <summary>

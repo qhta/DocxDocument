@@ -19,8 +19,11 @@ public sealed partial class CustomProperty : DocumentProperty
   {
   }
 
-  private DXCP.CustomDocumentProperty? _OpenXmlCustomProperty;
-  
+  private DXCP.CustomDocumentProperty? OpenXmlCustomProperty
+  {
+    get => GetUpdatableObject() as DXCP.CustomDocumentProperty;
+    set => SetUpdatableObject(value);
+  }
 
   /// <summary>
   /// Initialization constructor.
@@ -30,7 +33,7 @@ public sealed partial class CustomProperty : DocumentProperty
   public CustomProperty(CustomProperties propertiesCollection, DXCP.CustomDocumentProperty openXmlOpenXmlCustomProperty) : this()
   {
     SetCollection(propertiesCollection);
-    _OpenXmlCustomProperty = openXmlOpenXmlCustomProperty;
+    OpenXmlCustomProperty = openXmlOpenXmlCustomProperty;
     LoadData(openXmlOpenXmlCustomProperty);
   }
 
@@ -43,9 +46,9 @@ public sealed partial class CustomProperty : DocumentProperty
   /// from the current object.</returns>
   public DXCP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {
-    _OpenXmlCustomProperty ??= new DXCP.CustomDocumentProperty();
-    UpdateData(_OpenXmlCustomProperty);
-    return _OpenXmlCustomProperty!;
+    OpenXmlCustomProperty ??= new DXCP.CustomDocumentProperty();
+    UpdateData(OpenXmlCustomProperty);
+    return OpenXmlCustomProperty!;
   }
 
   /// <summary>
@@ -92,7 +95,7 @@ public sealed partial class CustomProperty : DocumentProperty
   {
     get
     {
-      if (_OpenXmlCustomProperty == null)
+      if (OpenXmlCustomProperty == null)
         return base.Value;
       return GetAttachedPropertyInfo();
     }
@@ -100,7 +103,7 @@ public sealed partial class CustomProperty : DocumentProperty
     {
       base.Value = value;
       base.ValueType = value?.GetType();
-      if (_OpenXmlCustomProperty != null)
+      if (OpenXmlCustomProperty != null)
         SetAttachedPropertyValue(value);
     }
   }
@@ -114,15 +117,15 @@ public sealed partial class CustomProperty : DocumentProperty
   /// <exception cref="InvalidOperationException">Thrown when the conversion or setting of the value fails.</exception>
   internal void SetAttachedPropertyValue(object? value)
   {
-    if (_OpenXmlCustomProperty != null)
+    if (OpenXmlCustomProperty != null)
     {
       try
       {
         var valElement = VariantConverter.CreateOpenXmlElement(value);
-        var openXmlElement = _OpenXmlCustomProperty.FirstChild;
+        var openXmlElement = OpenXmlCustomProperty.FirstChild;
         if (openXmlElement != null)
           openXmlElement.Remove();
-        _OpenXmlCustomProperty.Append(valElement);
+        OpenXmlCustomProperty.Append(valElement);
       }
       catch (Exception e)
       {
@@ -139,11 +142,11 @@ public sealed partial class CustomProperty : DocumentProperty
   /// <exception cref="InvalidOperationException">Thrown when the conversion or retrieval of the value fails.</exception>
   internal object? GetAttachedPropertyInfo()
   {
-    if (_OpenXmlCustomProperty != null)
+    if (OpenXmlCustomProperty != null)
     {
       try
       {
-        var openXmlElement = (_OpenXmlCustomProperty)?.FirstChild;
+        var openXmlElement = (OpenXmlCustomProperty)?.FirstChild;
         if (openXmlElement != null)
         {
           var vtVariant = VariantConverter.CreateVariant(openXmlElement);
@@ -176,7 +179,7 @@ public sealed partial class CustomProperty : DocumentProperty
     get
     {
       var value = new Variant(base.Value);
-      var openXmlElement = (GetUpdatableElement() as DXCP.CustomDocumentProperty)?.FirstChild;
+      var openXmlElement = (GetUpdatableObject() as DXCP.CustomDocumentProperty)?.FirstChild;
       if (openXmlElement != null)
       {
         var vtVariant = openXmlElement.AsVTVariant();
@@ -193,7 +196,7 @@ public sealed partial class CustomProperty : DocumentProperty
       {
         base.Value = value;
         base.ValueType = value?.GetType();
-        if (GetUpdatableElement() is DXCP.CustomDocumentProperty openXmlElement)
+        if (GetUpdatableObject() is DXCP.CustomDocumentProperty openXmlElement)
         {
           openXmlElement.RemoveAllChildren();
           if (value != null)
@@ -238,6 +241,7 @@ public sealed partial class CustomProperty : DocumentProperty
         var value = VariantConverter.GetValue(firstChild);
         base.Value = value;
         base.ValueType = value?.GetType();
+        SetUpdatableObject(openXmlElement.Parent);
       }
     }
   }

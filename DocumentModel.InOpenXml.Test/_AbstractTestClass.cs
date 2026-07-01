@@ -202,7 +202,7 @@ public abstract class _AbstractTestClass
   {
     try
     {
-      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(dataType, out _);
+      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(dataType, out var namespaces);
       using (var stringReader = new StringReader(xml))
         return xmlSerializer.Deserialize(stringReader);
     }

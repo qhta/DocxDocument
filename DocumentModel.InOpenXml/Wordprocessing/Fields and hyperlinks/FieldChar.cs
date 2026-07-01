@@ -14,7 +14,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldCharType))]
   public FieldCharType? FieldCharType 
   {
-    get => _FieldCharType ??= GetProperty<FieldCharType?>(_UpdatableElement?.FieldCharType);
+    get => _FieldCharType ??= GetProperty<FieldCharType?>(GetUpdatableElement()?.FieldCharType);
     set => UpdateField(ref _FieldCharType, value, nameof(FieldCharType));
   }
   private FieldCharType? _FieldCharType;
@@ -25,7 +25,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldLock))]
   public bool? FieldLock 
   {
-    get => _FieldLock ??= GetProperty<bool?>(_UpdatableElement?.FieldLock);
+    get => _FieldLock ??= GetProperty<bool?>(GetUpdatableElement()?.FieldLock);
     set => UpdateField(ref _FieldLock, value, nameof(FieldLock));
   }
   private bool? _FieldLock;
@@ -36,7 +36,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   [OpenXmlProperty(nameof(DXW.FieldChar.Dirty))]
   public bool? Dirty 
   {
-    get => _Dirty ??= GetProperty<bool?>(_UpdatableElement?.Dirty);
+    get => _Dirty ??= GetProperty<bool?>(GetUpdatableElement()?.Dirty);
     set => UpdateField(ref _Dirty, value, nameof(Dirty));
   }
   private bool? _Dirty;
@@ -47,7 +47,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldData))]
   public string? FieldData 
   {
-    get => _FieldData ??= GetProperty<string?>(_UpdatableElement?.FieldData);
+    get => _FieldData ??= GetProperty<string?>(GetUpdatableElement()?.FieldData);
     set => UpdateField(ref _FieldData, value, nameof(FieldData));
   }
   private string? _FieldData;
@@ -58,7 +58,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   [OpenXmlProperty(nameof(DXW.FieldChar.FormFieldData))]
   public FormFieldData? FormFieldData
   {
-    get => _FormFieldData ??= GetProperty<FormFieldData?>(_UpdatableElement?.FormFieldData);
+    get => _FormFieldData ??= GetProperty<FormFieldData?>(GetUpdatableElement()?.FormFieldData);
     set => UpdateField(ref _FormFieldData, value, nameof(FormFieldData));
   }
   private FormFieldData? _FormFieldData;

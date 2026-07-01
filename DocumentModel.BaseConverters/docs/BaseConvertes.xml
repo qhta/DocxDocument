@@ -4444,22 +4444,22 @@
             which can be used for synchronization or updating operations in the context of Open XML document manipulation.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.IUpdatable.GetUpdatableElement">
+        <member name="M:DocumentModel.OpenXml.IUpdatable.GetUpdatableObject">
             <summary>
-            Gets an Open XML element that can be used for updating the state of the implementing object.
-            The returned object may be null if there is no relevant Open XML element to provide.
+            Gets an object that can be used for updating the state of the implementing object.
+            The returned object may be null if there is no relevant object to provide.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.IUpdatable.SetUpdatableElement(System.Object)">
+        <member name="M:DocumentModel.OpenXml.IUpdatable.SetUpdatableObject(System.Object)">
             <summary>
-            Sets an Open XML element that can be used for updating the state of the implementing object.
+            Sets an object that can be used for updating the state of the implementing object.
             </summary>
         </member>
         <member name="M:DocumentModel.OpenXml.IUpdatable.UpdateData(System.Object)">
             <summary>
-            Updates the specified Open XML element with new data or changes.
+            Updates the specified object with new data or changes.
             </summary>
-            <param name="openXmlElement">The Open XML element to update. Cannot be null.</param>
+            <param name="updatableObject">The object to update. Cannot be null.</param>
         </member>
         <member name="T:DocumentModel.OpenXml.UpdatableExtensions">
             <summary>
@@ -8046,12 +8046,6 @@
             Parent element that contains this item.
             </summary>
         </member>
-        <member name="M:DocumentModel.IChildItem.SetParent(System.Object)">
-            <summary>
-            Sets the parent element for this item. 
-            </summary>
-            <param name="parent">Object to set as a parent of the item.</param>
-        </member>
         <member name="T:DocumentModel.ICollectionItem">
             <summary>
             Element of the collection must implement this interface.
@@ -8179,16 +8173,10 @@
             Property name to be used when the object raise PropertyChanged event.
             </summary>
         </member>
-        <member name="M:DocumentModel.INotificationSource.SetPropertyName(System.String)">
-            <summary>
-            Sets the property name.
-            </summary>
-            <param name="propertyName">Property name to set (null erases property name)</param>
-        </member>
         <member name="P:DocumentModel.INotificationSource.IsNotificationEnabled">
             <summary>
             Flag to determine if notification is enabled when the object raise PropertyChanged event.
-            It should be set to true when the object is Icreated.
+            It should be set to true when the object is created.
             </summary>
         </member>
         <member name="T:DocumentModel.BaseConverters.ISerializationEnabling">

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.ExtrusionColor))]
 [XmlRoot("ExtrusionColor", Namespace = "DocumentModel.Drawings")]
-public partial class ExtrusionColor : DrawingsColorBase<DXD.ExtrusionColor>
+public partial class ExtrusionColor : ColorHolder<DXD.ExtrusionColor>
 {
 
 }

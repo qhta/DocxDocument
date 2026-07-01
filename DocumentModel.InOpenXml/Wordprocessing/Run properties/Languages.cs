@@ -36,7 +36,7 @@ public partial class Languages : ModelElement<DXW.Languages>
   [OpenXmlProperty(nameof(DXW.Languages.Val))]
   public string? Val 
   {
-    get => _Val ??= GetProperty<string?>(_UpdatableElement?.Val);
+    get => _Val ??= GetProperty<string?>(GetUpdatableElement()?.Val);
     set => UpdateField(ref _Val, value, nameof(Val));
   }
   private string? _Val;
@@ -47,7 +47,7 @@ public partial class Languages : ModelElement<DXW.Languages>
   [OpenXmlProperty(nameof(DXW.Languages.Bidi))]
   public string? Bidi 
   {
-    get => _Bidi ??= GetProperty<string?>(_UpdatableElement?.Bidi);
+    get => _Bidi ??= GetProperty<string?>(GetUpdatableElement()?.Bidi);
     set => UpdateField(ref _Bidi, value, nameof(Bidi));
   }
   private string? _Bidi;
@@ -58,7 +58,7 @@ public partial class Languages : ModelElement<DXW.Languages>
   [OpenXmlProperty(nameof(DXW.Languages.EastAsia))]
   public string? EastAsia 
   {
-    get => _EastAsia ??= GetProperty<string?>(_UpdatableElement?.EastAsia);
+    get => _EastAsia ??= GetProperty<string?>(GetUpdatableElement()?.EastAsia);
     set => UpdateField(ref _EastAsia, value, nameof(EastAsia));
   }
   private string? _EastAsia;

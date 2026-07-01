@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.BackgroundColor))]
 [XmlRoot("BackgroundColor", Namespace = "DocumentModel.Drawings")]
-public partial class BackgroundColor : DrawingsColorBase<DXD.BackgroundColor>
+public partial class BackgroundColor : ColorHolder<DXD.BackgroundColor>
 {
 
 }

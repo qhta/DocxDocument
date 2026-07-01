@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaInverse))]
 [XmlRoot("AlphaInverse", Namespace = "DocumentModel.Drawings")]
-public partial class AlphaInverse : DrawingsColorBase<DXD.AlphaInverse>
+public partial class AlphaInverse : ColorHolder<DXD.AlphaInverse>
 {
 
 }

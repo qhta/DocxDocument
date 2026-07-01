@@ -213,11 +213,11 @@ public class RunTest : _AbstractTestClass
     }
 
     AddAbstractColorOverride(overrides,
-      typeof(DM.Color<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>),
+      typeof(DM.AnyColor<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>),
       "AbstractColorOfDrawingRgbColorModelHex",
       "urn:docmodel:drawings");
     AddAbstractColorOverride(overrides,
-      typeof(DM.Color<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>),
+      typeof(DM.AnyColor<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>),
       "AbstractColorOfWord2010RgbColorModelHex",
       "urn:docmodel:wordprocessing-drawings");
 

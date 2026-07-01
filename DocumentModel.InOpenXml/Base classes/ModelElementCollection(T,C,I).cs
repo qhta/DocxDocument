@@ -47,7 +47,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected sealed override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
-    foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
+    foreach (var openXmlElement in openXmlModeledCollection.Elements<OpenXmlItemType>())
     {
       var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
       ItemType modelObject;
@@ -73,7 +73,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
   protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
-    SetUpdatableElement(openXmlModeledCollection);
+    SetUpdatableObject(openXmlModeledCollection);
     var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
     foreach (var child in children)
     {
