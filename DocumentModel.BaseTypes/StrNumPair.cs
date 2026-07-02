@@ -7,6 +7,7 @@
 /// This struct provides a way to represent values that may be expressed as either text or numeric form,
 /// commonly used in document models where formatting or content can accept multiple representations.
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(StrNumPairJsonConverter))]
 public partial struct StrNumPair : IEquatable<StrNumPair>
 {

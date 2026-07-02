@@ -6,6 +6,10 @@
 //[OpenXmlItem(typeof(DX.OpenXmlElement))]
 public class StoryItemsCollection: ContentItemsCollection
 {
+  /// <summary>
+  /// Default constructor needed for XML serialization. Initializes a new instance of the StoryItemsCollection class.
+  /// </summary>
+  public StoryItemsCollection() { }
 
   /// <summary>
   /// Initializes a new instance of the StoryItemsCollection class with the specified parent model element and Open XML

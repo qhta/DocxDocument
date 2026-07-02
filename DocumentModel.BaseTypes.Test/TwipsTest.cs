@@ -53,7 +53,7 @@ public static class TwipsTest
     Twips Twips2 = "1in";
     var inchTwips = Twips2.ToInch();
     Console.WriteLine($"\n✓ String with unit to Twips: {Twips2} ({inchTwips}in)");
-    if (inchTwips != 1.0)
+    if (inchTwips != 1.0m)
     {
       Console.WriteLine("✗ String with unit to Twips conversion FAILED");
       return false;
@@ -175,7 +175,7 @@ public static class TwipsTest
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     Twips original = Twips1Inch; // 1 inch
-    double inches = original.ToInch();
+    decimal inches = original.ToInch();
     Twips roundTrip = new Twips($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} Twips");
     Console.WriteLine($"  To inches: {inches:F6}in");
@@ -557,7 +557,7 @@ public static class TwipsTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double inches = testTwips.ToInch();
+      decimal inches = testTwips.ToInch();
     }
     sw.Stop();
     Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -565,7 +565,7 @@ public static class TwipsTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double points = testTwips.ToPoints();
+      decimal points = testTwips.ToPoints();
     }
     sw.Stop();
     Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -573,7 +573,7 @@ public static class TwipsTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testTwips.ToMillimeters();
+      decimal mm = testTwips.ToMillimeters();
     }
     sw.Stop();
     Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");

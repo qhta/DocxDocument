@@ -13,7 +13,7 @@ public partial class DrawingsColorBase<T> : IXmlSerializable
   /// Deserializes the instance from XML.
   /// </summary>
   /// <param name = "reader">The <see cref = "XmlReader"/> to read from.</param>
-  public virtual void ReadXml(XmlReader reader)
+  public override void ReadXml(XmlReader reader)
   {
     var readerDepth = reader.Depth;
     if (reader.IsEmptyElement)
@@ -59,7 +59,7 @@ public partial class DrawingsColorBase<T> : IXmlSerializable
   /// Serializes the instance to XML.
   /// </summary>
   /// <param name = "writer">The <see cref = "XmlWriter"/> to write to.</param>
-  public virtual void WriteXml(XmlWriter writer)
+  public override void WriteXml(XmlWriter writer)
   {
     foreach (var transformation in ColorTransformations)
     {

@@ -9,6 +9,7 @@
 /// - Bits 8-15 represent the Green component
 /// - Bits 0-7 represent the Blue component
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(HexColorJsonConverter))]
 [SimpleType]
 public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible

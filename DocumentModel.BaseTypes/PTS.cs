@@ -10,13 +10,14 @@
 /// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 point = 1/72 inch.
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(PTSJsonConverter))]
 public partial class PTS : UniversalMeasure
 {
   /// <summary>
   /// Defines the number of points in one inch.
   /// </summary>
-  protected override double UnitsPerInch => 72;
+  protected override decimal UnitsPerInch => 72;
 
   #region Constructors
 
@@ -73,6 +74,14 @@ public partial class PTS : UniversalMeasure
     Init(value);
   }
 
+  /// <summary>
+  /// Initializes a new instance of the <see cref="PTS"/> from a 128-bit decimal value.
+  /// </summary>
+  /// <param name="value">The value in half-points.</param>
+  public PTS(Decimal value)
+  {
+    Init(value);
+  }
   #endregion
 
   #region Static Factory Methods
@@ -108,9 +117,9 @@ public partial class PTS : UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static PTS Parse(string value) => new PTS(value);
+  public static PTS Parse(string str) => new PTS(str);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -140,22 +149,14 @@ public partial class PTS : UniversalMeasure
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
   /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// <param name="str">The string representation of the length measure to parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out PTS? result)
+  public static bool TryParse(string str, out PTS? result)
   {
-    try
-    {
-      result = new PTS(value);
-      return true;
-    }
-    catch
-    {
-      result = null!;
-      return false;
-    }
+    result = new PTS();
+    return result.TryInit(str);
   }
 
   #endregion

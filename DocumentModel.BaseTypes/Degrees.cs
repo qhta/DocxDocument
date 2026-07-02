@@ -5,6 +5,7 @@
 /// So, for example, a value of 180 degrees is stored as 10800000, and a value of 0.5 degrees is stored as 30000.
 /// Supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(DegreesJsonConverter))]
 public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, IComparable<Degrees>, IComparable<object>
 {

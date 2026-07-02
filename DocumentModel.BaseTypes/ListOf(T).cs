@@ -24,6 +24,7 @@ namespace DocumentModel;
 /// </list>
 /// </remarks>
 [DebuggerDisplay("{InnerText}")]
+[DataContract]
 [JsonConverter(typeof(ListOfJsonConverterFactory))]
 public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>, IConvertible
   where T : IConvertible

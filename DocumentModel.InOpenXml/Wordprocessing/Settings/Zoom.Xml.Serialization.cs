@@ -15,7 +15,7 @@ public partial class Zoom : IXmlSerializable
   ///   Serializes the <see cref="Zoom"/> object to XML, writing either the preset kind as a string or the percentage value as a string.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write XML content to.</param>
-  public void WriteXml(XmlWriter writer)
+  public override void WriteXml(XmlWriter writer)
   {
     if (Preset != null)
       writer.WriteString(Preset.ToString());
@@ -26,7 +26,7 @@ public partial class Zoom : IXmlSerializable
   ///   Deserializes XML content into the <see cref="Zoom"/> object, interpreting the content as either a percentage or a preset kind.
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read XML content from.</param>
-  public void ReadXml(XmlReader reader)
+  public override void ReadXml(XmlReader reader)
   {
     var content = reader.ReadElementContentAsString();
     if (content.EndsWith("%"))

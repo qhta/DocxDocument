@@ -14,6 +14,7 @@
 /// commonly used in color representations where byte percentages need to be converted to 0-255 range.
 /// </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(HexPercentJsonConverter))]
 public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>, IComparable<HexPercent>
 {

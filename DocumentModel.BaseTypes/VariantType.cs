@@ -4,6 +4,7 @@
 /// <summary>
 ///   Array Variant ValueType Simple ValueType
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(StringEnumConverter))]
 public enum VariantType
 {

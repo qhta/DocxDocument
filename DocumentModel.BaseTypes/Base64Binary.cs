@@ -20,6 +20,7 @@
 ///   encoding method for embedding binary data in XML-based document formats.
 ///   </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
 [SimpleType]
 public partial class Base64Binary : IEquatable<Base64Binary>

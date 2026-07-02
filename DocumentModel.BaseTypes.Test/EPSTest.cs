@@ -53,7 +53,7 @@ public static class EPSTest
     EPS eps2 = "1in";
     var inchEPS = eps2.ToInch();
     Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS}in)");
-    if (inchEPS != 1.0)
+    if (inchEPS != 1.0m)
     {
       Console.WriteLine("✗ String with unit to EPS conversion FAILED");
       return false;
@@ -174,7 +174,7 @@ public static class EPSTest
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     EPS original = eps1Inch; // 1 inch
-    double inches = original.ToInch();
+    decimal inches = original.ToInch();
     EPS roundTrip = new EPS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} EPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
@@ -586,7 +586,7 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double inches = testEp.ToInch();
+      decimal inches = testEp.ToInch();
     }
     sw.Stop();
     Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -594,7 +594,7 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double points = testEp.ToPoints();
+      decimal points = testEp.ToPoints();
     }
     sw.Stop();
     Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -602,7 +602,7 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testEp.ToMillimeters();
+      decimal mm = testEp.ToMillimeters();
     }
     sw.Stop();
     Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");

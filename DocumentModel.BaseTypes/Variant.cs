@@ -8,6 +8,7 @@ namespace DocumentModel;
 /// <summary>
 /// Represents a variant value that can hold any supported type, similar to a COM VARIANT.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(VariantJsonConverter))]
 [SimpleType]
 public partial class Variant : IConvertible, IEquatable<Variant>

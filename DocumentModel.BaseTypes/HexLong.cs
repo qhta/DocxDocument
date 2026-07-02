@@ -5,6 +5,7 @@
 /// Enables type-safe conversion between numeric values and their hexadecimal string representations, supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks in Office documents.
 /// Ensures consistent 16-character formatting, seamless .NET type integration, and efficient equality checks.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(HexLongJsonConverter))]
 public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
 {

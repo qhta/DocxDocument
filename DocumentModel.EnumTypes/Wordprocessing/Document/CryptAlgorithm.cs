@@ -3,17 +3,17 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the CryptAlgorithmValues enumeration.
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
-[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Presentation.CryptAlgorithmValues))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues))]
 public enum CryptAlgorithm
 {
   /// <summary>
   ///   Any Type.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Presentation.CryptAlgorithmValues.TypeAny))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues.TypeAny))]
   TypeAny,
   /// <summary>
   ///   custom.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Presentation.CryptAlgorithmValues.Invalid))]
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues.Custom))]
   Custom
 }

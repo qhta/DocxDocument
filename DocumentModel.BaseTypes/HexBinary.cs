@@ -28,6 +28,7 @@
 ///   formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
 ///   </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(HexBinaryJsonConverter))]
 public partial class HexBinary : IEquatable<HexBinary>
 {

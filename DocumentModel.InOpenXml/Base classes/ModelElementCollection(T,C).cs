@@ -31,7 +31,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
   /// </summary>
-  protected ModelElementCollection()
+  public ModelElementCollection()
   {
     InitCollectionChangedEventHandler();
   }

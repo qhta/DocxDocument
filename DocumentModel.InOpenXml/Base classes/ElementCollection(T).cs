@@ -34,7 +34,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
-  protected ElementCollection() { }
+  public ElementCollection() { }
 
   /// <summary>
   /// 

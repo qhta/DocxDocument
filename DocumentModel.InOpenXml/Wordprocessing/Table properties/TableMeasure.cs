@@ -20,7 +20,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
  /// <summary>
  /// Defines the number of TableMeasure in one inch.
  /// </summary>
- protected override double UnitsPerInch => 1440.0;
+ protected override decimal UnitsPerInch => 1440.0m;
 
  /// <summary>
  /// Gets or sets the value represented as a nullable 64-bit signed integer.
@@ -133,7 +133,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
  /// accordingly.</remarks>
  /// <param name = "str">The string that specifies the table width. Supported values include "nil", "auto", a percentage (e.g., "50%"), or
  /// an absolute value.</param>
- protected override void Init(string str)
+ private new void Init(string str)
  {
   if (str == "nil")
   {
@@ -409,7 +409,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
    throw new ArgumentException($"Cannot compare TableMeasure of type {Type} to TableMeasure of type {other.Type}.");
   if (Type == TableMeasureType.Auto || Type == TableMeasureType.Nil)
    return true; // Consider "auto" and "nil" as equal for comparison purposes 
-  return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
+  return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10m;
  }
 
  /// <summary>

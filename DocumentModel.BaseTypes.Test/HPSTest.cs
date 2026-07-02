@@ -54,7 +54,7 @@ public static class HPSTest
     HPS hps2 = "1in";
     var inchHPS = hps2.ToInch();
     Console.WriteLine($"\n✓ String with unit to HPS: {hps2} ({inchHPS}in)");
-    if (inchHPS != 1.0)
+    if (inchHPS != 1.0m)
     {
       Console.WriteLine("✗ String with unit to HPS conversion FAILED");
       return false;
@@ -176,7 +176,7 @@ public static class HPSTest
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     HPS original = hps1Inch; // 1 inch
-    double inches = original.ToInch();
+    decimal inches = original.ToInch();
     HPS roundTrip = new HPS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} HPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
@@ -602,7 +602,7 @@ public static class HPSTest
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double inches = testHp.ToInch();
+        decimal inches = testHp.ToInch();
       }
       sw.Stop();
       Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -610,7 +610,7 @@ public static class HPSTest
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double points = testHp.ToPoints();
+        decimal points = testHp.ToPoints();
       }
       sw.Stop();
       Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -618,7 +618,7 @@ public static class HPSTest
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double mm = testHp.ToMillimeters();
+        decimal mm = testHp.ToMillimeters();
       }
       sw.Stop();
       Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");

@@ -20,7 +20,7 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
  /// <summary>
  /// Defines the number of HeightMeasure in one inch.
  /// </summary>
- protected override double UnitsPerInch => 1440.0;
+ protected override decimal UnitsPerInch => 1440.0m;
 
  /// <summary>
  /// Gets or sets the value represented as a nullable 64-bit signed integer.
@@ -135,7 +135,7 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
  /// accordingly.</remarks>
  /// <param name = "str">The string that specifies the table width. Supported values include "auto", "atLeast "+value,
  /// or "exact "+value.</param>
- protected override void Init(string str)
+ private new void Init(string str)
  {
   if (str == "auto")
   {
@@ -415,7 +415,7 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
    throw new ArgumentException($"Cannot compare HeightMeasure of type {Type} to HeightMeasure of type {other.Type}.");
   if (Type == HeightMeasureType.Auto)
    return true; // Consider "auto" as equal for comparison purposes 
-  return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
+  return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10m;
  }
 
  /// <summary>

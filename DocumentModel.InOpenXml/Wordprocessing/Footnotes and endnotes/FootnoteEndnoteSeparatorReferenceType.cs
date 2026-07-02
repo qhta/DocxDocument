@@ -6,9 +6,15 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.FootnoteEndnoteSeparatorReferenceType))]
 [DataContract]
 [XmlRoot("FootnoteEndnoteSeparatorReferenceType", Namespace = "DocumentModel.Wordprocessing")]
-public partial class FootnoteEndnoteSeparatorReferenceType : ModelElement<DXW.FootnoteEndnoteSeparatorReferenceType>
+public abstract partial class FootnoteEndnoteSeparatorReferenceType<T> : ModelElement<T> 
+  where T : DXW.FootnoteEndnoteSeparatorReferenceType
 {
- /// <summary>
+  /// <summary>
+  /// Default constructor needed by XmlSerializer
+  /// </summary>
+  public FootnoteEndnoteSeparatorReferenceType() { }
+
+  /// <summary>
  ///   Identifier for the footnote or endnote associated with this separator reference.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FootnoteEndnoteSeparatorReferenceType.Id))]

@@ -6,6 +6,7 @@
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
 /// External numerical values are scaled to fit within the internal representation.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(PercentageJsonConverter))]
 public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>, IComparable<Percentage>, IComparable<object>
 {

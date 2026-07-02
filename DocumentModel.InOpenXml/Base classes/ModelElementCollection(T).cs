@@ -16,7 +16,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class.
   /// </summary>
-  protected ModelElementCollection()
+  public ModelElementCollection()
   {
   }
 

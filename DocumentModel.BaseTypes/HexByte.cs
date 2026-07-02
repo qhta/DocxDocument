@@ -4,6 +4,7 @@
 /// <summary>
 ///   Represents a byte value encoded as a hexadecimal string (2 hex digits) for use in Office Open XML documents.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(HexByteJsonConverter))]
 public partial record HexByte : IConvertible, IEquatable<HexByte>
 {

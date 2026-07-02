@@ -37,6 +37,7 @@
 /// };
 /// </code>
 /// </example>
+[DataContract]
 [JsonConverter(typeof(VClipboardDataJsonConverter))]
 public partial struct VClipboardData: IEquatable<VClipboardData>
 {

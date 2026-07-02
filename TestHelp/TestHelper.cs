@@ -192,7 +192,8 @@ public static class TestHelper
       throw new ArgumentNullException(nameof(instance));
     //Debug.WriteLine($"Populating test data for instance of type {instance.GetType().Name}");
     var properties = instance.GetType().GetProperties()
-      .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>() == null);
+      .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>() == null
+      && prop.GetCustomAttribute<ObsoleteAttribute>() == null);
     foreach (var prop in properties)
     {
       var propType = prop.PropertyType.GetNotNullableType();
@@ -200,7 +201,10 @@ public static class TestHelper
       // Set each property with new test data
       if (propType == typeof(string))
       {
-        prop.SetValue(instance, "Sample " + prop.Name + (index >= 0 ? $" {index + 1}" : ""));
+        if (prop.Name == "Uri")
+          prop.SetValue(instance, @"file://C:/Templates/Normal.dotm");
+        else
+          prop.SetValue(instance, "Sample " + prop.Name + (index >= 0 ? $" {index + 1}" : ""));
       }
       else if (propType == typeof(bool))
       {
@@ -267,6 +271,26 @@ public static class TestHelper
       else if (propType == typeof(Single))
       {
         prop.SetValue(instance, (float)Random.Shared.NextDouble() * 100);
+      }
+      else if (propType == typeof(Twips))
+      {
+        prop.SetValue(instance, new Twips((Decimal)(Random.Shared.NextDouble() * 50_000)));
+      }
+      else if (propType == typeof(EMU))
+      {
+        prop.SetValue(instance, new EMU((Decimal)(Random.Shared.NextDouble() * 50_000)));
+      }
+      else if (propType == typeof(EPS))
+      {
+        prop.SetValue(instance, new EPS((Decimal)(Random.Shared.NextDouble() * 50_000)));
+      }
+      else if (propType == typeof(HPS))
+      {
+        prop.SetValue(instance, new HPS((Decimal)(Random.Shared.NextDouble() * 50_000)));
+      }
+      else if (propType == typeof(PTS))
+      {
+        prop.SetValue(instance, new PTS((Decimal)(Random.Shared.NextDouble() * 50_000)));
       }
       else if (propType == typeof(Variant))
       {

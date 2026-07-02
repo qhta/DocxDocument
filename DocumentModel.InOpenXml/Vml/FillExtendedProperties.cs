@@ -18,6 +18,6 @@ public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProp
  ///   Fill Type
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Type))]
- public FillType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private FillType? _Type;
+ public FillKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+ private FillKind? _Type;
 }

@@ -78,6 +78,9 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   /// Gets a collection of paragraphs within the story, providing access to all paragraph elements contained in the story's items.
   /// This property retrieves a collection of paragraphs by filtering the items in the story to include only those that are of type <see cref="DMW.Paragraph"/>.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public DMW.Paragraphs Paragraphs => _Paragraphs ??= new DMW.Paragraphs(this, Items);
   private DMW.Paragraphs? _Paragraphs;
 

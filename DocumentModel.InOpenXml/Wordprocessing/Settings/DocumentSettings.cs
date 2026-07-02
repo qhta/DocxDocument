@@ -14,10 +14,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// <summary>
   /// Known properties that can be set in DocumentSettings.
   /// </summary>
-  public static KnownProperties KnownProperties
-  {
-    get => _KnownProperties ??= new KnownProperties(typeof(DocumentSettings));
-  }
+  public static KnownProperties KnownProperties => _KnownProperties ??= new KnownProperties(typeof(DocumentSettings));
   private static KnownProperties? _KnownProperties;
 
   /// <summary>
@@ -959,7 +956,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from ending a line for custom line breaking logic.
   /// </summary>
   [MultiCategory("Multilanguage")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku))]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku))]
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku
   {
     get => _NoLineBreaksAfterKinsoku ??=
@@ -972,7 +969,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of characters restricted from beginning a new line for custom line breaking logic.
   /// </summary>
   [MultiCategory("Multilanguage")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
+  [OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku
   {
     get => _NoLineBreaksBeforeKinsoku ??=
@@ -1003,7 +1000,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w15:persistentDocumentId
   /// </remarks>
   [MultiCategory("Identification")]
-  [XmlIgnore, OpenXmlElement(typeof(DXO13W.PersistentDocumentId))]
+  [OpenXmlElement(typeof(DXO13W.PersistentDocumentId))]
   public Guid? PersistentDocumentId
   {
     get => _PersistentDocumentId ??= GetElement<Guid?, DXO13W.PersistentDocumentId>(GetUpdatableElement());
@@ -1078,7 +1075,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:proofState
   /// </remarks>
   [MultiCategory("Proofing")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.ProofState))]
+  [OpenXmlElement(typeof(DXW.ProofState))]
   public ProofState? ProofState
   {
     get => _ProofState ??= GetElement<ProofState?, DXW.ProofState>(GetUpdatableElement());
@@ -1090,7 +1087,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the exact set of page and text sizing parameters for displaying the document, used for ink annotations.
   /// </summary>
   [MultiCategory("View")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.ReadModeInkLockDown))]
+  [OpenXmlElement(typeof(DXW.ReadModeInkLockDown))]
   public DMWD.ReadModeInkLockDown? ReadModeInkLockDown
   {
     get => _ReadModeInkLockDown ??= GetElement<DMWD.ReadModeInkLockDown?, DXW.ReadModeInkLockDown>(GetUpdatableElement());
@@ -1135,7 +1132,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:revisionView
   /// </remarks>
   [MultiCategory("View")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.RevisionView))]
+  [OpenXmlElement(typeof(DXW.RevisionView))]
   public RevisionView? RevisionView
   {
     get => _RevisionView ??= GetElement<RevisionView?, DXW.RevisionView>(GetUpdatableElement());
@@ -1207,7 +1204,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the location of a custom XSL transform to be used when saving as a single XML file.
   /// </summary>
   [MultiCategory("Saving")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.SaveThroughXslt))]
+  [OpenXmlElement(typeof(DXW.SaveThroughXslt))]
   public SaveThroughXslt? SaveThroughXslt
   {
     get => _SaveThroughXslt ??= GetElement<SaveThroughXslt?, DXW.SaveThroughXslt>(GetUpdatableElement());
@@ -1231,7 +1228,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the set of XML namespaces associated with custom XML markup in the document.
   /// </summary>
   [MultiCategory("CustomXml")]
-  [XmlIgnore, OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
+  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
   public DMCX.SchemaLibrary? SchemaLibrary
   {
     get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
@@ -1243,7 +1240,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the defaults used when creating new shapes, stored once per document.
   /// </summary>
   [MultiCategory("Drawings")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.ShapeDefaults))]
+  [OpenXmlElement(typeof(DXW.ShapeDefaults))]
   [Obsolete]
   public DMWD.ShapeDefaults? ShapeDefaults
   {
@@ -1301,7 +1298,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies suggested filters to be applied to the list of document styles in the application UI.
   /// </summary>
   [MultiCategory("StylePane")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
+  [OpenXmlElement(typeof(DXW.StylePaneFormatFilter))]
   public StylePaneFormatFilter? StylePaneFormatFilter
   {
     get => _StylePaneFormatFilter ??= GetElement<StylePaneFormatFilter?, DXW.StylePaneFormatFilter>(GetUpdatableElement());
@@ -1348,7 +1345,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the language used to determine theme fonts in the document's Theme part.
   /// </summary>
   [MultiCategory("Theme")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.ThemeFontLanguages))]
+  [OpenXmlElement(typeof(DXW.ThemeFontLanguages))]
   public Languages? ThemeFontLanguages
   {
     get => _ThemeFontLanguages ??= GetElement<Languages?, DXW.ThemeFontLanguages>(GetUpdatableElement());
@@ -1438,7 +1435,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:writeProtection
   /// </remarks>
   [MultiCategory("Protection")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.WriteProtection))]
+  [OpenXmlElement(typeof(DXW.WriteProtection))]
   public WriteProtection? WriteProtection
   {
     get => _WriteProtection ??= GetElement<WriteProtection?, DXW.WriteProtection>(GetUpdatableElement());
@@ -1465,7 +1462,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies all mail merge information for the document.
   /// </summary>
   [MultiCategory("Mailing")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.MailMerge))]
+  [OpenXmlElement(typeof(DXW.MailMerge))]
   public MailMerge? MailMerge
   {
     get => _MailMerge ??= GetElement<MailMerge?, DXW.MailMerge>(GetUpdatableElement());
@@ -1477,7 +1474,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the document-level properties for all math in the document.
   /// </summary>
   [MultiCategory("Math")]
-  [XmlIgnore, OpenXmlElement(typeof(DXM.MathProperties))]
+  [OpenXmlElement(typeof(DXM.MathProperties))]
   public DMM.MathProperties? MathProperties
   {
     get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());

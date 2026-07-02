@@ -15,6 +15,10 @@ public abstract partial class ContentItemsCollection : ModelElement,
   IFilteringCollection
 {
 
+  /// <summary>
+  /// Default constructor needed for XML serialization. Initializes a new instance of the StoryItemsCollection class.
+  /// </summary>
+  protected ContentItemsCollection() { }
 
   /// <summary>
   /// Initializes a new instance of the ContentItemsCollection class with the specified parent model element and Open
@@ -209,11 +213,13 @@ public abstract partial class ContentItemsCollection : ModelElement,
   /// <summary>
   /// 
   /// </summary>
+  [XmlIgnore]
   public abstract Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping { get; }
 
   /// <summary>
   /// Gets the mapping between model element types and their corresponding OpenXml element types.
   /// </summary>
+  [XmlIgnore]
   public abstract Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping { get; }
   /// <summary>
   /// Gets an enumerator that iterates through the collection, yielding each item in the collection. The enumerator retrieves items from the underlying OpenXml composite element, converting them to the appropriate model type based on the defined type mapping. Only items accepted by the AcceptItem method are included in the enumeration.

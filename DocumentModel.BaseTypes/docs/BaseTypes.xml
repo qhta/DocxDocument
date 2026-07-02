@@ -1972,6 +1972,12 @@
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
+        <member name="M:DocumentModel.EMU.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EMU"/> from a 128-bit decimal value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
         <member name="M:DocumentModel.EMU.FromTwips(System.Double)">
             <summary>
             Creates an instance of an <see cref="T:DocumentModel.EMU"/> that represents the specified value in twips.
@@ -2004,7 +2010,7 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.EMU.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -2024,7 +2030,7 @@
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
             langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="str">The string representation of the length measure to parse.</param>
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -2205,6 +2211,12 @@
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
+        <member name="M:DocumentModel.EPS.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a 128-bit decimal value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
         <member name="M:DocumentModel.EPS.FromTwips(System.Double)">
             <summary>
             Creates an instance of an <see cref="T:DocumentModel.EPS"/> that represents the specified value in twips.
@@ -2237,7 +2249,7 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.EPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -2257,7 +2269,7 @@
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
             langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="str">The string representation of the length measure to parse.</param>
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -5694,6 +5706,12 @@
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
+        <member name="M:DocumentModel.HPS.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HPS"/> from a 128-bit decimal value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
         <member name="M:DocumentModel.HPS.FromTwips(System.Double)">
             <summary>
             Creates an instance of an <see cref="T:DocumentModel.HPS"/> that represents the specified value in twips.
@@ -5726,7 +5744,7 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.HPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -5746,7 +5764,7 @@
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
             langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="str">The string representation of the length measure to parse.</param>
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -7271,6 +7289,12 @@
             </summary>
             <param name="value">The value in half-points.</param>
         </member>
+        <member name="M:DocumentModel.PTS.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PTS"/> from a 128-bit decimal value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
         <member name="M:DocumentModel.PTS.FromTwips(System.Double)">
             <summary>
             Creates an instance of an <see cref="T:DocumentModel.PTS"/> that represents the specified value in twips.
@@ -7303,7 +7327,7 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
@@ -7323,7 +7347,7 @@
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
             langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="str">The string representation of the length measure to parse.</param>
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -8291,7 +8315,7 @@
             </summary>
             <remarks>If the input string does not conform to a valid length measure format, an exception may be
             thrown.</remarks>
-            <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
         <member name="M:DocumentModel.Twips.TryParse(System.String,DocumentModel.Twips@)">
@@ -8301,7 +8325,7 @@
             </summary>
             <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
             langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="value">The string representation of the length measure to parse.</param>
+            <param name="str">The string representation of the length measure to parse.</param>
             <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
             langword="null"/>.</param>
             <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -10510,26 +10534,6 @@
             Checks if the instance has been initialized with a value.
             </summary>
         </member>
-        <member name="P:DocumentModel.UniversalMeasure.IsInteger">
-            <summary>
-            Checks if the instance represents an integer value.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.UniversalMeasure.IsUnsignedInteger">
-            <summary>
-            Checks if the instance represents an unsigned integer value.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.UniversalMeasure.IsDecimal">
-            <summary>
-            Checks if the instance represents a decimal value.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.UniversalMeasure.IsDouble">
-            <summary>
-            Checks if the instance represents a double value.
-            </summary>
-        </member>
         <member name="P:DocumentModel.UniversalMeasure.IntValue">
             <summary>
             Gets the Int64 value represented by this instance.
@@ -10553,7 +10557,7 @@
         <member name="P:DocumentModel.UniversalMeasure.DoubleValue">
             <summary>
             Gets the Double value represented by this instance.
-            If the instance was initialized with an Int64 or Decimal value, it will be converted to double.
+            If the instance was initialized with an Int64 or Decimal value, it will be converted to decimal.
             </summary>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.UnitsPerInch">
@@ -10613,6 +10617,13 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
+        <member name="M:DocumentModel.UniversalMeasure.TryInit(System.String)">
+            <summary>
+            Attempts to initialize a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+            <returns>True if the initialization was successful; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.UniversalMeasure.Init(System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from an Int64 integer value.
@@ -10641,25 +10652,25 @@
             <summary>
             Converts the UniversalMeasure value to millimeters.
             </summary>
-            <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
+            <returns>The measurement in millimeters as a decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToCentimeters">
             <summary>
             Converts the UniversalMeasure value to centimeters.
             </summary>
-            <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
+            <returns>The measurement in centimeters as a decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToInch">
             <summary>
             Converts the UniversalMeasure value to inches.
             </summary>
-            <returns>The measurement in inches as a double-precision floating-point number.</returns>
+            <returns>The measurement in inches as a decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToPoints">
             <summary>
             Converts the UniversalMeasure value to points.
             </summary>
-            <returns>The measurement in points as a double-precision floating-point number.</returns>
+            <returns>The measurement in points as a decimal-precision floating-point number.</returns>
             <remarks>
             A point is defined as 1/72 of an inch.
             </remarks>
@@ -10668,7 +10679,7 @@
             <summary>
             Converts the UniversalMeasure value to Twips.
             </summary>
-            <returns>The measurement in Twips as a double-precision floating-point number.</returns>
+            <returns>The measurement in Twips as a decimal-precision floating-point number.</returns>
             <remarks>
             A twips is defined as 1/20 of a point.
             </remarks>
@@ -10722,10 +10733,10 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToDouble(System.IFormatProvider)">
             <summary>
-            Converts the current value to a double-precision floating-point number. 
+            Converts the current value to a decimal-precision floating-point number. 
             </summary>
             <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
-            <returns>A double-precision floating-point number equivalent to the current value.</returns>
+            <returns>A decimal-precision floating-point number equivalent to the current value.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToInt16(System.IFormatProvider)">
             <summary>

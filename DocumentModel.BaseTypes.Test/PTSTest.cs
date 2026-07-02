@@ -52,7 +52,7 @@ public static class PTSTest
     PTS pts2 = "1in";
     var inchPTS = pts2.ToInch();
     Console.WriteLine($"\n✓ String with unit to PTS: {pts2} ({inchPTS}in)");
-    if (inchPTS != 1.0)
+    if (inchPTS != 1.0m)
     {
       Console.WriteLine("✗ String with unit to PTS conversion FAILED");
       return false;
@@ -174,7 +174,7 @@ public static class PTSTest
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     PTS original = pts1Inch; // 1 inch
-    double inches = original.ToInch();
+    decimal inches = original.ToInch();
     PTS roundTrip = new PTS($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} PTS");
     Console.WriteLine($"  To inches: {inches:F6}in");
@@ -567,7 +567,7 @@ public static class PTSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double inches = testPTS.ToInch();
+      decimal inches = testPTS.ToInch();
     }
     sw.Stop();
     Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -575,7 +575,7 @@ public static class PTSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double pts = testPTS.ToPoints();
+      decimal pts = testPTS.ToPoints();
     }
     sw.Stop();
     Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -583,7 +583,7 @@ public static class PTSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testPTS.ToMillimeters();
+      decimal mm = testPTS.ToMillimeters();
     }
     sw.Stop();
     Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");

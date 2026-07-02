@@ -5,26 +5,60 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("RevisionView", Namespace = "DocumentModel.Wordprocessing")]
-public partial class RevisionView
+public partial class RevisionView : ModelElement<DXW.RevisionView>
 {
- /// <summary>
- /// Display visual indicator of the markup area.
- /// </summary>
- public bool? Markup { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Display comments in the document.
- /// </summary>
- public bool? Comments { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Display content revisions in the document.
- /// </summary>
- public bool? DisplayRevision { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Display formatting revisions in the document.
- /// </summary>
- public bool? Formatting { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Display ink annotations in the document.
- /// </summary>
- public bool? InkAnnotations { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Display visual indicator of the markup area.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RevisionView.Markup))]
+  public bool? Markup 
+  { 
+    get => _Markup ?? GetProperty<bool?>(GetUpdatableElement()?.Markup); 
+    set => UpdateField(ref _Markup, value, nameof(Markup));
+  }
+  private bool? _Markup;
+
+  /// <summary>
+  /// Display comments in the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RevisionView.Comments))]
+  public bool? Comments 
+  { 
+    get => _Comments ?? GetProperty<bool?>(GetUpdatableElement()?.Comments); 
+    set => UpdateField(ref _Comments, value, nameof(Comments));
+  }
+  private bool? _Comments;
+
+  /// <summary>
+  /// Display content revisions in the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RevisionView.DisplayRevision))]
+  public bool? DisplayRevision
+  {
+    get => _DisplayRevision ?? GetProperty<bool?>(GetUpdatableElement()?.DisplayRevision);
+    set => UpdateField(ref _DisplayRevision, value, nameof(DisplayRevision));
+  }
+  private bool? _DisplayRevision;
+
+  /// <summary>
+  /// Display formatting revisions in the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RevisionView.Formatting))]
+  public bool? Formatting
+  {
+    get => _Formatting ?? GetProperty<bool?>(GetUpdatableElement()?.Formatting);
+    set => UpdateField(ref _Formatting, value, nameof(Formatting));
+  }
+  private bool? _Formatting;
+
+  /// <summary>
+  /// Display ink annotations in the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RevisionView.InkAnnotations))]
+  public bool? InkAnnotations 
+  {
+    get => _InkAnnotations ?? GetProperty<bool?>(GetUpdatableElement()?.InkAnnotations);
+    set => UpdateField(ref _InkAnnotations, value, nameof(InkAnnotations));
+  }
+  private bool? _InkAnnotations;
 }

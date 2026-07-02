@@ -9,13 +9,14 @@
 /// Twips provide a precise, integer-based unit for document measurements.
 /// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(TwipsJsonConverter))]
 public sealed partial class Twips: UniversalMeasure
 {
   /// <summary>
   /// Defines the number of twips in one inch.
   /// </summary>
-  protected override double UnitsPerInch => 1440.0;
+  protected override decimal UnitsPerInch => 1440.0m;
 
   #region Constructors
 
@@ -173,9 +174,9 @@ public sealed partial class Twips: UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static Twips Parse(string value) => new Twips(value);
+  public static Twips Parse(string str) => new Twips(str);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
@@ -183,21 +184,14 @@ public sealed partial class Twips: UniversalMeasure
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
   /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// <param name="str">The string representation of the length measure to parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out Twips? result)
+  public static bool TryParse(string str, out Twips? result)
   {
-    try
-    {
-      result = new Twips(value);
-      return true;
-    } catch
-    {
-      result = null;
-      return false;
-    }
+    result = new Twips();
+    return result.TryInit(str);
   }
 
   #endregion

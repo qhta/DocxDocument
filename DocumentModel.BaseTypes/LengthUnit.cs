@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace DocumentModel.BaseTypes.Interfaces;
+﻿namespace DocumentModel.BaseTypes.Interfaces;
 
 /// <summary>
 /// Enumeration of length units supported by ToString or Parse methods of length-related base types.

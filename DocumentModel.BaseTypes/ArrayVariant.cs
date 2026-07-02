@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents a variant that contains an array of elements with a specified base type and bounds.
@@ -49,6 +43,7 @@ namespace DocumentModel;
 /// intArray.Resize(10, VariantType.String); // Now a 10-element string array
 /// </code>
 /// </example>
+[DataContract]
 [JsonConverter(typeof(ArrayVariantJsonConverter))]
 public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVariant>
 {

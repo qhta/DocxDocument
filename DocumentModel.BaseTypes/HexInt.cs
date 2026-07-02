@@ -35,6 +35,7 @@
 ///   formats including Word, Excel, and PowerPoint documents (Office 2007 and later).
 ///   </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(HexIntJsonConverter))]
 public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
 {

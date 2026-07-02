@@ -25,7 +25,7 @@ public partial class HeaderShapeDefaults: ModelElement<DXW.HeaderShapeDefaults>
   /// <summary>
   /// Default shape layout for VML shapes in the header and footer.
   /// </summary>
-  [XmlIgnore, OpenXmlElement(typeof(DXVO.ShapeLayout))]
+  [OpenXmlElement(typeof(DXVO.ShapeLayout))]
   public ShapeLayout? ShapeLayout
   {
     get => _ShapeLayout ??= GetElement<ShapeLayout?, DXVO.ShapeLayout>(GetUpdatableElement());

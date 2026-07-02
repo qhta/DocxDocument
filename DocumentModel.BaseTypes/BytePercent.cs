@@ -36,6 +36,7 @@
 /// </code>
 /// </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(BytePercentJsonConverter))]
 public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercent>, IComparable<BytePercent>
 {

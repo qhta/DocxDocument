@@ -44,6 +44,7 @@
 /// Console.WriteLine(stringVector[1]); // "Middle"
 /// </code>
 /// </example>
+[DataContract]
 [JsonConverter(typeof(VectorVariantJsonConverter))]
 public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
 {

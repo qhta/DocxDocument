@@ -102,9 +102,16 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
    if (oldRel != null)
     parentPart.DeleteExternalRelationship(oldRel.Id);
   }
-
-  var rel = parentPart?.AddExternalRelationship("http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate", new Uri(Uri));
-  Id = rel?.Id;
+  if (Uri == null)
+  {
+    if (System.Uri.TryCreate(Uri, UriKind.Absolute, out var uri))
+    {
+      var rel = parentPart?.AddExternalRelationship(
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate",
+        uri);
+      Id = rel?.Id;
+    }
+  }
  }
 
  /// <summary>

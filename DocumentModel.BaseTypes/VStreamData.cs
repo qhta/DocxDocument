@@ -37,6 +37,7 @@ namespace DocumentModel;
 /// Console.WriteLine($"Size: {streamData.Data.Length} bytes");
 /// </code>
 /// </example>
+[DataContract]
 [JsonConverter(typeof(VStreamDataJsonConverter))]
 public readonly partial struct VStreamData : IEquatable<VStreamData>
 {

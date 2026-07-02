@@ -43,7 +43,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
     if (value.EndsWith("%"))
       return new Zoom
       {
-        Percent = int.Parse(value.TrimEnd('%'))
+        Percent = decimal.Parse(value.TrimEnd('%'))
       };
     else
       return new Zoom
@@ -97,6 +97,54 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
     return Preset?.ToString() ?? Percent?.ToString() ?? base.ToString();
   }
 
+  /// <summary>
+  /// Static method to parse a string representation of a Zoom instance, returning a boolean indicating success or failure.
+  /// </summary>
+  /// <param name="str">The string representation of the Zoom instance.</param>
+  /// <param name="value">The parsed Zoom instance if successful; otherwise, null.</param>
+  /// <returns>True if the string was successfully parsed; otherwise, false.</returns>
+  public static bool TryParse(string str, out Zoom? value)
+  {
+    if (str.EndsWith("%"))
+    {
+      if (decimal.TryParse(str.TrimEnd('%'), out var percent))
+      {
+        value = new Zoom
+        {
+          Percent = percent
+        };
+        return true;
+      }
+      value = null;
+      return false;
+    }
+    else
+    {
+      if (Enum.TryParse<PresetZoom>(str, out var preset))
+      {
+        value = new Zoom
+        {
+          Preset = preset
+        };
+        return true;
+      }
+      value = null;
+      return false;
+    }
+  }
+
+  /// <summary>
+  /// Parses a string representation of a Zoom instance, throwing a FormatException if the string is invalid.
+  /// </summary>
+  /// <param name="str">The string representation of the Zoom instance.</param>
+  /// <returns>The parsed Zoom instance.</returns>
+  /// <exception cref="FormatException">Thrown if the string is not a valid Zoom format.</exception>
+  public static Zoom Parse(string str)
+  {
+    if (TryParse(str, out var value))
+      return value!;
+    throw new FormatException($"Invalid Zoom format: {str}");
+  }
   /// <summary>
   /// Implements equality comparison between two Zoom instances.
   /// </summary>

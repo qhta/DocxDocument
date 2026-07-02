@@ -16,7 +16,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  protected ModelElementCollection()
+  public ModelElementCollection()
   {
   }
 

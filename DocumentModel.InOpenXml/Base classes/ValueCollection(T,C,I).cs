@@ -16,7 +16,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  protected ValueCollection()
+  public ValueCollection()
   {
   }
 

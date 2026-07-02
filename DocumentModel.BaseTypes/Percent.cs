@@ -4,6 +4,7 @@
 /// Represents a percentage value stored as a decimal number.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
 /// </summary>
+[DataContract]
 [JsonConverter(typeof(PercentJsonConverter))]
 public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
 {

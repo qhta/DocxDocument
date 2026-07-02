@@ -58,7 +58,7 @@ public static class EMUTest
     EMU emu2 = "1in";
     var inchEMU = emu2.ToInch();
     Console.WriteLine($"\nâś“ String with unit to EMU: {emu2} ({inchEMU}in)");
-    if (inchEMU != 1.0)
+    if (inchEMU != 1.0m)
     {
       Console.WriteLine("âś— String with unit to EMU conversion FAILED");
       return false;
@@ -180,7 +180,7 @@ public static class EMUTest
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
     EMU original = emu1Inch; // 1 inch
-    double inches = original.ToInch();
+    decimal inches = original.ToInch();
     EMU roundTrip = new EMU($"{inches:F6}in");
     Console.WriteLine($"  Original: {(long)original} EMUs");
     Console.WriteLine($"  To inches: {inches:F6}in");
@@ -535,7 +535,7 @@ public static class EMUTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double inches = testEmu.ToInch();
+      decimal inches = testEmu.ToInch();
     }
     sw.Stop();
     Console.WriteLine($"ToInch() x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -543,7 +543,7 @@ public static class EMUTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testEmu.ToMillimeters();
+      decimal mm = testEmu.ToMillimeters();
     }
     sw.Stop();
     Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");

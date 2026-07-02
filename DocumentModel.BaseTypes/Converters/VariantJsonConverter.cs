@@ -47,6 +47,7 @@ namespace DocumentModel;
 /// Office Open XML variant type specifications.
 /// </para>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(VariantJsonConverter))]
 public class VariantJsonConverter : JsonConverter<Variant>
 {

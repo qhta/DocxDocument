@@ -18,6 +18,7 @@ namespace DocumentModel;
 /// <item><description>Implicit conversions between string and StringList</description></item>
 /// </list>
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(StringListJsonConverter))]
 [SimpleType]
 public partial class StringList : ICollection, ICollection<string>, IEquatable<StringList>, IConvertible

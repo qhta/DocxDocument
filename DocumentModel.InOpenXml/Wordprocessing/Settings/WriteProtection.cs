@@ -19,6 +19,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic provider type used for write protection.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicProviderType))]
+  [Obsolete]
   public CryptProvider? CryptographicProviderType { get => _CryptographicProviderType; set => UpdateField(ref _CryptographicProviderType, value, nameof(CryptographicProviderType)); }
   private CryptProvider? _CryptographicProviderType;
 
@@ -26,6 +27,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic algorithm class used for write protection.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicAlgorithmClass))]
+  [Obsolete]
   public CryptAlgorithmClass? CryptographicAlgorithmClass { get => _CryptographicAlgorithmClass; set => UpdateField(ref _CryptographicAlgorithmClass, value, nameof(CryptographicAlgorithmClass)); }
   private CryptAlgorithmClass? _CryptographicAlgorithmClass;
 
@@ -33,6 +35,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic algorithm type used for write protection.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicAlgorithmType))]
+  [Obsolete]
   public CryptAlgorithm? CryptographicAlgorithmType { get => _CryptographicAlgorithmType; set => UpdateField(ref _CryptographicAlgorithmType, value, nameof(CryptographicAlgorithmType)); }
   private CryptAlgorithm? _CryptographicAlgorithmType;
 
@@ -40,6 +43,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic hashing algorithm identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicAlgorithmSid))]
+  [Obsolete]
   public Int32? CryptographicAlgorithmSid { get => _CryptographicAlgorithmSid; set => UpdateField(ref _CryptographicAlgorithmSid, value, nameof(CryptographicAlgorithmSid)); }
   private Int32? _CryptographicAlgorithmSid;
 
@@ -47,6 +51,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Number of iterations to run the hashing algorithm.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicSpinCount))]
+  [Obsolete]
   public UInt32? CryptographicSpinCount { get => _CryptographicSpinCount; set => UpdateField(ref _CryptographicSpinCount, value, nameof(CryptographicSpinCount)); }
   private UInt32? _CryptographicSpinCount;
 
@@ -54,6 +59,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Name of the cryptographic provider.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicProvider))]
+  [Obsolete]
   public string? CryptographicProvider { get => _CryptographicProvider; set => UpdateField(ref _CryptographicProvider, value, nameof(CryptographicProvider)); }
   private string? _CryptographicProvider;
 
@@ -61,6 +67,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic algorithm extensibility identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.AlgorithmIdExtensibility))]
+  [Obsolete]
   public HexInt? AlgorithmIdExtensibility { get => _AlgorithmIdExtensibility; set => UpdateField(ref _AlgorithmIdExtensibility, value, nameof(AlgorithmIdExtensibility)); }
   private HexInt? _AlgorithmIdExtensibility;
 
@@ -68,6 +75,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Source for the algorithm extensibility identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.AlgorithmIdExtensibilitySource))]
+  [Obsolete]
   public string? AlgorithmIdExtensibilitySource { get => _AlgorithmIdExtensibilitySource; set => UpdateField(ref _AlgorithmIdExtensibilitySource, value, nameof(AlgorithmIdExtensibilitySource)); }
   private string? _AlgorithmIdExtensibilitySource;
 
@@ -75,6 +83,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Cryptographic provider type extensibility identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicProviderTypeExtensibility))]
+  [Obsolete]
   public HexInt? CryptographicProviderTypeExtensibility { get => _CryptographicProviderTypeExtensibility; set => UpdateField(ref _CryptographicProviderTypeExtensibility, value, nameof(CryptographicProviderTypeExtensibility)); }
   private HexInt? _CryptographicProviderTypeExtensibility;
 
@@ -82,6 +91,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Source for the cryptographic provider type extensibility identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.CryptographicProviderTypeExtSource))]
+  [Obsolete]  
   public string? CryptographicProviderTypeExtSource { get => _CryptographicProviderTypeExtSource; set => UpdateField(ref _CryptographicProviderTypeExtSource, value, nameof(CryptographicProviderTypeExtSource)); }
   private string? _CryptographicProviderTypeExtSource;
 
@@ -89,6 +99,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Password hash value for write protection.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.Hash))]
+  [Obsolete]
   public Base64Binary? Hash { get => _Hash; set => UpdateField(ref _Hash, value, nameof(Hash)); }
   private Base64Binary? _Hash;
 
@@ -96,6 +107,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Salt value for password verifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.Salt))]
+  [Obsolete]
   public Base64Binary? Salt { get => _Salt; set => UpdateField(ref _Salt, value, nameof(Salt)); }
   private Base64Binary? _Salt;
 
@@ -103,6 +115,7 @@ public partial class WriteProtection : ModelElement<DXW.WriteProtection>
   /// Name of the specific cryptographic hashing algorithm used with the salt and input password.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.WriteProtection.AlgorithmName))]
+  [Obsolete]
   public string? AlgorithmName { get => _AlgorithmName; set => UpdateField(ref _AlgorithmName, value, nameof(AlgorithmName)); }
   private string? _AlgorithmName;
 

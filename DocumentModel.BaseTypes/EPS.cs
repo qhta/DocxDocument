@@ -10,13 +10,14 @@
 /// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
 /// </remarks>
+[DataContract]
 [JsonConverter(typeof(EPSJsonConverter))]
 public partial class EPS : UniversalMeasure
 {
   /// <summary>
   /// Defines the number of eighth-points in one inch.
   /// </summary>
-  protected override double UnitsPerInch => 72*8;
+  protected override decimal UnitsPerInch => 72*8;
 
   #region Constructors
 
@@ -72,9 +73,16 @@ public partial class EPS : UniversalMeasure
   {
     Init(value);
   }
+  /// <summary>
+  /// Initializes a new instance of the <see cref="EPS"/> from a 128-bit decimal value.
+  /// </summary>
+  /// <param name="value">The value in half-points.</param>
+  public EPS(Decimal value)
+  {
+    Init(value);
+  }
 
   #endregion
-
 
   #region Static Factory Methods
 
@@ -109,9 +117,9 @@ public partial class EPS : UniversalMeasure
   /// </summary>
   /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+  /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static EPS Parse(string value) => new EPS(value);
+  public static EPS Parse(string str) => new EPS(str);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -141,22 +149,14 @@ public partial class EPS : UniversalMeasure
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
   /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// <param name="str">The string representation of the length measure to parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string value, out EPS? result)
+  public static bool TryParse(string str, out EPS? result)
   {
-    try
-    {
-      result = new EPS(value);
-      return true;
-    }
-    catch
-    {
-      result = null!;
-      return false;
-    }
+    result = new EPS();
+    return result.TryInit(str);
   }
 
   #endregion
