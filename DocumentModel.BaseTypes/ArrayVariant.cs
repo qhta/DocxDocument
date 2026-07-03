@@ -57,7 +57,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// Initializes a new instance of the <see cref="ArrayVariant"/> class with default settings.
   /// </summary>
   /// <remarks>
-  /// The array is Icreated with no elements and must be resized before use.
+  /// The array is created with no elements and must be resized before use.
   /// The <see cref="VariantType"/> is set to <see cref="VariantType.Array"/>.
   /// </remarks>
   public ArrayVariant(): base(VariantType.Array)

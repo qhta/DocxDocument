@@ -8,27 +8,31 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [XmlRoot("ReadModeInkLockDown", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class ReadModeInkLockDown : ModelElement<DXW.ReadModeInkLockDown>
 {
- /// <summary>
- /// Indicates whether actual pages are used instead of virtual pages for layout, affecting how ink content is rendered and paginated.
- /// </summary>
- public bool? UseActualPages { get => _UseActualPages; set => UpdateField(ref _UseActualPages, value, nameof(UseActualPages)); }
- private bool? _UseActualPages;
+  /// <summary>
+  /// Indicates whether actual pages are used instead of virtual pages for layout, affecting how ink content is rendered and paginated.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ReadModeInkLockDown.UseActualPages))]
+  public bool? UseActualPages { get => _UseActualPages; set => UpdateField(ref _UseActualPages, value, nameof(UseActualPages)); }
+  private bool? _UseActualPages;
 
- /// <summary>
- /// The width of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
- /// </summary>
- public PixelsMeasure? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
- private PixelsMeasure? _Width;
+  /// <summary>
+  /// The width of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ReadModeInkLockDown.Width))]
+  public PixelsMeasure? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+  private PixelsMeasure? _Width;
 
- /// <summary>
- /// The height of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
- /// </summary>
- public PixelsMeasure? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
- private PixelsMeasure? _Height;
+  /// <summary>
+  /// The height of the virtual page, specified in units relevant to the document, used for layout calculations in read mode.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ReadModeInkLockDown.Height))]
+  public PixelsMeasure? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+  private PixelsMeasure? _Height;
 
- /// <summary>
- /// The scaling factor for font size, specified as a string, used to adjust text size for consistent appearance in read mode.
- /// </summary>
- public Percent? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
- private Percent? _FontSize;
+  /// <summary>
+  /// The scaling factor for font size, specified as a string, used to adjust text size for consistent appearance in read mode.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ReadModeInkLockDown.FontSize))]
+  public Percent? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
+  private Percent? _FontSize;
 }

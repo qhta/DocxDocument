@@ -51,7 +51,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// It can be an OpenXmlElement or any other object that represents the data source for this model.
   /// If null, no updates will be performed.
   /// </summary>
-  public virtual OpenXmlType? GetUpdatableElement()
+  public OpenXmlType? GetUpdatableElement()
   {
     return base.GetUpdatableObject() as OpenXmlType;
   }
@@ -140,7 +140,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool LoadData()
   {
-    var updatableObject = GetUpdatableElement();
+    var updatableObject = GetUpdatableObject();
     if (updatableObject != null)
     {
       LoadData(updatableObject);
@@ -154,7 +154,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool UpdateData()
   {
-    var updatableObject = GetUpdatableElement();
+    var updatableObject = GetUpdatableObject();
     if (updatableObject != null)
     {
       UpdateData(updatableObject);
@@ -168,6 +168,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public bool HasDirectAccess => GetUpdatableElement() != null 
+  public bool HasDirectAccess => GetUpdatableObject() != null 
                                  && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
 }

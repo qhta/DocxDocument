@@ -274,23 +274,53 @@ public static class TestHelper
       }
       else if (propType == typeof(Twips))
       {
-        prop.SetValue(instance, new Twips((Decimal)(Random.Shared.NextDouble() * 50_000)));
+        var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
+        var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
+        if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
+        {
+          val = System.Math.Min(val,(Decimal)maxValueAttr.MaxValue);
+        }
+        prop.SetValue(instance, new Twips(val));
       }
       else if (propType == typeof(EMU))
       {
-        prop.SetValue(instance, new EMU((Decimal)(Random.Shared.NextDouble() * 50_000)));
+        var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
+        var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
+        if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
+        {
+          val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
+        }
+        prop.SetValue(instance, new EMU(val));
       }
       else if (propType == typeof(EPS))
       {
-        prop.SetValue(instance, new EPS((Decimal)(Random.Shared.NextDouble() * 50_000)));
+        var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
+        var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
+        if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
+        {
+          val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
+        }
+        prop.SetValue(instance, new EPS(val));
       }
       else if (propType == typeof(HPS))
       {
-        prop.SetValue(instance, new HPS((Decimal)(Random.Shared.NextDouble() * 50_000)));
+        var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
+        var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
+        if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
+        {
+          val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
+        }
+        prop.SetValue(instance, new HPS(val));
       }
       else if (propType == typeof(PTS))
       {
-        prop.SetValue(instance, new PTS((Decimal)(Random.Shared.NextDouble() * 50_000)));
+        var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
+        var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
+        if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
+        {
+          val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
+        }
+        prop.SetValue(instance, new PTS(val));
       }
       else if (propType == typeof(Variant))
       {
@@ -320,7 +350,10 @@ public static class TestHelper
         && !elementType.IsAbstract)
     {
       var n = Random.Shared.Next(2, 5); // Random number of elements to add
-
+      if (instance is ILimitedCollection collection)
+      {
+        n = System.Math.Min(n, collection.MaxCount);
+      }
       if (elementType == typeof(string))
       {
         for (var i = 0; i < n; i++)
@@ -345,7 +378,6 @@ public static class TestHelper
         }
       }
     }
-
   }
 
   /// <summary>

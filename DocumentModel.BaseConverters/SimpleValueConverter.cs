@@ -53,7 +53,6 @@ public static class SimpleValueConverter
     { typeof(PTS), typeof(PTSConverter) },
     { typeof(Degrees), typeof(DegreesConverter) },
     { typeof(Percentage), typeof(PercentageConverter) },
-
   };
 
   /// <summary>
@@ -81,31 +80,44 @@ public static class SimpleValueConverter
       {
         var converterType = kvp.Value;
         //Debug.WriteLine($"SimpleValueConverter: Initializing converter for {converterType.Name}");
-        var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
-          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-        var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
-          BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
-        if (conversionToMapField != null && conversionFromMapField != null)
-        {
-          var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
-          var conversionFromMap = (ConversionFromMap)conversionFromMapField.GetValue(null)!;
-          ConversionToMap.Append(conversionToMap);
-          ConversionFromMap.Append(conversionFromMap);
-        }
-        else
-        {
-          throw new InvalidOperationException(
-            $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
-        }
+        RegisterConverterType(converterType);
       }
     } catch (Exception ex)
     {
       Debug.WriteLine(ex);
       throw;
     }
-
-
   }
+
+  /// <summary>
+  /// Registers the conversion methods from a specific converter type into the global conversion maps.
+  /// It retrieves the static fields named ConversionToMap and ConversionFromMap from the converter type
+  /// and appends their contents to the global ConversionToMap and ConversionFromMap, respectively.
+  /// If the required fields are not found, an InvalidOperationException is thrown.
+  /// </summary>
+  /// <param name="converterType"></param>
+  /// <exception cref="InvalidOperationException"></exception>
+  public static void RegisterConverterType(Type converterType)
+  {
+    var conversionToMapField = converterType.GetField(nameof(ConversionToMap),
+      BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+    var conversionFromMapField = converterType.GetField(nameof(ConversionFromMap),
+      BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+    if (conversionToMapField != null && conversionFromMapField != null)
+    {
+      var conversionToMap = (ConversionToMap)conversionToMapField.GetValue(null)!;
+      var conversionFromMap = (ConversionFromMap)conversionFromMapField.GetValue(null)!;
+      ConversionToMap.Append(conversionToMap);
+      ConversionFromMap.Append(conversionFromMap);
+    }
+    else
+    {
+      throw new InvalidOperationException(
+        $"Converter type {converterType.FullName} must have static fields named {nameof(ConversionToMap)} and {nameof(ConversionFromMap)}.");
+    }
+  }
+
+
 
   /// <summary>
   /// Provides a mapping from custom measurement types to their corresponding base numeric types.

@@ -16,12 +16,12 @@ public static partial class OpenXmlModelConverter
   /// <summary>
   /// Represents a collection of delegates to convert a type from OpenXml.
   /// </summary>
-  public static readonly Dictionary<Type, ConvertFromOpenXml> ConvertFromOpenXmlDelegates = new();
+  public static readonly Dictionary<Type, ConvertFromOpenXmlDelegate> ConvertFromOpenXmlDelegates = new();
 
   /// <summary>
   /// Represents a collection of delegates to convert a type to OpenXml.
   /// </summary>
-  public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenXmlDelegates = new();
+  public static readonly Dictionary<Type, ConvertToOpenXmlDelegate> ConvertToOpenXmlDelegates = new();
 
   /// <summary>
   /// Converts a model object to an Open XML element of the specified type.
@@ -29,13 +29,13 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelObject">The model object to convert.</param>
   /// <param name="openXmlType">The target Open XML type.</param>
   /// <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
-  /// <returns>The Icreated Open XML element, or null if the input is null.</returns>
+  /// <returns>The created Open XML element, or null if the input is null.</returns>
   public static object? ConvertTo(object? modelObject, Type openXmlType)
   {
     if (modelObject == null)
       return null;
 
-    if (openXmlType == typeof(DXD.Dark1Color)) Debug.Assert(true);
+    if (openXmlType == typeof(DXW.ReadModeInkLockDown)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -85,7 +85,7 @@ public static partial class OpenXmlModelConverter
   /// <summary>
   /// Converts an OpenXML element to an instance of the specified model type.
   /// </summary>
-  /// <remarks>The returned object is Icreated using the default constructor of the specified model type. Ensure
+  /// <remarks>The returned object is created using the default constructor of the specified model type. Ensure
   /// that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
   /// <paramref name="openXmlObject"/>.</remarks>
   /// <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
@@ -209,6 +209,7 @@ public static partial class OpenXmlModelConverter
     bool updated = false;
     foreach (var modelProperty in modelType.GetModelProperties())
     {
+      if (modelProperty.Name == "ReadModeInkLockDown") Debug.Assert(true);
       if (UpdateData(modelObject, modelProperty, openXmlObject, openXmlType)) updated = true;
     }
     return updated;
@@ -265,7 +266,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name == "ColorScheme") Debug.Assert(true);
+    if (modelProperty.Name == "Width") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;

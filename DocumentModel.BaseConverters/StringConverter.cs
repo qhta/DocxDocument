@@ -61,7 +61,7 @@ public static class StringConverter
   /// Creates an instance of StringType and sets its Val property.
   /// </summary>
   /// <param name="value">The string value to set.</param>
-  /// <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
+  /// <param name="targetType">The target type for the created StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
   public static DXW.StringType? ConvertToStringType(String? value, Type targetType)
   {
@@ -92,7 +92,7 @@ public static class StringConverter
   /// Creates an instance of String255Type and sets its Val property.
   /// </summary>
   /// <param name="value">The string value to set</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String255Type.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of String255Type.</param>
   /// <returns>Created String255Type instance or null if value is null.</returns>
   public static DXW.String255Type? ConvertToString255Type(String? value, Type targetType)
   {
@@ -123,7 +123,7 @@ public static class StringConverter
   /// Creates an instance of String253Type and sets its Val property.
   /// </summary>
   /// <param name="value">The string value to set</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String253Type.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of String253Type.</param>
   /// <returns>Created String253Type instance or null if value is null.</returns>
   public static DXW.String253Type? ConvertToString253Type(String? value, Type targetType)
   {
@@ -154,7 +154,7 @@ public static class StringConverter
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(string? value, Type targetType)
   {
@@ -190,7 +190,7 @@ public static class StringConverter
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(string? value, Type targetType)
   {
@@ -230,7 +230,7 @@ public static class StringConverter
   /// Creates an OpenXml EnumValue and sets its value or text property.
   /// </summary>
   /// <param name="value">The string value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlSimpleType? ConvertToOpenXmlSimpleType(string? value, Type targetType)
   {

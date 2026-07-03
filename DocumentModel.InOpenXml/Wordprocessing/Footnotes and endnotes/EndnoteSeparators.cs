@@ -6,7 +6,9 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.EndnoteSpecialReference))]
 [DataContract]
 [XmlRoot("EndnoteSeparators", Namespace = "DocumentModel.Wordprocessing")]
-public class EndnoteSeparators : ModelElementCollection<EndnoteSeparator, DXW.EndnoteDocumentWideProperties, DXW.EndnoteSpecialReference>
+public class EndnoteSeparators : 
+  ModelElementCollection<EndnoteSeparator, DXW.EndnoteDocumentWideProperties, DXW.EndnoteSpecialReference>, 
+  ILimitedCollection
 {
   /// <summary>
   /// Default constructor for the <see cref = "EndnoteSeparators"/> class, initializing a new instance of the collection without a parent element.
@@ -25,4 +27,10 @@ public class EndnoteSeparators : ModelElementCollection<EndnoteSeparator, DXW.En
   {
 
   }
+
+  /// <summary>
+  /// Gets the maximum number of footnote separators allowed in the collection, which is 3.
+  /// </summary>
+  public int MaxCount => 3;
+
 }

@@ -40,7 +40,7 @@
             Creates an OpenXml StringValue from an Base64Binary value.
             </summary>
             <param name="value">The Base64Binary value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Base64BinaryConverter.ConvertFromString(System.String)">
@@ -70,7 +70,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Base64Binary value.
             </summary>
             <param name="value">The Base64Binary value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Base64BinaryConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -574,7 +574,7 @@
             Creates an OpenXml StringValue from an Byte value.
             </summary>
             <param name="value">The Byte value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.ByteConverter.ConvertFromString(System.String)">
@@ -604,7 +604,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Byte value.
             </summary>
             <param name="value">The Byte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.ByteConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -619,7 +619,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Byte value.
             </summary>
             <param name="value">The Byte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.ByteConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -634,7 +634,7 @@
             Creates an OpenXml HexBinaryValue from an Byte value.
             </summary>
             <param name="value">The Byte value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.ByteConverter.ConvertTo(System.Nullable{System.Byte},System.Type)">
@@ -805,7 +805,7 @@
             Creates an OpenXml StringValue from an BytePercent value.
             </summary>
             <param name="value">The BytePercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.BytePercentConverter.ConvertFromString(System.String)">
@@ -835,7 +835,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an BytePercent value.
             </summary>
             <param name="value">The BytePercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.BytePercentConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -850,7 +850,7 @@
             Creates an OpenXml OpenXmlLeafElement from an BytePercent value.
             </summary>
             <param name="value">The BytePercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.BytePercentConverter.ConvertTo(System.Nullable{DocumentModel.BytePercent},System.Type)">
@@ -1063,7 +1063,7 @@
             Creates an OpenXml StringValue from an DateTime value.
             </summary>
             <param name="value">The DateTime value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DateTimeConverter.ConvertFromString(System.String)">
@@ -1093,7 +1093,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an DateTime value.
             </summary>
             <param name="value">The DateTime value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DateTimeConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -1108,7 +1108,7 @@
             Creates an OpenXml OpenXmlLeafElement from an DateTime value.
             </summary>
             <param name="value">The DateTime value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DateTimeConverter.ConvertTo(System.Nullable{System.DateTime},System.Type)">
@@ -1167,7 +1167,7 @@
             Creates an OpenXml StringValue from an Decimal value.
             </summary>
             <param name="value">The Decimal value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DecimalConverter.ConvertFromString(System.String)">
@@ -1197,7 +1197,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Decimal value.
             </summary>
             <param name="value">The Decimal value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DecimalConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -1212,7 +1212,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Decimal value.
             </summary>
             <param name="value">The Decimal value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DecimalConverter.ConvertTo(System.Nullable{System.Decimal},System.Type)">
@@ -1269,7 +1269,7 @@
             Creates an OpenXml StringValue from an Degrees value.
             </summary>
             <param name="value">The Degrees value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromString(System.String)">
@@ -1299,7 +1299,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Degrees value.
             </summary>
             <param name="value">The Degrees value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -1314,7 +1314,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Degrees value.
             </summary>
             <param name="value">The Degrees value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertTo(System.Nullable{DocumentModel.Degrees},System.Type)">
@@ -1380,7 +1380,7 @@
             Creates an OpenXmlLeafTextElement and sets its value or text property.
             </summary>
             <param name="value">The Double value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DoubleConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -1395,7 +1395,7 @@
             Creates an OpenXmlLeafElement and sets its value or text property.
             </summary>
             <param name="value">The Double value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.DoubleConverter.ConvertTo(System.Nullable{System.Double},System.Type)">
@@ -1507,7 +1507,7 @@
             Creates an OpenXml StringValue from an EMU value.
             </summary>
             <param name="value">The EMU value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromString(System.String)">
@@ -1537,7 +1537,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an EMU value.
             </summary>
             <param name="value">The EMU value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -1552,7 +1552,7 @@
             Creates an OpenXml OpenXmlLeafElement from an EMU value.
             </summary>
             <param name="value">The EMU value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EMUConverter.ConvertTo(DocumentModel.EMU,System.Type)">
@@ -1761,7 +1761,7 @@
             <summary>
             Creates a mapping between model enum values and target type values.
             Target type can be either OpenXml EnumValues type, OpenXml EnumValue&lt;&gt; type, or String type,
-            and the mapping is Icreated based on the attributes on the model enum fields and the structure of the target type.
+            and the mapping is created based on the attributes on the model enum fields and the structure of the target type.
             </summary>
             <param name="modelEnumType">The model enum type.</param>
             <param name="targetType">The target type.</param>
@@ -1806,7 +1806,7 @@
             Creates an OpenXml EnumValue from an Enum value.
             </summary>
             <param name="value">The Enum value to convert.</param>
-            <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
             <returns>A new EnumValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.ConvertFromIEnumValue(DocumentFormat.OpenXml.IEnumValue,System.Type)">
@@ -1822,7 +1822,7 @@
             Creates an OpenXml IEnumValue from an Enum value.
             </summary>
             <param name="value">The Enum value to convert.</param>
-            <param name="openXmlType">The target OpenXmlValues type for the Icreated IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
             <returns>A new IEnumValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value,System.Type)">
@@ -1884,7 +1884,7 @@
             Creates an OpenXmlLeafTextElement from an Enum value.
             </summary>
             <param name="value">The Enum value to convert.</param>
-            <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
             <returns>A new EnumValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement,System.Type)">
@@ -1900,7 +1900,7 @@
             Creates an OpenXmlLeafElement from an Enum value.
             </summary>
             <param name="value">The Enum value to convert.</param>
-            <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
             <returns>A new EnumValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.ConvertFromOpenXmlEnumValueToString(DocumentFormat.OpenXml.OpenXmlSimpleType)">
@@ -1915,7 +1915,7 @@
             Creates an OpenXml EnumValue from an Enum value.
             </summary>
             <param name="value">The Enum value to convert.</param>
-            <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
+            <param name="openXmlType">The target OpenXmlValues type for the created EnumValue instance. Must be of OpenXml EnumValue type.</param>
             <returns>A new EnumValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.TryConvertTo(System.Object,System.Type,System.Object@)">
@@ -2051,7 +2051,7 @@
             Creates an OpenXml StringValue from an EPS value.
             </summary>
             <param name="value">The EPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromString(System.String)">
@@ -2081,7 +2081,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an EPS value.
             </summary>
             <param name="value">The EPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2096,7 +2096,7 @@
             Creates an OpenXml OpenXmlLeafElement from an EPS value.
             </summary>
             <param name="value">The EPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.EPSConverter.ConvertTo(DocumentModel.EPS,System.Type)">
@@ -2139,7 +2139,7 @@
             Creates an OpenXml StringValue from an Guid value.
             </summary>
             <param name="value">The Guid value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.GuidConverter.ConvertFromString(System.String)">
@@ -2169,7 +2169,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Guid value.
             </summary>
             <param name="value">The Guid value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.GuidConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2184,7 +2184,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Guid value.
             </summary>
             <param name="value">The Guid value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.GuidConverter.ConvertTo(System.Nullable{System.Guid},System.Type)">
@@ -2243,7 +2243,7 @@
             Creates an OpenXml StringValue from an HexBinary value.
             </summary>
             <param name="value">The HexBinary value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexBinaryConverter.ConvertFromString(System.String)">
@@ -2273,7 +2273,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexBinary value.
             </summary>
             <param name="value">The HexBinary value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexBinaryConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2474,7 +2474,7 @@
             Creates an OpenXml StringValue from an HexByte value.
             </summary>
             <param name="value">The HexByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -2489,7 +2489,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexByte value.
             </summary>
             <param name="value">The HexByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -2504,7 +2504,7 @@
             Creates an OpenXml HexBinaryValue from an HexByte value.
             </summary>
             <param name="value">The HexByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2519,7 +2519,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HexByte value.
             </summary>
             <param name="value">The HexByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertFromString(System.String)">
@@ -2703,7 +2703,7 @@
             Creates an OpenXml StringValue from an HexChar value.
             </summary>
             <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -2718,7 +2718,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexChar value.
             </summary>
             <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -2733,7 +2733,7 @@
             Creates an OpenXml HexBinaryValue from an HexChar value.
             </summary>
             <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2748,7 +2748,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HexChar value.
             </summary>
             <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromString(System.String)">
@@ -2932,7 +2932,7 @@
             Creates an OpenXml StringValue from an RGB value.
             </summary>
             <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -2947,7 +2947,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an RGB value.
             </summary>
             <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -2962,7 +2962,7 @@
             Creates an OpenXml HexBinaryValue from an RGB value.
             </summary>
             <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -2977,7 +2977,7 @@
             Creates an OpenXml OpenXmlLeafElement from an RGB value.
             </summary>
             <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromString(System.String)">
@@ -3161,7 +3161,7 @@
             Creates an OpenXml StringValue from an HexInt value.
             </summary>
             <param name="value">The HexInt value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexIntConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -3176,7 +3176,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexInt value.
             </summary>
             <param name="value">The HexInt value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexIntConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -3191,7 +3191,7 @@
             Creates an OpenXml HexBinaryValue from an HexInt value.
             </summary>
             <param name="value">The HexInt value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexIntConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -3206,7 +3206,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HexInt value.
             </summary>
             <param name="value">The HexInt value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexIntConverter.ConvertFromString(System.String)">
@@ -3390,7 +3390,7 @@
             Creates an OpenXml StringValue from an HexLong value.
             </summary>
             <param name="value">The HexLong value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexLongConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -3405,7 +3405,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexLong value.
             </summary>
             <param name="value">The HexLong value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexLongConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -3420,7 +3420,7 @@
             Creates an OpenXml HexBinaryValue from an HexLong value.
             </summary>
             <param name="value">The HexLong value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexLongConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -3435,7 +3435,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HexLong value.
             </summary>
             <param name="value">The HexLong value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexLongConverter.ConvertFromString(System.String)">
@@ -3507,7 +3507,7 @@
             Creates an OpenXml StringValue from an HexPercent value.
             </summary>
             <param name="value">The HexPercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -3522,7 +3522,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HexPercent value.
             </summary>
             <param name="value">The HexPercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -3537,7 +3537,7 @@
             Creates an OpenXml HexBinaryValue from an HexPercent value.
             </summary>
             <param name="value">The HexPercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -3552,7 +3552,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HexPercent value.
             </summary>
             <param name="value">The HexPercent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromString(System.String)">
@@ -3680,7 +3680,7 @@
             Creates an OpenXml StringValue from an HPS value.
             </summary>
             <param name="value">The HPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromString(System.String)">
@@ -3710,7 +3710,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an HPS value.
             </summary>
             <param name="value">The HPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -3725,7 +3725,7 @@
             Creates an OpenXml OpenXmlLeafElement from an HPS value.
             </summary>
             <param name="value">The HPS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.HPSConverter.ConvertTo(DocumentModel.HPS,System.Type)">
@@ -3894,7 +3894,7 @@
             Creates an OpenXml StringValue from an Int16 value.
             </summary>
             <param name="value">The Int16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int16Converter.ConvertFromString(System.String)">
@@ -3924,7 +3924,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Int16 value.
             </summary>
             <param name="value">The Int16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int16Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -3939,7 +3939,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Int16 value.
             </summary>
             <param name="value">The Int16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int16Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -3954,7 +3954,7 @@
             Creates an OpenXml HexBinaryValue from an Int16 value.
             </summary>
             <param name="value">The Int16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int16Converter.ConvertTo(System.Nullable{System.Int16},System.Type)">
@@ -4125,7 +4125,7 @@
             Creates an OpenXml StringValue from an Int32 value.
             </summary>
             <param name="value">The Int32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int32Converter.ConvertFromString(System.String)">
@@ -4155,7 +4155,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Int32 value.
             </summary>
             <param name="value">The Int32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int32Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -4170,7 +4170,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Int32 value.
             </summary>
             <param name="value">The Int32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int32Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -4185,7 +4185,7 @@
             Creates an OpenXml HexBinaryValue from an Int32 value.
             </summary>
             <param name="value">The Int32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int32Converter.ConvertTo(System.Nullable{System.Int32},System.Type)">
@@ -4354,7 +4354,7 @@
             Creates an OpenXml StringValue from an Int64 value.
             </summary>
             <param name="value">The Int64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int64Converter.ConvertFromString(System.String)">
@@ -4384,7 +4384,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Int64 value.
             </summary>
             <param name="value">The Int64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int64Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -4399,7 +4399,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Int64 value.
             </summary>
             <param name="value">The Int64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int64Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -4414,7 +4414,7 @@
             Creates an OpenXml HexBinaryValue from an Int64 value.
             </summary>
             <param name="value">The Int64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.Int64Converter.ConvertTo(System.Nullable{System.Int64},System.Type)">
@@ -4645,7 +4645,7 @@
             <param name="modelObject">The model object to convert.</param>
             <param name="openXmlType">The target Open XML type.</param>
             <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
-            <returns>The Icreated Open XML element, or null if the input is null.</returns>
+            <returns>The created Open XML element, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertTo``2(``0)">
             <summary>
@@ -4660,7 +4660,7 @@
             <summary>
             Converts an OpenXML element to an instance of the specified model type.
             </summary>
-            <remarks>The returned object is Icreated using the default constructor of the specified model type. Ensure
+            <remarks>The returned object is created using the default constructor of the specified model type. Ensure
             that <paramref name="modelType"/> has a public parameterless constructor and is compatible with the data in
             <paramref name="openXmlObject"/>.</remarks>
             <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
@@ -5372,7 +5372,7 @@
             </remarks>
             <returns>A method info is found; otherwise, null.</returns>
         </member>
-        <member name="T:DocumentModel.OpenXml.ConvertFromOpenXml">
+        <member name="T:DocumentModel.OpenXml.ConvertFromOpenXmlDelegate">
             <summary>
             Defines a delegate to convert an object from OpenXml to a model type.
             </summary>
@@ -5380,7 +5380,7 @@
             <param name="modelType">Model object type to convert to.</param>
             <returns>Converted model object of the specified type.</returns>
         </member>
-        <member name="T:DocumentModel.OpenXml.ConvertToOpenXml">
+        <member name="T:DocumentModel.OpenXml.ConvertToOpenXmlDelegate">
             <summary>
             Defines a delegate to convert an object from a model to OpenXml.
             </summary>
@@ -5461,7 +5461,7 @@
             Creates an OpenXml StringValue from an Percentage value.
             </summary>
             <param name="value">The Percentage value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromString(System.String)">
@@ -5491,7 +5491,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Percentage value.
             </summary>
             <param name="value">The Percentage value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -5506,7 +5506,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Percentage value.
             </summary>
             <param name="value">The Percentage value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertTo(System.Nullable{DocumentModel.Percentage},System.Type)">
@@ -5675,7 +5675,7 @@
             Creates an OpenXml StringValue from an Percent value.
             </summary>
             <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromString(System.String)">
@@ -5705,7 +5705,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Percent value.
             </summary>
             <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -5720,7 +5720,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Percent value.
             </summary>
             <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertTo(System.Nullable{DocumentModel.Percent},System.Type)">
@@ -5833,7 +5833,7 @@
             Creates an OpenXml StringValue from an PTS value.
             </summary>
             <param name="value">The PTS value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromString(System.String)">
@@ -5863,7 +5863,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an PTS value.
             </summary>
             <param name="value">The PTS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -5878,7 +5878,7 @@
             Creates an OpenXml OpenXmlLeafElement from an PTS value.
             </summary>
             <param name="value">The PTS value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.PTSConverter.ConvertTo(DocumentModel.PTS,System.Type)">
@@ -6047,7 +6047,7 @@
             Creates an OpenXml StringValue from an SByte value.
             </summary>
             <param name="value">The SByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SByteConverter.ConvertFromString(System.String)">
@@ -6077,7 +6077,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an SByte value.
             </summary>
             <param name="value">The SByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SByteConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -6092,7 +6092,7 @@
             Creates an OpenXml OpenXmlLeafElement from an SByte value.
             </summary>
             <param name="value">The SByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SByteConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -6107,7 +6107,7 @@
             Creates an OpenXml HexBinaryValue from an SByte value.
             </summary>
             <param name="value">The SByte value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SByteConverter.ConvertTo(System.Nullable{System.SByte},System.Type)">
@@ -6154,6 +6154,16 @@
             <summary>
             Initializes the conversion maps by registering specific converters for each supported type. This method should be called once during application startup to ensure that all conversions are properly set up.
             </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.SimpleValueConverter.RegisterConverterType(System.Type)">
+            <summary>
+            Registers the conversion methods from a specific converter type into the global conversion maps.
+            It retrieves the static fields named ConversionToMap and ConversionFromMap from the converter type
+            and appends their contents to the global ConversionToMap and ConversionFromMap, respectively.
+            If the required fields are not found, an InvalidOperationException is thrown.
+            </summary>
+            <param name="converterType"></param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
         <member name="F:DocumentModel.OpenXml.SimpleValueConverter.BaseTypeMappings">
@@ -6272,7 +6282,7 @@
             Creates an OpenXmlLeafTextElement and sets its value or text property.
             </summary>
             <param name="value">The Single value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SingleConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -6287,7 +6297,7 @@
             Creates an OpenXmlLeafElement and sets its value or text property.
             </summary>
             <param name="value">The Single value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SingleConverter.ConvertTo(System.Nullable{System.Single},System.Type)">
@@ -6338,7 +6348,7 @@
             Creates an instance of StringType and sets its Val property.
             </summary>
             <param name="value">The string value to set.</param>
-            <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
+            <param name="targetType">The target type for the created StringType instance. Must be a subclass of StringType.</param>
             <returns>Created StringType instance or null if element is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromString255Type(DocumentFormat.OpenXml.Wordprocessing.String255Type)">
@@ -6353,7 +6363,7 @@
             Creates an instance of String255Type and sets its Val property.
             </summary>
             <param name="value">The string value to set</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String255Type.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of String255Type.</param>
             <returns>Created String255Type instance or null if value is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromString253Type(DocumentFormat.OpenXml.Wordprocessing.String253Type)">
@@ -6368,7 +6378,7 @@
             Creates an instance of String253Type and sets its Val property.
             </summary>
             <param name="value">The string value to set</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String253Type.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of String253Type.</param>
             <returns>Created String253Type instance or null if value is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -6383,7 +6393,7 @@
             Creates an OpenXmlLeafTextElement and sets its value or text property.
             </summary>
             <param name="value">The string value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -6398,7 +6408,7 @@
             Creates an OpenXmlLeafElement and sets its value or text property.
             </summary>
             <param name="value">The string value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromOpenXmlSimpleType(DocumentFormat.OpenXml.OpenXmlSimpleType)">
@@ -6413,7 +6423,7 @@
             Creates an OpenXml EnumValue and sets its value or text property.
             </summary>
             <param name="value">The string value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringConverter.ConvertFromUri(System.Uri)">
@@ -6499,7 +6509,7 @@
             Creates an instance of StringType and sets its Val property.
             </summary>
             <param name="value">The StringList value to set.</param>
-            <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
+            <param name="targetType">The target type for the created StringType instance. Must be a subclass of StringType.</param>
             <returns>Created StringType instance or null if element is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringListConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -6514,7 +6524,7 @@
             Creates an OpenXmlLeafTextElement and sets its value or text property.
             </summary>
             <param name="value">The StringList value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringListConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -6529,7 +6539,7 @@
             Creates an OpenXmlLeafElement and sets its value or text property.
             </summary>
             <param name="value">The StringList value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringListConverter.GetValue(DocumentFormat.OpenXml.OpenXmlSimpleType)">
@@ -6544,7 +6554,7 @@
             Creates an OpenXml EnumValue and sets its value or text property.
             </summary>
             <param name="value">The StringList value to set.</param>
-            <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
+            <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
             <returns>A new instance of the specified OpenXml element type with the value set.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.StringListConverter.ConvertTo(DocumentModel.StringList,System.Type)">
@@ -6741,7 +6751,7 @@
             Creates an OpenXml StringValue from an Twips value.
             </summary>
             <param name="value">The Twips value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromString(System.String)">
@@ -6771,7 +6781,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an Twips value.
             </summary>
             <param name="value">The Twips value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -6786,7 +6796,7 @@
             Creates an OpenXml OpenXmlLeafElement from an Twips value.
             </summary>
             <param name="value">The Twips value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertTo(DocumentModel.Twips,System.Type)">
@@ -6955,7 +6965,7 @@
             Creates an OpenXml StringValue from an UInt16 value.
             </summary>
             <param name="value">The UInt16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt16Converter.ConvertFromString(System.String)">
@@ -6985,7 +6995,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an UInt16 value.
             </summary>
             <param name="value">The UInt16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt16Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -7000,7 +7010,7 @@
             Creates an OpenXml OpenXmlLeafElement from an UInt16 value.
             </summary>
             <param name="value">The UInt16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt16Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -7015,7 +7025,7 @@
             Creates an OpenXml HexBinaryValue from an UInt16 value.
             </summary>
             <param name="value">The UInt16 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt16Converter.ConvertTo(System.Nullable{System.UInt16},System.Type)">
@@ -7186,7 +7196,7 @@
             Creates an OpenXml StringValue from an UInt32 value.
             </summary>
             <param name="value">The UInt32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt32Converter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -7201,7 +7211,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an UInt32 value.
             </summary>
             <param name="value">The UInt32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt32Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -7216,7 +7226,7 @@
             Creates an OpenXml HexBinaryValue from an UInt32 value.
             </summary>
             <param name="value">The UInt32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt32Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -7231,7 +7241,7 @@
             Creates an OpenXml OpenXmlLeafElement from an UInt32 value.
             </summary>
             <param name="value">The UInt32 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt32Converter.ConvertFromString(System.String)">
@@ -7415,7 +7425,7 @@
             Creates an OpenXml StringValue from an UInt64 value.
             </summary>
             <param name="value">The UInt64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
             <returns>A new StringValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt64Converter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
@@ -7430,7 +7440,7 @@
             Creates an OpenXml OpenXmlLeafTextElement from an UInt64 value.
             </summary>
             <param name="value">The UInt64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
             <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt64Converter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
@@ -7445,7 +7455,7 @@
             Creates an OpenXml HexBinaryValue from an UInt64 value.
             </summary>
             <param name="value">The UInt64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
             <returns>A new HexBinaryValue, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt64Converter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
@@ -7460,7 +7470,7 @@
             Creates an OpenXml OpenXmlLeafElement from an UInt64 value.
             </summary>
             <param name="value">The UInt64 value to convert.</param>
-            <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
             <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.UInt64Converter.ConvertFromString(System.String)">
@@ -7597,7 +7607,7 @@
             </summary>
             <remarks>This method is typically used to set or clear measurement values, such as margins or spacing, in
             Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
-            type of the child element. If the child element does not exist and a non-null value is provided, it is Icreated and
+            type of the child element. If the child element does not exist and a non-null value is provided, it is created and
             appended to the composite element.</remarks>
             <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type that supports assignment of a twips value.</typeparam>
             <param name="openXmlElement">The OpenXmlCompositeElement to which the twips value will be applied. This element must be capable of containing
@@ -7617,7 +7627,7 @@
             parameter.</typeparam>
             <typeparam name="ElementType">The type of OpenXmlElement to search for as a child of the provided OpenXmlCompositeElement.</typeparam>
             <param name="openXmlElement">The OpenXmlCompositeElement from which to retrieve the child element. Can be null.</param>
-            <returns>An instance of ObjectType Icreated from the first child element of type ElementType, or null if no such child
+            <returns>An instance of ObjectType created from the first child element of type ElementType, or null if no such child
             exists or if openXmlElement is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlCompositeElementUtils.AddChildElement(DocumentFormat.OpenXml.OpenXmlCompositeElement,DocumentFormat.OpenXml.OpenXmlElement)">

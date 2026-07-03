@@ -57,7 +57,7 @@
             Initializes a new instance of the <see cref="T:DocumentModel.ArrayVariant"/> class with default settings.
             </summary>
             <remarks>
-            The array is Icreated with no elements and must be resized before use.
+            The array is created with no elements and must be resized before use.
             The <see cref="P:DocumentModel.ArrayVariant.VariantType"/> is set to <see cref="F:DocumentModel.VariantType.Array"/>.
             </remarks>
         </member>
@@ -673,7 +673,7 @@
               </para>
               <para>
               This method uses sequence comparison, so Base64Binary values with identical binary content
-              are considered equal even if they were Icreated from different sources (byte array vs. Base64 string).
+              are considered equal even if they were created from different sources (byte array vs. Base64 string).
               </para>
             </remarks>
         </member>
@@ -1038,7 +1038,7 @@
             Implicitly converts a <see cref="T:DocumentModel.BytePercent"/> value to a <see cref="T:DocumentModel.HexBinary"/> value.
             </summary>
             <param name="value">The BytePercent value to convert.</param>
-            <returns>A new HexBinary instance Icreated from the string representation of the BytePercent value.</returns>
+            <returns>A new HexBinary instance created from the string representation of the BytePercent value.</returns>
         </member>
         <member name="M:DocumentModel.BytePercent.op_Implicit(DocumentModel.HexBinary)~DocumentModel.BytePercent">
             <summary>
@@ -10018,7 +10018,7 @@
             </list>
             </para>
             <para>
-            For simple array format, the vector is Icreated without a specific base type, and elements
+            For simple array format, the vector is created without a specific base type, and elements
             are stored as-is.
             </para>
             <para>

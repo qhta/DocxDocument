@@ -1,5 +1,7 @@
 using DocumentModel.BaseConverters;
 
+using Qhta.OpenXmlTools;
+
 #pragma warning disable CS0659
 namespace DocumentModel;
 
@@ -49,14 +51,47 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var modelType = otherInstance.GetType();
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      var thisValue = modelProperty.GetValue(this);
+      if (modelProperty.PropertyType.Name == "PixelsMeasure")
+        Debug.Assert(true);
       var otherValue = modelProperty.GetValue(otherInstance);
-      if (thisValue is ModelElement thisElement && otherValue is ModelElement otherElement)
-        thisElement.CopyFrom(otherElement);
+      if (otherValue is ModelElement otherElement)
+      {
+        var thisValue = modelProperty.GetValue(this);
+        if (thisValue == null)
+        {
+          var newElement = (ModelElement)Activator.CreateInstance(otherValue.GetType())!;
+          newElement.CopyFrom(otherElement);
+          modelProperty.SetValue(this, newElement);
+        }
+        else
+        if (thisValue is ModelElement thisElement)
+        {
+          thisElement.CopyFrom(otherElement);
+        }
+      }
       else
+      if (otherValue!=null)
+      {
         modelProperty.SetValue(this, otherValue);
+      }
     }
 
+    if (otherInstance is IEnumerable otherEnumerable)
+    {
+      foreach (var otherInstanceItem in otherEnumerable)
+      {
+        if (otherInstanceItem is ModelElement otherElementItem)
+        {
+          var newElementItem = (ModelElement)Activator.CreateInstance(otherElementItem.GetType())!;
+          newElementItem.CopyFrom(otherElementItem);
+          if (this is IList thisList)
+            thisList.Add(newElementItem);
+        }
+      }
+    }
+
+    if (otherInstance.GetType().Name=="DocumentSettings")
+      Debug.Assert(true);
     var updatableElement = GetUpdatableObject();
     if (updatableElement != null)
       UpdateData(updatableElement);
@@ -303,7 +338,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
           if (wordprocessingDocument != null)
           {
             wordprocessingDocumentAware.AttachAndUpdate(wordprocessingDocument);
-            var themePart = wordprocessingDocument.MainDocumentPart?.ThemePart;
           }
         }
     }
@@ -553,7 +587,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Sets the underlying Open XML element that can be updated by this model element. This method allows the model to be associated with a specific data source, which may be an OpenXmlElement or another type of object. If null is passed, the model will not have an updatable element.
   /// </summary>
   /// <param name="element">The Open XML element or other object to associate with this model element. Can be null to clear the current association.</param>
-  public virtual void SetUpdatableObject(object? element) => _UpdatableObject = element;
+  public void SetUpdatableObject(object? element) => _UpdatableObject = element;
 
   /// <summary>
   /// Gets or sets the underlying Open XML element that can be updated by this model element.

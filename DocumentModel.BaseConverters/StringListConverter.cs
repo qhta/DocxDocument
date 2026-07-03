@@ -101,7 +101,7 @@ public static class StringListConverter
   /// Creates an instance of StringType and sets its Val property.
   /// </summary>
   /// <param name="value">The StringList value to set.</param>
-  /// <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
+  /// <param name="targetType">The target type for the created StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
   public static DXW.StringType? ConvertToStringType(StringList? value, Type targetType)
   {
@@ -133,7 +133,7 @@ public static class StringListConverter
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The StringList value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(StringList? value, Type targetType)
   {
@@ -170,7 +170,7 @@ public static class StringListConverter
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The StringList value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(StringList? value, Type targetType)
   {
@@ -210,7 +210,7 @@ public static class StringListConverter
   /// Creates an OpenXml EnumValue and sets its value or text property.
   /// </summary>
   /// <param name="value">The StringList value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlSimpleType? CreateOpenXmlEnumValue(StringList? value, Type targetType)
   {

@@ -88,7 +88,7 @@
         </member>
         <member name="F:DocumentModel.Wordprocessing.BuiltInProperty.TimeCreated">
             <summary>
-            Time Icreated.
+            Time created.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.BuiltInProperty.TimeLastSaved">
@@ -238,7 +238,7 @@
             <summary>
             Represents an undefined value. wdForward 1073741823Indicates that selection will be extended forward using the
             MoveStartUntil or MoveStartWhile method of the IRange or ISelection object. wdCreatorCode1297307460Represents
-            the creator code for objects Icreated by Microsoft Word.
+            the creator code for objects created by Microsoft Word.
             </summary>
         </member>
         <member name="F:DocumentModel.Wordprocessing.Constants.Forward">
@@ -3844,7 +3844,7 @@
         </member>
         <member name="T:DocumentModel.Wordprocessing.BrowserLevel">
             <summary>
-            Specifies the version of Web browser at which you want to target new Web pages Icreated in Microsoft Word.
+            Specifies the version of Web browser at which you want to target new Web pages created in Microsoft Word.
             </summary>
             <remarks>
             See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` for Office interop details.

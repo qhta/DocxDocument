@@ -138,6 +138,8 @@ public partial class ModelElement : IXmlSerializable
     var (attributeProperties, elementProperties) = SplitProperties(serializableProperties);
     foreach (var property in attributeProperties)
     {
+      if (property.PropertyType.GetNotNullableType()==typeof(DMW.PixelsMeasure))
+        Debug.Assert(true);
       var value = property.GetValue(this);
       if (value != null)
       {

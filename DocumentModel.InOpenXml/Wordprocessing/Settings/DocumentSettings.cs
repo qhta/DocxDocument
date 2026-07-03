@@ -396,6 +396,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// </remarks>
   [MultiCategory("Conformance")]
   [OpenXmlElement(typeof(DXW.DefaultTabStop))]
+  [MaxValue(Int16.MaxValue)]
   public Twips? DefaultTabStop
   {
     get => _DefaultTabStop ??= GetElement<short?, DXW.DefaultTabStop>(GetUpdatableElement());

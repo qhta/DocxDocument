@@ -95,7 +95,7 @@ public static class SingleConverter
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The Single value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Single? value, Type targetType)
   {
@@ -136,7 +136,7 @@ public static class SingleConverter
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
   /// <param name="value">The Single value to set.</param>
-  /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Single? value, Type targetType)
   {

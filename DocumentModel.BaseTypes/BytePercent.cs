@@ -405,7 +405,7 @@ public readonly partial struct BytePercent : IConvertible, IEquatable<BytePercen
   /// Implicitly converts a <see cref="BytePercent"/> value to a <see cref="HexBinary"/> value.
   /// </summary>
   /// <param name="value">The BytePercent value to convert.</param>
-  /// <returns>A new HexBinary instance Icreated from the string representation of the BytePercent value.</returns>
+  /// <returns>A new HexBinary instance created from the string representation of the BytePercent value.</returns>
   public static implicit operator HexBinary(BytePercent value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
 
   /// <summary>

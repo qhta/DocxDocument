@@ -169,7 +169,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   </para>
   ///   <para>
   ///   This method uses sequence comparison, so Base64Binary values with identical binary content
-  ///   are considered equal even if they were Icreated from different sources (byte array vs. Base64 string).
+  ///   are considered equal even if they were created from different sources (byte array vs. Base64 string).
   ///   </para>
   /// </remarks>
   public bool Equals(Base64Binary? other)

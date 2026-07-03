@@ -55,7 +55,7 @@ public static class OpenXmlCompositeElementUtils
   /// </summary>
   /// <remarks>This method is typically used to set or clear measurement values, such as margins or spacing, in
   /// Open XML WordprocessingML or MathML documents. The method determines the appropriate value assignment based on the
-  /// type of the child element. If the child element does not exist and a non-null value is provided, it is Icreated and
+  /// type of the child element. If the child element does not exist and a non-null value is provided, it is created and
   /// appended to the composite element.</remarks>
   /// <typeparam name="ElementType">The type of OpenXmlLeafElement to create or modify. Must be a type that supports assignment of a twips value.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement to which the twips value will be applied. This element must be capable of containing
@@ -106,7 +106,7 @@ public static class OpenXmlCompositeElementUtils
   /// parameter.</typeparam>
   /// <typeparam name="ElementType">The type of OpenXmlElement to search for as a child of the provided OpenXmlCompositeElement.</typeparam>
   /// <param name="openXmlElement">The OpenXmlCompositeElement from which to retrieve the child element. Can be null.</param>
-  /// <returns>An instance of ObjectType Icreated from the first child element of type ElementType, or null if no such child
+  /// <returns>An instance of ObjectType created from the first child element of type ElementType, or null if no such child
   /// exists or if openXmlElement is null.</returns>
   public static ObjectType? GetObject<ObjectType, ElementType>(this DX.OpenXmlCompositeElement? openXmlElement) where ObjectType : class
     where ElementType : DX.OpenXmlElement

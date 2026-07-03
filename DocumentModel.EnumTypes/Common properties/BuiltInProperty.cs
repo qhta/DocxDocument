@@ -49,7 +49,7 @@ public enum BuiltInProperty
   /// </summary>
   TimeLastPrinted = 10,
   /// <summary>
-  /// Time Icreated.
+  /// Time created.
   /// </summary>
   TimeCreated = 11,
   /// <summary>

@@ -6,7 +6,9 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.FootnoteSpecialReference))]
 [DataContract]
 [XmlRoot("FootnoteSeparators", Namespace = "DocumentModel.Wordprocessing")]
-public class FootnoteSeparators : ModelElementCollection<FootnoteSeparator, DXW.FootnoteDocumentWideProperties, DXW.FootnoteSpecialReference>
+public class FootnoteSeparators : 
+  ModelElementCollection<FootnoteSeparator, DXW.FootnoteDocumentWideProperties, DXW.FootnoteSpecialReference>, 
+  ILimitedCollection
 {
   /// <summary>
   /// Default constructor for the <see cref = "FootnoteSeparators"/> class, initializing a new instance of the collection without a parent element.
@@ -25,4 +27,9 @@ public class FootnoteSeparators : ModelElementCollection<FootnoteSeparator, DXW.
   {
 
   }
+
+  /// <summary>
+  /// Gets the maximum number of footnote separators allowed in the collection, which is 3.
+  /// </summary>
+  public int MaxCount => 3;
 }

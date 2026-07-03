@@ -339,7 +339,7 @@ public static class HexByteConverter
   /// Creates an OpenXml StringValue from an HexByte value.
   /// </summary>
   /// <param name="value">The HexByte value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexByte? value, Type targetType)
   {
@@ -372,7 +372,7 @@ public static class HexByteConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexByte value.
   /// </summary>
   /// <param name="value">The HexByte value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexByte? value, Type targetType)
   {
@@ -408,7 +408,7 @@ public static class HexByteConverter
   /// Creates an OpenXml HexBinaryValue from an HexByte value.
   /// </summary>
   /// <param name="value">The HexByte value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexByte? value, Type targetType)
   {
@@ -454,7 +454,7 @@ public static class HexByteConverter
   /// Creates an OpenXml OpenXmlLeafElement from an HexByte value.
   /// </summary>
   /// <param name="value">The HexByte value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexByte? value, Type targetType)
   {

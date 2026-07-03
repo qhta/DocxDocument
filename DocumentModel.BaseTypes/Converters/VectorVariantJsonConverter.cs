@@ -48,7 +48,7 @@ public class VectorVariantJsonConverter : JsonConverter<VectorVariant>
   /// </list>
   /// </para>
   /// <para>
-  /// For simple array format, the vector is Icreated without a specific base type, and elements
+  /// For simple array format, the vector is created without a specific base type, and elements
   /// are stored as-is.
   /// </para>
   /// <para>

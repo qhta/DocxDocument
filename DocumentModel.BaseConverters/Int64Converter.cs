@@ -332,7 +332,7 @@ public static class Int64Converter
   /// Creates an OpenXml StringValue from an Int64 value.
   /// </summary>
   /// <param name="value">The Int64 value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Int64? value, Type targetType)
   {
@@ -400,7 +400,7 @@ public static class Int64Converter
   /// Creates an OpenXml OpenXmlLeafTextElement from an Int64 value.
   /// </summary>
   /// <param name="value">The Int64 value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Int64? value, Type targetType)
   {
@@ -444,7 +444,7 @@ public static class Int64Converter
   /// Creates an OpenXml OpenXmlLeafElement from an Int64 value.
   /// </summary>
   /// <param name="value">The Int64 value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Int64? value, Type targetType)
   {
@@ -489,7 +489,7 @@ public static class Int64Converter
   /// Creates an OpenXml HexBinaryValue from an Int64 value.
   /// </summary>
   /// <param name="value">The Int64 value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+  /// <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(Int64? value, Type targetType)
   {

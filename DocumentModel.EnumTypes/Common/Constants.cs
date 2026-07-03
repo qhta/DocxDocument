@@ -23,7 +23,7 @@ public enum Constants
   /// <summary>
   /// Represents an undefined value. wdForward 1073741823Indicates that selection will be extended forward using the
   /// MoveStartUntil or MoveStartWhile method of the IRange or ISelection object. wdCreatorCode1297307460Represents
-  /// the creator code for objects Icreated by Microsoft Word.
+  /// the creator code for objects created by Microsoft Word.
   /// </summary>
   Undefined = 9999999,
   /// <summary>

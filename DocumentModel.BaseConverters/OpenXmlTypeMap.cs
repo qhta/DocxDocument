@@ -6,7 +6,7 @@
 /// <param name="openXmlValue">OpenXml object to convert from. It can be a simple OpenXml value or OpenXmlElement.</param>
 /// <param name="modelType">Model object type to convert to.</param>
 /// <returns>Converted model object of the specified type.</returns>
-public delegate object? ConvertFromOpenXml(object? openXmlValue, Type modelType);
+public delegate object? ConvertFromOpenXmlDelegate(object? openXmlValue, Type modelType);
 
 /// <summary>
 /// Defines a delegate to convert an object from a model to OpenXml.
@@ -15,7 +15,7 @@ public delegate object? ConvertFromOpenXml(object? openXmlValue, Type modelType)
 /// <param name="openXmlType">OpenXml object to convert to. It can be a simple OpenXml value or OpenXmlElement.</param>
 /// <returns>Converted OpenXml object of the specified type.</returns>
 
-public delegate object? ConvertToOpenXml(object? modelValue, Type openXmlType);
+public delegate object? ConvertToOpenXmlDelegate(object? modelValue, Type openXmlType);
 
 /// <summary>
 /// Provides a mapping between DocumentModel element types and their corresponding OpenXML types.

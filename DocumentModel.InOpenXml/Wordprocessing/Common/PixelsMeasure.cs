@@ -10,6 +10,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
 [JsonConverter(typeof(PixelsMeasureJsonConverter))]
+[SimpleType]
 [DataContract]
 [XmlRoot("Pixels", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PixelsMeasure : IComparable<PixelsMeasure>, IEquatable<PixelsMeasure>
@@ -17,6 +18,9 @@ public partial class PixelsMeasure : IComparable<PixelsMeasure>, IEquatable<Pixe
   static PixelsMeasure()
   {
     PixelsMeasureOpenXmlConverter.RegisterOpenXmlConversion();
+    ObjectToStringConverter.RegisterConverters(typeof(PixelsMeasure), 
+      (object? val) => val?.ToString(), 
+      (string? str) => str != null ? new PixelsMeasure(str) : null);
   }
 
 
@@ -226,6 +230,7 @@ public partial class PixelsMeasure : IComparable<PixelsMeasure>, IEquatable<Pixe
   }
 
   #endregion
+
   #region IComparable and IEquatable Implementations
   /// <summary>
   /// Compares this instance to a specified <see cref = "PixelsMeasure"/> object and returns an indication of their relative values.

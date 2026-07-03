@@ -204,7 +204,7 @@ public static class EMUConverter
   /// Creates an OpenXml StringValue from an EMU value.
   /// </summary>
   /// <param name="value">The EMU value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(EMU? value, Type targetType)
   {
@@ -272,7 +272,7 @@ public static class EMUConverter
   /// Creates an OpenXml OpenXmlLeafTextElement from an EMU value.
   /// </summary>
   /// <param name="value">The EMU value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(EMU? value, Type targetType)
   {
@@ -316,7 +316,7 @@ public static class EMUConverter
   /// Creates an OpenXml OpenXmlLeafElement from an EMU value.
   /// </summary>
   /// <param name="value">The EMU value to convert.</param>
-  /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(EMU? value, Type targetType)
   {

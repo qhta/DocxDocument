@@ -145,20 +145,20 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
     return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableObject();
   }
 
-  /// <summary>
-  /// Sets the OpenXml collection element instance for update operations.
-  /// </summary>
-  /// <param name = "element"></param>
-  /// <exception cref = "NotImplementedException"></exception>
-  public override void SetUpdatableObject(object? element)
-  {
-    if (element is null)
-      _openXmlCollection = null;
-    else if (element is OpenXmlCollectionType openXmlCollection)
-      _openXmlCollection = openXmlCollection;
-    else
-      throw new ArgumentException($"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
-  }
+  ///// <summary>
+  ///// Sets the OpenXml collection element instance for update operations.
+  ///// </summary>
+  ///// <param name = "element"></param>
+  ///// <exception cref = "NotImplementedException"></exception>
+  //public override void SetUpdatableObject(object? element)
+  //{
+  //  if (element is null)
+  //    _openXmlCollection = null;
+  //  else if (element is OpenXmlCollectionType openXmlCollection)
+  //    _openXmlCollection = openXmlCollection;
+  //  else
+  //    throw new ArgumentException($"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
+  //}
 
   /// <summary>
   ///   Loads data from the specified OpenXml element into this model element collection.

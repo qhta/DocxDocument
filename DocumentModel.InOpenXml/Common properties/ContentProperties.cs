@@ -36,14 +36,14 @@ public sealed partial class ContentProperties : BaseBuiltInProperties
   /// <summary>
   /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
   /// </summary>
-  private DXEP.Properties? OpenXmlProperties => (DXEP.Properties?)base.GetUpdatableElement();
+  private DXEP.Properties? OpenXmlProperties => (DXEP.Properties?)base.GetUpdatableObject();
 
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable content properties for the current instance.
   /// </summary>
   /// <returns>An object representing the updatable Open XML content properties, or <see langword="null"/> if no properties are
   /// available.</returns>
-  public override DX.OpenXmlElement? GetUpdatableElement()
+  public override object? GetUpdatableObject()
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetExtendedFileProperties(true);
@@ -79,7 +79,7 @@ public sealed partial class ContentProperties : BaseBuiltInProperties
       modelProperty.SetValue(this, value);
     }
 
-    var updatableElement = GetUpdatableElement();
+    var updatableElement = GetUpdatableObject();
     if (updatableElement != null)
       UpdateData(updatableElement);
   }
