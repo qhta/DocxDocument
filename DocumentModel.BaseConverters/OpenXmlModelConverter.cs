@@ -1104,8 +1104,8 @@ public static partial class OpenXmlModelConverter
       {
         Array.Sort(result, (x, y) =>
         {
-          var xOrder = x.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? -1;
-          var yOrder = y.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? -1;
+          var xOrder = x.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? x.GetCustomAttribute<OpenXmlElementCollectionAttribute>()?.Order ?? -1;
+          var yOrder = y.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? y.GetCustomAttribute<OpenXmlElementCollectionAttribute>()?.Order ?? -1;
           return xOrder.CompareTo(yOrder);
         });
       }
