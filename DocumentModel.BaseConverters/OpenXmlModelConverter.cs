@@ -1087,32 +1087,43 @@ public static partial class OpenXmlModelConverter
     return value;
   }
 
-  /// <summary>
-  /// Gets the writable model properties of the specified OpenXML type.
-  /// </summary>
   /// <param name="modelType">The model type to search for properties</param>
-  /// <returns>Array of writable model properties</returns>
-  /// <remarks>Properties with NotMappedAttribute will be ignored</remarks>
-  public static PropertyInfo[] GetModelProperties(this Type modelType)
+  extension(Type modelType)
   {
-    return modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop =>
-      prop.GetIndexParameters().Length == 0 && prop.CanWrite &&
-      !prop.GetCustomAttributes(typeof(NotMappedAttribute), true).Any()).ToArray();
-  }
+    /// <summary>
+    /// Gets the writable model properties of the specified OpenXML type.
+    /// </summary>
+    /// <returns>Array of writable model properties</returns>
+    /// <remarks>Properties with NotMappedAttribute will be ignored</remarks>
+    public PropertyInfo[] GetModelProperties(bool sorted = false)
+    {
+      var result = modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop =>
+        prop.GetIndexParameters().Length == 0 && prop.CanWrite &&
+        !prop.GetCustomAttributes(typeof(NotMappedAttribute), true).Any()).ToArray();
+      if (sorted)
+      {
+        Array.Sort(result, (x, y) =>
+        {
+          var xOrder = x.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? -1;
+          var yOrder = y.GetCustomAttribute<OpenXmlElementAttribute>()?.Order ?? -1;
+          return xOrder.CompareTo(yOrder);
+        });
+      }
+      return result;
+    }
 
-  /// <summary>
-  /// Gets the writable OpenXML properties of the specified OpenXML type.
-  /// </summary>
-  /// <param name="openXmlType">The OpenXML type to search for properties</param>
-  /// <returns>Array of writable OpenXML properties</returns>
-  /// <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
-  public static PropertyInfo[] GetOpenXmlProperties(this Type openXmlType)
-  {
-    return openXmlType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop =>
-        prop.GetIndexParameters().Length == 0 && prop.CanWrite && prop.DeclaringType != typeof(DX.OpenXmlElement))
-      .ToArray();
+    /// <summary>
+    /// Gets the writable OpenXML properties of the specified OpenXML type.
+    /// </summary>
+    /// <returns>Array of writable OpenXML properties</returns>
+    /// <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
+    public PropertyInfo[] GetOpenXmlProperties()
+    {
+      return modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(prop =>
+          prop.GetIndexParameters().Length == 0 && prop.CanWrite && prop.DeclaringType != typeof(DX.OpenXmlElement))
+        .ToArray();
+    }
   }
-
 
   /// <summary>
   /// Tries to registers a lazy load for a model collection from openXmlObject.

@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Reflection;
 
+using Qhta.TextUtils;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
@@ -569,7 +571,7 @@ public static partial class EnumTypeConverter
     if (valueProp.PropertyType.GetInterface("IEnumValue") != null)
       targetValue = EnumTypeConverter.ConvertToIEnumValue(value, valueProp.PropertyType);
     else if (valueProp.PropertyType == typeof(string))
-      targetValue = EnumTypeConverter.ConvertToString(value)?.ToLowerInvariant();
+      targetValue = EnumTypeConverter.ConvertToString(value)?.ToLowerFirst();
     else
       targetValue = Int32Converter.ConvertTo(Convert.ToInt32(value), valueProp.PropertyType);
     valueProp.SetValue(targetInstance, targetValue);

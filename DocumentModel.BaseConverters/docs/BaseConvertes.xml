@@ -5027,21 +5027,11 @@
             <param name="targetType">The target type.</param>
             <returns>The converted value, or the original value if already compatible.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetModelProperties(System.Type)">
-            <summary>
-            Gets the writable model properties of the specified OpenXML type.
-            </summary>
-            <param name="modelType">The model type to search for properties</param>
-            <returns>Array of writable model properties</returns>
-            <remarks>Properties with NotMappedAttribute will be ignored</remarks>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetModelProperties(System.Type,System.Boolean)">
+            <inheritdoc cref="M:DocumentModel.OpenXml.OpenXmlModelConverter.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetModelProperties(System.Boolean)"/>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetOpenXmlProperties(System.Type)">
-            <summary>
-            Gets the writable OpenXML properties of the specified OpenXML type.
-            </summary>
-            <param name="openXmlType">The OpenXML type to search for properties</param>
-            <returns>Array of writable OpenXML properties</returns>
-            <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
+            <inheritdoc cref="M:DocumentModel.OpenXml.OpenXmlModelConverter.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetOpenXmlProperties"/>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryRegisterLazyLoad(System.Object,DocumentFormat.OpenXml.OpenXmlCompositeElement)">
             <summary>
@@ -5327,6 +5317,23 @@
             </summary>
             <param name="obj">The qualified name to hash.</param>
             <returns>The hash code for the qualified name.</returns>
+        </member>
+        <member name="T:DocumentModel.OpenXml.OpenXmlModelConverter.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.&lt;M&gt;$64E3D2BECCE0A4F80C6FD124345AF686">
+            <param name="modelType">The model type to search for properties</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetModelProperties(System.Boolean)">
+            <summary>
+            Gets the writable model properties of the specified OpenXML type.
+            </summary>
+            <returns>Array of writable model properties</returns>
+            <remarks>Properties with NotMappedAttribute will be ignored</remarks>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.&lt;G&gt;$6B6159A298CA62A8C577E514BE40E3DD.GetOpenXmlProperties">
+            <summary>
+            Gets the writable OpenXML properties of the specified OpenXML type.
+            </summary>
+            <returns>Array of writable OpenXML properties</returns>
+            <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
         </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlPropertyMap">
             <summary>

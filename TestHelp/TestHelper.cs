@@ -201,9 +201,24 @@ public static class TestHelper
       // Set each property with new test data
       if (propType == typeof(string))
       {
-        if (prop.Name == "Uri")
-          prop.SetValue(instance, @"file://C:/Templates/Normal.dotm");
-        else
+        if (prop.Name.StartsWith("Lang"))
+        {
+          prop.SetValue(instance, @"en-US");
+        }
+        else if (prop.Name == "Uri")
+          prop.SetValue(instance, @"file:///C:/Templates/Normal.dotm");
+        else if (prop.Name.Contains("Id"))
+        {
+          var val = new HexInt(Random.Shared.Next()).ToString();
+          if (instance is DMW.IRelationshipType relationshipType && prop.Name == "Id")
+          {
+            val = "R" + val;
+            relationshipType.Id = val;
+          }
+          else
+            prop.SetValue(instance, val);
+        }
+        else 
           prop.SetValue(instance, "Sample " + prop.Name + (index >= 0 ? $" {index + 1}" : ""));
       }
       else if (propType == typeof(bool))
@@ -258,7 +273,7 @@ public static class TestHelper
       }
       else if (propType == typeof(Percent))
       {
-        prop.SetValue(instance, new Percent(Random.Shared.NextDouble() * 100));
+        prop.SetValue(instance, new Percent(Random.Shared.Next(100)));
       }
       else if (propType == typeof(Decimal))
       {

@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents an abstract base class for defining a strongly-typed relationship element within a document model.
 /// </summary>
@@ -10,7 +11,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.RelationshipType))]
 [DataContract]
 [XmlRoot("RelationshipType", Namespace = "DocumentModel.Wordprocessing")]
-public abstract partial class RelationshipType<T> : ModelElement<T> where T : DXW.RelationshipType
+public abstract partial class RelationshipType<T>: ModelElement<T>, IRelationshipType where T : DXW.RelationshipType
 {
  /// <summary>
  /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.

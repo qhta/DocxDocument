@@ -42,6 +42,7 @@
     <Compile Remove="Wordprocessing\Colors\SchemeColor.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
+    <Compile Remove="Wordprocessing\Mail merge\FieldMapDataCollection.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDefinition.ext.cs" />
   </ItemGroup>

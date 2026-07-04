@@ -58,7 +58,7 @@ public partial class DocumentSettings
   public bool ShouldSerializeForceUpgrade() => ForceUpgrade is not null;
   public bool ShouldSerializeFormsDesign() => FormsDesign is not null;
   public bool ShouldSerializeGutterAtTop() => GutterAtTop is not null;
-  public bool ShouldSerializeHeaderShapeDefaults() => HeaderShapeDefaults is not null && ShouldSerialize(HeaderShapeDefaults);
+  //public bool ShouldSerializeHeaderShapeDefaults() => HeaderShapeDefaults is not null && ShouldSerialize(HeaderShapeDefaults);
   public bool ShouldSerializeHideGrammaticalErrors() => HideGrammaticalErrors is not null;
   public bool ShouldSerializeHideSpellingErrors() => HideSpellingErrors is not null;
   public bool ShouldSerializeHyphenationZone() => HyphenationZone is not null && ShouldSerialize(HyphenationZone);
@@ -85,7 +85,7 @@ public partial class DocumentSettings
   public bool ShouldSerializeSaveSubsetFonts() => SaveSubsetFonts is not null;
   public bool ShouldSerializeSaveThroughXslt() => SaveThroughXslt is not null && ShouldSerialize(SaveThroughXslt);
   public bool ShouldSerializeSaveXmlDataOnly() => SaveXmlDataOnly is not null;
-  public bool ShouldSerializeSchemaLibrary() => SchemaLibrary is not null && ShouldSerialize(SchemaLibrary);
+  //public bool ShouldSerializeSchemaLibrary() => SchemaLibrary is not null && ShouldSerialize(SchemaLibrary);
   public bool ShouldSerializeShapeDefaults() => ShapeDefaults is not null && ShouldSerialize(ShapeDefaults);
   public bool ShouldSerializeShowEnvelope() => ShowEnvelope is not null;
   public bool ShouldSerializeShowXmlTags() => ShowXmlTags is not null;
@@ -102,5 +102,5 @@ public partial class DocumentSettings
   public bool ShouldSerializeWriteProtection() => WriteProtection is not null && ShouldSerialize(WriteProtection);
   public bool ShouldSerializeZoom() => Zoom is not null && ShouldSerialize(Zoom);
   public bool ShouldSerializeMailMerge() => MailMerge is not null && ShouldSerialize(MailMerge);
-  public bool ShouldSerializeMathProperties() => MathProperties is not null && ShouldSerialize(MathProperties);
+  //public bool ShouldSerializeMathProperties() => MathProperties is not null && ShouldSerialize(MathProperties);
 }

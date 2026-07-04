@@ -2573,8 +2573,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_Recipients">
     <xsd:sequence>
-      <xsd:element name="recipientData" type="CT_RecipientData" minOccurs="1" maxOccurs="unbounded"
-      />
+      <xsd:element name="recipientData" type="CT_RecipientData" minOccurs="1" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="recipients" type="CT_Recipients"/>

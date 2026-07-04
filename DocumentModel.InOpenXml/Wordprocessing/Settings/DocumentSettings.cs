@@ -836,17 +836,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   private bool? _GutterAtTop;
 
-  /// <summary>
-  /// Specifies the default parameters for VML objects inserted in the header and footer.
-  /// </summary>
-  [MultiCategory("VML")]
-  [OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
-  public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
-  {
-    get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(GetUpdatableElement());
-    set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
-  }
-  private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
+  ///// <summary>
+  ///// Specifies the default parameters for VML objects inserted in the header and footer.
+  ///// </summary>
+  //[MultiCategory("VML")]
+  //[OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
+  //public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
+  //{
+  //  get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(GetUpdatableElement());
+  //  set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
+  //}
+  //private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
 
   /// <summary>
   /// Specifies whether a visual cue should be displayed around grammatical errors.
@@ -1225,17 +1225,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   private bool? _SaveXmlDataOnly;
 
-  /// <summary>
-  /// Specifies the set of XML namespaces associated with custom XML markup in the document.
-  /// </summary>
-  [MultiCategory("CustomXml")]
-  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
-  public DMCX.SchemaLibrary? SchemaLibrary
-  {
-    get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
-    set => UpdateField(ref _SchemaLibrary, value, nameof(SchemaLibrary));
-  }
-  private DMCX.SchemaLibrary? _SchemaLibrary;
+  ///// <summary>
+  ///// Specifies the set of XML namespaces associated with custom XML markup in the document.
+  ///// </summary>
+  //[MultiCategory("CustomXml")]
+  //[OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
+  //public DMCX.SchemaLibrary? SchemaLibrary
+  //{
+  //  get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
+  //  set => UpdateField(ref _SchemaLibrary, value, nameof(SchemaLibrary));
+  //}
+  //private DMCX.SchemaLibrary? _SchemaLibrary;
 
   /// <summary>
   /// Specifies the defaults used when creating new shapes, stored once per document.
@@ -1471,17 +1471,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   private MailMerge? _MailMerge;
 
-  /// <summary>
-  /// Specifies the document-level properties for all math in the document.
-  /// </summary>
-  [MultiCategory("Math")]
-  [OpenXmlElement(typeof(DXM.MathProperties))]
-  public DMM.MathProperties? MathProperties
-  {
-    get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());
-    set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
-  }
-  private DMM.MathProperties? _MathProperties;
+  ///// <summary>
+  ///// Specifies the document-level properties for all math in the document.
+  ///// </summary>
+  //[MultiCategory("Math")]
+  //[OpenXmlElement(typeof(DXM.MathProperties))]
+  //public DMM.MathProperties? MathProperties
+  //{
+  //  get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());
+  //  set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
+  //}
+  //private DMM.MathProperties? _MathProperties;
 
   /// <summary>
   /// Specifies a set of optional compatibility options for the document.

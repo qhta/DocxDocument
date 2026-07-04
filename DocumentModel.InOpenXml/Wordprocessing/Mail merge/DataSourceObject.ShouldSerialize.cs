@@ -11,5 +11,5 @@ public partial class DataSourceObject
   public bool ShouldSerializeMailMergeSource() => MailMergeSource is not null && ShouldSerialize(MailMergeSource);
   public bool ShouldSerializeFirstRowHeader() => FirstRowHeader is not null;
   public bool ShouldSerializeFieldMap() => FieldMap is not null && ShouldSerialize(FieldMap);
-  public bool ShouldSerializeRecipientDataReference() => RecipientDataReference is not null && ShouldSerialize(RecipientDataReference);
+  public bool ShouldSerializeRecipientDataReferences() => RecipientDataReference is not null && ShouldSerialize(RecipientDataReference);
 }

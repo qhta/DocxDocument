@@ -10,7 +10,11 @@
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
 public class OpenXmlElementAttribute(Type openXmlType) : Attribute
 {
-  
+  /// <summary>
+  /// The order of the Open XML element in the schema.
+  /// </summary>
+  public int Order { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
   /// <summary>
   /// The Open XML element type name associated with the decorated member.
   /// </summary>
