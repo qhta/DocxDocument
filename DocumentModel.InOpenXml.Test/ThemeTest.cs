@@ -115,8 +115,8 @@ public class ThemeTest : _AbstractTestClass
           MajorFont = new MajorFont
           {
             LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
-            EastAsianFont = new DMD.TextFontType(),
-            ComplexScriptFont = new DMD.TextFontType(),
+            EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
+            ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
             SupplementalFonts =
             [
               new SupplementalFont { Script = "Jpan", Typeface = "游ゴシック Light" },
@@ -170,9 +170,9 @@ public class ThemeTest : _AbstractTestClass
           },
           MinorFont = new MinorFont
           {
-            LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204") },
-            EastAsianFont = new DMD.TextFontType(),
-            ComplexScriptFont = new DMD.TextFontType(),
+            LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
+            EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
+            ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
             SupplementalFonts =
             [
               new SupplementalFont { Script = "Jpan", Typeface = "游明朝" },

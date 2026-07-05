@@ -170,6 +170,7 @@ public static partial class OpenXmlModelConverter
     if (openXmlType == null)
       openXmlType = openXmlObject.GetType();
     var modelType = modelObject.GetType();
+    if (modelType.Name=="SchemaLibrary") Debug.Assert(true);
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, openXmlObject, openXmlType, modelType)) return;
 
     TryUpdateModelProperties(modelObject, openXmlObject, openXmlType, modelType);

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns="http://purl.oclc.org/ooxml/spreadsheetml/main"
-  xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
-  xmlns:xdr="http://purl.oclc.org/ooxml/drawingml/spreadsheetDrawing"
-  xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
-  targetNamespace="http://purl.oclc.org/ooxml/spreadsheetml/main" elementFormDefault="qualified">
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"
+  xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"
+  xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  targetNamespace="http://schemas.openxmlformats.org/spreadsheetml/2006/main" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
     schemaLocation="shared-relationshipReference.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/spreadsheetDrawing"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing"
     schemaLocation="dml-spreadsheetDrawing.xsd"/>
   <xsd:complexType name="CT_AutoFilter">
     <xsd:sequence>

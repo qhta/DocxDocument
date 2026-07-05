@@ -7,6 +7,7 @@ namespace DocumentModel.Drawings;
 [XmlRoot("FontScheme", Namespace = "DocumentModel.Drawings")]
 public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableElement
 {
+
   /// <summary>
   ///   Name of the font scheme.
   /// </summary>

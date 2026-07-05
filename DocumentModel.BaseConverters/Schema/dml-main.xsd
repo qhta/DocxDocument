@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
-  xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
-  xmlns="http://purl.oclc.org/ooxml/drawingml/main"
-  targetNamespace="http://purl.oclc.org/ooxml/drawingml/main" elementFormDefault="qualified">
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  xmlns="http://schemas.openxmlformats.org/drawingml/2006/main"
+  targetNamespace="http://schemas.openxmlformats.org/drawingml/2006/main" elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
     schemaLocation="shared-relationshipReference.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/diagram"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/diagram"
     schemaLocation="dml-diagram.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/chart" schemaLocation="dml-chart.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/picture"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/chart" schemaLocation="dml-chart.xsd"/>
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/picture"
     schemaLocation="dml-picture.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/lockedCanvas"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas"
     schemaLocation="dml-lockedCanvas.xsd"/>
   <xsd:complexType name="CT_AudioFile">
     <xsd:sequence>
@@ -172,9 +172,9 @@
   </xsd:complexType>
   <xsd:complexType name="CT_BaseStyles">
     <xsd:sequence>
-      <xsd:element name="clrScheme" type="CT_ColorScheme" minOccurs="1" maxOccurs="1"/>
-      <xsd:element name="fontScheme" type="CT_FontScheme" minOccurs="1" maxOccurs="1"/>
-      <xsd:element name="fmtScheme" type="CT_StyleMatrix" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="clrScheme" type="CT_ColorScheme" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="fontScheme" type="CT_FontScheme" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="fmtScheme" type="CT_StyleMatrix" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="extLst" type="CT_OfficeArtExtensionList" minOccurs="0" maxOccurs="1"/>
     </xsd:sequence>
   </xsd:complexType>

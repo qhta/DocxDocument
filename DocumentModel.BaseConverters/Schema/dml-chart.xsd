@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns:a="http://purl.oclc.org/ooxml/drawingml/main"
-  xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
-  xmlns="http://purl.oclc.org/ooxml/drawingml/chart"
-  xmlns:cdr="http://purl.oclc.org/ooxml/drawingml/chartDrawing"
-  xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
-  targetNamespace="http://purl.oclc.org/ooxml/drawingml/chart" elementFormDefault="qualified"
+  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns="http://schemas.openxmlformats.org/drawingml/2006/chart"
+  xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing"
+  xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  targetNamespace="http://schemas.openxmlformats.org/drawingml/2006/chart" elementFormDefault="qualified"
   attributeFormDefault="unqualified" blockDefault="#all">
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
     schemaLocation="shared-relationshipReference.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/main" schemaLocation="dml-main.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/chartDrawing"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/main" schemaLocation="dml-main.xsd"/>
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing"
     schemaLocation="dml-chartDrawing.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
   <xsd:complexType name="CT_Boolean">
     <xsd:attribute name="val" type="xsd:boolean" use="optional" default="true"/>

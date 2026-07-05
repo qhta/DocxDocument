@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns="http://purl.oclc.org/ooxml/officeDocument/customProperties"
-  xmlns:vt="http://purl.oclc.org/ooxml/officeDocument/docPropsVTypes"
-  xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
-  targetNamespace="http://purl.oclc.org/ooxml/officeDocument/customProperties" blockDefault="#all"
+  xmlns="http://schemas.openxmlformats.org/officeDocument/2006/customProperties"
+  xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"
+  xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  targetNamespace="http://schemas.openxmlformats.org/officeDocument/2006/customProperties" blockDefault="#all"
   elementFormDefault="qualified">
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/docPropsVTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"
     schemaLocation="shared-documentPropertiesVariantTypes.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
   <xsd:element name="Properties" type="CT_Properties"/>
   <xsd:complexType name="CT_Properties">

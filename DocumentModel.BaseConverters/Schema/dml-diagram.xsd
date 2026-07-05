@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns="http://purl.oclc.org/ooxml/drawingml/diagram"
-  xmlns:a="http://purl.oclc.org/ooxml/drawingml/main"
-  xmlns:r="http://purl.oclc.org/ooxml/officeDocument/relationships"
-  xmlns:s="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
-  targetNamespace="http://purl.oclc.org/ooxml/drawingml/diagram" elementFormDefault="qualified"
+  xmlns="http://schemas.openxmlformats.org/drawingml/2006/diagram"
+  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:s="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
+  targetNamespace="http://schemas.openxmlformats.org/drawingml/2006/diagram" elementFormDefault="qualified"
   attributeFormDefault="unqualified">
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/relationships"
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
     schemaLocation="shared-relationshipReference.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/drawingml/main" schemaLocation="dml-main.xsd"/>
-  <xsd:import namespace="http://purl.oclc.org/ooxml/officeDocument/sharedTypes"
+  <xsd:import namespace="http://schemas.openxmlformats.org/drawingml/2006/main" schemaLocation="dml-main.xsd"/>
+  <xsd:import namespace="http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes"
     schemaLocation="shared-commonSimpleTypes.xsd"/>
   <xsd:complexType name="CT_CTName">
     <xsd:attribute name="lang" type="xsd:string" use="optional" default=""/>

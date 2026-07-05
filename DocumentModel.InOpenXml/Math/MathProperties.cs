@@ -145,7 +145,18 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   the default of the val attribute is 1440 twips (or 1 inch). 
   /// </summary>
   [OpenXmlElement(typeof(DXM.WrapIndent))]
-  public Twips? WrapIndent { get => _WrapIndent; set => UpdateField(ref _WrapIndent, value, nameof(WrapIndent)); }
+  public Twips? WrapIndent
+  {
+    get => _WrapIndent;
+    set
+    {
+      if (WrapRight!=null)
+        WrapRight = null;
+
+      UpdateField(ref _WrapIndent, value, nameof(WrapIndent));
+    }
+  }
+
   private Twips? _WrapIndent;
 
   /// <summary>
@@ -158,7 +169,17 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [OpenXmlElement(typeof(DXM.WrapRight))]
-  public bool? WrapRight { get => _WrapRight; set => UpdateField(ref _WrapRight, value, nameof(WrapRight)); }
+  public bool? WrapRight 
+  { 
+    get => _WrapRight; 
+    set
+    {
+      if (WrapIndent != null)
+        WrapIndent = null;
+
+      UpdateField(ref _WrapRight, value, nameof(WrapRight));
+    }
+  }
   private bool? _WrapRight;
 
   /// <summary>

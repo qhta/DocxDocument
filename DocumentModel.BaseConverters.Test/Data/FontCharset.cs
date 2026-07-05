@@ -50,11 +50,11 @@ public enum FontCharset
   /// </summary>
   Greek = 0xA1,
   /// <summary>
-  /// Specifies the Greek character set (IANA name iso-8859-9).
+  /// Specifies the Turkish character set (IANA name iso-8859-9).
   /// </summary>
   Turkish = 0xA2,
   /// <summary>
-  /// Specifies the Greek character set (IANA name windows-1258).
+  /// Specifies the Vietnamese character set (IANA name windows-1258).
   /// </summary>
   Vietnamese = 0xA3,
   /// <summary>

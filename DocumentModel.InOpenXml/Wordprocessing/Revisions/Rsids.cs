@@ -19,6 +19,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   /// <param name = "document">Wordprocessing document model</param>
   public Rsids(Document document): base(document, document.WordprocessingDocument?.GetRsids())
   {
+
   }
 
   /// <summary>

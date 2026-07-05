@@ -5057,24 +5057,6 @@
             Represents schema for WML
             </summary>
         </member>
-        <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.WordprocessingNamespace">
-            <summary>
-            URI of Wordprocessing namespace.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.MathNamespace">
-            <summary>
-            URI of Math namespace
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.NamespaceAliases">
-            <summary>
-            Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
-            documents.
-            </summary>
-            <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
-            namespace mappings used in Open XML document processing.</remarks>
-        </member>
         <member name="F:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema.Schema">
             <summary>
             Lazy-loaded schema instance.

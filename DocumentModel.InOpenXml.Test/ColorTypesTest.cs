@@ -434,6 +434,22 @@ public class ColorTypesTest : _AbstractTestClass
     colorScheme.Hyperlink = new RgbColorModelHex { Value = (HexColor)0x0467886 };
     colorScheme.FollowedHyperlink = new RgbColorModelHex { Value = (HexColor)0x96607D };
 
+    theme.ThemeElements.FontScheme = new FontScheme
+    {
+      Name = "Office",
+      MajorFont = new MajorFont
+      {
+        LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
+        EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
+        ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
+      },
+      MinorFont = new MinorFont()
+      {
+        LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
+        EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
+        ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
+      }
+    };
     return theme;
   }
 

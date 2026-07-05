@@ -1,6 +1,8 @@
 ﻿using System.Collections.Concurrent;
 using System.Xml.Schema;
 
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel.OpenXml;
 
 public static partial class OpenXmlModelConverter
@@ -17,7 +19,7 @@ public static partial class OpenXmlModelConverter
   /// <exception cref="ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
   public static void AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
   {
-    if (child.LocalName=="mathPr")
+    if (child.LocalName=="schemaLibrary")
       Debug.Assert(true);
     if (parentElement == null)
       throw new ArgumentNullException(nameof(parentElement));
@@ -30,6 +32,23 @@ public static partial class OpenXmlModelConverter
       parentElement.AppendChild(child);
       return;
     }
+    // this code creates a new child element with the normalized namespace if the child element's namespace does not match the normalized namespace defined by the Wordprocessing schema.
+    // This causes the original child element is NOT added to the parent element, but instead a new child is added.
+    //var legacyNamespace = child.NamespaceUri;
+    //var modernNamespace = WordprocessingSchema.NormalizeNamespace(legacyNamespace);
+    //if (!StringComparer.Ordinal.Equals(child.NamespaceUri, modernNamespace))
+    //{
+    //  var updatedOuterXml = child.OuterXml.Replace(
+    //    legacyNamespace,
+    //    modernNamespace);
+
+
+    //  var partContainer = (parentElement.GetRootElement() as DX.OpenXmlPartRootElement)?.OpenXmlPart; // OpenXmlPartContainer
+    //  if (partContainer == null)
+    //    throw new InvalidOperationException("parentElement is not attached to an OpenXmlPart.");
+    //  child = DX.OpenXmlUnknownElementExtensions.CreateUnknownElement(partContainer, updatedOuterXml);
+    //}
+
     var childIndex = WordprocessingSchema.GetChildOrderIndex(childOrder, child);
     if (childIndex == WordprocessingSchema.UnknownOrder)
     {
@@ -67,27 +86,33 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   public static class WordprocessingSchema
   {
-    /// <summary>
-    /// URI of Wordprocessing namespace.
-    /// </summary>
-    public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
+    ///// <summary>
+    ///// URI of Wordprocessing namespace.
+    ///// </summary>
+    //public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
 
-    /// <summary>
-    /// URI of Math namespace
-    /// </summary>
-    public const string MathNamespace = "http://purl.oclc.org/ooxml/officeDocument/math";
+    ///// <summary>
+    ///// URI of Math namespace
+    ///// </summary>
+    //public const string MathNamespace = "http://purl.oclc.org/ooxml/officeDocument/math";
 
-    /// <summary>
-    /// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
-    /// documents.
-    /// </summary>
-    /// <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
-    /// namespace mappings used in Open XML document processing.</remarks>
-    public static readonly Dictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
-    {
-      ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace,
-      ["http://schemas.openxmlformats.org/officeDocument/2006/math"] = MathNamespace
-    };
+    ///// <summary>
+    ///// URI of SchemaLibrary namespace
+    ///// </summary>
+    //public const string SchemaLibraryNamespace = "http://purl.oclc.org/ooxml/schemaLibrary/main";
+
+    ///// <summary>
+    ///// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
+    ///// documents.
+    ///// </summary>
+    ///// <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
+    ///// namespace mappings used in Open XML document processing.</remarks>
+    //public static readonly Dictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
+    //{
+    //  ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace,
+    //  ["http://schemas.openxmlformats.org/officeDocument/2006/math"] = MathNamespace,
+    //  ["http://schemas.openxmlformats.org/schemaLibrary/2006/main"] = SchemaLibraryNamespace
+    //};
 
     /// <summary>
     /// Lazy-loaded schema instance.
@@ -236,10 +261,6 @@ public static partial class OpenXmlModelConverter
     public static string? GetElementKey(DX.OpenXmlElement element, out XmlQualifiedName? qualifiedName)
     {
       var ns = NormalizeNamespace(element.NamespaceUri);
-      qualifiedName = null;
-      if (!StringComparer.Ordinal.Equals(ns, WordprocessingNamespace))
-        return null;
-
       qualifiedName = new XmlQualifiedName(element.LocalName, ns);
       return $"{ns}:{element.LocalName}";
     }
@@ -253,8 +274,9 @@ public static partial class OpenXmlModelConverter
     {
       if (string.IsNullOrEmpty(namespaceUri))
         return string.Empty;
-      if (NamespaceAliases.TryGetValue(namespaceUri!, out var mapped))
-        return mapped;
+      //if (NamespaceAliases.TryGetValue(namespaceUri!, out var mapped))
+        //return mapped;
+      //namespaceUri = namespaceUri!.Replace("2006/", "").Replace("schemas.openxmlformats.org/", "purl.oclc.org/ooxml/");
 
       return namespaceUri!;
     }
@@ -382,7 +404,7 @@ public static partial class OpenXmlModelConverter
             break;
           case XmlSchemaElement element:
             var qualifiedName = GetQualifiedName(element);
-            Debug.WriteLine($"Processing element: \"{qualifiedName}\"");
+            //Debug.WriteLine($"Processing element: \"{qualifiedName}\"");
             if (qualifiedName != null)
             {
               order.Add(new ChildOrderEntry(qualifiedName));

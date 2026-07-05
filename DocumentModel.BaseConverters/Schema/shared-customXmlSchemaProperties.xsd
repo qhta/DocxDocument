@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns="http://purl.oclc.org/ooxml/schemaLibrary/main"
-  targetNamespace="http://purl.oclc.org/ooxml/schemaLibrary/main" attributeFormDefault="qualified"
+  xmlns="http://schemas.openxmlformats.org/schemaLibrary/2006/main"
+  targetNamespace="http://schemas.openxmlformats.org/schemaLibrary/2006/main" attributeFormDefault="qualified"
   elementFormDefault="qualified">
   <xsd:complexType name="CT_Schema">
     <xsd:attribute name="uri" type="xsd:string" default=""/>

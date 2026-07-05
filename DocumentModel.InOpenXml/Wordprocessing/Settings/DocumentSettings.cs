@@ -1370,17 +1370,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   private DMM.MathProperties? _MathProperties;
 
-  ///// <summary>
-  ///// Specifies the set of XML namespaces associated with custom XML markup in the document.
-  ///// </summary>
-  //[MultiCategory("CustomXml")]
-  //[OpenXmlElement(typeof(DXCXSR.SchemaLibrary), Order = 93)]
-  //public DMCX.SchemaLibrary? SchemaLibrary
-  //{
-  //  get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
-  //  set => UpdateField(ref _SchemaLibrary, value, nameof(SchemaLibrary));
-  //}
-  //private DMCX.SchemaLibrary? _SchemaLibrary;
+  /// <summary>
+  /// Specifies the set of XML namespaces associated with custom XML markup in the document.
+  /// </summary>
+  [MultiCategory("CustomXml")]
+  [OpenXmlElement(typeof(DXCXSR.SchemaLibrary), Order = 93)]
+  public DMCX.SchemaLibrary? SchemaLibrary
+  {
+    get => _SchemaLibrary ??= GetElement<DMCX.SchemaLibrary?, DXCXSR.SchemaLibrary>(GetUpdatableElement());
+    set => UpdateField(ref _SchemaLibrary, value, nameof(SchemaLibrary));
+  }
+  private DMCX.SchemaLibrary? _SchemaLibrary;
 
 
   /// <summary>
