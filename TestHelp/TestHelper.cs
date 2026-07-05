@@ -122,7 +122,6 @@ public static class TestHelper
     if (comparedType.IsEnumerable(out var itemType) && obj1 is IEnumerable obj1Enumerable
                                                     && obj2 is IEnumerable obj2Enumerable)
     {
-
       var enumerator1 = obj1Enumerable.GetEnumerator();
       var enumerator2 = obj2Enumerable.GetEnumerator();
       int itemCount = 0;

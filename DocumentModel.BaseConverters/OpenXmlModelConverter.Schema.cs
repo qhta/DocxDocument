@@ -17,18 +17,20 @@ public static partial class OpenXmlModelConverter
   /// <exception cref="ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
   public static void AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
   {
+    if (child.LocalName=="mathPr")
+      Debug.Assert(true);
     if (parentElement == null)
       throw new ArgumentNullException(nameof(parentElement));
     if (child == null)
       throw new ArgumentNullException(nameof(child));
 
-    var order = WordprocessingSchema.GetChildOrder(parentElement);
-    if (order.Count == 0)
+    var childOrder = WordprocessingSchema.GetChildOrder(parentElement);
+    if (childOrder.Count == 0)
     {
       parentElement.AppendChild(child);
       return;
     }
-    var childIndex = WordprocessingSchema.GetChildOrderIndex(order, child);
+    var childIndex = WordprocessingSchema.GetChildOrderIndex(childOrder, child);
     if (childIndex == WordprocessingSchema.UnknownOrder)
     {
       parentElement.AppendChild(child);
@@ -39,7 +41,7 @@ public static partial class OpenXmlModelConverter
     DX.OpenXmlElement? insertAfter = null;
     foreach (DX.OpenXmlElement existing in parentElement.ChildElements)
     {
-      var existingIndex = WordprocessingSchema.GetChildOrderIndex(order, existing);
+      var existingIndex = WordprocessingSchema.GetChildOrderIndex(childOrder, existing);
       if (existingIndex == WordprocessingSchema.UnknownOrder)
         continue;
 
@@ -71,6 +73,11 @@ public static partial class OpenXmlModelConverter
     public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
 
     /// <summary>
+    /// URI of Math namespace
+    /// </summary>
+    public const string MathNamespace = "http://purl.oclc.org/ooxml/officeDocument/math";
+
+    /// <summary>
     /// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
     /// documents.
     /// </summary>
@@ -78,7 +85,8 @@ public static partial class OpenXmlModelConverter
     /// namespace mappings used in Open XML document processing.</remarks>
     public static readonly Dictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
     {
-      ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace
+      ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace,
+      ["http://schemas.openxmlformats.org/officeDocument/2006/math"] = MathNamespace
     };
 
     /// <summary>
@@ -328,7 +336,7 @@ public static partial class OpenXmlModelConverter
       /// <returns>The complex type definition if found; otherwise, null.</returns>
       public XmlSchemaComplexType? LookupComplexType(XmlQualifiedName typeName)
       {
-        if (typeName == null || typeName.IsEmpty)
+        if (typeName.IsEmpty)
           return null;
 
         return schemaSet.GlobalTypes[typeName] as XmlSchemaComplexType;
@@ -374,10 +382,15 @@ public static partial class OpenXmlModelConverter
             break;
           case XmlSchemaElement element:
             var qualifiedName = GetQualifiedName(element);
+            Debug.WriteLine($"Processing element: \"{qualifiedName}\"");
             if (qualifiedName != null)
             {
               order.Add(new ChildOrderEntry(qualifiedName));
               position++;
+            }
+            else
+            {
+              Debug.Assert(true);
             }
             break;
           case XmlSchemaAny any:
@@ -430,6 +443,7 @@ public static partial class OpenXmlModelConverter
     /// <summary>
     /// Entry for child-orders cache.
     /// </summary>
+    [DebuggerDisplay("Name:\"{name}\" WildCard=\"{wildcard}\"")]
     public sealed class ChildOrderEntry
     {
       /// <summary>
@@ -475,6 +489,7 @@ public static partial class OpenXmlModelConverter
         }
         return wildcard?.Matches(namespaceUri) == true;
       }
+
     }
 
     /// <summary>
@@ -526,7 +541,7 @@ public static partial class OpenXmlModelConverter
           namespaces = Array.Empty<string>();
           return;
         }
-        var parts = ns.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        var parts = ns.Split([' ', '\t', '\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
         var values = new List<string>(parts.Length);
         foreach (var part in parts)
         {

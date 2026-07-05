@@ -446,13 +446,8 @@ public static partial class OpenXmlModelConverter
         throw new InvalidOperationException($"No Open XML type mapping found " +
                                             $"for model property {modelProperty.Name} of type {modelPropertyType}");
     }
-    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
-    if (children.Length > 1)
-      throw new InvalidOperationException($"Multiple child elements of type {openXmlChildType} " +
-                                          $"found in Open XML element {openXmlType} for model property {modelProperty.Name}");
 
-    foreach (var child in children)
-      openXmlElement.RemoveChild(child);
+
     var modelValue = modelProperty.GetValue(modelObject);
     if (modelValue == null)
       return;
@@ -474,6 +469,17 @@ public static partial class OpenXmlModelConverter
       throw new InvalidOperationException($"Converted Open XML child element " +
                                           $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");
 
+    var children = openXmlElement.ChildElements.Where(item => item.GetType() == openXmlChildType).ToArray();
+    if (children.Length > 1)
+      throw new InvalidOperationException($"Multiple child elements of type {openXmlChildType} " +
+                                          $"found in Open XML element {openXmlType} for model property {modelProperty.Name}");
+    if (children.Length==1)
+    {
+      var child = children[0];
+      if (String.Compare(child.OuterXml, openXmlChildElement.OuterXml, StringComparison.Ordinal) == 0)
+        return;
+      openXmlElement.RemoveChild(child);
+    }
     openXmlElement.AddChildUsingSchemaOrder(o);
     UpdateData(modelValue, openXmlChildElement);
   }

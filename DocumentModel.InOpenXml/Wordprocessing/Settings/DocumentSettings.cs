@@ -1358,17 +1358,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   //}
   //private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
 
-  ///// <summary>
-  ///// Specifies the document-level properties for all math in the document.
-  ///// </summary>
-  //[MultiCategory("Math")]
-  //[OpenXmlElement(typeof(DXM.MathProperties), Order = 83)]
-  //public DMM.MathProperties? MathProperties
-  //{
-  //  get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());
-  //  set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
-  //}
-  //private DMM.MathProperties? _MathProperties;
+  /// <summary>
+  /// Specifies the document-level properties for all math in the document.
+  /// </summary>
+  [MultiCategory("Math")]
+  [OpenXmlElement(typeof(DXM.MathProperties), Order = 83)]
+  public DMM.MathProperties? MathProperties
+  {
+    get => _MathProperties ??= GetElement<DMM.MathProperties?, DXM.MathProperties>(GetUpdatableElement());
+    set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
+  }
+  private DMM.MathProperties? _MathProperties;
 
   ///// <summary>
   ///// Specifies the set of XML namespaces associated with custom XML markup in the document.
