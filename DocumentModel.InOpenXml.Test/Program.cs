@@ -28,9 +28,9 @@ internal class Program
     if (!Exec(new DocumentSettingsTest())) return;
 
     if (!Exec(new FontTableTestClass())) return;
-    //if (!Exec(new FontEmbeddingTestClass())) return;
-    //if (!Exec(new LatentStylesTest())) return;
-    //if (!Exec(new StyleDefinitionsTest())) return;
+    if (!Exec(new FontEmbeddingTestClass())) return;
+    if (!Exec(new LatentStylesTest())) return;
+    if (!Exec(new StyleDefinitionsTest())) return;
     //if (!Exec(new BaseRunPropertiesTest())) return;
     //if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
     //if (!Exec(new BaseParagraphPropertiesTest())) return;
