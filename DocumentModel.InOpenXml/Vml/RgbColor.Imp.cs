@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Vml;
 
 public partial class RgbColor : IColor
 {
@@ -112,36 +112,5 @@ public partial class RgbColor : IColor
     }
   }
 
-
-  /// <summary>
-  /// Name of the color. It may be used to specify a color by name, such as "Red", "Blue", etc
-  /// or a scheme color name like "Accent1", "Accent2", etc.
-  /// If the color is not found in the PresetColors enumeration, the exception is raised.
-  /// </summary>
-  public string? Name
-  {
-    get
-    {
-      if (this.RGB is not null)
-      {
-        var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
-        return presetColorField?.Name;
-      }
-
-      return null;
-    }
-
-    set
-    {
-      if (value is null)
-        return;
-      if (Enum.TryParse<PresetColors>(value, out var presetColor))
-      {
-        this.RGB = (UInt32)presetColor;
-        return;
-      }
-
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
-    }
-  }
+  string? IColor.Name { get => null; set { } }
 }

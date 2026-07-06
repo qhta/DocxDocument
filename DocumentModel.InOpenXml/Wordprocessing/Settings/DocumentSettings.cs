@@ -1346,17 +1346,17 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   }
   private MailMerge? _MailMerge;
 
-  ///// <summary>
-  ///// Specifies the default parameters for VML objects inserted in the header and footer.
-  ///// </summary>
-  //[MultiCategory("VML")]
-  //[OpenXmlElement(typeof(DXW.HeaderShapeDefaults), Order = 132)]
-  //public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
-  //{
-  //  get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(GetUpdatableElement());
-  //  set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
-  //}
-  //private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
+  /// <summary>
+  /// Specifies the default parameters for VML objects inserted in the header and footer.
+  /// </summary>
+  [MultiCategory("VML")]
+  [OpenXmlElement(typeof(DXW.HeaderShapeDefaults), Order = 132)]
+  public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
+  {
+    get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(GetUpdatableElement());
+    set => UpdateField(ref _HeaderShapeDefaults, value, nameof(HeaderShapeDefaults));
+  }
+  private DMWV.HeaderShapeDefaults? _HeaderShapeDefaults;
 
   /// <summary>
   /// Specifies the document-level properties for all math in the document.

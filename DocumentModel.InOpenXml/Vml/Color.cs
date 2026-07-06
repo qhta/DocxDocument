@@ -11,7 +11,7 @@
 /// OpenXML-specific color representations.</remarks>
 [DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Vml")]
-public partial class Color : ModelElement
+public partial class Color : ModelElement, IColor
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
@@ -37,7 +37,7 @@ public partial class Color : ModelElement
   /// <param name = "hexColor">The </param>
   public Color(UInt32 hexColor)
   {
-    Val = hexColor.ToString();
+    Value = hexColor.ToString();
   }
 
   /// <summary>
@@ -47,8 +47,8 @@ public partial class Color : ModelElement
   /// <remarks>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
-  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-  private string? _Val;
+  public object? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+  private object? _Value;
 
   /// <summary>
   /// Implicitly converts a string to a <see cref = "Color"/> value.
@@ -76,13 +76,19 @@ public partial class Color : ModelElement
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
-    var strings = colorString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-    foreach (var str in strings)
+
+    if (HexColor.TryParse(colorString, out var hexColor))
+      Value = hexColor;
+    else
+    if (Enum.TryParse<PresetColors>(colorString, out var presetColor))
     {
-      var s = str.Trim();
-      if (HexColor.TryParse(s, out var hexColor))
-        Val = hexColor;
+      Value = presetColor;
     }
+    else
+    if (RgbColor.TryParse(colorString, out var rgbColor))
+      Value = rgbColor;
+    else
+      Value = colorString; // Fallback to storing the raw string if no known format matches
   }
 
   /// <summary>
@@ -91,7 +97,7 @@ public partial class Color : ModelElement
   /// <returns></returns>
   public override string? ToString()
   {
-    return Val;
+    return Value?.ToString();
   }
 
   /// <summary>
@@ -151,8 +157,7 @@ public partial class Color : ModelElement
     DMV.Color? color = null;
     if (val?.Value != null)
     {
-      color ??= new DMV.Color();
-      color.Val = val.Value;
+      color ??= new DMV.Color(val.Value);
     }
 
     return color;
@@ -167,8 +172,8 @@ public partial class Color : ModelElement
   /// <returns>A DX.StringValue representing the color value, or null if not set.</returns>
   public DX.StringValue? ToOpenXml()
   {
-    if (Val is not null)
-      return new DX.StringValue(Val);
+    if (Value is not null)
+      return new DX.StringValue(Value.ToString());
     return null;
   }
 
@@ -184,7 +189,7 @@ public partial class Color : ModelElement
       return null!;
     return new Color
     {
-      Val = value,
+      Value = value,
     };
   }
 
@@ -199,7 +204,7 @@ public partial class Color : ModelElement
   {
     if (color is null)
       return null;
-    if (UInt32.TryParse(color.Val, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hexValue))
+    if (UInt32.TryParse(color.Value?.ToString(), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hexValue))
       return new HexColor(hexValue);
     return null;
   }
@@ -216,7 +221,7 @@ public partial class Color : ModelElement
       return null!;
     return new Color
     {
-      Val = value.Value.ToString("X6"),
+      Value = new HexColor(value.Value),
     };
   }
 
@@ -231,9 +236,8 @@ public partial class Color : ModelElement
   {
     if (color is null)
       return null;
-    if (UInt32.TryParse(color.Val, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hexValue))
+    if (UInt32.TryParse(color.Value?.ToString(), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var hexValue))
       return hexValue;
     return null;
   }
-
 }

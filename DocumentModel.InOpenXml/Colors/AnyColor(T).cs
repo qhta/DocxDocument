@@ -14,7 +14,7 @@ namespace DocumentModel;
 [XmlInclude(typeof(DMD.PresetColor))]
 [XmlInclude(typeof(DMD.SystemColor))]
 [XmlInclude(typeof(DMD.HslColor))]
-[XmlInclude(typeof(DMW.RgbColorHex))]
+[XmlInclude(typeof(DMW.RgbColor))]
 [XmlInclude(typeof(DMW.SchemeColor))]
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
 [JsonDerivedType(typeof(DMW.Color), "DocumentModel.Wordprocessing.Color")]
@@ -24,7 +24,7 @@ namespace DocumentModel;
 [JsonDerivedType(typeof(DMD.PresetColor), "DocumentModel.Drawings.PresetColor")]
 [JsonDerivedType(typeof(DMD.SystemColor), "DocumentModel.Drawings.SystemColor")]
 [JsonDerivedType(typeof(DMD.HslColor), "DocumentModel.Drawings.HslColor")]
-[JsonDerivedType(typeof(DMW.RgbColorHex), "DocumentModel.Wordprocessing.RgbColorModelHex")]
+[JsonDerivedType(typeof(DMW.RgbColor), "DocumentModel.Wordprocessing.RgbColorModelHex")]
 [JsonDerivedType(typeof(DMW.SchemeColor), "DocumentModel.Wordprocessing.SchemeColor")]
 
 public abstract class AnyColor<T> : ModelElement<T> where T : DX.OpenXmlElement

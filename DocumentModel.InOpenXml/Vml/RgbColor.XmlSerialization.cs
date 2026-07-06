@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Vml;
 /// <summary>
 /// Provides XML serialization support for the <see cref = "RgbColor"/> structure.
 /// </summary>
@@ -20,20 +20,10 @@ public partial class RgbColor : IXmlSerializable
     var valueStr = reader.GetAttribute("value");
     if (!string.IsNullOrEmpty(valueStr))
     {
-      Value = valueStr;
-    }
+      RgbColor parsedValue = RgbColor.Parse(valueStr);
 
-    var tintStr = reader.GetAttribute("tint");
-    if (!string.IsNullOrEmpty(tintStr))
-    {
-      Tint = tintStr;
-    }
-
-    var shadeStr = reader.GetAttribute("shade");
-    if (!string.IsNullOrEmpty(shadeStr))
-    {
-      Shade = shadeStr;
-
+      // Use Unsafe.AsRef to update the readonly field
+      System.Runtime.CompilerServices.Unsafe.AsRef(in Value) = parsedValue.Value;
     }
     if (reader.IsEmptyElement)
     {
@@ -56,9 +46,5 @@ public partial class RgbColor : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteAttributeString("value", Value.ToString());
-    if (Tint != null)
-      writer.WriteAttributeString("tint", Tint.ToString());
-    if (Shade != null)
-      writer.WriteAttributeString("shade", Shade.ToString());
   }
 }

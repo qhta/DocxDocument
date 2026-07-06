@@ -182,7 +182,7 @@ public abstract partial class ColorHolder<T>: ModelElement<T>, IColor, IColorHol
   /// <summary>
   /// Gets or sets the name of the color. If the Color property is null, this property will return null. Setting this property will update the name of the Color if it is not null. 
   /// </summary>
-  public virtual string? Name
+  string? IColor.Name
   {
     get => (Color as IColor)?.Name;
     set

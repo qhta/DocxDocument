@@ -61,8 +61,10 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SchemeColorDef),
       typeof(DocumentModel.Drawings.SystemColor),
+      typeof(DocumentModel.Vml.Color),
+      typeof(DocumentModel.Vml.RgbColor),
       typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.RgbColorHex),
+      typeof(DocumentModel.Wordprocessing.RgbColor),
       typeof(DocumentModel.Wordprocessing.SchemeColor),
     }.OrderBy(item => item.FullName).ToList();
 
@@ -91,7 +93,7 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SystemColor),
       typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.RgbColorHex),
+      typeof(DocumentModel.Wordprocessing.RgbColor),
       typeof(DocumentModel.Wordprocessing.SchemeColor),
     }.OrderBy(item => item.FullName).ToList();
 
@@ -364,8 +366,8 @@ public class ColorTypesTest : _AbstractTestClass
         Tint = new HexPercent("40%"),
         Shade = new HexPercent("20%"),
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.RgbColorHex))
-      return new DocumentModel.Wordprocessing.RgbColorHex
+    if (colorType == typeof(DocumentModel.Wordprocessing.RgbColor))
+      return new DocumentModel.Wordprocessing.RgbColor
       {
         Value = (HexColor)0x336699,
         Tint = new Percentage("10%"),

@@ -1,6 +1,6 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Vml;
 
-public partial class RgbColor : IColor
+public partial class Color : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -8,7 +8,7 @@ public partial class RgbColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32? RGB { get => this.Value is null ? null : (UInt32)this.Value!; set => this.Value = value; }
+  public UInt32? RGB { get => this.Value is IColor ? ((IColor)this.Value).RGB : Value as UInt32?; set => this.Value = value; }
 
   /// <summary>
   /// Red component of the color as percentage value.
@@ -114,11 +114,10 @@ public partial class RgbColor : IColor
 
 
   /// <summary>
-  /// Name of the color. It may be used to specify a color by name, such as "Red", "Blue", etc
-  /// or a scheme color name like "Accent1", "Accent2", etc.
+  /// Name of the color. It may be used to specify a color by name.
   /// If the color is not found in the PresetColors enumeration, the exception is raised.
   /// </summary>
-  public string? Name
+  string? IColor.Name
   {
     get
     {
@@ -141,7 +140,7 @@ public partial class RgbColor : IColor
         return;
       }
 
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
+      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid preset color.");
     }
   }
 }

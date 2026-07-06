@@ -26,5 +26,5 @@ public interface IColor
   /// The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
   /// </summary>
   public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-  
+
 }
