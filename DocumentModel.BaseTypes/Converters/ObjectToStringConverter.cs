@@ -34,6 +34,7 @@ public static class ObjectToStringConverter
     RegisterConverters(typeof(HexInt), HexIntObjectToString, StringToHexIntObject);
     RegisterConverters(typeof(HexLong), HexLongObjectToString, StringToHexLongObject);
     RegisterConverters(typeof(HexPercent), HexPercentObjectToString, StringToHexPercentObject);
+    RegisterConverters(typeof(StringList), StringListObjectToString, StringToStringListObject);
   }
 
   /// <summary>
@@ -205,5 +206,10 @@ public static class ObjectToStringConverter
   private static object? StringToHexPercentObject(string? str) => StringToHexPercent(str);
   private static string? HexPercentToString(HexPercent? val) => val?.ToString();
   private static HexPercent? StringToHexPercent(string? str) => String.IsNullOrEmpty(str) ? (HexPercent?)null : HexPercent.Parse(str!);
+
+  private static string? StringListObjectToString(object? val) => StringListToString((StringList?)val);
+  private static object? StringToStringListObject(string? str) => StringToStringList(str);
+  private static string? StringListToString(StringList? val) => val?.ToString();
+  private static StringList? StringToStringList(string? str) => String.IsNullOrEmpty(str) ? (StringList?)null : StringList.Parse(str!);
 
 }

@@ -186,6 +186,12 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
   {
     if (builtInProperty.Name != null)
     {
+      if (builtInProperty.Name == "TitlesOfParts")
+      {
+        ContentProperties.TryAdd(builtInProperty);
+        return;
+      }
+
       if (CoreProperties.TryAdd(builtInProperty) || ContentProperties.TryAdd(builtInProperty) || StatisticProperties.TryAdd(builtInProperty))
         return;
       throw new InvalidOperationException($"BuiltInProperty {builtInProperty.Name} not found in known properties.");

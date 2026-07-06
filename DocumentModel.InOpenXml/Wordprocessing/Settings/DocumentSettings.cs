@@ -728,7 +728,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.ForceUpgrade), Order = 89)]
   public bool? ForceUpgrade
   {
-    get => _ForceUpgrade ??= GetElement<bool?, DXW.ForceUpgrade>(GetUpdatableElement());
+    get => _ForceUpgrade ??= GetElement<bool?, DXW.ForceUpgrade>(GetUpdatableElement()) ?? false;
     set => UpdateField(ref _ForceUpgrade, value, nameof(ForceUpgrade));
   }
   private bool? _ForceUpgrade;

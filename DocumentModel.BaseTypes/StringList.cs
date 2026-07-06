@@ -39,9 +39,9 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   /// </remarks>
   public StringList(string? str)
   {
-    if (str == null)
+    if (string.IsNullOrEmpty(str))
       return;
-    var ss = str.Split(',');
+    var ss = str!.Split(',');
     foreach (var s in ss)
     { _list.Add(s); }
   }
@@ -67,6 +67,16 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
   }
 
   /// <summary>
+  /// Parses a comma-separated string into a new StringList instance.
+  /// </summary>
+  /// <param name="str">The comma-separated string to parse.</param>
+  /// <returns>A new <see cref="StringList"/> instance containing the parsed strings.</returns>
+  public static StringList Parse(string str)
+  {
+    return new StringList(str);
+  }
+
+  /// <summary>
   /// Attempts to parse the specified string into a new StringList instance.
   /// </summary>
   /// <param name="str">The string to parse into a StringList.</param>
@@ -85,6 +95,7 @@ public partial class StringList : ICollection, ICollection<string>, IEquatable<S
       return false;
     }
   }
+
   /// <summary>
   /// Returns an enumerator that iterates through the collection.
   /// </summary>

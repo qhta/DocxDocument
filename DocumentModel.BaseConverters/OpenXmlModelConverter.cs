@@ -808,7 +808,7 @@ public static partial class OpenXmlModelConverter
       Debug.Assert(loadTypeMethod.GetParameters().Length == 1,
         $"Load method {loadTypeMethod} should have exactly one parameter");
       var propertyValue = modelProperty.GetValue(modelObject);
-      if (propertyValue == null && !loadTypeMethod.IsStatic)
+      if (propertyValue == null)
       {
         propertyValue = Activator.CreateInstance(modelProperty.PropertyType!)!;
         loadTypeMethod.Invoke(propertyValue, [openXmlObject]);

@@ -7622,6 +7622,13 @@
             Initializes a new instance of the <see cref="T:DocumentModel.StringList"/> class with an array of strings.
             </summary>
         </member>
+        <member name="M:DocumentModel.StringList.Parse(System.String)">
+            <summary>
+            Parses a comma-separated string into a new StringList instance.
+            </summary>
+            <param name="str">The comma-separated string to parse.</param>
+            <returns>A new <see cref="T:DocumentModel.StringList"/> instance containing the parsed strings.</returns>
+        </member>
         <member name="M:DocumentModel.StringList.TryParse(System.String,DocumentModel.StringList@)">
             <summary>
             Attempts to parse the specified string into a new StringList instance.

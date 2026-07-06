@@ -215,10 +215,7 @@ public partial class BaseBuiltInPropertiesCollection : DocumentPropertiesCollect
       foreach (var property in KnownProperties.Values)
       {
         var value = property.GetValue(Owner);
-        if (value != null)
-        {
-          yield return new BuiltInProperty { Name = property.Name, Value = value };
-        }
+        yield return new BuiltInProperty { Name = property.Name, Value = value };
       }
     }
   }

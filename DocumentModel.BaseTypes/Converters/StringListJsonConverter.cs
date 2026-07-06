@@ -110,12 +110,6 @@ public class StringListJsonConverter : JsonConverter<StringList>
       writer.WriteNullValue();
       return;
     }
-
-    writer.WriteStartArray();
-    foreach (var item in value)
-    {
-      writer.WriteStringValue(item);
-    }
-    writer.WriteEndArray();
+    writer.WriteStringValue(value.ToString());
   }
 }

@@ -344,6 +344,10 @@ public static class TestHelper
       {
         prop.SetValue(instance, new Vml.TextBoxContent("Sample Text"));
       }
+      else if (propType == typeof(StringList))
+      {
+        prop.SetValue(instance, new StringList("Item 1,Item 2,Item 3"));
+      }
       else if (propType.IsClass && propType != typeof(string))
       {
         if (!propType.IsAbstract)
