@@ -340,6 +340,10 @@ public static class TestHelper
       {
         prop.SetValue(instance, CreateVariant(VariantSupportedTypes[Random.Shared.Next(VariantSupportedTypes.Length)]));
       }
+      else if (propType == typeof(Vml.TextBoxContent))
+      {
+        prop.SetValue(instance, new Vml.TextBoxContent("Sample Text"));
+      }
       else if (propType.IsClass && propType != typeof(string))
       {
         if (!propType.IsAbstract)

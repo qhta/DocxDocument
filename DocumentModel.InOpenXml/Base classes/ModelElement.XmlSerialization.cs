@@ -29,9 +29,33 @@ public partial class ModelElement : IXmlSerializable
     reader.MoveToContent();
 
     var serializableProperties = GetSerializableProperties();
-    var (_, elementProperties) = SplitProperties(serializableProperties);
 
     // Read attributes
+    ReadAttributes(reader, serializableProperties);
+
+    var isEmptyElement = reader.IsEmptyElement;
+    reader.ReadStartElement();
+    if (isEmptyElement)
+      return;
+
+    reader.MoveToContent();
+
+    // Read child elements serialized as properties.
+    ReadProperties(reader, serializableProperties);
+
+    // Read remaining child elements serialized as collection items.
+    ReadItems(reader);
+    if (reader.NodeType == XmlNodeType.EndElement)
+      reader.ReadEndElement();
+  }
+
+  /// <summary>
+  /// Reads the attributes of the current XML element and sets the corresponding properties of the current instance.
+  /// </summary>
+  /// <param name="reader">The <see cref="XmlReader"/> from which the XML representation of the attributes will be read.</param>
+  /// <param name="serializableProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be read from the XML attributes.</param>
+  protected virtual void ReadAttributes(XmlReader reader, PropertyInfo[] serializableProperties)
+  {
     if (reader.NodeType == XmlNodeType.Element && reader.MoveToFirstAttribute())
     {
       do
@@ -50,15 +74,15 @@ public partial class ModelElement : IXmlSerializable
 
       reader.MoveToElement();
     }
+  }
 
-    var isEmptyElement = reader.IsEmptyElement;
-    reader.ReadStartElement();
-    if (isEmptyElement)
-      return;
-
-    reader.MoveToContent();
-
-    // Read child elements serialized as properties.
+  /// <summary>
+  /// Reads the child elements of the current XML element and sets the corresponding properties of the current instance.
+  /// </summary>
+  /// <param name="reader">The <see cref="XmlReader"/> from which the XML representation of the properties will be read.</param>
+  /// <param name="elementProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be read from the XML.</param>
+  protected virtual void ReadProperties(XmlReader reader, PropertyInfo[] elementProperties)
+  {
     while (reader.NodeType == XmlNodeType.Element)
     {
       var propName = reader.LocalName;
@@ -88,15 +112,21 @@ public partial class ModelElement : IXmlSerializable
         else
           reader.Skip();
       }
-
-      reader.MoveToContent();
     }
+    reader.MoveToContent();
+  }
 
-    // Read remaining child elements serialized as collection items.
+  /// <summary>
+  /// Reads the child elements of the current XML element and adds them to the current instance using the appropriate "Add" method.
+  /// </summary>
+  /// <param name="reader">The <see cref="XmlReader"/> from which the XML representation of the items will be read.</param>
+  /// <exception cref="ApplicationException">Thrown when no suitable Add method is found for a given type.</exception>
+  protected virtual void ReadItems(XmlReader reader)
+  {
     var thisType = this.GetType();
     var addMethods = thisType.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-                             .Where(m => m.Name.StartsWith("Add") && m.GetParameters().Length == 1)
-                             .ToArray();
+      .Where(m => m.Name.StartsWith("Add") && m.GetParameters().Length == 1)
+      .ToArray();
 
     while (reader.NodeType == XmlNodeType.Element)
     {
@@ -123,9 +153,6 @@ public partial class ModelElement : IXmlSerializable
 
       reader.MoveToContent();
     }
-
-    if (reader.NodeType == XmlNodeType.EndElement)
-      reader.ReadEndElement();
   }
 
   /// <summary>
@@ -136,10 +163,20 @@ public partial class ModelElement : IXmlSerializable
   {
     var serializableProperties = GetSerializableProperties();
     var (attributeProperties, elementProperties) = SplitProperties(serializableProperties);
+    WriteAttributes(writer, attributeProperties);
+    WriteProperties(writer, elementProperties);
+    WriteItems(writer);
+  }
+
+  /// <summary>
+  /// Writes the attributes of the current instance to the specified <see cref="XmlWriter"/>.
+  /// </summary>
+  /// <param name="writer">The <see cref="XmlWriter"/> to which the XML representation of the attributes will be written.</param>
+  /// <param name="attributeProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be written as attributes.</param>
+  protected virtual void WriteAttributes(XmlWriter writer, PropertyInfo[] attributeProperties)
+  {
     foreach (var property in attributeProperties)
     {
-      if (property.PropertyType.GetNotNullableType()==typeof(DMW.PixelsMeasure))
-        Debug.Assert(true);
       var value = property.GetValue(this);
       if (value != null)
       {
@@ -149,6 +186,15 @@ public partial class ModelElement : IXmlSerializable
         writer.WriteAttributeString(property.Name.ToLowerFirst(), valueString);
       }
     }
+  }
+
+  /// <summary>
+  /// Writes the properties of the current instance to the specified <see cref="XmlWriter"/> as child elements.
+  /// </summary>
+  /// <param name="writer">The <see cref="XmlWriter"/> to which the XML representation of the properties will be written.</param>
+  /// <param name="elementProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be written as child elements.</param>
+  protected virtual void WriteProperties(XmlWriter writer, PropertyInfo[] elementProperties)
+  {
     if (elementProperties.Any())
     {
       foreach (var property in elementProperties)
@@ -167,6 +213,14 @@ public partial class ModelElement : IXmlSerializable
         }
       }
     }
+  }
+
+  /// <summary>
+  /// Writes the child elements of the current instance to the specified <see cref="XmlWriter"/>.
+  /// </summary>
+  /// <param name="writer">The <see cref="XmlWriter"/> to which the XML representation of the child elements will be written.</param>
+  protected virtual void WriteItems(XmlWriter writer)
+  {
     if (this is IEnumerable enumerable)
     {
       foreach (var item in enumerable)

@@ -12,7 +12,7 @@ public partial class Callout
   public bool ShouldSerializeDropAuto() => DropAuto is not null;
   public bool ShouldSerializeDrop() => !String.IsNullOrEmpty(Drop);
   public bool ShouldSerializeDistance() => !String.IsNullOrEmpty(Distance);
-  public bool ShouldSerializeLengthSpec() => LengthSpec is not null;
+  public bool ShouldSerializeLengthSpec() => LengthSpecified is not null;
   public bool ShouldSerializeLength() => !String.IsNullOrEmpty(Length);
   public bool ShouldSerializeAccentBar() => AccentBar is not null;
   public bool ShouldSerializeTextBorder() => TextBorder is not null;

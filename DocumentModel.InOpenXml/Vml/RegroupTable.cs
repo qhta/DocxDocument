@@ -14,9 +14,10 @@ public partial class RegroupTable : ModelElement<DXVO.RegroupTable>
  public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
  private ExtensionHandlingBehavior? _Extension;
 
- /// <summary>
- ///   Contains the collection of regrouping history entries for shape groups.
- /// </summary>
+  /// <summary>
+  ///   Contains the collection of regrouping history entries for shape groups.
+  /// </summary>
+  [OpenXmlElementCollection(typeof(DXVO.Entry))]
  public Entries? Entries { get => _Entries; set => UpdateField(ref _Entries, value, nameof(Entries)); }
  private Entries? _Entries;
 }

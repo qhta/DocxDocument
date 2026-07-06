@@ -11,7 +11,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   /// Name of the custom color, which can be used to identify and reference the color within the document. 
   /// </summary>
   [OpenXmlProperty(nameof(DXD.CustomColor.Name))]
-  public new string? Name
+  public string? Name
   {
     get => _Name ??= GetProperty<string>(GetUpdatableElement()?.Name);
     set => UpdateField(ref _Name, value, nameof(Name));

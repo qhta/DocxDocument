@@ -9,37 +9,69 @@ namespace DocumentModel.Vml;
 [XmlRoot("TextBox", Namespace = "DocumentModel.Vml")]
 public partial class TextBox : ModelElement<DXV.TextBox>
 {
- /// <summary>
- /// Unique identifier for the text box.
- /// </summary>
- [OpenXmlProperty(nameof(DXV.TextBox.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  /// <summary>
+  /// Unique identifier for the text box.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXV.TextBox.Id))]
+  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private string? _Id;
 
- /// <summary>
- /// CSS-style string specifying shape styling properties for the text box.
- /// </summary>
- [OpenXmlProperty(nameof(DXV.TextBox.Style))]
- public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
- private string? _Style;
+  /// <summary>
+  /// CSS-style string specifying shape styling properties for the text box.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXV.TextBox.Style))]
+  public string? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
+  private string? _Style;
 
- /// <summary>
- /// Inset margin values for the text box content.
- /// </summary>
- [OpenXmlProperty(nameof(DXV.TextBox.Inset))]
- public string? Inset { get => _Inset; set => UpdateField(ref _Inset, value, nameof(Inset)); }
- private string? _Inset;
+  /// <summary>
+  /// Inset margin values for the text box content.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXV.TextBox.Inset))]
+  public string? Inset { get => _Inset; set => UpdateField(ref _Inset, value, nameof(Inset)); }
+  private string? _Inset;
 
- /// <summary>
- /// Indicates whether single-click selection is enabled for the text box.
- /// </summary>
- [OpenXmlProperty(nameof(DXV.TextBox.SingleClick))]
- public bool? SingleClick { get => _SingleClick; set => UpdateField(ref _SingleClick, value, nameof(SingleClick)); }
- private bool? _SingleClick;
+  /// <summary>
+  /// Indicates whether single-click selection is enabled for the text box.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXV.TextBox.SingleClick))]
+  public bool? SingleClick { get => _SingleClick; set => UpdateField(ref _SingleClick, value, nameof(SingleClick)); }
+  private bool? _SingleClick;
 
- /// <summary>
- /// Content of the text box, including paragraphs and runs.
- /// </summary>
- public TextBoxContent? TextBoxContent { get => _TextBoxContent; set => UpdateField(ref _TextBoxContent, value, nameof(TextBoxContent)); }
- private TextBoxContent? _TextBoxContent;
+  /// <summary>
+  /// Content of the text box, including paragraphs and runs.
+  /// </summary>
+  [XmlIgnore]
+  [OpenXmlUpdateData(nameof(UpdateContent))]
+  [OpenXmlLoadData(nameof(LoadContent))]
+  public TextBoxContent? TextBoxContent
+  {
+    get => _TextBoxContent;
+    set => UpdateField(ref _TextBoxContent, value, nameof(TextBoxContent));
+  }
+
+  private TextBoxContent? _TextBoxContent;
+
+  /// <summary>
+  /// Updates the content of the text box element with the current TextBoxContent.
+  /// </summary>
+  /// <param name="element">The OpenXmlElement representing the text box.</param>
+  public void UpdateContent(DX.OpenXmlElement element)
+  {
+    if (TextBoxContent is not null && element is DXV.TextBox textBoxElement)
+    {
+      textBoxElement.InnerXml = TextBoxContent.ToString() ?? string.Empty;
+    }
+  }
+
+  /// <summary>
+  /// Loads the content of the text box element into the TextBoxContent property.
+  /// </summary>
+  /// <param name="element">The OpenXmlElement representing the text box.</param>
+  public void LoadContent(DX.OpenXmlElement element)
+  {
+    if (element is DXV.TextBox textBoxElement)
+    {
+      TextBoxContent = TextBoxContent.Parse(textBoxElement.InnerXml);
+    }
+  }
 }

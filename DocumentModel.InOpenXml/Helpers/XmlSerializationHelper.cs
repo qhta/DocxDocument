@@ -89,13 +89,13 @@ public static class XmlSerializationHelper
   {
     if (modelTypes == null)
       modelTypes = XmlSerializationHelper.GetKnownTypes(rootType);
-    Debug.WriteLine($"$ModelTypes: {modelTypes.Count()}");
-    foreach (var knownType in modelTypes)
-    {
-      Debug.WriteLine($"  {knownType.FullName}");
-    }
+    //Debug.WriteLine($"$ModelTypes: {modelTypes.Count()}");
+    //foreach (var knownType in modelTypes)
+    //{
+    //  Debug.WriteLine($"  {knownType.FullName}");
+    //}
     Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNamesDictionary(modelTypes);
-    Debug.WriteLine($"Ambiguous: {ambiguousTypeNames.Count}");
+    //Debug.WriteLine($"Ambiguous: {ambiguousTypeNames.Count}");
 
     XmlAttributeOverrides? xmlAttributeOverrides = null;
     if (ambiguousTypeNames.Any())
