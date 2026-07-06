@@ -95,8 +95,18 @@ public static class XmlSerializationHelper
     //  Debug.WriteLine($"  {knownType.FullName}");
     //}
     Dictionary<string, List<Type>> ambiguousTypeNames = GetTypeNamesDictionary(modelTypes);
-    //Debug.WriteLine($"Ambiguous: {ambiguousTypeNames.Count}");
-
+    //if (ambiguousTypeNames.Any())
+    //{
+    //  Debug.WriteLine($"Ambiguous type names: {ambiguousTypeNames.Count}");
+    //  foreach (var item in ambiguousTypeNames)
+    //  {
+    //    Debug.WriteLine($"  {item.Key}");
+    //    foreach (var type in item.Value)
+    //    {
+    //      Debug.WriteLine($"    {type.FullName}");
+    //    }
+    //  }
+    //}
     XmlAttributeOverrides? xmlAttributeOverrides = null;
     if (ambiguousTypeNames.Any())
     {
@@ -192,8 +202,8 @@ public static class XmlSerializationHelper
     {
       if (visitedTypes.Contains(aType))
         return;
-      if (aType.FullName!.Contains("TextBoxContent"))
-        Debug.Assert(true);
+      //if (aType.FullName!.Contains("TextBoxContent"))
+      //  Debug.Assert(true);
       //Debug.WriteLine($"GetKnownTypes for {aType.FullName}");
       visitedTypes.Add(aType);
       //if ((aType.FullName ?? "").Contains("<>"))
@@ -214,6 +224,7 @@ public static class XmlSerializationHelper
         if (arg.Namespace.StartsWith("System") || arg.Namespace.StartsWith("DocumentFormat") || arg.IsInterface)
         {
           knownTypes.Add(aType);
+          visitedTypes.Add(aType);
           //Debug.WriteLine($"Skipping known arg type: {arg.FullName}");
         }
         else
@@ -276,10 +287,10 @@ public static class XmlSerializationHelper
     Dictionary<string, List<Type>> typeNames = new Dictionary<string, List<Type>>();
     foreach (var aType in types)
     {
-      if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Office2010.Word.Glow]")
-        Debug.Assert(true);
-      if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Drawing.Glow]")
-        Debug.Assert(true);
+      //if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Office2010.Word.Glow]")
+      //  Debug.Assert(true);
+      //if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Drawing.Glow]")
+      //  Debug.Assert(true);
       var aName = aType.Name;
       if (aType.IsGenericType)
       {
