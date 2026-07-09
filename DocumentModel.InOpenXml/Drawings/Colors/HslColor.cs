@@ -16,10 +16,10 @@ public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColo
   /// Hue represents the color's position on the color wheel: 0=red, 60=yellow, 120=green, 180=cyan, 240=blue, 300=magenta.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
-  public Degrees H
+  public Degrees Hue
   {
     get => _Hue ??= GetProperty<Degrees>(GetUpdatableElement()?.HueValue);
-    set => UpdateField(ref _Hue, value, nameof(H));
+    set => UpdateField(ref _Hue, value, nameof(Hue));
   }
   private Degrees? _Hue;
 
@@ -31,10 +31,10 @@ public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColo
   /// Saturation determines the intensity or vividness of the color.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.SatValue))]
-  public Percentage S
+  public Percentage Saturation
   {
     get => _Saturation ??= GetProperty<Percentage>(GetUpdatableElement()?.SatValue);
-    set => UpdateField(ref _Saturation, value, nameof(S));
+    set => UpdateField(ref _Saturation, value, nameof(Saturation));
   }
   private Percentage? _Saturation;
 
@@ -46,10 +46,10 @@ public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColo
   /// and 100% is white. Luminance determines how light or dark the color appears.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.HslColor.LumValue))]
-  public Percentage L
+  public Percentage Luminance
   {
     get => _Luminance ??= GetProperty<Percentage>(GetUpdatableElement()?.LumValue);
-    set => UpdateField(ref _Luminance, value, nameof(L));
+    set => UpdateField(ref _Luminance, value, nameof(Luminance));
   }
   private Percentage? _Luminance;
 
@@ -60,10 +60,10 @@ public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColo
   /// Specifies the amount of alpha (opacity) in the color where 0 is fully transparent and 100% is fully opaque.
   /// This is equivalent to RGBA values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
-  public Percentage A
+  public Percentage Alpha
   {
     get => _Alpha ??= "100%";
-    set => UpdateField(ref _Alpha, value, nameof(A));
+    set => UpdateField(ref _Alpha, value, nameof(Alpha));
   }
   private Percentage? _Alpha;
 }

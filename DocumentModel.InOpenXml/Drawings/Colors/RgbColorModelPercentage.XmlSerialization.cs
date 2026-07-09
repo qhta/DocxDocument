@@ -18,22 +18,22 @@ public partial class RgbColorModelPercentage : IXmlSerializable
     string? rStr = reader.GetAttribute("r");
     if (!string.IsNullOrEmpty(rStr))
     {
-      R = Percentage.Parse(rStr);
+      Red = Percentage.Parse(rStr);
     }
     string? gStr = reader.GetAttribute("g");
     if (!string.IsNullOrEmpty(gStr))
     {
-      G = Percentage.Parse(gStr);
+      Green = Percentage.Parse(gStr);
     }
     string? bStr = reader.GetAttribute("b");
     if (!string.IsNullOrEmpty(bStr))
     {
-      B = Percentage.Parse(bStr);
+      Blue = Percentage.Parse(bStr);
     }
     string? aStr = reader.GetAttribute("a");
     if (!string.IsNullOrEmpty(aStr))
     {
-      A = Percentage.Parse(aStr);
+      Alpha = Percentage.Parse(aStr);
     }
     base.ReadXml(reader);
   }
@@ -44,11 +44,11 @@ public partial class RgbColorModelPercentage : IXmlSerializable
   /// <param name = "writer">The <see cref = "XmlWriter"/> to write to.</param>
   public override void WriteXml(XmlWriter writer)
   {
-    writer.WriteAttributeString("r", R.ToString());
-    writer.WriteAttributeString("g", G.ToString());
-    writer.WriteAttributeString("b", B.ToString());
-    if (A!= 1.0)
-      writer.WriteAttributeString("a", A.ToString());
+    writer.WriteAttributeString("r", Red.ToString());
+    writer.WriteAttributeString("g", Green.ToString());
+    writer.WriteAttributeString("b", Blue.ToString());
+    if (Alpha.ToString() != "100%")
+      writer.WriteAttributeString("a", Alpha.ToString());
 
     base.WriteXml(writer);
   }

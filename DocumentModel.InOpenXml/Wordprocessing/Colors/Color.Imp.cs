@@ -5,7 +5,7 @@ public partial class Color : IColor
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
   /// </summary>
-  UInt32 IColor.ARGB { get => this.Value ?? (UInt32)PresetColors.Auto; set => this.Value = value; }
+  UInt32 IColor.ARGB { get => ((this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000); set => this.Value = value ^ 0xFF000000; }
 
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.
@@ -17,10 +17,11 @@ public partial class Color : IColor
   {
     get
     {
-      double Red = (((Value ?? 0) >> 16) & 0xFF) / 255.0;
-      double Green = (((Value ?? 0) >> 8) & 0xFF) / 255.0;
-      double Blue = (((Value ?? 0) & 0xFF) / 255.0);
-      double Alpha = (((Value ?? 0) >> 24) & 0xFF) / 255.0;
+      var argb = (this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000;
+      double Red = ((argb >> 16) & 0xFF) / 255.0;
+      double Green = ((argb >> 8) & 0xFF) / 255.0;
+      double Blue = ((argb & 0xFF) / 255.0);
+      double Alpha = ((argb >> 24) & 0xFF) / 255.0;
       return (Red, Green, Blue, Alpha);
     }
     set

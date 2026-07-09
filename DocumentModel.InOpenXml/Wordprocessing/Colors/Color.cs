@@ -32,7 +32,7 @@ public partial class Color : AnyColor<DXW.Color>
   /// <param name = "hexColor">The </param>
   public Color(UInt32 hexColor)
   {
-    Value = hexColor;
+    Value = hexColor ^ 0xFF000000;
   }
 
   /// <summary>

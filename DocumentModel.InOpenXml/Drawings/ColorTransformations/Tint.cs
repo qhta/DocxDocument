@@ -18,6 +18,6 @@ public class Tint: PercentageTransformation<DXD.Tint>
     var tint = Value / 100.0;
     l = l*tint + (1 - tint);
     l = Math.Clamp(l, 0, 1);
-    return new HslColor { H = h, S = s, L = l, A = a };
+    return new HslColor { Hue = h, Saturation = s, Luminance = l, Alpha = a };
   }
 }

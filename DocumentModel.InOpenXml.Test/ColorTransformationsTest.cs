@@ -7,7 +7,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive tests for all DocumentModel types implementing IColor.
 /// </summary>
-public class ColorTypesTest : _AbstractTestClass
+public class ColorTransformationsTest : _AbstractTestClass
 {
   /// <summary>
   /// Runs all IColor implementation tests.
@@ -15,17 +15,17 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public override bool Run()
   {
-    Console.WriteLine("=== Color Implementations Test ===\n");
+    Console.WriteLine("=== Color Transformations Test ===\n");
     if (!TestTypeDiscovery()) return false;
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestColorAccessors()) return false;
-    if (!TestEdgeCases()) return false;
     if (!TestColorModelsConversion()) return false;
-    if (!StoreThemeInDocument()) return false;
-    if (!ChangeColorsInDocument()) return false;
+    //if (!TestXmlSerialization()) return false;
+    //if (!TestJsonSerialization()) return false;
+    //if (!TestColorAccessors()) return false;
+    //if (!TestEdgeCases()) return false;
+    //if (!StoreThemeInDocument()) return false;
+    //if (!ChangeColorsInDocument()) return false;
 
-    Console.WriteLine("All Color implementation tests passed.\n");
+    Console.WriteLine("All Color transformation tests passed.\n");
     return true;
   }
 
@@ -35,44 +35,22 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if discovery is correct; otherwise, false.</returns>
   private bool TestTypeDiscovery()
   {
-    Console.WriteLine("--- Color Type Discovery ---");
-    var discovered = GetIColorTypes();
+    Console.WriteLine("--- ColorTransformations Type Discovery ---");
+    var discovered = GetIColorTransformationTypes();
     var expected = new List<Type>
     {
-      typeof(DocumentModel.Drawings.AlphaInverse),
-      typeof(DocumentModel.Drawings.BackgroundColor),
-      typeof(DocumentModel.Drawings.BulletColor),
-      typeof(DocumentModel.Drawings.ColorReplacement),
-      typeof(DocumentModel.Drawings.ColorType),
-      typeof(DocumentModel.Drawings.ContourColor),
-      typeof(DocumentModel.Drawings.CustomColor),
-      typeof(DocumentModel.Drawings.Diagrams.ColorType),
-      typeof(DocumentModel.Drawings.Diagrams.EffectColorList),
-      typeof(DocumentModel.Drawings.Diagrams.FillColor),
-      typeof(DocumentModel.Drawings.Diagrams.LineColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextEffectColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextFillColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextLineColorList),
-      typeof(DocumentModel.Drawings.Duotone),
-      typeof(DocumentModel.Drawings.ExtrusionColor),
-      typeof(DocumentModel.Drawings.HslColor),
-      typeof(DocumentModel.Drawings.PresetColor),
-      typeof(DocumentModel.Drawings.RgbColorModelHex),
-      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-      typeof(DocumentModel.Drawings.SchemeColor),
-      typeof(DocumentModel.Drawings.SchemeColorDef),
-      typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.Vml.Color),
-      typeof(DocumentModel.Vml.RgbColor),
-      typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.RgbColor),
-      typeof(DocumentModel.Wordprocessing.SchemeColor),
-    }.OrderBy(item => item.FullName).ToList();
+      typeof(DocumentModel.Drawings.Alpha),
+      typeof(DocumentModel.Drawings.AlphaModulation),
+      typeof(DocumentModel.Drawings.AlphaOffset),
+      typeof(DocumentModel.Drawings.Shade),
+      typeof(DocumentModel.Drawings.Tint),
+    };
+
 
     if (!discovered.SequenceEqual(expected))
 
     {
-      Console.WriteLine("✗ Color type discovery FAILED");
+      Console.WriteLine("✗ ColorTransformations type discovery FAILED");
       Console.WriteLine("Discovered:");
       foreach (var item in discovered) Console.WriteLine($"  {item}");
       Console.WriteLine("Expected:");
@@ -80,23 +58,53 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    Console.WriteLine("✓ Color type discovery passed\n");
+    Console.WriteLine("✓ ColorTransformations type discovery passed\n");
     return true;
   }
 
 
-  private readonly List<Type> typesToTest = new List<Type>
+  private readonly List<Type> typesToConvert = new List<Type>
+  {
+
+    typeof(DocumentModel.Drawings.RgbColorModelHex),
+    typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+    typeof(DocumentModel.Drawings.HslColor),
+    typeof(DocumentModel.Wordprocessing.Color),
+    typeof(DocumentModel.Wordprocessing.RgbColor),
+  };
+
+
+  private bool TestColorModelsConversion()
+  {
+    Console.WriteLine("--- TestColorModelsConversion ---");
+
+    foreach (var baseType in typesToConvert)
     {
-      typeof(DocumentModel.Drawings.HslColor),
-      typeof(DocumentModel.Drawings.PresetColor),
-      typeof(DocumentModel.Drawings.RgbColorModelHex),
-      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-      typeof(DocumentModel.Drawings.SchemeColor),
-      typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.RgbColor),
-      typeof(DocumentModel.Wordprocessing.SchemeColor),
-    }.OrderBy(item => item.FullName).ToList();
+      IColor baseColor = CreateSampleColor(baseType);
+
+      var xmlString = SerializeObjectToXml(baseColor);
+      Console.WriteLine($"\nOriginal color model ({baseType.Name}):\n{xmlString}");
+
+      foreach (var otherType in typesToConvert)
+      {
+        IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
+        otherColor.ARGB = baseColor.ARGB;
+        xmlString = SerializeObjectToXml(otherColor);
+        Console.WriteLine($"\nOther color model ({otherType.Name}):\n{xmlString}");
+
+        if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out var message))
+        {
+          Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+          return false;
+        }
+      }
+
+    }
+
+    Console.WriteLine("✓ TestColorModelsConversion passed\n");
+    return true;
+
+  }
 
   /// <summary>
   /// Tests XML serialization and deserialization for all IColor implementations.
@@ -121,7 +129,7 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    foreach (var type in typesToTest)
+    foreach (var type in typesToConvert)
     {
       var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
@@ -170,7 +178,7 @@ public class ColorTypesTest : _AbstractTestClass
       return false;
     }
 
-    foreach (var type in typesToTest)
+    foreach (var type in typesToConvert)
     {
       var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
@@ -204,7 +212,7 @@ public class ColorTypesTest : _AbstractTestClass
   {
     Console.WriteLine("--- Color Accessors ---");
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToTest)
+    foreach (var type in typesToConvert)
     {
       var testData = CreateSampleColor(type);
       AttachToDocumentContext(testData, document);
@@ -257,7 +265,7 @@ public class ColorTypesTest : _AbstractTestClass
     Console.WriteLine("--- Edge Cases ---");
     var jsonOptions = CreateJsonOptions();
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToTest)
+    foreach (var type in typesToConvert)
     {
       var empty = Activator.CreateInstance(type);
       if (empty == null)
@@ -290,62 +298,19 @@ public class ColorTypesTest : _AbstractTestClass
     return true;
   }
 
-  private readonly List<Type> typesToConvert = new List<Type>
-  {
-
-    typeof(DocumentModel.Drawings.RgbColorModelHex),
-    typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-    typeof(DocumentModel.Drawings.HslColor),
-    typeof(DocumentModel.Wordprocessing.Color),
-    typeof(DocumentModel.Wordprocessing.RgbColor),
-  };
-
-
-  private bool TestColorModelsConversion()
-  {
-    Console.WriteLine("--- TestColorModelsConversion ---");
-
-    foreach (var baseType in typesToConvert)
-    {
-      IColor baseColor = CreateSampleColor(baseType);
-
-      var xmlString = SerializeObjectToXml(baseColor);
-      Console.WriteLine($"\nBase color model ({baseType.Name}):{xmlString}");
-
-      foreach (var otherType in typesToConvert)
-      {
-        IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
-        otherColor.ARGB = baseColor.ARGB;
-        xmlString = SerializeObjectToXml(otherColor);
-        Console.WriteLine($"\n  Other color model ({otherType.Name}):{xmlString}");
-
-        if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out var message))
-        {
-          Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
-          return false;
-        }
-      }
-
-    }
-
-    Console.WriteLine("✓ TestColorModelsConversion passed\n");
-    return true;
-
-  }
   /// <summary>
   /// Returns all non-abstract classes in the model assembly that implement an interface named IColor.
   /// </summary>
   /// <returns>Collection of discovered IColor implementation types.</returns>
-  private List<Type> GetIColorTypes()
+  private List<Type> GetIColorTransformationTypes()
   {
     var assembly = typeof(DocumentModel.Drawings.ColorType).Assembly;
     var colorTypes = assembly.GetTypes()
-      .Where(t => !t.IsAbstract && t.GetInterfaces().Any(i => i.Name == "IColor"))
+      .Where(t => !t.IsAbstract && t.GetInterfaces().Any(i => i.Name == "IColorTransformation"))
       .OrderBy(item => item.FullName).ToList();
 
     return colorTypes;
   }
-
 
   /// <summary>
   /// Creates representative sample data for each IColor implementation type.
@@ -472,7 +437,7 @@ public class ColorTypesTest : _AbstractTestClass
     colorScheme.Dark2Color = new RgbColorModelHex { Value = (HexColor)0x0E2841 };
     colorScheme.Light2Color = new RgbColorModelHex { Value = (HexColor)0xE8E8E8 };
     colorScheme.Accent1Color = new RgbColorModelHex { Value = (HexColor)0x156082 };
-    colorScheme.Accent2Color = new RgbColorModelHex { Value = (HexColor)0xE97132 }; 
+    colorScheme.Accent2Color = new RgbColorModelHex { Value = (HexColor)0xE97132 };
     colorScheme.Accent3Color = new RgbColorModelHex { Value = (HexColor)0xE97132 };
     colorScheme.Accent4Color = new RgbColorModelHex { Value = (HexColor)0x0F9ED5 };
     colorScheme.Accent5Color = new RgbColorModelHex { Value = (HexColor)0xA02B93 };

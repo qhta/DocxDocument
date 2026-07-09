@@ -19,10 +19,10 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
-  public Percentage R
+  public Percentage Red
   {
     get => _RedPercentage ??= GetProperty<Percentage>(GetUpdatableElement()?.RedPortion);
-    set => UpdateField(ref _RedPercentage, value, nameof(R));
+    set => UpdateField(ref _RedPercentage, value, nameof(Red));
   }
   private Percentage? _RedPercentage;
 
@@ -34,10 +34,10 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
-  public Percentage G
+  public Percentage Green
   {
     get => _GreenPercentage ??= GetProperty<Percentage>(GetUpdatableElement()?.GreenPortion);
-    set => UpdateField(ref _GreenPercentage, value, nameof(G));
+    set => UpdateField(ref _GreenPercentage, value, nameof(Green));
   }
   private Percentage? _GreenPercentage;
 
@@ -49,10 +49,10 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
-  public Percentage B
+  public Percentage Blue
   {
     get => _BluePercentage ??= GetProperty<Percentage>(GetUpdatableElement()?.BluePortion);
-    set => UpdateField(ref _BluePercentage, value, nameof(B));
+    set => UpdateField(ref _BluePercentage, value, nameof(Blue));
   }
   private Percentage? _BluePercentage;
 
@@ -63,47 +63,47 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// Specifies the amount of alpha (opacity) in the color where 0 is fully transparent and 100% is fully opaque.
   /// This is equivalent to RGBA values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
-  public Percentage A
+  public Percentage Alpha
   {
     get => _AlphaPercentage ??= "100%";
-    set => UpdateField(ref _AlphaPercentage, value, nameof(A));
+    set => UpdateField(ref _AlphaPercentage, value, nameof(Alpha));
   }
   private Percentage? _AlphaPercentage;
 
   /// <summary>
   /// Gets or sets the red component of the color as a double value between 0 and 1.
   /// </summary>
-  public override double Red
+  public override double RedFactor
   {
     get => _RedPercentage?.ToDouble() / 100.0 ?? 0;
-    set => R = new Percentage(value*100);
+    set => Red = new Percentage(value*100);
   }
 
   /// <summary>
   /// Gets or sets the green component of the color as a double value between 0 and 1.
   /// </summary>
-  public override double Green
+  public override double GreenFactor
   {
     get => _GreenPercentage?.ToDouble() / 100.0 ?? 0;
-    set => G = new Percentage(value*100);
+    set => Green = new Percentage(value*100);
   }
 
 
   /// <summary>
   /// Gets or sets the blue component of the color as a double value between 0 and 1.
   /// </summary>
-  public override double Blue
+  public override double BlueFactor
   {
     get => _BluePercentage?.ToDouble() / 100.0 ?? 0;
-    set => B = new Percentage(value*100);
+    set => Blue = new Percentage(value*100);
   }
 
   /// <summary>
   /// Gets or sets the alpha component of the color as a double value between 0 and 1.
   /// </summary>
-  public override double Alpha
+  public override double AlphaFactor
   {
     get => _AlphaPercentage?.ToDouble() / 100.0 ?? 0;
-    set => A = new Percentage(value*100);
+    set => Alpha = new Percentage(value*100);
   }
 }

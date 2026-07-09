@@ -10,13 +10,13 @@ public partial class RgbColorModelPercentage : IColor
   [JsonIgnore]
   public override UInt32 ARGB
   {
-    get => (UInt32)((A << 24) | ((R * 255 / 100000) << 16) | ((G * 255 / 100000) << 8) | (B * 255 / 100000));
+    get => (UInt32)((Alpha *255 / 100 << 24) | ((Red * 255 / 100) << 16) | ((Green * 255 / 100) << 8) | (Blue * 255 / 100));
     set
     {
-      R = (Int32)System.Math.Round(((value >> 16) & 0xFF) * 100000.0 / 255.0);
-      G = (Int32)System.Math.Round(((value >> 8) & 0xFF) * 100000.0 / 255.0);
-      B = (Int32)System.Math.Round((value & 0xFF) * 100000.0 / 255.0);
-      A = (Int32)System.Math.Round(((value >> 24) & 0xFF) * 100000.0 / 255.0);
+      Red = (Int32)System.Math.Round(((value >> 16) & 0xFF) * 100.0 / 255.0);
+      Green = (Int32)System.Math.Round(((value >> 8) & 0xFF) * 100.0 / 255.0);
+      Blue = (Int32)System.Math.Round((value & 0xFF) * 100.0 / 255.0);
+      Alpha = (Int32)System.Math.Round(((value >> 24) & 0xFF) * 100.0 / 255.0);
     }
   }
 

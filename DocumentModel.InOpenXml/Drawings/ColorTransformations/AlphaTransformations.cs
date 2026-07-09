@@ -18,7 +18,7 @@ public class Alpha: PercentageTransformation<DXD.Alpha>
     var (r, g, b, _) = color.RGBAComponents;
     var a = Value / 100.0;
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { R = r, G = g, B = b, A = a };
+    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
   }
 }
 
@@ -43,7 +43,7 @@ public class AlphaOffset : PercentageTransformation<DXD.AlphaOffset>
     var (r, g, b, a) = color.RGBAComponents;
     a += Value / 100.0;
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { R = r, G = g, B = b, A = a };
+    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
   }
 }
 /// <summary>
@@ -66,6 +66,6 @@ public class AlphaModulation : PercentageTransformation<DXD.AlphaModulation>
     var (r, g, b, a) = color.RGBAComponents;
     a += Value / 100.0;
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { R = r, G = g, B = b, A = a };
+    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
   }
 }

@@ -22,7 +22,7 @@ public partial class HslColor : IXmlSerializable
     {
       if (Degrees.TryParse(hueStr, out var hue))
       {
-        H = hue;
+        Hue = hue;
       }
     }
 
@@ -31,7 +31,7 @@ public partial class HslColor : IXmlSerializable
     {
       if (Percentage.TryParse(saturationStr, out var saturation))
       {
-        S = saturation;
+        Saturation = saturation;
       }
     }
 
@@ -40,7 +40,7 @@ public partial class HslColor : IXmlSerializable
     {
       if (Percentage.TryParse(luminanceStr, out var luminance))
       {
-        L = luminance;
+        Luminance = luminance;
       }
     }
 
@@ -53,9 +53,9 @@ public partial class HslColor : IXmlSerializable
   /// <param name = "writer">The <see cref = "XmlWriter"/> to write to.</param>
   public override void WriteXml(XmlWriter writer)
   {
-    writer.WriteAttributeString("h", H.ToString());
-    writer.WriteAttributeString("s", S.ToString());
-    writer.WriteAttributeString("l", L.ToString());
+    writer.WriteAttributeString("h", Hue.ToString());
+    writer.WriteAttributeString("s", Saturation.ToString());
+    writer.WriteAttributeString("l", Luminance.ToString());
     base.WriteXml(writer);
   }
 }

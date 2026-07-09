@@ -19,7 +19,7 @@ public abstract partial class DrawingsColorBase<T> : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public virtual double Red
+  public virtual double RedFactor
   {
     get => ((this.ARGB >> 16) & 0xFF) / 255.0;
     set
@@ -38,7 +38,7 @@ public abstract partial class DrawingsColorBase<T> : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public virtual double Green
+  public virtual double GreenFactor
   {
     get => ((this.ARGB >> 8) & 0xFF) / 255.0;
     set
@@ -57,7 +57,7 @@ public abstract partial class DrawingsColorBase<T> : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public virtual double Blue
+  public virtual double BlueFactor
   {
     get => (this.ARGB & 0xFF) / 255.0;
     set
@@ -76,7 +76,7 @@ public abstract partial class DrawingsColorBase<T> : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public virtual double Alpha
+  public virtual double AlphaFactor
   {
     get => ((this.ARGB >> 24) & 0xFF) / 255.0;
     set
@@ -93,13 +93,13 @@ public abstract partial class DrawingsColorBase<T> : IColor
   [NotMapped]
   public virtual (double R, double G, double B, double A) RGBAComponents
   {
-    get => (this.Red, this.Green, this.Blue, this.Alpha);
+    get => (this.RedFactor, this.GreenFactor, this.BlueFactor, this.AlphaFactor);
     set
     {
-      this.Red = value.R;
-      this.Green = value.G;
-      this.Blue = value.B;
-      this.Alpha = value.A;
+      this.RedFactor = value.R;
+      this.GreenFactor = value.G;
+      this.BlueFactor = value.B;
+      this.AlphaFactor = value.A;
     }
   }
 
