@@ -4,12 +4,16 @@
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues))]
+[OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues))]
 public enum SchemeColors
 {
   /// <summary>
   ///   Style Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.PhColor))]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues), nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.PhColor))]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues),nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues.None))]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues), nameof(DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues.AutoColor))]
   Auto = 0,
   /// <summary>
   ///   Dark Color 1.

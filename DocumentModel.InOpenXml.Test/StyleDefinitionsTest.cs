@@ -21,7 +21,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
   internal static Styles CreateSampleStyles()
   {
     var Styles = new Styles();
-    Styles.StyleDefinitions.Add(new StyleDefinition()
+    Styles.StyleDefinitions.Add(new Style()
     {
       StyleName = "Normal",
       Type = StyleType.Paragraph,
@@ -29,7 +29,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
       IsPrimary = true,
       UIPriority = 1,
     });
-    Styles.StyleDefinitions.Add(new StyleDefinition()
+    Styles.StyleDefinitions.Add(new Style()
     {
       StyleName = "Heading 1",
       Type = StyleType.Paragraph,
@@ -38,7 +38,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
       NextParagraphStyle = "Normal",
       UIPriority = 9,
     });
-    Styles.StyleDefinitions.Add(new StyleDefinition()
+    Styles.StyleDefinitions.Add(new Style()
     {
       StyleName = "Heading 6",
       Type = StyleType.Paragraph,
@@ -47,7 +47,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
       NextParagraphStyle = "Normal",
       UIPriority = 14,
     });
-    Styles.StyleDefinitions.Add(new StyleDefinition()
+    Styles.StyleDefinitions.Add(new Style()
     {
       StyleName = "annotation text",
       Type = StyleType.Character,
@@ -55,7 +55,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
       BasedOn = "DefaultParagraphFont",
       UIPriority = 99,
     });
-    Styles.StyleDefinitions.Add(new StyleDefinition()
+    Styles.StyleDefinitions.Add(new Style()
     {
       StyleName = "Book title",
       Type = StyleType.Paragraph,
@@ -77,7 +77,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
   /// <returns>The updated style data after changes have been applied.</returns>
   protected override Styles UpdateDataInDocument(Document document, Styles data)
   {
-    data.StyleDefinitions.Add(new StyleDefinition()
+    data.StyleDefinitions.Add(new Style()
     {
       StyleName = "NewStyle",
       Type = StyleType.Paragraph,

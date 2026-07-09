@@ -5,21 +5,20 @@
 /// </summary>
 public interface IColor
 {
-  /// <summary>A value of the color as uint. The value is in the format 0xRRGGBB,
-  /// where RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
+  /// <summary>A value of the color as uint. The value is in the format 0xAARRGGBB,
+  /// where AA represents the alpha channel, RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
   /// </summary>
-  public UInt32? RGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public UInt32 ARGB { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
-  /// Red, green, and blue components of the color as a tuple of double values between 0 and 1.
+  /// Red, green, blue, and alpha components of the color as a tuple of double values between 0 and 1.
   /// </summary>
-  public (double R, double G, double B) RGBComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
+  public (double R, double G, double B, double A) RGBAComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
-  /// Hue, saturation, and luminance components of the color as a tuple of double values between 0 and 1.
+  /// Hue, saturation, luminance, and alpha components of the color as a tuple of double values between 0 and 1.
   /// </summary>
-  public (double H, double S, double L) HSLComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public (double H, double S, double L, double A) HSLAComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.

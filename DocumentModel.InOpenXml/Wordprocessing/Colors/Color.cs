@@ -54,8 +54,8 @@ public partial class Color : AnyColor<DXW.Color>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeColor))]
-  public ThemeColors? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
-  private ThemeColors? _ThemeColor;
+  public DMD.SchemeColors? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
+  private DMD.SchemeColors? _ThemeColor;
 
   /// <summary>
   /// <para>Run Content Theme Color Tint</para>
@@ -111,7 +111,7 @@ public partial class Color : AnyColor<DXW.Color>
       var s = str.Trim();
       if (HexColor.TryParse(s, out var hexColor))
         Value = hexColor;
-      else if (Enum.TryParse<ThemeColors>(s, true, out var themeColor))
+      else if (Enum.TryParse<DMD.SchemeColors>(s, true, out var themeColor))
         ThemeColor = themeColor;
       if (s.StartsWith("ThemeTint:", StringComparison.OrdinalIgnoreCase) && byte.TryParse(s.Substring("ThemeTint:".Length).Trim(), out var themeTint))
         Tint = themeTint;
@@ -205,7 +205,7 @@ public partial class Color : AnyColor<DXW.Color>
     if (themeColor?.Value != null)
     {
       color ??= new DMW.Color();
-      color.ThemeColor = (ThemeColors)EnumTypeConverter.ConvertFrom(themeColor, typeof(ThemeColors))!;
+      color.ThemeColor = (DMD.SchemeColors)EnumTypeConverter.ConvertFrom(themeColor, typeof(DMD.SchemeColors))!;
     }
 
     if (themeTint?.Value != null)
@@ -239,7 +239,7 @@ public partial class Color : AnyColor<DXW.Color>
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
       // ReSharper disable once InvokeAsExtensionMember
-      themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
+      themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, DMD.SchemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;
     if (Tint is not null)
       themeTint = HexPercentConverter.ConvertTo(Tint, typeof(DX.StringValue)) as DX.StringValue;

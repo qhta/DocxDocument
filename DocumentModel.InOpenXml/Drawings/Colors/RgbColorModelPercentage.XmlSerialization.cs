@@ -30,6 +30,11 @@ public partial class RgbColorModelPercentage : IXmlSerializable
     {
       B = Percentage.Parse(bStr);
     }
+    string? aStr = reader.GetAttribute("a");
+    if (!string.IsNullOrEmpty(aStr))
+    {
+      A = Percentage.Parse(aStr);
+    }
     base.ReadXml(reader);
   }
 
@@ -41,7 +46,10 @@ public partial class RgbColorModelPercentage : IXmlSerializable
   {
     writer.WriteAttributeString("r", R.ToString());
     writer.WriteAttributeString("g", G.ToString());
-    writer.WriteAttributeString("b", B.ToString()); 
+    writer.WriteAttributeString("b", B.ToString());
+    if (A!= 1.0)
+      writer.WriteAttributeString("a", A.ToString());
+
     base.WriteXml(writer);
   }
 }

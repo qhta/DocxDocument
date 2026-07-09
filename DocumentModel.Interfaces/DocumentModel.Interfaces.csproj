@@ -28,6 +28,7 @@
     <Compile Remove="Wordprocessing\Fonts\TextFormat.Methods.cs" />
     <Compile Remove="Wordprocessing\Fonts\TextFormat2.cs" />
     <Compile Remove="Wordprocessing\Settings\Options.SpellChecking.cs" />
+    <Compile Remove="Wordprocessing\Styles\Style.Methods.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />

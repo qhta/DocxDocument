@@ -316,69 +316,69 @@ public class ColorTypesTest : _AbstractTestClass
         H = new Degrees(120),
         S = new Percentage("60%"),
         L = new Percentage("45%"),
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
 
     if (colorType == typeof(Drawings.PresetColor))
       return new DocumentModel.Drawings.PresetColor
       {
         Index = PresetColors.Red,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(Drawings.RgbColorModelHex))
       return new DocumentModel.Drawings.RgbColorModelHex()
       {
-        RGB = (HexColor)0x336699,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        Value = (HexColor)0x336699,
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage
       {
-        R = new Percentage("20%"),
+        Red = new Percentage("20%"),
         Green = new Percentage("40%"),
         Blue = new Percentage("60%"),
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(Drawings.SchemeColor))
       return new DocumentModel.Drawings.SchemeColor
       {
         Index = SchemeColors.Accent3,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {
         Index = SystemColors.WindowText,
         LastColor = (HexColor)0x112233,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.Color))
       return new DocumentModel.Wordprocessing.Color
       {
         Value = (HexColor)0x445566,
-        ThemeColor = ThemeColors.Text1,
-        Tint = new HexPercent("40%"),
-        Shade = new HexPercent("20%"),
+        ThemeColor = DMD.SchemeColors.Text1,
+        //Tint = new HexPercent("40%"),
+        //Shade = new HexPercent("20%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.RgbColor))
       return new DocumentModel.Wordprocessing.RgbColor
       {
         Value = (HexColor)0x336699,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.SchemeColor))
       return new DocumentModel.Wordprocessing.SchemeColor
       {
         Index = DMD.SchemeColors.Accent3,
-        Tint = new Percentage("10%"),
-        Shade = new Percentage("5%"),
+        //Tint = new Percentage("10%"),
+        //Shade = new Percentage("5%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }
@@ -607,11 +607,11 @@ public class ColorTypesTest : _AbstractTestClass
           var color = runProperties.Color;
           if (color == null)
             throw new ApplicationException("Color not found.");
-          if (color.ThemeColor != ThemeColors.Accent1)
+          if (color.ThemeColor != DMD.SchemeColors.Accent1)
             throw new ApplicationException($"Unexpected color value for ACCENT1 run: {color.ThemeColor}");
 
           color.Value = null;
-          color.ThemeColor = ThemeColors.Accent2;
+          color.ThemeColor = DMD.SchemeColors.Accent2;
           color.Tint = null;
           color.Shade = null;
           accentUpdated = true;

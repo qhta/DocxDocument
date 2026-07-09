@@ -7,12 +7,11 @@
 [JsonDerivedType(typeof(Shade), "Shade")]
 public abstract class ColorTransformation : ModelElement, IColorTransformation
 {
-  ///// <summary>
-  ///// Abstract method to transform a given color based on the specific color transformation logic implemented in derived classes.
-  ///// </summary>
-  ///// <param name="color">The color to be transformed.</param>
-  ///// <returns>The transformed color.</returns>
-  //public abstract IColor Transform(IColor color);
+  /// <summary>
+  /// Abstract method to transform a given color based on the specific color transformation logic implemented in derived classes.
+  /// </summary>
+  /// <param name="color">The color to be transformed.</param>
+  /// <returns>The transformed color.</returns>
+  public abstract IColor Transform(IColor color);
 
-  //public string Type { get => this.GetType().Name; }
 }

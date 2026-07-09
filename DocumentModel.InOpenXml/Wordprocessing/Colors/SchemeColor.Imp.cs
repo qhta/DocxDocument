@@ -8,16 +8,16 @@ public partial class SchemeColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32? RGB
+  public UInt32 ARGB
   {
     get
     {
       if (_RGB != null)
-        return _RGB;
+        return _RGB.Value;
       if (this.Index is null)
-        return null;
+        return (uint)PresetColors.Auto;
       var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
-      return (ColorScheme as DMD.ISchemeBaseColor)?.RGB;
+      return (ColorScheme as DMD.ISchemeBaseColor)?.ARGB ?? (uint)PresetColors.Auto;
     }
 
     set => _RGB = value;
@@ -32,13 +32,8 @@ public partial class SchemeColor : IColor
   {
     get
     {
-      if (this.RGB is not null)
-      {
-        var schemeColorField = typeof(DMD.SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
-        return schemeColorField?.Name;
-      }
-
-      return null;
+      var schemeColorField = typeof(DMD.SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
+      return schemeColorField?.Name;
     }
 
     set
@@ -62,21 +57,23 @@ public partial class SchemeColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B) RGBComponents
+  public (double R, double G, double B, double A) RGBAComponents
   {
     get
     {
-      double Red = (((RGB ?? 0) >> 16) & 0xFF) / 255.0;
-      double Green = (((RGB ?? 0) >> 8) & 0xFF) / 255.0;
-      double Blue = (((RGB ?? 0) & 0xFF) / 255.0);
-      return (Red, Green, Blue);
+      double Red = (((ARGB >> 16) & 0xFF) / 255.0);
+      double Green = (((ARGB >> 8) & 0xFF) / 255.0);
+      double Blue = ((ARGB & 0xFF) / 255.0);
+      double Alpha = (((ARGB >> 24) & 0xFF) / 255.0);
+      return (Red, Green, Blue, Alpha);
     }
     set
     {
       byte R = (byte)(value.R * 255);
       byte G = (byte)(value.G * 255);
       byte B = (byte)(value.B * 255);
-      this.RGB = (UInt32)((R << 16) | (G << 8) | B);
+      byte A = (byte)(value.A * 255);
+      this.ARGB = (UInt32)((A << 24) | (R << 16) | (G << 8) | B);
     }
   }
 
@@ -86,18 +83,18 @@ public partial class SchemeColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L) HSLComponents
+  public (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
-      var (R, G, B) = this.RGBComponents;
+      var (R, G, B, A) = this.RGBAComponents;
       var (H, S, L) = DMD.Hsl2Rgb.ToHSL(R, G, B);
-      return (H, S, L);
+      return (H, S, L, A);
     }
     set
     {
       var (R, G, B) = DMD.Hsl2Rgb.FromHSL(value.H, value.S, value.L);
-      this.RGBComponents = (R, G, B);
+      this.RGBAComponents = (R, G, B, value.A);
     }
   }
 

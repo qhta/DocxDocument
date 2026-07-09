@@ -8,7 +8,7 @@ public partial class RgbColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32? RGB { get => this.Value is null ? null : (UInt32)this.Value!; set => this.Value = value; }
+  public UInt32 ARGB { get => this.Value is null ? (uint)PresetColors.Auto : (UInt32)this.Value! ^ 0xFF000000; set => this.Value = (value ^ 0xFF000000); }
 
   /// <summary>
   /// Red component of the color as percentage value.
@@ -19,15 +19,13 @@ public partial class RgbColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public double? Red
+  public double Red
   {
-    get => ((this.RGB >> 16) & 0xFF) / 255.0;
+    get => ((this.ARGB >> 16) & 0xFF) / 255.0;
     set
     {
-      if (value is null)
-        return;
       var red = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0x00FFFF | (red << 16);
+      this.ARGB = (UInt32)(this.ARGB) & 0x00FFFF | (red << 16);
     }
   }
 
@@ -40,15 +38,13 @@ public partial class RgbColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public double? Green
+  public double Green
   {
-    get => ((this.RGB >> 8) & 0xFF) / 255.0;
+    get => ((this.ARGB >> 8) & 0xFF) / 255.0;
     set
     {
-      if (value is null)
-        return;
       var green = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0xFF00FF | (green << 8);
+      this.ARGB = (UInt32)(this.ARGB) & 0xFF00FF | (green << 8);
     }
   }
 
@@ -61,18 +57,34 @@ public partial class RgbColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public double? Blue
+  public double Blue
   {
-    get => (this.RGB & 0xFF) / 255.0;
+    get => (this.ARGB & 0xFF) / 255.0;
     set
     {
-      if (value is null)
-        return;
       var blue = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0xFFFF00 | blue;
+      this.ARGB = (UInt32)(this.ARGB) & 0xFFFF00 | blue;
     }
   }
 
+  /// <summary>
+  /// Alpha component of the color as percentage value.
+  /// The value is between 0 and 1, where 0 represents no alpha and 1 represents full alpha (255 in RGB).
+  /// This is derived from the ARGB value, where the alpha component is extracted and converted to a percentage.
+  /// Setting this property will update the ARGB value accordingly, modifying only the alpha component while preserving the red, green, and blue components.  
+  /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
+  public double Alpha
+  {
+    get => ((this.ARGB >> 24) & 0xFF) / 255.0;
+    set
+    {
+      var alpha = (UInt32)System.Math.Round((double)value * 255.0);
+      this.ARGB = (UInt32)(this.ARGB) & 0x00FFFFFF | (alpha << 24);
+    }
+  }
 
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.
@@ -80,14 +92,15 @@ public partial class RgbColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B) RGBComponents
+  public (double R, double G, double B, double A) RGBAComponents
   {
-    get => (this.Red ?? 0, this.Green ?? 0, this.Blue ?? 0);
+    get => (this.Red, this.Green, this.Blue, this.Alpha);
     set
     {
       this.Red = value.R;
       this.Green = value.G;
       this.Blue = value.B;
+      this.Alpha = value.A;
     }
   }
 
@@ -97,18 +110,18 @@ public partial class RgbColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L) HSLComponents
+  public (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
-      var (R, G, B) = this.RGBComponents;
+      var (R, G, B, A) = this.RGBAComponents;
       var (H, S, L) = DMD.Hsl2Rgb.ToHSL(R, G, B);
-      return (H, S, L);
+      return (H, S, L, A);
     }
     set
     {
       var (R, G, B) = DMD.Hsl2Rgb.FromHSL(value.H, value.S, value.L);
-      this.RGBComponents = (R, G, B);
+      this.RGBAComponents = (R, G, B, value.A);
     }
   }
 

@@ -47,6 +47,7 @@
     <Compile Remove="Wordprocessing\Styles\StyleDefinition.ext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="docs\Colors.docx" />
     <None Remove="Wordprocessing\Table properties\Enums\5k3e00t1.egu~" />
   </ItemGroup>
   <ItemGroup>

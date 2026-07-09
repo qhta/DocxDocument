@@ -8,16 +8,16 @@ public partial class SchemeColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public override UInt32? RGB
+  public override UInt32 ARGB
   {
     get
     {
       if (_RGB != null)
-        return _RGB;
+        return _RGB.Value;
       if (this.Index is null)
-        return null;
+        return (uint)PresetColors.Auto;
       var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
-      return (ColorScheme as ISchemeBaseColor)?.RGB;
+      return (ColorScheme as ISchemeBaseColor)?.ARGB ?? (uint)PresetColors.Auto;
     }
 
     set => _RGB = value;
@@ -32,13 +32,8 @@ public partial class SchemeColor : IColor
   {
     get
     {
-      if (this.RGB is not null)
-      {
-        var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
-        return schemeColorField?.Name;
-      }
-
-      return null;
+      var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
+      return schemeColorField?.Name;
     }
 
     set

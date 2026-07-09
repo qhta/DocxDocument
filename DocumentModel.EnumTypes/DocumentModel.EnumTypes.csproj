@@ -17,6 +17,7 @@
   <ItemGroup>
     <Compile Remove="Drawings\SchemeColors.cs" />
     <Compile Remove="OMath\OMathSpacingRule.cs" />
+    <Compile Remove="Themes\ThemeColors.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,14 +8,14 @@ public partial class SystemColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public override UInt32? RGB
+  public override UInt32 ARGB
   {
     get
     {
       if (LastColor is not null)
-        return LastColor;
+        return LastColor.Value;
       if (this.Index is null)
-        return null;
+        return (uint)PresetColors.Auto;
       var systemColor = this.Index.Value switch
       {
         SystemColors.ScrollBar => global::System.Drawing.SystemColors.ScrollBar,
@@ -50,7 +50,7 @@ public partial class SystemColor : IColor
         SystemColors.MenuBar => global::System.Drawing.SystemColors.MenuBar,
         _ => default(global::System.Drawing.Color)
       };
-      return LastColor = (UInt32)(systemColor.ToArgb() & 0x00FFFFFF);
+      return (LastColor = (UInt32?)((uint)systemColor.ToArgb() ^ 0xFF000000)).Value;
     }
 
     set => LastColor = value;
@@ -64,13 +64,8 @@ public partial class SystemColor : IColor
   {
     get
     {
-      if (this.RGB is not null)
-      {
-        var SystemColorField = typeof(SystemColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
-        return SystemColorField?.Name;
-      }
-
-      return null;
+      var SystemColorField = typeof(SystemColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
+      return SystemColorField?.Name;
     }
 
     set

@@ -25,7 +25,7 @@ public partial class Color : IXmlSerializable
     var themeColorStr = reader.GetAttribute("themeColor");
     if (!string.IsNullOrEmpty(themeColorStr))
     {
-      if (Enum.TryParse<ThemeColors>(themeColorStr, out var themeColor))
+      if (Enum.TryParse<DMD.SchemeColors>(themeColorStr, out var themeColor))
         ThemeColor = themeColor;
     }
 

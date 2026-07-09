@@ -10,10 +10,6 @@ namespace DocumentModel.Drawings;
 ///   <item><description><see cref="T:DocumentModel.Drawings.HslColor" /></description></item>
 /// </list>
 /// </summary>
-public partial interface ISchemeBaseColor
+public partial interface ISchemeBaseColor: IColor
 {
-  /// <summary>
-  /// Gets the RGB color value represented by this instance, if available.
-  /// </summary>
-  public UInt32? RGB { get; }
 }

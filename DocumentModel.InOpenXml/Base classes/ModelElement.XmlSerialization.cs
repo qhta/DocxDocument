@@ -175,6 +175,8 @@ public partial class ModelElement : IXmlSerializable
   /// <param name="attributeProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be written as attributes.</param>
   protected virtual void WriteAttributes(XmlWriter writer, PropertyInfo[] attributeProperties)
   {
+    if (this is DMD.RgbColorModelPercentage)
+      Debug.Assert(true);
     foreach (var property in attributeProperties)
     {
       var value = property.GetValue(this);

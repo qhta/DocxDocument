@@ -324,7 +324,7 @@ public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
   IColor? ITextFormat.Color
   {
     get => this.Color;
-    set => this.Color = value?.RGB;
+    set => this.Color = value?.ARGB;
   }
 
 

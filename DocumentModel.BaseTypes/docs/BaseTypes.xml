@@ -5491,6 +5491,20 @@
             <returns>A new HexPercent instance with the converted value.</returns>
             <remarks>Values should be between 0.0 and 1.0. Values outside this range will be clamped.</remarks>
         </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>A new Percentage instance with the converted value.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.Percentage)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The Percentage value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+        </member>
         <member name="M:DocumentModel.HexPercent.Parse(System.String)">
             <summary>
             Parses a string representation of a percentage and returns a corresponding HexPercent instance.

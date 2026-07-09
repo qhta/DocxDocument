@@ -12,8 +12,12 @@ The classes are as follows:
 	5. **Drawing.PresetColor** - preset color
 	6. **Drawing.SchemeColor** - scheme color
 - **Wordprocessing.Color** - it is an OpenXmlLeafElement that represents a color in WordprocessingML, widely used for text and shading colors.
-- **Office2010.Word.RgbColorModelHex** - RGB color in hexadecimal model, used in WordprocessingML, closely mimicking the DrawingsML RGBColorModelHex class.
-- **Office2010.Word.SchemeColor** - scheme color, used in WordprocessingML, closely mimicking the DrawingsML SchemeColor class.
+- **Office2010.Word.RgbColorModelHex** - RGB color in hexadecimal model, used in WordprocessingML, similar to the DrawingsML RGBColorModelHex class.
+- **Office2010.Word.SchemeColor** - scheme color, used in WordprocessingML, similar to the DrawingsML SchemeColor class.
+
+In the addition, OpenXml SDK uses a VML color specification in the **DocumentFormat.OpenXml.Vml** namespace, which is a legacy color model used in VML drawings.
+It is represented by string properties in the **DocumentFormat.OpenXml.Vml.Fill** and **DocumentFormat.OpenXml.Vml.Stroke** classes.
+These properties express a color value in hexadecimal format (RRGGBB), or a named color, or in the specific format "rgb(R,G,B)", where R, G, and B are decimal values for the red, green, and blue components of the color.
 
 ## DrawingModel.ColorType definition classes
 
@@ -22,19 +26,21 @@ The six available ColorType components define various color models in the follow
 ### RgbColorModelHex class
 
 The **Drawing.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
-The **Val** property has the format "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
+
+The **Value** property represents the color in a format of "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
 
 ### RgbColorModelPercentage class
 
 The **Drawing.RgbColorModelPercentage** class represents a color in the RGB color model using percentage notation.
-Three properties **RedPortion**, **GreenPortion**, and **BluePortion** represent the red, green, and blue components of the color, respectively. 
-The values are of Int32 type and are in the range from 0 to 100,000, where 0 means no contribution of that color component and 100,000 means full (100%) contribution of that color component.
+
+Three properties **RedPortion**, **GreenPortion**, and **BluePortion** represent the red, green, and blue components of the color, respectively. The values are of Int32 type and are in the range from 0 to 100,000, where 0 means no contribution of that color component and 100,000 means full (100%) contribution of that color component.
 
 ### HslColorModel class
 
 The **Drawing.HslColorModel** class represents a color in the HSL color model using degree and percentage notation.
-The **HueValue** property is a degree value that ranges from 0 to 360 degrees, where 0 degree represents red, 120 degrees represents green, and 240 degrees represents blue. 
-The value of hue is stored as an Int32 type in the range from 0 to 21,600,000, where 1 degree is represented as 60,000 units.
+
+The **HueValue** property is a degree value that ranges from 0 to 360 degrees, 
+where 0 degree represents red, 120 degrees represents green, and 240 degrees represents blue. The value of hue is stored as an Int32 type in the range from 0 to 21,600,000, where 1 degree is represented as 60,000 units.
 
 The **SatValue** and **LumValue** properties are percentage values that represent the saturation and luminance components of the color, respectively.
 
@@ -46,18 +52,18 @@ The **Val** property is an enumeration of the standard preset color names, such 
 ### SystemColor class
 
 The **Drawing.SystemColor** class represents a color that is defined in the system color table of the operating system.
+
 The **Val** property is an enumeration of the standard system color names, such as "ActiveBorder", "ActiveCaption", "AppWorkspace", etc. A set of 16 system color names is defined in the **Drawing.SystemColors** enumeration.	
-The **LastColor** property is an optional property that represents the last color value used in the system color table. It is a hexadecimal RGB value in the format "RRGGBB".
-It can be helpful when the document is viewed on a system with a different color scheme.
+
+The **LastColor** property is an optional property that represents the last color value used in the system color table. It is a hexadecimal RGB value in the format "RRGGBB".It can be helpful when the document is viewed on a system with a different color scheme.
 
 ### SchemeColor class
 
-The **Drawing.SchemeColor** class have a **Val** property, which is a **SchemeColorValues** enumeration of the standard themed colors, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.
-The actual color values are defined in the **Drawing.ColorScheme** class, which is a part of the document theme.
+The **Drawing.SchemeColor** class have a **Val** property, which is a **SchemeColorValues** enumeration of the standard themed colors, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.The actual color values are defined in the **Drawing.ColorScheme** class, which is a part of the document theme.
 
 ### Drawing color transformation elements
 
-All the drawing color classes can contain several optional elements that can be used to transform the color value. Classes of these elementsare the following:
+All the above drawing color classes can contain several optional elements that can be used to transform the color value. Classes of these elements are the following:
 - **Drawing.Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
 - **Drawing.AlphaOffset** - specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
 - **Drawing.AlphaModulation** - specifies a more or less opaque version of its input color. An alpha modulate never increases the alpha beyond 100%. A 200% alpha modulate makes a input color twice as opaque as before. A 50% alpha modulate makes a input color half as opaque as before.
@@ -208,16 +214,25 @@ Both **Office2010.Word.RgbColorModelHex** and **Office2010.Word.SchemeColor** ty
 
 # Specifying colors in the DocumentModel
 
-DocumentModel reduces the complexity of color specification.
+DocumentModel follows the same color model definitions as in the OpenXml SDK, but with some differences in the property types and value ranges.
 
-First, it defines universal Percentage and Degree types for all color properties, which are used in all color models, 
-despite the source color class namespace.
+One difference is alpha channel management. Color models in OpenXml generally do not use alpha channel. However drawings color models accept specifying alpha transformations for base colors. To implement these transformations, DocumentModel classes must somehow manage alpha component of the color. It is done in **HexColor** type and other classes.
 
-## Percentage and Degree types
+## Base types
 
-Most of color model class properties use two base types of values: **Percentage** and **Degree**.
+A few base types were defined to be used in color model classes:
+- **HexColor** - to store color in a hexadecimal format.
+- **Percentage** - to represent a percentage of color components, such as red, green, blue.
+- **Degree** - to represent a hue component in HSL color models.
+- **HexPercent** - to map a percentage range from 0 to 100% to byte values from 0 to 255.
 
-## Drawings.Percentage class
+### HexColor type. Alpha channel and transparency
+
+Basically, a **HexColor** type represents a RGB color model as a 6-digit hexadecimal number in a format of "RRGGBB" which is used in OpenXml. However DocumentModel implementation of the **HexColor** type is based on 32-bit unsigned integer. 24 lower bits (3 bytes) are used to encode RR, GG, and BB components of the color. The highest 8 bits (1 byte) can be used to represent an alpha channel. 
+
+On the other hand, all OpenXml color codes are 6-digits hexadecimal numbers, e.g. a red color is encoded as "FF0000" string. Alpha channel is encoded such that "00" represents full transparency and "FF" represents full opacity of the color. So the full opaque red color would be encoded as "FFFF0000" and it would be incompatible with OpenXml notation. To achieve constistenty, the highest byte of **HexColor** structure should be interpreted as *transparency*, not *alpha channel*. To convert transparency to alpha channel (and vice versa), we must XOR UInt32 data with 0xFF000000.
+
+### Drawings.Percentage type
 
 All percentage values in the DocumentModel classes are represented by **Percentage** class, 
 which stores the value as an integer value, where the value is scaled by 1000 to preserve precision. 
@@ -226,22 +241,27 @@ and a value of 0.5% is represented as 500.
 
 The **Percentage** class supports implicit conversions to/from numeric types and string representations 
 with an optional "%" suffix. Conversions from numeric types hides internal scaling, 
-so that a value of 100% can be assigned as 100, and a value of 0.5% can be assigned as 0.5.
+so that a value of 100% can be assigned as 100, and a value of 0.5% can be assigned as 0.5 decimal.
 
-## Degree class
+Note: If we use a **Precentage** value as a factor in multiplication, we must divide it by 100.0.
+
+### Degree type
 
 A **Hue** property in the HSL color model is represented by **Degree** class, 
 which stores the value as an integer value, where the value is scaled by 60,000 to preserve precision.
 So, a value of 180 degrees is represented internally as 10,800,000, a value of 0.5 degrees is represented as 30,000, and a value of 0.5 degrees is represented as 30,000.
 
-This class supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
-Conversions from numeric types hides internal scaling, 
-so that a value of 180 degrees can be assigned as 180, and a value of 0.5 degrees can be assigned as 0.5.
+This class supports implicit conversions to/from numeric types and string representations with an optional "°" suffix. Conversions from numeric types hides internal scaling, so that a value of 180 degrees can be assigned as 180, and a value of 0.5 degrees can be assigned as 0.5.
+
+### HexPercent type
+
+A **Wordprocessing.Color** class defines two properties (**Tint** and **Shade**) that represent percentage in a byte-range, such that 255 represents 100%. In addition in OpenXml these properties are encoded as two-digits hexadecimal integers.
+
+To achieve compatibility with OpenXml, a **HexPercent** base type is defined.
 
 ## Drawings.DrawingsColorBase\<T> class
 
-The **Drawings.DrawingsColorBase\<T>** class is an abstract base class for all color models in the Drawings namespace.
-It provides common properties and methods for color manipulation, such as tint and shade adjustments.
+The **Drawings.DrawingsColorBase\<T>** class is an abstract base class for all color models in the Drawings namespace. It provides common properties and methods for color manipulation, such as tint and shade adjustments.
 It has the following properties:
 - **Tint** - An optional property that represents the tint of the color. It is a percentage value that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
 - **Shade** - An optional property that represents the shade of the color. It is a percentage value that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
@@ -272,11 +292,14 @@ It has the following properties:
 - **Gamma** - An optional property that indicates whether gamma correction is applied. When set to true, applies standard gamma correction (typically gamma 2.2) to convert from linear RGB space to display-corrected RGB. Default is false. Gamma correction adjusts colors to appear correct on display devices.
 - **InverseGamma** - An optional property that indicates whether inverse gamma correction is applied. When set to true, applies inverse gamma correction to convert from display-corrected RGB to linear RGB space. Default is false. This is the opposite of standard gamma correction.
 
+Note that the above properties are treated as *Color transformations*. The details will be described later.
+
 ## Drawings.RgbColorModelHex class
 
 The **Drawings.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
-It has the following properties:
-- **Value** - A string property that holds the hexadecimal value of the color. The value should be in the format "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
+It has a property named **Value**. It is a **HexColor** property that holds the hexadecimal value of the color. 
+
+If we need to use an alpha channel, we should use an **ARGB** property. It has an UInt32 data type, and it gets and sets data in the format of "AARRGGBB", where "AA" is two-digit hexadecimal number representing the alpha channel. Its value is XOR-ed with 0xFF000000 to get or set to the **Value** property. E.g. when we get the **Value** of the red color as "FF0000", we get the **ARGB** value as "FFFF0000".
 
 ## Drawings.RgbColorModelPercentage class
 
@@ -285,10 +308,9 @@ It has the following properties:
 - **R** - A percentage property that holds the value of the red component of the color. 
 - **G** - A percentage property that holds the value of the green component of the color.
 - **B** - A percentage property that holds the value of the blue component of the color.
+- **A** - A percentage property that holds the value of the alpha component of the color.
 
-The values for **R**, **G**, and **B** override the base **Red**, **Green**, and **Blue** properties 
-in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, 
-while the base properties are optional adjustments of the base color.
+The values for **R**, **G**, and **B** are independent from **Red**, **Green**, and **Blue** transformations in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, while the transformations are optional adjustments of the base color.
 
 ## Drawings.HslColor class
 
@@ -297,18 +319,14 @@ It has the following properties:
 - **H** - A property that specifies the hue of the color. It is a degree value that ranges from 0 to 360, where 0 represents red, 120 represents green, and 240 represents blue. 
 - **S** - A percentage property that holds the value of the saturation component of the color. The values are in the range from "-100%" to "100%", where "0%" means no saturation (a shade of gray) and "100%" means full saturation (the pure color).
 - **L** - A percentage property that holds the value of the lightness component of the color. The values are in the range from "-100%" to "100%", where "0%" means no saturation (a shade of gray) and "100%" means full saturation (the pure color).
+- **A** - A percentage property that holds the value of the alpha component of the color.
 
-The values for **H**, **S**, and **L** override the base **Hue**, **Saturation**, and **Luminance** properties 
-in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, 
-while the base properties are optional adjustments of the base color.
+The values for **H**, **S**, and **L** are independent from **Hue**, **Saturation**, and **Luminance** transformations in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, while the base properties are optional adjustments of the base color.
 
 ## Drawings.SchemeColor class
 
 The **Drawings.SchemeColor** class represents a color that is defined in the color scheme of the document.
-It has the following properties:
-- **Index** - A property that holds the enumeration index to the scheme color table.
-- **Tint** - An optional property that represents the tint of the color. It is a percentage value that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
-- **Shade** - An optional property that represents the shade of the color. It is a percentage value that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
+It has an **Index** property that holds the enumeration index to the scheme color table.
 
 The **Drawings.SchemeColors** enumeration defines the following standard scheme color names that can be used as values for the Index property of the **Drawings.SchemeColor** class:
 - **Auto** = 0,
@@ -332,12 +350,8 @@ The **Drawings.SchemeColors** enumeration defines the following standard scheme 
 ## Drawings.PresetColor class
 
 The **Drawings.PresetColor** class represents a color using a predefined color name with optional transformations.
-This class allows colors to be specified by name (e.g., "Red", "Blue", "AliceBlue") from a standard palette, with optional 
-modifications like tint, shade, alpha transparency, and hue/saturation/luminance adjustments.
-The has the following properties:
-- **Index** - A property that holds the enumeration value to the preset color table. 
-- **Tint** - An optional property that represents the tint of the color. It is a percentage value that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
-- **Shade** - An optional property that represents the shade of the color. It is a percentage value that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
+This class allows colors to be specified by name (e.g., "Red", "Blue", "AliceBlue") from a standard palette.
+The has an **Index** property that holds the enumeration value to the preset color table. 
 
 The **Drawings.PresetColors** enumeration defines the following standard preset color names that can be used as values for the Index property of the **Drawings.PresetColor** class:
 - **AliceBlue** = 0x00F0F8FF
@@ -483,21 +497,13 @@ The **Drawings.PresetColors** enumeration defines the following standard preset 
 - **Transparent** = 0xFFFFFFFF  
 - **Auto** = 0xFF000000
 
-All preset colors are defined with their corresponding ARGB hexadecimal values, 
-with the alpha channel set to 0x00 (fully opaque). 
-The two exceptions are Transparent and Auto, which are defined with their ARGB hexadecimal values 
-that include the alpha channel set to 0xFF (fully transparent).
-Transparent is defined as white with 100% alpha (0xFFFFFFFF) 
-and Auto is defined as black with 100% alpha (0xFF000000).
+All preset colors are defined with their corresponding UInt32 hexadecimal values with the highest byte set to 0x00 (fully opaque). The two exceptions are Transparent and Auto, which are defined with their UInt32 hexadecimal values that include the highest byte set to 0xFF. **Transparent** color is defined as white with 100% alpha (0xFFFFFFFF) and **Auto** color is defined as black with 100% alpha (0xFF000000).
 
 ## Drawings.SystemColor class
 
-The **Drawings.SystemColor** class represents a color that is defined by the system colors of the operating system.
-It has the following properties:
+The **Drawings.SystemColor** class represents a color that is defined by the system colors of the operating system. It has two main properties:
 - **Index** - A property that holds the enumeration index to the system color table.
 - **LastColor** - An optional property that holds the last color value used for this system color. This can be used to preserve the color value when the system color changes.
-- **Tint** - An optional property that represents the tint of the color. It is a percentage value that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
-- **Shade** - An optional property that represents the shade of the color. It is a percentage value that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
 
 The **Drawings.SystemColors** enumeration defines the following standard system color names that can be used as values for the Index property of the **Drawings.SystemColor** class:
 -  **ScrollBar**
@@ -534,10 +540,10 @@ The **Drawings.SystemColors** enumeration defines the following standard system 
 All the names are self-explanatory and correspond to the standard system colors defined by the Windows operating system.
 
 The **Drawings.SystemColor.LastColor** property serves multiple important purposes:
-- **Cross-platform compatibility** - Provides a concrete color value when viewing documents on non-Windows systems
-- **Fallback rendering** - Used when the system color cannot be resolved (e.g., in print preview, PDF export)
-- **Document portability** - Ensures consistent appearance when the document is moved between systems
-- **Color caching** - Stores the resolved color to avoid repeated OS queries
+- *Cross-platform compatibility* - Provides a concrete color value when viewing documents on non-Windows systems
+- *Fallback rendering* - Used when the system color cannot be resolved (e.g., in print preview, PDF export)
+- *Document portability* - Ensures consistent appearance when the document is moved between systems
+- *Color caching* - Stores the resolved color to avoid repeated OS queries
 
 Applications typically update this property when:
 - The document is first opened and system colors are resolved
@@ -545,10 +551,96 @@ Applications typically update this property when:
 - The document is saved (to preserve the current color values)
 - The document is rendered for export (PDF, image, etc.)
 
-When rendering a document, applications should prefer the live system color (via **Index**) 
+When rendering a document, applications should prefer the live system color (via **Index**), 
 but fall back to **LastColor** if the system color cannot be resolved.
 This ensures the best possible appearance in all environments while maintaining a reasonable
 fallback for non-Windows or incompatible systems.
 
+## Wordprocessing color model classes
 
+The **DocumentModel.Wordprocessing** namespace defines the following color model classes that are used 
+in WordprocessingML documents:
+- **Wordprocessing.Color** - represents a commonly used color in **Wordprocessing** textual elements.
+- **Wordprocessing.SchemeColor** - represents a color based on a theme defined in the **Drawings** namespace.
+- **Wordprocessing.RgbColorHex** - represents a color in RGB color model using hexadecimal notation.
 
+All three color model classes have the same properties as their corresponding OpenXml SDK classes.
+There are significant differences in the features of the Wordprocessing color model classes compared 
+to the **Drawings** color model classes.
+
+### Wordprocessing.Color class
+
+The **Wordprocessing.Color** class represents a color commonly used in various element of a Wordprocessing document, such as text, borders, and shading.It has the following properties:
+- **Value** - A property that holds the hexadecimal value of the color. The value is of the base type **HexColor**, which should be in the format "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
+- **ThemeColor** - An optional property that holds the theme color value. It is of the type **Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
+- **Tint** - An optional property that represents the tint of the color. It is a percentage value expressed as a **HexPercent** type, that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
+- **Shade** - An optional property that represents the shade of the color. It is a percentage value expressed as a **HexPercent** type, that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
+
+The **Tint** and **Shade** properties are of base type **HexPercent**, where 100% is expressed as a hexadecimal value of "FF" and 0% is expressed as a hexadecimal value of "00".
+
+The **HexPercent** type values are converted to/from numeric types in the same way as the **Percentage** type values are. 
+The difference between the two types lays in the value range and precision. 
+The **HexPercent** type has a range of 0% to 100% with a precision of 0.392% (100/255%), 
+while the **Percentage** type has a range over 100% with a precision of 0.001%.
+
+### Wordprocessing.SchemeColor class
+
+The **Wordprocessing.SchemeColor** class represents a color that is defined in the color scheme of the document.
+It has the following properties:
+- **Index** - A mandatory property that holds the theme color value. It is of the type **Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
+- **Tint** - An optional property that represents the tint of the color. 
+It is a percentage value expressed as a **Percentage** type,that can be used to lighten the color. 
+A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
+- **Shade** - An optional property that represents the shade of the color. 
+It is a percentage value expressed as a **Percentage** type, that can be used to darken the color. 
+A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
+
+### Wordprocessing.RgbColorHex
+
+The **Wordprocessing.RgbColorHex** class is a simplified version of **Wordprocessing.Color** class.
+It has the following properties:
+- **Value** - A property that holds the hexadecimal value of the color. 
+The value is of the base type **HexColor**, which should be in the format "RRGGBB", 
+where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components
+of the color, respectively.
+- **Tint** - An optional property that represents the tint of the color. 
+It is a percentage value expressed as a **Percentage** type,that can be used to lighten the color. 
+A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
+- **Shade** - An optional property that represents the shade of the color. 
+It is a percentage value expressed as a **Percentage** type, that can be used to darken the color. 
+A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
+
+Note that a **Value** property in **Wordprocessing.RgbColorHex** class is the same as in **Wordprocessing.Color** class, while **Tint** and **Shade** properties are the same as in **Wordprocessing.SchemeColor** class.
+
+## VML color model classes
+
+The **DocumentModel.Vml** namespace defines the two color model classes that are used in legacy documents:
+- **Vml.Color** - represents main VML color specification, which can be a hexadecimal number, a color name, or a specific "rgb(R,G,B)" notation, where R, G, B are decimal byte values representing red, green and blue components of RGB color respectively.
+- **Vml.RgbColor** - represents a color in a specific "rgb(R,G,B) notation.
+
+The **Vml.Color** class accepts all three notations of the RGB color and converts them to the internal **Value** property. When it is a specific "rgb(R,G,B)" notation, the internal **Value** becomes an instance of **Vml.RgbColor** class 
+
+## Document model color interfaces
+
+To unify various color models used in the document model, several interfaces are defined:
+- **IColor** - main interface for all color models,
+- **Drawings.IColorHolder** - interface for an element that can hold a color value, such as a fill or a line,
+- **Drawings.IColorTransformation** - interface that represents a color transformation.
+- **Drawings.IDrawingColor** - interface that represents all drawing color models.
+- **Drawings.ISchemaBaseColor** - interface that represents the drawing color models that can be used to define schema colors in color scheme of a theme.
+
+The last three interfaces are used only to classify a color model instance.
+
+### IColor interface
+
+The **IColor** interface must be implemented by all color model classes.
+It defines four properties, which can be used to interchange data:
+- **ARGB** - represents a value of the color as UInt32. The value is in the format 0xAARRGGBB, where AA represents the alpha channel, RR represents the red channel, GG represents the green channel, and BB represents the blue channel. 
+- **RGBAComponents** - enables to get or set red, green, blue, and alpha components of the color as a tuple of double values between 0 and 1.
+- **HSLAComponents** - enables to get or set hue, saturation, luminance, and alpha components of the color as a tuple of double values between 0 and 1.
+- **Name** - gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
+The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
+
+### Drawings.IColorHolder interface
+
+It is an interface for a drawings element, such as a fill or a line, which can hold one of the drawings color models representet by a property **Color**.

@@ -5,7 +5,7 @@ public partial class Color : IColor
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
   /// </summary>
-  UInt32? IColor.RGB { get => this.Value; set => this.Value = value; }
+  UInt32 IColor.ARGB { get => this.Value ?? (UInt32)PresetColors.Auto; set => this.Value = value; }
 
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.
@@ -13,21 +13,23 @@ public partial class Color : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B) RGBComponents
+  public (double R, double G, double B, double A) RGBAComponents
   {
     get
     {
       double Red = (((Value ?? 0) >> 16) & 0xFF) / 255.0;
       double Green = (((Value ?? 0) >> 8) & 0xFF) / 255.0;
       double Blue = (((Value ?? 0) & 0xFF) / 255.0);
-      return (Red, Green, Blue);
+      double Alpha = (((Value ?? 0) >> 24) & 0xFF) / 255.0;
+      return (Red, Green, Blue, Alpha);
     }
     set
     {
       byte R = (byte)(value.R * 255);
       byte G = (byte)(value.G * 255);
       byte B = (byte)(value.B * 255);
-      this.Value = (UInt32)((R << 16) | (G << 8) | B);
+      byte A = (byte)(value.A * 255);
+      this.Value = (UInt32)((A << 24) | (R << 16) | (G << 8) | B);
     }
   }
 
@@ -37,18 +39,18 @@ public partial class Color : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L) HSLComponents
+  public (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
-      var (R, G, B) = this.RGBComponents;
+      var (R, G, B, A) = this.RGBAComponents;
       var (H, S, L) = DMD.Hsl2Rgb.ToHSL(R, G, B);
-      return (H, S, L);
+      return (H, S, L, A);
     }
     set
     {
       var (R, G, B) = DMD.Hsl2Rgb.FromHSL(value.H, value.S, value.L);
-      this.RGBComponents = (R, G, B);
+      this.RGBAComponents = (R, G, B, value.A);
     }
   }
 
@@ -75,7 +77,7 @@ public partial class Color : IColor
     {
       if (value is null)
         this.ThemeColor = null;
-      if (Enum.TryParse<ThemeColors>(this.Value.ToString(), out var themeColor))
+      if (Enum.TryParse<DMD.SchemeColors>(this.Value.ToString(), out var themeColor))
         this.ThemeColor = themeColor;
       if (Enum.TryParse<PresetColors>(this.Value.ToString(), out var presetColor))
         this.Value = (UInt32)presetColor;

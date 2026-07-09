@@ -70,7 +70,7 @@ public partial interface IColorFormat : IModelObject
   /// Gets or sets the theme color applied to the object.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.objectthemecolor?view=word-pia"/>
-  public ThemeColors ObjectThemeColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public DMD.SchemeColors ObjectThemeColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   /// <summary>
   /// Gets or sets the brightness of the color.

@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 [DataContract]
 [XmlRoot("DefinedStyles", Namespace = "DocumentModel.Wordprocessing")]
 //[DirectAccess]
-public partial class StyleDefinitions : ModelElementCollection<StyleDefinition, DXW.Styles, DXW.Style>
+public partial class StyleDefinitions : ModelElementCollection<Style, DXW.Styles, DXW.Style>
 {
   /// <summary>
   /// Default constructor.
@@ -83,7 +83,7 @@ public partial class StyleDefinitions : ModelElementCollection<StyleDefinition, 
     this.Clear();
     foreach (var style in styleElements)
     {
-      var styleDef = OpenXmlElementConverter.ConvertFrom(style, typeof(DMW.StyleDefinition)) as DMW.StyleDefinition;
+      var styleDef = OpenXmlElementConverter.ConvertFrom(style, typeof(DMW.Style)) as DMW.Style;
       this.Add(styleDef!);
     }
 

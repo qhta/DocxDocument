@@ -272,6 +272,28 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Convert a value of the OpenXmlElement property to ModelType.
   /// </summary>
   /// <typeparam name="ModelType">Type of the output model value</typeparam>
+  /// <param name="openXmlElement">The OpenXml element associated with the property.</param>
+  /// <param name="propertyName">The name of the property associated with the value.</param>
+  /// <returns>The converted model value, or null if the OpenXml value is null.</returns>
+  protected ModelType? GetProperty<ModelType>(DX.OpenXmlElement? openXmlElement, string propertyName)
+  {
+    if (openXmlElement == null)
+      return default;
+
+    var valProperty = openXmlElement.GetType()?.GetProperty("Val");
+    if (valProperty != null)
+    {
+      var valValue = valProperty.GetValue(openXmlElement);
+      if (valValue != null)
+        return GetProperty <ModelType>(valValue);
+    }
+    return default;
+  }
+
+  /// <summary>
+  /// Convert a value of the OpenXml value to ModelType.
+  /// </summary>
+  /// <typeparam name="ModelType">Type of the output model value</typeparam>
   /// <param name="openXmlValue">The OpenXml value to convert.</param>
   /// <returns>The converted model value, or null if the OpenXml value is null.</returns>
   protected ModelType? GetProperty<ModelType>(object? openXmlValue)

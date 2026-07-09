@@ -4,10 +4,16 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Style
 {
-  public bool ShouldSerializeNameLocal() => !String.IsNullOrEmpty(NameLocal);
   public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
-  public bool ShouldSerializeBaseStyle() => BaseStyle is not null && ShouldSerialize(BaseStyle);
-  public bool ShouldSerializeNextParagraphStyle() => NextParagraphStyle is not null && ShouldSerialize(NextParagraphStyle);
-  public bool ShouldSerializeAutomaticallyUpdate() => AutomaticallyUpdate is not null;
-  public bool ShouldSerializeHidden() => Hidden is not null;
+  public bool ShouldSerializeStyleId() => !String.IsNullOrEmpty(StyleId);
+  public bool ShouldSerializeStyleName() => !String.IsNullOrEmpty(StyleName);
+  public bool ShouldSerializeIsDefault() => IsDefault is not null;
+  public bool ShouldSerializeIsCustom() => IsCustom is not null;
+  public bool ShouldSerializeBasedOn() => !String.IsNullOrEmpty(BasedOn);
+  public bool ShouldSerializeNextParagraphStyle() => !String.IsNullOrEmpty(NextParagraphStyle);
+  public bool ShouldSerializeLinkedStyle() => !String.IsNullOrEmpty(LinkedStyle);
+  public bool ShouldSerializeIsAutoRedefined() => IsAutoRedefined is not null && ShouldSerialize(IsAutoRedefined);
+  public bool ShouldSerializeIsHidden() => IsHidden is not null && ShouldSerialize(IsHidden);
+  public bool ShouldSerializeUIPriority() => UIPriority is not null && ShouldSerialize(UIPriority);
+  public bool ShouldSerializeRsid() => Rsid is not null && ShouldSerialize(Rsid);
 }

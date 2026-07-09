@@ -99,19 +99,19 @@
             Full color interface, supporting both RGB and theme colors.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.RGB">
-            <summary>A value of the color as uint. The value is in the format 0xRRGGBB,
-            where RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
+        <member name="P:DocumentModel.IColor.ARGB">
+            <summary>A value of the color as uint. The value is in the format 0xAARRGGBB,
+            where AA represents the alpha channel, RR represents the red channel, GG represents the green channel, and BB represents the blue channel.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.RGBComponents">
+        <member name="P:DocumentModel.IColor.RGBAComponents">
             <summary>
-            Red, green, and blue components of the color as a tuple of double values between 0 and 1.
+            Red, green, blue, and alpha components of the color as a tuple of double values between 0 and 1.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.HSLComponents">
+        <member name="P:DocumentModel.IColor.HSLAComponents">
             <summary>
-            Hue, saturation, and luminance components of the color as a tuple of double values between 0 and 1.
+            Hue, saturation, luminance, and alpha components of the color as a tuple of double values between 0 and 1.
             </summary>
         </member>
         <member name="P:DocumentModel.IColor.Name">
@@ -14857,10 +14857,6 @@
             Represents a single built-in or user-defined style.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style?view=word-pia"/>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style?view=word-pia"/>
         </member>
         <member name="P:DocumentModel.Wordprocessing.IStyle.NameLocal">
             <summary>
@@ -15037,15 +15033,6 @@
             paragraph and character formatting. Read-only.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.linked?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Wordprocessing.IStyle.Delete">
-            <summary>
-            Deletes the specified object.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.delete?view=word-pia"/>
         </member>
         <member name="T:DocumentModel.Wordprocessing.IStyles">
             <summary>
@@ -27888,7 +27875,7 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme?view=office-pia"/>
         </member>
-        <member name="M:DocumentModel.Themes.IThemeColorScheme.Colors(DocumentModel.ThemeColors)">
+        <member name="M:DocumentModel.Themes.IThemeColorScheme.Colors(DocumentModel.Drawings.SchemeColors)">
             <summary>
             Invokes `Colors`.
             </summary>

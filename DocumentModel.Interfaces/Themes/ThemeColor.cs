@@ -17,6 +17,6 @@ public partial interface IThemeColor: IModelObject
   /// Gets the `ThemeColorSchemeIndex` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolor.themecolorschemeindex?view=office-pia"/>
-  public ThemeColors ThemeColorSchemeIndex { get; }
+  public DMD.SchemeColors ThemeColorSchemeIndex { get; }
 }
 

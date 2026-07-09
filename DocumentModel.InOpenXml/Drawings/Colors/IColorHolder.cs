@@ -10,12 +10,6 @@ public partial interface IColorHolder
   /// </summary>
   ColorType? Color { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-  ///// <summary>
-  ///// Gets the RGB color value represented by this instance, if available.
-  ///// </summary>
-  //public UInt32? RGB { get; }
-
-
   /// <summary>
   /// Loads the color information from the specified Open XML element.
   /// </summary>

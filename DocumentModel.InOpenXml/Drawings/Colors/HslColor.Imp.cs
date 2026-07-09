@@ -7,7 +7,7 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- public override UInt32? RGB
+ public override UInt32 ARGB
  {
   get
   {
@@ -34,17 +34,9 @@ public partial class HslColor : IColor
 
   set
   {
-   if (value is null)
-   {
-    _Hue = null;
-    _Saturation = null;
-    _Luminance = null;
-    return;
-   }
-
-   var r = ((value.Value >> 16) & 0xFF) / 255.0;
-   var g = ((value.Value >> 8) & 0xFF) / 255.0;
-   var b = (value.Value & 0xFF) / 255.0;
+   var r = ((value >> 16) & 0xFF) / 255.0;
+   var g = ((value >> 8) & 0xFF) / 255.0;
+   var b = (value & 0xFF) / 255.0;
    var max = System.Math.Max(r, System.Math.Max(g, b));
    var min = System.Math.Min(r, System.Math.Min(g, b));
    var delta = max - min;
@@ -78,15 +70,16 @@ public partial class HslColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
- public override (double R, double G, double B) RGBComponents
+ public override (double R, double G, double B, double A) RGBAComponents
  {
-   get => Hsl2Rgb.FromHSL(H / 360.0, S, L);
+   get { var (r, g, b) = Hsl2Rgb.FromHSL(H / 360.0, S / 100.0, L / 100.0); return (r, g, b, A / 100.0); }
    set
    {
      var (h, s, l)= Hsl2Rgb.ToHSL(value.R, value.G, value.B);
      this.H = h * 360.0;
-     this.S = s;
-     this.L = l;  
+     this.S = s * 100.0;
+     this.L = l * 100.0;  
+     this.A = value.A * 100.0;
    }
  }
 
@@ -96,77 +89,73 @@ public partial class HslColor : IColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
- public override (double H, double S, double L) HSLComponents
+ public override (double H, double S, double L, double A) HSLAComponents
  {
-   get => (H / 360.0, S, L); 
+   get => (H / 360.0, S /100.0, L/100.0, A/100.0); 
    set
    {
      H = value.H * 360.0;
-     S = value.S;
-     L = value.L;
+     S = value.S * 100.0;
+     L = value.L * 100.0;
+     A = value.A * 100.0;
    } 
  }
 
-  /// <summary>
-  /// Red component of the color as percentage value.
-  /// The value is between 0 and 1, where 0 represents no red and 1 represents full red (255 in RGB).
-  /// This is derived from the RGB+ value, where the red component is extracted and converted to a percentage.
-  /// Setting this property will update the RGB+ value accordingly, modifying only the red component while preserving the green and blue components.
-  /// </summary>
-  [NotMapped]
-  [XmlIgnore]
-  [JsonIgnore]
-  public override double? Red
-  {
-    get => ((this.RGB >> 16) & 0xFF) / 255.0;
-    set
-    {
-      if (value is null)
-        return;
-      var red = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0x00FFFF | (red << 16);
-    }
-  }
+  ///// <summary>
+  ///// Red component of the color as percentage value.
+  ///// The value is between 0 and 1, where 0 represents no red and 1 represents full red (255 in RGB).
+  ///// This is derived from the RGB+ value, where the red component is extracted and converted to a percentage.
+  ///// Setting this property will update the RGB+ value accordingly, modifying only the red component while preserving the green and blue components.
+  ///// </summary>
+  //[NotMapped]
+  //[XmlIgnore]
+  //[JsonIgnore]
+  //public override double Red
+  //{
+  //  get => ((this.ARGB >> 16) & 0xFF) / 255.0;
+  //  set
+  //  {
+  //    var red = (UInt32)System.Math.Round((double)value * 255.0);
+  //    this.ARGB = (UInt32)(this.ARGB) & 0x00FFFF | (red << 16);
+  //  }
+  //}
 
-  /// <summary>
-  /// Green component of the color as percentage value.
-  /// The value is between 0 and 1, where 0 represents no green and 1 represents full green (255 in RGB).
-  /// This is derived from the RGB+ value, where the green component is extracted and converted to a percentage.
-  /// Setting this property will update the RGB+ value accordingly, modifying only the green component while preserving the red and blue components.
-  /// </summary>
-  [NotMapped]
-  [XmlIgnore]
-  [JsonIgnore]
-  public override double? Green
-  {
-    get => ((this.RGB >> 8) & 0xFF) / 255.0;
-    set
-    {
-      if (value is null)
-        return;
-      var green = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0xFF00FF | (green << 8);
-    }
-  }
+  ///// <summary>
+  ///// Green component of the color as percentage value.
+  ///// The value is between 0 and 1, where 0 represents no green and 1 represents full green (255 in RGB).
+  ///// This is derived from the RGB+ value, where the green component is extracted and converted to a percentage.
+  ///// Setting this property will update the RGB+ value accordingly, modifying only the green component while preserving the red and blue components.
+  ///// </summary>
+  //[NotMapped]
+  //[XmlIgnore]
+  //[JsonIgnore]
+  //public override double Green
+  //{
+  //  get => ((this.ARGB >> 8) & 0xFF) / 255.0;
+  //  set
+  //  {
+  //    var green = (UInt32)System.Math.Round((double)value * 255.0);
+  //    this.ARGB = (UInt32)(this.ARGB) & 0xFF00FF | (green << 8);
+  //  }
+  //}
 
-  /// <summary>
-  /// Blue component of the color as percentage value.
-  /// The value is between 0 and 1, where 0 represents no blue and 1 represents full blue (255 in RGB).
-  /// This is derived from the RGB+ value, where the blue component is extracted and converted to a percentage.
-  /// Setting this property will update the RGB+ value accordingly, modifying only the blue component while preserving the red and green components.
-  /// </summary>
-  [NotMapped]
-  [XmlIgnore]
-  [JsonIgnore]
-  public override double? Blue
-  {
-    get => (this.RGB & 0xFF) / 255.0;
-    set
-    {
-      if (value is null)
-        return;
-      var blue = (UInt32)System.Math.Round((double)value * 255.0);
-      this.RGB = (UInt32)(this.RGB ?? 0) & 0xFFFF00 | blue;
-    }
-  }
+  ///// <summary>
+  ///// Blue component of the color as percentage value.
+  ///// The value is between 0 and 1, where 0 represents no blue and 1 represents full blue (255 in RGB).
+  ///// This is derived from the RGB+ value, where the blue component is extracted and converted to a percentage.
+  ///// Setting this property will update the RGB+ value accordingly, modifying only the blue component while preserving the red and green components.
+  ///// </summary>
+  //[NotMapped]
+  //[XmlIgnore]
+  //[JsonIgnore]
+  //public override double Blue
+  //{
+  //  get => (this.ARGB & 0xFF) / 255.0;
+  //  set
+  //  {
+
+  //    var blue = (UInt32)System.Math.Round((double)value * 255.0);
+  //    this.ARGB = (UInt32)(this.ARGB) & 0xFFFF00 | blue;
+  //  }
+  //}
 }

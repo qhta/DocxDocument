@@ -15,7 +15,7 @@ public partial interface IThemeColorScheme: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme.colors?view=office-pia"/>
-  public IThemeColor Colors(ThemeColors Index);
+  public IThemeColor Colors(DMD.SchemeColors Index);
   /// <summary>
   /// Invokes `Load`.
   /// </summary>

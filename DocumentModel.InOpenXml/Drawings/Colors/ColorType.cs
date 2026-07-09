@@ -196,7 +196,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
     {
       if (Model == value) return;
       var parent = (InternalColor as ModelElement)?.Parent;
-      var rgb = (InternalColor is IColor iColor) ? iColor.RGB : null;
+      var rgba = (InternalColor is IColor iColor) ? iColor.RGBAComponents : (0, 0, 0, 0);
       InternalColor = value switch
       {
         ColorModel.RGBPercentage => new RgbColorModelPercentage(),
@@ -211,7 +211,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
         return;
       (InternalColor as ModelElement)!.Parent = parent;
       if (InternalColor is IColor iColor2)
-        iColor2.RGB = rgb;
+        iColor2.RGBAComponents = rgba;
       var updatableElement = GetUpdatableElement();
       if (updatableElement is DX.OpenXmlElement openXmlElement)
         UpdateColorInOpenXml(openXmlElement);

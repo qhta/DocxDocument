@@ -6,14 +6,14 @@
 /// </summary>
 /// <typeparam name="T">Type of the underlying OpenXML element representing the percentage transformation.</typeparam>
 public abstract partial class PercentageTransformation<T> : ColorTransformation, IPercentageTransformation
-  where T : DXD.PositiveFixedPercentageType
+  where T : DX.OpenXmlLeafElement
 {
   /// <summary>
   /// Gets or sets the percentage parameter for the color transformation.
   /// </summary>
   public Percentage Value
   {
-    get => _Val ??= GetProperty<Percentage>((GetUpdatableObject() as T)?.Val);
+    get => _Val ??= GetProperty<Percentage>((GetUpdatableObject() as T), "Val");
     set => UpdateField(ref _Val, value, nameof(Value));
   }
   private Percentage? _Val;

@@ -193,9 +193,13 @@ public static partial class EnumTypeConverter
       enumValuesMap = new BiDiDictionary<object, object>();
       foreach (var modelEnumField in modelEnumFields)
       {
-        string mappedName = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>()?.FirstOrDefault(a => a.EnumType==null || a.EnumType==openXmlEnumValuesType)?.EnumValueName ??
-                            modelEnumField.GetCustomAttribute<OpenXmlPropertyAttribute>()?.PropertyName ??
-                            modelEnumField.Name;
+        var attributes = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>(true);
+        string? mappedName = attributes?.FirstOrDefault(a => a.EnumType == null || a.EnumType == openXmlEnumValuesType)?.EnumValueName;
+;
+        if (mappedName==null)
+          mappedName = modelEnumField.GetCustomAttribute<OpenXmlPropertyAttribute>()?.PropertyName;
+        if (mappedName == null || mappedName == string.Empty)
+          mappedName = modelEnumField.Name;
         if (!openXmlEnumProperties.TryGetValue(mappedName, out var openXmlProperty))
           throw new InvalidOperationException(
             $"Enum value '{mappedName}' not found in Enum type '{openXmlEnumValuesType.Name}'.");

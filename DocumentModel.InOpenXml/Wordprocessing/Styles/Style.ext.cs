@@ -3,7 +3,7 @@
 /// Represents extended style definition information for a Wordprocessing document.
 /// Provides properties for the primary style name, alternative names (aliases), and status flags, enabling advanced management and customization of style definitions. Implements aliasing and property state checks.
 /// </summary>
-public partial class StyleDefinition : IAliasedObject
+public partial class Style : IAliasedObject
 {
  ///// <summary>
  ///// The primary style name associated with this style definition.

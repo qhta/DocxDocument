@@ -135,47 +135,52 @@ public abstract partial class ColorHolder<T>: ModelElement<T>, IColor, IColorHol
   }
 
   /// <summary>
-  /// Gets or sets the RGB value of the color. If the Color property is null, this property will return null. Setting this property will update the RGB value of the Color if it is not null.
+  /// Gets or sets the ARGB value of the color. If the Color property is null, this property will return null.
+  /// Setting this property will update the ARGB value of the Color if it is not null.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public uint? RGB
+  public uint ARGB
   {
-    get => (Color as IColor)?.RGB;
+    get => ((Color as IColor)?.ARGB) ?? (uint)PresetColors.Auto;
     set
     {
-      if (Color is IColor color) color.RGB = value;
+      if (Color is IColor color) color.ARGB = value;
     }
   }
 
   /// <summary>
-  /// Gets or sets the RGB components of the color as a tuple of three doubles (R, G, B). If the Color property is null, this property will return (0, 0, 0). Setting this property will update the RGB components of the Color if it is not null.
+  /// Gets or sets the RGBA components of the color as a tuple of four doubles (R, G, B, A).
+  /// If the Color property is null, this property will return (0, 0, 0, 0).
+  /// Setting this property will update the RGBA components of the Color if it is not null.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B) RGBComponents
+  public (double R, double G, double B, double A) RGBAComponents
   {
-    get => (Color as IColor)?.RGBComponents ?? (0, 0, 0);
+    get => (Color as IColor)?.RGBAComponents ?? (0, 0, 0, 0);
     set
     {
-      if (Color is IColor color) color.RGBComponents = value;
+      if (Color is IColor color) color.RGBAComponents = value;
     }
   }
 
   /// <summary>
-  /// Gets or sets the HSL components of the color as a tuple of three doubles (H, S, L). If the Color property is null, this property will return (0, 0, 0). Setting this property will update the HSL components of the Color if it is not null.
+  /// Gets or sets the HSLA components of the color as a tuple of four doubles (H, S, L, A).
+  /// If the Color property is null, this property will return (0, 0, 0, 0).
+  /// Setting this property will update the HSLA components of the Color if it is not null.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L) HSLComponents
+  public (double H, double S, double L, double A) HSLAComponents
   {
-    get => (Color as IColor)?.HSLComponents ?? (0, 0, 0);
+    get => (Color as IColor)?.HSLAComponents ?? (0, 0, 0, 0);
     set
     {
-      if (Color is IColor color) color.HSLComponents = value;
+      if (Color is IColor color) color.HSLAComponents = value;
     }
   }
 
