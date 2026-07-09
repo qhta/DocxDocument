@@ -15,8 +15,9 @@ public class ListOfJsonConverterFactory : JsonConverterFactory
     if (!typeToConvert.IsGenericType)
       return false;
 
-    var genericType = typeToConvert.GetGenericTypeDefinition();
-    return genericType == typeof(List<>);
+    //var genericType = typeToConvert.GetGenericTypeDefinition();
+    //var result = genericType == typeof(List<>);
+    return true;
   }
 
   /// <summary>

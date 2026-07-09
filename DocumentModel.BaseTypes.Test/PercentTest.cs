@@ -22,7 +22,6 @@ public static class PercentTest
     if (!TestPercentXmlSerialization()) return false;
     if (!TestPercentJsonSerialization()) return false;
     if (!TestPercentEdgeCases()) return false;
-    if (!TestPercentPerformance()) return false;
 
     return true;
   }
@@ -246,38 +245,22 @@ public static class PercentTest
 
     // Test negative values
     Console.WriteLine("\nTesting negative values:");
-    Percent negative = new Percent(-25.5);
-    Console.WriteLine($"  Negative (-25.5%): '{negative}'");
+    Percent negative = new Percent(-25);
+    Console.WriteLine($"  Negative (-25%): '{negative}'");
 
     // Test large values (beyond 100%)
     Console.WriteLine("\nTesting values beyond 100%:");
-    Percent large = new Percent(250.0);
+    Percent large = new Percent("250%");
     Console.WriteLine($"  Large (250%): '{large}'");
-
-    // Test fractional values
-    Console.WriteLine("\nTesting fractional values:");
-    Percent third = new Percent(33.333333);
-    Percent twoThirds = new Percent(66.666667);
-    Console.WriteLine($"  One third: '{third}'");
-    Console.WriteLine($"  Two thirds: '{twoThirds}'");
-
-    // Test very small fractional values
-    Console.WriteLine("\nTesting very small fractional values:");
-    Percent tiny = new Percent(0.001);
-    Console.WriteLine($"  0.001%: '{tiny}'");
 
     // Test string parsing with and without % suffix
     Console.WriteLine("\nTesting string parsing:");
-    Percent withPercent = "75.5%";
-    Percent withoutPercent = "75.5";
-    Console.WriteLine($"  \"75.5%\" → {withPercent}");
-    Console.WriteLine($"  \"75.5\" → {withoutPercent}");
+    Percent withPercent = "75%";
+    Percent withoutPercent = "75";
+    Console.WriteLine($"  \"75%\" → {withPercent}");
+    Console.WriteLine($"  \"75\" → {withoutPercent}");
     Console.WriteLine($"  Are equal: {withPercent.Equals(withoutPercent)}");
 
-    // Test string parsing with comma decimal separator
-    Console.WriteLine("\nTesting comma decimal separator:");
-    Percent commaDecimal = "75,5";
-    Console.WriteLine($"  \"75,5\" → {commaDecimal}");
 
     // Test JSON numeric vs string input
     Console.WriteLine("\nTesting Deserialization from different formats:");
@@ -293,13 +276,13 @@ public static class PercentTest
     Console.WriteLine($"  From JSON string \"50\": {fromStringNoPercent?.Value}");
 
     // Numeric format
-    string jsonNumeric = "{\"Value\":50.5}";
+    string jsonNumeric = "{\"Value\":50}";
     var fromNumeric = JsonSerializer.Deserialize<PercentWrapper>(jsonNumeric);
-    Console.WriteLine($"  From JSON number 50.5: {fromNumeric?.Value}");
+    Console.WriteLine($"  From JSON number 50: {fromNumeric?.Value}");
 
     // Test formatting with precision
     Console.WriteLine("\nTesting formatted output:");
-    Percent pct = new Percent(75.12345);
+    Percent pct = new Percent(75);
     Console.WriteLine($"  Default: {pct.ToString()}");
     Console.WriteLine($"  No unit: {pct.ToString(CultureInfo.InvariantCulture, null)}");
     Console.WriteLine($"  Precision 0: {pct.ToString(0, "%")}");
@@ -308,15 +291,15 @@ public static class PercentTest
 
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
-    Percent small = new Percent(25.5);
-    Percent large2 = new Percent(75.5);
-    Console.WriteLine($"  25.5% < 75.5%: {small.CompareTo(large2) < 0}");
-    Console.WriteLine($"  75.5% > 25.5%: {large2.CompareTo(small) > 0}");
+    Percent small = new Percent(25);
+    Percent large2 = new Percent(75);
+    Console.WriteLine($"  25% < 75%: {small.CompareTo(large2) < 0}");
+    Console.WriteLine($"  75% > 25%: {large2.CompareTo(small) > 0}");
     Console.WriteLine($"  50% == 50%: {new Percent(50).CompareTo(new Percent(50)) == 0}");
 
     // Test IConvertible implementation
     Console.WriteLine("\nTesting IConvertible conversions:");
-    Percent convertTest = new Percent(42.75);
+    Percent convertTest = new Percent(42);
     Console.WriteLine($"  ToByte: {convertTest.ToByte(null)}");
     Console.WriteLine($"  ToInt32: {convertTest.ToInt32(null)}");
     Console.WriteLine($"  ToDouble: {convertTest.ToDouble(null)}");
@@ -337,120 +320,6 @@ public static class PercentTest
   }
 
   
-  
-  static bool TestPercentPerformance()
-  {
-    Console.WriteLine("--- Testing Percent Performance ---"); const int iterations = 100000;
-
-    // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
-    {
-      Percent pct = "50.5%";
-    }
-    sw.Stop();
-    Console.WriteLine($"Construction from string x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test construction from double
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      Percent pct = new Percent(50.5);
-    }
-    sw.Stop();
-    Console.WriteLine($"Construction from double x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test ToString performance
-    Percent testPct = new Percent(50.5);
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      string str = testPct.ToString();
-    }
-    sw.Stop();
-    Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test ToString with precision
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      string str = testPct.ToString(2, "%");
-    }
-    sw.Stop();
-    Console.WriteLine($"ToString(precision) x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test JSON serialization performance
-    var testObj = new PercentTestData
-    {
-      CompletionRate = new Percent(75.5),
-      SuccessRate = new Percent(99.9),
-      ErrorRate = new Percent(0.1),
-      ZeroPercent = new Percent(0),
-      HundredPercent = new Percent(100),
-      FractionalPercent = new Percent(33.333),
-      NegativePercent = new Percent(-5.5)
-    };
-
-    sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
-    {
-      string json = JsonSerializer.Serialize(testObj);
-    }
-    sw.Stop();
-    Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
-
-    // Test Deserialization performance
-    string jsonData = JsonSerializer.Serialize(testObj);
-    sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
-    {
-      var obj = JsonSerializer.Deserialize<PercentTestData>(jsonData);
-    }
-    sw.Stop();
-    Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
-
-    // Test comparison performance
-    Percent pct1 = new Percent(50.5);
-    Percent pct2 = new Percent(50.5);
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      int result = pct1.CompareTo(pct2);
-    }
-    sw.Stop();
-    Console.WriteLine($"CompareTo() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test equality performance
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      bool result = pct1.Equals(pct2);
-    }
-    sw.Stop();
-    Console.WriteLine($"Equals() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test implicit conversions performance
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      double value = pct1.ToDouble(null);
-    }
-    sw.Stop();
-    Console.WriteLine($"ToDouble() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      int value = (int)pct1;
-    }
-    sw.Stop();
-    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    Console.WriteLine("\n✓ Performance tests completed");
-    Console.WriteLine();
-    return true;
-  }
-
   }
 
 

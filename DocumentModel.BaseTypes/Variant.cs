@@ -647,21 +647,21 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The string value.</returns>
-  public virtual string? ToString(IFormatProvider? provider = null)
+  public virtual string ToString(IFormatProvider? provider = null)
   {
     if (Value is byte[] bytes)
       return Convert.ToBase64String(bytes);
     if (VariantType == VariantType.Date)
       return ToDateOnly().ToString("yyyy-MM-dd");
     if (VariantType == VariantType.DateTime)
-      return Value?.ToString();
+      return Value?.ToString() ?? string.Empty;
     if (_value?.GetType().TryGetConverter(out var typeConverter) == true)
-    {
+    {  
       if (typeConverter != null && typeConverter.CanConvertTo(typeof(string)))
-        return typeConverter.ConvertToInvariantString(_value);
+        return typeConverter.ConvertToInvariantString(_value) ?? string.Empty;
     }
     var result = Convert.ToString(Value, CultureInfo.InvariantCulture);
-    return result;
+    return result ?? string.Empty;
   }
 
   /// <summary>

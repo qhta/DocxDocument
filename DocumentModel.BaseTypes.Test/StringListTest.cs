@@ -161,7 +161,7 @@ public static class StringListTest
     Console.WriteLine("\nTesting empty string:");
     StringList list3 = new StringList("");
     Console.WriteLine($"  \"\" → {list3} (Count={list3.Count})");
-    if (list3.Count != 1) // Empty string creates one empty item
+    if (list3.Count != 0) // Empty string creates zero items
     {
       Console.WriteLine("✗ Parsing FAILED");
       return false;

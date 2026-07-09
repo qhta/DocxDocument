@@ -112,38 +112,38 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   //public Boolean? Gray { get => _Gray; set => UpdateField(ref _Gray, value, nameof(Gray)); }
   //private Boolean? _Gray;
 
-  ///// <summary>
-  ///// Absolute alpha (transparency) value.
-  ///// </summary>
-  ///// <remarks>
-  ///// Specifies the opacity of the color where 0 is fully transparent and 100,000 is fully opaque (100%).
-  ///// Values between create semi-transparent colors. If null, full opacity (100,000) is assumed.
-  ///// </remarks>
-  //[OpenXmlElement(typeof(DXD.Alpha))]
-  //public Percentage? Alpha { get => _Alpha; set => UpdateField(ref _Alpha, value, nameof(Alpha)); }
-  //private Percentage? _Alpha;
+  /// <summary>
+  /// Absolute alpha (transparency) value.
+  /// </summary>
+  /// <remarks>
+  /// Specifies the opacity of the color where 0 is fully transparent and 100,000 is fully opaque (100%).
+  /// Values between create semi-transparent colors. If null, full opacity (100,000) is assumed.
+  /// </remarks>
+  [OpenXmlElement(typeof(DXD.Alpha))]
+  public Percentage? AlphaValue { get => _Alpha; set => UpdateField(ref _Alpha, value, nameof(Alpha)); }
+  private Percentage? _Alpha;
 
-  ///// <summary>
-  ///// Alpha (transparency) offset adjustment.
-  ///// </summary>
-  ///// <remarks>
-  ///// Adds or subtracts from the base alpha value. Range is typically -100,000 to +100,000.
-  ///// Positive values increase opacity, negative values increase transparency.
-  ///// </remarks>
-  //[OpenXmlElement(typeof(DXD.AlphaOffset))]
-  //public Percentage? AlphaOffset { get => _AlphaOffset; set => UpdateField(ref _AlphaOffset, value, nameof(AlphaOffset)); }
-  //private Percentage? _AlphaOffset;
+  /// <summary>
+  /// Alpha (transparency) offset adjustment.
+  /// </summary>
+  /// <remarks>
+  /// Adds or subtracts from the base alpha value. Range is typically -100,000 to +100,000.
+  /// Positive values increase opacity, negative values increase transparency.
+  /// </remarks>
+  [OpenXmlElement(typeof(DXD.AlphaOffset))]
+  public Percentage? AlphaOffset { get => _AlphaOffset; set => UpdateField(ref _AlphaOffset, value, nameof(AlphaOffset)); }
+  private Percentage? _AlphaOffset;
 
-  ///// <summary>
-  ///// Alpha (transparency) modulation percentage.
-  ///// </summary>
-  ///// <remarks>
-  ///// Multiplies the base alpha by this percentage. A value of 50,000 (50%) makes the color twice as transparent.
-  ///// Range is 0 to 100,000, where 100,000 means no change.
-  ///// </remarks>
-  //[OpenXmlElement(typeof(DXD.AlphaModulation))]
-  //public Percentage? AlphaModulation { get => _AlphaModulation; set => UpdateField(ref _AlphaModulation, value, nameof(AlphaModulation)); }
-  //private Percentage? _AlphaModulation;
+  /// <summary>
+  /// Alpha (transparency) modulation percentage.
+  /// </summary>
+  /// <remarks>
+  /// Multiplies the base alpha by this percentage. A value of 50,000 (50%) makes the color twice as transparent.
+  /// Range is 0 to 100,000, where 100,000 means no change.
+  /// </remarks>
+  [OpenXmlElement(typeof(DXD.AlphaModulation))]
+  public Percentage? AlphaModulation { get => _AlphaModulation; set => UpdateField(ref _AlphaModulation, value, nameof(AlphaModulation)); }
+  private Percentage? _AlphaModulation;
 
   ///// <summary>
   ///// Absolute hue value in the HSL color space.

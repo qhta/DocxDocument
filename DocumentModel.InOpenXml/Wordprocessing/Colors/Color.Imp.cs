@@ -18,11 +18,11 @@ public partial class Color : IColor
     get
     {
       var argb = (this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000;
-      double Red = ((argb >> 16) & 0xFF) / 255.0;
-      double Green = ((argb >> 8) & 0xFF) / 255.0;
-      double Blue = ((argb & 0xFF) / 255.0);
-      double Alpha = ((argb >> 24) & 0xFF) / 255.0;
-      return (Red, Green, Blue, Alpha);
+      double R = ((argb >> 16) & 0xFF) / 255.0;
+      double G = ((argb >> 8) & 0xFF) / 255.0;
+      double B = ((argb & 0xFF) / 255.0);
+      double A = ((argb >> 24) & 0xFF) / 255.0;
+      return (R, G, B, A);
     }
     set
     {

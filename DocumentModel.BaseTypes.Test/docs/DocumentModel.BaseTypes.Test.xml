@@ -501,6 +501,26 @@
             Simple wrapper class for testing Deserialization scenarios with strings.
             </summary>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentageTest">
+            <summary>
+            Test suite for Percentage type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.PercentageTest.Run">
+            <summary>
+            Runs all Percentage serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentageTestData">
+            <summary>
+            Test data class containing various Percentage properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.PercentageWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
         <member name="T:DocumentModel.BaseTypes.Test.PercentTest">
             <summary>
             Test suite for Percent type serialization in both XML and JSON formats.

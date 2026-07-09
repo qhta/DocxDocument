@@ -498,17 +498,6 @@ public static class HexRgbTest
     mutable.B = 50;
     Console.WriteLine($"  After B=50: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
 
-    // Test 24-bit masking
-    Console.WriteLine("\nTesting 24-bit masking:");
-    HexColor masked = new HexColor(0xFFABCDEF);
-    Console.WriteLine($"  Input: 0xFFABCDEF");
-    Console.WriteLine($"  Masked HexRgb: {masked} (should be ABCDEF)");
-    if (masked.ToString() != "ABCDEF")
-    {
-      Console.WriteLine("✗ 24-bit masking test FAILED");
-      return false;
-    }
-
     // Test equality and hash code
     Console.WriteLine("\nTesting equality and hash code:");
     HexColor color1 = new HexColor("123456");

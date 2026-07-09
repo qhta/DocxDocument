@@ -6791,12 +6791,6 @@
             </summary>
             <param name="value">The int value representing the Percentage.</param>
         </member>
-        <member name="M:DocumentModel.Percentage.#ctor(System.Int64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from an Int64 value.
-            </summary>
-            <param name="value">The int value representing the Percentage.</param>
-        </member>
         <member name="M:DocumentModel.Percentage.#ctor(System.Double)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a double value.
@@ -6808,12 +6802,6 @@
             Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a decimal value.
             </summary>
             <param name="value">The double value representing the Percentage.</param>
-        </member>
-        <member name="M:DocumentModel.Percentage.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from an UInt64 value.
-            </summary>
-            <param name="value">The UInt64 value representing the Percentage.</param>
         </member>
         <member name="M:DocumentModel.Percentage.FromHexString(System.String)">
             <summary>
@@ -7020,13 +7008,6 @@
             Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Percentage"/> value.
             </summary>
             <param name="val">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
-        </member>
-        <member name="M:DocumentModel.Percentage.op_Implicit(System.UInt64)~DocumentModel.Percentage">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Percentage"/> value.
-            </summary>
-            <param name="val">The 64-bit unsigned integer to convert.</param>
             <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.Parse(System.String)">

@@ -10,7 +10,7 @@
 [JsonConverter(typeof(PercentageJsonConverter))]
 public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>, IComparable<Percentage>, IComparable<object>
 {
-  private readonly Int32 value;
+  private readonly Int32 Value;
 
   private const int scale = 1000;
 
@@ -27,8 +27,8 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     {
       str = str.TrimEnd('%');
     }
-    var decimalValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
-      this.value = (int)(decimalValue * scale);
+    var decimalValue = int.Parse(str, CultureInfo.InvariantCulture);
+      this.Value = (int)(decimalValue * scale);
   }
 
   /// <summary>
@@ -37,16 +37,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The int value representing the Percentage.</param>
   public Percentage(int value)
   {
-    this.value = (int)(value * scale);
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="Percentage"/> struct from an Int64 value.
-  /// </summary>
-  /// <param name="value">The int value representing the Percentage.</param>
-  public Percentage(Int64 value)
-  {
-    this.value = (int)(value * scale);
+    this.Value = (int)(value * scale);
   }
 
   /// <summary>
@@ -55,7 +46,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The double value representing the Percentage.</param>
   public Percentage(double value)
   {
-    this.value = (int)(value * scale);
+    this.Value = (int)(value * 100 * scale);
   }
 
   /// <summary>
@@ -64,17 +55,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="value">The double value representing the Percentage.</param>
   public Percentage(decimal value)
   {
-    this.value = (int)(value * scale);
-  }
-
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="Percentage"/> struct from an UInt64 value.
-  /// </summary>
-  /// <param name="value">The UInt64 value representing the Percentage.</param>
-  public Percentage(UInt64 value)
-  {
-    this.value = (int)(value * scale);
+    this.Value = (int)(value * 100 * scale);
   }
 
   /// <summary>
@@ -96,8 +77,8 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
       str = str.TrimStart('#');
     }
     var byteValue = byte.Parse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
-    var decimalValue = byteValue*100/255.0; // Convert byte to percentage
-    return new Percentage(decimalValue);
+    int intValue = byteValue*100/255; // Convert byte to percentage
+    return new Percentage(intValue);
   }
 
   #region IConvertible Implementation
@@ -128,7 +109,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider = null)
   {
-    return (byte)(value);
+    return (byte)(Value);
   }
 
   /// <summary>
@@ -158,7 +139,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public Decimal ToDecimal(IFormatProvider? provider = null)
   {
-    return (decimal)(value) / scale;
+    return (decimal)(Value) / scale;
   }
 
   /// <summary>
@@ -168,7 +149,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider = null)
   {
-    return (double)(value) / scale;
+    return (double)(Value) / scale / 100.0;
   }
 
   /// <summary>
@@ -178,7 +159,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider = null)
   {
-    return (short)(value / scale);
+    return (short)(Value / scale);
   }
 
   /// <summary>
@@ -188,7 +169,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider = null)
   {
-    return (Int32)(value / scale);
+    return (Int32)(Value / scale);
   }
 
   /// <summary>
@@ -198,7 +179,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider = null)
   {
-    return (Int64)(value / scale);
+    return (Int64)(Value / scale);
   }
 
   /// <summary>
@@ -208,7 +189,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider = null)
   {
-    return (SByte)(value / scale);
+    return (SByte)(Value / scale);
   }
 
   /// <summary>
@@ -218,7 +199,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider = null)
   {
-    return (float)(value) / scale;
+    return (float)(Value) / scale;
   }
 
   /// <summary>
@@ -238,7 +219,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider = null)
   {
-    return (ushort)(value / scale);
+    return (ushort)(Value / scale);
   }
 
   /// <summary>
@@ -248,7 +229,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider = null)
   {
-    return (uint)(value / scale);
+    return (uint)(Value / scale);
   }
 
   /// <summary>
@@ -258,7 +239,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider = null)
   {
-    return (ulong)(value / scale);
+    return (ulong)(Value / scale);
   }
 
   /// <summary>
@@ -271,33 +252,33 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return (UInt16)(value / scale);
+      return (UInt16)(Value / scale);
     if (targetType == typeof(Int32))
-      return (Int32)(value / scale);
+      return (Int32)(Value / scale);
     if (targetType == typeof(UInt32))
-      return (UInt32)(value / scale);
+      return (UInt32)(Value / scale);
     if (targetType == typeof(Int64))
-      return (Int64)(value / scale);
+      return (Int64)(Value / scale);
     if (targetType == typeof(UInt64))
-      return (UInt64)(value / scale);
+      return (UInt64)(Value / scale);
     if (targetType == typeof(Int16))
-      return (Int16)(value / scale);
+      return (Int16)(Value / scale);
     if (targetType == typeof(Byte))
-      return (byte)(value / scale);
+      return (byte)(Value / scale);
     if (targetType == typeof(SByte))
-      return (sbyte)(value / scale);
+      return (sbyte)(Value / scale);
     if (targetType == typeof(Single))
-      return (float)(value) / scale;
+      return (float)(Value) / scale / 100.0f;
     if (targetType == typeof(Double))
-      return (double)(value) / scale;
+      return (double)(Value) / scale / 100.0;
     if (targetType == typeof(decimal))
-      return (decimal)(value) / scale;
+      return (decimal)(Value) / scale / 100.0m;
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Percentage))
-      return new Percentage(value);
+      return new Percentage(Value);
 
-    return ((IConvertible)value).ToType(targetType, provider);
+    return ((IConvertible)Value).ToType(targetType, provider);
   }
 
   #endregion
@@ -410,16 +391,6 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <param name="val">The 32-bit signed integer to convert.</param>
   /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
   public static implicit operator Percentage(Int32 val)
-  {
-    return new Percentage(val);
-  }
-
-  /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Percentage"/> value.
-  /// </summary>
-  /// <param name="val">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
-  public static implicit operator Percentage(ulong val)
   {
     return new Percentage(val);
   }
@@ -539,7 +510,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(Percentage other)
   {
-    return value == other.value;
+    return Value == other.Value;
   }
 
   /// <summary>
@@ -554,7 +525,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// </returns>
   public int CompareTo(Percentage other)
   {
-    return value.CompareTo(other.value);
+    return Value.CompareTo(other.Value);
   }
 
   /// <summary>
@@ -568,27 +539,27 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (other is Percentage Percentage)
       return CompareTo(Percentage);
     if (other is Int32 int32value)
-      return this.CompareTo(new Percentage(int32value));
+      return this.Value.CompareTo(int32value * scale);
     if (other is UInt32 uint32value)
-      return this.CompareTo(new Percentage(uint32value));
+      return this.Value.CompareTo(uint32value * scale);
     if (other is Int64 int64value)
-      return this.CompareTo(new Percentage(int64value));
+      return this.Value.CompareTo(int64value * scale);
     if (other is UInt64 uint64value)
-      return this.CompareTo(new Percentage(uint64value));
+      return this.Value.CompareTo((long)(uint64value * scale));
     if (other is Int16 int16value)
-      return this.CompareTo(new Percentage(int16value));
+      return this.Value.CompareTo(int16value * scale);
     if (other is UInt16 uint16value)
-      return this.CompareTo(new Percentage(uint16value));
+      return this.Value.CompareTo(uint16value * scale);
     if (other is SByte sByteValue)
-      return this.CompareTo(new Percentage(sByteValue));
+      return this.Value.CompareTo(sByteValue * scale);
     if (other is Byte byteValue)
-      return this.CompareTo(new Percentage(byteValue));
+      return this.Value.CompareTo(byteValue * scale);
     if (other is Single singleValue)
-      return this.CompareTo(new Percentage(singleValue));
+      return this.Value.CompareTo(singleValue * scale / 100.0f);
     if (other is decimal decimalValue)
-      return this.CompareTo(new Percentage(decimalValue));
+      return this.Value.CompareTo(decimalValue * scale / 100.0m);
     if (other is double doubleValue)
-      return this.CompareTo(new Percentage(doubleValue));
+      return this.Value.CompareTo(doubleValue * scale / 100.0);
     if (other is String str)
       return this.CompareTo(Percentage.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");
@@ -600,6 +571,6 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return value.GetHashCode();
+    return Value.GetHashCode();
   }
 }
