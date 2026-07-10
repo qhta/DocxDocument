@@ -38,7 +38,10 @@ public static class PercentageConverter
   {
     if (Int32Value == null) return null;
 
-    return Int32Value.Value / 100000.0;
+    decimal decValue = Int32Value.Value / 1000.0m;
+    var result = new Percentage(decValue);
+    Debug.WriteLine($"Converted Int32Value {Int32Value.Value} to Percentage {result}");
+    return result;
   }
 
   /// <summary>
@@ -50,11 +53,11 @@ public static class PercentageConverter
   {
     if (value is null) return null;
 
-    var doubleValue = (double)value * 100000;
-    if (doubleValue < Int32.MinValue || doubleValue > Int32.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for Int32");
+    int intValue = (int)((decimal)value * 1000);
 
-    return new DX.Int32Value { Value = (Int32)doubleValue };
+    var result = new DX.Int32Value { Value = (Int32)intValue };
+    Debug.WriteLine($"Converted Percentage {value} to Int32Value {result.Value}");
+    return result;
   }
 
   #endregion
