@@ -475,11 +475,11 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// </list>
   /// </para>
   /// </remarks>
-  public override string? ToString(IFormatProvider? provider = null)
+  public override string ToString(IFormatProvider? provider = null)
   {
     var formattedItems = _items.Select(item =>
     {
-      if (item == null) return "";
+      if (item is null) return "";
       if (item is IFormattable formattable)
         return formattable.ToString(null, provider);
       return item.ToString() ?? "";

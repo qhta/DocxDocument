@@ -571,9 +571,9 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// </list>
   /// </para>
   /// </remarks>
-  public override string? ToString(IFormatProvider? provider = null)
+  public override string ToString(IFormatProvider? provider = null)
   {
-    if (_items == null)
+    if (_items is null)
       return "[]";
 
     var formattedItems = new List<string>();

@@ -56,9 +56,9 @@ public partial class RgbColor : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteAttributeString("value", Value.ToString());
-    if (Tint != null)
+    if (Tint is not null)
       writer.WriteAttributeString("tint", Tint.ToString());
-    if (Shade != null)
+    if (Shade is not null)
       writer.WriteAttributeString("shade", Shade.ToString());
   }
 }

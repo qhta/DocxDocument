@@ -428,7 +428,7 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
     where TTrans: PercentageTransformation<OpenXmlType>, new()
     where OpenXmlType : DXD.PositiveFixedPercentageType
   {
-    if (value != null)
+    if (value is not null)
     {
       if (_ColorTransformations != null)
       {

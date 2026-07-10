@@ -6776,6 +6776,11 @@
             The value is written using the default string representation of the <see cref="T:DocumentModel.Percentage"/> structure.
             </remarks>
         </member>
+        <member name="F:DocumentModel.Percentage.Value">
+            <summary>
+            Internal integer representation of the percentage value, scaled by 1000 to preserve precision.
+            </summary>
+        </member>
         <member name="M:DocumentModel.Percentage.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a string value.
@@ -6939,6 +6944,13 @@
             </summary>
             <param name="val">The string to convert.</param>
             <returns>A <see cref="T:DocumentModel.Percentage"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a string representation.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A string representation of the <see cref="T:DocumentModel.Percentage"/> value.</returns>
         </member>
         <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.UInt16">
             <summary>

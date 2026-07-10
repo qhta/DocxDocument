@@ -15,6 +15,12 @@ namespace DocumentModel;
 /// </summary>
 public static class TestHelper
 {
+  /// <summary>
+  /// Returns a check mark (✓) if the input is true, or a cross mark (✗) if the input is false.
+  /// </summary>
+  /// <param name="ok">The boolean value to evaluate.</param>
+  /// <returns>A check mark (✓) if true, or a cross mark (✗) if false.</returns>
+  public static string OkMarker(bool ok) => ok ? "✓" : "✗";
 
   /// <summary>
   /// Compares two test data instances property by property.

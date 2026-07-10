@@ -22,83 +22,118 @@ public static class PercentageTest
     if (!TestPercentageXmlSerialization()) return false;
     if (!TestPercentageJsonSerialization()) return false;
     if (!TestPercentageEdgeCases()) return false;
-    if (!TestPercentagePerformance()) return false;
 
     return true;
   }
 
-  
+
   static bool TestPercentageBasicOperations()
   {
-    Console.WriteLine("--- Testing Percentage Basic Operations ---");      // Test string to Percentage conversion
-    Percentage pct1 = "50%";
-    Console.WriteLine($"\n✓ String to Percentage: {pct1} = {(double)pct1}");
+    Console.WriteLine("--- Testing Percentage Basic Operations ---"); // Test string to Percentage conversion
+    Console.WriteLine("");
+    var ok = true;
+
+
+    // Test string to Percentage conversion
+    var str = "50%";
+    Percentage pct1 = str;
+    var intVal = pct1.Value;
+    ok = intVal == 50000;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} String to Percentage: \"{str}\" -> {intVal}");
+    if (!ok) return false;
+
+    // Test string from Percentage conversion
+    pct1 = new Percentage("50%");
+    var strVal = (string)pct1;
+    ok = strVal == "50%";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to string: \"{pct1}\" -> {strVal}");
+    if (!ok) return false;
+
+    // Test Percentage to double conversion
+    pct1 = new Percentage("50%");
+    double dbl = (double)pct1;
+    ok = dbl == 0.5;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to double: {pct1} = {dbl}");
+    if (!ok) return false;
 
     // Test double to Percentage conversion
-    Percentage pct2 = new Percentage("50%");
-    Console.WriteLine($"\n✓ Double to Percentage: {pct2}");
+    dbl = 0.5;
+    pct1 = dbl;
+    ok = pct1 == 0.5;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Double to Percentage: {dbl} -> {pct1}");
+    if (!ok) return false;
 
-    // Test equality
-    if (pct1.Equals(pct2))
-      Console.WriteLine("\n✓ Equality test passed");
-    else
-      Console.WriteLine("✗ Equality test FAILED");
+    // Test Percentage to int conversion
+    pct1 = new Percentage("50%");
+    intVal = (int)pct1;
+    ok = intVal == 50;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to int: {pct1} -> {intVal}");
+    if (!ok) return false;
 
-    // Test Percentage to string with %
-    string str = pct1.ToString();
-    Console.WriteLine($"\n✓ Percentage to string: {str}");
+    // Test int to Percentage conversion
+    intVal = 50;
+    pct1 = intVal;
+    ok = pct1 == 0.5;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Double to Percentage: {dbl} -> {pct1}");
+    if (!ok) return false;
 
-    // Test Percentage to double
-    double value = pct1.ToDouble(null);
-    Console.WriteLine($"\n✓ Percentage to double: {value}");
-
-    // Test hash code
-    Console.WriteLine($"\n✓ Hash code: {pct1.GetHashCode()}");
-
-    // Test various numeric conversions
-    int intVal = (int)pct1;
-    uint uintVal = (uint)pct1;
-    short shortVal = (short)pct1;
-    Console.WriteLine($"\n✓ Numeric conversions: int={intVal}, uint={uintVal}, short={shortVal}");
+    // Test Percentage to string without %
+    strVal = "50";
+    pct1 = new Percentage(strVal);
+    ok = pct1 == "50%";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} String without % to Percentage: \"{strVal}\" -> {pct1}");
+    if (!ok) return false;
 
     // Test with precision
+    strVal = "50.12%";
+    pct1 = new Percentage(strVal);
     string preciseStr = pct1.ToString(2, "%");
-    Console.WriteLine($"\n✓ ToString with precision 2: {preciseStr}");
+    ok = strVal == preciseStr;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} String to Percentage: \"{pct1}\" -> {preciseStr}");
 
-    // Test comparison
-    Percentage pct3 = new Percentage("75%");
-    Console.WriteLine($"\n✓ CompareTo (50 vs 75): {pct1.CompareTo(pct3)} (expected < 0)");
+    // Test hash code
+    pct1 = new Percentage("50%");
+    var hash1 = pct1.GetHashCode();
+    var hash2 = (0.5).GetHashCode();
+    ok = hash1 == hash2;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {(ok ? "==" : "!=")} {hash2}");
+    if (!ok) return false;
 
-    Console.WriteLine("\n✓ All basic operations passed");
+    // Test equality
+    pct1 = new Percentage("50%");
+    Percentage pct2 = new Percentage(0.5);
+    ok = pct1.Equals(pct2);
+    string equalityMessage = ok ? "is equal to" : "is not equal to";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{pct1}\" {equalityMessage} \"{pct2}\" ");
+    if (!ok) return false;
+
+    // Test comparison 1
+    pct1 = new Percentage("50%");
+    pct2 = new Percentage(0.5);
+    ok = pct1.CompareTo(pct2) == 0;
+    string comparisonMessage = ok ? "is equal to" : "is not equal to";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 1 test: \"{pct1}\" {comparisonMessage} \"{pct2}\" ");
+    if (!ok) return false;
+
+    // Test comparison 2
+    pct1 = new Percentage("50.12%");
+    pct2 = new Percentage(0.50);
+    ok = pct1.CompareTo(pct2) == 1;
+    comparisonMessage = ok ? "is greater than" : "is not greater than";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 2 test: \"{pct1}\" {comparisonMessage} \"{pct2}\" ");
+    if (!ok) return false;
+
     Console.WriteLine();
     return true;
   }
 
-  
-  
+
+
   static bool TestPercentageXmlSerialization()
   {
-    Console.WriteLine("--- Testing Percentage XML Serialization ---");      // Create test object
-    var testData = new PercentageTestData
-    {
-      CompletionRate = new Percentage(75.5),
-      SuccessRate = new Percentage(99.9),
-      ErrorRate = new Percentage(0.1),
-      ZeroPercentage = new Percentage(0),
-      HundredPercentage = new Percentage(100),
-      FractionalPercentage = new Percentage(33.333),
-      NegativePercentage = new Percentage(-5.5)
-    };
-
-    Console.WriteLine($"Original data:");
-    Console.WriteLine($"  CompletionRate: {testData.CompletionRate}");
-    Console.WriteLine($"  SuccessRate: {testData.SuccessRate}");
-    Console.WriteLine($"  ErrorRate: {testData.ErrorRate}");
-    Console.WriteLine($"  ZeroPercentage: {testData.ZeroPercentage}");
-    Console.WriteLine($"  HundredPercentage: {testData.HundredPercentage}");
-    Console.WriteLine($"  FractionalPercentage: {testData.FractionalPercentage}");
-    Console.WriteLine($"  NegativePercentage: {testData.NegativePercentage}");
-    Console.WriteLine();
+    Console.WriteLine("--- Testing Percentage XML Serialization ---"); // Create test object
+    var testData = CreateTestData();
+    ShowOriginalData(testData);
 
     // Serialize to XML
     var xmlSerializer = new XmlSerializer(typeof(PercentageTestData));
@@ -133,48 +168,10 @@ public static class PercentageTest
     Console.WriteLine();
     return true;
   }
-
-  private static bool VerifyDeserializedData(PercentageTestData? deserializedData, PercentageTestData testData)
-  {
-    if (deserializedData == null)
-    {
-      Console.WriteLine("✗ Deserialization returned null");
-      return false;
-    }
-
-    // Verify deserialized data
-    Console.WriteLine("Deserialized data:");
-
-    Console.WriteLine($"  CompletionRate: {deserializedData.CompletionRate}");
-    if (!testData.CompletionRate.Equals(deserializedData.CompletionRate))
-      return false;
-    Console.WriteLine($"  SuccessRate: {deserializedData.SuccessRate}");
-    if (!testData.SuccessRate.Equals(deserializedData.SuccessRate))
-      return false;
-    Console.WriteLine($"  ErrorRate: {deserializedData.ErrorRate}");
-    if (!testData.ErrorRate.Equals(deserializedData.ErrorRate))
-      return false;
-    Console.WriteLine($"  ZeroPercentage: {deserializedData.ZeroPercentage}");
-    if (!testData.ZeroPercentage.Equals(deserializedData.ZeroPercentage))
-      return false;
-    Console.WriteLine($"  HundredPercentage: {deserializedData.HundredPercentage}");
-    if (!testData.HundredPercentage.Equals(deserializedData.HundredPercentage))
-      return false;
-    Console.WriteLine($"  FractionalPercentage: {deserializedData.FractionalPercentage}");
-    if (!testData.FractionalPercentage.Equals(deserializedData.FractionalPercentage))
-      return false;
-    Console.WriteLine($"  NegativePercentage: {deserializedData.NegativePercentage}");
-    if (!testData.NegativePercentage.Equals(deserializedData.NegativePercentage))
-      return false;
-
-    return true;
-  }
-
-  
   
   static bool TestPercentageJsonSerialization()
   {
-    Console.WriteLine("--- Testing Percentage JSON Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing Percentage JSON Serialization ---"); // Create test object
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
@@ -201,19 +198,19 @@ public static class PercentageTest
     return true;
   }
 
-  
   private static PercentageTestData CreateTestData()
   {
-    return new PercentageTestData
+    var testData = new PercentageTestData
     {
-      CompletionRate = new Percentage(75.5),
-      SuccessRate = new Percentage(98.0),
-      ErrorRate = new Percentage(2.0),
-      ZeroPercentage = new Percentage(0),
-      HundredPercentage = new Percentage(100),
-      FractionalPercentage = new Percentage(33.333),
-      NegativePercentage = new Percentage(-5.5)
+      CompletionRate = new Percentage("75.5%"),
+      SuccessRate = new Percentage("99.9%"),
+      ErrorRate = new Percentage("0.1%"),
+      ZeroPercentage = new Percentage("0%"),
+      HundredPercentage = new Percentage("100%"),
+      FractionalPercentage = new Percentage("33.333%"),
+      NegativePercentage = new Percentage("-5.5%")
     };
+    return testData;
   }
 
   private static void ShowOriginalData(PercentageTestData testData)
@@ -229,42 +226,109 @@ public static class PercentageTest
     Console.WriteLine();
   }
 
-  
+  private static bool VerifyDeserializedData(PercentageTestData? deserializedData, PercentageTestData testData)
+  {
+    if (deserializedData == null)
+    {
+      Console.WriteLine("✗ Deserialization returned null");
+      return false;
+    }
+
+    // Verify deserialized data
+    Console.WriteLine("Deserialized data:");
+    var ok = true;
+    ok = testData.CompletionRate.Equals(deserializedData.CompletionRate);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  CompletionRate: {deserializedData.CompletionRate}");
+    if (!ok) return false;
+
+    ok = testData.SuccessRate.Equals(deserializedData.SuccessRate);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  SuccessRate: {deserializedData.SuccessRate}");
+    if (!ok) return false;
+
+    ok = testData.ErrorRate.Equals(deserializedData.ErrorRate);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  ErrorRate: {deserializedData.ErrorRate}");
+    if (!ok) return false;
+
+    ok = testData.ZeroPercentage.Equals(deserializedData.ZeroPercentage);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  ZeroPercentage: {deserializedData.ZeroPercentage}");
+    if (!ok) return false;
+
+    ok = testData.HundredPercentage.Equals(deserializedData.HundredPercentage);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  HundredPercentage: {deserializedData.HundredPercentage}");
+    if (!ok) return false;
+
+    ok = testData.FractionalPercentage.Equals(deserializedData.FractionalPercentage);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  FractionalPercentage: {deserializedData.FractionalPercentage}");
+    if (!ok) return false;
+
+    ok = testData.NegativePercentage.Equals(deserializedData.NegativePercentage);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  NegativePercentage: {deserializedData.NegativePercentage}");
+    if (!ok) return false;
+
+    return true;
+  }
+
+
   static bool TestPercentageEdgeCases()
   {
-    Console.WriteLine("--- Testing Percentage Edge Cases ---");      // Test zero value
+    Console.WriteLine("--- Testing Percentage Edge Cases ---"); // Test zero value
+    Console.WriteLine();
+
     Console.WriteLine("Testing zero value:");
+    var ok = true;
     Percentage zero = new Percentage(0);
-    Console.WriteLine($"  Zero: '{zero}' ({zero.ToDouble(null)})");
+    var dblZero = zero.ToDouble(null);
+    ok = zero==0;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
+    if (!ok) return false;
 
     // Test boundary values
     Console.WriteLine("\nTesting boundary values:");
     Percentage minPercentage = new Percentage(0);
     Percentage maxPercentage = new Percentage(100);
-    Console.WriteLine($"  Min (0%): '{minPercentage}'");
-    Console.WriteLine($"  Max (100%): '{maxPercentage}'");
+    var minInt = minPercentage.ToInt32(null);
+    var maxInt = maxPercentage.ToInt32(null);
+    ok = minInt==0;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0%): \"{minPercentage}\" = {minInt}");
+    ok = maxInt==100;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Max (100%): \"{maxPercentage}\" = {maxInt}");
+    if (!ok) return false;
 
     // Test negative values
     Console.WriteLine("\nTesting negative values:");
-    Percentage negative = new Percentage(-25.5);
-    Console.WriteLine($"  Negative (-25.5%): '{negative}'");
+    Percentage negative = new Percentage("-25.5%");
+    var dblNegative = negative.ToDouble(null);
+    ok = dblNegative == -0.255;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-25.5%): \"{negative}\" = {dblNegative}");
+    if (!ok) return false;
 
     // Test large values (beyond 100%)
     Console.WriteLine("\nTesting values beyond 100%:");
-    Percentage large = new Percentage(250.0);
-    Console.WriteLine($"  Large (250%): '{large}'");
+    Percentage large = new Percentage("250%");
+    var dblLarge = large.ToDouble(null);
+    ok = dblLarge == 2.5;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (250%): \"{large}\" = {dblLarge}");
+    if (!ok) return false;
 
     // Test fractional values
     Console.WriteLine("\nTesting fractional values:");
-    Percentage third = new Percentage(33.333333);
-    Percentage twoThirds = new Percentage(66.666667);
-    Console.WriteLine($"  One third: '{third}'");
-    Console.WriteLine($"  Two thirds: '{twoThirds}'");
+    Percentage third = new Percentage("33.333%");
+    Percentage twoThirds = new Percentage("66.667%");
+    var dblThird = third.ToDecimal(null);
+    var dblTwoThirds = twoThirds.ToDecimal(null);
+    ok = dblThird == 0.33333m;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{third}\" = {dblThird}");
+    ok = dblTwoThirds == 0.66667m;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" = {dblTwoThirds}");
+    if (!ok) return false;
 
     // Test very small fractional values
     Console.WriteLine("\nTesting very small fractional values:");
     Percentage tiny = new Percentage(0.001);
-    Console.WriteLine($"  0.001%: '{tiny}'");
+    var dblTiny = tiny.ToDouble(null);
+    ok = dblTiny == 0.001;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  0.001%: \"{tiny}\" = {dblTiny}");
+    if (!ok) return false;
 
     // Test string parsing with and without % suffix
     Console.WriteLine("\nTesting string parsing:");
@@ -336,122 +400,7 @@ public static class PercentageTest
     return true;
   }
 
-  
-  
-  static bool TestPercentagePerformance()
-  {
-    Console.WriteLine("--- Testing Percentage Performance ---"); const int iterations = 100000;
-
-    // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
-    {
-      Percentage pct = "50.5%";
-    }
-    sw.Stop();
-    Console.WriteLine($"Construction from string x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test construction from double
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      Percentage pct = new Percentage(50.5);
-    }
-    sw.Stop();
-    Console.WriteLine($"Construction from double x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test ToString performance
-    Percentage testPct = new Percentage(50.5);
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      string str = testPct.ToString();
-    }
-    sw.Stop();
-    Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test ToString with precision
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      string str = testPct.ToString(2, "%");
-    }
-    sw.Stop();
-    Console.WriteLine($"ToString(precision) x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test JSON serialization performance
-    var testObj = new PercentageTestData
-    {
-      CompletionRate = new Percentage(75.5),
-      SuccessRate = new Percentage(99.9),
-      ErrorRate = new Percentage(0.1),
-      ZeroPercentage = new Percentage(0),
-      HundredPercentage = new Percentage(100),
-      FractionalPercentage = new Percentage(33.333),
-      NegativePercentage = new Percentage(-5.5)
-    };
-
-    sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
-    {
-      string json = JsonSerializer.Serialize(testObj);
-    }
-    sw.Stop();
-    Console.WriteLine($"JSON Serialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
-
-    // Test Deserialization performance
-    string jsonData = JsonSerializer.Serialize(testObj);
-    sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
-    {
-      var obj = JsonSerializer.Deserialize<PercentageTestData>(jsonData);
-    }
-    sw.Stop();
-    Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
-
-    // Test comparison performance
-    Percentage pct1 = new Percentage(50.5);
-    Percentage pct2 = new Percentage(50.5);
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      int result = pct1.CompareTo(pct2);
-    }
-    sw.Stop();
-    Console.WriteLine($"CompareTo() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test equality performance
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      bool result = pct1.Equals(pct2);
-    }
-    sw.Stop();
-    Console.WriteLine($"Equals() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    // Test implicit conversions performance
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      double value = pct1.ToDouble(null);
-    }
-    sw.Stop();
-    Console.WriteLine($"ToDouble() x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      int value = (int)pct1;
-    }
-    sw.Stop();
-    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
-
-    Console.WriteLine("\n✓ Performance tests completed");
-    Console.WriteLine();
-    return true;
-  }
-
-  }
+}
 
 
 /// <summary>
@@ -462,26 +411,69 @@ public class PercentageTestData
 {
   [XmlElement("CompletionRate")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public Percentage CompletionRate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage CompletionRate
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("SuccessRate")]
-  public Percentage SuccessRate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage SuccessRate
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("ErrorRate")]
-  public Percentage ErrorRate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage ErrorRate
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("ZeroPercentage")]
-  public Percentage ZeroPercentage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage ZeroPercentage
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("HundredPercentage")]
-  public Percentage HundredPercentage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage HundredPercentage
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("FractionalPercentage")]
-  public Percentage FractionalPercentage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage FractionalPercentage
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 
   [XmlElement("NegativePercentage")]
-  public Percentage NegativePercentage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public Percentage NegativePercentage
+  {
+    [DebuggerStepThrough]
+    get;
+    [DebuggerStepThrough]
+    set;
+  }
 }
+
 
 /// <summary>
 /// Simple wrapper class for testing Deserialization scenarios.

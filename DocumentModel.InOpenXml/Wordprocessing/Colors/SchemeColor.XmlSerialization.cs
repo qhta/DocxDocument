@@ -59,9 +59,9 @@ public partial class SchemeColor : IXmlSerializable
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteAttributeString("index", Index.ToString());
-    if (Tint != null)
+    if (Tint is not null)
       writer.WriteAttributeString("tint", Tint.ToString());
-    if (Shade != null)
+    if (Shade is not null)
       writer.WriteAttributeString("shade", Shade.ToString());
   }
 }

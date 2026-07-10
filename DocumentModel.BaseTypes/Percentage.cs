@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System.Net.Security;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Represents a percentage value stored as an integer value, where the value is scaled by 1000 to preserve precision.
@@ -10,7 +12,12 @@
 [JsonConverter(typeof(PercentageJsonConverter))]
 public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>, IComparable<Percentage>, IComparable<object>
 {
-  private readonly Int32 Value;
+  /// <summary>
+  /// Internal integer representation of the percentage value, scaled by 1000 to preserve precision.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  public readonly Int32 Value;
 
   private const int scale = 1000;
 
@@ -26,9 +33,14 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
-    }
-    var decimalValue = int.Parse(str, CultureInfo.InvariantCulture);
+      var decimalValue = decimal.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
       this.Value = (int)(decimalValue * scale);
+    }
+    else
+    {
+      var decimalValue = decimal.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
+      this.Value = (int)(decimalValue * scale);
+    }
   }
 
   /// <summary>
@@ -139,7 +151,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public Decimal ToDecimal(IFormatProvider? provider = null)
   {
-    return (decimal)(Value) / scale;
+    return (decimal)(Value) / scale / 100.0m;
   }
 
   /// <summary>
@@ -209,7 +221,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider = null)
   {
-    return ToDecimal().ToString(provider)+"%";
+    return ToString(provider ?? CultureInfo.InvariantCulture, "%");
   }
 
   /// <summary>
@@ -293,6 +305,16 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   public static implicit operator Percentage(string val)
   {
     return new Percentage(val);
+  }
+
+  /// <summary>
+  /// Implicitly converts a <see cref="Percentage"/> value to a string representation.
+  /// </summary>
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A string representation of the <see cref="Percentage"/> value.</returns>
+  public static implicit operator string(Percentage val)
+  {
+    return val.ToString();
   }
 
   /// <summary>
@@ -436,7 +458,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return ToDecimal().ToString(CultureInfo.InvariantCulture) + "%";
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, "%");
   }
 
   /// <summary>
@@ -473,7 +495,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     string format = $"F{precision}";
     if (unit == "%")
     {
-      return ToDecimal().ToString(format, provider) + unit;
+      return (ToDecimal() * 100).ToString(format, provider) + unit;
     }
     else if (String.IsNullOrEmpty(unit))
     {
@@ -490,13 +512,26 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)
   {
-    if (unit == "%")
+    if (unit == "%" || string.IsNullOrEmpty(unit))
     {
-      return ToDecimal().ToString(provider) + unit;
-    }
-    else if (String.IsNullOrEmpty(unit))
-    {
-      return ToDecimal().ToString(provider);
+      if (Value<scale)
+        return (ToDecimal() * 100).ToString(provider) + unit;
+      var str = Value.ToString();
+      var n = str.Length;
+      str = str.Insert(n - 3, ".");
+      n++;
+      for (int i=1; i <= 3; i++)
+      {
+        if (str[n-1] != '0')
+          break;
+
+        n--;
+      }
+      if (str[n-1] == '.')
+        n--;
+      if (n < str.Length)
+        str = str.Substring(0, n);
+      return str + unit;
     }
     throw new NotSupportedException($"The unit '{unit}' is not supported.");
   }
@@ -571,6 +606,6 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return Value.GetHashCode();
+    return ((double)this).GetHashCode();
   }
 }
