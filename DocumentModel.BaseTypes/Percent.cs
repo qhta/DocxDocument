@@ -1,14 +1,21 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a percentage value stored as a decimal number.
+/// Represents a percentage value stored as an integer number.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
+/// Conversion to/from double and single precision floating-point types means scaling by 100 to support fractional percentages.
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(PercentJsonConverter))]
 public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
 {
-  private readonly int value;
+  /// <summary>
+  /// Gets the underlying integer value of the percentage.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public readonly int Value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Percent"/> struct from a string value.
@@ -20,7 +27,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public Percent(string str)
   {
     str = str.TrimEnd('%');
-    value = int.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    Value = int.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -29,7 +36,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The byte value representing the percentage.</param>
   public Percent(byte value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -38,7 +45,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The SByte value representing the percentage.</param>
   public Percent(sbyte value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -47,7 +54,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Int16 value representing the percentage.</param>
   public Percent(Int16 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -56,7 +63,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Int32 value representing the percentage.</param>
   public Percent(Int32 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
 
@@ -66,7 +73,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The int value representing the percentage.</param>
   public Percent(Int64 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -75,7 +82,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt16 value representing the percentage.</param>
   public Percent(UInt16 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -84,7 +91,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt32 value representing the percentage.</param>
   public Percent(UInt32 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
 
@@ -94,7 +101,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The UInt value representing the percentage.</param>
   public Percent(UInt64 value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
   /// <summary>
@@ -103,7 +110,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Decimal value representing the percentage.</param>
   public Percent(Decimal value)
   {
-    this.value = (int)value;
+    this.Value = (int)value;
   }
 
 
@@ -113,7 +120,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Single value representing the percentage.</param>
   public Percent(Single value)
   {
-    this.value = (int)value;
+    this.Value = (int)(value * 100.0);
   }
 
   /// <summary>
@@ -122,7 +129,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The Double value representing the percentage.</param>
   public Percent(Double value)
   {
-    this.value = (int)value;
+    this.Value = (int)(value * 100.0);
   }
 
   #region IConvertible Implementation
@@ -133,7 +140,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>The type code of the underlying value.</returns>
   public TypeCode GetTypeCode()
   {
-    return value.GetTypeCode();
+    return Value.GetTypeCode();
   }
 
   /// <summary>
@@ -153,7 +160,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider)
   {
-    return (byte)(value);
+    return (byte)(Value);
   }
 
   /// <summary>
@@ -183,7 +190,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    return (Decimal)(value);
+    return (Decimal)(Value);
   }
 
   /// <summary>
@@ -193,7 +200,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return (double)value;
+    return (double)Value / 100;
   }
 
   /// <summary>
@@ -203,7 +210,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider)
   {
-    return (short)(value);
+    return (short)(Value);
   }
 
   /// <summary>
@@ -213,7 +220,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return (Int32)(value);
+    return (Int32)(Value);
   }
 
   /// <summary>
@@ -223,7 +230,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
-    return (Int64)(value);
+    return (Int64)(Value);
   }
 
   /// <summary>
@@ -233,7 +240,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    return (SByte)(value);
+    return (SByte)(Value);
   }
 
   /// <summary>
@@ -243,7 +250,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return (float)value;
+    return (float)Value / 100;
   }
 
   /// <summary>
@@ -253,7 +260,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider) + "%";
+    return Value.ToString(provider) + "%";
   }
 
   /// <summary>
@@ -263,7 +270,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return (ushort)(value);
+    return (ushort)(Value);
   }
 
   /// <summary>
@@ -273,7 +280,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return (uint)(value);
+    return (uint)(Value);
   }
 
   /// <summary>
@@ -283,7 +290,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return (ulong)(value);
+    return (ulong)(Value);
   }
 
   /// <summary>
@@ -296,33 +303,33 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return (UInt16)value;
+      return (UInt16)Value;
     if (targetType == typeof(Int32))
-      return (Int32)value;
+      return (Int32)Value;
     if (targetType == typeof(UInt32))
-      return (UInt32)value;
+      return (UInt32)Value;
     if (targetType == typeof(Int64))
-      return (Int64)value;
+      return (Int64)Value;
     if (targetType == typeof(UInt64))
-      return (UInt64)value;
+      return (UInt64)Value;
     if (targetType == typeof(Int16))
-      return (Int16)value;
+      return (Int16)Value;
     if (targetType == typeof(Byte))
-      return (byte)value;
+      return (byte)Value;
     if (targetType == typeof(SByte))
-      return (sbyte)value;
+      return (sbyte)Value;
     if (targetType == typeof(Single))
-      return (float)(value);
+      return (float)(Value);
     if (targetType == typeof(Double))
-      return (double)value;
+      return (double)Value;
     if (targetType == typeof(Decimal))
-      return (decimal)value;
+      return (decimal)Value;
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Percent))
-      return new Percent(value);
+      return new Percent(Value);
 
-    return ((IConvertible)value).ToType(targetType, provider);
+    return ((IConvertible)Value).ToType(targetType, provider);
   }
 
   #endregion
@@ -340,13 +347,23 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
+  /// Implicitly converts a <see cref="Percent"/> value to a string representation.
+  /// </summary>
+  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
+  /// <returns>A string representation of the <see cref="Percent"/> value.</returns>
+  public static implicit operator string(Percent val)
+  {
+    return val.ToString();
+  }
+
+  /// <summary>
   /// Implicitly converts a <see cref="Percent"/> value to a 16-bit unsigned integer.
   /// </summary>
   /// <param name="val">The <see cref="Percent"/> value to convert.</param>
   /// <returns>A 16-bit unsigned integer representation of the percentage value.</returns>
   public static implicit operator ushort(Percent val)
   {
-    return (ushort)val.value;
+    return (ushort)val.Value;
   }
 
   /// <summary>
@@ -356,7 +373,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 32-bit unsigned integer representation of the percentage value.</returns>
   public static implicit operator uint(Percent val)
   {
-    return (uint)val.value;
+    return (uint)val.Value;
   }
 
   /// <summary>
@@ -366,7 +383,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 32-bit signed integer representation of the percentage value.</returns>
   public static implicit operator Int32(Percent val)
   {
-    return (int)val.value;
+    return (int)val.Value;
   }
 
 
@@ -377,7 +394,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 64-bit signed integer representation of the percentage value.</returns>
   public static implicit operator Int64(Percent val)
   {
-    return (long)val.value;
+    return (long)val.Value;
   }
 
   /// <summary>
@@ -387,7 +404,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 64-bit unsigned integer representation of the percentage value.</returns>
   public static implicit operator ulong(Percent val)
   {
-    return (ulong)val.value;
+    return (ulong)val.Value;
   }
 
   /// <summary>
@@ -397,7 +414,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A decimal representation of the percentage value.</returns>
   public static implicit operator Decimal(Percent val)
   {
-    return (Decimal)val.value;
+    return (Decimal)val.Value;
   }
 
   /// <summary>
@@ -407,7 +424,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A decimal representation of the percentage value.</returns>
   public static implicit operator Double(Percent val)
   {
-    return (Double)val.value;
+    return (Double)val.Value / 100;
   }
 
   /// <summary>
@@ -448,7 +465,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A <see cref="Percent"/>Percent instance.</returns>
   public static implicit operator Percent(double val)
   {
-    return new Percent((decimal)val);
+    return new Percent(val);
   }
 
   /// <summary>
@@ -502,7 +519,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return value.ToString(CultureInfo.InvariantCulture) + "%";
+    return Value.ToString(CultureInfo.InvariantCulture) + "%";
   }
 
   /// <summary>
@@ -540,9 +557,9 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     if (unit != null)
     {
       if (unit.EndsWith("%"))
-        return (value).ToString(format, provider) + unit;
+        return (Value).ToString(format, provider) + unit;
     }
-    return value.ToString(provider);
+    return Value.ToString(provider);
   }
 
   /// <summary>
@@ -556,9 +573,9 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     if (unit != null)
     {
       if (unit.EndsWith("%"))
-        return (value).ToString(provider) + unit;
+        return (Value).ToString(provider) + unit;
     }
-    return value.ToString(provider);
+    return Value.ToString(provider);
   }
 
   #endregion
@@ -570,7 +587,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(Percent other)
   {
-    return value == other.value;
+    return Value == other.Value;
   }
 
   /// <summary>
@@ -585,7 +602,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// </returns>
   public int CompareTo(Percent other)
   {
-    return value.CompareTo(other.value);
+    return Value.CompareTo(other.Value);
   }
 
   /// <summary>
@@ -595,7 +612,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(Byte other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -605,7 +622,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(SByte other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -615,7 +632,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(Int16 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -625,7 +642,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(Int32 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -635,7 +652,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(Int64 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -645,7 +662,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(UInt16 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -655,7 +672,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(UInt32 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -665,7 +682,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
   public int CompareTo(UInt64 other)
   {
-    return value.CompareTo(other);
+    return Value.CompareTo(other);
   }
 
   /// <summary>
@@ -711,6 +728,6 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return value.GetHashCode();
+    return ((double)Value / 100).GetHashCode();
   }
 }

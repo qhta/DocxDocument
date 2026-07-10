@@ -1,6 +1,4 @@
-﻿using System.Net.Security;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents a percentage value stored as a decimal value to preserve precision.
@@ -16,6 +14,7 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
+  [NotMapped]
   public readonly Decimal Value;
 
   /// <summary>

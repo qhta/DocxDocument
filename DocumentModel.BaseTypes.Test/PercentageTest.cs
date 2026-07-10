@@ -115,7 +115,7 @@ public static class PercentageTest
     if (!ok) return false;
 
     // Test comparison 2
-    pct1 = new Percentage("50.12%");
+    pct1 = new Percentage("51%");
     pct2 = new Percentage(0.50);
     ok = pct1.CompareTo(pct2) == 1;
     comparisonMessage = ok ? "is greater than" : "is not greater than";

@@ -50,7 +50,7 @@ namespace DocumentModel.Wordprocessing
    {
     writer.WriteStringValue(value.Preset.ToString());
    }
-   else if (value.Percent != null)
+   else if (value.Percent is not null)
    {
     writer.WriteNumberValue(value.Percent.Value);
    }

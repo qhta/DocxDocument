@@ -6274,8 +6274,9 @@
         </member>
         <member name="T:DocumentModel.Percent">
             <summary>
-            Represents a percentage value stored as a decimal number.
+            Represents a percentage value stored as an integer number.
             Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
+            Conversion to/from double and single precision floating-point types means scaling by 100 to support fractional percentages.
             </summary>
         </member>
         <member name="M:DocumentModel.Percent.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -6307,6 +6308,11 @@
             <remarks>
             The value is written using the default string representation of the <see cref="T:DocumentModel.Percent"/> structure.
             </remarks>
+        </member>
+        <member name="F:DocumentModel.Percent.Value">
+            <summary>
+            Gets the underlying integer value of the percentage.
+            </summary>
         </member>
         <member name="M:DocumentModel.Percent.#ctor(System.String)">
             <summary>
@@ -6509,6 +6515,13 @@
             </summary>
             <param name="val">The string to convert.</param>
             <returns>A <see cref="T:DocumentModel.Percent"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.op_Implicit(DocumentModel.Percent)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percent"/> value to a string representation.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percent"/> value to convert.</param>
+            <returns>A string representation of the <see cref="T:DocumentModel.Percent"/> value.</returns>
         </member>
         <member name="M:DocumentModel.Percent.op_Implicit(DocumentModel.Percent)~System.UInt16">
             <summary>

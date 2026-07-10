@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents abstract universal measurement in some length unit measure.

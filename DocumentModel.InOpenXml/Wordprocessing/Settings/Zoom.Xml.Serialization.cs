@@ -19,7 +19,7 @@ public partial class Zoom : IXmlSerializable
   {
     if (Preset != null)
       writer.WriteString(Preset.ToString());
-    else if (Percent != null)
+    else if (Percent is not null)
       writer.WriteString(Percent.Value.ToString());
   }
   /// <summary>
