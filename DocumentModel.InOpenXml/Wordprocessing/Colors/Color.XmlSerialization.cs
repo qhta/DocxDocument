@@ -64,9 +64,9 @@ public partial class Color : IXmlSerializable
     writer.WriteAttributeString("value", Value.ToString());
     if (ThemeColor != null)
       writer.WriteAttributeString("themeColor", ThemeColor.ToString());
-    if (Tint != null)
+    if (Tint is not null)
       writer.WriteAttributeString("tint", Tint.ToString());
-    if (Shade != null)
+    if (Shade is not null)
       writer.WriteAttributeString("shade", Shade.ToString());
   }
 }

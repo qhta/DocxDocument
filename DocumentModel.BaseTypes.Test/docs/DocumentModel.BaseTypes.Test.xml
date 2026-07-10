@@ -350,6 +350,26 @@
             Test data class containing various HexLong properties.
             </summary>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexPercentTest">
+            <summary>
+            Test suite for HexPercent type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.HexPercentTest.Run">
+            <summary>
+            Runs all HexPercent serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexPercentTestData">
+            <summary>
+            Test data class containing various HexPercent properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.HexPercentWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
         <member name="T:DocumentModel.BaseTypes.Test.HexRgbTest">
             <summary>
             Test suite for HexRgb type serialization in both XML and JSON formats.

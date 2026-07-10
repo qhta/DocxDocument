@@ -24,21 +24,27 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
     if (reader.TokenType == JsonTokenType.Null)
       return default;
 
-    if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token for HexPercent, but got {reader.TokenType}");
-
-    var str = reader.GetString();
-    if (string.IsNullOrEmpty(str))
-      return default;
-
-    try
+    if (reader.TokenType == JsonTokenType.String)
     {
-      return new HexPercent(str!);
+      var str = reader.GetString();
+      try
+      {
+        if (string.IsNullOrEmpty(str))
+          return default;
+
+        return new HexPercent(str!);
+      }
+      catch (Exception ex)
+      {
+        throw new JsonException($"Invalid string '{str}' for HexPercent. Expected a valid percentage format.", ex);
+      }
     }
-    catch (Exception ex)
+    if (reader.TokenType == JsonTokenType.Number)
     {
-      throw new JsonException($"Invalid string '{str}' for HexPercent. Expected a valid percentage format.", ex);
+      var decValue = reader.GetDecimal().ToString(CultureInfo.InvariantCulture);
+      return new HexPercent(decValue);
     }
+    throw new JsonException($"Invalid token '{reader.TokenType}' for HexPercent. Expected string or number.");
   }
 
   /// <summary>
@@ -50,6 +56,6 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
   public override void Write(Utf8JsonWriter writer, HexPercent value, JsonSerializerOptions options)
   {
     // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-    writer.WriteStringValue(value.ToString());
+    writer.WriteStringValue(value.ToHexString());
   }
 }

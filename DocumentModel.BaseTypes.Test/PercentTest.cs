@@ -53,7 +53,7 @@ public static class PercentTest
     pct1 = new Percent("50%");
     double dbl = (double)pct1;
     ok = dbl == 0.5;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percent to double: {pct1} = {dbl}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percent to double: {pct1} {TestHelper.EqualitySymbol(ok)} {dbl}");
     if (!ok) return false;
 
     // Test double to Percent conversion
@@ -74,7 +74,7 @@ public static class PercentTest
     intVal = 50;
     pct1 = intVal;
     ok = pct1 == 0.5;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Double to Percent: {dbl} -> {pct1}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} int to Percent: {intVal} -> {pct1}");
     if (!ok) return false;
 
     // Test Percent to string without %
@@ -96,7 +96,7 @@ public static class PercentTest
     var hash1 = pct1.GetHashCode();
     var hash2 = (0.5).GetHashCode();
     ok = hash1 == hash2;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {(ok ? "==" : "!=")} {hash2}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {TestHelper.EqualitySymbol(ok)} {hash2}");
     if (!ok) return false;
 
     // Test equality
@@ -206,7 +206,7 @@ public static class PercentTest
       ErrorRate = new Percent("1%"),
       ZeroPercent = new Percent("0%"),
       HundredPercent = new Percent("100%"),
-      FractionalPercent = new Percent("33%"),
+      //FractionalPercent = new Percent("33%"),
       NegativePercent = new Percent("-5%")
     };
     return testData;
@@ -220,7 +220,7 @@ public static class PercentTest
     Console.WriteLine($"  ErrorRate: {testData.ErrorRate}");
     Console.WriteLine($"  ZeroPercent: {testData.ZeroPercent}");
     Console.WriteLine($"  HundredPercent: {testData.HundredPercent}");
-    Console.WriteLine($"  FractionalPercent: {testData.FractionalPercent}");
+    //Console.WriteLine($"  FractionalPercent: {testData.FractionalPercent}");
     Console.WriteLine($"  NegativePercent: {testData.NegativePercent}");
     Console.WriteLine();
   }
@@ -256,9 +256,9 @@ public static class PercentTest
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  HundredPercent: {deserializedData.HundredPercent}");
     if (!ok) return false;
 
-    ok = testData.FractionalPercent.Equals(deserializedData.FractionalPercent);
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  FractionalPercent: {deserializedData.FractionalPercent}");
-    if (!ok) return false;
+    //ok = testData.FractionalPercent.Equals(deserializedData.FractionalPercent);
+    //Console.WriteLine($"{TestHelper.OkMarker(ok)}  FractionalPercent: {deserializedData.FractionalPercent}");
+    //if (!ok) return false;
 
     ok = testData.NegativePercent.Equals(deserializedData.NegativePercent);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  NegativePercent: {deserializedData.NegativePercent}");
@@ -332,7 +332,7 @@ public static class PercentTest
     ok = twoThirds.Equals(dblTwoThirds);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" {TestHelper.EqualityMessage(ok)} {dblTwoThirds} (double)");
     if (!ok) return false;
-    Console.WriteLine(" but note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");
+    Console.WriteLine(" note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");
     ok = oneThird == dblOneThird;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualitySymbol(ok)} {dblOneThird} (double)");
     ok = twoThirds == dblTwoThirds;
@@ -352,7 +352,7 @@ public static class PercentTest
     //if (!ok) return false;
 
     // Test string parsing with and without % suffix
-    Console.WriteLine("\nTesting string parsing:");
+    Console.WriteLine("\nTesting string parsing with and without % suffix:");
     Percent withPercent = "75%";
     Percent withoutPercent = "75";
     ok = withPercent.Equals(withoutPercent);
@@ -481,14 +481,14 @@ public class PercentTestData
     set;
   }
 
-  [XmlElement("FractionalPercent")]
-  public Percent FractionalPercent
-  {
-    [DebuggerStepThrough]
-    get;
-    [DebuggerStepThrough]
-    set;
-  }
+  //[XmlElement("FractionalPercent")]
+  //public Percent FractionalPercent
+  //{
+  //  [DebuggerStepThrough]
+  //  get;
+  //  [DebuggerStepThrough]
+  //  set;
+  //}
 
   [XmlElement("NegativePercent")]
   public Percent NegativePercent

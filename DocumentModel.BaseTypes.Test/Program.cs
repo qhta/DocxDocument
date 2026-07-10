@@ -32,6 +32,7 @@ class Program
     //if (!Exec(HexRgbTest.Run)) return;
     //if (!Exec(ListOfTest.Run)) return;
     if (!Exec(PercentTest.Run)) return;
+    if (!Exec(HexPercentTest.Run)) return;
     if (!Exec(PercentageTest.Run)) return;
     //if (!Exec(PTSTest.Run)) return;
     //if (!Exec(TSBooleanTest.Run)) return;

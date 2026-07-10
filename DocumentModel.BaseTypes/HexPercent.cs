@@ -1,24 +1,33 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a percentage value stored in hexadecimal format (0x00-0xFF), used in Office Open XML documents to represent Tint and Shade in Word color.
-/// </summary>
-/// <remarks>
-/// <para>
+/// Represents a percentage value stored in hexadecimal format (0x00-0xFF).
 /// This structure provides a type-safe representation of percentage values that are stored as byte values
 /// in Office Open XML specifications. It supports conversion between different numeric formats and provides
 /// functionality for parsing and formatting percentage strings with "%" suffix.
+/// <para>
+/// String started with "#" prefix is considered as hexadecimal value from 0x00 to 0xFF.
 /// </para>
 /// <para>
-/// The HexPercent type also supports conversion to/from hexadecimal format (0x00-0xFF scale) which is
-/// commonly used in color representations where byte percentages need to be converted to 0-255 range.
+/// String ended with "%" suffix is considered as decimal percent value from 0% to 100% and string without "%" suffix is considered as integer decimal value from 0 to 255.
 /// </para>
-/// </remarks>
+/// <para>
+/// Conversion to/from double and single precision floating-point types means scaling by 255 to support fractional percentages.
+/// The result is in the range of 0.0 to 1.0.
+/// </para>
+/// <para>
+/// Conversion to/from integer and decimal types is in the range of 0 to 255.
+/// </para>
+/// </summary>
+
 [DataContract]
 [JsonConverter(typeof(HexPercentJsonConverter))]
 public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>, IComparable<HexPercent>
 {
-  private readonly byte value;
+  /// <summary>
+  /// Gets the underlying byte value representing the percentage in hexadecimal format (0x00-0xFF).
+  /// </summary>
+  public readonly byte Value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="HexPercent"/> structure from a string representation.
@@ -37,12 +46,28 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// </exception>
   public HexPercent(string str)
   {
+    if (str.StartsWith("#"))
+    {
+      str = str.Substring(1);
+      var byteVal = Convert.ToByte(str, 16);
+      Value = byteVal;
+    }
+    else
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
+      var decVal = decimal.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
+      if (decVal < 0)
+        throw new OverflowException($"Hex percent value less than 0 is not allowed.");
+      if (decVal > 100)
+        throw new OverflowException($"Hex percent value greater than 100% is not allowed.");
+      Value = (byte)(decVal * 255 / 100);
     }
-    var doubleValue = double.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
-    value = (byte)(doubleValue * 255 / 100);
+    else
+    {
+      var byteVal  = Convert.ToByte(str);
+      Value = byteVal;
+    }
   }
 
   /// <summary>
@@ -55,7 +80,17 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// </remarks>
   public HexPercent(byte value)
   {
-    this.value = value;
+    this.Value = value;
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="HexPercent"/> structure from a double value.
+  /// </summary>
+  /// <param name="value">The double value representing the percentage in the range 0.0 to 1.0.</param>
+  public HexPercent(double value)
+  {
+    this.Value = (byte)(value * 255);
   }
 
   #region IConvertible Implementation
@@ -66,7 +101,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>The enumerated constant <see cref="TypeCode.Byte"/>.</returns>
   public TypeCode GetTypeCode()
   {
-    return value.GetTypeCode();
+    return Value.GetTypeCode();
   }
 
   /// <summary>
@@ -86,7 +121,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider)
   {
-    return (byte)(value * 100 / 255);
+    return (byte)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -118,7 +153,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A <see cref="Decimal"/> number equivalent to the value of this instance.</returns>
   public decimal ToDecimal(IFormatProvider? provider)
   {
-    return value*100.0m/255.0m;
+    return Value*100.0m/255.0m;
   }
 
   /// <summary>
@@ -128,7 +163,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
-    return value*100.0/255.0;
+    return Value*100.0/255.0;
   }
 
   /// <summary>
@@ -138,7 +173,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider)
   {
-    return (short)(value * 100 / 255);
+    return (short)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -148,7 +183,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return value * 100 / 255;
+    return Value * 100 / 255;
   }
 
   /// <summary>
@@ -158,7 +193,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
-    return value * 100 / 255;
+    return Value * 100 / 255;
   }
 
   /// <summary>
@@ -168,7 +203,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider)
   {
-    return (sbyte)(value * 100 / 255);
+    return (sbyte)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -178,7 +213,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public float ToSingle(IFormatProvider? provider)
   {
-    return (float)(value * 100.0 / 255.0);
+    return (float)(Value * 100.0 / 255.0);
   }
 
   /// <summary>
@@ -188,7 +223,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>The string representation of the value of this instance without "%" suffix.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return (value * 100 / 255).ToString(provider)+"%";
+    return (Value * 100 / 255).ToString(provider)+"%";
   }
 
   /// <summary>
@@ -198,7 +233,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider)
   {
-    return (ushort)(value * 100 / 255);
+    return (ushort)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -208,7 +243,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return (uint)(value * 100 / 255);
+    return (uint)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -218,7 +253,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return (ulong)(value * 100 / 255);
+    return (ulong)(Value * 100 / 255);
   }
 
   /// <summary>
@@ -247,32 +282,32 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return (ushort)(value * 100 / 255);
+      return (ushort)(Value * 100 / 255);
     if (targetType == typeof(Int32))
-      return (int)(value * 100 / 255);
+      return (int)(Value * 100 / 255);
     if (targetType == typeof(UInt32))
-      return (uint)(value * 100 / 255);
+      return (uint)(Value * 100 / 255);
     if (targetType == typeof(Int64))
-      return (long)(value * 100 / 255);
+      return (long)(Value * 100 / 255);
     if (targetType == typeof(UInt64))
-      return (ulong)(value * 100 / 255);
+      return (ulong)(Value * 100 / 255);
     if (targetType == typeof(Int16))
-      return (short)(value * 100 / 255);
+      return (short)(Value * 100 / 255);
     if (targetType == typeof(Byte))
-      return (byte)(value * 100 / 255);
+      return (byte)(Value * 100 / 255);
     if (targetType == typeof(SByte))
-      return (sbyte)(value * 100 / 255);
+      return (sbyte)(Value * 100 / 255);
     if (targetType == typeof(Single))
-      return (float)(value * 100.0 / 255.0);
+      return (float)(Value * 100.0 / 255.0);
     if (targetType == typeof(Double))
-      return (double)(value * 100.0 / 255.0);
+      return (double)(Value * 100.0 / 255.0);
     if (targetType == typeof(Decimal))
-      return (decimal)(value * 100.0 / 255.0);
+      return (decimal)(Value * 100.0 / 255.0);
     if (targetType == typeof(String))
       return ToString();
     if (targetType == typeof(HexPercent))
-      return new HexPercent(value);
-    return ((IConvertible)value).ToType(targetType, provider);
+      return new HexPercent(Value);
+    return ((IConvertible)Value).ToType(targetType, provider);
   }
 
   #endregion
@@ -291,13 +326,45 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   }
 
   /// <summary>
+  /// Implicitly converts a <see cref="HexPercent"/> value to a string representation with "%" suffix.
+  /// </summary>
+  /// <param name="val">The HexPercent value to convert.</param>
+  /// <returns>A string representation of the HexPercent value with "%" suffix.</returns>
+  public static implicit operator string(HexPercent val)
+  {
+    return (val.Value * 100.0 / 255.0).ToString() + "%";
+  }
+
+  /// <summary>
   /// Implicitly converts a <see cref="HexPercent"/> value to a double value.
   /// </summary>
   /// <param name="val">The HexPercent value to convert.</param>
   /// <returns>The underlying byte value divided by 255.0 to get a percentage.</returns>
   public static implicit operator double(HexPercent val)
   {
-    return val.value * 100.0 / 255.0;
+    return val.Value / 255.0;
+  }
+
+  /// <summary>
+  /// Implicitly converts an integer value to a <see cref="HexPercent"/> value.
+  /// </summary>
+  /// <param name="val">The integer value to convert.</param>
+  /// <returns>A new HexPercent instance with the converted value.</returns>
+  /// <remarks>Values should be between 0 and 255. Values outside this range will be clamped.</remarks>
+  public static implicit operator HexPercent(int val)
+  {
+    val = System.Math.Min(System.Math.Max(val, 0), 255);
+    return new HexPercent((byte)val);
+  }
+
+  /// <summary>
+  /// Implicitly converts a <see cref="HexPercent"/> value to an integer value.
+  /// </summary>
+  /// <param name="val">The HexPercent value to convert.</param>
+  /// <returns>The underlying byte value.</returns>
+  public static implicit operator int(HexPercent val)
+  {
+    return val.Value;
   }
 
   /// <summary>
@@ -308,9 +375,8 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <remarks>Values should be between 0.0 and 1.0. Values outside this range will be clamped.</remarks>
   public static implicit operator HexPercent(double val)
   {
-    return new HexPercent((byte)(val * 255.0 / 100.0));
+    return new HexPercent((byte)(val * 255.0));
   }
-
   /// <summary>
   /// Implicitly converts a <see cref="HexPercent"/> value to a <see cref="Percentage"/> value.
   /// </summary>
@@ -318,7 +384,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A new Percentage instance with the converted value.</returns>
   public static implicit operator Percentage(HexPercent val)
   {
-    return new Percentage(val.value * 100.0 / 255.0);
+    return new Percentage(val.Value * 100.0 / 255.0);
   }
 
   /// <summary>
@@ -376,7 +442,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// </remarks>
   public override string ToString()
   {
-    return (value / 255.0 * 100).ToString(CultureInfo.InvariantCulture) + "%";
+    return (Value / 255.0 * 100).ToString(CultureInfo.InvariantCulture) + "%";
   }
 
   /// <summary>
@@ -409,9 +475,9 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
     if (unit != null)
     {
       if (unit.EndsWith("%"))
-        return (value / 255.0 * 100).ToString(format, provider) + unit;
+        return (Value / 255.0 * 100).ToString(format, provider) + unit;
     }
-    return (value / 255.0 * 100).ToString(format, provider);
+    return (Value / 255.0 * 100).ToString(format, provider);
   }
 
   /// <summary>
@@ -424,9 +490,9 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
     if (unit != null)
     {
       if (unit.EndsWith("%"))
-        return (value / 255.0 * 100).ToString(provider) + unit;
+        return (Value / 255.0 * 100).ToString(provider) + unit;
     }
-    return (value / 255.0 * 100).ToString(provider);
+    return (Value / 255.0 * 100).ToString(provider);
   }
 
   #endregion
@@ -452,8 +518,8 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A string representation of the hexadecimal value (e.g., "32").</returns>
   public string ToHexString()
   {
-    byte hexValue = value;
-    return hexValue.ToString("X2");
+    byte hexValue = Value;
+    return "#"+hexValue.ToString("X2");
   } 
   #endregion
 
@@ -464,7 +530,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(HexPercent other)
   {
-    return value == other.value;
+    return Value == other.Value;
   }
 
   /// <summary>
@@ -482,7 +548,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// </returns>
   public int CompareTo(HexPercent other)
   {
-    return value.CompareTo(other.value);
+    return Value.CompareTo(other.Value);
   }
 
   /// <summary>
@@ -491,6 +557,6 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return value;
+    return ((double)Value/255.0).GetHashCode();
   }
 }

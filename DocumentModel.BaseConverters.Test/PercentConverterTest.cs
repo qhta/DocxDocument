@@ -108,7 +108,7 @@ public static class PercentConverterTest
         }
         // Convert back to Percent
         var convertedBackValue = PercentConverter.ConvertFrom(openXmlValue);
-        if (convertedBackValue == null)
+        if (convertedBackValue is null)
         {
           Console.WriteLine($"Conversion back to Percent returned null for OpenXml value {openXmlValue}");
           return false;

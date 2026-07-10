@@ -5263,19 +5263,24 @@
         </member>
         <member name="T:DocumentModel.HexPercent">
             <summary>
-            Represents a percentage value stored in hexadecimal format (0x00-0xFF), used in Office Open XML documents to represent Tint and Shade in Word color.
-            </summary>
-            <remarks>
-            <para>
+            Represents a percentage value stored in hexadecimal format (0x00-0xFF).
             This structure provides a type-safe representation of percentage values that are stored as byte values
             in Office Open XML specifications. It supports conversion between different numeric formats and provides
             functionality for parsing and formatting percentage strings with "%" suffix.
+            <para>
+            String started with "#" prefix is considered as hexadecimal value from 0x00 to 0xFF.
             </para>
             <para>
-            The HexPercent type also supports conversion to/from hexadecimal format (0x00-0xFF scale) which is
-            commonly used in color representations where byte percentages need to be converted to 0-255 range.
+            String ended with "%" suffix is considered as decimal percent value from 0% to 100% and string without "%" suffix is considered as integer decimal value from 0 to 255.
             </para>
-            </remarks>
+            <para>
+            Conversion to/from double and single precision floating-point types means scaling by 255 to support fractional percentages.
+            The result is in the range of 0.0 to 1.0.
+            </para>
+            <para>
+            Conversion to/from integer and decimal types is in the range of 0 to 255.
+            </para>
+            </summary>
         </member>
         <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#GetSchema">
             <summary>
@@ -5303,6 +5308,11 @@
             </summary>
             <param name="writer">The XML writer to write to.</param>
         </member>
+        <member name="F:DocumentModel.HexPercent.Value">
+            <summary>
+            Gets the underlying byte value representing the percentage in hexadecimal format (0x00-0xFF).
+            </summary>
+        </member>
         <member name="M:DocumentModel.HexPercent.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.HexPercent"/> structure from a string representation.
@@ -5329,6 +5339,12 @@
             Values are typically in the range 0-100 representing 0% to 100%, though the byte type
             allows values up to 255.
             </remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HexPercent"/> structure from a double value.
+            </summary>
+            <param name="value">The double value representing the percentage in the range 0.0 to 1.0.</param>
         </member>
         <member name="M:DocumentModel.HexPercent.GetTypeCode">
             <summary>
@@ -5476,12 +5492,34 @@
             <returns>A new HexPercent instance parsed from the string.</returns>
             <exception cref="T:System.FormatException">Thrown when the string cannot be parsed as a valid byte value.</exception>
         </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a string representation with "%" suffix.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>A string representation of the HexPercent value with "%" suffix.</returns>
+        </member>
         <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.Double">
             <summary>
             Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a double value.
             </summary>
             <param name="val">The HexPercent value to convert.</param>
             <returns>The underlying byte value divided by 255.0 to get a percentage.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.Int32)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts an integer value to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The integer value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+            <remarks>Values should be between 0 and 255. Values outside this range will be clamped.</remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to an integer value.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>The underlying byte value.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.op_Implicit(System.Double)~DocumentModel.HexPercent">
             <summary>

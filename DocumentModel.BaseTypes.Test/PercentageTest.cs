@@ -53,7 +53,7 @@ public static class PercentageTest
     pct1 = new Percentage("50%");
     double dbl = (double)pct1;
     ok = dbl == 0.5;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to double: {pct1} = {dbl}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to double: {pct1} {TestHelper.EqualitySymbol(ok)} {dbl}");
     if (!ok) return false;
 
     // Test double to Percentage conversion
@@ -74,7 +74,7 @@ public static class PercentageTest
     intVal = 50;
     pct1 = intVal;
     ok = pct1 == 0.5;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Double to Percentage: {dbl} -> {pct1}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} int to Percentage: {intVal} -> {pct1}");
     if (!ok) return false;
 
     // Test Percentage to string without %
@@ -96,7 +96,7 @@ public static class PercentageTest
     var hash1 = pct1.GetHashCode();
     var hash2 = (0.5).GetHashCode();
     ok = hash1 == hash2;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {(ok ? "==" : "!=")} {hash2}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {TestHelper.EqualitySymbol(ok)} {hash2}");
     if (!ok) return false;
 
     // Test equality
@@ -352,7 +352,7 @@ public static class PercentageTest
     if (!ok) return false;
 
     // Test string parsing with and without % suffix
-    Console.WriteLine("\nTesting string parsing:");
+    Console.WriteLine("\nTesting string parsing with and without % suffix:");
     Percentage withPercentage = "75.5%";
     Percentage withoutPercentage = "75.5";
     ok = withPercentage.Equals(withoutPercentage);

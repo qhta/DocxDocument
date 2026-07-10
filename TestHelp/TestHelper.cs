@@ -29,6 +29,8 @@ public static class TestHelper
   /// <returns>A string indicating equality or inequality.</returns>
   public static string EqualityMessage(bool isEqual) => isEqual ? "is equal to" : "is not equal to";
 
+  public static string CompareMessage(int cmp) => cmp > 0 ? "is greater than" : (cmp < 0 ? "is less than" : "is equal to");
+
   /// <summary>
   /// Returns a string representing the equality symbol based on the input boolean.
   /// </summary>
