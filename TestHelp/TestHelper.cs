@@ -23,6 +23,20 @@ public static class TestHelper
   public static string OkMarker(bool ok) => ok ? "✓" : "✗";
 
   /// <summary>
+  /// Returns a string indicating whether two values are equal or not based on the input boolean.
+  /// </summary>
+  /// <param name="isEqual">The boolean value indicating equality.</param>
+  /// <returns>A string indicating equality or inequality.</returns>
+  public static string EqualityMessage(bool isEqual) => isEqual ? "is equal to" : "is not equal to";
+
+  /// <summary>
+  /// Returns a string representing the equality symbol based on the input boolean.
+  /// </summary>
+  /// <param name="isEqual">The boolean value indicating equality.</param>
+  /// <returns>A string representing the equality symbol ("==" or "!=").</returns>
+  public static string EqualitySymbol(bool isEqual) => isEqual ? "==" : "!=";
+
+  /// <summary>
   /// Compares two test data instances property by property.
   /// </summary>
   /// <param name="obj1">First test data instance</param>

@@ -37,9 +37,9 @@ public static class PercentageTest
     // Test string to Percentage conversion
     var str = "50%";
     Percentage pct1 = str;
-    var intVal = pct1.Value;
-    ok = intVal == 50000;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} String to Percentage: \"{str}\" -> {intVal}");
+    var decVal = pct1.Value;
+    ok = decVal == 50;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} String to Percentage: \"{str}\" -> {decVal}");
     if (!ok) return false;
 
     // Test string from Percentage conversion
@@ -65,7 +65,7 @@ public static class PercentageTest
 
     // Test Percentage to int conversion
     pct1 = new Percentage("50%");
-    intVal = (int)pct1;
+    var intVal = (int)pct1;
     ok = intVal == 50;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to int: {pct1} -> {intVal}");
     if (!ok) return false;
@@ -103,8 +103,7 @@ public static class PercentageTest
     pct1 = new Percentage("50%");
     Percentage pct2 = new Percentage(0.5);
     ok = pct1.Equals(pct2);
-    string equalityMessage = ok ? "is equal to" : "is not equal to";
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{pct1}\" {equalityMessage} \"{pct2}\" ");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{pct1}\" {TestHelper.EqualityMessage(ok)} \"{pct2}\" ");
     if (!ok) return false;
 
     // Test comparison 1
@@ -310,16 +309,38 @@ public static class PercentageTest
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (250%): \"{large}\" = {dblLarge}");
     if (!ok) return false;
 
-    // Test fractional values
-    Console.WriteLine("\nTesting fractional values:");
-    Percentage third = new Percentage("33.333%");
+    // Test fractional values 1
+    Console.WriteLine("\nTesting fractional decimal values:");
+    Percentage oneThird = new Percentage("33.333%");
     Percentage twoThirds = new Percentage("66.667%");
-    var dblThird = third.ToDecimal(null);
-    var dblTwoThirds = twoThirds.ToDecimal(null);
-    ok = dblThird == 0.33333m;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{third}\" = {dblThird}");
-    ok = dblTwoThirds == 0.66667m;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" = {dblTwoThirds}");
+    var decOneThird = oneThird.ToDecimal(null);
+    var decTwoThirds = twoThirds.ToDecimal(null);
+    ok = decOneThird == 33.333m;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" = {decOneThird} (decimal)");
+    ok = decTwoThirds == 66.667m;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" = {decTwoThirds} (decimal)");
+    if (!ok) return false;
+
+    // Test fractional values 2
+    Console.WriteLine("\nTesting fractional double values:");
+    oneThird = new Percentage("33.333%");
+    twoThirds = new Percentage("66.667%");
+    var dblOneThird = oneThird.ToDouble(null);
+    var dblTwoThirds = twoThirds.ToDouble(null);
+    ok =  oneThird.Equals(dblOneThird);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
+    ok = twoThirds.Equals(dblTwoThirds);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" {TestHelper.EqualityMessage(ok)} {dblTwoThirds} (double)");
+    if (!ok) return false;
+    Console.WriteLine(" but note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");
+    ok = oneThird == dblOneThird;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualitySymbol(ok)} {dblOneThird} (double)");
+    ok = twoThirds == dblTwoThirds;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" {TestHelper.EqualitySymbol(ok)} {dblTwoThirds} (double)");
+    ok = dblOneThird == oneThird;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: {dblOneThird} (double) {TestHelper.EqualitySymbol(ok)} \"{oneThird}\"");
+    ok = dblTwoThirds == twoThirds;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: {dblTwoThirds} (double) {TestHelper.EqualitySymbol(ok)} \"{twoThirds}\"");
     if (!ok) return false;
 
     // Test very small fractional values
@@ -334,14 +355,19 @@ public static class PercentageTest
     Console.WriteLine("\nTesting string parsing:");
     Percentage withPercentage = "75.5%";
     Percentage withoutPercentage = "75.5";
-    Console.WriteLine($"  \"75.5%\" → {withPercentage}");
-    Console.WriteLine($"  \"75.5\" → {withoutPercentage}");
-    Console.WriteLine($"  Are equal: {withPercentage.Equals(withoutPercentage)}");
+    ok = withPercentage.Equals(withoutPercentage);
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75.5%\" → {withPercentage}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75.5\" → {withoutPercentage}");
+    if (!ok) return false;
+
+
 
     // Test string parsing with comma decimal separator
     Console.WriteLine("\nTesting comma decimal separator:");
-    Percentage commaDecimal = "75,5";
-    Console.WriteLine($"  \"75,5\" → {commaDecimal}");
+    Percentage commaDecimal = "75,5%";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75.5%\" → {withPercentage}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75,5\" → {commaDecimal}");
+    if (!ok) return false;
 
     // Test JSON numeric vs string input
     Console.WriteLine("\nTesting Deserialization from different formats:");
@@ -363,7 +389,7 @@ public static class PercentageTest
 
     // Test formatting with precision
     Console.WriteLine("\nTesting formatted output:");
-    Percentage pct = new Percentage(75.12345);
+    Percentage pct = new Percentage("75.12345%");
     Console.WriteLine($"  Default: {pct.ToString()}");
     Console.WriteLine($"  No unit: {pct.ToString(CultureInfo.InvariantCulture, null)}");
     Console.WriteLine($"  Precision 0: {pct.ToString(0, "%")}");
@@ -372,15 +398,15 @@ public static class PercentageTest
 
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
-    Percentage small = new Percentage(25.5);
-    Percentage large2 = new Percentage(75.5);
+    Percentage small = new Percentage("25.5%");
+    Percentage large2 = new Percentage("75.5%");
     Console.WriteLine($"  25.5% < 75.5%: {small.CompareTo(large2) < 0}");
     Console.WriteLine($"  75.5% > 25.5%: {large2.CompareTo(small) > 0}");
-    Console.WriteLine($"  50% == 50%: {new Percentage(50).CompareTo(new Percentage(50)) == 0}");
+    Console.WriteLine($"  50% == 50%: {new Percentage("50%").CompareTo(new Percentage("50%")) == 0}");
 
     // Test IConvertible implementation
     Console.WriteLine("\nTesting IConvertible conversions:");
-    Percentage convertTest = new Percentage(42.75);
+    Percentage convertTest = new Percentage("42.75%");
     Console.WriteLine($"  ToByte: {convertTest.ToByte(null)}");
     Console.WriteLine($"  ToInt32: {convertTest.ToInt32(null)}");
     Console.WriteLine($"  ToDouble: {convertTest.ToDouble(null)}");

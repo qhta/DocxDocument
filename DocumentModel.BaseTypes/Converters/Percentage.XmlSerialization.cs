@@ -41,9 +41,9 @@ public partial struct Percentage : IXmlSerializable
       {
         str = str.TrimEnd('%');
         // Parse the PerHundredThousand string to double
-        var decimalValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture); ;
+        var decimalValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture); ;
         // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in Value) = (int)(decimalValue * Percentage.scale);
+        System.Runtime.CompilerServices.Unsafe.AsRef(in Value) = decimalValue;
       }
 
       reader.Read(); // Move past text

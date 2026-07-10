@@ -6740,10 +6740,9 @@
         </member>
         <member name="T:DocumentModel.Percentage">
             <summary>
-            Represents a percentage value stored as an integer value, where the value is scaled by 1000 to preserve precision.
-            So, for example, a value of 50% is stored internally as 50000 (50 * 1000).
+            Represents a percentage value stored as a decimal value to preserve precision.
             Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-            External numerical values are scaled to fit within the internal representation.
+            Conversion to/from double and single precision floating-point types means scaling by 100 to support fractional percentages.
             </summary>
         </member>
         <member name="M:DocumentModel.Percentage.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -6778,7 +6777,7 @@
         </member>
         <member name="F:DocumentModel.Percentage.Value">
             <summary>
-            Internal integer representation of the percentage value, scaled by 1000 to preserve precision.
+            Internal decimal representation of the percentage value.
             </summary>
         </member>
         <member name="M:DocumentModel.Percentage.#ctor(System.String)">
