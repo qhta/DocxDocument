@@ -40,7 +40,6 @@ public static class PercentageConverter
 
     decimal decValue = Int32Value.Value / 1000.0m;
     var result = new Percentage(decValue);
-    Debug.WriteLine($"Converted Int32Value {Int32Value.Value} to Percentage {result}");
     return result;
   }
 
@@ -56,7 +55,6 @@ public static class PercentageConverter
     int intValue = (int)((decimal)value * 1000);
 
     var result = new DX.Int32Value { Value = (Int32)intValue };
-    Debug.WriteLine($"Converted Percentage {value} to Int32Value {result.Value}");
     return result;
   }
 

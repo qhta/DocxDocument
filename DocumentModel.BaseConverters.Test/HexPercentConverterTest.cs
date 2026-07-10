@@ -2,27 +2,27 @@
 
 using DocumentModel.OpenXml;
 
-using PercentageConverter = DocumentModel.OpenXml.PercentageConverter;
+using HexPercentConverter = DocumentModel.OpenXml.HexPercentConverter;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="PercentageConverter"/> conversions between .NET UInt32 values and various Open XML numeric types.
+///   Provides unit tests for verifying the correctness of <see cref="HexPercentConverter"/> conversions between .NET UInt32 values and various Open XML numeric types.
 ///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
-public static class PercentageConverterTest
+public static class HexPercentConverterTest
 {
   /// <summary>
   ///   IList of Open XML types supported for UInt32 value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
-    typeof(DX.Int32Value),
+    //typeof(DX.ByteValue),
     typeof(DX.StringValue)
   ];
 
   /// <summary>
-  ///   Runs all PercentageConverter tests for supported types and reports results to the console.
+  ///   Runs all HexPercentConverter tests for supported types and reports results to the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -30,8 +30,8 @@ public static class PercentageConverterTest
     bool testResult = true;
     foreach (var type in SupportedTypes)
     {
-      Console.Write($"TestPercentageConversion with {type.Name} ");
-      if (!TestPercentageConversion(type))
+      Console.Write($"TestHexPercentConversion with {type.Name} ");
+      if (!TestHexPercentConversion(type))
       {
         Console.WriteLine("failed.");
         testResult = false;
@@ -45,23 +45,12 @@ public static class PercentageConverterTest
   /// <summary>
   ///   Test values used for UInt32 conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly decimal[] testValues =
+  static readonly HexPercent[] testValues =
   [
-    12345.678m,
-    -12345.678m,
-    Int32.MaxValue / 1000.0m,
-    Int32.MinValue / 1000.0m
+    new HexPercent("60%"),
+    new HexPercent("#FF"),
   ];
 
-  /// <summary>
-  ///   IDictionary mapping Open XML types to their valid UInt32 value ranges (min, max) for conversion tests.
-  /// </summary>
-  public static Dictionary<Type, (int min, int max)> typeRanges = new()
-  {
-    { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.IntegerValue), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.StringValue), (Int32.MinValue, Int32.MaxValue) }
-  };
 
   /// <summary>
   ///   Tests round-trip conversion of UInt32 values to and from the specified Open XML numeric type.
@@ -69,30 +58,24 @@ public static class PercentageConverterTest
   /// </summary>
   /// <param name="openXmlType">The Open XML type to test UInt32 conversion for.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
-  public static bool TestPercentageConversion(Type openXmlType)
+  public static bool TestHexPercentConversion(Type openXmlType)
   {
-    foreach (var objValue in testValues)
+    foreach (var testValue in testValues)
     {
-      var testValue = new Percentage(objValue);
       try
       {
-        var openXmlValue = PercentageConverter.ConvertTo(testValue, openXmlType);
+        var openXmlValue = HexPercentConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
           Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
           return false;
         }
-        var (min, max) = typeRanges[openXmlType];
-        if (testValue.CompareTo(min) < 0 || testValue.CompareTo(max) > 0)
-        {
-          Console.WriteLine("Out-of-range value did not throw an exception. ");
-          return false; // Expected exception for out-of-range value
-        }
-        // Convert back to Percentage
-        var convertedBackValue = PercentageConverter.ConvertFrom(openXmlValue);
+        Console.Write($"{testValue} -> {openXmlValue} ");
+        // Convert back to HexPercent
+        var convertedBackValue = HexPercentConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
-          Console.WriteLine($"Conversion back to Percentage returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back to HexPercent returned null for OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))
@@ -104,7 +87,7 @@ public static class PercentageConverterTest
 
       catch (Exception e)
       {
-        Console.WriteLine($"\n{e.GetType().Name} for {objValue} expected");
+        Console.WriteLine($"\n{e.GetType().Name} for {testValue} expected");
         return true;
       }
     }

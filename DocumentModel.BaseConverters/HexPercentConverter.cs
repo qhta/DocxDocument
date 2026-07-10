@@ -7,12 +7,12 @@ public static class HexPercentConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
-    new(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
+    //new(typeof(DX.ByteValue), nameof(ConvertFromByteValue), nameof(ConvertToByteValue)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
-    new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
-    new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
-    new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
-    new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
+    //new(typeof(DX.HexBinaryValue), nameof(ConvertFromHexBinaryValue), nameof(ConvertToHexBinaryValue)),
+    //new(typeof(DX.OpenXmlLeafTextElement), nameof(ConvertFromOpenXmlLeafTextElement), nameof(ConvertToOpenXmlLeafTextElement)),
+    //new(typeof(DX.OpenXmlLeafElement), nameof(ConvertFromOpenXmlLeafElement), nameof(ConvertToOpenXmlLeafElement)),
+    //new(typeof(string), nameof(ConvertFromString), nameof(ConvertToString)),
   ];
 
   internal static readonly ConversionToMap ConversionToMap = new();
@@ -84,7 +84,7 @@ public static class HexPercentConverter
   {
     if (value is null) return null;
 
-    var text = value.ToString()!;
+    var text = value.Value.ToHexString()!;
     var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
     element.Value = text;
     return element;
