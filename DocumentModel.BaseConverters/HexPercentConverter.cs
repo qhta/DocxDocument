@@ -71,7 +71,8 @@ public static class HexPercentConverter
     if (text == null)
       throw new InvalidOperationException("StringValue has no content.");
 
-    return new HexPercent(text);
+    var byteVal = Convert.ToByte(text, 16);
+    return new HexPercent(byteVal);
   }
 
   /// <summary>
@@ -84,7 +85,7 @@ public static class HexPercentConverter
   {
     if (value is null) return null;
 
-    var text = value.Value.ToHexString()!;
+    var text = value.Value.Value.ToString("X2");
     var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
     element.Value = text;
     return element;
