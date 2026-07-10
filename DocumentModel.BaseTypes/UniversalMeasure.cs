@@ -13,7 +13,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <summary>
   /// internal storage for the length value. This can be of type Int64, UInt64, Decimal, or Double, depending on how the instance was initialized.
   /// </summary>
-  protected internal decimal? _value;
+  protected internal Decimal? _value;
 
   /// <summary>
   /// Internal storage for the unit of measurement associated with this length value.
@@ -61,7 +61,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
 
   /// <summary>
   /// Gets the Double value represented by this instance.
-  /// If the instance was initialized with an Int64 or Decimal value, it will be converted to decimal.
+  /// If the instance was initialized with an Int64 or Decimal value, it will be converted to Decimal.
   /// </summary>
   public Double DoubleValue => (Double)_value!;
 
@@ -70,35 +70,35 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   /// <remarks>This property provides the conversion factor used to translate measurements from inches to the
   /// unit defined by the current context. It is essential for calculations involving dimensions and scaling.</remarks>
-  protected abstract decimal UnitsPerInch { get; }
+  protected abstract Decimal UnitsPerInch { get; }
 
   /// <summary>
   /// Gets the equivalent measurement in millimeters for the current unit value, based on the number of UniversalMeasure per inch.
   /// </summary>
   /// <remarks>This property converts the unit measurement from inches to millimeters using the standard
   /// conversion factor of 25.4.</remarks>
-  protected decimal UnitsPerMM => UnitsPerInch / 25.4m;
+  protected Decimal UnitsPerMM => UnitsPerInch / 25.4m;
 
   /// <summary>
   /// Gets the equivalent measurement in centimeters based on the current unit per inch value.
   /// </summary>
   /// <remarks>This property converts the value of UniversalMeasure per inch to centimeters by dividing by 2.54, the number
   /// of centimeters in an inch.</remarks>
-  protected decimal UnitsInCM => UnitsPerInch / 2.54m;
+  protected Decimal UnitsInCM => UnitsPerInch / 2.54m;
 
   /// <summary>
   /// Gets the number of measurement UniversalMeasure in a single point, based on the number of UniversalMeasure per inch.
   /// </summary>
   /// <remarks>This property converts the value of UniversalMeasure per inch to points by dividing by 72.0, the number
   /// of points in an inch.</remarks>
-  protected decimal UnitsPerPoint => UnitsPerInch / 72.0m;
+  protected Decimal UnitsPerPoint => UnitsPerInch / 72.0m;
 
   /// <summary>
   /// Gets the number of measurement UniversalMeasure in one Twips, based on the number of UniversalMeasure per point.
   /// </summary>
   /// <remarks>This property converts the value of UniversalMeasure per point to Twips by dividing by 20.0, the number
   /// of Twips in a point.</remarks>
-  protected decimal UnitsPerTwips => UnitsPerPoint / 20.0m;
+  protected Decimal UnitsPerTwips => UnitsPerPoint / 20.0m;
 
   #region Constructors
 
@@ -122,7 +122,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <item><description>"12pt" - points</description></item>
   /// <item><description>"1in" - inches</description></item>
   /// </list>
-  /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
+  /// <para>Commas in the input string are replaced with periods before parsing to ensure Decimal separator consistency.</para>
   /// </remarks>
   protected void Init(string str)
   {
@@ -214,14 +214,14 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       _value = uint64Value;
       return true;
     }
-    if (Decimal.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var decimalValue))
+    if (Decimal.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out var DecimalValue))
     {
-      _value = decimalValue;
+      _value = DecimalValue;
       return true;
     }
     if (Double.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var dblValue))
     {
-      _value = (decimal)dblValue;
+      _value = (Decimal)dblValue;
       return true;
     }
     return false;
@@ -248,10 +248,10 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <summary>
   /// Initializes a new instance of the <see cref="UniversalMeasure"/> from a Decimal value.
   /// </summary>
-  /// <param name="decimalValue">The value in UniversalMeasure.</param>
-  protected void Init(Decimal decimalValue)
+  /// <param name="DecimalValue">The value in UniversalMeasure.</param>
+  protected void Init(Decimal DecimalValue)
   {
-    this._value = decimalValue;
+    this._value = DecimalValue;
   }
   /// <summary>
   /// Initializes a new instance of the <see cref="UniversalMeasure"/> from a Double value.
@@ -259,7 +259,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <param name="doubleValue">The value in UniversalMeasure.</param>
   protected void Init(Double doubleValue)
   {
-    this._value = (decimal)doubleValue;
+    this._value = (Decimal)doubleValue;
   }
 
   #endregion
@@ -269,38 +269,38 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <summary>
   /// Converts the UniversalMeasure value to millimeters.
   /// </summary>
-  /// <returns>The measurement in millimeters as a decimal-precision floating-point number.</returns>
-  public decimal ToMillimeters() => DecimalValue / UnitsPerMM;
+  /// <returns>The measurement in millimeters as a Decimal-precision floating-point number.</returns>
+  public Decimal ToMillimeters() => DecimalValue / UnitsPerMM;
 
   /// <summary>
   /// Converts the UniversalMeasure value to centimeters.
   /// </summary>
-  /// <returns>The measurement in centimeters as a decimal-precision floating-point number.</returns>
-  public decimal ToCentimeters() => DecimalValue / UnitsInCM;
+  /// <returns>The measurement in centimeters as a Decimal-precision floating-point number.</returns>
+  public Decimal ToCentimeters() => DecimalValue / UnitsInCM;
 
   /// <summary>
   /// Converts the UniversalMeasure value to inches.
   /// </summary>
-  /// <returns>The measurement in inches as a decimal-precision floating-point number.</returns>
-  public decimal ToInch() => DecimalValue / UnitsPerInch;
+  /// <returns>The measurement in inches as a Decimal-precision floating-point number.</returns>
+  public Decimal ToInch() => DecimalValue / UnitsPerInch;
 
   /// <summary>
   /// Converts the UniversalMeasure value to points.
   /// </summary>
-  /// <returns>The measurement in points as a decimal-precision floating-point number.</returns>
+  /// <returns>The measurement in points as a Decimal-precision floating-point number.</returns>
   /// <remarks>
   /// A point is defined as 1/72 of an inch.
   /// </remarks>
-  public decimal ToPoints() => DecimalValue / UnitsPerPoint;
+  public Decimal ToPoints() => DecimalValue / UnitsPerPoint;
 
   /// <summary>
   /// Converts the UniversalMeasure value to Twips.
   /// </summary>
-  /// <returns>The measurement in Twips as a decimal-precision floating-point number.</returns>
+  /// <returns>The measurement in Twips as a Decimal-precision floating-point number.</returns>
   /// <remarks>
   /// A twips is defined as 1/20 of a point.
   /// </remarks>
-  public decimal ToTwips() => DecimalValue / UnitsPerTwips;
+  public Decimal ToTwips() => DecimalValue / UnitsPerTwips;
 
   /// <summary>
   /// Converts the current length value to the specified unit of measurement.
@@ -309,7 +309,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Centimeters, and Inches.</param>
   /// <returns>The length value converted to the specified unit.</returns>
   /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
-  public decimal ConvertTo(LengthUnit units)
+  public Decimal ConvertTo(LengthUnit units)
   {
     return units switch
     {
@@ -376,16 +376,16 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
   /// <returns>A Decimal value equivalent to the current value.</returns>
-  public decimal ToDecimal(IFormatProvider? provider)
+  public Decimal ToDecimal(IFormatProvider? provider)
   {
     return (Decimal)_value!;
   }
 
   /// <summary>
-  /// Converts the current value to a decimal-precision floating-point number. 
+  /// Converts the current value to a Decimal-precision floating-point number. 
   /// </summary>
   /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
-  /// <returns>A decimal-precision floating-point number equivalent to the current value.</returns>
+  /// <returns>A Decimal-precision floating-point number equivalent to the current value.</returns>
   public double ToDouble(IFormatProvider? provider)
   {
     return Convert.ToDouble((Decimal)_value!);
@@ -512,12 +512,12 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   public override string ToString()
   {
-    return ((int)_value!).ToString(CultureInfo.InvariantCulture);
+    return ((Decimal)_value!).ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>
   /// Converts the current length measure to its string representation.
-  /// This allows for culture-specific formatting of the output string, such as using different decimal separators
+  /// This allows for culture-specific formatting of the output string, such as using different Decimal separators
   /// based on the culture settings provided by the formatProvider.
   /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
   /// </summary>
@@ -525,12 +525,12 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <returns>A string representation of the current length measure, formatted according to the specified format provider.</returns>
   public virtual string ToString(IFormatProvider? formatProvider)
   {
-    return ((decimal)_value!).ToString(formatProvider);
+    return ((Decimal)_value!).ToString(formatProvider);
   }
 
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format string and format provider.
-  /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+  /// The format string can specify how the numeric value should be formatted (e.g., number of Decimal places, unit symbols)
   /// while the format provider allows for culture-specific formatting.
   /// If the format string is null or empty, a default numeric format should be used.
   /// If the format provider is null, invariant culture's formatting conventions should be applied.
@@ -673,9 +673,9 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Implicitly converts a UniversalMeasure instance to its equivalent Decimal value.
   /// </summary>
   /// <remarks>This conversion returns the value of the DecimalValue property, representing the UniversalMeasure
-  /// in decimal format. This allows UniversalMeasure instances to be used in contexts where a decimal is expected
+  /// in Decimal format. This allows UniversalMeasure instances to be used in contexts where a Decimal is expected
   /// without explicit casting.</remarks>
-  /// <param name="value">The UniversalMeasure instance to convert to a decimal.</param>
+  /// <param name="value">The UniversalMeasure instance to convert to a Decimal.</param>
   public static implicit operator Decimal(UniversalMeasure value)
   {
     return value.DecimalValue;
@@ -751,8 +751,8 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
 
     if (obj is IConvertible convertible)
     {
-      var decimalValue = Convert.ToDouble(convertible);
-      return System.Math.Abs(DoubleValue - decimalValue) < 1e-10;
+      var DecimalValue = Convert.ToDouble(convertible);
+      return System.Math.Abs(DoubleValue - DecimalValue) < 1e-10;
     }
     return false;
   }

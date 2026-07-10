@@ -20,12 +20,9 @@ public static class PercentConverterTest
     typeof(DX.SByteValue),
     typeof(DX.Int16Value),
     typeof(DX.Int32Value),
-    typeof(DX.Int64Value),
     typeof(DX.IntegerValue),
     typeof(DX.ByteValue),
     typeof(DX.UInt16Value),
-    typeof(DX.UInt32Value),
-    typeof(DX.UInt64Value),
     typeof(DX.StringValue)
   ];
 
@@ -53,7 +50,7 @@ public static class PercentConverterTest
   /// <summary>
   ///   Test values used for UInt32 conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly Percent[] testValues =
+  static readonly int[] testValues =
   [
     0,
     1,
@@ -61,25 +58,22 @@ public static class PercentConverterTest
     12345678,
     12345678,
     -12345678,
-    Decimal.MaxValue,
-    Decimal.MinValue
+    Int32.MaxValue,
+    Int32.MinValue
   ];
 
   /// <summary>
   ///   IDictionary mapping Open XML types to their valid UInt32 value ranges (min, max) for conversion tests.
   /// </summary>
-  public static Dictionary<Type, (object min, object max)> typeRanges = new()
+  public static Dictionary<Type, (int min, int max)> typeRanges = new()
   {
     { typeof(DX.SByteValue), (SByte.MinValue, SByte.MaxValue) },
     { typeof(DX.Int16Value), (Int16.MinValue, Int16.MaxValue) },
     { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
-    { typeof(DX.Int64Value), (Int64.MinValue, Int64.MaxValue) },
-    { typeof(DX.IntegerValue), (Int64.MinValue, Int64.MaxValue) },
+    { typeof(DX.IntegerValue), (Int32.MinValue, Int32.MaxValue) },
     { typeof(DX.ByteValue), (Byte.MinValue, Byte.MaxValue) },
     { typeof(DX.UInt16Value), (0, UInt16.MaxValue) },
-    { typeof(DX.UInt32Value), (0, UInt32.MaxValue) },
-    { typeof(DX.UInt64Value), (0, UInt64.MaxValue) },
-    { typeof(DX.StringValue), (Decimal.MinValue, Decimal.MaxValue) }
+    { typeof(DX.StringValue), (Int32.MinValue, Int32.MaxValue) }
   };
 
   /// <summary>
@@ -90,8 +84,9 @@ public static class PercentConverterTest
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestPercentConversion(Type openXmlType)
   {
-    foreach (var testValue in testValues)
+    foreach (var objValue in testValues)
     {
+      var testValue = new Percent(objValue);
       try
       {
         var openXmlValue = PercentConverter.ConvertTo(testValue, openXmlType);

@@ -1864,6 +1864,15 @@
             <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
             <returns>The Enum value, or null if the element has no content.</returns>
         </member>
+        <member name="M:DocumentModel.OpenXml.EnumTypeConverter.GetEnumOpenXmlName(System.Enum,System.Type)">
+            <summary>
+            Returns the OpenXml name for an Enum value, based on the OpenXmlEnumTypeAttribute on the enum type.
+            If no OpenXmlEnumTypeAttribute is present, the method returns the enum value's name as a string.
+            </summary>
+            <param name="value">The Enum value to get the OpenXml name for.</param>
+            <param name="openXmlType">A type to search in OpenXmlEmnType attributes.</param>
+            <returns>The OpenXml name, or null if the input is null.</returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.EnumTypeConverter.ConvertToString(System.Enum)">
             <summary>
             Creates an OpenXml String from an Enum value.

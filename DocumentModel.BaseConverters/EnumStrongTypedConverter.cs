@@ -90,7 +90,7 @@ public static partial class EnumTypeConverter
   /// <typeparam name="ModelEnumType">The model enum type.</typeparam>
   /// <param name="value">The model enum value.</param>
   /// <returns>The converted OpenXml enum value.</returns>
-  public static OpenXmlEnumType ConvertTo<OpenXmlEnumType, ModelEnumType>(ModelEnumType value) 
+  public static OpenXmlEnumType ConvertTo<OpenXmlEnumType, ModelEnumType>(ModelEnumType value)
     where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
     where ModelEnumType : struct, Enum
   {
@@ -291,7 +291,28 @@ public static partial class EnumTypeConverter
       var enumValueInstance = Activator.CreateInstance(enumValueType, targetValue);
       return enumValueInstance;
     }
-    throw new InvalidOperationException($"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
+    else
+    {
+
+      var valueName = GetEnumOpenXmlName(enumVal, openXmlType)!;
+      var targetProp =
+        openXmlType.GetProperty(valueName, BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase);
+      if (targetProp != null)
+      {
+        var targetValue = targetProp.GetValue(null, []);
+        return targetValue;
+      }
+      if (openXmlType == typeof(DX.IntegerValue))
+      {
+        return new DX.IntegerValue{ Value = Convert.ToInt32(enumVal) };
+      }
+      if (openXmlType == typeof(DX.StringValue))
+      {
+        return new DX.StringValue { Value = ConvertToString(enumVal) };
+      }
+      throw new InvalidOperationException($"Cannot find enum value {valueName} in type {openXmlType}");
+
+    }
   }
 
   /// <summary>
@@ -361,30 +382,43 @@ public static partial class EnumTypeConverter
   /// null if <paramref name="enumVal"/> is null.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the target type does not have a suitable property (Val, Value, or Type), if the value cannot be
   /// retrieved from the enumeration, or if the target type is not a subclass of DX.OpenXmlElement.</exception>
-  public static DX.OpenXmlLeafElement? ConvertTo(Enum? enumVal, Type openXmlType)
+  public static object? ConvertTo(Enum? enumVal, Type openXmlType)
   {
     if (enumVal == null) return null;
 
-    if (openXmlType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+    if (typeof(DX.OpenXmlLeafTextElement).IsAssignableFrom(openXmlType))
     {
-      var valProperty = openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value");
-      if (valProperty == null)
-        throw new InvalidOperationException($"Cannot find Val/Value/Type property in {openXmlType}");
-
-      var valPropertyType = valProperty.PropertyType!;
-      if (!valPropertyType.Name.StartsWith("EnumValue`"))
-        throw new InvalidOperationException(
-          $"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
-
-      var targetValue = CreateOpenXmlEnumValue(enumVal, valPropertyType);
-      if (targetValue == null)
-        throw new InvalidOperationException($"Cannot create EnumValue from {enumVal} for property {valProperty.Name}");
-
-      var openXmlElement = (DX.OpenXmlLeafElement)Activator.CreateInstance(openXmlType)!;
-      valProperty.SetValue(openXmlElement, targetValue);
-      return openXmlElement;
+      return ConvertToOpenXmlLeafTextElement(enumVal, openXmlType);
     }
-    throw new InvalidOperationException($"Cannot create Open XML element for {enumVal} of type {enumVal.GetType()}");
+    else
+    {
+      if (openXmlType.GetInterface("IEnumValue") != null)
+      {
+        var targetValue = CreateOpenXmlEnumValue(enumVal, openXmlType);
+        if (targetValue == null)
+          throw new InvalidOperationException(
+            $"Cannot create EnumValue from {enumVal} for property {openXmlType.Name}");
+
+        return targetValue;
+      }
+      else
+      {
+        var valProperty = openXmlType.GetProperty("Val") ?? openXmlType.GetProperty("Value");
+        if (valProperty == null)
+          throw new InvalidOperationException($"Cannot find Val/Value/Type property in {openXmlType}");
+
+        var valPropertyType = valProperty.PropertyType!;
+
+        var targetValue = CreateOpenXmlEnumValue(enumVal, valPropertyType);
+        if (targetValue == null)
+          throw new InvalidOperationException(
+            $"Cannot create EnumValue from {enumVal} for property {valProperty.Name}");
+
+        var openXmlElement = Activator.CreateInstance(openXmlType)!;
+        valProperty.SetValue(openXmlElement, targetValue);
+        return openXmlElement;
+      }
+    }
   }
 
   /// <summary>

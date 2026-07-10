@@ -17,7 +17,7 @@ public enum RowSpacingRule
   /// </summary>
   [OpenXmlEnumValue(1)]
   [InteropEnumValue("WdOMathSpacing1pt5")]
-  OneAndHalf =1,
+  OneAndHalf = 1,
   /// <summary>
   /// Double line height
   /// </summary>

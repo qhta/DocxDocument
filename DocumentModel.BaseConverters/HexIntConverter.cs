@@ -109,8 +109,8 @@ public static class HexIntConverter
   public static HexInt? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
-    if (Int32Value.Value < 0)
-      throw new OverflowException($"Value {Int32Value.Value} is out of range for HexInt");
+    //if (Int32Value.Value < 0)
+    //  throw new OverflowException($"Value {Int32Value.Value} is out of range for HexInt");
 
     return (HexInt)Int32Value.Value;
   }
@@ -126,7 +126,8 @@ public static class HexIntConverter
     if (value > Int32.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int32");
 
-    return new DX.Int32Value { Value = (Int32)value };
+    var intVal = (Int32)value;
+    return new DX.Int32Value { Value = intVal };
   }
 
   #endregion

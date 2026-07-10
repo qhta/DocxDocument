@@ -434,6 +434,30 @@ public static partial class EnumTypeConverter
   }
 
   /// <summary>
+  /// Returns the OpenXml name for an Enum value, based on the OpenXmlEnumTypeAttribute on the enum type.
+  /// If no OpenXmlEnumTypeAttribute is present, the method returns the enum value's name as a string.
+  /// </summary>
+  /// <param name="value">The Enum value to get the OpenXml name for.</param>
+  /// <param name="openXmlType">A type to search in OpenXmlEmnType attributes.</param>
+  /// <returns>The OpenXml name, or null if the input is null.</returns>
+  private static String? GetEnumOpenXmlName(Enum? value, Type openXmlType)
+  {
+    if (value == null) return null;
+
+    var modelEnumType = value.GetType()!;
+    var modelEnumField = modelEnumType.GetField(value.ToString());
+    if (modelEnumField != null)
+    {
+      var attribute = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>()
+        .FirstOrDefault(item => item.EnumType == null || item.EnumType == openXmlType);
+      if (attribute != null)
+        return attribute.EnumValueName;
+    }
+
+    return value.ToString();
+  }
+
+  /// <summary>
   /// Creates an OpenXml String from an Enum value.
   /// </summary>
   /// <param name="value">The Enum value to convert.</param>
@@ -449,8 +473,8 @@ public static partial class EnumTypeConverter
       return intValue.ToString();
     }
 
-    var result = value.ToString();
-    return result;
+    var result = Convert.ToInt32(value);
+    return result.ToString();
   }
 
   #endregion

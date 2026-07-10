@@ -10621,7 +10621,7 @@
         <member name="P:DocumentModel.UniversalMeasure.DoubleValue">
             <summary>
             Gets the Double value represented by this instance.
-            If the instance was initialized with an Int64 or Decimal value, it will be converted to decimal.
+            If the instance was initialized with an Int64 or Decimal value, it will be converted to Decimal.
             </summary>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.UnitsPerInch">
@@ -10678,7 +10678,7 @@
             <item><description>"12pt" - points</description></item>
             <item><description>"1in" - inches</description></item>
             </list>
-            <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
+            <para>Commas in the input string are replaced with periods before parsing to ensure Decimal separator consistency.</para>
             </remarks>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.TryInit(System.String)">
@@ -10704,7 +10704,7 @@
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.UniversalMeasure"/> from a Decimal value.
             </summary>
-            <param name="decimalValue">The value in UniversalMeasure.</param>
+            <param name="DecimalValue">The value in UniversalMeasure.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.Init(System.Double)">
             <summary>
@@ -10716,25 +10716,25 @@
             <summary>
             Converts the UniversalMeasure value to millimeters.
             </summary>
-            <returns>The measurement in millimeters as a decimal-precision floating-point number.</returns>
+            <returns>The measurement in millimeters as a Decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToCentimeters">
             <summary>
             Converts the UniversalMeasure value to centimeters.
             </summary>
-            <returns>The measurement in centimeters as a decimal-precision floating-point number.</returns>
+            <returns>The measurement in centimeters as a Decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToInch">
             <summary>
             Converts the UniversalMeasure value to inches.
             </summary>
-            <returns>The measurement in inches as a decimal-precision floating-point number.</returns>
+            <returns>The measurement in inches as a Decimal-precision floating-point number.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToPoints">
             <summary>
             Converts the UniversalMeasure value to points.
             </summary>
-            <returns>The measurement in points as a decimal-precision floating-point number.</returns>
+            <returns>The measurement in points as a Decimal-precision floating-point number.</returns>
             <remarks>
             A point is defined as 1/72 of an inch.
             </remarks>
@@ -10743,7 +10743,7 @@
             <summary>
             Converts the UniversalMeasure value to Twips.
             </summary>
-            <returns>The measurement in Twips as a decimal-precision floating-point number.</returns>
+            <returns>The measurement in Twips as a Decimal-precision floating-point number.</returns>
             <remarks>
             A twips is defined as 1/20 of a point.
             </remarks>
@@ -10797,10 +10797,10 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToDouble(System.IFormatProvider)">
             <summary>
-            Converts the current value to a decimal-precision floating-point number. 
+            Converts the current value to a Decimal-precision floating-point number. 
             </summary>
             <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
-            <returns>A decimal-precision floating-point number equivalent to the current value.</returns>
+            <returns>A Decimal-precision floating-point number equivalent to the current value.</returns>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToInt16(System.IFormatProvider)">
             <summary>
@@ -10875,7 +10875,7 @@
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider)">
             <summary>
             Converts the current length measure to its string representation.
-            This allows for culture-specific formatting of the output string, such as using different decimal separators
+            This allows for culture-specific formatting of the output string, such as using different Decimal separators
             based on the culture settings provided by the formatProvider.
             If the formatProvider is null, the method should use invariant culture's formatting conventions.
             </summary>
@@ -10885,7 +10885,7 @@
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,System.IFormatProvider)">
             <summary>
             Converts the current length measure to its string representation using the specified format string and format provider.
-            The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
+            The format string can specify how the numeric value should be formatted (e.g., number of Decimal places, unit symbols)
             while the format provider allows for culture-specific formatting.
             If the format string is null or empty, a default numeric format should be used.
             If the format provider is null, invariant culture's formatting conventions should be applied.
@@ -10997,9 +10997,9 @@
             Implicitly converts a UniversalMeasure instance to its equivalent Decimal value.
             </summary>
             <remarks>This conversion returns the value of the DecimalValue property, representing the UniversalMeasure
-            in decimal format. This allows UniversalMeasure instances to be used in contexts where a decimal is expected
+            in Decimal format. This allows UniversalMeasure instances to be used in contexts where a Decimal is expected
             without explicit casting.</remarks>
-            <param name="value">The UniversalMeasure instance to convert to a decimal.</param>
+            <param name="value">The UniversalMeasure instance to convert to a Decimal.</param>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.Double">
             <summary>

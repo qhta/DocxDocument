@@ -266,6 +266,9 @@ public static class ConverterBase
     if (TryConvertFrom(value, targetType, conversionFromMap, out var result))
       return result;
 
+    if (TryConvertFrom(value, targetType, conversionFromMap, out result))
+      return result;
+
     throw new NotSupportedException(
       $"Conversion from {sourceType.FullName} to {targetType.FullName} is not supported.");
   }

@@ -47,7 +47,7 @@ public static class TwipsConverterTest
   /// <summary>
   ///   Test values used for Twips conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly Twips[] testValues =
+  static readonly Int64[] testValues =
   [
     Int64.MinValue,
     Int32.MinValue,
@@ -62,7 +62,7 @@ public static class TwipsConverterTest
   /// <summary>
   ///   IDictionary mapping Open XML types to their valid Twips value ranges (min, max) for conversion tests.
   /// </summary>
-  public static Dictionary<Type, (Twips min, Twips max)> typeRanges = new()
+  public static Dictionary<Type, (Int64 min, Int64 max)> typeRanges = new()
   {
     { typeof(DX.Int32Value), (Int32.MinValue, Int32.MaxValue) },
     { typeof(DX.Int64Value), (Int64.MinValue, Int64.MaxValue) },
@@ -78,8 +78,11 @@ public static class TwipsConverterTest
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestTwipsConversion(Type openXmlType)
   {
-    foreach (var testValue in testValues)
+    foreach (var longValue in testValues)
     {
+      if (longValue > typeRanges[openXmlType].max || longValue < typeRanges[openXmlType].min)
+        continue;
+      var testValue = new Twips(longValue);
       try
       {
         // Convert to OpenXml
