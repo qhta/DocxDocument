@@ -38,7 +38,7 @@ public static class DegreesConverter
   {
     if (Int32Value == null) return null;
 
-    return new Degrees(Int32Value.Value / 60000.0);
+    return new Degrees(Int32Value.Value / 60000.0m);
   }
 
   /// <summary>
@@ -50,11 +50,11 @@ public static class DegreesConverter
   {
     if (value is null) return null;
 
-    var doubleValue = (double)value * 60000;
-    if (doubleValue < Int32.MinValue || doubleValue > Int32.MaxValue)
+    var decimalValue = (decimal)value * 60000;
+    if (decimalValue < Int32.MinValue || decimalValue > Int32.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int32");
 
-    return new DX.Int32Value { Value = (Int32)doubleValue };
+    return new DX.Int32Value { Value = (Int32)decimalValue };
   }
 
   #endregion

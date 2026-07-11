@@ -41,6 +41,7 @@ internal class Program
     if (!Exec(PercentConverterTest.Run)) return;
     if (!Exec(PercentageConverterTest.Run)) return;
     if (!Exec(HexPercentConverterTest.Run)) return;
+    if (!Exec(DegreesConverterTest.Run)) return;
     if (!Exec(TwipsConverterTest.Run)) return;
     if (!Exec(SimpleValueConverterTest.Run)) return;
 
