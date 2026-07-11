@@ -7,7 +7,7 @@
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(PercentJsonConverter))]
-public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
+public readonly partial struct Percent : IEquatable<Percent>, IComparable<Percent>, IComparable<object>, IPercentage
 {
   /// <summary>
   /// Gets the underlying integer value of the percentage.
@@ -131,208 +131,6 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   {
     this.Value = (int)(value * 100.0);
   }
-
-  #region IConvertible Implementation
-
-  /// <summary>
-  /// Returns the <see cref="TypeCode"/> for this instance.
-  /// </summary>
-  /// <returns>The type code of the underlying value.</returns>
-  public TypeCode GetTypeCode()
-  {
-    return Value.GetTypeCode();
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent Boolean value.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
-  public bool ToBoolean(IFormatProvider? provider)
-  {
-    throw new NotSupportedException("Conversion from Percent to Boolean is not supported.");
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 8-bit unsigned integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
-  public byte ToByte(IFormatProvider? provider)
-  {
-    return (byte)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent Unicode character.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A Unicode character equivalent to the value of this instance.</returns>
-  public char ToChar(IFormatProvider? provider)
-  {
-    throw new NotSupportedException("Conversion from Percent to Char is not supported.");
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent <see cref="System.DateTime"/>.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A <see cref="System.DateTime"/> equivalent to the value of this instance.</returns>
-  public DateTime ToDateTime(IFormatProvider? provider)
-  {
-    throw new NotSupportedException("Conversion from Percent to DateTime is not supported.");
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent <see cref="decimal"/> number.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
-  public decimal ToDecimal(IFormatProvider? provider)
-  {
-    return (Decimal)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent double-precision floating-point number.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
-  public double ToDouble(IFormatProvider? provider)
-  {
-    return (double)Value / 100;
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 16-bit signed integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
-  public short ToInt16(IFormatProvider? provider)
-  {
-    return (short)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 32-bit signed integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
-  public int ToInt32(IFormatProvider? provider)
-  {
-    return (Int32)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 64-bit signed integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
-  public long ToInt64(IFormatProvider? provider)
-  {
-    return (Int64)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 8-bit signed integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
-  public sbyte ToSByte(IFormatProvider? provider)
-  {
-    return (SByte)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent single-precision floating-point number.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
-  public float ToSingle(IFormatProvider? provider)
-  {
-    return (float)Value / 100;
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to its equivalent string representation using the specified format provider.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
-  public string ToString(IFormatProvider? provider)
-  {
-    return Value.ToString(provider) + "%";
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 16-bit unsigned integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
-  public ushort ToUInt16(IFormatProvider? provider)
-  {
-    return (ushort)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
-  public uint ToUInt32(IFormatProvider? provider)
-  {
-    return (uint)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an equivalent 64-bit unsigned integer.
-  /// </summary>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
-  public ulong ToUInt64(IFormatProvider? provider)
-  {
-    return (ulong)(Value);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to an <see cref="object"/> of the specified <see cref="Type"/> 
-  /// that has an equivalent value, using the specified culture-specific formatting information.
-  /// </summary>
-  /// <param name="targetType">The <see cref="Type"/> to which the value of this instance is converted.</param>
-  /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>An <see cref="object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
-  public object ToType(Type targetType, IFormatProvider? provider)
-  {
-    if (targetType == typeof(UInt16))
-      return (UInt16)Value;
-    if (targetType == typeof(Int32))
-      return (Int32)Value;
-    if (targetType == typeof(UInt32))
-      return (UInt32)Value;
-    if (targetType == typeof(Int64))
-      return (Int64)Value;
-    if (targetType == typeof(UInt64))
-      return (UInt64)Value;
-    if (targetType == typeof(Int16))
-      return (Int16)Value;
-    if (targetType == typeof(Byte))
-      return (byte)Value;
-    if (targetType == typeof(SByte))
-      return (sbyte)Value;
-    if (targetType == typeof(Single))
-      return (float)(Value);
-    if (targetType == typeof(Double))
-      return (double)Value;
-    if (targetType == typeof(Decimal))
-      return (decimal)Value;
-    if (targetType == typeof(String))
-      return ToString(CultureInfo.InvariantCulture, null);
-    if (targetType == typeof(Percent))
-      return new Percent(Value);
-
-    return ((IConvertible)Value).ToType(targetType, provider);
-  }
-
-  #endregion
 
   #region Implicit Conversions
 
@@ -730,4 +528,23 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   {
     return ((double)Value / 100).GetHashCode();
   }
+  
+  /// <summary>
+  /// Gets the percentage value as an integer in the range of 0 to 100.
+  /// </summary>
+  /// <returns>The integer representation of the percentage value.</returns>  
+  public int AsInteger() => Value;
+
+  /// <summary>
+  /// Returns the decimal representation of the percentage value.
+  /// </summary>
+  /// <returns>A decimal value representing the percentage.</returns>
+  public decimal AsDecimal() => Value;
+
+  /// <summary>
+  /// Returns the double representation of the percentage value.
+  /// </summary>
+  /// <returns>A double value representing the percentage.</returns>
+  public double AsDouble() => (double)Value / 100;
+
 }

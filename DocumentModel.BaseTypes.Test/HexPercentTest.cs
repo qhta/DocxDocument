@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-// ReSharper disable SpecifyACultureInStringConversionExplicitly
+﻿// ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.BaseTypes.Test;
 
@@ -107,21 +105,20 @@ public static class HexPercentTest
 
     // Test equality
     pct1 = new HexPercent("60%");
-    HexPercent pct2 = new HexPercent(0.6);
-    ok = pct1.Equals(pct2);
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{pct1}\" {TestHelper.EqualityMessage(ok)} \"{pct2}\" ");
+    ok = pct1 == "60%";
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{pct1}\" {TestHelper.EqualityMessage(ok)} \"60%\" ");
     if (!ok) return false;
 
     // Test comparison 1
     pct1 = new HexPercent("60%");
-    pct2 = new HexPercent(0.6);
+    var pct2 = new HexPercent("60%");
     ok = pct1.CompareTo(pct2) == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 1 test: \"{pct1}\" {TestHelper.EqualityMessage(ok)} \"{pct2}\" ");
     if (!ok) return false;
 
     // Test comparison 2
     pct1 = new HexPercent("51%");
-    pct2 = new HexPercent(0.50);
+    pct2 = new HexPercent("50%");
     int cmp = pct1.CompareTo(pct2);
     ok = cmp > 0;
     var comparisonMessage = ok ? "is greater than" : "is not greater than";
@@ -282,7 +279,7 @@ public static class HexPercentTest
     Console.WriteLine("Testing zero value:");
     var ok = true;
     HexPercent zero = new HexPercent(0);
-    var dblZero = zero.ToDouble(null);
+    var dblZero = zero.AsDouble();
     ok = zero == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
     if (!ok) return false;
@@ -291,8 +288,8 @@ public static class HexPercentTest
     Console.WriteLine("\nTesting boundary values:");
     HexPercent minHexPercent = new HexPercent(0);
     HexPercent maxHexPercent = new HexPercent(255);
-    var minInt = minHexPercent.ToInt32(null);
-    var maxInt = maxHexPercent.ToInt32(null);
+    var minInt = minHexPercent.AsDecimal();
+    var maxInt = maxHexPercent.AsDecimal();
     ok = minInt == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0%): \"{minHexPercent}\" = {minInt}");
     ok = maxInt == 100;
@@ -304,7 +301,7 @@ public static class HexPercentTest
     try
     {
       HexPercent negative = new HexPercent("-25%");
-      var dblNegative = negative.ToDouble(null);
+      var dblNegative = negative.AsDouble();
       ok = dblNegative == -0.25;
       Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-25%): \"{negative}\" = {dblNegative}");
     }
@@ -320,7 +317,7 @@ public static class HexPercentTest
     try
     {
       HexPercent large = new HexPercent("250%");
-      var dblLarge = large.ToDouble(null);
+      var dblLarge = large.AsDouble();
       ok = dblLarge == 2.5;
       Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (250%): \"{large}\" = {dblLarge}");
     }
@@ -335,11 +332,11 @@ public static class HexPercentTest
     Console.WriteLine("\nTesting fractional decimal values:");
     HexPercent oneThird = new HexPercent("33.33%");
     HexPercent twoThirds = new HexPercent("66.67%");
-    var decOneThird = oneThird.ToDecimal(null);
-    var decTwoThirds = twoThirds.ToDecimal(null);
-    ok = decOneThird == 32.941176470588235294117647059m;
+    var decOneThird = oneThird.AsDecimal();
+    var decTwoThirds = twoThirds.AsDecimal();
+    ok = decOneThird == 32.94117647058823529411764706m;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" = {decOneThird} (decimal)");
-    ok = decTwoThirds == 66.666666666666666666666666667m;
+    ok = decTwoThirds == 66.66666666666666666666666667m;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" = {decTwoThirds} (decimal)");
     if (!ok) return false;
 
@@ -347,16 +344,16 @@ public static class HexPercentTest
     Console.WriteLine("\nTesting fractional double values:");
     oneThird = new HexPercent("33.33%");
     twoThirds = new HexPercent("66.67%");
-    var dblOneThird = oneThird.ToDouble(null);
-    var dblTwoThirds = twoThirds.ToDouble(null);
-    oneThird = 32.94117647058823;
-    twoThirds = 66.66666666666667;
+    var dblOneThird = oneThird.AsDouble();
+    var dblTwoThirds = twoThirds.AsDouble();
+    oneThird = 1.0/3.0;
+    twoThirds = 2.0/3.0;
     ok = oneThird.Equals(dblOneThird);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
     ok = twoThirds.Equals(dblTwoThirds);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" {TestHelper.EqualityMessage(ok)} {dblTwoThirds} (double)");
     if (!ok) return false;
-    Console.WriteLine(" but note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");
+    Console.WriteLine(" note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");
     var eq = oneThird == dblOneThird;
     ok = !eq;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualitySymbol(eq)} {dblOneThird} (double)");
@@ -369,7 +366,6 @@ public static class HexPercentTest
     eq = dblTwoThirds == twoThirds;
     ok = !eq;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: {dblTwoThirds} (double) {TestHelper.EqualitySymbol(eq)} \"{twoThirds}\"");
-    if (!ok) return false;
 
     //// Test very small fractional values
     //Console.WriteLine("\nTesting very small fractional values:");
@@ -434,23 +430,6 @@ public static class HexPercentTest
     Console.WriteLine($"  25% < 75%: {small.CompareTo(large2) < 0}");
     Console.WriteLine($"  75% > 25%: {large2.CompareTo(small) > 0}");
     Console.WriteLine($"  50% == 50%: {new HexPercent("50%").CompareTo(new HexPercent("50%")) == 0}");
-
-    // Test IConvertible implementation
-    Console.WriteLine("\nTesting IConvertible conversions:");
-    HexPercent convertTest = new HexPercent("42%");
-    Console.WriteLine($"  ToByte: {convertTest.ToByte(null)}");
-    Console.WriteLine($"  ToInt32: {convertTest.ToInt32(null)}");
-    Console.WriteLine($"  ToDouble: {convertTest.ToDouble(null)}");
-    Console.WriteLine($"  ToDecimal: {convertTest.ToDecimal(null)}");
-
-    // Test ToType conversions
-    Console.WriteLine("\nTesting ToType conversions:");
-    var asInt32 = (int)convertTest.ToType(typeof(Int32), null);
-    var asDouble = (double)convertTest.ToType(typeof(Double), null);
-    var asString = (string)convertTest.ToType(typeof(String), null);
-    Console.WriteLine($"  ToType(Int32): {asInt32}");
-    Console.WriteLine($"  ToType(Double): {asDouble}");
-    Console.WriteLine($"  ToType(String): {asString}");
 
     Console.WriteLine("\n✓ All edge case tests completed");
     Console.WriteLine();

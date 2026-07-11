@@ -276,7 +276,7 @@ public static class PercentTest
     Console.WriteLine("Testing zero value:");
     var ok = true;
     Percent zero = new Percent(0);
-    var dblZero = zero.ToDouble(null);
+    var dblZero = zero.AsDouble();
     ok = zero==0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
     if (!ok) return false;
@@ -285,8 +285,8 @@ public static class PercentTest
     Console.WriteLine("\nTesting boundary values:");
     Percent minPercent = new Percent(0);
     Percent maxPercent = new Percent(100);
-    var minInt = minPercent.ToInt32(null);
-    var maxInt = maxPercent.ToInt32(null);
+    var minInt = minPercent.AsDecimal();
+    var maxInt = maxPercent.AsDecimal();
     ok = minInt==0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0%): \"{minPercent}\" = {minInt}");
     ok = maxInt==100;
@@ -296,7 +296,7 @@ public static class PercentTest
     // Test negative values
     Console.WriteLine("\nTesting negative values:");
     Percent negative = new Percent("-25%");
-    var dblNegative = negative.ToDouble(null);
+    var dblNegative = negative.AsDouble();
     ok = dblNegative == -0.25;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-25%): \"{negative}\" = {dblNegative}");
     if (!ok) return false;
@@ -304,7 +304,7 @@ public static class PercentTest
     // Test large values (beyond 100%)
     Console.WriteLine("\nTesting values beyond 100%:");
     Percent large = new Percent("250%");
-    var dblLarge = large.ToDouble(null);
+    var dblLarge = large.AsDouble();
     ok = dblLarge == 2.5;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (250%): \"{large}\" = {dblLarge}");
     if (!ok) return false;
@@ -313,8 +313,8 @@ public static class PercentTest
     Console.WriteLine("\nTesting fractional decimal values:");
     Percent oneThird = new Percent("33%");
     Percent twoThirds = new Percent("67%");
-    var decOneThird = oneThird.ToDecimal(null);
-    var decTwoThirds = twoThirds.ToDecimal(null);
+    var decOneThird = oneThird.AsDecimal();
+    var decTwoThirds = twoThirds.AsDecimal();
     ok = decOneThird == 33m;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" = {decOneThird} (decimal)");
     ok = decTwoThirds == 67m;
@@ -325,8 +325,8 @@ public static class PercentTest
     Console.WriteLine("\nTesting fractional double values:");
     oneThird = new Percent("33%");
     twoThirds = new Percent("67%");
-    var dblOneThird = oneThird.ToDouble(null);
-    var dblTwoThirds = twoThirds.ToDouble(null);
+    var dblOneThird = oneThird.AsDouble();
+    var dblTwoThirds = twoThirds.AsDouble();
     ok =  oneThird.Equals(dblOneThird);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
     ok = twoThirds.Equals(dblTwoThirds);
@@ -403,23 +403,6 @@ public static class PercentTest
     Console.WriteLine($"  25% < 75%: {small.CompareTo(large2) < 0}");
     Console.WriteLine($"  75% > 25%: {large2.CompareTo(small) > 0}");
     Console.WriteLine($"  50% == 50%: {new Percent("50%").CompareTo(new Percent("50%")) == 0}");
-
-    // Test IConvertible implementation
-    Console.WriteLine("\nTesting IConvertible conversions:");
-    Percent convertTest = new Percent("42%");
-    Console.WriteLine($"  ToByte: {convertTest.ToByte(null)}");
-    Console.WriteLine($"  ToInt32: {convertTest.ToInt32(null)}");
-    Console.WriteLine($"  ToDouble: {convertTest.ToDouble(null)}");
-    Console.WriteLine($"  ToDecimal: {convertTest.ToDecimal(null)}");
-
-    // Test ToType conversions
-    Console.WriteLine("\nTesting ToType conversions:");
-    var asInt32 = (int)convertTest.ToType(typeof(Int32), null);
-    var asDouble = (double)convertTest.ToType(typeof(Double), null);
-    var asString = (string)convertTest.ToType(typeof(String), null);
-    Console.WriteLine($"  ToType(Int32): {asInt32}");
-    Console.WriteLine($"  ToType(Double): {asDouble}");
-    Console.WriteLine($"  ToType(String): {asString}");
 
     Console.WriteLine("\n✓ All edge case tests completed");
     Console.WriteLine();

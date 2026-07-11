@@ -83,6 +83,6 @@ public class PercentJsonConverter : JsonConverter<Percent>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, Percent value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
+    writer.WriteStringValue(value.ToString(System.Globalization.CultureInfo.InvariantCulture, "%"));
   }
 }

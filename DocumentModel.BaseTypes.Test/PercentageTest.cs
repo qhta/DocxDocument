@@ -276,7 +276,7 @@ public static class PercentageTest
     Console.WriteLine("Testing zero value:");
     var ok = true;
     Percentage zero = new Percentage(0);
-    var dblZero = zero.ToDouble(null);
+    var dblZero = zero.AsDouble();
     ok = zero==0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
     if (!ok) return false;
@@ -285,8 +285,8 @@ public static class PercentageTest
     Console.WriteLine("\nTesting boundary values:");
     Percentage minPercentage = new Percentage(0);
     Percentage maxPercentage = new Percentage(100);
-    var minInt = minPercentage.ToInt32(null);
-    var maxInt = maxPercentage.ToInt32(null);
+    var minInt = minPercentage.AsInteger();
+    var maxInt = maxPercentage.AsInteger();
     ok = minInt==0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0%): \"{minPercentage}\" = {minInt}");
     ok = maxInt==100;
@@ -296,7 +296,7 @@ public static class PercentageTest
     // Test negative values
     Console.WriteLine("\nTesting negative values:");
     Percentage negative = new Percentage("-25.5%");
-    var dblNegative = negative.ToDouble(null);
+    var dblNegative = negative.AsDouble();
     ok = dblNegative == -0.255;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-25.5%): \"{negative}\" = {dblNegative}");
     if (!ok) return false;
@@ -304,7 +304,7 @@ public static class PercentageTest
     // Test large values (beyond 100%)
     Console.WriteLine("\nTesting values beyond 100%:");
     Percentage large = new Percentage("250%");
-    var dblLarge = large.ToDouble(null);
+    var dblLarge = large.AsDouble();
     ok = dblLarge == 2.5;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (250%): \"{large}\" = {dblLarge}");
     if (!ok) return false;
@@ -313,8 +313,8 @@ public static class PercentageTest
     Console.WriteLine("\nTesting fractional decimal values:");
     Percentage oneThird = new Percentage("33.333%");
     Percentage twoThirds = new Percentage("66.667%");
-    var decOneThird = oneThird.ToDecimal(null);
-    var decTwoThirds = twoThirds.ToDecimal(null);
+    var decOneThird = oneThird.AsDecimal();
+    var decTwoThirds = twoThirds.AsDecimal();
     ok = decOneThird == 33.333m;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" = {decOneThird} (decimal)");
     ok = decTwoThirds == 66.667m;
@@ -325,8 +325,8 @@ public static class PercentageTest
     Console.WriteLine("\nTesting fractional double values:");
     oneThird = new Percentage("33.333%");
     twoThirds = new Percentage("66.667%");
-    var dblOneThird = oneThird.ToDouble(null);
-    var dblTwoThirds = twoThirds.ToDouble(null);
+    var dblOneThird = oneThird.AsDouble();
+    var dblTwoThirds = twoThirds.AsDouble();
     ok =  oneThird.Equals(dblOneThird);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
     ok = twoThirds.Equals(dblTwoThirds);
@@ -346,7 +346,7 @@ public static class PercentageTest
     // Test very small fractional values
     Console.WriteLine("\nTesting very small fractional values:");
     Percentage tiny = new Percentage(0.001);
-    var dblTiny = tiny.ToDouble(null);
+    var dblTiny = tiny.AsDouble();
     ok = dblTiny == 0.001;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  0.001%: \"{tiny}\" = {dblTiny}");
     if (!ok) return false;
@@ -403,23 +403,6 @@ public static class PercentageTest
     Console.WriteLine($"  25.5% < 75.5%: {small.CompareTo(large2) < 0}");
     Console.WriteLine($"  75.5% > 25.5%: {large2.CompareTo(small) > 0}");
     Console.WriteLine($"  50% == 50%: {new Percentage("50%").CompareTo(new Percentage("50%")) == 0}");
-
-    // Test IConvertible implementation
-    Console.WriteLine("\nTesting IConvertible conversions:");
-    Percentage convertTest = new Percentage("42.75%");
-    Console.WriteLine($"  ToByte: {convertTest.ToByte(null)}");
-    Console.WriteLine($"  ToInt32: {convertTest.ToInt32(null)}");
-    Console.WriteLine($"  ToDouble: {convertTest.ToDouble(null)}");
-    Console.WriteLine($"  ToDecimal: {convertTest.ToDecimal(null)}");
-
-    // Test ToType conversions
-    Console.WriteLine("\nTesting ToType conversions:");
-    var asInt32 = (int)convertTest.ToType(typeof(Int32), null);
-    var asDouble = (double)convertTest.ToType(typeof(Double), null);
-    var asString = (string)convertTest.ToType(typeof(String), null);
-    Console.WriteLine($"  ToType(Int32): {asInt32}");
-    Console.WriteLine($"  ToType(Double): {asDouble}");
-    Console.WriteLine($"  ToType(String): {asString}");
 
     Console.WriteLine("\n✓ All edge case tests completed");
     Console.WriteLine();

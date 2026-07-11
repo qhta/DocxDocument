@@ -75,7 +75,7 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// </summary>
   public override double RedFactor
   {
-    get => _RedPercentage?.ToDouble() / 100.0 ?? 0;
+    get => _RedPercentage?.AsDouble() ?? 0;
     set => Red = new Percentage(value*100);
   }
 
@@ -84,7 +84,7 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// </summary>
   public override double GreenFactor
   {
-    get => _GreenPercentage?.ToDouble() / 100.0 ?? 0;
+    get => _GreenPercentage?.AsDouble() ?? 0;
     set => Green = new Percentage(value*100);
   }
 
@@ -94,7 +94,7 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// </summary>
   public override double BlueFactor
   {
-    get => _BluePercentage?.ToDouble() / 100.0 ?? 0;
+    get => _BluePercentage?.AsDouble() ?? 0;
     set => Blue = new Percentage(value*100);
   }
 
@@ -103,7 +103,7 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   /// </summary>
   public override double AlphaFactor
   {
-    get => _AlphaPercentage?.ToDouble() / 100.0 ?? 0;
+    get => _AlphaPercentage?.AsDouble() ?? 0;
     set => Alpha = new Percentage(value*100);
   }
 }

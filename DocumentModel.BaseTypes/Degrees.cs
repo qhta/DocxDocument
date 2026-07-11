@@ -3,7 +3,6 @@
 /// <summary>
 /// Represents a drawing angle value stored as a Decimal, preserving precision.
 /// Supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
-/// Conversion to/from double and single precision floating-point types involves scaling by 360 to support hue in color models.
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(DegreesJsonConverter))]
@@ -60,7 +59,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <param name="value">The Double value representing the Degrees.</param>
   public Degrees(Double value)
   {
-    this.Value = (Decimal)(value * 360);
+    this.Value = (Decimal)(value);
   }
 
   /// <summary>
@@ -150,7 +149,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
   public Double ToDouble(IFormatProvider? provider = null)
   {
-    return (Double)(Value / 360);
+    return (Double)(Value);
   }
 
   /// <summary>
@@ -200,7 +199,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
   public Single ToSingle(IFormatProvider? provider = null)
   {
-    return (Single)(Value / 360);
+    return (Single)(Value);
   }
 
   /// <summary>
@@ -271,9 +270,9 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (targetType == typeof(Decimal))
       return (Decimal)((Decimal)Value); 
     if (targetType == typeof(Single))
-      return (Single)(Value / 360);
+      return (Single)(Value);
     if (targetType == typeof(Double))
-      return (Double)(Value / 360);
+      return (Double)(Value);
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Degrees))
@@ -579,9 +578,9 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (other is Decimal decimalValue)
       return this.Value.CompareTo(decimalValue);
     if (other is Single singleValue)
-      return this.Value.CompareTo(singleValue / 360);
+      return this.Value.CompareTo(singleValue);
     if (other is double doubleValue)
-      return this.Value.CompareTo(doubleValue / 360);
+      return this.Value.CompareTo(doubleValue);
     if (other is String str)
       return this.CompareTo(Degrees.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");

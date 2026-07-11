@@ -52,14 +52,14 @@ public static class DegreesTest
     // Test Degrees to double conversion
     deg1 = new Degrees("180°");
     double dbl = (double)deg1;
-    ok = dbl == 0.5;
+    ok = dbl == 180;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Degrees to double: {deg1} -> {dbl}");
     if (!ok) return false;
 
     // Test double to Degrees conversion
-    dbl = 0.5;
+    dbl = 180;
     deg1 = dbl;
-    ok = deg1 == 0.5;
+    ok = deg1 == 180;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Double to Degrees: {dbl} -> {deg1}");
     if (!ok) return false;
 
@@ -73,7 +73,7 @@ public static class DegreesTest
     // Test int to Degrees conversion
     intVal = 180;
     deg1 = intVal;
-    ok = deg1 == 0.5;
+    ok = deg1 == "180°";
     Console.WriteLine($"{TestHelper.OkMarker(ok)} int to Degrees: {intVal} -> {deg1}");
     if (!ok) return false;
 
@@ -94,21 +94,21 @@ public static class DegreesTest
     // Test hash code
     deg1 = new Degrees("180°");
     var hash1 = deg1.GetHashCode();
-    var hash2 = (0.5).GetHashCode();
+    var hash2 = (180.0).GetHashCode();
     ok = hash1 == hash2;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Hash code test: {hash1} {TestHelper.EqualitySymbol(ok)} {hash2}");
     if (!ok) return false;
 
     // Test equality
     deg1 = new Degrees("180°");
-    Degrees deg2 = new Degrees(0.5);
+    Degrees deg2 = new Degrees(180);
     ok = deg1.Equals(deg2);
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Equality test: \"{deg1}\" {TestHelper.EqualityMessage(ok)} \"{deg2}\" ");
     if (!ok) return false;
 
     // Test comparison 1
     deg1 = new Degrees("180°");
-    deg2 = new Degrees(0.5);
+    deg2 = new Degrees(180);
     var cmp = deg1.CompareTo(deg2);
     ok = cmp == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 1 test: \"{deg1}\" {TestHelper.CompareMessage(cmp)} \"{deg2}\" ");
@@ -116,7 +116,7 @@ public static class DegreesTest
 
     // Test comparison 2
     deg1 = new Degrees("181°");
-    deg2 = new Degrees(0.5);
+    deg2 = new Degrees(180);
     cmp = deg1.CompareTo(deg2);
     ok = cmp == 1;
     Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 2 test: \"{deg1}\" {TestHelper.CompareMessage(cmp)} \"{deg2}\" ");
@@ -296,17 +296,17 @@ public static class DegreesTest
     // Test negative values
     Console.WriteLine("\nTesting negative values:");
     Degrees negative = new Degrees("-90°");
-    var dblNegative = negative.ToDouble(null);
-    ok = dblNegative == -0.25;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-90°): \"{negative}\" = {dblNegative}");
+    var intNegative = negative.ToInt32(null);
+    ok = intNegative == -90;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Negative (-90°): \"{negative}\" = {intNegative}");
     if (!ok) return false;
 
     // Test large values (beyond 360°)
     Console.WriteLine("\nTesting values beyond 360°:");
     Degrees large = new Degrees("450°");
-    var dblLarge = large.ToDouble(null);
-    ok = dblLarge == 1.25;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (450°): \"{large}\" = {dblLarge}");
+    var intLarge = large.ToInt32(null);
+    ok = intLarge == 450;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)}  Large (450°): \"{large}\" = {intLarge}");
     if (!ok) return false;
 
     // Test fractional values 1
