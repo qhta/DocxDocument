@@ -13,8 +13,8 @@ public partial class HslColor : IColor
     get
     {
       var h = NormalizeHue(Hue);
-      var s = Clamp01(Saturation / 100.0);
-      var l = Clamp01(Luminance / 100.0);
+      var s = Clamp01(Saturation);
+      var l = Clamp01(Luminance);
       var c = (1.0 - System.Math.Abs(2.0 * l - 1.0)) * s;
       var x = c * (1.0 - System.Math.Abs((h / 60.0) % 2.0 - 1.0));
       var m = l - c / 2.0;
@@ -30,7 +30,7 @@ public partial class HslColor : IColor
       var r = (UInt32)System.Math.Round((r1 + m) * 255.0);
       var g = (UInt32)System.Math.Round((g1 + m) * 255.0);
       var b = (UInt32)System.Math.Round((b1 + m) * 255.0);
-      var a = (UInt32)System.Math.Round(Alpha / 100.0 * 255.0);
+      var a = (UInt32)System.Math.Round(Alpha * 255.0);
       return (a << 24) | (r << 16) | (g << 8) | b;
     }
 
@@ -55,10 +55,10 @@ public partial class HslColor : IColor
       else
         h = 60.0 * (((r - g) / delta) + 4.0);
       h = NormalizeHue(h);
-      Hue = (Int32)System.Math.Round(h);
-      Saturation = (Int32)System.Math.Round(Clamp01(s) * 100.0);
-      Luminance = (Int32)System.Math.Round(Clamp01(l) * 100.0);
-      Alpha = (Int32)System.Math.Round(Clamp01(a) * 100.0);
+      Hue = h;
+      Saturation = Clamp01(s);
+      Luminance = Clamp01(l);
+      Alpha = Clamp01(a);
     }
   }
   private static double Clamp01(double value) => value < 0.0 ? 0.0 : value > 1.0 ? 1.0 : value;
@@ -76,14 +76,14 @@ public partial class HslColor : IColor
   [JsonIgnore]
   public override (double R, double G, double B, double A) RGBAComponents
   {
-    get { var (r, g, b) = Hsl2Rgb.FromHSL(Hue / 360.0, Saturation / 100.0, Luminance / 100.0); return (r, g, b, Alpha / 100.0); }
+    get { var (r, g, b) = Hsl2Rgb.FromHSL(Hue / 360.0, Saturation , Luminance ); return (r, g, b, Alpha); }
     set
     {
       var (h, s, l) = Hsl2Rgb.ToHSL(value.R, value.G, value.B);
       this.Hue = h * 360.0;
-      this.Saturation = s * 100.0;
-      this.Luminance = l * 100.0;
-      this.Alpha = value.A * 100.0;
+      this.Saturation = s;
+      this.Luminance = l;
+      this.Alpha = value.A;
     }
   }
 
@@ -95,71 +95,13 @@ public partial class HslColor : IColor
   [JsonIgnore]
   public override (double H, double S, double L, double A) HSLAComponents
   {
-    get => (Hue / 360.0, Saturation / 100.0, Luminance / 100.0, Alpha / 100.0);
+    get => (Hue / 360.0, Saturation , Luminance , Alpha );
     set
     {
       Hue = value.H * 360.0;
-      Saturation = value.S * 100.0;
-      Luminance = value.L * 100.0;
-      Alpha = value.A * 100.0;
+      Saturation = value.S ;
+      Luminance = value.L ;
+      Alpha = value.A;
     }
   }
-
-  ///// <summary>
-  ///// Red component of the color as percentage value.
-  ///// The value is between 0 and 1, where 0 represents no red and 1 represents full red (255 in RGB).
-  ///// This is derived from the RGB+ value, where the red component is extracted and converted to a percentage.
-  ///// Setting this property will update the RGB+ value accordingly, modifying only the red component while preserving the green and blue components.
-  ///// </summary>
-  //[NotMapped]
-  //[XmlIgnore]
-  //[JsonIgnore]
-  //public override double Red
-  //{
-  //  get => ((this.ARGB >> 16) & 0xFF) / 255.0;
-  //  set
-  //  {
-  //    var red = (UInt32)System.Math.Round((double)value * 255.0);
-  //    this.ARGB = (UInt32)(this.ARGB) & 0x00FFFF | (red << 16);
-  //  }
-  //}
-
-  ///// <summary>
-  ///// Green component of the color as percentage value.
-  ///// The value is between 0 and 1, where 0 represents no green and 1 represents full green (255 in RGB).
-  ///// This is derived from the RGB+ value, where the green component is extracted and converted to a percentage.
-  ///// Setting this property will update the RGB+ value accordingly, modifying only the green component while preserving the red and blue components.
-  ///// </summary>
-  //[NotMapped]
-  //[XmlIgnore]
-  //[JsonIgnore]
-  //public override double Green
-  //{
-  //  get => ((this.ARGB >> 8) & 0xFF) / 255.0;
-  //  set
-  //  {
-  //    var green = (UInt32)System.Math.Round((double)value * 255.0);
-  //    this.ARGB = (UInt32)(this.ARGB) & 0xFF00FF | (green << 8);
-  //  }
-  //}
-
-  ///// <summary>
-  ///// Blue component of the color as percentage value.
-  ///// The value is between 0 and 1, where 0 represents no blue and 1 represents full blue (255 in RGB).
-  ///// This is derived from the RGB+ value, where the blue component is extracted and converted to a percentage.
-  ///// Setting this property will update the RGB+ value accordingly, modifying only the blue component while preserving the red and green components.
-  ///// </summary>
-  //[NotMapped]
-  //[XmlIgnore]
-  //[JsonIgnore]
-  //public override double Blue
-  //{
-  //  get => (this.ARGB & 0xFF) / 255.0;
-  //  set
-  //  {
-
-  //    var blue = (UInt32)System.Math.Round((double)value * 255.0);
-  //    this.ARGB = (UInt32)(this.ARGB) & 0xFFFF00 | blue;
-  //  }
-  //}
 }

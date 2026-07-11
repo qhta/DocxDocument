@@ -44,6 +44,14 @@ public partial class HslColor : IXmlSerializable
       }
     }
 
+    string? alphaStr = reader.GetAttribute("a");
+    if (!string.IsNullOrEmpty(alphaStr))
+    {
+      if (Percentage.TryParse(alphaStr, out var alpha))
+      {
+        Alpha = alpha;
+      }
+    }
     base.ReadXml(reader);
   }
 
@@ -56,6 +64,8 @@ public partial class HslColor : IXmlSerializable
     writer.WriteAttributeString("h", Hue.ToString());
     writer.WriteAttributeString("s", Saturation.ToString());
     writer.WriteAttributeString("l", Luminance.ToString());
+    writer.WriteAttributeString("a", Alpha.ToString());
+
     base.WriteXml(writer);
   }
 }
