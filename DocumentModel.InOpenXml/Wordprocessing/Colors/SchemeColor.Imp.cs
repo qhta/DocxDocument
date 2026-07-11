@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class SchemeColor : IColor
+public partial class SchemeColor : IColor, ITintableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -98,4 +98,23 @@ public partial class SchemeColor : IColor
     }
   }
 
+  double? ITintableColor.Tint
+  {
+    get => this.Tint?.AsDouble();
+    set
+    {
+      if (value != null)
+        this.Tint = value.Value;
+    }
+  }
+
+  double? ITintableColor.Shade
+  {
+    get => this.Shade?.AsDouble();
+    set
+    {
+      if (value != null)
+        this.Shade = value.Value;
+    }
+  }
 }

@@ -30,8 +30,8 @@ public partial class Border : ModelElement<DXW.BorderType>
  /// </summary>
  [OpenXmlLoadData(nameof(LoadColor))]
  [OpenXmlUpdateData(nameof(UpdateColor))]
- public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private DMW.Color? _Color;
+ public DMW.WordColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private DMW.WordColor? _Color;
 
  /// <summary>
  /// Border width, specified in twips.
@@ -108,7 +108,7 @@ public partial class Border : ModelElement<DXW.BorderType>
  /// <param name = "border">The OpenXML border element containing color, theme color, tint, and shade information to be loaded.</param>
  public void LoadColor(DXW.BorderType border)
  {
-  this.Color = DMW.Color.FromOpenXml(border.Color, border.ThemeColor, border.ThemeTint, border.ThemeShade);
+  this.Color = DMW.WordColor.FromOpenXml(border.Color, border.ThemeColor, border.ThemeTint, border.ThemeShade);
  }
 
  /// <summary>

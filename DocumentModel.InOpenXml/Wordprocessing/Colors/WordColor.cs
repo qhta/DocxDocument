@@ -6,12 +6,12 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Color))]
 [DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Color : AnyColor<DXW.Color>
+public partial class WordColor : AnyColor<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color() : base()
+  public WordColor() : base()
   {
   }
 
@@ -21,7 +21,7 @@ public partial class Color : AnyColor<DXW.Color>
   /// <remarks>The compoundString parameter can be null, in which case the Color instance will be initialized with a
   /// null value.</remarks>
   /// <param name = "colorString">The color string to initialize the Color instance.</param>
-  public Color(string colorString)
+  public WordColor(string colorString)
   {
     Init(colorString);
   }
@@ -30,7 +30,7 @@ public partial class Color : AnyColor<DXW.Color>
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
   /// <param name = "hexColor">The </param>
-  public Color(UInt32 hexColor)
+  public WordColor(UInt32 hexColor)
   {
     Value = hexColor ^ 0xFF000000;
   }
@@ -80,19 +80,19 @@ public partial class Color : AnyColor<DXW.Color>
   private HexPercent? _shade;
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref = "Color"/> value.
+  /// Implicitly converts a string to a <see cref = "WordColor"/> value.
   /// </summary>
   /// <param name = "value">The string to convert.</param>
-  /// <returns>A <see cref = "Color"/> value representing the color.</returns>
-  public static implicit operator Color(string value) => new Color(value);
+  /// <returns>A <see cref = "WordColor"/> value representing the color.</returns>
+  public static implicit operator WordColor(string value) => new WordColor(value);
 
   /// <summary>
-  /// Implicitly converts an <see cref = "Color"/> value to a string representation.
+  /// Implicitly converts an <see cref = "WordColor"/> value to a string representation.
   /// </summary>
-  /// <param name = "value">The <see cref = "Color"/> value to convert.</param>
+  /// <param name = "value">The <see cref = "WordColor"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-  public static implicit operator String(Color value) => value.ToString()!;
+  public static implicit operator String(WordColor value) => value.ToString()!;
 
   /// <summary>
   /// Initializes instance properties based on the provided color string,
@@ -150,32 +150,32 @@ public partial class Color : AnyColor<DXW.Color>
   /// <returns>A Color object that corresponds to the parsed color value.</returns>
   /// <exception cref = "ArgumentException">Thrown when the colorString parameter is null or empty.</exception>
   /// <exception cref = "FormatException">Thrown when colorString is not a valid hexadecimal color value or a recognized theme color name.</exception>
-  public static Color Parse(string colorString)
+  public static WordColor Parse(string colorString)
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
-    return new Color(colorString);
+    return new WordColor(colorString);
   }
 
   /// <summary>
-  /// Attempts to parse the specified color string into a <see cref = "Color"/> object, supporting both hexadecimal RGB
+  /// Attempts to parse the specified color string into a <see cref = "WordColor"/> object, supporting both hexadecimal RGB
   /// and named theme color formats.
   /// </summary>
   /// <remarks>This method supports parsing color strings in both hexadecimal RGB format and as named theme
   /// colors. If the input string is null or empty, parsing fails.</remarks>
   /// <param name = "colorString">The color string to parse. This can be a hexadecimal RGB value (e.g., "#FF0000") or the name of a theme color.
   /// Cannot be null or empty.</param>
-  /// <param name = "color">When this method returns <see langword="true"/>, contains the parsed <see cref = "Color"/> object; otherwise, is
+  /// <param name = "color">When this method returns <see langword="true"/>, contains the parsed <see cref = "WordColor"/> object; otherwise, is
   /// <see langword="null"/>.</param>
   /// <returns>true if the color string was successfully parsed; otherwise, false.</returns>
-  public static bool TryParse(string? colorString, out Color? color)
+  public static bool TryParse(string? colorString, out WordColor? color)
   {
     color = null;
     if (string.IsNullOrEmpty(colorString))
       return false;
     try
     {
-      color = new Color(colorString);
+      color = new WordColor(colorString);
       return true;
     }
     catch (FormatException)
@@ -185,7 +185,7 @@ public partial class Color : AnyColor<DXW.Color>
   }
 
   /// <summary>
-  /// Creates new instance of <see cref = "Color"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
+  /// Creates new instance of <see cref = "WordColor"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
   /// and shade.
   /// </summary>
   /// <param name = "val">StringValue representing the color value.</param>
@@ -193,30 +193,30 @@ public partial class Color : AnyColor<DXW.Color>
   /// <param name = "themeTint">StringValue representing the theme tint.</param>
   /// <param name = "themeShade">StringValue representing the theme shade.</param>
   /// <returns>A Color object populated with the provided OpenXml color properties. If no color properties are provided, returns null.</returns>
-  public static DMW.Color? FromOpenXml(DX.StringValue? val = null, DX.EnumValue<DXW.ThemeColorValues>? themeColor = null, DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
+  public static DMW.WordColor? FromOpenXml(DX.StringValue? val = null, DX.EnumValue<DXW.ThemeColorValues>? themeColor = null, DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
   {
-    DMW.Color? color = null;
+    DMW.WordColor? color = null;
     if (val?.Value != null)
     {
-      color ??= new DMW.Color();
+      color ??= new DMW.WordColor();
       color.Value = HexColorConverter.ConvertFrom(val);
     }
 
     if (themeColor?.Value != null)
     {
-      color ??= new DMW.Color();
+      color ??= new DMW.WordColor();
       color.ThemeColor = (DMD.SchemeColors)EnumTypeConverter.ConvertFrom(themeColor, typeof(DMD.SchemeColors))!;
     }
 
     if (themeTint?.Value != null)
     {
-      color ??= new DMW.Color();
+      color ??= new DMW.WordColor();
       color.Tint = HexPercentConverter.ConvertFrom(themeTint)!;
     }
 
     if (themeShade?.Value != null)
     {
-      color ??= new DMW.Color();
+      color ??= new DMW.WordColor();
       color.Shade = HexPercentConverter.ConvertFrom(themeShade)!;
     }
 
@@ -255,11 +255,11 @@ public partial class Color : AnyColor<DXW.Color>
   /// <remarks>This operator enables seamless assignment of a nullable HexColor to a nullable DMW.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided HexColor value.</remarks>
   /// <param name = "value">The HexColor value to convert. If null, the result is null.</param>
-  public static implicit operator DMW.Color? (HexColor? value)
+  public static implicit operator DMW.WordColor? (HexColor? value)
   {
     if (value is null)
       return null!;
-    return new Color
+    return new WordColor
     {
       Value = value,
     };
@@ -272,7 +272,7 @@ public partial class Color : AnyColor<DXW.Color>
   /// returned. This operator enables seamless conversion between Color and HexColor types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to a HexColor.</param>
-  public static implicit operator HexColor? (Color? color)
+  public static implicit operator HexColor? (WordColor? color)
   {
     if (color is null)
       return null;
@@ -285,11 +285,11 @@ public partial class Color : AnyColor<DXW.Color>
   /// <remarks>This operator enables seamless assignment of a nullable UInt32 to a nullable DMW.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided UInt32 value.</remarks>
   /// <param name = "value">The UInt32 value to convert. If null, the result is null.</param>
-  public static implicit operator DMW.Color? (UInt32? value)
+  public static implicit operator DMW.WordColor? (UInt32? value)
   {
     if (value is null)
       return null!;
-    return new Color
+    return new WordColor
     {
       Value = value,
     };
@@ -302,7 +302,7 @@ public partial class Color : AnyColor<DXW.Color>
   /// returned. This operator enables seamless conversion between Color and UInt32 types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to an UInt32.</param>
-  public static implicit operator UInt32? (Color? color)
+  public static implicit operator UInt32? (WordColor? color)
   {
     if (color is null)
       return null;

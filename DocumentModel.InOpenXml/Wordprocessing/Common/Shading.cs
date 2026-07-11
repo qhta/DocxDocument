@@ -21,16 +21,16 @@ public partial class Shading : ModelElement<DXW.Shading>
  /// </summary>
  [OpenXmlLoadData(nameof(LoadForegroundColor))]
  [OpenXmlUpdateData(nameof(UpdateForegroundColor))]
- public DMW.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
- private DMW.Color? _ForegroundColor;
+ public DMW.WordColor? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
+ private DMW.WordColor? _ForegroundColor;
 
  /// <summary>
  /// The color of the pattern background, specifying the secondary color used in the shading pattern.
  /// </summary>
  [OpenXmlLoadData(nameof(LoadBackgroundColor))]
  [OpenXmlUpdateData(nameof(UpdateBackgroundColor))]
- public DMW.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
- private DMW.Color? _BackgroundColor;
+ public DMW.WordColor? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
+ private DMW.WordColor? _BackgroundColor;
 
  /// <summary>
  /// Loads the shading foreground color from the specified OpenXML shading element, applying any associated theme color, tint,
@@ -42,7 +42,7 @@ public partial class Shading : ModelElement<DXW.Shading>
  /// <param name = "shading">The OpenXML shading element containing color, theme color, tint, and shade information to be loaded.</param>
  public void LoadForegroundColor(DXW.Shading shading)
  {
-  this.ForegroundColor = DMW.Color.FromOpenXml(shading.Color, shading.ThemeColor, shading.ThemeTint, shading.ThemeShade);
+  this.ForegroundColor = DMW.WordColor.FromOpenXml(shading.Color, shading.ThemeColor, shading.ThemeTint, shading.ThemeShade);
  }
 
  /// <summary>
@@ -78,7 +78,7 @@ public partial class Shading : ModelElement<DXW.Shading>
  /// <param name = "shading">The OpenXML shading element containing color, theme color, tint, and shade information to be loaded.</param>
  public void LoadBackgroundColor(DXW.Shading shading)
  {
-  this.BackgroundColor = DMW.Color.FromOpenXml(shading.Fill, shading.ThemeFill, shading.ThemeFillTint, shading.ThemeFillShade);
+  this.BackgroundColor = DMW.WordColor.FromOpenXml(shading.Fill, shading.ThemeFill, shading.ThemeFillTint, shading.ThemeFillShade);
  }
 
  /// <summary>

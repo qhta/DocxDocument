@@ -10,7 +10,7 @@ public partial class SchemeColor : IXmlSerializable
   /// <returns>Always returns null.</returns>
   XmlSchema? IXmlSerializable.GetSchema() => null;
   /// <summary>
-  /// Deserializes the <see cref = "Color"/> value from XML.
+  /// Deserializes the <see cref = "WordColor"/> value from XML.
   /// </summary>
   /// <param name = "reader">The <see cref = "XmlReader"/> to read from.</param>
   void IXmlSerializable.ReadXml(XmlReader reader)
@@ -50,11 +50,11 @@ public partial class SchemeColor : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref = "Color"/> value to XML.
+  /// Serializes the <see cref = "WordColor"/> value to XML.
   /// </summary>
   /// <param name = "writer">The <see cref = "XmlWriter"/> to write to.</param>
   /// <remarks>
-  /// The value is written as a string representing <see cref = "Color"/> .
+  /// The value is written as a string representing <see cref = "WordColor"/> .
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class Color : IColor
+public partial class WordColor : IColor, ITintableColor
 {
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
@@ -86,4 +86,23 @@ public partial class Color : IColor
     }
   }
 
+  double? ITintableColor.Tint
+  {
+    get => this.Tint?.AsDouble();
+    set
+    {
+      if (value!=null)
+        this.Tint = value.Value;
+    }
+  }
+
+  double? ITintableColor.Shade
+  {
+    get => this.Shade?.AsDouble();
+    set
+    {
+      if (value!=null)
+        this.Shade = value.Value;
+    }
+  }
 }

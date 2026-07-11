@@ -158,8 +158,8 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.Color))]
   [MultiCategory("Fonts and attributes")]
-  public DMW.Color? Color { get => _Color ??= GetElement<DMW.Color?, DXW.Color>(GetUpdatableElement()); set => UpdateField(ref _Color, value, nameof(Color)); }
-  private DMW.Color? _Color;
+  public DMW.WordColor? Color { get => _Color ??= GetElement<DMW.WordColor?, DXW.Color>(GetUpdatableElement()); set => UpdateField(ref _Color, value, nameof(Color)); }
+  private DMW.WordColor? _Color;
 
   /// <summary>
   /// Character pitch added or removed after each character in the run.

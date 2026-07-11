@@ -10,13 +10,13 @@
 /// WordprocessingML and other OpenXML schemas. The class also provides methods for converting to and from
 /// OpenXML-specific color representations.</remarks>
 [DataContract]
-[XmlRoot("Color", Namespace = "DocumentModel.Vml")]
-public partial class Color : ModelElement, IColor
+[XmlRoot("VmlColor", Namespace = "DocumentModel.Vml")]
+public partial class VmlColor : ModelElement, IColor
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color() : base()
+  public VmlColor() : base()
   {
   }
 
@@ -26,7 +26,7 @@ public partial class Color : ModelElement, IColor
   /// <remarks>The compoundString parameter can be null, in which case the Color instance will be initialized with a
   /// null value.</remarks>
   /// <param name = "colorString">The color string to initialize the Color instance.</param>
-  public Color(string colorString)
+  public VmlColor(string colorString)
   {
     Init(colorString);
   }
@@ -35,7 +35,7 @@ public partial class Color : ModelElement, IColor
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
   /// <param name = "hexColor">The </param>
-  public Color(UInt32 hexColor)
+  public VmlColor(UInt32 hexColor)
   {
     Value = hexColor.ToString();
   }
@@ -51,19 +51,19 @@ public partial class Color : ModelElement, IColor
   private object? _Value;
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref = "Color"/> value.
+  /// Implicitly converts a string to a <see cref = "VmlColor"/> value.
   /// </summary>
   /// <param name = "value">The string to convert.</param>
-  /// <returns>A <see cref = "Color"/> value representing the color.</returns>
-  public static implicit operator Color(string value) => new Color(value);
+  /// <returns>A <see cref = "VmlColor"/> value representing the color.</returns>
+  public static implicit operator VmlColor(string value) => new VmlColor(value);
 
   /// <summary>
-  /// Implicitly converts an <see cref = "Color"/> value to a string representation.
+  /// Implicitly converts an <see cref = "VmlColor"/> value to a string representation.
   /// </summary>
-  /// <param name = "value">The <see cref = "Color"/> value to convert.</param>
+  /// <param name = "value">The <see cref = "VmlColor"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
    // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-  public static implicit operator String(Color value) => value.ToString()!;
+  public static implicit operator String(VmlColor value) => value.ToString()!;
 
   /// <summary>
   /// Initializes instance properties based on the provided color string,
@@ -112,32 +112,32 @@ public partial class Color : ModelElement, IColor
   /// <returns>A Color object that corresponds to the parsed color value.</returns>
   /// <exception cref = "ArgumentException">Thrown when the colorString parameter is null or empty.</exception>
   /// <exception cref = "FormatException">Thrown when colorString is not a valid hexadecimal color value or a recognized theme color name.</exception>
-  public static Color Parse(string colorString)
+  public static VmlColor Parse(string colorString)
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
-    return new Color(colorString);
+    return new VmlColor(colorString);
   }
 
   /// <summary>
-  /// Attempts to parse the specified color string into a <see cref = "Color"/> object, supporting both hexadecimal RGB
+  /// Attempts to parse the specified color string into a <see cref = "VmlColor"/> object, supporting both hexadecimal RGB
   /// and named theme color formats.
   /// </summary>
   /// <remarks>This method supports parsing color strings in both hexadecimal RGB format and as named theme
   /// colors. If the input string is null or empty, parsing fails.</remarks>
   /// <param name = "colorString">The color string to parse. This can be a hexadecimal RGB value (e.g., "#FF0000") or the name of a theme color.
   /// Cannot be null or empty.</param>
-  /// <param name = "color">When this method returns <see langword="true"/>, contains the parsed <see cref = "Color"/> object; otherwise, is
+  /// <param name = "color">When this method returns <see langword="true"/>, contains the parsed <see cref = "VmlColor"/> object; otherwise, is
   /// <see langword="null"/>.</param>
   /// <returns>true if the color string was successfully parsed; otherwise, false.</returns>
-  public static bool TryParse(string? colorString, out Color? color)
+  public static bool TryParse(string? colorString, out VmlColor? color)
   {
     color = null;
     if (string.IsNullOrEmpty(colorString))
       return false;
     try
     {
-      color = new Color(colorString);
+      color = new VmlColor(colorString);
       return true;
     }
     catch (FormatException)
@@ -147,17 +147,17 @@ public partial class Color : ModelElement, IColor
   }
 
   /// <summary>
-  /// Creates new instance of <see cref = "Color"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
+  /// Creates new instance of <see cref = "VmlColor"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
   /// and shade.
   /// </summary>
   /// <param name = "val">StringValue representing the color value.</param>
   /// <returns>A Color object populated with the provided OpenXml color properties. If no color properties are provided, returns null.</returns>
-  public static DMV.Color? FromOpenXml(DX.StringValue? val)
+  public static DMV.VmlColor? FromOpenXml(DX.StringValue? val)
   {
-    DMV.Color? color = null;
+    DMV.VmlColor? color = null;
     if (val?.Value != null)
     {
-      color ??= new DMV.Color(val.Value);
+      color ??= new DMV.VmlColor(val.Value);
     }
 
     return color;
@@ -183,11 +183,11 @@ public partial class Color : ModelElement, IColor
   /// <remarks>This operator enables seamless assignment of a nullable HexColor to a nullable DMV.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided HexColor value.</remarks>
   /// <param name = "value">The HexColor value to convert. If null, the result is null.</param>
-  public static implicit operator DMV.Color?(HexColor? value)
+  public static implicit operator DMV.VmlColor?(HexColor? value)
   {
     if (value is null)
       return null!;
-    return new Color
+    return new VmlColor
     {
       Value = value,
     };
@@ -200,7 +200,7 @@ public partial class Color : ModelElement, IColor
   /// returned. This operator enables seamless conversion between Color and HexColor types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to a HexColor.</param>
-  public static implicit operator HexColor?(Color? color)
+  public static implicit operator HexColor?(VmlColor? color)
   {
     if (color is null)
       return null;
@@ -215,11 +215,11 @@ public partial class Color : ModelElement, IColor
   /// <remarks>This operator enables seamless assignment of a nullable UInt32 to a nullable DMV.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided UInt32 value.</remarks>
   /// <param name = "value">The UInt32 value to convert. If null, the result is null.</param>
-  public static implicit operator DMV.Color?(UInt32? value)
+  public static implicit operator DMV.VmlColor?(UInt32? value)
   {
     if (value is null)
       return null!;
-    return new Color
+    return new VmlColor
     {
       Value = new HexColor(value.Value),
     };
@@ -232,7 +232,7 @@ public partial class Color : ModelElement, IColor
   /// returned. This operator enables seamless conversion between Color and UInt32 types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to an UInt32.</param>
-  public static implicit operator UInt32?(Color? color)
+  public static implicit operator UInt32?(VmlColor? color)
   {
     if (color is null)
       return null;
@@ -240,4 +240,14 @@ public partial class Color : ModelElement, IColor
       return hexValue;
     return null;
   }
+
+  /// <summary>
+  /// Not supported in VML. This property is included for compatibility with the IColor interface, but it does not have a meaningful implementation in the context of VML colors.
+  /// </summary>
+  public double Tint { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
+
+  /// <summary>
+  /// Not supported in VML. This property is included for compatibility with the IColor interface, but it does not have a meaningful implementation in the context of VML colors.
+  /// </summary>
+  public double Shade { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
 }

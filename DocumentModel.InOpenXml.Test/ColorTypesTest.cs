@@ -62,9 +62,9 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SchemeColorDef),
       typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.Vml.Color),
+      typeof(DocumentModel.Vml.VmlColor),
       typeof(DocumentModel.Vml.RgbColor),
-      typeof(DocumentModel.Wordprocessing.Color),
+      typeof(DocumentModel.Wordprocessing.WordColor),
       typeof(DocumentModel.Wordprocessing.RgbColor),
       typeof(DocumentModel.Wordprocessing.SchemeColor),
     }.OrderBy(item => item.FullName).ToList();
@@ -93,7 +93,7 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.RgbColorModelPercentage),
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.Wordprocessing.Color),
+      typeof(DocumentModel.Wordprocessing.WordColor),
       typeof(DocumentModel.Wordprocessing.RgbColor),
       typeof(DocumentModel.Wordprocessing.SchemeColor),
     }.OrderBy(item => item.FullName).ToList();
@@ -296,7 +296,7 @@ public class ColorTypesTest : _AbstractTestClass
     typeof(DocumentModel.Drawings.RgbColorModelHex),
     typeof(DocumentModel.Drawings.RgbColorModelPercentage),
     typeof(DocumentModel.Drawings.HslColor),
-    typeof(DocumentModel.Wordprocessing.Color),
+    typeof(DocumentModel.Wordprocessing.WordColor),
     typeof(DocumentModel.Wordprocessing.RgbColor),
   };
 
@@ -317,7 +317,7 @@ public class ColorTypesTest : _AbstractTestClass
         IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
         otherColor.ARGB = baseColor.ARGB;
         xmlString = SerializeObjectToXml(otherColor);
-        Console.WriteLine($"\n  Other color model ({otherType.Name}):{xmlString}");
+        Console.WriteLine($"\n  Color model conversion ({baseType.Name} -> {otherType.Name}):\n{xmlString}");
 
         if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out var message))
         {
@@ -402,8 +402,8 @@ public class ColorTypesTest : _AbstractTestClass
         //Tint = new Percentage("10%"),
         //Shade = new Percentage("5%"),
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.Color))
-      return new DocumentModel.Wordprocessing.Color
+    if (colorType == typeof(DocumentModel.Wordprocessing.WordColor))
+      return new DocumentModel.Wordprocessing.WordColor
       {
         Value = (HexColor)0x336699,
         //ThemeColor = DMD.SchemeColors.Text1,

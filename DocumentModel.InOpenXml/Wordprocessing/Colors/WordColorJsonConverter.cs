@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref = "Color"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref = "WordColor"/> structure.
 /// </summary>
 /// <remarks>
 /// This converter handles both string and numeric JSON tokens for deserialization,
@@ -8,15 +8,15 @@ namespace DocumentModel.Wordprocessing;
 /// </remarks>
 [DataContract]
 [XmlRoot("ColorJsonConverter", Namespace = "DocumentModel.Wordprocessing")]
-public class ColorJsonConverter : JsonConverter<DMW.Color>
+public class WordColorJsonConverter : JsonConverter<DMW.WordColor>
 {
  /// <summary>
- /// Reads and converts JSON to a <see cref = "Color"/> value.
+ /// Reads and converts JSON to a <see cref = "WordColor"/> value.
  /// </summary>
  /// <param name = "reader">The <see cref = "Utf8JsonReader"/> to read from.</param>
  /// <param name = "typeToConvert">The type to convert.</param>
  /// <param name = "options">The <see cref = "JsonSerializerOptions"/> to use.</param>
- /// <returns>A <see cref = "Color"/> value parsed from the JSON input.</returns>
+ /// <returns>A <see cref = "WordColor"/> value parsed from the JSON input.</returns>
  /// <exception cref = "JsonException">
  /// Thrown when:
  /// <list type="bullet">
@@ -34,7 +34,7 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
  /// <item><description>Numeric tokens as integer values representing Color directly</description></item>
  /// </list>
  /// </remarks>
- public override DMW.Color Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+ public override DMW.WordColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
  {
   if (reader.TokenType == JsonTokenType.String)
   {
@@ -43,7 +43,7 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
     throw new JsonException($"Expected string value for Color, but got null");
    try
    {
-    return new DMW.Color(value);
+    return new DMW.WordColor(value);
    }
    catch (FormatException ex)
    {
@@ -57,12 +57,12 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
    {
     if (reader.TryGetUInt32(out uint uintValue))
     {
-     return new Color(uintValue);
+     return new WordColor(uintValue);
     }
 
     var stringValue = reader.GetString();
     {
-     return new Color(stringValue!);
+     return new WordColor(stringValue!);
     }
 
     throw new JsonException($"Invalid numeric value for Color");
@@ -77,16 +77,16 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
  }
 
  /// <summary>
- /// Writes a <see cref = "Color"/> value as JSON.
+ /// Writes a <see cref = "WordColor"/> value as JSON.
  /// </summary>
  /// <param name = "writer">The <see cref = "Utf8JsonWriter"/> to write to.</param>
- /// <param name = "value">The <see cref = "Color"/> value to serialize.</param>
+ /// <param name = "value">The <see cref = "WordColor"/> value to serialize.</param>
  /// <param name = "options">The <see cref = "JsonSerializerOptions"/> to use.</param>
  /// <remarks>
  /// Writes the Color value as a numeric string without unit suffix.
  /// For example, a value of 1440 Color is written as "1440".
  /// </remarks>
- public override void Write(Utf8JsonWriter writer, DMW.Color value, JsonSerializerOptions options)
+ public override void Write(Utf8JsonWriter writer, DMW.WordColor value, JsonSerializerOptions options)
  {
   writer.WriteStringValue(value.ToString());
  }

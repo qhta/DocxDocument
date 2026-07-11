@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Vml;
 
-public partial class Color : IColor
+public partial class VmlColor : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.

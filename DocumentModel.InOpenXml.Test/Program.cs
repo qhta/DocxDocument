@@ -20,9 +20,9 @@ internal class Program
     //if (!Exec(new BuiltInPropertiesTest())) return;
     //if (!Exec(new CustomPropertiesTest())) return;
     //if (!Exec(new DocumentPropertiesTest())) return;
-    if (!Exec(new ColorTypesTest())) return;
+    //if (!Exec(new ColorTypesTest())) return;
     //if (!Exec(new ThemeTest())) return;
-    //if (!Exec(new ColorTransformationsTest())) return;
+    if (!Exec(new ColorTransformationsTest())) return;
 
     //if (!Exec(new RsidsTest())) return;
     //if (!Exec(new DocumentVariablesTestClass())) return;
@@ -30,6 +30,7 @@ internal class Program
 
     //if (!Exec(new FontTableTestClass())) return;
     //if (!Exec(new FontEmbeddingTestClass())) return;
+
     //if (!Exec(new LatentStylesTest())) return;
     //if (!Exec(new StyleDefinitionsTest())) return;
     //if (!Exec(new BaseRunPropertiesTest())) return;

@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "T">The type of the underlying Open XML element represented by this color model element. Must derive from
 /// DX.OpenXmlElement.</typeparam>
-[XmlInclude(typeof(DMW.Color))]
+[XmlInclude(typeof(DMW.WordColor))]
 [XmlInclude(typeof(DMD.RgbColorModelHex))]
 [XmlInclude(typeof(DMD.SchemeColor))]
 [XmlInclude(typeof(DMD.RgbColorModelPercentage))]
@@ -17,7 +17,7 @@ namespace DocumentModel;
 [XmlInclude(typeof(DMW.RgbColor))]
 [XmlInclude(typeof(DMW.SchemeColor))]
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
-[JsonDerivedType(typeof(DMW.Color), "DocumentModel.Wordprocessing.Color")]
+[JsonDerivedType(typeof(DMW.WordColor), "DocumentModel.Wordprocessing.Color")]
 [JsonDerivedType(typeof(DMD.RgbColorModelHex), "DocumentModel.Drawings.RgbColorModelHex")]
 [JsonDerivedType(typeof(DMD.SchemeColor), "DocumentModel.Drawings.SchemeColor")]
 [JsonDerivedType(typeof(DMD.RgbColorModelPercentage), "DocumentModel.Drawings.RgbColorModelPercentage")]

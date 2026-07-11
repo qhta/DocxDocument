@@ -12,8 +12,8 @@ public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
  /// Color for the background of the document, specifying the fill color applied to all pages.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocumentBackground.Color))]
- public Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private Color? _Color;
+ public WordColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private WordColor? _Color;
 
  /// <summary>
  /// Background element, specifying additional background properties such as images or patterns.

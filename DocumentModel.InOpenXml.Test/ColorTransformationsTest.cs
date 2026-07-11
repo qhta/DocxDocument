@@ -69,7 +69,7 @@ public class ColorTransformationsTest : _AbstractTestClass
     typeof(DocumentModel.Drawings.RgbColorModelHex),
     typeof(DocumentModel.Drawings.RgbColorModelPercentage),
     typeof(DocumentModel.Drawings.HslColor),
-    typeof(DocumentModel.Wordprocessing.Color),
+    typeof(DocumentModel.Wordprocessing.WordColor),
     typeof(DocumentModel.Wordprocessing.RgbColor),
   };
 
@@ -83,20 +83,31 @@ public class ColorTransformationsTest : _AbstractTestClass
       IColor baseColor = CreateSampleColor(baseType);
 
       var xmlString = SerializeObjectToXml(baseColor);
-      Console.WriteLine($"\nOriginal color model ({baseType.Name}):\n{xmlString}");
+      Console.WriteLine($"\nBase color model ({baseType.Name}):\n{xmlString}");
 
       foreach (var otherType in typesToConvert)
       {
         IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
         otherColor.ARGB = baseColor.ARGB;
+        if (otherColor is ITintableColor tintableOther && baseColor is ITintableColor tintableBase)
+        {
+          tintableOther.Tint = tintableBase.Tint;
+          tintableOther.Shade = tintableBase.Shade;
+        }
         xmlString = SerializeObjectToXml(otherColor);
-        Console.WriteLine($"\nOther color model ({otherType.Name}):\n{xmlString}");
+        Console.WriteLine($"\n  Color model conversion ({baseType.Name} -> {otherType.Name}):\n{xmlString}");
 
         if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out var message))
         {
           Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
           return false;
         }
+        if (otherColor is ITintableColor && baseColor is ITintableColor)
+          if (!TestHelper.CompareTestData(typeof(ITintableColor), baseColor, otherColor, "testColor", "otherColor", out message))
+          {
+            Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+            return false;
+          }
       }
 
     }
@@ -325,23 +336,23 @@ public class ColorTransformationsTest : _AbstractTestClass
         Hue = new Degrees(210),
         Saturation = new Percentage("50%"),
         Luminance = new Percentage("40%"),
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+        //Shade = new Percentage("40%"),
       };
 
     if (colorType == typeof(Drawings.PresetColor))
       return new DocumentModel.Drawings.PresetColor
       {
         Index = PresetColors.Red,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+        //Shade = new Percentage("40%"),
       };
     if (colorType == typeof(Drawings.RgbColorModelHex))
       return new DocumentModel.Drawings.RgbColorModelHex()
       {
         Value = (HexColor)0x336699,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        //Tint = new Percentage("20%"),
+        Shade = new Percentage("40%"),
       };
     if (colorType == typeof(Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage
@@ -349,45 +360,45 @@ public class ColorTransformationsTest : _AbstractTestClass
         Red = new Percentage("20%"),
         Green = new Percentage("40%"),
         Blue = new Percentage("60%"),
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+        //Shade = new Percentage("40%"),
       };
     if (colorType == typeof(Drawings.SchemeColor))
       return new DocumentModel.Drawings.SchemeColor
       {
         Index = SchemeColors.Accent3,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+        Shade = new Percentage("40%"),
       };
     if (colorType == typeof(Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {
         Index = SystemColors.WindowText,
-        LastColor = (HexColor)0x112233,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        //LastColor = (HexColor)0x112233,
+        Tint = new Percentage("20%"),
+        //Shade = new Percentage("40%"),
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.Color))
-      return new DocumentModel.Wordprocessing.Color
+    if (colorType == typeof(DocumentModel.Wordprocessing.WordColor))
+      return new DocumentModel.Wordprocessing.WordColor
       {
         Value = (HexColor)0x336699,
         //ThemeColor = DMD.SchemeColors.Text1,
-        //Tint = new HexPercent("40%"),
+        Tint = new HexPercent("20%"),
         //Shade = new HexPercent("20%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.RgbColor))
       return new DocumentModel.Wordprocessing.RgbColor
       {
         Value = (HexColor)0x336699,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new HexPercent("20%"),
+        //Shade = new HexPercent("40%"),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.SchemeColor))
       return new DocumentModel.Wordprocessing.SchemeColor
       {
         Index = DMD.SchemeColors.Accent3,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+       // Shade = new Percentage("40%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }

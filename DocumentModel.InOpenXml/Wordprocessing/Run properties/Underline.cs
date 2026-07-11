@@ -22,8 +22,8 @@ public partial class Underline : ModelElement<DXW.Underline>
  //  nameof(DXW.Underline.ThemeTint), nameof(DXW.Underline.ThemeShade))]
  [OpenXmlLoadData(nameof(LoadColor))]
  [OpenXmlUpdateData(nameof(UpdateColor))]
- public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private DMW.Color? _Color;
+ public DMW.WordColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private DMW.WordColor? _Color;
 
  /// <summary>
  /// Loads the underline color from the specified OpenXML underline element, applying any associated theme color, tint,
@@ -35,7 +35,7 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// <param name = "underline">The OpenXML underline element containing color, theme color, tint, and shade information to be loaded.</param>
  public void LoadColor(DXW.Underline underline)
  {
-  this.Color = DMW.Color.FromOpenXml(underline.Color, underline.ThemeColor, underline.ThemeTint, underline.ThemeShade);
+  this.Color = DMW.WordColor.FromOpenXml(underline.Color, underline.ThemeColor, underline.ThemeTint, underline.ThemeShade);
  }
 
  /// <summary>

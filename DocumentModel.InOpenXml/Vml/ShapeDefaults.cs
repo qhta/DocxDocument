@@ -45,12 +45,12 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Default Fill Color
   /// </summary>
   [OpenXmlProperty(nameof(DXVO.ShapeDefaults.FillColor))]
-  public DMV.Color? FillColor
+  public DMV.VmlColor? FillColor
   {
-    get => _FillColor ??= GetProperty<DMV.Color?>(GetUpdatableElement()?.FillColor);
+    get => _FillColor ??= GetProperty<DMV.VmlColor?>(GetUpdatableElement()?.FillColor);
     set => UpdateField(ref _FillColor, value, nameof(FillColor));
   }
-  private DMV.Color? _FillColor;
+  private DMV.VmlColor? _FillColor;
 
   /// <summary>
   ///   Shape Stroke Toggle
@@ -67,12 +67,12 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   ///   Shape Stroke Color
   /// </summary>
   [OpenXmlProperty(nameof(DXVO.ShapeDefaults.StrokeColor))]
-  public DMV.Color? StrokeColor
+  public DMV.VmlColor? StrokeColor
   {
-    get => _StrokeColor ??= GetProperty<DMV.Color?>(GetUpdatableElement()?.StrokeColor);
+    get => _StrokeColor ??= GetProperty<DMV.VmlColor?>(GetUpdatableElement()?.StrokeColor);
     set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor));
   }
-  private DMV.Color? _StrokeColor;
+  private DMV.VmlColor? _StrokeColor;
 
   /// <summary>
   ///   Allow in Table Cell

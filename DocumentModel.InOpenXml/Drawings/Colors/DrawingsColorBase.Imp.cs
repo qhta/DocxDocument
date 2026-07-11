@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Drawings;
 
-public abstract partial class DrawingsColorBase<T> : IColor
+public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -152,6 +152,32 @@ public abstract partial class DrawingsColorBase<T> : IColor
       }
 
       throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
+    }
+  }
+
+  /// <summary>
+  /// Gets or sets the tint of the color as a double value between 0 and 1.
+  /// </summary>
+  double? ITintableColor.Tint
+  {
+    get => this.Tint?.AsDouble();
+    set
+    {
+      if (value != null)
+        this.Tint = value.Value;
+    }
+  }
+
+  /// <summary>
+  /// Gets or sets the shade of the color as a double value between 0 and 1.
+  /// </summary>
+  double? ITintableColor.Shade
+  {
+    get => this.Shade?.AsDouble();
+    set
+    {
+      if (value != null)
+        this.Shade = value.Value;
     }
   }
 }

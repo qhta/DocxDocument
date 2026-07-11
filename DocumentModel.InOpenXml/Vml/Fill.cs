@@ -32,8 +32,8 @@ public partial class Fill : ModelElement<DXV.Fill>
  ///   Primary Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Fill.Color))]
- public DMV.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private DMV.Color? _Color;
+ public DMV.VmlColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private DMV.VmlColor? _Color;
 
  /// <summary>
  ///   Primary Color Opacity

@@ -126,4 +126,5 @@ public partial class RgbColor : IColor
   }
 
   string? IColor.Name { get => null; set { } }
+
 }
