@@ -33,6 +33,7 @@ class Program
     if (!Exec(PercentTest.Run)) return;
     if (!Exec(HexPercentTest.Run)) return;
     if (!Exec(PercentageTest.Run)) return;
+    if (!Exec(DegreesTest.Run)) return;
     if (!Exec(PTSTest.Run)) return;
     if (!Exec(TSBooleanTest.Run)) return;
     if (!Exec(StringListTest.Run)) return;

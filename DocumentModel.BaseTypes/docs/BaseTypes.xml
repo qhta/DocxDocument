@@ -1472,9 +1472,9 @@
         </member>
         <member name="T:DocumentModel.Degrees">
             <summary>
-            Represents a drawing angle value stored as a 32-bit integer, where the value is scaled by 60000 to preserve precision.
-            So, for example, a value of 180 degrees is stored as 10800000, and a value of 0.5 degrees is stored as 30000.
+            Represents a drawing angle value stored as a Decimal, preserving precision.
             Supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
+            Conversion to/from double and single precision floating-point types involves scaling by 360 to support hue in color models.
             </summary>
         </member>
         <member name="M:DocumentModel.Degrees.System#Xml#Serialization#IXmlSerializable#GetSchema">
@@ -1507,13 +1507,18 @@
             The value is written using the default string representation of the <see cref="T:DocumentModel.Degrees"/> structure.
             </remarks>
         </member>
+        <member name="F:DocumentModel.Degrees.Value">
+            <summary>
+            The underlying value of the Degrees struct, stored as a Decimal for precision.
+            </summary>
+        </member>
         <member name="M:DocumentModel.Degrees.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a string value.
             </summary>
             <param name="str">The string value to parse. Can include an optional "°" suffix and uses invariant culture for parsing.</param>
             <remarks>
-            Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
+            Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.
             </remarks>
         </member>
         <member name="M:DocumentModel.Degrees.#ctor(System.Int32)">
@@ -1530,15 +1535,15 @@
         </member>
         <member name="M:DocumentModel.Degrees.#ctor(System.Double)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a double value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a Double value.
             </summary>
-            <param name="value">The double value representing the Degrees.</param>
+            <param name="value">The Double value representing the Degrees.</param>
         </member>
         <member name="M:DocumentModel.Degrees.#ctor(System.Decimal)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a decimal value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a Decimal value.
             </summary>
-            <param name="value">The double value representing the Degrees.</param>
+            <param name="value">The Double value representing the Degrees.</param>
         </member>
         <member name="M:DocumentModel.Degrees.#ctor(System.UInt64)">
             <summary>
@@ -1673,6 +1678,13 @@
             <param name="val">The string to convert.</param>
             <returns>A <see cref="T:DocumentModel.Degrees"/> value parsed from the string.</returns>
         </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a string representation.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A string representation of the <see cref="T:DocumentModel.Degrees"/> value.</returns>
+        </member>
         <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.UInt16">
             <summary>
             Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 16-bit unsigned integer.
@@ -1710,17 +1722,17 @@
         </member>
         <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Decimal">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a decimal value.
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a Decimal value.
             </summary>
             <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
-            <returns>A double representation of the Degrees value.</returns>
+            <returns>A Double representation of the Degrees value.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Double">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a double value.
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a Double value.
             </summary>
             <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
-            <returns>A double representation of the Degrees value.</returns>
+            <returns>A Double representation of the Degrees value.</returns>
         </member>
         <member name="M:DocumentModel.Degrees.op_Implicit(System.UInt16)~DocumentModel.Degrees">
             <summary>
@@ -6793,7 +6805,7 @@
             <summary>
             Represents a percentage value stored as a decimal value to preserve precision.
             Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-            Conversion to/from double and single precision floating-point types means scaling by 100 to support fractional percentages.
+            Conversion to/from double and single precision floating-point types involves scaling by 100 to support fractional percentages.
             </summary>
         </member>
         <member name="M:DocumentModel.Percentage.System#Xml#Serialization#IXmlSerializable#GetSchema">

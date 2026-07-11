@@ -59,6 +59,26 @@
             Simple wrapper class for testing Deserialization scenarios.
             </summary>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Test.DegreesTest">
+            <summary>
+            Test suite for Degrees type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.DegreesTest.Run">
+            <summary>
+            Runs all Degrees serialization tests.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.DegreesTestData">
+            <summary>
+            Test data class containing various Degrees properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.DegreesWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
         <member name="T:DocumentModel.BaseTypes.Test.EMUTest">
             <summary>
             Test suite for EMU type serialization in both XML and JSON formats.

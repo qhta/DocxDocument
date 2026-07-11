@@ -48,7 +48,7 @@ public static class DegreesConverter
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   private static DX.Int32Value? ConvertToInt32Value(Degrees? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var doubleValue = (double)value * 60000;
     if (doubleValue < Int32.MinValue || doubleValue > Int32.MaxValue)
@@ -85,7 +85,7 @@ public static class DegreesConverter
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(Degrees? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var text = value.ToString()!;
     var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
@@ -119,7 +119,7 @@ public static class DegreesConverter
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(Degrees? value)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var text = value.ToString()!;
     return text;
@@ -153,7 +153,7 @@ public static class DegreesConverter
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Degrees? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var text = value.ToString()!;
     var element = (DX.OpenXmlLeafTextElement)Activator.CreateInstance(targetType)!;
@@ -197,7 +197,7 @@ public static class DegreesConverter
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Degrees? value, Type targetType)
   {
-    if (value == null) return null;
+    if (value is null) return null;
 
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
     var valProp = element.GetType().GetProperty("Val");

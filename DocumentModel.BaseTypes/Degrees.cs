@@ -1,24 +1,28 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a drawing angle value stored as a 32-bit integer, where the value is scaled by 60000 to preserve precision.
-/// So, for example, a value of 180 degrees is stored as 10800000, and a value of 0.5 degrees is stored as 30000.
+/// Represents a drawing angle value stored as a Decimal, preserving precision.
 /// Supports implicit conversions to/from numeric types and string representations with an optional "°" suffix.
+/// Conversion to/from double and single precision floating-point types involves scaling by 360 to support hue in color models.
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(DegreesJsonConverter))]
 public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, IComparable<Degrees>, IComparable<object>
 {
-  private readonly Int32 value;
-  private const int scale = 60000;
-
+  /// <summary>
+  /// The underlying value of the Degrees struct, stored as a Decimal for precision.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public readonly Decimal Value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Degrees"/> struct from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include an optional "°" suffix and uses invariant culture for parsing.</param>
   /// <remarks>
-  /// Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
+  /// Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.
   /// </remarks>
   public Degrees(string str)
   {
@@ -26,8 +30,8 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     {
       str = str.TrimEnd('°');
     }
-    var decimalValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
-    this.value = (int)(decimalValue * scale);
+    var DecimalValue = Decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    this.Value = DecimalValue;
     
   }
 
@@ -37,7 +41,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <param name="value">The int value representing the Degrees.</param>
   public Degrees(int value)
   {
-    this.value = value * scale;
+    this.Value = value;
   }
 
 
@@ -47,25 +51,25 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <param name="value">The int value representing the Degrees.</param>
   public Degrees(Int64 value)
   {
-    this.value = (int)(value * scale);
+    this.Value = (value);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Degrees"/> struct from a double value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from a Double value.
   /// </summary>
-  /// <param name="value">The double value representing the Degrees.</param>
-  public Degrees(double value)
+  /// <param name="value">The Double value representing the Degrees.</param>
+  public Degrees(Double value)
   {
-    this.value = (int)(value * scale);
+    this.Value = (Decimal)(value * 360);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Degrees"/> struct from a decimal value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from a Decimal value.
   /// </summary>
-  /// <param name="value">The double value representing the Degrees.</param>
-  public Degrees(decimal value)
+  /// <param name="value">The Double value representing the Degrees.</param>
+  public Degrees(Decimal value)
   {
-    this.value = (int)(value * scale);
+    this.Value = (value);
   }
 
 
@@ -75,7 +79,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <param name="value">The UInt64 value representing the Degrees.</param>
   public Degrees(UInt64 value)
   {
-    this.value = (int)(value * scale);
+    this.Value = (value);
   }
 
   #region IConvertible Implementation
@@ -106,7 +110,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
   public byte ToByte(IFormatProvider? provider = null)
   {
-    return (byte)(value / scale);
+    return (byte)(Value);
   }
 
   /// <summary>
@@ -130,13 +134,13 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   }
 
   /// <summary>
-  /// Converts the value of this instance to an equivalent <see cref="decimal"/> number.
+  /// Converts the value of this instance to an equivalent <see cref="Decimal"/> number.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-  /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
+  /// <returns>A <see cref="Decimal"/> number equivalent to the value of this instance.</returns>
   public Decimal ToDecimal(IFormatProvider? provider = null)
   {
-    return (decimal)(value) / scale;
+    return (Decimal)(Value);
   }
 
   /// <summary>
@@ -144,9 +148,9 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
-  public double ToDouble(IFormatProvider? provider = null)
+  public Double ToDouble(IFormatProvider? provider = null)
   {
-    return (double)(value) / scale;
+    return (Double)(Value / 360);
   }
 
   /// <summary>
@@ -156,7 +160,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
   public short ToInt16(IFormatProvider? provider = null)
   {
-    return (short)(value / scale);
+    return (short)(Value);
   }
 
   /// <summary>
@@ -166,7 +170,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
   public int ToInt32(IFormatProvider? provider = null)
   {
-    return (Int32)(value / scale);
+    return (Int32)(Value);
   }
 
   /// <summary>
@@ -176,7 +180,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
   public long ToInt64(IFormatProvider? provider = null)
   {
-    return (Int64)(value / scale);
+    return (Int64)(Value);
   }
 
   /// <summary>
@@ -186,7 +190,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
   public sbyte ToSByte(IFormatProvider? provider = null)
   {
-    return (SByte)(value / scale);
+    return (SByte)(Value);
   }
 
   /// <summary>
@@ -194,9 +198,9 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
-  public float ToSingle(IFormatProvider? provider = null)
+  public Single ToSingle(IFormatProvider? provider = null)
   {
-    return (float)((double)value / scale);
+    return (Single)(Value / 360);
   }
 
   /// <summary>
@@ -206,7 +210,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider = null)
   {
-    return ToDecimal().ToString(provider) + "°";
+    return Value.ToString(provider) + "°";
   }
 
   /// <summary>
@@ -216,7 +220,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
   public ushort ToUInt16(IFormatProvider? provider = null)
   {
-    return (ushort)(value / scale);
+    return (ushort)(Value);
   }
 
   /// <summary>
@@ -226,7 +230,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
   public uint ToUInt32(IFormatProvider? provider = null)
   {
-    return (uint)(value / scale);
+    return (uint)(Value);
   }
 
   /// <summary>
@@ -236,7 +240,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
   public ulong ToUInt64(IFormatProvider? provider = null)
   {
-    return (ulong)(value / scale);
+    return (ulong)(Value);
   }
 
   /// <summary>
@@ -249,33 +253,33 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   public object ToType(Type targetType, IFormatProvider? provider)
   {
     if (targetType == typeof(UInt16))
-      return (UInt16)(value / scale);
+      return (UInt16)(Value);
     if (targetType == typeof(Int32))
-      return (Int32)(value / scale);
+      return (Int32)(Value);
     if (targetType == typeof(UInt32))
-      return (UInt32)(value / scale);
+      return (UInt32)(Value);
     if (targetType == typeof(Int64))
-      return (Int64)(value / scale);
+      return (Int64)(Value);
     if (targetType == typeof(UInt64))
-      return (UInt64)(value / scale);
+      return (UInt64)(Value);
     if (targetType == typeof(Int16))
-      return (Int16)(value / scale);
+      return (Int16)(Value);
     if (targetType == typeof(Byte))
-      return (byte)(value / scale);
+      return (byte)(Value);
     if (targetType == typeof(SByte))
-      return (sbyte)(value / scale);
+      return (sbyte)(Value);
+    if (targetType == typeof(Decimal))
+      return (Decimal)((Decimal)Value); 
     if (targetType == typeof(Single))
-      return (float)((double)value / scale);
+      return (Single)(Value / 360);
     if (targetType == typeof(Double))
-      return (double)((double)value / scale);
-    if (targetType == typeof(decimal))
-      return (decimal)((decimal)value / scale);
+      return (Double)(Value / 360);
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
     if (targetType == typeof(Degrees))
-      return new Degrees(value);
+      return new Degrees(Value);
 
-    return ((IConvertible)value).ToType(targetType, provider);
+    return ((IConvertible)Value).ToType(targetType, provider);
   }
 
   #endregion
@@ -290,6 +294,16 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   public static implicit operator Degrees(string val)
   {
     return new Degrees(val);
+  }
+
+  /// <summary>
+  /// Implicitly converts a <see cref="Degrees"/> value to a string representation.
+  /// </summary>
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A string representation of the <see cref="Degrees"/> value.</returns>
+  public static implicit operator string(Degrees val)
+  {
+    return val.ToString();
   }
 
   /// <summary>
@@ -344,20 +358,20 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Degrees"/> value to a decimal value.
+  /// Implicitly converts a <see cref="Degrees"/> value to a Decimal value.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A double representation of the Degrees value.</returns>
-  public static implicit operator decimal(Degrees val)
+  /// <returns>A Double representation of the Degrees value.</returns>
+  public static implicit operator Decimal(Degrees val)
   {
     return val.ToDecimal();
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Degrees"/> value to a double value.
+  /// Implicitly converts a <see cref="Degrees"/> value to a Double value.
   /// </summary>
   /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
-  /// <returns>A double representation of the Degrees value.</returns>
+  /// <returns>A Double representation of the Degrees value.</returns>
   public static implicit operator Double(Degrees val)
   {
     return val.ToDouble();
@@ -378,7 +392,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// </summary>
   /// <param name="val">The 32-bit unsigned integer to convert.</param>
   /// <returns>A <see cref="Degrees"/>Degrees instance.</returns>
-  public static implicit operator Degrees(double val)
+  public static implicit operator Degrees(Double val)
   {
     return new Degrees(val);
   }
@@ -444,7 +458,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>The string representation of the value with a "°" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return ToDecimal().ToString(CultureInfo.InvariantCulture) + "°";
+    return ToString(System.Globalization.CultureInfo.InvariantCulture, "°");
   }
 
   /// <summary>
@@ -518,7 +532,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(Degrees other)
   {
-    return value == other.value;
+    return Value == other.Value;
   }
 
   /// <summary>
@@ -533,7 +547,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// </returns>
   public int CompareTo(Degrees other)
   {
-    return value.CompareTo(other.value);
+    return Value.CompareTo(other.Value);
   }
 
   /// <summary>
@@ -547,27 +561,27 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (other is Degrees Degrees)
       return CompareTo(Degrees);
     if (other is Int32 int32value)
-      return this.CompareTo(new Degrees(int32value));
+      return this.Value.CompareTo(int32value);
     if (other is UInt32 uint32value)
-      return this.CompareTo(new Degrees(uint32value));
+      return this.Value.CompareTo(uint32value);
     if (other is Int64 int64value)
-      return this.CompareTo(new Degrees(int64value));
+      return this.Value.CompareTo(int64value);
     if (other is UInt64 uint64value)
-      return this.CompareTo(new Degrees(uint64value));
+      return this.Value.CompareTo((long)(uint64value));
     if (other is Int16 int16value)
-      return this.CompareTo(new Degrees(int16value));
+      return this.Value.CompareTo(int16value);
     if (other is UInt16 uint16value)
-      return this.CompareTo(new Degrees(uint16value));
+      return this.Value.CompareTo(uint16value);
     if (other is SByte sByteValue)
-      return this.CompareTo(new Degrees(sByteValue));
+      return this.Value.CompareTo(sByteValue);
     if (other is Byte byteValue)
-      return this.CompareTo(new Degrees(byteValue));
+      return this.Value.CompareTo(byteValue);
+    if (other is Decimal decimalValue)
+      return this.Value.CompareTo(decimalValue);
     if (other is Single singleValue)
-      return this.CompareTo(new Degrees(singleValue));
-    if (other is decimal decimalValue)
-      return this.CompareTo(new Degrees(decimalValue));
+      return this.Value.CompareTo(singleValue / 360);
     if (other is double doubleValue)
-      return this.CompareTo(new Degrees(doubleValue));
+      return this.Value.CompareTo(doubleValue / 360);
     if (other is String str)
       return this.CompareTo(Degrees.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");
@@ -579,6 +593,6 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return value.GetHashCode();
+    return ((double)this).GetHashCode();
   }
 }

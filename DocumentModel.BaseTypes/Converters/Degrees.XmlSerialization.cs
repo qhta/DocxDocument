@@ -43,7 +43,7 @@ public partial struct Degrees : IXmlSerializable
         // Parse the Degrees string to double
         var decimalValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
         // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = (int)(decimalValue * Degrees.scale);
+        System.Runtime.CompilerServices.Unsafe.AsRef(in Value) = (decimalValue);
       }
 
       reader.Read(); // Move past text

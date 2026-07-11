@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a percentage value stored as a decimal value to preserve precision.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-/// Conversion to/from double and single precision floating-point types means scaling by 100 to support fractional percentages.
+/// Conversion to/from double and single precision floating-point types involves scaling by 100 to support fractional percentages.
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(PercentageJsonConverter))]
@@ -572,9 +572,9 @@ public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>
     if (other is Decimal decimalValue)
       return this.Value.CompareTo(decimalValue);
     if (other is Single singleValue)
-      return this.Value.CompareTo(singleValue / 100.0f);
+      return this.Value.CompareTo(singleValue / 100);
     if (other is double doubleValue)
-      return this.Value.CompareTo(doubleValue / 100.0);
+      return this.Value.CompareTo(doubleValue / 100);
     if (other is String str)
       return this.CompareTo(Percentage.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");

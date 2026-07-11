@@ -53,7 +53,7 @@ public static class PercentageTest
     pct1 = new Percentage("50%");
     double dbl = (double)pct1;
     ok = dbl == 0.5;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to double: {pct1} {TestHelper.EqualitySymbol(ok)} {dbl}");
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Percentage to double: {pct1} -> {dbl}");
     if (!ok) return false;
 
     // Test double to Percentage conversion
@@ -109,17 +109,17 @@ public static class PercentageTest
     // Test comparison 1
     pct1 = new Percentage("50%");
     pct2 = new Percentage(0.5);
-    ok = pct1.CompareTo(pct2) == 0;
-    string comparisonMessage = ok ? "is equal to" : "is not equal to";
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 1 test: \"{pct1}\" {comparisonMessage} \"{pct2}\" ");
+    var cmp = pct1.CompareTo(pct2);
+    ok = cmp == 0;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 1 test: \"{pct1}\" {TestHelper.CompareMessage(cmp)} \"{pct2}\" ");
     if (!ok) return false;
 
     // Test comparison 2
     pct1 = new Percentage("51%");
     pct2 = new Percentage(0.50);
-    ok = pct1.CompareTo(pct2) == 1;
-    comparisonMessage = ok ? "is greater than" : "is not greater than";
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 2 test: \"{pct1}\" {comparisonMessage} \"{pct2}\" ");
+    cmp = pct1.CompareTo(pct2);
+    ok = cmp == 1;
+    Console.WriteLine($"{TestHelper.OkMarker(ok)} Comparison 2 test: \"{pct1}\" {TestHelper.CompareMessage(cmp)} \"{pct2}\" ");
     if (!ok) return false;
 
     Console.WriteLine();
