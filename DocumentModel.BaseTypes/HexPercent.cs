@@ -165,7 +165,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   /// <returns>A new Percentage instance with the converted value.</returns>
   public static implicit operator Percentage(HexPercent val)
   {
-    return new Percentage(val.Value * 100.0 / 255.0);
+    return new Percentage(val.Value / 255.0);
   }
 
   /// <summary>
@@ -175,7 +175,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   /// <returns>A new HexPercent instance with the converted value.</returns>
   public static implicit operator HexPercent(Percentage val)
   {
-    return new HexPercent((byte)(val.AsDouble() * 255.0 / 100.0));
+    return new HexPercent((byte)(val.AsDouble() * 255.0 ));
   }
   #endregion
 
@@ -348,13 +348,13 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   public int AsInteger() => (int)Math.Round((Value / 255.0m) * 100);
 
   /// <summary>
-  /// Gets the percentage value as a decimal in the range of 0 to 100, rounded to the nearest whole number.
+  /// Gets the percentage value as a decimal in the range of 0 to 100, with optional fractional part.
   /// </summary>
   /// <returns>The decimal representation of the percentage value.</returns>
   public decimal AsDecimal() => ((Value / 255.0m) * 100);
 
   /// <summary>
-  /// Gets the factor in decimal form represented by this instance (e.g., 0.5 for 50%).
+  /// Gets the factor as double-precision value in the range from 0.0 to 1.0
   /// </summary>
   /// <returns>The double representation of the percentage value as a factor.</returns>
   public double AsDouble() => Value / 255.0;

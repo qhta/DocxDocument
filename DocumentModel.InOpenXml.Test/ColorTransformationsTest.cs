@@ -7,7 +7,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive tests for all DocumentModel types implementing IColor.
 /// </summary>
-public class ColorTransformationsTest : _AbstractTestClass
+public class ColorTransformationsTest : BaseThemeTest
 {
   /// <summary>
   /// Runs all IColor implementation tests.
@@ -70,24 +70,42 @@ public class ColorTransformationsTest : _AbstractTestClass
     typeof(DocumentModel.Drawings.RgbColorModelPercentage),
     typeof(DocumentModel.Drawings.HslColor),
     typeof(DocumentModel.Wordprocessing.WordColor),
-    typeof(DocumentModel.Wordprocessing.RgbColor),
+    typeof(DocumentModel.Wordprocessing.RgbColorHex),
+    typeof(DocumentModel.Wordprocessing.SchemeColor),
   };
 
 
   private bool TestColorModelsConversion()
   {
     Console.WriteLine("--- TestColorModelsConversion ---");
+    var document = CreateDocumentWithInitializedThemePart();
+    var theme = document.Theme!;
+    var xmlString = SerializeObjectToXml(theme);
+    Console.WriteLine($"\nSerialized XML (theme):\n{xmlString}");
+    var deserializedTheme = DeserializeObjectFromXml(typeof(Theme), xmlString);
+    if (deserializedTheme == null)
+    {
+      Console.WriteLine($"✗ Xml theme deserialization returned null for '{theme.GetType().Name}'");
+      return false;
+    }
+    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, "testTheme", "deserialized", out var message))
+    {
+      Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
+      return false;
+    }
 
     foreach (var baseType in typesToConvert)
     {
       IColor baseColor = CreateSampleColor(baseType);
 
-      var xmlString = SerializeObjectToXml(baseColor);
+      xmlString = SerializeObjectToXml(baseColor);
       Console.WriteLine($"\nBase color model ({baseType.Name}):\n{xmlString}");
 
       foreach (var otherType in typesToConvert)
       {
         IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
+        if (baseColor is DMW.SchemeColor)
+          Debug.Assert(true);
         otherColor.ARGB = baseColor.ARGB;
         if (otherColor is ITintableColor tintableOther && baseColor is ITintableColor tintableBase)
         {
@@ -97,7 +115,7 @@ public class ColorTransformationsTest : _AbstractTestClass
         xmlString = SerializeObjectToXml(otherColor);
         Console.WriteLine($"\n  Color model conversion ({baseType.Name} -> {otherType.Name}):\n{xmlString}");
 
-        if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out var message))
+        if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out message))
         {
           Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
           return false;
@@ -274,7 +292,7 @@ public class ColorTransformationsTest : _AbstractTestClass
   private bool TestEdgeCases()
   {
     Console.WriteLine("--- Edge Cases ---");
-    var jsonOptions = CreateJsonOptions();
+    var jsonOptions = JsonConfig.Options;
     var document = CreateDocumentWithInitializedThemePart();
     foreach (var type in typesToConvert)
     {
@@ -386,8 +404,8 @@ public class ColorTransformationsTest : _AbstractTestClass
         Tint = new HexPercent("20%"),
         //Shade = new HexPercent("20%"),
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.RgbColor))
-      return new DocumentModel.Wordprocessing.RgbColor
+    if (colorType == typeof(DocumentModel.Wordprocessing.RgbColorHex))
+      return new DocumentModel.Wordprocessing.RgbColorHex
       {
         Value = (HexColor)0x336699,
         Tint = new HexPercent("20%"),
@@ -396,83 +414,12 @@ public class ColorTransformationsTest : _AbstractTestClass
     if (colorType == typeof(DocumentModel.Wordprocessing.SchemeColor))
       return new DocumentModel.Wordprocessing.SchemeColor
       {
-        Index = DMD.SchemeColors.Accent3,
+        Index = DMD.SchemeColors.Dark2,
+        LastColor = (HexColor)0x336699,
         Tint = new Percentage("20%"),
        // Shade = new Percentage("40%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
-  }
-
-  /// <summary>
-  /// Creates a document context initialized with a theme and color scheme.
-  /// </summary>
-  /// <returns>Document context for color tests.</returns>
-  private DocumentModel.Wordprocessing.Document CreateDocumentWithInitializedThemePart()
-  {
-    var document = new DocumentModel.Wordprocessing.Document();
-    document.Theme = CreateThemeWithColorScheme();
-    return document;
-  }
-
-  /// <summary>
-  /// Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
-  /// </summary>
-  /// <param name="color">Color instance to attach.</param>
-  /// <param name="document">Document context containing initialized theme data.</param>
-  private void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
-  {
-    if (color is ModelElement modelElement)
-      modelElement.Parent = document;
-  }
-
-  /// <summary>
-  /// Initializes the document theme part with a basic color scheme.
-  /// </summary>
-  private Theme CreateThemeWithColorScheme()
-  {
-
-    var theme = new Theme
-    {
-      Name = "Office Theme",
-      ThemeElements = new ThemeElements()
-    };
-
-    var colorScheme = new ColorScheme
-    {
-      Name = "Office",
-    };
-    theme.ThemeElements.ColorScheme = colorScheme;
-
-    colorScheme.Dark1Color = new SystemColor { Index = SystemColors.WindowText, LastColor = (HexColor)0x000000 };
-    colorScheme.Light1Color = new SystemColor { Index = SystemColors.Window, LastColor = (HexColor)0xFFFFFF };
-    colorScheme.Dark2Color = new RgbColorModelHex { Value = (HexColor)0x0E2841 };
-    colorScheme.Light2Color = new RgbColorModelHex { Value = (HexColor)0xE8E8E8 };
-    colorScheme.Accent1Color = new RgbColorModelHex { Value = (HexColor)0x156082 };
-    colorScheme.Accent2Color = new RgbColorModelHex { Value = (HexColor)0xE97132 };
-    colorScheme.Accent3Color = new RgbColorModelHex { Value = (HexColor)0xE97132 };
-    colorScheme.Accent4Color = new RgbColorModelHex { Value = (HexColor)0x0F9ED5 };
-    colorScheme.Accent5Color = new RgbColorModelHex { Value = (HexColor)0xA02B93 };
-    colorScheme.Accent6Color = new RgbColorModelHex { Value = (HexColor)0x4EA72E };
-    colorScheme.Hyperlink = new RgbColorModelHex { Value = (HexColor)0x0467886 };
-    colorScheme.FollowedHyperlink = new RgbColorModelHex { Value = (HexColor)0x96607D };
-
-    theme.ThemeElements.FontScheme = new FontScheme
-    {
-      Name = "Office",
-      MajorFont = new MajorFont
-      {
-        LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
-        EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
-        ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
-      },
-      MinorFont = new MinorFont()
-      {
-        LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
-        EastAsianFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0x80 },
-        ComplexScriptFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xB1 },
-      }
-    };
-    return theme;
   }
 
   private JsonSerializerOptions CreateJsonOptions()

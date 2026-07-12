@@ -5520,13 +5520,13 @@
         </member>
         <member name="M:DocumentModel.HexPercent.AsDecimal">
             <summary>
-            Gets the percentage value as a decimal in the range of 0 to 100, rounded to the nearest whole number.
+            Gets the percentage value as a decimal in the range of 0 to 100, with optional fractional part.
             </summary>
             <returns>The decimal representation of the percentage value.</returns>
         </member>
         <member name="M:DocumentModel.HexPercent.AsDouble">
             <summary>
-            Gets the factor in decimal form represented by this instance (e.g., 0.5 for 50%).
+            Gets the factor as double-precision value in the range from 0.0 to 1.0
             </summary>
             <returns>The double representation of the percentage value as a factor.</returns>
         </member>

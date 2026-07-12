@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Provides XML serialization support for the <see cref = "RgbColor"/> structure.
+/// Provides XML serialization support for the <see cref = "RgbColorHex"/> structure.
 /// </summary>
-public partial class RgbColor : IXmlSerializable
+public partial class RgbColorHex : IXmlSerializable
 {
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.

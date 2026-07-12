@@ -10,8 +10,8 @@ public partial class SolidColorFillProperties : ModelElement<DXO10W.SolidColorFi
  /// <summary>
  ///   RgbColorModelHex.
  /// </summary>
- public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
- private RgbColor? _RgbColor;
+ public RgbColorHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ private RgbColorHex? _RgbColor;
 
  /// <summary>
  ///   SchemeColor.

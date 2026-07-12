@@ -526,6 +526,29 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.BaseThemeTest">
+            <summary>
+            Creates a base class for theme-related tests, providing utility methods for setting up document contexts with initialized themes and color schemes. This class serves as a foundation for testing theme and color functionality in Wordprocessing documents, ensuring that color instances can be properly attached to document contexts for accurate testing of ParentDocument-dependent behavior.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseThemeTest.AttachToDocumentContext(System.Object,DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
+            </summary>
+            <param name="color">Color instance to attach.</param>
+            <param name="document">Document context containing initialized theme data.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseThemeTest.CreateDocumentWithInitializedThemePart">
+            <summary>
+            Creates a document context initialized with a theme and color scheme.
+            </summary>
+            <returns>Document context for color tests.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseThemeTest.CreateThemeWithColorScheme">
+            <summary>
+            Initializes the document theme part with a basic color scheme.
+            </summary>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.BodyReadTest">
             <summary>
             Tests reading document body from a sample file and serializing created DocumentModel elements.
@@ -680,24 +703,6 @@
             <param name="colorType">The concrete color implementation type.</param>
             <returns>A populated color instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.CreateDocumentWithInitializedThemePart">
-            <summary>
-            Creates a document context initialized with a theme and color scheme.
-            </summary>
-            <returns>Document context for color tests.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.AttachToDocumentContext(System.Object,DocumentModel.Wordprocessing.Document)">
-            <summary>
-            Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
-            </summary>
-            <param name="color">Color instance to attach.</param>
-            <param name="document">Document context containing initialized theme data.</param>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.CreateThemeWithColorScheme">
-            <summary>
-            Initializes the document theme part with a basic color scheme.
-            </summary>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.StoreThemeInDocument">
             <summary>
             Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
@@ -768,24 +773,6 @@
             </summary>
             <param name="colorType">The concrete color implementation type.</param>
             <returns>A populated color instance.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateDocumentWithInitializedThemePart">
-            <summary>
-            Creates a document context initialized with a theme and color scheme.
-            </summary>
-            <returns>Document context for color tests.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.AttachToDocumentContext(System.Object,DocumentModel.Wordprocessing.Document)">
-            <summary>
-            Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
-            </summary>
-            <param name="color">Color instance to attach.</param>
-            <param name="document">Document context containing initialized theme data.</param>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateThemeWithColorScheme">
-            <summary>
-            Initializes the document theme part with a basic color scheme.
-            </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.StoreThemeInDocument">
             <summary>

@@ -17,7 +17,7 @@ public partial class SchemeColor : IColor
       if (this.Index is null)
         return (uint)PresetColors.Auto;
       var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
-      return (ColorScheme as ISchemeBaseColor)?.ARGB ?? (uint)PresetColors.Auto;
+      return (ColorScheme as IColor)?.ARGB ?? (uint)PresetColors.Auto;
     }
 
     set => _RGB = value;

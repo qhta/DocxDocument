@@ -40,6 +40,12 @@ public partial class SchemeColor : AnyColor<DXO10W.SchemeColor>
   private DMD.SchemeColors? _index;
 
   /// <summary>
+  /// Gets or sets the last known RGB color value for the scheme color.
+  /// </summary>
+  public HexColor? LastColor { get => _LastColor; set => UpdateField(ref _LastColor, value, nameof(LastColor)); }
+  private HexColor? _LastColor;
+
+  /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
   /// <remarks>

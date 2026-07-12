@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class RgbColor : IColor
+public partial class RgbColorHex : IColor, ITintableColor
 {
   /// <summary>
   /// Value of the cAolor as RGB uint.
@@ -161,4 +161,9 @@ public partial class RgbColor : IColor
       throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
     }
   }
+
+  double? ITintableColor.Tint { get => this.Tint; set => this.Tint = value; }
+
+  double? ITintableColor.Shade { get => this.Shade; set => this.Shade = value; }
+
 }
