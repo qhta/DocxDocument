@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.OpenXmlElement
 {
+
   /// <summary>
   /// Collection of color transformation operations that can be applied to the base color.
   /// </summary>

@@ -72,6 +72,7 @@
     <Compile Include="Drawings\Colors\PresetColor.Imp.cs" />
     <Compile Include="Drawings\Colors\ColorType.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelHex.Imp.cs" />
+    <Compile Include="Colors\EffectiveColor.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelPercentage.Imp.cs" />
     <Compile Include="Drawings\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Drawings\Colors\SystemColor.Imp.cs" />

@@ -660,35 +660,23 @@
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestTypeDiscovery">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestTransformationTypeDiscovery">
             <summary>
             Verifies that all known IColor implementations are discovered.
             </summary>
             <returns>True if discovery is correct; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestXmlSerialization">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestColorModelsConversion">
             <summary>
-            Tests XML serialization and deserialization for all IColor implementations.
+            Tests conversion between all IColor implementations by serializing and deserializing each type to XML and comparing the results.
             </summary>
-            <returns>True if all XML tests pass; otherwise, false.</returns>
+            <returns>True if all conversions pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestJsonSerialization">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestColorTransformations">
             <summary>
-            Tests JSON serialization and deserialization for all IColor implementations.
+            Tests the GetEffectiveColor method for all ITransformableColor implementations by creating sample colors, applying transformations, and verifying the effective color matches expectations.
             </summary>
-            <returns>True if all JSON tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestColorAccessors">
-            <summary>
-            Tests common IColor accessors for all implementations.
-            </summary>
-            <returns>True if all accessor tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestEdgeCases">
-            <summary>
-            Tests edge cases using empty instances for all IColor implementations.
-            </summary>
-            <returns>True if all edge case tests pass; otherwise, false.</returns>
+            <returns>True if all tests pass; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.GetIColorTransformationTypes">
             <summary>
@@ -703,23 +691,6 @@
             <param name="colorType">The concrete color implementation type.</param>
             <returns>A populated color instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.StoreThemeInDocument">
-            <summary>
-            Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
-            </summary>
-            <returns></returns>
-            <exception cref="T:System.InvalidOperationException"></exception>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.ChangeColorsInDocument(System.String)">
-            <summary>
-            Changes colors of two specific run texts in the specified document.
-            First copies the document to a temporary file to avoid modifying the original.
-            Temporary file has a name like "Colors test updated.docx" in the same directory as the original.
-            Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
-            </summary>
-            <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
-            <returns>True if both target runs were found and updated; otherwise, false.</returns>
-        </member>
         <member name="T:DocumentModel.InOpenXml.Test.ColorTypesTest">
             <summary>
             Comprehensive tests for all DocumentModel types implementing IColor.
@@ -731,7 +702,7 @@
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestTypeDiscovery">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestColorTypeDiscovery">
             <summary>
             Verifies that all known IColor implementations are discovered.
             </summary>

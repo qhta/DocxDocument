@@ -1,19 +1,20 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class RgbColorHex : IColor, ITintableColor
+public partial class RgbColorHex: IColor, ITransformableColor
 {
   /// <summary>
   /// Value of the cAolor as RGB uint.
   /// </summary>
   [NotMapped]
   [XmlIgnore]
-  [JsonIgnore]  
+  [JsonIgnore]
   public UInt32 ARGB
   {
     get
     {
       var hexColor = this.Value;
       if (hexColor is not null) return ((UInt32)hexColor) ^ 0xFF000000;
+
       return (uint)PresetColors.Auto;
     }
     set => this.Value = (value ^ 0xFF000000);
@@ -36,7 +37,7 @@ public partial class RgbColorHex : IColor, ITintableColor
       var red = (UInt32)System.Math.Round((double)value * 255.0);
       this.ARGB = (UInt32)(this.ARGB) & 0x00FFFF | (red << 16);
     }
-  }   
+  }
 
   /// <summary>
   /// Green component of the color as percentage value.
@@ -76,6 +77,7 @@ public partial class RgbColorHex : IColor, ITintableColor
       this.ARGB = (UInt32)(this.ARGB) & 0xFFFF00 | blue;
     }
   }
+
   /// <summary>
   /// Alpha component of the color as percentage value.
   /// The value is between 0 and 1, where 0 represents no Alpha and 1 represents full Alpha (255 in RGB).
@@ -144,26 +146,47 @@ public partial class RgbColorHex : IColor, ITintableColor
   {
     get
     {
-      var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
+      var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
+        .FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
       return presetColorField?.Name;
     }
-
     set
     {
       if (value is null)
         return;
+
       if (Enum.TryParse<PresetColors>(value, out var presetColor))
       {
         this.ARGB = (UInt32)presetColor ^ 0xFF000000;
         return;
       }
 
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
+      throw new ArgumentException(
+        $"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
     }
   }
 
-  double? ITintableColor.Tint { get => this.Tint; set => this.Tint = value; }
+  double? ITransformableColor.Tint { get => this.Tint; set => this.Tint = value; }
 
-  double? ITintableColor.Shade { get => this.Shade; set => this.Shade = value; }
+  double? ITransformableColor.Shade { get => this.Shade; set => this.Shade = value; }
 
+  IColor ITransformableColor.GetEffectiveColor()
+  {
+    IColor result = this;
+    if (Tint is not null)
+      result = new DMD.Tint { Value = Tint.Value }.Transform(result);
+    if (Shade is not null)
+      result = new DMD.Shade { Value = Shade.Value }.Transform(result);
+    return result;
+  }
+
+  IEnumerable<IColorTransformation> ITransformableColor.GetTransformations()
+  {
+    var transformations = new List<IColorTransformation>();
+    if (Tint is not null)
+      transformations.Add(new DMD.Tint { Value = Tint.Value });
+    if (Shade is not null)
+      transformations.Add(new DMD.Shade { Value = Shade.Value });
+    return transformations;
+  }
 }

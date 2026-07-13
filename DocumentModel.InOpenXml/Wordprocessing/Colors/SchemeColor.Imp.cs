@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class SchemeColor : IColor, INamedColor, ITintableColor
+public partial class SchemeColor : IColor, INamedColor, ITransformableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -99,7 +99,7 @@ public partial class SchemeColor : IColor, INamedColor, ITintableColor
     }
   }
 
-  double? ITintableColor.Tint
+  double? ITransformableColor.Tint
   {
     get => this.Tint?.AsDouble();
     set
@@ -109,7 +109,7 @@ public partial class SchemeColor : IColor, INamedColor, ITintableColor
     }
   }
 
-  double? ITintableColor.Shade
+  double? ITransformableColor.Shade
   {
     get => this.Shade?.AsDouble();
     set
@@ -117,5 +117,25 @@ public partial class SchemeColor : IColor, INamedColor, ITintableColor
       if (value != null)
         this.Shade = value.Value;
     }
+  }
+
+  IColor ITransformableColor.GetEffectiveColor()
+  {
+    IColor result = this;
+    if (Tint is not null)
+      result = new DMD.Tint { Value = Tint.Value }.Transform(result);
+    if (Shade is not null)
+      result = new DMD.Shade { Value = Shade.Value }.Transform(result);
+    return result;
+  }
+
+  IEnumerable<IColorTransformation> ITransformableColor.GetTransformations()
+  {
+    var transformations = new List<IColorTransformation>();
+    if (Tint is not null)
+      transformations.Add(new DMD.Tint { Value = Tint.Value });
+    if (Shade is not null)
+      transformations.Add(new DMD.Shade { Value = Shade.Value });
+    return transformations;
   }
 }

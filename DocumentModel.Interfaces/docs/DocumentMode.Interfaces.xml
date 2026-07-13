@@ -114,6 +114,18 @@
             Hue, saturation, luminance, and alpha components of the color as a tuple of double values between 0 and 1.
             </summary>
         </member>
+        <member name="T:DocumentModel.IColorTransformation">
+            <summary>
+            Represents a color transformation that can be applied to a color.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.IColorTransformation.Transform(DocumentModel.IColor)">
+            <summary>
+            Transforms the specified source color according to the transformation defined by the implementation of this interface.
+            </summary>
+            <param name="sourceColor">The source color to be transformed.</param>
+            <returns>The transformed color.</returns>
+        </member>
         <member name="T:DocumentModel.INamedColor">
             <summary>
             Interface representing a color that can be specified by name.
@@ -125,20 +137,32 @@
             The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
             </summary>
         </member>
-        <member name="T:DocumentModel.ITintableColor">
+        <member name="T:DocumentModel.ITransformableColor">
             <summary>
-            Interface representing a color that can be tinted or shaded, providing properties to get or set the tint and shade values of the color.
+            Interface representing a color that can be transformed, providing properties to get or set the tint and shade values of the color.
             </summary>
         </member>
-        <member name="P:DocumentModel.ITintableColor.Tint">
+        <member name="P:DocumentModel.ITransformableColor.Tint">
             <summary>
             Gets or sets the tint value of the color. The tint is a double value that represents the amount of white or black added to the color.
             </summary>
         </member>
-        <member name="P:DocumentModel.ITintableColor.Shade">
+        <member name="P:DocumentModel.ITransformableColor.Shade">
             <summary>
             Gets or sets the shade value of the color. The shade is a double value that represents the amount of black added to the color.
             </summary>
+        </member>
+        <member name="M:DocumentModel.ITransformableColor.GetEffectiveColor">
+            <summary>
+            Evaluates and returns the effective color after applying color transformations to the original color.
+            </summary>
+            <returns>The effective color after transformations.</returns>
+        </member>
+        <member name="M:DocumentModel.ITransformableColor.GetTransformations">
+            <summary>
+            Returns a collection of transformations applied to the color.
+            </summary>
+            <returns>A collection of transformations.</returns>
         </member>
         <member name="T:DocumentModel.Properties.ICustomProperties">
             <summary>

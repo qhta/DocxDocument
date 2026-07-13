@@ -1,13 +1,4 @@
-﻿using System.Collections;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Reflection;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
-
-using Qhta.TypeUtils;
-
+﻿using Math = System.Math;
 namespace DocumentModel;
 
 /// <summary>
@@ -53,6 +44,30 @@ public static class TestHelper
   }
 
   /// <summary>
+  /// An equality comparer that compares double values with a tolerance for approximate equality.
+  /// </summary>
+  public class ApproxEqualityComparer: IEqualityComparer
+  {
+    /// <summary>
+    /// If both x and y are double, compares them with a tolerance of 1e-6. Otherwise, uses the default structural equality comparer.
+    /// </summary>
+    /// <param name="x">The first object to compare.</param>
+    /// <param name="y">The second object to compare.</param>
+    /// <returns>True if the objects are considered equal; otherwise, false.</returns>
+   bool IEqualityComparer.Equals(object? x, object? y)
+    {
+      if (x is double dbl1 && y is double dbl2)
+        return System.Math.Abs(dbl1 - dbl2) < 1e-6;
+      return StructuralComparisons.StructuralEqualityComparer.Equals(x, y);
+    }
+
+    public int GetHashCode(object obj)
+    {
+      throw new NotImplementedException();
+    }
+  }
+
+  /// <summary>
   /// Compares the public writable properties of two objects of the specified type for deep equality.
   /// </summary>
   /// <remarks>If the specified type represents a collection, the method compares the elements recursively in
@@ -74,7 +89,41 @@ public static class TestHelper
     if (obj1 == null && obj2 == null) return true;
     if (obj1 == null && obj2 != null) { message = $"{firstName} is null and {secondName} is {obj2}"; return false; }
     if (obj2 == null && obj1 != null) { message = $"{secondName} is null and {firstName} is {obj1}"; return false; }
+    if (comparedType == typeof(object))
+      comparedType = typeof(T);
     comparedType = comparedType.GetNotNullableType();
+    if (comparedType == typeof(Double))
+    {
+      double dbl1 = Convert.ToDouble(obj1);
+      double dbl2 = Convert.ToDouble(obj2);
+      result = System.Math.Abs(dbl1 - dbl2) < 1e-6;
+      if (!result)
+        message = $"Double values differ -> {firstName}={dbl1} vs {secondName}={dbl2}";
+      return result;
+    }
+    if (obj1 is IStructuralEquatable structuralObj1)
+    {
+      Debug.Assert(true);
+      result = structuralObj1.Equals(obj2, new ApproxEqualityComparer());
+      if (!result)
+        message = $"Structural values differ -> {firstName}={obj1} vs {secondName}={obj2}";
+      return result;
+    }
+    var equatableType = typeof(IEquatable<>).MakeGenericType(comparedType);
+    if (comparedType.Implements(equatableType))
+    {
+      var equalsMethod = equatableType.GetMethod("Equals", [comparedType]);
+      equalsMethod ??= comparedType.GetMethod("Equals", [comparedType]);
+      if (equalsMethod == null)
+        throw new InvalidOperationException(
+          $"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
+
+      result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
+      if (!result)
+        message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
+      return result;
+    }
+
     if (comparedType.IsEnum)
     {
       result = object.Equals(obj1, obj2);
@@ -107,7 +156,7 @@ public static class TestHelper
       else
       {
 
-        var equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
+        equatableType = typeof(IEquatable<>).MakeGenericType(property.PropertyType);
         if (equatableType.IsInstanceOfType(obj1Value))
         {
           var equalsMethod = equatableType.GetMethod("Equals", [property.PropertyType]);
@@ -182,25 +231,27 @@ public static class TestHelper
       (enumerator1 as IDisposable)?.Dispose();
       (enumerator2 as IDisposable)?.Dispose();
     }
-    else
-    {
-      var equatableType = typeof(IEquatable<>).MakeGenericType(comparedType);
-      if (comparedType.Implements(equatableType))
-      {
-        var equalsMethod = equatableType.GetMethod("Equals", [comparedType]);
-        equalsMethod ??= comparedType.GetMethod("Equals", [comparedType]);
-        if (equalsMethod == null)
-          throw new InvalidOperationException($"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
-        result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
-        if (!result)
-          message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
-        if (!result)
-          return false;
-      }
-    }
+    //else
+    //{
+    //  equatableType = typeof(IEquatable<>).MakeGenericType(comparedType);
+    //  if (comparedType.Implements(equatableType))
+    //  {
+    //    var equalsMethod = equatableType.GetMethod("Equals", [comparedType]);
+    //    equalsMethod ??= comparedType.GetMethod("Equals", [comparedType]);
+    //    if (equalsMethod == null)
+    //      throw new InvalidOperationException(
+    //        $"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
+
+    //    result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
+    //    if (!result)
+    //      message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
+    //    if (!result)
+    //      return false;
+    //  }
+    //}
 
     return result;
-  }
+    }
 
   /// <summary>
   /// Populates test data in the given instance.
@@ -239,7 +290,7 @@ public static class TestHelper
           else
             prop.SetValue(instance, val);
         }
-        else 
+        else
           prop.SetValue(instance, "Sample " + prop.Name + (index >= 0 ? $" {index + 1}" : ""));
       }
       else if (propType == typeof(bool))
@@ -314,7 +365,7 @@ public static class TestHelper
         var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
         if (maxValueAttr != null && val > (Decimal)maxValueAttr.MaxValue)
         {
-          val = System.Math.Min(val,(Decimal)maxValueAttr.MaxValue);
+          val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
         }
         prop.SetValue(instance, new Twips(val));
       }

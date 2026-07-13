@@ -16,8 +16,9 @@ public class Shade: PercentageTransformation<DXD.Shade>
   public override IColor Transform(IColor color)
   {
     var (h, s, l, a) = color.HSLAComponents;
-    l = l * Value;
-    l = Math.Clamp(l, 0, 1);
-    return new HslColor { Hue = h, Saturation = s, Luminance = l, Alpha = a };
+    l = l * Value.AsDouble();
+    l = l.Clamp01();
+    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) };
+    return result;
   }
 }

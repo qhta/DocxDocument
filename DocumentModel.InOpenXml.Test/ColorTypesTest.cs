@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 using DocumentModel.Drawings;
 
 using Path = System.IO.Path;
@@ -16,7 +18,7 @@ public class ColorTypesTest : BaseThemeTest
   public override bool Run()
   {
     Console.WriteLine("=== Color Implementations Test ===\n");
-    if (!TestTypeDiscovery()) return false;
+    if (!TestColorTypeDiscovery()) return false;
     if (!TestXmlSerialization()) return false;
     if (!TestJsonSerialization()) return false;
     if (!TestColorAccessors()) return false;
@@ -33,7 +35,7 @@ public class ColorTypesTest : BaseThemeTest
   /// Verifies that all known IColor implementations are discovered.
   /// </summary>
   /// <returns>True if discovery is correct; otherwise, false.</returns>
-  private bool TestTypeDiscovery()
+  private bool TestColorTypeDiscovery()
   {
     Console.WriteLine("--- Color Type Discovery ---");
     var discovered = GetIColorTypes();
@@ -62,6 +64,7 @@ public class ColorTypesTest : BaseThemeTest
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SchemeColorDef),
       typeof(DocumentModel.Drawings.SystemColor),
+      typeof(DocumentModel.EffectiveColor),
       typeof(DocumentModel.Vml.VmlColor),
       typeof(DocumentModel.Vml.RgbColor),
       typeof(DocumentModel.Wordprocessing.WordColor),
@@ -340,7 +343,7 @@ public class ColorTypesTest : BaseThemeTest
   {
     var assembly = typeof(DocumentModel.Drawings.ColorType).Assembly;
     var colorTypes = assembly.GetTypes()
-      .Where(t => !t.IsAbstract && t.GetInterfaces().Any(i => i.Name == "IColor"))
+      .Where(t => !t.IsAbstract && t.GetCustomAttribute<DataContractAttribute>()!=null && t.GetInterfaces().Any(i => i.Name == "IColor"))
       .OrderBy(item => item.FullName).ToList();
 
     return colorTypes;

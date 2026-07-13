@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Drawings;
 
-public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
+public abstract partial class DrawingsColorBase<T> : IColor, ITransformableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -21,7 +21,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   [JsonIgnore]
   public virtual double RedFactor
   {
-    get => ((this.ARGB >> 16) & 0xFF) / 255.0;
+    get => (((this.ARGB >> 16) & 0xFF) / 255.0).Clamp01();
     set
     {
       var red = (UInt32)System.Math.Round((double)value * 255.0);
@@ -40,7 +40,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   [JsonIgnore]
   public virtual double GreenFactor
   {
-    get => ((this.ARGB >> 8) & 0xFF) / 255.0;
+    get => (((this.ARGB >> 8) & 0xFF) / 255.0).Clamp01();
     set
     {
       var green = (UInt32)System.Math.Round((double)value * 255.0);
@@ -59,7 +59,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   [JsonIgnore]
   public virtual double BlueFactor
   {
-    get => (this.ARGB & 0xFF) / 255.0;
+    get => ((this.ARGB & 0xFF) / 255.0).Clamp01();
     set
     {
       var blue = (UInt32)System.Math.Round((double)value * 255.0);
@@ -78,13 +78,14 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   [JsonIgnore]
   public virtual double AlphaFactor
   {
-    get => ((this.ARGB >> 24) & 0xFF) / 255.0;
+    get => (((this.ARGB >> 24) & 0xFF) / 255.0).Clamp01();
     set
     {
       var alpha = (UInt32)System.Math.Round((double)value * 255.0);
       this.ARGB = (UInt32)(this.ARGB) & 0x00FFFFFF | (alpha << 24);
     }
   }
+
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.
   /// </summary>
@@ -158,7 +159,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   /// <summary>
   /// Gets or sets the tint of the color as a double value between 0 and 1.
   /// </summary>
-  double? ITintableColor.Tint
+  double? ITransformableColor.Tint
   {
     get => this.Tint?.AsDouble();
     set
@@ -171,7 +172,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
   /// <summary>
   /// Gets or sets the shade of the color as a double value between 0 and 1.
   /// </summary>
-  double? ITintableColor.Shade
+  double? ITransformableColor.Shade
   {
     get => this.Shade?.AsDouble();
     set
@@ -179,5 +180,28 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor
       if (value != null)
         this.Shade = value.Value;
     }
+  }
+
+  /// <summary>
+  /// Evaluates and returns the effective color after applying color transformations to the original color.
+  /// </summary>
+  /// <returns>The effective color after transformations.</returns>
+  public IColor GetEffectiveColor()
+  {
+    IColor result = this;
+    foreach (var colorTransformation in this.ColorTransformations)
+    {
+      result = colorTransformation.Transform(result);
+    }
+    return result;
+  }
+
+  /// <summary>
+  /// Returns a collection of transformations applied to the color.
+  /// </summary>
+  /// <returns>A collection of transformations.</returns>
+  public IEnumerable<IColorTransformation> GetTransformations()
+  {
+    return this.ColorTransformations;
   }
 }

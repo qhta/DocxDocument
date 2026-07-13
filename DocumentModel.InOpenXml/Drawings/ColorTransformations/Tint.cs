@@ -1,4 +1,7 @@
-﻿namespace DocumentModel.Drawings;
+﻿using DocumentModel.Drawings.Diagrams;
+
+namespace DocumentModel.Drawings;
+
 using Math = System.Math;
 
 /// <summary>
@@ -6,7 +9,7 @@ using Math = System.Math;
 /// </summary>
 [OpenXmlType(typeof(DXD.Tint))]
 [DataContract]
-public class Tint: PercentageTransformation<DXD.Tint>
+public class Tint : PercentageTransformation<DXD.Tint>
 {
   /// <summary>
   /// Transforms the given color by applying the tint transformation based on the specified value.
@@ -16,9 +19,10 @@ public class Tint: PercentageTransformation<DXD.Tint>
   public override IColor Transform(IColor color)
   {
     var (h, s, l, a) = color.HSLAComponents;
-    var tint = Value / 100.0;
-    l = l*tint + (1 - tint);
-    l = Math.Clamp(l, 0, 1);
-    return new HslColor { Hue = h, Saturation = s, Luminance = l, Alpha = a };
+    var tint = Value.AsDouble();
+    l = l * tint + (1 - tint);
+    l = l.Clamp01();
+    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) }; 
+    return result;
   }
 }

@@ -1,5 +1,6 @@
 namespace DocumentModel.Drawings;
 
+using Math = System.Math;
 public partial class HslColor : IColor
 {
   /// <summary>
@@ -12,9 +13,9 @@ public partial class HslColor : IColor
   {
     get
     {
-      var h = NormalizeHue(Hue);
-      var s = Clamp01(Saturation);
-      var l = Clamp01(Luminance);
+      var h = Hue.NormalizeHue();
+      var s = Saturation.Clamp01();
+      var l = Luminance.Clamp01();
       var c = (1.0 - System.Math.Abs(2.0 * l - 1.0)) * s;
       var x = c * (1.0 - System.Math.Abs((h / 60.0) % 2.0 - 1.0));
       var m = l - c / 2.0;
@@ -54,18 +55,11 @@ public partial class HslColor : IColor
         h = 60.0 * (((b - r) / delta) + 2.0);
       else
         h = 60.0 * (((r - g) / delta) + 4.0);
-      h = NormalizeHue(h);
-      Hue = h;
-      Saturation = Clamp01(s);
-      Luminance = Clamp01(l);
-      Alpha = Clamp01(a);
+      Hue = h.NormalizeHue();
+      Saturation = s.Clamp01();
+      Luminance = l.Clamp01();
+      Alpha = a.Clamp01();
     }
-  }
-  private static double Clamp01(double value) => value < 0.0 ? 0.0 : value > 1.0 ? 1.0 : value;
-  private static double NormalizeHue(double hue)
-  {
-    hue %= 360.0;
-    return hue < 0.0 ? hue + 360.0 : hue;
   }
 
   /// <summary>
@@ -76,11 +70,18 @@ public partial class HslColor : IColor
   [JsonIgnore]
   public override (double R, double G, double B, double A) RGBAComponents
   {
-    get { var (r, g, b) = Hsl2Rgb.FromHSL(Hue / 360.0, Saturation , Luminance ); return (r, g, b, Alpha); }
+    get
+    {
+      (double R, double G, double B) rgb = Hsl2Rgb.FromHSL((Hue / 360.0).Clamp01(), Saturation.Clamp01(), Luminance.Clamp01()); 
+      rgb.R = rgb.R.Clamp01();
+      rgb.G = rgb.G.Clamp01();
+      rgb.B = rgb.B.Clamp01();
+      return (rgb.R, rgb.G, rgb.B, Alpha);
+    }
     set
     {
       var (h, s, l) = Hsl2Rgb.ToHSL(value.R, value.G, value.B);
-      this.Hue = h * 360.0;
+      this.Hue = (h * 360.0).NormalizeHue();
       this.Saturation = s;
       this.Luminance = l;
       this.Alpha = value.A;

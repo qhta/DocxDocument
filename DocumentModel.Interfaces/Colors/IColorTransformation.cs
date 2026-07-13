@@ -1,7 +1,7 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a color transformation that can be applied to a color in the context of Office Open XML DrawingML.
+/// Represents a color transformation that can be applied to a color.
 /// </summary>
 public interface IColorTransformation
 {

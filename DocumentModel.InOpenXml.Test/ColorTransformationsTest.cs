@@ -16,14 +16,10 @@ public class ColorTransformationsTest : BaseThemeTest
   public override bool Run()
   {
     Console.WriteLine("=== Color Transformations Test ===\n");
-    if (!TestTypeDiscovery()) return false;
+    if (!TestTransformationTypeDiscovery()) return false;
     if (!TestColorModelsConversion()) return false;
-    //if (!TestXmlSerialization()) return false;
-    //if (!TestJsonSerialization()) return false;
-    //if (!TestColorAccessors()) return false;
-    //if (!TestEdgeCases()) return false;
-    //if (!StoreThemeInDocument()) return false;
-    //if (!ChangeColorsInDocument()) return false;
+    if (!TestColorTransformations()) return false;
+    
 
     Console.WriteLine("All Color transformation tests passed.\n");
     return true;
@@ -33,7 +29,7 @@ public class ColorTransformationsTest : BaseThemeTest
   /// Verifies that all known IColor implementations are discovered.
   /// </summary>
   /// <returns>True if discovery is correct; otherwise, false.</returns>
-  private bool TestTypeDiscovery()
+  private bool TestTransformationTypeDiscovery()
   {
     Console.WriteLine("--- ColorTransformations Type Discovery ---");
     var discovered = GetIColorTransformationTypes();
@@ -74,7 +70,10 @@ public class ColorTransformationsTest : BaseThemeTest
     typeof(DocumentModel.Wordprocessing.SchemeColor),
   };
 
-
+  /// <summary>
+  /// Tests conversion between all IColor implementations by serializing and deserializing each type to XML and comparing the results.
+  /// </summary>
+  /// <returns>True if all conversions pass; otherwise, false.</returns>
   private bool TestColorModelsConversion()
   {
     Console.WriteLine("--- TestColorModelsConversion ---");
@@ -111,7 +110,7 @@ public class ColorTransformationsTest : BaseThemeTest
         {
           namedOther.Name = namedBase.Name;
         }
-        if (otherColor is ITintableColor tintableOther && baseColor is ITintableColor tintableBase)
+        if (otherColor is ITransformableColor tintableOther && baseColor is ITransformableColor tintableBase)
         {
           tintableOther.Tint = tintableBase.Tint;
           tintableOther.Shade = tintableBase.Shade;
@@ -131,8 +130,8 @@ public class ColorTransformationsTest : BaseThemeTest
             return false;
           }
 
-        if (otherColor is ITintableColor && baseColor is ITintableColor)
-          if (!TestHelper.CompareTestData(typeof(ITintableColor), baseColor, otherColor, "testColor", "otherColor", out message))
+        if (otherColor is ITransformableColor && baseColor is ITransformableColor)
+          if (!TestHelper.CompareTestData(typeof(ITransformableColor), baseColor, otherColor, "testColor", "otherColor", out message))
           {
             Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
             return false;
@@ -147,194 +146,78 @@ public class ColorTransformationsTest : BaseThemeTest
   }
 
   /// <summary>
-  /// Tests XML serialization and deserialization for all IColor implementations.
+  /// Tests the GetEffectiveColor method for all ITransformableColor implementations by creating sample colors, applying transformations, and verifying the effective color matches expectations.
   /// </summary>
-  /// <returns>True if all XML tests pass; otherwise, false.</returns>
-  private bool TestXmlSerialization()
+  /// <returns>True if all tests pass; otherwise, false.</returns>
+  private bool TestColorTransformations()
   {
-    Console.WriteLine("--- Theme/Color XML Serialization ---");
+    Console.WriteLine("--- TestColorTransformations ---");
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
-    var xmlString = SerializeObjectToXml(theme);
-    Console.WriteLine($"\nSerialized XML (theme):\n{xmlString}");
-    var deserializedTheme = DeserializeObjectFromXml(typeof(Theme), xmlString);
-    if (deserializedTheme == null)
-    {
-      Console.WriteLine($"✗ Xml theme deserialization returned null for '{theme.GetType().Name}'");
-      return false;
-    }
-    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, "testTheme", "deserialized", out var message))
-    {
-      Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
-      return false;
-    }
+#pragma warning disable IDE0018 // Inline variable declaration
+    string? message;
 
     foreach (var type in typesToConvert)
     {
-      var color = CreateSampleColor(type);
-      AttachToDocumentContext(color, document);
-      xmlString = SerializeObjectToXml(color);
-      Console.WriteLine($"\nSerialized XML ({type.Name}):\n{xmlString}");
+      var baseColor = CreateSampleColor(type);
+      AttachToDocumentContext(baseColor, document);
+      var xmlString = SerializeObjectToXml(baseColor);
+      Console.WriteLine($"\nBaseColor ({type.Name}):\n{xmlString}");
+      var previousRGBA = baseColor.RGBAComponents;
+      var previousHSLA = baseColor.HSLAComponents;
+      Console.WriteLine($"   Base R: {previousRGBA.R}, G: {previousRGBA.G}, B: {previousRGBA.B}, A: {previousRGBA.A}");
+      Console.WriteLine($"   Base H: {previousHSLA.H}, S: {previousHSLA.S}, L: {previousHSLA.L}, A: {previousHSLA.A}");
 
-      var deserialized = DeserializeObjectFromXml(color.GetType(), xmlString);
-      if (deserialized == null)
+
+      if (baseColor is ITransformableColor transformableColor)
       {
-        Console.WriteLine($"✗ Theme/Color XML Deserialization returned null for '{type.Name}'");
-        return false;
-      }
-      AttachToDocumentContext(deserialized, document);
-
-      if (!TestHelper.CompareTestData(type, color, deserialized, "testColor", "deserialized", out message))
-      {
-        Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-    }
-
-    Console.WriteLine("✓ Theme/Color XML serialization tests passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests JSON serialization and deserialization for all IColor implementations.
-  /// </summary>
-  /// <returns>True if all JSON tests pass; otherwise, false.</returns>
-  private bool TestJsonSerialization()
-  {
-    Console.WriteLine("--- Theme/Color Json Serialization ---");
-    var document = CreateDocumentWithInitializedThemePart();
-    var theme = document.Theme!;
-    var JsonString = SerializeToJson(theme);
-    Console.WriteLine($"\nSerialized Json (theme):\n{JsonString}");
-    var deserializedTheme = DeserializeFromJson<Theme>(JsonString);
-    if (deserializedTheme == null)
-    {
-      Console.WriteLine($"✗ Json theme deserialization returned null for '{theme.GetType().Name}'");
-      return false;
-    }
-    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, "testTheme", "deserialized", out var message))
-    {
-      Console.WriteLine($"✗ Theme/Color Json Serialization/Deserialization test FAILED: {message}");
-      return false;
-    }
-
-    foreach (var type in typesToConvert)
-    {
-      var color = CreateSampleColor(type);
-      AttachToDocumentContext(color, document);
-      JsonString = SerializeToJson(color);
-      Console.WriteLine($"\nSerialized Json ({type.Name}):\n{JsonString}");
-
-      var deserialized = DeserializeFromJson(color.GetType(), JsonString);
-      if (deserialized == null)
-      {
-        Console.WriteLine($"✗ Theme/Color Json Deserialization returned null for '{type.Name}'");
-        return false;
-      }
-      AttachToDocumentContext(deserialized, document);
-
-      if (!TestHelper.CompareTestData(type, color, deserialized, "testColor", "deserialized", out message))
-      {
-        Console.WriteLine($"✗ Theme/Color Json Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-    }
-
-    Console.WriteLine("✓ Theme/Color Json serialization tests passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests common IColor accessors for all implementations.
-  /// </summary>
-  /// <returns>True if all accessor tests pass; otherwise, false.</returns>
-  private bool TestColorAccessors()
-  {
-    Console.WriteLine("--- Color Accessors ---");
-    var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToConvert)
-    {
-      var testData = CreateSampleColor(type);
-      AttachToDocumentContext(testData, document);
-      var iColorType = type.GetInterfaces().First(i => i.Name == "IColor");
-
-      foreach (var propName in new[] { "Red", "Green", "Blue", "Name", "Tint", "Shade" })
-      {
-        var prop = iColorType.GetProperty(propName);
-        if (prop == null) continue;
-
-        try
+        var effectiveColor = baseColor;
+        foreach (var transformation in transformableColor.GetTransformations())
         {
-          _ = prop.GetValue(testData);
-        }
-        catch (Exception ex)
-        {
-          Console.WriteLine($"✗ Accessor '{type.Name}.{propName}' get failed: {ex.Message}");
-          return false;
+          Console.WriteLine($"Applying transformation: {transformation.GetType().Name}");
+
+          effectiveColor = transformation.Transform(effectiveColor);
+
+          var effectiveRGBA = effectiveColor.RGBAComponents;
+          var effectiveHSLA = effectiveColor.HSLAComponents;
+          Console.WriteLine(
+            $"   Effective R: {effectiveRGBA.R}, G: {effectiveRGBA.G}, B: {effectiveRGBA.B}, A: {effectiveRGBA.A}");
+          Console.WriteLine(
+            $"   Effective H: {effectiveHSLA.H}, S: {effectiveHSLA.S}, L: {effectiveHSLA.L}, A: {effectiveHSLA.A}");
+          var checkColor = effectiveColor;
+
+          if (transformation is Shade shade)
+          {
+            var l = previousHSLA.L * shade.Value.AsDouble();
+            checkColor = new HslColor() { Hue = effectiveHSLA.H*360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
+          }
+          else if (transformation is Tint tint)
+          {
+            var l = previousHSLA.L * tint.Value.AsDouble() + (1 - tint.Value.AsDouble());
+            checkColor = new HslColor() { Hue = effectiveHSLA.H * 360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
+          }
+          var checkRGBA = checkColor.RGBAComponents;
+          var checkHSLA = checkColor.HSLAComponents;
+          if (!TestHelper.CompareTestData(checkHSLA, effectiveHSLA, "checkHSLA", "effectiveHSLA",
+                out message))
+          {
+            Console.WriteLine($"✗ Color {transformation.GetType().Name} transformation test FAILED: {message}");
+            return false;
+          }
+          if (!TestHelper.CompareTestData(checkRGBA, effectiveRGBA, "checkRGBA", "effectiveRGBA",
+                out message))
+          {
+            Console.WriteLine($"✗ Color {transformation.GetType().Name} transformation test FAILED: {message}");
+            return false;
+          }
+          previousRGBA = effectiveColor.RGBAComponents;
+          previousHSLA = effectiveColor.HSLAComponents;
         }
       }
 
-      foreach (var propName in new[] { "Tint", "Shade" })
-      {
-        var prop = iColorType.GetProperty(propName);
-        if (prop?.CanWrite != true) continue;
-
-        try
-        {
-          prop.SetValue(testData, 0.25);
-          _ = prop.GetValue(testData);
-        }
-        catch (Exception ex)
-        {
-          Console.WriteLine($"✗ Accessor '{type.Name}.{propName}' set failed: {ex.Message}");
-          return false;
-        }
-      }
     }
-
-    Console.WriteLine("✓ Color accessor tests passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests edge cases using empty instances for all IColor implementations.
-  /// </summary>
-  /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-  private bool TestEdgeCases()
-  {
-    Console.WriteLine("--- Edge Cases ---");
-    var jsonOptions = JsonConfig.Options;
-    var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToConvert)
-    {
-      var empty = Activator.CreateInstance(type);
-      if (empty == null)
-      {
-        Console.WriteLine($"✗ Could not create empty instance of '{type.Name}'");
-        return false;
-      }
-      AttachToDocumentContext(empty, document);
-
-      var xml = SerializeObjectToXml(empty);
-      var xmlDeserialized = DeserializeObjectFromXml(type, xml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine($"✗ Edge case XML deserialization failed for '{type.Name}'");
-        return false;
-      }
-      AttachToDocumentContext(xmlDeserialized, document);
-
-      var json = JsonSerializer.Serialize(empty, type, jsonOptions);
-      var jsonDeserialized = JsonSerializer.Deserialize(json, type, jsonOptions);
-      if (jsonDeserialized == null)
-      {
-        Console.WriteLine($"✗ Edge case JSON deserialization failed for '{type.Name}'");
-        return false;
-      }
-      AttachToDocumentContext(jsonDeserialized, document);
-    }
-
-    Console.WriteLine("✓ Edge case tests passed\n");
+  
+    Console.WriteLine("✓ TestColorTransformations passed\n");
     return true;
   }
 
@@ -431,187 +314,6 @@ public class ColorTransformationsTest : BaseThemeTest
        // Shade = new Percentage("40%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
-  }
-
-  private JsonSerializerOptions CreateJsonOptions()
-  {
-    var options = new JsonSerializerOptions(JsonConfig.Options);
-    //var resolver = new DefaultJsonTypeInfoResolver();
-    //resolver.Modifiers.Add(typeInfo =>
-    //{
-    //  if (typeInfo.Type != typeof(ModelElement))
-    //    return;
-
-    //  var polymorphismOptions = new JsonPolymorphismOptions
-    //  {
-    //    TypeDiscriminatorPropertyName = "$type"
-    //  };
-    //  foreach (var derivedType in GetIColorTypes().Where(t => typeof(ModelElement).IsAssignableFrom(t)))
-    //  {
-    //    polymorphismOptions.DerivedTypes.Add(new JsonDerivedType(derivedType, derivedType.FullName!));
-    //  }
-    //  typeInfo.PolymorphismOptions = polymorphismOptions;
-    //});
-
-    //options.TypeInfoResolver = resolver;
-    return options;
-  }
-
-  /// <summary>
-  /// Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
-  /// </summary>
-  /// <returns></returns>
-  /// <exception cref="InvalidOperationException"></exception>
-  private bool StoreThemeInDocument()
-  {
-    Console.WriteLine("\n --- Store Theme in document ---");
-    Theme testData = CreateThemeWithColorScheme();
-    var testFileName = Path.Combine(_AbstractTestClass.TestFileDir, "TestThemeCreate.docx");
-    using (var document = Document.Open(testFileName, FileMode.CreateNew))
-    {
-      document.Theme = testData;
-    }
-
-    Theme storedData;
-    using (var document = Document.Open(testFileName))
-    {
-      var openXml = document.WordprocessingDocument!.MainDocumentPart!.ThemePart!.Theme!.OuterXml;
-      //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-      //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-      Console.WriteLine(formattedOpenXml);
-      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-      if (!validationResult.IsValid)
-      {
-        Console.WriteLine("✗ Store Theme Test: OpenXml schema validation FAILED - issues found:");
-        foreach (var message in validationResult.Messages)
-        {
-          Console.WriteLine($" {message}");
-        }
-        return false;
-      }
-
-      storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
-    }
-
-    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(Theme), out var namespaces);
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("Theme loaded from document:\n" + xmlString);
-    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, "testData", "storedData", out var message2))
-    {
-      Console.WriteLine($"✗ XML test FAILED: {message2}");
-      return false;
-    }
-    Console.WriteLine("✓ Store Theme in document passed");
-    return true;
-
-  }
-
-  private readonly Random Random = new Random();
-  private HexColor GetRandomHexColor() => (HexColor)Random.Next(0x000000, 0xFFFFFF);
-  //private DXW.ThemeColorValues GetRandomThemeColor() => (DXW.ThemeColorValues)Random.Next(1, Enum.GetValues(typeof(DXW.ThemeColorValues)).Length);
-
-  /// <summary>
-  /// Changes colors of two specific run texts in the specified document.
-  /// First copies the document to a temporary file to avoid modifying the original.
-  /// Temporary file has a name like "Colors test updated.docx" in the same directory as the original.
-  /// Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
-  /// </summary>
-  /// <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
-  /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
-  private bool ChangeColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test.docx")
-  {
-    Console.WriteLine("\n--- Change Colors in Document ---");
-
-    if (!File.Exists(filePath))
-    {
-      Console.WriteLine($"✗ File not found: {filePath}");
-      return false;
-    }
-    var newFilePath = Path.Combine(Path.GetDirectoryName(filePath) ?? ".", Path.GetFileNameWithoutExtension(filePath) + " updated" + Path.GetExtension(filePath));
-
-    System.IO.File.Copy(filePath, newFilePath, true);
-    var document = Document.Open(newFilePath);
-    var body = document.Body;
-
-    var redUpdated = false;
-    var accentUpdated = false;
-
-    foreach (var paragraph in body.Paragraphs)
-    {
-      //Debug.WriteLine($"Enumerated paragraph {paragraph.ParagraphId}");
-      //int runIndex = 0;
-      foreach (var run in paragraph.Runs)
-      {
-        //Debug.WriteLine($"  Enumerated run[{runIndex}] Items count={run.Items.Count}");
-        //runIndex++;
-        foreach (var item in run.Items)
-        {
-          //string? text = null;
-          //if (item is RunText runText)
-          //  text = $"\"{runText.Text}\"";
-          //Debug.WriteLine($"    Enumerated run item {item.GetType()} {text}");
-
-        }
-        if (!redUpdated && run.Text == "RED")
-        {
-          run.Text = "BLUE";
-          var runProperties = run.RunProperties;
-          if (runProperties == null)
-            throw new ApplicationException("Run properties not found.");
-          var color = runProperties.Color;
-          if (color == null)
-            throw new ApplicationException("Color not found.");
-          if (color.Value != "FF0000")
-            throw new ApplicationException($"Unexpected color value for RED run: {color.Value}");
-          color.Value = "0000FF";
-          color.ThemeColor = null;
-          color.Tint = null;
-          color.Shade = null;
-          redUpdated = true;
-        }
-        else if (!accentUpdated && run.Text == "ACCENT1")
-        {
-          run.Text = "ACCENT2";
-          var runProperties = run.RunProperties;
-          if (runProperties == null)
-            throw new ApplicationException("Run properties not found.");
-          var color = runProperties.Color;
-          if (color == null)
-            throw new ApplicationException("Color not found.");
-          if (color.ThemeColor != DMD.SchemeColors.Accent1)
-            throw new ApplicationException($"Unexpected color value for ACCENT1 run: {color.ThemeColor}");
-
-          color.Value = null;
-          color.ThemeColor = DMD.SchemeColors.Accent2;
-          color.Tint = null;
-          color.Shade = null;
-          accentUpdated = true;
-        }
-
-        if (redUpdated && accentUpdated)
-          break;
-      }
-    }
-
-    document.Save();
-
-    if (!redUpdated)
-      Console.WriteLine("✗ Run with text 'RED' not found.");
-    if (!accentUpdated)
-      Console.WriteLine("✗ Run with text 'ACCENT1' not found.");
-
-    var result = redUpdated && accentUpdated;
-    if (result)
-      Console.WriteLine("✓  Change Colors in Document passed");
-
-    return result;
   }
 
 }
