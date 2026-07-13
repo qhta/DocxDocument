@@ -26,6 +26,12 @@ public partial class SchemeColor : IXmlSerializable
       }
     }
 
+    var nameStr = reader.GetAttribute("name");
+    if (!string.IsNullOrEmpty(nameStr))
+    {
+      Name = nameStr;
+    }
+
     var lastColorStr = reader.GetAttribute("lastColor");
     if (!string.IsNullOrEmpty(lastColorStr))
     {
@@ -64,6 +70,9 @@ public partial class SchemeColor : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
+    if (Name is not null)
+      writer.WriteAttributeString("name", Name.ToString());
+    else
     if (Index is not null)
       writer.WriteAttributeString("index", Index.ToString());
     if (LastColor is not null)

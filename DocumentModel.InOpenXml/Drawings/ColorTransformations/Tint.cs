@@ -5,6 +5,7 @@ using Math = System.Math;
 /// Represents a tint color transformation for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.Tint))]
+[DataContract]
 public class Tint: PercentageTransformation<DXD.Tint>
 {
   /// <summary>

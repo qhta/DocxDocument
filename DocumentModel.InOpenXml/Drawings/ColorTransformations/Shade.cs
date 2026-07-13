@@ -5,6 +5,7 @@ using Math = System.Math;
 /// Represents a shade color transformation for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.Shade))]
+[DataContract]
 public class Shade: PercentageTransformation<DXD.Shade>
 {
   /// <summary>

@@ -11,7 +11,7 @@
 /// OpenXML-specific color representations.</remarks>
 [DataContract]
 [XmlRoot("VmlColor", Namespace = "DocumentModel.Vml")]
-public partial class VmlColor : ModelElement, IColor
+public partial class VmlColor : ModelElement
 {
   /// <summary>
   /// Initializes a new instance of the Color class.

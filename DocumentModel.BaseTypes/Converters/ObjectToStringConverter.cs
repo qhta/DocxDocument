@@ -34,6 +34,9 @@ public static class ObjectToStringConverter
     RegisterConverters(typeof(HexInt), HexIntObjectToString, StringToHexIntObject);
     RegisterConverters(typeof(HexLong), HexLongObjectToString, StringToHexLongObject);
     RegisterConverters(typeof(HexPercent), HexPercentObjectToString, StringToHexPercentObject);
+    RegisterConverters(typeof(Percent), PercentObjectToString, StringToPercentObject);
+    RegisterConverters(typeof(Percentage), PercentageObjectToString, StringToPercentageObject);
+    RegisterConverters(typeof(Degrees), DegreesObjectToString, StringToDegreesObject);
     RegisterConverters(typeof(StringList), StringListObjectToString, StringToStringListObject);
   }
 
@@ -206,6 +209,21 @@ public static class ObjectToStringConverter
   private static object? StringToHexPercentObject(string? str) => StringToHexPercent(str);
   private static string? HexPercentToString(HexPercent? val) => val?.ToString();
   private static HexPercent? StringToHexPercent(string? str) => String.IsNullOrEmpty(str) ? (HexPercent?)null : HexPercent.Parse(str!);
+
+  private static string? PercentObjectToString(object? val) => PercentToString((Percent?)val);
+  private static object? StringToPercentObject(string? str) => StringToPercent(str);
+  private static string? PercentToString(Percent? val) => val?.ToString();
+  private static Percent? StringToPercent(string? str) => String.IsNullOrEmpty(str) ? (Percent?)null : Percent.Parse(str!);
+
+  private static string? PercentageObjectToString(object? val) => PercentageToString((Percentage?)val);
+  private static object? StringToPercentageObject(string? str) => StringToPercentage(str);
+  private static string? PercentageToString(Percentage? val) => val?.ToString();
+  private static Percentage? StringToPercentage(string? str) => String.IsNullOrEmpty(str) ? (Percentage?)null : Percentage.Parse(str!);
+
+  private static string? DegreesObjectToString(object? val) => DegreesToString((Degrees?)val);
+  private static object? StringToDegreesObject(string? str) => StringToDegrees(str);
+  private static string? DegreesToString(Degrees? val) => val?.ToString();
+  private static Degrees? StringToDegrees(string? str) => String.IsNullOrEmpty(str) ? (Degrees?)null : Degrees.Parse(str!);
 
   private static string? StringListObjectToString(object? val) => StringListToString((StringList?)val);
   private static object? StringToStringListObject(string? str) => StringToStringList(str);

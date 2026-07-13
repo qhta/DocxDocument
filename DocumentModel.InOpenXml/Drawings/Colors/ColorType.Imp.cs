@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Drawings;
 
-public partial class ColorType : IColor
+public partial class ColorType : IColor, INamedColor
 {
 
   /// <summary>
@@ -55,12 +55,12 @@ public partial class ColorType : IColor
   /// <summary>
   /// Gets or sets the name of the color. If the Color property is null, this property will return null. Setting this property will update the name of the Color if it is not null. 
   /// </summary>
-  string? IColor.Name
+  string? INamedColor.Name
   {
-    get => (InternalColor as IColor)?.Name;
+    get => (InternalColor as INamedColor)?.Name;
     set
     {
-      if (InternalColor is IColor color) color.Name = value;
+      if (InternalColor is INamedColor color) color.Name = value;
     }
   }
 

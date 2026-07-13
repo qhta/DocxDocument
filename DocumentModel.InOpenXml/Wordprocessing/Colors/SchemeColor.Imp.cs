@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class SchemeColor : IColor, ITintableColor
+public partial class SchemeColor : IColor, INamedColor, ITintableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -15,7 +15,9 @@ public partial class SchemeColor : IColor, ITintableColor
       IColor? colorScheme = null;
       if (this.Index is not null)
         colorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
-      return (colorScheme as IColor)?.ARGB ?? (uint)((uint?)LastColor ^ 0xFF000000 ?? (uint)PresetColors.Auto ^ 0xFF000000);
+      var argb = (colorScheme as IColor)?.ARGB ?? (uint)((uint?)LastColor ^ 0xFF000000 ?? (uint)PresetColors.Auto ^ 0xFF000000);
+      //LastColor = argb ^ 0xFF000000;
+      return argb;
     }
 
     set => LastColor = value ^ 0xFF000000;
@@ -25,28 +27,30 @@ public partial class SchemeColor : IColor, ITintableColor
   /// Name of the color. It may be used to specify a color by name, such as "Accent1", "Accent2", etc.
   /// If the color is not found in the SchemeColors enumeration, the exception is raised.
   /// </summary>
-  string? IColor.Name
+  public string? Name
   {
     get
     {
-      var schemeColorField = typeof(DMD.SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static).FirstOrDefault(f => f.GetValue(null)?.Equals(this.ARGB ^ 0xFF000000) == true);
-      return schemeColorField?.Name;
+      if (this.Index is not null)
+        return this.Index.ToString();
+
+      return _Name;
     }
 
     set
     {
-      if (value is null)
-        return;
-      if (Enum.TryParse<DMD.SchemeColors>(value, out var schemeColor))
+      if (value is not null)
       {
-        this.Index = schemeColor;
-        return;
-      }
-
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid scheme color.");
+        if (Enum.TryParse<DMD.SchemeColors>(value, out var schemeColor))
+        {
+          this.Index = schemeColor;
+        }
+      } 
+      _Name = value;
     }
   }
 
+  private string? _Name;
 
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.

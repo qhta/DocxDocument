@@ -375,8 +375,8 @@ public class ColorTypesTest : BaseThemeTest
       return new DocumentModel.Drawings.RgbColorModelHex()
       {
         Value = (HexColor)0x336699,
-        //Tint = new Percentage("10%"),
-        //Shade = new Percentage("5%"),
+        Tint = new Percentage("20%"),
+        Shade = new Percentage("40%"),
       };
     if (colorType == typeof(Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage

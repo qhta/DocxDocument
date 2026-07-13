@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class WordColor : IColor, ITintableColor
+public partial class WordColor : IColor, INamedColor, ITintableColor
 {
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
@@ -59,7 +59,7 @@ public partial class WordColor : IColor, ITintableColor
   /// Gets or sets the name of the color represented by this property.
   /// It may be used to specify a color by name, such as "red", "blue", etc. The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
   /// </summary>
-  string? IColor.Name
+  string? INamedColor.Name
   {
     get
     {
@@ -71,20 +71,23 @@ public partial class WordColor : IColor, ITintableColor
         return presetColorField?.Name;
       }
 
-      return null;
+      return _Name;
     }
 
     set
     {
-      if (value is null)
-        this.ThemeColor = null;
-      if (Enum.TryParse<DMD.SchemeColors>(this.Value.ToString(), out var themeColor))
-        this.ThemeColor = themeColor;
-      if (Enum.TryParse<PresetColors>(this.Value.ToString(), out var presetColor))
-        this.Value = (UInt32)presetColor;
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
+      if (value is not null)
+      {
+        if (Enum.TryParse<DMD.SchemeColors>(value, out var themeColor))
+          this.ThemeColor = themeColor;
+        if (Enum.TryParse<PresetColors>(value, out var presetColor))
+          this.Value = (uint)presetColor ^ 0xFF000000;
+      }
+      _Name = value;
     }
   }
+
+  private string? _Name;
 
   double? ITintableColor.Tint
   {

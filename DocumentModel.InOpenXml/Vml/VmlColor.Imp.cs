@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Vml;
 
-public partial class VmlColor : IColor
+public partial class VmlColor : IColor, INamedColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -147,7 +147,7 @@ public partial class VmlColor : IColor
   /// Name of the color. It may be used to specify a color by name.
   /// If the color is not found in the PresetColors enumeration, the exception is raised.
   /// </summary>
-  string? IColor.Name
+  string? INamedColor.Name
   {
     get
     {

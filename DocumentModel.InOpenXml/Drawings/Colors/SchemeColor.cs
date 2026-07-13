@@ -17,6 +17,12 @@ public partial class SchemeColor: DrawingsColorBase<DXD.SchemeColor>, IDrawingCo
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
   public SchemeColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
-
   private SchemeColors? _index;
+
+
+  /// <summary>
+  /// Gets or sets the last known RGB color value for the scheme color.
+  /// </summary>
+  public HexColor? LastColor { get => _LastColor; set => UpdateField(ref _LastColor, value, nameof(LastColor)); }
+  private HexColor? _LastColor;
 }

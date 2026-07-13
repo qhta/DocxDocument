@@ -12,17 +12,14 @@ public partial class SchemeColor : IColor
   {
     get
     {
-      if (_RGB != null)
-        return _RGB.Value;
-      if (this.Index is null)
-        return (uint)PresetColors.Auto;
-      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
-      return (ColorScheme as IColor)?.ARGB ?? (uint)PresetColors.Auto;
+      IColor? colorScheme = null;
+      if (this.Index is not null)
+        colorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
+      return (colorScheme as IColor)?.ARGB ??
+             (uint)((uint?)LastColor ^ 0xFF000000 ?? (uint)PresetColors.Auto ^ 0xFF000000);
     }
-
-    set => _RGB = value;
+    set => LastColor = value ^ 0xFF000000;
   }
-  private UInt32? _RGB;
 
   /// <summary>
   /// Name of the color. It may be used to specify a color by name, such as "Accent1", "Accent2", etc.

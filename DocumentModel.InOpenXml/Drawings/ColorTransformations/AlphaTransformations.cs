@@ -6,6 +6,7 @@ using Math = System.Math;
 /// Specifies that the defined color has a specific opacity (as a positive fixed percentage), but with its color unchanged.
 /// </summary>
 [OpenXmlType(typeof(DXD.Alpha))]
+[DataContract]
 public class Alpha: PercentageTransformation<DXD.Alpha>
 {
   /// <summary>
@@ -31,6 +32,7 @@ public class Alpha: PercentageTransformation<DXD.Alpha>
 /// 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaOffset))]
+[DataContract]
 public class AlphaOffset : PercentageTransformation<DXD.AlphaOffset>
 {
   /// <summary>
@@ -54,6 +56,7 @@ public class AlphaOffset : PercentageTransformation<DXD.AlphaOffset>
 /// 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
 /// </summary>
 [OpenXmlType(typeof(DXD.AlphaModulation))]
+[DataContract]
 public class AlphaModulation : PercentageTransformation<DXD.AlphaModulation>
 {
   /// <summary>

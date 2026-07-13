@@ -62,15 +62,15 @@ public partial class ModelElement : IXmlSerializable
       {
         var propName = reader.LocalName;
         var propValue = reader.Value;
-        var property = serializableProperties.FirstOrDefault(p => p.Name.Equals(propName, StringComparison.OrdinalIgnoreCase));
+        var property =
+          serializableProperties.FirstOrDefault(p => p.Name.Equals(propName, StringComparison.OrdinalIgnoreCase));
         if (property != null && property.CanWrite)
         {
           var valueType = property.PropertyType.GetNotNullableType();
           var value = ObjectToStringConverter.ConvertFromString(propValue, valueType);
           property.SetValue(this, value);
         }
-      }
-      while (reader.MoveToNextAttribute());
+      } while (reader.MoveToNextAttribute());
 
       reader.MoveToElement();
     }
@@ -125,8 +125,7 @@ public partial class ModelElement : IXmlSerializable
   {
     var thisType = this.GetType();
     var addMethods = thisType.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-      .Where(m => m.Name.StartsWith("Add") && m.GetParameters().Length == 1)
-      .ToArray();
+      .Where(m => m.Name.StartsWith("Add") && m.GetParameters().Length == 1).ToArray();
 
     while (reader.NodeType == XmlNodeType.Element)
     {
@@ -136,7 +135,8 @@ public partial class ModelElement : IXmlSerializable
       if (item is IXmlSerializable xmlSerializable)
       {
         xmlSerializable.ReadXml(reader);
-        var addMethod = addMethods.FirstOrDefault(m => m.GetParameters()[0].ParameterType.IsAssignableFrom(elementType));
+        var addMethod =
+          addMethods.FirstOrDefault(m => m.GetParameters()[0].ParameterType.IsAssignableFrom(elementType));
         if (addMethod != null)
         {
           addMethod.Invoke(this, [item]);
@@ -146,12 +146,8 @@ public partial class ModelElement : IXmlSerializable
           throw new ApplicationException($"No suitable Add method found for type {elementType.FullName}");
         }
       }
-      else
-      {
-        reader.Skip();
-      }
 
-      reader.MoveToContent();
+      reader.Skip();
     }
   }
 
@@ -162,7 +158,7 @@ public partial class ModelElement : IXmlSerializable
   public virtual void WriteXml(XmlWriter writer)
   {
     var serializableProperties = GetSerializableProperties();
-    var (attributeProperties, elementProperties) = SplitProperties(serializableProperties);
+    var (attributeProperties, elementProperties) = serializableProperties.SplitAttributesAndElements();
     WriteAttributes(writer, attributeProperties);
     WriteProperties(writer, elementProperties);
     WriteItems(writer);
@@ -175,18 +171,27 @@ public partial class ModelElement : IXmlSerializable
   /// <param name="attributeProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be written as attributes.</param>
   protected virtual void WriteAttributes(XmlWriter writer, PropertyInfo[] attributeProperties)
   {
-    if (this is DMD.RgbColorModelPercentage)
-      Debug.Assert(true);
-    foreach (var property in attributeProperties)
+    try
     {
-      var value = property.GetValue(this);
-      if (value != null)
+      foreach (var property in attributeProperties)
       {
-        var valueType = value.GetType();
-        TypeToStringConverter.RegisterType(valueType);
-        string? valueString = ObjectToStringConverter.ConvertToString(value);
-        writer.WriteAttributeString(property.Name.ToLowerFirst(), valueString);
+        var value = property.GetValue(this);
+        if (value != null)
+        {
+          var valueType = value.GetType();
+
+          TypeToStringConverter.RegisterType(valueType);
+          string? valueString = ObjectToStringConverter.ConvertToString(value);
+          if (property.Name.ToLowerFirst() == "index")
+            Debug.Assert(true);
+          writer.WriteAttributeString(property.Name.ToLowerFirst(), valueString);
+        }
       }
+    }
+    catch (Exception ex)
+    {
+      Debug.WriteLine(ex);
+      throw;
     }
   }
 
@@ -204,14 +209,40 @@ public partial class ModelElement : IXmlSerializable
         var value = property.GetValue(this);
         if (value != null)
         {
+          //if (property.Name == "SerializedColorTransformations")
+          //  Debug.Assert(true);
+
           //var valueType = value.GetType();
           //TypeToStringConverter.RegisterType(valueType);
-          writer.WriteStartElement(property.Name.ToLowerFirst());
-          if (value is IXmlSerializable xmlSerializable)
+          string? elementName = null;
+          if (property.GetCustomAttribute<XmlElementAttribute>() is XmlElementAttribute xmlElementAttribute)
           {
-            xmlSerializable.WriteXml(writer);
+            elementName = xmlElementAttribute.ElementName;
           }
-          writer.WriteEndElement();
+          else if (property.GetCustomAttribute<XmlArrayAttribute>() is XmlArrayAttribute xmlArrayAttribute)
+          {
+            elementName = xmlArrayAttribute.ElementName;
+          }
+          else
+          {
+            elementName = property.Name.ToLowerFirst();
+          }
+          if (string.IsNullOrEmpty(elementName))
+          {
+            if (value is IXmlSerializable xmlSerializable)
+            {
+              xmlSerializable.WriteXml(writer);
+            }
+          }
+          else
+          {
+            writer.WriteStartElement(elementName);
+            if (value is IXmlSerializable xmlSerializable)
+            {
+              xmlSerializable.WriteXml(writer);
+            }
+            writer.WriteEndElement();
+          }
         }
       }
     }
@@ -243,17 +274,31 @@ public partial class ModelElement : IXmlSerializable
   /// Gets the properties of the current instance that should be serialized to XML.
   /// </summary>
   /// <returns>An array of <see cref="PropertyInfo"/> objects representing the serializable properties.</returns>
-  protected virtual PropertyInfo[] GetSerializableProperties()
+  protected virtual PropertyInfo[] GetSerializableProperties() => this.GetType().GetSerializableProperties();
+
+
+}
+
+/// <summary>
+/// Provides utility methods for XML serialization
+/// </summary>
+public static class XmlSerializationTool
+{
+
+  /// <summary>
+  /// Static method that retrieves the properties of a given type that should be serialized to XML. It filters out properties that are not readable, not writable, or marked with the <see cref="XmlIgnoreAttribute"/>.
+  /// </summary>
+  /// <param name="aType">The type whose serializable properties are to be retrieved.</param>
+  /// <returns>An array of <see cref="PropertyInfo"/> objects representing the serializable properties of the specified type.</returns>
+  public static PropertyInfo[] GetSerializableProperties(this Type aType)
   {
-    var aType = this.GetType();
     var allProperties = aType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
     var serializablePropertiesList = new List<PropertyInfo>();
     foreach (var property in allProperties)
     {
-      if (property.CanRead && property.GetCustomAttribute<XmlIgnoreAttribute>() == null
-        && (property.CanWrite || property.PropertyType.IsEnumerable())
-        && !property.IsIndexer())
+      if ((property.CanRead && (property.CanWrite || property.PropertyType.IsEnumerable()) && !property.IsIndexer()) &&
+          property.GetCustomAttribute<XmlIgnoreAttribute>() == null)
       {
         serializablePropertiesList.Add(property);
       }
@@ -262,26 +307,30 @@ public partial class ModelElement : IXmlSerializable
   }
 
   /// <summary>
-  /// Splits the serializable properties of the current instance into two groups: those that are marked with the <see cref="XmlAttributeAttribute"/> and those that are not.
+  /// Splits the given array of serializable properties into two groups: those that are marked with the <see cref="XmlAttributeAttribute"/> and those that are not. Properties that are value types, strings, or have a static "TryParse" method are also considered attribute properties.
   /// </summary>
   /// <param name="serializableProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be split.</param>
   /// <returns>A tuple containing two arrays of <see cref="PropertyInfo"/> objects: one for attribute properties and one for element properties.</returns>
-  protected virtual (PropertyInfo[] attributeProperties, PropertyInfo[] elementProperties) SplitProperties
-    (PropertyInfo[] serializableProperties)
+  public static (PropertyInfo[] attributeProperties, PropertyInfo[] elementProperties) SplitAttributesAndElements
+  (this PropertyInfo[] serializableProperties)
   {
     var attributePropertiesList = new List<PropertyInfo>();
-    foreach (var property in serializableProperties) {
+    foreach (var property in serializableProperties)
+    {
       if (property.GetCustomAttribute<XmlAttributeAttribute>() != null)
         attributePropertiesList.Add(property);
       else
-      {
-        var propType = property.PropertyType.GetNotNullableType();
-        if (propType.IsValueType || propType==typeof(string) ||
-            propType.GetMethod("TryParse", BindingFlags.Public | BindingFlags.Static) != null)
-        {
+        if (property.GetCustomAttribute<XmlElementAttribute>() != null)
           attributePropertiesList.Add(property);
+        else
+        {
+          var propType = property.PropertyType.GetNotNullableType();
+          if (propType.IsValueType || propType == typeof(string) ||
+              propType.GetMethod("TryParse", BindingFlags.Public | BindingFlags.Static) != null)
+          {
+            attributePropertiesList.Add(property);
+          }
         }
-      }
     }
     var attributeProperties = attributePropertiesList.ToArray();
     var elementProperties = serializableProperties.Except(attributeProperties).ToArray();

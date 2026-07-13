@@ -107,6 +107,10 @@ public class ColorTransformationsTest : BaseThemeTest
         if (baseColor is DMW.SchemeColor)
           Debug.Assert(true);
         otherColor.ARGB = baseColor.ARGB;
+        if (otherColor is INamedColor namedOther && baseColor is INamedColor namedBase)
+        {
+          namedOther.Name = namedBase.Name;
+        }
         if (otherColor is ITintableColor tintableOther && baseColor is ITintableColor tintableBase)
         {
           tintableOther.Tint = tintableBase.Tint;
@@ -120,6 +124,13 @@ public class ColorTransformationsTest : BaseThemeTest
           Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
           return false;
         }
+        if (otherColor is INamedColor && baseColor is INamedColor)
+          if (!TestHelper.CompareTestData(typeof(INamedColor), baseColor, otherColor, "testColor", "otherColor", out message))
+          {
+            Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+            return false;
+          }
+
         if (otherColor is ITintableColor && baseColor is ITintableColor)
           if (!TestHelper.CompareTestData(typeof(ITintableColor), baseColor, otherColor, "testColor", "otherColor", out message))
           {

@@ -16,6 +16,7 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// <summary>
   /// ColorTransformations as serialized, but ignored if null or empty.
   /// </summary>
+  [XmlArray(null)]
   [JsonPropertyName(nameof(ColorTransformations))]
   [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
   public ColorTransformations? SerializedColorTransformations
@@ -25,6 +26,16 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   }
 
   private ColorTransformations? _ColorTransformations;
+
+  /// <summary>
+  /// Adds a color transformation operation to the <see cref="ColorTransformations"/> collection.
+  /// This method is needed by XmlSerialization
+  /// </summary>
+  /// <param name="transformation">The color transformation to add.</param>
+  public void Add(ColorTransformation transformation)
+  {
+    ColorTransformations.Add(transformation);
+  }
 
   /// <summary>
   /// Tint value to lighten the color.
@@ -425,26 +436,16 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// <typeparam name="OpenXmlType">The type of the underlying OpenXML element representing the percentage transformation.</typeparam>
   /// <param name="value">The percentage value to set.</param>
   private void SetPercentage<TTrans, OpenXmlType>(Percentage? value)
-    where TTrans: PercentageTransformation<OpenXmlType>, new()
+    where TTrans : PercentageTransformation<OpenXmlType>, new()
     where OpenXmlType : DXD.PositiveFixedPercentageType
   {
     if (value is not null)
     {
-      if (_ColorTransformations != null)
-      {
-        var transformation = ColorTransformations.FirstOrDefault(ct => ct is TTrans);
-        if (transformation != null)
-        {
-          ((IPercentageTransformation)transformation).Value = value.Value;
-        }
-      }
-      else
-      {
-        _ColorTransformations = new ColorTransformations(this);
-        var transformation = new TTrans();
-        ((IPercentageTransformation)transformation).Value = value.Value;
-        ColorTransformations.Add(transformation);
-      }
+      _ColorTransformations ??= new ColorTransformations(this);
+
+      var transformation = new TTrans();
+      ((IPercentageTransformation)transformation).Value = value.Value;
+      ColorTransformations.Add(transformation);
     }
     else
     {
