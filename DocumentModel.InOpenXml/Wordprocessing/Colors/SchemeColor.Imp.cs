@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class SchemeColor : IColor, INamedColor, ITransformableColor
+public partial class SchemeColor : IColor, INamedColor, ITintableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -8,7 +8,7 @@ public partial class SchemeColor : IColor, INamedColor, ITransformableColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32 ARGB
+  public override UInt32 ARGB
   {
     get
     {
@@ -58,7 +58,7 @@ public partial class SchemeColor : IColor, INamedColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B, double A) RGBAComponents
+  public override (double R, double G, double B, double A) RGBAComponents
   {
     get
     {
@@ -84,7 +84,7 @@ public partial class SchemeColor : IColor, INamedColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L, double A) HSLAComponents
+  public override (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
@@ -99,43 +99,4 @@ public partial class SchemeColor : IColor, INamedColor, ITransformableColor
     }
   }
 
-  double? ITransformableColor.Tint
-  {
-    get => this.Tint?.AsDouble();
-    set
-    {
-      if (value != null)
-        this.Tint = value.Value;
-    }
-  }
-
-  double? ITransformableColor.Shade
-  {
-    get => this.Shade?.AsDouble();
-    set
-    {
-      if (value != null)
-        this.Shade = value.Value;
-    }
-  }
-
-  IColor ITransformableColor.GetEffectiveColor()
-  {
-    IColor result = this;
-    if (Tint is not null)
-      result = new DMD.Tint { Value = Tint.Value }.Transform(result);
-    if (Shade is not null)
-      result = new DMD.Shade { Value = Shade.Value }.Transform(result);
-    return result;
-  }
-
-  IEnumerable<IColorTransformation> ITransformableColor.GetTransformations()
-  {
-    var transformations = new List<IColorTransformation>();
-    if (Tint is not null)
-      transformations.Add(new DMD.Tint { Value = Tint.Value });
-    if (Shade is not null)
-      transformations.Add(new DMD.Shade { Value = Shade.Value });
-    return transformations;
-  }
 }

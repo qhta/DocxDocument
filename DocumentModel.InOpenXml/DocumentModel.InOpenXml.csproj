@@ -80,6 +80,7 @@
     <Compile Include="Vml\RgbColor.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\RgbColorHex.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\SchemeColor.Imp.cs" />
+    <Compile Include="Wordprocessing\Colors\WordColorBase.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\WordColor.Imp.cs" />
     <Compile Include="Wordprocessing\Run properties\BaseRunProperties.TextFormat.Imp.cs" />
   </ItemGroup>

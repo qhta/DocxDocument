@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXO10W.SchemeColor))]
 [DataContract]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class SchemeColor : AnyColor<DXO10W.SchemeColor>
+public partial class SchemeColor : WordColorBase<DXO10W.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
@@ -64,7 +64,7 @@ public partial class SchemeColor : AnyColor<DXO10W.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Tint))]
-  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  public override Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
   private Percentage? _Tint;
 
   /// <summary>
@@ -85,7 +85,7 @@ public partial class SchemeColor : AnyColor<DXO10W.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXO10W.Shade))]
-  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  public override Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
   private Percentage? _Shade;
 
 }

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class RgbColorHex: IColor, ITransformableColor
+public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
 {
   /// <summary>
   /// Value of the cAolor as RGB uint.
@@ -166,11 +166,15 @@ public partial class RgbColorHex: IColor, ITransformableColor
     }
   }
 
-  double? ITransformableColor.Tint { get => this.Tint; set => this.Tint = value; }
+  double? ITintableColor.Tint { get => this.Tint; set => this.Tint = value; }
 
-  double? ITransformableColor.Shade { get => this.Shade; set => this.Shade = value; }
+  double? ITintableColor.Shade { get => this.Shade; set => this.Shade = value; }
 
-  IColor ITransformableColor.GetEffectiveColor()
+  /// <summary>
+  /// Gets the effective color after applying any tint or shade transformations.
+  /// </summary>
+  /// <returns>The effective color after applying transformations.</returns>
+  public IColor GetEffectiveColor()
   {
     IColor result = this;
     if (Tint is not null)
@@ -180,7 +184,11 @@ public partial class RgbColorHex: IColor, ITransformableColor
     return result;
   }
 
-  IEnumerable<IColorTransformation> ITransformableColor.GetTransformations()
+  /// <summary>
+  /// Gets the list of color transformations (tint and shade) applied to the current color.
+  /// </summary>
+  /// <returns>A list of color transformations applied to the current color.</returns>
+  public IEnumerable<IColorTransformation> GetTransformations()
   {
     var transformations = new List<IColorTransformation>();
     if (Tint is not null)
@@ -188,5 +196,27 @@ public partial class RgbColorHex: IColor, ITransformableColor
     if (Shade is not null)
       transformations.Add(new DMD.Shade { Value = Shade.Value });
     return transformations;
+  }
+
+  /// <summary>
+  /// Adds a color transformation to the current color.
+  /// If the transformation is a Tint or Shade, it updates the corresponding property of the color.
+  /// Otherwise, it does not modify the color and returns false.
+  /// </summary>
+  /// <param name="transformation">The transformation to add.</param>
+  /// <returns>True if the transformation was added successfully; otherwise, false.</returns>
+  bool ITransformableColor.AddTransformation(IColorTransformation transformation)
+  {
+    if (transformation is DMD.Tint tint)
+    {
+      Tint = tint.Value;
+      return true;
+    }
+    if (transformation is DMD.Shade shade)
+    {
+      Shade = shade.Value;
+      return true;
+    }
+    return false;
   }
 }

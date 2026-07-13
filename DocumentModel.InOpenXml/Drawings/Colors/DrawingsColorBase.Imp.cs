@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Drawings;
 
-public abstract partial class DrawingsColorBase<T> : IColor, ITransformableColor
+public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor, ITransformableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -159,7 +159,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITransformableColor
   /// <summary>
   /// Gets or sets the tint of the color as a double value between 0 and 1.
   /// </summary>
-  double? ITransformableColor.Tint
+  double? ITintableColor.Tint
   {
     get => this.Tint?.AsDouble();
     set
@@ -172,7 +172,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITransformableColor
   /// <summary>
   /// Gets or sets the shade of the color as a double value between 0 and 1.
   /// </summary>
-  double? ITransformableColor.Shade
+  double? ITintableColor.Shade
   {
     get => this.Shade?.AsDouble();
     set
@@ -203,5 +203,18 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITransformableColor
   public IEnumerable<IColorTransformation> GetTransformations()
   {
     return this.ColorTransformations;
+  }
+
+  /// <summary>
+  /// Adds a color transformation to the collection of transformations applied to the color.
+  /// </summary>
+  /// <param name="transformation">The transformation to add.</param>
+  /// <returns>True if the transformation was added successfully; otherwise, false.</returns>
+  public bool AddTransformation(IColorTransformation transformation)
+  {
+    if (this.ColorTransformations.Contains(transformation))
+      return false;
+    this.ColorTransformations.Add((transformation as ColorTransformation)!);
+    return true;
   }
 }

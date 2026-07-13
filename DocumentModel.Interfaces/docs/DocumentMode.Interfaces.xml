@@ -137,20 +137,38 @@
             The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
             </summary>
         </member>
-        <member name="T:DocumentModel.ITransformableColor">
+        <member name="T:DocumentModel.ITintableColor">
             <summary>
-            Interface representing a color that can be transformed, providing properties to get or set the tint and shade values of the color.
+            Interface representing a color that can be tinted or shaded, providing properties to get or set the tint and shade values of the color.
             </summary>
         </member>
-        <member name="P:DocumentModel.ITransformableColor.Tint">
+        <member name="P:DocumentModel.ITintableColor.Tint">
             <summary>
             Gets or sets the tint value of the color. The tint is a double value that represents the amount of white or black added to the color.
             </summary>
         </member>
-        <member name="P:DocumentModel.ITransformableColor.Shade">
+        <member name="P:DocumentModel.ITintableColor.Shade">
             <summary>
             Gets or sets the shade value of the color. The shade is a double value that represents the amount of black added to the color.
             </summary>
+        </member>
+        <member name="M:DocumentModel.ITintableColor.GetEffectiveColor">
+            <summary>
+            Evaluates and returns the effective color after applying color transformations to the original color.
+            </summary>
+            <returns>The effective color after transformations.</returns>
+        </member>
+        <member name="T:DocumentModel.ITransformableColor">
+            <summary>
+            Interface representing a color that can be transformed by a collection of transformations.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ITransformableColor.AddTransformation(DocumentModel.IColorTransformation)">
+            <summary>
+            Adds a transformation to the color.
+            </summary>
+            <param name="transformation">The transformation to add.</param>
+            <returns>True if the transformation was added successfully; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.ITransformableColor.GetEffectiveColor">
             <summary>

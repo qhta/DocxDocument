@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Color))]
 [DataContract]
 [XmlRoot("Color", Namespace = "DocumentModel.Wordprocessing")]
-public partial class WordColor : AnyColor<DXW.Color>
+public partial class WordColor : WordColorBase<DXW.Color>
 {
   /// <summary>
   /// Initializes a new instance of the Color class.
@@ -29,55 +29,53 @@ public partial class WordColor : AnyColor<DXW.Color>
   /// <summary>
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
-  /// <param name = "hexColor">The </param>
+  /// <param name = "hexColor">The hexadecimal RGB color value to initialize the Color instance.</param>
   public WordColor(UInt32 hexColor)
   {
     Value = hexColor ^ 0xFF000000;
   }
 
   /// <summary>
-  /// <para>Run Content Color</para>
-  /// <para>Represents the following attribute in the schema: w:val</para>
+  /// Hexadecimal RGB color value representing the color. This property corresponds to the 'w:val' attribute in the WordprocessingML schema.
   /// </summary>
-  /// <remarks>
-  /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
-  /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.Val))]
   public HexColor? Value { get => _value; set => UpdateField(ref _value, value, nameof(Value)); }
   private HexColor? _value;
 
   /// <summary>
-  /// <para>Run Content Theme Color</para>
-  /// <para>Represents the following attribute in the schema: w:themeColor</para>
+  /// Gets or sets the theme color associated with this color definition. This property corresponds to the 'w:themeColor' attribute in the WordprocessingML schema and allows for the use of theme-based colors in Word documents.
   /// </summary>
-  /// <remarks>
-  /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
-  /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeColor))]
   public DMD.SchemeColors? ThemeColor { get => _ThemeColor; set => UpdateField(ref _ThemeColor, value, nameof(ThemeColor)); }
   private DMD.SchemeColors? _ThemeColor;
 
   /// <summary>
-  /// <para>Run Content Theme Color Tint</para>
-  /// <para>Represents the following attribute in the schema: w:themeTint</para>
+  /// Gets or sets the theme tint associated with this color definition. This property corresponds to the 'w:themeTint' attribute in the WordprocessingML schema and allows for the application of a tint to the theme color, enabling lighter variations of the base theme color.
   /// </summary>
-  /// <remarks>
-  /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
-  /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeTint))]
-  public HexPercent? Tint { get => _tint; set => UpdateField(ref _tint, value, nameof(Tint)); }
+  [XmlIgnore]
+  [JsonIgnore]
+  public HexPercent? ThemeTint { get => _tint; set => UpdateField(ref _tint, value, nameof(Tint)); }
   private HexPercent? _tint;
 
   /// <summary>
-  /// <para>Run Content Theme Color Shade</para>
-  /// <para>Represents the following attribute in the schema: w:themeShade</para>
+  /// Implements the Tint property from the WordColorBase class
   /// </summary>
-  /// <remarks>
-  /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
-  /// </remarks>
+  public override Percentage? Tint { get => ThemeTint; set => ThemeTint = value; }
+
+  /// <summary>
+  /// Gets or sets the theme shade associated with this color definition. This property corresponds to the 'w:themeShade' attribute in the WordprocessingML schema and allows for the application of a shade to the theme color, enabling darker variations of the base theme color.
+  /// </summary>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
-  public HexPercent? Shade { get => _shade; set => UpdateField(ref _shade, value, nameof(Shade)); }
+  [XmlIgnore]
+  [JsonIgnore] 
+  public HexPercent? ThemeShade { get => _shade; set => UpdateField(ref _shade, value, nameof(Shade)); }
   private HexPercent? _shade;
+
+  /// <summary>
+  /// Implements the Shade property from the WordColorBase class
+  /// </summary>
+  public override Percentage? Shade { get => ThemeShade; set => ThemeShade = value; }
 
   /// <summary>
   /// Implicitly converts a string to a <see cref = "WordColor"/> value.

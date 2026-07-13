@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class WordColor : IColor, INamedColor, ITransformableColor
+public partial class WordColor : IColor, INamedColor, ITintableColor
 {
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
   /// </summary>
-  UInt32 IColor.ARGB { get => ((this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000); set => this.Value = value ^ 0xFF000000; }
+  public override UInt32 ARGB { get => ((this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000); set => this.Value = value ^ 0xFF000000; }
 
   /// <summary>
   /// Gets or sets the RGB components of the color as a tuple of double values between 0 and 1.
@@ -13,7 +13,7 @@ public partial class WordColor : IColor, INamedColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B, double A) RGBAComponents
+  public override (double R, double G, double B, double A) RGBAComponents
   {
     get
     {
@@ -40,7 +40,7 @@ public partial class WordColor : IColor, INamedColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L, double A) HSLAComponents
+  public override (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
@@ -89,42 +89,4 @@ public partial class WordColor : IColor, INamedColor, ITransformableColor
 
   private string? _Name;
 
-  double? ITransformableColor.Tint
-  {
-    get => this.Tint?.AsDouble();
-    set
-    {
-      if (value!=null)
-        this.Tint = value.Value;
-    }
-  }
-
-  double? ITransformableColor.Shade
-  {
-    get => this.Shade?.AsDouble();
-    set
-    {
-      if (value!=null)
-        this.Shade = value.Value;
-    }
-  }
-  IColor ITransformableColor.GetEffectiveColor()
-  {
-    IColor result = this;
-    if (Tint is not null)
-      result = new DMD.Tint { Value = Tint.Value }.Transform(result);
-    if (Shade is not null)
-      result = new DMD.Shade { Value = Shade.Value }.Transform(result);
-    return result;
-  }
-
-  IEnumerable<IColorTransformation> ITransformableColor.GetTransformations()
-  {
-    var transformations = new List<IColorTransformation>();
-    if (Tint is not null)
-      transformations.Add(new DMD.Tint { Value = Tint.Value });
-    if (Shade is not null)
-      transformations.Add(new DMD.Shade { Value = Shade.Value });
-    return transformations;
-  }
 }

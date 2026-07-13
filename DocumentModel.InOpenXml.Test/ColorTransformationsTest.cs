@@ -19,7 +19,7 @@ public class ColorTransformationsTest : BaseThemeTest
     if (!TestTransformationTypeDiscovery()) return false;
     if (!TestColorModelsConversion()) return false;
     if (!TestColorTransformations()) return false;
-    
+
 
     Console.WriteLine("All Color transformation tests passed.\n");
     return true;
@@ -59,8 +59,8 @@ public class ColorTransformationsTest : BaseThemeTest
   }
 
 
-  private readonly List<Type> typesToConvert = new List<Type>
-  {
+  private readonly List<Type> typesToConvert =
+  [
 
     typeof(DocumentModel.Drawings.RgbColorModelHex),
     typeof(DocumentModel.Drawings.RgbColorModelPercentage),
@@ -68,8 +68,16 @@ public class ColorTransformationsTest : BaseThemeTest
     typeof(DocumentModel.Wordprocessing.WordColor),
     typeof(DocumentModel.Wordprocessing.RgbColorHex),
     typeof(DocumentModel.Wordprocessing.SchemeColor),
-  };
+  ];
 
+  private readonly List<ColorTransformation> colorTransformationsToTest =
+  [
+    new DocumentModel.Drawings.Alpha { Value = "50%"},
+    new DocumentModel.Drawings.AlphaModulation { Value = "60%"},
+    new DocumentModel.Drawings.AlphaOffset { Value = "20%"},
+    new DocumentModel.Drawings.Shade { Value = "40%"},
+    new DocumentModel.Drawings.Tint { Value = "40%"}
+  ];
   /// <summary>
   /// Tests conversion between all IColor implementations by serializing and deserializing each type to XML and comparing the results.
   /// </summary>
@@ -110,7 +118,7 @@ public class ColorTransformationsTest : BaseThemeTest
         {
           namedOther.Name = namedBase.Name;
         }
-        if (otherColor is ITransformableColor tintableOther && baseColor is ITransformableColor tintableBase)
+        if (otherColor is ITintableColor tintableOther && baseColor is ITintableColor tintableBase)
         {
           tintableOther.Tint = tintableBase.Tint;
           tintableOther.Shade = tintableBase.Shade;
@@ -171,6 +179,10 @@ public class ColorTransformationsTest : BaseThemeTest
 
       if (baseColor is ITransformableColor transformableColor)
       {
+        foreach (var transformation in colorTransformationsToTest)
+        {
+          transformableColor.AddTransformation(transformation);
+        }
         var effectiveColor = baseColor;
         foreach (var transformation in transformableColor.GetTransformations())
         {
@@ -189,7 +201,7 @@ public class ColorTransformationsTest : BaseThemeTest
           if (transformation is Shade shade)
           {
             var l = previousHSLA.L * shade.Value.AsDouble();
-            checkColor = new HslColor() { Hue = effectiveHSLA.H*360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
+            checkColor = new HslColor() { Hue = effectiveHSLA.H * 360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
           }
           else if (transformation is Tint tint)
           {
@@ -216,7 +228,7 @@ public class ColorTransformationsTest : BaseThemeTest
       }
 
     }
-  
+
     Console.WriteLine("✓ TestColorTransformations passed\n");
     return true;
   }
@@ -311,7 +323,7 @@ public class ColorTransformationsTest : BaseThemeTest
         Index = DMD.SchemeColors.Dark2,
         LastColor = (HexColor)0x336699,
         Tint = new Percentage("20%"),
-       // Shade = new Percentage("40%"),
+        // Shade = new Percentage("40%"),
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }

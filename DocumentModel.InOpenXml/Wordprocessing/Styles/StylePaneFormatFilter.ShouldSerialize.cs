@@ -4,7 +4,9 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class StylePaneFormatFilter
 {
+#pragma warning disable CS0618 // Type or member is obsolete
   public bool ShouldSerializeVal() => Val is not null && ShouldSerialize(Val);
+#pragma warning restore CS0618 // Type or member is obsolete
   public bool ShouldSerializeAllStyles() => AllStyles is not null;
   public bool ShouldSerializeCustomStyles() => CustomStyles is not null;
   public bool ShouldSerializeLatentStyles() => LatentStyles is not null;
