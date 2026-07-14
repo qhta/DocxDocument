@@ -56,19 +56,6 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   }
   private Percentage? _BluePercentage;
 
-  /// <summary>
-  /// Alpha component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of alpha (opacity) in the color where 0 is fully transparent and 100% is fully opaque.
-  /// This is equivalent to RGBA values 0-255, but expressed as a percentage for easier calculations.
-  /// </remarks>
-  public Percentage Alpha
-  {
-    get => _AlphaPercentage ??= "100%";
-    set => UpdateField(ref _AlphaPercentage, value, nameof(Alpha));
-  }
-  private Percentage? _AlphaPercentage;
 
   /// <summary>
   /// Gets or sets the red component of the color as a double value between 0 and 1.
@@ -96,14 +83,5 @@ public partial class RgbColorModelPercentage : DrawingsColorBase<DXD.RgbColorMod
   {
     get => _BluePercentage?.AsDouble() ?? 0;
     set => Blue = new Percentage(value);
-  }
-
-  /// <summary>
-  /// Gets or sets the alpha component of the color as a double value between 0 and 1.
-  /// </summary>
-  public override double AlphaFactor
-  {
-    get => _AlphaPercentage?.AsDouble() ?? 0;
-    set => Alpha = new Percentage(value);
   }
 }

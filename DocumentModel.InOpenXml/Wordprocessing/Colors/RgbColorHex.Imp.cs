@@ -8,7 +8,7 @@ public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
   [NotMapped]
   [XmlIgnore]
   [JsonIgnore]
-  public UInt32 ARGB
+  public override UInt32 ARGB
   {
     get
     {
@@ -103,7 +103,7 @@ public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double R, double G, double B, double A) RGBAComponents
+  public override (double R, double G, double B, double A) RGBAComponents
   {
     get => (this.Red, this.Green, this.Blue, this.Alpha);
     set
@@ -121,7 +121,7 @@ public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public (double H, double S, double L, double A) HSLAComponents
+  public override (double H, double S, double L, double A) HSLAComponents
   {
     get
     {
@@ -166,57 +166,4 @@ public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
     }
   }
 
-  double? ITintableColor.Tint { get => this.Tint; set => this.Tint = value; }
-
-  double? ITintableColor.Shade { get => this.Shade; set => this.Shade = value; }
-
-  /// <summary>
-  /// Gets the effective color after applying any tint or shade transformations.
-  /// </summary>
-  /// <returns>The effective color after applying transformations.</returns>
-  public IColor GetEffectiveColor()
-  {
-    IColor result = this;
-    if (Tint is not null)
-      result = new DMD.Tint { Value = Tint.Value }.Transform(result);
-    if (Shade is not null)
-      result = new DMD.Shade { Value = Shade.Value }.Transform(result);
-    return result;
-  }
-
-  /// <summary>
-  /// Gets the list of color transformations (tint and shade) applied to the current color.
-  /// </summary>
-  /// <returns>A list of color transformations applied to the current color.</returns>
-  public IEnumerable<IColorTransformation> GetTransformations()
-  {
-    var transformations = new List<IColorTransformation>();
-    if (Tint is not null)
-      transformations.Add(new DMD.Tint { Value = Tint.Value });
-    if (Shade is not null)
-      transformations.Add(new DMD.Shade { Value = Shade.Value });
-    return transformations;
-  }
-
-  /// <summary>
-  /// Adds a color transformation to the current color.
-  /// If the transformation is a Tint or Shade, it updates the corresponding property of the color.
-  /// Otherwise, it does not modify the color and returns false.
-  /// </summary>
-  /// <param name="transformation">The transformation to add.</param>
-  /// <returns>True if the transformation was added successfully; otherwise, false.</returns>
-  bool ITransformableColor.AddTransformation(IColorTransformation transformation)
-  {
-    if (transformation is DMD.Tint tint)
-    {
-      Tint = tint.Value;
-      return true;
-    }
-    if (transformation is DMD.Shade shade)
-    {
-      Shade = shade.Value;
-      return true;
-    }
-    return false;
-  }
 }

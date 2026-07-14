@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXO10W.SchemeColor))]
 [DataContract]
 [XmlRoot("SchemeColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class SchemeColor : WordColorBase<DXO10W.SchemeColor>
+public partial class SchemeColor : WordDrawingsColorBase<DXO10W.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.

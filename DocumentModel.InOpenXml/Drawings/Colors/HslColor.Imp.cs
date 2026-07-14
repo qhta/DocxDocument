@@ -31,7 +31,7 @@ public partial class HslColor : IColor
       var r = (UInt32)System.Math.Round((r1 + m) * 255.0);
       var g = (UInt32)System.Math.Round((g1 + m) * 255.0);
       var b = (UInt32)System.Math.Round((b1 + m) * 255.0);
-      var a = (UInt32)System.Math.Round(Alpha * 255.0);
+      var a = (UInt32)System.Math.Round(AlphaFactor * 255.0);
       return (a << 24) | (r << 16) | (g << 8) | b;
     }
 
@@ -58,7 +58,7 @@ public partial class HslColor : IColor
       Hue = h.NormalizeHue();
       Saturation = s.Clamp01();
       Luminance = l.Clamp01();
-      Alpha = a.Clamp01();
+      AlphaFactor = a.Clamp01();
     }
   }
 
@@ -76,7 +76,7 @@ public partial class HslColor : IColor
       rgb.R = rgb.R.Clamp01();
       rgb.G = rgb.G.Clamp01();
       rgb.B = rgb.B.Clamp01();
-      return (rgb.R, rgb.G, rgb.B, Alpha);
+      return (rgb.R, rgb.G, rgb.B, AlphaFactor);
     }
     set
     {
@@ -84,7 +84,7 @@ public partial class HslColor : IColor
       this.Hue = (h * 360.0).NormalizeHue();
       this.Saturation = s;
       this.Luminance = l;
-      this.Alpha = value.A;
+      this.AlphaFactor = value.A;
     }
   }
 
@@ -96,13 +96,13 @@ public partial class HslColor : IColor
   [JsonIgnore]
   public override (double H, double S, double L, double A) HSLAComponents
   {
-    get => (Hue / 360.0, Saturation , Luminance , Alpha );
+    get => (Hue / 360.0, Saturation , Luminance , AlphaFactor );
     set
     {
       Hue = value.H * 360.0;
       Saturation = value.S ;
       Luminance = value.L ;
-      Alpha = value.A;
+      AlphaFactor = value.A;
     }
   }
 }

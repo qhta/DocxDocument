@@ -5,6 +5,9 @@ public partial class WordColor : IColor, INamedColor, ITintableColor
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped] 
   public override UInt32 ARGB { get => ((this.Value ?? (UInt32)PresetColors.Auto) ^ 0xFF000000); set => this.Value = value ^ 0xFF000000; }
 
   /// <summary>

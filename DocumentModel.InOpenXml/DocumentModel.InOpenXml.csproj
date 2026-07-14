@@ -43,12 +43,17 @@
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.ShouldSerialize.cs" />
     <Compile Remove="Math\Argument.cs" />
     <Compile Remove="Math\Argument.ShouldSerialize.cs" />
+    <Compile Remove="Vml\RgbColor.cs" />
+    <Compile Remove="Vml\RgbColor.XmlSerialization.cs" />
+    <Compile Remove="Vml\RgbColorJsonConverter.cs" />
     <Compile Remove="Vml\Rules.JsonConversion.cs" />
     <Compile Remove="Wordprocessing\Colors\Color.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Colors\RgbColorHex.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Colors\RgbColorModelHex.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Colors\SchemeColor.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing\Colors\SchemeColor.XmlSerialization.cs" />
+    <Compile Remove="Wordprocessing\Colors\WordColor.XmlSerialization.cs" />
+    <Compile Remove="Wordprocessing\Colors\WordColorJsonConverter.cs" />
     <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
     <Compile Remove="Wordprocessing\Mail merge\FieldMapDataCollection.cs" />
@@ -76,8 +81,8 @@
     <Compile Include="Drawings\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Drawings\Colors\SystemColor.Imp.cs" />
     <Compile Include="Vml\VmlColor.Imp.cs" />
-    <Compile Include="Vml\RgbColor.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\RgbColorHex.Imp.cs" />
+    <Compile Include="Wordprocessing\Colors\WordDrawingsColorBase.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\WordColorBase.Imp.cs" />
     <Compile Include="Wordprocessing\Colors\WordColor.Imp.cs" />

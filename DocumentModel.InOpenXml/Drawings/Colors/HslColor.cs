@@ -53,17 +53,4 @@ public partial class HslColor : DrawingsColorBase<DXD.HslColor>, ISchemeBaseColo
   }
   private Percentage? _Luminance;
 
-  /// <summary>
-  /// Alpha component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of alpha (opacity) in the color where 0 is fully transparent and 100% is fully opaque.
-  /// This is equivalent to RGBA values 0-255, but expressed as a percentage for easier calculations.
-  /// </remarks>
-  public Percentage Alpha
-  {
-    get => _Alpha ??= "100%";
-    set => UpdateField(ref _Alpha, value, nameof(Alpha));
-  }
-  private Percentage? _Alpha;
 }

@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace DocumentModel;
 /// <summary>
 /// Represents an RGB color as a result of color transformations applied to a base color.
@@ -10,7 +12,7 @@ public partial class EffectiveColor : ModelElement
   /// </summary>
   public EffectiveColor()
   {
-    Red = new Percentage(100); Green = new Percentage(100); Blue = new Percentage(100); Alpha = new Percentage(100);
+    Red = new Percentage(100); Green = new Percentage(100); Blue = new Percentage(100);
   }
 
   /// <summary>
@@ -25,7 +27,7 @@ public partial class EffectiveColor : ModelElement
     Red = red;
     Green = green;
     Blue = blue;
-    Alpha = alpha;
+    AlphaFactor = alpha;
   }
 
   /// <summary>
@@ -74,13 +76,16 @@ public partial class EffectiveColor : ModelElement
   /// Specifies the amount of alpha (opacity) in the color where 0 is fully transparent and 100% is fully opaque.
   /// This is equivalent to RGBA values 0-255, but expressed as a percentage for easier calculations.
   /// </remarks>
-  public Percentage Alpha { get; set; }
+  public Percentage? Alpha { get; set; }
 
 
 
   /// <summary>
   /// Gets or sets the red component of the color as a double value between 0 and 1.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public double RedFactor
   {
     get => Red.AsDouble();
@@ -90,6 +95,9 @@ public partial class EffectiveColor : ModelElement
   /// <summary>
   /// Gets or sets the green component of the color as a double value between 0 and 1.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public double GreenFactor
   {
     get => Green.AsDouble();
@@ -100,6 +108,9 @@ public partial class EffectiveColor : ModelElement
   /// <summary>
   /// Gets or sets the blue component of the color as a double value between 0 and 1.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public double BlueFactor
   {
     get => Blue.AsDouble();
@@ -109,9 +120,18 @@ public partial class EffectiveColor : ModelElement
   /// <summary>
   /// Gets or sets the alpha component of the color as a double value between 0 and 1.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public double AlphaFactor
   {
-    get => Alpha.AsDouble();
-    set => Alpha = new Percentage(value);
+    get => Alpha?.AsDouble() ?? 1.0;
+    set
+    {
+      if (value == 1.0)
+        Alpha = null;
+      else
+        Alpha = new Percentage(value);
+    }
   }
 }

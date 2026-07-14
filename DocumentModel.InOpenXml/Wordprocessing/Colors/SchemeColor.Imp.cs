@@ -1,6 +1,8 @@
-﻿namespace DocumentModel.Wordprocessing;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
 
-public partial class SchemeColor : IColor, INamedColor, ITintableColor
+namespace DocumentModel.Wordprocessing;
+
+public partial class SchemeColor : IColor, INamedColor, ITransformableColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -12,7 +14,7 @@ public partial class SchemeColor : IColor, INamedColor, ITintableColor
   {
     get
     {
-      IColor? colorScheme = null;
+      DMD.ColorType? colorScheme = null;
       if (this.Index is not null)
         colorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
       var argb = (colorScheme as IColor)?.ARGB ?? (uint)((uint?)LastColor ^ 0xFF000000 ?? (uint)PresetColors.Auto ^ 0xFF000000);

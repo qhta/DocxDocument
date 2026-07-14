@@ -10,7 +10,7 @@ public partial class RgbColor : ModelElement
   /// <summary>
   /// Gets or sets the RGB color value in hexadecimal format (e.g., #RRGGBB).
   /// </summary>
-  private HexColor? Value;
+  public HexColor? Value;
 
   /// <summary>
   /// Returns a string representation of the RGB color in the format "rgb(r,g,b)".
@@ -46,20 +46,27 @@ public partial class RgbColor : ModelElement
     if (string.IsNullOrWhiteSpace(str))
       return false;
     // Check if the string starts with "rgb(" and ends with ")"
-    if (!str.StartsWith("rgb(", StringComparison.OrdinalIgnoreCase) || !str.EndsWith(")"))
-      return false;
-    // Extract the content inside the parentheses
-    var content = str.Substring(4, str.Length - 5);
-    var parts = content.Split(',');
-    if (parts.Length != 3)
-      return false;
-    // Try to parse each part as an integer
-    if (Byte.TryParse(parts[0].Trim(), out byte r) &&
-        Byte.TryParse(parts[1].Trim(), out byte g) &&
-        Byte.TryParse(parts[2].Trim(), out byte b))
+    if (str.StartsWith("rgb(", StringComparison.OrdinalIgnoreCase) && str.EndsWith(")"))
     {
-      // Create a new RgbColor instance
-      color = new RgbColor { Value = new HexColor(r, g, b) };
+      // Extract the content inside the parentheses
+      var content = str.Substring(4, str.Length - 5);
+      var parts = content.Split(',');
+      if (parts.Length != 3)
+        return false;
+
+      // Try to parse each part as an integer
+      if (Byte.TryParse(parts[0].Trim(), out byte r) && Byte.TryParse(parts[1].Trim(), out byte g) &&
+          Byte.TryParse(parts[2].Trim(), out byte b))
+      {
+        // Create a new RgbColor instance
+        color = new RgbColor { Value = new HexColor(r, g, b) };
+        return true;
+      }
+      return false;
+    }
+    if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out uint hex))
+    {
+      color = new RgbColor { Value = new HexColor(hex) };
       return true;
     }
     return false;

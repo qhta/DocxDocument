@@ -10,12 +10,7 @@ public partial class VmlColor : IColor, INamedColor
   [JsonIgnore]
   public UInt32 ARGB
   {
-    get
-    {
-      if (this.Value is IColor)
-        return ((IColor)this.Value).ARGB;
-      return this.Value as UInt32? ?? (uint)PresetColors.Auto;
-    }
+    get => (Value is not null) ? (uint)this.Value ^ 0xFF000000 : (uint)PresetColors.Auto ^ 0xFF000000;
     set => this.Value = value;
   }
 

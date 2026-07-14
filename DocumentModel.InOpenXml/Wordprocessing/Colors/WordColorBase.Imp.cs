@@ -52,7 +52,7 @@ public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableCol
   /// Gets the effective color after applying any tint or shade transformations.
   /// </summary>
   /// <returns>The effective color after applying transformations.</returns>
-  public IColor GetEffectiveColor()
+  public virtual IColor GetEffectiveColor()
   {
     IColor result = this;
     if (Tint is not null)
@@ -66,7 +66,7 @@ public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableCol
   /// Gets tint and shade transformations as a list of IColorTransformation objects.
   /// </summary>
   /// <returns></returns>
-  public IEnumerable<IColorTransformation> GetTransformations()
+  public virtual IEnumerable<IColorTransformation> GetTransformations()
   {
     var transformations = new List<IColorTransformation>();
     if (Tint is not null)
@@ -81,7 +81,7 @@ public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableCol
   /// </summary>
   /// <param name="transformation">The color transformation to add.</param>
   /// <returns>True if the transformation was added; otherwise, false.</returns>
-  public bool AddTransformation(IColorTransformation transformation)
+  public virtual bool AddTransformation(IColorTransformation transformation)
   {
     if (transformation is DMD.Tint tintTransformation)
     {

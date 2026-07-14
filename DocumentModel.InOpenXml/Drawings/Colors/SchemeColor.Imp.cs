@@ -12,7 +12,7 @@ public partial class SchemeColor : IColor
   {
     get
     {
-      IColor? colorScheme = null;
+      DMD.ColorType? colorScheme = null;
       if (this.Index is not null)
         colorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
       return (colorScheme as IColor)?.ARGB ??

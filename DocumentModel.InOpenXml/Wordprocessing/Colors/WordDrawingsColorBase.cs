@@ -1,54 +1,22 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Wordprocessing;
+
 /// <summary>
-/// Represents a set of color modification operations that can be applied to a base color.
-/// These modifications include tinting, shading, alpha transparency, hue/saturation/luminance adjustments
-/// and so on.
+/// Base class for Wordprocessing RgbColorHex and SchemeColor types,
+/// providing Tint and Shade common properties and methods for color transformations.
 /// </summary>
-public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.OpenXmlElement
+public abstract partial class WordDrawingsColorBase<T> : WordColorBase<T> where T :DX.OpenXmlElement
 {
-
-  /// <summary>
-  /// Collection of color transformation operations that can be applied to the base color.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  public ColorTransformations ColorTransformations => _ColorTransformations ??= new ColorTransformations(this);
-
-  /// <summary>
-  /// ColorTransformations as serialized, but ignored if null or empty.
-  /// </summary>
-  [XmlArray(null)]
-  [JsonPropertyName(nameof(ColorTransformations))]
-  [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-  public ColorTransformations? SerializedColorTransformations
-  {
-    get => _ColorTransformations is not null && _ColorTransformations.Any() ? _ColorTransformations : null;
-    set => _ColorTransformations = value;
-  }
-
-  private ColorTransformations? _ColorTransformations;
-
-  /// <summary>
-  /// Adds a color transformation operation to the <see cref="ColorTransformations"/> collection.
-  /// This method is needed by XmlSerialization
-  /// </summary>
-  /// <param name="transformation">The color transformation to add.</param>
-  public void Add(ColorTransformation transformation)
-  {
-    ColorTransformations.Add(transformation);
-  }
-
   /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
   /// <remarks>
   /// <para>
   /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100,000, where:
+  /// Values range from 0 to 100000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50,000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100,000 = 100% tint (fully white)</description></item>
+  /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
+  /// <item><description>100000 = 100% tint (fully white)</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -56,9 +24,10 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// Tint and shade are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
+  [OpenXmlElement(typeof(DXO10W.Tint))]
   [XmlIgnore]
   [JsonIgnore]
-  public Percentage? Tint
+  public override Percentage? Tint
   {
     get => GetPercentage<DMD.Tint, DXD.Tint>();
     set => SetPercentage<DMD.Tint, DXD.Tint>(value);
@@ -70,39 +39,55 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// <remarks>
   /// <para>
   /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100,000, where:
+  /// Values range from 0 to 100000, where:
   /// <list type="bullet">
   /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50,000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100,000 = 100% shade (fully black)</description></item>
+  /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
+  /// <item><description>100000 = 100% shade (fully black)</description></item>
   /// </list>
   /// </para>
   /// <para>
   /// Shade and tint are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
+  [OpenXmlElement(typeof(DXO10W.Shade))]
   [XmlIgnore]
   [JsonIgnore]
-  public Percentage? Shade
+  public override Percentage? Shade
   {
     get => GetPercentage<DMD.Shade, DXD.Shade>();
     set => SetPercentage<DMD.Shade, DXD.Shade>(value);
   }
 
-
   /// <summary>
-  /// Absolute alpha (transparency) value.
+  /// Collection of color transformation operations that can be applied to the base color.
   /// </summary>
-  /// <remarks>
-  /// Specifies the opacity of the color where 0 is fully transparent and 100,000 is fully opaque (100%).
-  /// Values between create semi-transparent colors. If null, full opacity (100,000) is assumed.
-  /// </remarks>
   [XmlIgnore]
   [JsonIgnore]
-  public Percentage? Alpha
+  public DMD.ColorTransformations ColorTransformations => _ColorTransformations ??= new DMD.ColorTransformations(this);
+
+  /// <summary>
+  /// ColorTransformations as serialized, but ignored if null or empty.
+  /// </summary>
+  [XmlArray(null)]
+  [JsonPropertyName(nameof(ColorTransformations))]
+  [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+  public DMD.ColorTransformations? SerializedColorTransformations
   {
-    get => GetPercentage<DMD.Alpha, DXD.Alpha>();
-    set => SetPercentage<DMD.Alpha, DXD.Alpha>(value);
+    get => _ColorTransformations is not null && _ColorTransformations.Any() ? _ColorTransformations : null;
+    set => _ColorTransformations = value;
+  }
+
+  private DMD.ColorTransformations? _ColorTransformations;
+
+  /// <summary>
+  /// Adds a color transformation operation to the <see cref="ColorTransformations"/> collection.
+  /// This method is needed by XmlSerialization
+  /// </summary>
+  /// <param name="transformation">The color transformation to add.</param>
+  public void Add(DMD.ColorTransformation transformation)
+  {
+    ColorTransformations.Add(transformation);
   }
 
   /// <summary>
@@ -112,7 +97,7 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// <typeparam name="OpenXmlType">The type of the underlying OpenXML element representing the percentage transformation.</typeparam>
   /// <returns>The percentage value of the specified color transformation property, or <c>null</c> if not found.</returns>
   private Percentage? GetPercentage<TTrans, OpenXmlType>()
-    where TTrans : PercentageTransformation<OpenXmlType>
+    where TTrans : DMD.PercentageTransformation<OpenXmlType>
     where OpenXmlType : DXD.PositiveFixedPercentageType
 
   {
@@ -121,7 +106,7 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
       var transformation = _ColorTransformations?.FirstOrDefault(ct => ct is TTrans);
       if (transformation != null)
       {
-        return ((IPercentageTransformation)transformation).Value;
+        return ((DMD.IPercentageTransformation)transformation).Value;
       }
     }
     return null;
@@ -134,17 +119,15 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
   /// <typeparam name="OpenXmlType">The type of the underlying OpenXML element representing the percentage transformation.</typeparam>
   /// <param name="value">The percentage value to set.</param>
   private void SetPercentage<TTrans, OpenXmlType>(Percentage? value)
-    where TTrans : PercentageTransformation<OpenXmlType>, new()
+    where TTrans : DMD.PercentageTransformation<OpenXmlType>, new()
     where OpenXmlType : DXD.PositiveFixedPercentageType
   {
     if (value is not null)
     {
-      _ColorTransformations ??= new ColorTransformations(this);
+      _ColorTransformations ??= new DMD.ColorTransformations(this);
 
       var transformation = new TTrans();
-      if (transformation is DMD.Alpha)
-        Debug.Assert(true);
-      ((IPercentageTransformation)transformation).Value = value.Value;
+      ((DMD.IPercentageTransformation)transformation).Value = value.Value;
       ColorTransformations.Add(transformation);
     }
     else
@@ -159,5 +142,4 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
       }
     }
   }
-
 }

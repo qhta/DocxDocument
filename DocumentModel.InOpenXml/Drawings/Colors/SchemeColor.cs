@@ -16,13 +16,34 @@ public partial class SchemeColor: DrawingsColorBase<DXD.SchemeColor>, IDrawingCo
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
-  public SchemeColors? Index { get => _index; set => UpdateField(ref _index, value, nameof(Index)); }
+  public SchemeColors? Index
+  {
+    get => _index; 
+    set => UpdateField(ref _index, value, nameof(Index));
+  }
   private SchemeColors? _index;
 
 
   /// <summary>
   /// Gets or sets the last known RGB color value for the scheme color.
   /// </summary>
-  public HexColor? LastColor { get => _LastColor; set => UpdateField(ref _LastColor, value, nameof(LastColor)); }
+  public HexColor? LastColor 
+  { 
+    get => _LastColor ??= GetColorScheme(); 
+    set => UpdateField(ref _LastColor, value, nameof(LastColor));
+  }
   private HexColor? _LastColor;
+
+  /// <summary>
+  /// Gets the actual RGB color value for the scheme color based on the current document theme.
+  /// </summary>
+  /// <returns></returns>
+  private HexColor? GetColorScheme()
+  {
+    DMD.ColorType? colorScheme = null;
+    if (this.Index is not null)
+      colorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Index.Value);
+    return (colorScheme as IColor)?.ARGB ^ 0xFF000000;
+
+  }
 }

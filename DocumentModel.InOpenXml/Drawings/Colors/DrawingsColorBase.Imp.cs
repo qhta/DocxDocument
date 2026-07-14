@@ -78,11 +78,13 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor, ITr
   [JsonIgnore]
   public virtual double AlphaFactor
   {
-    get => (((this.ARGB >> 24) & 0xFF) / 255.0).Clamp01();
+    get => Alpha?.AsDouble() ?? 1.0;
     set
     {
-      var alpha = (UInt32)System.Math.Round((double)value * 255.0);
-      this.ARGB = (UInt32)(this.ARGB) & 0x00FFFFFF | (alpha << 24);
+      if (value == 1.0)
+        Alpha = null;
+      else
+        Alpha = new Percentage(value);
     }
   }
 

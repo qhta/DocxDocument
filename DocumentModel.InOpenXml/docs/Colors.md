@@ -644,3 +644,35 @@ The actual interpretation of the name depends on the context in which it is used
 ### Drawings.IColorHolder interface
 
 It is an interface for a drawings element, such as a fill or a line, which can hold one of the drawings color models representet by a property **Color**.
+
+# Color transformations
+
+All the drawings color models have a set of optional properties, which represent color transformations. The properties are the following:
+- **Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
+- **AlphaOffset** - specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
+- **AlphaModulation** - specifies a more or less opaque version of its input color. An alpha modulate never increases the alpha beyond 100%. A 200% alpha modulate makes a input color twice as opaque as before. A 50% alpha modulate makes a input color half as opaque as before.
+- **Blue** - specifies the input color with the specific blue component, but with the red and green color components unchanged.
+- **BlueOffset** - specifies specifies the input color with its blue component shifted, but with its red and green color components unchanged.
+- **BlueModulation** - specifies the input color with its blue component modulated by the given percentage. A 50% blue modulate reduces the blue component by half. A 200% blue modulate doubles the blue component.
+- **Green** - specifies the input color with the specific green component, but with the red and blue color components unchanged.
+- **GreenOffset** - specifies the input color with its green component shifted, but with its red and blue color components unchanged.
+- **GreenModulation** - specifies the input color with its green component modulated by the given percentage. A 50% green modulate reduces the green component by half. A 200% green modulate doubles the green component.
+- **Red** - specifies the input color with the specific red component, but with the green and blue color components unchanged.
+- **RedOffset** - specifies the input color with its red component shifted, but with its green and blue color components unchanged.
+- **RedModulation** - specifies the input color with its red component modulated by the given percentage. A 50% red modulate reduces the red component by half. A 200% red modulate doubles the red component.
+- **Hue** - specifies the input color with the specific hue component, but with the saturation and luminance components unchanged.
+- **HueOffset** - specifies the input color with its hue component shifted, but with its saturation and luminance components unchanged.
+- **HueModulation** - specifies the input color with its hue component modulated by the given percentage. A 50% hue modulate reduces the hue component by half. A 200% hue modulate doubles the hue component.
+- **Saturation** - specifies the input color with the specific saturation component, but with the hue and luminance components unchanged.
+- **SaturationOffset** - specifies the input color with its saturation component shifted, but with its hue and luminance components unchanged.
+- **SaturationModulation** - specifies the input color with its saturation component modulated by the given percentage. A 50% saturation modulate reduces the saturation component by half. A 200% saturation modulate doubles the saturation component.
+- **Luminance** - specifies the input color with the specific luminance component, but with the hue and saturation components unchanged.
+- **LuminanceOffset** - specifies the input color with its luminance component shifted, but with its hue and saturation components unchanged.
+- **LuminanceModulation** - specifies the input color with its luminance component modulated by the given percentage. A 50% luminance modulate reduces the luminance component by half. A 200% luminance modulate doubles the luminance component.
+- **Tint** - specifies the input color with a tint applied. A tint is a percentage of white added to the color, lightening it. A 10% tint is 10% of the input color combined with 90% white.
+- **Shade** - specifies the input color with a shade applied. A shade is a percentage of black added to the color, darkening it. A 10% shade is 10% of the input color combined with 90% black.
+- **Complement** - specifies the input color with its complement (opposite) color applied. The complement color is the color directly opposite on the color wheel. For example, the complement of red is cyan, green is magenta, and blue is yellow.
+- **Inverse** - specifies the input color with its inverse color applied. The inverse color is calculated by inverting each RGB component (255 - value). For example, the inverse of red (255,0,0) is cyan (0,255,255).
+- **Gray** - specifies the input color with its grayscale version applied. The grayscale value is calculated based on the perceived luminance of the original color, resulting in a shade of gray that represents the brightness of the color.
+- **Gamma** - specifies the input color with gamma correction applied. Gamma correction adjusts the brightness of the color to account for the nonlinear response of display devices. A gamma value of 2.2 is commonly used for standard displays.
+- **InverseGamma** - specifies the input color with inverse gamma correction applied. Inverse gamma correction reverses the gamma correction process, converting display-corrected RGB values back to linear RGB values.

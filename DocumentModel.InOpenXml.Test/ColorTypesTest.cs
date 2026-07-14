@@ -38,39 +38,8 @@ public class ColorTypesTest : BaseThemeTest
   private bool TestColorTypeDiscovery()
   {
     Console.WriteLine("--- Color Type Discovery ---");
-    var discovered = GetIColorTypes();
-    var expected = new List<Type>
-    {
-      typeof(DocumentModel.Drawings.AlphaInverse),
-      typeof(DocumentModel.Drawings.BackgroundColor),
-      typeof(DocumentModel.Drawings.BulletColor),
-      typeof(DocumentModel.Drawings.ColorReplacement),
-      typeof(DocumentModel.Drawings.ColorType),
-      typeof(DocumentModel.Drawings.ContourColor),
-      typeof(DocumentModel.Drawings.CustomColor),
-      typeof(DocumentModel.Drawings.Diagrams.ColorType),
-      typeof(DocumentModel.Drawings.Diagrams.EffectColorList),
-      typeof(DocumentModel.Drawings.Diagrams.FillColor),
-      typeof(DocumentModel.Drawings.Diagrams.LineColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextEffectColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextFillColorList),
-      typeof(DocumentModel.Drawings.Diagrams.TextLineColorList),
-      typeof(DocumentModel.Drawings.Duotone),
-      typeof(DocumentModel.Drawings.ExtrusionColor),
-      typeof(DocumentModel.Drawings.HslColor),
-      typeof(DocumentModel.Drawings.PresetColor),
-      typeof(DocumentModel.Drawings.RgbColorModelHex),
-      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-      typeof(DocumentModel.Drawings.SchemeColor),
-      typeof(DocumentModel.Drawings.SchemeColorDef),
-      typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.EffectiveColor),
-      typeof(DocumentModel.Vml.VmlColor),
-      typeof(DocumentModel.Vml.RgbColor),
-      typeof(DocumentModel.Wordprocessing.WordColor),
-      typeof(DocumentModel.Wordprocessing.RgbColorHex),
-      typeof(DocumentModel.Wordprocessing.SchemeColor),
-    }.OrderBy(item => item.FullName).ToList();
+    var discovered = GetColorTypes();
+    var expected = colorTypes.OrderBy(item => item.FullName).ToList();
 
     if (!discovered.SequenceEqual(expected))
 
@@ -88,18 +57,42 @@ public class ColorTypesTest : BaseThemeTest
   }
 
 
-  private readonly List<Type> typesToTest = new List<Type>
-    {
-      typeof(DocumentModel.Drawings.HslColor),
-      typeof(DocumentModel.Drawings.PresetColor),
-      typeof(DocumentModel.Drawings.RgbColorModelHex),
-      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-      typeof(DocumentModel.Drawings.SchemeColor),
-      typeof(DocumentModel.Drawings.SystemColor),
-      typeof(DocumentModel.Wordprocessing.WordColor),
-      typeof(DocumentModel.Wordprocessing.RgbColorHex),
-      typeof(DocumentModel.Wordprocessing.SchemeColor),
-    }.OrderBy(item => item.FullName).ToList();
+  private static readonly Type[] colorTypes =
+  [
+    typeof(DocumentModel.Drawings.HslColor),
+    typeof(DocumentModel.Drawings.PresetColor),
+    typeof(DocumentModel.Drawings.RgbColorModelHex),
+    typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+    typeof(DocumentModel.Drawings.SchemeColor),
+    typeof(DocumentModel.Drawings.SystemColor),
+    typeof(DocumentModel.EffectiveColor),
+    typeof(DocumentModel.Vml.VmlColor),
+    typeof(DocumentModel.Wordprocessing.WordColor),
+    typeof(DocumentModel.Wordprocessing.RgbColorHex),
+    typeof(DocumentModel.Wordprocessing.SchemeColor),
+  ];
+
+  private static readonly Type[] colorHolderTypes =
+  [
+    typeof(DocumentModel.Drawings.AlphaInverse),
+    typeof(DocumentModel.Drawings.BackgroundColor),
+    typeof(DocumentModel.Drawings.BulletColor),
+    typeof(DocumentModel.Drawings.ColorReplacement),
+    typeof(DocumentModel.Drawings.ColorType),
+    typeof(DocumentModel.Drawings.ContourColor),
+    typeof(DocumentModel.Drawings.CustomColor),
+    typeof(DocumentModel.Drawings.Diagrams.ColorType),
+    typeof(DocumentModel.Drawings.Diagrams.EffectColorList),
+    typeof(DocumentModel.Drawings.Diagrams.FillColor),
+    typeof(DocumentModel.Drawings.Diagrams.LineColorList),
+    typeof(DocumentModel.Drawings.Diagrams.TextEffectColorList),
+    typeof(DocumentModel.Drawings.Diagrams.TextFillColorList),
+    typeof(DocumentModel.Drawings.Diagrams.TextLineColorList),
+    typeof(DocumentModel.Drawings.Duotone),
+    typeof(DocumentModel.Drawings.ExtrusionColor),
+    typeof(DocumentModel.Drawings.SchemeColorDef),
+  ];
+
 
   /// <summary>
   /// Tests XML serialization and deserialization for all IColor implementations.
@@ -124,7 +117,7 @@ public class ColorTypesTest : BaseThemeTest
       return false;
     }
 
-    foreach (var type in typesToTest)
+    foreach (var type in colorTypes)
     {
       var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
@@ -173,7 +166,7 @@ public class ColorTypesTest : BaseThemeTest
       return false;
     }
 
-    foreach (var type in typesToTest)
+    foreach (var type in colorTypes)
     {
       var color = CreateSampleColor(type);
       AttachToDocumentContext(color, document);
@@ -207,7 +200,7 @@ public class ColorTypesTest : BaseThemeTest
   {
     Console.WriteLine("--- Color Accessors ---");
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToTest)
+    foreach (var type in colorTypes)
     {
       var testData = CreateSampleColor(type);
       AttachToDocumentContext(testData, document);
@@ -260,7 +253,7 @@ public class ColorTypesTest : BaseThemeTest
     Console.WriteLine("--- Edge Cases ---");
     var jsonOptions = JsonConfig.Options;
     var document = CreateDocumentWithInitializedThemePart();
-    foreach (var type in typesToTest)
+    foreach (var type in colorTypes)
     {
       var empty = Activator.CreateInstance(type);
       if (empty == null)
@@ -339,14 +332,14 @@ public class ColorTypesTest : BaseThemeTest
   /// Returns all non-abstract classes in the model assembly that implement an interface named IColor.
   /// </summary>
   /// <returns>Collection of discovered IColor implementation types.</returns>
-  private List<Type> GetIColorTypes()
+  private List<Type> GetColorTypes()
   {
     var assembly = typeof(DocumentModel.Drawings.ColorType).Assembly;
-    var colorTypes = assembly.GetTypes()
+    var foundTypes = assembly.GetTypes()
       .Where(t => !t.IsAbstract && t.GetCustomAttribute<DataContractAttribute>()!=null && t.GetInterfaces().Any(i => i.Name == "IColor"))
       .OrderBy(item => item.FullName).ToList();
 
-    return colorTypes;
+    return foundTypes;
   }
 
 
@@ -426,6 +419,20 @@ public class ColorTypesTest : BaseThemeTest
         Index = DMD.SchemeColors.Accent3,
         //Tint = new Percentage("10%"),
         //Shade = new Percentage("5%"),
+      };
+    if (colorType == typeof(DocumentModel.EffectiveColor))
+      return new DocumentModel.EffectiveColor
+      {
+        Red = 0.5,
+        Green = 0.75,
+        Blue = 0.25,
+      };
+    if (colorType == typeof(DocumentModel.Vml.VmlColor))
+      return new DocumentModel.Vml.VmlColor
+      {
+        Red = 0.5,
+        Green = 0.75,
+        Blue = 0.25,
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }

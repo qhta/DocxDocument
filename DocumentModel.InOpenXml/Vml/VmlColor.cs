@@ -37,7 +37,7 @@ public partial class VmlColor : ModelElement
   /// <param name = "hexColor">The </param>
   public VmlColor(UInt32 hexColor)
   {
-    Value = hexColor.ToString();
+    Value = new HexColor(hexColor);
   }
 
   /// <summary>
@@ -47,8 +47,15 @@ public partial class VmlColor : ModelElement
   /// <remarks>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
-  public object? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
-  private object? _Value;
+  public HexColor? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+  private HexColor? _Value;
+
+  /// <summary>
+  /// Name of the color, which can be used to specify a color by name, such as "Red", "Black", etc.
+  /// If the color is not found in the PresetColors enumeration, an exception is raised.
+  /// </summary>
+  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+  private string? _Name;
 
   /// <summary>
   /// Implicitly converts a string to a <see cref = "VmlColor"/> value.
@@ -82,13 +89,55 @@ public partial class VmlColor : ModelElement
     else
     if (Enum.TryParse<PresetColors>(colorString, out var presetColor))
     {
-      Value = presetColor;
+      Name = presetColor.ToString();
+      Value = new HexColor((uint)presetColor ^ 0xFF000000);
     }
     else
-    if (RgbColor.TryParse(colorString, out var rgbColor))
-      Value = rgbColor;
+    if (HexColor.TryParse(colorString, out var hexColor2))
+    {
+      Value = hexColor2;
+    }
     else
-      Value = colorString; // Fallback to storing the raw string if no known format matches
+      Name = colorString; // Fallback to storing the raw string if no known format matches
+  }
+
+
+  /// <summary>
+  /// Tries to parse a string representation of an RGB color in the format "rgb(r,g,b)" and returns a boolean indicating success or failure.
+  /// </summary>
+  /// <param name="str">The string representation of the RGB color.</param>
+  /// <param name="color">When this method returns, contains the parsed RgbColor if the parsing succeeded, or null if the parsing failed.</param>
+  /// <returns>True if the parsing succeeded; otherwise, false.</returns>
+  public static bool TryParse(string str, out HexColor? color)
+  {
+    color = null;
+    if (string.IsNullOrWhiteSpace(str))
+      return false;
+    // Check if the string starts with "rgb(" and ends with ")"
+    if (str.StartsWith("rgb(", StringComparison.OrdinalIgnoreCase) && str.EndsWith(")"))
+    {
+      // Extract the content inside the parentheses
+      var content = str.Substring(4, str.Length - 5);
+      var parts = content.Split(',');
+      if (parts.Length != 3)
+        return false;
+
+      // Try to parse each part as an integer
+      if (Byte.TryParse(parts[0].Trim(), out byte r) && Byte.TryParse(parts[1].Trim(), out byte g) &&
+          Byte.TryParse(parts[2].Trim(), out byte b))
+      {
+        // Create a new HexColor instance
+        color = new HexColor(r, g, b);
+        return true;
+      }
+      return false;
+    }
+    if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out uint hex))
+    {
+      color = new HexColor(hex);
+      return true;
+    }
+    return false;
   }
 
   /// <summary>
@@ -240,14 +289,4 @@ public partial class VmlColor : ModelElement
       return hexValue;
     return null;
   }
-
-  /// <summary>
-  /// Not supported in VML. This property is included for compatibility with the IColor interface, but it does not have a meaningful implementation in the context of VML colors.
-  /// </summary>
-  public double Tint { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
-
-  /// <summary>
-  /// Not supported in VML. This property is included for compatibility with the IColor interface, but it does not have a meaningful implementation in the context of VML colors.
-  /// </summary>
-  public double Shade { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
 }

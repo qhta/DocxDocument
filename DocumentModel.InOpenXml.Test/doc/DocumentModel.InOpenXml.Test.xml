@@ -732,7 +732,7 @@
             </summary>
             <returns>True if all edge case tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.GetIColorTypes">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.GetColorTypes">
             <summary>
             Returns all non-abstract classes in the model assembly that implement an interface named IColor.
             </summary>
