@@ -1,8 +1,8 @@
 using DocumentModel.Drawings;
 
-using Path = System.IO.Path;
-
 namespace DocumentModel.InOpenXml.Test;
+
+using Math = System.Math;
 
 /// <summary>
 /// Comprehensive tests for all DocumentModel types implementing IColor.
@@ -33,7 +33,7 @@ public class ColorTransformationsTest : BaseThemeTest
   {
     Console.WriteLine("--- ColorTransformations Type Discovery ---");
     var discovered = GetIColorTransformationTypes();
-    var expected = colorTransformationsToTest.Select(t => t.GetType()).ToArray();
+    var expected = colorTransformationsToTest.Select(t => t.GetType()).OrderBy(t => t.FullName).ToArray();
 
     if (!discovered.SequenceEqual(expected))
 
@@ -70,12 +70,17 @@ public class ColorTransformationsTest : BaseThemeTest
     new DocumentModel.Drawings.Blue { Value = "50%"},
     new DocumentModel.Drawings.BlueModulation { Value = "60%"},
     new DocumentModel.Drawings.BlueOffset { Value = "20%"},
+    new DocumentModel.Drawings.Complement(),
+    new DocumentModel.Drawings.Gamma(),
+    new DocumentModel.Drawings.Gray(),
     new DocumentModel.Drawings.Green { Value = "50%"},
     new DocumentModel.Drawings.GreenModulation { Value = "60%"},
     new DocumentModel.Drawings.GreenOffset { Value = "20%"},
     new DocumentModel.Drawings.Hue { Value = "180°"},
     new DocumentModel.Drawings.HueModulation { Value = "60%"},
     new DocumentModel.Drawings.HueOffset { Value = "30°"},
+    new DocumentModel.Drawings.Inverse(),
+    new DocumentModel.Drawings.InverseGamma(),
     new DocumentModel.Drawings.Luminance { Value = "50%"},
     new DocumentModel.Drawings.LuminanceModulation { Value = "60%"},
     new DocumentModel.Drawings.LuminanceOffset { Value = "20%"},
@@ -360,7 +365,50 @@ public class ColorTransformationsTest : BaseThemeTest
       var l = baseColor.HSLAComponents.L * luminanceModulation.Value.AsDouble();
       return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
     }
-    
+
+    if (transformation is Complement)
+    {
+      var (h, s, l, a) = baseColor.HSLAComponents;
+      h = (h + 0.5) % 1.0; // Shift hue by 180 degrees to get the complement
+      return new EffectiveColor(new Degrees(h * 360), s, l, a);
+    }
+
+    if (transformation is Inverse)
+    {
+      var (r, g, b, a) = baseColor.RGBAComponents;
+      r = 1.0 - r; // Invert red component
+      g = 1.0 - g; // Invert green component
+      b = 1.0 - b; // Invert blue component
+      return new EffectiveColor { RGBAComponents = (r, g, b, a) };
+    }
+
+    if (transformation is Gray)
+    {
+      var (r, g, b, a) = baseColor.RGBAComponents;
+      var grayValue = r * 0.3 + g * 0.59 + b * 0.11;
+      return new EffectiveColor { RGBAComponents = (grayValue, grayValue, grayValue, a) };
+    }
+
+    if (transformation is Gamma)
+    {
+      var (r, g, b, a) = baseColor.RGBAComponents;
+      var gammaValue = 2.2;
+      r = Math.Pow(r, 1.0 / gammaValue);
+      g = Math.Pow(g, 1.0 / gammaValue);
+      b = Math.Pow(b, 1.0 / gammaValue);
+      return new EffectiveColor { RGBAComponents = (r, g, b, a) };
+    }
+
+
+    if (transformation is InverseGamma)
+    {
+      var (r, g, b, a) = baseColor.RGBAComponents;
+      var gammaValue = 2.2;
+      r = Math.Pow(r, gammaValue);
+      g = Math.Pow(g, gammaValue);
+      b = Math.Pow(b, gammaValue);
+      return new EffectiveColor { RGBAComponents = (r, g, b, a) };
+    }
     return baseColor;
   }
 

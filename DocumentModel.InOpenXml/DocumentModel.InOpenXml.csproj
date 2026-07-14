@@ -39,7 +39,6 @@
     <Compile Remove="Drawings\Colors\RgbColorModelPercentage.XmlSerialization.cs" />
     <Compile Remove="Drawings\Colors\SchemeColor.XmlSerialization.cs" />
     <Compile Remove="Drawings\Colors\SystemColor.XmlSerialization.cs" />
-    <Compile Remove="Drawings\ColorTransformations\ColorTransformation%28T%29.cs" />
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.cs" />
     <Compile Remove="Drawings\Text elements and properties\FontCollectionType.ShouldSerialize.cs" />
     <Compile Remove="Math\Argument.cs" />
