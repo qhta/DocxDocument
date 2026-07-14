@@ -3,7 +3,7 @@ using Math = System.Math;
 
 
 /// <summary>
-/// Specifies that the defined color has a specific opacity (as a positive fixed percentage), but with its color unchanged.
+/// Transforms the alpha (opacity) component of the color based on the specified percentage value.
 /// </summary>
 [OpenXmlType(typeof(DXD.Alpha))]
 [DataContract]
@@ -16,10 +16,10 @@ public class Alpha: PercentageTransformation<DXD.Alpha>
   /// <returns>The transformed color.</returns>
   public override IColor Transform(IColor color)
   {
-    var (r, g, b, _) = color.RGBAComponents;
-    var a = Value.AsDouble();
+    var (r, g, b, a) = color.RGBAComponents;
+    a = Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
+    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
   }
 }
 
@@ -45,7 +45,7 @@ public class AlphaOffset : PercentageTransformation<DXD.AlphaOffset>
     var (r, g, b, a) = color.RGBAComponents;
     a += Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
+    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
   }
 }
 /// <summary>
@@ -69,6 +69,6 @@ public class AlphaModulation : PercentageTransformation<DXD.AlphaModulation>
     var (r, g, b, a) = color.RGBAComponents;
     a *= Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new RgbColorModelPercentage() { Red = r, Green = g, Blue = b, Alpha = a };
+    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
   }
 }

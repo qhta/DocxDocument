@@ -594,4 +594,23 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
   {
     return ((double)this).GetHashCode();
   }
+
+
+  /// <summary>
+  /// Gets the degrees value as an integer.
+  /// </summary>
+  /// <returns>The integer representation of the degrees value.</returns>
+  public int AsInteger() => (int)Value;
+
+  /// <summary>
+  /// Returns the decimal representation of the degrees value.
+  /// </summary>
+  /// <returns>The decimal representation of the degrees value.</returns>
+  public decimal AsDecimal() => (decimal)Value;
+
+  /// <summary>
+  /// Returns the double representation of the degrees value as a factor (e.g., 0.5 for 180 degrees).   
+  /// </summary>
+  /// <returns>The double representation of the degrees value as a factor.</returns>
+  public double AsDouble() => (double)Value / 360;
 }

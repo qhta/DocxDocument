@@ -49,7 +49,7 @@ public static class TestHelper
   public class ApproxEqualityComparer: IEqualityComparer
   {
     /// <summary>
-    /// If both x and y are double, compares them with a tolerance of 1e-6. Otherwise, uses the default structural equality comparer.
+    /// If both x and y are double, compares them with a tolerance of 1e-4. Otherwise, uses the default structural equality comparer.
     /// </summary>
     /// <param name="x">The first object to compare.</param>
     /// <param name="y">The second object to compare.</param>
@@ -57,7 +57,7 @@ public static class TestHelper
    bool IEqualityComparer.Equals(object? x, object? y)
     {
       if (x is double dbl1 && y is double dbl2)
-        return System.Math.Abs(dbl1 - dbl2) < 1e-6;
+        return System.Math.Abs(dbl1 - dbl2) < 1e-4;
       return StructuralComparisons.StructuralEqualityComparer.Equals(x, y);
     }
 

@@ -27,7 +27,7 @@ public partial class EffectiveColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public virtual (double R, double G, double B, double A) RGBAComponents
+  public (double R, double G, double B, double A) RGBAComponents
   {
     get => (this.RedFactor, this.GreenFactor, this.BlueFactor, this.AlphaFactor);
     set
@@ -45,7 +45,7 @@ public partial class EffectiveColor : IColor
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public virtual (double H, double S, double L, double A) HSLAComponents
+  public (double H, double S, double L, double A) HSLAComponents
   {
     get
     {

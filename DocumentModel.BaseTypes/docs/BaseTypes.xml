@@ -1849,6 +1849,24 @@
             </summary>
             <returns>A 32-bit signed integer hash code.</returns>
         </member>
+        <member name="M:DocumentModel.Degrees.AsInteger">
+            <summary>
+            Gets the degrees value as an integer.
+            </summary>
+            <returns>The integer representation of the degrees value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.AsDecimal">
+            <summary>
+            Returns the decimal representation of the degrees value.
+            </summary>
+            <returns>The decimal representation of the degrees value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.AsDouble">
+            <summary>
+            Returns the double representation of the degrees value as a factor (e.g., 0.5 for 180 degrees).   
+            </summary>
+            <returns>The double representation of the degrees value as a factor.</returns>
+        </member>
         <member name="T:DocumentModel.DegreesJsonConverter">
             <summary>
             Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.Degrees"/> structure.

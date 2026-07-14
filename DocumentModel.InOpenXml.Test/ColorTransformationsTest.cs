@@ -33,15 +33,7 @@ public class ColorTransformationsTest : BaseThemeTest
   {
     Console.WriteLine("--- ColorTransformations Type Discovery ---");
     var discovered = GetIColorTransformationTypes();
-    var expected = new List<Type>
-    {
-      typeof(DocumentModel.Drawings.Alpha),
-      typeof(DocumentModel.Drawings.AlphaModulation),
-      typeof(DocumentModel.Drawings.AlphaOffset),
-      typeof(DocumentModel.Drawings.Shade),
-      typeof(DocumentModel.Drawings.Tint),
-    };
-
+    var expected = colorTransformationsToTest.Select(t => t.GetType()).ToArray();
 
     if (!discovered.SequenceEqual(expected))
 
@@ -61,13 +53,13 @@ public class ColorTransformationsTest : BaseThemeTest
 
   private readonly List<Type> typesToConvert =
   [
-
-    typeof(DocumentModel.Drawings.RgbColorModelHex),
-    typeof(DocumentModel.Drawings.RgbColorModelPercentage),
-    typeof(DocumentModel.Drawings.HslColor),
     typeof(DocumentModel.Wordprocessing.WordColor),
     typeof(DocumentModel.Wordprocessing.RgbColorHex),
     typeof(DocumentModel.Wordprocessing.SchemeColor),
+    typeof(DocumentModel.Drawings.RgbColorModelHex),
+    typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+    typeof(DocumentModel.Drawings.HslColor),
+
   ];
 
   private readonly List<ColorTransformation> colorTransformationsToTest =
@@ -75,6 +67,24 @@ public class ColorTransformationsTest : BaseThemeTest
     new DocumentModel.Drawings.Alpha { Value = "50%"},
     new DocumentModel.Drawings.AlphaModulation { Value = "60%"},
     new DocumentModel.Drawings.AlphaOffset { Value = "20%"},
+    new DocumentModel.Drawings.Blue { Value = "50%"},
+    new DocumentModel.Drawings.BlueModulation { Value = "60%"},
+    new DocumentModel.Drawings.BlueOffset { Value = "20%"},
+    new DocumentModel.Drawings.Green { Value = "50%"},
+    new DocumentModel.Drawings.GreenModulation { Value = "60%"},
+    new DocumentModel.Drawings.GreenOffset { Value = "20%"},
+    new DocumentModel.Drawings.Hue { Value = "180°"},
+    new DocumentModel.Drawings.HueModulation { Value = "60%"},
+    new DocumentModel.Drawings.HueOffset { Value = "30°"},
+    new DocumentModel.Drawings.Luminance { Value = "50%"},
+    new DocumentModel.Drawings.LuminanceModulation { Value = "60%"},
+    new DocumentModel.Drawings.LuminanceOffset { Value = "20%"},
+    new DocumentModel.Drawings.Red { Value = "50%"},
+    new DocumentModel.Drawings.RedModulation { Value = "60%"},
+    new DocumentModel.Drawings.RedOffset { Value = "20%"},
+    new DocumentModel.Drawings.Saturation { Value = "50%"},
+    new DocumentModel.Drawings.SaturationModulation { Value = "60%"},
+    new DocumentModel.Drawings.SaturationOffset { Value = "20%"},
     new DocumentModel.Drawings.Shade { Value = "40%"},
     new DocumentModel.Drawings.Tint { Value = "40%"}
   ];
@@ -188,6 +198,7 @@ public class ColorTransformationsTest : BaseThemeTest
         {
           Console.WriteLine($"Applying transformation: {transformation.GetType().Name}");
 
+          var checkColor = CreateCheckColor(transformation, effectiveColor);
           effectiveColor = transformation.Transform(effectiveColor);
 
           var effectiveRGBA = effectiveColor.RGBAComponents;
@@ -196,18 +207,7 @@ public class ColorTransformationsTest : BaseThemeTest
             $"   Effective R: {effectiveRGBA.R}, G: {effectiveRGBA.G}, B: {effectiveRGBA.B}, A: {effectiveRGBA.A}");
           Console.WriteLine(
             $"   Effective H: {effectiveHSLA.H}, S: {effectiveHSLA.S}, L: {effectiveHSLA.L}, A: {effectiveHSLA.A}");
-          var checkColor = effectiveColor;
 
-          if (transformation is Shade shade)
-          {
-            var l = previousHSLA.L * shade.Value.AsDouble();
-            checkColor = new HslColor() { Hue = effectiveHSLA.H * 360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
-          }
-          else if (transformation is Tint tint)
-          {
-            var l = previousHSLA.L * tint.Value.AsDouble() + (1 - tint.Value.AsDouble());
-            checkColor = new HslColor() { Hue = effectiveHSLA.H * 360, Saturation = effectiveHSLA.S, Luminance = l, Alpha = effectiveHSLA.A };
-          }
           var checkRGBA = checkColor.RGBAComponents;
           var checkHSLA = checkColor.HSLAComponents;
           if (!TestHelper.CompareTestData(checkHSLA, effectiveHSLA, "checkHSLA", "effectiveHSLA",
@@ -231,6 +231,137 @@ public class ColorTransformationsTest : BaseThemeTest
 
     Console.WriteLine("✓ TestColorTransformations passed\n");
     return true;
+  }
+
+  private IColor CreateCheckColor(IColorTransformation transformation, 
+    IColor baseColor)
+  {
+    if (transformation is Shade shade)
+    {
+      var l = baseColor.HSLAComponents.L * shade.Value.AsDouble();
+      return new EffectiveColor ( new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A );
+    }
+    if (transformation is Tint tint)
+    {
+      var l = baseColor.HSLAComponents.L * tint.Value.AsDouble() + (1 - tint.Value.AsDouble());
+      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A );
+    }
+
+    if (transformation is Hue hue)
+    {
+      var h = hue.Value.AsDouble();
+      return new EffectiveColor(new Degrees(h * 360), baseColor.HSLAComponents.S, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
+    }
+    if (transformation is HueOffset hueOffset)
+    {
+      var h = baseColor.HSLAComponents.H;
+      h += hueOffset.Value.AsDouble();
+      return new EffectiveColor(new Degrees(h * 360), baseColor.HSLAComponents.S, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
+    }
+    if (transformation is HueModulation hueModulation)
+    {
+      var h = baseColor.HSLAComponents.H;
+      h *= hueModulation.Value.AsDouble();
+      return new EffectiveColor(new Degrees(h * 360), baseColor.HSLAComponents.S, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
+    }
+
+    if (transformation is Alpha alpha)
+    {
+      var a = alpha.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = a };
+    }
+    if (transformation is AlphaOffset alphaOffset)
+    {
+      var a = baseColor.RGBAComponents.A + alphaOffset.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = a };
+    }
+    if (transformation is AlphaModulation alphaModulation)
+    {
+      var a = baseColor.RGBAComponents.A * alphaModulation.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = a };
+    }
+
+    if (transformation is Blue blue)
+    {
+      var b = blue.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = b, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is BlueOffset blueOffset)
+    {
+      var b = baseColor.RGBAComponents.B + blueOffset.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = b, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is BlueModulation blueModulation)
+    {
+      var b = baseColor.RGBAComponents.B * blueModulation.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = baseColor.RGBAComponents.G, Blue = b, Alpha = baseColor.RGBAComponents.A };
+    }
+
+    if (transformation is Green green)
+    {
+      var g = green.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = g, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is GreenOffset greenOffset)
+    {
+      var g = baseColor.RGBAComponents.G + greenOffset.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = g, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is GreenModulation greenModulation)
+    {
+      var g = baseColor.RGBAComponents.G * greenModulation.Value.AsDouble();
+      return new EffectiveColor() { Red = baseColor.RGBAComponents.R, Green = g, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+
+    if (transformation is Red red)
+    {
+      var r = red.Value.AsDouble();
+      return new EffectiveColor() { Red = r, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is RedOffset redOffset)
+    {
+      var r = baseColor.RGBAComponents.R + redOffset.Value.AsDouble();
+      return new EffectiveColor() { Red = r, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+    if (transformation is RedModulation redModulation)
+    {
+      var r = baseColor.RGBAComponents.R * redModulation.Value.AsDouble();
+      return new EffectiveColor() { Red = r, Green = baseColor.RGBAComponents.G, Blue = baseColor.RGBAComponents.B, Alpha = baseColor.RGBAComponents.A };
+    }
+
+    if (transformation is Saturation saturation)
+    {
+      var s = saturation.Value.AsDouble();
+      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+    }
+    if (transformation is SaturationOffset saturationOffset)
+    {
+      var s = baseColor.HSLAComponents.S + saturationOffset.Value.AsDouble();
+      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+    }
+    if (transformation is SaturationModulation saturationModulation)
+    {
+      var s = baseColor.HSLAComponents.S * saturationModulation.Value.AsDouble();
+      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+    }
+    
+    if (transformation is Luminance luminance)
+    {
+      var l = luminance.Value.AsDouble();
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
+    }
+    if (transformation is LuminanceOffset luminanceOffset)
+    {
+      var l = baseColor.HSLAComponents.L + luminanceOffset.Value.AsDouble();
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
+    }
+    if (transformation is LuminanceModulation luminanceModulation)
+    {
+      var l = baseColor.HSLAComponents.L * luminanceModulation.Value.AsDouble();
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
+    }
+    
+    return baseColor;
   }
 
   /// <summary>
