@@ -46,7 +46,7 @@ public static class TestHelper
   /// <summary>
   /// An equality comparer that compares double values with a tolerance for approximate equality.
   /// </summary>
-  public class ApproxEqualityComparer: IEqualityComparer
+  public class ApproxEqualityComparer : IEqualityComparer
   {
     /// <summary>
     /// If both x and y are double, compares them with a tolerance of 1e-4. Otherwise, uses the default structural equality comparer.
@@ -54,7 +54,7 @@ public static class TestHelper
     /// <param name="x">The first object to compare.</param>
     /// <param name="y">The second object to compare.</param>
     /// <returns>True if the objects are considered equal; otherwise, false.</returns>
-   bool IEqualityComparer.Equals(object? x, object? y)
+    bool IEqualityComparer.Equals(object? x, object? y)
     {
       if (x is double dbl1 && y is double dbl2)
         return System.Math.Abs(dbl1 - dbl2) < 1e-4;
@@ -103,7 +103,6 @@ public static class TestHelper
     }
     if (obj1 is IStructuralEquatable structuralObj1)
     {
-      Debug.Assert(true);
       result = structuralObj1.Equals(obj2, new ApproxEqualityComparer());
       if (!result)
         message = $"Structural values differ -> {firstName}={obj1} vs {secondName}={obj2}";
@@ -117,7 +116,6 @@ public static class TestHelper
       if (equalsMethod == null)
         throw new InvalidOperationException(
           $"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
-
       result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
       if (!result)
         message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
@@ -231,27 +229,8 @@ public static class TestHelper
       (enumerator1 as IDisposable)?.Dispose();
       (enumerator2 as IDisposable)?.Dispose();
     }
-    //else
-    //{
-    //  equatableType = typeof(IEquatable<>).MakeGenericType(comparedType);
-    //  if (comparedType.Implements(equatableType))
-    //  {
-    //    var equalsMethod = equatableType.GetMethod("Equals", [comparedType]);
-    //    equalsMethod ??= comparedType.GetMethod("Equals", [comparedType]);
-    //    if (equalsMethod == null)
-    //      throw new InvalidOperationException(
-    //        $"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
-
-    //    result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
-    //    if (!result)
-    //      message = $"Values of type {comparedType.Name} differ -> {firstName}={obj1} vs {secondName}={obj2}";
-    //    if (!result)
-    //      return false;
-    //  }
-    //}
-
     return result;
-    }
+  }
 
   /// <summary>
   /// Populates test data in the given instance.
@@ -421,9 +400,17 @@ public static class TestHelper
       {
         prop.SetValue(instance, new StringList("Item 1,Item 2,Item 3"));
       }
-      else if (propType.IsClass && propType != typeof(string))
+      else if (propType == typeof(DocumentModel.HexColor))
       {
-        if (!propType.IsAbstract)
+        prop.SetValue(instance, new DocumentModel.HexColor(Random.Shared.Next(0, 0xFFFFFF)));
+      }
+      else if (propType == typeof(DocumentModel.Vml.VmlColor))
+      {
+        prop.SetValue(instance, new DocumentModel.Vml.VmlColor((uint)Random.Shared.Next(0, 0xFFFFFF)));
+      }
+      else if (propType.IsClass)
+      {
+        if (!propType.IsAbstract && propType != typeof(string))
         {
           // For complex types, recursively change their properties
           var nestedInstance = prop.GetValue(instance);
@@ -474,6 +461,8 @@ public static class TestHelper
       }
     }
   }
+
+
 
   /// <summary>
   /// Changes test data in the given instance.

@@ -55,7 +55,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
     if (str != null)
     {
       str = str.TrimStart('#');
-      if (ushort.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var byteValue))
+      if (uint.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var byteValue))
       {
         result = new HexColor(byteValue);
         return true;

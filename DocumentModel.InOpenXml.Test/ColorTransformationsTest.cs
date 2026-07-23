@@ -126,8 +126,6 @@ public class ColorTransformationsTest : BaseThemeTest
       foreach (var otherType in typesToConvert)
       {
         IColor otherColor = (IColor)Activator.CreateInstance(otherType)!;
-        if (baseColor is DMW.SchemeColor)
-          Debug.Assert(true);
         otherColor.ARGB = baseColor.ARGB;
         if (otherColor is INamedColor namedOther && baseColor is INamedColor namedBase)
         {

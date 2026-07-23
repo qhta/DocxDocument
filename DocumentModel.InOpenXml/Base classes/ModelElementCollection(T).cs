@@ -9,7 +9,7 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 [LazyLoad]
-public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>, IDirectAccessElement
+public partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>, IDirectAccessElement
   where ItemType : ModelElement
 {
 

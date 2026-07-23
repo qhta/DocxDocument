@@ -101,45 +101,6 @@ public partial class VmlColor : ModelElement
       Name = colorString; // Fallback to storing the raw string if no known format matches
   }
 
-
-  /// <summary>
-  /// Tries to parse a string representation of an RGB color in the format "rgb(r,g,b)" and returns a boolean indicating success or failure.
-  /// </summary>
-  /// <param name="str">The string representation of the RGB color.</param>
-  /// <param name="color">When this method returns, contains the parsed RgbColor if the parsing succeeded, or null if the parsing failed.</param>
-  /// <returns>True if the parsing succeeded; otherwise, false.</returns>
-  public static bool TryParse(string str, out HexColor? color)
-  {
-    color = null;
-    if (string.IsNullOrWhiteSpace(str))
-      return false;
-    // Check if the string starts with "rgb(" and ends with ")"
-    if (str.StartsWith("rgb(", StringComparison.OrdinalIgnoreCase) && str.EndsWith(")"))
-    {
-      // Extract the content inside the parentheses
-      var content = str.Substring(4, str.Length - 5);
-      var parts = content.Split(',');
-      if (parts.Length != 3)
-        return false;
-
-      // Try to parse each part as an integer
-      if (Byte.TryParse(parts[0].Trim(), out byte r) && Byte.TryParse(parts[1].Trim(), out byte g) &&
-          Byte.TryParse(parts[2].Trim(), out byte b))
-      {
-        // Create a new HexColor instance
-        color = new HexColor(r, g, b);
-        return true;
-      }
-      return false;
-    }
-    if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out uint hex))
-    {
-      color = new HexColor(hex);
-      return true;
-    }
-    return false;
-  }
-
   /// <summary>
   /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
   /// </summary>

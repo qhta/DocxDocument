@@ -157,7 +157,6 @@ public static class SimpleValueConverterTest
     Console.Write($"TestSimpleValueConverter with {modelType.Name} and {otherType.Name}");
     bool testResult = true;
     if (testValues == null) testValues = GetTestData(modelType);
-    if (otherType == typeof(DXW.TwipsMeasureType)) Debug.Assert(true);
 
     if (otherType.IsAbstract)
       otherType = ConcreteTypesMap[otherType];

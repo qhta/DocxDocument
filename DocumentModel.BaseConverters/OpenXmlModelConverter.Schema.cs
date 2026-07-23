@@ -19,8 +19,6 @@ public static partial class OpenXmlModelConverter
   /// <exception cref="ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
   public static void AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
   {
-    if (child.LocalName=="schemaLibrary")
-      Debug.Assert(true);
     if (parentElement == null)
       throw new ArgumentNullException(nameof(parentElement));
     if (child == null)
@@ -412,7 +410,7 @@ public static partial class OpenXmlModelConverter
             }
             else
             {
-              Debug.Assert(true);
+              throw new ApplicationException($"Unable to determine qualified name for element: {element}");
             }
             break;
           case XmlSchemaAny any:

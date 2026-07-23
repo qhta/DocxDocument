@@ -51,8 +51,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var modelType = otherInstance.GetType();
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.PropertyType.Name == "PixelsMeasure")
-        Debug.Assert(true);
       var otherValue = modelProperty.GetValue(otherInstance);
       if (otherValue is ModelElement otherElement)
       {
@@ -90,8 +88,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       }
     }
 
-    if (otherInstance.GetType().Name=="DocumentSettings")
-      Debug.Assert(true);
     var updatableElement = GetUpdatableObject();
     if (updatableElement != null)
       UpdateData(updatableElement);

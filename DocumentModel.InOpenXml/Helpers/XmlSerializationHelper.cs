@@ -202,12 +202,7 @@ public static class XmlSerializationHelper
     {
       if (visitedTypes.Contains(aType))
         return;
-      //if (aType.FullName!.Contains("TextBoxContent"))
-      //  Debug.Assert(true);
-      //Debug.WriteLine($"GetKnownTypes for {aType.FullName}");
       visitedTypes.Add(aType);
-      //if ((aType.FullName ?? "").Contains("<>"))
-      //  return;
       if (aType.Namespace == null)
         return;
       if (aType.Namespace.StartsWith("System"))
@@ -243,8 +238,6 @@ public static class XmlSerializationHelper
                    .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
         {
           var arg = iEnumerable.GetGenericArguments()[0];
-          if (arg.FullName!.Contains("Paragraph"))
-            Debug.Assert(true);
           if (arg.Name.Contains("<>"))
             continue;
           if (arg.Namespace!.StartsWith("System") || arg.FullName == "DocumentModel.Drawings.Theme" || arg.IsInterface)
@@ -287,10 +280,6 @@ public static class XmlSerializationHelper
     Dictionary<string, List<Type>> typeNames = new Dictionary<string, List<Type>>();
     foreach (var aType in types)
     {
-      //if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Office2010.Word.Glow]")
-      //  Debug.Assert(true);
-      //if (aType.FullName == "DocumentModel.ModelElement`1[DocumentFormat.OpenXml.Drawing.Glow]")
-      //  Debug.Assert(true);
       var aName = aType.Name;
       if (aType.IsGenericType)
       {

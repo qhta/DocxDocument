@@ -6204,16 +6204,36 @@
             <param name="toStringConverter">The function to convert an object of the specified type to a string.</param>
             <param name="fromStringConverter">The function to convert a string back to an object of the specified type.</param>
         </member>
-        <member name="M:DocumentModel.ObjectToStringConverter.ConvertToString(System.Object)">
+        <member name="M:DocumentModel.ObjectToStringConverter.ConvertToJsonString(System.Object)">
             <summary>
-            Converts an object to its string representation using a predefined mapping of types to conversion functions. If the object's type is not found in the mapping, it falls back to the default ToString() method.
+            Converts an object to its string representation using a predefined mapping of types to conversion functions.
+            If the object's type is not found in the mapping, it converts the object using the JsonSerializer Serialize method.
             </summary>
             <param name="value">The object to convert to a string.</param>
             <returns>The string representation of the object, or null if the object is null.</returns>
         </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts an object to its string representation using a predefined mapping of types to conversion functions.
+            If the object's type is not found in the mapping, and the value type has Parse(string) method, it falls back to the default ToString() method.
+            Otherwise, it returns null.
+            </summary>
+            <param name="value">The object to convert to a string.</param>
+            <returns>The string representation of the object, or null if the object is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ConvertFromJsonString(System.String,System.Type)">
+            <summary>
+            Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions.
+            If the target type is not found in the mapping, it converts the string using the JsonSerializer Deserialize method.
+            </summary>
+            <param name="str">The string representation of the object to convert.</param>
+            <param name="targetType">The target type to convert the string to.</param>
+            <returns>The converted object, or null if the conversion fails or the target type is not found.</returns>
+        </member>
         <member name="M:DocumentModel.ObjectToStringConverter.ConvertFromString(System.String,System.Type)">
             <summary>
-            Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions. If the target type is not found in the mapping, it returns null. This method allows for flexible deserialization of string representations back into their original object forms based on the registered converters. 
+            Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions.
+            If the target type is not found in the mapping, it converts the string using the type Parse(string) method.
             </summary>
             <param name="str">The string representation of the object to convert.</param>
             <param name="targetType">The target type to convert the string to.</param>

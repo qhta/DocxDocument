@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System.Reflection;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Converter class for converting objects to their string representation. This class maintains a mapping of types to custom conversion functions, allowing for flexible and extensible string conversion logic. When an object is passed to the ConvertToString method, it checks if there is a registered converter for the object's type and uses it to convert the object to a string. If no converter is found, it falls back to the default ToString() method of the object. This design allows for easy customization of how specific types are represented as strings without modifying the core logic of the conversion process.
@@ -54,11 +56,12 @@ public static class ObjectToStringConverter
   }
 
   /// <summary>
-  /// Converts an object to its string representation using a predefined mapping of types to conversion functions. If the object's type is not found in the mapping, it falls back to the default ToString() method.
+  /// Converts an object to its string representation using a predefined mapping of types to conversion functions.
+  /// If the object's type is not found in the mapping, it converts the object using the JsonSerializer Serialize method.
   /// </summary>
   /// <param name="value">The object to convert to a string.</param>
   /// <returns>The string representation of the object, or null if the object is null.</returns>
-  public static string? ConvertToString(object? value)
+  public static string? ConvertToJsonString(object? value)
   {
     if (value == null)
       return null;
@@ -77,8 +80,70 @@ public static class ObjectToStringConverter
     return str;
   }
 
+
   /// <summary>
-  /// Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions. If the target type is not found in the mapping, it returns null. This method allows for flexible deserialization of string representations back into their original object forms based on the registered converters. 
+  /// Converts an object to its string representation using a predefined mapping of types to conversion functions.
+  /// If the object's type is not found in the mapping, and the value type has Parse(string) method, it falls back to the default ToString() method.
+  /// Otherwise, it returns null.
+  /// </summary>
+  /// <param name="value">The object to convert to a string.</param>
+  /// <returns>The string representation of the object, or null if the object is null.</returns>
+  public static string? ConvertToString(object? value)
+  {
+    if (value == null)
+      return null;
+
+    var type = value.GetType();
+    if (_convertsToString.TryGetValue(type, out var converter))
+    {
+      return converter(value);
+    }
+    else if (value is Enum enumValue)
+    {
+      return enumValue.ToString();
+    }
+    var targetType = value.GetType();
+    var parseMethod = targetType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static,  null, [typeof(string)], null);
+    if (parseMethod is not null)
+    {
+      var str = value.ToString();
+      return str;
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions.
+  /// If the target type is not found in the mapping, it converts the string using the JsonSerializer Deserialize method.
+  /// </summary>
+  /// <param name="str">The string representation of the object to convert.</param>
+  /// <param name="targetType">The target type to convert the string to.</param>
+  /// <returns>The converted object, or null if the conversion fails or the target type is not found.</returns>
+  public static object? ConvertFromJsonString(string? str, Type targetType)
+  {
+    if (str == null)
+      return null;
+
+    if (_convertsFromString.TryGetValue(targetType, out var converter))
+    {
+      var result = converter(str);
+      return result;
+    }
+    else if (targetType.IsEnum)
+    {
+      return Enum.Parse(targetType, str);
+    }
+    else
+    {
+      str = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(str));
+      var result = JsonSerializer.Deserialize(str, targetType);
+      return result;
+    }
+  }
+
+  /// <summary>
+  /// Converts a string back to an object of the specified target type using a predefined mapping of types to conversion functions.
+  /// If the target type is not found in the mapping, it converts the string using the type Parse(string) method.
   /// </summary>
   /// <param name="str">The string representation of the object to convert.</param>
   /// <param name="targetType">The target type to convert the string to.</param>
@@ -99,8 +164,8 @@ public static class ObjectToStringConverter
     }
     else
     {
-      str = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(str));
-      var result = JsonSerializer.Deserialize(str, targetType);
+      var parseMethod = targetType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static, null, [typeof(string)], null);
+      var result = parseMethod!.Invoke(null, [str])!;
       return result;
     }
   }

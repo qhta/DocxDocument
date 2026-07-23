@@ -39,7 +39,6 @@ public sealed class CollectionWithExtraPropsConverterFactory : JsonConverterFact
 
   private static Type? GetElementCollectionItemType(Type? type)
   {
-    if (type == typeof(DXW.CompatibilitySetting)) Debug.Assert(true);
     while (type != typeof(object) && type is not null)
     {
       if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(DM.ElementCollection<>))

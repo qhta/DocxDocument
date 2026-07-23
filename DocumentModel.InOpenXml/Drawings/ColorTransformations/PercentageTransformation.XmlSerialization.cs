@@ -21,6 +21,7 @@ public partial class PercentageTransformation<T>: IXmlSerializable
     {
       Value = Percentage.Parse(indexStr);
     }
+    reader.Read();
   }
 
   /// <summary>

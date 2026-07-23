@@ -416,8 +416,6 @@ public static partial class EnumTypeConverter
       return (Enum)enumValue;
     }
 
-    if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null) Debug.Assert(true);
-
     var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
     if (enumValuesMap.TryGetValue1(enumValuesMap, out var result))
       return (Enum)result;
@@ -502,8 +500,6 @@ public static partial class EnumTypeConverter
       var enumValue = Enum.ToObject(modelEnumType, intValue);
       return (Enum)enumValue;
     }
-    if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null) Debug.Assert(true);
-
     var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
     if (enumValuesMap.TryGetValue1(enumValuesMap, out var result))
       return (Enum)result;

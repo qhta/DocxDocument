@@ -39,8 +39,6 @@ public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : Docum
     if (root.TryGetProperty("Type", out var typeEl))
     {
       var typeName = typeEl.GetString();
-      if (typeName == "Variant")
-        Debug.Assert(true);
       if (Enum.TryParse<DocumentPropertyType>(typeName, out var parsedType))
       {
         expectedType = parsedType;
@@ -75,9 +73,7 @@ public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : Docum
       var str = valueEl.GetString();
       if (str != null)
       {
-        if (valueType == typeof(Variant))
-          Debug.Assert(true);
-        var value = ObjectToStringConverter.ConvertFromString(str!, valueType);
+        var value = ObjectToStringConverter.ConvertFromJsonString(str!, valueType);
         p.Value = value;
       }
     }
@@ -129,7 +125,7 @@ public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : Docum
     if (value.Value is not null) 
     {
       writer.WritePropertyName("Value");
-      var str = ObjectToStringConverter.ConvertToString(value.Value);
+      var str = ObjectToStringConverter.ConvertToJsonString(value.Value);
       JsonSerializer.Serialize(writer, str, typeof(string), options);
     }
     writer.WriteEndObject();

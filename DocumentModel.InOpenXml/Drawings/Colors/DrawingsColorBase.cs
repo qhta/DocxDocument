@@ -142,8 +142,6 @@ public abstract partial class DrawingsColorBase<T> : AnyColor<T> where T : DX.Op
       _ColorTransformations ??= new ColorTransformations(this);
 
       var transformation = new TTrans();
-      if (transformation is DMD.Alpha)
-        Debug.Assert(true);
       ((IPercentageTransformation)transformation).Value = value.Value;
       ColorTransformations.Add(transformation);
     }

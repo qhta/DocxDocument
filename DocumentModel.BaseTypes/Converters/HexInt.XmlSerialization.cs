@@ -82,11 +82,10 @@ public partial struct HexInt : IXmlSerializable
       }
 
       reader.Read(); // Move past text
-    }
-
-    if (reader.NodeType == XmlNodeType.EndElement)
-    {
-      reader.Read(); // Move past end element
+      if (reader.NodeType == XmlNodeType.EndElement)
+      {
+        reader.Read(); // Move past end element
+      }
     }
   }
 

@@ -36,7 +36,6 @@ public static class OpenXmlElementConverter
       }
       return null;
     }
-    if (openXmlType == typeof(DXD.Dark1Color)) Debug.Assert(true);
 
     if (SimpleValueConverter.TryConvertTo(modelValue, openXmlType, out var result))
     {
@@ -65,7 +64,6 @@ public static class OpenXmlElementConverter
     if (openXmlType == modelType)
       return openXmlElement;
 
-    if (modelType.Name== "IZoom") Debug.Assert(true);
     if (OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(openXmlType, out var convertDelegate) 
         || OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(modelType, out convertDelegate))
     {

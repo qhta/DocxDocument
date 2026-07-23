@@ -1,4 +1,5 @@
-﻿using System.Security.AccessControl;
+﻿using System.CodeDom;
+using System.Security.AccessControl;
 
 namespace DocumentModel;
 
@@ -56,18 +57,28 @@ public partial class DocumentProperty : IXmlSerializable
 
 
     string? linkTarget = reader.GetAttribute("linkTarget");
-
     reader.Read(); // Move to content
     object? value = null;
-    if (!reader.IsEmptyElement)
+    if (reader.HasValue)
     {
       var str = reader.Value;
-      if (!String.IsNullOrEmpty(str))
-        value = ObjectToStringConverter.ConvertFromString(str, valueType ?? typeof(object));
+      value = ObjectToStringConverter.ConvertFromString(str, valueType ?? typeof(object));
+    }
+    else
+    {
+      if (reader.NodeType == XmlNodeType.Element)
+      {
+        if (valueType != null)
+        {
+          value = Activator.CreateInstance(valueType);
+          if (value is IXmlSerializable xmlSerializable)
+            xmlSerializable.ReadXml(reader);
+        }
+      }
     }
     if (value == null)
       valueType = null;
-    
+
     var documentProperty = new CustomProperty
     {
       PropertyId = propertyId,
@@ -128,7 +139,15 @@ public partial class DocumentProperty : IXmlSerializable
     if (Value is not null)
     {
       var str = ObjectToStringConverter.ConvertToString(Value);
-      writer.WriteValue(str);
+      if (str != null)
+        writer.WriteValue(str);
+      else if (Value is IXmlSerializable serializable)
+      {
+        writer.WriteStartElement(Value.GetType().Name);
+        serializable.WriteXml(writer);
+        writer.WriteEndElement();
+      }
+
     }
   }
 

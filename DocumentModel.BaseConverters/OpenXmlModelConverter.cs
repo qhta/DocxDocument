@@ -35,7 +35,6 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType == typeof(DXW.ReadModeInkLockDown)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -170,7 +169,6 @@ public static partial class OpenXmlModelConverter
     if (openXmlType == null)
       openXmlType = openXmlObject.GetType();
     var modelType = modelObject.GetType();
-    if (modelType.Name=="SchemaLibrary") Debug.Assert(true);
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, openXmlObject, openXmlType, modelType)) return;
 
     TryUpdateModelProperties(modelObject, openXmlObject, openXmlType, modelType);
@@ -210,7 +208,6 @@ public static partial class OpenXmlModelConverter
     bool updated = false;
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name == "ReadModeInkLockDown") Debug.Assert(true);
       if (UpdateData(modelObject, modelProperty, openXmlObject, openXmlType)) updated = true;
     }
     return updated;
@@ -267,7 +264,6 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name == "Width") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -414,7 +410,6 @@ public static partial class OpenXmlModelConverter
       var targetParameters = updatePropertyMethod.GetParameters();
       if (targetParameters.Length == 1)
       {
-        if (openXmlObject is DXD.Dark1Color) Debug.Assert(true);
         updatePropertyMethod.Invoke(modelObject, [openXmlObject]);
         return true;
       }
@@ -454,8 +449,6 @@ public static partial class OpenXmlModelConverter
       return;
 
     DX.OpenXmlElement openXmlChildElement;
-    if (modelValue is Guid && openXmlChildType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
-      Debug.Assert(true);
     if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)))
     {
       if (!modelValue.Equals(true))
@@ -579,7 +572,6 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
   public static void LoadData(object modelObject, object openXmlObject)
   {
-    if (modelObject.GetType().Name == "Body") Debug.Assert(true);
     (modelObject as ILoadable)?.SetLoading(true);
     var modelType = modelObject.GetType();
     var openXmlType = openXmlObject.GetType();
@@ -650,7 +642,6 @@ public static partial class OpenXmlModelConverter
     bool loaded = false;
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      if (modelProperty.Name=="VariantValue") Debug.Assert(true);
       if (modelProperty.CanWrite && modelProperty.GetCustomAttribute<NotMappedAttribute>() == null)
       {
         if (LoadProperty(modelObject, modelProperty, openXmlObject)) loaded = true;
@@ -708,7 +699,6 @@ public static partial class OpenXmlModelConverter
     if (openXmlPropertyAttribute != null && openXmlPropertyAttribute.DirectAccess)
       return false;
     var openXmlType = openXmlObject.GetType();
-    if (modelProperty.Name == "EastAsia") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {

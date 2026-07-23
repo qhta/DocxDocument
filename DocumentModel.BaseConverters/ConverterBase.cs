@@ -201,7 +201,6 @@ public static class ConverterBase
     {
       targetSubType = typeof(DX.EnumValue<>);
     }
-    if (targetType.IsEqualOrSubclassOf(typeof(DXW.FontCharSet))) Debug.Assert(true);
     while (targetSubType != null)
     {
       if (conversionToMap.TryGetValue((sourceSearchType, targetSubType), out var conversionFunc) ||
@@ -223,7 +222,6 @@ public static class ConverterBase
       result = targetInstance;
       return true;
     }
-    if (targetType.IsEqualOrSubclassOf(typeof(DXW.FontCharSet))) Debug.Assert(true);
     if (targetType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
     {
       var valProp = targetType.GetValProperty();
