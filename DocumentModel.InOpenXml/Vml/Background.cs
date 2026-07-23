@@ -25,8 +25,8 @@ public partial class Background : ModelElement<DXV.Background>
  ///   Fill Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Background.Fillcolor))]
- public string? Fillcolor { get => _Fillcolor; set => UpdateField(ref _Fillcolor, value, nameof(Fillcolor)); }
- private string? _Fillcolor;
+ public VmlColor? FillColor { get => _fillColor; set => UpdateField(ref _fillColor, value, nameof(FillColor)); }
+ private VmlColor? _fillColor;
 
  /// <summary>
  ///   Black-and-White Mode
@@ -60,6 +60,6 @@ public partial class Background : ModelElement<DXV.Background>
  ///   Fill.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Background.Fill))]
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 }

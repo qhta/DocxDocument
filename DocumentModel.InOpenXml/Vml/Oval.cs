@@ -196,29 +196,29 @@ public partial class Oval : ModelElement<DXV.Oval>, IEmbeddedObjectContent
  ///   Color value for the top border of the oval.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Oval.BorderTopColor))]
- public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
- private string? _BorderTopColor;
+ public VmlColor? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
+ private VmlColor? _BorderTopColor;
 
  /// <summary>
  ///   Color value for the left border of the oval.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Oval.BorderLeftColor))]
- public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
- private string? _BorderLeftColor;
+ public VmlColor? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
+ private VmlColor? _BorderLeftColor;
 
  /// <summary>
  ///   Color value for the bottom border of the oval.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Oval.BorderBottomColor))]
- public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
- private string? _BorderBottomColor;
+ public VmlColor? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
+ private VmlColor? _BorderBottomColor;
 
  /// <summary>
  ///   Color value for the right border of the oval.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Oval.BorderRightColor))]
- public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
- private string? _BorderRightColor;
+ public VmlColor? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
+ private VmlColor? _BorderRightColor;
 
  /// <summary>
  ///   Identifier for the layout style of a diagram node.
@@ -371,8 +371,8 @@ public partial class Oval : ModelElement<DXV.Oval>, IEmbeddedObjectContent
  ///   Base64-encoded binary package data embedded within the oval.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Oval.Gfxdata))]
- public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
- private Base64Binary? _Gfxdata;
+ public Base64Binary? GfxData { get => _GfxData; set => UpdateField(ref _GfxData, value, nameof(GfxData)); }
+ private Base64Binary? _GfxData;
 
  /// <summary>
  ///   Defines the geometric path instructions.
@@ -395,8 +395,8 @@ public partial class Oval : ModelElement<DXV.Oval>, IEmbeddedObjectContent
  /// <summary>
  ///   Provides drawing fill settings for the oval.
  /// </summary>
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 
  /// <summary>
  ///   Describes stroke settings for the outline.

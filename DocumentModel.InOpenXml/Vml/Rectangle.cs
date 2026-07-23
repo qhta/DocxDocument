@@ -371,8 +371,8 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  ///   Base64-encoded binary package data embedded within the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Rectangle.Gfxdata))]
- public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
- private Base64Binary? _Gfxdata;
+ public Base64Binary? GfxData { get => _GfxData; set => UpdateField(ref _GfxData, value, nameof(GfxData)); }
+ private Base64Binary? _GfxData;
 
  /// <summary>
  ///   Defines the geometric path instructions.
@@ -395,8 +395,8 @@ public partial class Rectangle : ModelElement<DXV.Rectangle>, IEmbeddedObjectCon
  /// <summary>
  ///   Provides drawing fill settings for the rectangle.
  /// </summary>
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 
  /// <summary>
  ///   Describes stroke settings for the outline.

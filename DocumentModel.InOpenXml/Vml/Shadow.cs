@@ -39,8 +39,8 @@ public partial class Shadow : ModelElement<DXV.Shadow>
  ///   Shadow Primary Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shadow.Color))]
- public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private string? _Color;
+ public VmlColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private VmlColor? _Color;
 
  /// <summary>
  ///   Shadow Opacity
@@ -60,8 +60,8 @@ public partial class Shadow : ModelElement<DXV.Shadow>
  ///   Shadow Secondary Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shadow.Color2))]
- public string? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
- private string? _Color2;
+ public VmlColor? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
+ private VmlColor? _Color2;
 
  /// <summary>
  ///   Shadow Secondary Offset

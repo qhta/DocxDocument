@@ -32,8 +32,8 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Color))]
- public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private string? _Color;
+ public VmlColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private VmlColor? _Color;
 
  /// <summary>
  ///   Stroke Opacity
@@ -116,8 +116,8 @@ public partial class Stroke : ModelElement<DXV.Stroke>
  ///   Stroke Alternate Pattern Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Stroke.Color2))]
- public string? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
- private string? _Color2;
+ public VmlColor? Color2 { get => _Color2; set => UpdateField(ref _Color2, value, nameof(Color2)); }
+ private VmlColor? _Color2;
 
  /// <summary>
  ///   Line Start Arrowhead

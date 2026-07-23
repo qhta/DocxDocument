@@ -123,8 +123,8 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
  ///   Extrusion Color
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Extrusion.Color))]
- public string? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private string? _Color;
+ public VmlColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+ private VmlColor? _Color;
 
  /// <summary>
  ///   Shininess
@@ -137,8 +137,8 @@ public partial class Extrusion : ModelElement<DXVO.Extrusion>
  ///   Specularity
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Extrusion.Specularity))]
- public string? Specularity { get => _Specularity; set => UpdateField(ref _Specularity, value, nameof(Specularity)); }
- private string? _Specularity;
+ public VmlColor? Specularity { get => _Specularity; set => UpdateField(ref _Specularity, value, nameof(Specularity)); }
+ private VmlColor? _Specularity;
 
  /// <summary>
  ///   Diffuse Reflection

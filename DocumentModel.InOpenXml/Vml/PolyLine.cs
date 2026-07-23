@@ -371,8 +371,8 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  ///   Base64-encoded binary package data embedded within the polyline.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.PolyLine.Gfxdata))]
- public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
- private Base64Binary? _Gfxdata;
+ public Base64Binary? GfxData { get => _GfxData; set => UpdateField(ref _GfxData, value, nameof(GfxData)); }
+ private Base64Binary? _GfxData;
 
  /// <summary>
  ///   List of points that define the polyline segments.
@@ -402,8 +402,8 @@ public partial class PolyLine : ModelElement<DXV.PolyLine>, IEmbeddedObjectConte
  /// <summary>
  ///   Provides drawing fill settings for the polyline.
  /// </summary>
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 
  /// <summary>
  ///   Describes stroke settings for the outline.

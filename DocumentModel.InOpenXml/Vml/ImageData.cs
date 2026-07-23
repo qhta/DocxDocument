@@ -88,15 +88,15 @@ public partial class ImageData : ModelElement<DXV.ImageData>
  ///   Embossed Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ImageData.EmbossColor))]
- public string? EmbossColor { get => _EmbossColor; set => UpdateField(ref _EmbossColor, value, nameof(EmbossColor)); }
- private string? _EmbossColor;
+ public VmlColor? EmbossColor { get => _EmbossColor; set => UpdateField(ref _EmbossColor, value, nameof(EmbossColor)); }
+ private VmlColor? _EmbossColor;
 
  /// <summary>
  ///   Black Recoloring Color
  /// </summary>
  [OpenXmlProperty(nameof(DXV.ImageData.RecolorTarget))]
- public string? RecolorTarget { get => _RecolorTarget; set => UpdateField(ref _RecolorTarget, value, nameof(RecolorTarget)); }
- private string? _RecolorTarget;
+ public VmlColor? RecolorTarget { get => _RecolorTarget; set => UpdateField(ref _RecolorTarget, value, nameof(RecolorTarget)); }
+ private VmlColor? _RecolorTarget;
 
  /// <summary>
  ///   Image Data Title

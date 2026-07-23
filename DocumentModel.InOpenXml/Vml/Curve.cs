@@ -196,29 +196,29 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
  ///   Color value for the top border of the curve.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.BorderTopColor))]
- public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
- private string? _BorderTopColor;
+ public VmlColor? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
+ private VmlColor? _BorderTopColor;
 
  /// <summary>
  ///   Color value for the left border of the curve.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.BorderLeftColor))]
- public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
- private string? _BorderLeftColor;
+ public VmlColor? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
+ private VmlColor? _BorderLeftColor;
 
  /// <summary>
  ///   Color value for the bottom border of the curve.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.BorderBottomColor))]
- public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
- private string? _BorderBottomColor;
+ public VmlColor? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
+ private VmlColor? _BorderBottomColor;
 
  /// <summary>
  ///   Color value for the right border of the curve.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.BorderRightColor))]
- public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
- private string? _BorderRightColor;
+ public VmlColor? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
+ private VmlColor? _BorderRightColor;
 
  /// <summary>
  ///   Identifier for the layout style of a diagram node.
@@ -259,8 +259,8 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
  ///   Primary color used to fill the curve interior.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.FillColor))]
- public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
- private string? _FillColor;
+ public VmlColor? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
+ private VmlColor? _FillColor;
 
  /// <summary>
  ///   Indicates whether the curve outline is drawn.
@@ -273,8 +273,8 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
  ///   Color used for the curve outline stroke.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.StrokeColor))]
- public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
- private string? _StrokeColor;
+ public VmlColor? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
+ private VmlColor? _StrokeColor;
 
  /// <summary>
  ///   Width of the curve outline stroke.
@@ -371,8 +371,8 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
  ///   Base64-encoded binary package data embedded within the curve.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Curve.Gfxdata))]
- public Base64Binary? Gfxdata { get => _Gfxdata; set => UpdateField(ref _Gfxdata, value, nameof(Gfxdata)); }
- private Base64Binary? _Gfxdata;
+ public Base64Binary? GfxData { get => _GfxData; set => UpdateField(ref _GfxData, value, nameof(GfxData)); }
+ private Base64Binary? _GfxData;
 
  /// <summary>
  ///   Starting point of the curve, in coordinate space.
@@ -423,8 +423,8 @@ public partial class Curve : ModelElement<DXV.Curve>, IEmbeddedObjectContent
  /// <summary>
  ///   Provides drawing fill settings for the curve.
  /// </summary>
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 
  /// <summary>
  ///   Describes stroke settings for the outline.

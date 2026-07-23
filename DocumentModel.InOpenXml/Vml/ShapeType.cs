@@ -198,29 +198,29 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Top border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderTopColor))]
- public string? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
- private string? _BorderTopColor;
+ public VmlColor? BorderTopColor { get => _BorderTopColor; set => UpdateField(ref _BorderTopColor, value, nameof(BorderTopColor)); }
+ private VmlColor? _BorderTopColor;
 
  /// <summary>
  /// Left border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderLeftColor))]
- public string? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
- private string? _BorderLeftColor;
+ public VmlColor? BorderLeftColor { get => _BorderLeftColor; set => UpdateField(ref _BorderLeftColor, value, nameof(BorderLeftColor)); }
+ private VmlColor? _BorderLeftColor;
 
  /// <summary>
  /// Bottom border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderBottomColor))]
- public string? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
- private string? _BorderBottomColor;
+ public VmlColor? BorderBottomColor { get => _BorderBottomColor; set => UpdateField(ref _BorderBottomColor, value, nameof(BorderBottomColor)); }
+ private VmlColor? _BorderBottomColor;
 
  /// <summary>
  /// Right border color of the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.BorderRightColor))]
- public string? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
- private string? _BorderRightColor;
+ public VmlColor? BorderRightColor { get => _BorderRightColor; set => UpdateField(ref _BorderRightColor, value, nameof(BorderRightColor)); }
+ private VmlColor? _BorderRightColor;
 
  /// <summary>
  /// Diagram node layout identifier for the shape.
@@ -261,8 +261,8 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Fill color for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.FillColor))]
- public string? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
- private string? _FillColor;
+ public VmlColor? FillColor { get => _FillColor; set => UpdateField(ref _FillColor, value, nameof(FillColor)); }
+ private VmlColor? _FillColor;
 
  /// <summary>
  /// Indicates whether the shape is stroked.
@@ -275,8 +275,8 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// Stroke color for the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Shapetype.StrokeColor))]
- public string? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
- private string? _StrokeColor;
+ public VmlColor? StrokeColor { get => _StrokeColor; set => UpdateField(ref _StrokeColor, value, nameof(StrokeColor)); }
+ private VmlColor? _StrokeColor;
 
  /// <summary>
  /// Stroke weight for the shape.
@@ -411,8 +411,8 @@ public partial class ShapeType : ModelElement<DXV.Shapetype>, IEmbeddedObjectCon
  /// <summary>
  /// Fill element for the shape, specifying fill formatting.
  /// </summary>
- public DMD.Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private DMD.Fill? _Fill;
+ public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+ private Fill? _Fill;
 
  /// <summary>
  /// Stroke element for the shape, specifying stroke formatting.
