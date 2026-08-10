@@ -24,8 +24,8 @@ public class ColorTypesTest : BaseThemeTest
     if (!TestColorAccessors()) return false;
     if (!TestEdgeCases()) return false;
     if (!TestColorModelsConversion()) return false;
-    if (!StoreThemeInDocument()) return false;
-    if (!ChangeColorsInDocument()) return false;
+    if (!TestStoreThemeInDocument()) return false;
+    if (!TestChangeColorsInDocument()) return false;
 
     Console.WriteLine("All Color implementation tests passed.\n");
     return true;
@@ -442,7 +442,7 @@ public class ColorTypesTest : BaseThemeTest
   /// </summary>
   /// <returns></returns>
   /// <exception cref="InvalidOperationException"></exception>
-  private bool StoreThemeInDocument()
+  private bool TestStoreThemeInDocument()
   {
     Console.WriteLine("\n --- Store Theme in document ---");
     Theme testData = CreateThemeWithColorScheme();
@@ -505,7 +505,7 @@ public class ColorTypesTest : BaseThemeTest
   /// </summary>
   /// <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
   /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
-  private bool ChangeColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test.docx")
+  private bool TestChangeColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test.docx")
   {
     Console.WriteLine("\n--- Change Colors in Document ---");
 

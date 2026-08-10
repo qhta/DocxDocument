@@ -666,7 +666,7 @@
             </summary>
             <returns>True if discovery is correct; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestColorModelsConversion">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTransformationsTest.TestColorModelConversion">
             <summary>
             Tests conversion between all IColor implementations by serializing and deserializing each type to XML and comparing the results.
             </summary>
@@ -745,14 +745,14 @@
             <param name="colorType">The concrete color implementation type.</param>
             <returns>A populated color instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.StoreThemeInDocument">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestStoreThemeInDocument">
             <summary>
             Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
             </summary>
             <returns></returns>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.ChangeColorsInDocument(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestChangeColorsInDocument(System.String)">
             <summary>
             Changes colors of two specific run texts in the specified document.
             First copies the document to a temporary file to avoid modifying the original.

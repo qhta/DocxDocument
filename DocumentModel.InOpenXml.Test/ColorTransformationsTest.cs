@@ -17,7 +17,7 @@ public class ColorTransformationsTest : BaseThemeTest
   {
     Console.WriteLine("=== Color Transformations Test ===\n");
     if (!TestTransformationTypeDiscovery()) return false;
-    if (!TestColorModelsConversion()) return false;
+    if (!TestColorModelConversion()) return false;
     if (!TestColorTransformations()) return false;
 
 
@@ -97,9 +97,9 @@ public class ColorTransformationsTest : BaseThemeTest
   /// Tests conversion between all IColor implementations by serializing and deserializing each type to XML and comparing the results.
   /// </summary>
   /// <returns>True if all conversions pass; otherwise, false.</returns>
-  private bool TestColorModelsConversion()
+  private bool TestColorModelConversion()
   {
-    Console.WriteLine("--- TestColorModelsConversion ---");
+    Console.WriteLine("--- TestColorModelConversion ---");
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
     var xmlString = SerializeObjectToXml(theme);
@@ -141,27 +141,27 @@ public class ColorTransformationsTest : BaseThemeTest
 
         if (!TestHelper.CompareTestData(typeof(IColor), baseColor, otherColor, "testColor", "otherColor", out message))
         {
-          Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+          Console.WriteLine($"✗ TestColorModelConversion FAILED: {message}");
           return false;
         }
         if (otherColor is INamedColor && baseColor is INamedColor)
           if (!TestHelper.CompareTestData(typeof(INamedColor), baseColor, otherColor, "testColor", "otherColor", out message))
           {
-            Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+            Console.WriteLine($"✗ TestColorModelConversion FAILED: {message}");
             return false;
           }
 
         if (otherColor is ITransformableColor && baseColor is ITransformableColor)
           if (!TestHelper.CompareTestData(typeof(ITransformableColor), baseColor, otherColor, "testColor", "otherColor", out message))
           {
-            Console.WriteLine($"✗ TestColorModelsConversion FAILED: {message}");
+            Console.WriteLine($"✗ TestColorModelConversion FAILED: {message}");
             return false;
           }
       }
 
     }
 
-    Console.WriteLine("✓ TestColorModelsConversion passed\n");
+    Console.WriteLine("✓ TestColorModelConversion passed\n");
     return true;
 
   }

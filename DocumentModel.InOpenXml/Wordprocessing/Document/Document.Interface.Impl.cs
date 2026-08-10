@@ -121,5 +121,5 @@ public partial class Document: IDocument
   IVersions? IDocument.Versions => throw new NotImplementedException();
   IWebOptions? IDocument.WebOptions => throw new NotImplementedException();
   IWindows? IDocument.Windows => throw new NotImplementedException();
-  IWords? IDocument.Words => throw new NotImplementedException();
+  Words? IDocument.Words => throw new NotImplementedException();
 }

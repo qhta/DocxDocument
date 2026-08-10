@@ -106,7 +106,7 @@
             IPage count.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.BuiltInProperty.IWords">
+        <member name="F:DocumentModel.Wordprocessing.BuiltInProperty.Words">
             <summary>
             Word count.
             </summary>
@@ -2994,7 +2994,7 @@
               Single Underline.
             </summary>
         </member>
-        <member name="F:DocumentModel.Wordprocessing.UnderlineType.IWords">
+        <member name="F:DocumentModel.Wordprocessing.UnderlineType.Words">
             <summary>
               Underline Non-Space ICharacters Only.
             </summary>
@@ -34870,9 +34870,9 @@
               Text Underline Enum ( None ).
             </summary>
         </member>
-        <member name="F:DocumentModel.Drawings.TextUnderline.IWords">
+        <member name="F:DocumentModel.Drawings.TextUnderline.Words">
             <summary>
-              Text Underline Enum ( IWords ).
+              Text Underline Enum ( Words ).
             </summary>
         </member>
         <member name="F:DocumentModel.Drawings.TextUnderline.Single">

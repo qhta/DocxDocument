@@ -104,7 +104,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   /// <param name="openXmlElement">The OpenXmlElement to load the color information from.</param>
   private new void LoadColorFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
-    Color = IColorHolder.LoadColorFromOpenXml(openXmlElement) as ColorType;
+    Color = ColorType.LoadColorFromOpenXmlStatic(openXmlElement) as ColorType;
   }
 
   /// <summary>
@@ -114,7 +114,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   /// <exception cref="NotImplementedException">Thrown in all cases as the method is not yet implemented.</exception>
   private void UpdateColorInOpenXml(DX.OpenXmlElement openXmlElement)
   {
-    IColorHolder.UpdateColorInOpenXml(Color, openXmlElement);
+    ColorType.UpdateColorInOpenXmlStatic(Color, openXmlElement);
   }
 
   /// <summary>
@@ -131,9 +131,4 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
     get => Color as ColorType;
     set => Color = value;
   }
-
-  ///// <summary>
-  ///// Gets the RGB color value represented by this scheme color, if available.
-  ///// </summary>
-  //public uint? RGB => (Color as IColor)?.RGB;
 }

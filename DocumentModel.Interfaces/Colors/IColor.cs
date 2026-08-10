@@ -20,5 +20,4 @@ public interface IColor
   /// </summary>
   public (double H, double S, double L, double A) HSLAComponents { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-
 }

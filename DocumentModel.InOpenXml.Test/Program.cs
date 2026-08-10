@@ -34,16 +34,16 @@ internal class Program
 
     if (!Exec(new LatentStylesTest())) return;
     if (!Exec(new StyleDefinitionsTest())) return;
-    //if (!Exec(new BaseRunPropertiesTest())) return;
-    //if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
-    //if (!Exec(new BaseParagraphPropertiesTest())) return;
-    //if (!Exec(new StyleDocDefaultsParagraphPropertiesTest())) return;
-    //if (!Exec(new AbstractNumberingsTest())) return;
-    //if (!Exec(new NumberingInstancesTest())) return;
-    //if (!Exec(new BaseSectionPropertiesTest())) return;
-    //if (!Exec(new BaseTableCellPropertiesTest())) return;
-    //if (!Exec(new BaseTableRowPropertiesTest())) return;
-    //if (!Exec(new BaseTablePropertiesTest())) return;
+    if (!Exec(new BaseRunPropertiesTest())) return;
+    if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
+    if (!Exec(new BaseParagraphPropertiesTest())) return;
+    if (!Exec(new StyleDocDefaultsParagraphPropertiesTest())) return;
+    if (!Exec(new AbstractNumberingsTest())) return;
+    if (!Exec(new NumberingInstancesTest())) return;
+    if (!Exec(new BaseSectionPropertiesTest())) return;
+    if (!Exec(new BaseTableCellPropertiesTest())) return;
+    if (!Exec(new BaseTableRowPropertiesTest())) return;
+    if (!Exec(new BaseTablePropertiesTest())) return;
 
     //if (!new Exec()new Test())) return;
 

@@ -40,8 +40,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
   /// <summary>
   /// Gets or sets the system color model.
   /// </summary>
-  public SystemColor? SystemColor { get => InternalColor as SystemColor; set => InternalColor = value;
-  }
+  public SystemColor? SystemColor { get => InternalColor as SystemColor; set => InternalColor = value; }
 
   /// <summary>
   /// Gets or sets the preset color model.
@@ -52,13 +51,6 @@ public partial class ColorType : ModelElement<DXD.ColorType>
   /// Gets or sets the scheme color model.
   /// </summary>
   public SchemeColor? SchemeColor { get => InternalColor as SchemeColor; set => InternalColor = value; }
-
-  ///// <summary>
-  ///// Gets the color type of the held color, or null if no color is held. This property provides a convenient way to access the specific color model (e.g., RGB, HSL, System, Preset, Scheme) of the color contained within this instance.
-  ///// </summary>
-  //[XmlIgnore]
-  //[JsonIgnore]
-  //public ColorType? Color { get => InternalColor as ColorType; set => InternalColor = value; }
 
   /// <summary>
   /// Loads the color information from the specified Open XML element.

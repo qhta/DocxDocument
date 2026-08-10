@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace DocumentModel;
 /// <summary>
 /// Represents an RGB color as a result of color transformations applied to a base color.

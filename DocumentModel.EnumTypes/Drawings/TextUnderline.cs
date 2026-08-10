@@ -13,10 +13,10 @@ public enum TextUnderline
   None = 1,
 
   /// <summary>
-  ///   Text Underline Enum ( IWords ).
+  ///   Text Underline Enum ( Words ).
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.TextUnderlineValues.Words))]
-  IWords,
+  Words,
   /// <summary>
   ///   Text Underline Enum ( Single ).
   /// </summary>

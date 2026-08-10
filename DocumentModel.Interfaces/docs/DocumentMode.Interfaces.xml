@@ -170,17 +170,17 @@
             <param name="transformation">The transformation to add.</param>
             <returns>True if the transformation was added successfully; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.ITransformableColor.GetEffectiveColor">
-            <summary>
-            Evaluates and returns the effective color after applying color transformations to the original color.
-            </summary>
-            <returns>The effective color after transformations.</returns>
-        </member>
         <member name="M:DocumentModel.ITransformableColor.GetTransformations">
             <summary>
             Returns a collection of transformations applied to the color.
             </summary>
             <returns>A collection of transformations.</returns>
+        </member>
+        <member name="M:DocumentModel.ITransformableColor.GetEffectiveColor">
+            <summary>
+            Evaluates and returns the effective color after applying color transformations to the original color.
+            </summary>
+            <returns>The effective color after transformations.</returns>
         </member>
         <member name="T:DocumentModel.Properties.ICustomProperties">
             <summary>
@@ -12768,19 +12768,19 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.includefieldcodes?view=word-pia"/>
         </member>
-        <member name="T:DocumentModel.Wordprocessing.IWords">
+        <member name="T:DocumentModel.Wordprocessing.Words">
             <summary>
             A collection of words in a selection, range, or document.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.words?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IWords.First">
+        <member name="P:DocumentModel.Wordprocessing.Words.First">
             <summary>
             Returns a Range object that represents the first word in a document, selection or range.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.words.first?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.IWords.Last">
+        <member name="P:DocumentModel.Wordprocessing.Words.Last">
             <summary>
             Returns a Range object that represents the last word in a document, selection, or range.
             </summary>

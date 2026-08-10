@@ -1,6 +1,9 @@
-﻿OpenXml SDK provides a set of classes to represent colors in different color models, including RGB, HSL, scheme colors, system colors, and preset colors. 
+﻿# Colors in text and drawings documents
 
-# OpenXml color classes
+OpenXml SDK defines many color models, including RGB, HSL, scheme colors, system colors, and preset colors. These models are further handled in DocumentModel classes. To simplify the color models, we defined common color interfaces.
+
+
+## OpenXml color models
 
 Most of OpenXml color classes are located in the **DocumentFormat.OpenXml.Drawing** namespace, while some are in the **DocumentFormat.OpenXml.Wordprocessing** namespace.
 The classes are as follows:
@@ -16,93 +19,93 @@ The classes are as follows:
 - **Office2010.Word.SchemeColor** - scheme color, used in WordprocessingML, similar to the DrawingsML SchemeColor class.
 
 In the addition, OpenXml SDK uses a VML color specification in the **DocumentFormat.OpenXml.Vml** namespace, which is a legacy color model used in VML drawings.
-It is represented by string properties in the **DocumentFormat.OpenXml.Vml.Fill** and **DocumentFormat.OpenXml.Vml.Stroke** classes.
+It is represented by string properties in some VML classes, e.g. in the **DocumentFormat.OpenXml.Vml.Fill** and **DocumentFormat.OpenXml.Vml.Stroke** classes.
 These properties express a color value in hexadecimal format (RRGGBB), or a named color, or in the specific format "rgb(R,G,B)", where R, G, and B are decimal values for the red, green, and blue components of the color.
 
-## DrawingModel.ColorType definition classes
+### OpenXml.Drawing ColorType definition classes
 
 The six available ColorType components define various color models in the following classes.
 
-### RgbColorModelHex class
+#### OpenXml.Drawing.RgbColorModelHex class
 
-The **Drawing.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
+The **OpenXml.Drawing.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
 
 The **Value** property represents the color in a format of "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
 
-### RgbColorModelPercentage class
+#### OpenXml.Drawing.RgbColorModelPercentage class
 
-The **Drawing.RgbColorModelPercentage** class represents a color in the RGB color model using percentage notation.
+The **OpenXml.Drawing.RgbColorModelPercentage** class represents a color in the RGB color model using percentage notation.
 
 Three properties **RedPortion**, **GreenPortion**, and **BluePortion** represent the red, green, and blue components of the color, respectively. The values are of Int32 type and are in the range from 0 to 100,000, where 0 means no contribution of that color component and 100,000 means full (100%) contribution of that color component.
 
-### HslColorModel class
+#### OpenXml.Drawing.HslColorModel class
 
-The **Drawing.HslColorModel** class represents a color in the HSL color model using degree and percentage notation.
+The **OpenXml.Drawing.HslColorModel** class represents a color in the HSL color model using degree and percentage notation.
 
 The **HueValue** property is a degree value that ranges from 0 to 360 degrees, 
 where 0 degree represents red, 120 degrees represents green, and 240 degrees represents blue. The value of hue is stored as an Int32 type in the range from 0 to 21,600,000, where 1 degree is represented as 60,000 units.
 
 The **SatValue** and **LumValue** properties are percentage values that represent the saturation and luminance components of the color, respectively.
 
-### PresetColor class
+#### OpenXml.Drawing.PresetColor class
 
-The **Drawing.PresetColor** class represents a color using a predefined color name. 
-The **Val** property is an enumeration of the standard preset color names, such as "AliceBlue", "AntiqueWhite", "Aqua", etc. A set of 190 preset color names and values is defined in the **Drawing.PresetColors** enumeration.
+The **OpenXml.Drawing.PresetColor** class represents a color using a predefined color name. 
+The **Val** property is an enumeration of the standard preset color names, such as "AliceBlue", "AntiqueWhite", "Aqua", etc. A set of 190 preset color names and values is defined in the **OpenXml.Drawing.PresetColors** enumeration.
 
-### SystemColor class
+#### OpenXml.Drawing.SystemColor class
 
-The **Drawing.SystemColor** class represents a color that is defined in the system color table of the operating system.
+The **OpenXml.Drawing.SystemColor** class represents a color that is defined in the system color table of the operating system.
 
-The **Val** property is an enumeration of the standard system color names, such as "ActiveBorder", "ActiveCaption", "AppWorkspace", etc. A set of 16 system color names is defined in the **Drawing.SystemColors** enumeration.	
+The **Val** property is an enumeration of the standard system color names, such as "ActiveBorder", "ActiveCaption", "AppWorkspace", etc. A set of 16 system color names is defined in the **OpenXml.Drawing.SystemColors** enumeration.	
 
 The **LastColor** property is an optional property that represents the last color value used in the system color table. It is a hexadecimal RGB value in the format "RRGGBB".It can be helpful when the document is viewed on a system with a different color scheme.
 
-### SchemeColor class
+#### OpenXml.Drawing.SchemeColor class
 
-The **Drawing.SchemeColor** class have a **Val** property, which is a **SchemeColorValues** enumeration of the standard themed colors, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.The actual color values are defined in the **Drawing.ColorScheme** class, which is a part of the document theme.
+The **OpenXml.Drawing.SchemeColor** class have a **Val** property, which is a **SchemeColorValues** enumeration of the standard themed colors, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.The actual color values are defined in the **OpenXml.Drawing.ColorScheme** class, which is a part of the document theme.
 
-### Drawing color transformation elements
+#### Drawing color transformation elements
 
 All the above drawing color classes can contain several optional elements that can be used to transform the color value. Classes of these elements are the following:
-- **Drawing.Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
-- **Drawing.AlphaOffset** - specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
-- **Drawing.AlphaModulation** - specifies a more or less opaque version of its input color. An alpha modulate never increases the alpha beyond 100%. A 200% alpha modulate makes a input color twice as opaque as before. A 50% alpha modulate makes a input color half as opaque as before.
-- **Drawing.Blue** - specifies the input color with the specific blue component, but with the red and green color components unchanged.
-- **Drawing.BlueOffset** - specifies specifies the input color with its blue component shifted, but with its red and green color components unchanged.
-- **Drawing.BlueModulation** - specifies the input color with its blue component modulated by the given percentage. A 50% blue modulate reduces the blue component by half. A 200% blue modulate doubles the blue component.
-- **Drawing.Green** - specifies the input color with the specific green component, but with the red and blue color components unchanged.
-- **Drawing.GreenOffset** - specifies the input color with its green component shifted, but with its red and blue color components unchanged.
-- **Drawing.GreenModulation** - specifies the input color with its green component modulated by the given percentage. A 50% green modulate reduces the green component by half. A 200% green modulate doubles the green component.
-- **Drawing.Red** - specifies the input color with the specific red component, but with the green and blue color components unchanged.
-- **Drawing.RedOffset** - specifies the input color with its red component shifted, but with its green and blue color components unchanged.
-- **Drawing.RedModulation** - specifies the input color with its red component modulated by the given percentage. A 50% red modulate reduces the red component by half. A 200% red modulate doubles the red component.
-- **Drawing.Hue** - specifies the input color with the specific hue component, but with the saturation and luminance components unchanged.
-- **Drawing.HueOffset** - specifies the input color with its hue component shifted, but with its saturation and luminance components unchanged.
-- **Drawing.HueModulation** - specifies the input color with its hue component modulated by the given percentage. A 50% hue modulate reduces the hue component by half. A 200% hue modulate doubles the hue component.
-- **Drawing.Saturation** - specifies the input color with the specific saturation component, but with the hue and luminance components unchanged.
-- **Drawing.SaturationOffset** - specifies the input color with its saturation component shifted, but with its hue and luminance components unchanged.
-- **Drawing.SaturationModulation** - specifies the input color with its saturation component modulated by the given percentage. A 50% saturation modulate reduces the saturation component by half. A 200% saturation modulate doubles the saturation component.
-- **Drawing.Luminance** - specifies the input color with the specific luminance component, but with the hue and saturation components unchanged.
-- **Drawing.LuminanceOffset** - specifies the input color with its luminance component shifted, but with its hue and saturation components unchanged.
-- **Drawing.LuminanceModulation** - specifies the input color with its luminance component modulated by the given percentage. A 50% luminance modulate reduces the luminance component by half. A 200% luminance modulate doubles the luminance component.
-- **Drawing.Tint** - specifies the input color with a tint applied. A tint is a percentage of white added to the color, lightening it. A 10% tint is 10% of the input color combined with 90% white.
-- **Drawing.Shade** - specifies the input color with a shade applied. A shade is a percentage of black added to the color, darkening it. A 10% shade is 10% of the input color combined with 90% black.
-- **Drawing.Complement** - specifies the input color with its complement (opposite) color applied. The complement color is the color directly opposite on the color wheel. For example, the complement of red is cyan, green is magenta, and blue is yellow.
-- **Drawing.Inverse** - specifies the input color with its inverse color applied. The inverse color is calculated by inverting each RGB component (255 - value). For example, the inverse of red (255,0,0) is cyan (0,255,255).
-- **Drawing.Gray** - specifies the input color with its grayscale version applied. The grayscale value is calculated based on the perceived luminance of the original color, resulting in a shade of gray that represents the brightness of the color.
-- **Drawing.Gamma** - specifies the input color with gamma correction applied. Gamma correction adjusts the brightness of the color to account for the nonlinear response of display devices. A gamma value of 2.2 is commonly used for standard displays.
-- **Drawing.InverseGamma** - specifies the input color with inverse gamma correction applied. Inverse gamma correction reverses the gamma correction process, converting display-corrected RGB values back to linear RGB values.
+- **OpenXml.Drawing.Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.
+- **OpenXml.Drawing.AlphaOffset** - specifies a more or less opaque version of its input color. Increases or decreases the input alpha percentage by the specified percentage offset. A 10% alpha offset increases a 50% opacity to 60%. A -10% alpha offset decreases a 50% opacity to 40%. The transformed alpha values are limited to a range of 0 to 100%. A 10% alpha offset increase to a 100% opaque object still results in 100% opacity.
+- **OpenXml.Drawing.AlphaModulation** - specifies a more or less opaque version of its input color. An alpha modulate never increases the alpha beyond 100%. A 200% alpha modulate makes a input color twice as opaque as before. A 50% alpha modulate makes a input color half as opaque as before.
+- **OpenXml.Drawing.Blue** - specifies the input color with the specific blue component, but with the red and green color components unchanged.
+- **OpenXml.Drawing.BlueOffset** - specifies specifies the input color with its blue component shifted, but with its red and green color components unchanged.
+- **OpenXml.Drawing.BlueModulation** - specifies the input color with its blue component modulated by the given percentage. A 50% blue modulate reduces the blue component by half. A 200% blue modulate doubles the blue component.
+- **OpenXml.Drawing.Green** - specifies the input color with the specific green component, but with the red and blue color components unchanged.
+- **OpenXml.Drawing.GreenOffset** - specifies the input color with its green component shifted, but with its red and blue color components unchanged.
+- **OpenXml.Drawing.GreenModulation** - specifies the input color with its green component modulated by the given percentage. A 50% green modulate reduces the green component by half. A 200% green modulate doubles the green component.
+- **OpenXml.Drawing.Red** - specifies the input color with the specific red component, but with the green and blue color components unchanged.
+- **OpenXml.Drawing.RedOffset** - specifies the input color with its red component shifted, but with its green and blue color components unchanged.
+- **OpenXml.Drawing.RedModulation** - specifies the input color with its red component modulated by the given percentage. A 50% red modulate reduces the red component by half. A 200% red modulate doubles the red component.
+- **OpenXml.Drawing.Hue** - specifies the input color with the specific hue component, but with the saturation and luminance components unchanged.
+- **OpenXml.Drawing.HueOffset** - specifies the input color with its hue component shifted, but with its saturation and luminance components unchanged.
+- **OpenXml.Drawing.HueModulation** - specifies the input color with its hue component modulated by the given percentage. A 50% hue modulate reduces the hue component by half. A 200% hue modulate doubles the hue component.
+- **OpenXml.Drawing.Saturation** - specifies the input color with the specific saturation component, but with the hue and luminance components unchanged.
+- **OpenXml.Drawing.SaturationOffset** - specifies the input color with its saturation component shifted, but with its hue and luminance components unchanged.
+- **OpenXml.Drawing.SaturationModulation** - specifies the input color with its saturation component modulated by the given percentage. A 50% saturation modulate reduces the saturation component by half. A 200% saturation modulate doubles the saturation component.
+- **OpenXml.Drawing.Luminance** - specifies the input color with the specific luminance component, but with the hue and saturation components unchanged.
+- **OpenXml.Drawing.LuminanceOffset** - specifies the input color with its luminance component shifted, but with its hue and saturation components unchanged.
+- **OpenXml.Drawing.LuminanceModulation** - specifies the input color with its luminance component modulated by the given percentage. A 50% luminance modulate reduces the luminance component by half. A 200% luminance modulate doubles the luminance component.
+- **OpenXml.Drawing.Tint** - specifies the input color with a tint applied. A tint is a percentage of white added to the color, lightening it. A 10% tint is 10% of the input color combined with 90% white.
+- **OpenXml.Drawing.Shade** - specifies the input color with a shade applied. A shade is a percentage of black added to the color, darkening it. A 10% shade is 10% of the input color combined with 90% black.
+- **OpenXml.Drawing.Complement** - specifies the input color with its complement (opposite) color applied. The complement color is the color directly opposite on the color wheel. For example, the complement of red is cyan, green is magenta, and blue is yellow.
+- **OpenXml.Drawing.Inverse** - specifies the input color with its inverse color applied. The inverse color is calculated by inverting each RGB component (255 - value). For example, the inverse of red (255,0,0) is cyan (0,255,255).
+- **OpenXml.Drawing.Gray** - specifies the input color with its grayscale version applied. The grayscale value is calculated based on the perceived luminance of the original color, resulting in a shade of gray that represents the brightness of the color.
+- **OpenXml.Drawing.Gamma** - specifies the input color with gamma correction applied. Gamma correction adjusts the brightness of the color to account for the nonlinear response of display devices. A gamma value of 2.2 is commonly used for standard displays.
+- **OpenXml.Drawing.InverseGamma** - specifies the input color with inverse gamma correction applied. Inverse gamma correction reverses the gamma correction process, converting display-corrected RGB values back to linear RGB values.
 
 Note that:
 1. The above color transformation elements can be combined in a single color definition to achieve complex color effects. The order of application of these transformations is important, as it can affect the final resulting color.
-2. In the **Drawing.RgbColorModelPercentage**, the **Red**, **Green**, and **Blue** transformation elements are independent of the **RedPortion**, **GreenPortion**, and **BluePortion** properties. 
+2. In the **OpenXml.Drawing.RgbColorModelPercentage**, the **Red**, **Green**, and **Blue** transformation elements are independent of the **RedPortion**, **GreenPortion**, and **BluePortion** properties. 
 The **RedPortion**, **GreenPortion**, and **BluePortion** properties define the base color value, while the **Red**, **Green**, and **Blue** transformation elements can be used to modify the base color by applying additional adjustments.
-3. Analogously, in the **Drawing.HslColorModel**, the **Hue**, **Saturation**, and **Luminance** transformation elements are independent of the **HueValue**, **SatValue**, and **LumValue** properties.
+3. Analogously, in the **OpenXml.Drawing.HslColorModel**, the **Hue**, **Saturation**, and **Luminance** transformation elements are independent of the **HueValue**, **SatValue**, and **LumValue** properties.
 
-## Definition of themed colors
+### Definition of themed colors
 
-A **Drawing.Theme** class, stored in the document theme part, defines a color scheme that can be used throughout the document.
-A **Drawing.ColorScheme** class defines 12 common colors that can be used in the whole document, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.
+A **OpenXml.Drawing.Theme** class, stored in the document theme part, defines a color scheme that can be used throughout the document.
+A **OpenXml.Drawing.ColorScheme** class defines 12 common colors that can be used in the whole document, including 6 accent colors, 2 dark colors, 2 light colors, and 2 hyperlink colors.
 These colors are defined in the following classes:
 - **Dark1Color**
 - **Light1Color**
@@ -118,68 +121,68 @@ These colors are defined in the following classes:
 - **FollowedHyperlinkColor**
 
 The above scheme definition classes are derived from a **Color2Type** abstract class which can contain one of the five color models in DrawingsML:
-1. **Drawing.RgbColorModelHex** - RGB color in hexadecimal model
-2. **Drawing.RgbColorModelPercentage** - RGB color in percentage model
-3. **Drawing.HslColorModel** - HSL color in percentage model
-4. **Drawing.SystemColor** - system color
-5. **Drawing.PresetColor** - preset color
+1. **OpenXml.Drawing.RgbColorModelHex** - RGB color in hexadecimal model
+2. **OpenXml.Drawing.RgbColorModelPercentage** - RGB color in percentage model
+3. **OpenXml.Drawing.HslColorModel** - HSL color in percentage model
+4. **OpenXml.Drawing.SystemColor** - system color
+5. **OpenXml.Drawing.PresetColor** - preset color
 
-Obviously, the **Drawing.SchemeColor** class can't be used in a **Color2Type** class.
+Obviously, the **OpenXml.Drawing.SchemeColor** class can't be used in a **Color2Type** class.
 
-## Using the drawing color classes
+### Using the drawing color classes
 
-The **Drawing.ColorType**, which can contain the six above mentioned DrawingML specific color models, is a base class for the following specific classes:
-- **Drawing.BackgroundColor** - represents a background color for a pattern fill.
-- **Drawing.BulletColor** - specifies the color to be used on bullet characters within a given paragraph.
-- **Drawing.ColorFrom** - specifies a color getting removed (source color) in a color change effect.
-- **Drawing.ColorTo** - specifies a color getting applied (target color) in a color change effect.
-- **Drawing.ContourColor** - represents a contour color for a shape or object.
-- **Drawing.ExtrusionColor** - represents an extrusion color for a 3D shape.
-- **Drawing.ForegroundColor** - represents a foreground color for a pattern fill.
-- **Drawing.Highlight** - represents a highlight color for text or objects.
+The **OpenXml.Drawing.ColorType**, which can contain the six above mentioned DrawingML specific color models, is a base class for the following specific classes:
+- **OpenXml.Drawing.BackgroundColor** - represents a background color for a pattern fill.
+- **OpenXml.Drawing.BulletColor** - specifies the color to be used on bullet characters within a given paragraph.
+- **OpenXml.Drawing.ColorFrom** - specifies a color getting removed (source color) in a color change effect.
+- **OpenXml.Drawing.ColorTo** - specifies a color getting applied (target color) in a color change effect.
+- **OpenXml.Drawing.ContourColor** - represents a contour color for a shape or object.
+- **OpenXml.Drawing.ExtrusionColor** - represents an extrusion color for a 3D shape.
+- **OpenXml.Drawing.ForegroundColor** - represents a foreground color for a pattern fill.
+- **OpenXml.Drawing.Highlight** - represents a highlight color for text or objects.
 
-Moreover, the following classes in DrawingsML, although not derived from **Drawing.ColorType**, can also contain one of the six DrawingML specific color models:
-- **Drawing.AlphaInverse** - represents an alpha inverse effect that can be applied to images in DrawingsML.
-- **Drawing.ColorReplacement** - represents a solid color replacement effect that can be applied to images in DrawingsML.
-- **Drawing.ColorTransform** - represents a color transformation effect that can be applied to images in DrawingsML.
-- **Drawing.Duotone** - represents a duotone effect that can be applied to images in DrawingsML. The duotone effect uses two colors through a linear interpolation to create a two-tone image effect.
-- **Drawing.Glow** - represents a glow effect that can be applied to shapes and text in DrawingsML.
-- **Drawing.GradientStop** - represents a gradient stop, which defines a position of a color within a gradient fill.
-- **Drawing.InnerShadow** - represents an inner shadow effect that can be applied within the edges of a shape or text in DrawingsML.
-- **Drawing.OuterShadow** - represents an outer shadow effect that can be applied outside the edges of a shape or text in DrawingsML.
-- **Drawing.PresetShadow** - represents a preset shadow effect that can be applied to shapes and text in DrawingsML.
-- **Drawing.SolidFill** - represents a solid color fill that can be applied to shapes and text in DrawingsML.
-- **Drawing.CustomColor** - represents a custom color that can be defined within a custom color list to define extra colors that can be appended to a theme. This is useful within corporate scenarios where there is a set corporate color palette from which to work.
-- **Drawing.EffectReference** - represents a reference to an effect style within a style effect list while defining a color that can be applied to shapes and text in DrawingsML.
-- **Drawing.FillReference** - represents a reference to a fill style within a fillstyle list while defining a fill style or background style that can be applied to shapes and text in DrawingsML.
-- **Drawing.LineReference** - represents a reference to a line style within a fill style list while defining a color that can be applied to lines and borders in DrawingsML.
-- **Drawing.FontReference** - represents a reference to a themed font style within a font theme while defining a color that can be applied to the font.
-- **Drawing.TableCellTextStyle** - defines the text properties associated with the text contained within a table cell in DrawingML.
+Moreover, the following classes in DrawingsML, although not derived from **OpenXml.Drawing.ColorType**, can also contain one of the six DrawingML specific color models:
+- **OpenXml.Drawing.AlphaInverse** - represents an alpha inverse effect that can be applied to images in DrawingsML.
+- **OpenXml.Drawing.ColorReplacement** - represents a solid color replacement effect that can be applied to images in DrawingsML.
+- **OpenXml.Drawing.ColorTransform** - represents a color transformation effect that can be applied to images in DrawingsML.
+- **OpenXml.Drawing.Duotone** - represents a duotone effect that can be applied to images in DrawingsML. The duotone effect uses two colors through a linear interpolation to create a two-tone image effect.
+- **OpenXml.Drawing.Glow** - represents a glow effect that can be applied to shapes and text in DrawingsML.
+- **OpenXml.Drawing.GradientStop** - represents a gradient stop, which defines a position of a color within a gradient fill.
+- **OpenXml.Drawing.InnerShadow** - represents an inner shadow effect that can be applied within the edges of a shape or text in DrawingsML.
+- **OpenXml.Drawing.OuterShadow** - represents an outer shadow effect that can be applied outside the edges of a shape or text in DrawingsML.
+- **OpenXml.Drawing.PresetShadow** - represents a preset shadow effect that can be applied to shapes and text in DrawingsML.
+- **OpenXml.Drawing.SolidFill** - represents a solid color fill that can be applied to shapes and text in DrawingsML.
+- **OpenXml.Drawing.CustomColor** - represents a custom color that can be defined within a custom color list to define extra colors that can be appended to a theme. This is useful within corporate scenarios where there is a set corporate color palette from which to work.
+- **OpenXml.Drawing.EffectReference** - represents a reference to an effect style within a style effect list while defining a color that can be applied to shapes and text in DrawingsML.
+- **OpenXml.Drawing.FillReference** - represents a reference to a fill style within a fillstyle list while defining a fill style or background style that can be applied to shapes and text in DrawingsML.
+- **OpenXml.Drawing.LineReference** - represents a reference to a line style within a fill style list while defining a color that can be applied to lines and borders in DrawingsML.
+- **OpenXml.Drawing.FontReference** - represents a reference to a themed font style within a font theme while defining a color that can be applied to the font.
+- **OpenXml.Drawing.TableCellTextStyle** - defines the text properties associated with the text contained within a table cell in DrawingML.
 
 The same six DrawingML specific color model components can be also used in the Drawing.Diagrams classes:
-- **Drawing.Diagrams.FillColorList** - specifies a list of colors to be used for fills in a diagram.
-- **Drawing.Diagrams.LineColorList** - specifies a list of colors to be used for lines in a diagram.
-- **Drawing.Diagrams.EffectColorList** - specifies a list of colors to be used for effects in a diagram.
-- **Drawing.Diagrams.TextEffectColorList** - specifies a list of colors to be used for text effects in a diagram.
-- **Drawing.Diagrams.TextFillColorList** - specifies a list of colors to be used for text fills in a diagram.
-- **Drawing.Diagrams.TextLineColorList** - specifies a list of colors to be used for text lines in a diagram.
+- **OpenXml.Drawing.Diagrams.FillColorList** - specifies a list of colors to be used for fills in a diagram.
+- **OpenXml.Drawing.Diagrams.LineColorList** - specifies a list of colors to be used for lines in a diagram.
+- **OpenXml.Drawing.Diagrams.EffectColorList** - specifies a list of colors to be used for effects in a diagram.
+- **OpenXml.Drawing.Diagrams.TextEffectColorList** - specifies a list of colors to be used for text effects in a diagram.
+- **OpenXml.Drawing.Diagrams.TextFillColorList** - specifies a list of colors to be used for text fills in a diagram.
+- **OpenXml.Drawing.Diagrams.TextLineColorList** - specifies a list of colors to be used for text lines in a diagram.
 
-## Colors in WordprocessingML
+### Colors in WordprocessingML
 
 The WordprocessingML defines three color models that can be used in text and shading colors.
 
 Note that the WordprocessingML color model classes properties are expressed in percentage values, but with a different scale than the DrawingML color model classes.
 The "100%" value in WordprocessingML color model classes is expressed as 100, while the "100%" value in DrawingML color model classes is expressed as 100,000.
 
-### Wordprocessing.Color class
+#### Wordprocessing.Color class
 
-The **Wordprocessing.Color** class specifies colors with the following properties:
+The **OpenXml.Wordprocessing.Color** class specifies colors with the following properties:
 - **Val** - specifies the color value in hexadecimal format (RRGGBB).
 - **ThemeColor** - specifies the color value based on a drawing theme defined color. 
 - **ThemeTint** - specifies the tint of the theme color.
 - **ThemeShade** - specifies the shade of the theme color.
 
-A **Wordprocessing.ThemeColorValues** enumeration is wider than **Drawing.SchemeColorValues** enumeration having four additional colors:
+A **OpenXml.Wordprocessing.ThemeColorValues** enumeration is wider than **OpenXml.Drawing.SchemeColorValues** enumeration having four additional colors:
 - **Text1Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
 - **Background1Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
 - **Text2Color** - a WordprocessingML specific theme color that is not defined in the DrawingML scheme colors.
@@ -188,17 +191,17 @@ A **Wordprocessing.ThemeColorValues** enumeration is wider than **Drawing.Scheme
 The **ThemeTint** and **ThemeShade** properties are percentage values that can be used to lighten or darken the theme color, respectively.
 They are expressed as two-digit hexadecimal numbers, where "00" means no change, "FF" means full tint (white), and "FF" means full shade (black).
 
-### Office2010.Word.RgbColorModelHex class
+#### Office2010.Word.RgbColorModelHex class
 
 The **Office2010.Word.RgbColorModelHex** class is a complex type that specifies a color using the RGB color model. 
 Red, green, and blue are expressed as a sequence of hex digits, RRGGBB. 
 
-### Office2010.Word.SchemeColor class
+#### Office2010.Word.SchemeColor class
 
 The **Office2010.Word.SchemeColor** class has a **Val** property, which is a **Office2010.Word.SchemeColorValues** enumeration of the standard themed colors.
-It is similar to the **Wordprocessing.ThemeColorValues** class, but with addition of **AutoColor** value.
+It is similar to the **OpenXml.Wordprocessing.ThemeColorValues** class, but with addition of **AutoColor** value.
 
-### Office2010.Word color transformation elements
+#### Office2010.Word color transformation elements
 
 Both **Office2010.Word.RgbColorModelHex** and **Office2010.Word.SchemeColor** types optionally specify a list of color transforms applied to the base color:
 - **Tint** - specifies that defined color has a specific tint (as positive fixed percentage), but with its color unchanged.
@@ -212,13 +215,13 @@ Both **Office2010.Word.RgbColorModelHex** and **Office2010.Word.SchemeColor** ty
 - **LuminanceOffset** - specifies that defined color has a specific luminance offset (as positive fixed percentage). A 10% luminance offset increases the luminance value by 10%. A -10% luminance offset decreases the luminance value by 10%.
 - **LuminanceModulation** - specifies that defined color has a specific luminance modulation (as positive fixed percentage). A 50% luminance modulate decreases the luminance value by half. A 200% luminance modulate doubles the luminance value.
 
-# Specifying colors in the DocumentModel
+## Specifying colors in the DocumentModel
 
 DocumentModel follows the same color model definitions as in the OpenXml SDK, but with some differences in the property types and value ranges.
 
 One difference is alpha channel management. Color models in OpenXml generally do not use alpha channel. However drawings color models accept specifying alpha transformations for base colors. To implement these transformations, DocumentModel classes must somehow manage alpha component of the color. It is done in **HexColor** type and other classes.
 
-## Base types
+### Base types
 
 A few base types were defined to be used in color model classes:
 - **HexColor** - to store color in a hexadecimal format.
@@ -226,13 +229,13 @@ A few base types were defined to be used in color model classes:
 - **Degree** - to represent a hue component in HSL color models.
 - **HexPercent** - to map a percentage range from 0 to 100% to byte values from 0 to 255.
 
-### HexColor type. Alpha channel and transparency
+#### HexColor type. Alpha channel and transparency
 
 Basically, a **HexColor** type represents a RGB color model as a 6-digit hexadecimal number in a format of "RRGGBB" which is used in OpenXml. However DocumentModel implementation of the **HexColor** type is based on 32-bit unsigned integer. 24 lower bits (3 bytes) are used to encode RR, GG, and BB components of the color. The highest 8 bits (1 byte) can be used to represent an alpha channel. 
 
 On the other hand, all OpenXml color codes are 6-digits hexadecimal numbers, e.g. a red color is encoded as "FF0000" string. Alpha channel is encoded such that "00" represents full transparency and "FF" represents full opacity of the color. So the full opaque red color would be encoded as "FFFF0000" and it would be incompatible with OpenXml notation. To achieve constistenty, the highest byte of **HexColor** structure should be interpreted as *transparency*, not *alpha channel*. To convert transparency to alpha channel (and vice versa), we must XOR UInt32 data with 0xFF000000.
 
-### Drawings.Percentage type
+#### Drawings.Percentage type
 
 All percentage values in the DocumentModel classes are represented by **Percentage** class, 
 which stores the value as an integer value, where the value is scaled by 1000 to preserve precision. 
@@ -245,7 +248,7 @@ so that a value of 100% can be assigned as 100, and a value of 0.5% can be assig
 
 Note: If we use a **Precentage** value as a factor in multiplication, we must divide it by 100.0.
 
-### Degree type
+#### Degree type
 
 A **Hue** property in the HSL color model is represented by **Degree** class, 
 which stores the value as an integer value, where the value is scaled by 60,000 to preserve precision.
@@ -253,13 +256,13 @@ So, a value of 180 degrees is represented internally as 10,800,000, a value of 0
 
 This class supports implicit conversions to/from numeric types and string representations with an optional "°" suffix. Conversions from numeric types hides internal scaling, so that a value of 180 degrees can be assigned as 180, and a value of 0.5 degrees can be assigned as 0.5.
 
-### HexPercent type
+#### HexPercent type
 
-A **Wordprocessing.Color** class defines two properties (**Tint** and **Shade**) that represent percentage in a byte-range, such that 255 represents 100%. In addition in OpenXml these properties are encoded as two-digits hexadecimal integers.
+A **OpenXml.Wordprocessing.Color** class defines two properties (**Tint** and **Shade**) that represent percentage in a byte-range, such that 255 represents 100%. In addition in OpenXml these properties are encoded as two-digits hexadecimal integers.
 
 To achieve compatibility with OpenXml, a **HexPercent** base type is defined.
 
-## Drawings.DrawingsColorBase\<T> class
+### Drawings.DrawingsColorBase\<T> class
 
 The **Drawings.DrawingsColorBase\<T>** class is an abstract base class for all color models in the Drawings namespace. It provides common properties and methods for color manipulation, such as tint and shade adjustments.
 It has the following properties:
@@ -294,14 +297,14 @@ It has the following properties:
 
 Note that the above properties are treated as *Color transformations*. The details will be described later.
 
-## Drawings.RgbColorModelHex class
+### Drawings.RgbColorModelHex class
 
 The **Drawings.RgbColorModelHex** class represents a color in the RGB color model using hexadecimal notation. 
 It has a property named **Value**. It is a **HexColor** property that holds the hexadecimal value of the color. 
 
 If we need to use an alpha channel, we should use an **ARGB** property. It has an UInt32 data type, and it gets and sets data in the format of "AARRGGBB", where "AA" is two-digit hexadecimal number representing the alpha channel. Its value is XOR-ed with 0xFF000000 to get or set to the **Value** property. E.g. when we get the **Value** of the red color as "FF0000", we get the **ARGB** value as "FFFF0000".
 
-## Drawings.RgbColorModelPercentage class
+### Drawings.RgbColorModelPercentage class
 
 The **Drawings.RgbColorModelPercentage** class represents a color in the RGB color model using percentage notation. 
 It has the following properties:
@@ -312,7 +315,7 @@ It has the following properties:
 
 The values for **R**, **G**, and **B** are independent from **Red**, **Green**, and **Blue** transformations in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, while the transformations are optional adjustments of the base color.
 
-## Drawings.HslColor class
+### Drawings.HslColor class
 
 The **Drawings.HslColor** class represents a color in the HSL color model using percentage notation. 
 It has the following properties:
@@ -323,7 +326,7 @@ It has the following properties:
 
 The values for **H**, **S**, and **L** are independent from **Hue**, **Saturation**, and **Luminance** transformations in the **Drawings.DrawingsColorBase\<T>** class in that they are required to be set for the color to be valid, while the base properties are optional adjustments of the base color.
 
-## Drawings.SchemeColor class
+### Drawings.SchemeColor class
 
 The **Drawings.SchemeColor** class represents a color that is defined in the color scheme of the document.
 It has an **Index** property that holds the enumeration index to the scheme color table.
@@ -347,7 +350,7 @@ The **Drawings.SchemeColors** enumeration defines the following standard scheme 
 - **Text2** = 19,
 - **Background2** = 20,
 
-## Drawings.PresetColor class
+### Drawings.PresetColor class
 
 The **Drawings.PresetColor** class represents a color using a predefined color name with optional transformations.
 This class allows colors to be specified by name (e.g., "Red", "Blue", "AliceBlue") from a standard palette.
@@ -499,13 +502,13 @@ The **Drawings.PresetColors** enumeration defines the following standard preset 
 
 All preset colors are defined with their corresponding UInt32 hexadecimal values with the highest byte set to 0x00 (fully opaque). The two exceptions are Transparent and Auto, which are defined with their UInt32 hexadecimal values that include the highest byte set to 0xFF. **Transparent** color is defined as white with 100% alpha (0xFFFFFFFF) and **Auto** color is defined as black with 100% alpha (0xFF000000).
 
-## Drawings.SystemColor class
+### Drawings.SystemColor class
 
-The **Drawings.SystemColor** class represents a color that is defined by the system colors of the operating system. It has two main properties:
+The **DocumentModel.Drawings.SystemColor** class represents a color that is defined by the system colors of the operating system. It has two main properties:
 - **Index** - A property that holds the enumeration index to the system color table.
 - **LastColor** - An optional property that holds the last color value used for this system color. This can be used to preserve the color value when the system color changes.
 
-The **Drawings.SystemColors** enumeration defines the following standard system color names that can be used as values for the Index property of the **Drawings.SystemColor** class:
+The **DocumentModel.Drawings.SystemColors** enumeration defines the following standard system color names that can be used as values for the Index property of the **DocumentModel.Drawings.SystemColor** class:
 -  **ScrollBar**
 -  **Background**
 -  **ActiveCaption**
@@ -539,7 +542,7 @@ The **Drawings.SystemColors** enumeration defines the following standard system 
 
 All the names are self-explanatory and correspond to the standard system colors defined by the Windows operating system.
 
-The **Drawings.SystemColor.LastColor** property serves multiple important purposes:
+The **DocumentModel.Drawings.SystemColor.LastColor** property serves multiple important purposes:
 - *Cross-platform compatibility* - Provides a concrete color value when viewing documents on non-Windows systems
 - *Fallback rendering* - Used when the system color cannot be resolved (e.g., in print preview, PDF export)
 - *Document portability* - Ensures consistent appearance when the document is moved between systems
@@ -556,23 +559,23 @@ but fall back to **LastColor** if the system color cannot be resolved.
 This ensures the best possible appearance in all environments while maintaining a reasonable
 fallback for non-Windows or incompatible systems.
 
-## Wordprocessing color model classes
+### Wordprocessing color model classes
 
 The **DocumentModel.Wordprocessing** namespace defines the following color model classes that are used 
 in WordprocessingML documents:
-- **Wordprocessing.Color** - represents a commonly used color in **Wordprocessing** textual elements.
-- **Wordprocessing.SchemeColor** - represents a color based on a theme defined in the **Drawings** namespace.
-- **Wordprocessing.RgbColorHex** - represents a color in RGB color model using hexadecimal notation.
+- **OpenXml.Wordprocessing.Color** - represents a commonly used color in **Wordprocessing** textual elements.
+- **OpenXml.Wordprocessing.SchemeColor** - represents a color based on a theme defined in the **Drawings** namespace.
+- **OpenXml.Wordprocessing.RgbColorHex** - represents a color in RGB color model using hexadecimal notation.
 
 All three color model classes have the same properties as their corresponding OpenXml SDK classes.
 There are significant differences in the features of the Wordprocessing color model classes compared 
 to the **Drawings** color model classes.
 
-### Wordprocessing.Color class
+#### Wordprocessing.Color class
 
-The **Wordprocessing.Color** class represents a color commonly used in various element of a Wordprocessing document, such as text, borders, and shading.It has the following properties:
+The **OpenXml.Wordprocessing.Color** class represents a color commonly used in various element of a Wordprocessing document, such as text, borders, and shading.It has the following properties:
 - **Value** - A property that holds the hexadecimal value of the color. The value is of the base type **HexColor**, which should be in the format "RRGGBB", where RR, GG, and BB are two-digit hexadecimal numbers representing the red, green, and blue components of the color, respectively.
-- **ThemeColor** - An optional property that holds the theme color value. It is of the type **Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
+- **ThemeColor** - An optional property that holds the theme color value. It is of the type **DocumentModel.Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
 - **Tint** - An optional property that represents the tint of the color. It is a percentage value expressed as a **HexPercent** type, that can be used to lighten the color. A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
 - **Shade** - An optional property that represents the shade of the color. It is a percentage value expressed as a **HexPercent** type, that can be used to darken the color. A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
 
@@ -583,11 +586,11 @@ The difference between the two types lays in the value range and precision.
 The **HexPercent** type has a range of 0% to 100% with a precision of 0.392% (100/255%), 
 while the **Percentage** type has a range over 100% with a precision of 0.001%.
 
-### Wordprocessing.SchemeColor class
+#### Wordprocessing.SchemeColor class
 
-The **Wordprocessing.SchemeColor** class represents a color that is defined in the color scheme of the document.
+The **OpenXml.Wordprocessing.SchemeColor** class represents a color that is defined in the color scheme of the document.
 It has the following properties:
-- **Index** - A mandatory property that holds the theme color value. It is of the type **Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
+- **Index** - A mandatory property that holds the theme color value. It is of the type **DocumentModel.Drawings.SchemeColors**, which is an enumeration of standard theme colors defined in the document's theme.
 - **Tint** - An optional property that represents the tint of the color. 
 It is a percentage value expressed as a **Percentage** type,that can be used to lighten the color. 
 A value of 0% means no change, while a value of 100% means the color is completely white (lightened).
@@ -595,9 +598,9 @@ A value of 0% means no change, while a value of 100% means the color is complete
 It is a percentage value expressed as a **Percentage** type, that can be used to darken the color. 
 A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
 
-### Wordprocessing.RgbColorHex
+#### Wordprocessing.RgbColorHex
 
-The **Wordprocessing.RgbColorHex** class is a simplified version of **Wordprocessing.Color** class.
+The **OpenXml.Wordprocessing.RgbColorHex** class is a simplified version of **OpenXml.Wordprocessing.Color** class.
 It has the following properties:
 - **Value** - A property that holds the hexadecimal value of the color. 
 The value is of the base type **HexColor**, which should be in the format "RRGGBB", 
@@ -610,30 +613,28 @@ A value of 0% means no change, while a value of 100% means the color is complete
 It is a percentage value expressed as a **Percentage** type, that can be used to darken the color. 
 A value of 0% means no change, while a value of 100% means the color is completely black (darkened).
 
-Note that a **Value** property in **Wordprocessing.RgbColorHex** class is the same as in **Wordprocessing.Color** class, while **Tint** and **Shade** properties are the same as in **Wordprocessing.SchemeColor** class.
+Note that a **Value** property in **OpenXml.Wordprocessing.RgbColorHex** class is the same as in **OpenXml.Wordprocessing.Color** class, while **Tint** and **Shade** properties are the same as in **OpenXml.Wordprocessing.SchemeColor** class.
 
-## VML color model classes
+### VML color model classes
 
-The **DocumentModel.Vml** namespace defines the two color model classes that are used in legacy documents:
-- **Vml.Color** - represents main VML color specification, which can be a hexadecimal number, a color name, or a specific "rgb(R,G,B)" notation, where R, G, B are decimal byte values representing red, green and blue components of RGB color respectively.
-- **Vml.RgbColor** - represents a color in a specific "rgb(R,G,B) notation.
-
-The **Vml.Color** class accepts all three notations of the RGB color and converts them to the internal **Value** property. When it is a specific "rgb(R,G,B)" notation, the internal **Value** becomes an instance of **Vml.RgbColor** class 
+The **DocumentModel.Vml.Color** - represents main VML color specification, which can be a hexadecimal number, a color name, or a specific "rgb(R,G,B)" notation, where R, G, B are decimal byte values representing red, green and blue components of RGB color respectively.
 
 ## Document model color interfaces
 
 To unify various color models used in the document model, several interfaces are defined:
-- **IColor** - main interface for all color models,
-- **Drawings.IColorHolder** - interface for an element that can hold a color value, such as a fill or a line,
-- **Drawings.IColorTransformation** - interface that represents a color transformation.
-- **Drawings.IDrawingColor** - interface that represents all drawing color models.
-- **Drawings.ISchemaBaseColor** - interface that represents the drawing color models that can be used to define schema colors in color scheme of a theme.
+- **DocumentModel.IColor** - main interface for all color models,
+- **DocumentModel.ITintableColor** - interface for a color that can be changed by adding white or black.
+- **DocumentModel.ITransformableColor** - interface for a color that can be transformed.
+- **DocumentModel.IColorTransformation** - interface that represents a color transformation.
+- **DocumentModel.IColorHolder** - interface for an element that can hold a color value, such as a fill or a line,
+- **DocumentModel.IDrawingColor** - interface that represents all drawing color models.
+- **DocumentModel.ISchemeBaseColor** - interface that represents the drawing color models that can be used to define schema colors in color scheme of a theme.
 
-The last three interfaces are used only to classify a color model instance.
+The last two interfaces are used only to classify a color model instance and do not introduce any properties or methods.
 
-### IColor interface
+#### DocumentModel.IColor interface
 
-The **IColor** interface must be implemented by all color model classes.
+The **DocumentModel.IColor** interface must be implemented by all color model classes.
 It defines four properties, which can be used to interchange data:
 - **ARGB** - represents a value of the color as UInt32. The value is in the format 0xAARRGGBB, where AA represents the alpha channel, RR represents the red channel, GG represents the green channel, and BB represents the blue channel. 
 - **RGBAComponents** - enables to get or set red, green, blue, and alpha components of the color as a tuple of double values between 0 and 1.
@@ -641,11 +642,11 @@ It defines four properties, which can be used to interchange data:
 - **Name** - gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
 The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
 
-### Drawings.IColorHolder interface
+#### DocumentModel.Drawings.IColorHolder interface
 
 It is an interface for a drawings element, such as a fill or a line, which can hold one of the drawings color models representet by a property **Color**.
 
-# Color transformations
+## Color transformations
 
 All the drawings color models have a set of optional properties, which represent color transformations. The properties are the following:
 - **Alpha** - specifies that defined color has a specific opacity (as positive fixed percentage), but with its color unchanged.

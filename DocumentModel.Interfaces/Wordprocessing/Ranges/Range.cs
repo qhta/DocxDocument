@@ -61,7 +61,7 @@ public partial interface IRange : IModelObject
   /// Returns a Words collection that represents all the words in a range.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.words?view=word-pia"/>
-  public IWords Words { get; }
+  public Words Words { get; }
 
   /// <summary>
   /// Returns a Sentences collection that represents all the sentences in the range.

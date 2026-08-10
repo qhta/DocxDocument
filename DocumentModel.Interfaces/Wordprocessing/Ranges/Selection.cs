@@ -66,7 +66,7 @@ public partial interface ISelection : IModelObject
   /// Returns a Words collection that represents all the words in a selection.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.words?view=word-pia"/>
-  public IWords Words { get; }
+  public Words Words { get; }
 
   /// <summary>
   /// Returns a Sentences collection that represents all the sentences in the selection.

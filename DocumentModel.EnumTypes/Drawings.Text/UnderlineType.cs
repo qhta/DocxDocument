@@ -20,7 +20,7 @@ public enum UnderlineType
   ///   Underline Non-Space ICharacters Only.
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.UnderlineValues.Words))]
-  IWords,
+  Words,
   /// <summary>
   ///   Double Underline.
   /// </summary>

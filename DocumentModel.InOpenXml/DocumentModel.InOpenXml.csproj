@@ -34,6 +34,7 @@
     <Compile Remove="Drawings\Colors\DrawingsColorBase.ShouldSerialize.cs" />
     <Compile Remove="Drawings\Colors\DrowingsColorBase.XmlSerialization.cs" />
     <Compile Remove="Drawings\Colors\HslColor.XmlSerialization.cs" />
+    <Compile Remove="Drawings\Colors\IColorHolder.cs" />
     <Compile Remove="Drawings\Colors\PresetColor.XmlSerialization.cs" />
     <Compile Remove="Drawings\Colors\RgbColorModelHex.XmlSerialization.cs" />
     <Compile Remove="Drawings\Colors\RgbColorModelPercentage.XmlSerialization.cs" />
@@ -74,7 +75,6 @@
     <Compile Include="Drawings\Colors\DrawingsColorBase.Imp.cs" />
     <Compile Include="Drawings\Colors\HslColor.Imp.cs" />
     <Compile Include="Drawings\Colors\PresetColor.Imp.cs" />
-    <Compile Include="Drawings\Colors\ColorType.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelHex.Imp.cs" />
     <Compile Include="Colors\EffectiveColor.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelPercentage.Imp.cs" />

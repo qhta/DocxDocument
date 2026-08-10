@@ -67,7 +67,7 @@ public enum BuiltInProperty
   /// <summary>
   /// Word count.
   /// </summary>
-  IWords = 15,
+  Words = 15,
   /// <summary>
   /// Character count.
   /// </summary>

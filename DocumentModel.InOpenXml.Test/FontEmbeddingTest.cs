@@ -24,7 +24,7 @@ public class FontEmbeddingTestClass: _AbstractTestClass
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testFileName = Path.Combine(TestFileDir, $"Font embedding full.docx");
 
-    using (var document = Document.Open(testFileName))
+    using (var document = Document.Open(testFileName, FileMode.OpenOrCreate, FileAccess.Read))
     {
       var openXml = GetOpenXmlFromDocument(document);
       if (openXml != null)

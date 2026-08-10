@@ -3,7 +3,7 @@
 /// <summary>
 /// Interface representing a color that can be tinted or shaded, providing properties to get or set the tint and shade values of the color.
 /// </summary>
-public interface ITintableColor
+public interface ITintableColor : IColor
 {
 
   /// <summary>

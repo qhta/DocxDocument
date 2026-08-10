@@ -691,6 +691,6 @@ public partial interface IDocument : IModelObject
   /// Returns a Words collection that represents all the words in a document.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.words?view=word-pia"/>
-  public IWords? Words { get; }
+  public Words? Words { get; }
 
 }

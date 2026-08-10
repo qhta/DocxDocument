@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlLoadData(nameof(LoadColorFromOpenXml))]
 [OpenXmlUpdateData(nameof(UpdateColorInOpenXml))]
-public abstract partial class ColorHolder<T>: ModelElement<T>, IColorHolder where T : DX.OpenXmlElement
+public abstract partial class ColorHolder<T>: ModelElement<T> where T : DX.OpenXmlElement
 {
 
   /// <summary>
