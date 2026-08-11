@@ -36,7 +36,7 @@ public static class ObjectToStringConverter
     RegisterConverters(typeof(HexInt), HexIntObjectToString, StringToHexIntObject);
     RegisterConverters(typeof(HexLong), HexLongObjectToString, StringToHexLongObject);
     RegisterConverters(typeof(HexPercent), HexPercentObjectToString, StringToHexPercentObject);
-    RegisterConverters(typeof(Percent), PercentObjectToString, StringToPercentObject);
+    RegisterConverters(typeof(BytePercent), BytePercentObjectToString, StringToBytePercentObject);
     RegisterConverters(typeof(Percentage), PercentageObjectToString, StringToPercentageObject);
     RegisterConverters(typeof(Degrees), DegreesObjectToString, StringToDegreesObject);
     RegisterConverters(typeof(StringList), StringListObjectToString, StringToStringListObject);
@@ -275,10 +275,10 @@ public static class ObjectToStringConverter
   private static string? HexPercentToString(HexPercent? val) => val?.ToString();
   private static HexPercent? StringToHexPercent(string? str) => String.IsNullOrEmpty(str) ? (HexPercent?)null : HexPercent.Parse(str!);
 
-  private static string? PercentObjectToString(object? val) => PercentToString((Percent?)val);
-  private static object? StringToPercentObject(string? str) => StringToPercent(str);
-  private static string? PercentToString(Percent? val) => val?.ToString();
-  private static Percent? StringToPercent(string? str) => String.IsNullOrEmpty(str) ? (Percent?)null : Percent.Parse(str!);
+  private static string? BytePercentObjectToString(object? val) => BytePercentToString((BytePercent?)val);
+  private static object? StringToBytePercentObject(string? str) => StringToBytePercent(str);
+  private static string? BytePercentToString(BytePercent? val) => val?.ToString();
+  private static BytePercent? StringToBytePercent(string? str) => String.IsNullOrEmpty(str) ? (BytePercent?)null : BytePercent.Parse(str!);
 
   private static string? PercentageObjectToString(object? val) => PercentageToString((Percentage?)val);
   private static object? StringToPercentageObject(string? str) => StringToPercentage(str);

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement in typographic points.
+/// Represents a measure values in typographic points.
 /// A point is defined as 1/72 of an inch, commonly used for typography adjustments.
 /// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
@@ -102,13 +102,13 @@ public partial class PTS : UniversalMeasure
   public static PTS FromMM(double millimeters) => new PTS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static PTS FromCM(double centimeters) => new PTS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static PTS FromInch(double inches) => new PTS($"{inches}in");
 

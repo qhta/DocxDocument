@@ -26,9 +26,9 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
   /// Zoom percentage, specifying the magnification level as a percentage.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Zoom.Percent))]
-  public Percent? Percent 
+  public BytePercent? Percent 
   { 
-    get => InternalValue as Percent?; 
+    get => InternalValue as BytePercent?; 
     set => UpdateField(ref InternalValue, value, nameof(Percent));
   }
 
@@ -43,7 +43,7 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
     if (value.EndsWith("%"))
       return new Zoom
       {
-        Percent = decimal.Parse(value.TrimEnd('%'))
+        Percent = BytePercent.Parse(value.TrimEnd('%'))
       };
     else
       return new Zoom
@@ -79,12 +79,12 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
   /// Implicitly converts a Zoom instance to its Percent value.
   /// </summary>
   /// <param name = "zoom">Zoom instance to convert.</param>
-  public static implicit operator Percent(Zoom zoom) => zoom.Percent ?? default(Percent);
+  public static implicit operator BytePercent(Zoom zoom) => zoom.Percent ?? default(BytePercent);
   /// <summary>
-  /// Implicitly converts a Percent value to a Zoom instance.
+  /// Implicitly converts a BytePercent value to a Zoom instance.
   /// </summary>
-  /// <param name = "percent">Percent value to convert.</param>
-  public static implicit operator Zoom(Percent percent) => new Zoom
+  /// <param name = "percent">BytePercent value to convert.</param>
+  public static implicit operator Zoom(BytePercent percent) => new Zoom
   {
     Percent = percent
   };

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a 64-bit integer value encoded as a fixed-width, uppercase hexadecimal string for use in Office Open XML documents.
+/// Represents a 64-bit integer value encoded as and 16-character hexadecimal string for use in Office Open XML documents.
 /// Enables type-safe conversion between numeric values and their hexadecimal string representations, supporting scenarios such as revision IDs, unique element identifiers, ARGB color values, and bitmasks in Office documents.
 /// Ensures consistent 16-character formatting, seamless .NET type integration, and efficient equality checks.
 /// </summary>
@@ -290,9 +290,9 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Implicitly converts a HexLong to a 64-bit signed integer.
   /// </summary>
-  public static implicit operator Int64(HexLong val)
+  public static implicit operator long(HexLong val)
   {
-    return (Int64)val.value;
+    return (long)val.value;
   }
 
   /// <summary>
@@ -322,7 +322,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a HexLong.
   /// </summary>
-  public static implicit operator HexLong(Int64 val)
+  public static implicit operator HexLong(long val)
   {
     return new HexLong((long)val);
   }
@@ -330,7 +330,7 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Implicitly converts a 64-bit unsigned integer to a HexLong.
   /// </summary>
-  public static implicit operator HexLong(UInt64 val)
+  public static implicit operator HexLong(ulong val)
   {
     return new HexLong((long)val);
   }

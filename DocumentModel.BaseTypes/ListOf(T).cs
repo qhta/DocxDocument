@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 namespace DocumentModel;
 
 /// <summary>
-/// Represents a generic list of values that Iimplements XSD list semantics.
+/// Represents a generic list of values that implements XSD list semantics.
 /// </summary>
 /// <typeparam name="T">The type of elements in the list. Must implement <see cref="IConvertible"/>.</typeparam>
 /// <remarks>

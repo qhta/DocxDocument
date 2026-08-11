@@ -3,7 +3,7 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Represents versioned stream data with a GUID identifier and binary content.
+/// Reprents a versioned stream data with a GUID identifier and binary content.
 /// </summary>
 /// <remarks>
 /// <para>
@@ -18,7 +18,7 @@ namespace DocumentModel;
 /// and OLE content.
 /// </para>
 /// <para>
-/// This structure Iimplements <see cref="IEquatable{T}"/> to provide value-based equality
+/// This structure implements <see cref="IEquatable{T}"/> to provide value-based equality
 /// comparison, including comparison of both the version GUID and binary data content.
 /// </para>
 /// </remarks>

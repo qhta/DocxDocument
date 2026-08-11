@@ -43,8 +43,8 @@ public partial class HeightMeasure : IXmlSerializable
    if (!string.IsNullOrEmpty(HeightMeasureString))
    {
     var parsedValue = new DMW.HeightMeasure(HeightMeasureString);
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
     System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = parsedValue.Type;
    }
 

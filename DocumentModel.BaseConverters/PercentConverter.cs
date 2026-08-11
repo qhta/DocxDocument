@@ -40,7 +40,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromSByteValue(DX.SByteValue? SByteValue)
+  private static BytePercent? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
     if (SByteValue == null) return null;
 
@@ -52,7 +52,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
-  private static DX.SByteValue? ConvertToSByteValue(Percent? value)
+  private static DX.SByteValue? ConvertToSByteValue(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -71,7 +71,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="Int16Value">The Int16Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromInt16Value(DX.Int16Value? Int16Value)
+  private static BytePercent? ConvertFromInt16Value(DX.Int16Value? Int16Value)
   {
     if (Int16Value == null) return null;
 
@@ -83,7 +83,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
-  private static DX.Int16Value? ConvertToInt16Value(Percent? value)
+  private static DX.Int16Value? ConvertToInt16Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -102,7 +102,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromInt32Value(DX.Int32Value? Int32Value)
+  private static BytePercent? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
 
@@ -114,7 +114,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
-  private static DX.Int32Value? ConvertToInt32Value(Percent? value)
+  private static DX.Int32Value? ConvertToInt32Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -133,7 +133,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromInt64Value(DX.Int64Value? Int64Value)
+  private static BytePercent? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
 
@@ -145,7 +145,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
-  private static DX.Int64Value? ConvertToInt64Value(Percent? value)
+  private static DX.Int64Value? ConvertToInt64Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -164,7 +164,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
+  private static BytePercent? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
     if (IntegerValue == null) return null;
 
@@ -176,7 +176,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
-  private static DX.IntegerValue? ConvertToIntegerValue(Percent? value)
+  private static DX.IntegerValue? ConvertToIntegerValue(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -192,7 +192,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromByteValue(DX.ByteValue? ByteValue)
+  private static BytePercent? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
     if (ByteValue == null) return null;
 
@@ -204,7 +204,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
-  private static DX.ByteValue? ConvertToByteValue(Percent? value)
+  private static DX.ByteValue? ConvertToByteValue(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -223,7 +223,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
+  private static BytePercent? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
     if (UInt16Value == null) return null;
 
@@ -235,7 +235,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
-  private static DX.UInt16Value? ConvertToUInt16Value(Percent? value)
+  private static DX.UInt16Value? ConvertToUInt16Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -254,7 +254,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
+  private static BytePercent? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
     if (UInt32Value == null) return null;
 
@@ -266,7 +266,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The UPercent value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
-  private static DX.UInt32Value? ConvertToUInt32Value(Percent? value)
+  private static DX.UInt32Value? ConvertToUInt32Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -285,7 +285,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
+  private static BytePercent? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
     if (UInt64Value == null) return null;
 
@@ -297,7 +297,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The Percent value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
-  private static DX.UInt64Value? ConvertToUInt64Value(Percent? value)
+  private static DX.UInt64Value? ConvertToUInt64Value(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -316,7 +316,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromStringValue(DX.StringValue? StringValue)
+  private static BytePercent? ConvertFromStringValue(DX.StringValue? StringValue)
   {
     if (StringValue == null) return null;
 
@@ -333,7 +333,7 @@ public static class PercentConverter
   /// <param name="value">The Percent value to convert.</param>
   /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
-  private static DX.StringValue? ConvertToStringValue(Percent? value, Type targetType)
+  private static DX.StringValue? ConvertToStringValue(BytePercent? value, Type targetType)
   {
     if (value is null) return null;
 
@@ -353,7 +353,7 @@ public static class PercentConverter
   /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
   /// <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
-  private static Percent? ConvertFromString(string? value)
+  private static BytePercent? ConvertFromString(string? value)
   {
     if (value == null) return null;
     if (!Percent.TryParse(value, out var result))
@@ -367,7 +367,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
-  private static String? ConvertToString(Percent? value)
+  private static String? ConvertToString(BytePercent? value)
   {
     if (value is null) return null;
 
@@ -384,7 +384,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
+  private static BytePercent? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
     if (OpenXmlLeafTextElement == null) return null;
 
@@ -401,7 +401,7 @@ public static class PercentConverter
   /// <param name="value">The Percent value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-  private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Percent? value, Type targetType)
+  private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(BytePercent? value, Type targetType)
   {
     if (value is null) return null;
 
@@ -420,7 +420,7 @@ public static class PercentConverter
   /// </summary>
   /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The Percent value, or null if the element has no content.</returns>
-  private static Percent? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
+  private static BytePercent? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
     if (OpenXmlLeafElement == null) return null;
 
@@ -445,7 +445,7 @@ public static class PercentConverter
   /// <param name="value">The Percent value to convert.</param>
   /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-  private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Percent? value, Type targetType)
+  private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(BytePercent? value, Type targetType)
   {
     if (value is null) return null;
 
@@ -475,7 +475,7 @@ public static class PercentConverter
   /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
-  public static object? ConvertTo(Percent? value, Type targetType)
+  public static object? ConvertTo(BytePercent? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
@@ -487,9 +487,9 @@ public static class PercentConverter
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
   /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="Percent"/> is not supported.</exception>
-  public static Percent? ConvertFrom(object? value)
+  public static BytePercent? ConvertFrom(object? value)
   {
-    return (Percent?)ConverterBase.ConvertFrom(value, typeof(Percent), ConversionFromMap);
+    return (BytePercent?)ConverterBase.ConvertFrom(value, typeof(Percent), ConversionFromMap);
   }
 
   #endregion

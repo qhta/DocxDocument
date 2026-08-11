@@ -174,8 +174,8 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   [OpenXmlElement(typeof(DXW.CharacterScale))]
   [MultiCategory("Scaling and spacing")]
-  public Percent? CharacterScale { get => _CharacterScale ??= GetElement<Percent?, DXW.CharacterScale>(GetUpdatableElement()); set => UpdateField(ref _CharacterScale, value, nameof(CharacterScale)); }
-  private Percent? _CharacterScale;
+  public BytePercent? CharacterScale { get => _CharacterScale ??= GetElement<BytePercent?, DXW.CharacterScale>(GetUpdatableElement()); set => UpdateField(ref _CharacterScale, value, nameof(CharacterScale)); }
+  private BytePercent? _CharacterScale;
 
   /// <summary>
   /// Minimum font size for automatic kerning in the run.

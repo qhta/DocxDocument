@@ -1,29 +1,35 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents an English Metric Unit (EMU), used for precise measurements in drawings.
-///   There are 914400 EMUs per inch.
+/// Represents a measure values in hundreths of a point (CPS).
+/// A hundredth of a point is defined as 1/7200 of an inch, commonly used for fine-grained typography adjustments.
+/// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
+/// <remarks>
+/// Hundredths of a point provide finer precision than points for typographic measurements in desktop publishing and word processing.
+/// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
+/// Note: 1 hundredth-point = 0.01 points = 1/7200 inch.
+/// </remarks>
 [DataContract]
-[JsonConverter(typeof(EMUJsonConverter))]
-public partial class EMU : UniversalMeasure
+[JsonConverter(typeof(CPSJsonConverter))]
+public partial class CPS: UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of EMU in one inch.
+  /// Defines the number of CPS in one inch.
   /// </summary>
-  protected override decimal UnitsPerInch => 914400;
+  protected override decimal UnitsPerInch => 7200;
 
   #region Constructors
 
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
-  public EMU()
+  public HPS()
   {
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> from a string value.
+  /// Initializes a new instance of the <see cref="HPS"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
@@ -37,42 +43,42 @@ public partial class EMU : UniversalMeasure
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
-  public EMU(string str)
+  public HPS(string str)
   {
     Init(str);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> from an Int64 value.
+  /// Initializes a new instance of the <see cref="HPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in EMU.</param>
-  public EMU(Int64 value)
+  /// <param name="value">The value in HPS.</param>
+  public HPS(Int64 value)
   {
     Init(value);
   }
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> from a UInt64 value.
+  /// Initializes a new instance of the <see cref="HPS"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value in EMU.</param>
-  public EMU(UInt64 value)
-  {
-    Init(value);
-  }
-  
-  /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> from a 64-bit floating-point value.
-  /// </summary>
-  /// <param name="value">The value in half-points.</param>
-  public EMU(Double value)
+  /// <param name="value">The value in HPS.</param>
+  public HPS(UInt64 value)
   {
     Init(value);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="EMU"/> from a 128-bit decimal value.
+  /// Initializes a new instance of the <see cref="HPS"/> from a 64-bit floating-point value.
   /// </summary>
   /// <param name="value">The value in half-points.</param>
-  public EMU(Decimal value)
+  public HPS(Double value)
+  {
+    Init(value);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="HPS"/> from a 128-bit decimal value.
+  /// </summary>
+  /// <param name="value">The value in half-points.</param>
+  public HPS(Decimal value)
   {
     Init(value);
   }
@@ -81,30 +87,30 @@ public partial class EMU : UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="EMU"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="HPS"/> that represents the specified value in twips.
   /// </summary>
-  public static EMU FromTwips(double twips) => new EMU($"{twips}tw");
+  public static HPS FromTwips(double twips) => new HPS($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="EMU"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="HPS"/> that represents the specified value in points.
   /// </summary>
-  public static EMU FromPT(double points) => new EMU($"{points}pt");
+  public static HPS FromPT(double points) => new HPS($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static EMU FromMM(double millimeters) => new EMU($"{millimeters}mm");
+  public static HPS FromMM(double millimeters) => new HPS($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static EMU FromCM(double centimeters) => new EMU($"{centimeters}cm");
+  public static HPS FromCM(double centimeters) => new HPS($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static EMU FromInch(double inches) => new EMU($"{inches}in");
+  public static HPS FromInch(double inches) => new HPS($"{inches}in");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
@@ -113,7 +119,7 @@ public partial class EMU : UniversalMeasure
   /// thrown.</remarks>
   /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static EMU Parse(string str) => new EMU(str);
+  public static HPS Parse(string str) => new HPS(str);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -123,7 +129,7 @@ public partial class EMU : UniversalMeasure
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static EMU ConvertFrom(double value, LengthUnit unit) => unit switch
+  public static HPS ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),
@@ -147,9 +153,9 @@ public partial class EMU : UniversalMeasure
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string str, out EMU? result)
+  public static bool TryParse(string str, out HPS? result)
   {
-    result = new EMU();
+    result = new HPS();
     return result.TryInit(str);
   }
 
@@ -158,54 +164,54 @@ public partial class EMU : UniversalMeasure
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="EMU"/> value.
+  /// Implicitly converts a string to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
-  /// <returns>A <see cref="EMU"/> value parsed from the string.</returns>
-  public static implicit operator EMU(string value)
+  /// <returns>A <see cref="HPS"/> value parsed from the string.</returns>
+  public static implicit operator HPS(string value)
   {
-    return new EMU(value);
+    return new HPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a string.
+  /// Implicitly converts a <see cref="HPS"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
-  /// <returns>A string representation of the EMU value.</returns>
-  public static implicit operator string(EMU value)
+  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
+  /// <returns>A string representation of the HPS value.</returns>
+  public static implicit operator string?(HPS value)
   {
     return value.ToString();
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="EMU"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(Int32 value)
+  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
+  public static implicit operator HPS(Int32 value)
   {
-    return new EMU(value);
+    return new HPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to a <see cref="EMU"/> value.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="HPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
-  /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
-  public static implicit operator EMU(Int64 value)
+  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
+  public static implicit operator HPS(Int64 value)
   {
-    return new EMU(value);
+    return new HPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number to a EMU instance.
+  /// Implicitly converts a double-precision floating-point number to a HPS instance.
   /// </summary>
-  /// <remarks>This conversion allows for seamless integration of double values into contexts where EMU are
-  /// required, facilitating operations that involve measurements in EMU.</remarks>
-  /// <param name="value">The value to convert, representing a measurement in EMU.</param>
-  public static implicit operator EMU(Double value)
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where HPS are
+  /// required, facilitating operations that involve measurements in HPS.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in HPS.</param>
+  public static implicit operator HPS(Double value)
   {
-    return new EMU(value);
+    return new HPS(value);
   }
 
   #endregion

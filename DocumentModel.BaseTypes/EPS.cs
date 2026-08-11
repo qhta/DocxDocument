@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement in eighth-points (one-eighth of a typographic point).
+/// Represents a measure values in eighth-points (one-eighth of a typographic point).
 /// An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision for typography.
 /// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
@@ -102,13 +102,13 @@ public partial class EPS : UniversalMeasure
   public static EPS FromMM(double millimeters) => new EPS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static EPS FromCM(double centimeters) => new EPS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static EPS FromInch(double inches) => new EPS($"{inches}in");
 

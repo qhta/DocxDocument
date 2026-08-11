@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement in half-points (half of a typographic point).
+/// Represents a measure values in half-points (half of a typographic point).
 /// A half-point is defined as 1/144 of an inch, commonly used for fine-grained typography adjustments.
 /// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
@@ -102,13 +102,13 @@ public partial class HPS: UniversalMeasure
   public static HPS FromMM(double millimeters) => new HPS($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static HPS FromCM(double centimeters) => new HPS($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static HPS FromInch(double inches) => new HPS($"{inches}in");
 

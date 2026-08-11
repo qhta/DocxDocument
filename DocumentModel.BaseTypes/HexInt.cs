@@ -6,7 +6,7 @@
 /// <remarks>
 ///   <para>
 ///   HexInt provides a type-safe wrapper for integer values that are represented as hexadecimal strings
-///   in Office Open XML documents. It stores a 32-bit signed integer value (-2,147,483,648 to 2,147,483,647)
+///   in Office Open XML documents. It stores a 32-bit unsigned integer value (0 to 4,294,967,295)
 ///   that is formatted as an 8-character uppercase hexadecimal string.
 ///   </para>
 ///   <para>
@@ -445,7 +445,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </summary>
   /// <param name="val">A HexInt value.</param>
   /// <returns>The underlying int32 value.</returns>
-  public static implicit operator Int32(HexInt val)
+  public static implicit operator int(HexInt val)
   {
     return (Int32)val.value;
   }
@@ -485,7 +485,7 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// </summary>
   /// <param name="val">An int value (-2,147,483,648 to 2,147,483,647).</param>
   /// <returns>A HexInt representing the value.</returns>
-  public static implicit operator HexInt(Int32 val)
+  public static implicit operator HexInt(int val)
   {
     return new HexInt((ulong)val);
   }

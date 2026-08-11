@@ -30,7 +30,7 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- public Int64? Value { get => (Int64? )_value; set => _value = value; }
+ public Int64? Value { get => (Int64? )value; set => base.value = value; }
 
  /// <summary>
  /// Represents the type of the HeightMeasure value, which can be Exact (in HeightMeasure), relative (in fiftieth of percent),
@@ -140,7 +140,7 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
   if (str == "auto")
   {
    _type = HeightMeasureType.Auto;
-   _value = 0;
+   value = 0;
   }
   else if (str.StartsWith("atLeast "))
   {

@@ -278,7 +278,7 @@ public static partial class OpenXmlModelConverter
   /// provided model object.
   /// </summary>
   /// <remarks>This method performs type conversion if the model property value is not directly assignable to
-  /// the Open XML property type. If the property value Iimplements IUpdatable, additional update logic is applied to
+  /// the Open XML property type. If the property value implements IUpdatable, additional update logic is applied to
   /// synchronize data. The method returns false if the property mapping is not found or the Open XML property cannot be
   /// written.</remarks>
   /// <param name="modelObject">The source object containing the property value to be mapped to the Open XML object. Cannot be null.</param>

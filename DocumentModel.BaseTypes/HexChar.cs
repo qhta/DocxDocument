@@ -27,7 +27,7 @@
 ///   </list>
 ///   </para>
 ///   <para>
-///   The struct Iimplements <see cref="IConvertible"/> for seamless integration with .NET type conversion
+///   The struct implements <see cref="IConvertible"/> for seamless integration with .NET type conversion
 ///   and <see cref="IEquatable{T}"/> for efficient equality comparisons. It provides implicit conversions
 ///   between HexChar and common numeric types (byte, ushort, uint, ulong) as well as string representations.
 ///   </para>

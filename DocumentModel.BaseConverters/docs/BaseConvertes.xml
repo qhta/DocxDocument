@@ -2352,7 +2352,7 @@
             <param name="SByteValue">The SByteValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToSByteValue(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToSByteValue(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml SByteValue from an HexByte value.
             </summary>
@@ -2366,7 +2366,7 @@
             <param name="int16Value">The Int16Value to convert.</param>
             <returns>The HexByte int16Value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt16Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt16Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml Int16Value from an HexByte value.
             </summary>
@@ -2380,7 +2380,7 @@
             <param name="Int32Value">The Int32Value to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt32Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt32Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml Int32Value from an HexByte value.
             </summary>
@@ -2394,7 +2394,7 @@
             <param name="Int64Value">The Int64Value to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt64Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToInt64Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml Int64Value from an HexByte value.
             </summary>
@@ -2408,7 +2408,7 @@
             <param name="IntegerValue">The IntegerValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToIntegerValue(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToIntegerValue(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml IntegerValue from an HexByte value.
             </summary>
@@ -2422,7 +2422,7 @@
             <param name="ByteValue">The ByteValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToByteValue(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToByteValue(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml ByteValue from an HexByte value.
             </summary>
@@ -2436,7 +2436,7 @@
             <param name="UInt16Value">The UInt16Value to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt16Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt16Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml UInt16Value from an HexByte value.
             </summary>
@@ -2450,7 +2450,7 @@
             <param name="HexByteValue">The HexByteValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt32Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt32Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml HexByteValue from an HexByte value.
             </summary>
@@ -2464,7 +2464,7 @@
             <param name="UInt64Value">The UInt64Value to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt64Value(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToUInt64Value(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Creates an OpenXml UInt64Value from an HexByte value.
             </summary>
@@ -2478,7 +2478,7 @@
             <param name="StringValue">The StringValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToStringValue(DocumentModel.HexByte,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToStringValue(System.Nullable{DocumentModel.HexByte},System.Type)">
             <summary>
             Creates an OpenXml StringValue from an HexByte value.
             </summary>
@@ -2493,7 +2493,7 @@
             <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.HexByte,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.HexByte},System.Type)">
             <summary>
             Creates an OpenXml OpenXmlLeafTextElement from an HexByte value.
             </summary>
@@ -2508,7 +2508,7 @@
             <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToHexBinaryValue(DocumentModel.HexByte,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToHexBinaryValue(System.Nullable{DocumentModel.HexByte},System.Type)">
             <summary>
             Creates an OpenXml HexBinaryValue from an HexByte value.
             </summary>
@@ -2523,7 +2523,7 @@
             <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
             <returns>The HexByte value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToOpenXmlLeafElement(DocumentModel.HexByte,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.HexByte},System.Type)">
             <summary>
             Creates an OpenXml OpenXmlLeafElement from an HexByte value.
             </summary>
@@ -2539,14 +2539,14 @@
             <returns>A HexByte integer equivalent to the number contained in the input string, or null if the input is null or
             not a valid integer.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToString(DocumentModel.HexByte)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertToString(System.Nullable{DocumentModel.HexByte})">
             <summary>
             Converts a nullable HexByte value to its string representation.
             </summary>
             <param name="value">The nullable HexByte value to convert. If null, the method returns null.</param>
             <returns>A string representation of the specified value, or null if the value is null.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertTo(DocumentModel.HexByte,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexByteConverter.ConvertTo(System.Nullable{DocumentModel.HexByte},System.Type)">
             <summary>
             Converts an HexByte value to the specified target type using standard type conversion.
             </summary>
@@ -4759,7 +4759,7 @@
             provided model object.
             </summary>
             <remarks>This method performs type conversion if the model property value is not directly assignable to
-            the Open XML property type. If the property value Iimplements IUpdatable, additional update logic is applied to
+            the Open XML property type. If the property value implements IUpdatable, additional update logic is applied to
             synchronize data. The method returns false if the property mapping is not found or the Open XML property cannot be
             written.</remarks>
             <param name="modelObject">The source object containing the property value to be mapped to the Open XML object. Cannot be null.</param>
@@ -5529,220 +5529,6 @@
             <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Percentage"/> is not supported.</exception>
-        </member>
-        <member name="T:DocumentModel.OpenXml.PercentConverter">
-            <summary>
-            Provides conversion methods for Percent value to/from Open XML.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.#cctor">
-            <summary>
-            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.PercentConverter"/>.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromSByteValue(DocumentFormat.OpenXml.SByteValue)">
-            <summary>
-            Converts an OpenXml SByteValue to Percent.
-            </summary>
-            <param name="SByteValue">The SByteValue to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToSByteValue(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml SByteValue from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new SByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
-            <summary>
-            Converts an OpenXml Int16Value to Percent.
-            </summary>
-            <param name="Int16Value">The Int16Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToInt16Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml Int16Value from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new Int16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
-            <summary>
-            Converts an OpenXml Int32Value to Percent.
-            </summary>
-            <param name="Int32Value">The Int32Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToInt32Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml Int32Value from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new Int32Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
-            <summary>
-            Converts an OpenXml Int64Value to Percent.
-            </summary>
-            <param name="Int64Value">The Int64Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToInt64Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml Int64Value from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new Int64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
-            <summary>
-            Converts an OpenXml IntegerValue to Percent.
-            </summary>
-            <param name="IntegerValue">The IntegerValue to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToIntegerValue(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml IntegerValue from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new IntegerValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
-            <summary>
-            Converts an OpenXml ByteValue to Percent.
-            </summary>
-            <param name="ByteValue">The ByteValue to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToByteValue(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml ByteValue from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new ByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
-            <summary>
-            Converts an OpenXml UInt16Value to Percent.
-            </summary>
-            <param name="UInt16Value">The UInt16Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToUInt16Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml UInt16Value from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new UInt16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
-            <summary>
-            Converts an OpenXml UInt32Value to Percent.
-            </summary>
-            <param name="UInt32Value">The UInt32Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToUInt32Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml UInt32Value from an UPercent value.
-            </summary>
-            <param name="value">The UPercent value to convert.</param>
-            <returns>A new UInt32Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
-            <summary>
-            Converts an OpenXml UInt64Value to Percent.
-            </summary>
-            <param name="UInt64Value">The UInt64Value to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToUInt64Value(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Creates an OpenXml UInt64Value from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <returns>A new UInt64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
-            <summary>
-            Converts an OpenXml StringValue to Percent.
-            </summary>
-            <param name="StringValue">The StringValue to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToStringValue(System.Nullable{DocumentModel.Percent},System.Type)">
-            <summary>
-            Creates an OpenXml StringValue from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
-            <returns>A new StringValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromString(System.String)">
-            <summary>
-            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
-            </summary>
-            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
-            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
-            not a valid integer.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToString(System.Nullable{DocumentModel.Percent})">
-            <summary>
-            Converts a nullable 32-bit integer value to its string representation.
-            </summary>
-            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
-            <returns>A string representation of the specified value, or null if the value is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafTextElement to Percent.
-            </summary>
-            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.Percent},System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafTextElement from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
-            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafElement to Percent.
-            </summary>
-            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
-            <returns>The Percent value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.Percent},System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafElement from an Percent value.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
-            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertTo(System.Nullable{DocumentModel.Percent},System.Type)">
-            <summary>
-            Converts an Percent value to the specified target type using standard type conversion.
-            </summary>
-            <param name="value">The Percent value to convert.</param>
-            <param name="targetType">The target type to convert to.</param>
-            <returns>The converted value, or null if the input is null.</returns>
-            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.OpenXml.PercentConverter.ConvertFrom(System.Object)">
-            <summary>
-            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
-            </summary>
-            <param name="value">The value to convert to an <see cref="T:DocumentModel.Percent"/>. Can be <see langword="null"/>.</param>
-            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
-            is <see langword="null"/>.</returns>
-            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Percent"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.PTSConverter">
             <summary>
@@ -6606,7 +6392,7 @@
             <summary>
             Parses textual representations of a tri-state boolean (true/false/blank) into <see cref="T:DocumentModel.TSBoolean"/>.
             </summary>
-            <param name="value">The string to interpret. Null or unrecognized text yields <see cref="F:DocumentModel.TSBoolean.Blank"/>.</param>
+            <param name="value">The string to interpret. Null or unrecognized text yields <see cref="F:DocumentModel.TSBoolean.Undefined"/>.</param>
             <returns>The parsed <see cref="T:DocumentModel.TSBoolean"/> value.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TSBooleanConverter.TSBooleanToString(DocumentModel.TSBoolean)">

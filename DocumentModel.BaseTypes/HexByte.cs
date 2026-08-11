@@ -6,16 +6,9 @@
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(HexByteJsonConverter))]
-public partial record HexByte : IConvertible, IEquatable<HexByte>
+public partial struct HexByte : IConvertible, IEquatable<HexByte>
 {
-  private readonly byte value;
-
-  /// <summary>
-  /// Default constructor needed for XML deserialization. Initializes the HexByte with a default value of 0 (null byte).
-  /// </summary>
-  public HexByte()
-  {
-  }
+  private byte value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexByte"/> struct from a hexadecimal string.
@@ -194,7 +187,7 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// </exception>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    return ((IConvertible)value).ToDateTime(provider);
+    throw new InvalidOperationException("Conversion from HexByte to DateTime is not supported.");
   }
 
   /// <summary>
@@ -529,18 +522,6 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
     return value.ToString("X2");
   }
 
-
-  /// <summary>
-  ///   Converts this HexByte to its string representation in a provided format.
-  /// </summary>
-  /// <param name="format">format for string representation (e.g., "X2" for 2-digit hex).</param>
-  /// <returns>
-  ///   A string in provided format string.
-  /// </returns>
-  public string ToString(string format)
-  {
-    return value.ToString(format);
-  }
   /// <summary>
   ///   Determines whether this HexByte is equal to another HexByte.
   /// </summary>
@@ -548,11 +529,9 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <returns>
   ///   <see langword="true"/> if the byte codes are equal; otherwise <see langword="false"/>.
   /// </returns>
-  public virtual bool Equals(HexByte? other)
+  public bool Equals(HexByte other)
   {
-    if (other == null)
-      return false;
-    return value == other.value;
+    return value == ((HexByte)other).value;
   }
 
   /// <summary>

@@ -141,6 +141,6 @@ public class BytePercentJsonConverter : JsonConverter<BytePercent>
   /// </remarks>
   public override void Write(Utf8JsonWriter writer, BytePercent value, JsonSerializerOptions options)
   {
-    writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
+    writer.WriteStringValue(value.ToString());
   }
 }

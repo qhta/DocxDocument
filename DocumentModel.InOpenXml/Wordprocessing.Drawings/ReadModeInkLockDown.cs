@@ -33,6 +33,6 @@ public partial class ReadModeInkLockDown : ModelElement<DXW.ReadModeInkLockDown>
   /// The scaling factor for font size, specified as a string, used to adjust text size for consistent appearance in read mode.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.ReadModeInkLockDown.FontSize))]
-  public Percent? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
-  private Percent? _FontSize;
+  public Percentage? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
+  private Percentage? _FontSize;
 }

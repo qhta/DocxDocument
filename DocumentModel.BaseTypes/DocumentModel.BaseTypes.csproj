@@ -35,7 +35,10 @@
     <Compile Remove="Converters\OnOffToggle.XmlSerialization.cs" />
     <Compile Remove="Converters\OnOffToggleJsonConverter.cs" />
     <Compile Remove="Converters\OnOffToggleJsonConvertery.cs" />
+    <Compile Remove="Converters\Percent.XmlSerialization.cs" />
+    <Compile Remove="Converters\PercentJsonConverter.cs" />
     <Compile Remove="OnOff.cs" />
+    <Compile Remove="Percent.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />

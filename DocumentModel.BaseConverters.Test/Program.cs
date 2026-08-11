@@ -38,7 +38,7 @@ internal class Program
     if (!Exec(SingleConverterTest.Run)) return;
     if (!Exec(DoubleConverterTest.Run)) return;
     if (!Exec(EnumConverterTest.Run)) return;
-    if (!Exec(PercentConverterTest.Run)) return;
+    if (!Exec(BytePercentConverterTest.Run)) return;
     if (!Exec(PercentageConverterTest.Run)) return;
     if (!Exec(HexPercentConverterTest.Run)) return;
     if (!Exec(DegreesConverterTest.Run)) return;

@@ -11,8 +11,8 @@ public partial class TabStop : ModelElement<DXD.TabStop>
  ///   Position of the tab stop.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TabStop.Position))]
- public Int32? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
- private Int32? _Position;
+ public EMU? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+ private EMU ? _Position;
 
  /// <summary>
  ///   Alignment type for the tab stop.

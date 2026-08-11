@@ -30,31 +30,31 @@ public static class TSBooleanTest
 
     TSBoolean trueValue = TSBoolean.True;
     TSBoolean falseValue = TSBoolean.False;
-    TSBoolean blankValue = TSBoolean.Blank;
+    TSBoolean blankValue = TSBoolean.Undefined;
 
-    Console.WriteLine($"\nâś“ True value: {trueValue}");
-    Console.WriteLine($"\nâś“ False value: {falseValue}");
-    Console.WriteLine($"\nâś“ Blank value: {blankValue}");
+    Console.WriteLine($"\n✓ True value: {trueValue}");
+    Console.WriteLine($"\n✓ False value: {falseValue}");
+    Console.WriteLine($"\n✓ Blank value: {blankValue}");
 
-    if (trueValue != TSBoolean.True || falseValue != TSBoolean.False || blankValue != TSBoolean.Blank)
+    if (trueValue != TSBoolean.True || falseValue != TSBoolean.False || blankValue != TSBoolean.Undefined)
     {
-      Console.WriteLine("âś— Equality test FAILED");
+      Console.WriteLine("✗ Equality test FAILED");
       return false;
     }
 
-    Console.WriteLine("\nâś“ Equality test passed");
+    Console.WriteLine("\n✓ Equality test passed");
 
     string trueString = trueValue.ToString();
     string falseString = falseValue.ToString();
-    Console.WriteLine($"\nâś“ ToString(): {trueString}, {falseString}");
+    Console.WriteLine($"\n✓ ToString(): {trueString}, {falseString}");
 
     int trueInt = (int)trueValue;
     TSBoolean fromInt = (TSBoolean)1;
-    Console.WriteLine($"\nâś“ Numeric conversions: True={trueInt}, FromInt={fromInt}");
+    Console.WriteLine($"\n✓ Numeric conversions: True={trueInt}, FromInt={fromInt}");
 
-    Console.WriteLine($"\nâś“ Hash codes: True={trueValue.GetHashCode()}, False={falseValue.GetHashCode()}, Blank={blankValue.GetHashCode()}");
+    Console.WriteLine($"\n✓ Hash codes: True={trueValue.GetHashCode()}, False={falseValue.GetHashCode()}, Blank={blankValue.GetHashCode()}");
 
-    Console.WriteLine("\nâś“ All basic operations passed");
+    Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
     return true;
   }
@@ -94,7 +94,7 @@ public static class TSBooleanTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\nâś“ XML Serialization/Deserialization test passed");
+    Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -123,7 +123,7 @@ public static class TSBooleanTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\nâś“ JSON Serialization/Deserialization test passed");
+    Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -142,7 +142,7 @@ public static class TSBooleanTest
   {
     if (deserializedData == null)
     {
-      Console.WriteLine("âś— Deserialization returned null");
+      Console.WriteLine("✗ Deserialization returned null");
       return false;
     }
 
@@ -171,7 +171,7 @@ public static class TSBooleanTest
     {
       Enabled = TSBoolean.True,
       Disabled = TSBoolean.False,
-      Indeterminate = TSBoolean.Blank,
+      Indeterminate = TSBoolean.Undefined,
       DefaultValue = TSBoolean.False
     };
   }
@@ -192,17 +192,17 @@ public static class TSBooleanTest
     Console.WriteLine("\nTesting Enum.TryParse:");
     bool parsedTrue = Enum.TryParse("True", out TSBoolean parsedTrueValue);
     bool parsedFalse = Enum.TryParse("False", out TSBoolean parsedFalseValue);
-    bool parsedBlank = Enum.TryParse("Blank", out TSBoolean parsedBlankValue);
+    bool parsedUndefined = Enum.TryParse("Undefined", out TSBoolean parsedUndefinedValue);
     bool parsedInvalid = Enum.TryParse("Invalid", out TSBoolean _);
 
     Console.WriteLine($"  \"True\" -> {parsedTrueValue} (success={parsedTrue})");
     Console.WriteLine($"  \"False\" -> {parsedFalseValue} (success={parsedFalse})");
-    Console.WriteLine($"  \"Blank\" -> {parsedBlankValue} (success={parsedBlank})");
+    Console.WriteLine($"  \"Undefined\" -> {parsedUndefinedValue} (success={parsedUndefined})");
     Console.WriteLine($"  \"Invalid\" -> success={parsedInvalid} (expected false)");
 
-    if (!parsedTrue || !parsedFalse || !parsedBlank || parsedInvalid)
+    if (!parsedTrue || !parsedFalse || !parsedUndefined || parsedInvalid)
     {
-      Console.WriteLine("âś— Enum parsing test FAILED");
+      Console.WriteLine("✗ Enum parsing test FAILED");
       return false;
     }
 
@@ -211,7 +211,7 @@ public static class TSBooleanTest
     var fromNumeric = JsonSerializer.Deserialize<TSBooleanWrapper>(jsonNumeric);
     Console.WriteLine($"  From JSON number 1: {fromNumeric?.Value}");
 
-    Console.WriteLine("\nâś“ All edge case tests completed");
+    Console.WriteLine("\n✓ All edge case tests completed");
     Console.WriteLine();
     return true;
   }
@@ -268,7 +268,7 @@ public static class TSBooleanTest
     sw.Stop();
     Console.WriteLine($"Equality check x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-    Console.WriteLine("\nâś“ Performance tests completed");
+    Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
     return true;
   }

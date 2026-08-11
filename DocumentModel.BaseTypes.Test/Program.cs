@@ -9,10 +9,9 @@ class Program
 {
   static void Main(string[] args)
   {
-    // Set culture to invariant to ensure consistent formatting across tests
-    CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
     // Ensure Unicode characters display correctly
     Console.OutputEncoding = System.Text.Encoding.UTF8;
+
     Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
     Console.WriteLine("║   DocumentModel Base Types Serialization Test Suite        ║");
     Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
@@ -30,7 +29,6 @@ class Program
     if (!Exec(HexLongTest.Run)) return;
     if (!Exec(HexRgbTest.Run)) return;
     if (!Exec(ListOfTest.Run)) return;
-    if (!Exec(PercentTest.Run)) return;
     if (!Exec(HexPercentTest.Run)) return;
     if (!Exec(PercentageTest.Run)) return;
     if (!Exec(DegreesTest.Run)) return;

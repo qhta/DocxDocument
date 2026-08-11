@@ -18,5 +18,5 @@ public enum TSBoolean
   /// <summary>
   /// Indicates an indeterminate or blank state.
   /// </summary>
-  Blank = 2
+  Undefined = 2
 }

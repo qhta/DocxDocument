@@ -68,7 +68,7 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.StringList), typeof(DX.StringValue)),
     (typeof(DocumentModel.HexColor), typeof(DXW.Color)),
     (typeof(DocumentModel.PresetColors), typeof(DXD.PresetColorValues)),
-    (typeof(DocumentModel.Percent), typeof(DXW.SummaryLength)),
+    (typeof(DocumentModel.BytePercent), typeof(DXW.SummaryLength)),
 
   ];
 
@@ -241,7 +241,7 @@ public static class SimpleValueConverterTest
     if (testedType == typeof(Boolean))
       return [true, false];
     if (testedType == typeof(TSBoolean))
-      return [TSBoolean.True, TSBoolean.False, TSBoolean.Blank];
+      return [TSBoolean.True, TSBoolean.False, TSBoolean.Undefined];
     if (testedType == typeof(String))
       return ["", "Test String", "Another String"];
     if (testedType == typeof(Byte))
@@ -310,8 +310,8 @@ public static class SimpleValueConverterTest
       return [new DocumentModel.HexColor(), new DocumentModel.HexColor("ABCDEF")];
     if (testedType == typeof(DocumentModel.PresetColors))
       return [new DocumentModel.PresetColors()];
-    if (testedType == typeof(DocumentModel.Percent))
-      return [new DocumentModel.Percent("50%")];
+    if (testedType == typeof(DocumentModel.BytePercent))
+      return [new DocumentModel.BytePercent("50%")];
     throw new NotSupportedException($"No test data defined for type {testedType.Name}");
   }
 }

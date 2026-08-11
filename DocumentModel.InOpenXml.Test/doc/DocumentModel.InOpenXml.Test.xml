@@ -566,12 +566,6 @@
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestGetBodyFromSampleFile">
-            <summary>
-            Tests reading document body from the sample file and loading it into DocumentModel body.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestCreateAndSerializeBodyElements">
             <summary>
             Tests creation of DocumentModel body elements by reading from sample body and serializing each element.

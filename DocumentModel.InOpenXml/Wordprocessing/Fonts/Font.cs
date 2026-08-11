@@ -127,13 +127,13 @@ public partial class Font : ModelElement<DXW.Font>
  /// <param name = "fontElement">The font element whose character set will be updated. This parameter must not be null.</param>
  public void UpdateCharset(DXW.Font fontElement)
  {
-  if (Charset == null)
+  if (Charset is null)
    fontElement.FontCharSet = null;
   else
   {
    fontElement.FontCharSet = new DXW.FontCharSet()
    {
-    Val = Charset.ToString("X2"),
+    Val = Charset.ToString(),
    };
   }
  }

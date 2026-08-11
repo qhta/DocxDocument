@@ -1,13 +1,13 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents an immutable wrapper for a UriString string value, providing value-based equality and encapsulation for
-/// UriString-related operations.
+/// Represents an immutable wrapper for a Uri string value, providing value-based equality and encapsulation for
+/// Uri-related operations.
 /// </summary>
-/// <remarks>The UriString struct is designed to encapsulate a UriString as a string, allowing for comparison and
-/// hashing based on the underlying string value. It can represent a null, empty, or any valid UriString string. This type is
-/// useful when you need to distinguish between an unset UriString (null) and an empty or specific UriString value, and when you
-/// want to use value semantics for UriString strings in collections or equality checks.</remarks>
+/// <remarks>The UriString struct is designed to encapsulate a Uri as a string, allowing for comparison and
+/// hashing based on the underlying string value. It can represent a null, empty, or any valid Uri string. This type is
+/// useful when you need to distinguish between an unset Uri (null) and an empty or specific Uri value, and when you
+/// want to use value semantics for Uri strings in collections or equality checks.</remarks>
 public readonly partial struct UriString : IEquatable<UriString>
 {
   private readonly string? value;

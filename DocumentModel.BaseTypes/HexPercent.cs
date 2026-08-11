@@ -9,7 +9,7 @@
 /// String started with "#" prefix is considered as hexadecimal value from 0x00 to 0xFF.
 /// </para>
 /// <para>
-/// String ended with "%" suffix is considered as decimal percent value from 0% to 100% and string without "%" suffix is considered as integer decimal value from 0 to 255.
+/// String ended with "%" suffix is considered as decimal percent value from 0% to 100% and the string is considered to be an integer decimal value from 0 to 255.
 /// </para>
 /// <para>
 /// Conversion to/from double and single precision floating-point types means scaling by 255 to support fractional percentages.
@@ -65,9 +65,8 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
     }
     else
     {
-      var byteVal  = Convert.ToByte(str);
-      Value = byteVal;
-    }
+      throw new InvalidOperationException("HexPercent string value should be started with '#' prefix or ended with '%' suffix.");
+      }
   }
 
   /// <summary>
@@ -197,7 +196,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   /// Attempts to parse a string representation of a percentage into a <see cref="HexPercent"/> instance.
   /// </summary>
   /// <param name="str">The string representation of the percentage.</param>
-  /// <param name="result">The resulting <see cref="Percent"/> instance if parsing is successful.</param>
+  /// <param name="result">The resulting <see cref="HexPercent"/> instance if parsing is successful.</param>
   /// <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
   public static bool TryParse(string str, out HexPercent result)
   {

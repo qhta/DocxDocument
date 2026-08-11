@@ -31,7 +31,7 @@ public static class TSBooleanConverter
   /// <returns>The equivalent <see cref="TSBoolean"/> value.</returns>
   public static TSBoolean ConvertFromTrueFalseBlankValue(DX.TrueFalseBlankValue value)
   {
-    if (!value.HasValue) return TSBoolean.Blank;
+    if (!value.HasValue) return TSBoolean.Undefined;
 
     return DX.TrueFalseBlankValue.ToBoolean(value) ? TSBoolean.True : TSBoolean.False;
   }
@@ -43,7 +43,7 @@ public static class TSBooleanConverter
   /// <returns>A new <see cref="DX.TrueFalseBlankValue"/> instance representing the same logical state.</returns>
   public static DX.TrueFalseBlankValue? ConvertToTrueFalseBlankValue(TSBoolean value)
   {
-    if (value == TSBoolean.Blank)
+    if (value == TSBoolean.Undefined)
       return new DX.TrueFalseBlankValue();
 
     return DX.TrueFalseBlankValue.FromBoolean(value == TSBoolean.True);
@@ -56,12 +56,12 @@ public static class TSBooleanConverter
   /// <summary>
   /// Parses textual representations of a tri-state boolean (true/false/blank) into <see cref="TSBoolean"/>.
   /// </summary>
-  /// <param name="value">The string to interpret. Null or unrecognized text yields <see cref="TSBoolean.Blank"/>.</param>
+  /// <param name="value">The string to interpret. Null or unrecognized text yields <see cref="TSBoolean.Undefined"/>.</param>
   /// <returns>The parsed <see cref="TSBoolean"/> value.</returns>
   public static TSBoolean TSBooleanFromString(string? value)
   {
     if (value == null)
-      return TSBoolean.Blank;
+      return TSBoolean.Undefined;
 
     value = value.ToLower();
     if (value == "true" || value == "1")
@@ -69,7 +69,7 @@ public static class TSBooleanConverter
     if (value == "false" || value == "0")
       return TSBoolean.False;
 
-    return TSBoolean.Blank;
+    return TSBoolean.Undefined;
   }
 
   /// <summary>

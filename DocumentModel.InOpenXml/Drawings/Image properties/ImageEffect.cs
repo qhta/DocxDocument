@@ -193,8 +193,8 @@ public partial class ImageEffect : ModelElement<DXO10D.ImageEffect>, IExtendable
  /// Saturation adjustment.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ImageEffect.Saturation))]
- public Percent? Saturation { get => _Saturation; set => UpdateField(ref _Saturation, value, nameof(Saturation)); }
- private Percent? _Saturation;
+ public Percentage? Saturation { get => _Saturation; set => UpdateField(ref _Saturation, value, nameof(Saturation)); }
+ private Percentage? _Saturation;
 
  /// <summary>
  /// Sharpen or soften adjustment.

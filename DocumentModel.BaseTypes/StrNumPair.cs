@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a value that can be either a string or a number.
+/// Represents a pair structure that consist of a string and an integer value.
 /// </summary>
 /// <remarks>
 /// This struct provides a way to represent values that may be expressed as either text or numeric form,

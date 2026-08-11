@@ -1,8 +1,7 @@
 ﻿namespace DocumentModel;
 
-public partial record HexByte : IXmlSerializable
+public partial struct HexByte : IXmlSerializable
 {
-
 
   /// <summary>
   ///   Returns null to indicate this type has no XML schema.

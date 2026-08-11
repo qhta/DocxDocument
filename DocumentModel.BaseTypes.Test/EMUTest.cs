@@ -36,7 +36,7 @@ public static class EMUTest
   /// instances, as well as comparison and hash code consistency.
   /// </summary>
   /// <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
-  /// representations, supports accurate numeric type conversions, produces consistent hash codes, and Iimplements
+  /// representations, supports accurate numeric type conversions, produces consistent hash codes, and implements
   /// comparison logic as expected. It is intended for use in validating the core functionality of the EMU
   /// type.</remarks>
   /// <returns>true if all basic EMU operations succeed; otherwise, false.</returns>

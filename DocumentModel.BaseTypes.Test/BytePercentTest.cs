@@ -231,24 +231,6 @@ public static class BytePercentTest
     Console.WriteLine($"  50%: '{half}'");
     Console.WriteLine($"  75%: '{threeQuarters}'");
 
-    // Test hex conversion (color alpha channel scenario)
-    Console.WriteLine("\nTesting hex conversion (color alpha):");
-    BytePercent fromHex00 = BytePercent.FromHexString("00"); // 0% opacity
-    BytePercent fromHex80 = BytePercent.FromHexString("80"); // ~50% opacity
-    BytePercent fromHexFF = BytePercent.FromHexString("FF"); // 100% opacity
-    Console.WriteLine($"  0x00 → {fromHex00} ({(byte)fromHex00}%)");
-    Console.WriteLine($"  0x80 → {fromHex80} ({(byte)fromHex80}%)");
-    Console.WriteLine($"  0xFF → {fromHexFF} ({(byte)fromHexFF}%)");
-
-    // Test reverse hex conversion
-    Console.WriteLine("\nTesting reverse hex conversion:");
-    BytePercent pct0 = 0;
-    BytePercent pct50 = 50;
-    BytePercent pct100 = 100;
-    Console.WriteLine($"  0% → 0x{pct0.ToHexString()}");
-    Console.WriteLine($"  50% → 0x{pct50.ToHexString()}");
-    Console.WriteLine($"  100% → 0x{pct100.ToHexString()}");
-
     // Test string parsing with and without % suffix
     Console.WriteLine("\nTesting string parsing:");
     BytePercent withPercent = "75%";
@@ -332,21 +314,6 @@ public static class BytePercentTest
     sw.Stop();
     Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-    // Test hex conversion performance
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      string hex = testPct.ToHexString();
-    }
-    sw.Stop();
-    Console.WriteLine($"ToHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
-    sw.Restart();
-    for (int i = 0; i < iterations; i++)
-    {
-      BytePercent pct = BytePercent.FromHexString("80");
-    }
-    sw.Stop();
-    Console.WriteLine($"FromHexString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
     var testObj = new BytePercentTestData

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// ValueType of Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
+/// Represents a color structure with Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
 /// </summary>
 /// <remarks>
 /// The RGB value is stored as a 32-bit unsigned integer where:
@@ -25,11 +25,6 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(string str)
   {
-    if (str == "auto")
-    {
-      value = 0xFFFFFFFF;
-      return;
-    }
     str = str.TrimStart('#');
     value = UInt32.Parse(str, NumberStyles.HexNumber);
   }
@@ -191,8 +186,6 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
   public override string ToString()
   {
-    if (value == 0xFFFFFFFF)
-      return "auto";
     return value.ToString("X6");
   }
 

@@ -43,8 +43,8 @@ public partial class TableMeasure : IXmlSerializable
    if (!string.IsNullOrEmpty(TableMeasureString))
    {
     var parsedValue = new DMW.TableMeasure(TableMeasureString);
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue.value;
+    System.Runtime.CompilerServices.Unsafe.AsRef(in unit) = parsedValue.Unit;
     System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = parsedValue.Type;
    }
 

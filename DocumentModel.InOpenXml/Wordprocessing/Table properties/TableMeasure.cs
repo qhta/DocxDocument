@@ -30,7 +30,7 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- public Int64? Value { get => (Int64? )_value; set => _value = value; }
+ public Int64? Value { get => (Int64? )value; set => base.value = value; }
 
  /// <summary>
  /// Represents the type of the TableMeasure value, which can be absolute (in TableMeasure), relative (in fiftieth of percent),
@@ -138,17 +138,17 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
   if (str == "nil")
   {
    _type = TableMeasureType.Nil;
-   _value = 0;
+   value = 0;
   }
   else if (str == "auto")
   {
    _type = TableMeasureType.Auto;
-   _value = 0;
+   value = 0;
   }
   else if (str.EndsWith("%"))
   {
    _type = TableMeasureType.Relative;
-   _value = Decimal.Parse(str.TrimEnd('%').Replace(',', '.'), CultureInfo.InvariantCulture) * 50; // Convert percentage to fiftieths of percent
+   value = Decimal.Parse(str.TrimEnd('%').Replace(',', '.'), CultureInfo.InvariantCulture) * 50; // Convert percentage to fiftieths of percent
   }
   else
   {

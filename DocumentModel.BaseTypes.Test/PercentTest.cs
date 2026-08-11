@@ -420,7 +420,7 @@ public class PercentTestData
 {
   [XmlElement("CompletionRate")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public Percent CompletionRate
+  public BytePercent CompletionRate
   {
     [DebuggerStepThrough]
     get;
@@ -429,7 +429,7 @@ public class PercentTestData
   }
 
   [XmlElement("SuccessRate")]
-  public Percent SuccessRate
+  public BytePercent SuccessRate
   {
     [DebuggerStepThrough]
     get;
@@ -438,7 +438,7 @@ public class PercentTestData
   }
 
   [XmlElement("ErrorRate")]
-  public Percent ErrorRate
+  public BytePercent ErrorRate
   {
     [DebuggerStepThrough]
     get;
@@ -447,7 +447,7 @@ public class PercentTestData
   }
 
   [XmlElement("ZeroPercent")]
-  public Percent ZeroPercent
+  public BytePercent ZeroPercent
   {
     [DebuggerStepThrough]
     get;
@@ -456,7 +456,7 @@ public class PercentTestData
   }
 
   [XmlElement("HundredPercent")]
-  public Percent HundredPercent
+  public BytePercent HundredPercent
   {
     [DebuggerStepThrough]
     get;
@@ -465,7 +465,7 @@ public class PercentTestData
   }
 
   //[XmlElement("FractionalPercent")]
-  //public Percent FractionalPercent
+  //public BytePercent FractionalPercent
   //{
   //  [DebuggerStepThrough]
   //  get;
@@ -474,7 +474,7 @@ public class PercentTestData
   //}
 
   [XmlElement("NegativePercent")]
-  public Percent NegativePercent
+  public BytePercent NegativePercent
   {
     [DebuggerStepThrough]
     get;
@@ -489,7 +489,7 @@ public class PercentTestData
 /// </summary>
 public class PercentWrapper
 {
-  public Percent Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public BytePercent Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

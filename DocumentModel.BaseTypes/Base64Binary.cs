@@ -12,7 +12,7 @@
 ///   <para>
 ///   This struct provides implicit conversions between Base64Binary and both string and byte array types,
 ///   making it seamless to work with binary data in different representations. The struct is immutable
-///   and Iimplements value equality based on the underlying byte sequence.
+///   and implements value equality based on the underlying byte sequence.
 ///   </para>
 ///   <para>
 ///   <b>Office Availability:</b> Base64 binary encoding is supported across all Office Open XML formats

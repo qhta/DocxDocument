@@ -12,6 +12,7 @@
   <ItemGroup>
     <Compile Remove="OnOffTest.cs" />
     <Compile Remove="OnOffToggleTest.cs" />
+    <Compile Remove="PercentTest.cs" />
   </ItemGroup>
 
   <ItemGroup>

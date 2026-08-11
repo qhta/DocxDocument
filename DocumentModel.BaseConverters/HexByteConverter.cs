@@ -345,7 +345,7 @@ public static class HexByteConverter
   {
     if (value is null) return null;
 
-    var text = value.ToString(format:"X2")!;
+    var text = value.ToString()!;
     var element = (DX.StringValue)Activator.CreateInstance(targetType)!;
     element.Value = text;
     return element;

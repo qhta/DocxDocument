@@ -31,7 +31,7 @@ public partial class Zoom : IXmlSerializable
     var content = reader.ReadElementContentAsString();
     if (content.EndsWith("%"))
     {
-      Percent = new Percent(content);
+      Percent = new BytePercent(content);
       Preset = null;
     }
     else if (int.TryParse(content, out var percent))

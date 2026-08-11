@@ -45,7 +45,7 @@ public static class SimpleValueConverter
     { typeof(StringList), typeof(StringListConverter) },
     { typeof(Enum), typeof(EnumTypeConverter) },
     { typeof(BytePercent), typeof(BytePercentConverter) },
-    { typeof(Percent), typeof(PercentConverter) },
+    //{ typeof(Percent), typeof(PercentConverter) },
     { typeof(Twips), typeof(TwipsConverter) },
     { typeof(EMU), typeof(EMUConverter) },
     { typeof(EPS), typeof(EPSConverter) },

@@ -14,7 +14,7 @@
 /// (e.g., CF_TEXT, CF_BITMAP, CF_METAFILEPICT) or custom registered formats.
 /// </para>
 /// <para>
-/// This structure Iimplements <see cref="IEquatable{T}"/> to provide value-based equality
+/// This structure implements <see cref="IEquatable{T}"/> to provide value-based equality
 /// comparison, including comparison of the binary data content.
 /// </para>
 /// </remarks>

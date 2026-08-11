@@ -59,10 +59,10 @@ public static class TSBooleanConverterTest
     if ( falseOutput != TSBoolean.False)
       return false;
 
-    var blankInput = TSBoolean.Blank;
+    var blankInput = TSBoolean.Undefined;
     var blankOpenXml = OpenXml.TSBooleanConverter.ConvertTo(blankInput, openXmlType);
     var blankOutput = OpenXml.TSBooleanConverter.ConvertFrom(blankOpenXml!);
-    if (blankOutput != TSBoolean.Blank)
+    if (blankOutput != TSBoolean.Undefined)
       return false;
 
     return true;

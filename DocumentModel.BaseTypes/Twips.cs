@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a measurement in twips (twentieth of a point).
+/// Represents a measure values in twips (twentieth of a point).
 /// A twip is 1/1440 of an inch, commonly used in word processing and document formatting.
 /// Supports conversions to/from millimeters, centimeters, inches, and points.
 /// </summary>
@@ -137,13 +137,13 @@ public sealed partial class Twips: UniversalMeasure
   public static Twips FromMM(double millimeters) => new Twips($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static Twips FromCM(double centimeters) => new Twips($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object that Iimplements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static Twips FromInch(double inches) => new Twips($"{inches}in");
 
@@ -153,7 +153,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <remarks>Supported units include Twips, IPoints, Millimeters, Centimeters, and Inches.</remarks>
   /// <param name="value">The numeric length value to convert, expressed in the unit specified by the unit parameter.</param>
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
-  /// <returns>An object that Iimplements ILengthMeasure, representing the converted length value in a standardized format.</returns>
+  /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
   public static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
   {

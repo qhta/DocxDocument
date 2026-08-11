@@ -24,6 +24,7 @@
     <Compile Remove="OnOffToggleConverter.cs" />
     <Compile Remove="OpenXmlPackageConverter.cs" />
     <Compile Remove="OpenXmlPartConverter.cs" />
+    <Compile Remove="PercentConverter.cs" />
     <Compile Remove="ReferenceConverter.cs" />
     <Compile Remove="ReferenceRelationshipConverter.cs" />
     <Compile Remove="SimpleValueConverter - Copy.cs" />

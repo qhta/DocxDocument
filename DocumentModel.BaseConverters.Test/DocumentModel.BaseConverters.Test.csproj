@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Remove="OnOffConverterTest.cs" />
     <Compile Remove="OnOffToggleConverterTest.cs" />
+    <Compile Remove="PercentConverterTest.cs" />
   </ItemGroup>
 
   <ItemGroup>

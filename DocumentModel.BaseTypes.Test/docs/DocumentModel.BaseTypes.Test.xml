@@ -99,7 +99,7 @@
             instances, as well as comparison and hash code consistency.
             </summary>
             <remarks>This method verifies that the EMU class correctly handles conversions from string and integer
-            representations, supports accurate numeric type conversions, produces consistent hash codes, and Iimplements
+            representations, supports accurate numeric type conversions, produces consistent hash codes, and implements
             comparison logic as expected. It is intended for use in validating the core functionality of the EMU
             type.</remarks>
             <returns>true if all basic EMU operations succeed; otherwise, false.</returns>
@@ -557,26 +557,6 @@
             </summary>
         </member>
         <member name="T:DocumentModel.BaseTypes.Test.PercentageWrapper">
-            <summary>
-            Simple wrapper class for testing Deserialization scenarios.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.PercentTest">
-            <summary>
-            Test suite for Percent type serialization in both XML and JSON formats.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.PercentTest.Run">
-            <summary>
-            Runs all Percent serialization tests.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.PercentTestData">
-            <summary>
-            Test data class containing various Percent properties.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.PercentWrapper">
             <summary>
             Simple wrapper class for testing Deserialization scenarios.
             </summary>

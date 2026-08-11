@@ -322,9 +322,9 @@ public static class TestHelper
       {
         prop.SetValue(instance, Guid.NewGuid());
       }
-      else if (propType == typeof(Percent))
+      else if (propType == typeof(BytePercent))
       {
-        prop.SetValue(instance, new Percent(Random.Shared.Next(100)));
+        prop.SetValue(instance, new BytePercent(Random.Shared.Next(100)));
       }
       else if (propType == typeof(Decimal))
       {
@@ -528,9 +528,9 @@ public static class TestHelper
       {
         prop.SetValue(instance, Guid.NewGuid());
       }
-      else if (propType == typeof(Percent))
+      else if (propType == typeof(BytePercent))
       {
-        prop.SetValue(instance, new Percent(Random.Shared.NextDouble() * 100));
+        prop.SetValue(instance, new BytePercent(Random.Shared.NextDouble() * 100));
       }
       //else if (propType.IsClass && propType != typeof(string))
       //{
@@ -643,8 +643,8 @@ public static class TestHelper
     }
     else if (type == typeof(Guid))
       return new Variant(Guid.NewGuid());
-    else if (type == typeof(Percent))
-      return new Variant(new Percent(Random.Shared.NextDouble() * 100));
+    else if (type == typeof(BytePercent))
+      return new Variant(new BytePercent(Random.Shared.NextDouble() * 100));
     else
       throw new NotSupportedException($"Type {type} is not supported for creating a Variant.");
   }

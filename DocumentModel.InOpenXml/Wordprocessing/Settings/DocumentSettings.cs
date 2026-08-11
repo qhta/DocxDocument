@@ -1210,12 +1210,12 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// </remarks>
   [MultiCategory("Automation")]
   [OpenXmlElement(typeof(DXW.SummaryLength), Order = 45)]
-  public Percent? SummaryLength
+  public Percentage? SummaryLength
   {
-    get => _SummaryLength ??= GetElement<Percent?, DXW.SummaryLength>(GetUpdatableElement());
+    get => _SummaryLength ??= GetElement<Percentage?, DXW.SummaryLength>(GetUpdatableElement());
     set => UpdateField(ref _SummaryLength, value, nameof(SummaryLength));
   }
-  private Percent? _SummaryLength;
+  private Percentage? _SummaryLength;
 
   /// <summary>
   /// Specifies the language used to determine theme fonts in the document's Theme part.
