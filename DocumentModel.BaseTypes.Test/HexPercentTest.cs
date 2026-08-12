@@ -82,11 +82,19 @@ public static class HexPercentTest
     if (!ok) return false;
 
     // Test HexPercent to string without %
-    strVal = "153";
-    pct1 = new HexPercent(strVal);
-    ok = pct1 == "60%";
-    Console.WriteLine($"{TestHelper.OkMarker(ok)} String without % to HexPercent: \"{strVal}\" -> {pct1}");
-    if (!ok) return false;
+    try
+    {
+      strVal = "99";
+      pct1 = new HexPercent(strVal);
+      ok = false;
+      Console.WriteLine($"{TestHelper.OkMarker(ok)} String without % to HexPercent: \"{strVal}\" -> {pct1}");
+      if (!ok) return false;
+    }
+    catch (ApplicationException ex)
+    {
+      ok = true;
+      Console.WriteLine($"{TestHelper.OkMarker(ok)} Caught expected exception: {ex.Message}");
+    }
 
     //// Test with precision
     //strVal = "50.12%";
@@ -346,8 +354,8 @@ public static class HexPercentTest
     twoThirds = new HexPercent("66.67%");
     var dblOneThird = oneThird.AsDouble();
     var dblTwoThirds = twoThirds.AsDouble();
-    oneThird = 1.0/3.0;
-    twoThirds = 2.0/3.0;
+    oneThird = 1.0 / 3.0;
+    twoThirds = 2.0 / 3.0;
     ok = oneThird.Equals(dblOneThird);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
     ok = twoThirds.Equals(dblTwoThirds);
@@ -380,14 +388,19 @@ public static class HexPercentTest
     HexPercent withHexPercent = "75%";
     ok = true;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75%\" → {withHexPercent}");
+    try
+    { 
     HexPercent withoutHexPercent = "75";
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75\" → {withoutHexPercent}");
     eq = withHexPercent.Equals(withoutHexPercent);
-    ok = !eq; 
+    ok = false;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{withHexPercent}\" {TestHelper.EqualitySymbol(eq)} \"{withoutHexPercent}\"");
     if (!ok) return false;
-
-
+    }
+    catch (ApplicationException ex)
+    {
+      Console.WriteLine($"{TestHelper.OkMarker(true)} Caught expected exception: {ex.Message}");
+    }
 
     //// Test string parsing with comma decimal separator
     //Console.WriteLine("\nTesting comma decimal separator:");
@@ -405,14 +418,28 @@ public static class HexPercentTest
     Console.WriteLine($"  From JSON string \"50%\": {fromStringHexPercent?.Value}");
 
     // String format without %
-    string jsonStringWithoutHexPercent = "{\"Value\":\"50\"}";
-    var fromStringNoHexPercent = JsonSerializer.Deserialize<HexPercentWrapper>(jsonStringWithoutHexPercent);
-    Console.WriteLine($"  From JSON string \"50\": {fromStringNoHexPercent?.Value}");
+    try
+    { 
+      string jsonStringWithoutHexPercent = "{\"Value\":\"50\"}";
+      var fromStringNoHexPercent = JsonSerializer.Deserialize<HexPercentWrapper>(jsonStringWithoutHexPercent);
+      Console.WriteLine($"  From JSON string \"50\": {fromStringNoHexPercent?.Value}");
+    } catch (Exception ex) 
+    {
+      Console.WriteLine($"{TestHelper.OkMarker(true)} Caught expected exception: {ex.Message}");
+    }
+
 
     // Numeric format
-    string jsonNumeric = "{\"Value\":50}";
-    var fromNumeric = JsonSerializer.Deserialize<HexPercentWrapper>(jsonNumeric);
-    Console.WriteLine($"  From JSON number 50: {fromNumeric?.Value}");
+    try
+    {
+      string jsonNumeric = "{\"Value\":50}";
+      var fromNumeric = JsonSerializer.Deserialize<HexPercentWrapper>(jsonNumeric);
+      Console.WriteLine($"  From JSON number 50: {fromNumeric?.Value}");
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"{TestHelper.OkMarker(true)} Caught expected exception: {ex.Message}");
+    }
 
     //// Test formatting with precision
     //Console.WriteLine("\nTesting formatted output:");

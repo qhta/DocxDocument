@@ -15,9 +15,14 @@
 public partial class PTS : UniversalMeasure
 {
   /// <summary>
+  /// The scale factor for the PTS measurement. A scale of 1 means that the value is in points, while a scale of 2 would mean that the value is in half-points, and so on.
+  /// </summary>
+  protected virtual int Scale => 1;
+
+  /// <summary>
   /// Defines the number of points in one inch.
   /// </summary>
-  protected override decimal UnitsPerInch => 72;
+  protected override decimal UnitsPerInch => 72*Scale;
 
   #region Constructors
 
@@ -35,11 +40,11 @@ public partial class PTS : UniversalMeasure
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
-  /// <item><description>"100" - interpreted as half-points</description></item>
+  /// <item><description>"100" - interpreted as points</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+  /// <item><description>"12pt" - points</description></item>
+  /// <item><description>"1in" - inches</description></item>
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>

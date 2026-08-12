@@ -48,7 +48,7 @@ public static class SimpleValueConverter
     //{ typeof(Percent), typeof(PercentConverter) },
     { typeof(Twips), typeof(TwipsConverter) },
     { typeof(EMU), typeof(EMUConverter) },
-    { typeof(EPS), typeof(EPSConverter) },
+    { typeof(CPS), typeof(CPSConverter) },
     { typeof(HPS), typeof(HPSConverter) },
     { typeof(PTS), typeof(PTSConverter) },
     { typeof(Degrees), typeof(DegreesConverter) },

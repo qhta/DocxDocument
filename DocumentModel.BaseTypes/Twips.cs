@@ -11,12 +11,12 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(TwipsJsonConverter))]
-public sealed partial class Twips: UniversalMeasure
+public sealed partial class Twips: PTS
 {
   /// <summary>
-  /// Defines the number of twips in one inch.
+  /// Override the scale factor for the Twips measurement. A scale of 20 means that the value is in twips.
   /// </summary>
-  protected override decimal UnitsPerInch => 1440.0m;
+  protected override int Scale => 20;
 
   #region Constructors
 
@@ -124,28 +124,28 @@ public sealed partial class Twips: UniversalMeasure
   /// <summary>
   /// Creates an instance of an <see cref="Twips"/> that represents the specified value in twips.
   /// </summary>
-  public static Twips FromTwips(double twips) => new Twips($"{twips}tw");
+  public new static Twips FromTwips(double twips) => new Twips($"{twips}tw");
 
   /// <summary>
   /// Creates an instance of an <see cref="Twips"/> that represents the specified value in points.
   /// </summary>
-  public static Twips FromPT(double points) => new Twips($"{points}pt");
+  public new static Twips FromPT(double points) => new Twips($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static Twips FromMM(double millimeters) => new Twips($"{millimeters}mm");
+  public new static Twips FromMM(double millimeters) => new Twips($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static Twips FromCM(double centimeters) => new Twips($"{centimeters}cm");
+  public new static Twips FromCM(double centimeters) => new Twips($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static Twips FromInch(double inches) => new Twips($"{inches}in");
+  public new static Twips FromInch(double inches) => new Twips($"{inches}in");
 
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
@@ -155,7 +155,7 @@ public sealed partial class Twips: UniversalMeasure
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
-  public static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
+  public new static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),
@@ -176,7 +176,7 @@ public sealed partial class Twips: UniversalMeasure
   /// thrown.</remarks>
   /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static Twips Parse(string str) => new Twips(str);
+  public new static Twips Parse(string str) => new Twips(str);
 
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates

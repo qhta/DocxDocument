@@ -59,6 +59,115 @@
             Simple wrapper class for testing Deserialization scenarios.
             </summary>
         </member>
+        <member name="T:DocumentModel.BaseTypes.Test.CPSTest">
+            <summary>
+            Test suite for CPS type serialization in both XML and JSON formats.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.Run">
+            <summary>
+            Runs all CPS serialization tests.
+            </summary>
+            <returns>true if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSBasicOperations">
+            <summary>
+            Tests the basic operations of the CPS class, including conversions between CPS and various types, string
+            representations, and comparisons.
+            </summary>
+            <remarks>This method verifies the correctness of the CPS class by testing string and numeric conversions,
+            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
+            console for each test and returns false if any test fails.</remarks>
+            <returns>true if all basic CPS operations pass successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSUnitConversions">
+            <summary>
+            Tests the accuracy and correctness of conversions between CPS and various length units, including inches,
+            millimeters, centimeters, points, and twips.
+            </summary>
+            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
+            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
+            Use this method to validate that CPS-related conversion logic is functioning as expected.</remarks>
+            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSXmlSerialization">
+            <summary>
+            Tests the XML serialization and deserialization process for an CPSTestData object to verify data integrity.
+            </summary>
+            <remarks>This method creates a sample CPSTestData instance, serializes it to XML, and then deserializes it
+            to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
+            inspection. Use this method to validate that changes to the CPSTestData structure or serialization logic do not
+            break XML compatibility.</remarks>
+            <returns>true if the CPSTestData object is successfully serialized to XML and deserialized back with matching data;
+            otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSJsonSerialization">
+            <summary>
+            Tests the serialization and deserialization of CPS test data to and from JSON format.
+            </summary>
+            <remarks>This method creates a sample CPS test data object, serializes it to a JSON string, and then
+            deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
+            the deserialized data matches the original. Use this method to validate that CPS data can be accurately
+            round-tripped using JSON serialization.</remarks>
+            <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
+            verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.ShowOriginalData(DocumentModel.BaseTypes.Test.CPSTestData)">
+            <summary>
+            Shows the original CPS test data values in a readable format to the console for verification before serialization.
+            </summary>
+            <param name="testData"></param>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.CPSTestData,DocumentModel.BaseTypes.Test.CPSTestData)">
+            <summary>
+            Verifies that the deserialized data matches the expected test data by comparing relevant properties.
+            </summary>
+            <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
+            LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
+            LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
+            message is written to the console and the method returns false.</remarks>
+            <param name="deserializedData">The deserialized CPSTestData instance to verify. If null, the verification fails.</param>
+            <param name="testData">The expected CPSTestData instance to compare against.</param>
+            <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.CreateTestData">
+            <summary>
+            Creates a new instance of the CPSTestData class initialized with default typographic values for testing purposes.
+            </summary>
+            <remarks>This method is intended for use in test scenarios that require consistent and repeatable
+            typographic settings. All values are specified in CPS units and may need to be converted for use in other
+            measurement systems.</remarks>
+            <returns>An CPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
+            properties.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSEdgeCases">
+            <summary>
+            Tests a comprehensive set of edge cases for the CPS (Encapsulated PostScript) type, including zero, boundary
+            values, precision, parsing, formatting, comparison, and implicit conversions.
+            </summary>
+            <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
+            such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
+            from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
+            robustness of the CPS type implementation.</remarks>
+            <returns>true if all CPS edge case tests are completed successfully.</returns>
+        </member>
+        <member name="M:DocumentModel.BaseTypes.Test.CPSTest.TestCPSPerformance">
+            <summary>
+            Tests the performance of various operations on the CPS type, including construction from strings and integers,
+            conversion to different units, and JSON serialization/deserialization.
+            </summary>
+            <returns>true if all CPS performance tests are completed successfully.</returns>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.CPSTestData">
+            <summary>
+            Test data class containing various CPS properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.BaseTypes.Test.CPSWrapper">
+            <summary>
+            Simple wrapper class for testing Deserialization scenarios.
+            </summary>
+        </member>
         <member name="T:DocumentModel.BaseTypes.Test.DegreesTest">
             <summary>
             Test suite for Degrees type serialization in both XML and JSON formats.
@@ -192,115 +301,6 @@
             </summary>
         </member>
         <member name="T:DocumentModel.BaseTypes.Test.EMUWrapper">
-            <summary>
-            Simple wrapper class for testing Deserialization scenarios.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.EPSTest">
-            <summary>
-            Test suite for EPS type serialization in both XML and JSON formats.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.Run">
-            <summary>
-            Runs all EPS serialization tests.
-            </summary>
-            <returns>true if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSBasicOperations">
-            <summary>
-            Tests the basic operations of the EPS class, including conversions between EPS and various types, string
-            representations, and comparisons.
-            </summary>
-            <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
-            string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
-            console for each test and returns false if any test fails.</remarks>
-            <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSUnitConversions">
-            <summary>
-            Tests the accuracy and correctness of conversions between EPS and various length units, including inches,
-            millimeters, centimeters, points, and twips.
-            </summary>
-            <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
-            verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-            Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
-            <returns>true if all unit conversion tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSXmlSerialization">
-            <summary>
-            Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
-            </summary>
-            <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
-            to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
-            inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
-            break XML compatibility.</remarks>
-            <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
-            otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSJsonSerialization">
-            <summary>
-            Tests the serialization and deserialization of EPS test data to and from JSON format.
-            </summary>
-            <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
-            deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
-            the deserialized data matches the original. Use this method to validate that EPS data can be accurately
-            round-tripped using JSON serialization.</remarks>
-            <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
-            verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.ShowOriginalData(DocumentModel.BaseTypes.Test.EPSTestData)">
-            <summary>
-            Shows the original EPS test data values in a readable format to the console for verification before serialization.
-            </summary>
-            <param name="testData"></param>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.VerifyDeserializedData(DocumentModel.BaseTypes.Test.EPSTestData,DocumentModel.BaseTypes.Test.EPSTestData)">
-            <summary>
-            Verifies that the deserialized data matches the expected test data by comparing relevant properties.
-            </summary>
-            <remarks>The method compares several properties, including FontSize, LineHeight, MicroKerning,
-            LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
-            LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
-            message is written to the console and the method returns false.</remarks>
-            <param name="deserializedData">The deserialized EPSTestData instance to verify. If null, the verification fails.</param>
-            <param name="testData">The expected EPSTestData instance to compare against.</param>
-            <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.CreateTestData">
-            <summary>
-            Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
-            </summary>
-            <remarks>This method is intended for use in test scenarios that require consistent and repeatable
-            typographic settings. All values are specified in EPS units and may need to be converted for use in other
-            measurement systems.</remarks>
-            <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
-            properties.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSEdgeCases">
-            <summary>
-            Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
-            values, precision, parsing, formatting, comparison, and implicit conversions.
-            </summary>
-            <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
-            such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
-            from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
-            robustness of the EPS type implementation.</remarks>
-            <returns>true if all EPS edge case tests are completed successfully.</returns>
-        </member>
-        <member name="M:DocumentModel.BaseTypes.Test.EPSTest.TestEPSPerformance">
-            <summary>
-            Tests the performance of various operations on the EPS type, including construction from strings and integers,
-            conversion to different units, and JSON serialization/deserialization.
-            </summary>
-            <returns>true if all EPS performance tests are completed successfully.</returns>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.EPSTestData">
-            <summary>
-            Test data class containing various EPS properties.
-            </summary>
-        </member>
-        <member name="T:DocumentModel.BaseTypes.Test.EPSWrapper">
             <summary>
             Simple wrapper class for testing Deserialization scenarios.
             </summary>

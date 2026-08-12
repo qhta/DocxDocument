@@ -3,94 +3,94 @@
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for EPS type serialization in both XML and JSON formats.
+/// Test suite for CPS type serialization in both XML and JSON formats.
 /// </summary>
-public static class EPSTest
+public static class CPSTest
 {
   /// <summary>
-  /// Runs all EPS serialization tests.
+  /// Runs all CPS serialization tests.
   /// </summary>
   /// <returns>true if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
-    Console.WriteLine("=== EPS Serialization Test Program ===");
+    Console.WriteLine("=== CPS Serialization Test Program ===");
     Console.WriteLine();
 
     // Run all tests
-    if (!TestEPSBasicOperations()) return false;
-    if (!TestEPSUnitConversions()) return false;
-    if (!TestEPSXmlSerialization()) return false;
-    if (!TestEPSJsonSerialization()) return false;
-    if (!TestEPSEdgeCases()) return false;
-    if (!TestEPSPerformance()) return false;
+    if (!TestCPSBasicOperations()) return false;
+    if (!TestCPSUnitConversions()) return false;
+    if (!TestCPSXmlSerialization()) return false;
+    if (!TestCPSJsonSerialization()) return false;
+    if (!TestCPSEdgeCases()) return false;
+    if (!TestCPSPerformance()) return false;
 
     return true;
   }
 
   /// <summary>
-  /// Tests the basic operations of the EPS class, including conversions between EPS and various types, string
+  /// Tests the basic operations of the CPS class, including conversions between CPS and various types, string
   /// representations, and comparisons.
   /// </summary>
-  /// <remarks>This method verifies the correctness of the EPS class by testing string and numeric conversions,
+  /// <remarks>This method verifies the correctness of the CPS class by testing string and numeric conversions,
   /// string representations, hash code consistency, and comparison operations. It outputs diagnostic information to the
   /// console for each test and returns false if any test fails.</remarks>
-  /// <returns>true if all basic EPS operations pass successfully; otherwise, false.</returns>
-  static bool TestEPSBasicOperations()
+  /// <returns>true if all basic CPS operations pass successfully; otherwise, false.</returns>
+  static bool TestCPSBasicOperations()
   {
-    Console.WriteLine("--- Testing EPS Basic Operations ---");
-    // Test string to EPS conversion (plain number)
+    Console.WriteLine("--- Testing CPS Basic Operations ---");
+    // Test string to CPS conversion (plain number)
     long eps1Val = 7315200;
     var eps1Str = eps1Val.ToString();
-    EPS eps1 = eps1Str;
-    var longEPS = (long)eps1;
-    Console.WriteLine($"\n✓ String to EPS: {eps1} = {longEPS} EPS");
-    if (longEPS != 7315200)
+    CPS eps1 = eps1Str;
+    var longCPS = (long)eps1;
+    Console.WriteLine($"\n✓ String to CPS: {eps1} = {longCPS} CPS");
+    if (longCPS != 7315200)
     {
-      Console.WriteLine("✗ String to EPS conversion FAILED");
+      Console.WriteLine("✗ String to CPS conversion FAILED");
       return false;
     }
-    // Test string to EPS conversion (with unit)
-    EPS eps2 = "1in";
-    var inchEPS = eps2.ToInch();
-    Console.WriteLine($"\n✓ String with unit to EPS: {eps2} ({inchEPS}in)");
-    if (inchEPS != 1.0m)
+    // Test string to CPS conversion (with unit)
+    CPS eps2 = "1in";
+    var inchCPS = eps2.ToInch();
+    Console.WriteLine($"\n✓ String with unit to CPS: {eps2} ({inchCPS}in)");
+    if (inchCPS != 1.0m)
     {
-      Console.WriteLine("✗ String with unit to EPS conversion FAILED");
-      return false;
-    }
-
-    // Test integer to EPS conversion
-    EPS eps3 = eps1Val;
-    var intEPS = (int)eps3;
-    Console.WriteLine($"\n✓ Int to EPS: {intEPS}");
-    if (intEPS != eps1Val)
-    {
-      Console.WriteLine("✗ Int to EPS conversion FAILED");
+      Console.WriteLine("✗ String with unit to CPS conversion FAILED");
       return false;
     }
 
-    // Test EPS to string
-    string strEPS = eps1.ToString();
-    Console.WriteLine($"\n✓ EPS to string: {strEPS}");
-    if (strEPS != eps1Str)
+    // Test integer to CPS conversion
+    CPS eps3 = eps1Val;
+    var intCPS = (int)eps3;
+    Console.WriteLine($"\n✓ Int to CPS: {intCPS}");
+    if (intCPS != eps1Val)
     {
-      Console.WriteLine("✗ EPS to string conversion FAILED");
+      Console.WriteLine("✗ Int to CPS conversion FAILED");
       return false;
     }
 
-    // Test EPS to various integer types
+    // Test CPS to string
+    string strCPS = eps1.ToString();
+    Console.WriteLine($"\n✓ CPS to string: {strCPS}");
+    if (strCPS != eps1Str)
+    {
+      Console.WriteLine("✗ CPS to string conversion FAILED");
+      return false;
+    }
+
+    // Test CPS to various integer types
     int int32Val = (int)eps1;
     long int64Val = (long)eps1;
     uint uint32Val = (uint)eps1;
     Console.WriteLine($"\n✓ Numeric conversions: int32={int32Val}, int64={int64Val}, uint32={uint32Val}");
     if (int32Val != eps1Val || int64Val != eps1Val || uint32Val != eps1Val)
     {
-      Console.WriteLine("✗ EPS to numeric conversions FAILED");
+      Console.WriteLine("✗ CPS to numeric conversions FAILED");
       return false;
     }
 
     // Test comparison
-    EPS eps4 = eps1Val * 2; // 2 inches
+    CPS eps4 = eps1Val * 2; // 2 inches
     Console.WriteLine($"\n✓ CompareTo ({eps1Val} vs {eps4}): {eps1.CompareTo(eps4)} (expected < 0)");
 
     Console.WriteLine("\n✓ All basic operations passed");
@@ -99,29 +99,29 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests the accuracy and correctness of conversions between EPS and various length units, including inches,
+  /// Tests the accuracy and correctness of conversions between CPS and various length units, including inches,
   /// millimeters, centimeters, points, and twips.
   /// </summary>
   /// <remarks>This method performs a series of unit conversion tests and outputs the results to the console. It
   /// verifies both direct and round-trip conversions, as well as string formatting for different units and precisions.
-  /// Use this method to validate that EPS-related conversion logic is functioning as expected.</remarks>
+  /// Use this method to validate that CPS-related conversion logic is functioning as expected.</remarks>
   /// <returns>true if all unit conversion tests pass; otherwise, false.</returns>
-  static bool TestEPSUnitConversions()
+  static bool TestCPSUnitConversions()
   {
-    var eps1Inch = 72 * 8;
-    var eps1MM = eps1Inch / 25.4;
-    var eps1CM = eps1MM * 10;
-    var eps1PT = eps1Inch / 72;
-    var eps12PT = eps1PT * 12;
-    var eps1Twips = eps1Inch / 1440.0;
-    var eps10Twips = eps1Twips * 10;
-    Console.WriteLine("--- Testing EPS Unit Conversions ---");
+    var cps1Inch = 72 * 100;
+    var cps1MM = cps1Inch / 25.4;
+    var cps1CM = cps1MM * 10;
+    var cps1PT = cps1Inch / 72;
+    var cps12PT = cps1PT * 12;
+    var cps1Twips = cps1Inch / 1440.0;
+    var cps10Twips = cps1Twips * 10;
+    Console.WriteLine("--- Testing CPS Unit Conversions ---");
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
-    EPS oneInch = "1in";
-    Console.WriteLine($"  1in = {oneInch} EPS (expected {eps1Inch})");
-    Console.WriteLine($"  {eps1Inch} EPS = {oneInch.ToInch()}in");
-    if (!oneInch.Equals(eps1Inch))
+    CPS oneInch = "1in";
+    Console.WriteLine($"  1in = {oneInch} CPS (expected {cps1Inch})");
+    Console.WriteLine($"  {cps1Inch} CPS = {oneInch.ToInch()}in");
+    if (!oneInch.Equals(cps1Inch))
     {
       Console.WriteLine("✗ Inch conversion FAILED");
       return false;
@@ -129,10 +129,10 @@ public static class EPSTest
 
     // Test millimeter conversions
     Console.WriteLine("\nTesting millimeter conversions:");
-    EPS oneMM = "1mm";
-    Console.WriteLine($"  1mm = {oneMM} EPS (expected {eps1MM})");
-    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMillimeters()}mm");
-    if (!oneMM.Equals(eps1MM))
+    CPS oneMM = "1mm";
+    Console.WriteLine($"  1mm = {oneMM} CPS (expected {cps1MM})");
+    Console.WriteLine($"  {cps1MM} CPS = {oneMM.ToMillimeters()}mm");
+    if (!oneMM.Equals(cps1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
       return false;
@@ -140,10 +140,10 @@ public static class EPSTest
 
     // Test centimeter conversions
     Console.WriteLine("\nTesting centimeter conversions:");
-    EPS oneCM = "1cm";
-    Console.WriteLine($"  1cm = {oneCM} EPS (expected ~{eps1CM})");
-    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCentimeters()}cm");
-    if (!oneCM.Equals(eps1CM))
+    CPS oneCM = "1cm";
+    Console.WriteLine($"  1cm = {oneCM} CPS (expected ~{cps1CM})");
+    Console.WriteLine($"  {cps1CM} CPS = {oneCM.ToCentimeters()}cm");
+    if (!oneCM.Equals(cps1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
       return false;
@@ -151,10 +151,10 @@ public static class EPSTest
 
     // Test point conversions
     Console.WriteLine("\nTesting point conversions:");
-    EPS twelvePoints = "12pt";
-    Console.WriteLine($"  12pt = {twelvePoints} EPS (expected {eps12PT})");
-    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPoints()}pt");
-    if (!twelvePoints.Equals(eps12PT))
+    CPS twelvePoints = "12pt";
+    Console.WriteLine($"  12pt = {twelvePoints} CPS (expected {cps12PT})");
+    Console.WriteLine($"  {cps12PT} CPS = {twelvePoints.ToPoints()}pt");
+    if (!twelvePoints.Equals(cps12PT))
     {
       Console.WriteLine("✗ IPoint conversion FAILED");
       return false;
@@ -162,10 +162,10 @@ public static class EPSTest
 
     // Test twips conversions
     Console.WriteLine("\nTesting twips conversions:");
-    EPS tenTwips = "10tw";
-    Console.WriteLine($"  10tw = {tenTwips} EPS (expected {eps10Twips})");
-    Console.WriteLine($"  {eps10Twips} EPS = {tenTwips.ToTwips()}tw");
-    if (!tenTwips.Equals(eps10Twips))
+    CPS tenTwips = "10tw";
+    Console.WriteLine($"  10tw = {tenTwips} CPS (expected {cps10Twips})");
+    Console.WriteLine($"  {cps10Twips} CPS = {tenTwips.ToTwips()}tw");
+    if (!tenTwips.Equals(cps10Twips))
     {
       Console.WriteLine("✗ Twips conversion FAILED");
       return false;
@@ -173,12 +173,12 @@ public static class EPSTest
 
     // Test conversion accuracy
     Console.WriteLine("\nTesting round-trip conversion accuracy:");
-    EPS original = eps1Inch; // 1 inch
+    CPS original = cps1Inch; // 1 inch
     decimal inches = original.ToInch();
-    EPS roundTrip = new EPS($"{inches:F6}in");
-    Console.WriteLine($"  Original: {(long)original} EPS");
+    CPS roundTrip = new CPS($"{inches:F6}in");
+    Console.WriteLine($"  Original: {(long)original} CPS");
     Console.WriteLine($"  To inches: {inches:F6}in");
-    Console.WriteLine($"  Back to EPS: {(long)roundTrip} EPS");
+    Console.WriteLine($"  Back to CPS: {(long)roundTrip} CPS");
     if (original.CompareTo(roundTrip) != 0)
     {
       Console.WriteLine("✗ Round-trip conversion FAILED");
@@ -196,7 +196,7 @@ public static class EPSTest
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
-    Console.WriteLine($"  As EPS: {original}");
+    Console.WriteLine($"  As CPS: {original}");
     Console.WriteLine($"  As inches: {length.ToString(LengthUnit.Inches)}");
     Console.WriteLine($"  As mm: {length.ToString(LengthUnit.Millimeters)}");
 
@@ -211,22 +211,22 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests the XML serialization and deserialization process for an EPSTestData object to verify data integrity.
+  /// Tests the XML serialization and deserialization process for an CPSTestData object to verify data integrity.
   /// </summary>
-  /// <remarks>This method creates a sample EPSTestData instance, serializes it to XML, and then deserializes it
+  /// <remarks>This method creates a sample CPSTestData instance, serializes it to XML, and then deserializes it
   /// to ensure that the original and deserialized data are equivalent. The serialized XML is written to the console for
-  /// inspection. Use this method to validate that changes to the EPSTestData structure or serialization logic do not
+  /// inspection. Use this method to validate that changes to the CPSTestData structure or serialization logic do not
   /// break XML compatibility.</remarks>
-  /// <returns>true if the EPSTestData object is successfully serialized to XML and deserialized back with matching data;
+  /// <returns>true if the CPSTestData object is successfully serialized to XML and deserialized back with matching data;
   /// otherwise, false.</returns>
-  static bool TestEPSXmlSerialization()
+  static bool TestCPSXmlSerialization()
   {
-    Console.WriteLine("--- Testing EPS XML Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing CPS XML Serialization ---");      // Create test object
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
     // Serialize to XML
-    var xmlSerializer = new XmlSerializer(typeof(EPSTestData));
+    var xmlSerializer = new XmlSerializer(typeof(CPSTestData));
     string xmlString;
 
     using (var stringWriter = new StringWriter())
@@ -246,10 +246,10 @@ public static class EPSTest
     Console.WriteLine();
 
     // Deserialize from XML
-    EPSTestData? deserializedData;
+    CPSTestData? deserializedData;
     using (var stringReader = new StringReader(xmlString))
     {
-      deserializedData = (EPSTestData?)xmlSerializer.Deserialize(stringReader);
+      deserializedData = (CPSTestData?)xmlSerializer.Deserialize(stringReader);
     }
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
@@ -261,17 +261,17 @@ public static class EPSTest
 
   
   /// <summary>
-  /// Tests the serialization and deserialization of EPS test data to and from JSON format.
+  /// Tests the serialization and deserialization of CPS test data to and from JSON format.
   /// </summary>
-  /// <remarks>This method creates a sample EPS test data object, serializes it to a JSON string, and then
+  /// <remarks>This method creates a sample CPS test data object, serializes it to a JSON string, and then
   /// deserializes it back to an object. It outputs the serialized JSON to the console for inspection and verifies that
-  /// the deserialized data matches the original. Use this method to validate that EPS data can be accurately
+  /// the deserialized data matches the original. Use this method to validate that CPS data can be accurately
   /// round-tripped using JSON serialization.</remarks>
   /// <returns>true if the JSON serialization and deserialization process completes successfully and the data integrity is
   /// verified; otherwise, false.</returns>
-  static bool TestEPSJsonSerialization()
+  static bool TestCPSJsonSerialization()
   {
-    Console.WriteLine("--- Testing EPS JSON Serialization ---");      // Create test object
+    Console.WriteLine("--- Testing CPS JSON Serialization ---");      // Create test object
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
@@ -289,7 +289,7 @@ public static class EPSTest
     Console.WriteLine();
 
     // Deserialize from JSON
-    var deserializedData = JsonSerializer.Deserialize<EPSTestData>(jsonString, jsonOptions);
+    var deserializedData = JsonSerializer.Deserialize<CPSTestData>(jsonString, jsonOptions);
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
@@ -299,10 +299,10 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Shows the original EPS test data values in a readable format to the console for verification before serialization.
+  /// Shows the original CPS test data values in a readable format to the console for verification before serialization.
   /// </summary>
   /// <param name="testData"></param>
-  private static void ShowOriginalData(EPSTestData testData)
+  private static void ShowOriginalData(CPSTestData testData)
   {
     Console.WriteLine($"Original data:");
     Console.WriteLine($"  FontSize: {testData.FontSize}");
@@ -326,10 +326,10 @@ public static class EPSTest
   /// LetterSpacing, WordSpacing, SuperscriptOffset, SubscriptOffset, BorderWidth, ZeroValue, SmallValue, and
   /// LargeValue. If any property does not match, the method returns false. If deserializedData is null, an error
   /// message is written to the console and the method returns false.</remarks>
-  /// <param name="deserializedData">The deserialized EPSTestData instance to verify. If null, the verification fails.</param>
-  /// <param name="testData">The expected EPSTestData instance to compare against.</param>
+  /// <param name="deserializedData">The deserialized CPSTestData instance to verify. If null, the verification fails.</param>
+  /// <param name="testData">The expected CPSTestData instance to compare against.</param>
   /// <returns>true if all compared properties of the deserialized data match the expected test data; otherwise, false.</returns>
-  private static bool VerifyDeserializedData(EPSTestData? deserializedData, EPSTestData testData)
+  private static bool VerifyDeserializedData(CPSTestData? deserializedData, CPSTestData testData)
   {
     if (deserializedData == null)
     {
@@ -375,133 +375,133 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Creates a new instance of the EPSTestData class initialized with default typographic values for testing purposes.
+  /// Creates a new instance of the CPSTestData class initialized with default typographic values for testing purposes.
   /// </summary>
   /// <remarks>This method is intended for use in test scenarios that require consistent and repeatable
-  /// typographic settings. All values are specified in EPS units and may need to be converted for use in other
+  /// typographic settings. All values are specified in CPS units and may need to be converted for use in other
   /// measurement systems.</remarks>
-  /// <returns>An EPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
+  /// <returns>An CPSTestData object containing predefined values for font size, line height, kerning, spacing, and offset
   /// properties.</returns>
-  private static EPSTestData CreateTestData()
+  private static CPSTestData CreateTestData()
   {
-    return new EPSTestData
+    return new CPSTestData
     {
-      FontSize = new EPS(96),         // 12 points
-      LineHeight = new EPS(144),      // 18 points
-      MicroKerning = new EPS(1),      // 0.125 points
-      LetterSpacing = new EPS(2),     // 0.25 points
-      WordSpacing = new EPS(8),       // 1 point
-      SuperscriptOffset = new EPS(40),// 5 points
-      SubscriptOffset = new EPS(24),  // 3 points
-      BorderWidth = new EPS(16),      // 2 points
-      ZeroValue = new EPS(0),
-      SmallValue = new EPS(1),        // 0.125 points
-      LargeValue = new EPS(8000)      // ~13.9 inches
+      FontSize = new CPS(1200),         // 12 points
+      LineHeight = new CPS(1800),      // 18 points
+      MicroKerning = new CPS(125),      // 0.125 points
+      LetterSpacing = new CPS(250),     // 0.25 points
+      WordSpacing = new CPS(1000),       // 1 point
+      SuperscriptOffset = new CPS(500),// 5 points
+      SubscriptOffset = new CPS(300),  // 3 points
+      BorderWidth = new CPS(200),      // 2 points
+      ZeroValue = new CPS(0),
+      SmallValue = new CPS(1),        // 0.100 points
+      LargeValue = new CPS(80*1200)      // 80 inches
     };
   }
 
   /// <summary>
-  /// Tests a comprehensive set of edge cases for the EPS (Encapsulated PostScript) type, including zero, boundary
+  /// Tests a comprehensive set of edge cases for the CPS (Encapsulated PostScript) type, including zero, boundary
   /// values, precision, parsing, formatting, comparison, and implicit conversions.
   /// </summary>
   /// <remarks>This method outputs the results of each test to the console for verification. It covers scenarios
   /// such as micro-typography adjustments, string parsing with various units and decimal separators, deserialization
   /// from different JSON formats, and conversion between numeric types. Use this method to validate the correctness and
-  /// robustness of the EPS type implementation.</remarks>
-  /// <returns>true if all EPS edge case tests are completed successfully.</returns>
-  static bool TestEPSEdgeCases()
+  /// robustness of the CPS type implementation.</remarks>
+  /// <returns>true if all CPS edge case tests are completed successfully.</returns>
+  static bool TestCPSEdgeCases()
   {
-    Console.WriteLine("--- Testing EPS Edge Cases ---");      // Test zero value
+    Console.WriteLine("--- Testing CPS Edge Cases ---");      // Test zero value
     Console.WriteLine("Testing zero value:");
-    EPS zero = 0;
-    Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} EPS)");
+    CPS zero = 0;
+    Console.WriteLine($"  Zero: '{zero}' ({(Int64)zero} CPS)");
 
     // Test boundary values
     Console.WriteLine("\nTesting boundary values:");
-    EPS minInt32 = Int32.MinValue;
-    EPS maxInt32 = Int32.MaxValue;
+    CPS minInt32 = Int32.MinValue;
+    CPS maxInt32 = Int32.MaxValue;
     Console.WriteLine($"  Int32.MinValue: {minInt32} ({minInt32.ToInch()}in)");
     Console.WriteLine($"  Int32.MaxValue: {maxInt32} ({maxInt32.ToInch()}in)");
 
-    // Test eighth-point precision (unique to EPS - finest granularity)
-    Console.WriteLine("\nTesting eighth-point precision (finest granularity):");
-    EPS oneEighth = 1;
-    EPS twoEighths = 2;
-    EPS fourEighths = 4;
-    EPS eightEighths = 8;
-    Console.WriteLine($"  1 eighth-point = {oneEighth.ToPoints():F3}pt (0.125pt)");
-    Console.WriteLine($"  2 EPS = {twoEighths.ToPoints():F3}pt (0.25pt)");
-    Console.WriteLine($"  4 EPS = {fourEighths.ToPoints():F3}pt (0.5pt)");
-    Console.WriteLine($"  8 EPS = {eightEighths.ToPoints():F3}pt (1.0pt)");
+    // Test centi-point precision (unique to CPS - finest granularity)
+    Console.WriteLine("\nTesting centi-point precision (finest granularity):");
+    CPS oneCentiPoint = 1;
+    CPS twoCentiPoints = 2;
+    CPS fourCentiPoints = 4;
+    CPS eightCentiPoints = 8;
+    Console.WriteLine($"  1 centi-point = {oneCentiPoint.ToPoints():F3}pt (0.001pt)");
+    Console.WriteLine($"  2 CPS = {twoCentiPoints.ToPoints():F3}pt (0.002pt)");
+    Console.WriteLine($"  4 CPS = {fourCentiPoints.ToPoints():F3}pt (0.004pt)");
+    Console.WriteLine($"  8 CPS = {eightCentiPoints.ToPoints():F3}pt (0.008pt)");
 
-    // Test micro-adjustments (use case for EPS)
+    // Test micro-adjustments (use case for CPS)
     Console.WriteLine("\nTesting micro-typography adjustments:");
-    EPS microKerning = new EPS(1);     // 0.125pt
-    EPS fineTracking = new EPS(3);     // 0.375pt
-    EPS preciseSpacing = new EPS(5);   // 0.625pt
-    Console.WriteLine($"  Micro-kerning (1 eighth-point): {microKerning.ToPoints():F3}pt");
-    Console.WriteLine($"  Fine tracking (3 EPS): {fineTracking.ToPoints():F3}pt");
-    Console.WriteLine($"  Precise spacing (5 EPS): {preciseSpacing.ToPoints():F3}pt");
+    CPS microKerning = new CPS(125);     // 0.125pt
+    CPS fineTracking = new CPS(375);     // 0.375pt
+    CPS preciseSpacing = new CPS(625);   // 0.625pt
+    Console.WriteLine($"  Micro-kerning (125 centi-point): {microKerning.ToPoints():F3}pt");
+    Console.WriteLine($"  Fine tracking (375 CPS): {fineTracking.ToPoints():F3}pt");
+    Console.WriteLine($"  Precise spacing (625 CPS): {preciseSpacing.ToPoints():F3}pt");
 
-    // Test common font sizes in EPS
+    // Test common font sizes in CPS
     Console.WriteLine("\nTesting common font sizes:");
-    EPS font10pt = new EPS(80);    // 10pt
-    EPS font12pt = new EPS(96);    // 12pt
-    EPS font14pt = new EPS(112);   // 14pt
-    Console.WriteLine($"  10pt = {(Int64)font10pt} EPS");
-    Console.WriteLine($"  12pt = {(Int64)font12pt} EPS");
-    Console.WriteLine($"  14pt = {(Int64)font14pt} EPS");
+    CPS font10pt = new CPS(1000);    // 10pt
+    CPS font12pt = new CPS(1200);    // 12pt
+    CPS font14pt = new CPS(1400);   // 14pt
+    Console.WriteLine($"  10pt = {(Int64)font10pt} CPS");
+    Console.WriteLine($"  12pt = {(Int64)font12pt} CPS");
+    Console.WriteLine($"  14pt = {(Int64)font14pt} CPS");
 
     // Test string parsing variations
     Console.WriteLine("\nTesting string parsing variations:");
-    EPS fromPlainNumber = "576";
-    EPS fromInches = "1in";
-    EPS fromPoints = "12pt";
-    EPS fromFraction = "0.125pt";
-    Console.WriteLine($"  \"576\" → {(Int64)fromPlainNumber} EPS");
-    Console.WriteLine($"  \"1in\" → {(Int64)fromInches} EPS");
-    Console.WriteLine($"  \"12pt\" → {(Int64)fromPoints} EPS");
-    Console.WriteLine($"  \"0.125pt\" → {(Int64)fromFraction} EPS");
+    CPS fromPlainNumber = "576";
+    CPS fromInches = "1in";
+    CPS fromPoints = "12pt";
+    CPS fromFraction = "0.125pt";
+    Console.WriteLine($"  \"576\" → {(Int64)fromPlainNumber} CPS");
+    Console.WriteLine($"  \"1in\" → {(Int64)fromInches} CPS");
+    Console.WriteLine($"  \"12pt\" → {(Int64)fromPoints} CPS");
+    Console.WriteLine($"  \"0.125pt\" → {(Int64)fromFraction} CPS");
 
     // Test decimal values with units
     Console.WriteLine("\nTesting decimal values with units:");
-    EPS halfInch = new EPS("0.5in");
-    EPS quarterInch = new EPS("0.25in");
-    Console.WriteLine($"  0.5in = {(Int64)halfInch} EPS (expected 288)");
-    Console.WriteLine($"  0.25in = {(Int64)quarterInch} EPS (expected 144)");
+    CPS halfInch = new CPS("0.5in");
+    CPS quarterInch = new CPS("0.25in");
+    Console.WriteLine($"  0.5in = {(Int64)halfInch} CPS (expected 288)");
+    Console.WriteLine($"  0.25in = {(Int64)quarterInch} CPS (expected 144)");
 
     // Test comma decimal separator
     Console.WriteLine("\nTesting comma decimal separator:");
-    EPS commaDecimal = new EPS("2,54cm");
-    Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} EPS");
+    CPS commaDecimal = new CPS("2,54cm");
+    Console.WriteLine($"  \"2,54cm\" → {(Int64)commaDecimal} CPS");
 
     // Test Deserialization from different formats
     Console.WriteLine("\nTesting Deserialization from different formats:");
 
     // Numeric format
     string jsonNumeric = "{\"Value\":576}";
-    var fromNumeric = JsonSerializer.Deserialize<EPSWrapper>(jsonNumeric);
+    var fromNumeric = JsonSerializer.Deserialize<CPSWrapper>(jsonNumeric);
     Console.WriteLine($"  From JSON number 576: {fromNumeric?.Value}");
 
     // String format with unit
     string jsonStringInch = "{\"Value\":\"1in\"}";
-    var fromStringInch = JsonSerializer.Deserialize<EPSWrapper>(jsonStringInch);
+    var fromStringInch = JsonSerializer.Deserialize<CPSWrapper>(jsonStringInch);
     Console.WriteLine($"  From JSON string \"1in\": {fromStringInch?.Value}");
 
     // String format with point unit
     string jsonStringPt = "{\"Value\":\"12pt\"}";
-    var fromStringPt = JsonSerializer.Deserialize<EPSWrapper>(jsonStringPt);
+    var fromStringPt = JsonSerializer.Deserialize<CPSWrapper>(jsonStringPt);
     Console.WriteLine($"  From JSON string \"12pt\": {fromStringPt?.Value} (expected 96)");
 
     // String format without unit
     string jsonStringPlain = "{\"Value\":\"576\"}";
-    var fromStringPlain = JsonSerializer.Deserialize<EPSWrapper>(jsonStringPlain);
+    var fromStringPlain = JsonSerializer.Deserialize<CPSWrapper>(jsonStringPlain);
     Console.WriteLine($"  From JSON string \"576\": {fromStringPlain?.Value}");
 
     // Test output with units
     Console.WriteLine("\nTesting output format with different units:");
-    EPS measurement = 576;
-    Console.WriteLine($"  As EPS: {measurement}");
+    CPS measurement = 576;
+    Console.WriteLine($"  As CPS: {measurement}");
     Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
     Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", LengthUnit.Inches)}");
     Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", LengthUnit.Points)}");
@@ -509,15 +509,15 @@ public static class EPSTest
     Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
-    EPS small = 288;  // 0.5 inch
-    EPS large = 576;  // 1 inch
+    CPS small = 288;  // 0.5 inch
+    CPS large = 576;  // 1 inch
     Console.WriteLine($"  288 < 576: {small.CompareTo(large) < 0}");
     Console.WriteLine($"  576 > 288: {large.CompareTo(small) > 0}");
-    Console.WriteLine($"  576 == 576: {large.CompareTo(new EPS(576)) == 0}");
+    Console.WriteLine($"  576 == 576: {large.CompareTo(new CPS(576)) == 0}");
 
     // Test implicit conversions
     Console.WriteLine("\nTesting implicit conversions:");
-    EPS fromInt64 = 576L;
+    CPS fromInt64 = 576L;
     Int64 toInt64 = fromInt64;
     Console.WriteLine($"  From Int64: {fromInt64}");
     Console.WriteLine($"  To Int64: {toInt64}");
@@ -528,19 +528,19 @@ public static class EPSTest
   }
 
   /// <summary>
-  /// Tests the performance of various operations on the EPS type, including construction from strings and integers,
+  /// Tests the performance of various operations on the CPS type, including construction from strings and integers,
   /// conversion to different units, and JSON serialization/deserialization.
   /// </summary>
-  /// <returns>true if all EPS performance tests are completed successfully.</returns>
-  static bool TestEPSPerformance()
+  /// <returns>true if all CPS performance tests are completed successfully.</returns>
+  static bool TestCPSPerformance()
   {
-    Console.WriteLine("--- Testing EPS Performance ---"); const int iterations = 100000;
+    Console.WriteLine("--- Testing CPS Performance ---"); const int iterations = 100000;
 
     // Test construction from string with unit
     var sw = System.Diagnostics.Stopwatch.StartNew();
     for (int i = 0; i < iterations; i++)
     {
-      EPS ep = "1in";
+      CPS ep = "1in";
     }
     sw.Stop();
     Console.WriteLine($"Construction from string with unit x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -549,7 +549,7 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      EPS ep = "576";
+      CPS ep = "576";
     }
     sw.Stop();
     Console.WriteLine($"Construction from plain string x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -558,13 +558,13 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      EPS ep = 576;
+      CPS ep = 576;
     }
     sw.Stop();
     Console.WriteLine($"Construction from integer x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test ToString performance
-    EPS testEp = 576;
+    CPS testEp = 576;
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -608,19 +608,19 @@ public static class EPSTest
     Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
-    var testObj = new EPSTestData
+    var testObj = new CPSTestData
     {
-      FontSize = new EPS(96),
-      LineHeight = new EPS(144),
-      MicroKerning = new EPS(1),
-      LetterSpacing = new EPS(2),
-      WordSpacing = new EPS(8),
-      SuperscriptOffset = new EPS(40),
-      SubscriptOffset = new EPS(24),
-      BorderWidth = new EPS(16),
-      ZeroValue = new EPS(0),
-      SmallValue = new EPS(1),
-      LargeValue = new EPS(8000)
+      FontSize = new CPS(96),
+      LineHeight = new CPS(144),
+      MicroKerning = new CPS(1),
+      LetterSpacing = new CPS(2),
+      WordSpacing = new CPS(8),
+      SuperscriptOffset = new CPS(40),
+      SubscriptOffset = new CPS(24),
+      BorderWidth = new CPS(16),
+      ZeroValue = new CPS(0),
+      SmallValue = new CPS(1),
+      LargeValue = new CPS(8000)
     };
 
     sw.Restart();
@@ -636,14 +636,14 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations / 10; i++)
     {
-      var obj = JsonSerializer.Deserialize<EPSTestData>(jsonData);
+      var obj = JsonSerializer.Deserialize<CPSTestData>(jsonData);
     }
     sw.Stop();
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     // Test comparison performance
-    EPS ep1 = 576;
-    EPS ep2 = 576;
+    CPS ep1 = 576;
+    CPS ep2 = 576;
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -679,53 +679,53 @@ public static class EPSTest
 
 
 /// <summary>
-/// Test data class containing various EPS properties.
+/// Test data class containing various CPS properties.
 /// </summary>
-[XmlRoot("EPSTestData")]
-public class EPSTestData
+[XmlRoot("CPSTestData")]
+public class CPSTestData
 {
   [XmlElement("FontSize")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-  public EPS FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS FontSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LineHeight")]
-  public EPS LineHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS LineHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("MicroKerning")]
-  public EPS MicroKerning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS MicroKerning { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LetterSpacing")]
-  public EPS LetterSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS LetterSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("WordSpacing")]
-  public EPS WordSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS WordSpacing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SuperscriptOffset")]
-  public EPS SuperscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS SuperscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SubscriptOffset")]
-  public EPS SubscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS SubscriptOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("BorderWidth")]
-  public EPS BorderWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS BorderWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("ZeroValue")]
-  public EPS ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS ZeroValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("SmallValue")]
-  public EPS SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS SmallValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
   [XmlElement("LargeValue")]
-  public EPS LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS LargeValue { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>
 /// Simple wrapper class for testing Deserialization scenarios.
 /// </summary>
-public class EPSWrapper
+public class CPSWrapper
 {
-  public EPS Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public CPS Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 

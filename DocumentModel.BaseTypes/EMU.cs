@@ -6,12 +6,12 @@
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(EMUJsonConverter))]
-public partial class EMU : UniversalMeasure
+public partial class EMU : PTS
 {
   /// <summary>
   /// Defines the number of EMU in one inch.
   /// </summary>
-  protected override decimal UnitsPerInch => 914400;
+  protected override int Scale => 914400 / 72;
 
   #region Constructors
 
@@ -29,11 +29,11 @@ public partial class EMU : UniversalMeasure
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
-  /// <item><description>"100" - interpreted as half-points</description></item>
+  /// <item><description>"100" - interpreted as EMU</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+  /// <item><description>"12pt" - points</description></item>
+  /// <item><description>"1in" - inches</description></item>
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
@@ -83,28 +83,28 @@ public partial class EMU : UniversalMeasure
   /// <summary>
   /// Creates an instance of an <see cref="EMU"/> that represents the specified value in twips.
   /// </summary>
-  public static EMU FromTwips(double twips) => new EMU($"{twips}tw");
+  public new static EMU FromTwips(double twips) => new EMU($"{twips}tw");
 
   /// <summary>
   /// Creates an instance of an <see cref="EMU"/> that represents the specified value in points.
   /// </summary>
-  public static EMU FromPT(double points) => new EMU($"{points}pt");
+  public new static EMU FromPT(double points) => new EMU($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static EMU FromMM(double millimeters) => new EMU($"{millimeters}mm");
+  public new static EMU FromMM(double millimeters) => new EMU($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static EMU FromCM(double centimeters) => new EMU($"{centimeters}cm");
+  public new static EMU FromCM(double centimeters) => new EMU($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static EMU FromInch(double inches) => new EMU($"{inches}in");
+  public new static EMU FromInch(double inches) => new EMU($"{inches}in");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
@@ -113,7 +113,7 @@ public partial class EMU : UniversalMeasure
   /// thrown.</remarks>
   /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static EMU Parse(string str) => new EMU(str);
+  public new static EMU Parse(string str) => new EMU(str);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -123,7 +123,7 @@ public partial class EMU : UniversalMeasure
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static EMU ConvertFrom(double value, LengthUnit unit) => unit switch
+  public new static EMU ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),

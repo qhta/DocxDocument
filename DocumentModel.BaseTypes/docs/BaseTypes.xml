@@ -1428,6 +1428,246 @@
             </para>
             </remarks>
         </member>
+        <member name="T:DocumentModel.CPS">
+            <summary>
+            Provides XML serialization support for the <see cref="T:DocumentModel.CPS"/> structure.
+            </summary>
+            <summary>
+            Represents a measure values in hundreths of a point (CPS).
+            A hundredth of a point is defined as 1/7200 of an inch, commonly used for fine-grained typography adjustments.
+            Supports conversions to/from millimeters, centimeters, inches, and points.
+            </summary>
+            <remarks>
+            Hundredths of a point provide finer precision than points for typographic measurements in desktop publishing and word processing.
+            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            Note: 1 hundredth-point = 0.01 points = 1/7200 inch.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.CPS.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.CPS"/> value from XML.
+            Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>Plain numeric values (e.g., "144" representing half-points directly)</description></item>
+            <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
+            <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
+            <item><description>Values with point suffix (e.g., "12pt" will be converted to 24 half-points)</description></item>
+            <item><description>Values with inch suffix (e.g., "1in" will be converted to 144 half-points)</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            Commas in the input are automatically replaced with periods for decimal separator consistency.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.CPS.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.CPS"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written as a plain numeric string representing half-points without unit suffix.
+            </remarks>
+        </member>
+        <member name="P:DocumentModel.CPS.Scale">
+            <summary>
+            Override the scale factor for the CPS measurement. A scale of 100 means that the value is in hundredths of a point.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor">
+            <summary>
+            Default constructor. Creates an empty instance.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.CPS"/> from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+            <remarks>
+            <para>Supported formats:</para>
+            <list type="bullet">
+            <item><description>"100" - interpreted as hundredths of a point</description></item>
+            <item><description>"10mm" - millimeters</description></item>
+            <item><description>"1cm" - centimeters</description></item>
+            <item><description>"12pt" - points</description></item>
+            <item><description>"1in" - inches</description></item>
+            </list>
+            <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.CPS"/> from an Int64 value.
+            </summary>
+            <param name="value">The value in CPS.</param>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.CPS"/> from a UInt64 value.
+            </summary>
+            <param name="value">The value in CPS.</param>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.CPS"/> from a 64-bit floating-point value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.CPS.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.CPS"/> from a 128-bit decimal value.
+            </summary>
+            <param name="value">The value in half-points.</param>
+        </member>
+        <member name="M:DocumentModel.CPS.FromTwips(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.CPS"/> that represents the specified value in twips.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.FromPT(System.Double)">
+            <summary>
+            Creates an instance of an <see cref="T:DocumentModel.CPS"/> that represents the specified value in points.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.FromMM(System.Double)">
+            <summary>
+            Creates a new instance of an object that represents a length specified in millimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.FromCM(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+            centimeters.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.FromInch(System.Double)">
+            <summary>
+            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.CPS.Parse(System.String)">
+            <summary>
+            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
+            </summary>
+            <remarks>If the input string does not conform to a valid length measure format, an exception may be
+            thrown.</remarks>
+            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
+            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+            <summary>
+            Converts a length value from the specified unit to an equivalent length measure.
+            </summary>
+            <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
+            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
+            <param name="value">The numeric value representing the length to convert.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.TryParse(System.String,DocumentModel.CPS@)">
+            <summary>
+            Attempts to parse the specified string representation of a length measure and returns a value that indicates
+            whether the parsing succeeded.
+            </summary>
+            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
+            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
+            <param name="str">The string representation of the length measure to parse.</param>
+            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
+            langword="null"/>.</param>
+            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.op_Implicit(System.String)~DocumentModel.CPS">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.CPS"/> value.
+            </summary>
+            <param name="value">The string to convert.</param>
+            <returns>A <see cref="T:DocumentModel.CPS"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.op_Implicit(DocumentModel.CPS)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.CPS"/> value to a string.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.CPS"/> value to convert.</param>
+            <returns>A string representation of the CPS value.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.op_Implicit(System.Int32)~DocumentModel.CPS">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.CPS"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.CPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.op_Implicit(System.Int64)~DocumentModel.CPS">
+            <summary>
+            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.CPS"/> value.
+            </summary>
+            <param name="value">The 64-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.CPS"/> value representing the integer.</returns>
+        </member>
+        <member name="M:DocumentModel.CPS.op_Implicit(System.Double)~DocumentModel.CPS">
+            <summary>
+            Implicitly converts a double-precision floating-point number to a CPS instance.
+            </summary>
+            <remarks>This conversion allows for seamless integration of double values into contexts where CPS are
+            required, facilitating operations that involve measurements in CPS.</remarks>
+            <param name="value">The value to convert, representing a measurement in CPS.</param>
+        </member>
+        <member name="T:DocumentModel.CPSJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.CPS"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes hundredths of a point values as strings for compatibility with Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.CPSJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to a <see cref="T:DocumentModel.CPS"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>A <see cref="T:DocumentModel.CPS"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "144", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
+            <item><description>Numeric tokens as integer values representing half-points directly</description></item>
+            </list>
+            Note: When using "pt" suffix, the value is multiplied by 100 (e.g., "12pt" becomes 1200 hundredths of a point).
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.CPSJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.CPS,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a <see cref="T:DocumentModel.CPS"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.CPS"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the hundredths of a point value as a numeric string without unit suffix.
+            For example, a value of 7200 hundredths of a point (1 inch) is written as "7200".
+            </remarks>
+        </member>
         <member name="T:DocumentModel.Degrees">
             <summary>
             Represents a drawing angle value stored as a Decimal, preserving precision.
@@ -1914,7 +2154,7 @@
             The value is written as a plain numeric string representing EMU without unit suffix.
             </remarks>
         </member>
-        <member name="P:DocumentModel.EMU.UnitsPerInch">
+        <member name="P:DocumentModel.EMU.Scale">
             <summary>
             Defines the number of EMU in one inch.
             </summary>
@@ -1932,11 +2172,11 @@
             <remarks>
             <para>Supported formats:</para>
             <list type="bullet">
-            <item><description>"100" - interpreted as half-points</description></item>
+            <item><description>"100" - interpreted as EMU</description></item>
             <item><description>"10mm" - millimeters</description></item>
             <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+            <item><description>"12pt" - points</description></item>
+            <item><description>"1in" - inches</description></item>
             </list>
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
@@ -2102,246 +2342,6 @@
             <remarks>
             Writes the EMU value as a numeric string without unit suffix.
             For example, a value of 1440 EMU is written as "1440".
-            </remarks>
-        </member>
-        <member name="T:DocumentModel.EPS">
-            <summary>
-            Provides XML serialization support for the <see cref="T:DocumentModel.EPS"/> structure.
-            </summary>
-            <summary>
-            Represents a measure values in eighth-points (one-eighth of a typographic point).
-            An eighth-point is defined as 1/576 of an inch, providing extremely fine-grained precision for typography.
-            Supports conversions to/from millimeters, centimeters, inches, and points.
-            </summary>
-            <remarks>
-            Eighth-points provide the finest precision among point-based measurements for typographic adjustments.
-            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
-            Note: 1 eighth-point = 0.125 points = 1/576 inch. There are 8 eighth-points in 1 point.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#GetSchema">
-            <summary>
-            This method is reserved and should not be used. Returns null as no schema is required.
-            </summary>
-            <returns>Always returns null.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Deserializes the <see cref="T:DocumentModel.EPS"/> value from XML.
-            Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
-            <remarks>
-            The method handles the following formats:
-            <list type="bullet">
-            <item><description>Plain numeric values (e.g., "576" representing eighth-points directly)</description></item>
-            <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
-            <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-            <item><description>Values with point suffix (e.g., "12pt" will be converted to 96 eighth-points)</description></item>
-            <item><description>Values with inch suffix (e.g., "1in" will be converted to 576 eighth-points)</description></item>
-            <item><description>Empty elements</description></item>
-            </list>
-            Commas in the input are automatically replaced with periods for decimal separator consistency.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EPS.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Serializes the <see cref="T:DocumentModel.EPS"/> value to XML.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
-            <remarks>
-            The value is written as a plain numeric string representing eighth-points without unit suffix.
-            </remarks>
-        </member>
-        <member name="P:DocumentModel.EPS.UnitsPerInch">
-            <summary>
-            Defines the number of eighth-points in one inch.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor">
-            <summary>
-            Default constructor. Creates an empty instance.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a string value.
-            </summary>
-            <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
-            <remarks>
-            <para>Supported formats:</para>
-            <list type="bullet">
-            <item><description>"100" - interpreted as half-points</description></item>
-            <item><description>"10mm" - millimeters</description></item>
-            <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
-            </list>
-            <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.Int64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from an Int64 value.
-            </summary>
-            <param name="value">The value in EPS.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a UInt64 value.
-            </summary>
-            <param name="value">The value in EPS.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a 64-bit floating-point value.
-            </summary>
-            <param name="value">The value in half-points.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.#ctor(System.Decimal)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.EPS"/> from a 128-bit decimal value.
-            </summary>
-            <param name="value">The value in half-points.</param>
-        </member>
-        <member name="M:DocumentModel.EPS.FromTwips(System.Double)">
-            <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EPS"/> that represents the specified value in twips.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.FromPT(System.Double)">
-            <summary>
-            Creates an instance of an <see cref="T:DocumentModel.EPS"/> that represents the specified value in points.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.FromMM(System.Double)">
-            <summary>
-            Creates a new instance of an object that represents a length specified in millimeters.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.FromCM(System.Double)">
-            <summary>
-            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
-            centimeters.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.FromInch(System.Double)">
-            <summary>
-            Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.EPS.Parse(System.String)">
-            <summary>
-            Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
-            </summary>
-            <remarks>If the input string does not conform to a valid length measure format, an exception may be
-            thrown.</remarks>
-            <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-            <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
-            <summary>
-            Converts a length value from the specified unit to an equivalent length measure.
-            </summary>
-            <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-            unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
-            <param name="value">The numeric value representing the length to convert.</param>
-            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-            <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.TryParse(System.String,DocumentModel.EPS@)">
-            <summary>
-            Attempts to parse the specified string representation of a length measure and returns a value that indicates
-            whether the parsing succeeded.
-            </summary>
-            <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
-            langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-            <param name="str">The string representation of the length measure to parse.</param>
-            <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
-            langword="null"/>.</param>
-            <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.String)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a string to a <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The string to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EPS"/> value parsed from the string.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(DocumentModel.EPS)~System.String">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.EPS"/> value to a string.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to convert.</param>
-            <returns>A string representation of the EPS value.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.Int32)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.Int64)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a 64-bit signed integer to a <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="value">The 64-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.EPS"/> value representing the integer.</returns>
-        </member>
-        <member name="M:DocumentModel.EPS.op_Implicit(System.Double)~DocumentModel.EPS">
-            <summary>
-            Implicitly converts a double-precision floating-point number to a EPS instance.
-            </summary>
-            <remarks>This conversion allows for seamless integration of double values into contexts where EPS are
-            required, facilitating operations that involve measurements in EPS.</remarks>
-            <param name="value">The value to convert, representing a measurement in EPS.</param>
-        </member>
-        <member name="T:DocumentModel.EPSJsonConverter">
-            <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.EPS"/> structure.
-            </summary>
-            <remarks>
-            This converter handles both string and numeric JSON tokens for deserialization,
-            and writes eighth-points values as strings for compatibility with Office Open XML conventions.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EPSJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Reads and converts JSON to an <see cref="T:DocumentModel.EPS"/> value.
-            </summary>
-            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
-            <param name="typeToConvert">The type to convert.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>An <see cref="T:DocumentModel.EPS"/> value parsed from the JSON input.</returns>
-            <exception cref="T:System.Text.Json.JsonException">
-            Thrown when:
-            <list type="bullet">
-            <item><description>The JSON token is a string but contains a null value.</description></item>
-            <item><description>The string value cannot be parsed as a valid eighth-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
-            <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
-            <item><description>The JSON token is neither a string nor a number.</description></item>
-            </list>
-            </exception>
-            <remarks>
-            Accepts the following input formats:
-            <list type="bullet">
-            <item><description>String tokens with numeric values and optional unit suffixes (e.g., "576", "1in", "12pt", "25.4mm", "2.54cm")</description></item>
-            <item><description>Numeric tokens as integer values representing eighth-points directly</description></item>
-            </list>
-            Note: When using "pt" suffix, the value is multiplied by 8 (e.g., "12pt" becomes 96 eighth-points).
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.EPSJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.EPS,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Writes an <see cref="T:DocumentModel.EPS"/> value as JSON.
-            </summary>
-            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.EPS"/> value to serialize.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <remarks>
-            Writes the eighth-points value as a numeric string without unit suffix.
-            For example, a value of 576 eighth-points (1 inch) is written as "576".
             </remarks>
         </member>
         <member name="T:DocumentModel.HexBinary">
@@ -5244,7 +5244,7 @@
             String started with "#" prefix is considered as hexadecimal value from 0x00 to 0xFF.
             </para>
             <para>
-            String ended with "%" suffix is considered as decimal percent value from 0% to 100% and string without "%" suffix is considered as integer decimal value from 0 to 255.
+            String ended with "%" suffix is considered as decimal percent value from 0% to 100% and the string is considered to be an integer decimal value from 0 to 255.
             </para>
             <para>
             Conversion to/from double and single precision floating-point types means scaling by 255 to support fractional percentages.
@@ -5566,9 +5566,9 @@
             The value is written as a plain numeric string representing half-points without unit suffix.
             </remarks>
         </member>
-        <member name="P:DocumentModel.HPS.UnitsPerInch">
+        <member name="P:DocumentModel.HPS.Scale">
             <summary>
-            Defines the number of HPS in one inch.
+            Override the scale factor for the HPS measurement. A scale of 2 means that the value is in half-points.
             </summary>
         </member>
         <member name="M:DocumentModel.HPS.#ctor">
@@ -5587,8 +5587,8 @@
             <item><description>"100" - interpreted as half-points</description></item>
             <item><description>"10mm" - millimeters</description></item>
             <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+            <item><description>"12pt" - points</description></item>
+            <item><description>"1in" - inches</description></item>
             </list>
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
@@ -6533,6 +6533,11 @@
             The value is written as a plain numeric string representing points without unit suffix.
             </remarks>
         </member>
+        <member name="P:DocumentModel.PTS.Scale">
+            <summary>
+            The scale factor for the PTS measurement. A scale of 1 means that the value is in points, while a scale of 2 would mean that the value is in half-points, and so on.
+            </summary>
+        </member>
         <member name="P:DocumentModel.PTS.UnitsPerInch">
             <summary>
             Defines the number of points in one inch.
@@ -6551,11 +6556,11 @@
             <remarks>
             <para>Supported formats:</para>
             <list type="bullet">
-            <item><description>"100" - interpreted as half-points</description></item>
+            <item><description>"100" - interpreted as points</description></item>
             <item><description>"10mm" - millimeters</description></item>
             <item><description>"1cm" - centimeters</description></item>
-            <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-            <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+            <item><description>"12pt" - points</description></item>
+            <item><description>"1in" - inches</description></item>
             </list>
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
@@ -7494,9 +7499,9 @@
             The value is written as a plain numeric string representing twips without unit suffix.
             </remarks>
         </member>
-        <member name="P:DocumentModel.Twips.UnitsPerInch">
+        <member name="P:DocumentModel.Twips.Scale">
             <summary>
-            Defines the number of twips in one inch.
+            Override the scale factor for the Twips measurement. A scale of 20 means that the value is in twips.
             </summary>
         </member>
         <member name="M:DocumentModel.Twips.#ctor">
@@ -9822,24 +9827,24 @@
             Supports conversions to/from millimeters, centimeters, inches, and points.
             </summary>
             <remarks>
-            UniversalMeasure provide a precise, integer-based unit for document measurements.
-            This supports implicit conversions to/from various integer types and string representations with unit suffixes.
+            UniversalMeasure provides a precise, integer-based unit for document measurements.
+            It supports implicit conversions to/from various integer types and string representations with unit suffixes.
             </remarks>
         </member>
-        <member name="F:DocumentModel.UniversalMeasure._value">
+        <member name="F:DocumentModel.UniversalMeasure.value">
             <summary>
             internal storage for the length value. This can be of type Int64, UInt64, Decimal, or Double, depending on how the instance was initialized.
             </summary>
         </member>
-        <member name="F:DocumentModel.UniversalMeasure._unit">
+        <member name="F:DocumentModel.UniversalMeasure.unit">
             <summary>
             Internal storage for the unit of measurement associated with this length value.
             </summary>
         </member>
         <member name="P:DocumentModel.UniversalMeasure.Unit">
             <summary>
-            Unit of measurement for this length value.
-            This can be set based on the input string during initialization (e.g., "mm", "cm", "in", "pt")
+            Unit of measurement for the numeric value.
+            It can be set based on the input string during initialization (e.g., "mm", "cm", "in", "pt")
             or left null if the unit is not specified.
             </summary>
         </member>

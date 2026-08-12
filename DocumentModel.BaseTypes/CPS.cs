@@ -12,73 +12,73 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(CPSJsonConverter))]
-public partial class CPS: UniversalMeasure
+public partial class CPS: PTS
 {
   /// <summary>
-  /// Defines the number of CPS in one inch.
+  /// Override the scale factor for the CPS measurement. A scale of 100 means that the value is in hundredths of a point.
   /// </summary>
-  protected override decimal UnitsPerInch => 7200;
+  protected override int Scale => 100;
 
   #region Constructors
 
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
-  public HPS()
+  public CPS()
   {
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> from a string value.
+  /// Initializes a new instance of the <see cref="CPS"/> from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
-  /// <item><description>"100" - interpreted as half-points</description></item>
+  /// <item><description>"100" - interpreted as hundredths of a point</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+  /// <item><description>"12pt" - points</description></item>
+  /// <item><description>"1in" - inches</description></item>
   /// </list>
   /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
   /// </remarks>
-  public HPS(string str)
+  public CPS(string str)
   {
     Init(str);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> from an Int64 value.
+  /// Initializes a new instance of the <see cref="CPS"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in HPS.</param>
-  public HPS(Int64 value)
+  /// <param name="value">The value in CPS.</param>
+  public CPS(Int64 value)
   {
     Init(value);
   }
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> from a UInt64 value.
+  /// Initializes a new instance of the <see cref="CPS"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value in HPS.</param>
-  public HPS(UInt64 value)
-  {
-    Init(value);
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> from a 64-bit floating-point value.
-  /// </summary>
-  /// <param name="value">The value in half-points.</param>
-  public HPS(Double value)
+  /// <param name="value">The value in CPS.</param>
+  public CPS(UInt64 value)
   {
     Init(value);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="HPS"/> from a 128-bit decimal value.
+  /// Initializes a new instance of the <see cref="CPS"/> from a 64-bit floating-point value.
   /// </summary>
   /// <param name="value">The value in half-points.</param>
-  public HPS(Decimal value)
+  public CPS(Double value)
+  {
+    Init(value);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="CPS"/> from a 128-bit decimal value.
+  /// </summary>
+  /// <param name="value">The value in half-points.</param>
+  public CPS(Decimal value)
   {
     Init(value);
   }
@@ -87,30 +87,30 @@ public partial class CPS: UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="HPS"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="CPS"/> that represents the specified value in twips.
   /// </summary>
-  public static HPS FromTwips(double twips) => new HPS($"{twips}tw");
+  public new static CPS FromTwips(double twips) => new CPS($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="HPS"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="CPS"/> that represents the specified value in points.
   /// </summary>
-  public static HPS FromPT(double points) => new HPS($"{points}pt");
+  public new static CPS FromPT(double points) => new CPS($"{points}pt");
 
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
-  public static HPS FromMM(double millimeters) => new HPS($"{millimeters}mm");
+  public new static CPS FromMM(double millimeters) => new CPS($"{millimeters}mm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
-  public static HPS FromCM(double centimeters) => new HPS($"{centimeters}cm");
+  public new static CPS FromCM(double centimeters) => new CPS($"{centimeters}cm");
 
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
-  public static HPS FromInch(double inches) => new HPS($"{inches}in");
+  public new static CPS FromInch(double inches) => new CPS($"{inches}in");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
@@ -119,7 +119,7 @@ public partial class CPS: UniversalMeasure
   /// thrown.</remarks>
   /// <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
-  public static HPS Parse(string str) => new HPS(str);
+  public new static CPS Parse(string str) => new CPS(str);
 
   /// <summary>
   /// Converts a length value from the specified unit to an equivalent length measure.
@@ -129,7 +129,7 @@ public partial class CPS: UniversalMeasure
   /// <param name="value">The numeric value representing the length to convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static HPS ConvertFrom(double value, LengthUnit unit) => unit switch
+  public new static CPS ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
     LengthUnit.Points => FromPT(value),
@@ -153,9 +153,9 @@ public partial class CPS: UniversalMeasure
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string str, out HPS? result)
+  public static bool TryParse(string str, out CPS? result)
   {
-    result = new HPS();
+    result = new CPS();
     return result.TryInit(str);
   }
 
@@ -164,54 +164,54 @@ public partial class CPS: UniversalMeasure
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="HPS"/> value.
+  /// Implicitly converts a string to a <see cref="CPS"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
-  /// <returns>A <see cref="HPS"/> value parsed from the string.</returns>
-  public static implicit operator HPS(string value)
+  /// <returns>A <see cref="CPS"/> value parsed from the string.</returns>
+  public static implicit operator CPS(string value)
   {
-    return new HPS(value);
+    return new CPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="HPS"/> value to a string.
+  /// Implicitly converts a <see cref="CPS"/> value to a string.
   /// </summary>
-  /// <param name="value">The <see cref="HPS"/> value to convert.</param>
-  /// <returns>A string representation of the HPS value.</returns>
-  public static implicit operator string?(HPS value)
+  /// <param name="value">The <see cref="CPS"/> value to convert.</param>
+  /// <returns>A string representation of the CPS value.</returns>
+  public static implicit operator string?(CPS value)
   {
     return value.ToString();
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="HPS"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="CPS"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int32 value)
+  /// <returns>A <see cref="CPS"/> value representing the integer.</returns>
+  public static implicit operator CPS(Int32 value)
   {
-    return new HPS(value);
+    return new CPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to a <see cref="HPS"/> value.
+  /// Implicitly converts a 64-bit signed integer to a <see cref="CPS"/> value.
   /// </summary>
   /// <param name="value">The 64-bit signed integer to convert.</param>
-  /// <returns>A <see cref="HPS"/> value representing the integer.</returns>
-  public static implicit operator HPS(Int64 value)
+  /// <returns>A <see cref="CPS"/> value representing the integer.</returns>
+  public static implicit operator CPS(Int64 value)
   {
-    return new HPS(value);
+    return new CPS(value);
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number to a HPS instance.
+  /// Implicitly converts a double-precision floating-point number to a CPS instance.
   /// </summary>
-  /// <remarks>This conversion allows for seamless integration of double values into contexts where HPS are
-  /// required, facilitating operations that involve measurements in HPS.</remarks>
-  /// <param name="value">The value to convert, representing a measurement in HPS.</param>
-  public static implicit operator HPS(Double value)
+  /// <remarks>This conversion allows for seamless integration of double values into contexts where CPS are
+  /// required, facilitating operations that involve measurements in CPS.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in CPS.</param>
+  public static implicit operator CPS(Double value)
   {
-    return new HPS(value);
+    return new CPS(value);
   }
 
   #endregion

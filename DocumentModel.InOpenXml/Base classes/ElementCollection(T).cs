@@ -12,7 +12,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
   where ItemType : notnull
 {
-  private readonly BiDiDictionary<object, ItemType> _index = new BiDiDictionary<object, ItemType>();
+  private readonly BiDiDictionary<string, ItemType>? _index = typeof(ItemType).GetInterfaces().Contains(typeof(INamedObject)) ? new BiDiDictionary<string, ItemType>() : null;
 
   /// <summary>
   /// Accessor for the internal ObservableCollection of items for all Collection
@@ -150,18 +150,18 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
         if (args is PropertyValueChangedEventArgs valueChangedArgs)
         {
           if (valueChangedArgs.OldValue is string oldName)
-            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+            _index?.Remove(new KeyValuePair<string, ItemType>(oldName, item));
           if (valueChangedArgs.NewValue is string newName)
-            _index.Add(new KeyValuePair<object, ItemType>(newName, item));
+            _index?.Add(new KeyValuePair<string, ItemType>(newName, item));
         }
         else
         {
           // If PropertyValueChangedEventArgs is not available, we can still update the index based on the new name.
           // However, we may not be able to remove the old name from the index without it. This is a limitation.
-          if (_index.TryGetValue1(item, out var oldName))
-            _index.Remove(new KeyValuePair<object, ItemType>(oldName, item));
+          if (_index?.TryGetValue1(item, out var oldName) == true)
+            _index?.Remove(new KeyValuePair<string, ItemType>(oldName, item));
           if (namedObject.Name != null)
-            _index.Add(new KeyValuePair<object, ItemType>(namedObject.Name, item));
+            _index?.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
         }
       }
     }
@@ -184,9 +184,15 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
       if (Index is int intIndex)
         return this[intIndex];
 
-      return _index.TryGetValue2(Index, out var item)
-        ? item
-        : throw new KeyNotFoundException($"No item with index '{Index}' found in the collection.");
+      if (Index is not string)
+        throw new NotSupportedException($"Index of type {Index.GetType()} is not supported. Use int or string.");
+      if (_index is null)
+        throw new NotSupportedException($"Indexing by string is not supported for ItemType {typeof(ItemType)}. It must implement INamedObject.");
+
+      if (_index?.TryGetValue2((string)Index, out var item) == true)
+        return item;
+      else
+        throw new KeyNotFoundException($"No item with index '{Index}' found in the collection.");
     }
     set
     {
@@ -194,8 +200,12 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
         this[intIndex] = value;
       else
       {
-        if (_index.TryGetValue2((Index), out var item))
-          _index[Index] = value;
+        if (Index is not string)
+          throw new NotSupportedException($"Index of type {Index.GetType()} is not supported. Use int or string.");
+        if (_index is null)
+          throw new NotSupportedException($"Indexing by string is not supported for ItemType {typeof(ItemType)}. It must implement INamedObject.");
+        if (_index?.TryGetValue2((string)Index, out var item) == true)
+          _index[(string)Index] = value;
         else
           throw new KeyNotFoundException($"No item with index '{Index}' found in the collection.");
       }

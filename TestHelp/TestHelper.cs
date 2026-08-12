@@ -358,7 +358,7 @@ public static class TestHelper
         }
         prop.SetValue(instance, new EMU(val));
       }
-      else if (propType == typeof(EPS))
+      else if (propType == typeof(CPS))
       {
         var val = (Decimal)(Random.Shared.NextDouble() * 50_000);
         var maxValueAttr = prop.GetCustomAttribute<MaxValueAttribute>();
@@ -366,7 +366,7 @@ public static class TestHelper
         {
           val = System.Math.Min(val, (Decimal)maxValueAttr.MaxValue);
         }
-        prop.SetValue(instance, new EPS(val));
+        prop.SetValue(instance, new CPS(val));
       }
       else if (propType == typeof(HPS))
       {

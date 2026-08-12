@@ -53,19 +53,19 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
       Value = byteVal;
     }
     else
-    if (str.EndsWith("%"))
-    {
-      str = str.TrimEnd('%');
-      var decVal = decimal.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
-      if (decVal < 0)
-        throw new OverflowException($"Hex percent value less than 0 is not allowed.");
-      if (decVal > 100)
-        throw new OverflowException($"Hex percent value greater than 100% is not allowed.");
-      Value = (byte)(decVal * 255 / 100);
-    }
-    else
-    {
-      throw new InvalidOperationException("HexPercent string value should be started with '#' prefix or ended with '%' suffix.");
+      if (str.EndsWith("%"))
+      {
+        str = str.TrimEnd('%');
+        var decVal = decimal.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
+        if (decVal < 0)
+          throw new OverflowException($"Hex percent value less than 0 is not allowed.");
+        if (decVal > 100)
+          throw new OverflowException($"Hex percent value greater than 100% is not allowed.");
+        Value = (byte)(decVal * 255 / 100);
+      }
+      else
+      {
+        throw new ApplicationException("HexPercent string value should be started with '#' prefix or ended with '%' suffix.");
       }
   }
 
@@ -174,7 +174,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   /// <returns>A new HexPercent instance with the converted value.</returns>
   public static implicit operator HexPercent(Percentage val)
   {
-    return new HexPercent((byte)(val.AsDouble() * 255.0 ));
+    return new HexPercent((byte)(val.AsDouble() * 255.0));
   }
   #endregion
 
@@ -211,7 +211,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
       return false;
     }
   }
-  
+
   /// <summary>
   /// Converts the value of this instance to its equivalent string representation with "%" suffix.
   /// </summary>
@@ -299,8 +299,8 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   public string ToHexString()
   {
     byte hexValue = Value;
-    return "#"+hexValue.ToString("X2");
-  } 
+    return "#" + hexValue.ToString("X2");
+  }
   #endregion
 
   /// <summary>
@@ -337,7 +337,7 @@ public readonly partial struct HexPercent : IEquatable<HexPercent>, IComparable<
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return ((double)Value/255.0).GetHashCode();
+    return ((double)Value / 255.0).GetHashCode();
   }
 
   /// <summary>
