@@ -32,6 +32,6 @@ public partial class LegendEntry : ModelElement<DXDC.LegendEntry>
  /// Extension list for the legend entry.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

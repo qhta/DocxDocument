@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("NumberingPictureBullet", Namespace = "DocumentModel.Wordprocessing")]
-public partial class NumberingPictureBullet : CollectionItem
+public partial class NumberingPictureBullet : ModelElement
 {
  /// <summary>
  /// Identifier for the numbering picture bullet, used to reference the picture bullet definition.

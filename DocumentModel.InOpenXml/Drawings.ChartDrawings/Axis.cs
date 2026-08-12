@@ -104,7 +104,7 @@ public partial class Axis : ModelElement<DXO16DCD.Axis>
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
-  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-  private ExtensionList? _ExtensionList;
+  private IExtensionList? _ExtensionList;
 }

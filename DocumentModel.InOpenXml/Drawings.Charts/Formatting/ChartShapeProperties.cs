@@ -101,6 +101,6 @@ public partial class ChartShapeProperties : ModelElement<DXDC.ChartShapeProperti
  ///   Collection of extension elements for additional shape customization.
  /// </summary>
  [OpenXmlElement(typeof(DXD.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

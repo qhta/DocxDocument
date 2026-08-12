@@ -62,6 +62,6 @@ public partial class DataPoint : ModelElement<DXDC.DataPoint>
  ///   Collection of extension elements for additional data point customization.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.DataPoint.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

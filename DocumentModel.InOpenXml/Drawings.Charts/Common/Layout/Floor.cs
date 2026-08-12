@@ -35,6 +35,6 @@ public partial class Floor : ModelElement<DXDC.Floor>
  /// The extension list of the floor.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Floor.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

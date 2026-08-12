@@ -18,6 +18,6 @@ public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD
  ///   URI string identifying the extension type or schema for the non-visual group drawing shape properties extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualGroupDrawingShapePropsExtension.Uri))]
- public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
- private string? _Uri;
+ public UriString? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+ private UriString? _Uri;
 }

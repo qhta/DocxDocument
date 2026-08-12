@@ -55,6 +55,6 @@ public partial class DataTable : ModelElement<DXDC.DataTable>
  ///   Collection of extension elements for additional data table customization.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.DataTable.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

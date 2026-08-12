@@ -74,6 +74,6 @@ public partial class Connection : ModelElement<DXDD.Connection>
  ///   ExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Connection.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

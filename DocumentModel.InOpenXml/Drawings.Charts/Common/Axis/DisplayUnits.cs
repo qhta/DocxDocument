@@ -28,6 +28,6 @@ public partial class DisplayUnits : ModelElement<DXDC.DisplayUnits>
  /// <summary>
  /// Specifies the extension list for additional display unit settings.
  /// </summary>
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

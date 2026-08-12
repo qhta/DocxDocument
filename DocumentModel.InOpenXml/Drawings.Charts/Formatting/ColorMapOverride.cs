@@ -84,5 +84,5 @@ public partial class ColorMapOverride : ModelElement<DXDC.ColorMapOverride>
   ///   Collection of extension elements for additional color map customization.
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.ColorMapOverride.ExtensionList))]
-  public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public IExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

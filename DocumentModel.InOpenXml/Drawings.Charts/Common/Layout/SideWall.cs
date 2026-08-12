@@ -35,6 +35,6 @@ public partial class SideWall : ModelElement<DXDC.SideWall>
  /// The extension list of the side wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SideWall.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

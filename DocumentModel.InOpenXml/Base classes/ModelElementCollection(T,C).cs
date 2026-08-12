@@ -10,13 +10,16 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
-  ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatable where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlElement
+  ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatable 
+  where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlCompositeElement
 {
   /// <summary>
   /// OpenXml collection element that this model element collection wraps and synchronizes with. Can be null if not attached to an OpenXml element.
   /// </summary>
-  protected OpenXmlCollectionType? _openXmlCollection;
-
+  protected OpenXmlCollectionType? SourceOpenXmlCompositeElement 
+  { get => DataSource as OpenXmlCollectionType;
+    set => DataSource = value;
+  }
 
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
@@ -31,7 +34,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
   /// </summary>
-  public ModelElementCollection()
+  protected ModelElementCollection()
   {
     InitCollectionChangedEventHandler();
   }
@@ -43,9 +46,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// <param name="openXmlCollection">The OpenXml collection element to wrap and synchronize with. Can be null.</param>
   protected ModelElementCollection(ModelElement parent, DX.OpenXmlElement? openXmlCollection = null) : base(parent, openXmlCollection)
   {
-    _openXmlCollection = openXmlCollection as OpenXmlCollectionType;
-    if (_openXmlCollection != null && this.GetType().GetCustomAttribute<DirectAccessAttribute>()==null)
-      LoadData(_openXmlCollection);
+    SourceOpenXmlCompositeElement = openXmlCollection as OpenXmlCollectionType;
+    if (SourceOpenXmlCompositeElement != null && !IsLazyLoadEnabled && !HasDirectAccess)
+      LoadData(SourceOpenXmlCompositeElement);
     InitCollectionChangedEventHandler();
   }
 
@@ -56,13 +59,13 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   {
     CollectionChanged += (sender, e) =>
     {
-      //Debug.WriteLine($"CollectionChanged event triggered. Action: {e.Action}, IsLoading: {IsLoading}, OpenXmlCollection: {_openXmlCollection}");
-      if (IsLoading || _openXmlCollection == null)
+      //Debug.WriteLine($"CollectionChanged event triggered. Action: {e.Action}, IsLoading: {IsLoading}, OpenXmlCollection: {SourceOpenXmlCompositeElement}");
+      if (IsLoading || SourceOpenXmlCompositeElement == null)
         return;
       if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
       {
-        //Debug.WriteLine($"Updating data for OpenXmlCollection: {_openXmlCollection}");
-        UpdateData(_openXmlCollection);
+        //Debug.WriteLine($"Updating data for OpenXmlCollection: {SourceOpenXmlCompositeElement}");
+        UpdateData(SourceOpenXmlCompositeElement);
       }
     };
   }
@@ -114,9 +117,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// </summary>
   public override bool LoadData()
   {
-    if (_openXmlCollection != null)
+    if (SourceOpenXmlCompositeElement != null)
     {
-      LoadData(_openXmlCollection);
+      LoadData(SourceOpenXmlCompositeElement);
       return true;
     }
     return false;
@@ -127,9 +130,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// </summary>
   public override bool UpdateData()
   {
-    if (_openXmlCollection != null)
+    if (SourceOpenXmlCompositeElement != null)
     {
-      UpdateData(_openXmlCollection);
+      UpdateData(SourceOpenXmlCompositeElement);
       return true;
     }
     return false;
@@ -142,23 +145,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public override object? GetUpdatableObject()
   {
-    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableObject();
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatable)?.GetUpdatableObject();
   }
-
-  ///// <summary>
-  ///// Sets the OpenXml collection element instance for update operations.
-  ///// </summary>
-  ///// <param name = "element"></param>
-  ///// <exception cref = "NotImplementedException"></exception>
-  //public override void SetUpdatableObject(object? element)
-  //{
-  //  if (element is null)
-  //    _openXmlCollection = null;
-  //  else if (element is OpenXmlCollectionType openXmlCollection)
-  //    _openXmlCollection = openXmlCollection;
-  //  else
-  //    throw new ArgumentException($"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
-  //}
 
   /// <summary>
   ///   Loads data from the specified OpenXml element into this model element collection.

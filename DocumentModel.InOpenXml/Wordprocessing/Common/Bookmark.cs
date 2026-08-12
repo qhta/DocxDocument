@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("Bookmark", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Bookmark : CollectionItem
+public partial class Bookmark : ModelElement
 {
  /// <summary>
  /// Start element of the bookmark, specifying the location where the bookmark begins.

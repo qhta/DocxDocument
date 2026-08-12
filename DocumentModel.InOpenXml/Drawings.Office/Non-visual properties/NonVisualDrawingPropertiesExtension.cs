@@ -10,8 +10,9 @@ namespace DocumentModel.Drawings;
 [XmlRoot("NonVisualDrawingPropertiesExtension", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualDrawingPropertiesExtension : NonVisualDrawingProperties<DXD.NonVisualDrawingPropertiesExtension>, IExtension
 {
- /// <summary>
- ///   URI string identifying the extension type or schema for the non-visual drawing properties extension.
- /// </summary>
- public string? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  ///   URI string identifying the extension type or schema for the non-visual drawing properties extension.
+  /// </summary>
+  public UriString? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+  private UriString? _Uri;
 }

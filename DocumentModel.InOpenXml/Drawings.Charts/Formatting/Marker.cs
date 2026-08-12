@@ -30,5 +30,5 @@ public partial class Marker : ModelElement<DXDC.Marker>
  ///   Collection of extension elements for additional marker customization.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Marker.ExtensionList))]
- public ExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+ public IExtensionList? ExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

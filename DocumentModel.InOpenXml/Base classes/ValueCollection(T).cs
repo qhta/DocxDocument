@@ -12,7 +12,7 @@ public abstract class ValueCollection<ItemType> : ModelElement, IValueCollection
  /// <summary>
  /// Initializes a new, empty collection.
  /// </summary>
- public ValueCollection()
+ protected ValueCollection()
  {
   _items.CollectionChanged += _items_CollectionChanged;
  }

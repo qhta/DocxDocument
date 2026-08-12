@@ -41,7 +41,7 @@ public partial class AxisTitle : ModelElement<DXO16DCD.AxisTitle>
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisTitle.ExtensionList))]
-  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-  private ExtensionList? _ExtensionList;
+  private IExtensionList? _ExtensionList;
 }

@@ -16,7 +16,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  public ValueCollection()
+  protected ValueCollection()
   {
   }
 
@@ -24,8 +24,8 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// Initializes a new instance of the collection from an Open XML composite element.
   /// </summary>
   /// <param name = "parent">The parent model element.</param>  
-  /// <param name = "openXmlCollection">The Open XML composite element to initialize from.</param>
-  protected ValueCollection(ModelElement parent, OpenXmlCollectionType? openXmlCollection) : base(parent, openXmlCollection)
+  /// <param name = "openXmlElement">The Open XML composite element to initialize from.</param>
+  protected ValueCollection(ModelElement parent, OpenXmlCollectionType? openXmlElement) : base(parent, openXmlElement)
   {
   }
 

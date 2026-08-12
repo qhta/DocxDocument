@@ -36,6 +36,6 @@ public partial class NonVisualPicturePropertiesExtension : ModelElement<DXD.NonV
  ///   URI string associated with this extension, identifying the extension type or schema for the non-visual picture properties extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.NonVisualPicturePropertiesExtension.Uri))]
- public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
- private string? _Uri;
+ public UriString? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+ private UriString? _Uri;
 }

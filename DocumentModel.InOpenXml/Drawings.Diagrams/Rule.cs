@@ -60,6 +60,6 @@ public partial class Rule : ModelElement<DXDD.Rule>
  ///   ExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Rule.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

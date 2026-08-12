@@ -16,7 +16,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  public ModelElementCollection()
+  protected ModelElementCollection()
   {
   }
 
@@ -35,11 +35,14 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <param name = "itemTypeCollection">The collection of model elements to add.</param>
   protected ModelElementCollection(IEnumerable<ItemType> itemTypeCollection) : base()
   {
-    foreach (var item in itemTypeCollection)
-    {
-      this.Add(item);
-    }
   }
+
+  /// <summary>
+  /// Determines whether the specified Open XML element is of the type that this collection can accept.
+  /// </summary>
+  /// <param name="item">The OpenXmlElement to check.</param>
+  /// <returns>True if the item is accepted; otherwise, false.</returns>
+  protected override bool AcceptSourceItem(DX.OpenXmlElement item) => item is OpenXmlItemType;
 
   /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
@@ -48,7 +51,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected sealed override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
-    foreach (var openXmlElement in openXmlModeledCollection.Elements<OpenXmlItemType>())
+    foreach (var openXmlElement in openXmlModeledCollection.Elements<OpenXmlItemType>().Where(AcceptSourceItem))
     {
       var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
       ItemType modelObject;

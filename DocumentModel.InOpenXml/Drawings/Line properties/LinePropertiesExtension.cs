@@ -17,6 +17,6 @@ public partial class LinePropertiesExtension : ModelElement<DXD.LinePropertiesEx
  ///  URI associated with the line properties extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LinePropertiesExtension.Uri))]
- public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
- private string? _Uri;
+ public UriString? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+ private UriString? _Uri;
 }

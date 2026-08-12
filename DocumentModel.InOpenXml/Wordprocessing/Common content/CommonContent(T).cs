@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// <typeparam name = "T">The type of collection item being wrapped, which must implement <see cref = "ICollectionItem"/>.</typeparam>
 [DataContract]
 [XmlRoot("CommonContent", Namespace = "DocumentModel.Wordprocessing")]
-public class CommonContent<T> : CollectionItem where T : ICollectionItem
+public class CommonContent<T> : ModelElement where T : ICollectionItem
 {
 }

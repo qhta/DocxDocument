@@ -13,7 +13,7 @@ namespace DocumentModel.CustomXml;
 /// </remarks>
 [DataContract]
 [XmlRoot("SchemaReference", Namespace = "DocumentModel.CustomXml")]
-public partial class SchemaReference : CollectionItem
+public partial class SchemaReference : ModelElement
 {
  /// <summary>
  ///   Gets or sets the target namespace UriString of the associated XML schema.

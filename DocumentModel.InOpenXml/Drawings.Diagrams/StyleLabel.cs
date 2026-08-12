@@ -46,6 +46,6 @@ public partial class StyleLabel : ModelElement<DXDD.StyleLabel>
  ///   ExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.StyleLabel.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

@@ -35,6 +35,6 @@ public partial class BackWall : ModelElement<DXDC.BackWall>
  /// The extension list of the back wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.BackWall.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

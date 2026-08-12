@@ -7,5 +7,5 @@ public interface IExtension : ICollectionItem
   /// <summary>
   ///   UriString that identifies the extension resource or schema.
   /// </summary>
-  public string? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public UriString? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

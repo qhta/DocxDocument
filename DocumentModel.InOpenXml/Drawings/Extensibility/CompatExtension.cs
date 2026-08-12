@@ -18,6 +18,6 @@ public partial class CompatExtension : ModelElement<DXO10D.CompatExtension>, IEx
  /// <summary>
  ///   URI string associated with the compatibility extension, identifying the extension type or schema for compatibility purposes.
  /// </summary>
- public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
- private string? _Uri;
+ public UriString? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+ private UriString? _Uri;
 }

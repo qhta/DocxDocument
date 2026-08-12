@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// </summary>
 [DataContract]
 [XmlRoot("ColorStyleVariation", Namespace = "DocumentModel.Drawings.ChartsStyle")]
-public partial class ColorStyleVariation : CollectionItem
+public partial class ColorStyleVariation : ModelElement
 {
   /// <summary>
   /// Tint adjustment value for the color variation.

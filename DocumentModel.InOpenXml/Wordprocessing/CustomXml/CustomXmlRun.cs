@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("CustomXmlRun", Namespace = "DocumentModel.Wordprocessing")]
-public class CustomXmlRun : CustomXmlElement, IParagraphContent, IRunContent, ISdtRunContent, ITableContent, IBidirectionalContent, DMM.IMathArgumentContent
+public class CustomXmlRun : CustomXmlElement, IParagraphContent, IRunContent, ISdtRunContent, ITableContent, 
+  IBidirectionalContent, DMM.IMathArgumentContent
 {
 }

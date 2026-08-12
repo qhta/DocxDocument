@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("CustomXmlElement", Namespace = "DocumentModel.Wordprocessing")]
-public partial class CustomXmlElement : CollectionItem
+public partial class CustomXmlElement : ModelElement
 {
  /// <summary>
  /// Custom XML markup namespace UriString associated with the element.

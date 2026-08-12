@@ -9,9 +9,38 @@ namespace DocumentModel;
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>, IWordprocessingDocumentAware where ItemType : notnull where OpenXmlCollectionType : DX.OpenXmlElement
 {
-  private OpenXmlCollectionType? _openXmlCollection;
+  /// <summary>
+  /// OpenXml collection element that this model element collection wraps and synchronizes with. Can be null if not attached to an OpenXml element.
+  /// </summary>
+  protected OpenXmlCollectionType? SourceOpenXmlCompositeElement
+  {
+    get => DataSource as OpenXmlCollectionType;
+    set => DataSource = value;
+  }
 
+  /// <summary>
+  /// Data source for lazy loading. 
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public object? DataSource { [DebuggerStepThrough] get; set; }
 
+  /// <summary>
+  /// Source collection for lazy loading.
+  /// If the DataSource is an OpenXmlCompositeElement, this property returns its child elements;
+  /// otherwise, it returns DataSource as IEnumerable&lt;DX.OpenXmlElement&gt;.
+  /// Setting this property updates the DataSource.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public virtual IEnumerable<DX.OpenXmlElement>? SourceCollection
+  {
+    get => DataSource is DX.OpenXmlCompositeElement openXmlElement ? openXmlElement.Elements() :
+      DataSource as IEnumerable<DX.OpenXmlElement>;
+    set => DataSource = value;
+  }
   /// <summary>
   ///   The WordprocessingDocument instance to which this value collection is attached, or null if not attached.
   /// </summary>
@@ -25,7 +54,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
   /// </summary>
-  public ValueCollection()
+  protected ValueCollection()
   {
     InitCollectionChangedEventHandler();
   }
@@ -34,12 +63,12 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
   /// </summary>
   /// <param name="parent">The parent model element.</param>
-  /// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
-  protected ValueCollection(ModelElement parent, DX.OpenXmlElement? openXmlCollection = null) : base(parent)
+  /// <param name = "openXmlElement">The OpenXml collection element to wrap and synchronize with.</param>
+  protected ValueCollection(ModelElement parent, DX.OpenXmlElement? openXmlElement = null) : base(parent)
   {
-    _openXmlCollection = openXmlCollection as OpenXmlCollectionType;
-    if (_openXmlCollection != null && this.GetType().GetCustomAttribute<DirectAccessAttribute>() == null)
-      LoadData(_openXmlCollection);
+    DataSource = openXmlElement;
+    if (SourceOpenXmlCompositeElement != null && this.GetType().GetCustomAttribute<DirectAccessAttribute>() == null)
+      LoadData(SourceOpenXmlCompositeElement);
     InitCollectionChangedEventHandler();
   }
 
@@ -50,13 +79,13 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   {
     CollectionChanged += (sender, e) =>
     {
-      //Debug.WriteLine($"CollectionChanged event triggered. Action: {e.Action}, IsLoading: {IsLoading}, OpenXmlCollection: {_openXmlCollection}");
-      if (IsLoading || _openXmlCollection == null)
+      //Debug.WriteLine($"CollectionChanged event triggered. Action: {e.Action}, IsLoading: {IsLoading}, OpenXmlCollection: {SourceOpenXmlCompositeElement}");
+      if (IsLoading || SourceOpenXmlCompositeElement == null)
         return;
       if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
       {
-        //Debug.WriteLine($"Updating data for OpenXmlCollection: {_openXmlCollection}");
-        UpdateData(_openXmlCollection);
+        //Debug.WriteLine($"Updating data for OpenXmlCollection: {SourceOpenXmlCompositeElement}");
+        UpdateData(SourceOpenXmlCompositeElement);
       }
     };
   }
@@ -108,9 +137,9 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   /// </summary>
   public override bool LoadData()
   {
-    if (_openXmlCollection != null)
+    if (SourceOpenXmlCompositeElement != null)
     {
-      LoadData(_openXmlCollection);
+      LoadData(SourceOpenXmlCompositeElement);
       return true;
     } 
     return false;
@@ -121,9 +150,9 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   /// </summary>
   public override bool UpdateData()
   {
-    if (_openXmlCollection != null)
+    if (SourceOpenXmlCompositeElement != null)
     {
-      UpdateData(_openXmlCollection);
+      UpdateData(SourceOpenXmlCompositeElement);
       return true;
     } 
     return false;
@@ -136,7 +165,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public override object? GetUpdatableObject()
   {
-    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableObject() as OpenXmlCollectionType;
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatable)?.GetUpdatableObject() as OpenXmlCollectionType;
   }
 
   /// <summary>
@@ -146,9 +175,9 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   public void SetUpdatableObject(OpenXmlCollectionType? element)
   {
     if (element is null)
-      _openXmlCollection = null;
+      SourceOpenXmlCompositeElement = null;
     else if (element is OpenXmlCollectionType openXmlCollection)
-      _openXmlCollection = openXmlCollection;
+      SourceOpenXmlCompositeElement = openXmlCollection;
     else
       throw new ArgumentException($"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
   }

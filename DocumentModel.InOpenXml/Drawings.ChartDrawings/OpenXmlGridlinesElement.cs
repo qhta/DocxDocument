@@ -18,7 +18,7 @@ public partial class OpenXmlGridlinesElement : ModelElement<DXO16DCD.OpenXmlGrid
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.OpenXmlGridlinesElement.ExtensionList))]
-  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
 
-  private ExtensionList? _ExtensionList;
+  private IExtensionList? _ExtensionList;
 }

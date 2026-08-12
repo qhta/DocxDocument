@@ -47,6 +47,6 @@ public partial class TrendlineLabel : ModelElement<DXDC.TrendlineLabel>
  ///   Collection of extension elements for additional customization of the trendline label.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

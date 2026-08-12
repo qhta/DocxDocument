@@ -75,6 +75,6 @@ public partial class PlotArea : ModelElement<DXDC.PlotArea>
  ///   Extension list for additional plot area properties.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

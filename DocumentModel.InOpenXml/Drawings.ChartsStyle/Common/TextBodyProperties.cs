@@ -193,6 +193,6 @@ public partial class TextBodyProperties : ModelElement<DXO13DCS.TextBodyProperti
  /// Extension list for additional text body properties.
  /// </summary>
  [OpenXmlElement(typeof(DXD.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }

@@ -24,6 +24,23 @@ namespace DocumentModel;
 [OpenXmlType(typeof(DXD.ExtensionList))]
 [DataContract]
 [XmlRoot("ExtensionList", Namespace = "DocumentModel")]
-public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>
+public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>, IExtensionList
 {
+  bool IElementCollection<IExtension>.TryAdd(IExtension item)
+    => base.TryAdd((Extension)item);
+  
+  IEnumerator<IExtension> IEnumerable<IExtension>.GetEnumerator()
+    => base.GetEnumerator();
+
+  void ICollection<IExtension>.Add(IExtension item)
+   => base.Add((Extension)item);
+
+  bool ICollection<IExtension>.Contains(IExtension item)
+    => base.Contains((Extension)item);
+
+  void ICollection<IExtension>.CopyTo(IExtension[] array, int arrayIndex)
+    => base.CopyTo((Extension[])array, arrayIndex);
+    
+  bool ICollection<IExtension>.Remove(IExtension item)
+   => base.Remove((Extension)item);
 }

@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// </summary>
 [DataContract]
 [XmlRoot("HyperlinkInfo", Namespace = "DocumentModel")]
-public class HyperlinkInfo : CollectionItem
+public class HyperlinkInfo : ModelElement
 {
  /// <summary>
  /// Application specific data associated with the hyperlink.

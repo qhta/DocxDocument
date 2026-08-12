@@ -1,3 +1,5 @@
+using Qhta.Xml.Reflection;
+
 namespace DocumentModel;
 
 /// <summary>
@@ -6,7 +8,7 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("DocumentProperty", Namespace = "DocumentModel")]
 //[JsonConverter(typeof(DocumentPropertyJsonConverter<DocumentProperty>))]
-public abstract partial class DocumentProperty : NamedModelElement
+public abstract partial class DocumentProperty : ModelElement, INamedObject
 {
   /// <summary>
   /// Default constructor needed for serialization.
@@ -14,6 +16,20 @@ public abstract partial class DocumentProperty : NamedModelElement
   protected DocumentProperty()
   {
   }
+
+  /// <summary>
+  /// Represents the name of the model element.
+  /// Setting this property will raise the NameChanged event if the name changes.
+  /// </summary>
+  public string? Name
+  {
+    get => _name;
+    set => UpdateField(ref _name, value, nameof(Name));
+  }
+  /// <summary>
+  /// Backing field for the Name property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
+  /// </summary>
+  protected string? _name;
 
   /// <summary>
   ///   Property identifier. Should be unique within the document properties.

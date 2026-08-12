@@ -4,7 +4,7 @@ namespace DocumentModel.WebExtensions.UI;
 /// </summary>
 [DataContract]
 [XmlRoot("WebExtensionTaskPane", Namespace = "DocumentModel.WebExtensions.UI")]
-public class WebExtensionTaskPane : CollectionItem
+public class WebExtensionTaskPane : ModelElement
 {
  /// <summary>
  ///   dockstate

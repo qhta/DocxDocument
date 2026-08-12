@@ -39,6 +39,6 @@ public partial class Scaling : ModelElement<DXDC.Scaling>
  ///   Chart Extensibility.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+ public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+ private IExtensionList? _ExtensionList;
 }
