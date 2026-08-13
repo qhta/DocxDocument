@@ -48,8 +48,11 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
-  protected sealed override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected override bool LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
+    if (IsLoaded)
+      return false;
+    SetIsLoading(true);
     this.Clear();
     foreach (var openXmlElement in openXmlModeledCollection.Elements<OpenXmlItemType>().Where(AcceptSourceItem))
     {
@@ -69,6 +72,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
 
       this.Add(modelObject);
     }
+    SetIsLoading(false);
+    return true;
   }
 
   /// <summary>

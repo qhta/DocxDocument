@@ -587,13 +587,13 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
   public static void LoadData(object modelObject, object openXmlObject)
   {
-    (modelObject as ILoadable)?.SetLoading(true);
+    (modelObject as ILoadable)?.SetIsLoading(true);
     var modelType = modelObject.GetType();
     var openXmlType = openXmlObject.GetType();
     if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return;
     TryLoadModelProperties(modelObject, openXmlObject, modelType, openXmlType);
     TryLoadUsingItemAttribute(modelObject, openXmlObject, modelType);
-    (modelObject as ILoadable)?.SetLoading(false);
+    (modelObject as ILoadable)?.SetIsLoading(false);
   }
 
   /// <summary>

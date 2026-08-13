@@ -108,7 +108,7 @@ public class RunItemsCollection: ContentItemsCollection
   /// </summary>
   /// <param name="item">The item to check.</param>
   /// <returns>True if the item is acceptable; otherwise, false.</returns>
-  public override bool AcceptItem(object item)
+  protected override bool AcceptSourceItem(DX.OpenXmlElement item)
   {
     return item is not DXW.RunProperties;
   }

@@ -191,9 +191,9 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      SetLoading(true);
+      SetIsLoading(true);
       LoadDataCollection(openXmlModeledElement);
-      SetLoading(false);
+      SetIsLoading(false);
     }
   }
 

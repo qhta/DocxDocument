@@ -21,20 +21,23 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   {
     get
     {
-      if (_items == null)
+      if (_Items == null)
       {
-        _items = new ObservableCollection<ItemType>();
-        _items.CollectionChanged += Items_CollectionChanged;
+        _Items = new ObservableCollection<ItemType>();
+        _Items.CollectionChanged += Items_CollectionChanged;
       }
-      return _items;
+      return _Items;
     }
   }
-  private ObservableCollection<ItemType>? _items;
+  /// <summary>
+  /// Backing field for the Items property.
+  /// </summary>
+  protected ObservableCollection<ItemType>? _Items;
 
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
-  public ElementCollection() { }
+  protected ElementCollection() { }
 
   /// <summary>
   /// 
@@ -50,10 +53,10 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "items">The items to add to the collection.</param>
   protected ElementCollection(IEnumerable<ItemType> items)
   {
-    _items = new ObservableCollection<ItemType>();
+    _Items = new ObservableCollection<ItemType>();
     foreach (var item in items)
     {
-      _items.Add(item);
+      _Items.Add(item);
       if (item is ICollectionItem collectionItem)
         collectionItem.SetCollection(this);
       if (item is INamedObject namedObject && _index != null)
@@ -61,7 +64,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
       if (item is INotifyPropertyChanged notificationSource)
         notificationSource.PropertyChanged += ItemPropertyChanged;
     }
-    _items.CollectionChanged += Items_CollectionChanged;
+    _Items.CollectionChanged += Items_CollectionChanged;
   }
 
   /// <summary>
@@ -280,7 +283,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "item">The item to add.</param>
   public virtual void Add(ItemType item)
   {
-    Debug.WriteLine($"Adding item: {item}");
+    //Debug.WriteLine($"Adding item: {item}");
     Items.Add(item);
   }
 

@@ -8,5 +8,5 @@ public class Paragraphs : ContentItemsQuery<Paragraph>
   /// <summary>
   /// Default constructor for the Paragraphs class, initializing a new instance of the Paragraphs collection.
   /// </summary>
-  public Paragraphs(ModelElement parent, ContentItemsCollection baseCollection) : base(parent, baseCollection) { }
+  public Paragraphs(ModelElement parent, StoryItemsCollection baseCollection) : base(parent, baseCollection) { }
 }

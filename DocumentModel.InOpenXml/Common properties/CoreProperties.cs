@@ -93,7 +93,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// <param name = "openXmlObject">The Open XML element containing property values to load. Must be an instance of the expected Open XML type.</param>
   public new void LoadData(object openXmlObject)
   {
-    SetLoading(true);
+    SetIsLoading(true);
     var currentType = GetType();
     var openXmlType = typeof(PackageProperties);
     foreach (var openXmlProperty in openXmlType.GetOpenXmlProperties())
@@ -107,7 +107,7 @@ public partial class CoreProperties : BaseBuiltInProperties
         modelProperty.SetValue(this, openXmlValue);
       }
     }
-    SetLoading(false);
+    SetIsLoading(false);
   }
 
   /// <summary>

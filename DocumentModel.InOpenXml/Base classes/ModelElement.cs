@@ -519,8 +519,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var updatedObject = GetUpdatableObject();
     if (updatedObject != null)
     {
-      LoadData(updatedObject);
-      return true;
+      return LoadData(updatedObject);
     }
     return false;
   }
@@ -529,7 +528,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
   /// </summary>
   /// <returns>True if the data was successfully updated; otherwise, false.</returns>
-  /// <exception cref="NotImplementedException"></exception>
   public virtual bool UpdateData()
   {
     var updatedObject = GetUpdatableObject();
@@ -549,11 +547,16 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// data loading behavior.</remarks>
   /// <param name = "openXmlObject">The Open XML element or other object containing the data to load into the model element.
   /// Must be compatible with the current model element type.</param>
-  public virtual void LoadData(object openXmlObject)
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public virtual bool LoadData(object openXmlObject)
   {
-    SetLoading(true);
+    if (IsLoaded)
+      return false;
+    SetIsLoading(true);
     OpenXmlModelConverter.LoadData(this, openXmlObject);
-    SetLoading(false);
+    SetIsLoading(false);
+    SetIsLoaded(true);
+    return true;
   }
 
   /// <summary>
@@ -698,19 +701,37 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsLoading
-  {
-    get => _IsLoading ?? (Parent is ILoadable loadableParent && loadableParent.IsLoading);
-  }
+  public bool IsLoading => _IsLoading ?? (Parent is ILoadable loadableParent && loadableParent.IsLoading);
+
   private bool? _IsLoading;
 
   /// <summary>
   /// Changes the loading state of the component. When set to true, it indicates that the component is currently loading, and any modifications made during this time should not trigger change notifications or mark the component as modified. When set to false, it indicates that loading is complete, and subsequent changes will be tracked normally.
   /// </summary>
   /// <param name="isLoading"></param>
-  public void SetLoading(bool isLoading)
+  public void SetIsLoading(bool isLoading)
   {
     _IsLoading = isLoading == false ? null : isLoading;
+  }
+
+  /// <summary>
+  /// Checks if the current model element has been loaded from its data source. 
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public bool IsLoaded => _IsLoaded;
+
+  private bool _IsLoaded;
+
+  /// <summary>
+  /// Sets the loaded state of the model element.
+  /// When set to true, it indicates that the model element has been successfully loaded from its data source. 
+  /// </summary>
+  /// <param name="isLoaded"></param>
+  public void SetIsLoaded(bool isLoaded)
+  {
+    _IsLoaded = isLoaded;
   }
 
   /// <summary>

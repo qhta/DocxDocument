@@ -7930,7 +7930,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:DocumentModel.ILoadable.SetLoading(System.Boolean)">
+        <member name="M:DocumentModel.ILoadable.SetIsLoading(System.Boolean)">
             <summary>
             Sets the loading state of the component.
             </summary>

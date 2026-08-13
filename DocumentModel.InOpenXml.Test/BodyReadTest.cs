@@ -17,10 +17,67 @@ public class BodyReadTest : _AbstractTestClass
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public override bool Run()
   {
-    Console.WriteLine("=== Body Read Test ===\n");
-    if (!TestReadBodyFromSampleFile()) return false;
+    Console.WriteLine("=== Body Count Test ===\n");
+    if (!TestCountBody(true, 2)) return false;
+    if (!TestCountBody(false, 2)) return false;
     //if (!TestCreateAndSerializeBodyElements()) return false;
     Console.WriteLine("All Body read tests passed.\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests reading document body from the sample file and loading it into DocumentModel body.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestCountBody(bool directAccess, int times = 0)
+  {
+    Console.WriteLine($"--- Count Body with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var tLoopStart = DateTime.Now;
+    var openXmlCount = openXmlBody.ChildElements.Count;
+    var t2 = DateTime.Now;
+    Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
+    Console.WriteLine($"Get OpenXml body elements count duration: {(t2 - t1).TotalMilliseconds} ms");
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    for (int i = 0; i < times; i++)
+    {
+      var modelCount = modelBody.Items.Count;
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Model body elements count: {modelCount}");
+      Console.WriteLine($"Get Model body elements count duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (modelCount != openXmlCount)
+      {
+        Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
+        return false;
+      }
+    }
+
+    Console.WriteLine($"✓ Count Body with direct access = {directAccess} from sample file test passed\n");
     return true;
   }
 
@@ -49,11 +106,11 @@ public class BodyReadTest : _AbstractTestClass
     var t0 = DateTime.Now;
     Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
     var t1 = DateTime.Now;
-    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
+    Console.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
     var openXmlCount = openXmlBody.ChildElements.Count;
     var modelCount = modelBody.Items.Count;
     var t2 = DateTime.Now;
-    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
+    Console.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
     Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
     Console.WriteLine($"Model body elements count: {modelCount}");
 
@@ -207,7 +264,7 @@ public class BodyReadTest : _AbstractTestClass
     var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
 
     return (xmlType?.AnonymousType ?? false)
-           || (xmlRoot!=null);
+           || (xmlRoot != null);
   }
 
   /// <summary>

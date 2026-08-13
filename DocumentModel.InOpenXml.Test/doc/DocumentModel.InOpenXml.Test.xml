@@ -560,6 +560,12 @@
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestCountBody(System.Boolean,System.Int32)">
+            <summary>
+            Tests reading document body from the sample file and loading it into DocumentModel body.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestReadBodyFromSampleFile">
             <summary>
             Tests reading document body from the sample file and loading it into DocumentModel body.

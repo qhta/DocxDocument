@@ -25,6 +25,11 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(string str)
   {
+    if (str=="auto")
+    {
+      value = 0xFFFFFFFF;
+      return;
+    }
     str = str.TrimStart('#');
     value = UInt32.Parse(str, NumberStyles.HexNumber);
   }

@@ -78,7 +78,7 @@ public partial class StyleDefinitions : ModelElementCollection<Style, DXW.Styles
   {
     if (element is not DXW.Styles styles)
       throw new ArgumentException($"Expected element of type {typeof(DXW.Styles).FullName}, but got {element.GetType().FullName}.");
-    SetLoading(true);
+    SetIsLoading(true);
     var styleElements = styles.Elements<DXW.Style>().ToArray();
     this.Clear();
     foreach (var style in styleElements)
@@ -87,6 +87,6 @@ public partial class StyleDefinitions : ModelElementCollection<Style, DXW.Styles
       this.Add(styleDef!);
     }
 
-    SetLoading(false);
+    SetIsLoading(false);
   }
 }

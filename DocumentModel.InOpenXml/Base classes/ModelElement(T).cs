@@ -168,6 +168,14 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public bool HasDirectAccess => GetUpdatableObject() != null 
+  public bool HasDirectAccess => _HasDirectAccess ?? GetUpdatableObject() != null 
                                  && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
+
+  private bool? _HasDirectAccess;
+
+  /// <summary>
+  /// Sets the HasDirectAccess property to the specified value, indicating whether the model element has direct access to its underlying OpenXml element.
+  /// </summary>
+  /// <param name="value"></param>
+  public void SetHasDirectAccess(bool value) => _HasDirectAccess = value;
 }

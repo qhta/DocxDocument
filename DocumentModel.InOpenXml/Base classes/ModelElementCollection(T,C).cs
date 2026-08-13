@@ -153,14 +153,13 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
-  public override void LoadData(object openXmlObject)
+  public override bool LoadData(object openXmlObject)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      SetLoading(true);
-      LoadDataCollection(openXmlModeledElement);
-      SetLoading(false);
+      return LoadDataCollection(openXmlModeledElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -168,7 +167,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The OpenXml collection to load data from.</param>
-  protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  protected abstract bool LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 
   /// <summary>
   ///   Stores data from this model element collection to the specified OpenXml element.

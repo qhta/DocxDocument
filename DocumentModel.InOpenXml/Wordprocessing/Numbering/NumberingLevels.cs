@@ -81,7 +81,7 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
  {
   if (element is not DXW.AbstractNum numbering)
    throw new ArgumentException($"Expected element of type {typeof(DXW.AbstractNum).FullName}, but got {element.GetType().FullName}.");
-  SetLoading(true);
+  SetIsLoading(true);
   var levelElements = numbering.Elements<DXW.Level>().ToArray();
   this.Clear();
   foreach (var openXmlElement in levelElements)
@@ -90,6 +90,6 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
    this.Add(numLevel!);
   }
 
-  SetLoading(false);
+  SetIsLoading(false);
  }
 }

@@ -16,7 +16,7 @@ public interface ILoadable
   /// Sets the loading state of the component.
   /// </summary>
   /// <param name="isLoading">true to indicate that the component is loading; otherwise, false.</param>
-  public void SetLoading(bool isLoading);
+  public void SetIsLoading(bool isLoading);
 
   /// <summary>
   /// Loads data from into the current object, updating its state accordingly.

@@ -30,7 +30,6 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   protected ModelElementCollection(DX.OpenXmlCompositeElement openXmlElement) : base()
   {
     DataSource = openXmlElement;
-    HasDirectAccess = true;
   }
 
   /// <summary>
@@ -42,7 +41,6 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   protected ModelElementCollection(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
     DataSource = openXmlElement;
-    HasDirectAccess = openXmlElement != null;
     IsLazyLoadEnabled = this.GetType().GetCustomAttribute<LazyLoadAttribute>()?.IsEnabled == true &&
                         this is ILazyLoadable;
   }
@@ -53,6 +51,14 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   [XmlIgnore]
   [JsonIgnore]
   public bool HasDirectAccess { get; private set; }
+
+  /// <summary>
+  /// Changes the value of the HasDirectAccess property,
+  /// allowing external code to enable or disable direct access to the underlying OpenXmlCompositeElement.
+  /// This method should be used with caution, as enabling direct access may bypass lazy loading and other collection management features.
+  /// </summary>
+  /// <param name="value"></param>
+  public void SetHasDirectAccess(bool value) => HasDirectAccess = value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class that contains elements copied from the specified collection.
@@ -84,13 +90,20 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   {
     get
     {
-      if (IsLazyLoadEnabled)
+      if (HasDirectAccess)
       {
         var sourceCollection = SourceCollection;
         if (sourceCollection is null)
           throw new ApplicationException("Can't check collection count because the source collection is null.");
 
         return sourceCollection.Count(AcceptSourceItem);
+      }
+      if (IsLazyLoadEnabled && !IsLoading && !IsLoaded)
+      {
+        var sourceCollection = SourceCollection;
+        if (sourceCollection is null)
+          throw new ApplicationException("Can't check collection count because the source collection is null.");
+        TryLazyLoad();
       }
       return Items.Count;
     }
@@ -106,6 +119,14 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <returns></returns>
   public override bool IsEmpty()
   {
+    if (IsLazyLoadEnabled)
+    {
+      var sourceCollection = SourceCollection;
+      if (sourceCollection is null)
+        throw new ApplicationException("Can't check if collection is empty because the source collection is null.");
+
+      return !sourceCollection.Where(AcceptSourceItem).Any();
+    }
     if (IsLazyLoadEnabled)
     {
       var sourceCollection = SourceCollection;
@@ -182,8 +203,6 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
 
       yield return item;
     }
-
-    IsLazyLoadEnabled = false;
   }
 
 
@@ -215,7 +234,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       yield return item;
     }
 
-    IsLazyLoadEnabled = false;
+    SetIsLoaded(true);
   }
 
   /// <summary>
@@ -245,7 +264,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   [NotMapped]
   public virtual IEnumerable<DX.OpenXmlElement>? SourceCollection
   {
-    get => DataSource is DX.OpenXmlCompositeElement openXmlElement ? openXmlElement.Elements() : 
+    get => DataSource is DX.OpenXmlCompositeElement openXmlElement ? openXmlElement.Elements() :
       DataSource as IEnumerable<DX.OpenXmlElement>;
     set => DataSource = value;
   }
@@ -257,49 +276,64 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   {
     if (IsLazyLoadEnabled)
       return TryLazyLoad(int.MaxValue);
-    return IsLazyLoadEnabled;
+    return IsLoaded;
   }
 
   /// <summary>
-  /// If LazyLoad is enabled, this method loads the related data from the data source until the specified index.
+  /// If LazyLoad is enabled, this method loads the related data from the data source until the specified untilIndex.
   /// <para>
-  /// If index is greater than the number of items in the source collection, it loads all items and disables lazy loading.
+  /// If untilIndex is greater than the number of items in the source collection, it loads all items and disables lazy loading.
   /// </para>
   /// </summary>
-  public virtual bool TryLazyLoad(int index)
+ 
+  public virtual bool TryLazyLoad(int untilIndex)
   {
-    if (IsLazyLoadEnabled)
+    if (IsLazyLoadEnabled && !IsLoading && !IsLoaded)
     {
+     //Debug.WriteLine($"TryLazyLoad ({untilIndex}) begin");
+      SetIsLoading(true);
       OpenXmlModelConverter.Init();
       var sourceCollection = SourceCollection;
       if (sourceCollection is null)
         throw new ApplicationException("Can't lazy load data because the source collection is null.");
-      Debug.WriteLine($"Lazy loading data for {GetType().Name}");
-      int loadedIndex = 0;
-      foreach (var openXmlItem in sourceCollection)
+      //Debug.WriteLine($"Lazy loading data for {GetType().Name}");
+
+      int alreadyLoaded = base.Items.Count;
+
+
+      var sourceArray = sourceCollection.Where(AcceptSourceItem).Skip(alreadyLoaded).ToArray();
+      int i;
+      for (i = 0; i < sourceArray.Length; i++)
       {
-        if (!AcceptSourceItem(openXmlItem))
-          continue;
-        if (loadedIndex > index)
+        int justLoading = alreadyLoaded+i;
+        if (justLoading > untilIndex)
           break;
-        if (loadedIndex > Count)
+        var openXmlItem = sourceArray[i];
+        var modelItemType = GetTargetModelItemType(openXmlItem);
+        //Debug.WriteLine($"TryLazyLoad {openXmlItem.LocalName}, {modelItemType}, {justLoading}");
+        var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
+        if (modelItem is ItemType item)
         {
-          var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, typeof(ItemType));
-          if (modelItem is ItemType item)
-          {
-            Add(item);
-            loadedIndex++;
-          }
-          else
-          {
-            throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {typeof(ItemType).Name}");
-          }
+          Add(item);
+        }
+        else
+        {
+          throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {modelItemType.Name}");
         }
       }
-      IsLazyLoadEnabled = loadedIndex < Count;
+      SetIsLoaded(i == sourceArray.Length);
+      SetIsLoading(false);
+      //Debug.WriteLine($"TryLazyLoad return {IsLoaded}");
     }
-    return !IsLazyLoadEnabled;
+    return IsLoaded;
   }
+
+  /// <summary>
+  /// Gets the target model item type for the specified OpenXmlElement. 
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlElement to get the target model item type for.</param>
+  /// <returns>The target model item type.  </returns>
+  protected virtual Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => typeof(ItemType);
 
   /// <summary>
   /// Checks if the specified OpenXmlElement should be accepted as a valid source item for this collection.
