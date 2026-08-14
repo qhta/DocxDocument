@@ -237,12 +237,15 @@ public partial class ModelElement : IXmlSerializable
           }
           else
           {
-            writer.WriteStartElement(elementName);
             if (value is IXmlSerializable xmlSerializable)
             {
-              xmlSerializable.WriteXml(writer);
+              if (value is ModelElement modelElement && !modelElement.IsEmpty())
+              {
+                writer.WriteStartElement(elementName);
+                xmlSerializable.WriteXml(writer);
+                writer.WriteEndElement();
+              }
             }
-            writer.WriteEndElement();
           }
         }
       }

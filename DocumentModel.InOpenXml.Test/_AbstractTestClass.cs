@@ -174,7 +174,6 @@ public abstract class _AbstractTestClass
     }
   }
 
-
   /// <summary>
   /// Serializes an object to XML using its runtime type.
   /// </summary>

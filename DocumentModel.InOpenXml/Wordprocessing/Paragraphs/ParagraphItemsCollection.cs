@@ -151,10 +151,10 @@ public class ParagraphItemsCollection: ContentItemsCollection
   /// <summary>
   /// Gets the mapping between OpenXml element types and their corresponding model element types.
   /// </summary>  
-  public override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
+  protected override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
 
   /// <summary>
   /// Gets the mapping between model element types and their corresponding OpenXml element types.
   /// </summary>
-  public override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
+  protected override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
 }

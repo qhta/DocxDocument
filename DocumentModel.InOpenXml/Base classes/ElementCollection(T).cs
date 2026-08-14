@@ -536,7 +536,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <returns></returns>
   public override bool IsEmpty()
   {
-    return !Items.Any();
+    return base.IsEmpty() && !Items.Any();
   }
 
   /// <summary>

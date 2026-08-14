@@ -89,7 +89,15 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public DMW.Paragraphs Paragraphs => _Paragraphs ??= new DMW.Paragraphs(this, Items);
+  public DMW.Paragraphs Paragraphs
+  {
+    get
+    {
+      var result = _Paragraphs ??= new DMW.Paragraphs(this, Items);
+      return result;
+    }
+  }
+
   private DMW.Paragraphs? _Paragraphs;
 
 }

@@ -735,7 +735,7 @@ public static partial class OpenXmlModelConverter
         else
         {
           var modelValue = Activator.CreateInstance(modelProperty.PropertyType)!;
-          LoadData(modelValue, openXmlValue);
+          (modelValue as ILoadable)?.LoadData(openXmlValue);
           modelProperty.SetValue(modelObject, modelValue);
           return true;
         }

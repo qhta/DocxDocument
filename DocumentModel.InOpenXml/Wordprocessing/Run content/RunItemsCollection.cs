@@ -96,12 +96,12 @@ public class RunItemsCollection: ContentItemsCollection
   /// <summary>
   /// Gets the mapping from OpenXml element types to model element types for this collection.
   /// </summary>
-  public override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
+  protected override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXmlElement2ModelTypeMapping;
 
   /// <summary>
   /// Gets the mapping from model element types to OpenXml element types for this collection.
   /// </summary>
-  public override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
+  protected override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
 
   /// <summary>
   /// Checks if the specified item is acceptable for this collection.

@@ -17,4 +17,5 @@ public sealed class Tabs : ModelElementCollection<TabStop, DXW.Tabs, DXW.TabStop
   /// </summary>
   /// <param name="items"></param>
   public Tabs(IEnumerable<TabStop> items) : base(items) { }
+
 }

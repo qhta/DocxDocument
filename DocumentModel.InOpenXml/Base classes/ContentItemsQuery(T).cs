@@ -8,8 +8,6 @@ namespace DocumentModel;
 /// </summary>
 [LazyLoad]
 public abstract partial class ContentItemsQuery<ItemType> : ModelElement, ICollection<ItemType>
-  //ILazyLoadable,
-  //IFilteringCollection
   where ItemType : ModelElement
 {
 

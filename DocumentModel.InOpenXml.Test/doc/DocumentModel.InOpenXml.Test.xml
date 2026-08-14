@@ -590,6 +590,18 @@
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodySectionPropertiesRead(System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Tests enumerating the document body Section Properties data read.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodySectionsRead(System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Tests enumerating the document body Sections data read.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestReadBodyAndSerialize(System.Boolean,System.Int32)">
             <summary>
             Tests reading document body from the sample file and loading it into DocumentModel body.

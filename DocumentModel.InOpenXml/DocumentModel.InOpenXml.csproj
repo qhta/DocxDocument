@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Base classes\CollectionItem.cs" />
-    <Compile Remove="Base classes\ContentItemsCollection%28T%29.cs" />
     <Compile Remove="Base classes\INamedModelElement.cs" />
     <Compile Remove="Base classes\LazyLoadElementCollection%28T,C%29.cs" />
     <Compile Remove="Common properties\BuiltInDocumentProperties.cs" />
@@ -61,6 +60,7 @@
     <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
     <Compile Remove="Wordprocessing\Mail merge\FieldMapDataCollection.cs" />
+    <Compile Remove="Wordprocessing\Paragraphs\Paragraphs - Copy.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDefinition.ext.cs" />
   </ItemGroup>

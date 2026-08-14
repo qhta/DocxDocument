@@ -110,10 +110,10 @@ public class StoryItemsCollection: ContentItemsCollection
   /// <summary>
   /// Gets the mapping between OpenXml element types and their corresponding model element types.
   /// </summary>
-  public override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXml2ModelElementTypeMapping;
+  protected override Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping => _OpenXml2ModelElementTypeMapping;
 
   /// <summary>
   /// Gets the mapping between model element types and their corresponding OpenXml element types.
   /// </summary>
-  public override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
+  protected override Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping => _ModelType2OpenXmlElementMapping;
 }

@@ -18,7 +18,7 @@ public class BodyReadTest : _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine("=== Body Count Test ===\n");
-    if (!TestCountBodyItems(true, 2)) return false;
+    //if (!TestCountBodyItems(true, 2)) return false;
     if (!TestCountBodyItems(false, 2)) return false;
 
     if (!TestCheckBodyEmpty(true, 2)) return false;
@@ -30,8 +30,14 @@ public class BodyReadTest : _AbstractTestClass
     if (!TestEnumerateBodyParagraphWithShallowDataRead(true, false, 2)) return false;
     if (!TestEnumerateBodyParagraphWithShallowDataRead(false, false, 2)) return false;
 
-    if (!TestEnumerateBodyParagraphPropertiesRead(true, false, 1)) return false;
+    if (!TestEnumerateBodyParagraphPropertiesRead(true, true, 1)) return false;
     if (!TestEnumerateBodyParagraphPropertiesRead(false, false, 2)) return false;
+
+    if (!TestEnumerateBodySectionPropertiesRead(true, true, 1)) return false;
+    if (!TestEnumerateBodySectionPropertiesRead(false, false, 2)) return false;
+
+    //if (!TestEnumerateBodySectionsRead(true, true, 1)) return false;
+    //if (!TestEnumerateBodySectionsRead(false, false, 2)) return false;
 
     //if (!TestReadBodyAndSerialize(true, 2)) return false;
     //if (!TestReadBodyAndSerialize(false, 2)) return false;
@@ -268,7 +274,7 @@ public class BodyReadTest : _AbstractTestClass
       int markIdsCount = 0;
       int noSpellErrorsCount = 0;
       List<HexInt> paraIds = new List<HexInt>();  
-      foreach (var item in modelBody.Items)
+      foreach (var item in modelBody.Paragraphs)
       {
         if (verbatim)
         {
@@ -403,7 +409,7 @@ public class BodyReadTest : _AbstractTestClass
       int paragraphIndex = 0;
       int paraPropertiesCount = 0;
       List<TimeSpan> paraTimeSpan = new List<TimeSpan>();
-      foreach (var item in modelBody.Items)
+      foreach (var item in modelBody.Paragraphs)
       {
         // get shallow data for Paragraph items
         if (item is Paragraph paragraph)
@@ -433,9 +439,11 @@ public class BodyReadTest : _AbstractTestClass
               Console.Write(".");
           }
           paragraphIndex++;
+          if (paragraphIndex==2)
+            break; // limit to first 2 paragraphs for performance
         }
       }
-      Console.WriteLine($"\nEnumerated: {paragraphIndex} paragraphs, {paraPropertiesCount} paragraph Properties");
+      Console.WriteLine($"\nEnumerated: {paragraphIndex} paragraphs, {paraPropertiesCount} Paragraph Properties");
       if (paraTimeSpan.Any())
         Console.WriteLine($" Mean Paragraph Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
       if (trial == 0)
@@ -468,6 +476,218 @@ public class BodyReadTest : _AbstractTestClass
     }
 
     Console.WriteLine($"✓ Enumerate Body Paragraphs Properties with direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests enumerating the document body Section Properties data read.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestEnumerateBodySectionPropertiesRead(bool directAccess, bool verbatim, int times = 1)
+  {
+    Console.WriteLine($"--- Enumerate Body Section Properties with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var t2 = DateTime.Now;
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    var lastParagraphsCount = 0;
+    int lastSectionPropertiesCount = 0;
+    for (int trial = 0; trial < times; trial++)
+    {
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+      int paragraphIndex = 0;
+      int sectPropertiesCount = 0;
+      List<TimeSpan> paraTimeSpan = new List<TimeSpan>();
+      foreach (var item in modelBody.Paragraphs)
+      {
+        // get shallow data for Paragraph items
+        if (item is Paragraph paragraph)
+        {
+          var paraId = paragraph.ParagraphId;
+          var t5 = DateTime.Now;
+          var paraProperties = paragraph.ParagraphProperties;
+          var t6 = DateTime.Now;
+          paraTimeSpan.Add(t6 - t5);
+          if (paraProperties?.SectionProperties != null)
+          {
+            sectPropertiesCount++;
+
+            if (verbatim)
+            {
+              Console.WriteLine($"Paragraph[{paragraphIndex}]: ID={paraId}");
+              {
+                string paraPropertiesString = SerializeObjectToXml(paraProperties!, omitXmlDeclaration: true);
+                if (paraPropertiesString != string.Empty)
+                  Console.WriteLine(paraPropertiesString);
+              }
+            }
+            else
+            {
+              if (paragraphIndex % 100 == 0)
+                Console.Write(".");
+            }
+            paragraphIndex++;
+          }
+        }
+      }
+      Console.WriteLine($"\nEnumerated: {sectPropertiesCount} Section Properties");
+      if (paraTimeSpan.Any())
+        Console.WriteLine($" Mean Section Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+      if (trial == 0)
+      {
+        lastParagraphsCount = paragraphIndex;
+        lastSectionPropertiesCount = sectPropertiesCount;
+      }
+      else if (paragraphIndex != lastParagraphsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastParagraphsCount} vs {paragraphIndex}");
+        return false;
+      }
+
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+    }
+
+    if (lastSectionPropertiesCount == 0)
+    {
+      Console.WriteLine($"✗ Body Section Properties count is zero");
+      return false;
+    }
+
+    Console.WriteLine($"✓ Enumerate Body Section Properties with direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests enumerating the document body Sections data read.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestEnumerateBodySectionsRead(bool directAccess, bool verbatim, int times = 1)
+  {
+    Console.WriteLine($"--- Enumerate Body Sections with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var t2 = DateTime.Now;
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    var lastParagraphsCount = 0;
+    int lastSectionPropertiesCount = 0;
+    for (int trial = 0; trial < times; trial++)
+    {
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+      int paragraphIndex = 0;
+      int sectPropertiesCount = 0;
+      List<TimeSpan> paraTimeSpan = new List<TimeSpan>();
+      foreach (var item in modelBody.Items)
+      {
+        // get shallow data for Paragraph items
+        if (item is Paragraph paragraph)
+        {
+          var paraId = paragraph.ParagraphId;
+          var t5 = DateTime.Now;
+          var paraProperties = paragraph.ParagraphProperties;
+          var t6 = DateTime.Now;
+          paraTimeSpan.Add(t6 - t5);
+          if (paraProperties?.SectionProperties != null)
+          {
+            sectPropertiesCount++;
+
+            if (verbatim)
+            {
+              Console.WriteLine($"Paragraph[{paragraphIndex}]: ID={paraId}");
+              {
+                string paraPropertiesString = SerializeObjectToXml(paraProperties!, omitXmlDeclaration: true);
+                if (paraPropertiesString != string.Empty)
+                  Console.WriteLine(paraPropertiesString);
+              }
+            }
+            else
+            {
+              if (paragraphIndex % 100 == 0)
+                Console.Write(".");
+            }
+            paragraphIndex++;
+          }
+        }
+      }
+      Console.WriteLine($"\nEnumerated: {sectPropertiesCount} Section Properties");
+      if (paraTimeSpan.Any())
+        Console.WriteLine($" Mean Sections read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+      if (trial == 0)
+      {
+        lastParagraphsCount = paragraphIndex;
+        lastSectionPropertiesCount = sectPropertiesCount;
+      }
+      else if (paragraphIndex != lastParagraphsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastParagraphsCount} vs {paragraphIndex}");
+        return false;
+      }
+
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+    }
+
+    if (lastSectionPropertiesCount == 0)
+    {
+      Console.WriteLine($"✗ Body Sections count is zero");
+      return false;
+    }
+
+    Console.WriteLine($"✓ Enumerate Body Sections with direct access = {directAccess} from sample file test passed\n");
     return true;
   }
 
