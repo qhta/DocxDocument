@@ -298,9 +298,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
     if (property == null) throw new InvalidOperationException($"Type {typeof(ModelDataType).Name} not found.");
     var result = (ModelDataType)property.GetValue(document)!;
-    if (result is IDirectAccessElement directAccessElement && result is ILoadable loadableResult)
-      if (directAccessElement.HasDirectAccess)
-        loadableResult.LoadData();
+    (result as ILoadable)?.LoadData();
     return result;
   }
 

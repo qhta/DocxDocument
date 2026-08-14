@@ -54,7 +54,11 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
   /// </summary>
-  protected ValueCollection()
+  /// <remarks>
+  /// It must be public to fulfill JsonSerialization requirements.
+  /// </remarks>
+  // ReSharper disable once PublicConstructorInAbstractClass
+  public ValueCollection()
   {
     InitCollectionChangedEventHandler();
   }

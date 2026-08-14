@@ -98,12 +98,14 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
 
         return sourceCollection.Count(AcceptSourceItem);
       }
-      if (IsLazyLoadEnabled && !IsLoading && !IsLoaded)
+      if (IsLazyLoadEnabled)
       {
+        if (IsLoaded)
+          return Items.Count;
         var sourceCollection = SourceCollection;
         if (sourceCollection is null)
           throw new ApplicationException("Can't check collection count because the source collection is null.");
-        TryLazyLoad();
+        return sourceCollection.Count(AcceptSourceItem);
       }
       return Items.Count;
     }
@@ -125,15 +127,18 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       if (sourceCollection is null)
         throw new ApplicationException("Can't check if collection is empty because the source collection is null.");
 
-      return !sourceCollection.Where(AcceptSourceItem).Any();
+      return !sourceCollection.Any(AcceptSourceItem);
     }
     if (IsLazyLoadEnabled)
     {
+      if (IsLoaded)
+        return !Items.Any();
       var sourceCollection = SourceCollection;
       if (sourceCollection is null)
         throw new ApplicationException("Can't check if collection is empty because the source collection is null.");
 
-      return !sourceCollection.Where(AcceptSourceItem).Any();
+      return !sourceCollection.Any(AcceptSourceItem);
+
     }
     return !Items.Any();
   }
@@ -197,7 +202,8 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     {
       if (!AcceptSourceItem(openXmlItem))
         continue;
-      var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, typeof(ItemType));
+      var modelItemType = GetTargetModelItemType(openXmlItem);
+      var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
       if (modelItem is not ItemType item)
         throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {typeof(ItemType).Name}");
 
@@ -211,30 +217,43 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// </summary>
   private IEnumerable<ItemType> EnumerateLazy()
   {
-    OpenXmlModelConverter.Init();
 
     // yield already-loaded items first
     foreach (var existing in base.Items)
       yield return existing;
 
-    var sourceCollection = SourceCollection
-                           ?? throw new ApplicationException("Can't lazy load data because the source collection is null.");
-
-    int alreadyLoaded = base.Items.Count;
-
-    foreach (var openXmlItem in sourceCollection.Skip(alreadyLoaded))
+    if (IsLazyLoadEnabled && !IsLoading && !IsLoaded)
     {
-      if (!AcceptSourceItem(openXmlItem))
-        continue;
-      var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, typeof(ItemType));
-      if (modelItem is not ItemType item)
-        throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {typeof(ItemType).Name}");
+      int alreadyLoaded = base.Items.Count;
+      //Debug.WriteLine($"TryEnumerateLazy ({alreadyLoaded}) begin");
+      SetIsLoading(true);
+      OpenXmlModelConverter.Init();
+      OpenXmlModelConverter.Init();
 
-      Add(item);
-      yield return item;
+
+      var sourceCollection = SourceCollection ??
+                             throw new ApplicationException(
+                               "Can't lazy load data because the source collection is null.");
+
+
+      var sourceArray = sourceCollection.Where(AcceptSourceItem).Skip(alreadyLoaded).ToArray();
+      int i;
+      for (i = 0; i < sourceArray.Length; i++)
+      {
+        int justLoading = alreadyLoaded + i;
+        var openXmlItem = sourceArray[i];
+        var modelItemType = GetTargetModelItemType(openXmlItem);
+        var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
+        if (modelItem is not ItemType item)
+          throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {modelItemType.Name}");
+
+        Add(item);
+        yield return item;
+      }
+      SetIsLoaded(i == sourceArray.Length);
+      SetIsLoading(false);
+      //Debug.WriteLine($"TryEnumerateLazy return {IsLoaded}");
     }
-
-    SetIsLoaded(true);
   }
 
   /// <summary>
@@ -274,9 +293,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// </summary>
   public virtual bool TryLazyLoad()
   {
-    if (IsLazyLoadEnabled)
-      return TryLazyLoad(int.MaxValue);
-    return IsLoaded;
+    return TryLazyLoad(int.MaxValue);
   }
 
   /// <summary>

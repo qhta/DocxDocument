@@ -326,6 +326,10 @@ public static class TestHelper
       {
         prop.SetValue(instance, new BytePercent(Random.Shared.Next(100)));
       }
+      else if (propType == typeof(Percentage))
+      {
+        prop.SetValue(instance, new Percentage(Random.Shared.Next(100)));
+      }
       else if (propType == typeof(Decimal))
       {
         prop.SetValue(instance, new Decimal(Random.Shared.NextDouble() * 100));

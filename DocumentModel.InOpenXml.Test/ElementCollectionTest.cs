@@ -201,7 +201,7 @@ public class ElementCollectionTest: _AbstractTestClass
         Console.WriteLine($"✗ {testMethodName} FAILED - expected NotSupportedException");
         return false;
       }
-      catch (KeyNotFoundException ex)
+      catch (NotSupportedException ex)
       {
         Debug.WriteLine($"Expected exception: {ex.GetType().Name} {ex.Message}");
         Console.WriteLine($"✓ {testMethodName} passed\n");

@@ -19,8 +19,16 @@ public interface ILoadable
   public void SetIsLoading(bool isLoading);
 
   /// <summary>
-  /// Loads data from into the current object, updating its state accordingly.
+  /// Loads data into the current object, updating its state accordingly.
   /// </summary>
   /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
   public bool LoadData();
+
+  /// <summary>
+  /// Loads data from the specified Open XML element (or value) into the current object, updating its state accordingly.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element (or value) to load data from.</param>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public bool LoadData(object openXmlElement);
+
 }

@@ -37,7 +37,11 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
-  protected ElementCollection() { }
+  /// <remarks>
+  /// It must be public to fulfill JsonSerialization requirements.
+  /// </remarks>
+  // ReSharper disable once PublicConstructorInAbstractClass
+  public ElementCollection() { }
 
   /// <summary>
   /// 

@@ -16,7 +16,11 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  protected ValueCollection()
+  /// <remarks>
+  /// It must be public to fulfill JsonSerialization requirements.
+  /// </remarks>
+  // ReSharper disable once PublicConstructorInAbstractClass
+  public ValueCollection()
   {
   }
 

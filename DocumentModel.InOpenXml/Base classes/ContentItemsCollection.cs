@@ -56,26 +56,26 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     return OpenXmlElement2ModelTypeMapping.ContainsKey(item.GetType());
   }
   
-  /// <summary>
-  /// Gets an enumerator that iterates through the collection, yielding each item in the collection. The enumerator retrieves items from the underlying OpenXml composite element, converting them to the appropriate model type based on the defined type mapping. Only items accepted by the AcceptItem method are included in the enumeration.
-  /// </summary>
-  /// <returns></returns>
-  /// <exception cref="InvalidOperationException"></exception>
-  public override IEnumerator<ModelElement> GetEnumerator()
-  {
-    if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
-    {
-      foreach (var openXmlChildElement in openXmlElement.Elements())
-      {
-        if (!AcceptSourceItem(openXmlChildElement))
-          continue;
-        if (OpenXmlElement2ModelTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
-          throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
-        var modelItem = CreateModelElement<ModelElement>(openXmlChildElement, modelItemType);
-        yield return modelItem;
-      }
-    }
-  }
+  ///// <summary>
+  ///// Gets an enumerator that iterates through the collection, yielding each item in the collection. The enumerator retrieves items from the underlying OpenXml composite element, converting them to the appropriate model type based on the defined type mapping. Only items accepted by the AcceptItem method are included in the enumeration.
+  ///// </summary>
+  ///// <returns></returns>
+  ///// <exception cref="InvalidOperationException"></exception>
+  //public override IEnumerator<ModelElement> GetEnumerator()
+  //{
+  //  if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
+  //  {
+  //    foreach (var openXmlChildElement in openXmlElement.Elements())
+  //    {
+  //      if (!AcceptSourceItem(openXmlChildElement))
+  //        continue;
+  //      if (OpenXmlElement2ModelTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
+  //        throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
+  //      var modelItem = CreateModelElement<ModelElement>(openXmlChildElement, modelItemType);
+  //      yield return modelItem;
+  //    }
+  //  }
+  //}
 
   /// <summary>
   /// Gets an enumerator that iterates through the collection, yielding each item in the collection.

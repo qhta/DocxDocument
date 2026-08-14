@@ -9,10 +9,14 @@ public abstract class ValueCollection<ItemType> : ModelElement, IValueCollection
 {
  private readonly ObservableCollection<ItemType> _items = new();
 
- /// <summary>
- /// Initializes a new, empty collection.
- /// </summary>
- protected ValueCollection()
+  /// <summary>
+  /// Initializes a new, empty collection.
+  /// </summary>
+  /// <remarks>
+  /// It must be public to fulfill JsonSerialization requirements.
+  /// </remarks>
+  // ReSharper disable once PublicConstructorInAbstractClass
+ public ValueCollection()
  {
   _items.CollectionChanged += _items_CollectionChanged;
  }

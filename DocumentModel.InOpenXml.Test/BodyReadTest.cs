@@ -18,21 +18,35 @@ public class BodyReadTest : _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine("=== Body Count Test ===\n");
-    if (!TestCountBody(true, 2)) return false;
-    if (!TestCountBody(false, 2)) return false;
-    //if (!TestCreateAndSerializeBodyElements()) return false;
+    if (!TestCountBodyItems(true, 2)) return false;
+    if (!TestCountBodyItems(false, 2)) return false;
+
+    if (!TestCheckBodyEmpty(true, 2)) return false;
+    if (!TestCheckBodyEmpty(false, 2)) return false;
+
+    if (!TestEnumerateBodyItems(true, false, 2)) return false;
+    if (!TestEnumerateBodyItems(false, false, 2)) return false;
+
+    if (!TestEnumerateBodyParagraphWithShallowDataRead(true, false, 2)) return false;
+    if (!TestEnumerateBodyParagraphWithShallowDataRead(false, false, 2)) return false;
+
+    if (!TestEnumerateBodyParagraphPropertiesRead(true, false, 1)) return false;
+    if (!TestEnumerateBodyParagraphPropertiesRead(false, false, 2)) return false;
+
+    //if (!TestReadBodyAndSerialize(true, 2)) return false;
+    //if (!TestReadBodyAndSerialize(false, 2)) return false;
+
     Console.WriteLine("All Body read tests passed.\n");
     return true;
   }
-
-
+  
   /// <summary>
-  /// Tests reading document body from the sample file and loading it into DocumentModel body.
+  /// Tests checking document body items count.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestCountBody(bool directAccess, int times = 0)
+  private bool TestCountBodyItems(bool directAccess, int times = 1)
   {
-    Console.WriteLine($"--- Count Body with direct access = {directAccess} From Sample File ---");
+    Console.WriteLine($"--- Count Body items with direct access = {directAccess} From Sample File ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -53,7 +67,6 @@ public class BodyReadTest : _AbstractTestClass
     }
 
 
-    var tLoopStart = DateTime.Now;
     var openXmlCount = openXmlBody.ChildElements.Count;
     var t2 = DateTime.Now;
     Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
@@ -63,21 +76,398 @@ public class BodyReadTest : _AbstractTestClass
     modelBody.SetHasDirectAccess(directAccess);
     var t3 = DateTime.Now;
     Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
-    for (int i = 0; i < times; i++)
+    for (int trial = 0; trial < times; trial++)
     {
       var modelCount = modelBody.Items.Count;
       var t4 = DateTime.Now;
       Console.WriteLine($"Model body elements count: {modelCount}");
-      Console.WriteLine($"Get Model body elements count duration: {(t4 - t3).TotalMilliseconds} ms");
+      Console.WriteLine($"Get Model items elements count duration: {(t4 - t3).TotalMilliseconds} ms");
       t3 = t4;
       if (modelCount != openXmlCount)
       {
-        Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
+        Console.WriteLine($"✗ Body items count mismatch: model={modelCount}, openXml={openXmlCount}");
         return false;
       }
     }
 
-    Console.WriteLine($"✓ Count Body with direct access = {directAccess} from sample file test passed\n");
+    Console.WriteLine($"✓ Count Body items with direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests checking if the document body is empty.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestCheckBodyEmpty(bool directAccess, int times = 1)
+  {
+    Console.WriteLine($"--- Check if Body is empty with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var openXmlIsEmpty = !openXmlBody.ChildElements.Any();
+    var t2 = DateTime.Now;
+    Console.WriteLine($"OpenXml body is empty: {openXmlIsEmpty}");
+    Console.WriteLine($"Check OpenXml body elements is empty duration: {(t2 - t1).TotalMilliseconds} ms");
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    for (int trial = 0; trial < times; trial++)
+    {
+      var modelCountIsEmpty = modelBody.Items.IsEmpty();
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Model body is empty: {modelCountIsEmpty}");
+      Console.WriteLine($"Get Model items is empty duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (modelCountIsEmpty != openXmlIsEmpty)
+      {
+        Console.WriteLine($"✗ Body items count mismatch: model={modelCountIsEmpty}, openXml={openXmlIsEmpty}");
+        return false;
+      }
+    }
+
+    Console.WriteLine($"✓ Check if Body is empty with direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests enumerating the document body items (shallow enumeration).
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestEnumerateBodyItems(bool directAccess, bool verbatim, int times = 1)
+  {
+    Console.WriteLine($"--- Enumerate Body items with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var t2 = DateTime.Now;
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    var lastItemsCount = 0;
+    for (int trial = 0; trial < times; trial++)
+    {
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+      int itemIndex = 0;
+      foreach (var item in modelBody.Items)
+      {
+        if (verbatim)
+          Console.WriteLine($"{trial}.{itemIndex}: {item.GetType().Name}");
+        itemIndex++;
+      }
+      Console.WriteLine($"Enumerated: {itemIndex} items");
+      if (trial==0)
+        lastItemsCount = itemIndex;
+      else if (itemIndex != lastItemsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastItemsCount} vs {itemIndex}");
+        return false;
+      }
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+    }
+
+    if (lastItemsCount==0)
+    {
+      Console.WriteLine($"✗ Body items count is zero");
+      return false;
+    } 
+    Console.WriteLine($"✓ Enumerate Body items with direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests enumerating the document body Paragraph items with shallow data read (without loading full data for each Paragraph).
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestEnumerateBodyParagraphWithShallowDataRead(bool directAccess, bool verbatim, int times = 1)
+  {
+    Console.WriteLine($"--- Enumerate Body Paragraphs with shallow direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var t2 = DateTime.Now;
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    var lastParagraphsCount = 0;
+    int lastParagraphIdsCount = 0;
+    int lastTextIdsCount = 0;
+    for (int trial = 0; trial < times; trial++)
+    {
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+      int paragraphIndex = 0;
+      int paraIdsCount = 0;
+      int textIdsCount = 0;
+      int additionIdsCount = 0;
+      int deletionIdsCount = 0;
+      int propertiesIdsCount = 0;
+      int runAdditionIdsCount = 0;
+      int markIdsCount = 0;
+      int noSpellErrorsCount = 0;
+      List<HexInt> paraIds = new List<HexInt>();  
+      foreach (var item in modelBody.Items)
+      {
+        if (verbatim)
+        {
+          Console.WriteLine($"{trial}.{paragraphIndex}: {item.GetType().Name}");
+        }
+        // get shallow data for Paragraph items
+        if (item is Paragraph paragraph)
+        {
+          var paraId = paragraph.ParagraphId;
+          if (paraId!=null)
+            paraIdsCount++;
+          var textId = paragraph.TextId;
+          if (textId!=null)
+            textIdsCount++;
+          var additionId = paragraph.RsidParagraphAddition;
+          if (additionId!=null)
+            additionIdsCount++;
+          var deletionId = paragraph.RsidParagraphDeletion;
+          if (deletionId!=null)
+            deletionIdsCount++;
+          var propertiesId = paragraph.RsidParagraphProperties;
+          if (propertiesId!=null)
+            propertiesIdsCount++;
+          var runAdditionId = paragraph.RsidRunAdditionDefault;
+          if (runAdditionId!=null)
+            runAdditionIdsCount++;
+          var markId = paragraph.RsidParagraphMarkRevision;
+          if (markId!=null)
+            markIdsCount++;
+          var noSpellError = paragraph.NoSpellError;
+          if (noSpellError!=null)
+            noSpellErrorsCount++;
+
+          if (verbatim)
+            Console.WriteLine($"Paragraph: ID={paraId}, TextID={textId}, AddID={additionId}, DelID={deletionId}, PropsID={propertiesId}, RunAddID={runAdditionId}, MarkID={markId}, NoSpellError={noSpellError}");
+          if (paraIds.Contains((HexInt)paraId!))
+          {
+            Console.WriteLine($"✗ Duplicate paragraph ID found: {paraId}");
+          }
+          else
+          {
+            paraIds.Add((HexInt)paraId!);
+          }
+          paragraphIndex++;
+        }
+      }
+      Console.WriteLine($"Enumerated: {paragraphIndex} paragraphs, {paraIdsCount} parIDs, {textIdsCount} textIDs" +
+                        $", {additionIdsCount} addIDs, {deletionIdsCount} delIDs, {propertiesIdsCount} propIDs, {runAdditionIdsCount} runAddIDs, {markIdsCount} markIDs, {noSpellErrorsCount} noSpellErrors");
+      if (trial == 0)
+      {
+        lastParagraphsCount = paragraphIndex;
+        lastParagraphIdsCount = paraIdsCount;
+        lastTextIdsCount = textIdsCount;
+      }
+      else if (paragraphIndex != lastParagraphsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastParagraphsCount} vs {paragraphIndex}");
+        return false;
+      }
+
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+    }
+    if (lastParagraphsCount == 0)
+    {
+      Console.WriteLine($"✗ Body paragraphs count is zero");
+      return false;
+    }
+
+    if (lastParagraphIdsCount == 0)
+    {
+      Console.WriteLine($"✗ Body paragraph IDs count is zero");
+      return false;
+    }
+    if (lastParagraphIdsCount != lastParagraphsCount)
+    {
+      Console.WriteLine($"✗ Body paragraph IDs count mismatch: {lastParagraphIdsCount} vs {lastParagraphsCount}");
+      return false;
+    }
+    if (lastTextIdsCount == 0)
+    {
+      Console.WriteLine($"✗ Body text IDs count is zero");
+      return false;
+    }
+    Console.WriteLine($"✓ Enumerate Body Paragraphs with shallow direct access = {directAccess} from sample file test passed\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests enumerating the document body Paragraph Properties data read.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  private bool TestEnumerateBodyParagraphPropertiesRead(bool directAccess, bool verbatim, int times = 1)
+  {
+    Console.WriteLine($"--- Enumerate Body Paragraphs Properties with direct access = {directAccess} From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var t1 = DateTime.Now;
+    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+
+    var t2 = DateTime.Now;
+
+    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
+    var t3 = DateTime.Now;
+    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    var lastParagraphsCount = 0;
+    int lastParagraphPropertiesCount = 0;
+    for (int trial = 0; trial < times; trial++)
+    {
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+      int paragraphIndex = 0;
+      int paraPropertiesCount = 0;
+      List<TimeSpan> paraTimeSpan = new List<TimeSpan>();
+      foreach (var item in modelBody.Items)
+      {
+        // get shallow data for Paragraph items
+        if (item is Paragraph paragraph)
+        {
+          var paraId = paragraph.ParagraphId;
+          var t5 = DateTime.Now;
+          var paraProperties = paragraph.ParagraphProperties;
+          var t6 = DateTime.Now;
+          paraTimeSpan.Add(t6 - t5);
+          if (paraProperties != null)
+          {
+            paraPropertiesCount++;
+          }
+          if (verbatim)
+          {
+            Console.WriteLine($"Paragraph[{paragraphIndex}]: ID={paraId}");
+            if (paraProperties != null)
+            {
+              string paraPropertiesString = SerializeObjectToXml(paraProperties!, omitXmlDeclaration: true);
+              if (paraPropertiesString != string.Empty)
+                Console.WriteLine(paraPropertiesString);
+            }
+          }
+          else
+          {
+            if (paragraphIndex % 100 == 0)
+              Console.Write(".");
+          }
+          paragraphIndex++;
+        }
+      }
+      Console.WriteLine($"\nEnumerated: {paragraphIndex} paragraphs, {paraPropertiesCount} paragraph Properties");
+      if (paraTimeSpan.Any())
+        Console.WriteLine($" Mean Paragraph Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+      if (trial == 0)
+      {
+        lastParagraphsCount = paragraphIndex;
+        lastParagraphPropertiesCount = paraPropertiesCount;
+      }
+      else if (paragraphIndex != lastParagraphsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastParagraphsCount} vs {paragraphIndex}");
+        return false;
+      }
+
+      var t4 = DateTime.Now;
+      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      t3 = t4;
+      if (verbatim)
+        Console.WriteLine("-------------------------------------------------");
+    }
+    if (lastParagraphsCount == 0)
+    {
+      Console.WriteLine($"✗ Body paragraphs count is zero");
+      return false;
+    }
+
+    if (lastParagraphPropertiesCount == 0)
+    {
+      Console.WriteLine($"✗ Body paragraph Properties count is zero");
+      return false;
+    }
+
+    Console.WriteLine($"✓ Enumerate Body Paragraphs Properties with direct access = {directAccess} from sample file test passed\n");
     return true;
   }
 
@@ -85,7 +475,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Tests reading document body from the sample file and loading it into DocumentModel body.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestReadBodyFromSampleFile()
+  private bool TestReadBodyAndSerialize(bool directAccess, int times = 1)
   {
     Console.WriteLine("--- Read Body From Sample File ---");
 
@@ -105,6 +495,7 @@ public class BodyReadTest : _AbstractTestClass
 
     var t0 = DateTime.Now;
     Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    modelBody.SetHasDirectAccess(directAccess);
     var t1 = DateTime.Now;
     Console.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
     var openXmlCount = openXmlBody.ChildElements.Count;
@@ -125,228 +516,15 @@ public class BodyReadTest : _AbstractTestClass
       Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
       return false;
     }
-    //var t3 = DateTime.Now;
-    //var bodyXml = SerializeObjectToXml(modelBody);
-    //var t4 = DateTime.Now;
-    //Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-    //Console.WriteLine("Serialized Body XML:\n" + bodyXml);
-
-    //var t3 = DateTime.Now;
-    //var bodyXml = SerializeObjectToXml(modelBody);
-    //var t4 = DateTime.Now;
-    //Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-    //Console.WriteLine("Serialized Body XML:\n" + bodyXml);
+    var t3 = DateTime.Now;
+    var bodyXml = SerializeObjectToXml(modelBody);
+    var t4 = DateTime.Now;
+    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
+    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
 
     Console.WriteLine("✓ Body read from sample file test passed\n");
     return true;
   }
 
-  /// <summary>
-  /// Tests creation of DocumentModel body elements by reading from sample body and serializing each element.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestCreateAndSerializeBodyElements()
-  {
-    Console.WriteLine("--- Create And Serialize DocumentModel Body Elements ---");
 
-    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
-    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
-    if (openXmlBody == null)
-    {
-      Console.WriteLine("✗ OpenXml body not found");
-      return false;
-    }
-
-    var modelBody = new DocumentModel.Wordprocessing.Body();
-    modelBody.LoadData(openXmlBody);
-
-    var createdElements = modelBody.Items.Cast<ModelElement>().Take(10).ToList();
-    if (createdElements.Count == 0)
-    {
-      Console.WriteLine("✗ No DocumentModel elements created from body");
-      return false;
-    }
-
-    foreach (var element in createdElements)
-    {
-      var elementType = element.GetType();
-      var elementXml = SerializeObjectToXml(element);
-      //var elementJson = JsonSerializer.Serialize(element, elementType, JsonConfig.Options);
-
-      Console.WriteLine($"Element type: {elementType.FullName}");
-      Console.WriteLine("XML:\n" + elementXml);
-      //Console.WriteLine("JSON:\n" + elementJson);
-      var xmlDeserialized = DeserializeObjectFromXml(elementType, elementXml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine($"✗ XML deserialization returned null for '{elementType.Name}'");
-        return false;
-      }
-
-      //var jsonDeserialized = JsonSerializer.Deserialize(elementJson, elementType, JsonConfig.Options);
-      //if (jsonDeserialized == null)
-      //{
-      //  Console.WriteLine($"✗ JSON deserialization returned null for '{elementType.Name}'");
-      //  return false;
-      //}
-    }
-
-    Console.WriteLine("✓ Create and serialize DocumentModel elements test passed\n");
-    return true;
-  }
-
-
-  private Type[] GetRuntimeKnownTypes(object root, Type rootType)
-  {
-    var knownTypes = new HashSet<Type>();
-    var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
-
-    CollectRuntimeTypes(root, rootType, knownTypes, visited);
-
-    return knownTypes.ToArray();
-  }
-
-  private void CollectRuntimeTypes(object? value, Type rootType, HashSet<Type> knownTypes, HashSet<object> visited)
-  {
-    if (value == null)
-      return;
-
-    if (!visited.Add(value))
-      return;
-
-    var type = value.GetType();
-
-    if (type.Namespace?.StartsWith("DocumentModel", StringComparison.Ordinal) == true
-        && type.IsPublic
-        && !type.IsAbstract
-        && !type.IsGenericTypeDefinition
-        && type.BaseType != typeof(System.Attribute)
-        && !type.IsSubclassOf(typeof(DocumentModel.ModelElementCollection<>))
-        //&& !IsXmlAnonymousType(type) && (type.BaseType == null || !IsXmlAnonymousType(type.BaseType))
-        && type != typeof(ExtensionList)
-        && type != typeof(Body)
-        && type != typeof(FooterReferences)
-        && type != typeof(HeaderReferences)
-        //&& type != typeof(Tabs)
-        && type.GetCustomAttribute<XmlTypeAttribute>()?.AnonymousType != true)
-    {
-      knownTypes.Add(type);
-    }
-
-    if (value is IEnumerable enumerable && value is not string)
-    {
-      foreach (var item in enumerable)
-        CollectRuntimeTypes(item, rootType, knownTypes, visited);
-    }
-
-    foreach (var prop in type.GetProperties(BindingFlags.Instance | BindingFlags.Public))
-    {
-      if (!prop.CanRead || prop.GetIndexParameters().Length > 0)
-        continue;
-      if (prop.PropertyType == typeof(string) || prop.PropertyType.IsValueType)
-        continue;
-      object? propValue;
-      try
-      {
-        propValue = prop.GetValue(value);
-      }
-      catch
-      {
-        continue;
-      }
-      CollectRuntimeTypes(propValue, rootType, knownTypes, visited);
-    }
-  }
-
-  private bool IsXmlAnonymousType(Type type)
-  {
-    var xmlType = type.GetCustomAttribute<XmlTypeAttribute>();
-    var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
-
-    return (xmlType?.AnonymousType ?? false)
-           || (xmlRoot != null);
-  }
-
-  /// <summary>
-  /// Creates XML serializer overrides with separate XML namespaces for different DocumentModel namespaces.
-  /// Also resolves closed generic AbstractColor type name collisions.
-  /// </summary>
-  /// <returns>Prepared overrides used by XmlSerializer.</returns>
-  private XmlAttributeOverrides CreateXmlSerializerOverrides()
-  {
-    var overrides = new XmlAttributeOverrides();
-    var assembly = typeof(DocumentModel.Wordprocessing.Body).Assembly;
-
-    foreach (var type in assembly.GetTypes().Where(t => t.Namespace?.StartsWith("DocumentModel", StringComparison.Ordinal) == true))
-    {
-      if (type.IsGenericTypeDefinition)
-        continue;
-      if (typeof(IXmlSerializable).IsAssignableFrom(type))
-        continue;
-
-      var xmlNamespace = GetXmlNamespaceForType(type);
-      if (string.IsNullOrEmpty(xmlNamespace))
-        continue;
-
-      var attrs = new XmlAttributes
-      {
-        XmlType = new XmlTypeAttribute
-        {
-          Namespace = xmlNamespace
-        }
-      };
-
-      if (type.IsGenericType)
-      {
-        var genericArgPart = string.Join("_", type.GetGenericArguments().Select(t => t.Name));
-        attrs.XmlType.TypeName = $"{type.Name}_{genericArgPart}";
-      }
-
-      overrides.Add(type, attrs);
-    }
-
-    AddAbstractColorOverride(overrides,
-      typeof(DM.AnyColor<DocumentFormat.OpenXml.Drawing.RgbColorModelHex>),
-      "AbstractColorOfDrawingRgbColorModelHex",
-      "urn:docmodel:drawings");
-    AddAbstractColorOverride(overrides,
-      typeof(DM.AnyColor<DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex>),
-      "AbstractColorOfWord2010RgbColorModelHex",
-      "urn:docmodel:wordprocessing-drawings");
-
-    return overrides;
-  }
-
-  /// <summary>
-  /// Gets XML namespace for a model type based on its CLR namespace.
-  /// </summary>
-  /// <param name="type">Type for which XML namespace is generated.</param>
-  /// <returns>XML namespace string.</returns>
-  private string GetXmlNamespaceForType(Type type)
-  {
-    var typeNamespace = type.Namespace ?? "DocumentModel";
-    if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
-      return "urn:docmodel:" + typeNamespace.Substring("DocumentModel.".Length).ToLowerInvariant().Replace('.', ':');
-    return "urn:docmodel:global";
-  }
-
-  /// <summary>
-  /// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
-  /// </summary>
-  /// <param name="overrides">Override collection to populate.</param>
-  /// <param name="type">Closed generic abstract color type to override.</param>
-  /// <param name="xmlTypeName">Unique XML type name.</param>
-  /// <param name="xmlNamespace">XML namespace for the type.</param>
-  private void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
-  {
-    var attrs = new XmlAttributes
-    {
-      XmlType = new XmlTypeAttribute
-      {
-        TypeName = xmlTypeName,
-        Namespace = xmlNamespace
-      }
-    };
-    overrides.Add(type, attrs);
-  }
 }

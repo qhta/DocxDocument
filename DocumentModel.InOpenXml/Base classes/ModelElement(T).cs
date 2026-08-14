@@ -16,6 +16,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   protected ModelElement()
   {
+    _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
   }
 
   /// <summary>
@@ -24,6 +25,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name="parent">The parent ModelElement that contains this element. Can be null if the element has no parent.</param>
   protected ModelElement(ModelElement parent) : base(parent)
   {
+    _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
   }
 
   /// <summary>
@@ -33,6 +35,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
+    _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
     SetUpdatableObject((OpenXmlType?)openXmlElement);
   }
 
@@ -43,6 +46,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
   protected ModelElement(DX.OpenXmlElement openXmlElement)
   {
+    _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
     SetUpdatableObject((OpenXmlType)openXmlElement);
   }
 
@@ -168,10 +172,9 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  public bool HasDirectAccess => _HasDirectAccess ?? GetUpdatableObject() != null 
-                                 && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
+  public bool HasDirectAccess => _HasDirectAccess;
 
-  private bool? _HasDirectAccess;
+  private bool _HasDirectAccess;
 
   /// <summary>
   /// Sets the HasDirectAccess property to the specified value, indicating whether the model element has direct access to its underlying OpenXml element.

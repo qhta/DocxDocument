@@ -7861,6 +7861,23 @@
             </summary>
             <param name="collection"></param>
         </member>
+        <member name="T:DocumentModel.IDirectAccess">
+            <summary>
+            Interface for types that have direct access to their underlying data source, allowing for immediate retrieval of data without the need for lazy loading.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IDirectAccess.HasDirectAccess">
+            <summary>
+            Gets a value indicating whether the object has direct access to its underlying data source,
+            allowing for immediate retrieval of data without the need for lazy loading.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.IDirectAccess.SetHasDirectAccess(System.Boolean)">
+            <summary>
+            Sets the direct access state of the component.
+            </summary>
+            <param name="hasDirectAccess">true to indicate that the component has direct access; otherwise, false.</param>
+        </member>
         <member name="T:DocumentModel.IDirectAccessElement">
             <summary>
             Interface for elements that support direct access to their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
@@ -7938,8 +7955,15 @@
         </member>
         <member name="M:DocumentModel.ILoadable.LoadData">
             <summary>
-            Loads data from into the current object, updating its state accordingly.
+            Loads data into the current object, updating its state accordingly.
             </summary>
+            <returns>True if the data was successfully loaded; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.ILoadable.LoadData(System.Object)">
+            <summary>
+            Loads data from the specified Open XML element (or value) into the current object, updating its state accordingly.
+            </summary>
+            <param name="openXmlElement">The Open XML element (or value) to load data from.</param>
             <returns>True if the data was successfully loaded; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.IModifiable">

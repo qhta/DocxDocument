@@ -16,7 +16,11 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <summary>
   /// Initializes a new instance of the collection with default settings.
   /// </summary>
-  protected ModelElementCollection()
+  /// <remarks>
+  /// It must be public to fulfill JsonSerialization requirements.
+  /// </remarks>
+  // ReSharper disable once PublicConstructorInAbstractClass
+  public ModelElementCollection()
   {
   }
 

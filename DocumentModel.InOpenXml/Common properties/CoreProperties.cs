@@ -91,7 +91,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// Only writable properties are set. Type conversion is performed if the property types do not match
   /// exactly.</remarks>
   /// <param name = "openXmlObject">The Open XML element containing property values to load. Must be an instance of the expected Open XML type.</param>
-  public new void LoadData(object openXmlObject)
+  public override bool LoadData(object openXmlObject)
   {
     SetIsLoading(true);
     var currentType = GetType();
@@ -108,6 +108,7 @@ public partial class CoreProperties : BaseBuiltInProperties
       }
     }
     SetIsLoading(false);
+    return true;
   }
 
   /// <summary>

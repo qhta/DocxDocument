@@ -79,7 +79,7 @@ public static class OpenXmlElementConverter
       return result;
     }
     var modelObject = Activator.CreateInstance(modelType)!;
-    OpenXmlModelConverter.LoadData(modelObject, openXmlElement);
+    (modelObject as ILoadable)?.LoadData(openXmlElement);
     return modelObject;
   }
 

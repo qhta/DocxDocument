@@ -516,7 +516,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <exception cref="NotImplementedException"></exception>
   public virtual bool LoadData()
   {
-    var updatedObject = GetUpdatableObject();
+    var updatedObject = GetUpdatableObject() as DX.OpenXmlElement;
     if (updatedObject != null)
     {
       return LoadData(updatedObject);

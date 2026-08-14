@@ -179,12 +179,13 @@ public abstract class _AbstractTestClass
   /// Serializes an object to XML using its runtime type.
   /// </summary>
   /// <param name="data">The object to serialize.</param>
+  /// <param name="omitXmlDeclaration">Whether to omit the XML declaration.</param>
   /// <returns>Serialized XML text.</returns>
-  protected string SerializeObjectToXml(object data)
+  protected string SerializeObjectToXml(object data, bool omitXmlDeclaration = false)
   {
     var xmlSerializer = CreateXmlSerializer(data, out var namespaces);
     using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true, OmitXmlDeclaration = omitXmlDeclaration }))
     {
       xmlSerializer.Serialize(xmlWriter, data, namespaces);
       return stringWriter.ToString();
