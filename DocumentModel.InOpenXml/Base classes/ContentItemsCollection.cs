@@ -37,29 +37,13 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
 
 
   /// <summary>
-  /// 
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  protected abstract Dictionary<Type, Type> OpenXmlElement2ModelTypeMapping { get; }
-
-  /// <summary>
-  /// Gets the mapping between model element types and their corresponding OpenXml element types.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  protected abstract Dictionary<Type, Type[]> ModelType2OpenXmlElementsMapping { get; }
-
-  /// <summary>
   /// Checks if the specified item is acceptable for this collection.
   /// </summary>
   /// <param name="item">The item to check.</param>
   /// <returns>True if the item is acceptable; otherwise, false.</returns>
-  protected override bool AcceptSourceItem(DX.OpenXmlElement item)
+  public override bool AcceptSourceItem(DX.OpenXmlElement item)
   {
-    return OpenXmlElement2ModelTypeMapping.ContainsKey(item.GetType());
+    return OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.ContainsKey(item.GetType());
   }
 
   /// <summary>
@@ -74,14 +58,14 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     var modelType = typeof(ItemType);
     if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
     {
-      if (!ModelType2OpenXmlElementsMapping.TryGetValue(modelType, out var openXmlTypes))
+      if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelType, out var openXmlTypes))
         throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelType}");
 
       foreach (var openXmlChildElement in openXmlElement.Elements())
       {
         if (!AcceptSourceItem(openXmlChildElement))
           continue;
-        if (OpenXmlElement2ModelTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
+        if (OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
           throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
 
         if (modelItemType == typeof(ItemType))
@@ -99,7 +83,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to get the target model item type for.</param>
   /// <returns>The target model item type.</returns>
-  protected override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElement2ModelTypeMapping[openXmlElement.GetType()];
+  public override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElementMapper.OpenXml2ModelElementTypeMapping[openXmlElement.GetType()];
 
   /// <summary>
   /// Creates a model element of the specified type from the given OpenXml child element, ensuring that the converted item is compatible with the expected model type.
@@ -140,7 +124,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     foreach (var openXmlElement in openXmlModeledCollection.Elements().Where(AcceptSourceItem))
     {
       var openXmlItemType = openXmlElement.GetType();
-      if (!OpenXmlElement2ModelTypeMapping.TryGetValue(openXmlItemType, out var modelItemType))
+      if (!OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.TryGetValue(openXmlItemType, out var modelItemType))
         throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlItemType}");
       var constructor = modelItemType.GetConstructor([modelItemType, openXmlItemType]);
       ModelElement modelObject;
@@ -174,7 +158,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     foreach (var modelItem in this)
     {
       var modelItemType = modelItem.GetType();
-      if (!ModelType2OpenXmlElementsMapping.TryGetValue(modelItemType, out var openXmlItemTypes))
+      if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelItemType, out var openXmlItemTypes))
         throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelItemType}");
 
       var openXmlItemType = openXmlItemTypes.First();

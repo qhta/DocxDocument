@@ -43,7 +43,7 @@ public class BodyReadTest : _AbstractTestClass
     Console.WriteLine("All Body read tests passed.\n");
     return true;
   }
-  
+
   /// <summary>
   /// Tests checking document body items count.
   /// </summary>
@@ -199,7 +199,7 @@ public class BodyReadTest : _AbstractTestClass
         itemIndex++;
       }
       Console.WriteLine($"Enumerated: {itemIndex} items");
-      if (trial==0)
+      if (trial == 0)
         lastItemsCount = itemIndex;
       else if (itemIndex != lastItemsCount)
       {
@@ -213,11 +213,11 @@ public class BodyReadTest : _AbstractTestClass
         Console.WriteLine("-------------------------------------------------");
     }
 
-    if (lastItemsCount==0)
+    if (lastItemsCount == 0)
     {
       Console.WriteLine($"✗ Body items count is zero");
       return false;
-    } 
+    }
     Console.WriteLine($"✓ Enumerate Body items with direct access = {directAccess} from sample file test passed\n");
     return true;
   }
@@ -271,7 +271,7 @@ public class BodyReadTest : _AbstractTestClass
       int runAdditionIdsCount = 0;
       int markIdsCount = 0;
       int noSpellErrorsCount = 0;
-      List<HexInt> paraIds = new List<HexInt>();  
+      List<HexInt> paraIds = new List<HexInt>();
       foreach (var item in modelBody.Paragraphs)
       {
         if (verbatim)
@@ -282,28 +282,28 @@ public class BodyReadTest : _AbstractTestClass
         if (item is Paragraph paragraph)
         {
           var paraId = paragraph.ParagraphId;
-          if (paraId!=null)
+          if (paraId != null)
             paraIdsCount++;
           var textId = paragraph.TextId;
-          if (textId!=null)
+          if (textId != null)
             textIdsCount++;
           var additionId = paragraph.RsidParagraphAddition;
-          if (additionId!=null)
+          if (additionId != null)
             additionIdsCount++;
           var deletionId = paragraph.RsidParagraphDeletion;
-          if (deletionId!=null)
+          if (deletionId != null)
             deletionIdsCount++;
           var propertiesId = paragraph.RsidParagraphProperties;
-          if (propertiesId!=null)
+          if (propertiesId != null)
             propertiesIdsCount++;
           var runAdditionId = paragraph.RsidRunAdditionDefault;
-          if (runAdditionId!=null)
+          if (runAdditionId != null)
             runAdditionIdsCount++;
           var markId = paragraph.RsidParagraphMarkRevision;
-          if (markId!=null)
+          if (markId != null)
             markIdsCount++;
           var noSpellError = paragraph.NoSpellError;
-          if (noSpellError!=null)
+          if (noSpellError != null)
             noSpellErrorsCount++;
 
           if (verbatim)
@@ -437,7 +437,7 @@ public class BodyReadTest : _AbstractTestClass
               Console.Write(".");
           }
           paragraphIndex++;
-          if (paragraphIndex==2)
+          if (paragraphIndex == 2)
             break; // limit to first 2 paragraphs for performance
         }
       }
@@ -626,29 +626,24 @@ public class BodyReadTest : _AbstractTestClass
       int sectionsCount = 0;
       foreach (var section in modelBody.Sections)
       {
-
-        //var paraId = paragraph.ParagraphId;
-        //var t5 = DateTime.Now;
-        //var paraProperties = paragraph.ParagraphProperties;
-        //var t6 = DateTime.Now;
-        //paraTimeSpan.Add(t6 - t5);
-        //if (paraProperties?.SectionProperties != null)
-        //{
-        //  sectPropertiesCount++;
-
-          if (verbatim)
-          {
-            Console.WriteLine($"Section {sectionIndex}");
-            string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
-            if (sectionString != string.Empty)
-              Console.WriteLine(sectionString);
-          }
-          else
-          {
-            Console.Write(".");
-          }
-          sectionIndex++;
-          sectionsCount++;
+        DMW.Range range = section.Range;
+        if (verbatim)
+        {
+          Console.WriteLine($"Section {sectionIndex}");
+          if (section.Paragraph != null)
+            Console.WriteLine($"Paragraph ID: {section.Paragraph.ParagraphId}");
+          Console.WriteLine($"Section.Collection={section.Collection}");
+          string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
+          if (sectionString != string.Empty)
+            Console.WriteLine(sectionString);
+          Console.WriteLine($"Range: Start={range.Start}, End={range.End}");
+        }
+        else
+        {
+          Console.Write(".");
+        }
+        sectionIndex++;
+        sectionsCount++;
 
       }
       Console.WriteLine($"\nEnumerated: {sectionsCount} Sections");

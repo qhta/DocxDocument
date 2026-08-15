@@ -100,12 +100,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       }
       if (IsLazyLoadEnabled)
       {
-        if (IsLoaded)
-          return Items.Count;
-        var sourceCollection = SourceCollection;
-        if (sourceCollection is null)
-          throw new ApplicationException("Can't check collection count because the source collection is null.");
-        return sourceCollection.Count(AcceptSourceItem);
+        TryLazyLoad();
       }
       return Items.Count;
     }
@@ -121,7 +116,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <returns></returns>
   public override bool IsEmpty()
   {
-    if (IsLazyLoadEnabled)
+    if (HasDirectAccess)
     {
       var sourceCollection = SourceCollection;
       if (sourceCollection is null)
@@ -131,14 +126,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     }
     if (IsLazyLoadEnabled)
     {
-      if (IsLoaded)
-        return !Items.Any();
-      var sourceCollection = SourceCollection;
-      if (sourceCollection is null)
-        throw new ApplicationException("Can't check if collection is empty because the source collection is null.");
-
-      return !sourceCollection.Any(AcceptSourceItem);
-
+      TryLazyLoad();
     }
     return !Items.Any();
   }
@@ -206,7 +194,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
       if (modelItem is not ItemType item)
         throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {typeof(ItemType).Name}");
-
+      item.Parent = this;
       yield return item;
     }
   }
@@ -228,8 +216,6 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       //Debug.WriteLine($"TryEnumerateLazy ({alreadyLoaded}) begin");
       SetIsLoading(true);
       OpenXmlModelConverter.Init();
-      OpenXmlModelConverter.Init();
-
 
       var sourceCollection = SourceCollection ??
                              throw new ApplicationException(
@@ -350,12 +336,14 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// </summary>
   /// <param name="openXmlElement">The OpenXmlElement to get the target model item type for.</param>
   /// <returns>The target model item type.  </returns>
-  protected virtual Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => typeof(ItemType);
+  public virtual Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => typeof(ItemType);
 
   /// <summary>
   /// Checks if the specified OpenXmlElement should be accepted as a valid source item for this collection.
   /// </summary>
   /// <param name="item">The OpenXmlElement to check.</param>
   /// <returns>True if the item is accepted; otherwise, false.</returns>
-  protected virtual bool AcceptSourceItem(DX.OpenXmlElement item) => true;
+  public virtual bool AcceptSourceItem(DX.OpenXmlElement item) => true;
+
+
 }

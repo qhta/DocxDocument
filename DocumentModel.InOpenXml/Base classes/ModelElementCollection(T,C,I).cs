@@ -46,7 +46,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// </summary>
   /// <param name="item">The OpenXmlElement to check.</param>
   /// <returns>True if the item is accepted; otherwise, false.</returns>
-  protected override bool AcceptSourceItem(DX.OpenXmlElement item) => item is OpenXmlItemType;
+  public override bool AcceptSourceItem(DX.OpenXmlElement item) => item is OpenXmlItemType;
 
   /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
@@ -71,7 +71,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       {
         //Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Typeface}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
         modelObject = Activator.CreateInstance<ItemType>();
-        modelObject.LoadData(openXmlElement);
+        if (modelObject is ILoadable loadable)
+          loadable.LoadData(openXmlElement);
       }
 
       this.Add(modelObject);

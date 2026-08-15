@@ -1,3 +1,5 @@
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel;
 /// <summary>
 ///   Represents a model element that wraps an OpenXml element of the specified type, providing synchronization and data binding between the document model and OpenXml representation.
@@ -6,7 +8,7 @@ namespace DocumentModel;
 /// <typeparam name = "OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
 [DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement<OpenXmlType> : ModelElement, 
+public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   IWordprocessingDocumentAware, IUpdatable, IDirectAccessElement
   where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
@@ -48,6 +50,22 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   {
     _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
     SetUpdatableObject((OpenXmlType)openXmlElement);
+  }
+
+  /// <summary>
+  ///  Gets the underlying Open XML element that can be updated by this model element.
+  /// </summary>
+  public object? DataSource => GetUpdatableObject();
+
+  /// <summary>
+  /// Gets the target model item type corresponding to the specified OpenXml element type, based on the defined mapping between OpenXml element types and model element types.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXml element for which to get the corresponding model item type.</param>
+  /// <returns>The target model item type corresponding to the specified OpenXml element.</returns>
+  /// <exception cref="NotSupportedException"></exception>
+  public virtual Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement)
+  {
+    return OpenXmlElementMapper.OpenXml2ModelElementTypeMapping[openXmlElement.GetType()];
   }
 
   /// <summary>
@@ -181,4 +199,42 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   /// <param name="value"></param>
   public void SetHasDirectAccess(bool value) => _HasDirectAccess = value;
+
+  public override ModelElement? Next
+  {
+    get
+    {
+      if (Collection is IList list)
+      {
+        int index = list.IndexOf(this);
+        if (index >= 0 && index < list.Count - 1)
+          return list[index + 1] as ModelElement;
+      }
+      if (DataSource is DX.OpenXmlCompositeElement sourceCompositeElement)
+      {
+        var nextElement = sourceCompositeElement.NextElement();
+        if (nextElement != null)
+          return (ModelElement?)OpenXmlElementConverter.ConvertFrom(nextElement, GetTargetModelItemType(nextElement));
+      }
+
+      if (Parent is IDirectAccessElement directAccessElement && directAccessElement.HasDirectAccess)
+      {
+        var dataSource = directAccessElement.DataSource;
+        if (dataSource is DX.OpenXmlCompositeElement compositeElement)
+        {
+          var nextElement = compositeElement.NextElement();
+          if (nextElement != null)
+            return (ModelElement?)OpenXmlElementConverter.ConvertFrom(nextElement, directAccessElement.GetTargetModelItemType(nextElement));
+        }
+
+        //var updatableObject = GetUpdatableObject();
+        //if (updatableObject is DX.OpenXmlCompositeElement openXmlElement)
+        //{
+        //  var nextElement = openXmlElement.NextSibling();
+        //  if (nextElement!=null)
+        //    return OpenXmlElementConverter.ConvertFrom(nextElement, GetTargetModelItemType(nextElement));
+      }
+      return null;
+    }
+  }
 }

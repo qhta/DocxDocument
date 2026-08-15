@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 using DocumentModel.BaseConverters;
 
 using Qhta.OpenXmlTools;
@@ -430,7 +432,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (ReferenceEquals(this, other))
       return true;
 
-    return DeepComparer.Equals(this, other);
+    return false;
   }
 
   /// <summary>
@@ -773,4 +775,22 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     }
     return true;
   }
+
+  /// <summary>
+  /// Get next element in the collection. If the current element is not part of a collection, or it is the last element, returns null.
+  /// </summary>
+  public virtual ModelElement? Next
+  {
+    get
+    {
+      if (Collection is IList list)
+      {
+        int index = list.IndexOf(this);
+        if (index >= 0 && index < list.Count - 1)
+          return list[index + 1] as ModelElement;
+      }
+      return null;
+    }
+  }
+
 }

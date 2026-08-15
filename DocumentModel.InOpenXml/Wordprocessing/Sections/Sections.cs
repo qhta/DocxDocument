@@ -27,6 +27,22 @@ public class Sections : ModelElementCollection<Section>
   public new bool HasDirectAccess => (Parent as IStory)?.HasDirectAccess == true;
 
   /// <summary>
+  /// Gets the collection of content items from the parent IStory element, which is used to manage and synchronize the sections in this collection.
+  /// </summary>
+  public ContentItemsCollection? ParentItemsCollection => (Parent as IStory)?.Items;
+
+  /// <summary>
+  /// Sets the HasDirectAccess property for the parent IStory element.
+  /// This method is intentionally left blank because sections cannot have direct access;
+  /// it is provided to maintain consistency with the base class interface.
+  /// </summary>
+  /// <param name="value"></param>
+  public new void SetHasDirectAccess(bool value)
+  {
+    // sections can't have direct access; this method is intentionally left blank.
+  }
+
+  /// <summary>
   /// Enumerates the sections in the collection lazily, loading them from the parent IStory element as needed.
   /// </summary>
   /// <returns>yield return each Section in the collection.</returns>
@@ -43,23 +59,20 @@ public class Sections : ModelElementCollection<Section>
           if (item is Paragraph paragraph && paragraph.ParagraphProperties?.SectionProperties is SectionProperties sectionProperties)
           {
             var section = new Section(this, sectionProperties);
-            if (!HasDirectAccess) 
-              Add(section);
+            Add(section);
             yield return section;
           }
           else if (item is SectionProperties lastSectionProperties)
           {
             var section = new Section(this, lastSectionProperties);
-            if (!HasDirectAccess)
-              Add(section);
+            Add(section);
             yield return section;
 
             break;
           }
         }
         SetIsLoading(false);
-        if (!HasDirectAccess)
-          SetIsLoaded(true);
+        SetIsLoaded(true);
         yield break;
       }
       throw new ApplicationException("Parent must implement IStory interface.");
@@ -105,8 +118,7 @@ public class Sections : ModelElementCollection<Section>
         var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
         if (modelItem is Section item)
         {
-          if (!HasDirectAccess)
-            Add(item);
+          Add(item);
         }
         else
         {
@@ -114,8 +126,7 @@ public class Sections : ModelElementCollection<Section>
         }
       }
       SetIsLoading(false);
-      if (!HasDirectAccess)
-        SetIsLoaded(i == sourceArray.Length);
+      SetIsLoaded(i == sourceArray.Length);
       //Debug.WriteLine($"TryLazyLoad return {IsLoaded}");
     }
     return IsLoaded;
