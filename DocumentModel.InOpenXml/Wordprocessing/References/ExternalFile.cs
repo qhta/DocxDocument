@@ -34,10 +34,12 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   If the associated document is not available, no update is performed.
   /// </summary>
   /// <param name = "openXmlObject">The Open XML element from which to load data. Must represent a valid Open XML element associated with a document.</param>
-  public override void UpdateData(object openXmlObject)
+  public override bool UpdateData(object openXmlObject)
   {
     if (WordprocessingDocument != null)
-      UpdateData(WordprocessingDocument);
+      return UpdateData(WordprocessingDocument);
+
+    return false;
   }
 
   /// <summary>
@@ -45,7 +47,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   If the relevant relationship is not present, the properties remain unchanged.
   /// </summary>
   /// <param name = "document">The document from which to load data.</param>
-  public override void LoadData(DXPP.WordprocessingDocument document)
+  public override bool LoadData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
@@ -56,7 +58,9 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       {
         Uri = relUri.ToString();
       }
+      return true;
     }
+    return false;
   }
 
   /// <summary>
@@ -64,7 +68,7 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   Sets the ID property and, if specified, the URI property on the relationship element within the provided document.
   /// </summary>
   /// <param name = "document">The document to update with new relationship data. Cannot be null.</param>
-  public override void UpdateData(DXPP.WordprocessingDocument document)
+  public override bool UpdateData(DXPP.WordprocessingDocument document)
   {
     DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
     if (updatedElement != null)
@@ -74,7 +78,9 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       {
         updatedElement.GetType().GetProperty("Uri")?.SetValue(updatedElement, new Uri(Uri));
       }
+      return true;
     }
+    return false;
   }
 
   /// <summary>

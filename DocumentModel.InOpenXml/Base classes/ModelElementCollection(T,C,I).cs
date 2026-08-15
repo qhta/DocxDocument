@@ -84,7 +84,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected override bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     SetUpdatableObject(openXmlModeledCollection);
     var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
@@ -99,5 +99,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       item.UpdateData(openXmlElement);
       openXmlModeledCollection.AppendChild(openXmlElement);
     }
+    return true;
   }
 }

@@ -108,7 +108,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override void UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
+  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
   {
     SetUpdatableObject(openXmlModeledCollection);
 
@@ -129,6 +129,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
       modelItem.UpdateData(openXmlElement);
       openXmlModeledCollection.AddChildElement(openXmlElement);
     }
+    return true;
   }
 
 }

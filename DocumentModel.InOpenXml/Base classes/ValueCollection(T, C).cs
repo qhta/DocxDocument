@@ -191,14 +191,13 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
-  public new void LoadData(object openXmlObject)
+  public new bool LoadData(object openXmlObject)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      SetIsLoading(true);
-      LoadDataCollection(openXmlModeledElement);
-      SetIsLoading(false);
+      return LoadDataCollection(openXmlModeledElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -206,19 +205,20 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The OpenXml collection to load data from.</param>
-  protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  protected abstract bool LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 
   /// <summary>
   ///   Stores data from this value collection to the specified OpenXml element.
   ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
-  public override void UpdateData(object openXmlObject)
+  public override bool UpdateData(object openXmlObject)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      UpdateDataCollection(openXmlModeledElement);
+      return UpdateDataCollection(openXmlModeledElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -226,5 +226,5 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The OpenXml collection to store data to.</param>
-  protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  protected abstract bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 }

@@ -33,9 +33,4 @@ public abstract partial class AbstractBody<T> : Story<T> where T : DXW.BodyType
   {
   }
 
-
-  /// <summary>
-  /// Collection of sections, recollected from <see cref = "ISectionProperties"/> elements within the document body.
-  /// </summary>
-  public Sections? Sections { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

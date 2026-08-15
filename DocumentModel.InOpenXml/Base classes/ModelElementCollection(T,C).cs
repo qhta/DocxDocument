@@ -178,12 +178,13 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
-  public override void UpdateData(object openXmlObject)
+  public override bool UpdateData(object openXmlObject)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      UpdateDataCollection(openXmlModeledElement);
+      return UpdateDataCollection(openXmlModeledElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -191,5 +192,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The OpenXml collection to store data to.</param>
-  protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  /// <returns>True if the update was successful; otherwise, false.</returns>
+  protected abstract bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 }

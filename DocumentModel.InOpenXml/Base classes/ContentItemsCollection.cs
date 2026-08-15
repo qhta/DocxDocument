@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 using DocumentModel;
 
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -165,7 +167,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override void UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
+  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
   {
     SetUpdatableObject(openXmlModeledCollection);
 
@@ -186,6 +188,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       modelItem.UpdateData(openXmlElement);
       openXmlModeledCollection.AddChildElement(openXmlElement);
     }
+    return true;
   }
-
+  
 }

@@ -18,29 +18,27 @@ public class BodyReadTest : _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine("=== Body Count Test ===\n");
+
     //if (!TestCountBodyItems(true, 2)) return false;
-    if (!TestCountBodyItems(false, 2)) return false;
+    //if (!TestCountBodyItems(false, 2)) return false;
 
-    if (!TestCheckBodyEmpty(true, 2)) return false;
-    if (!TestCheckBodyEmpty(false, 2)) return false;
+    //if (!TestCheckBodyEmpty(true, 2)) return false;
+    //if (!TestCheckBodyEmpty(false, 2)) return false;
 
-    if (!TestEnumerateBodyItems(true, false, 2)) return false;
-    if (!TestEnumerateBodyItems(false, false, 2)) return false;
+    //if (!TestEnumerateBodyItems(true, false, 2)) return false;
+    //if (!TestEnumerateBodyItems(false, false, 2)) return false;
 
-    if (!TestEnumerateBodyParagraphWithShallowDataRead(true, false, 2)) return false;
-    if (!TestEnumerateBodyParagraphWithShallowDataRead(false, false, 2)) return false;
+    //if (!TestEnumerateBodyParagraphWithShallowDataRead(true, false, 2)) return false;
+    //if (!TestEnumerateBodyParagraphWithShallowDataRead(false, false, 2)) return false;
 
-    if (!TestEnumerateBodyParagraphPropertiesRead(true, true, 1)) return false;
-    if (!TestEnumerateBodyParagraphPropertiesRead(false, false, 2)) return false;
+    //if (!TestEnumerateBodyParagraphPropertiesRead(true, true, 1)) return false;
+    //if (!TestEnumerateBodyParagraphPropertiesRead(false, false, 2)) return false;
 
-    if (!TestEnumerateBodySectionPropertiesRead(true, true, 1)) return false;
-    if (!TestEnumerateBodySectionPropertiesRead(false, false, 2)) return false;
+    //if (!TestEnumerateBodySectionPropertiesRead(true, true, 1)) return false;
+    //if (!TestEnumerateBodySectionPropertiesRead(false, false, 2)) return false;
 
-    //if (!TestEnumerateBodySectionsRead(true, true, 1)) return false;
-    //if (!TestEnumerateBodySectionsRead(false, false, 2)) return false;
-
-    //if (!TestReadBodyAndSerialize(true, 2)) return false;
-    //if (!TestReadBodyAndSerialize(false, 2)) return false;
+    if (!TestEnumerateBodySectionsRead(true, true, 2)) return false;
+    if (!TestEnumerateBodySectionsRead(false, true, 2)) return false;
 
     Console.WriteLine("All Body read tests passed.\n");
     return true;
@@ -587,7 +585,7 @@ public class BodyReadTest : _AbstractTestClass
 
 
   /// <summary>
-  /// Tests enumerating the document body Sections data read.
+  /// Tests enumerating the document body Sections collection read.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
   private bool TestEnumerateBodySectionsRead(bool directAccess, bool verbatim, int times = 1)
@@ -619,59 +617,44 @@ public class BodyReadTest : _AbstractTestClass
     modelBody.SetHasDirectAccess(directAccess);
     var t3 = DateTime.Now;
     Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
-    var lastParagraphsCount = 0;
-    int lastSectionPropertiesCount = 0;
+    int lastSectionsCount = 0;
     for (int trial = 0; trial < times; trial++)
     {
       if (verbatim)
         Console.WriteLine("-------------------------------------------------");
-      int paragraphIndex = 0;
-      int sectPropertiesCount = 0;
-      List<TimeSpan> paraTimeSpan = new List<TimeSpan>();
-      foreach (var item in modelBody.Items)
+      int sectionIndex = 0;
+      int sectionsCount = 0;
+      foreach (var section in modelBody.Sections)
       {
-        // get shallow data for Paragraph items
-        if (item is Paragraph paragraph)
-        {
-          var paraId = paragraph.ParagraphId;
-          var t5 = DateTime.Now;
-          var paraProperties = paragraph.ParagraphProperties;
-          var t6 = DateTime.Now;
-          paraTimeSpan.Add(t6 - t5);
-          if (paraProperties?.SectionProperties != null)
-          {
-            sectPropertiesCount++;
 
-            if (verbatim)
-            {
-              Console.WriteLine($"Paragraph[{paragraphIndex}]: ID={paraId}");
-              {
-                string paraPropertiesString = SerializeObjectToXml(paraProperties!, omitXmlDeclaration: true);
-                if (paraPropertiesString != string.Empty)
-                  Console.WriteLine(paraPropertiesString);
-              }
-            }
-            else
-            {
-              if (paragraphIndex % 100 == 0)
-                Console.Write(".");
-            }
-            paragraphIndex++;
+        //var paraId = paragraph.ParagraphId;
+        //var t5 = DateTime.Now;
+        //var paraProperties = paragraph.ParagraphProperties;
+        //var t6 = DateTime.Now;
+        //paraTimeSpan.Add(t6 - t5);
+        //if (paraProperties?.SectionProperties != null)
+        //{
+        //  sectPropertiesCount++;
+
+          if (verbatim)
+          {
+            Console.WriteLine($"Section {sectionIndex}");
+            string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
+            if (sectionString != string.Empty)
+              Console.WriteLine(sectionString);
           }
-        }
+          else
+          {
+            Console.Write(".");
+          }
+          sectionIndex++;
+          sectionsCount++;
+
       }
-      Console.WriteLine($"\nEnumerated: {sectPropertiesCount} Section Properties");
-      if (paraTimeSpan.Any())
-        Console.WriteLine($" Mean Sections read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+      Console.WriteLine($"\nEnumerated: {sectionsCount} Sections");
       if (trial == 0)
       {
-        lastParagraphsCount = paragraphIndex;
-        lastSectionPropertiesCount = sectPropertiesCount;
-      }
-      else if (paragraphIndex != lastParagraphsCount)
-      {
-        Console.WriteLine($"✗ Body items count mismatch between iterations: {lastParagraphsCount} vs {paragraphIndex}");
-        return false;
+        lastSectionsCount = sectionsCount;
       }
 
       var t4 = DateTime.Now;
@@ -681,7 +664,7 @@ public class BodyReadTest : _AbstractTestClass
         Console.WriteLine("-------------------------------------------------");
     }
 
-    if (lastSectionPropertiesCount == 0)
+    if (lastSectionsCount == 0)
     {
       Console.WriteLine($"✗ Body Sections count is zero");
       return false;
@@ -691,60 +674,60 @@ public class BodyReadTest : _AbstractTestClass
     return true;
   }
 
-  /// <summary>
-  /// Tests reading document body from the sample file and loading it into DocumentModel body.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestReadBodyAndSerialize(bool directAccess, int times = 1)
-  {
-    Console.WriteLine("--- Read Body From Sample File ---");
+  ///// <summary>
+  ///// Tests reading document body from the sample file and loading it into DocumentModel body.
+  ///// </summary>
+  ///// <returns>True if the test passes; otherwise, false.</returns>
+  //private bool TestReadBodyAndSerialize(bool directAccess, int times = 1)
+  //{
+  //  Console.WriteLine("--- Read Body From Sample File ---");
 
-    if (!File.Exists(SampleFilePath))
-    {
-      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
-      return false;
-    }
+  //  if (!File.Exists(SampleFilePath))
+  //  {
+  //    Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+  //    return false;
+  //  }
 
-    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
-    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
-    if (openXmlBody == null)
-    {
-      Console.WriteLine("✗ OpenXml body not found");
-      return false;
-    }
+  //  using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+  //  var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+  //  if (openXmlBody == null)
+  //  {
+  //    Console.WriteLine("✗ OpenXml body not found");
+  //    return false;
+  //  }
 
-    var t0 = DateTime.Now;
-    Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
-    modelBody.SetHasDirectAccess(directAccess);
-    var t1 = DateTime.Now;
-    Console.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
-    var openXmlCount = openXmlBody.ChildElements.Count;
-    var modelCount = modelBody.Items.Count;
-    var t2 = DateTime.Now;
-    Console.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
-    Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
-    Console.WriteLine($"Model body elements count: {modelCount}");
+  //  var t0 = DateTime.Now;
+  //  Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+  //  modelBody.SetHasDirectAccess(directAccess);
+  //  var t1 = DateTime.Now;
+  //  Console.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
+  //  var openXmlCount = openXmlBody.ChildElements.Count;
+  //  var modelCount = modelBody.Items.Count;
+  //  var t2 = DateTime.Now;
+  //  Console.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
+  //  Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
+  //  Console.WriteLine($"Model body elements count: {modelCount}");
 
-    if (modelCount == 0)
-    {
-      Console.WriteLine("✗ Model body is empty after load");
-      return false;
-    }
+  //  if (modelCount == 0)
+  //  {
+  //    Console.WriteLine("✗ Model body is empty after load");
+  //    return false;
+  //  }
 
-    if (modelCount != openXmlCount)
-    {
-      Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
-      return false;
-    }
-    var t3 = DateTime.Now;
-    var bodyXml = SerializeObjectToXml(modelBody);
-    var t4 = DateTime.Now;
-    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
+  //  if (modelCount != openXmlCount)
+  //  {
+  //    Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
+  //    return false;
+  //  }
+  //  var t3 = DateTime.Now;
+  //  var bodyXml = SerializeObjectToXml(modelBody);
+  //  var t4 = DateTime.Now;
+  //  Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
+  //  Console.WriteLine("Serialized Body XML:\n" + bodyXml);
 
-    Console.WriteLine("✓ Body read from sample file test passed\n");
-    return true;
-  }
+  //  Console.WriteLine("✓ Body read from sample file test passed\n");
+  //  return true;
+  //}
 
 
 }

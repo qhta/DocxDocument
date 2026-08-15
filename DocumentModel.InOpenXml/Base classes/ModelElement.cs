@@ -568,10 +568,10 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// type.</remarks>
   /// <param name = "openXmlObject">The Open XML element or other object to update with property values from this model.
   /// Must not be null.</param>
-  public virtual void UpdateData(object openXmlObject)
+  public virtual bool UpdateData(object openXmlObject)
   {
     var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlObject.GetType();
-    OpenXmlModelConverter.UpdateData(this, openXmlObject, openXmlType);
+    return OpenXmlModelConverter.UpdateData(this, openXmlObject, openXmlType);
   }
 
   /// <summary>

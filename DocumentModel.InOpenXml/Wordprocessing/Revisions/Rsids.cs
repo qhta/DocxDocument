@@ -29,7 +29,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   /// <remarks>If the collection is empty or the first element does not match the root revision save ID from the
   /// provided Rsids object, the method inserts the root revision save ID at the beginning of the collection.</remarks>
   /// <param name="rsids">The Rsids object containing the root revision save ID to be loaded into the collection.</param>
-  protected override void LoadDataCollection(DXW.Rsids rsids)
+  protected override bool LoadDataCollection(DXW.Rsids rsids)
   {
     if (rsids.RsidRoot != null)
     {
@@ -45,14 +45,16 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
         var hexInt = new HexInt(rsid.Val?.Value!);
         this.Add(hexInt);
       }
+      return true;
     }
+    return false;
   }
 
   /// <summary>
   /// Store data from this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's DocumentSettings.
   /// </summary>
   /// <param name="rsids"></param>
-  protected override void UpdateDataCollection(DXW.Rsids rsids)
+  protected override bool UpdateDataCollection(DXW.Rsids rsids)
   {
     if (this.Count > 0)
     {
@@ -82,5 +84,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
       rsids.RsidRoot = null;
       rsids.RemoveAllChildren<DXW.Rsid>();
     }
+    return true;
   }
 }

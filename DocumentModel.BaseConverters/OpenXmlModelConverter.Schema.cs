@@ -17,7 +17,8 @@ public static partial class OpenXmlModelConverter
   /// <param name="parentElement">The parent OpenXmlElement to which the child element will be added. This parameter cannot be null.</param>
   /// <param name="child">The child OpenXmlElement to add to the parent. This parameter cannot be null.</param>
   /// <exception cref="ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
-  public static void AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
+  /// <returns>true if the child element was successfully added; otherwise, false.</returns>
+  public static bool AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
   {
     if (parentElement == null)
       throw new ArgumentNullException(nameof(parentElement));
@@ -28,7 +29,7 @@ public static partial class OpenXmlModelConverter
     if (childOrder.Count == 0)
     {
       parentElement.AppendChild(child);
-      return;
+      return true;
     }
     // this code creates a new child element with the normalized namespace if the child element's namespace does not match the normalized namespace defined by the Wordprocessing schema.
     // This causes the original child element is NOT added to the parent element, but instead a new child is added.
@@ -51,7 +52,7 @@ public static partial class OpenXmlModelConverter
     if (childIndex == WordprocessingSchema.UnknownOrder)
     {
       parentElement.AppendChild(child);
-      return;
+      return true;
     }
     if (child.Parent != null)
       child.Remove();
@@ -71,12 +72,13 @@ public static partial class OpenXmlModelConverter
         parentElement.InsertAfter(child, insertAfter);
       else
         parentElement.InsertBefore(child, existing);
-      return;
+      return true;
     }
     if (insertAfter != null)
       parentElement.InsertAfter(child, insertAfter);
     else
       parentElement.AppendChild(child);
+    return true;
   }
 
   /// <summary>
@@ -84,33 +86,6 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   public static class WordprocessingSchema
   {
-    ///// <summary>
-    ///// URI of Wordprocessing namespace.
-    ///// </summary>
-    //public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
-
-    ///// <summary>
-    ///// URI of Math namespace
-    ///// </summary>
-    //public const string MathNamespace = "http://purl.oclc.org/ooxml/officeDocument/math";
-
-    ///// <summary>
-    ///// URI of SchemaLibrary namespace
-    ///// </summary>
-    //public const string SchemaLibraryNamespace = "http://purl.oclc.org/ooxml/schemaLibrary/main";
-
-    ///// <summary>
-    ///// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
-    ///// documents.
-    ///// </summary>
-    ///// <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
-    ///// namespace mappings used in Open XML document processing.</remarks>
-    //public static readonly Dictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
-    //{
-    //  ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace,
-    //  ["http://schemas.openxmlformats.org/officeDocument/2006/math"] = MathNamespace,
-    //  ["http://schemas.openxmlformats.org/schemaLibrary/2006/main"] = SchemaLibraryNamespace
-    //};
 
     /// <summary>
     /// Lazy-loaded schema instance.

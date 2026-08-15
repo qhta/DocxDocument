@@ -49,7 +49,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
-  protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected override bool LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
     foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
@@ -67,13 +67,14 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
 
       this.Add(modelObject);
     }
+    return true;
   }
 
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected override bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
     foreach (var child in children)
@@ -86,5 +87,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
       OpenXmlItemType openXmlElement = (OpenXmlItemType)OpenXmlModelConverter.ConvertTo(item, typeof(OpenXmlItemType))!;
       openXmlModeledCollection.AppendChild(openXmlElement);
     }
+    return true;  
   }
 }

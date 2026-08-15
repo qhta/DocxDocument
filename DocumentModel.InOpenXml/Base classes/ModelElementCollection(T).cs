@@ -215,7 +215,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <summary>
   /// Enumerates the items in the collection, loading them lazily from the source collection if lazy loading is enabled.
   /// </summary>
-  private IEnumerable<ItemType> EnumerateLazy()
+  protected virtual IEnumerable<ItemType> EnumerateLazy()
   {
 
     // yield already-loaded items first

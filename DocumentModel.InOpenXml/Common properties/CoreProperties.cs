@@ -119,7 +119,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// Property values are converted to the appropriate Open XML types as needed.</remarks>
   /// <param name = "openXmlObject">The Open XML element to update. Must be an instance of the expected Open XML type that supports writable
   /// properties corresponding to this model.</param>
-  public override void UpdateData(object openXmlObject)
+  public override bool UpdateData(object openXmlObject)
   {
     var modelType = GetType();
     var openXmlType = typeof(PackageProperties);
@@ -134,6 +134,7 @@ public partial class CoreProperties : BaseBuiltInProperties
         openXmlProperty.SetValue(openXmlObject, modelValue);
       }
     }
+    return true; 
   }
 
   /// <summary>

@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("Story", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DX.OpenXmlCompositeElement))]
 [DirectAccess(true)]
-public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>
+public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>, IStory
   where OpenXmlCollectionType: DX.OpenXmlCompositeElement
 {
   /// <summary>
@@ -99,5 +99,24 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   }
 
   private DMW.Paragraphs? _Paragraphs;
+
+
+  /// <summary>
+  /// Gets a collection of paragraphs within the story, providing access to all paragraph elements contained in the story's items.
+  /// This property retrieves a collection of paragraphs by filtering the items in the story to include only those that are of type <see cref="DMW.Paragraph"/>.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DMW.Sections Sections
+  {
+    get
+    {
+      var result = _Sections ??= new DMW.Sections(this);
+      return result;
+    }
+  }
+
+  private DMW.Sections? _Sections;
 
 }

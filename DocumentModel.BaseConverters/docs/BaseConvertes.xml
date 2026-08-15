@@ -4469,6 +4469,7 @@
             Updates the specified object with new data or changes.
             </summary>
             <param name="updatableObject">The object to update. Cannot be null.</param>
+            <returns>True if the update was successful; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.OpenXml.UpdatableExtensions">
             <summary>
@@ -4654,7 +4655,7 @@
             <param name="modelObject">The model object to convert.</param>
             <param name="openXmlType">The target Open XML type.</param>
             <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
-            <returns>The created Open XML element, or null if the input is null.</returns>
+            <returns>The created Open XML element or value, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertTo``2(``0)">
             <summary>
@@ -4663,7 +4664,7 @@
             <typeparam name="ModelElementType"></typeparam>
             <typeparam name="OpenXmlElementType"></typeparam>
             <param name="modelObject"></param>
-            <returns></returns>
+            <returns>The created OpenXml element or value, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFrom(System.Object,System.Type)">
             <summary>
@@ -4674,8 +4675,7 @@
             <paramref name="openXmlObject"/>.</remarks>
             <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
             <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
-            <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
-            name="openXmlObject"/> is null.</returns>
+            <returns>The created model object, or null if <paramref name="openXmlObject"/> is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFrom``2(``1)">
             <summary>
@@ -4684,7 +4684,7 @@
             <typeparam name="ModelElementType"></typeparam>
             <typeparam name="OpenXmlElementType"></typeparam>
             <param name="openXmlObject"></param>
-            <returns></returns>
+            <returns>The created model object, or null if <paramref name="openXmlObject"/> is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateData(System.Object,System.Object,System.Type)">
             <summary>
@@ -4698,6 +4698,7 @@
             <param name="openXmlObject">The Open XML element or other object containing the data to synchronize with the model object. Cannot be null.</param>
             <param name="openXmlType">The type of the Open XML element used to determine property mapping.
             If null then type of <paramref name="openXmlObject"/> will be used.</param>
+            <returns>true if the <paramref name="openXmlObject"/> was successfully updated; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryUpdateUsingItemAttribute(System.Object,System.Object,System.Type)">
             <summary>
@@ -4709,6 +4710,7 @@
             <param name="modelObject">The model object that contains the data to update the Open XML element.</param>
             <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
             <param name="modelType">The type of the model object, which is checked for the presence of the OpenXmlItemAttribute.</param>
+            <returns>true if the <paramref name="openXmlObject  "/> was successfully updated; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryUpdateModelProperties(System.Object,System.Object,System.Type,System.Type)">
             <summary>
@@ -4719,7 +4721,7 @@
             <param name="openXmlType">The type of the Open XML element used to determine property mapping.
             If null then type of <paramref name="openXmlObject"/> will be used.</param>
             <param name="modelType">The type of the model object, used to retrieve the corresponding update method.</param>
-            <returns>true if any properties were successfully updated; otherwise, false.</returns>
+            <returns>true if any properties or the <paramref name="openXmlObject"/> were successfully updated; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryUpdateUsingTypeUpdateDataMethod(System.Object,System.Object,System.Type,System.Type)">
             <summary>
@@ -4732,7 +4734,7 @@
             <param name="openXmlObject">The Open XML object containing the data to update the model object. Must not be null.</param>
             <param name="openXmlType">The type of the Open XML object, used to determine the appropriate update method.</param>
             <param name="modelType">The type of the model object, used to retrieve the corresponding update method.</param>
-            <returns>true if the model object was successfully updated using the corresponding update method; otherwise, false.</returns>
+            <returns>true if the <paramref name="openXmlObject"/> was successfully updated using the corresponding update method; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateOpenXmlProperty(System.Object,System.Reflection.PropertyInfo,System.Object,System.Reflection.PropertyInfo)">
             <summary>
@@ -4743,6 +4745,7 @@
             <param name="modelProperty">The property on the model object whose value will be read and applied to the Open XML element. Cannot be null.</param>
             <param name="openXmlObject">The Open XML element or other object whose property will be updated. Cannot be null.</param>
             <param name="openXmlProperty">The property on the Open XML element to update. Cannot be null.</param>
+            <returns>true if the <paramref name="openXmlProperty"/> of the <paramref name="openXmlObject"/> was successfully updated; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateData(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
             <summary>
@@ -4828,12 +4831,16 @@
             <summary>
             Updates a child element of an Open XML element based on the value of a model object's property.
             </summary>
+            <remarks>
+              If the openXmlChildType is derived from DXW.EmptyType, the method will add or remove the child element based on the boolean value of the model property.
+            </remarks>
             <param name="modelObject">The source model object.</param>
             <param name="modelProperty">The property from the model object.</param>
             <param name="openXmlElement">The target Open XML element.</param>
             <param name="openXmlType">The type of the Open XML element.</param>
             <param name="openXmlChildType">The type of the Open XML child element.</param>
             <exception cref="T:System.InvalidOperationException">Thrown if the update fails.</exception>
+            <returns>true if the <paramref name="openXmlChildType"/> of the <paramref name="openXmlElement"/> was successfully updated; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateChildElementCollection(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
             <summary>
@@ -4843,7 +4850,7 @@
             <param name="modelProperty">The property from the model object.</param>
             <param name="openXmlElement">The target Open XML element.</param>
             <param name="openXmlType">The type of the Open XML element.</param>
-            <returns></returns>
+            <returns>true if the child elements were successfully updated; otherwise, false.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the update fails.</exception>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateElementCollection(System.Object,DocumentFormat.OpenXml.OpenXmlElement)">
@@ -5048,6 +5055,7 @@
             </summary>
             <param name="modelCollection">The target model object collection.</param>
             <param name="openXmlObject">The source Open XML element or other object.</param>
+            <returns>true if the lazy load was successfully registered; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.AddChildUsingSchemaOrder(DocumentFormat.OpenXml.OpenXmlElement,DocumentFormat.OpenXml.OpenXmlElement)">
             <summary>
@@ -5060,6 +5068,7 @@
             <param name="parentElement">The parent OpenXmlElement to which the child element will be added. This parameter cannot be null.</param>
             <param name="child">The child OpenXmlElement to add to the parent. This parameter cannot be null.</param>
             <exception cref="T:System.ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
+            <returns>true if the child element was successfully added; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlModelConverter.WordprocessingSchema">
             <summary>

@@ -22,7 +22,8 @@ public interface IUpdatable
   /// Updates the specified object with new data or changes.
   /// </summary>
   /// <param name="updatableObject">The object to update. Cannot be null.</param>
-  public void UpdateData(object updatableObject);
+  /// <returns>True if the update was successful; otherwise, false.</returns>
+  public bool UpdateData(object updatableObject);
 }
 
 /// <summary>

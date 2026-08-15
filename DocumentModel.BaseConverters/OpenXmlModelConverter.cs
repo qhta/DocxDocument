@@ -29,7 +29,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelObject">The model object to convert.</param>
   /// <param name="openXmlType">The target Open XML type.</param>
   /// <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
-  /// <returns>The created Open XML element, or null if the input is null.</returns>
+  /// <returns>The created Open XML element or value, or null if the input is null.</returns>
   public static object? ConvertTo(object? modelObject, Type openXmlType)
   {
     if (modelObject == null)
@@ -60,7 +60,7 @@ public static partial class OpenXmlModelConverter
   /// <typeparam name="ModelElementType"></typeparam>
   /// <typeparam name="OpenXmlElementType"></typeparam>
   /// <param name="modelObject"></param>
-  /// <returns></returns>
+  /// <returns>The created OpenXml element or value, or null if the input is null.</returns>
   public static OpenXmlElementType? ConvertTo<ModelElementType, OpenXmlElementType>(ModelElementType? modelObject) 
   {
     if (modelObject == null)
@@ -89,8 +89,7 @@ public static partial class OpenXmlModelConverter
   /// <paramref name="openXmlObject"/>.</remarks>
   /// <param name="openXmlObject">The OpenXML element to convert. Can be null.</param>
   /// <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
-  /// <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
-  /// name="openXmlObject"/> is null.</returns>
+  /// <returns>The created model object, or null if <paramref name="openXmlObject"/> is null.</returns>
   public static object? ConvertFrom(object? openXmlObject, Type modelType)
   {
     if (openXmlObject == null)
@@ -133,7 +132,7 @@ public static partial class OpenXmlModelConverter
   /// <typeparam name="ModelElementType"></typeparam>
   /// <typeparam name="OpenXmlElementType"></typeparam>
   /// <param name="openXmlObject"></param>
-  /// <returns></returns>
+  /// <returns>The created model object, or null if <paramref name="openXmlObject"/> is null.</returns>
   public static ModelElementType? ConvertFrom<ModelElementType, OpenXmlElementType>(OpenXmlElementType? openXmlObject)
   {
     var modelType = typeof(ModelElementType).GetNotNullableType();
@@ -164,15 +163,18 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlObject">The Open XML element or other object containing the data to synchronize with the model object. Cannot be null.</param>
   /// <param name="openXmlType">The type of the Open XML element used to determine property mapping.
   /// If null then type of <paramref name="openXmlObject"/> will be used.</param>
-  public static void UpdateData(object modelObject, object openXmlObject, Type? openXmlType = null)
+  /// <returns>true if the <paramref name="openXmlObject"/> was successfully updated; otherwise, false.</returns>
+  public static bool UpdateData(object modelObject, object openXmlObject, Type? openXmlType = null)
   {
     if (openXmlType == null)
       openXmlType = openXmlObject.GetType();
     var modelType = modelObject.GetType();
-    if (TryUpdateUsingTypeUpdateDataMethod(modelObject, openXmlObject, openXmlType, modelType)) return;
+    if (TryUpdateUsingTypeUpdateDataMethod(modelObject, openXmlObject, openXmlType, modelType)) return true;
 
-    TryUpdateModelProperties(modelObject, openXmlObject, openXmlType, modelType);
-    TryUpdateUsingItemAttribute(modelObject, openXmlObject, modelType);
+    bool done = false;
+    if (TryUpdateModelProperties(modelObject, openXmlObject, openXmlType, modelType)) done = true;
+    if (TryUpdateUsingItemAttribute(modelObject, openXmlObject, modelType)) { done = true; }
+    return done;
   }
 
   /// <summary>
@@ -184,13 +186,15 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelObject">The model object that contains the data to update the Open XML element.</param>
   /// <param name="openXmlObject">The Open XML element to be updated based on the model object.</param>
   /// <param name="modelType">The type of the model object, which is checked for the presence of the OpenXmlItemAttribute.</param>
-  public static void TryUpdateUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
+  /// <returns>true if the <paramref name="openXmlObject  "/> was successfully updated; otherwise, false.</returns>
+  public static bool TryUpdateUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
   {
     if (openXmlObject is DX.OpenXmlElement openXmlElement &&
         modelType.GetCustomAttribute<OpenXmlItemAttribute>() != null)
     {
-      UpdateElementCollection(modelObject, openXmlElement);
+      return UpdateElementCollection(modelObject, openXmlElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -201,9 +205,8 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlType">The type of the Open XML element used to determine property mapping.
   /// If null then type of <paramref name="openXmlObject"/> will be used.</param>
   /// <param name="modelType">The type of the model object, used to retrieve the corresponding update method.</param>
-  /// <returns>true if any properties were successfully updated; otherwise, false.</returns>
-  public static bool TryUpdateModelProperties
-    (object modelObject, object openXmlObject, Type openXmlType, Type modelType)
+  /// <returns>true if any properties or the <paramref name="openXmlObject"/> were successfully updated; otherwise, false.</returns>
+  public static bool TryUpdateModelProperties(object modelObject, object openXmlObject, Type openXmlType, Type modelType)
   {
     bool updated = false;
     foreach (var modelProperty in modelType.GetModelProperties())
@@ -223,9 +226,8 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlObject">The Open XML object containing the data to update the model object. Must not be null.</param>
   /// <param name="openXmlType">The type of the Open XML object, used to determine the appropriate update method.</param>
   /// <param name="modelType">The type of the model object, used to retrieve the corresponding update method.</param>
-  /// <returns>true if the model object was successfully updated using the corresponding update method; otherwise, false.</returns>
-  public static bool TryUpdateUsingTypeUpdateDataMethod
-    (object modelObject, object openXmlObject, Type openXmlType, Type modelType)
+  /// <returns>true if the <paramref name="openXmlObject"/> was successfully updated using the corresponding update method; otherwise, false.</returns>
+  public static bool TryUpdateUsingTypeUpdateDataMethod(object modelObject, object openXmlObject, Type openXmlType, Type modelType)
   {
     var updateMethod = OpenXmlTypeMap.GetUpdateDataMethod(modelType, openXmlType);
     if (updateMethod != null)
@@ -246,11 +248,12 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelProperty">The property on the model object whose value will be read and applied to the Open XML element. Cannot be null.</param>
   /// <param name="openXmlObject">The Open XML element or other object whose property will be updated. Cannot be null.</param>
   /// <param name="openXmlProperty">The property on the Open XML element to update. Cannot be null.</param>
-  public static void UpdateOpenXmlProperty
+  /// <returns>true if the <paramref name="openXmlProperty"/> of the <paramref name="openXmlObject"/> was successfully updated; otherwise, false.</returns>
+  public static bool UpdateOpenXmlProperty
     (object modelObject, PropertyInfo modelProperty, object openXmlObject, PropertyInfo openXmlProperty)
   {
     var openXmlType = openXmlObject.GetType();
-    UpdateData(modelObject, modelProperty, openXmlObject, openXmlType);
+    return UpdateData(modelObject, modelProperty, openXmlObject, openXmlType);
   }
 
   /// <summary>
@@ -422,13 +425,17 @@ public static partial class OpenXmlModelConverter
   /// <summary>
   /// Updates a child element of an Open XML element based on the value of a model object's property.
   /// </summary>
+  /// <remarks>
+  ///   If the openXmlChildType is derived from DXW.EmptyType, the method will add or remove the child element based on the boolean value of the model property.
+  /// </remarks>
   /// <param name="modelObject">The source model object.</param>
   /// <param name="modelProperty">The property from the model object.</param>
   /// <param name="openXmlElement">The target Open XML element.</param>
   /// <param name="openXmlType">The type of the Open XML element.</param>
   /// <param name="openXmlChildType">The type of the Open XML child element.</param>
   /// <exception cref="InvalidOperationException">Thrown if the update fails.</exception>
-  public static void UpdateChildElement
+  /// <returns>true if the <paramref name="openXmlChildType"/> of the <paramref name="openXmlElement"/> was successfully updated; otherwise, false.</returns>
+  public static bool UpdateChildElement
   (object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType,
     Type? openXmlChildType)
   {
@@ -448,13 +455,13 @@ public static partial class OpenXmlModelConverter
 
 
     DX.OpenXmlElement openXmlChildElement;
-    if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)))
+    if (openXmlChildType.IsEqualOrSubclassOf(typeof(DXW.EmptyType)))
     {
       if (true.Equals(modelValue))
       {
         var existingChild = openXmlElement.ChildElements.FirstOrDefault(item => item.GetType() == openXmlChildType);
         if (existingChild != null)
-          return;
+          return false;
         openXmlChildElement = Activator.CreateInstance(openXmlChildType) as DX.OpenXmlElement ??
                               throw new InvalidOperationException(
                                 $"Failed to create instance of Open XML child element " +
@@ -465,13 +472,16 @@ public static partial class OpenXmlModelConverter
       { // false or null
         var existingChild = openXmlElement.ChildElements.FirstOrDefault(item => item.GetType() == openXmlChildType);
         if (existingChild != null)
+        {
           openXmlElement.RemoveChild(existingChild);
+          return true;
+        }
       }
-      return;
+      return false;
 
     }
     if (modelValue == null)
-      return;
+      return false;
     
     openXmlChildElement = (DX.OpenXmlElement)ConvertTo(modelValue, openXmlChildType)!;
     if (openXmlChildElement is not DX.OpenXmlElement o)
@@ -486,11 +496,11 @@ public static partial class OpenXmlModelConverter
     {
       var child = children[0];
       if (String.Compare(child.OuterXml, openXmlChildElement.OuterXml, StringComparison.Ordinal) == 0)
-        return;
+        return false;
       openXmlElement.RemoveChild(child);
     }
     openXmlElement.AddChildUsingSchemaOrder(o);
-    UpdateData(modelValue, openXmlChildElement);
+    return UpdateData(modelValue, openXmlChildElement);
   }
 
   /// <summary>
@@ -500,7 +510,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelProperty">The property from the model object.</param>
   /// <param name="openXmlElement">The target Open XML element.</param>
   /// <param name="openXmlType">The type of the Open XML element.</param>
-  /// <returns></returns>
+  /// <returns>true if the child elements were successfully updated; otherwise, false.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the update fails.</exception>
   public static bool UpdateChildElementCollection
     (object modelObject, PropertyInfo modelProperty, DX.OpenXmlElement openXmlElement, Type openXmlType)
@@ -548,7 +558,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelObject">The source model object.</param>
   /// <param name="openXmlElement">The target Open XML element.</param>
   /// <exception cref="InvalidOperationException">Thrown if the update fails.</exception>
-  public static void UpdateElementCollection(object modelObject, DX.OpenXmlElement openXmlElement)
+  public static bool UpdateElementCollection(object modelObject, DX.OpenXmlElement openXmlElement)
   {
     var modelType = modelObject.GetType();
     var openXmlType = openXmlElement.GetType();
@@ -576,8 +586,10 @@ public static partial class OpenXmlModelConverter
       if (openXmlChildElement is not DX.OpenXmlElement o)
         throw new InvalidOperationException($"Converted Open XML child element is not of a DX.OpenXmlElement");
 
-      openXmlElement.AddChildUsingSchemaOrder(o);
+      if (!openXmlElement.AddChildUsingSchemaOrder(o))
+        return false;
     }
+    return true;
   }
 
   /// <summary>
@@ -1142,6 +1154,7 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   /// <param name="modelCollection">The target model object collection.</param>
   /// <param name="openXmlObject">The source Open XML element or other object.</param>
+  /// <returns>true if the lazy load was successfully registered; otherwise, false.</returns>
   public static bool TryRegisterLazyLoad(object modelCollection, DX.OpenXmlCompositeElement openXmlObject)
   {
     var modelType = modelCollection.GetType();

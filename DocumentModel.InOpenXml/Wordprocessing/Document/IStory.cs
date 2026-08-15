@@ -1,8 +1,17 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies the content of the document in a WordprocessingML document.
-/// This class extends <see cref="ElementCollection{StoryContent}"/> and contains block-level markup, allowing elements such as paragraphs, tables, and other block content to exist as siblings within the document structure.
+/// Specifies the collection of model elements at the story level, which can include paragraphs, tables, and other content elements in a WordprocessingML document.
+/// This interface provides a unified way to access and manage the content of a story, enabling advanced organization and manipulation of document structures.
 /// </summary>
-public interface IStory: IElementCollection<CommonContent<IStoryContent>>, ICollectionItem
+public interface IStory: IDirectAccess
 {
+  /// <summary>
+  /// Gets the collection of items within the story, which can include paragraphs, tables, and other block-level content elements.
+  /// </summary>
+  public StoryItemsCollection Items { get; }
+
+  /// <summary>
+  /// Gets the collection of paragraphs within the story.
+  /// </summary>
+  public DMW.Paragraphs Paragraphs { get; }
 }
