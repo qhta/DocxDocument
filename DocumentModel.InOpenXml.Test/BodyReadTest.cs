@@ -636,7 +636,7 @@ public class BodyReadTest : _AbstractTestClass
           string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
           if (sectionString != string.Empty)
             Console.WriteLine(sectionString);
-          Console.WriteLine($"Range: Start={range.Start}, End={range.End}");
+          Console.WriteLine($"Range: Start={RefStr(range.Start)}, End={RefStr(range.End)}");
         }
         else
         {
@@ -667,6 +667,16 @@ public class BodyReadTest : _AbstractTestClass
 
     Console.WriteLine($"✓ Enumerate Body Sections with direct access = {directAccess} from sample file test passed\n");
     return true;
+  }
+
+  private string RefStr(ModelElement element)
+  {
+    var result = element.GetType().Name;
+    if (element is IHexIdentObject hexIdentObject)
+    {
+      result += $" {hexIdentObject.HexId}";
+    }
+    return result;
   }
 
   ///// <summary>

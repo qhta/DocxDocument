@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Paragraph))]
 [SpecificClass]
 [DirectAccess(true)]
-public partial class Paragraph: ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent,
+public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IStoryContent, ITableCellContent, ISdtBlockContent,
   ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
 {
   /// <summary>
@@ -20,17 +20,17 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IStoryContent, ITab
   public Paragraph(): base() { }
 
   /// <summary>
-  /// Initializes a new instance of the Run class with the specified parent object.
+  /// Initializes a new instance of the Paragraph class with the specified parent object.
   /// </summary>
-  /// <param name = "parent">The parent object that will contain this Run instance. This parameter establishes the hierarchical relationship
+  /// <param name = "parent">The parent object that will contain this Paragraph instance. This parameter establishes the hierarchical relationship
   /// within the object model and cannot be null.</param>
-  /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
+  /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Paragraph instance. Cannot be null.</param>
   public Paragraph(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement): base(parent, openXmlElement) { }
 
   /// <summary>
-  /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement.  
+  /// Initializes a new instance of the Paragraph class using the specified OpenXmlCompositeElement.  
   /// </summary>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the run.</param>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the Paragraph.</param>
   public Paragraph(DX.OpenXmlCompositeElement openXmlElement): base(openXmlElement) { }
 
   private DXW.Paragraph? _openXmlParagraph => GetUpdatableElement() as DXW.Paragraph;
@@ -40,7 +40,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IStoryContent, ITab
   /// this method is overridden to set up the updatable object with the provided OpenXmlCompositeElement.
   /// However, it does not perform any additional data loading, as the properties are accessed directly from the OpenXml element.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the paragraph.</param>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the Paragraph.</param>
   /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
   public override bool LoadData(object openXmlElement)
   {
@@ -51,6 +51,12 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IStoryContent, ITab
     }
     return base.LoadData(openXmlElement);
   }
+
+  /// <summary>
+  /// Unique identifier for the paragraph, represented as a hexadecimal integer.
+  /// This property is an alias for <see cref="ParagraphId"/> and provides a convenient way to access the paragraph's unique identifier in hexadecimal format.
+  /// </summary>
+  public HexInt? HexId => ParagraphId;
 
   /// <summary>
   /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
