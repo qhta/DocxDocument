@@ -120,8 +120,8 @@ public static partial class OpenXmlModelConverter
     else
     {
       var modelObject = Activator.CreateInstance(modelType)!;
-      if (openXmlObject is DX.OpenXmlElement openXmlElement)
-        LoadData(modelObject, openXmlElement);
+      if (modelObject is ILoadable loadable)
+        loadable.LoadData(openXmlObject);
       return modelObject;
     }
   }
@@ -597,15 +597,17 @@ public static partial class OpenXmlModelConverter
   /// </summary>
   /// <param name="modelObject">The target model object that will receive the loaded data.</param>
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
-  public static void LoadData(object modelObject, object openXmlObject)
+  public static bool LoadData(object modelObject, object openXmlObject)
   {
     (modelObject as ILoadable)?.SetIsLoading(true);
     var modelType = modelObject.GetType();
     var openXmlType = openXmlObject.GetType();
-    if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return;
-    TryLoadModelProperties(modelObject, openXmlObject, modelType, openXmlType);
-    TryLoadUsingItemAttribute(modelObject, openXmlObject, modelType);
+    if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return true;
+    bool ok = false;
+    if (TryLoadModelProperties(modelObject, openXmlObject, modelType, openXmlType)) ok = true;
+    if (TryLoadUsingItemAttribute(modelObject, openXmlObject, modelType)) ok = true;
     (modelObject as ILoadable)?.SetIsLoading(false);
+    return ok;
   }
 
   /// <summary>
@@ -643,13 +645,14 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelObject">The model object that receives data loaded from the Open XML element.</param>
   /// <param name="openXmlObject">The Open XML object to be loaded into the model object. Must be of type DX.OpenXmlElement.</param>
   /// <param name="modelType">The type of the model object, used to determine if the OpenXmlItemAttribute is present.</param>
-  public static void TryLoadUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
+  public static bool TryLoadUsingItemAttribute(object modelObject, object openXmlObject, Type modelType)
   {
     if (openXmlObject is DX.OpenXmlCompositeElement openXmlElement &&
         modelType.GetCustomAttribute<OpenXmlItemAttribute>() != null)
     {
-      LoadCollectionChildren(modelObject, openXmlElement);
+      return LoadCollectionChildren(modelObject, openXmlElement);
     }
+    return false;
   }
 
   /// <summary>
@@ -938,12 +941,12 @@ public static partial class OpenXmlModelConverter
   /// <param name="modelCollection">The model collection to load the child elements into.</param>
   /// <param name="openXmlElement">The Open XML element to load the child elements from.</param>
   /// <exception cref="InvalidOperationException"></exception>
-  public static void LoadCollectionChildren(object modelCollection, DX.OpenXmlCompositeElement openXmlElement)
+  public static bool LoadCollectionChildren(object modelCollection, DX.OpenXmlCompositeElement openXmlElement)
   {
     //Debug.WriteLine($"Loading collection children for model collection of type {modelCollection.GetType()} " +
     //                $"from Open XML type {openXmlElement.GetType()}");
     if (TryRegisterLazyLoad(modelCollection, openXmlElement))
-      return;
+      return true;
 
     var modelPropertyType = modelCollection.GetType();
     var (modelItemType, openXmlChildType) =
@@ -974,6 +977,7 @@ public static partial class OpenXmlModelConverter
 
       modelAddMethod.Invoke(modelCollection, [modelItem]);
     }
+    return true;
   }
 
   /// <summary>

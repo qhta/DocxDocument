@@ -175,7 +175,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public bool Equals(Base64Binary? other)
   {
     if (other == null)
-      return false;
+      return !value.Any();
     return Enumerable.SequenceEqual(value, other.value);
   }
 

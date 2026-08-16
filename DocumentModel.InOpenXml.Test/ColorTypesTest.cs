@@ -272,8 +272,8 @@ public class ColorTypesTest : BaseThemeTest
       }
       AttachToDocumentContext(xmlDeserialized, document);
 
-      var json = JsonSerializer.Serialize(empty, type, jsonOptions);
-      var jsonDeserialized = JsonSerializer.Deserialize(json, type, jsonOptions);
+      var json = SerializeToJson(empty);
+      var jsonDeserialized = DeserializeFromJson(type, json);
       if (jsonDeserialized == null)
       {
         Console.WriteLine($"✗ Edge case JSON deserialization failed for '{type.Name}'");

@@ -14,7 +14,9 @@ public static class JsonSerializationHelper
     var options = new JsonSerializerOptions
     {
       DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-      WriteIndented = true
+      WriteIndented = true,
+      IgnoreReadOnlyProperties = true,
+
     };
     //options.Converters.Add(new BuiltInPropertyJsonConverter());
     //options.Converters.Add(new ElementCollectionJsonConverterFactory());

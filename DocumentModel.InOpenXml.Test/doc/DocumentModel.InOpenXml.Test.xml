@@ -214,34 +214,6 @@
             <param name="isUpdated">Indicates whether to create updated sample properties for update scenarios.</param>
             <returns>A populated BaseRUnProperties object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
-            <summary>
-            Serializes a Styles object to an XML string.
-            </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized XML string.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest.DeserializeFromXml(System.String)">
-            <summary>
-            Deserializes a Styles object from an XML string.
-            </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest.SerializeToJson(DocumentModel.Wordprocessing.Styles)">
-            <summary>
-            Serializes a Styles object to a JSON string.
-            </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest.DeserializeFromJson(System.String)">
-            <summary>
-            Deserializes a Styles object from a JSON string.
-            </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-        </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest">
             <summary>
             Comprehensive test for Styles BaseSectionProperties.

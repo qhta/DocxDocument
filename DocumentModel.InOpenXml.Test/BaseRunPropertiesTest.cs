@@ -65,11 +65,10 @@ namespace DocumentModel.InOpenXml.Test
     {
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleProperties();
-      var jsonOptions = JsonConfig.Options;
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
+      string jsonString = SerializeToJson(testData);
       Console.WriteLine("Serialized JSON:\n" + jsonString);
 
-      var deserialized = JsonSerializer.Deserialize<BaseRunProperties>(jsonString, jsonOptions);
+      var deserialized = DeserializeFromJson<BaseRunProperties>(jsonString);
       if (deserialized == null)
       {
         Console.WriteLine("✗ JSON Deserialization returned null");
@@ -93,14 +92,14 @@ namespace DocumentModel.InOpenXml.Test
       Console.WriteLine("--- Edge Cases ---");
       var empty = new Styles();
       string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
+      var xmlDeserialized = DeserializeFromXml<Styles>(xml);
       if (xmlDeserialized == null)
       {
         Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
+      var jsonDeserialized = DeserializeFromJson<Styles>(json);
       if (jsonDeserialized == null)
       {
         Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
@@ -178,56 +177,5 @@ namespace DocumentModel.InOpenXml.Test
       };
     }
 
-    /// <summary>
-    /// Serializes a Styles object to an XML string.
-    /// </summary>
-    /// <param name="props">The Styles object to serialize.</param>
-    /// <returns>The serialized XML string.</returns>
-    private string SerializeToXml(Styles props)
-    {
-      var xmlSerializer = new XmlSerializer(typeof(Styles));
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, props);
-        return stringWriter.ToString();
-      }
-    }
-
-    /// <summary>
-    /// Deserializes a Styles object from an XML string.
-    /// </summary>
-    /// <param name="xml">The XML string to deserialize.</param>
-    /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-    private Styles? DeserializeFromXml(string xml)
-    {
-      var xmlSerializer = new XmlSerializer(typeof(Styles));
-      using (var stringReader = new StringReader(xml))
-      {
-        return (Styles?)xmlSerializer.Deserialize(stringReader);
-      }
-    }
-
-    /// <summary>
-    /// Serializes a Styles object to a JSON string.
-    /// </summary>
-    /// <param name="props">The Styles object to serialize.</param>
-    /// <returns>The serialized JSON string.</returns>
-    private string SerializeToJson(Styles props)
-    {
-      var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-      return JsonSerializer.Serialize(props, jsonOptions);
-    }
-
-    /// <summary>
-    /// Deserializes a Styles object from a JSON string.
-    /// </summary>
-    /// <param name="json">The JSON string to deserialize.</param>
-    /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-    private Styles? DeserializeFromJson(string json)
-    {
-      var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-      return JsonSerializer.Deserialize<Styles>(json, jsonOptions);
-    }
   }
 }

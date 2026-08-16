@@ -64,13 +64,13 @@ public static class OpenXmlElementConverter
     if (openXmlType == modelType)
       return openXmlElement;
 
-    if (OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(openXmlType, out var convertDelegate) 
+    if (OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(openXmlType, out var convertDelegate)
         || OpenXmlModelConverter.ConvertFromOpenXmlDelegates.TryGetValue(modelType, out convertDelegate))
     {
       return convertDelegate(openXmlElement, modelType)!;
     }
 
-    if (openXmlType.IsEqualOrSubclassOf(typeof(DXW.EmptyType)) && modelType==typeof(bool))
+    if (openXmlType.IsEqualOrSubclassOf(typeof(DXW.EmptyType)) && modelType == typeof(bool))
     {
       return true;
     }
@@ -79,6 +79,8 @@ public static class OpenXmlElementConverter
       return result;
     }
     var modelObject = Activator.CreateInstance(modelType)!;
+    if (modelType.Name == "ShapeLayout")
+      Debug.Assert(true);
     (modelObject as ILoadable)?.LoadData(openXmlElement);
     return modelObject;
   }

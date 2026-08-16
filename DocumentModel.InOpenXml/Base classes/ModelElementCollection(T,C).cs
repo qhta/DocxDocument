@@ -153,6 +153,16 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   }
 
   /// <summary>
+  /// Gets or sets the underlying Open XML element that can be updated by this model element.
+  /// It can be an OpenXmlElement or any other object that represents the data source for this model.
+  /// If null, no updates will be performed.
+  /// </summary>
+  public OpenXmlCollectionType? GetUpdatableElement()
+  {
+    return base.GetUpdatableObject() as OpenXmlCollectionType;
+  }
+
+  /// <summary>
   ///   Loads data from the specified OpenXml element into this model element collection.
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
@@ -161,9 +171,24 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
-      return LoadDataCollection(openXmlModeledElement);
+      var ok = false;
+      if (LoadCollectionProperties(openXmlModeledElement)) ok = true;
+      if (LoadDataCollection(openXmlModeledElement)) ok = true;
+      return ok;
     }
     return false;
+  }
+
+  /// <summary>
+  ///   Loads properties data from the modeled OpenXml collection into this model element collection instance.
+  /// </summary>
+  /// <param name = "openXmlObject">The OpenXml collection to load data from.</param>
+  protected virtual bool LoadCollectionProperties(OpenXmlCollectionType openXmlObject)
+  {
+    SetIsLoaded(true);
+    var ok = OpenXmlModelConverter.TryLoadModelProperties(this, openXmlObject, this.GetType(), openXmlObject.GetType());
+    SetIsLoaded(false);
+    return ok;
   }
 
   /// <summary>

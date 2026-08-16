@@ -86,12 +86,31 @@ public static class TestHelper
   {
     bool result;
     message = null;
+    comparedType = comparedType.GetNotNullableType();
     if (obj1 == null && obj2 == null) return true;
-    if (obj1 == null && obj2 != null) { message = $"{firstName} is null and {secondName} is {obj2}"; return false; }
-    if (obj2 == null && obj1 != null) { message = $"{secondName} is null and {firstName} is {obj1}"; return false; }
+
+    if (obj1 == null && obj2 != null)
+    {
+      if (comparedType == typeof(string))
+      {
+        if (obj2.ToString() == String.Empty)
+          return true;
+      }
+      message = $"{firstName} is null and {secondName} is {obj2}"; 
+      return false;
+    }
+    if (obj2 == null && obj1 != null)
+    {
+      if (comparedType == typeof(string))
+      {
+        if (obj1.ToString() == String.Empty)
+          return true;
+      }
+      message = $"{secondName} is null and {firstName} is {obj1}";
+      return false;
+    }
     if (comparedType == typeof(object))
       comparedType = typeof(T);
-    comparedType = comparedType.GetNotNullableType();
     if (comparedType == typeof(Double))
     {
       double dbl1 = Convert.ToDouble(obj1);
@@ -146,7 +165,7 @@ public static class TestHelper
 
       if (comparedType.IsValueType)
       {
-        result = Comparer.Equals(obj1Value, obj2Value);
+        result = Comparer.Equals(obj1Value, obj2Value) || StructuralComparisons.StructuralEqualityComparer.Equals(obj1Value, obj2Value);
         if (!result)
           message = $"Property {propName} values differ -> {firstName}={obj1Value} vs {secondName}={obj2Value}";
         return result;

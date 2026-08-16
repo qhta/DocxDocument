@@ -157,6 +157,6 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
       return false;
     if (ReferenceEquals(this, other))
       return true;
-    return base.Equals(other) && Preset == other.Preset && Percent.Equals(other.Percent);
+    return Percent.Equals(other.Percent) && Preset == other.Preset;
   }
 }

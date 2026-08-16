@@ -31,13 +31,17 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   /// <param name="rsids">The Rsids object containing the root revision save ID to be loaded into the collection.</param>
   protected override bool LoadDataCollection(DXW.Rsids rsids)
   {
-    if (rsids.RsidRoot != null)
+    if (!IsLoading)
     {
+      SetIsLoading(true);
       this.Clear();
-      // ReSharper disable once SpecifyACultureInStringConversionExplicitly
-      if (this.Count == 0 || this[0].ToString() != rsids.RsidRoot.Val?.Value)
+      if (rsids.RsidRoot != null)
       {
-        this.Insert(0, new HexInt(rsids.RsidRoot.Val?.Value!));
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        if (this.Count == 0 || this[0].ToString() != rsids.RsidRoot.Val?.Value)
+        {
+          this.Insert(0, new HexInt(rsids.RsidRoot.Val?.Value!));
+        }
       }
       foreach (var rsid in rsids.Elements<DXW.Rsid>())
       {
@@ -45,6 +49,7 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
         var hexInt = new HexInt(rsid.Val?.Value!);
         this.Add(hexInt);
       }
+      SetIsLoading(false);
       return true;
     }
     return false;

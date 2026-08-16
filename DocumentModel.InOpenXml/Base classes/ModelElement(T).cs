@@ -56,7 +56,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   ///  Gets the underlying Open XML element that can be updated by this model element.
   /// </summary>
   public object? DataSource => GetUpdatableObject();
-
+  
   /// <summary>
   /// Gets the target model item type corresponding to the specified OpenXml element type, based on the defined mapping between OpenXml element types and model element types.
   /// </summary>
@@ -200,6 +200,9 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <param name="value"></param>
   public void SetHasDirectAccess(bool value) => _HasDirectAccess = value;
 
+  /// <summary>
+  /// Gets the next ModelElement in the collection or sequence, based on the current element's position within its parent collection or OpenXml structure. Returns null if there is no next element.
+  /// </summary>
   public override ModelElement? Next
   {
     get
@@ -227,14 +230,8 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
             return (ModelElement?)OpenXmlElementConverter.ConvertFrom(nextElement, directAccessElement.GetTargetModelItemType(nextElement));
         }
 
-        //var updatableObject = GetUpdatableObject();
-        //if (updatableObject is DX.OpenXmlCompositeElement openXmlElement)
-        //{
-        //  var nextElement = openXmlElement.NextSibling();
-        //  if (nextElement!=null)
-        //    return OpenXmlElementConverter.ConvertFrom(nextElement, GetTargetModelItemType(nextElement));
       }
-      return null;
+      return base.Next;
     }
   }
 }

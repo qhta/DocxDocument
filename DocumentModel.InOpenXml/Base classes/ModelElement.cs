@@ -518,7 +518,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <exception cref="NotImplementedException"></exception>
   public virtual bool LoadData()
   {
-    var updatedObject = GetUpdatableObject() as DX.OpenXmlElement;
+    var updatedObject = GetUpdatableObject();
     if (updatedObject != null)
     {
       return LoadData(updatedObject);
@@ -682,7 +682,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         {
           try
           {
-            if (prop.GetIndexParameters().Length == 0)
+            if (prop.GetIndexParameters().Length == 0 && prop.CanWrite)
               if (prop.GetValue(this) is IModifiable modifiableChild)
                 modifiableChild.SetIsModified(IsModified);
           }
@@ -779,6 +779,9 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <summary>
   /// Get next element in the collection. If the current element is not part of a collection, or it is the last element, returns null.
   /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
   public virtual ModelElement? Next
   {
     get
