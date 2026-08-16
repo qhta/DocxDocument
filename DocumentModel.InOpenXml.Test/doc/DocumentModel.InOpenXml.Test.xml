@@ -521,54 +521,65 @@
             Initializes the document theme part with a basic color scheme.
             </summary>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.BodyReadTest">
+        <member name="T:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest">
             <summary>
             Tests reading document body from a sample file and serializing created DocumentModel elements.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.Run">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.Run">
             <summary>
             Runs all body read tests.
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestCountBodyItems(System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.TestCountBodyItems(System.Boolean,System.Int32)">
             <summary>
             Tests checking document body items count.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestCheckBodyEmpty(System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.TestCheckBodyEmpty(System.Boolean,System.Int32)">
             <summary>
             Tests checking if the document body is empty.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodyItems(System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.TestEnumerateBodyItems(System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Tests enumerating the document body items (shallow enumeration).
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodyParagraphWithShallowDataRead(System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.TestEnumerateBodyParagraphWithShallowDataRead(System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Tests enumerating the document body Paragraph items with shallow data read (without loading full data for each Paragraph).
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodyParagraphPropertiesRead(System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodyParagraphsEnumerationTest.TestEnumerateBodyParagraphPropertiesRead(System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Tests enumerating the document body Paragraph Properties data read.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodySectionPropertiesRead(System.Boolean,System.Boolean,System.Int32)">
+        <member name="T:DocumentModel.InOpenXml.Test.BodySectionsEnumerationTest">
+            <summary>
+            Tests reading document sections from a sample file.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodySectionsEnumerationTest.Run">
+            <summary>
+            Runs all body read tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodySectionsEnumerationTest.TestEnumerateBodySectionPropertiesRead(System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Tests enumerating the document body Section Properties data read.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.TestEnumerateBodySectionsRead(System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodySectionsEnumerationTest.TestEnumerateBodySectionsRead(System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Tests enumerating the document body Sections collection read.
             </summary>

@@ -46,7 +46,8 @@ internal class Program
     if (!Exec(new BaseTableRowPropertiesTest())) return;
     if (!Exec(new BaseTablePropertiesTest())) return;
 
-    if (!Exec(new BodyReadTest())) return;
+    if (!Exec(new BodyParagraphsEnumerationTest())) return;
+    if (!Exec(new BodySectionsEnumerationTest())) return;
 
     Console.WriteLine("All tests passed.");
 
