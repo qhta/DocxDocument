@@ -19,13 +19,23 @@ public class ColorTypesTest : BaseThemeTest
   {
     Console.WriteLine("=== Color Implementations Test ===\n");
     if (!TestColorTypeDiscovery()) return false;
+    var t0 = DateTime.Now;
     if (!TestXmlSerialization()) return false;
+    var t1 = DateTime.Now;
+    TotalXmlSerialization += (t1 - t0).TotalMilliseconds;
     if (!TestJsonSerialization()) return false;
+    var t2 = DateTime.Now;
+    TotalJsonSerialization += (t2 - t1).TotalMilliseconds;  
     if (!TestColorAccessors()) return false;
     if (!TestEdgeCases()) return false;
     if (!TestColorModelsConversion()) return false;
+    var t3 = DateTime.Now;
     if (!TestStoreThemeInDocument()) return false;
+    var t4 = DateTime.Now;
+    TotalStoreInOpenXml += (t4 - t3).TotalMilliseconds;
     if (!TestChangeColorsInDocument()) return false;
+    var t5 = DateTime.Now;
+    TotalUpdateInOpenXml = (t5 - t3).TotalMilliseconds;
 
     Console.WriteLine("All Color implementation tests passed.\n");
     return true;

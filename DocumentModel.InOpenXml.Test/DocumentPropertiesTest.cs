@@ -16,8 +16,13 @@ public class DocumentPropertiesTest : _AbstractModelTestClass<DocumentProperties
   public override bool Run()
   {
     Console.WriteLine($"=== {TestName} test ===\n");
+    var t0 = DateTime.Now;
     if (!TestJsonSerialization()) return false;
+    var t1 = DateTime.Now;
+    TotalJsonSerialization += (t1 - t0).TotalMilliseconds;
     if (!TestXmlSerialization()) return false;
+    var t2 = DateTime.Now;
+    TotalXmlSerialization += (t2 - t1).TotalMilliseconds;
     //if (!TestEdgeCases()) return false;
     //if (!TestStoreDataInOpenXmlDocument()) return false;
     //if (!TestUpdateDataInOpenXmlDocument()) return false;

@@ -12,9 +12,16 @@ namespace DocumentModel.InOpenXml.Test
     public override bool Run()
     {
       Console.WriteLine("=== BaseSectionProperties Test ===\n");
+      var t0 = DateTime.Now;
       if (!TestXmlSerialization()) return false;
+      var t1 = DateTime.Now;
+      TotalXmlSerialization += (t1 - t0).TotalMilliseconds;
       if (!TestJsonSerialization()) return false;
+      var t2 = DateTime.Now;
+      TotalJsonSerialization += (t2 - t1).TotalMilliseconds;
       if (!TestEdgeCases()) return false;
+      var t3 = DateTime.Now;
+      TotalEdgeCases += (t3 - t2).TotalMilliseconds;
 
       Console.WriteLine("All BaseSectionProperties tests passed.\n");
       return true;

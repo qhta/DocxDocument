@@ -15,12 +15,25 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
   {
     //DXW.CharacterScale
     Console.WriteLine("=== Styles DocDefaults DefaultParagraphProperties Test ===\n");
-    //if (!TestXmlSerialization()) return false;
+    //var t0 = DateTime.Now;
     //if (!TestJsonSerialization()) return false;
+    //var t1 = DateTime.Now;
+    //TotalJsonSerialization += (t1 - t0).TotalMilliseconds;
+    //if (!TestXmlSerialization()) return false;
+    //var t2 = DateTime.Now;
+    //TotalXmlSerialization += (t2 - t1).TotalMilliseconds;
     //if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
+    var t3 = DateTime.Now;
+    //TotalEdgeCases += (t3 - t2).TotalMilliseconds;
+    if (!TestStoreDataInOpenXmlDocument()) return false;
+    var t4 = DateTime.Now;
+    TotalStoreInOpenXml += (t4 - t3).TotalMilliseconds;
+    if (!TestUpdateDataInOpenXmlDocument()) return false;
+    var t5 = DateTime.Now;
+    TotalUpdateInOpenXml += (t5 - t4).TotalMilliseconds;
     if (!TestValidateOpenXml()) return false;
+    var t6 = DateTime.Now;
+    TotalValidateInOpenXml += (t6 - t5).TotalMilliseconds;
     Console.WriteLine("All Styles DocDefaults DefaultParagraphProperties tests passed.\n");
     return true;
   }
@@ -119,7 +132,7 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
   /// Tests setting sample Styles to a new document and outputs the result to the console.
   /// </summary>
   /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreInDocument()
+  private bool TestStoreDataInOpenXmlDocument()
   {
     Console.WriteLine("--- Store sample doc defaults Paragraph properties in new document---");
     Styles testData = CreateSampleStyles();
@@ -158,7 +171,7 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
   /// Tests updating the Styles of a document and outputs the result to the console.
   /// </summary>
   /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateInDocument()
+  private bool TestUpdateDataInOpenXmlDocument()
   {
     Console.WriteLine("--- Update document doc defaults Paragraph properties ---");
     Styles testData = CreateSampleStyles();

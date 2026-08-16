@@ -20,17 +20,18 @@ internal class Program
     if (!Exec(new BuiltInPropertiesTest())) return;
     if (!Exec(new CustomPropertiesTest())) return;
     if (!Exec(new DocumentPropertiesTest())) return;
-    if (!Exec(new ColorTypesTest())) return;
-    if (!Exec(new ColorTransformationsTest())) return;
-
-    if (!Exec(new ThemeTest())) return;
-
+    
     if (!Exec(new RsidsTest())) return;
     if (!Exec(new DocumentVariablesTestClass())) return;
     if (!Exec(new DocumentSettingsTest())) return;
 
     if (!Exec(new FontTableTestClass())) return;
     if (!Exec(new FontEmbeddingTestClass())) return;
+
+    if (!Exec(new ColorTypesTest())) return;
+    if (!Exec(new ColorTransformationsTest())) return;
+
+    if (!Exec(new ThemeTest())) return;
 
     if (!Exec(new LatentStylesTest())) return;
     if (!Exec(new StyleDefinitionsTest())) return;
@@ -48,6 +49,14 @@ internal class Program
     if (!Exec(new BodyReadTest())) return;
 
     Console.WriteLine("All tests passed.");
+
+    Console.WriteLine($"Total JSON Serialization Time:  {(int)(_AbstractTestClass.TotalJsonSerialization),6} ms");
+    Console.WriteLine($"Total XML Serialization Time:   {(int)(_AbstractTestClass.TotalXmlSerialization),6} ms");
+    Console.WriteLine($"Total Load From OpenXml Time:   {(int)(_AbstractTestClass.TotalLoadFromOpenXml),6} ms");
+    Console.WriteLine($"Total Store In OpenXml Time:    {(int)(_AbstractTestClass.TotalStoreInOpenXml),6} ms");
+    Console.WriteLine($"Total Update In OpenXml Time:   {(int)(_AbstractTestClass.TotalUpdateInOpenXml),6} ms");
+    Console.WriteLine($"Total Validate In OpenXml Time: {(int)(_AbstractTestClass.TotalValidateInOpenXml),6} ms");
+    Console.WriteLine($"Total Edge Cases Time:          {(int)(_AbstractTestClass.TotalEdgeCases),6} ms");
   }
 
   /// <summary>

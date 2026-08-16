@@ -14,11 +14,25 @@ public class NumberingInstancesTest : _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine("=== NumberingInstances test ===\n");
-    if (!TestXmlSerialization()) return false;
+    var t0 = DateTime.Now;
     if (!TestJsonSerialization()) return false;
+    var t1 = DateTime.Now;
+    TotalJsonSerialization += (t1 - t0).TotalMilliseconds;
+    if (!TestXmlSerialization()) return false;
+    var t2 = DateTime.Now;
+    TotalXmlSerialization += (t2 - t1).TotalMilliseconds;
     if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
+    var t3 = DateTime.Now;
+    TotalEdgeCases += (t3 - t2).TotalMilliseconds;
+    if (!TestStoreDataInOpenXmlDocument()) return false;
+    var t4 = DateTime.Now;
+    TotalStoreInOpenXml += (t4 - t3).TotalMilliseconds;
+    if (!TestUpdateDataInOpenXmlDocument()) return false;
+    var t5 = DateTime.Now;
+    TotalUpdateInOpenXml += (t5 - t4).TotalMilliseconds;
+    //if (!TestValidateOpenXml()) return false;
+    //var t6 = DateTime.Now;
+    //TotalValidateInOpenXml += (t6 - t5).TotalMilliseconds;
     Console.WriteLine("All NumberingInstances tests passed.\n");
     return true;
   }
@@ -120,7 +134,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreInDocument()
+  private bool TestStoreDataInOpenXmlDocument()
   {
     Console.WriteLine("--- Store sample NumberingInstances in new document---");
     Numbering testData = CreateSampleNumbering();
@@ -179,7 +193,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateInDocument()
+  private bool TestUpdateDataInOpenXmlDocument()
   {
     Console.WriteLine("--- Update document NumberingInstances ---");
     Numbering testData = CreateSampleNumbering();

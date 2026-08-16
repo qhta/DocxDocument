@@ -12,14 +12,17 @@ public class FontEmbeddingTestClass: _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine($"=== {TestName} test ===\n");
-
+    var t0 = DateTime.Now;
     if (!TestEmbedFontsFull()) return false;
+    var t1 = DateTime.Now;
+    TotalLoadFromOpenXml += (t1 - t0).TotalMilliseconds;
     Console.WriteLine($"All {TestName} tests passed.\n");
     return true;
   }
 
   private bool TestEmbedFontsFull()
   {
+
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testFileName = Path.Combine(TestFileDir, $"Font embedding full.docx");

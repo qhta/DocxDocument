@@ -6,6 +6,8 @@
 public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClass
   where ModelDataType : DM.ModelElement, new()
 {
+
+
   /// <summary>
   /// Test file name for storing the document during tests.
   /// </summary>
@@ -18,11 +20,22 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   public override bool Run()
   {
     Console.WriteLine($"=== {TestName} test ===\n");
+    var t0 = DateTime.Now;
     if (!TestJsonSerialization()) return false;
+    var t1 = DateTime.Now;
+    TotalJsonSerialization += (t1 - t0).TotalMilliseconds;
     if (!TestXmlSerialization()) return false;
+    var t2 = DateTime.Now;
+    TotalXmlSerialization += (t2 - t1).TotalMilliseconds;
     if (!TestEdgeCases()) return false;
+    var t3 = DateTime.Now;
+    TotalEdgeCases += (t3 - t2).TotalMilliseconds;
     if (!TestStoreDataInOpenXmlDocument()) return false;
+    var t4 = DateTime.Now;
+    TotalStoreInOpenXml += (t4 - t3).TotalMilliseconds;
     if (!TestUpdateDataInOpenXmlDocument()) return false;
+    var t5 = DateTime.Now;
+    TotalUpdateInOpenXml += (t5 - t4).TotalMilliseconds;
     //if (!TestStoreDataInXmlDocument()) return false;
     Console.WriteLine($"All {TestName} tests passed.\n");
     return true;

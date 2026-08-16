@@ -18,7 +18,7 @@ public class BodyReadTest : _AbstractTestClass
   public override bool Run()
   {
     Console.WriteLine("=== Body Count Test ===\n");
-
+    var t0 = DateTime.Now;
     //if (!TestCountBodyItems(true, 2)) return false;
     //if (!TestCountBodyItems(false, 2)) return false;
 
@@ -39,6 +39,8 @@ public class BodyReadTest : _AbstractTestClass
 
     if (!TestEnumerateBodySectionsRead(true, true, 2)) return false;
     if (!TestEnumerateBodySectionsRead(false, true, 2)) return false;
+    var t1 = DateTime.Now;
+    TotalLoadFromOpenXml += (t1 - t0).TotalMilliseconds;
 
     Console.WriteLine("All Body read tests passed.\n");
     return true;

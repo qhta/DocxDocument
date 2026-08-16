@@ -30,6 +30,34 @@ public abstract class _AbstractTestClass
     => memberName;
 
   /// <summary>
+  /// Total time spent on JSON serialization tests across all instances of this test class.
+  /// </summary>
+  public static double TotalJsonSerialization = 0;
+  /// <summary>
+  /// Total time spent on XML serialization tests across all instances of this test class.
+  /// </summary>
+  public static double TotalXmlSerialization = 0;
+  /// <summary>
+  /// Total time spent on loading data from OpenXml document tests across all instances of this test class.
+  /// </summary>
+  public static double TotalLoadFromOpenXml = 0;
+  /// <summary>
+  /// Total time spent on storing data in OpenXml document tests across all instances of this test class.
+  /// </summary>
+  public static double TotalStoreInOpenXml = 0;
+  /// <summary>
+  /// Total time spent on updating data in OpenXml document tests across all instances of this test class.
+  /// </summary>
+  public static double TotalUpdateInOpenXml = 0;
+  /// <summary>
+  /// Total time spent on validating data in OpenXml document tests across all instances of this test class.
+  /// </summary>
+  public static double TotalValidateInOpenXml = 0;
+  /// <summary>
+  /// Total number of edge cases encountered during tests across all instances of this test class.
+  /// </summary>
+  public static double TotalEdgeCases = 0;
+  /// <summary>
   /// Runs a test and returns its result.
   /// </summary>
   /// <returns>True if test passed, false otherwise</returns>
