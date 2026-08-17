@@ -7854,6 +7854,12 @@
             Parent element that contains this item.
             </summary>
         </member>
+        <member name="M:DocumentModel.IChildItem.SetParent(System.Object)">
+            <summary>
+            Sets the parent element that contains this item.
+            </summary>
+            <param name="parent">The parent element.</param>
+        </member>
         <member name="T:DocumentModel.ICollectionItem">
             <summary>
             Element of the collection must implement this interface.
@@ -7984,6 +7990,14 @@
         <member name="M:DocumentModel.ILoadable.LoadData(System.Object)">
             <summary>
             Loads data from the specified Open XML element (or value) into the current object, updating its state accordingly.
+            </summary>
+            <param name="openXmlElement">The Open XML element (or value) to load data from.</param>
+            <returns>True if the data was successfully loaded; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.ILoadable.TryLoadData(System.Object)">
+            <summary>
+            Loads data from the specified Open XML element (or value) into the current object, updating its state accordingly.
+            If the data cannot be loaded in current context, the method returns false and can load data later.
             </summary>
             <param name="openXmlElement">The Open XML element (or value) to load data from.</param>
             <returns>True if the data was successfully loaded; otherwise, false.</returns>

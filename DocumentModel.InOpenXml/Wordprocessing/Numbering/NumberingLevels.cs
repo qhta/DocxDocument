@@ -34,7 +34,7 @@ public class NumberingLevels : ModelElementCollection<NumberingLevel, DXW.Abstra
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- public AbstractNumbering? Numbering { get => Parent as AbstractNumbering; set => Parent = value; }
+ public AbstractNumbering? Numbering { get => Parent as AbstractNumbering; set => SetParent(value); }
 
  /// <summary>
  /// Retrieves the updatable abstract numbering element associated with the current numbering instance, if available.

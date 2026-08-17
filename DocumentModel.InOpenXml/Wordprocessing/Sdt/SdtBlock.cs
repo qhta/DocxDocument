@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.SdtBlock))]
 [DataContract]
 [XmlRoot("SdtBlock", Namespace = "DocumentModel.Wordprocessing")]
-[LazyLoad(true)]
+[DirectAccess]
 [SpecificClass]
 public partial class SdtBlock : ModelElement<DXW.SdtBlock>, IHexIdentObject, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent
 {
@@ -15,7 +15,8 @@ public partial class SdtBlock : ModelElement<DXW.SdtBlock>, IHexIdentObject, ISt
   /// </summary>
   /// <remarks>This constructor creates a new SdtBlock element using the default settings. Use this constructor
   /// when you want to create a new SdtBlock in a document without copying from an existing one.</remarks>
-  public SdtBlock() : base() { }
+  public SdtBlock(): base() { }
+
 
   /// <summary>
   /// Initializes a new instance of the SdtBlock class with the specified parent object.

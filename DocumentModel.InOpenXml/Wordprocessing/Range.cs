@@ -3,12 +3,12 @@
 /// <summary>
 /// Represents a range of model elements in a WordprocessingML document, defined by a start and end position.
 /// </summary>
-public class Range
+public class Range: ModelElement
 {
   /// <summary>
-  /// Gets the parent model element that contains this range, providing context for the range within the document structure.
+  /// Data source for the range, representing the underlying model element that contains the structure for the range.
   /// </summary>
-  public ModelElement Parent { get; private set; }
+  public ModelElement SourceElement { get; private set; }
 
   /// <summary>
   /// Gets or sets the starting model element of the range, indicating where the range begins within the document.
@@ -24,12 +24,27 @@ public class Range
   /// Initializes a new instance of the <see cref="Range"/> class with the specified parent, start, and end model elements.
   /// </summary>
   /// <param name="parent">The parent model element that contains this range.</param>
+  /// <param name="sourceElement">The model element that serves as the data source for the range.</param>
   /// <param name="start">The starting model element of the range.</param>
   /// <param name="end">The ending model element of the range.</param>
-  public Range(ModelElement parent, ModelElement start, ModelElement end)
+  public Range(ModelElement parent, ModelElement sourceElement, ModelElement start, ModelElement end)
   {
-    Parent = parent;
+    SetParent(parent);
+    SourceElement = sourceElement;
     Start = start;
     End = end;
   }
+
+  /// <summary>
+  /// Gets the collection of items within the range, allowing access to the block-level content that exists between the start and end model elements.
+  /// </summary>
+  public RangeItemsCollections Items
+  {
+    get
+    {
+      var result = _Items ??= new RangeItemsCollections(this, SourceElement);
+      return result;
+    }
+  }
+  private RangeItemsCollections? _Items;
 }

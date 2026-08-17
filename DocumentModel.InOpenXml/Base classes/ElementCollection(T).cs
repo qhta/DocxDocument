@@ -105,6 +105,8 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
         {
           if (item is ICollectionItem collectionItem)
             collectionItem.SetCollection(this);
+          if (item is IChildItem childItem)
+            childItem.SetParent(this.Parent);
           if (item is INamedObject namedObject && _index != null && namedObject.Name != null)
             _index.Add(namedObject.Name, item);
           if (item is INotifyPropertyChanged notificationSource)

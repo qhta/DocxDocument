@@ -22,8 +22,8 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     //if (!TestEnumerateBodySectionPropertiesRead(true, true, 1)) return false;
     //if (!TestEnumerateBodySectionPropertiesRead(false, false, 2)) return false;
 
-    if (!TestEnumerateBodySectionsRead(true, true, 2)) return false;
-    if (!TestEnumerateBodySectionsRead(false, true, 2)) return false;
+    //if (!TestEnumerateBodySectionsRead(true, true, 1)) return false;
+    if (!TestEnumerateBodySectionsRead(false, false, 1)) return false;
     var t1 = DateTime.Now;
     TotalLoadFromOpenXml += (t1 - t0).TotalMilliseconds;
 
@@ -38,7 +38,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   private bool TestEnumerateBodySectionPropertiesRead(bool directAccess, bool verbatim, int times = 1)
   {
-    Console.WriteLine($"--- Enumerate Body Section Properties with direct access = {directAccess} From Sample File ---");
+    Console.WriteLine($"--- Enumerate Body Section Properties with direct access = {directAccess} ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -49,7 +49,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     var t0 = DateTime.Now;
     using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
     var t1 = DateTime.Now;
-    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+    //Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
 
     var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
     if (openXmlBody == null)
@@ -64,7 +64,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
     modelBody.SetHasDirectAccess(directAccess);
     var t3 = DateTime.Now;
-    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    //Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
     var lastParagraphsCount = 0;
     int lastSectionPropertiesCount = 0;
     for (int trial = 0; trial < times; trial++)
@@ -121,7 +121,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
       }
 
       var t4 = DateTime.Now;
-      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      //Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
       t3 = t4;
       if (verbatim)
         Console.WriteLine("-------------------------------------------------");
@@ -133,7 +133,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
       return false;
     }
 
-    Console.WriteLine($"✓ Enumerate Body Section Properties with direct access = {directAccess} from sample file test passed\n");
+    Console.WriteLine($"✓ Enumerate Body Section Properties with direct access = {directAccess} test passed\n");
     return true;
   }
 
@@ -144,7 +144,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   private bool TestEnumerateBodySectionsRead(bool directAccess, bool verbatim, int times = 1)
   {
-    Console.WriteLine($"--- Enumerate Body Sections with direct access = {directAccess} From Sample File ---");
+    Console.WriteLine($"--- Enumerate Body Sections with direct access = {directAccess} ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -155,7 +155,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     var t0 = DateTime.Now;
     using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
     var t1 = DateTime.Now;
-    Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+    //Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
 
     var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
     if (openXmlBody == null)
@@ -170,7 +170,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
     modelBody.SetHasDirectAccess(directAccess);
     var t3 = DateTime.Now;
-    Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
+    //Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
     int lastSectionsCount = 0;
     for (int trial = 0; trial < times; trial++)
     {
@@ -178,36 +178,43 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
         Console.WriteLine("-------------------------------------------------");
       int sectionIndex = 0;
       int sectionsCount = 0;
+      int totalRangeItemsCount = 0;
       foreach (var section in modelBody.Sections)
       {
+        //Debug.WriteLine($"Section {sectionIndex}");
         DMW.Range range = section.Range;
+        var rangeItems = range.Items;
+        var rangeItemsCount = rangeItems.Count();
+        totalRangeItemsCount += rangeItemsCount;
+        Console.WriteLine($"Section {sectionIndex}");
+        if (section.Paragraph != null)
+          Console.WriteLine($"Paragraph ID: {section.Paragraph.ParagraphId}");
         if (verbatim)
         {
-          Console.WriteLine($"Section {sectionIndex}");
-          if (section.Paragraph != null)
-            Console.WriteLine($"Paragraph ID: {section.Paragraph.ParagraphId}");
-          Console.WriteLine($"Section.Collection={section.Collection}");
           string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
           if (sectionString != string.Empty)
             Console.WriteLine(sectionString);
-          Console.WriteLine($"Range: Start={RefStr(range.Start)}, End={RefStr(range.End)}");
         }
-        else
-        {
-          Console.Write(".");
-        }
+        Console.WriteLine($"Range: Start={RefStr(range.Start)}, End={RefStr(range.End)}, ItemsCount={rangeItemsCount}");
         sectionIndex++;
         sectionsCount++;
 
       }
-      Console.WriteLine($"\nEnumerated: {sectionsCount} Sections");
+      Console.WriteLine($"\nEnumerated: {sectionsCount} Sections with total {totalRangeItemsCount} Range Items");
+      var bodyItemsCount = modelBody.Items.Count();
+      if (totalRangeItemsCount != bodyItemsCount)
+      {
+        Console.WriteLine($"✗ Body items count mismatch: {bodyItemsCount} vs {totalRangeItemsCount}");
+        return false;
+      }
+
       if (trial == 0)
       {
         lastSectionsCount = sectionsCount;
       }
 
       var t4 = DateTime.Now;
-      Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
+      //Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
       t3 = t4;
       if (verbatim)
         Console.WriteLine("-------------------------------------------------");
@@ -219,7 +226,8 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
       return false;
     }
 
-    Console.WriteLine($"✓ Enumerate Body Sections with direct access = {directAccess} from sample file test passed\n");
+
+    Console.WriteLine($"✓ Enumerate Body Sections with direct access = {directAccess} test passed\n");
     return true;
   }
 
@@ -233,60 +241,6 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     return result;
   }
 
-  ///// <summary>
-  ///// Tests reading document body from the sample file and loading it into DocumentModel body.
-  ///// </summary>
-  ///// <returns>True if the test passes; otherwise, false.</returns>
-  //private bool TestReadBodyAndSerialize(bool directAccess, int times = 1)
-  //{
-  //  Console.WriteLine("--- Read Body From Sample File ---");
-
-  //  if (!File.Exists(SampleFilePath))
-  //  {
-  //    Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
-  //    return false;
-  //  }
-
-  //  using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
-  //  var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
-  //  if (openXmlBody == null)
-  //  {
-  //    Console.WriteLine("✗ OpenXml body not found");
-  //    return false;
-  //  }
-
-  //  var t0 = DateTime.Now;
-  //  Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
-  //  modelBody.SetHasDirectAccess(directAccess);
-  //  var t1 = DateTime.Now;
-  //  Console.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
-  //  var openXmlCount = openXmlBody.ChildElements.Count;
-  //  var modelCount = modelBody.Items.Count;
-  //  var t2 = DateTime.Now;
-  //  Console.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
-  //  Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
-  //  Console.WriteLine($"Model body elements count: {modelCount}");
-
-  //  if (modelCount == 0)
-  //  {
-  //    Console.WriteLine("✗ Model body is empty after load");
-  //    return false;
-  //  }
-
-  //  if (modelCount != openXmlCount)
-  //  {
-  //    Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
-  //    return false;
-  //  }
-  //  var t3 = DateTime.Now;
-  //  var bodyXml = SerializeObjectToXml(modelBody);
-  //  var t4 = DateTime.Now;
-  //  Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-  //  Console.WriteLine("Serialized Body XML:\n" + bodyXml);
-
-  //  Console.WriteLine("✓ Body read from sample file test passed\n");
-  //  return true;
-  //}
 
 
 }

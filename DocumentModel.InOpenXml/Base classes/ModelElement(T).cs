@@ -172,6 +172,23 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   }
 
   /// <summary>
+  /// Tries to load data from the specified OpenXmlElement if direct access is enabled and the element is of the expected type.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element to load data from.</param>
+  /// <returns>True if the data was successfully loaded or if direct access is enabled; otherwise, false.</returns>
+  public override bool TryLoadData(object openXmlElement)
+  {
+    if (openXmlElement is not OpenXmlType typedElement)
+     throw new ApplicationException("The provided object is not of the expected OpenXmlType.");
+    if (HasDirectAccess)
+    {
+      SetUpdatableObject(typedElement);
+      return true;
+    }
+    return base.LoadData(openXmlElement);
+  }
+
+  /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
   /// </summary>
   public override bool UpdateData()

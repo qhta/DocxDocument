@@ -19,7 +19,7 @@ public partial class ParagraphProperties : BaseParagraphProperties<DXW.Paragraph
   /// <param name="parent">The parent paragraph to which these properties belong.</param>
   public ParagraphProperties(DMW.Paragraph parent): base()
   {
-    Parent = parent;
+    SetParent(parent);
   }
 
   /// <summary>

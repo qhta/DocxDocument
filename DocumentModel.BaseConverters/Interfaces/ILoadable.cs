@@ -31,4 +31,13 @@ public interface ILoadable
   /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
   public bool LoadData(object openXmlElement);
 
+  /// <summary>
+  /// Loads data from the specified Open XML element (or value) into the current object, updating its state accordingly.
+  /// If the data cannot be loaded in current context, the method returns false and can load data later.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element (or value) to load data from.</param>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public bool TryLoadData(object openXmlElement);
+
+
 }

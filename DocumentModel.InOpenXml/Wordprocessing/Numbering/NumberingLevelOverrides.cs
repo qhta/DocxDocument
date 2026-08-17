@@ -29,7 +29,7 @@ public class NumberingLevelOverrides : ModelElementCollection<NumberingLevelOver
  [XmlIgnore]
  [JsonIgnore]
  [NotMapped]
- public NumberingInstance? Numbering { get => Parent as NumberingInstance; set => Parent = value; }
+ public NumberingInstance? Numbering { get => Parent as NumberingInstance; set => SetParent(value); }
 
  /// <summary>
  /// Gets updatable element for this collection of numbering instance,

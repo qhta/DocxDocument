@@ -121,7 +121,7 @@ public static partial class OpenXmlModelConverter
     {
       var modelObject = Activator.CreateInstance(modelType)!;
       if (modelObject is ILoadable loadable)
-        loadable.LoadData(openXmlObject);
+        loadable.TryLoadData(openXmlObject);
       return modelObject;
     }
   }
@@ -750,7 +750,7 @@ public static partial class OpenXmlModelConverter
         else
         {
           var modelValue = Activator.CreateInstance(modelProperty.PropertyType)!;
-          (modelValue as ILoadable)?.LoadData(openXmlValue);
+          (modelValue as ILoadable)?.TryLoadData(openXmlValue);
           modelProperty.SetValue(modelObject, modelValue);
           return true;
         }

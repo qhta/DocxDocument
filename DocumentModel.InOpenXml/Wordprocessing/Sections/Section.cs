@@ -62,22 +62,23 @@ public class Section: ModelElement
   {
     if (this.Collection is ICollection<Section> sectionCollection)
     {
-      var sectionArray = sectionCollection.ToArray();
-      var sectionIndex = Array.IndexOf(sectionArray, this);
+      var sectionArray = sectionCollection.ToList();
+      var sectionIndex = sectionArray.IndexOf(this);
       if (sectionIndex < 0)
         throw new InvalidOperationException("Section index not found.");
       ModelElement? sectionStart = null;
+
       if (sectionIndex == 0)
-        sectionStart = (Parent as Sections)?.ParentItemsCollection?.FirstOrDefault();
+        sectionStart = (Collection as Sections)?.ParentItemsCollection?.FirstOrDefault();
       else
-      {
         sectionStart = sectionArray[sectionIndex - 1].Paragraph?.Next;
-      }
+
       if (sectionStart is null)
         throw new InvalidOperationException("Section start not found.");
-
+      if (sectionStart.GetUpdatableObject() is null)
+        Debug.Assert(true);
       var sectionEnd = (Paragraph as ModelElement) ?? this;
-      var range = new Range(this, sectionStart, sectionEnd);
+      var range = new Range(this, (Parent as ModelElement)!, sectionStart, sectionEnd);
       return range;
     }
     else

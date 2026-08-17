@@ -7,6 +7,11 @@ public interface IChildItem
   /// <summary>
   /// Parent element that contains this item.
   /// </summary>
-  public object? Parent { get; set; }
+  public object? Parent { get; }
 
+  /// <summary>
+  /// Sets the parent element that contains this item.
+  /// </summary>
+  /// <param name="parent">The parent element.</param>
+  public void SetParent(object? parent);
 }

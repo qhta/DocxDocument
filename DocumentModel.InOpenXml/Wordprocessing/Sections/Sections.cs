@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of sections in a Word document.
@@ -16,7 +18,7 @@ public class Sections : ModelElementCollection<Section>
   {
     if (parent is not IStory)
       throw new ArgumentException("Parent must implement IStory interface.", nameof(parent));
-    Parent = parent;
+    SetParent(parent);
     DataSource = parent;
     IsLazyLoadEnabled = true;
   }
@@ -58,13 +60,13 @@ public class Sections : ModelElementCollection<Section>
         {
           if (item is Paragraph paragraph && paragraph.ParagraphProperties?.SectionProperties is SectionProperties sectionProperties)
           {
-            var section = new Section(this, sectionProperties);
+            var section = new Section((Parent as ModelElement)!, sectionProperties);
             Add(section);
             yield return section;
           }
           else if (item is SectionProperties lastSectionProperties)
           {
-            var section = new Section(this, lastSectionProperties);
+            var section = new Section((Parent as ModelElement)!, lastSectionProperties);
             Add(section);
             yield return section;
 
@@ -147,12 +149,12 @@ public class Sections : ModelElementCollection<Section>
         if (item is Paragraph paragraph)
           if (paragraph.ParagraphProperties?.SectionProperties is SectionProperties sectionProperties)
           {
-            var section = new Section(this, sectionProperties);
+            var section = new Section((Parent as ModelElement)!, sectionProperties);
             Add(section);
           }
           else if (item is SectionProperties lastSectionProperties)
           {
-            var section = new Section(this, lastSectionProperties);
+            var section = new Section((Parent as ModelElement)!, lastSectionProperties);
             Add(section);
             break;
           }

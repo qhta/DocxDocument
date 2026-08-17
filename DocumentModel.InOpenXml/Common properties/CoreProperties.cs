@@ -24,7 +24,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// <param name = "document">Wordprocessing document model</param>
   public CoreProperties(Wordprocessing.Document document) : this()
   {
-    Parent = document;
+    SetParent(document);
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }

@@ -327,7 +327,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     {
       var oldValue = fieldValue;
       if (fieldValue is IChildItem oldChild && oldChild.Parent == this)
-        oldChild.Parent = null;
+        oldChild.SetParent(null);
       DXPP.WordprocessingDocument? oldWordprocessingDocument = null;
       if (fieldValue is IWordprocessingDocumentAware oldWDAValue && oldWDAValue.WordprocessingDocument != null)
       {
@@ -339,7 +339,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
       fieldValue = newValue;
       if (fieldValue is IChildItem newChild && newChild.Parent == null)
-        newChild.Parent = this;
+        newChild.SetParent(this);
       if (!IsLoading && newValue is IWordprocessingDocumentAware newWDAValue && oldWordprocessingDocument != null)
         newWDAValue.AttachAndUpdate(oldWordprocessingDocument);
       if (newValue is INotifyCollectionChanged collection)
@@ -449,10 +449,11 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       return false;
     if (ReferenceEquals(this, obj))
       return true;
-    if (obj.GetType() != GetType())
-      return false;
+    return false;
+    //if (obj.GetType() != GetType())
+    //  return false;
 
-    return DeepComparer.Equals(this.GetType(), this, obj);
+    //return DeepComparer.Equals(this.GetType(), this, obj);
   }
 
   /// <summary>
@@ -527,19 +528,13 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
-  /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// Attempts to load data into the current model element from the specified Open XML object.
+  /// This method calls the LoadData method and returns its result, allowing for a more flexible approach to data loading that can be overridden in derived classes.
   /// </summary>
-  /// <returns>True if the data was successfully updated; otherwise, false.</returns>
-  public virtual bool UpdateData()
-  {
-    var updatedObject = GetUpdatableObject();
-    if (updatedObject != null)
-    {
-      UpdateData(updatedObject);
-      return true;
-    }
-    return false;
-  }
+  /// <param name="openXmlObject">The Open XML object to load data from.</param>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public virtual bool TryLoadData(object openXmlObject) => LoadData(openXmlObject);
+
 
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
@@ -555,10 +550,27 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (IsLoaded)
       return false;
     SetIsLoading(true);
+    SetUpdatableObject(openXmlObject);
     OpenXmlModelConverter.LoadData(this, openXmlObject);
     SetIsLoading(false);
     SetIsLoaded(true);
     return true;
+  }
+
+
+  /// <summary>
+  /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// </summary>
+  /// <returns>True if the data was successfully updated; otherwise, false.</returns>
+  public virtual bool UpdateData()
+  {
+    var updatedObject = GetUpdatableObject();
+    if (updatedObject != null)
+    {
+      UpdateData(updatedObject);
+      return true;
+    }
+    return false;
   }
 
   /// <summary>
@@ -623,13 +635,20 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public object? Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  public object? Parent { [DebuggerStepThrough] get; private set; }
+
+  /// <summary>
+  /// Sets the parent object that contains this item. This method is used to establish a parent-child relationship between model elements. The parent can be any object, and it is typically another model element or a collection that contains this item.
+  /// </summary>
+  /// <param name="parent"></param>
+  public void SetParent(object? parent) => Parent = parent;
 
   /// <summary>
   /// Optional collection that contains this item.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
+  [NotMapped]
   public object? Collection
   {
     [DebuggerStepThrough]

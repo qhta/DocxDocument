@@ -16,7 +16,7 @@ public abstract class BaseThemeTest: _AbstractTestClass
   public void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
   {
     if (color is ModelElement modelElement)
-      modelElement.Parent = document;
+      modelElement.SetParent(document);
   }
 
   /// <summary>

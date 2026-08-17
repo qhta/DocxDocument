@@ -79,9 +79,7 @@ public static class OpenXmlElementConverter
       return result;
     }
     var modelObject = Activator.CreateInstance(modelType)!;
-    if (modelType.Name == "ShapeLayout")
-      Debug.Assert(true);
-    (modelObject as ILoadable)?.LoadData(openXmlElement);
+    (modelObject as ILoadable)?.TryLoadData(openXmlElement);
     return modelObject;
   }
 

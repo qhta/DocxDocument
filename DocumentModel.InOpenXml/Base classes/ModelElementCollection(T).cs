@@ -92,11 +92,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     {
       if (HasDirectAccess)
       {
-        var sourceCollection = SourceCollection;
-        if (sourceCollection is null)
-          throw new ApplicationException("Can't check collection count because the source collection is null.");
-
-        return sourceCollection.Count(AcceptSourceItem);
+        return GetSourceElements().Count(AcceptSourceItem);
       }
       if (IsLazyLoadEnabled)
       {
@@ -118,11 +114,8 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   {
     if (HasDirectAccess)
     {
-      var sourceCollection = SourceCollection;
-      if (sourceCollection is null)
-        throw new ApplicationException("Can't check if collection is empty because the source collection is null.");
 
-      return !sourceCollection.Any(AcceptSourceItem);
+      return !GetSourceElements().Any(AcceptSourceItem);
     }
     if (IsLazyLoadEnabled)
     {
@@ -171,9 +164,27 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   }
 
   /// <summary>
+  /// Gets the source elements from the SourceCollection.
+  /// </summary>
+  protected virtual IEnumerable<DX.OpenXmlElement> GetSourceElements()
+  {
+    if (SourceCollection is null)
+      throw new ApplicationException("Can't enumerate source elements because the source collection is null.");
+    //int elementIndex = 0;
+    foreach (var element in SourceCollection)
+    {
+      //var str = $"Yielding element[{elementIndex++}]: {element.GetType().Name}";
+      //if (element.GetType().Name == "Paragraph")
+      //  str += " " + element.GetAttribute("paraId", "http://schemas.microsoft.com/office/word/2010/wordml").Value;
+      //Debug.WriteLine(str);
+      yield return element;
+    }
+  }
+
+  /// <summary>
   /// Enumerates the items in the collection, returning them directly after converting from the source collection.
   /// </summary>
-  private IEnumerable<ItemType> EnumerateDirectly()
+  protected IEnumerable<ItemType> EnumerateDirectly()
   {
     OpenXmlModelConverter.Init();
 
@@ -181,12 +192,10 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     foreach (var existing in base.Items)
       yield return existing;
 
-    var sourceCollection = SourceCollection
-                           ?? throw new ApplicationException("Can't enumerate data directly because the source collection is null.");
 
     int alreadyLoaded = base.Items.Count;
 
-    foreach (var openXmlItem in sourceCollection.Skip(alreadyLoaded))
+    foreach (var openXmlItem in SourceCollection!)
     {
       if (!AcceptSourceItem(openXmlItem))
         continue;
@@ -194,7 +203,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       var modelItem = OpenXmlElementConverter.ConvertFrom(openXmlItem, modelItemType);
       if (modelItem is not ItemType item)
         throw new ApplicationException($"Failed to convert OpenXmlElement {openXmlItem} to {typeof(ItemType).Name}");
-      item.Parent = this;
+      item.SetParent(this);
       yield return item;
     }
   }
@@ -222,7 +231,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
                                "Can't lazy load data because the source collection is null.");
 
 
-      var sourceArray = sourceCollection.Where(AcceptSourceItem).Skip(alreadyLoaded).ToArray();
+      var sourceArray = GetSourceElements().Where(AcceptSourceItem).Skip(alreadyLoaded).ToArray();
       int i;
       for (i = 0; i < sourceArray.Length; i++)
       {

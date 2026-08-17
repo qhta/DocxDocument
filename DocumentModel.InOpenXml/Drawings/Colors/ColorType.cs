@@ -201,7 +201,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       };
       if (InternalColor == null)
         return;
-      (InternalColor as ModelElement)!.Parent = parent;
+      (InternalColor as ModelElement)!.SetParent(parent);
       if (InternalColor is IColor iColor2)
         iColor2.RGBAComponents = rgba;
       var updatableElement = GetUpdatableElement();
@@ -221,7 +221,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.RgbColorModelPercentage rgbPercentage)
       {
         var color = new RgbColorModelPercentage();
-        color.Parent = this;
+        color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(rgbPercentage);
         color.LoadData(rgbPercentage);
         InternalColor = color;
@@ -229,7 +229,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.RgbColorModelHex rgbHex)
       {
         var color = new RgbColorModelHex();
-        color.Parent = this;
+        color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(rgbHex);
         color.LoadData(rgbHex);
         InternalColor = color;
@@ -237,7 +237,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.HslColor hslColor)
       {
         var color = new HslColor();
-        color.Parent = this;
+            color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(hslColor);
         color.LoadData(hslColor);
         InternalColor = color;
@@ -245,7 +245,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.SystemColor systemColor)
       {
         var color = new SystemColor();
-        color.Parent = this;
+          color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(systemColor);
         color.LoadData(systemColor);
         InternalColor = color;
@@ -253,7 +253,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.PresetColor presetColor)
       {
         var color = new PresetColor();
-        color.Parent = this;
+        color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(presetColor);
         color.LoadData(presetColor);
         InternalColor = color;
@@ -261,7 +261,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       if (element is DXD.SchemeColor schemeColor)
       {
         var color = new SchemeColor();
-        color.Parent = this;
+        color.SetParent(this);
         ((IUpdatable)color).SetUpdatableObject(schemeColor);
         color.LoadData(schemeColor);
         InternalColor = color;

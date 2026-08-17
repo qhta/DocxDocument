@@ -1,9 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
-
-using DocumentModel;
-
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
 namespace DocumentModel;
 /// <summary>
 ///   Represents a collection of model elements associated with an OpenXml element, which loads separate elements on demand.
@@ -15,7 +9,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
 {
 
   /// <summary>
-  /// Default constructor needed for XML serialization. Initializes a new instance of the StoryItemsCollection class.
+  /// Default constructor needed for XML serialization. Initializes a new instance of the ContentItemsCollection class.
   /// </summary>
   protected ContentItemsCollection()
   {
@@ -61,7 +55,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelType, out var openXmlTypes))
         throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelType}");
 
-      foreach (var openXmlChildElement in openXmlElement.Elements())
+      foreach (var openXmlChildElement in GetSourceElements())
       {
         if (!AcceptSourceItem(openXmlChildElement))
           continue;
@@ -94,7 +88,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// <param name="modelItemType">The expected model item type.</param>
   /// <returns>The created model element of the specified type.</returns>
   /// <exception cref="InvalidOperationException"></exception>
-  private ItemType CreateModelElement<ItemType>(DX.OpenXmlElement openXmlChildElement, Type modelItemType)
+  protected virtual ItemType CreateModelElement<ItemType>(DX.OpenXmlElement openXmlChildElement, Type modelItemType)
   {
     var modelItem = OpenXmlModelConverter.ConvertFrom(openXmlChildElement, modelItemType);
     if (modelItem is not ModelElement modelElement)
@@ -103,7 +97,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     if (modelItem != null && !modelItemType.IsInstanceOfType(modelItem))
       throw new InvalidOperationException($"Converted model item is not compatible to {modelItemType}");
 
-    modelElement.Parent = this.Parent;
+    modelElement.SetParent(Parent);
     if (modelItem is IUpdatable updatableModelItem)
       updatableModelItem.SetUpdatableObject(openXmlChildElement);
 
@@ -137,7 +131,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       {
         //Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Typeface}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
         modelObject = (ModelElement)Activator.CreateInstance(modelItemType)!;
-        (modelObject as ILoadable)?.LoadData(openXmlElement);
+        (modelObject as ILoadable)?.TryLoadData(openXmlElement);
       }
 
       this.Add(modelObject);
