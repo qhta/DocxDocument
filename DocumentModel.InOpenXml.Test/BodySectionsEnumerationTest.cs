@@ -195,7 +195,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
           if (sectionString != string.Empty)
             Console.WriteLine(sectionString);
         }
-        Console.WriteLine($"Range: Start={RefStr(range.Start)}, End={RefStr(range.End)}, ItemsCount={rangeItemsCount}");
+        Console.WriteLine($"Range: Start={range.Start}, End={range.End}, ItemsCount={rangeItemsCount}");
         sectionIndex++;
         sectionsCount++;
 
@@ -230,17 +230,6 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
     Console.WriteLine($"✓ Enumerate Body Sections with direct access = {directAccess} test passed\n");
     return true;
   }
-
-  private string RefStr(ModelElement element)
-  {
-    var result = element.GetType().Name;
-    if (element is IHexIdentObject hexIdentObject)
-    {
-      result += $" {hexIdentObject.HexId}";
-    }
-    return result;
-  }
-
 
 
 }

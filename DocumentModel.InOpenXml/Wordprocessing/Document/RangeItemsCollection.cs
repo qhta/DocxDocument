@@ -52,7 +52,7 @@ public class RangeItemsCollections: ContentItemsCollection
       throw new ApplicationException("Can't get source elements because the start element is null.");
     var endElement = Range.End.GetUpdatableObject()! as DX.OpenXmlElement;
     var element = startElement;
-    int elementIndex = 0;
+    //int elementIndex = 0;
     do
     {
       if (element is null)

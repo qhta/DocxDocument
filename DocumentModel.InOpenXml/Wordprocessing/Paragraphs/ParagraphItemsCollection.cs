@@ -15,4 +15,13 @@ public class ParagraphItemsCollection: ContentItemsCollection
   {
   }
 
+  /// <summary>
+  /// Accepts source items. ParagraphProperties are not accepted.
+  /// </summary>
+  /// <param name="item"></param>
+  /// <returns></returns>
+  public override bool AcceptSourceItem(DX.OpenXmlElement item)
+  {
+    return item.GetType()!=typeof(DXW.ParagraphProperties);
+  }
 }

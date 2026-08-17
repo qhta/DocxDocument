@@ -248,8 +248,7 @@ public class BodyParagraphsEnumerationTest : _AbstractTestClass
               Console.Write(".");
           }
           paragraphIndex++;
-          if (paragraphIndex == 2)
-            break; // limit to first 2 paragraphs for performance
+
         }
       }
       Console.WriteLine($"\nEnumerated: {paragraphIndex} paragraphs, {paraPropertiesCount} Paragraph Properties");

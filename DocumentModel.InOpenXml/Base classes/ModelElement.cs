@@ -815,4 +815,25 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     }
   }
 
+  /// <summary>
+  /// Returns a string that represents the current object, including its type name and, if applicable, its hex identifier.
+  /// The string format is "Namespace.TypeName HexId" if the object implements IHexIdentObject; otherwise, it is simply "Namespace.TypeName".
+  /// The namespace prefix "DocumentModel." is trimmed from the output for clarity.
+  /// </summary>
+  /// <returns></returns>
+  public override string? ToString()
+  {
+    var str = this.GetType().Name;
+    var ns = this.GetType().Namespace;
+    if (ns != null)
+    {
+      ns = ns.TrimStart("DocumentModel.");
+      str = ns + "." + str;
+    }
+    if (this is IHexIdentObject hexIdentObject)
+      str += " " + hexIdentObject.HexId;
+    else if (this is DMW.ITextualElement textObject)
+      str += " " + textObject.Text;
+    return str;
+  }
 }

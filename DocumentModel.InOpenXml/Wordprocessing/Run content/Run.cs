@@ -1,5 +1,7 @@
 using DocumentModel.Math;
 
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines a region of text with a common set of properties. 
@@ -10,7 +12,7 @@ namespace DocumentModel.Wordprocessing;
 [DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
-public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
+public partial class Run : ModelElement<DXW.Run>, ITextualElement,
  IParagraphContent, ISdtRunContent, IRubyContent, IBidirectionalContent, IMathArgumentContent
 {
   /// <summary>
@@ -42,7 +44,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   Revision Identifier for Run Properties
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunProperties))]
-  public HexInt? RsidProps 
+  public HexInt? RsidProps
   {
     get => _RsidProps ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunProperties);
     set => UpdateField(ref _RsidProps, value, nameof(RsidProps));
@@ -53,7 +55,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   Revision Identifier for Run Deletion
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunDeletion))]
-  public HexInt? RsidDel 
+  public HexInt? RsidDel
   {
     get => _RsidDel ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunDeletion);
     set => UpdateField(ref _RsidDel, value, nameof(RsidDel));
@@ -64,7 +66,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   Revision Identifier for Run
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunAddition))]
-  public HexInt? RsidAdd 
+  public HexInt? RsidAdd
   {
     get => _RsidAdd ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunAddition);
     set => UpdateField(ref _RsidAdd, value, nameof(RsidAdd));
@@ -77,7 +79,7 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   since they are directly applied to the run and supersede any formatting from styles..
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RunProperties))]
-  public RunProperties? RunProperties 
+  public RunProperties? RunProperties
   {
     get => _RunProperties ??= GetProperty<RunProperties?>(GetUpdatableElement()?.RunProperties);
     set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
@@ -121,30 +123,21 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   [XmlArrayItem("DeletedText", typeof(DMW.DeletedText))]
   [XmlArrayItem("FieldCode", typeof(DMW.FieldCode))]
   [XmlArrayItem("DeletedFieldCode", typeof(DMW.DeletedFieldCode))]
-  public RunItemsCollection Items
-  {
-    get => _Items ??= new RunItemsCollection(this, GetUpdatableElement());
-  }
+  public RunItemsCollection Items => _Items ??= new RunItemsCollection(this, GetUpdatableElement());
+  
   private RunItemsCollection? _Items;
 
   /// <summary>
   /// This property provides access to the collection of text elements within the run. 
   /// </summary>
-  public RunTexts TextItems
-  {
-    get => _TextItems ??= new RunTexts(this, Items);
-  }
-  private RunTexts? _TextItems;
+  public IEnumerable<ModelElement> TextualItems => Items.Where(item => item is ITextualElement);
+  
 
   /// <summary>
-  ///  Gets or sets the concatenated text content of the run, combining all text elements within the run's items collection.
-  /// Setting this property will update the text content of the run accordingly.
+  /// The text value represented by this element.
   /// </summary>
-  public string Text
-  {
-    get => GetText();
-    set => SetText(value);
-  }
+  [XmlText]
+  public string? Text { get => GetText(); set => SetText(value); }
 
   /// <summary>
   /// Gets the concatenated text content of the run, combining all text elements within the run's items collection.
@@ -152,20 +145,17 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   /// <returns>The concatenated text content of the run.</returns>
   public string GetText()
   {
-    return String.Concat(TextItems.Select(item=>item.Text));
+    return String.Concat(TextualItems.Select(item => (item as ITextualElement)?.Text));
   }
 
   /// <summary>
   /// Sets the text content of the run by updating the text of the first textual element found in the run's items collection.
   /// </summary>
   /// <param name="value">The text content to set</param>
-  public void SetText(string value)
+  public void SetText(string? value)
   {
-    var firstTextualElement = Items.OfType<DMW.ITextualElement>().FirstOrDefault();
-    if (firstTextualElement != null)
-    {
-      firstTextualElement.Text = value;
-    }
+    throw new NotImplementedException("Run SetText not implemented yet");
+
   }
 
 }

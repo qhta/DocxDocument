@@ -6,11 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ITextualElement
 {
-  /// <summary>
-  /// Indicates whether this textual element is deleted.
-  /// </summary>
-  [DefaultValue(false)]
-  public bool IsDeleted { get; set; }
 
   /// <summary>
   /// The text value represented by this element.
