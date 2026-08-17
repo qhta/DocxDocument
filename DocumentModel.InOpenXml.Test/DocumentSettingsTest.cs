@@ -5,6 +5,7 @@
   /// </summary>
   public class DocumentSettingsTest: _AbstractModelTestClass<DocumentSettings>
   {
+
     /// <summary>
     /// Creates a new instance of <see cref="DocumentSettings"/> populated with sample test data.
     /// </summary>

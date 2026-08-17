@@ -165,7 +165,7 @@ public static class TestHelper
 
       if (comparedType.IsValueType)
       {
-        result = Comparer.Equals(obj1Value, obj2Value) || StructuralComparisons.StructuralEqualityComparer.Equals(obj1Value, obj2Value);
+        result = Comparer.Equals(obj1Value, obj2Value) || DeepComparer.Equals(obj1Value, obj2Value) || StructuralComparisons.StructuralEqualityComparer.Equals(obj1Value, obj2Value);
         if (!result)
           message = $"Property {propName} values differ -> {firstName}={obj1Value} vs {secondName}={obj2Value}";
         return result;

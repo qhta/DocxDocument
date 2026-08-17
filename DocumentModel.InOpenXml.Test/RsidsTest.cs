@@ -7,6 +7,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class RsidsTest: _AbstractModelTestClass<Rsids>
 {
+
   /// <summary>
   /// Creates a sample Rsids object with various property types.
   /// </summary>

@@ -761,6 +761,7 @@ public static class VariantUtils
     var variant = value as Variant;
     if (variant?.VariantType == VariantType.Empty)
       return new DXVT.VTEmpty();
+
     if (baseType == null)
     {
       if (variant != null)
@@ -780,7 +781,8 @@ public static class VariantUtils
         }
       }
       else
-        baseType = TypeToVectorBase[value.GetType()];
+        if (TypeToVectorBase.TryGetValue(value.GetType(), out var values))
+          baseType = values;  
     }
 
     if (baseType == DXVT.VectorBaseValues.Variant)

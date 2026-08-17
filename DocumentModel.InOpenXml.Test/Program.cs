@@ -13,41 +13,41 @@ internal class Program
     Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
-    //if (!Exec(new ElementCollectionTest())) return;
-    //if (!Exec(new CorePropertiesTest())) return;
-    //if (!Exec(new ContentPropertiesTest())) return;
-    //if (!Exec(new StatisticPropertiesTest())) return;
-    //if (!Exec(new BuiltInPropertiesTest())) return;
-    //if (!Exec(new CustomPropertiesTest())) return;
-    //if (!Exec(new DocumentPropertiesTest())) return;
+    if (!Exec(new ElementCollectionTest())) return;
+    if (!Exec(new CorePropertiesTest())) return;
+    if (!Exec(new ContentPropertiesTest())) return;
+    if (!Exec(new StatisticPropertiesTest())) return;
+    if (!Exec(new BuiltInPropertiesTest())) return;
+    if (!Exec(new CustomPropertiesTest())) return;
+    if (!Exec(new DocumentPropertiesTest())) return;
 
-    //if (!Exec(new RsidsTest())) return;
-    //if (!Exec(new DocumentVariablesTestClass())) return;
-    //if (!Exec(new DocumentSettingsTest())) return;
+    if (!Exec(new RsidsTest())) return;
+    if (!Exec(new DocumentVariablesTestClass())) return;
+    if (!Exec(new DocumentSettingsTest())) return;
 
-    //if (!Exec(new FontTableTestClass())) return;
-    //if (!Exec(new FontEmbeddingTestClass())) return;
+    if (!Exec(new FontTableTestClass())) return;
+    if (!Exec(new FontEmbeddingTestClass())) return;
 
-    //if (!Exec(new ColorTypesTest())) return;
-    //if (!Exec(new ColorTransformationsTest())) return;
+    if (!Exec(new ColorTypesTest())) return;
+    if (!Exec(new ColorTransformationsTest())) return;
 
-    //if (!Exec(new ThemeTest())) return;
+    if (!Exec(new ThemeTest())) return;
 
-    //if (!Exec(new LatentStylesTest())) return;
-    //if (!Exec(new StyleDefinitionsTest())) return;
-    //if (!Exec(new BaseRunPropertiesTest())) return;
-    //if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
-    //if (!Exec(new BaseParagraphPropertiesTest())) return;
-    //if (!Exec(new StyleDocDefaultsParagraphPropertiesTest())) return;
-    //if (!Exec(new AbstractNumberingsTest())) return;
-    //if (!Exec(new NumberingInstancesTest())) return;
-    //if (!Exec(new BaseSectionPropertiesTest())) return;
-    //if (!Exec(new BaseTableCellPropertiesTest())) return;
-    //if (!Exec(new BaseTableRowPropertiesTest())) return;
-    //if (!Exec(new BaseTablePropertiesTest())) return;
+    if (!Exec(new LatentStylesTest())) return;
+    if (!Exec(new StyleDefinitionsTest())) return;
+    if (!Exec(new BaseRunPropertiesTest())) return;
+    if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
+    if (!Exec(new BaseParagraphPropertiesTest())) return;
+    if (!Exec(new StyleDocDefaultsParagraphPropertiesTest())) return;
+    if (!Exec(new AbstractNumberingsTest())) return;
+    if (!Exec(new NumberingInstancesTest())) return;
+    if (!Exec(new BaseSectionPropertiesTest())) return;
+    if (!Exec(new BaseTableCellPropertiesTest())) return;
+    if (!Exec(new BaseTableRowPropertiesTest())) return;
+    if (!Exec(new BaseTablePropertiesTest())) return;
 
     if (!Exec(new BodyItemsEnumerationTest())) return;
-    //if (!Exec(new BodyParagraphsEnumerationTest())) return;
+    if (!Exec(new BodyParagraphsEnumerationTest())) return;
     if (!Exec(new BodySectionsEnumerationTest())) return;
 
     Console.WriteLine("All tests passed.");

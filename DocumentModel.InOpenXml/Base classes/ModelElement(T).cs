@@ -178,11 +178,11 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <returns>True if the data was successfully loaded or if direct access is enabled; otherwise, false.</returns>
   public override bool TryLoadData(object openXmlElement)
   {
-    if (openXmlElement is not OpenXmlType typedElement)
-     throw new ApplicationException("The provided object is not of the expected OpenXmlType.");
+    //if (openXmlElement is not OpenXmlType typedElement)
+    // throw new ApplicationException("The provided object is not of the expected OpenXmlType.");
     if (HasDirectAccess)
     {
-      SetUpdatableObject(typedElement);
+      SetUpdatableObject(openXmlElement);
       return true;
     }
     return base.LoadData(openXmlElement);
