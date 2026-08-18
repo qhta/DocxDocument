@@ -165,6 +165,11 @@ public class Sections : ModelElementCollection<Section>
     return false;
   }
 
+  /// <summary>
+  /// Sections cannot be updated directly; this method is not implemented and will throw a NotImplementedException if called.
+  /// </summary>
+  /// <returns></returns>
+  /// <exception cref="NotImplementedException"></exception>
   public override bool UpdateData()
   {
     throw new NotImplementedException();

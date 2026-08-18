@@ -89,7 +89,21 @@ public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
             {
               var itemIndex = 0;
               foreach (var paraItem in paraItems)
-                Console.WriteLine($"  Item[{itemIndex++}] {paraItem}");
+              {
+                if (paraItem is Run run)
+                {
+                  Console.WriteLine($"  Item[{itemIndex++}] {paraItem}");
+                  if (run.Items.Count > 1 || run.Items.FirstOrDefault() is not RunText)
+                  {
+                    foreach (var runItem in run.Items)
+                    {
+                      Console.WriteLine($"    RunItem[{itemIndex++}] {runItem}");
+                    }
+                  }
+                }
+                else
+                  Console.WriteLine($"  Item[{itemIndex++}] {paraItem}");
+              }
             }
           }
           else

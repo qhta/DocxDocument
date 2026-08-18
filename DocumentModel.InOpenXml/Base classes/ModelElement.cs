@@ -12,6 +12,7 @@ namespace DocumentModel;
 /// </summary>
 [DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
+[DebuggerDisplay(nameof(ToString))]
 public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
   ICollectionItem, IModifiable, IUpdatable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
   IPropertiesProvider, IModelObject
@@ -833,7 +834,15 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (this is IHexIdentObject hexIdentObject)
       str += " " + hexIdentObject.HexId;
     else if (this is DMW.ITextualElement textObject)
-      str += " " + textObject.Text;
+    {
+      var text = textObject.Text;
+      if (text != null)
+      {
+        if (text.Length > 50)
+          text = text.Truncate(50, true, true);
+        str += " " + text;
+      }
+    }
     return str;
   }
 }

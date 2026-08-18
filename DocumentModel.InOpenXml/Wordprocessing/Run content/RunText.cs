@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Text))]
 [DataContract]
 [XmlRoot("Text", Namespace = "DocumentModel.Wordprocessing")]
+[DirectAccess]
 public class RunText : TextualElement<DXW.Text>
 {
   /// <summary>
