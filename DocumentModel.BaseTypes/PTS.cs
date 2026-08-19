@@ -132,15 +132,15 @@ public partial class PTS : UniversalMeasure
   /// <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
   /// unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
   /// <param name="value">The numeric value representing the length to convert.</param>
-  /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+  /// <param name="unit">The unit of the input length value, specified as a member of the MeasureUnit enumeration.</param>
   /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
-  public static PTS ConvertFrom(double value, LengthUnit unit) => unit switch
+  public static PTS ConvertFrom(double value, MeasureUnit unit) => unit switch
   {
-    LengthUnit.Twips => FromTwips(value),
-    LengthUnit.Points => FromPT(value),
-    LengthUnit.Millimeters => FromMM(value),
-    LengthUnit.Centimeters => FromCM(value),
-    LengthUnit.Inches => FromInch(value),
+    MeasureUnit.Twips => FromTwips(value),
+    MeasureUnit.Points => FromPT(value),
+    MeasureUnit.Millimeters => FromMM(value),
+    MeasureUnit.Centimeters => FromCM(value),
+    MeasureUnit.Inches => FromInch(value),
     _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
   };
 

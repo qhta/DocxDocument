@@ -39,14 +39,14 @@ public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
   /// <returns>The Unicode character if available; otherwise, null.</returns>
   public Char? GetUnicodeChar()
   {
-    if (Font == null || Char == null)
+    if (Font == null || Char is null)
       return null;
 
-    var hexChar = Char!;
+    var hexChar = Char.Value;
     if (hexChar >= 0xF000 && hexChar <= 0xF0FF)
       hexChar = hexChar - 0xF000;
     var newHexChar = SymbolCharCodec.GetHexChar(Font, hexChar.ToChar());
-    if (newHexChar != null && newHexChar<=0xFFFF)
+    if (newHexChar is not null && newHexChar<=0xFFFF)
       return (char)newHexChar;
     return null;
   }

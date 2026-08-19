@@ -2581,7 +2581,7 @@
             <param name="SByteValue">The SByteValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToSByteValue(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToSByteValue(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml SByteValue from an HexChar value.
             </summary>
@@ -2595,7 +2595,7 @@
             <param name="int16Value">The Int16Value to convert.</param>
             <returns>The HexChar int16Value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt16Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt16Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml Int16Value from an HexChar value.
             </summary>
@@ -2609,7 +2609,7 @@
             <param name="Int32Value">The Int32Value to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt32Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt32Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml Int32Value from an HexChar value.
             </summary>
@@ -2623,7 +2623,7 @@
             <param name="Int64Value">The Int64Value to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt64Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt64Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml Int64Value from an HexChar value.
             </summary>
@@ -2637,7 +2637,7 @@
             <param name="IntegerValue">The IntegerValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToIntegerValue(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToIntegerValue(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml IntegerValue from an HexChar value.
             </summary>
@@ -2651,7 +2651,7 @@
             <param name="ByteValue">The ByteValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToByteValue(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToByteValue(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml ByteValue from an HexChar value.
             </summary>
@@ -2665,7 +2665,7 @@
             <param name="UInt16Value">The UInt16Value to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt16Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt16Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml UInt16Value from an HexChar value.
             </summary>
@@ -2679,7 +2679,7 @@
             <param name="HexCharValue">The HexCharValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt32Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt32Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml HexCharValue from an HexChar value.
             </summary>
@@ -2693,7 +2693,7 @@
             <param name="UInt64Value">The UInt64Value to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt64Value(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt64Value(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Creates an OpenXml UInt64Value from an HexChar value.
             </summary>
@@ -2707,7 +2707,7 @@
             <param name="StringValue">The StringValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToStringValue(DocumentModel.HexChar,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToStringValue(System.Nullable{DocumentModel.HexChar},System.Type)">
             <summary>
             Creates an OpenXml StringValue from an HexChar value.
             </summary>
@@ -2722,7 +2722,7 @@
             <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.HexChar,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.HexChar},System.Type)">
             <summary>
             Creates an OpenXml OpenXmlLeafTextElement from an HexChar value.
             </summary>
@@ -2737,7 +2737,7 @@
             <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToHexBinaryValue(DocumentModel.HexChar,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToHexBinaryValue(System.Nullable{DocumentModel.HexChar},System.Type)">
             <summary>
             Creates an OpenXml HexBinaryValue from an HexChar value.
             </summary>
@@ -2752,7 +2752,7 @@
             <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
             <returns>The HexChar value, or null if the element has no content.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafElement(DocumentModel.HexChar,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.HexChar},System.Type)">
             <summary>
             Creates an OpenXml OpenXmlLeafElement from an HexChar value.
             </summary>
@@ -2768,14 +2768,14 @@
             <returns>A HexChar integer equivalent to the number contained in the input string, or null if the input is null or
             not a valid integer.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToString(DocumentModel.HexChar)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToString(System.Nullable{DocumentModel.HexChar})">
             <summary>
             Converts a nullable HexChar value to its string representation.
             </summary>
             <param name="value">The nullable HexChar value to convert. If null, the method returns null.</param>
             <returns>A string representation of the specified value, or null if the value is null.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertTo(DocumentModel.HexChar,System.Type)">
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertTo(System.Nullable{DocumentModel.HexChar},System.Type)">
             <summary>
             Converts an HexChar value to the specified target type using standard type conversion.
             </summary>

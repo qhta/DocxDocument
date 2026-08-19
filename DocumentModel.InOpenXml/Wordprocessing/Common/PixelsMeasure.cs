@@ -1,7 +1,4 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
-using DocumentModel.BaseTypes.Interfaces;
-
-using Math = System.Math;
 
 namespace DocumentModel.Wordprocessing;
 /// <summary>
@@ -15,12 +12,31 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("Pixels", Namespace = "DocumentModel.Wordprocessing")]
 public partial class PixelsMeasure : IComparable<PixelsMeasure>, IEquatable<PixelsMeasure>
 {
+  /// <summary>
+  /// Defines a converter class for converting between PixelsMeasure objects and their string representations.
+  /// </summary>
+  public class PixelsTypeToStringConverter : TypeToStringConverter
+  {
+    /// <summary>
+    /// Converts a PixelsMeasure object to its string representation.
+    /// </summary>
+    /// <param name="val">The PixelsMeasure object to convert to a string.</param>
+    /// <returns>The string representation of the PixelsMeasure object, or null if the val is null.</returns>
+    public override string? ConvertToString(object? val) => val?.ToString();
+
+    /// <summary>
+    /// Converts a string to a PixelsMeasure object.
+    /// </summary>
+    /// <param name="str">The string to convert to a PixelsMeasure object.</param>
+    /// <returns>The PixelsMeasure object represented by the string, or null if the string is null.</returns>
+    public override object? ConvertFromString(string? str) => str != null ? new PixelsMeasure(str) : null;
+
+  }
+
   static PixelsMeasure()
   {
     PixelsMeasureOpenXmlConverter.RegisterOpenXmlConversion();
-    ObjectToStringConverter.RegisterConverters(typeof(PixelsMeasure), 
-      (object? val) => val?.ToString(), 
-      (string? str) => str != null ? new PixelsMeasure(str) : null);
+    ObjectToStringConverter.RegisterConverter(typeof(PixelsMeasure), new PixelsTypeToStringConverter());
   }
 
 

@@ -1,5 +1,4 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
-using DocumentModel.BaseTypes.Interfaces;
 
 namespace DocumentModel.Wordprocessing;
 /// <summary>
@@ -274,13 +273,13 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
  /// <param name = "unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
  /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
  /// <exception cref = "ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
- public static HeightMeasure ConvertFrom(double value, LengthUnit unit) => unit switch
+ public static HeightMeasure ConvertFrom(double value, MeasureUnit unit) => unit switch
  {
-  LengthUnit.Twips => FromTwips(value),
-  LengthUnit.Points => FromPT(value),
-  LengthUnit.Millimeters => FromMM(value),
-  LengthUnit.Centimeters => FromCM(value),
-  LengthUnit.Inches => FromInch(value),
+  MeasureUnit.Twips => FromTwips(value),
+  MeasureUnit.Points => FromPT(value),
+  MeasureUnit.Millimeters => FromMM(value),
+  MeasureUnit.Centimeters => FromCM(value),
+  MeasureUnit.Inches => FromInch(value),
   _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))};
 #endregion
 #region Parsing Methods

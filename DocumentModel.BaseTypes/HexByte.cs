@@ -6,9 +6,9 @@
 /// </summary>
 [DataContract]
 [JsonConverter(typeof(HexByteJsonConverter))]
-public partial struct HexByte : IConvertible, IEquatable<HexByte>
+public readonly partial struct HexByte : IConvertible, IEquatable<HexByte>
 {
-  private byte value;
+  private readonly byte value;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexByte"/> struct from a hexadecimal string.

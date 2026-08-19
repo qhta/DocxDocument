@@ -1,10 +1,16 @@
-﻿namespace DocumentModel.BaseTypes.Interfaces;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Enumeration of length units supported by ToString or Parse methods of length-related base types.
 /// </summary>
-public enum LengthUnit
+public enum MeasureUnit
 {
+  /// <summary>
+  /// Represents no specific unit of length.
+  /// </summary>
+  [EnumMember(Value = "none")]
+  None,
+
   /// <summary>
   /// Represents the twips unit of length, where 1 twip is equal to 1/20 of a point.
   /// </summary>

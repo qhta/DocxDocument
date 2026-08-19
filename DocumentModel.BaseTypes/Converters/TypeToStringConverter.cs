@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// <summary>
 /// Converter class for converting System.Type objects to their string representation and vice versa. This class maintains a cache of known types from specified assemblies to optimize the conversion process. It provides methods to register assemblies for type lookup and to convert Type objects to their full name as a string, as well as to convert a string back to a Type object by searching through the registered assemblies. This converter is particularly useful in scenarios where type information needs to be serialized or deserialized, such as in JSON or XML serialization of document properties that may have varying types.
 /// </summary>
-public static class TypeToStringConverter
+public abstract class TypeToStringConverter
 {
   private static readonly List<Assembly> _assemblies = new List<Assembly>
   {
@@ -61,4 +61,24 @@ public static class TypeToStringConverter
     }
     throw new TypeLoadException($"Type '{typeName}' could not be found in registered assemblies.");
   }
+
+  /// <summary>
+  /// Abstract method that must be implemented by derived classes to convert an object to its string representation.
+  /// The implementation should handle the conversion logic specific to the type of object being converted.
+  /// If the val is null, the method should return null.
+  /// This method is intended to be used in scenarios where type information needs to be serialized or logged as a string.
+  /// </summary>
+  /// <param name="val">The object to convert to a string.</param>
+  /// <returns>The string representation of the object, or null if the object is null.</returns>
+  public abstract string? ConvertToString(object? val);
+
+  /// <summary>
+  /// Abstract method that must be implemented by derived classes to convert a string representation back to an object.
+  /// The implementation should handle the conversion logic specific to the type of object being converted.
+  /// If the str is null, the method should return null.
+  /// This method is intended to be used in scenarios where type information needs to be deserialized or reconstructed from a string.
+  /// </summary>
+  /// <param name="str">The string representation of the object to convert.</param>
+  /// <returns>The converted object, or null if the string is null.</returns>
+  public abstract object? ConvertFromString(string? str);
 }

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public partial struct HexByte : IXmlSerializable
+public readonly partial struct HexByte : IXmlSerializable
 {
 
   /// <summary>

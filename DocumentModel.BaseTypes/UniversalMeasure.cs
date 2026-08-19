@@ -18,7 +18,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <summary>
   /// Internal storage for the unit of measurement associated with this length value.
   /// </summary>
-  protected internal LengthUnit? unit;
+  protected internal MeasureUnit? unit;
 
   /// <summary>
   /// Unit of measurement for the numeric value.
@@ -26,7 +26,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// or left null if the unit is not specified.
   /// </summary>
   [NotMapped]
-  public LengthUnit? Unit { get => unit; protected set => unit = value; }
+  public MeasureUnit? Unit { get => unit; protected set => unit = value; }
 
   /// <summary>
   /// Checks if the instance is empty, meaning it has not been initialized with a value.
@@ -144,7 +144,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsPerMM;
-        unit = LengthUnit.Millimeters;
+        unit = MeasureUnit.Millimeters;
         return true;
       }
       return false;
@@ -155,7 +155,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsInCM;
-        unit = LengthUnit.Centimeters;
+        unit = MeasureUnit.Centimeters;
         return true;
       }
       return false;
@@ -166,7 +166,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsPerInch;
-        unit = LengthUnit.Inches;
+        unit = MeasureUnit.Inches;
         return true;
       }
       return false;
@@ -177,7 +177,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsPerPoint;
-        unit = LengthUnit.Points;
+        unit = MeasureUnit.Points;
         return true;
       }
       return false;
@@ -188,7 +188,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsPerTwips;
-        unit = LengthUnit.Twips;
+        unit = MeasureUnit.Twips;
         return true;
       }
       return false;
@@ -199,7 +199,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       if (Decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var value))
       {
         this.value = value * UnitsPerTwips;
-        unit = LengthUnit.Twips;
+        unit = MeasureUnit.Twips;
         return true;
       }
       return false;
@@ -309,15 +309,15 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// Centimeters, and Inches.</param>
   /// <returns>The length value converted to the specified unit.</returns>
   /// <exception cref="ArgumentException">Thrown if the specified unit is not supported.</exception>
-  public Decimal ConvertTo(LengthUnit units)
+  public Decimal ConvertTo(MeasureUnit units)
   {
     return units switch
     {
-      LengthUnit.Twips => ToTwips(),
-      LengthUnit.Points => ToPoints(),
-      LengthUnit.Millimeters => ToMillimeters(),
-      LengthUnit.Centimeters => ToCentimeters(),
-      LengthUnit.Inches => ToInch(),
+      MeasureUnit.Twips => ToTwips(),
+      MeasureUnit.Points => ToPoints(),
+      MeasureUnit.Millimeters => ToMillimeters(),
+      MeasureUnit.Centimeters => ToCentimeters(),
+      MeasureUnit.Inches => ToInch(),
       _ => throw new ArgumentException($"Unsupported length unit: {units}", nameof(units))
     };
   }
@@ -564,7 +564,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   /// <param name="units">The unit to use for the string representation.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
-  public string ToString(LengthUnit units)
+  public string ToString(MeasureUnit units)
     => $"{ConvertTo(units).ToString(CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
@@ -574,7 +574,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <param name="formatProvider">An object that supplies culture-specific formatting information. If null, invariant culture's formatting conventions are used.</param>
   /// <param name="units">The unit to use for the string representation.</param>
   /// <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
-  public string ToString(IFormatProvider? formatProvider, LengthUnit units)
+  public string ToString(IFormatProvider? formatProvider, MeasureUnit units)
   => $"{ConvertTo(units).ToString(formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
@@ -590,7 +590,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
   /// provider.</returns>
-  public string ToString(string? format, IFormatProvider? formatProvider, LengthUnit units)
+  public string ToString(string? format, IFormatProvider? formatProvider, MeasureUnit units)
       => $"{ConvertTo(units).ToString(format, formatProvider ?? CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
@@ -600,14 +600,14 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// <param name="format">A standard or custom numeric format string that defines how the value is formatted. If null, the default format is used.</param>
   /// <param name="units">The unit of length to use when formatting the value.</param>
   /// <returns>A string representation of the current length value, formatted according to the specified unit and format string.</returns>
-  public string ToString(string? format, LengthUnit units)
+  public string ToString(string? format, MeasureUnit units)
         => $"{ConvertTo(units).ToString(format, CultureInfo.InvariantCulture)} {UnitSuffixed[(int)units]}";
 
   /// <summary>
   /// Suffixes for length UniversalMeasure that can be used in string representations of length measures.
-  /// The order of the suffixes corresponds to the order of the LengthUnit enum values.
+  /// The order of the suffixes corresponds to the order of the MeasureUnit enum values.
   /// </summary>
-  public static string[] UnitSuffixed { get; } = ["tw", "pt", "mm", "cm", "in"];
+  public static string[] UnitSuffixed { get; } = ["", "tw", "pt", "mm", "cm", "in"];
 
   #endregion
 
@@ -751,8 +751,8 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
 
     if (obj is IConvertible convertible)
     {
-      var DecimalValue = Convert.ToDouble(convertible);
-      return System.Math.Abs(DoubleValue - DecimalValue) < 1e-10;
+      var doubleValue = Convert.ToDouble(convertible);
+      return System.Math.Abs(DoubleValue - doubleValue) < 1e-10;
     }
     return false;
   }

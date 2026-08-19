@@ -13,6 +13,11 @@
 [JsonConverter(typeof(TwipsJsonConverter))]
 public sealed partial class Twips: PTS
 {
+  static Twips()
+  {
+    ObjectToStringConverter.RegisterConverter(typeof(Twips), new UniversalMeasureToStringConverter<Twips>{MeasureUnits = MeasureUnit.Points});
+  }
+
   /// <summary>
   /// Override the scale factor for the Twips measurement. A scale of 20 means that the value is in twips.
   /// </summary>
@@ -155,13 +160,13 @@ public sealed partial class Twips: PTS
   /// <param name="unit">The unit of measurement for the value parameter. Must be one of the supported length units.</param>
   /// <returns>An object that implements ILengthMeasure, representing the converted length value in a standardized format.</returns>
   /// <exception cref="ArgumentException">Thrown when the specified unit is not supported for conversion.</exception>
-  public new static Twips ConvertFrom(double value, LengthUnit unit) => unit switch
+  public new static Twips ConvertFrom(double value, MeasureUnit unit) => unit switch
   {
-    LengthUnit.Twips => FromTwips(value),
-    LengthUnit.Points => FromPT(value),
-    LengthUnit.Millimeters => FromMM(value),
-    LengthUnit.Centimeters => FromCM(value),
-    LengthUnit.Inches => FromInch(value),
+    MeasureUnit.Twips => FromTwips(value),
+    MeasureUnit.Points => FromPT(value),
+    MeasureUnit.Millimeters => FromMM(value),
+    MeasureUnit.Centimeters => FromCM(value),
+    MeasureUnit.Inches => FromInch(value),
     _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
   };
 

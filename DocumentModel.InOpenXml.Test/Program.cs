@@ -51,7 +51,8 @@ internal class Program
     //if (!Exec(new BodySectionsEnumerationTest())) return;
     //if (!Exec(new BodyParagraphsItemsEnumerationTest())) return;
     //if (!Exec(new BodyRunItemsEnumerationTest())) return;
-    if (!Exec(new BodyRunTextModificationTest())) return;
+    //if (!Exec(new BodyRunTextModificationTest())) return;
+    if (!Exec(new BodySerializationTest())) return;
 
     Console.WriteLine("All tests passed.");
 

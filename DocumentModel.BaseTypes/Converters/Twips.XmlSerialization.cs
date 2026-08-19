@@ -70,6 +70,6 @@ public sealed partial class Twips : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
-    writer.WriteString(ToString(LengthUnit.Twips).Replace(" ", ""));
+    writer.WriteString(ToString(MeasureUnit.Twips).Replace(" ", ""));
   }
 }

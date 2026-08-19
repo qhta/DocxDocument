@@ -1563,14 +1563,14 @@
             <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.CPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.CPS.ConvertFrom(System.Double,DocumentModel.MeasureUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
             unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
-            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the MeasureUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.CPS.TryParse(System.String,DocumentModel.CPS@)">
@@ -2240,14 +2240,14 @@
             <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.EMU.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.EMU.ConvertFrom(System.Double,DocumentModel.MeasureUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
             unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
-            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the MeasureUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.EMU.TryParse(System.String,DocumentModel.EMU@)">
@@ -3204,7 +3204,7 @@
         </member>
         <member name="T:DocumentModel.HexChar">
             <summary>
-              Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
+              Represents a character value encoded as a hexadecimal string (2, 4 or 5 hex digits) for use in Office Open XML documents.
             </summary>
             <remarks>
               <para>
@@ -3355,7 +3355,7 @@
             <param name="str">A hexadecimal string containing 2 or 4 hex digits, optionally prefixed with '#'.</param>
             <returns>A HexChar instance representing the parsed value.</returns>
         </member>
-        <member name="M:DocumentModel.HexChar.TryParse(System.String,DocumentModel.HexChar@)">
+        <member name="M:DocumentModel.HexChar.TryParse(System.String,System.Nullable{DocumentModel.HexChar}@)">
             <summary>
             Attempts to parse a hexadecimal string and returns a boolean indicating success or failure. The result is stored in the out parameter.
             </summary>
@@ -3648,22 +3648,6 @@
             </summary>
             <param name="val">A HexChar value.</param>
             <returns>The underlying ushort value (0-65535).</returns>
-        </member>
-        <member name="M:DocumentModel.HexChar.op_Implicit(DocumentModel.HexChar)~System.UInt32">
-            <summary>
-              Implicitly converts a HexChar to a 32-bit unsigned integer.
-            </summary>
-            <param name="val">A HexChar value.</param>
-            <returns>The character code as a uint (0-65535).</returns>
-        </member>
-        <member name="M:DocumentModel.HexChar.op_Implicit(DocumentModel.HexChar)~System.Nullable{System.UInt32}">
-            <summary>
-              Implicitly converts a nullable HexChar to a nullable 32-bit unsigned integer.
-            </summary>
-            <param name="val">A nullable HexChar value.</param>
-            <returns>
-              The character code as a nullable uint, or null if the input is null.
-            </returns>
         </member>
         <member name="M:DocumentModel.HexChar.op_Implicit(DocumentModel.HexChar)~System.UInt64">
             <summary>
@@ -5674,14 +5658,14 @@
             <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.HPS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.HPS.ConvertFrom(System.Double,DocumentModel.MeasureUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
             unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
-            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the MeasureUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.HPS.TryParse(System.String,DocumentModel.HPS@)">
@@ -5778,6 +5762,25 @@
             Writes the half-points value as a numeric string without unit suffix.
             For example, a value of 144 half-points (1 inch) is written as "144".
             </remarks>
+        </member>
+        <member name="T:DocumentModel.IUniversalMeasureToStringConverter">
+            <summary>
+            Interface for converting specific types to and from their string representations, with support for specifying measure units.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IUniversalMeasureToStringConverter.MeasureUnits">
+            <summary>
+            Gets or sets the measure units to be used for conversion.
+            This property allows specifying the desired units (e.g., "mm", "cm", "pt", "in") for converting the specific type to and from its string representation.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.IUniversalMeasureToStringConverter.ConvertToString(System.Object,DocumentModel.MeasureUnit)">
+            <summary>
+            Converts an object of the specific type to its string representation using the specified measure unit.
+            </summary>
+            <param name="val">The object of the specific type to convert.</param>
+            <param name="measureUnit">The measure unit to use for the conversion.</param>
+            <returns>The string representation of the object.</returns>
         </member>
         <member name="T:DocumentModel.ListOf`1">
             <summary>
@@ -6157,18 +6160,38 @@
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <returns>A <see cref="T:System.Text.Json.Serialization.JsonConverter"/> instance for the specified type.</returns>
         </member>
+        <member name="T:DocumentModel.MeasureUnitAttribute">
+            <summary>
+            An attribute that specifies the measure unit associated with a property or field.
+            This attribute can be used to annotate properties or types that represent measurements, allowing for consistent handling of units across the application.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.MeasureUnitAttribute.#ctor(DocumentModel.MeasureUnit)">
+            <summary>
+            An attribute that specifies the measure unit associated with a property or field.
+            This attribute can be used to annotate properties or types that represent measurements, allowing for consistent handling of units across the application.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.MeasureUnitAttribute.MeasureUnit">
+            <summary>
+            Declares the measure unit associated with the property or type.
+            </summary>
+        </member>
         <member name="T:DocumentModel.ObjectToStringConverter">
             <summary>
             Converter class for converting objects to their string representation. This class maintains a mapping of types to custom conversion functions, allowing for flexible and extensible string conversion logic. When an object is passed to the ConvertToString method, it checks if there is a registered converter for the object's type and uses it to convert the object to a string. If no converter is found, it falls back to the default ToString() method of the object. This design allows for easy customization of how specific types are represented as strings without modifying the core logic of the conversion process.
             </summary>
         </member>
-        <member name="M:DocumentModel.ObjectToStringConverter.RegisterConverters(System.Type,System.Func{System.Object,System.String},System.Func{System.String,System.Object})">
+        <member name="M:DocumentModel.ObjectToStringConverter.RegisterConverter(System.Type,DocumentModel.TypeToStringConverter)">
             <summary>
-            Registers custom conversion functions for a specific type, allowing for flexible and extensible string conversion logic. The toStringConverter function is used to convert an object of the specified type to its string representation, while the fromStringConverter function is used to convert a string back to an object of the specified type. By registering these converters, you can customize how specific types are represented as strings and how they are reconstructed from their string representations without modifying the core logic of the conversion process.
+            Registers a custom converter for a specific type, allowing for flexible and extensible string conversion logic.
+            The converter parameter is an instance of the TypeToStringConverter class,
+            which encapsulates the logic for converting an object of the specified type to its string representation and vice versa.
+            By registering this converter, you can customize how the specified type is represented as a string
+            and how it is reconstructed from its string representation without modifying the core logic of the conversion process.
             </summary>
-            <param name="type">The type for which the converters are being registered.</param>
-            <param name="toStringConverter">The function to convert an object of the specified type to a string.</param>
-            <param name="fromStringConverter">The function to convert a string back to an object of the specified type.</param>
+            <param name="type">The type for which the converter is being registered.</param>
+            <param name="converter">The TypeToStringConverter instance that handles the conversion logic for the specified type.</param>
         </member>
         <member name="M:DocumentModel.ObjectToStringConverter.ConvertToJsonString(System.Object)">
             <summary>
@@ -6178,13 +6201,14 @@
             <param name="value">The object to convert to a string.</param>
             <returns>The string representation of the object, or null if the object is null.</returns>
         </member>
-        <member name="M:DocumentModel.ObjectToStringConverter.ConvertToString(System.Object)">
+        <member name="M:DocumentModel.ObjectToStringConverter.ConvertToString(System.Object,System.Nullable{DocumentModel.MeasureUnit})">
             <summary>
             Converts an object to its string representation using a predefined mapping of types to conversion functions.
             If the object's type is not found in the mapping, and the value type has Parse(string) method, it falls back to the default ToString() method.
             Otherwise, it returns null.
             </summary>
             <param name="value">The object to convert to a string.</param>
+            <param name="measureUnits">A string representing the measure units to use in the conversion.</param>
             <returns>The string representation of the object, or null if the object is null.</returns>
         </member>
         <member name="M:DocumentModel.ObjectToStringConverter.ConvertFromJsonString(System.String,System.Type)">
@@ -6204,6 +6228,482 @@
             <param name="str">The string representation of the object to convert.</param>
             <param name="targetType">The target type to convert the string to.</param>
             <returns>The converted object, or null if the conversion fails or the target type is not found.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.ObjToStringConverter">
+            <summary>
+            A converter class that provides methods to convert an object to a string and vice versa.
+            Used as a default converter for types that do not have specific conversion logic defined.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ObjToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts an object to its string representation. If the object is null, it returns null. Otherwise, it casts the object to a string and returns it.
+            </summary>
+            <param name="val">The object to convert to a string.</param>
+            <returns>The string representation of the object, or null if the object is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ObjToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to an object. If the string is null, it returns null. Otherwise, it casts the string to an object and returns it.  
+            </summary>
+            <param name="str">The string to convert to an object.</param>
+            <returns>The object representation of the string, or null if the string is null.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.BooleanToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a boolean value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.BooleanToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a boolean val to its string representation. If the val is null, it returns null. Otherwise, it converts the boolean to a lowercase string ("true" or "false").
+            </summary>
+            <param name="val">The boolean val to convert to a string.</param>
+            <returns>The string representation of the boolean val, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.BooleanToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a boolean value. If the string is null or empty, it returns null. Otherwise, it parses the string to a boolean value.
+            </summary>
+            <param name="str">The string to convert to a boolean value.</param>
+            <returns>The boolean value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.SByteToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a signed byte (sbyte) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.SByteToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a signed byte (sbyte) value to its string representation. If the val is null, it returns null. Otherwise, it converts the sbyte to a string.
+            </summary>
+            <param name="val">The signed byte (sbyte) value to convert to a string.</param>
+            <returns>The string representation of the signed byte (sbyte) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.SByteToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a signed byte (sbyte) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a signed byte (sbyte) value.
+            </summary>
+            <param name="str">The string to convert to a signed byte (sbyte) value.</param>
+            <returns>The signed byte (sbyte) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.Int32TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 32-bit signed integer (Int32) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int32TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 32-bit signed integer (Int32) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Int32 to a string.
+            </summary>
+            <param name="val">The 32-bit signed integer (Int32) value to convert to a string.</param>
+            <returns>The string representation of the 32-bit signed integer (Int32) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int32TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 32-bit signed integer (Int32) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 32-bit signed integer (Int32) value.
+            </summary>
+            <param name="str">The string to convert to a 32-bit signed integer (Int32) value.</param>
+            <returns>The 32-bit signed integer (Int32) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.Int64TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 64-bit signed integer (Int64) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int64TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 64-bit signed integer (Int64) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Int64 to a string. 
+            </summary>
+            <param name="val">The 64-bit signed integer (Int64) value to convert to a string.</param>
+            <returns>The string representation of the 64-bit signed integer (Int64) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int64TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 64-bit signed integer (Int64) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 64-bit signed integer (Int64) value.
+            </summary>
+            <param name="str">The string to convert to a 64-bit signed integer (Int64) value.</param>
+            <returns>The 64-bit signed integer (Int64) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.Int16TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 16-bit signed integer (Int16) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int16TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 16-bit signed integer (Int16) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Int16 to a string.
+            </summary>
+            <param name="val">The 16-bit signed integer (Int16) value to convert to a string.</param>
+            <returns>The string representation of the 16-bit signed integer (Int16) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.Int16TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 16-bit signed integer (Int16) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 16-bit signed integer (Int16) value.
+            </summary>
+            <param name="str">The string to convert to a 16-bit signed integer (Int16) value.</param>
+            <returns>The 16-bit signed integer (Int16) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.ByteToStringConverter">
+            <summary>
+            A converter class that provides methods to convert an 8-bit unsigned integer (Byte) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ByteToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts an 8-bit unsigned integer (Byte) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Byte to a string.
+            </summary>
+            <param name="val">The 8-bit unsigned integer (Byte) value to convert to a string.</param>
+            <returns>The string representation of the 8-bit unsigned integer (Byte) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.ByteToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to an 8-bit unsigned integer (Byte) value. If the string is null or empty, it returns null. Otherwise, it parses the string to an 8-bit unsigned integer (Byte) value.
+            </summary>
+            <param name="str">The string to convert to an 8-bit unsigned integer (Byte) value.</param>
+            <returns>The 8-bit unsigned integer (Byte) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.UInt16TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 16-bit unsigned integer (UInt16) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt16TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 16-bit unsigned integer (UInt16) value to its string representation. If the val is null, it returns null. Otherwise, it converts the UInt16 to a string.
+            </summary>
+            <param name="val">The 16-bit unsigned integer (UInt16) value to convert to a string.</param>
+            <returns>The string representation of the 16-bit unsigned integer (UInt16) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt16TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 16-bit unsigned integer (UInt16) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 16-bit unsigned integer (UInt16) value.
+            </summary>
+            <param name="str">The string to convert to a 16-bit unsigned integer (UInt16) value.</param>
+            <returns>The 16-bit unsigned integer (UInt16) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.UInt32TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 32-bit unsigned integer (UInt32) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt32TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 32-bit unsigned integer (UInt32) value to its string representation. If the val is null, it returns null. Otherwise, it converts the UInt32 to a string.   
+            </summary>
+            <param name="val">The 32-bit unsigned integer (UInt32) value to convert to a string.</param>
+            <returns>The string representation of the 32-bit unsigned integer (UInt32) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt32TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 32-bit unsigned integer (UInt32) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 32-bit unsigned integer (UInt32) value.
+            </summary>
+            <param name="str">The string to convert to a 32-bit unsigned integer (UInt32) value.</param>
+            <returns>The 32-bit unsigned integer (UInt32) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.UInt64TypeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a 64-bit unsigned integer (UInt64) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt64TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a 64-bit unsigned integer (UInt64) value to its string representation. If the val is null, it returns null. Otherwise, it converts the UInt64 to a string.
+            </summary>
+            <param name="val">The 64-bit unsigned integer (UInt64) value to convert to a string.</param>
+            <returns>The string representation of the 64-bit unsigned integer (UInt64) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.UInt64TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a 64-bit unsigned integer (UInt64) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a 64-bit unsigned integer (UInt64) value.
+            </summary>
+            <param name="str">The string to convert to a 64-bit unsigned integer (UInt64) value.</param>
+            <returns>The 64-bit unsigned integer (UInt64) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.SingleToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a single-precision floating-point (Single) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.SingleToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a single-precision floating-point (Single) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Single to a string using the "R" format specifier and invariant culture.
+            </summary>
+            <param name="val">The single-precision floating-point (Single) value to convert to a string.</param>
+            <returns>The string representation of the single-precision floating-point (Single) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.SingleToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a single-precision floating-point (Single) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a single-precision floating-point (Single) value.
+            </summary>
+            <param name="str">The string to convert to a single-precision floating-point (Single) value.</param>
+            <returns>The single-precision floating-point (Single) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.DoubleToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a double-precision floating-point (Double) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DoubleToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a double-precision floating-point (Double) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Double to a string using the "R" format specifier and invariant culture.
+            </summary>
+            <param name="val">The double-precision floating-point (Double) value to convert to a string.</param>
+            <returns>The string representation of the double-precision floating-point (Double) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DoubleToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a double-precision floating-point (Double) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a double-precision floating-point (Double) value.
+            </summary>
+            <param name="str">The string to convert to a double-precision floating-point (Double) value.</param>
+            <returns>The double-precision floating-point (Double) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.DecimalToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a decimal (Decimal) value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DecimalToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a decimal (Decimal) value to its string representation. If the val is null, it returns null. Otherwise, it converts the Decimal to a string using the "R" format specifier and invariant culture.  
+            </summary>
+            <param name="val">The decimal (Decimal) value to convert to a string.</param>
+            <returns>The string representation of the decimal (Decimal) value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DecimalToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a decimal (Decimal) value. If the string is null or empty, it returns null. Otherwise, it parses the string to a decimal (Decimal) value.
+            </summary>
+            <param name="str">The string to convert to a decimal (Decimal) value.</param>
+            <returns>The decimal (Decimal) value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.DateTimeToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a DateTime value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DateTimeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a DateTime value to its string representation in ISO 8601 format. If the val is null, it returns null. Otherwise, it converts the DateTime to a string using the "o" format specifier.
+            </summary>
+            <param name="val">The DateTime value to convert to a string.</param>
+            <returns>The string representation of the DateTime value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DateTimeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a DateTime value. If the string is null or empty, it returns null. Otherwise, it parses the string to a DateTime value.
+            </summary>
+            <param name="str">The string to convert to a DateTime value.</param>
+            <returns>The DateTime value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexBinaryToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexBinary value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexBinaryToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexBinary value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexBinary to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexBinary value to convert to a string.</param>
+            <returns>The string representation of the HexBinary value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexBinaryToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexBinary value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexBinary value.
+            </summary>
+            <param name="str">The string to convert to a HexBinary value.</param>
+            <returns>The HexBinary value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexByteToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexByte value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexByteToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexByte value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexByte to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexByte value to convert to a string.</param>
+            <returns>The string representation of the HexByte value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexByteToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexByte value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexByte value.
+            </summary>
+            <param name="str">The string to convert to a HexByte value.</param>
+            <returns>The HexByte value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexCharToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexChar value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexCharToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexChar value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexChar to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexChar value to convert to a string.</param>
+            <returns>The string representation of the HexChar value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexCharToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexChar value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexChar value.
+            </summary>
+            <param name="str">The string to convert to a HexChar value.</param>
+            <returns>The HexChar value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexColorToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexColor value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexColorToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexColor value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexColor to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexColor value to convert to a string.</param>
+            <returns>The string representation of the HexColor value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexColorToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexColor value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexColor value.
+            </summary>
+            <param name="str">The string to convert to a HexColor value.</param>
+            <returns>The HexColor value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexIntToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexInt value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexIntToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexInt value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexInt to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexInt value to convert to a string.</param>
+            <returns>The string representation of the HexInt value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexIntToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexInt value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexInt value. 
+            </summary>
+            <param name="str">The string to convert to a HexInt value.</param>
+            <returns>The HexInt value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexLongToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexLong value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexLongToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexLong value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexLong to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexLong value to convert to a string.</param>
+            <returns>The string representation of the HexLong value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexLongToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexLong value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexLong value.
+            </summary>
+            <param name="str">The string to convert to a HexLong value.</param>
+            <returns>The HexLong value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.HexPercentToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexPercent value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexPercentToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a HexPercent value to its string representation. If the val is null, it returns null. Otherwise, it converts the HexPercent to a string using its ToString() method.
+            </summary>
+            <param name="val">The HexPercent value to convert to a string.</param>
+            <returns>The string representation of the HexPercent value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.HexPercentToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a HexPercent value. If the string is null or empty, it returns null. Otherwise, it parses the string to a HexPercent value.
+            </summary>
+            <param name="str">The string to convert to a HexPercent value.</param>
+            <returns>The HexPercent value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.BytePercentToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a HexByte value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.BytePercentToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a BytePercent value to its string representation. If the val is null, it returns null. Otherwise, it converts the BytePercent to a string using its ToString() method.
+            </summary>
+            <param name="val">The BytePercent value to convert to a string.</param>
+            <returns>The string representation of the BytePercent value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.BytePercentToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a BytePercent value. If the string is null or empty, it returns null. Otherwise, it parses the string to a BytePercent value.
+            </summary>
+            <param name="str">The string to convert to a BytePercent value.</param>
+            <returns>The BytePercent value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.PercentageToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a Percentage value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.PercentageToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a Percentage value to its string representation. If the val is null, it returns null. Otherwise, it converts the Percentage to a string using its ToString() method.
+            </summary>
+            <param name="val">The Percentage value to convert to a string.</param>
+            <returns>The string representation of the Percentage value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.PercentageToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a Percentage value. If the string is null or empty, it returns null. Otherwise, it parses the string to a Percentage value.
+            </summary>
+            <param name="str">The string to convert to a Percentage value.</param>
+            <returns>The Percentage value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.DegreesToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a Degrees value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DegreesToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a Degrees value to its string representation. If the val is null, it returns null. Otherwise, it converts the Degrees to a string using its ToString() method.
+            </summary>
+            <param name="val">The Degrees value to convert to a string.</param>
+            <returns>The string representation of the Degrees value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.DegreesToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a Degrees value. If the string is null or empty, it returns null. Otherwise, it parses the string to a Degrees value.
+            </summary>
+            <param name="str">The string to convert to a Degrees value.</param>
+            <returns>The Degrees value represented by the string, or null if the string is null or empty.</returns>
+        </member>
+        <member name="T:DocumentModel.ObjectToStringConverter.StringListToStringConverter">
+            <summary>
+            A converter class that provides methods to convert a StringList value to a string and vice versa.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.StringListToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Converts a StringList value to its string representation. If the val is null, it returns null. Otherwise, it converts the StringList to a string using its ToString() method.
+            </summary>
+            <param name="val">The StringList value to convert to a string.</param>
+            <returns>The string representation of the StringList value, or null if the val is null.</returns>
+        </member>
+        <member name="M:DocumentModel.ObjectToStringConverter.StringListToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts a string back to a StringList value. If the string is null or empty, it returns null. Otherwise, it parses the string to a StringList value.
+            </summary>
+            <param name="str">The string to convert to a StringList value.</param>
+            <returns>The StringList value represented by the string, or null if the string is null or empty.</returns>
         </member>
         <member name="T:DocumentModel.Percentage">
             <summary>
@@ -6646,14 +7146,14 @@
             <param name="str">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
             <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
         </member>
-        <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.PTS.ConvertFrom(System.Double,DocumentModel.MeasureUnit)">
             <summary>
             Converts a length value from the specified unit to an equivalent length measure.
             </summary>
             <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
             unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
             <param name="value">The numeric value representing the length to convert.</param>
-            <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
+            <param name="unit">The unit of the input length value, specified as a member of the MeasureUnit enumeration.</param>
             <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
         </member>
         <member name="M:DocumentModel.PTS.TryParse(System.String,DocumentModel.PTS@)">
@@ -7622,7 +8122,7 @@
             Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
             </summary>
         </member>
-        <member name="M:DocumentModel.Twips.ConvertFrom(System.Double,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.Twips.ConvertFrom(System.Double,DocumentModel.MeasureUnit)">
             <summary>
             Converts a length value from the specified unit to a standardized length measure.
             </summary>
@@ -7858,6 +8358,60 @@
             <param name="typeName">The name of the type to resolve.</param>
             <returns>The resolved Type object.</returns>
             <exception cref="T:System.TypeLoadException">Thrown if the type cannot be found in the registered assemblies.</exception>
+        </member>
+        <member name="M:DocumentModel.TypeToStringConverter.ConvertToString(System.Object)">
+            <summary>
+            Abstract method that must be implemented by derived classes to convert an object to its string representation.
+            The implementation should handle the conversion logic specific to the type of object being converted.
+            If the val is null, the method should return null.
+            This method is intended to be used in scenarios where type information needs to be serialized or logged as a string.
+            </summary>
+            <param name="val">The object to convert to a string.</param>
+            <returns>The string representation of the object, or null if the object is null.</returns>
+        </member>
+        <member name="M:DocumentModel.TypeToStringConverter.ConvertFromString(System.String)">
+            <summary>
+            Abstract method that must be implemented by derived classes to convert a string representation back to an object.
+            The implementation should handle the conversion logic specific to the type of object being converted.
+            If the str is null, the method should return null.
+            This method is intended to be used in scenarios where type information needs to be deserialized or reconstructed from a string.
+            </summary>
+            <param name="str">The string representation of the object to convert.</param>
+            <returns>The converted object, or null if the string is null.</returns>
+        </member>
+        <member name="T:DocumentModel.UniversalMeasureToStringConverter`1">
+            <summary>
+            A generic converter class that converts between a specific type of UniversalMeasure and its string representation.
+            </summary>
+            <typeparam name="SpecificType"></typeparam>
+        </member>
+        <member name="P:DocumentModel.UniversalMeasureToStringConverter`1.MeasureUnits">
+            <summary>
+            Gets or sets the measure units to be used for conversion.
+            This property allows specifying the desired units (e.g., "mm", "cm", "pt", "in") for converting the specific type to and from its string representation.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasureToStringConverter`1.ConvertToString(System.Object,DocumentModel.MeasureUnit)">
+            <summary>
+            Converts an object of the specific type to its string representation using the specified measure unit.
+            </summary>
+            <param name="val">The object of the specific type to convert.</param>
+            <param name="measureUnit">The measure unit to use for the conversion.</param>
+            <returns>The string representation of the object.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasureToStringConverter`1.ConvertToString(System.Object)">
+            <summary>
+            Converts an object of the specific type to its string representation.
+            </summary>
+            <param name="val">The object of the specific type to convert.</param>
+            <returns>The string representation of the object.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasureToStringConverter`1.ConvertFromString(System.String)">
+            <summary>
+            Converts a string representation back to an object of the specific type.
+            </summary>
+            <param name="str">The string representation of the object.</param>
+            <returns>The object of the specific type represented by the string.</returns>
         </member>
         <member name="T:DocumentModel.UriString">
             <summary>
@@ -9788,32 +10342,37 @@
             </summary>
             <returns>The double representation of the percentage value as a factor.</returns> 
         </member>
-        <member name="T:DocumentModel.BaseTypes.Interfaces.LengthUnit">
+        <member name="T:DocumentModel.MeasureUnit">
             <summary>
             Enumeration of length units supported by ToString or Parse methods of length-related base types.
             </summary>
         </member>
-        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Twips">
+        <member name="F:DocumentModel.MeasureUnit.None">
+            <summary>
+            Represents no specific unit of length.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.MeasureUnit.Twips">
             <summary>
             Represents the twips unit of length, where 1 twip is equal to 1/20 of a point.
             </summary>
         </member>
-        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Points">
+        <member name="F:DocumentModel.MeasureUnit.Points">
             <summary>
             Represents the point unit of length.
             </summary>
         </member>
-        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Millimeters">
+        <member name="F:DocumentModel.MeasureUnit.Millimeters">
             <summary>
             Represents the millimeter unit of length.
             </summary>
         </member>
-        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Centimeters">
+        <member name="F:DocumentModel.MeasureUnit.Centimeters">
             <summary>
             Represents the centimeter unit of length.
             </summary>
         </member>
-        <member name="F:DocumentModel.BaseTypes.Interfaces.LengthUnit.Inches">
+        <member name="F:DocumentModel.MeasureUnit.Inches">
             <summary>
             Represents the inch unit of length.
             </summary>
@@ -10030,7 +10589,7 @@
             A twips is defined as 1/20 of a point.
             </remarks>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ConvertTo(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.UniversalMeasure.ConvertTo(DocumentModel.MeasureUnit)">
             <summary>
             Converts the current length value to the specified unit of measurement.
             </summary>
@@ -10188,7 +10747,7 @@
             If null, a default format is used.</param>
             <returns>A string representation of the current instance, formatted according to the specified format string.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToString(DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.UniversalMeasure.ToString(DocumentModel.MeasureUnit)">
             <summary>
             Converts the current length measure to its string representation using the specified unit.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -10196,7 +10755,7 @@
             <param name="units">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider,DocumentModel.MeasureUnit)">
             <summary>
             Converts the current length measure to its string representation using the specified unit and format provider.
               The output string should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -10205,7 +10764,7 @@
             <param name="units">The unit to use for the string representation.</param>
             <returns>A string representation of the current length measure, formatted according to the specified unit and format provider.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,System.IFormatProvider,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,System.IFormatProvider,DocumentModel.MeasureUnit)">
             <summary>
             Converts the current length value to its string representation using the specified unit, format, and format
             provider. 
@@ -10220,7 +10779,7 @@
             <returns>A string representation of the current length value, formatted according to the specified unit, format, and format
             provider.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,DocumentModel.BaseTypes.Interfaces.LengthUnit)">
+        <member name="M:DocumentModel.UniversalMeasure.ToString(System.String,DocumentModel.MeasureUnit)">
             <summary>
             Converts the current length value to its string representation using the specified unit and format string.
             The output should include the numeric value followed by the appropriate unit symbol (e.g., "10 mm", "2.5 in").
@@ -10232,7 +10791,7 @@
         <member name="P:DocumentModel.UniversalMeasure.UnitSuffixed">
             <summary>
             Suffixes for length UniversalMeasure that can be used in string representations of length measures.
-            The order of the suffixes corresponds to the order of the LengthUnit enum values.
+            The order of the suffixes corresponds to the order of the MeasureUnit enum values.
             </summary>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.op_Implicit(DocumentModel.UniversalMeasure)~System.String">

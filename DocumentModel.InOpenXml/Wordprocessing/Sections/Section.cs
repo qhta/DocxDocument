@@ -24,6 +24,21 @@ public class Section: ModelElement
   }
 
   /// <summary>
+  /// Number of the section within the parent Sections collection. Returns the section's index + 1,
+  /// or 0 if the section is not part of a Sections collection.
+  /// </summary>
+  public int Number
+  {
+    get => (Collection as Sections)?.IndexOf(this)+1 ?? 0; 
+    // ReSharper disable once ValueParameterNotUsed
+    set 
+    {
+      // Do nothing, as the section number is determined by its position in the collection and cannot be set directly.
+      // The set accessor is provided to satisfy the XmlSerialization property contract
+    }
+  }
+
+  /// <summary>
   /// Specifies the properties of the section, such as page size, margins, and other layout settings.
   /// </summary>
   public SectionProperties? SectionProperties { get; set; }

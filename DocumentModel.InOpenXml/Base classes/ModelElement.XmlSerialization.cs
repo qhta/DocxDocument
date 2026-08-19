@@ -185,11 +185,17 @@ public partial class ModelElement : IXmlSerializable
           var valueType = value.GetType();
 
           TypeToStringConverter.RegisterType(valueType);
-          string? valueString = ObjectToStringConverter.ConvertToString(value);
+          string? valueString = null;
+          if (property.GetCustomAttribute<MeasureUnitAttribute>() is { } measureUnitAttribute)
+            valueString = ObjectToStringConverter.ConvertToString(value, measureUnitAttribute.MeasureUnit);
+          else
+            valueString = ObjectToStringConverter.ConvertToString(value);
+
           if (valueString != null)
             writer.WriteAttributeString(property.Name.ToLowerFirst(), valueString);
           else
             extraElements.Add(property);
+
         }
       }
       extraElementProperties = extraElements.ToArray();

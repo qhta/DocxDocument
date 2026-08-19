@@ -2,7 +2,7 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 /// <summary>
-///   Represents a character value encoded as a hexadecimal string (2 or 4 hex digits) for use in Office Open XML documents.
+///   Represents a character value encoded as a hexadecimal string (2, 4 or 5 hex digits) for use in Office Open XML documents.
 /// </summary>
 /// <remarks>
 ///   <para>
@@ -38,7 +38,7 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(HexCharJsonConverter))]
-public partial record HexChar : IConvertible, IEquatable<HexChar>
+public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
 {
   private readonly int value;
 
@@ -454,9 +454,9 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <remarks>
   ///   Example: string s = hexChar; // produces "0041" or "41" depending on value
   /// </remarks>
-  public static implicit operator string?(HexChar? val)
+  public static implicit operator string(HexChar val)
   {
-    return val?.ToString(CultureInfo.InvariantCulture);
+    return val.ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>
@@ -497,28 +497,6 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator ushort(HexChar val)
   {
     return (ushort)val.value;
-  }
-
-  /// <summary>
-  ///   Implicitly converts a HexChar to a 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="val">A HexChar value.</param>
-  /// <returns>The character code as a uint (0-65535).</returns>
-  public static implicit operator uint(HexChar val)
-  {
-    return (uint)val.value;
-  }
-
-  /// <summary>
-  ///   Implicitly converts a nullable HexChar to a nullable 32-bit unsigned integer.
-  /// </summary>
-  /// <param name="val">A nullable HexChar value.</param>
-  /// <returns>
-  ///   The character code as a nullable uint, or null if the input is null.
-  /// </returns>
-  public static implicit operator uint?(HexChar? val)
-  {
-    return (val is not null) ? (uint)val : null;
   }
 
   /// <summary>
@@ -611,10 +589,8 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>
   ///   <see langword="true"/> if the character codes are equal; otherwise <see langword="false"/>.
   /// </returns>
-  public virtual bool Equals(HexChar? other)
+  public bool Equals(HexChar other)
   {
-    if (other == null)
-      return false;
     return value == other.value;
   }
 
@@ -628,4 +604,5 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   {
     return value;
   }
+
 }

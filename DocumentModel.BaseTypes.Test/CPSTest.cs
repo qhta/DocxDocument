@@ -188,22 +188,22 @@ public static class CPSTest
     // Test ConvertTo for each unit
     Console.WriteLine("\nTesting ConvertTo method:");
     UniversalMeasure length = original;
-    Console.WriteLine($"  To inches: {length.ConvertTo(LengthUnit.Inches)}");
-    Console.WriteLine($"  To mm: {length.ConvertTo(LengthUnit.Millimeters)}");
-    Console.WriteLine($"  To cm: {length.ConvertTo(LengthUnit.Centimeters)}");
-    Console.WriteLine($"  To pt: {length.ConvertTo(LengthUnit.Points)}");
-    Console.WriteLine($"  To twips: {length.ConvertTo(LengthUnit.Twips)}");
+    Console.WriteLine($"  To inches: {length.ConvertTo(MeasureUnit.Inches)}");
+    Console.WriteLine($"  To mm: {length.ConvertTo(MeasureUnit.Millimeters)}");
+    Console.WriteLine($"  To cm: {length.ConvertTo(MeasureUnit.Centimeters)}");
+    Console.WriteLine($"  To pt: {length.ConvertTo(MeasureUnit.Points)}");
+    Console.WriteLine($"  To twips: {length.ConvertTo(MeasureUnit.Twips)}");
 
     // Test string output with units
     Console.WriteLine("\nTesting string output with units:");
     Console.WriteLine($"  As CPS: {original}");
-    Console.WriteLine($"  As inches: {length.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As mm: {length.ToString(LengthUnit.Millimeters)}");
+    Console.WriteLine($"  As inches: {length.ToString(MeasureUnit.Inches)}");
+    Console.WriteLine($"  As mm: {length.ToString(MeasureUnit.Millimeters)}");
 
     // Test string output with precision
     Console.WriteLine("\nTesting string output with precision:");
-    Console.WriteLine($"  Precision 0: {length.ToString("F0", LengthUnit.Inches)}");
-    Console.WriteLine($"  Precision 2: {length.ToString("F2", LengthUnit.Millimeters)}");
+    Console.WriteLine($"  Precision 0: {length.ToString("F0", MeasureUnit.Inches)}");
+    Console.WriteLine($"  Precision 2: {length.ToString("F2", MeasureUnit.Millimeters)}");
 
     Console.WriteLine("\n✓ All unit conversion tests passed");
     Console.WriteLine();
@@ -502,11 +502,11 @@ public static class CPSTest
     Console.WriteLine("\nTesting output format with different units:");
     CPS measurement = 576;
     Console.WriteLine($"  As CPS: {measurement}");
-    Console.WriteLine($"  As inches (no precision): {measurement.ToString(LengthUnit.Inches)}");
-    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", LengthUnit.Inches)}");
-    Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", LengthUnit.Points)}");
-    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", LengthUnit.Millimeters)}");
-    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", LengthUnit.Centimeters)}");
+    Console.WriteLine($"  As inches (no precision): {measurement.ToString(MeasureUnit.Inches)}");
+    Console.WriteLine($"  As inches (3 decimal): {measurement.ToString("F3", MeasureUnit.Inches)}");
+    Console.WriteLine($"  As points (2 decimal): {measurement.ToString("F2", MeasureUnit.Points)}");
+    Console.WriteLine($"  As mm (1 decimal): {measurement.ToString("F1", MeasureUnit.Millimeters)}");
+    Console.WriteLine($"  As cm (2 decimal): {measurement.ToString("F2", MeasureUnit.Centimeters)}");
     // Test comparison
     Console.WriteLine("\nTesting comparison:");
     CPS small = 288;  // 0.5 inch
@@ -577,7 +577,7 @@ public static class CPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      string str = testEp.ToString(LengthUnit.Inches);
+      string str = testEp.ToString(MeasureUnit.Inches);
     }
     sw.Stop();
     Console.WriteLine($"ToString(unit) x {iterations}: {sw.ElapsedMilliseconds}ms");
