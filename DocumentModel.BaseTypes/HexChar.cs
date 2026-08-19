@@ -7,8 +7,8 @@
 /// <remarks>
 ///   <para>
 ///   HexChar provides a type-safe wrapper for character values that are represented as hexadecimal strings
-///   in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) that can represent
-///   any Unicode character in the Basic Multilingual Plane (BMP).
+///   in Office Open XML documents. It stores a 32-bit signed integer value that can represent
+///   any Unicode character.
 ///   </para>
 ///   <para>
 ///   This type is commonly used in Office documents for:
@@ -40,7 +40,7 @@
 [JsonConverter(typeof(HexCharJsonConverter))]
 public partial record HexChar : IConvertible, IEquatable<HexChar>
 {
-  private readonly ushort value;
+  private readonly int value;
 
   /// <summary>
   /// Default constructor needed for XML deserialization. Initializes the HexChar with a default value of 0 (null character).
@@ -71,7 +71,7 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   public HexChar(string str)
   {
     str = str.TrimStart('#');
-    value = ushort.Parse(str, NumberStyles.HexNumber);
+    value = int.Parse(str, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -200,6 +200,17 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   public byte ToByte(IFormatProvider? provider)
   {
     return (byte)value;
+  }
+
+  /// <summary>
+  ///   Converts the HexChar value to a character.
+  /// </summary>
+  /// <returns>
+  ///   A character corresponding to the Unicode code point stored in this HexChar.
+  /// </returns>
+  public char ToChar()
+  {
+    return ((IConvertible)value).ToChar(null);
   }
 
   /// <summary>
@@ -446,6 +457,26 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator string?(HexChar? val)
   {
     return val?.ToString(CultureInfo.InvariantCulture);
+  }
+
+  /// <summary>
+  ///   Implicitly converts a HexChar to a 32-bit signed integer.
+  /// </summary>
+  /// <param name="val">A HexChar value.</param>
+  /// <returns>The character code as int</returns>
+  public static implicit operator int(HexChar val)
+  {
+    return (int)val.value;
+  }
+
+  /// <summary>
+  ///   Implicitly converts a 32-bit signed integer to a HexChar.
+  /// </summary>
+  /// <param name="val">A 32-bit signed integer value.</param>
+  /// <returns>A HexChar representing the character code.</returns>
+  public static implicit operator HexChar(int val)
+  {
+     return new HexChar((ushort)val);
   }
 
   /// <summary>

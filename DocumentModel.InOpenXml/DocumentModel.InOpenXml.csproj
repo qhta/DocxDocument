@@ -107,4 +107,15 @@
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\Symbol.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Webdings.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Wingdings.enc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

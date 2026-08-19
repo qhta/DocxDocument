@@ -3209,8 +3209,8 @@
             <remarks>
               <para>
               HexChar provides a type-safe wrapper for character values that are represented as hexadecimal strings
-              in Office Open XML documents. It stores a 16-bit unsigned integer value (0-65535) that can represent
-              any Unicode character in the Basic Multilingual Plane (BMP).
+              in Office Open XML documents. It stores a 32-bit signed integer value that can represent
+              any Unicode character.
               </para>
               <para>
               This type is commonly used in Office documents for:
@@ -3439,6 +3439,14 @@
               Values greater than 255 will be truncated to their lower 8 bits.
             </remarks>
         </member>
+        <member name="M:DocumentModel.HexChar.ToChar">
+            <summary>
+              Converts the HexChar value to a character.
+            </summary>
+            <returns>
+              A character corresponding to the Unicode code point stored in this HexChar.
+            </returns>
+        </member>
         <member name="M:DocumentModel.HexChar.ToChar(System.IFormatProvider)">
             <summary>
               Converts the HexChar value to a character.
@@ -3612,6 +3620,20 @@
             <remarks>
               Example: string s = hexChar; // produces "0041" or "41" depending on value
             </remarks>
+        </member>
+        <member name="M:DocumentModel.HexChar.op_Implicit(DocumentModel.HexChar)~System.Int32">
+            <summary>
+              Implicitly converts a HexChar to a 32-bit signed integer.
+            </summary>
+            <param name="val">A HexChar value.</param>
+            <returns>The character code as int</returns>
+        </member>
+        <member name="M:DocumentModel.HexChar.op_Implicit(System.Int32)~DocumentModel.HexChar">
+            <summary>
+              Implicitly converts a 32-bit signed integer to a HexChar.
+            </summary>
+            <param name="val">A 32-bit signed integer value.</param>
+            <returns>A HexChar representing the character code.</returns>
         </member>
         <member name="M:DocumentModel.HexChar.op_Implicit(DocumentModel.HexChar)~System.Byte">
             <summary>

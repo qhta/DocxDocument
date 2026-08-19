@@ -5,6 +5,7 @@ using DocumentModel.Math;
 using Qhta.OpenXmlTools;
 
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Defines a region of text with a common set of properties. 
 ///   A run allows the producer to specify a single set of formatting properties, 
@@ -14,15 +15,13 @@ namespace DocumentModel.Wordprocessing;
 [DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
-public partial class Run : ModelElement<DXW.Run>, ITextualElement,
- IParagraphContent, ISdtRunContent, IRubyContent, IBidirectionalContent, IMathArgumentContent
+public partial class Run: ModelElement<DXW.Run>, ITextualElement, IParagraphContent, ISdtRunContent, IRubyContent,
+  IBidirectionalContent, IMathArgumentContent
 {
   /// <summary>
   /// Initializes a new instance of the Run class.
   /// </summary>
-  public Run() : base()
-  {
-  }
+  public Run(): base() { }
 
   /// <summary>
   /// Initializes a new instance of the Run class with the specified parent object.
@@ -30,17 +29,13 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
   /// <param name = "parent">The parent object that will contain this Run instance. This parameter establishes the hierarchical relationship
   /// within the object model and cannot be null.</param>
   /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
-  public Run(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement)
-  {
-  }
+  public Run(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement): base(parent, openXmlElement) { }
 
   /// <summary>
   /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement.  
   /// </summary>
   /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the run.</param>
-  public Run(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
-  {
-  }
+  public Run(DX.OpenXmlCompositeElement openXmlElement): base(openXmlElement) { }
 
   /// <summary>
   ///   Revision Identifier for Run Properties
@@ -51,6 +46,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
     get => _RsidProps ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunProperties);
     set => UpdateField(ref _RsidProps, value, nameof(RsidProps));
   }
+
   private HexInt? _RsidProps;
 
   /// <summary>
@@ -62,6 +58,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
     get => _RsidDel ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunDeletion);
     set => UpdateField(ref _RsidDel, value, nameof(RsidDel));
   }
+
   private HexInt? _RsidDel;
 
   /// <summary>
@@ -73,6 +70,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
     get => _RsidAdd ??= GetProperty<HexInt?>(GetUpdatableElement()?.RsidRunAddition);
     set => UpdateField(ref _RsidAdd, value, nameof(RsidAdd));
   }
+
   private HexInt? _RsidAdd;
 
   /// <summary>
@@ -86,6 +84,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
     get => _RunProperties ??= GetProperty<RunProperties?>(GetUpdatableElement()?.RunProperties);
     set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
   }
+
   private RunProperties? _RunProperties;
 
   /// <summary>
@@ -173,17 +172,50 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
   /// <returns>The concatenated text content of the run.</returns>
   public string GetText()
   {
-    return String.Concat(SourceElements.Select(item => item is DXW.TextType textualElement
-      ? textualElement.Text
-      : _SymbolCharTypesMap.TryGetValue(item.GetType(), out var c)
-        ? c.ToString()
-        : "\xFFFC"));
+    var sb = new StringBuilder();
+    foreach (var item in SourceElements)
+    {
+      sb.Append(GetReplacementText(item));
+    }
+    return sb.ToString();
   }
 
   /// <summary>
-  /// Groups the items in the run into contiguous segments of either textual elements or non-textual elements.
+  /// Gets the replacement text for a given OpenXmlElement item. If the item is a textual element, it returns its text content.
+  /// For certain special elements, it returns their corresponding character representations.
+  /// For other elements, it returns the Unicode object replacement character '\xFFFC'.
   /// </summary>
-  private class ElementsGroup: List<DX.OpenXmlElement>
+  /// <param name="item">The OpenXmlElement item for which to get the replacement text.</param>
+  /// <returns>The replacement text for the given item.</returns>
+  private string GetReplacementText(DX.OpenXmlElement item)
+  {
+    if (item is DXW.TextType textualElement)
+    {
+      return textualElement.Text;
+    }
+    else if (_SymbolCharTypesMap.TryGetValue(item.GetType(), out var c))
+    {
+      return c.ToString();
+    }
+    else if (item is DXW.SymbolChar symbolChar)
+    {
+      var uniChar = new SymbolChar(symbolChar).GetUnicodeChar();
+      if (uniChar != null)
+        return uniChar!.ToString()!;
+      else
+        return "\xFFFC";
+    }
+    else
+    {
+      return "\xFFFC";
+    }
+  }
+
+
+  /// <summary>
+/// Groups the items in the run into contiguous segments of either textual elements or non-textual elements.
+/// </summary>
+private class ElementsGroup: List<DX.OpenXmlElement>
   {
     public bool IsObject { get; init; }
   }
@@ -191,7 +223,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
   /// <summary>
   /// Represents a list of ElementsGroup objects along with the count of object groups.
   /// </summary>
-  private class ElementsGroups : List<ElementsGroup>
+  private class ElementsGroups: List<ElementsGroup>
   {
     public int ObjectGroupsCount { get; set; }
   }
@@ -207,26 +239,31 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
   /// <summary>
   /// Represents a list of character groups (strings) along with the count of object groups.
   /// </summary>
-  private class CharsGroups : List<CharGroup>
+  private class CharsGroups: List<CharGroup>
   {
     public int ObjectGroupsCount { get; set; }
   }
 
   /// <summary>
-  /// Sets the text content of the run by updating the text of the first textual element found in the run's items collection.
+  /// Sets the text content of the run. Setting the text will update the underlying OpenXml elements to reflect the new text,
+  /// while preserving the structure of non-textual elements (such as drawings) in the run.
+  /// If the number of object groups in the existing run elements does not match the number of object groups in the new text,
+  /// an InvalidOperationException will be thrown.
   /// </summary>
   /// <param name="value">The text content to set</param>
   public void SetText(string? value)
   {
     if (GetUpdatableElement() is null)
       throw new ApplicationException("The run element can't set textas it has no updatable element.");
+
     value ??= string.Empty;
     var sourceElements = SourceElements.ToList();
     var elementsGroups = GroupElements(sourceElements);
     var charsGroups = GroupChars(value);
     if (elementsGroups.ObjectGroupsCount != charsGroups.ObjectGroupsCount)
     {
-      throw new InvalidOperationException("The number of object groups in the existing run elements does not match the number of object groups in the new text.");
+      throw new InvalidOperationException(
+        "The number of object groups in the existing run elements does not match the number of object groups in the new text.");
     }
     int elementGroupIndex = 0;
     int charGroupIndex = 0;
@@ -247,6 +284,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
           elementGroupIndex++;
         }
       }
+
       // Update the text of the element group with the characters from the char group
       if (!elementGroup.IsObject)
       {
@@ -259,18 +297,18 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
         elementGroupIndex++;
         charGroupIndex++;
       }
-
     }
     while (elementGroupIndex < elementsGroups.Count)
     {
       RemoveElementGroup(elementsGroups[elementGroupIndex]);
       elementGroupIndex++;
     }
-    while (charGroupIndex  < charsGroups.Count)
+    while (charGroupIndex < charsGroups.Count)
     {
       InsertCharGroupBefore(charsGroups[charGroupIndex], null);
       charGroupIndex++;
     }
+
     // Clear the cached items collection to ensure it reflects the updated state
     _Items = null;
   }
@@ -286,7 +324,7 @@ public partial class Run : ModelElement<DXW.Run>, ITextualElement,
     ElementsGroup? currentGroup = null;
     foreach (var item in items)
     {
-      if (item is DXW.TextType || _SymbolCharTypesMap.ContainsKey(item.GetType()))
+      if (GetReplacementText(item) != "\xFFFC")
       {
         if (currentGroup == null || currentGroup.IsObject)
         {
