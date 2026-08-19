@@ -1,11 +1,7 @@
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
-/// Tests reading document body from a sample file and serializing created DocumentModel elements.
+/// Tests enumerating the document body items;
 /// </summary>
 public class BodyItemsEnumerationTest : _AbstractTestClass
 {

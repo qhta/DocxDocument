@@ -23,4 +23,5 @@ public class RunItemsCollection: ContentItemsCollection
   {
     return item is not DXW.RunProperties;
   }
+
 }

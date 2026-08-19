@@ -1,11 +1,7 @@
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
-/// Tests reading document body from a sample file and serializing created DocumentModel elements.
+/// Tests enumerating the document body Paragraphs.
 /// </summary>
 public class BodyParagraphsEnumerationTest : _AbstractTestClass
 {
@@ -226,8 +222,7 @@ public class BodyParagraphsEnumerationTest : _AbstractTestClass
           var paraId = paragraph.ParagraphId;
           var t5 = DateTime.Now;
           var paraProperties = paragraph.ParagraphProperties;
-          var t6 = DateTime.Now;
-          paraTimeSpan.Add(t6 - t5);
+
           if (paraProperties != null)
           {
             paraPropertiesCount++;
@@ -248,12 +243,13 @@ public class BodyParagraphsEnumerationTest : _AbstractTestClass
               Console.Write(".");
           }
           paragraphIndex++;
-
+          var t6 = DateTime.Now;
+          paraTimeSpan.Add(t6 - t5);
         }
       }
       Console.WriteLine($"\nEnumerated: {paragraphIndex} paragraphs, {paraPropertiesCount} Paragraph Properties");
       if (paraTimeSpan.Any())
-        Console.WriteLine($" Mean Paragraph Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+        Console.WriteLine($"Mean Paragraph Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
       if (trial == 0)
       {
         lastParagraphsCount = paragraphIndex;

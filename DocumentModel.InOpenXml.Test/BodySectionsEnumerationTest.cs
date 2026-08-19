@@ -108,7 +108,7 @@ public class BodySectionsEnumerationTest : _AbstractTestClass
       }
       Console.WriteLine($"\nEnumerated: {sectPropertiesCount} Section Properties");
       if (paraTimeSpan.Any())
-        Console.WriteLine($" Mean Section Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
+        Console.WriteLine($"Mean Section Properties read duration: {paraTimeSpan.Average(t => t.TotalMilliseconds)} ms");
       if (trial == 0)
       {
         lastParagraphsCount = paragraphIndex;

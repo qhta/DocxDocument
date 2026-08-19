@@ -1,9 +1,9 @@
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
-/// Tests enumerating the document body Paragraph items.
+/// Tests enumerating the document body Run items.
 /// </summary>
-public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
+public class BodyRunItemsEnumerationTest : _AbstractTestClass
 {
   private const string SampleFilePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\_Jakość oprogramowania2.zip";
 
@@ -13,15 +13,15 @@ public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public override bool Run()
   {
-    Console.WriteLine("=== Body Paragraphs items Enumeration Test ===\n");
+    Console.WriteLine("=== Body Run Items Enumeration Test ===\n");
     var t0 = DateTime.Now;
 
-    if (!TestEnumerateBodyParagraphItems(true, true, 1)) return false;
+    if (!TestEnumerateBodyRunItems(true, true, 1)) return false;
 
     var t1 = DateTime.Now;
     TotalLoadFromOpenXml += (t1 - t0).TotalMilliseconds;
 
-    Console.WriteLine("All Body Paragraphs Items Enumeration passed.\n");
+    Console.WriteLine("All Body Run Items Enumeration passed.\n");
     return true;
   }
 
@@ -31,9 +31,9 @@ public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
   /// Tests enumerating the document body Paragraph Properties data read.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestEnumerateBodyParagraphItems(bool directAccess, bool verbatim, int times = 1)
+  private bool TestEnumerateBodyRunItems(bool directAccess, bool verbatim, int times = 1)
   {
-    Console.WriteLine($"--- Enumerate Body Paragraphs Items with direct access = {directAccess} ---");
+    Console.WriteLine($"--- Enumerate Body Run Items with direct access = {directAccess} ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -88,11 +88,29 @@ public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
             foreach (var paraItem in paraItems)
             {
               var paraItemStr = paraItem.ToString();
-              if (verbatim)
-                Console.WriteLine($"  Item[{itemIndex++}] {paraItemStr}");
+
+              if (paraItem is Run run)
+              {
+                if (verbatim)
+                  Console.WriteLine($"  Item[{itemIndex++}] {paraItemStr}");
+                if (run.Items.Count > 1 || run.Items.FirstOrDefault() is not RunText)
+                {
+                  foreach (var runItem in run.Items)
+                  {
+                    var runItemStr = runItem.ToString();
+                    if (verbatim)
+                      Console.WriteLine($"    RunItem[{itemIndex++}] {runItemStr}");
+                  }
+                }
+              }
+              else
+              {
+                if (verbatim)
+                  Console.WriteLine($"  Item[{itemIndex++}] {paraItemStr}");
+              }
             }
           }
-
+          
           if (!verbatim)
           {
             if (paragraphIndex % 100 == 0)
@@ -136,7 +154,7 @@ public class BodyParagraphsItemsEnumerationTest : _AbstractTestClass
       return false;
     }
 
-    Console.WriteLine($"✓ Enumerate Body Paragraphs Items with direct access = {directAccess} test passed\n");
+    Console.WriteLine($"✓ Enumerate Body Run Items with direct access = {directAccess} test passed\n");
     return true;
   }
 
