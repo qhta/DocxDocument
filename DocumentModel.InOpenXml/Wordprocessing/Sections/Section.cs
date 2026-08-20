@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("Section", Namespace = "DocumentModel.Wordprocessing")]
+[ContentProperty(nameof(Items))]
 public class Section: ModelElement
 {
 
@@ -101,5 +102,11 @@ public class Section: ModelElement
       throw new InvalidOperationException("Section is not part of a section collection.");
     } 
   }
+
+  /// <summary>
+  /// Gets the collection of items within the section's range, allowing access to the block-level content that exists between the start and end model elements of the section.
+  /// </summary>
+  public RangeItemsCollections Items => Range.Items;
+
 
 }

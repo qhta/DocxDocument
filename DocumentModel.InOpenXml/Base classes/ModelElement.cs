@@ -12,7 +12,6 @@ namespace DocumentModel;
 /// </summary>
 [DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-[DebuggerDisplay(nameof(ToString))]
 public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
   ICollectionItem, IModifiable, IUpdatable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
   IPropertiesProvider, IModelObject

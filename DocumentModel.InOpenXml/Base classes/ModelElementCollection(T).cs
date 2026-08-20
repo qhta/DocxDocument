@@ -184,18 +184,18 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <summary>
   /// Enumerates the items in the collection, returning them directly after converting from the source collection.
   /// </summary>
-  protected IEnumerable<ItemType> EnumerateDirectly()
+  protected virtual IEnumerable<ItemType> EnumerateDirectly()
   {
     OpenXmlModelConverter.Init();
 
-    // yield already-loaded items first
-    foreach (var existing in base.Items)
-      yield return existing;
+    //// yield already-loaded items first
+    //foreach (var existing in base.Items)
+    //  yield return existing;
 
 
-    int alreadyLoaded = base.Items.Count;
-
-    foreach (var openXmlItem in SourceCollection!)
+    //int alreadyLoaded = base.Items.Count;
+    var sourceCollection = GetSourceElements();  
+    foreach (var openXmlItem in sourceCollection)
     {
       if (!AcceptSourceItem(openXmlItem))
         continue;

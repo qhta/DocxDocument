@@ -12,7 +12,6 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
   /// Page width, specified in twips.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageSize.Width))]
-  [MeasureUnit(MeasureUnit.Inches)]
   public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
   private Twips? _Width;
 
@@ -20,7 +19,6 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
   /// Page height, specified in twips.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageSize.Height))]
-  [MeasureUnit(MeasureUnit.Inches)]
   public Twips? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
   private Twips? _Height;
 

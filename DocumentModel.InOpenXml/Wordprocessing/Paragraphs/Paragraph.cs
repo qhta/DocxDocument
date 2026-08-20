@@ -9,6 +9,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Paragraph))]
 [SpecificClass]
 [DirectAccess(true)]
+[ContentProperty(nameof(Items))]
 public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IStoryContent, ITableCellContent, ISdtBlockContent,
   ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
 {
@@ -247,6 +248,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IS
   /// Gets a collection of runs within the paragraph, providing access to all run elements contained in the paragraph's items.
   /// This property retrieves a collection of runs by filtering the items in the paragraph to include only those that are of type <see cref="DMW.Run"/>.
   /// </summary>
+  [XmlIgnore]
   public DMW.Runs Runs => _Runs ??= new DMW.Runs(this, Items);
 
   private DMW.Runs? _Runs;

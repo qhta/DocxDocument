@@ -669,7 +669,7 @@
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodySerialization(System.Boolean,System.Boolean,System.Int32)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodySerialization(System.Boolean)">
             <summary>
             Tests serializing the document body Sections collection.
             </summary>

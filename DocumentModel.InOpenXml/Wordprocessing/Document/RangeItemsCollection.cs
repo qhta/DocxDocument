@@ -40,7 +40,7 @@ public class RangeItemsCollections: ContentItemsCollection
   {
     return EnumerateDirectly().GetEnumerator();
   }
-
+  
   /// <summary>
   /// Gets the source elements for the collection, yielding each element in the range from the start to the end.
   /// </summary>

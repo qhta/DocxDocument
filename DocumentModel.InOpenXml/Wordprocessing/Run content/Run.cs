@@ -15,6 +15,7 @@ namespace DocumentModel.Wordprocessing;
 [DataContract]
 [XmlRoot("Run", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess(true)]
+[ContentProperty(nameof(Items))]
 public partial class Run: ModelElement<DXW.Run>, ITextualElement, IParagraphContent, ISdtRunContent, IRubyContent,
   IBidirectionalContent, IMathArgumentContent
 {
@@ -163,7 +164,7 @@ public partial class Run: ModelElement<DXW.Run>, ITextualElement, IParagraphCont
   /// <summary>
   /// The text value represented by this element.
   /// </summary>
-  [XmlText]
+  [XmlIgnore]
   public string? Text { get => GetText(); set => SetText(value); }
 
   /// <summary>

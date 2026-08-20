@@ -10,9 +10,8 @@ public abstract partial class TextualElement<T> : ModelElement<T>, ITextualEleme
   /// <summary>
   /// Indicates whether this textual element is deleted.
   /// </summary>
-  [DefaultValue(false)]
-  public bool IsDeleted { get => _IsDeleted; set => UpdateField(ref _IsDeleted, value, nameof(IsDeleted)); }
-  private bool _IsDeleted;
+  public bool? IsDeleted { get => _IsDeleted; set => UpdateField(ref _IsDeleted, value, nameof(IsDeleted)); }
+  private bool? _IsDeleted;
 
   /// <summary>
   /// The text value represented by this element.

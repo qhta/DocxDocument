@@ -16,7 +16,7 @@ public class BodySerializationTest : _AbstractTestClass
     Console.WriteLine("=== Body Sections Enumeration Test ===\n");
     var t0 = DateTime.Now;
 
-    if (!TestBodySerialization(true, true, 1)) return false;
+    if (!TestBodySerialization(true)) return false;
     var t1 = DateTime.Now;
     TotalLoadFromOpenXml += (t1 - t0).TotalMilliseconds;
 
@@ -28,16 +28,17 @@ public class BodySerializationTest : _AbstractTestClass
   /// Tests serializing the document body Sections collection.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestBodySerialization(bool directAccess, bool verbatim, int times = 1)
+  private bool TestBodySerialization(bool verbatim)
   {
-    Console.WriteLine($"--- Serialize Body Sections with direct access = {directAccess} ---");
+    Console.WriteLine($"--- Serialize Body Sections");
 
     if (!File.Exists(SampleFilePath))
     {
       Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
       return false;
     }
-
+    var outputFileName = Path.Combine(Path.GetDirectoryName(SampleFilePath)!, "BodySerializationTestOutput.xml");
+    using var outputFile = File.CreateText(outputFileName);
     var t0 = DateTime.Now;
     using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
     var t1 = DateTime.Now;
@@ -54,66 +55,55 @@ public class BodySerializationTest : _AbstractTestClass
     var t2 = DateTime.Now;
 
     Body modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
-    modelBody.SetHasDirectAccess(directAccess);
     var t3 = DateTime.Now;
-    //Console.WriteLine($"LoadData duration: {(t3 - t2).TotalMilliseconds} ms");
-    int lastSectionsCount = 0;
-    for (int trial = 0; trial < times; trial++)
+    if (verbatim)
+      Console.WriteLine("-------------------------------------------------");
+    int sectionIndex = 0;
+    int sectionsCount = 0;
+    int totalRangeItemsCount = 0;
+    outputFile.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+    outputFile.WriteLine("<Body>");
+    foreach (var section in modelBody.Sections)
     {
+      //Debug.WriteLine($"Section {sectionIndex}");
+      DMW.Range range = section.Range;
+      var rangeItems = range.Items;
+      var rangeItemsCount = rangeItems.Count();
+      totalRangeItemsCount += rangeItemsCount;
+      Console.WriteLine($"Section {sectionIndex}");
       if (verbatim)
-        Console.WriteLine("-------------------------------------------------");
-      int sectionIndex = 0;
-      int sectionsCount = 0;
-      int totalRangeItemsCount = 0;
-      foreach (var section in modelBody.Sections)
-      {
-        //Debug.WriteLine($"Section {sectionIndex}");
-        DMW.Range range = section.Range;
-        var rangeItems = range.Items;
-        var rangeItemsCount = rangeItems.Count();
-        totalRangeItemsCount += rangeItemsCount;
-        Console.WriteLine($"Section {sectionIndex}");
-        if (section.Paragraph != null)
-          Console.WriteLine($"Paragraph ID: {section.Paragraph.ParagraphId}");
-        if (verbatim)
-        {
-          string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
-          if (sectionString != string.Empty)
-            Console.WriteLine(sectionString);
-        }
         Console.WriteLine($"Range: Start={range.Start}, End={range.End}, ItemsCount={rangeItemsCount}");
-        sectionIndex++;
-        sectionsCount++;
-
-      }
-      Console.WriteLine($"\nEnumerated: {sectionsCount} Sections with total {totalRangeItemsCount} Range Items");
-      var bodyItemsCount = modelBody.Items.Count();
-      if (totalRangeItemsCount != bodyItemsCount)
+      string sectionString = SerializeObjectToXml(section, omitXmlDeclaration: true);
+      if (sectionString != string.Empty)
       {
-        Console.WriteLine($"✗ Body items count mismatch: {bodyItemsCount} vs {totalRangeItemsCount}");
-        return false;
-      }
+        outputFile.WriteLine(sectionString);
+      }  
+      sectionIndex++;
+      sectionsCount++;
 
-      if (trial == 0)
-      {
-        lastSectionsCount = sectionsCount;
-      }
-
-      var t4 = DateTime.Now;
-      //Console.WriteLine($"Get Model items duration: {(t4 - t3).TotalMilliseconds} ms");
-      t3 = t4;
-      if (verbatim)
-        Console.WriteLine("-------------------------------------------------");
     }
+    Console.WriteLine($"\nEnumerated: {sectionsCount} Sections with total {totalRangeItemsCount} Range Items");
+    var bodyItemsCount = modelBody.Items.Count();
+    if (totalRangeItemsCount != bodyItemsCount)
+    {
+      Console.WriteLine($"✗ Body items count mismatch: {bodyItemsCount} vs {totalRangeItemsCount}");
+      return false;
+    }
+    outputFile.WriteLine("</Body>");
+    var t4 = DateTime.Now;
+    Console.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
+    if (verbatim)
+      Console.WriteLine("-------------------------------------------------");
 
-    if (lastSectionsCount == 0)
+
+    if (sectionsCount == 0)
     {
       Console.WriteLine($"✗ Body Sections count is zero");
       return false;
     }
 
 
-    Console.WriteLine($"✓ Serialize Body Sections with direct access = {directAccess} test passed\n");
+    Console.WriteLine($"✓ Serialize Body Sections test passed\n");
     return true;
   }
 

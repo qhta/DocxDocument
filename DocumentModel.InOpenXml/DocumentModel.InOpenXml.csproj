@@ -61,6 +61,7 @@
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
     <Compile Remove="Wordprocessing\Mail merge\FieldMapDataCollection.cs" />
     <Compile Remove="Wordprocessing\Paragraphs\Paragraphs - Copy.cs" />
+    <Compile Remove="Wordprocessing\Run content\Run.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDefinition.ext.cs" />
   </ItemGroup>
