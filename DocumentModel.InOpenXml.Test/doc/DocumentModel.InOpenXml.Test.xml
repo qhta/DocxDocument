@@ -669,7 +669,19 @@
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodySerialization(System.Boolean)">
+        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodyItemsSerialization(System.Boolean)">
+            <summary>
+            Tests body items serialization. Xml output is written to a file named "BodySerializationTestOutput.xml" in the same directory as the sample file.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodyItemsDeserialization(System.Boolean)">
+            <summary>
+            Tests body items deserialization. Xml input is read from a file named "BodySerializationTestOutput.xml" in the same directory as the sample file.
+            A temporary copy of the sample file is created with the deserialized body items.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BodySerializationTest.TestBodySectionsSerialization(System.Boolean)">
             <summary>
             Tests serializing the document body Sections collection.
             </summary>
@@ -1841,6 +1853,25 @@
             <typeparam name="DataType">The type of the object to deserialize from the XML string. Must be compatible with XML serialization.</typeparam>
             <param name="xml">A string containing the XML data to deserialize. The XML must represent an object of type DataType.</param>
             <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
+            object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.DeserializeModelElement(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the specified XML element into a ModelElement object.
+            </summary>
+            <param name="xmlElement">The XML element to deserialize.</param>
+            <returns>An instance of ModelElement deserialized from the XML element, or null if the XML does not represent a valid object.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the resolved type is not a ModelElement.</exception>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.DeserializeFromXml``1(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the specified XML element into an object of the given type.
+            </summary>
+            <remarks>The XML element must match the structure expected by the XML serializer for the specified type. If
+            the XML is invalid or does not match the expected format, the method may throw an exception.</remarks>
+            <typeparam name="DataType">The type of the object to deserialize from the XML element. Must be compatible with XML serialization.</typeparam>
+            <param name="xmlElement">The XML element to deserialize. The XML must represent an object of type DataType.</param>
+            <returns>An instance of type DataType deserialized from the XML element, or null if the XML does not represent a valid
             object.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToJson(System.Object)">

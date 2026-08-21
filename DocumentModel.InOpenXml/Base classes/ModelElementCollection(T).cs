@@ -29,7 +29,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the XML content for the collection. Cannot be null.</param>
   protected ModelElementCollection(DX.OpenXmlCompositeElement openXmlElement) : base()
   {
-    DataSource = openXmlElement;
+    SetDataSource(openXmlElement);
   }
 
   /// <summary>
@@ -40,9 +40,10 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection. Can be null.</param>
   protected ModelElementCollection(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
-    DataSource = openXmlElement;
-    IsLazyLoadEnabled = this.GetType().GetCustomAttribute<LazyLoadAttribute>()?.IsEnabled == true &&
+    SetDataSource(openXmlElement);
+    IsLazyLoadEnabled = this.GetType().GetCustomAttribute<LazyLoadAttribute>(true)?.IsEnabled == true &&
                         this is ILazyLoadable;
+    HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>(true)?.IsEnabled == true;
   }
 
   /// <summary>
@@ -66,7 +67,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <param name = "items">The collection of items to copy into the new collection. Cannot be null.</param>
   protected ModelElementCollection(IEnumerable<ItemType> items) : this()
   {
-    DataSource = items;
+    SetDataSource(items);
     IsLazyLoadEnabled = true;
   }
 
@@ -260,12 +261,19 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   public bool IsLazyLoadEnabled { [DebuggerStepThrough] get; set; }
 
   /// <summary>
-  /// Data source for lazy loading. 
+  /// Data source for lazy loading or direct access. 
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public object? DataSource { [DebuggerStepThrough] get; set; }
+  public object? DataSource { [DebuggerStepThrough] get => _DataSource;}
+  private object? _DataSource;
+
+  /// <summary>
+  /// Sets the data source for lazy loading. 
+  /// </summary>
+  /// <param name="dataSource">The data source to be set for lazy loading or direct access.</param>
+  public void SetDataSource(object? dataSource) => _DataSource = dataSource;
 
   /// <summary>
   /// Source collection for lazy loading.
@@ -280,7 +288,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   {
     get => DataSource is DX.OpenXmlCompositeElement openXmlElement ? openXmlElement.Elements() :
       DataSource as IEnumerable<DX.OpenXmlElement>;
-    set => DataSource = value;
+    set => SetDataSource(value);
   }
 
   /// <summary>

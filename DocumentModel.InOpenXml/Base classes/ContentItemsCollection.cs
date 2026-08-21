@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// </summary>
 [DataContract]
 [XmlRoot("ContentItemsCollection", Namespace = "DocumentModel")]
-[LazyLoad]
+[DirectAccess]
 public abstract partial class ContentItemsCollection : ModelElementCollection<ModelElement, DX.OpenXmlCompositeElement>
 {
 
@@ -13,7 +13,6 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// </summary>
   protected ContentItemsCollection()
   {
-    IsLazyLoadEnabled = true;
   }
 
   /// <summary>
@@ -23,10 +22,8 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
   /// <param name="dataSource">The underlying OpenXmlCompositeElement that provides the XML structure for the collection. Can be null.</param>
   protected ContentItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement? dataSource) :
-    base(parent)
+    base(parent, dataSource)
   {
-    IsLazyLoadEnabled = true;
-    DataSource = dataSource;
   }
 
 
@@ -37,7 +34,15 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// <returns>True if the item is acceptable; otherwise, false.</returns>
   public override bool AcceptSourceItem(DX.OpenXmlElement item)
   {
-    return OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.ContainsKey(item.GetType());
+    try
+    {
+      OpenXmlElementMapper.GetModelElementType(item.GetType());
+      return true;
+    }
+    catch (ApplicationException)
+    {
+      return false;
+    }
   }
 
   /// <summary>
@@ -52,15 +57,13 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     var modelType = typeof(ItemType);
     if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
     {
-      if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelType, out var openXmlTypes))
-        throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelType}");
+      var openXmlTypes = OpenXmlElementMapper.GetOpenXmlElementTypes(modelType);
 
       foreach (var openXmlChildElement in GetSourceElements())
       {
         if (!AcceptSourceItem(openXmlChildElement))
           continue;
-        if (OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
-          throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
+        var modelItemType = OpenXmlElementMapper.GetModelElementType(openXmlChildElement.GetType());
 
         if (modelItemType == typeof(ItemType))
         {
@@ -77,7 +80,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to get the target model item type for.</param>
   /// <returns>The target model item type.</returns>
-  public override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElementMapper.OpenXml2ModelElementTypeMapping[openXmlElement.GetType()];
+  public override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElementMapper.GetModelElementType(openXmlElement.GetType());
 
   /// <summary>
   /// Creates a model element of the specified type from the given OpenXml child element, ensuring that the converted item is compatible with the expected model type.
@@ -98,7 +101,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       throw new InvalidOperationException($"Converted model item is not compatible to {modelItemType}");
 
     modelElement.SetParent(Parent);
-    if (modelItem is IUpdatable updatableModelItem)
+    if (modelItem is IUpdatableElement updatableModelItem)
       updatableModelItem.SetUpdatableObject(openXmlChildElement);
 
     return (ItemType)modelItem!;
@@ -118,8 +121,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
     foreach (var openXmlElement in openXmlModeledCollection.Elements().Where(AcceptSourceItem))
     {
       var openXmlItemType = openXmlElement.GetType();
-      if (!OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.TryGetValue(openXmlItemType, out var modelItemType))
-        throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlItemType}");
+      var modelItemType = OpenXmlElementMapper.GetModelElementType(openXmlItemType);
       var constructor = modelItemType.GetConstructor([modelItemType, openXmlItemType]);
       ModelElement modelObject;
       if (constructor != null)
@@ -144,19 +146,18 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
-  /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
+  /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
+  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlModeledCollection);
+    SetUpdatableObject(openXmlCompositeElement);
 
     foreach (var modelItem in this)
     {
       var modelItemType = modelItem.GetType();
-      if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelItemType, out var openXmlItemTypes))
-        throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelItemType}");
+      var openXmlItemTypes = OpenXmlElementMapper.GetOpenXmlElementTypes(modelItemType);
 
       var openXmlItemType = openXmlItemTypes.First();
-      var children = openXmlModeledCollection.Elements().Where(item => item.GetType().IsEqualOrSubclassOf(openXmlItemType)).ToArray();
+      var children = openXmlCompositeElement.Elements().Where(item => item.GetType().IsEqualOrSubclassOf(openXmlItemType)).ToArray();
       foreach (var child in children)
       {
         child.Remove();
@@ -164,9 +165,43 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       
       DX.OpenXmlElement openXmlElement = (DX.OpenXmlElement)Activator.CreateInstance(openXmlItemType)!;
       modelItem.UpdateData(openXmlElement);
-      openXmlModeledCollection.AddChildElement(openXmlElement);
+      openXmlCompositeElement.AddChildElement(openXmlElement);
     }
     return true;
   }
-  
+
+  /// <summary>
+  /// Overrides the Add method to prevent adding items directly to the collection. Instead, use the AddModelElement method to add model elements to the collection.
+  /// </summary>
+  /// <param name="modelItem"></param>
+  public override void Add(ModelElement modelItem)
+  {
+    return; // Disable adding items directly to the collection. Use AddModelElement instead.
+  }
+
+  /// <summary>
+  /// Adds a model Item to the collection.
+  /// </summary>
+  /// <param name = "modelItem">The modelItem to add.</param>
+  public void AddModelElement(ModelElement modelItem)
+  {
+    if (modelItem is DMW.BookmarkStart)
+      Debug.Assert(true);
+    var updatableElement = GetUpdatableObject();
+    if (updatableElement is not DX.OpenXmlCompositeElement openXmlCompositeElement)
+      throw new ApplicationException("Updatable element of content modelItem collection must be a OpenXmlCompositeElement");
+
+    var openXmlElement = (modelItem as IUpdatableElement).GetUpdatableObject() as DX.OpenXmlElement;
+    if (openXmlElement is null)
+    {
+      openXmlElement = modelItem.GetUpdatableElement() as DX.OpenXmlElement;
+      if (openXmlElement is null)
+        throw new ApplicationException("Updatable element of modelItem must be a OpenXmlElement");
+      Debug.WriteLine($"Created {openXmlElement.GetType().FullName} for modelItem of type {modelItem.GetType().FullName}");
+    }
+    if (openXmlElement is not DXW.TextType)
+      modelItem.UpdateData(openXmlElement);
+    openXmlCompositeElement.AddChildElement(openXmlElement);
+
+  }
 }

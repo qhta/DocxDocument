@@ -4446,25 +4446,25 @@
             <returns>An Int64 representation of the input value, or null if the input is null or cannot be converted.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
         </member>
-        <member name="T:DocumentModel.OpenXml.IUpdatable">
+        <member name="T:DocumentModel.OpenXml.IUpdatableElement">
             <summary>
             Interface for types that can provide an Open XML element for updating purposes.
             Implementing this interface allows a type to specify how it can be represented as an Open XML element,
             which can be used for synchronization or updating operations in the context of Open XML document manipulation.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.IUpdatable.GetUpdatableObject">
+        <member name="M:DocumentModel.OpenXml.IUpdatableElement.GetUpdatableObject">
             <summary>
             Gets an object that can be used for updating the state of the implementing object.
             The returned object may be null if there is no relevant object to provide.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.IUpdatable.SetUpdatableObject(System.Object)">
+        <member name="M:DocumentModel.OpenXml.IUpdatableElement.SetUpdatableObject(System.Object)">
             <summary>
             Sets an object that can be used for updating the state of the implementing object.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.IUpdatable.UpdateData(System.Object)">
+        <member name="M:DocumentModel.OpenXml.IUpdatableElement.UpdateData(System.Object)">
             <summary>
             Updates the specified object with new data or changes.
             </summary>
@@ -4476,7 +4476,7 @@
             Extension methods for IUpdatable interface.
             </summary>
         </member>
-        <member name="M:DocumentModel.OpenXml.UpdatableExtensions.UpdateData(DocumentModel.OpenXml.IUpdatable)">
+        <member name="M:DocumentModel.OpenXml.UpdatableExtensions.UpdateData(DocumentModel.OpenXml.IUpdatableElement)">
             <summary>
             Updates the updatable element with new data or changes.
             </summary>
@@ -7876,23 +7876,6 @@
             </summary>
             <param name="collection"></param>
         </member>
-        <member name="T:DocumentModel.IDirectAccess">
-            <summary>
-            Interface for types that have direct access to their underlying data source, allowing for immediate retrieval of data without the need for lazy loading.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.IDirectAccess.HasDirectAccess">
-            <summary>
-            Gets a value indicating whether the object has direct access to its underlying data source,
-            allowing for immediate retrieval of data without the need for lazy loading.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.IDirectAccess.SetHasDirectAccess(System.Boolean)">
-            <summary>
-            Sets the direct access state of the component.
-            </summary>
-            <param name="hasDirectAccess">true to indicate that the component has direct access; otherwise, false.</param>
-        </member>
         <member name="T:DocumentModel.IDirectAccessElement">
             <summary>
             Interface for elements that support direct access to their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
@@ -7903,11 +7886,23 @@
             Gets a value indicating whether the element has direct access to its underlying OpenXml representation.
             </summary>
         </member>
+        <member name="M:DocumentModel.IDirectAccessElement.SetHasDirectAccess(System.Boolean)">
+            <summary>
+            Sets the direct access state of the component.
+            </summary>
+            <param name="hasDirectAccess">true to indicate that the component has direct access; otherwise, false.</param>
+        </member>
         <member name="P:DocumentModel.IDirectAccessElement.DataSource">
             <summary>
             Gets the underlying data source associated with the element, which may be an OpenXml element or other relevant data structure.
             This property allows for direct interaction with the underlying data without requiring full model element instantiation.
             </summary>
+        </member>
+        <member name="M:DocumentModel.IDirectAccessElement.SetDataSource(System.Object)">
+            <summary>
+             Sets the underlying data source associated with the element, which may be an OpenXml element or other relevant data structure.
+            </summary>
+            <param name="dataSource">The data source to set.</param>
         </member>
         <member name="M:DocumentModel.IDirectAccessElement.GetTargetModelItemType(DocumentFormat.OpenXml.OpenXmlElement)">
             <summary>

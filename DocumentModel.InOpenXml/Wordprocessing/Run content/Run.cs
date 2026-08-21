@@ -461,4 +461,13 @@ private class ElementsGroup: List<DX.OpenXmlElement>
     }
     return elements;
   }
+
+  /// <summary>
+  /// Adds a new ModelElement to the run's items collection.
+  /// </summary>
+  /// <param name="element">The ModelElement to add to the run`'s items collection.</param>
+  public void Add(ModelElement element)
+  {
+    Items.AddModelElement(element);
+  }
 }

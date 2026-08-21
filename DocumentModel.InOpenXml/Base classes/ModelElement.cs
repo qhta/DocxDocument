@@ -13,7 +13,7 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
-  ICollectionItem, IModifiable, IUpdatable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
+  ICollectionItem, IModifiable, IUpdatableElement, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
   IPropertiesProvider, IModelObject
 {
   static ModelElement()
@@ -261,7 +261,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var modelValue = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlElement)!;
     if (modelValue is ModelElement modelElement)
       modelElement.Parent = this;
-    if (modelValue is IUpdatable updatable)
+    if (modelValue is IUpdatableElement updatable)
       updatable.SetUpdatableObject(openXmlElement);
     return modelValue;
   }
@@ -302,7 +302,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var modelValue = (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
     if (modelValue is ModelElement modelElement)
       modelElement.Parent = this;
-    if (modelValue is IUpdatable updatable)
+    if (modelValue is IUpdatableElement updatable)
       updatable.SetUpdatableObject(openXmlValue);
     return modelValue;
   }
@@ -535,6 +535,15 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
   public virtual bool TryLoadData(object openXmlObject) => LoadData(openXmlObject);
 
+  /// <summary>
+  /// This method wraps the virtual LoadData method to be called on initialization of the model element. 
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element to load data from.</param>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public bool LoadDataOnInit(DX.OpenXmlElement openXmlElement)
+  {
+    return LoadData(openXmlElement);
+  }
 
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
@@ -628,6 +637,15 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Gets or sets the underlying Open XML element that can be updated by this model element.
   /// </summary>
   private object? _UpdatableObject;
+
+  /// <summary>
+  /// Gets the underlying Open XML element that can be updated by this model element.
+  /// This method returns the object that represents the data source for this model,
+  /// which may be an OpenXmlElement or another type of object.
+  /// If no updatable element is associated with this model, the method returns null.
+  /// </summary>
+  /// <returns></returns>
+  public virtual DX.OpenXmlElement? GetUpdatableElement() => null;
 
   /// <summary>
   /// Parent object that contains this item.

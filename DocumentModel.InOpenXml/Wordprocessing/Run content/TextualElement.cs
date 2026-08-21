@@ -5,8 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("TextualElement", Namespace = "DocumentModel.Wordprocessing")]
+[DirectAccess]
 public abstract partial class TextualElement<T> : ModelElement<T>, ITextualElement, IRunContent where T : DX.OpenXmlElement
 {
+
   /// <summary>
   /// Indicates whether this textual element is deleted.
   /// </summary>

@@ -623,11 +623,11 @@ public static class BooleanConverter
 
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
     var valProp = targetType.GetValProperty();
-    if (valProp == null)
-      throw new InvalidOperationException("The Val property is not found in " + targetType.Name);
-
-    var valValue = ConvertTo(value, valProp.PropertyType);
-    valProp.SetValue(element, valValue);
+    if (valProp != null)
+    {
+      var valValue = ConvertTo(value, valProp.PropertyType);
+      valProp.SetValue(element, valValue);
+    } 
     return element;
   }
 

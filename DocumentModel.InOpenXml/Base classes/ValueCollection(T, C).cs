@@ -169,7 +169,7 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public override object? GetUpdatableObject()
   {
-    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatable)?.GetUpdatableObject() as OpenXmlCollectionType;
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject() as OpenXmlCollectionType;
   }
 
   /// <summary>

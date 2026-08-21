@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 using DocumentFormat.OpenXml.Packaging;
 
@@ -128,6 +129,46 @@ public abstract class _AbstractTestClass
     using (var stringReader = new StringReader(xml))
     {
       return (DataType?)xmlSerializer.Deserialize(stringReader);
+    }
+  }
+
+  /// <summary>
+  /// Deserializes the specified XML element into a ModelElement object.
+  /// </summary>
+  /// <param name="xmlElement">The XML element to deserialize.</param>
+  /// <returns>An instance of ModelElement deserialized from the XML element, or null if the XML does not represent a valid object.</returns>
+  /// <exception cref="InvalidOperationException">Thrown if the resolved type is not a ModelElement.</exception>
+  protected ModelElement? DeserializeModelElement(XElement xmlElement)
+  {
+    var rootName = xmlElement.Name.LocalName;              // Paragraph
+    var rootNs = xmlElement.Name.NamespaceName;            // DocumentModel.Wordprocessing
+
+    var concreteType = XmlSerializationHelper.ResolveType(rootName, rootNs);
+    if (!typeof(ModelElement).IsAssignableFrom(concreteType))
+      throw new InvalidOperationException($"Resolved type {concreteType.FullName} is not a ModelElement.");
+
+    //var xmlSerializer = CreateXmlSerializer(concreteType, out _);
+    using var xmlReader = xmlElement.CreateReader();
+    var modelElement = (ModelElement)Activator.CreateInstance(concreteType)!;
+    modelElement.ReadXml(xmlReader);
+    return modelElement;
+  }
+
+  /// <summary>
+  /// Deserializes the specified XML element into an object of the given type.
+  /// </summary>
+  /// <remarks>The XML element must match the structure expected by the XML serializer for the specified type. If
+  /// the XML is invalid or does not match the expected format, the method may throw an exception.</remarks>
+  /// <typeparam name="DataType">The type of the object to deserialize from the XML element. Must be compatible with XML serialization.</typeparam>
+  /// <param name="xmlElement">The XML element to deserialize. The XML must represent an object of type DataType.</param>
+  /// <returns>An instance of type DataType deserialized from the XML element, or null if the XML does not represent a valid
+  /// object.</returns>
+  protected DataType? DeserializeFromXml<DataType>(XElement xmlElement)
+  {
+    var xmlSerializer = CreateXmlSerializer(typeof(DataType), out _);
+    using (var xmlReader = xmlElement.CreateReader())
+    {
+      return (DataType?)xmlSerializer.Deserialize(xmlReader);
     }
   }
 

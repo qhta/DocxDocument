@@ -17,7 +17,7 @@ public partial class TextBox : IXmlSerializable
   {
     reader.MoveToContent();
 
-    var serializableProperties = GetSerializableProperties();
+    var serializableProperties = this.GetType().GetSerializablePropertiesInfo();
 
     // Read attributes
     ReadAttributes(reader, serializableProperties);

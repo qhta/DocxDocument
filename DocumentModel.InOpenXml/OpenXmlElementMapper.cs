@@ -5,11 +5,68 @@
 /// </summary>
 public static class OpenXmlElementMapper
 {
+  /// <summary>
+  /// Scans the provided list of model element types and populates the mapping dictionaries for OpenXml element types to model element types and vice versa.
+  /// This method uses reflection to find the OpenXmlTypeAttribute on each model type to determine the corresponding OpenXml type.
+  /// </summary>
+  /// <param name="typeList">List of model element types to scan.</param>
+  public static void ScanModelElements(Type[] typeList)
+  {
+    foreach (var modelType in typeList)
+    {
+      if (ModelType2OpenXmlElementMapping.ContainsKey(modelType))
+        continue;
+
+      var openXmlTypeAttributes = modelType.GetCustomAttributes<OpenXmlTypeAttribute>().ToArray();
+      if (openXmlTypeAttributes.Any())
+      {
+        var openXmlTypes = openXmlTypeAttributes.Select(attr => attr.Type).ToArray();
+        foreach (var openXmlType in openXmlTypes)
+        {
+          if (!OpenXml2ModelElementTypeMapping.TryGetValue(openXmlType, out var existingModelType))
+            OpenXml2ModelElementTypeMapping.Add(openXmlType, modelType);
+          else
+          if (existingModelType != modelType)
+              throw new ApplicationException($"Conflicting model element type mapping for OpenXml type {openXmlType.FullName}: {existingModelType.FullName} and {modelType.FullName}");
+        }
+        ModelType2OpenXmlElementMapping.Add(modelType, openXmlTypes);
+      }
+    }
+  }
+
+  /// <summary>
+  /// Gets the corresponding model element type for the specified OpenXml type. If no mapping is found, an ApplicationException is thrown.
+  /// </summary>
+  /// <param name="openXmlType">The OpenXml type to get the corresponding model element type for.</param>
+  /// <returns>The corresponding model element type.</returns>
+  /// <exception cref="ApplicationException"></exception>
+  public static Type GetModelElementType(Type openXmlType)
+  {
+    if (OpenXml2ModelElementTypeMapping.TryGetValue(openXmlType, out var modelType))
+      return modelType;
+    throw new ApplicationException($"No model element type mapping found for OpenXml type {openXmlType.FullName}");
+  }
+  
+  /// <summary>
+  /// Gets the corresponding OpenXml element types for the specified model type. If no mapping is found, an ApplicationException is thrown.
+  /// </summary>
+  /// <param name="modelType">The model type to get the corresponding OpenXml element types for.</param>
+  /// <returns>The corresponding OpenXml element types.</returns>
+  /// <exception cref="ApplicationException"></exception>
+  public static Type[] GetOpenXmlElementTypes(Type modelType)
+  {
+    if (ModelType2OpenXmlElementMapping.TryGetValue(modelType, out var openXmlTypes))
+      return openXmlTypes;
+    ScanModelElements([modelType]);
+    if (ModelType2OpenXmlElementMapping.TryGetValue(modelType, out openXmlTypes))
+      return openXmlTypes;
+    throw new ApplicationException($"No OpenXml element type mapping found for model type {modelType.FullName}");
+  }
 
   /// <summary>
   /// Static mapping from OpenXml element types to model element types. 
   /// </summary>
-  public static readonly Dictionary<Type, Type> OpenXml2ModelElementTypeMapping = new()
+  private static readonly Dictionary<Type, Type> OpenXml2ModelElementTypeMapping = new()
   {
     { typeof(DX.AlternateContent), typeof(DM.AlternateContent) },
     { typeof(DXM.Accent), typeof(DMM.Accent) },
@@ -78,6 +135,7 @@ public static class OpenXmlElementMapper
     { typeof(DXW.FootnoteReferenceMark), typeof(DMW.FootnoteReferenceMark) },
     { typeof(DXW.Hyperlink), typeof(DMW.Hyperlink) },
     { typeof(DXW.InsertedRun), typeof(DMW.InsertedRun) },
+    { typeof(DXW.Languages), typeof(DMW.Languages) },
     { typeof(DXW.LastRenderedPageBreak), typeof(DMW.LastRenderedPageBreak) },
     { typeof(DXW.MonthLong), typeof(DMW.MonthLong) },
     { typeof(DXW.MonthShort), typeof(DMW.MonthShort) },
@@ -117,7 +175,7 @@ public static class OpenXmlElementMapper
   /// <summary>
   /// Static mapping from OpenXml element types to model element types. 
   /// </summary>
-  public static readonly Dictionary<Type, Type[]> ModelType2OpenXmlElementMapping = new()
+  private static readonly Dictionary<Type, Type[]> ModelType2OpenXmlElementMapping = new()
   {
     { typeof(DM.AlternateContent), [typeof(DX.AlternateContent)] },
     { typeof(DMM.Accent), [typeof(DXM.Accent)] },
@@ -183,6 +241,7 @@ public static class OpenXmlElementMapper
     { typeof(DMW.FootnoteReferenceMark), [typeof(DXW.FootnoteReferenceMark)] },
     { typeof(DMW.Hyperlink), [typeof(DXW.Hyperlink)] },
     { typeof(DMW.InsertedRun), [typeof(DXW.InsertedRun)] },
+    { typeof(DMW.Languages), [typeof(DXW.Languages)]},
     { typeof(DMW.LastRenderedPageBreak), [typeof(DXW.LastRenderedPageBreak)] },
     { typeof(DMW.MonthLong), [typeof(DXW.MonthLong)] },
     { typeof(DMW.MonthShort), [typeof(DXW.MonthShort)] },

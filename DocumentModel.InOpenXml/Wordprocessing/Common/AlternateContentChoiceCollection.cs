@@ -19,9 +19,16 @@ namespace DocumentModel;
 ///   Each <see cref = "AlternateContentChoice"/> in the collection contains both a requirement specification (typically
 ///   a namespace UriString) and the actual content items to display when that choice is selected.
 /// </remarks>
-[OpenXmlType(typeof(AlternateContentChoice))]
 [DataContract]
 [XmlRoot("AlternateContentChoiceCollection", Namespace = "DocumentModel")]
-public class AlternateContentChoiceCollection : ElementCollection<AlternateContentChoice>
+public class AlternateContentChoiceCollection : ContentItemsCollection<AlternateContentChoice>
 {
+  /// <summary>
+  /// Constructs a new instance of the <see cref = "AlternateContentChoiceCollection"/> class with the specified parent <see cref = "AlternateContent"/>.``
+  /// </summary>
+  /// <param name="parent"></param>
+  public AlternateContentChoiceCollection(AlternateContent parent) : base(parent, parent.GetUpdatableElement())
+  {
+  }
+
 }

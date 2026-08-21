@@ -194,6 +194,7 @@ public class BodyRunTextModificationTest : _AbstractTestClass
     }
 
     var TempFilePath = Path.Combine(Path.GetDirectoryName(SampleFilePath) ?? string.Empty, Path.GetFileNameWithoutExtension(SampleFilePath) + "_temp" + Path.GetExtension(SampleFilePath));
+    File.Copy(SampleFilePath, TempFilePath, true);
 
     var t0 = DateTime.Now;
     using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(TempFilePath, false);

@@ -30,8 +30,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   protected ContentItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement? dataSource) :
     base(parent)
   {
-    IsLazyLoadEnabled = true;
-    DataSource = dataSource;
+    SetDataSource(dataSource);
   }
 
   /// <summary>
@@ -41,7 +40,15 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// <returns>True if the item is acceptable; otherwise, false.</returns>
   public override bool AcceptSourceItem(DX.OpenXmlElement item)
   {
-    return OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.ContainsKey(item.GetType());
+    try
+    {
+      OpenXmlElementMapper.GetModelElementType(item.GetType());
+      return true;
+    }
+    catch (ApplicationException)
+    {
+      return false;
+    }
   }
 
   /// <summary>
@@ -49,7 +56,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// </summary>
   /// <param name="openXmlElement">The OpenXml element to get the target model item type for.</param>
   /// <returns>The target model item type.</returns>
-  public override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElementMapper.OpenXml2ModelElementTypeMapping[openXmlElement.GetType()];
+  public override Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement) => OpenXmlElementMapper.GetModelElementType(openXmlElement.GetType());
 
   /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
@@ -64,13 +71,12 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
     foreach (var openXmlElement in openXmlModeledCollection.Elements().Where(AcceptSourceItem))
     {
       var openXmlItemType = openXmlElement.GetType();
-      if (!OpenXmlElementMapper.OpenXml2ModelElementTypeMapping.TryGetValue(openXmlItemType, out var modelItemType))
-        throw new InvalidOperationException($"No model element type mapping found for OpenXml element type {openXmlItemType}");
+      var modelItemType = OpenXmlElementMapper.GetModelElementType(openXmlItemType);
       var constructor = modelItemType.GetConstructor([modelItemType, openXmlItemType]);
       ItemType modelObject;
       if (constructor != null)
       {
-        Debug.WriteLine($"Invoking constructor with parameters for type {modelItemType.FullName}.");
+        //Debug.WriteLine($"Invoking constructor with parameters for type {modelItemType.FullName}.");
         modelObject = (ItemType)constructor.Invoke([this, openXmlElement]);
       }
       else
@@ -90,19 +96,18 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
-  /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlModeledCollection)
+  /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
+  protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlModeledCollection);
+    SetUpdatableObject(openXmlCompositeElement);
 
     foreach (var modelItem in this)
     {
       var modelItemType = modelItem.GetType();
-      if (!OpenXmlElementMapper.ModelType2OpenXmlElementMapping.TryGetValue(modelItemType, out var openXmlItemTypes))
-        throw new InvalidOperationException($"No OpenXml element type mapping found for model element type {modelItemType}");
+      var openXmlItemTypes = OpenXmlElementMapper.GetOpenXmlElementTypes(modelItemType);
 
       var openXmlItemType = openXmlItemTypes.First();
-      var children = openXmlModeledCollection.Elements().Where(item => item.GetType().IsEqualOrSubclassOf(openXmlItemType)).ToArray();
+      var children = openXmlCompositeElement.Elements().Where(item => item.GetType().IsEqualOrSubclassOf(openXmlItemType)).ToArray();
       foreach (var child in children)
       {
         child.Remove();
@@ -110,7 +115,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
 
       DX.OpenXmlElement openXmlElement = (DX.OpenXmlElement)Activator.CreateInstance(openXmlItemType)!;
       modelItem.UpdateData(openXmlElement);
-      openXmlModeledCollection.AddChildElement(openXmlElement);
+      openXmlCompositeElement.AddChildElement(openXmlElement);
     }
     return true;
   }

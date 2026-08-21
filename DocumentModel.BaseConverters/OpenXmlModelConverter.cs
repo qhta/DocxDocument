@@ -303,7 +303,7 @@ public static partial class OpenXmlModelConverter
         openXmlValue = ConvertTo(modelValue, openXmlProperty.PropertyType);
       }
       openXmlProperty.SetValue(openXmlObject, openXmlValue);
-      if (modelValue is IUpdatable updatable && openXmlValue is DX.OpenXmlElement)
+      if (modelValue is IUpdatableElement updatable && openXmlValue is DX.OpenXmlElement)
       {
         updatable.SetUpdatableObject(openXmlValue);
         updatable.UpdateData(openXmlValue);

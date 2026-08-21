@@ -10,7 +10,7 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
-  ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatable 
+  ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatableElement 
   where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlCompositeElement
 {
   /// <summary>
@@ -18,7 +18,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// </summary>
   protected OpenXmlCollectionType? SourceOpenXmlCompositeElement 
   { get => DataSource as OpenXmlCollectionType;
-    set => DataSource = value;
+    set => SetDataSource(value);
   }
 
   /// <summary>
@@ -52,7 +52,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   {
     SourceOpenXmlCompositeElement = openXmlCollection as OpenXmlCollectionType;
     if (SourceOpenXmlCompositeElement != null && !IsLazyLoadEnabled && !HasDirectAccess)
-      LoadData(SourceOpenXmlCompositeElement);
+      LoadDataOnInit(SourceOpenXmlCompositeElement);
     InitCollectionChangedEventHandler();
   }
 
@@ -149,7 +149,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public override object? GetUpdatableObject()
   {
-    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatable)?.GetUpdatableObject();
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject();
   }
 
   /// <summary>
@@ -157,7 +157,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// It can be an OpenXmlElement or any other object that represents the data source for this model.
   /// If null, no updates will be performed.
   /// </summary>
-  public OpenXmlCollectionType? GetUpdatableElement()
+  public override OpenXmlCollectionType? GetUpdatableElement()
   {
     return base.GetUpdatableObject() as OpenXmlCollectionType;
   }
@@ -216,7 +216,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Stores data from this model element collection instance to the modeled OpenXml collection.
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
-  /// <param name = "openXmlModeledCollection">The OpenXml collection to store data to.</param>
+  /// <param name = "openXmlCompositeElement">The OpenXml collection to store data to.</param>
   /// <returns>True if the update was successful; otherwise, false.</returns>
-  protected abstract bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  protected abstract bool UpdateDataCollection(OpenXmlCollectionType openXmlCompositeElement);
 }

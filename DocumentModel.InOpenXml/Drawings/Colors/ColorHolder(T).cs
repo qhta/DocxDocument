@@ -103,7 +103,7 @@ public abstract partial class ColorHolder<T>: ModelElement<T> where T : DX.OpenX
         scheme.Remove();
     }
 
-    if (color is IUpdatable updatableColor)
+    if (color is IUpdatableElement updatableColor)
     {
       var updatableElement = updatableColor.GetUpdatableObject() as DX.OpenXmlElement;
       if (updatableElement == null)

@@ -19,7 +19,7 @@ public class Sections : ModelElementCollection<Section>
     if (parent is not IStory)
       throw new ArgumentException("Parent must implement IStory interface.", nameof(parent));
     SetParent(parent);
-    DataSource = parent;
+    SetDataSource(parent);
     IsLazyLoadEnabled = true;
   }
 

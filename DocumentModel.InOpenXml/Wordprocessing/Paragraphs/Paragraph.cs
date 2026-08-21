@@ -169,7 +169,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IS
   [OpenXmlProperty(nameof(DXW.Paragraph.ParagraphProperties))]
   public ParagraphProperties? ParagraphProperties
   {
-    get => _ParagraphProperties ??= GetProperty<ParagraphProperties?>(_openXmlParagraph!.ParagraphProperties);
+    get => _ParagraphProperties ??= GetProperty<ParagraphProperties?>(_openXmlParagraph?.ParagraphProperties);
     set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties));
   }
 
@@ -252,4 +252,13 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IS
   public DMW.Runs Runs => _Runs ??= new DMW.Runs(this, Items);
 
   private DMW.Runs? _Runs;
+
+  /// <summary>
+  /// Adds a new ModelElement to the paragraph's items collection.
+  /// </summary>
+  /// <param name="element">The ModelElement to add to the paragraph's items collection.</param>
+  public void Add(ModelElement element)
+  {
+    Items.AddModelElement(element);
+  }
 }

@@ -28,6 +28,7 @@ public class RunText : TextualElement<DXW.Text>
     var updatableElement = GetUpdatableElement();
     if (updatableElement != null)
     {
+      var parent = updatableElement.Parent;
       if (text != null && text.Length > 0)
         updatableElement.Text = text;
       else

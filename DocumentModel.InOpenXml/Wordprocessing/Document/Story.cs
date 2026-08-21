@@ -183,4 +183,24 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
 
   private DMW.Sections? _Sections;
 
+
+  /// <summary>
+  /// Clears the content of the story by removing all child elements from the underlying OpenXmlCollectionType element and resetting the items, paragraphs, and sections collections to null.
+  /// </summary>
+  public void Clear()
+  {
+    GetUpdatableElement()?.RemoveAllChildren();
+    _Items = null;
+    _Paragraphs = null;
+    _Sections = null;
+  }
+
+  /// <summary>
+  /// Adds a new ModelElement to the story's items collection.
+  /// </summary>
+  /// <param name="element">The ModelElement to add to the story's items collection.</param>
+  public void Add(ModelElement element)
+  {
+    Items.AddModelElement(element);
+  }
 }

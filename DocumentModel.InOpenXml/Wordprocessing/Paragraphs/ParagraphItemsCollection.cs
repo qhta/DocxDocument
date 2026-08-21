@@ -6,6 +6,11 @@
 public class ParagraphItemsCollection: ContentItemsCollection
 {
   /// <summary>
+  /// Default constructor needed for XML serialization. Initializes a new instance of the ParagraphItemsCollection class.
+  /// </summary>
+  public ParagraphItemsCollection() { }
+
+  /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="parent">Model element that owns this collection. Cannot be null.</param>

@@ -28,7 +28,7 @@ public partial class ModelElement : IXmlSerializable
   {
     reader.MoveToContent();
 
-    var serializableProperties = GetSerializableProperties();
+    var serializableProperties = this.GetType().GetSerializablePropertiesInfo();
 
     // Read attributes
     ReadAttributes(reader, serializableProperties);
@@ -44,6 +44,7 @@ public partial class ModelElement : IXmlSerializable
     ReadProperties(reader, serializableProperties);
 
     // Read remaining child elements serialized as collection items.
+
     ReadItems(reader);
     if (reader.NodeType == XmlNodeType.EndElement)
       reader.ReadEndElement();
@@ -53,8 +54,8 @@ public partial class ModelElement : IXmlSerializable
   /// Reads the attributes of the current XML element and sets the corresponding properties of the current instance.
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> from which the XML representation of the attributes will be read.</param>
-  /// <param name="serializableProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be read from the XML attributes.</param>
-  protected virtual void ReadAttributes(XmlReader reader, PropertyInfo[] serializableProperties)
+  /// <param name="serializableProperties">A <see cref="SerializablePropertiesInfo"/> object representing the properties to be read from the XML.</param>
+  protected virtual void ReadAttributes(XmlReader reader, SerializablePropertiesInfo serializableProperties)
   {
     if (reader.NodeType == XmlNodeType.Element && reader.MoveToFirstAttribute())
     {
@@ -68,6 +69,11 @@ public partial class ModelElement : IXmlSerializable
         {
           var valueType = property.PropertyType.GetNotNullableType();
           var value = ObjectToStringConverter.ConvertFromString(propValue, valueType);
+          if (this is IDirectAccessElement directAccessElement)
+          {
+            if (directAccessElement.HasDirectAccess)
+              directAccessElement.SetDataSource(GetUpdatableElement());
+          }
           property.SetValue(this, value);
         }
       } while (reader.MoveToNextAttribute());
@@ -80,13 +86,13 @@ public partial class ModelElement : IXmlSerializable
   /// Reads the child elements of the current XML element and sets the corresponding properties of the current instance.
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> from which the XML representation of the properties will be read.</param>
-  /// <param name="elementProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be read from the XML.</param>
-  protected virtual void ReadProperties(XmlReader reader, PropertyInfo[] elementProperties)
+  /// <param name="serializableProperties">A <see cref="SerializablePropertiesInfo"/> object representing the properties to be read from the XML.</param>
+  protected virtual void ReadProperties(XmlReader reader, SerializablePropertiesInfo serializableProperties)
   {
     while (reader.NodeType == XmlNodeType.Element)
     {
       var propName = reader.LocalName;
-      var property = elementProperties.FirstOrDefault(p => p.Name.Equals(propName, StringComparison.OrdinalIgnoreCase));
+      var property = serializableProperties.FirstOrDefault(p => p.Name.Equals(propName, StringComparison.OrdinalIgnoreCase));
       if (property == null)
         break;
 
@@ -131,7 +137,21 @@ public partial class ModelElement : IXmlSerializable
     {
       var elementName = reader.LocalName;
       var elementType = XmlSerializationHelper.ResolveType(elementName, this.GetType().Namespace!);
-      var item = Activator.CreateInstance(elementType);
+      var item = (ModelElement)Activator.CreateInstance(elementType)!;
+      var thisOpenXmlElement = this.GetUpdatableObject() as DX.OpenXmlCompositeElement;
+      var itemOpenXmlElement = item.GetUpdatableObject() as DX.OpenXmlElement;
+      if (thisOpenXmlElement is not null && itemOpenXmlElement is not null)
+      {
+        //if (itemOpenXmlElement is DX.AlternateContent alternateContent)
+        //{
+        //  (thisOpenXmlElement.Parent as DX.OpenXmlCompositeElement)?.AddChild(itemOpenXmlElement);
+        //}
+        //else
+        //{
+          thisOpenXmlElement.Append(itemOpenXmlElement);
+        //}
+      }
+
       if (item is IXmlSerializable xmlSerializable)
       {
         xmlSerializable.ReadXml(reader);
@@ -139,11 +159,18 @@ public partial class ModelElement : IXmlSerializable
           addMethods.FirstOrDefault(m => m.GetParameters()[0].ParameterType.IsAssignableFrom(elementType));
         if (addMethod != null)
         {
-          addMethod.Invoke(this, [item]);
+          try
+          {
+            addMethod.Invoke(this, [item]);
+          }
+          catch (Exception e)
+          {
+            throw e.GetBaseException();
+          }
         }
         else
         {
-          throw new ApplicationException($"No suitable Add method found for type {elementType.FullName}");
+          throw new ApplicationException($"No suitable Add method found in {thisType.FullName} for {elementType.FullName}");
         }
       }
       else
@@ -159,12 +186,11 @@ public partial class ModelElement : IXmlSerializable
   /// <param name="writer">The <see cref="XmlWriter"/> to which the XML representation of the current instance will be written.</param>
   public virtual void WriteXml(XmlWriter writer)
   {
-    var serializableProperties = GetSerializableProperties();
-    var splitProperties = this.GetType().SplitAttributesAndElements(serializableProperties);
-    WriteAttributes(writer, splitProperties.AttributeProperties, out var extraElementProperties);
-    WriteProperties(writer, splitProperties.ElementProperties.Concat(extraElementProperties).ToArray());
-    if (splitProperties.ContentProperty != null)
-      WriteContentProperty(writer, splitProperties.ContentProperty);
+    var serializableProperties = this.GetType().GetSerializablePropertiesInfo();
+    WriteAttributes(writer, serializableProperties.AttributeProperties, out var extraElementProperties);
+    WriteProperties(writer, serializableProperties.ElementProperties.Concat(extraElementProperties).ToArray());
+    if (serializableProperties.ContentProperty != null)
+      WriteContentProperty(writer, serializableProperties.ContentProperty);
     else
       WriteItems(writer);
   }
@@ -226,14 +252,16 @@ public partial class ModelElement : IXmlSerializable
         {
           string? elementName = null;
           if (property.GetCustomAttribute<XmlElementAttribute>() is XmlElementAttribute xmlElementAttribute)
+          {
             elementName = xmlElementAttribute.ElementName;
+          }
           else if (property.GetCustomAttribute<XmlArrayAttribute>() is XmlArrayAttribute xmlArrayAttribute)
             elementName = xmlArrayAttribute.ElementName;
           else
             elementName = property.Name.ToLowerFirst();
           if (string.IsNullOrEmpty(elementName))
           {
-            if (value is IXmlSerializable xmlSerializable) 
+            if (value is IXmlSerializable xmlSerializable)
               xmlSerializable.WriteXml(writer);
           }
           else
@@ -290,6 +318,7 @@ public partial class ModelElement : IXmlSerializable
         var itemType = item.GetType();
         if (item is IXmlSerializable xmlSerializable)
         {
+
           var elementName = itemType.Name;
           writer.WriteStartElement(elementName);
           xmlSerializable.WriteXml(writer);
@@ -304,14 +333,12 @@ public partial class ModelElement : IXmlSerializable
   /// </summary>
   /// <returns>An array of <see cref="PropertyInfo"/> objects representing the serializable properties.</returns>
   protected virtual PropertyInfo[] GetSerializableProperties() => this.GetType().GetSerializableProperties();
-
-
 }
 
 /// <summary>
 /// Represents a split of properties into attribute properties, element properties, and an optional content property for XML serialization.
 /// </summary>
-public record PropertiesSplit
+public record SerializablePropertiesInfo: IEnumerable<PropertyInfo>
 {
   /// <summary>
   /// Gets the properties that should be serialized as XML attributes.
@@ -325,6 +352,25 @@ public record PropertiesSplit
   /// Gets the property that should be serialized as the content of the XML element, if any.
   /// </summary>
   public PropertyInfo? ContentProperty { get; init; }
+
+  /// <summary>
+  /// Enumerates all properties in the order of attribute properties, element properties, and then the content property (if present).
+  /// </summary>
+  /// <returns>An enumerator that can be used to iterate through the properties.</returns>
+  public IEnumerator<PropertyInfo> GetEnumerator()
+  {
+    foreach (var property in AttributeProperties)
+      yield return property;
+    foreach (var property in ElementProperties)
+      yield return property;
+    if (ContentProperty != null)
+      yield return ContentProperty;
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+    return GetEnumerator();
+  }
 }
 
 /// <summary>
@@ -333,10 +379,7 @@ public record PropertiesSplit
 public static class XmlSerializationTool
 {
 
-  private static readonly Dictionary<Type, PropertyInfo[]>
-    _serializablePropertiesCache = new Dictionary<Type, PropertyInfo[]>();
-  private static readonly Dictionary<PropertyInfo[], PropertiesSplit>
-    _splitPropertiesCache = new();
+  private static readonly Dictionary<Type, SerializablePropertiesInfo> _serializablePropertiesCache = new Dictionary<Type, SerializablePropertiesInfo>();
 
   /// <summary>
   /// Static method that retrieves the properties of a given type that should be serialized to XML. It filters out properties that are not readable, not writable, or marked with the <see cref="XmlIgnoreAttribute"/>.
@@ -345,10 +388,6 @@ public static class XmlSerializationTool
   /// <returns>An array of <see cref="PropertyInfo"/> objects representing the serializable properties of the specified type.</returns>
   public static PropertyInfo[] GetSerializableProperties(this Type aType)
   {
-    if (_serializablePropertiesCache.TryGetValue(aType, out var cachedProperties))
-    {
-      return cachedProperties;
-    }
     var allProperties = aType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
     var contentPropertyName = aType.GetCustomAttribute<ContentPropertyAttribute>()?.PropertyName;
 
@@ -362,27 +401,26 @@ public static class XmlSerializationTool
       }
     }
     var result = serializablePropertiesList.ToArray();
-    _serializablePropertiesCache[aType] = result;
     return result;
   }
 
   /// <summary>
-  /// Splits the given array of serializable properties into two groups: those that are marked with the <see cref="XmlAttributeAttribute"/> and those that are not.
+  /// Gets the serializable properties of the given and split them into two groups: those that are marked with the <see cref="XmlAttributeAttribute"/> and those that are not.
   /// Properties that are value types, strings, or have a static "Parse" method are also considered attribute properties.
+  /// Content property is identified by the <see cref="ContentPropertyAttribute"/> and is included in the result if present. The result is cached for future calls.
   /// </summary>
   /// <param name="aType">The type whose properties are to be split.</param>
-  /// <param name="serializableProperties">An array of <see cref="PropertyInfo"/> objects representing the properties to be split.</param>
-  /// <returns>A <see cref="PropertiesSplit"/> object containing the attribute properties, element properties, and an optional content property.</returns>
-  public static PropertiesSplit SplitAttributesAndElements
-  (this Type aType, PropertyInfo[] serializableProperties)
+  /// <returns>A <see cref="SerializablePropertiesInfo"/> object containing the attribute properties, element properties, and an optional content property.</returns>
+  public static SerializablePropertiesInfo GetSerializablePropertiesInfo
+  (this Type aType)
   {
-    if (_splitPropertiesCache.TryGetValue(serializableProperties, out var cachedSplit))
+    if (_serializablePropertiesCache.TryGetValue(aType, out var propertiesInfo))
     {
-      return cachedSplit;
+      return propertiesInfo;
     }
-
+    var serializableProperties = aType.GetSerializableProperties();
     var contentPropertyName = aType.GetCustomAttribute<ContentPropertyAttribute>()?.PropertyName;
-    if (contentPropertyName!=null)
+    if (contentPropertyName != null)
       Debug.Assert(true);
     PropertyInfo? contentProperty = null;
     var attributePropertiesList = new List<PropertyInfo>();
@@ -393,28 +431,28 @@ public static class XmlSerializationTool
       if (property.Name == contentPropertyName)
         contentProperty = property;
       else
-      if (property.GetCustomAttribute<XmlAttributeAttribute>() != null)
-        attributePropertiesList.Add(property);
-      else
-      if (property.GetCustomAttribute<XmlElementAttribute>() != null)
-        attributePropertiesList.Add(property);
-      else
-      {
-        var propType = property.PropertyType.GetNotNullableType();
-        if (propType.IsValueType || propType == typeof(string) ||
-            propType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static) != null)
+        if (property.GetCustomAttribute<XmlAttributeAttribute>() != null)
           attributePropertiesList.Add(property);
         else
-          elementPropertiesList.Add(property);
-      }
+          if (property.GetCustomAttribute<XmlElementAttribute>() != null)
+            attributePropertiesList.Add(property);
+          else
+          {
+            var propType = property.PropertyType.GetNotNullableType();
+            if (propType.IsValueType || propType == typeof(string) ||
+                propType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static) != null)
+              attributePropertiesList.Add(property);
+            else
+              elementPropertiesList.Add(property);
+          }
     }
-    var result = new PropertiesSplit
+    var result = new SerializablePropertiesInfo
     {
       AttributeProperties = attributePropertiesList.ToArray(),
       ElementProperties = elementPropertiesList.ToArray(),
       ContentProperty = contentProperty
     };
-    _splitPropertiesCache[serializableProperties] = result;
+    _serializablePropertiesCache[aType] = result;
     return result;
   }
 }

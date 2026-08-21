@@ -64,7 +64,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       ItemType modelObject;
       if (constructor != null)
       {
-        Debug.WriteLine($"Invoking constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) for type {typeof(ItemType).FullName}.");
+        //Debug.WriteLine($"Invoking constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) for type {typeof(ItemType).FullName}.");
         modelObject = (ItemType)constructor.Invoke([this, openXmlElement]);
       }
       else
@@ -84,11 +84,11 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
-  /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override bool UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
+  protected override bool UpdateDataCollection(OpenXmlCollectionType openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlModeledCollection);
-    var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
+    SetUpdatableObject(openXmlCompositeElement);
+    var children = openXmlCompositeElement.Elements().Where(item => item is OpenXmlItemType).ToArray();
     foreach (var child in children)
     {
       child.Remove();
@@ -98,7 +98,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
     {
       OpenXmlItemType openXmlElement = Activator.CreateInstance<OpenXmlItemType>();
       item.UpdateData(openXmlElement);
-      openXmlModeledCollection.AppendChild(openXmlElement);
+      openXmlCompositeElement.AppendChild(openXmlElement);
     }
     return true;
   }

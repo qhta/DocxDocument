@@ -20,25 +20,30 @@ namespace DocumentModel;
 ///   content variants.
 /// </remarks>
 [DataContract]
+[OpenXmlType(typeof(DX.AlternateContent))]
 [XmlRoot("AlternateContent", Namespace = "DocumentModel")]
-public partial class AlternateContent : ModelElement
+public partial class AlternateContent : ModelElement<DX.AlternateContent>
 {
- /// <summary>
- ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.
- /// </summary>
- /// <remarks>
- ///   The choices collection contains multiple content options, each with associated requirements that specify
- ///   when that choice should be selected. Choices are evaluated in the order they appear in the collection,
- ///   with the first choice meeting its requirements being selected for rendering. Each choice typically contains
- ///   content optimized for specific application versions or features, such as new content types, advanced
- ///   formatting, or enhanced functionality. If no choice in the collection has its requirements met, the
- ///   application falls back to the <see cref = "Fallback"/> content. Common choice requirements include namespace
- ///   support (indicating the application can process specific XML namespaces), feature availability (such as
- ///   support for specific content types or rendering capabilities), or version checks. The choice mechanism
- ///   enables documents to leverage new features when available while maintaining compatibility with older
- ///   applications through the fallback mechanism.
- /// </remarks>
- public AlternateContentChoiceCollection? Choices { get => _Choices; set => UpdateField(ref _Choices, value, nameof(Choices)); }
+  /// <summary>
+  ///   Gets or sets the collection of alternate content choices, each representing a different rendering option.
+  /// </summary>
+  /// <remarks>
+  ///   The choices collection contains multiple content options, each with associated requirements that specify
+  ///   when that choice should be selected. Choices are evaluated in the order they appear in the collection,
+  ///   with the first choice meeting its requirements being selected for rendering. Each choice typically contains
+  ///   content optimized for specific application versions or features, such as new content types, advanced
+  ///   formatting, or enhanced functionality. If no choice in the collection has its requirements met, the
+  ///   application falls back to the <see cref = "Fallback"/> content. Common choice requirements include namespace
+  ///   support (indicating the application can process specific XML namespaces), feature availability (such as
+  ///   support for specific content types or rendering capabilities), or version checks. The choice mechanism
+  ///   enables documents to leverage new features when available while maintaining compatibility with older
+  ///   applications through the fallback mechanism.
+  /// </remarks>
+  public AlternateContentChoiceCollection? Choices
+  {
+    get => _Choices ??= new AlternateContentChoiceCollection(this);
+    set => UpdateField(ref _Choices, value, nameof(Choices));
+  }
  private AlternateContentChoiceCollection? _Choices;
 
  /// <summary>

@@ -5,14 +5,14 @@
 /// Implementing this interface allows a type to specify how it can be represented as an Open XML element,
 /// which can be used for synchronization or updating operations in the context of Open XML document manipulation.
 /// </summary>
-public interface IUpdatable
+public interface IUpdatableElement
 {
   /// <summary>
   /// Gets an object that can be used for updating the state of the implementing object.
   /// The returned object may be null if there is no relevant object to provide.
   /// </summary>
   public object? GetUpdatableObject();
-
+  
   /// <summary>
   /// Sets an object that can be used for updating the state of the implementing object.
   /// </summary>
@@ -34,7 +34,7 @@ public static class UpdatableExtensions
   /// <summary>
   /// Updates the updatable element with new data or changes.
   /// </summary>
-  public static void UpdateData(this IUpdatable updatable)
+  public static void UpdateData(this IUpdatableElement updatable)
   {
     var updatableObject = updatable.GetUpdatableObject();
     if (updatableObject != null)

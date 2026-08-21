@@ -8,8 +8,20 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [DataContract]
 [XmlRoot("MarkupEndRangeElement", Namespace = "DocumentModel.Wordprocessing")]
+[DirectAccess]
 public abstract partial class MarkupEndRangeElement<T1, T2> : ModelElement<T1>, IMarkupElement where T1 : DX.OpenXmlElement where T2 : DX.OpenXmlElement
 {
+
+  /// <summary>
+  ///   Unique identifier for the markup range, used to associate start and end elements and track changes.
+  /// </summary>
+  public int? Id
+  {
+    get => _Id ??= GetProperty<int>(GetUpdatableElement(),"Id"); 
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
+  private int? _Id;
+
   /// <summary>
   /// Gets the element that forms the matching pair for this markup range element, if one exists.
   /// </summary>

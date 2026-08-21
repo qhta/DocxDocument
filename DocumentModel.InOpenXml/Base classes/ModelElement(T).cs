@@ -9,7 +9,7 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement<OpenXmlType> : ModelElement,
-  IWordprocessingDocumentAware, IUpdatable, IDirectAccessElement
+  IWordprocessingDocumentAware, IUpdatableElement, IDirectAccessElement
   where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
 
@@ -19,6 +19,11 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   protected ModelElement()
   {
     _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
+    if (_HasDirectAccess)
+    {
+      var openXmlElement = Activator.CreateInstance<OpenXmlType>();
+      SetUpdatableObject(openXmlElement);
+    }
   }
 
   /// <summary>
@@ -52,11 +57,30 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
     SetUpdatableObject((OpenXmlType)openXmlElement);
   }
 
+  ///// <summary>
+  ///// Sets the parent of this model element and updates the underlying OpenXml element reference based on the parent's updatable object, if applicable.
+  ///// </summary>
+  ///// <param name="parent"></param>
+  //public override void SetParent(object? parent)
+  //{
+  //  base.SetParent(parent);
+  //  if (parent is IUpdatable parentUpdatable)
+  //    SetUpdatableObject(parentUpdatable.GetUpdatableObject());
+  //  if (parent is IWordprocessingDocumentAware parentAware)
+  //    WordprocessingDocument = parentAware.WordprocessingDocument;
+  //}
+
   /// <summary>
-  ///  Gets the underlying Open XML element that can be updated by this model element.
+  ///  Gets the underlying Open XML element as a DataSource.
   /// </summary>
   public object? DataSource => GetUpdatableObject();
-  
+
+  /// <summary>
+  ///  Sets the underlying Open XML element as a DataSource.
+  /// </summary>
+  /// <param name="dataSource">The data source to set.</param>
+  public void SetDataSource(object? dataSource) => SetUpdatableObject(dataSource);
+
   /// <summary>
   /// Gets the target model item type corresponding to the specified OpenXml element type, based on the defined mapping between OpenXml element types and model element types.
   /// </summary>
@@ -65,17 +89,28 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <exception cref="NotSupportedException"></exception>
   public virtual Type GetTargetModelItemType(DX.OpenXmlElement openXmlElement)
   {
-    return OpenXmlElementMapper.OpenXml2ModelElementTypeMapping[openXmlElement.GetType()];
+    return OpenXmlElementMapper.GetModelElementType(openXmlElement.GetType());
   }
 
   /// <summary>
   /// Gets or sets the underlying Open XML element that can be updated by this model element.
   /// It can be an OpenXmlElement or any other object that represents the data source for this model.
-  /// If null, no updates will be performed.
+  /// If null, a new OpenXmlType element is created.
   /// </summary>
-  public OpenXmlType? GetUpdatableElement()
+  public override OpenXmlType? GetUpdatableElement()
   {
-    return base.GetUpdatableObject() as OpenXmlType;
+    var openXmlElement = base.GetUpdatableObject() as OpenXmlType;
+    if (openXmlElement == null)
+    {
+      var modelItemType = this.GetType();
+      var openXmlItemTypes = OpenXmlElementMapper.GetOpenXmlElementTypes(modelItemType);
+      if (openXmlItemTypes.Length > 1)
+        throw new InvalidOperationException($"Multiple OpenXml element types found for model element type {modelItemType}. Specify the correct OpenXml type explicitly.");
+      var openXmlItemType = openXmlItemTypes.First();
+      openXmlElement = Activator.CreateInstance(openXmlItemType) as OpenXmlType;
+      base.SetUpdatableObject(openXmlElement);
+    }
+    return openXmlElement;
   }
 
   ///// <summary>
