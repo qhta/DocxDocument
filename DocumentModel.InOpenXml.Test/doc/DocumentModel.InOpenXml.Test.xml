@@ -1939,20 +1939,18 @@
             <param name="xml">XML input.</param>
             <returns>Deserialized instance or null.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Object,System.Xml.Serialization.XmlSerializerNamespaces@)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Object)">
             <summary>
             Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
             </summary>
             <param name="data">The object to serialize.</param>
-            <param name="namespaces">Output parameter for XML namespaces.</param>
             <returns>XmlSerializer instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Type,System.Xml.Serialization.XmlSerializerNamespaces@)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CreateXmlSerializer(System.Type)">
             <summary>
             Creates an XmlSerializer for the specified root type, including overrides for generic ModelElement types to ensure unique XML type names.
             </summary>
             <param name="rootType">The root type for the XmlSerializer.</param>
-            <param name="namespaces">Output parameter for XML namespaces.</param>
             <returns>XmlSerializer instance.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">

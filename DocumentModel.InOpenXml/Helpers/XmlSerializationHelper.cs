@@ -8,7 +8,26 @@ namespace DocumentModel;
 /// </summary>
 public static class XmlSerializationHelper
 {
+  /// <summary>
+  /// Namespace mappings for XML serialization,
+  /// including default and commonly used namespaces for document model elements.
+  /// </summary>
+  public static readonly XmlSerializerNamespaces Namespaces = createSerializerNamespaces();
 
+  private static XmlSerializerNamespaces createSerializerNamespaces()
+  {
+    var namespaces = new XmlSerializerNamespaces();
+    namespaces.Add("", "DocumentModel");
+    namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+    namespaces.Add("w", "DocumentModel.Wordprocessing");
+    namespaces.Add("d", "DocumentModel.Drawings");
+    namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
+    namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
+    namespaces.Add("m", "DocumentModel.Math");
+    namespaces.Add("pr", "DocumentModel.Properties");
+    return namespaces;
+  }
+  
   /// <summary>
   /// Serializes an object to XML using its runtime type.
   /// </summary>
@@ -17,11 +36,11 @@ public static class XmlSerializationHelper
   /// <returns>Serialized XML text.</returns>
   public static string SerializeObjectToXml(object data, Type[]? modelTypes = null)
   {
-    var xmlSerializer = CreateXmlSerializer(data, modelTypes, out var namespaces);
+    var xmlSerializer = CreateXmlSerializer(data, modelTypes);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, data, namespaces);
+      xmlSerializer.Serialize(xmlWriter, data, Namespaces);
       return stringWriter.ToString();
     }
   }
@@ -47,45 +66,33 @@ public static class XmlSerializationHelper
   /// <param name="dataType">The type of the object to serialize.</param>
   /// <returns>XmlSerializer instance.</returns>
   public static XmlSerializer CreateXmlSerializer(Type dataType)
-    => CreateXmlSerializer(dataType, null, out _);
-
-  /// <summary>
-  /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
-  /// </summary>
-  /// <param name="dataType">The type of the object to serialize.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
-  /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(Type dataType, out XmlSerializerNamespaces namespaces)
-    => CreateXmlSerializer(dataType, null, out namespaces);
+    => CreateXmlSerializer(dataType, null);
 
 
   /// <summary>
   /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
   /// </summary>
   /// <param name="data">The object to serialize.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(object data, out XmlSerializerNamespaces namespaces)
-    => CreateXmlSerializer(data.GetType(), null, out namespaces);
+  public static XmlSerializer CreateXmlSerializer(object data)
+    => CreateXmlSerializer(data.GetType(), null);
 
   /// <summary>
   /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
   /// </summary>
   /// <param name="data">The object to serialize.</param>
   /// <param name="modelTypes">Array of model types to include in the serializer.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(object data, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
-  => CreateXmlSerializer(data.GetType(), modelTypes, out namespaces);
+  public static XmlSerializer CreateXmlSerializer(object data, Type[]? modelTypes)
+  => CreateXmlSerializer(data.GetType(), modelTypes);
 
   /// <summary>
   /// Creates an XmlSerializer for the specified root type, including overrides for generic ModelElement types to ensure unique XML type names.
   /// </summary>
   /// <param name="rootType">The root type for the XmlSerializer.</param>
   /// <param name="modelTypes">Array of model types to include in the serializer.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  public static XmlSerializer CreateXmlSerializer(Type rootType, Type[]? modelTypes, out XmlSerializerNamespaces namespaces)
+  public static XmlSerializer CreateXmlSerializer(Type rootType, Type[]? modelTypes)
   {
     if (modelTypes == null)
       modelTypes = XmlSerializationHelper.GetKnownTypes(rootType);
@@ -114,25 +121,15 @@ public static class XmlSerializationHelper
       xmlAttributeOverrides = GetXmlAttributeOverrides(ambiguousTypes);
     }
 
-    namespaces = new XmlSerializerNamespaces();
-    namespaces.Add("", "DocumentModel");
-    namespaces.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-    namespaces.Add("w", "DocumentModel.Wordprocessing");
-    namespaces.Add("d", "DocumentModel.Drawings");
-    namespaces.Add("wd", "DocumentModel.Wordprocessing.Drawings");
-    namespaces.Add("dw", "DocumentModel.Drawings.Wordprocessing");
-    namespaces.Add("m", "DocumentModel.Math");
-    namespaces.Add("pr", "DocumentModel.Properties");
-
     var rootNamespace = GetXmlNamespace(rootType);
     if (!string.IsNullOrEmpty(rootNamespace))
-      AddNamespaceIfMissing(namespaces, rootNamespace!);
+      AddNamespaceIfMissing(Namespaces, rootNamespace!);
 
     foreach (var type in modelTypes)
     {
       var typeNamespace = GetXmlNamespace(type);
       if (!string.IsNullOrEmpty(typeNamespace))
-        AddNamespaceIfMissing(namespaces, typeNamespace!);
+        AddNamespaceIfMissing(Namespaces, typeNamespace!);
     }
 
     var xmlRootAttribute = GetXmlRootAttribute(rootType);
@@ -444,8 +441,10 @@ public static class XmlSerializationHelper
     var knownTypes = GetModelTypes();
     foreach (var type in knownTypes)
     {
-      var typeName = type.GetTypeName();
-      var (ns, localName) = SplitTypeName(typeName);
+      var elementName = type.GetElementName();
+      if (elementName == null)
+        continue;
+      var (ns, localName) = SplitTypeName(elementName);
       if (!_typeCache.ContainsKey(localName))
       {
         _typeCache[localName] = new List<Type>();
@@ -455,16 +454,25 @@ public static class XmlSerializationHelper
   }
 
   /// <summary>
-  /// Gets the type name for a given Type, returning the full name if available, or the simple name otherwise.
-  /// Trims assembly and version information from the full name if present, returning only the type's namespace and name.
+  /// Gets the element name for a given Type, returning its full name
+  /// or XmlRoot name if available. 
   /// </summary>
-  /// <param name="type"></param>
-  /// <returns></returns>
-  public static string GetTypeName(this Type type)
+  /// <param name="type">The type for which to get the element name.</param>
+  /// <returns>The element name for the specified type.</returns>
+  public static string? GetElementName(this Type type)
   {
+    var rootElementAttribute = type.GetCustomAttribute<XmlRootAttribute>();
+    if (rootElementAttribute != null && !string.IsNullOrEmpty(rootElementAttribute.ElementName))
+      return rootElementAttribute.Namespace + "." + rootElementAttribute.ElementName;
     var str = type.FullName ?? type.Name;
     var ss = str.Split(',');
-    return ss[0];
+    str = ss[0];
+    if (str.Contains('<') || str.Contains('`'))
+      return null;
+    var k = str.IndexOf('`');
+    if (k >= 0) 
+      str = str.Substring(0, k);
+    return str;
   }
 
   /// <summary>
@@ -485,10 +493,10 @@ public static class XmlSerializationHelper
   /// If the type is not found in the cache, it throws a TypeLoadException. This method is useful for resolving types during deserialization when only the type name is available.
   /// </summary>
   /// <param name="typeName">The name of the type to resolve.</param>
-  /// <param name="preferredNamespace">The preferred namespace to use when resolving the type. If multiple types with the same name exist, the type in the preferred namespace will be returned.</param>
+  /// <param name="prefix">The prefix to use when resolving the type. If multiple types with the same name exist, the type in the namespace corresponding to the prefix will be returned.</param>
   /// <returns>The resolved type.</returns>
   /// <exception cref="TypeLoadException"></exception>
-  public static Type ResolveType(string typeName, string preferredNamespace)
+  public static Type ResolveType(string typeName, string prefix)
   {
     if (!_typeCache.Any())
       InitTypeCache();
@@ -498,11 +506,19 @@ public static class XmlSerializationHelper
         return foundTypes[0];
       else
       {
+        var preferredNamespace = Namespaces.ToArray().FirstOrDefault(ns => ns.Name == prefix)?.Namespace;
         foreach (var type in foundTypes)
         {
           if (type.Namespace == preferredNamespace)
             return type;
         }
+        preferredNamespace = "DocumentModel.Wordprocessing";
+        foreach (var type in foundTypes)
+        {
+          if (type.Namespace == preferredNamespace)
+            return type;
+        }
+
         throw new TypeLoadException($"Ambiguous type '{typeName}' could not be resolved.");
       }
     }

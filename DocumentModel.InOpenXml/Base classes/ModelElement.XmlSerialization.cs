@@ -136,20 +136,19 @@ public partial class ModelElement : IXmlSerializable
     while (reader.NodeType == XmlNodeType.Element)
     {
       var elementName = reader.LocalName;
-      var elementType = XmlSerializationHelper.ResolveType(elementName, this.GetType().Namespace!);
+      var prefix = reader.Prefix;
+      var elementType = XmlSerializationHelper.ResolveType(elementName, prefix);
+      if (!AcceptsXmlItem(elementType))
+      {
+        reader.Skip();
+        continue;
+      }
       var item = (ModelElement)Activator.CreateInstance(elementType)!;
       var thisOpenXmlElement = this.GetUpdatableObject() as DX.OpenXmlCompositeElement;
       var itemOpenXmlElement = item.GetUpdatableObject() as DX.OpenXmlElement;
       if (thisOpenXmlElement is not null && itemOpenXmlElement is not null)
       {
-        //if (itemOpenXmlElement is DX.AlternateContent alternateContent)
-        //{
-        //  (thisOpenXmlElement.Parent as DX.OpenXmlCompositeElement)?.AddChild(itemOpenXmlElement);
-        //}
-        //else
-        //{
-          thisOpenXmlElement.Append(itemOpenXmlElement);
-        //}
+        thisOpenXmlElement.Append(itemOpenXmlElement);
       }
 
       if (item is IXmlSerializable xmlSerializable)
@@ -178,6 +177,17 @@ public partial class ModelElement : IXmlSerializable
         throw new ApplicationException($"Item of type {elementType.FullName} does not implement IXmlSerializable");
       }
     }
+  }
+
+  /// <summary>
+  /// Determines whether the current instance accepts an XML item of the specified type.
+  /// This method can be overridden in derived classes to provide custom logic for accepting or rejecting specific item types.
+  /// </summary>
+  /// <param name="itemType">The type of the XML item to check.</param>
+  /// <returns>True if the item is accepted; otherwise, false.</returns>
+  protected virtual bool AcceptsXmlItem(Type itemType)
+  {
+    return true;
   }
 
   /// <summary>
@@ -294,8 +304,8 @@ public partial class ModelElement : IXmlSerializable
         var itemType = item.GetType();
         if (item is IXmlSerializable xmlSerializable)
         {
-          var elementName = itemType.Name;
-          writer.WriteStartElement(elementName);
+          var (elementName, elementNamespace) = GetElementNameAndNamespace(itemType, itemType.Name);
+          WriteStartElement(writer, elementName, elementNamespace);
           xmlSerializable.WriteXml(writer);
           writer.WriteEndElement();
         }
@@ -319,13 +329,49 @@ public partial class ModelElement : IXmlSerializable
         if (item is IXmlSerializable xmlSerializable)
         {
 
-          var elementName = itemType.Name;
-          writer.WriteStartElement(elementName);
+          var (elementName, elementNamespace) = GetElementNameAndNamespace(itemType, itemType.Name);
+          WriteStartElement(writer, elementName, elementNamespace);
           xmlSerializable.WriteXml(writer);
           writer.WriteEndElement();
         }
       }
     }
+  }
+
+  private static (string ElementName, string? Namespace) GetElementNameAndNamespace(Type elementType, string fallbackName)
+  {
+    var xmlRoot = elementType.GetCustomAttribute<XmlRootAttribute>();
+    var elementName = string.IsNullOrEmpty(xmlRoot?.ElementName) ? fallbackName : xmlRoot!.ElementName;
+    var elementNamespace = string.IsNullOrEmpty(xmlRoot?.Namespace) ? null : xmlRoot.Namespace;
+    return (elementName, elementNamespace);
+  }
+
+  private static void WriteStartElement(XmlWriter writer, string elementName, string? elementNamespace)
+  {
+    if (string.IsNullOrEmpty(elementNamespace))
+    {
+      writer.WriteStartElement(elementName);
+      return;
+    }
+
+    var prefix = writer.LookupPrefix(elementNamespace);
+    if (string.IsNullOrEmpty(prefix))
+      prefix = GetPreferredPrefix(elementNamespace);
+    writer.WriteStartElement(prefix, elementName, elementNamespace);
+  }
+
+  private static string? GetPreferredPrefix(string elementNamespace)
+  {
+    return elementNamespace switch
+    {
+      "DocumentModel.Math" => "m",
+      "DocumentModel.Wordprocessing" => "w",
+      "DocumentModel.Drawings" => "d",
+      "DocumentModel.Wordprocessing.Drawings" => "wd",
+      "DocumentModel.Drawings.Wordprocessing" => "dw",
+      "DocumentModel.Properties" => "pr",
+      _ => null,
+    };
   }
 
   /// <summary>

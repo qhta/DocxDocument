@@ -508,11 +508,17 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   #region ToString conversions
 
   /// <summary>
-  /// Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
+  /// Converts the current length measure to its string representation in InvariantCulture.
+  /// Trailing zeros after the decimal point are removed, and if the result ends with a decimal point, it is also removed.
   /// </summary>
   public override string ToString()
   {
-    return ((Decimal)value!).ToString(CultureInfo.InvariantCulture);
+    var str = ((Decimal)value!).ToString(CultureInfo.InvariantCulture);
+    while (str.Last() == '0' && str.Contains('.'))
+      str = str.Substring(0, str.Length - 1);
+    if (str.Last() == '.')
+      str = str.Substring(0, str.Length - 1);
+    return str;
   }
 
   /// <summary>

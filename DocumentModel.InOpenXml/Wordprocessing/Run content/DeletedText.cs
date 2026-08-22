@@ -27,7 +27,10 @@ public class DeletedText: TextualElement<DXW.DeletedText>
     if (updatableElement != null)
     {
       if (text != null && text.Length > 0)
+      {
         updatableElement.Text = text;
+        UpdateXmlSpacePreserve(updatableElement, text);
+      }
       else
       {
         updatableElement.Remove();

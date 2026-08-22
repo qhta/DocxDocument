@@ -5,8 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// Specifies the presence of a hyperlink at the current location in a WordprocessingML document.
 /// This class extends <see cref = "IParagraphContent"/>, <see cref = "ISdtRunContent"/>, <see cref = "IBidirectionalContent"/>, and <see cref = "IMathArgumentContent"/>, enabling advanced linking, navigation, and integration of hyperlinks within paragraphs, structured document tags, bidirectional content, and mathematical arguments.
 /// </summary>
-[DataContract]
-[XmlRoot("Hyperlink", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class Hyperlink<T> : ModelElement<T>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent where T : DX.OpenXmlElement
 {
  /// <summary>

@@ -10710,7 +10710,8 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString">
             <summary>
-            Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
+            Converts the current length measure to its string representation in InvariantCulture.
+            Trailing zeros after the decimal point are removed, and if the result ends with a decimal point, it is also removed.
             </summary>
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider)">

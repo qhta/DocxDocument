@@ -29,7 +29,10 @@ public class DeletedFieldCode : TextualElement<DXW.FieldCode>
     if (updatableElement != null)
     {
       if (text != null && text.Length > 0)
+      {
         updatableElement.Text = text;
+        UpdateXmlSpacePreserve(updatableElement, text);
+      }
       else
       {
         updatableElement.Remove();

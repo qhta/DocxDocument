@@ -32,4 +32,20 @@ public abstract partial class TextualElement<T> : ModelElement<T>, ITextualEleme
   /// </summary>
   /// <param name="text">The text content to set</param>
   public abstract void SetText(string? text);
+
+  /// <summary>
+  /// Sets or removes xml:space="preserve" for OpenXml text-like elements depending on leading/trailing whitespace.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXml element to update.</param>
+  /// <param name="text">The text content assigned to the element.</param>
+  protected static void UpdateXmlSpacePreserve(DX.OpenXmlElement openXmlElement, string text)
+  {
+    var shouldPreserve = text.Length > 0 &&
+                         (char.IsWhiteSpace(text[0]) || char.IsWhiteSpace(text[text.Length - 1]));
+
+    if (shouldPreserve)
+      openXmlElement.SetAttribute(new DX.OpenXmlAttribute("xml", "space", "http://www.w3.org/XML/1998/namespace", "preserve"));
+    else
+      openXmlElement.RemoveAttribute("space", "http://www.w3.org/XML/1998/namespace");
+  }
 }

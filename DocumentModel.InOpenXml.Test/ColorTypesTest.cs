@@ -484,12 +484,12 @@ public class ColorTypesTest : BaseThemeTest
       storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
     }
 
-    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(Theme), out var namespaces);
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(Theme));
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
+      xmlSerializer.Serialize(xmlWriter, storedData, XmlSerializationHelper.Namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine("Theme loaded from document:\n" + xmlString);

@@ -30,7 +30,10 @@ public class RunText : TextualElement<DXW.Text>
     {
       var parent = updatableElement.Parent;
       if (text != null && text.Length > 0)
+      {
         updatableElement.Text = text;
+        UpdateXmlSpacePreserve(updatableElement, text);
+      }
       else
       {
         updatableElement.Remove();

@@ -36,12 +36,12 @@ public class FontEmbeddingTestClass: _AbstractTestClass
         Console.WriteLine(formattedOpenXml);
       }
       FontTable testData = document.FontTable;
-      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(testData, out var namespaces);
+      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(testData);
       string xmlString;
       using (var stringWriter = new StringWriter())
       using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
       {
-        xmlSerializer.Serialize(xmlWriter, testData, namespaces);
+        xmlSerializer.Serialize(xmlWriter, testData, XmlSerializationHelper.Namespaces);
         xmlString = stringWriter.ToString();
       }
       Console.WriteLine($"{TestName} Serialized XML:\n" + xmlString);

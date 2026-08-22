@@ -50,12 +50,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testData = CreateSampleData();
-    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(testData, out var namespaces);
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(testData);
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, testData, namespaces);
+      xmlSerializer.Serialize(xmlWriter, testData, XmlSerializationHelper.Namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} Serialized XML:\n" + xmlString);
@@ -204,12 +204,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       storedData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
     }
 
-    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(ModelDataType));
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, storedData, namespaces);
+      xmlSerializer.Serialize(xmlWriter, storedData, XmlSerializationHelper.Namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} {testMethodName} reloaded data is:\n" + xmlString);
@@ -270,12 +270,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       restoredData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found."); ;
     }
 
-    var xmlSerializer = CreateXmlSerializer(typeof(ModelDataType), out var namespaces);
+    var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(typeof(ModelDataType));
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, restoredData, namespaces);
+      xmlSerializer.Serialize(xmlWriter, restoredData, XmlSerializationHelper.Namespaces);
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine($"{TestName} {testMethodName} updated data is:\n" + xmlString);

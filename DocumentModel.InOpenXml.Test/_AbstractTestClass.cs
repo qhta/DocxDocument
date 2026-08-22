@@ -125,7 +125,7 @@ public abstract class _AbstractTestClass
   /// object.</returns>
   protected DataType? DeserializeFromXml<DataType>(string xml)
   {
-    var xmlSerializer = CreateXmlSerializer(typeof(DataType), out _);
+    var xmlSerializer = CreateXmlSerializer(typeof(DataType));
     using (var stringReader = new StringReader(xml))
     {
       return (DataType?)xmlSerializer.Deserialize(stringReader);
@@ -141,9 +141,9 @@ public abstract class _AbstractTestClass
   protected ModelElement? DeserializeModelElement(XElement xmlElement)
   {
     var rootName = xmlElement.Name.LocalName;              // Paragraph
-    var rootNs = xmlElement.Name.NamespaceName;            // DocumentModel.Wordprocessing
+    var prefix = xmlElement.GetPrefixOfNamespace(xmlElement.Name.Namespace) ?? "";           // DocumentModel.Wordprocessing
 
-    var concreteType = XmlSerializationHelper.ResolveType(rootName, rootNs);
+    var concreteType = XmlSerializationHelper.ResolveType(rootName, prefix);
     if (!typeof(ModelElement).IsAssignableFrom(concreteType))
       throw new InvalidOperationException($"Resolved type {concreteType.FullName} is not a ModelElement.");
 
@@ -165,7 +165,7 @@ public abstract class _AbstractTestClass
   /// object.</returns>
   protected DataType? DeserializeFromXml<DataType>(XElement xmlElement)
   {
-    var xmlSerializer = CreateXmlSerializer(typeof(DataType), out _);
+    var xmlSerializer = CreateXmlSerializer(typeof(DataType));
     using (var xmlReader = xmlElement.CreateReader())
     {
       return (DataType?)xmlSerializer.Deserialize(xmlReader);
@@ -251,11 +251,11 @@ public abstract class _AbstractTestClass
   /// <returns>Serialized XML text.</returns>
   protected string SerializeObjectToXml(object data, bool omitXmlDeclaration = false)
   {
-    var xmlSerializer = CreateXmlSerializer(data, out var namespaces);
+    var xmlSerializer = CreateXmlSerializer(data);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true, OmitXmlDeclaration = omitXmlDeclaration }))
     {
-      xmlSerializer.Serialize(xmlWriter, data, namespaces);
+      xmlSerializer.Serialize(xmlWriter, data, XmlSerializationHelper.Namespaces);
       return stringWriter.ToString();
     }
   }
@@ -271,7 +271,7 @@ public abstract class _AbstractTestClass
   {
     try
     {
-      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(dataType, out var namespaces);
+      var xmlSerializer = XmlSerializationHelper.CreateXmlSerializer(dataType);
       using (var stringReader = new StringReader(xml))
         return xmlSerializer.Deserialize(stringReader);
     }
@@ -287,20 +287,18 @@ public abstract class _AbstractTestClass
   /// Creates an XmlSerializer for the given data object, handling type overrides for generic ModelElement types.
   /// </summary>
   /// <param name="data">The object to serialize.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  protected XmlSerializer CreateXmlSerializer(object data, out XmlSerializerNamespaces namespaces)
-  => CreateXmlSerializer(data.GetType(), out namespaces);
+  protected XmlSerializer CreateXmlSerializer(object data)
+  => CreateXmlSerializer(data.GetType());
 
   /// <summary>
   /// Creates an XmlSerializer for the specified root type, including overrides for generic ModelElement types to ensure unique XML type names.
   /// </summary>
   /// <param name="rootType">The root type for the XmlSerializer.</param>
-  /// <param name="namespaces">Output parameter for XML namespaces.</param>
   /// <returns>XmlSerializer instance.</returns>
-  protected XmlSerializer CreateXmlSerializer(Type rootType, out XmlSerializerNamespaces namespaces)
+  protected XmlSerializer CreateXmlSerializer(Type rootType)
   {
-    return XmlSerializationHelper.CreateXmlSerializer(rootType, out namespaces);
+    return XmlSerializationHelper.CreateXmlSerializer(rootType);
   }
 
   /// <summary>

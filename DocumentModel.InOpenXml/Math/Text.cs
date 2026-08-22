@@ -26,7 +26,10 @@ public class Text : DMW.TextualElement<DXM.Text>
     if (updatableElement != null)
     {
       if (text != null && text.Length > 0)
+      {
         updatableElement.Text = text;
+        UpdateXmlSpacePreserve(updatableElement, text);
+      }
       else
       {
         updatableElement.Remove();

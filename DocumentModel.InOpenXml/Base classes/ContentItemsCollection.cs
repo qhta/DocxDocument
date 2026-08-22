@@ -197,7 +197,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
       openXmlElement = modelItem.GetUpdatableElement() as DX.OpenXmlElement;
       if (openXmlElement is null)
         throw new ApplicationException("Updatable element of modelItem must be a OpenXmlElement");
-      Debug.WriteLine($"Created {openXmlElement.GetType().FullName} for modelItem of type {modelItem.GetType().FullName}");
+      //Debug.WriteLine($"Created {openXmlElement.GetType().FullName} for modelItem of type {modelItem.GetType().FullName}");
     }
     if (openXmlElement is not DXW.TextType)
       modelItem.UpdateData(openXmlElement);
