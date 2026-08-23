@@ -17,7 +17,7 @@ public class BodySerializationTest : _AbstractTestClass
   {
     Console.WriteLine("=== Body Serialization Test ===\n");
 
-    //if (!TestBodyItemsSerialization(false)) return false;
+    if (!TestBodyItemsSerialization(false)) return false;
     if (!TestBodyItemsDeserialization(true)) return false;
 
     Console.WriteLine("All Body Serialization Test passed.\n");

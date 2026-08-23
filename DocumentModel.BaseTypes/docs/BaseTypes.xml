@@ -3825,6 +3825,8 @@
             - Bits 16-23 represent the Red component
             - Bits 8-15 represent the Green component
             - Bits 0-7 represent the Blue component
+            - Bits 31-24 can be used as Transparency component (inverter Alpha channel).
+            The 0xFFFFFFFF is a special value named "auto"
             </remarks>
         </member>
         <member name="M:DocumentModel.HexColor.System#Xml#Serialization#IXmlSerializable#GetSchema">

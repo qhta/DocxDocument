@@ -8,6 +8,8 @@
 /// - Bits 16-23 represent the Red component
 /// - Bits 8-15 represent the Green component
 /// - Bits 0-7 represent the Blue component
+/// - Bits 31-24 can be used as Transparency component (inverter Alpha channel).
+/// The 0xFFFFFFFF is a special value named "auto"
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(HexColorJsonConverter))]
@@ -54,12 +56,18 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   {
     if (str != null)
     {
+      if (str == "auto")
+      {
+        result = new HexColor(0xFFFFFFFF);
+        return true;
+      }
       str = str.TrimStart('#');
       if (uint.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var byteValue))
       {
         result = new HexColor(byteValue);
         return true;
       }
+
     }
     result = null;
     return false;
@@ -191,6 +199,8 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
   public override string ToString()
   {
+    if (value == 0xFFFFFFFF)
+      return "auto";
     return value.ToString("X6");
   }
 

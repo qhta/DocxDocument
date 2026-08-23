@@ -3706,10 +3706,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3731,10 +3731,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3760,10 +3760,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3789,10 +3789,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3818,10 +3818,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3843,10 +3843,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3872,10 +3872,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3901,10 +3901,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3930,10 +3930,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -3955,10 +3955,10 @@
   <paragraphProperties paragraphStyleId="ListBullet" spacingByContext="false">
     <paragraphMarkRunProperties italic="true" italicCS="true" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <spacingBefore val="0 pt" />
     <spacingAfter val="0 pt" />
@@ -25931,10 +25931,10 @@
 <Paragraph paragraphId="6DB6335E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -25945,10 +25945,10 @@
 <Paragraph paragraphId="01DD9E7B" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -25959,10 +25959,10 @@
 <Paragraph paragraphId="2E157594" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -25973,10 +25973,10 @@
 <Paragraph paragraphId="084C7EA5" textId="7E1347B5" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -25993,10 +25993,10 @@
 <Paragraph paragraphId="79A33C2E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26007,10 +26007,10 @@
 <Paragraph paragraphId="0648B26A" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26025,10 +26025,10 @@
 <Paragraph paragraphId="2DF1502B" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26039,10 +26039,10 @@
 <Paragraph paragraphId="1D9D5C49" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26053,10 +26053,10 @@
 <Paragraph paragraphId="38EA2E1E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26067,10 +26067,10 @@
 <Paragraph paragraphId="0AF80753" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="23" />
   </paragraphProperties>
@@ -26107,10 +26107,10 @@
 <Paragraph paragraphId="2041B518" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet" keepNext="true">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26122,10 +26122,10 @@
 <Paragraph paragraphId="13CD2938" textId="1E34179B" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet" keepNext="true">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26142,10 +26142,10 @@
 <Paragraph paragraphId="40B31878" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet" keepNext="true">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26160,10 +26160,10 @@
 <Paragraph paragraphId="31BE863E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26174,10 +26174,10 @@
 <Paragraph paragraphId="7530B969" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26188,10 +26188,10 @@
 <Paragraph paragraphId="6945D685" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26202,10 +26202,10 @@
 <Paragraph paragraphId="3743A361" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26216,10 +26216,10 @@
 <Paragraph paragraphId="38DF8BC4" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26230,10 +26230,10 @@
 <Paragraph paragraphId="7301BBA3" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="24" />
   </paragraphProperties>
@@ -26257,10 +26257,10 @@
 <Paragraph paragraphId="1B77076A" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26271,10 +26271,10 @@
 <Paragraph paragraphId="4064354A" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26285,10 +26285,10 @@
 <Paragraph paragraphId="5F5D322B" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26299,10 +26299,10 @@
 <Paragraph paragraphId="155A971B" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26313,10 +26313,10 @@
 <Paragraph paragraphId="4F63A779" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26327,10 +26327,10 @@
 <Paragraph paragraphId="3D1C9D6E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26341,10 +26341,10 @@
 <Paragraph paragraphId="0DD061F3" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26355,10 +26355,10 @@
 <Paragraph paragraphId="0E4A6AB7" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="25" />
   </paragraphProperties>
@@ -26385,10 +26385,10 @@
 <Paragraph paragraphId="2ECB661F" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26399,10 +26399,10 @@
 <Paragraph paragraphId="4C19848F" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26413,10 +26413,10 @@
 <Paragraph paragraphId="09FF3EDD" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26427,10 +26427,10 @@
 <Paragraph paragraphId="201B60C1" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26441,10 +26441,10 @@
 <Paragraph paragraphId="555B95FE" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26455,10 +26455,10 @@
 <Paragraph paragraphId="35960EDC" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26469,10 +26469,10 @@
 <Paragraph paragraphId="58C4E2BD" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26483,10 +26483,10 @@
 <Paragraph paragraphId="143B5E2E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26497,10 +26497,10 @@
 <Paragraph paragraphId="4498C54E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26511,10 +26511,10 @@
 <Paragraph paragraphId="33D61CD3" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26525,10 +26525,10 @@
 <Paragraph paragraphId="381C9C2D" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="26" />
   </paragraphProperties>
@@ -26570,10 +26570,10 @@
 <Paragraph paragraphId="693CCFF0" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26584,10 +26584,10 @@
 <Paragraph paragraphId="5D021B8D" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26598,10 +26598,10 @@
 <Paragraph paragraphId="34E7E99C" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26612,10 +26612,10 @@
 <Paragraph paragraphId="3FF9C30A" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26627,10 +26627,10 @@
 <Paragraph paragraphId="6BBC2767" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26641,10 +26641,10 @@
 <Paragraph paragraphId="2C409347" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26655,10 +26655,10 @@
 <Paragraph paragraphId="445EE42F" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -26669,10 +26669,10 @@
 <Paragraph paragraphId="0764AD4E" textId="77777777" rsidParagraphAddition="00DC5A5D" rsidParagraphProperties="003F38B4" rsidRunAdditionDefault="00DC5A5D" rsidParagraphMarkRevision="00001019" xmlns="DocumentModel.Wordprocessing">
   <paragraphProperties paragraphStyleId="ListBullet">
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
     <numberingProperties numberingLevelReference="Level1" numberingId="78" />
   </paragraphProperties>
@@ -63309,10 +63309,10 @@
   <paragraphProperties paragraphStyleId="NormalIndent">
     <paragraphMarkRunProperties italic="true" italicCS="false" />
     <borders>
-      <topBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <leftBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
-      <bottomBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.05 pt" />
-      <rightBorder type="Single" color="FFFFFFFF" width="0.2 pt" space="0.2 pt" />
+      <topBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <leftBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
+      <bottomBorder type="Single" color="auto" width="0.2 pt" space="0.05 pt" />
+      <rightBorder type="Single" color="auto" width="0.2 pt" space="0.2 pt" />
     </borders>
   </paragraphProperties>
   <w:Run rsidProps="00001019" xmlns:w="DocumentModel.Wordprocessing">
