@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.Charts;
 [XmlRoot("ChartLinesType", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class ChartLinesType<T> : ModelElement<T> where T : DXDC.ChartLinesType
 {
- /// <summary>
- ///   Chart shape properties of the chart lines.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.ChartLinesType.ChartShapeProperties))]
- public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
- private ChartShapeProperties? _ChartShapeProperties;
+  /// <summary>
+  ///   Chart shape properties of the chart lines.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.ChartLinesType.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
+  private ChartShapeProperties? _ChartShapeProperties;
 }
 
 /// <summary>

@@ -13,7 +13,7 @@ public partial class EffectiveColor : IColor
     get => (((UInt32)(AlphaFactor * 255) << 24) | (((UInt32)(RedFactor * 255)) << 16) | (((UInt32)(GreenFactor * 255) << 8)) | ((UInt32)(BlueFactor * 255)));
     set
     {
-      RedFactor =((value >> 16) & 0xFF) / 255.0;
+      RedFactor = ((value >> 16) & 0xFF) / 255.0;
       GreenFactor = ((value >> 8) & 0xFF) / 255.0;
       BlueFactor = (value & 0xFF) / 255.0;
       AlphaFactor = ((value >> 24) & 0xFF) / 255.0;

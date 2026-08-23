@@ -11,11 +11,11 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(TwipsJsonConverter))]
-public sealed partial class Twips: PTS
+public sealed partial class Twips : PTS
 {
   static Twips()
   {
-    ObjectToStringConverter.RegisterConverter(typeof(Twips), new UniversalMeasureToStringConverter<Twips>{MeasureUnits = MeasureUnit.Points});
+    ObjectToStringConverter.RegisterConverter(typeof(Twips), new UniversalMeasureToStringConverter<Twips> { MeasureUnits = MeasureUnit.Points });
   }
 
   /// <summary>
@@ -331,7 +331,7 @@ public sealed partial class Twips: PTS
   /// <param name="value">The Twips value to convert.</param>
   public static implicit operator Int32(Twips value)
   {
-    return (Int32?)value.IntValue?? 0;
+    return (Int32?)value.IntValue ?? 0;
   }
 
   /// <summary>

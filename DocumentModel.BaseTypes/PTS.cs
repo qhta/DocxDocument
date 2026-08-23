@@ -22,7 +22,7 @@ public partial class PTS : UniversalMeasure
   /// <summary>
   /// Defines the number of points in one inch.
   /// </summary>
-  protected override decimal UnitsPerInch => 72*Scale;
+  protected override decimal UnitsPerInch => 72 * Scale;
 
   #region Constructors
 

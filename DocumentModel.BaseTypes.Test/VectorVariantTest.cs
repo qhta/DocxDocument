@@ -28,7 +28,7 @@ public static class VectorVariantTest
     return true;
   }
 
-  
+
   static bool TestVectorVariantBasicOperations()
   {
     Console.WriteLine("--- Testing VectorVariant Basic Operations ---");      // Test default constructor
@@ -102,8 +102,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantTypeConversions()
   {
     Console.WriteLine("--- Testing VectorVariant ValueType Conversions ---");      // Test different variant types
@@ -162,8 +162,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantListOperations()
   {
     Console.WriteLine("--- Testing VectorVariant IList Operations ---");      // Test Insert
@@ -228,8 +228,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantToString()
   {
     Console.WriteLine("--- Testing VectorVariant ToString ---");      // Test empty vector
@@ -328,8 +328,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant XML Serialization ---");      // Create test object
@@ -403,8 +403,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing VectorVariant JSON Serialization ---");      // Create test object
@@ -441,7 +441,7 @@ public static class VectorVariantTest
     return true;
   }
 
-  
+
   private static VectorVariantTestData CreateTestData()
   {
     var testData = new VectorVariantTestData
@@ -489,7 +489,7 @@ public static class VectorVariantTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestVectorVariantEdgeCases()
   {
     Console.WriteLine("--- Testing VectorVariant Edge Cases ---");      // Test empty vector
@@ -597,8 +597,8 @@ public static class VectorVariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVectorVariantPerformance()
   {
     Console.WriteLine("--- Testing VectorVariant Performance ---"); const int iterations = 10000;
@@ -708,7 +708,7 @@ public static class VectorVariantTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

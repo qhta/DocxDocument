@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the complete chart space container that encapsulates all chart elements and their configurations.
 /// </summary>
@@ -16,62 +17,101 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.ChartSpace))]
 [DataContract]
 [XmlRoot("ChartSpace", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class ChartSpace : ModelElement<DXO16DCD.ChartSpace>
+public partial class ChartSpace: ModelElement<DXO16DCD.ChartSpace>
 {
   /// <summary>
   /// Specifies the chart data.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.ChartData))]
-  public ChartData? ChartData { get => _ChartData; set => UpdateField(ref _ChartData, value, nameof(ChartData)); }
+  public ChartData? ChartData
+  {
+    get => _ChartData ??= GetProperty<ChartData?>(GetUpdatableElement()?.ChartData);
+    set => UpdateField(ref _ChartData, value, nameof(ChartData));
+  }
 
   private ChartData? _ChartData;
+
   /// <summary>
   /// Specifies the chart.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.Chart))]
-  public Chart? Chart { get => _Chart; set => UpdateField(ref _Chart, value, nameof(Chart)); }
+  public Chart? Chart
+  {
+    get => _Chart ??= GetProperty<Chart?>(GetUpdatableElement()?.Chart);
+    set => UpdateField(ref _Chart, value, nameof(Chart));
+  }
 
   private Chart? _Chart;
+
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.ShapeProperties))]
-  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetProperty<ShapeProperties?>(GetUpdatableElement()?.ShapeProperties);
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
 
   private ShapeProperties? _ShapeProperties;
+
   /// <summary>
   /// Specifies the tx pr text body.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.TxPrTextBody))]
-  public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
+  public TxPrTextBody? TxPrTextBody
+  {
+    get => _TxPrTextBody ??= GetProperty<TxPrTextBody?>(GetUpdatableElement()?.TxPrTextBody);
+    set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody));
+  }
 
   private TxPrTextBody? _TxPrTextBody;
+
   /// <summary>
   /// Specifies the color mapping type.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.ColorMappingType))]
-  public ColorMappingType? ColorMappingType { get => _ColorMappingType; set => UpdateField(ref _ColorMappingType, value, nameof(ColorMappingType)); }
+  public ColorMappingType? ColorMappingType
+  {
+    get => _ColorMappingType ??= GetProperty<ColorMappingType?>(GetUpdatableElement()?.ColorMappingType);
+    set => UpdateField(ref _ColorMappingType, value, nameof(ColorMappingType));
+  }
 
   private ColorMappingType? _ColorMappingType;
+
   /// <summary>
   /// Specifies the format overrides.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.FormatOverrides))]
-  public FormatOverrides? FormatOverrides { get => _FormatOverrides; set => UpdateField(ref _FormatOverrides, value, nameof(FormatOverrides)); }
+  public FormatOverrides? FormatOverrides
+  {
+    get => _FormatOverrides ??= GetProperty<FormatOverrides?>(GetUpdatableElement()?.FormatOverrides);
+    set => UpdateField(ref _FormatOverrides, value, nameof(FormatOverrides));
+  }
 
   private FormatOverrides? _FormatOverrides;
+
   /// <summary>
   /// Specifies the print settings.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.PrintSettings))]
-  public PrintSettings? PrintSettings { get => _PrintSettings; set => UpdateField(ref _PrintSettings, value, nameof(PrintSettings)); }
+  public PrintSettings? PrintSettings
+  {
+    get => _PrintSettings ??= GetProperty<PrintSettings?>(GetUpdatableElement()?.PrintSettings);
+    set => UpdateField(ref _PrintSettings, value, nameof(PrintSettings));
+  }
 
   private PrintSettings? _PrintSettings;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartSpace.ExtensionList))]
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

@@ -9,135 +9,135 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("FontDef", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Font : ModelElement<DXW.Font>
 {
- /// <summary>
- /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.Name))]
- public string? Typeface { get => _typeface; set => UpdateField(ref _typeface, value, nameof(Typeface)); }
- private string? _typeface;
+  /// <summary>
+  /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.Name))]
+  public string? Typeface { get => _typeface ??= GetProperty<string?>(GetUpdatableElement()?.Name); set => UpdateField(ref _typeface, value, nameof(Typeface)); }
+  private string? _typeface;
 
- /// <summary>
- /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.AltName))]
- public StringList? Aliases { get => _Aliases; set => UpdateField(ref _Aliases, value, nameof(Aliases)); }
- private StringList? _Aliases;
+  /// <summary>
+  /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.AltName))]
+  public StringList? Aliases { get => _Aliases ??= GetProperty<StringList?>(GetUpdatableElement()?.AltName); set => UpdateField(ref _Aliases, value, nameof(Aliases)); }
+  private StringList? _Aliases;
 
- /// <summary>
- /// Panose-1 classification number, used for font substitution logic to locate appropriate substitute fonts.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.Panose1Number))]
- public HexBinary? Panose { get => _panose; set => UpdateField(ref _panose, value, nameof(Panose)); }
- private HexBinary? _panose;
+  /// <summary>
+  /// Panose-1 classification number, used for font substitution logic to locate appropriate substitute fonts.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.Panose1Number))]
+  public HexBinary? Panose { get => _panose ??= GetProperty<HexBinary?>(GetUpdatableElement()?.Panose1Number); set => UpdateField(ref _panose, value, nameof(Panose)); }
+  private HexBinary? _panose;
 
- /// <summary>
- /// Character set supported by the font, used for font substitution logic.
- /// </summary>
- //[OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
- [OpenXmlLoadData(nameof(LoadCharset))]
- [OpenXmlUpdateData(nameof(UpdateCharset))]
- public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
- private HexByte? _charset;
+  /// <summary>
+  /// Character set supported by the font, used for font substitution logic.
+  /// </summary>
+  //[OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
+  [OpenXmlLoadData(nameof(LoadCharset))]
+  [OpenXmlUpdateData(nameof(UpdateCharset))]
+  public HexByte? Charset { get => _charset ??= GetProperty<HexByte?>(GetUpdatableElement()?.FontCharSet); set => UpdateField(ref _charset, value, nameof(Charset)); }
+  private HexByte? _charset;
 
- /// <summary>
- /// TextFormat family classification (e.g., Roman, Swiss, Modern).
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
- public FontFamily? FontFamily { get => _fontFamily; set => UpdateField(ref _fontFamily, value, nameof(FontFamily)); }
- private FontFamily? _fontFamily;
+  /// <summary>
+  /// TextFormat family classification (e.g., Roman, Swiss, Modern).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
+  public FontFamily? FontFamily { get => _fontFamily ??= GetProperty<FontFamily?>(GetUpdatableElement()?.FontFamily); set => UpdateField(ref _fontFamily, value, nameof(FontFamily)); }
+  private FontFamily? _fontFamily;
 
- /// <summary>
- /// Pitch of the font (e.g., fixed, variable).
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.Pitch))]
- public FontPitch? Pitch { get => _Pitch; set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
- private FontPitch? _Pitch;
+  /// <summary>
+  /// Pitch of the font (e.g., fixed, variable).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.Pitch))]
+  public FontPitch? Pitch { get => _Pitch ??= GetProperty<FontPitch?>(GetUpdatableElement()?.Pitch); set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
+  private FontPitch? _Pitch;
 
- /// <summary>
- /// TextFormat signature information, including Unicode subset and code page bitfields.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.FontSignature))]
- public HexBinary? FontSignature { get => _FontSignature; set => UpdateField(ref _FontSignature, value, nameof(FontSignature)); }
- private HexBinary? _FontSignature;
+  /// <summary>
+  /// TextFormat signature information, including Unicode subset and code page bitfields.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.FontSignature))]
+  public HexBinary? FontSignature { get => _FontSignature ??= GetProperty<HexBinary?>(GetUpdatableElement()?.FontSignature); set => UpdateField(ref _FontSignature, value, nameof(FontSignature)); }
+  private HexBinary? _FontSignature;
 
- /// <summary>
- /// Indicates whether the font is not a TrueType font.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.NotTrueType))]
- public bool? NotTrueType { get => _NotTrueType; set => UpdateField(ref _NotTrueType, value, nameof(NotTrueType)); }
- private bool? _NotTrueType;
+  /// <summary>
+  /// Indicates whether the font is not a TrueType font.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.NotTrueType))]
+  public bool? NotTrueType { get => _NotTrueType ??= GetProperty<bool?>(GetUpdatableElement()?.NotTrueType); set => UpdateField(ref _NotTrueType, value, nameof(NotTrueType)); }
+  private bool? _NotTrueType;
 
   /// <summary>
   /// Reference to an embedded font part containing the regular (non-bold, non-italic) form of the font,
   /// used for embedding font data within the document package.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Font.EmbedRegularFont))]
- public EmbedFont? EmbedRegularFont { get => _EmbedRegularFont; set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont)); }
- private EmbedFont? _EmbedRegularFont;
+  public EmbedFont? EmbedRegularFont { get => _EmbedRegularFont ??= GetProperty<EmbedFont?>(GetUpdatableElement()?.EmbedRegularFont); set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont)); }
+  private EmbedFont? _EmbedRegularFont;
 
- /// <summary>
- /// Reference to an embedded font part containing the bold form of the font,
- /// used for embedding font data within the document package.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.EmbedBoldFont))]
- public EmbedFont? EmbedBoldFont { get => _EmbedBoldFont; set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont)); }
- private EmbedFont? _EmbedBoldFont;
+  /// <summary>
+  /// Reference to an embedded font part containing the bold form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldFont))]
+  public EmbedFont? EmbedBoldFont { get => _EmbedBoldFont ??= GetProperty<EmbedFont?>(GetUpdatableElement()?.EmbedBoldFont); set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont)); }
+  private EmbedFont? _EmbedBoldFont;
 
- /// <summary>
- /// Reference to an embedded font part containing the italic form of the font,
- /// used for embedding font data within the document package.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.EmbedItalicFont))]
- public EmbedFont? EmbedItalicFont { get => _EmbedItalicFont; set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont)); }
- private EmbedFont? _EmbedItalicFont;
+  /// <summary>
+  /// Reference to an embedded font part containing the italic form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedItalicFont))]
+  public EmbedFont? EmbedItalicFont { get => _EmbedItalicFont ??= GetProperty<EmbedFont?>(GetUpdatableElement()?.EmbedItalicFont); set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont)); }
+  private EmbedFont? _EmbedItalicFont;
 
- /// <summary>
- /// Reference to an embedded font part containing the bold italic form of the font,
- /// used for embedding font data within the document package.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Font.EmbedBoldItalicFont))]
- public EmbedFont? EmbedBoldItalicFont { get => _EmbedBoldItalicFont; set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont)); }
- private EmbedFont? _EmbedBoldItalicFont;
+  /// <summary>
+  /// Reference to an embedded font part containing the bold italic form of the font,
+  /// used for embedding font data within the document package.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldItalicFont))]
+  public EmbedFont? EmbedBoldItalicFont { get => _EmbedBoldItalicFont ??= GetProperty<EmbedFont?>(GetUpdatableElement()?.EmbedBoldItalicFont); set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont)); }
+  private EmbedFont? _EmbedBoldItalicFont;
 
- /// <summary>
- /// Loads the character set from the specified font source and updates the Charset property accordingly.
- /// </summary>
- /// <remarks>If the source provides a StrictCharacterSet, it is used to update the Charset property.
- /// Otherwise, the Val property is used. If neither is available, the Charset property remains unchanged.</remarks>
- /// <param name = "fontElement">The font source from which to load the character set. Cannot be null; if the FontCharSet property of the source is
- /// null, no action is taken.</param>
- public void LoadCharset(DXW.Font fontElement)
- {
-  if (fontElement.FontCharSet == null)
-   Charset = null;
-  else if (fontElement.FontCharSet?.Val?.Value != null)
-   Charset = new HexByte(fontElement.FontCharSet.Val!.Value!);
-  else if (fontElement.FontCharSet?.StrictCharacterSet != null)
-   Charset = strictCharacterSets.GetValue2(fontElement.FontCharSet.StrictCharacterSet);
-  else
-   Charset = null;
- }
-
- /// <summary>
- /// Updates the character set information of the specified font element to reflect the current charset value.
- /// </summary>
- /// <remarks>If the current charset is null, the font element's character set is cleared. If a strict
- /// character set mapping exists for the current charset, it is applied; otherwise, the charset value is assigned
- /// directly.</remarks>
- /// <param name = "fontElement">The font element whose character set will be updated. This parameter must not be null.</param>
- public void UpdateCharset(DXW.Font fontElement)
- {
-  if (Charset is null)
-   fontElement.FontCharSet = null;
-  else
+  /// <summary>
+  /// Loads the character set from the specified font source and updates the Charset property accordingly.
+  /// </summary>
+  /// <remarks>If the source provides a StrictCharacterSet, it is used to update the Charset property.
+  /// Otherwise, the Val property is used. If neither is available, the Charset property remains unchanged.</remarks>
+  /// <param name = "fontElement">The font source from which to load the character set. Cannot be null; if the FontCharSet property of the source is
+  /// null, no action is taken.</param>
+  public void LoadCharset(DXW.Font fontElement)
   {
-   fontElement.FontCharSet = new DXW.FontCharSet()
-   {
-    Val = Charset.ToString(),
-   };
+    if (fontElement.FontCharSet == null)
+      Charset = null;
+    else if (fontElement.FontCharSet?.Val?.Value != null)
+      Charset = new HexByte(fontElement.FontCharSet.Val!.Value!);
+    else if (fontElement.FontCharSet?.StrictCharacterSet != null)
+      Charset = strictCharacterSets.GetValue2(fontElement.FontCharSet.StrictCharacterSet);
+    else
+      Charset = null;
   }
- }
- private static readonly BiDiDictionary<DXW.StrictCharacterSet, string> strictCharacterSets = new BiDiDictionary<DXW.StrictCharacterSet, string>()
+
+  /// <summary>
+  /// Updates the character set information of the specified font element to reflect the current charset value.
+  /// </summary>
+  /// <remarks>If the current charset is null, the font element's character set is cleared. If a strict
+  /// character set mapping exists for the current charset, it is applied; otherwise, the charset value is assigned
+  /// directly.</remarks>
+  /// <param name = "fontElement">The font element whose character set will be updated. This parameter must not be null.</param>
+  public void UpdateCharset(DXW.Font fontElement)
+  {
+    if (Charset is null)
+      fontElement.FontCharSet = null;
+    else
+    {
+      fontElement.FontCharSet = new DXW.FontCharSet()
+      {
+        Val = Charset.ToString(),
+      };
+    }
+  }
+  private static readonly BiDiDictionary<DXW.StrictCharacterSet, string> strictCharacterSets = new BiDiDictionary<DXW.StrictCharacterSet, string>()
  {
   {
    DXW.StrictCharacterSet.chsAnsi,
@@ -204,7 +204,7 @@ public partial class Font : ModelElement<DXW.Font>
    "windows-1250"
   },
  };
- private static readonly BiDiDictionary<DXW.StrictCharacterSet, byte> characterSetsCode = new BiDiDictionary<DXW.StrictCharacterSet, byte>()
+  private static readonly BiDiDictionary<DXW.StrictCharacterSet, byte> characterSetsCode = new BiDiDictionary<DXW.StrictCharacterSet, byte>()
  {
   {
    DXW.StrictCharacterSet.chsAnsi,

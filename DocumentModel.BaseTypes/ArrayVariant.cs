@@ -60,7 +60,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// The array is created with no elements and must be resized before use.
   /// The <see cref="VariantType"/> is set to <see cref="VariantType.Array"/>.
   /// </remarks>
-  public ArrayVariant(): base(VariantType.Array)
+  public ArrayVariant() : base(VariantType.Array)
   {
   }
 
@@ -100,7 +100,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// Gets the variant type of the value represented by this instance.
   /// </summary>
   [XmlIgnore] public new VariantType VariantType => VariantType.Array;
-  
+
   /// <summary>
   /// Gets or sets the base type of elements stored in the array.
   /// </summary>
@@ -128,7 +128,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// <see cref="BaseType"/> property and mapped through the <c>ItemTypes</c> dictionary.
   /// </remarks>
   public Type ItemType { get; private set; } = typeof(object);
-  
+
   /// <summary>
   /// Gets or sets the inclusive lower bound (starting index) of the array.
   /// </summary>
@@ -172,7 +172,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
       if (_upperBounds != value) Resize(_lowerBounds, value, BaseType);
     }
   }
-  
+
   /// <summary>
   /// Gets the total number of elements in the array.
   /// </summary>
@@ -181,7 +181,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   /// For the count of non-null elements, use the <see cref="Count"/> property.
   /// </remarks>
   public int Size => _upperBounds - _lowerBounds + 1;
-  
+
   /// <summary>
   /// Gets or sets the element at the specified index within the array's custom bounds.
   /// </summary>
@@ -211,7 +211,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
     get => _items?.GetValue(index - _lowerBounds);
     set => _items?.SetValue(Convert.ChangeType(value, ItemType), index - _lowerBounds);
   }
-  
+
   IEnumerator<object?> IEnumerable<object?>.GetEnumerator()
   {
     yield break;
@@ -235,7 +235,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   {
     return _items?.GetEnumerator() ?? throw new InvalidOperationException("ArrayVariant not initialized");
   }
-  
+
   /// <summary>
   /// Adds an element to the next available position in the array.
   /// </summary>
@@ -527,15 +527,15 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
       return false;
     var result =
       _variantType == other._variantType
-      && _lowerBounds == other._lowerBounds 
+      && _lowerBounds == other._lowerBounds
       && _upperBounds == other._upperBounds
       && _items?.Length == other._items?.Length;
-    if (result && _items!=null && other._items!=null)
+    if (result && _items != null && other._items != null)
       for (int i = 0; i < _items.Length; i++)
       {
         var item = _items.GetValue(i);
         var otherItem = other._items.GetValue(i);
-        if (item==null && otherItem==null)
+        if (item == null && otherItem == null)
           continue;
         if (!item!.Equals(otherItem))
           return false;

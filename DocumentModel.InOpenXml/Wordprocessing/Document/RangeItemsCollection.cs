@@ -3,7 +3,7 @@
 /// <summary>
 /// Specific collection of Story items in a Wordprocessing document, extending the generic ContentItemsCollection to handle ModelElement types. This collection is designed to accept any item and provides a mapping between OpenXml element types and model element types for proper data loading and synchronization within the document model.
 /// </summary>
-public class RangeItemsCollections: ContentItemsCollection
+public class RangeItemsCollections : ContentItemsCollection
 {
   /// <summary>
   /// Default constructor needed for XML serialization. Initializes a new instance of the RangeItemsCollections class.
@@ -20,8 +20,8 @@ public class RangeItemsCollections: ContentItemsCollection
   /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
   /// <param name="sourceElement">The model element that serves as the data source for the collection. Can be null.</param>
   public RangeItemsCollections
-    (DMW.Range parent, ModelElement? sourceElement): base(parent,
-    sourceElement?.GetUpdatableObject() as DX.OpenXmlCompositeElement)
+    (DMW.Range parent, ModelElement? sourceElement) : base(parent,
+    sourceElement?.GetUpdatableObject(null) as DX.OpenXmlCompositeElement)
   {
     SetHasDirectAccess(true);
   }
@@ -40,17 +40,17 @@ public class RangeItemsCollections: ContentItemsCollection
   {
     return EnumerateDirectly().GetEnumerator();
   }
-  
+
   /// <summary>
   /// Gets the source elements for the collection, yielding each element in the range from the start to the end.
   /// </summary>
   protected override IEnumerable<DX.OpenXmlElement> GetSourceElements()
   {
-    var startObject = Range.Start.GetUpdatableObject();
+    var startObject = Range.Start.GetUpdatableObject(null);
     var startElement = startObject as DX.OpenXmlElement;
     if (startElement is null)
       throw new ApplicationException("Can't get source elements because the start element is null.");
-    var endElement = Range.End.GetUpdatableObject()! as DX.OpenXmlElement;
+    var endElement = Range.End.GetUpdatableObject(null)! as DX.OpenXmlElement;
     var element = startElement;
     //int elementIndex = 0;
     do

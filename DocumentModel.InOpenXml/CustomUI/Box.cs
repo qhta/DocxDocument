@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the Box Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -32,69 +33,109 @@ public partial class Box : ModelElement<DXO10CUI.Box>
   /// Specifies the unique identifier of the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Id))]
-  public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  public String? Id
+  {
+    get => _Id ??= GetProperty<String?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
   private String? _Id;
 
   /// <summary>
   /// Specifies the qualified identifier of the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.QualifiedId))]
-  public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  public String? QualifiedId
+  {
+    get => _QualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.QualifiedId);
+    set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId));
+  }
   private String? _QualifiedId;
 
   /// <summary>
   /// Specifies an application-defined tag for the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Tag))]
-  public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  public String? Tag
+  {
+    get => _Tag ??= GetProperty<String?>(GetUpdatableElement()?.Tag);
+    set => UpdateField(ref _Tag, value, nameof(Tag));
+  }
   private String? _Tag;
 
   /// <summary>
   /// Specifies whether the box is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.Visible))]
-  public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
+  public Boolean? Visible
+  {
+    get => _Visible ??= GetProperty<Boolean?>(GetUpdatableElement()?.Visible);
+    set => UpdateField(ref _Visible, value, nameof(Visible));
+  }
   private Boolean? _Visible;
 
   /// <summary>
   /// Specifies the callback that returns whether the box is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.GetVisible))]
-  public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
+  public String? GetVisible
+  {
+    get => _GetVisible ??= GetProperty<String?>(GetUpdatableElement()?.GetVisible);
+    set => UpdateField(ref _GetVisible, value, nameof(GetVisible));
+  }
   private String? _GetVisible;
 
   /// <summary>
   /// Specifies a built-in control after which this box is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.InsertAfterMso))]
-  public String? InsertAfterMso { get => _InsertAfterMso; set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso)); }
+  public String? InsertAfterMso
+  {
+    get => _InsertAfterMso ??= GetProperty<String?>(GetUpdatableElement()?.InsertAfterMso);
+    set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso));
+  }
   private String? _InsertAfterMso;
 
   /// <summary>
   /// Specifies a built-in control before which this box is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.InsertBeforeMso))]
-  public String? InsertBeforeMso { get => _InsertBeforeMso; set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso)); }
+  public String? InsertBeforeMso
+  {
+    get => _InsertBeforeMso ??= GetProperty<String?>(GetUpdatableElement()?.InsertBeforeMso);
+    set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso));
+  }
   private String? _InsertBeforeMso;
 
   /// <summary>
   /// Specifies a qualified control identifier after which this box is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.InsertAfterQulifiedId))]
-  public String? InsertAfterQualifiedId { get => _InsertAfterQualifiedId; set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId)); }
+  public String? InsertAfterQualifiedId
+  {
+    get => _InsertAfterQualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.InsertAfterQulifiedId);
+    set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId));
+  }
   private String? _InsertAfterQualifiedId;
 
   /// <summary>
   /// Specifies a qualified control identifier before which this box is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.InsertBeforeQulifiedId))]
-  public String? InsertBeforeQualifiedId { get => _InsertBeforeQualifiedId; set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId)); }
+  public String? InsertBeforeQualifiedId
+  {
+    get => _InsertBeforeQualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.InsertBeforeQulifiedId);
+    set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId));
+  }
   private String? _InsertBeforeQualifiedId;
 
   /// <summary>
   /// Specifies the visual layout style of the box.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Box.BoxStyle))]
-  public BoxStyle? BoxStyle { get => _BoxStyle; set => UpdateField(ref _BoxStyle, value, nameof(BoxStyle)); }
+  public BoxStyle? BoxStyle
+  {
+    get => _BoxStyle ??= GetProperty<BoxStyle?>(GetUpdatableElement()?.BoxStyle);
+    set => UpdateField(ref _BoxStyle, value, nameof(BoxStyle));
+  }
   private BoxStyle? _BoxStyle;
 }

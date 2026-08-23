@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto?view=word-pia"/>
-public partial interface IKeysBoundTo: IModelObject
+public partial interface IKeysBoundTo : IModelObject
 {
   /// <summary>
   /// Returns the key binding for the specified key combination.

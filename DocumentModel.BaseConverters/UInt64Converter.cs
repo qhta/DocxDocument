@@ -33,7 +33,7 @@ public static class UInt64Converter
   {
     ConverterBase.RegisterConversionMethods(typeof(UInt64Converter), typeof(UInt64), supportedConversions, ConversionToMap, ConversionFromMap);
   }
-  
+
   #region SByteValue conversion.
 
   /// <summary>
@@ -108,7 +108,7 @@ public static class UInt64Converter
   public static UInt64? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
-    if (Int32Value.Value< 0)
+    if (Int32Value.Value < 0)
       throw new OverflowException($"Value {Int32Value.Value} is out of range for UInt64");
 
     return (UInt64)Int32Value.Value;

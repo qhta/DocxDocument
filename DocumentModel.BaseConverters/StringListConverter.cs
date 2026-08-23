@@ -63,7 +63,7 @@ public static class StringListConverter
   public static StringList? ConvertFromStringValue(DX.StringValue? element)
   {
     if (element == null) return null;
-   
+
     return new StringList(element.Value);
   }
 

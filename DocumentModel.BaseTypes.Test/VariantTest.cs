@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+﻿#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
 namespace DocumentModel.BaseTypes.Test;
 
@@ -34,7 +32,7 @@ public static class VariantTest
     return true;
   }
 
-  
+
   static bool TestVariantConstruction()
   {
     Console.WriteLine("--- Testing Variant Construction ---");      // Test empty constructor
@@ -74,8 +72,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantNumericTypes()
   {
     Console.WriteLine("--- Testing Variant Numeric Types ---");      // Test all integer types
@@ -138,8 +136,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantStringTypes()
   {
     Console.WriteLine("--- Testing Variant String Types ---");      // Test string variants
@@ -182,8 +180,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantDateTimeTypes()
   {
     Console.WriteLine("--- Testing Variant DateTime Types ---");      // Test Date type
@@ -240,8 +238,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantSpecialTypes()
   {
     Console.WriteLine("--- Testing Variant Special Types ---");      // Test Boolean
@@ -300,8 +298,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantBinaryTypes()
   {
     Console.WriteLine("--- Testing Variant Binary Types ---");      // Test byte array (Blob)
@@ -350,8 +348,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantTypeConversions()
   {
     Console.WriteLine("--- Testing Variant Type Conversions ---");      // Test numeric conversions
@@ -420,8 +418,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantEquality()
   {
     Console.WriteLine("--- Testing Variant Equality ---");      // Test value equality
@@ -486,8 +484,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing Variant XML Serialization ---");      // Create test object with various variant types
@@ -574,8 +572,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing Variant JSON Serialization ---");      // Create test object with various variant types
@@ -608,7 +606,7 @@ public static class VariantTest
     return true;
   }
 
-  
+
   private static VariantTestData CreateTestData()
   {
     return new VariantTestData
@@ -643,7 +641,7 @@ public static class VariantTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestVariantEdgeCases()
   {
     Console.WriteLine("--- Testing Variant Edge Cases ---");      // Test default values
@@ -724,8 +722,8 @@ public static class VariantTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVariantPerformance()
   {
     Console.WriteLine("--- Testing Variant Performance ---"); const int iterations = 10000;
@@ -815,7 +813,7 @@ public static class VariantTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

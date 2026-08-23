@@ -13,7 +13,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   /// Name of the form field, used for identification and referencing within the document.
   /// </summary>
   [OpenXmlElement(typeof(DXW.FormFieldName))]
-  public string? FormFieldName 
+  public string? FormFieldName
   {
     get => _FormFieldName ??= GetElement<string?, DXW.FormFieldName>(GetUpdatableElement());
     set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName));
@@ -24,7 +24,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   /// Indicates whether the form field is enabled for user interaction.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Enabled))]
-  public bool? Enabled 
+  public bool? Enabled
   {
     get => _Enabled ??= GetElement<bool?, DXW.Enabled>(GetUpdatableElement());
     set => UpdateField(ref _Enabled, value, nameof(Enabled));
@@ -35,7 +35,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   /// Indicates whether calculations should be performed when exiting the form field.
   /// </summary>
   [OpenXmlElement(typeof(DXW.CalculateOnExit))]
-  public bool? CalculateOnExit 
+  public bool? CalculateOnExit
   {
     get => _CalculateOnExit ??= GetElement<bool?, DXW.CalculateOnExit>(GetUpdatableElement());
     set => UpdateField(ref _CalculateOnExit, value, nameof(CalculateOnExit));
@@ -46,7 +46,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   /// Macro to run when entering the form field.
   /// </summary>
   [OpenXmlElement(typeof(DXW.EntryMacro))]
-  public string? EntryMacro 
+  public string? EntryMacro
   {
     get => _EntryMacro ??= GetElement<string?, DXW.EntryMacro>(GetUpdatableElement());
     set => UpdateField(ref _EntryMacro, value, nameof(EntryMacro));
@@ -57,7 +57,7 @@ public partial class FormFieldData : ModelElement<DXW.FormFieldData>
   /// Macro to run when exiting the form field.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ExitMacro))]
-  public string? ExitMacro 
+  public string? ExitMacro
   {
     get => _ExitMacro ??= GetElement<string?, DXW.ExitMacro>(GetUpdatableElement());
     set => UpdateField(ref _ExitMacro, value, nameof(ExitMacro));

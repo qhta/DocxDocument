@@ -107,7 +107,7 @@ public static class ObjectToStringConverter
       return enumValue.ToString();
     }
     var targetType = value.GetType();
-    var parseMethod = targetType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static,  null, [typeof(string)], null);
+    var parseMethod = targetType.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static, null, [typeof(string)], null);
     // To assure deserialization, the value will be converted to string only when the type has a Parse(string) method.
     if (parseMethod is not null)
     {
@@ -328,7 +328,7 @@ public static class ObjectToStringConverter
     /// <param name="str">The string to convert to a 16-bit unsigned integer (UInt16) value.</param>
     /// <returns>The 16-bit unsigned integer (UInt16) value represented by the string, or null if the string is null or empty.</returns>
     public override object? ConvertFromString(string? str) => String.IsNullOrEmpty(str) ? null : UInt16.Parse(str);
-  }   
+  }
 
   /// <summary>
   /// A converter class that provides methods to convert a 32-bit unsigned integer (UInt32) value to a string and vice versa.
@@ -385,7 +385,7 @@ public static class ObjectToStringConverter
     /// <param name="str">The string to convert to a single-precision floating-point (Single) value.</param>
     /// <returns>The single-precision floating-point (Single) value represented by the string, or null if the string is null or empty.</returns>
     public override object? ConvertFromString(string? str) => String.IsNullOrEmpty(str) ? null : Single.Parse(str, System.Globalization.CultureInfo.InvariantCulture);
-  } 
+  }
 
   /// <summary>
   /// A converter class that provides methods to convert a double-precision floating-point (Double) value to a string and vice versa.
@@ -442,7 +442,7 @@ public static class ObjectToStringConverter
     /// <param name="str">The string to convert to a DateTime value.</param>
     /// <returns>The DateTime value represented by the string, or null if the string is null or empty.</returns>
     public override object? ConvertFromString(string? str) => String.IsNullOrEmpty(str) ? null : DateTime.Parse(str, null, System.Globalization.DateTimeStyles.RoundtripKind);
-  } 
+  }
 
   /// <summary>
   /// A converter class that provides methods to convert a HexBinary value to a string and vice versa.
@@ -575,8 +575,8 @@ public static class ObjectToStringConverter
     /// <param name="str">The string to convert to a HexPercent value.</param>
     /// <returns>The HexPercent value represented by the string, or null if the string is null or empty.</returns>
     public override object? ConvertFromString(string? str) => String.IsNullOrEmpty(str) ? (object?)null : HexPercent.Parse(str!);
-  } 
-  
+  }
+
   /// <summary>
   /// A converter class that provides methods to convert a HexByte value to a string and vice versa.
   /// </summary>

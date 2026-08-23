@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for StrNumPair type serialization in both XML and JSON formats.
@@ -26,7 +24,7 @@ public static class StrNumPairTest
     return true;
   }
 
-  
+
   static bool TestStrNumPairBasicOperations()
   {
     Console.WriteLine("--- Testing StrNumPair Basic Operations ---");      // Test string-only constructor
@@ -78,8 +76,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStrNumPairParsing()
   {
     Console.WriteLine("--- Testing StrNumPair Parsing ---");      // Test format "(Str,Num)" with both values
@@ -177,8 +175,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStrNumPairXmlSerialization()
   {
     Console.WriteLine("--- Testing StrNumPair XML Serialization ---");      // Create test object
@@ -279,8 +277,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStrNumPairJsonSerialization()
   {
     Console.WriteLine("--- Testing StrNumPair JSON Serialization ---");      // Create test object
@@ -338,8 +336,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStrNumPairEdgeCases()
   {
     Console.WriteLine("--- Testing StrNumPair Edge Cases ---");      // Test null values
@@ -436,8 +434,8 @@ public static class StrNumPairTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStrNumPairPerformance()
   {
     Console.WriteLine("--- Testing StrNumPair Performance ---"); const int iterations = 100000;
@@ -562,7 +560,7 @@ public static class StrNumPairTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

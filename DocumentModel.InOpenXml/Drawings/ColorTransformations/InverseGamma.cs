@@ -1,6 +1,4 @@
-﻿using DocumentModel.Drawings.Diagrams;
-
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 using Math = System.Math;
 
@@ -25,7 +23,7 @@ public class InverseGamma : ColorTransformation<DXD.InverseGamma>
     r = Math.Pow(r, gamma);
     g = Math.Pow(g, gamma);
     b = Math.Pow(b, gamma);
-    var result = new EffectiveColor { RGBAComponents = (r, g, b, a) }; 
+    var result = new EffectiveColor { RGBAComponents = (r, g, b, a) };
     return result;
   }
 }

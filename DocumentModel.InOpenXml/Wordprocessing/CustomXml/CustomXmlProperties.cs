@@ -8,8 +8,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("CustomXmlProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CustomXmlProperties : ModelElementCollection<CustomXmlAttribute, DXW.CustomXmlProperties, DX.OpenXmlElement>
 {
- /// <summary>
- /// Placeholder text displayed in place of the custom XML element when its contents are empty (i.e., no runs of text within the element).
- /// </summary>
- public string? CustomXmlPlaceholder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Placeholder text displayed in place of the custom XML element when its contents are empty (i.e., no runs of text within the element).
+  /// </summary>
+  public string? CustomXmlPlaceholder { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

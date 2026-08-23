@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks?view=word-pia"/>
-public partial interface IBookmarks: IModelObject
+public partial interface IBookmarks : IModelObject
 {
   /// <summary>
   /// Adds a bookmark to a range.

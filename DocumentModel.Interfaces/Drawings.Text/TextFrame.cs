@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextFrame2` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2?view=office-pia"/>
-public partial interface ITextFrame: IModelObject
+public partial interface ITextFrame : IModelObject
 {
   /// <summary>
   /// Gets or sets the `MarginBottom` property.

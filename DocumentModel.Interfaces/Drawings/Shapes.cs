@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia"/>
-public partial interface IShapes: IModelCollection<IShape>
+public partial interface IShapes : IModelCollection<IShape>
 {
   /// <summary>
   /// Gets the `Background` property.

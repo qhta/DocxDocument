@@ -1,16 +1,22 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Represents an artistic blur effect, which applies a blur to an image or shape with a specified radius.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticBlur))]
 [DataContract]
 [XmlRoot("ArtisticBlur", Namespace = "DocumentModel.Drawings")]
-public partial class ArtisticBlur : ModelElement<DXO10D.ArtisticBlur>
+public partial class ArtisticBlur: ModelElement<DXO10D.ArtisticBlur>
 {
- /// <summary>
- /// Radius of the artistic blur effect.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10D.ArtisticBlur.Radius))]
- public Int32? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
- private Int32? _Radius;
+  /// <summary>
+  /// Radius of the artistic blur effect.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10D.ArtisticBlur.Radius))]
+  public Int32? Radius
+  {
+    get => _Radius ??= GetProperty<Int32?>(GetUpdatableElement()?.Radius);
+    set => UpdateField(ref _Radius, value, nameof(Radius));
+  }
+
+  private Int32? _Radius;
 }

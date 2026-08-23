@@ -114,7 +114,7 @@ public class BodyRunTextModificationTest : _AbstractTestClass
                 //if (run.Items.Count > 0)
                 {
                   var text = run.Text;
-                  text = "|" + text + "|"; 
+                  text = "|" + text + "|";
                   run.Text = text;
                   if (run.Text != text)
                   {
@@ -130,7 +130,7 @@ public class BodyRunTextModificationTest : _AbstractTestClass
               }
             }
           }
-          
+
           if (!verbatim)
           {
             if (paragraphIndex % 100 == 0)

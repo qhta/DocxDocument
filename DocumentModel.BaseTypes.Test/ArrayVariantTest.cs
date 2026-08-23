@@ -28,7 +28,7 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
+
   static bool TestArrayVariantBasicOperations()
   {
     Console.WriteLine("--- Testing ArrayVariant Basic Operations ---");      // Test default constructor
@@ -96,8 +96,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantTypeConversions()
   {
     Console.WriteLine("--- Testing ArrayVariant ValueType Conversions ---");      // Test different variant types
@@ -149,8 +149,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantToString()
   {
     Console.WriteLine("--- Testing ArrayVariant ToString ---");      // Test empty array
@@ -322,8 +322,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantResizing()
   {
     Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size only
@@ -402,8 +402,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantXmlSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant XML Serialization ---");      // Create test object
@@ -521,13 +521,13 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantJsonSerialization()
   {
     Console.WriteLine("--- Testing ArrayVariant JSON Serialization ---");      // Create test object
     var testData = CreateTestData();
-    ShowOriginalData(testData); 
+    ShowOriginalData(testData);
     Console.WriteLine();
 
     // Serialize to JSON
@@ -552,8 +552,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantEdgeCases()
   {
     Console.WriteLine("--- Testing ArrayVariant Edge Cases ---");      // Test empty array
@@ -649,8 +649,8 @@ public static class ArrayVariantTests
     return true;
   }
 
-  
-  
+
+
   static bool TestArrayVariantPerformance()
   {
     Console.WriteLine("--- Testing ArrayVariant Performance ---"); const int iterations = 10000;
@@ -763,7 +763,7 @@ public static class ArrayVariantTests
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

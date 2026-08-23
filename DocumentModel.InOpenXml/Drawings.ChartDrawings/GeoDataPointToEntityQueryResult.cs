@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the result of a data point-to-entity mapping query, containing both coordinate-based and entity-based query specifications.
 /// </summary>
@@ -25,20 +26,30 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQueryResult))]
 [DataContract]
 [XmlRoot("GeoDataPointToEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoDataPointToEntityQueryResult : ModelElement<DXO16DCD.GeoDataPointToEntityQueryResult>
+public partial class GeoDataPointToEntityQueryResult: ModelElement<DXO16DCD.GeoDataPointToEntityQueryResult>
 {
   /// <summary>
   /// Specifies the geo data point query.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointQuery))]
-  public GeoDataPointQuery? GeoDataPointQuery { get => _GeoDataPointQuery; set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery)); }
+  public GeoDataPointQuery? GeoDataPointQuery
+  {
+    get => _GeoDataPointQuery ??= GetProperty<GeoDataPointQuery?>(GetUpdatableElement()?.GeoDataPointQuery);
+    set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery));
+  }
 
   private GeoDataPointQuery? _GeoDataPointQuery;
+
   /// <summary>
   /// Specifies the geo data point to entity query.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointToEntityQuery))]
-  public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get => _GeoDataPointToEntityQuery; set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery)); }
+  public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery
+  {
+    get => _GeoDataPointToEntityQuery ??=
+      GetProperty<GeoDataPointToEntityQuery?>(GetUpdatableElement()?.GeoDataPointToEntityQuery);
+    set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery));
+  }
 
   private GeoDataPointToEntityQuery? _GeoDataPointToEntityQuery;
 }

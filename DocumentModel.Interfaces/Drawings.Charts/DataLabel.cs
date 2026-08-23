@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a data label.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia"/>
-public partial interface IDataLabel: IModelObject
+public partial interface IDataLabel : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

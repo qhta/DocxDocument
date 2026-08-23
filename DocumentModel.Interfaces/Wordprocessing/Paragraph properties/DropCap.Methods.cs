@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap?view=word-pia"/>
-public partial interface IDropCap: IModelObject
+public partial interface IDropCap : IModelObject
 {
   /// <summary>
   /// Removes the dropped capital letter formatting.

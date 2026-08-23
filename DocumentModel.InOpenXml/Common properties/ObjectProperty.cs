@@ -6,8 +6,8 @@ namespace DocumentModel;
 [XmlRoot("ObjectProperty", Namespace = "DocumentModel")]
 public abstract partial class ObjectProperty
 {
- /// <summary>
- /// Name of the property.
- /// </summary>
- public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Name of the property.
+  /// </summary>
+  public string? Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

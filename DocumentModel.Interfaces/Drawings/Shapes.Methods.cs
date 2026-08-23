@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
-public partial interface IShapes: IModelObject
+public partial interface IShapes : IModelObject
 {
   /// <summary>
   /// Adds a callout shape to the collection.

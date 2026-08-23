@@ -1,7 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-using Qhta.TypeUtils;
+﻿using Qhta.TypeUtils;
 
 namespace DocumentModel;
 
@@ -92,9 +89,9 @@ public partial class Variant : IXmlSerializable
         throw new XmlException($"Could not resolve type: {valueTypeAttr}");
       }
     }
-    else 
+    else
 
-    reader.Read(); // Move to content
+      reader.Read(); // Move to content
 
     object? value = null;
 
@@ -368,7 +365,7 @@ public partial class Variant : IXmlSerializable
       case VariantType.Guid:
         if (value is Guid guid)
           return guid.ToString();
-        return value.ToString();  
+        return value.ToString();
       case VariantType.HexInt:
         return value.ToString();
 

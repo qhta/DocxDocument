@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate?view=word-pia"/>
-public partial interface IListTemplate: IModelObject
+public partial interface IListTemplate : IModelObject
 {
   /// <summary>
   /// Converts a list template to another list template type.

@@ -8,9 +8,9 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [XmlRoot("LineJoinMiterProperties", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class LineJoinMiterProperties : ModelElement<DXO10W.LineJoinMiterProperties>
 {
- /// <summary>
- /// The miter limit value, specifying the maximum allowed ratio of miter length to line width before the join is beveled.
- /// </summary>
- public Int32? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
- private Int32? _Limit;
+  /// <summary>
+  /// The miter limit value, specifying the maximum allowed ratio of miter length to line width before the join is beveled.
+  /// </summary>
+  public Int32? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
+  private Int32? _Limit;
 }

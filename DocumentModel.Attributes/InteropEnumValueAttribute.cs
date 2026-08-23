@@ -6,7 +6,7 @@
 /// <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in an Office Interop Enum type.
 /// This is typically used for conversion to/from Office Interop Enum values.</remarks>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
-public class InteropEnumValueAttribute: Attribute
+public class InteropEnumValueAttribute : Attribute
 {
   /// <summary>
   /// Specifies the Word Interop Enum type value name to associate with an Enum field for mapping purposes.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents series lines in a chart.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines?view=office-pia"/>
-public partial interface ISeriesLines: IModelObject
+public partial interface ISeriesLines : IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

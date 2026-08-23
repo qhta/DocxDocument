@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes?view=word-pia"/>
-public partial interface ICanvasShapes: IModelObject
+public partial interface ICanvasShapes : IModelObject
 {
   /// <summary>
   /// Creates a callout shape on the drawing canvas.

@@ -11,7 +11,7 @@
 [DataContract]
 [XmlRoot("Drawing", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.Drawing))]
-public class Drawing: ModelElement<DXW.Drawing>
+public class Drawing : ModelElement<DXW.Drawing>
 {
   /// <summary>
   /// Default constructor for the Drawing class, initializing a new instance without any parent or underlying OpenXML element.

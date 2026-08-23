@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the result of a geographic data entity query, containing both the query specification and retrieved entity data.
 /// </summary>
@@ -26,20 +27,29 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoDataEntityQueryResult))]
 [DataContract]
 [XmlRoot("GeoDataEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoDataEntityQueryResult : ModelElement<DXO16DCD.GeoDataEntityQueryResult>
+public partial class GeoDataEntityQueryResult: ModelElement<DXO16DCD.GeoDataEntityQueryResult>
 {
   /// <summary>
   /// Specifies the geo data entity query.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoDataEntityQuery))]
-  public GeoDataEntityQuery? GeoDataEntityQuery { get => _GeoDataEntityQuery; set => UpdateField(ref _GeoDataEntityQuery, value, nameof(GeoDataEntityQuery)); }
+  public GeoDataEntityQuery? GeoDataEntityQuery
+  {
+    get => _GeoDataEntityQuery ??= GetProperty<GeoDataEntityQuery?>(GetUpdatableElement()?.GeoDataEntityQuery);
+    set => UpdateField(ref _GeoDataEntityQuery, value, nameof(GeoDataEntityQuery));
+  }
 
   private GeoDataEntityQuery? _GeoDataEntityQuery;
+
   /// <summary>
   /// Specifies the geo data.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoData))]
-  public GeoData? GeoData { get => _GeoData; set => UpdateField(ref _GeoData, value, nameof(GeoData)); }
+  public GeoData? GeoData
+  {
+    get => _GeoData ??= GetProperty<GeoData?>(GetUpdatableElement()?.GeoData);
+    set => UpdateField(ref _GeoData, value, nameof(GeoData));
+  }
 
   private GeoData? _GeoData;
 }

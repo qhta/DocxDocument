@@ -7,8 +7,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("AltChunkProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AltChunkProperties
 {
- /// <summary>
- /// Indicates if style definitions present in the imported content should be overridden by identical styles in the host document. If true, styles in the imported content are maintained by redefining the style name and/or ID as needed. If false, styles from the main document replace those in the imported content.
- /// </summary>
- public bool? MatchSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Indicates if style definitions present in the imported content should be overridden by identical styles in the host document. If true, styles in the imported content are maintained by redefining the style name and/or ID as needed. If false, styles from the main document replace those in the imported content.
+  /// </summary>
+  public bool? MatchSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

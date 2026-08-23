@@ -10,7 +10,7 @@ public class ActiveWritingStyles : ModelElementCollection<ActiveWritingStyle, DX
   /// <summary>
   /// Default constructor. Initializes an empty collection of active writing styles.
   /// </summary>
-  public ActiveWritingStyles(): base()
+  public ActiveWritingStyles() : base()
   {
   }
 

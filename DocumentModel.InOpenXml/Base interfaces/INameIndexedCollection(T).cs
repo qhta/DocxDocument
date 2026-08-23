@@ -8,7 +8,7 @@
 /// where clients should be notified of changes to the collection. Implementations must ensure that each element's name
 /// is unique within the collection.</remarks>
 /// <typeparam name="T">The type of elements in the collection. Must implement <see cref="DocumentModel.INamedObject"/> and <see cref="CollectionItem"/>.</typeparam>
-public interface INameIndexedElementCollection<T>: IElementCollection<T>
-  where T: INamedObject, ICollectionItem
+public interface INameIndexedElementCollection<T> : IElementCollection<T>
+  where T : INamedObject, ICollectionItem
 {
 }

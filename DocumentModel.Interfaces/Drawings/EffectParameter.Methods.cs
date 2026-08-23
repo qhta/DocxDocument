@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace DocumentModel.Interop.Core;
 
 /// <summary>

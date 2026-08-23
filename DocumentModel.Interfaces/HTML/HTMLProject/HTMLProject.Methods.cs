@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace DocumentModel.HTML;
 
 /// <summary>
@@ -8,7 +6,7 @@ namespace DocumentModel.HTML;
 /// <remarks>
 /// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface IHTMLProject: IModelObject
+public partial interface IHTMLProject : IModelObject
 {
   /// <summary>
   /// Invokes `RefreshProject`.

@@ -1,6 +1,5 @@
 namespace DocumentModel.Drawings;
 
-using Math = System.Math;
 public partial class HslColor : IColor
 {
   /// <summary>
@@ -72,7 +71,7 @@ public partial class HslColor : IColor
   {
     get
     {
-      (double R, double G, double B) rgb = Hsl2Rgb.FromHSL((Hue / 360.0).Clamp01(), Saturation.Clamp01(), Luminance.Clamp01()); 
+      (double R, double G, double B) rgb = Hsl2Rgb.FromHSL((Hue / 360.0).Clamp01(), Saturation.Clamp01(), Luminance.Clamp01());
       rgb.R = rgb.R.Clamp01();
       rgb.G = rgb.G.Clamp01();
       rgb.B = rgb.B.Clamp01();
@@ -96,12 +95,12 @@ public partial class HslColor : IColor
   [JsonIgnore]
   public override (double H, double S, double L, double A) HSLAComponents
   {
-    get => (Hue / 360.0, Saturation , Luminance , AlphaFactor );
+    get => (Hue / 360.0, Saturation, Luminance, AlphaFactor);
     set
     {
       Hue = value.H * 360.0;
-      Saturation = value.S ;
-      Luminance = value.L ;
+      Saturation = value.S;
+      Luminance = value.L;
       AlphaFactor = value.A;
     }
   }

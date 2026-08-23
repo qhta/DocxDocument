@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for BaseRunProperties.
   /// </summary>
-  public class BaseRunPropertiesTest: _AbstractTestClass
+  public class BaseRunPropertiesTest : _AbstractTestClass
   {
     /// <summary>
     /// Runs all BaseRUnProperties tests.
@@ -151,11 +151,11 @@ namespace DocumentModel.InOpenXml.Test
         Strike = true,
         DoubleStrike = isUpdated ? true : null,
         Color = isUpdated ? new DMW.WordColor("00AA00") : new DMW.WordColor { Value = "000000", ThemeColor = DMD.SchemeColors.Text1 },
-        Underline = new Underline { Type = UnderlineType.Wave, Color = "FF0000" }, 
+        Underline = new Underline { Type = UnderlineType.Wave, Color = "FF0000" },
         Spacing = isUpdated ? new Twips(30) : new Twips(20),
         CharacterScale = isUpdated ? new BytePercent(115) : new BytePercent(110),
         NoProof = true,
-        Kern = isUpdated ? new HPS("10 pt") : new HPS("12 pt"), 
+        Kern = isUpdated ? new HPS("10 pt") : new HPS("12 pt"),
         Language = isUpdated ? "en-US" : new Languages("fr-FR", "ar-SA", "ja-JP"),
         Border = new DMW.Border
         {

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variables?view=word-pia"/>
-public partial interface IVariables: IModelObject
+public partial interface IVariables : IModelObject
 {
   /// <summary>
   /// Adds a new variable to the collection.

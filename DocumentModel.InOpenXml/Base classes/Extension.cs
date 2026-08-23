@@ -7,11 +7,11 @@ namespace DocumentModel;
 [XmlRoot("Extension", Namespace = "DocumentModel")]
 public partial class Extension<T> : ModelElement<T>, IExtension where T : DX.OpenXmlElement
 {
- /// <summary>
- ///   Uri string that identifies the extension resource or schema.
- /// </summary>
- [XmlAttribute]
- public UriString? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  ///   Uri string that identifies the extension resource or schema.
+  /// </summary>
+  [XmlAttribute]
+  public UriString? Uri { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }
 
 /// <summary>

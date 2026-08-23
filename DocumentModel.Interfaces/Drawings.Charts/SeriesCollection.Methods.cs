@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -8,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <remarks>
 /// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface ISeriesCollection: IModelCollection<ISeries>
+public partial interface ISeriesCollection : IModelCollection<ISeries>
 {
   /// <summary>
   /// Invokes `Add`.
@@ -41,7 +39,7 @@ public partial interface ISeriesCollection: IModelCollection<ISeries>
   /// <param name="NewSeries">The `NewSeries` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia"/>
-  public object Paste (XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace, object NewSeries);
+  public object Paste(XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace, object NewSeries);
   /// <summary>
   /// Invokes `NewSeries`.
   /// </summary>

@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 [OpenXmlItem(typeof(DXVO.Rule))]
 [DataContract]
 [XmlRoot("Rules", Namespace = "DocumentModel.Vml")]
-public partial class Rules: ModelElementCollection<Rule, DXVO.Rules, DXVO.Rule>
+public partial class Rules : ModelElementCollection<Rule, DXVO.Rules, DXVO.Rule>
 {
   /// <summary>
   ///   VML Extension Handling Behavior

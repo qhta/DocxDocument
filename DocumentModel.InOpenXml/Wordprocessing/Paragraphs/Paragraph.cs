@@ -34,7 +34,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IS
   /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the Paragraph.</param>
   public Paragraph(DX.OpenXmlCompositeElement openXmlElement): base(openXmlElement) { }
 
-  private DXW.Paragraph? _openXmlParagraph => GetUpdatableElement() as DXW.Paragraph;
+  private DXW.Paragraph? _openXmlParagraph => GetUpdatableElement();
 
   /// <summary>
   /// If this object has direct access to the underlying OpenXml element,
@@ -47,7 +47,7 @@ public partial class Paragraph: ModelElement<DXW.Paragraph>, IHexIdentObject, IS
   {
     if (HasDirectAccess)
     {
-      SetUpdatableObject(openXmlElement);
+      SetUpdatableObject(openXmlElement, null);
       return false;
     }
     return base.LoadData(openXmlElement);

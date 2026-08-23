@@ -1,149 +1,250 @@
 namespace DocumentModel.Drawings.Diagrams;
+
 /// <summary>
 ///   If.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DiagramChooseIf))]
 [DataContract]
 [XmlRoot("DiagramChooseIf", Namespace = "DocumentModel.Drawings.Diagrams")]
-public partial class DiagramChooseIf : ModelElement<DXDD.DiagramChooseIf>
+public partial class DiagramChooseIf: ModelElement<DXDD.DiagramChooseIf>
 {
- /// <summary>
- ///   Name
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Name))]
- public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
- private string? _Name;
+  /// <summary>
+  ///   Name
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Name))]
+  public string? Name
+  {
+    get => _Name ??= GetProperty<string?>(GetUpdatableElement()?.Name);
+    set => UpdateField(ref _Name, value, nameof(Name));
+  }
 
- /// <summary>
- ///   Axis
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Axis))]
- public List<AxisType>? Axis { get => _Axis; set => UpdateField(ref _Axis, value, nameof(Axis)); }
- private List<AxisType>? _Axis;
+  private string? _Name;
 
- /// <summary>
- ///   Data Point Type
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.PointType))]
- public List<ElementType>? PointType { get => _PointType; set => UpdateField(ref _PointType, value, nameof(PointType)); }
- private List<ElementType>? _PointType;
+  /// <summary>
+  ///   Axis
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Axis))]
+  public List<AxisType>? Axis
+  {
+    get => _Axis ??= GetProperty<List<AxisType>?>(GetUpdatableElement()?.Axis);
+    set => UpdateField(ref _Axis, value, nameof(Axis));
+  }
 
- /// <summary>
- ///   Hide Last Transition
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.HideLastTrans))]
- public List<Boolean>? HideLastTrans { get => _HideLastTrans; set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans)); }
- private List<Boolean>? _HideLastTrans;
+  private List<AxisType>? _Axis;
 
- /// <summary>
- ///   Start
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Start))]
- public List<Int32>? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
- private List<Int32>? _Start;
+  /// <summary>
+  ///   Data Point Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.PointType))]
+  public List<ElementType>? PointType
+  {
+    get => _PointType ??= GetProperty<List<ElementType>?>(GetUpdatableElement()?.PointType);
+    set => UpdateField(ref _PointType, value, nameof(PointType));
+  }
 
- /// <summary>
- ///   Count
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Count))]
- public List<UInt32>? Count { get => _Count; set => UpdateField(ref _Count, value, nameof(Count)); }
- private List<UInt32>? _Count;
+  private List<ElementType>? _PointType;
 
- /// <summary>
- ///   Step
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Step))]
- public List<Int32>? Step { get => _Step; set => UpdateField(ref _Step, value, nameof(Step)); }
- private List<Int32>? _Step;
+  /// <summary>
+  ///   Hide Last Transition
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.HideLastTrans))]
+  public List<Boolean>? HideLastTrans
+  {
+    get => _HideLastTrans ??= GetProperty<List<Boolean>?>(GetUpdatableElement()?.HideLastTrans);
+    set => UpdateField(ref _HideLastTrans, value, nameof(HideLastTrans));
+  }
 
- /// <summary>
- ///   Function
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Function))]
- public Function? Function { get => _Function; set => UpdateField(ref _Function, value, nameof(Function)); }
- private Function? _Function;
+  private List<Boolean>? _HideLastTrans;
 
- /// <summary>
- ///   Argument
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Argument))]
- public string? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private string? _Argument;
+  /// <summary>
+  ///   Start
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Start))]
+  public List<Int32>? Start
+  {
+    get => _Start ??= GetProperty<List<Int32>?>(GetUpdatableElement()?.Start);
+    set => UpdateField(ref _Start, value, nameof(Start));
+  }
 
- /// <summary>
- ///   Operator
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Operator))]
- public FunctionOperator? Operator { get => _Operator; set => UpdateField(ref _Operator, value, nameof(Operator)); }
- private FunctionOperator? _Operator;
+  private List<Int32>? _Start;
 
- /// <summary>
- ///   Value
- /// </summary>
- [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Val))]
- public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
- private string? _Val;
+  /// <summary>
+  ///   Count
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Count))]
+  public List<UInt32>? Count
+  {
+    get => _Count ??= GetProperty<List<UInt32>?>(GetUpdatableElement()?.Count);
+    set => UpdateField(ref _Count, value, nameof(Count));
+  }
 
- /// <summary>
- /// Algorithm.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.Algorithm))]
- public Algorithm? Algorithm { get => _Algorithm; set => UpdateField(ref _Algorithm, value, nameof(Algorithm)); }
- private Algorithm? _Algorithm;
+  private List<UInt32>? _Count;
 
- /// <summary>
- /// Shape.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.Shape))]
- public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
- private Shape? _Shape;
+  /// <summary>
+  ///   Step
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Step))]
+  public List<Int32>? Step
+  {
+    get => _Step ??= GetProperty<List<Int32>?>(GetUpdatableElement()?.Step);
+    set => UpdateField(ref _Step, value, nameof(Step));
+  }
 
- /// <summary>
- /// Presentation Of.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.PresentationOf))]
- public PresentationOf? PresentationOf { get => _PresentationOf; set => UpdateField(ref _PresentationOf, value, nameof(PresentationOf)); }
- private PresentationOf? _PresentationOf;
+  private List<Int32>? _Step;
 
- /// <summary>
- /// Constraints.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.Constraints))]
- public Constraints? Constraints { get => _Constraints; set => UpdateField(ref _Constraints, value, nameof(Constraints)); }
- private Constraints? _Constraints;
+  /// <summary>
+  ///   Function
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Function))]
+  public Function? Function
+  {
+    get => _Function ??= GetProperty<Function?>(GetUpdatableElement()?.Function);
+    set => UpdateField(ref _Function, value, nameof(Function));
+  }
 
- /// <summary>
- /// Rule List.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.RuleList))]
- public RuleList? RuleList { get => _RuleList; set => UpdateField(ref _RuleList, value, nameof(RuleList)); }
- private RuleList? _RuleList;
+  private Function? _Function;
 
- /// <summary>
- /// For Each.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.ForEach))]
- public ForEach? ForEach { get => _ForEach; set => UpdateField(ref _ForEach, value, nameof(ForEach)); }
- private ForEach? _ForEach;
+  /// <summary>
+  ///   Argument
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Argument))]
+  public string? Argument
+  {
+    get => _Argument ??= GetProperty<string?>(GetUpdatableElement()?.Argument);
+    set => UpdateField(ref _Argument, value, nameof(Argument));
+  }
 
- /// <summary>
- /// Layout Node.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.LayoutNode))]
- public LayoutNode? LayoutNode { get => _LayoutNode; set => UpdateField(ref _LayoutNode, value, nameof(LayoutNode)); }
- private LayoutNode? _LayoutNode;
+  private string? _Argument;
 
- /// <summary>
- /// Choose.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.Choose))]
- public Choose? Choose { get => _Choose; set => UpdateField(ref _Choose, value, nameof(Choose)); }
- private Choose? _Choose;
+  /// <summary>
+  ///   Operator
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Operator))]
+  public FunctionOperator? Operator
+  {
+    get => _Operator ??= GetProperty<FunctionOperator?>(GetUpdatableElement()?.Operator);
+    set => UpdateField(ref _Operator, value, nameof(Operator));
+  }
 
- /// <summary>
- /// Extension List.
- /// </summary>
- [OpenXmlElement(typeof(DXDD.ExtensionList))]
- public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private IExtensionList? _ExtensionList;
+  private FunctionOperator? _Operator;
+
+  /// <summary>
+  ///   Value
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDD.DiagramChooseIf.Val))]
+  public string? Val
+  {
+    get => _Val ??= GetProperty<string?>(GetUpdatableElement()?.Val);
+    set => UpdateField(ref _Val, value, nameof(Val));
+  }
+
+  private string? _Val;
+
+  /// <summary>
+  /// Algorithm.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.Algorithm))]
+  public Algorithm? Algorithm
+  {
+    get => _Algorithm ??= GetElement<Algorithm, DXDD.Algorithm>(GetUpdatableElement());
+    set => UpdateField(ref _Algorithm, value, nameof(Algorithm));
+  }
+
+  private Algorithm? _Algorithm;
+
+  /// <summary>
+  /// Shape.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.Shape))]
+  public Shape? Shape
+  {
+    get => _Shape ??= GetElement<Shape, DXDD.Shape>(GetUpdatableElement());
+    set => UpdateField(ref _Shape, value, nameof(Shape));
+  }
+
+  private Shape? _Shape;
+
+  /// <summary>
+  /// Presentation Of.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.PresentationOf))]
+  public PresentationOf? PresentationOf
+  {
+    get => _PresentationOf ??= GetElement<PresentationOf, DXDD.PresentationOf>(GetUpdatableElement());
+    set => UpdateField(ref _PresentationOf, value, nameof(PresentationOf));
+  }
+
+  private PresentationOf? _PresentationOf;
+
+  /// <summary>
+  /// Constraints.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.Constraints))]
+  public Constraints? Constraints
+  {
+    get => _Constraints ??= GetElement<Constraints, DXDD.Constraints>(GetUpdatableElement());
+    set => UpdateField(ref _Constraints, value, nameof(Constraints));
+  }
+
+  private Constraints? _Constraints;
+
+  /// <summary>
+  /// Rule List.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.RuleList))]
+  public RuleList? RuleList
+  {
+    get => _RuleList ??= GetElement<RuleList, DXDD.RuleList>(GetUpdatableElement());
+    set => UpdateField(ref _RuleList, value, nameof(RuleList));
+  }
+
+  private RuleList? _RuleList;
+
+  /// <summary>
+  /// For Each.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.ForEach))]
+  public ForEach? ForEach
+  {
+    get => _ForEach ??= GetElement<ForEach, DXDD.ForEach>(GetUpdatableElement());
+    set => UpdateField(ref _ForEach, value, nameof(ForEach));
+  }
+
+  private ForEach? _ForEach;
+
+  /// <summary>
+  /// Layout Node.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.LayoutNode))]
+  public LayoutNode? LayoutNode
+  {
+    get => _LayoutNode ??= GetElement<LayoutNode, DXDD.LayoutNode>(GetUpdatableElement());
+    set => UpdateField(ref _LayoutNode, value, nameof(LayoutNode));
+  }
+
+  private LayoutNode? _LayoutNode;
+
+  /// <summary>
+  /// Choose.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.Choose))]
+  public Choose? Choose
+  {
+    get => _Choose ??= GetElement<Choose, DXDD.Choose>(GetUpdatableElement());
+    set => UpdateField(ref _Choose, value, nameof(Choose));
+  }
+
+  private Choose? _Choose;
+
+  /// <summary>
+  /// Extension List.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDD.ExtensionList))]
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetElement<IExtensionList, DXDD.ExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private IExtensionList? _ExtensionList;
 }

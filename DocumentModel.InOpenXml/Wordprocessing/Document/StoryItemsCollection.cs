@@ -3,7 +3,7 @@
 /// <summary>
 /// Specific collection of Story items in a Wordprocessing document, extending the generic ContentItemsCollection to handle ModelElement types. This collection is designed to accept any item and provides a mapping between OpenXml element types and model element types for proper data loading and synchronization within the document model.
 /// </summary>
-public class StoryItemsCollection: ContentItemsCollection
+public class StoryItemsCollection : ContentItemsCollection
 {
   /// <summary>
   /// Default constructor needed for XML serialization. Initializes a new instance of the StoryItemsCollection class.

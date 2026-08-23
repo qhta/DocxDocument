@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings.Text;
 
 /// <summary>
 /// Represents the `TextRange2` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2?view=office-pia"/>
-public partial interface ITextRange: IModelObject
+public partial interface ITextRange : IModelObject
 {
   /// <summary>
   /// Invokes `Item`.

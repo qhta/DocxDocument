@@ -6,7 +6,7 @@
 /// which is necessary because the properties of the component are not known at compile time
 /// and can vary depending on the component's content and structure.
 /// </summary>
-public class PropertiesProvider: ViewModel, ICustomTypeDescriptor
+public class PropertiesProvider : ViewModel, ICustomTypeDescriptor
 {
 
   /// <summary>

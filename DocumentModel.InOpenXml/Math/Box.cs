@@ -1,4 +1,5 @@
 namespace DocumentModel.Math;
+
 /// <summary>
 ///   This element specifies the box object, which is used to group components of an equation or other instance of mathematical text. 
 ///   A boxed object can (for example) serve as an operator emulator with or without an alignment point, 
@@ -8,19 +9,29 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.Box))]
 [DataContract]
 [XmlRoot("Box", Namespace = "DocumentModel.Math")]
-public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
+public partial class Box: ModelElement<DXM.Box>, ICommonMathContent
 {
- /// <summary>
- ///   Specifies properties of box object.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.Box.BoxProperties))]
- public BoxProperties? BoxProperties { get => _BoxProperties; set => UpdateField(ref _BoxProperties, value, nameof(BoxProperties)); }
- private BoxProperties? _BoxProperties;
+  /// <summary>
+  ///   Specifies properties of box object.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Box.BoxProperties))]
+  public BoxProperties? BoxProperties
+  {
+    get => _BoxProperties ??= GetProperty<BoxProperties?>(GetUpdatableElement()?.BoxProperties);
+    set => UpdateField(ref _BoxProperties, value, nameof(BoxProperties));
+  }
 
- /// <summary>
- ///   Specifies the argument of box function.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.Box.Base))]
- public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
- private Base? _Base;
+  private BoxProperties? _BoxProperties;
+
+  /// <summary>
+  ///   Specifies the argument of box function.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Box.Base))]
+  public Base? Base
+  {
+    get => _Base ??= GetProperty<Base?>(GetUpdatableElement()?.Base);
+    set => UpdateField(ref _Base, value, nameof(Base));
+  }
+
+  private Base? _Base;
 }

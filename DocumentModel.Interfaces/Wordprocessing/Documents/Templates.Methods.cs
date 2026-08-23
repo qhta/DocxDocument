@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.templates?view=word-pia"/>
-public partial interface ITemplates: IModelObject
+public partial interface ITemplates : IModelObject
 {
   /// <summary>
   /// Loads the building blocks for all templates into Microsoft Office Word.

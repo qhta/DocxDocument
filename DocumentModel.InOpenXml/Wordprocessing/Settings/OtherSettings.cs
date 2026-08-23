@@ -11,7 +11,7 @@ public class OtherSettings : ModelElementCollection<CompatibilitySetting, DXW.Co
   /// <summary>
   /// Default constructor for the OtherSettings class, initializing a new instance without any parent element or underlying OpenXml element.
   /// </summary>
-  public OtherSettings(): base() { }
+  public OtherSettings() : base() { }
 
   /// <summary>
   /// Initializes a new instance of the OtherSettings class with the specified parent element.

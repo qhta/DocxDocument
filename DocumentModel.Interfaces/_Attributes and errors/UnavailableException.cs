@@ -3,7 +3,7 @@
 /// <summary>
 /// Exception thrown when an operation cannot be performed because this feature is unavailable in the specific interface implementation. 
 /// </summary>
-public class UnavailableException: Exception
+public class UnavailableException : Exception
 {
   /// <summary>
   /// Default constructor.

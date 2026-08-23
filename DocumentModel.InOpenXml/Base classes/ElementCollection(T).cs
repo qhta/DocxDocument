@@ -134,7 +134,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
 
     if (!IsLoading)
     {
-      var openXmlElement = GetUpdatableObject();
+      var openXmlElement = GetUpdatableObject(null);
       if (openXmlElement != null)
         UpdateData(openXmlElement);
     }

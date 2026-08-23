@@ -6,7 +6,7 @@
 [DataContract]
 [XmlRoot("DeletedText", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.DeletedText))]
-public class DeletedText: TextualElement<DXW.DeletedText>
+public class DeletedText : TextualElement<DXW.DeletedText>
 {
   /// <summary>
   /// Gets the text content of this Text element.
@@ -34,7 +34,7 @@ public class DeletedText: TextualElement<DXW.DeletedText>
       else
       {
         updatableElement.Remove();
-        SetUpdatableObject(null);
+        SetUpdatableObject(null, null);
       }
     }
   }

@@ -1,6 +1,7 @@
 using DocumentModel.Drawings.Charts;
 
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a query for identifying the geographic entity that contains a specific coordinate point.
 /// </summary>
@@ -27,27 +28,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointQuery))]
 [DataContract]
 [XmlRoot("GeoDataPointQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoDataPointQuery : ModelElement<DXO16DCD.GeoDataPointQuery>
+public partial class GeoDataPointQuery: ModelElement<DXO16DCD.GeoDataPointQuery>
 {
   /// <summary>
   /// Specifies the entity type.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.EntityType))]
-  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+  public EntityTypeEnum? EntityType
+  {
+    get => _EntityType ??= GetProperty<EntityTypeEnum?>(GetUpdatableElement()?.EntityType);
+    set => UpdateField(ref _EntityType, value, nameof(EntityType));
+  }
 
   private EntityTypeEnum? _EntityType;
+
   /// <summary>
   /// Specifies the latitude.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Latitude))]
-  public Double? Latitude { get => _Latitude; set => UpdateField(ref _Latitude, value, nameof(Latitude)); }
+  public Double? Latitude
+  {
+    get => _Latitude ??= GetProperty<Double?>(GetUpdatableElement()?.Latitude);
+    set => UpdateField(ref _Latitude, value, nameof(Latitude));
+  }
 
   private Double? _Latitude;
+
   /// <summary>
   /// Specifies the longitude.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Longitude))]
-  public Double? Longitude { get => _Longitude; set => UpdateField(ref _Longitude, value, nameof(Longitude)); }
+  public Double? Longitude
+  {
+    get => _Longitude ??= GetProperty<Double?>(GetUpdatableElement()?.Longitude);
+    set => UpdateField(ref _Longitude, value, nameof(Longitude));
+  }
 
   private Double? _Longitude;
 }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Test of font embedding functionality in DocumentModel, including reading and serializing the font table from a Word document.
 /// </summary>
-public class FontEmbeddingTestClass: _AbstractTestClass
+public class FontEmbeddingTestClass : _AbstractTestClass
 {
   /// <summary>
   /// Executes the test including EmbedFont tests, 
@@ -51,7 +51,7 @@ public class FontEmbeddingTestClass: _AbstractTestClass
         Console.WriteLine($"✗ {TestName} {testMethodName} failed: 'Times New Roman' font not found in font table.");
         return false;
       }
-      if (timesNewRomanFont.EmbedRegularFont==null)
+      if (timesNewRomanFont.EmbedRegularFont == null)
       {
         Console.WriteLine($"✗ {TestName} {testMethodName} failed: 'Times New Roman' font does not have an embedded regular font.");
         return false;
@@ -64,11 +64,11 @@ public class FontEmbeddingTestClass: _AbstractTestClass
       var fontFileName = Path.Combine(TestFileDir, $"Times.ttf");
 
       var fontData = (byte[])timesNewRomanFont.EmbedRegularFont.FontData;
-      using (var memStream = new MemoryStream(fontData)) 
-        using (var stream = new FileStream(fontFileName, FileMode.Create, FileAccess.Write))
-        {
-          memStream.CopyTo(stream);
-        }
+      using (var memStream = new MemoryStream(fontData))
+      using (var stream = new FileStream(fontFileName, FileMode.Create, FileAccess.Write))
+      {
+        memStream.CopyTo(stream);
+      }
     }
     Console.WriteLine($"✓ {TestName} {testMethodName} passed\n");
     return true;

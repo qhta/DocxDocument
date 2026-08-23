@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Styles.
 /// </summary>
-public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
+public class StyleDefinitionsTest : _AbstractModelTestClass<Styles>
 {
   /// <summary>
   /// Creates and returns a sample set of styles for demonstration or testing purposes.
@@ -63,7 +63,7 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
       BasedOn = "Normal",
       NextParagraphStyle = "Normal",
       UIPriority = 22,
-      IsHidden = StyleHide.Hidden | StyleHide.UnhiddenWhenUsed ,
+      IsHidden = StyleHide.Hidden | StyleHide.UnhiddenWhenUsed,
     });
 
     return Styles;

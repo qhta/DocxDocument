@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.twoinitialcapsexception?view=word-pia"/>
-public partial interface ITwoInitialCapsException: IModelObject
+public partial interface ITwoInitialCapsException : IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

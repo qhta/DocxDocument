@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyles?view=word-pia"/>
-public partial interface IHeadingStyles: IModelObject
+public partial interface IHeadingStyles : IModelObject
 {
   /// <summary>
   /// Adds a heading style mapping to the collection.

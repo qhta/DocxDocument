@@ -1,8 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 public partial class Base64Binary : IXmlSerializable
 {
@@ -63,7 +59,7 @@ public partial class Base64Binary : IXmlSerializable
   /// </remarks>
   public void WriteXml(XmlWriter writer)
   {
-    if ( value.Length > 0)
+    if (value.Length > 0)
     {
       writer.WriteString(Convert.ToBase64String(value));
     }

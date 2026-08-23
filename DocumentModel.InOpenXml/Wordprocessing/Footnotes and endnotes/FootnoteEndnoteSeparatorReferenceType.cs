@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.FootnoteEndnoteSeparatorReferenceType))]
 [DataContract]
 [XmlRoot("FootnoteEndnoteSeparatorReferenceType", Namespace = "DocumentModel.Wordprocessing")]
-public abstract partial class FootnoteEndnoteSeparatorReferenceType<T> : ModelElement<T> 
+public abstract partial class FootnoteEndnoteSeparatorReferenceType<T> : ModelElement<T>
   where T : DXW.FootnoteEndnoteSeparatorReferenceType
 {
   /// <summary>
@@ -15,9 +15,9 @@ public abstract partial class FootnoteEndnoteSeparatorReferenceType<T> : ModelEl
   public FootnoteEndnoteSeparatorReferenceType() { }
 
   /// <summary>
- ///   Identifier for the footnote or endnote associated with this separator reference.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.FootnoteEndnoteSeparatorReferenceType.Id))]
- public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private Int32? _Id;
+  ///   Identifier for the footnote or endnote associated with this separator reference.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.FootnoteEndnoteSeparatorReferenceType.Id))]
+  public Int32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private Int32? _Id;
 }

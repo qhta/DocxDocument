@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class RgbColorHex: IColor, ITintableColor, ITransformableColor
+public partial class RgbColorHex : IColor, ITintableColor, ITransformableColor
 {
   /// <summary>
   /// Value of the cAolor as RGB uint.

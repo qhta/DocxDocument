@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia"/>
-public partial interface IShape: IModelObject
+public partial interface IShape : IModelObject
 {
   /// <summary>
   /// Invokes `Apply`.

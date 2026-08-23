@@ -1,11 +1,12 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   Custom color.
 /// </summary>
 [OpenXmlType(typeof(DXD.CustomColor))]
 [DataContract]
 [XmlRoot("CustomColor", Namespace = "DocumentModel.Drawings")]
-public partial class CustomColor : ColorHolder<DXD.CustomColor>
+public partial class CustomColor: ColorHolder<DXD.CustomColor>
 {
   /// <summary>
   /// Name of the custom color, which can be used to identify and reference the color within the document. 
@@ -36,6 +37,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
     schemeColorDef.Color.InternalColor = color;
     return schemeColorDef;
   }
+
   /// <summary>
   /// Implicit conversion operator that allows for converting a <see cref="DMD.RgbColorModelHex"/> color value directly to a <see cref="CustomColor"/> instance. This operator enables seamless assignment of RGB color values in hexadecimal format to scheme color definitions, simplifying the process of defining colors based on RGB values within the document model. When a <see cref="DMD.RgbColorModelPercentage"/> value is assigned to a <see cref="CustomColor"/>, it creates a new instance of <see cref="CustomColor"/> with the RGB color model hex variant set to the provided color value.
   /// </summary>
@@ -47,6 +49,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
     schemeColorDef.Color.InternalColor = color;
     return schemeColorDef;
   }
+
   /// <summary>
   /// Implicit conversion operator that allows for converting a <see cref="DMD.HslColor"/> color value directly to a <see cref="CustomColor"/> instance. This operator enables seamless assignment of RGB color values in hexadecimal format to scheme color definitions, simplifying the process of defining colors based on RGB values within the document model. When a <see cref="DMD.HslColor"/> value is assigned to a <see cref="CustomColor"/>, it creates a new instance of <see cref="CustomColor"/> with the RGB color model hex variant set to the provided color value.
   /// </summary>
@@ -96,6 +99,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   [OpenXmlLoadData(nameof(LoadColorFromOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateColorInOpenXml))]
   public new ColorType? Color { get => _color; set => UpdateField(ref _color, value, nameof(Color)); }
+
   private ColorType? _color;
 
   /// <summary>
@@ -104,7 +108,7 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   /// <param name="openXmlElement">The OpenXmlElement to load the color information from.</param>
   private new void LoadColorFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
-    Color = ColorType.LoadColorFromOpenXmlStatic(openXmlElement) as ColorType;
+    Color = ColorType.LoadColorFromOpenXmlStatic(openXmlElement);
   }
 
   /// <summary>
@@ -126,9 +130,5 @@ public partial class CustomColor : ColorHolder<DXD.CustomColor>
   /// Sets the color value of the scheme color definition by determining the type of the provided color value and assigning it to the corresponding color property. The method checks the type of the input color value and updates the appropriate color property (RGB Color Model - Percentage Variant, RGB Color Model - Hex Variant, Hue, Saturation, Luminance Color Model, System Color, or Preset Color) based on the type of the input color. This allows for setting the color value of the scheme color definition using a single property while internally managing multiple color types.
   /// </para>
   /// </summary>
-  public ColorType? ColorType
-  {
-    get => Color as ColorType;
-    set => Color = value;
-  }
+  public ColorType? ColorType { get => Color; set => Color = value; }
 }

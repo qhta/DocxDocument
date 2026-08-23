@@ -1,12 +1,10 @@
-using System.Collections;
-
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Represents a collection of data labels.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia"/>
-public partial interface IDataLabels: IModelObject
+public partial interface IDataLabels : IModelObject
 {
   /// <summary>
   /// Selects the data labels collection.

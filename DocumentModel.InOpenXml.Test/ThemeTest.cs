@@ -1,7 +1,3 @@
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
 using DocumentModel.Drawings;
 
 using Path = System.IO.Path;
@@ -96,8 +92,8 @@ public class ThemeTest : _AbstractTestClass
         ColorScheme = new ColorScheme
         {
           Name = "Office",
-          Dark1Color = new  SystemColor { Index = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
-          Light1Color = new  SystemColor { Index = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
+          Dark1Color = new SystemColor { Index = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
+          Light1Color = new SystemColor { Index = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
           Dark2Color = new RgbColorModelHex { Value = (HexColor)0x0E2841 },
           Light2Color = new RgbColorModelHex { Value = (HexColor)0xE8E8E8 },
           Accent1Color = new RgbColorModelHex { Value = (HexColor)0x156082 },

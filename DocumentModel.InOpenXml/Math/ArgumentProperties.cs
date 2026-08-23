@@ -1,4 +1,5 @@
 namespace DocumentModel.Math;
+
 /// <summary>
 ///   This element specifies any properties of the math argument. 
 ///   1 represents that it is one size larger than normal, 2 represents that it is two sizes larger than normal, 
@@ -38,12 +39,17 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.ArgumentProperties))]
 [DataContract]
 [XmlRoot("ArgumentProperties", Namespace = "DocumentModel.Math")]
-public partial class ArgumentProperties : ModelElement<DXM.ArgumentProperties>
+public partial class ArgumentProperties: ModelElement<DXM.ArgumentProperties>
 {
- /// <summary>
- ///   Argument Size.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.ArgumentProperties.ArgumentSize))]
- public Int32? ArgumentSize { get => _ArgumentSize; set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize)); }
- private Int32? _ArgumentSize;
+  /// <summary>
+  ///   Argument Size.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.ArgumentProperties.ArgumentSize))]
+  public Int32? ArgumentSize
+  {
+    get => _ArgumentSize ??= GetProperty<Int32?>(GetUpdatableElement()?.ArgumentSize);
+    set => UpdateField(ref _ArgumentSize, value, nameof(ArgumentSize));
+  }
+
+  private Int32? _ArgumentSize;
 }

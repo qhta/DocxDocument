@@ -11,87 +11,88 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.RelationshipType))]
 [DataContract]
 [XmlRoot("RelationshipType", Namespace = "DocumentModel.Wordprocessing")]
-public abstract partial class RelationshipType<T>: ModelElement<T>, IRelationshipType where T : DXW.RelationshipType
+public abstract partial class RelationshipType<T> : ModelElement<T>, IRelationshipType where T : DXW.RelationshipType
 {
- /// <summary>
- /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
- /// This property is used to link the relationship to a specific part or resource within the document.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.RelationshipType.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  /// <summary>
+  /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
+  /// This property is used to link the relationship to a specific part or resource within the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.RelationshipType.Id))]
+  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private string? _Id;
 
- /// <summary>
- /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and load.</param>
- public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  base.AttachAndLoad(wordprocessingDocument);
-  if (WordprocessingDocument == null)
-   return;
-  LoadData(WordprocessingDocument);
- }
-
- /// <summary>
- /// Attaches the specified WordprocessingDocument and updates the associated data.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and use for updating data.</param>
- public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  base.AttachAndUpdate(wordprocessingDocument);
-  if (WordprocessingDocument == null)
-   return;
-  UpdateData(WordprocessingDocument);
- }
-
- /// <summary>
- /// Updates the internal data by loading information from the specified Open XML element.
- /// </summary>
- /// <remarks>If the associated Document is not available, the method does not perform any
- /// update.</remarks>
- /// <param name = "openXmlObject">The Open XML element from which to load data. This parameter must represent a valid Open XML element associated
- /// with a Document.</param>
- public override bool UpdateData(object openXmlObject)
- {
-  if (WordprocessingDocument == null)
-   return false;
-  return UpdateData(WordprocessingDocument);
- }
-
- /// <summary>
- /// Loads data from the specified Document into the current instance.
- /// </summary>
- /// <remarks>This method updates the Id and Uri properties based on the relationship information found in the
- /// provided document, if available. If the relevant relationship is not present, the properties remain
- /// unchanged.</remarks>
- /// <param name = "document">The Document from which to load data.</param>
- public virtual bool LoadData(DXPP.WordprocessingDocument document)
- {
-  DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableElement();
-  if (updatedElement != null)
+  /// <summary>
+  /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and load.</param>
+  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-   Id = updatedElement.Id;
-   return true;
+    base.AttachAndLoad(wordprocessingDocument);
+    if (WordprocessingDocument == null)
+      return;
+    LoadData(WordprocessingDocument);
   }
-  return false;
- }
 
- /// <summary>
- /// Updates the specified Document with the current Id and Uri values.
- /// </summary>
- /// <remarks>This method sets the Id property and, if specified, the Uri property on the relationship element
- /// within the provided document. The document must contain a relationship element compatible with the update
- /// operation.</remarks>
- /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
- public virtual bool UpdateData(DXPP.WordprocessingDocument document)
- {
-  DXW.RelationshipType? updatedElement = (DXW.RelationshipType? )GetUpdatableElement();
-  if (updatedElement != null)
+  /// <summary>
+  /// Attaches the specified WordprocessingDocument and updates the associated data.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach and use for updating data.</param>
+  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-   updatedElement.Id = Id;
-   return true;
+    base.AttachAndUpdate(wordprocessingDocument);
+    if (WordprocessingDocument == null)
+      return;
+    UpdateData(WordprocessingDocument);
   }
-  return false;
- }
+
+  /// <summary>
+  /// Updates the internal data by loading information from the specified Open XML element.
+  /// </summary>
+  /// <remarks>If the associated Document is not available, the method does not perform any
+  /// update.</remarks>
+  /// <param name = "openXmlObject">The Open XML element from which to load data. This parameter must represent a valid Open XML element associated
+  ///   with a Document.</param>
+  /// <param name="context">An optional context object that can be used to pass additional information for the update operation.</param>
+  public override bool UpdateData(object openXmlObject, object? context)
+  {
+    if (WordprocessingDocument == null)
+      return false;
+    return UpdateData(WordprocessingDocument, context);
+  }
+
+  /// <summary>
+  /// Loads data from the specified Document into the current instance.
+  /// </summary>
+  /// <remarks>This method updates the Id and Uri properties based on the relationship information found in the
+  /// provided document, if available. If the relevant relationship is not present, the properties remain
+  /// unchanged.</remarks>
+  /// <param name = "document">The Document from which to load data.</param>
+  public virtual bool LoadData(DXPP.WordprocessingDocument document)
+  {
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
+    if (updatedElement != null)
+    {
+      Id = updatedElement.Id;
+      return true;
+    }
+    return false;
+  }
+
+  /// <summary>
+  /// Updates the specified Document with the current Id and Uri values.
+  /// </summary>
+  /// <remarks>This method sets the Id property and, if specified, the Uri property on the relationship element
+  /// within the provided document. The document must contain a relationship element compatible with the update
+  /// operation.</remarks>
+  /// <param name = "document">The Document to update with new relationship data. Cannot be null.</param>
+  public virtual bool UpdateData(DXPP.WordprocessingDocument document)
+  {
+    DXW.RelationshipType? updatedElement = (DXW.RelationshipType?)GetUpdatableElement();
+    if (updatedElement != null)
+    {
+      updatedElement.Id = Id;
+      return true;
+    }
+    return false;
+  }
 }

@@ -35,12 +35,12 @@ public struct RowSpacing
     {
       if (str.EndsWith("ln"))
       {
-        Value = (UInt16)(Double.Parse(str.Substring(0,str.Length-2).Trim(), CultureInfo.InvariantCulture)*2);
+        Value = (UInt16)(Double.Parse(str.Substring(0, str.Length - 2).Trim(), CultureInfo.InvariantCulture) * 2);
         Rule = RowSpacingRule.Multiple;
       }
       else if (str.EndsWith("pt"))
       {
-        Value = UInt16.Parse(str.Substring(0,str.Length-2).Trim());
+        Value = UInt16.Parse(str.Substring(0, str.Length - 2).Trim());
         Rule = RowSpacingRule.Exactly;
       }
       else

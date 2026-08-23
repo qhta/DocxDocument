@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Represents a data point in a chart series.
 ///   A data point defines the value, formatting, and visual properties for a single entry in a chart, such as a bar, line, or marker.
@@ -7,61 +8,101 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.DataPoint))]
 [DataContract]
 [XmlRoot("DataPoint", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class DataPoint : ModelElement<DXDC.DataPoint>
+public partial class DataPoint: ModelElement<DXDC.DataPoint>
 {
- /// <summary>
- ///   Index of the data point within the series or collection.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.Index))]
- public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
- private UInt32? _Index;
+  /// <summary>
+  ///   Index of the data point within the series or collection.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.Index))]
+  public UInt32? Index
+  {
+    get => _Index ??= GetProperty<UInt32?>(GetUpdatableElement()?.Index);
+    set => UpdateField(ref _Index, value, nameof(Index));
+  }
 
- /// <summary>
- ///   Indicates whether the data point should be inverted if its value is negative.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.InvertIfNegative))]
- public bool? InvertIfNegative { get => _InvertIfNegative; set => UpdateField(ref _InvertIfNegative, value, nameof(InvertIfNegative)); }
- private bool? _InvertIfNegative;
+  private UInt32? _Index;
 
- /// <summary>
- ///   Marker configuration for the data point, used in line and scatter charts.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.Marker))]
- public Marker? Marker { get => _Marker; set => UpdateField(ref _Marker, value, nameof(Marker)); }
- private Marker? _Marker;
+  /// <summary>
+  ///   Indicates whether the data point should be inverted if its value is negative.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.InvertIfNegative))]
+  public bool? InvertIfNegative
+  {
+    get => _InvertIfNegative ??= GetProperty<bool?>(GetUpdatableElement()?.InvertIfNegative);
+    set => UpdateField(ref _InvertIfNegative, value, nameof(InvertIfNegative));
+  }
 
- /// <summary>
- ///   Indicates whether the data point is rendered as a 3D bubble (for bubble charts).
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.Bubble3D))]
- public bool? Bubble3D { get => _Bubble3D; set => UpdateField(ref _Bubble3D, value, nameof(Bubble3D)); }
- private bool? _Bubble3D;
+  private bool? _InvertIfNegative;
 
- /// <summary>
- ///   Explosion value for the data point, used in pie and doughnut charts to separate the slice.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.Explosion))]
- public UInt32? Explosion { get => _Explosion; set => UpdateField(ref _Explosion, value, nameof(Explosion)); }
- private UInt32? _Explosion;
+  /// <summary>
+  ///   Marker configuration for the data point, used in line and scatter charts.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.Marker))]
+  public Marker? Marker
+  {
+    get => _Marker ??= GetProperty<Marker?>(GetUpdatableElement()?.Marker);
+    set => UpdateField(ref _Marker, value, nameof(Marker));
+  }
 
- /// <summary>
- ///   Visual and shape properties for the data point.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.ChartShapeProperties))]
- public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
- private ChartShapeProperties? _ChartShapeProperties;
+  private Marker? _Marker;
 
- /// <summary>
- ///   Picture options for the data point, such as fill or image settings.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.PictureOptions))]
- public PictureOptions? PictureOptions { get => _PictureOptions; set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions)); }
- private PictureOptions? _PictureOptions;
+  /// <summary>
+  ///   Indicates whether the data point is rendered as a 3D bubble (for bubble charts).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.Bubble3D))]
+  public bool? Bubble3D
+  {
+    get => _Bubble3D ??= GetProperty<bool?>(GetUpdatableElement()?.Bubble3D);
+    set => UpdateField(ref _Bubble3D, value, nameof(Bubble3D));
+  }
 
- /// <summary>
- ///   Collection of extension elements for additional data point customization.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.DataPoint.ExtensionList))]
- public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private IExtensionList? _ExtensionList;
+  private bool? _Bubble3D;
+
+  /// <summary>
+  ///   Explosion value for the data point, used in pie and doughnut charts to separate the slice.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.Explosion))]
+  public UInt32? Explosion
+  {
+    get => _Explosion ??= GetProperty<UInt32?>(GetUpdatableElement()?.Explosion);
+    set => UpdateField(ref _Explosion, value, nameof(Explosion));
+  }
+
+  private UInt32? _Explosion;
+
+  /// <summary>
+  ///   Visual and shape properties for the data point.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties
+  {
+    get => _ChartShapeProperties ??= GetProperty<ChartShapeProperties?>(GetUpdatableElement()?.ChartShapeProperties);
+    set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
+  }
+
+  private ChartShapeProperties? _ChartShapeProperties;
+
+  /// <summary>
+  ///   Picture options for the data point, such as fill or image settings.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.PictureOptions))]
+  public PictureOptions? PictureOptions
+  {
+    get => _PictureOptions ??= GetProperty<PictureOptions?>(GetUpdatableElement()?.PictureOptions);
+    set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions));
+  }
+
+  private PictureOptions? _PictureOptions;
+
+  /// <summary>
+  ///   Collection of extension elements for additional data point customization.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.DataPoint.ExtensionList))]
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private IExtensionList? _ExtensionList;
 }

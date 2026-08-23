@@ -1,7 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   JSON converter that serializes enum values as string names rather than numeric values.

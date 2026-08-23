@@ -6,7 +6,7 @@
 /// <remarks>Apply this attribute to an Enum field to indicate its corresponding static property name in an Open  XML EnumValues type.
 /// This is typically used for conversion to/from OpenXml EnumValue&lt;EnumValues&gt;.</remarks>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
-public class OpenXmlEnumValueAttribute: Attribute
+public class OpenXmlEnumValueAttribute : Attribute
 {
   /// <summary>
   /// Specifies the Open XML EnumValues static property name to associate with an Enum field for mapping purposes.

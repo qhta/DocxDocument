@@ -1,9 +1,4 @@
-﻿using DocumentModel.Drawings.Diagrams;
-
-namespace DocumentModel.Drawings;
-
-using Math = System.Math;
-
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a tint color transformation for drawing elements.
 /// </summary>
@@ -22,7 +17,7 @@ public class Tint : PercentageTransformation<DXD.Tint>
     var tint = Value.AsDouble();
     l = l * tint + (1 - tint);
     l = l.Clamp01();
-    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) }; 
+    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) };
     return result;
   }
 }

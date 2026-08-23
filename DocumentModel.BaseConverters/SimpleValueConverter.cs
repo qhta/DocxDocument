@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
-
-using DocumentModel;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides utility methods for converting simple values between types, including support for implicit conversion operators.
@@ -82,7 +78,8 @@ public static class SimpleValueConverter
         //Debug.WriteLine($"SimpleValueConverter: Initializing converter for {converterType.Name}");
         RegisterConverterType(converterType);
       }
-    } catch (Exception ex)
+    }
+    catch (Exception ex)
     {
       Debug.WriteLine(ex);
       throw;

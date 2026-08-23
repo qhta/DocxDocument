@@ -78,7 +78,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
         try
         {
           T item;
-          
+
           // Handle different JSON token types based on T
           if (typeof(T) == typeof(string))
           {
@@ -140,7 +140,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
           {
             // For other IConvertible types, try to get as string and convert
             string? stringValue = null;
-            
+
             if (reader.TokenType == JsonTokenType.String)
             {
               stringValue = reader.GetString();
@@ -153,7 +153,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             {
               stringValue = reader.GetBoolean().ToString(CultureInfo.InvariantCulture);
             }
-            
+
             if (stringValue != null)
             {
               item = (T)Convert.ChangeType(stringValue, typeof(T));
@@ -163,7 +163,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
               throw new JsonException($"Cannot convert {reader.TokenType} to List<{typeof(T).Name}>");
             }
           }
-          
+
           list.Add(item);
         }
         catch (Exception ex) when (ex is not JsonException)
@@ -200,7 +200,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
     }
 
     writer.WriteStartArray();
-    
+
     foreach (var item in value)
     {
       if (item == null)
@@ -264,7 +264,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
         writer.WriteStringValue(item.ToString(CultureInfo.InvariantCulture));
       }
     }
-    
+
     writer.WriteEndArray();
   }
 }

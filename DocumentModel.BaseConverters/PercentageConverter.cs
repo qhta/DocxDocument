@@ -1,6 +1,4 @@
-﻿using DocumentModel;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Percentage value to/from Open XML.

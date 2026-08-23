@@ -91,7 +91,7 @@ public class Section: ModelElement
 
       if (sectionStart is null)
         throw new InvalidOperationException("Section start not found.");
-      if (sectionStart.GetUpdatableObject() is null)
+      if (sectionStart.GetUpdatableObject(null) is null)
         Debug.Assert(true);
       var sectionEnd = (Paragraph as ModelElement) ?? this;
       var range = new Range(this, (Parent as ModelElement)!, sectionStart, sectionEnd);

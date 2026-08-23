@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.browser?view=word-pia"/>
-public partial interface IBrowser: IModelObject
+public partial interface IBrowser : IModelObject
 {
   /// <summary>
   /// Moves the selection to the next item indicated by the browser target.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizers?view=word-pia"/>
-public partial interface ISmartTagRecognizers: IModelObject
+public partial interface ISmartTagRecognizers : IModelObject
 {
   /// <summary>
   /// Reloads all recognizers installed on a user's computer.

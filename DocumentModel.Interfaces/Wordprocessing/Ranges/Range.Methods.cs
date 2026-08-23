@@ -1,12 +1,10 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface IRange: IModelObject
+public partial interface IRange : IModelObject
 {
   /// <summary>
   /// Returns information about the range.

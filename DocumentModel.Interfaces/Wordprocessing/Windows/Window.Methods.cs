@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window?view=word-pia"/>
-public partial interface IWindow: IModelObject
+public partial interface IWindow : IModelObject
 {
   /// <summary>
   /// Activates the specified object.

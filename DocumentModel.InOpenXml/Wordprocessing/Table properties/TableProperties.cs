@@ -9,8 +9,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("TableProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableProperties : ExtBaseTableProperties<DXW.TableProperties>
 {
- /// <summary>
- ///   Revision information for table properties, enabling tracking and management of property changes and historical settings.
- /// </summary>
- public TablePropertiesChange? TablePropertiesChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  ///   Revision information for table properties, enabling tracking and management of property changes and historical settings.
+  /// </summary>
+  public TablePropertiesChange? TablePropertiesChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

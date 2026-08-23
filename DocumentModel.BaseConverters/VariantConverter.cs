@@ -1,5 +1,6 @@
 ﻿
 namespace DocumentModel.OpenXml;
+
 using VTVariant = DocumentFormat.OpenXml.VariantTypes.Variant;
 
 /// <summary>

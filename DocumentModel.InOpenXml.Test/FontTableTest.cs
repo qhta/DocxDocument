@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.FontTable.
 /// </summary>
-public class FontTableTestClass: _AbstractModelTestClass<FontTable>
+public class FontTableTestClass : _AbstractModelTestClass<FontTable>
 {
 
   /// <summary>

@@ -1,9 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-using Qhta.TypeUtils;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="Variant"/> class.

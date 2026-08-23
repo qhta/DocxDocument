@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Represents the plot area of a chart, including layout, chart collection, axes, data table, shape properties, and extension list.
 /// </summary>
@@ -34,47 +35,77 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.PlotArea))]
 [DataContract]
 [XmlRoot("PlotArea", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class PlotArea : ModelElement<DXDC.PlotArea>
+public partial class PlotArea: ModelElement<DXDC.PlotArea>
 {
- /// <summary>
- ///   Layout configuration for the plot area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.Layout))]
- public Layout? Layout { get => _Layout; set => UpdateField(ref _Layout, value, nameof(Layout)); }
- private Layout? _Layout;
+  /// <summary>
+  ///   Layout configuration for the plot area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.Layout))]
+  public Layout? Layout
+  {
+    get => _Layout ??= GetElement<Layout, DXDC.Layout>(GetUpdatableElement());
+    set => UpdateField(ref _Layout, value, nameof(Layout));
+  }
 
- /// <summary>
- ///   Collection of charts contained in the plot area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.BarChart))]
- public Charts? Charts { get => _Charts; set => UpdateField(ref _Charts, value, nameof(Charts)); }
- private Charts? _Charts;
+  private Layout? _Layout;
 
- /// <summary>
- ///   List of axes used in the plot area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DateAxis))]
- public AxisList? Axes { get => _Axes; set => UpdateField(ref _Axes, value, nameof(Axes)); }
- private AxisList? _Axes;
+  /// <summary>
+  ///   Collection of charts contained in the plot area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.BarChart))]
+  public Charts? Charts
+  {
+    get => _Charts ??= GetElement<Charts, DXDC.BarChart>(GetUpdatableElement());
+    set => UpdateField(ref _Charts, value, nameof(Charts));
+  }
 
- /// <summary>
- ///   Data table associated with the plot area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DataTable))]
- public DataTable? DataTable { get => _DataTable; set => UpdateField(ref _DataTable, value, nameof(DataTable)); }
- private DataTable? _DataTable;
+  private Charts? _Charts;
 
- /// <summary>
- ///   Shape properties for the plot area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  ///   List of axes used in the plot area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DateAxis))]
+  public AxisList? Axes
+  {
+    get => _Axes ??= GetElement<AxisList, DXDC.DateAxis>(GetUpdatableElement());
+    set => UpdateField(ref _Axes, value, nameof(Axes));
+  }
 
- /// <summary>
- ///   Extension list for additional plot area properties.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private IExtensionList? _ExtensionList;
+  private AxisList? _Axes;
+
+  /// <summary>
+  ///   Data table associated with the plot area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DataTable))]
+  public DataTable? DataTable
+  {
+    get => _DataTable ??= GetElement<DataTable, DXDC.DataTable>(GetUpdatableElement());
+    set => UpdateField(ref _DataTable, value, nameof(DataTable));
+  }
+
+  private DataTable? _DataTable;
+
+  /// <summary>
+  ///   Shape properties for the plot area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ShapeProperties))]
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetElement<ShapeProperties, DXDC.ShapeProperties>(GetUpdatableElement());
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
+
+  private ShapeProperties? _ShapeProperties;
+
+  /// <summary>
+  ///   Extension list for additional plot area properties.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ExtensionList))]
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetElement<IExtensionList, DXDC.ExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private IExtensionList? _ExtensionList;
 }

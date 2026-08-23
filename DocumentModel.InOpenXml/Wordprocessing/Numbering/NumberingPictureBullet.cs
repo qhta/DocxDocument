@@ -7,16 +7,16 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("NumberingPictureBullet", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingPictureBullet : ModelElement
 {
- /// <summary>
- /// Identifier for the numbering picture bullet, used to reference the picture bullet definition.
- /// </summary>
- public Int32? NumberingPictureBulletId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Base definition for the picture bullet, specifying the image and formatting used for the bullet symbol.
- /// </summary>
- public DMWV.PictureBulletBase? PictureBulletBase { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Drawing element associated with the picture bullet, containing the image data and rendering information.
- /// </summary>
- public DMDO.Drawing? Drawing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Identifier for the numbering picture bullet, used to reference the picture bullet definition.
+  /// </summary>
+  public Int32? NumberingPictureBulletId { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Base definition for the picture bullet, specifying the image and formatting used for the bullet symbol.
+  /// </summary>
+  public DMWV.PictureBulletBase? PictureBulletBase { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Drawing element associated with the picture bullet, containing the image data and rendering information.
+  /// </summary>
+  public DMDO.Drawing? Drawing { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

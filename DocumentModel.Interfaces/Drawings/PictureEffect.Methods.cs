@@ -1,5 +1,3 @@
-using System.Reflection;
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
@@ -8,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface IPictureEffect: IModelObject
+public partial interface IPictureEffect : IModelObject
 {
   /// <summary>
   /// Invokes `Delete`.

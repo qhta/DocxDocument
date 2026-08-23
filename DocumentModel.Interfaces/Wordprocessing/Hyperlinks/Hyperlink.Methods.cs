@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink?view=word-pia"/>
-public partial interface IHyperlink: IModelObject
+public partial interface IHyperlink : IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

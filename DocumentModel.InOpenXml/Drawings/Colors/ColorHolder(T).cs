@@ -4,13 +4,13 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlLoadData(nameof(LoadColorFromOpenXml))]
 [OpenXmlUpdateData(nameof(UpdateColorInOpenXml))]
-public abstract partial class ColorHolder<T>: ModelElement<T> where T : DX.OpenXmlElement
+public abstract partial class ColorHolder<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
 
   /// <summary>
   /// Color that is held by this instance. 
   /// </summary>
-  protected IColor? InternalColor { get => Color?.InternalColor; set => Color = new ColorType{ InternalColor = value }; }
+  protected IColor? InternalColor { get => Color?.InternalColor; set => Color = new ColorType { InternalColor = value }; }
 
   /// <summary>
   /// Gets or sets the RGB color model in hexadecimal format.
@@ -75,7 +75,7 @@ public abstract partial class ColorHolder<T>: ModelElement<T> where T : DX.OpenX
   /// <exception cref="NotImplementedException">Thrown in all cases as the method is not yet implemented.</exception>
   private void UpdateColorInOpenXml(DX.OpenXmlElement openXmlElement)
   {
-    if (Color!=null)
+    if (Color != null)
       Color.UpdateColorInOpenXml(openXmlElement);
   }
 
@@ -105,7 +105,7 @@ public abstract partial class ColorHolder<T>: ModelElement<T> where T : DX.OpenX
 
     if (color is IUpdatableElement updatableColor)
     {
-      var updatableElement = updatableColor.GetUpdatableObject() as DX.OpenXmlElement;
+      var updatableElement = updatableColor.GetUpdatableObject(null) as DX.OpenXmlElement;
       if (updatableElement == null)
       {
         if (color is RgbColorModelPercentage)

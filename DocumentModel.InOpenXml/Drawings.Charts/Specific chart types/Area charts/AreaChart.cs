@@ -1,58 +1,94 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Represents an area chart, including grouping, color variation, series, labels, drop lines, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.AreaChart))]
 [DataContract]
 [XmlRoot("AreaChart", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class AreaChart : ModelElement<DXDC.AreaChart>
+public partial class AreaChart: ModelElement<DXDC.AreaChart>
 {
- /// <summary>
- ///   Specifies the grouping type for the area chart.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.AreaChart.Grouping))]
- public Grouping? Grouping { get => _Grouping; set => UpdateField(ref _Grouping, value, nameof(Grouping)); }
- private Grouping? _Grouping;
+  /// <summary>
+  ///   Specifies the grouping type for the area chart.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.AreaChart.Grouping))]
+  public Grouping? Grouping
+  {
+    get => _Grouping ??= GetProperty<Grouping?>(GetUpdatableElement()?.Grouping);
+    set => UpdateField(ref _Grouping, value, nameof(Grouping));
+  }
 
- /// <summary>
- ///   Indicates whether colors should vary between chart series.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.AreaChart.VaryColors))]
- public bool? VaryColors { get => _VaryColors; set => UpdateField(ref _VaryColors, value, nameof(VaryColors)); }
- private bool? _VaryColors;
+  private Grouping? _Grouping;
 
- /// <summary>
- ///   Area chart series displayed in the chart.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.AreaChartSeries))]
- public AreaChartSeriesList? AreaChartSeries { get => _AreaChartSeries; set => UpdateField(ref _AreaChartSeries, value, nameof(AreaChartSeries)); }
- private AreaChartSeriesList? _AreaChartSeries;
+  /// <summary>
+  ///   Indicates whether colors should vary between chart series.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.AreaChart.VaryColors))]
+  public bool? VaryColors
+  {
+    get => _VaryColors ??= GetProperty<bool?>(GetUpdatableElement()?.VaryColors);
+    set => UpdateField(ref _VaryColors, value, nameof(VaryColors));
+  }
 
- /// <summary>
- ///   Data labels configuration for the chart.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DataLabels))]
- public DataLabels? DataLabels { get => _DataLabels; set => UpdateField(ref _DataLabels, value, nameof(DataLabels)); }
- private DataLabels? _DataLabels;
+  private bool? _VaryColors;
 
- /// <summary>
- ///   Drop lines configuration for the chart.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DropLines))]
- public DropLines? DropLines { get => _DropLines; set => UpdateField(ref _DropLines, value, nameof(DropLines)); }
- private DropLines? _DropLines;
+  /// <summary>
+  ///   Area chart series displayed in the chart.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.AreaChartSeries))]
+  public AreaChartSeriesList? AreaChartSeries
+  {
+    get => _AreaChartSeries ??= GetElement<AreaChartSeriesList, DXDC.AreaChartSeries>(GetUpdatableElement());
+    set => UpdateField(ref _AreaChartSeries, value, nameof(AreaChartSeries));
+  }
 
- /// <summary>
- ///   Identifiers for the axes used in the chart.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.AxisId))]
- public AxisIds? AxisIds { get => _AxisIds; set => UpdateField(ref _AxisIds, value, nameof(AxisIds)); }
- private AxisIds? _AxisIds;
+  private AreaChartSeriesList? _AreaChartSeries;
 
- /// <summary>
- ///   Extension list for additional chart properties.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.AreaChartExtensionList))]
- public AreaChartExtension? AreaChartExtension { get => _AreaChartExtension; set => UpdateField(ref _AreaChartExtension, value, nameof(AreaChartExtension)); }
- private AreaChartExtension? _AreaChartExtension;
+  /// <summary>
+  ///   Data labels configuration for the chart.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DataLabels))]
+  public DataLabels? DataLabels
+  {
+    get => _DataLabels ??= GetElement<DataLabels, DXDC.DataLabels>(GetUpdatableElement());
+    set => UpdateField(ref _DataLabels, value, nameof(DataLabels));
+  }
+
+  private DataLabels? _DataLabels;
+
+  /// <summary>
+  ///   Drop lines configuration for the chart.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DropLines))]
+  public DropLines? DropLines
+  {
+    get => _DropLines ??= GetElement<DropLines, DXDC.DropLines>(GetUpdatableElement());
+    set => UpdateField(ref _DropLines, value, nameof(DropLines));
+  }
+
+  private DropLines? _DropLines;
+
+  /// <summary>
+  ///   Identifiers for the axes used in the chart.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.AxisId))]
+  public AxisIds? AxisIds
+  {
+    get => _AxisIds ??= GetElement<AxisIds, DXDC.AxisId>(GetUpdatableElement());
+    set => UpdateField(ref _AxisIds, value, nameof(AxisIds));
+  }
+
+  private AxisIds? _AxisIds;
+
+  /// <summary>
+  ///   Extension list for additional chart properties.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.AreaChartExtensionList))]
+  public AreaChartExtension? AreaChartExtension
+  {
+    get => _AreaChartExtension ??= GetElement<AreaChartExtension, DXDC.AreaChartExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _AreaChartExtension, value, nameof(AreaChartExtension));
+  }
+
+  private AreaChartExtension? _AreaChartExtension;
 }

@@ -5,7 +5,7 @@
 /// This attribute can be applied to classes to indicate that they are recognized during deserialization processes, allowing for proper handling of polymorphic types and ensuring that the correct class is instantiated when deserializing XML data.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-public class SpecificClassAttribute: Attribute
+public class SpecificClassAttribute : Attribute
 {
-  
+
 }

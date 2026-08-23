@@ -7,10 +7,10 @@ namespace DocumentModel;
 /// <typeparam name = "OpenXmlItemType">Type of the Open XML element representing individual items.</typeparam>
 [DataContract]
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
-public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> : 
-  ValueCollection<ItemType, OpenXmlCollectionType> 
-  where ItemType : notnull 
-  where OpenXmlCollectionType : DX.OpenXmlCompositeElement 
+public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> :
+  ValueCollection<ItemType, OpenXmlCollectionType>
+  where ItemType : notnull
+  where OpenXmlCollectionType : DX.OpenXmlCompositeElement
   where OpenXmlItemType : DX.OpenXmlElement
 {
   /// <summary>
@@ -87,6 +87,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
       OpenXmlItemType openXmlElement = (OpenXmlItemType)OpenXmlModelConverter.ConvertTo(item, typeof(OpenXmlItemType))!;
       openXmlModeledCollection.AppendChild(openXmlElement);
     }
-    return true;  
+    return true;
   }
 }

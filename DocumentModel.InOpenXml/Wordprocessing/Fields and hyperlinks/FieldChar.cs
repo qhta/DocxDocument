@@ -13,7 +13,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   /// Field character type, specifying whether this is a start, separator, or end character for the complex field.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldCharType))]
-  public FieldCharType? FieldCharType 
+  public FieldCharType? FieldCharType
   {
     get => _FieldCharType ??= GetProperty<FieldCharType?>(GetUpdatableElement()?.FieldCharType);
     set => UpdateField(ref _FieldCharType, value, nameof(FieldCharType));
@@ -24,7 +24,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   /// Indicates whether the field should not be recalculated.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldLock))]
-  public bool? FieldLock 
+  public bool? FieldLock
   {
     get => _FieldLock ??= GetProperty<bool?>(GetUpdatableElement()?.FieldLock);
     set => UpdateField(ref _FieldLock, value, nameof(FieldLock));
@@ -35,7 +35,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   /// Indicates whether the field result is invalidated and needs to be updated.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FieldChar.Dirty))]
-  public bool? Dirty 
+  public bool? Dirty
   {
     get => _Dirty ??= GetProperty<bool?>(GetUpdatableElement()?.Dirty);
     set => UpdateField(ref _Dirty, value, nameof(Dirty));
@@ -46,7 +46,7 @@ public partial class FieldChar : ModelElement<DXW.FieldChar>, IRunContent
   /// Custom field data associated with the field character.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FieldChar.FieldData))]
-  public string? FieldData 
+  public string? FieldData
   {
     get => _FieldData ??= GetProperty<string?>(GetUpdatableElement()?.FieldData);
     set => UpdateField(ref _FieldData, value, nameof(FieldData));

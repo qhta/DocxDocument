@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for EMU type serialization in both XML and JSON formats.
@@ -73,7 +71,7 @@ public static class EMUTest
       Console.WriteLine("âś— Int to EMU conversion FAILED");
       return false;
     }
-    
+
     // Test EMU to string
     string strEMU = emu1.ToString();
     Console.WriteLine($"\nâś“ EMU to string: {strEMU}");
@@ -121,7 +119,7 @@ public static class EMUTest
     var emu1Twips = emu1Inch / 1440.0;
     var emu10Twips = emu1Twips * 10;
 
-    Console.WriteLine("--- Testing EMU Unit Conversions ---");      
+    Console.WriteLine("--- Testing EMU Unit Conversions ---");
     // Test inch conversions
     Console.WriteLine("Testing inch conversions:");
     EMU oneInch = "1in";
@@ -482,7 +480,7 @@ public static class EMUTest
   /// <returns>true if all performance tests complete successfully.</returns>
   static bool TestEMUPerformance()
   {
-    Console.WriteLine("--- Testing EMU Performance ---"); 
+    Console.WriteLine("--- Testing EMU Performance ---");
     const int iterations = 100000;
 
     // Test construction from string with unit
@@ -603,7 +601,7 @@ public static class EMUTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

@@ -139,7 +139,8 @@ public static class ConverterBase
               return toMethod.Invoke(null, [value, targetType])!;
             };
           }
-        } catch (TargetInvocationException ex)
+        }
+        catch (TargetInvocationException ex)
         {
           if (ex.InnerException != null)
             throw ex.InnerException;

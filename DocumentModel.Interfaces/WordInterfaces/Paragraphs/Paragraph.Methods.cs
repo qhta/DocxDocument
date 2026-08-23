@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph?view=word-pia"/>
-public partial interface IParagraph: IModelObject
+public partial interface IParagraph : IModelObject
 {
   /// <summary>
   /// Returns the list number original.

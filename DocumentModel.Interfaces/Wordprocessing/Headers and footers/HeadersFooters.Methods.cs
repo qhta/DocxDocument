@@ -1,12 +1,10 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headersfooters?view=word-pia"/>
-public partial interface IHeadersFooters: IModelObject
+public partial interface IHeadersFooters : IModelObject
 {
   /// <summary>
   /// Returns a single header or footer from the collection.

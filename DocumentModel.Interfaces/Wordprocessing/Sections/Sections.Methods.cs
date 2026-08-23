@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections?view=word-pia"/>
-public partial interface ISections: IModelObject
+public partial interface ISections : IModelObject
 {
   /// <summary>
   /// Adds a new section to the document.

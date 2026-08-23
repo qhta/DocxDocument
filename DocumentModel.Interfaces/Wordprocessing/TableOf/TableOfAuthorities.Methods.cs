@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities?view=word-pia"/>
-public partial interface ITableOfAuthorities: IModelObject
+public partial interface ITableOfAuthorities : IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

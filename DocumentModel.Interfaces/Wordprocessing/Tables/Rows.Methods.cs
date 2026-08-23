@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows?view=word-pia"/>
-public partial interface IRows: IModelObject
+public partial interface IRows : IModelObject
 {
   /// <summary>
   /// Adds a new row before the specified row.

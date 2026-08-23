@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for HPS value to/from Open XML.
@@ -70,7 +68,7 @@ public static class HPSConverter
   private static HPS? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
     if (Int64Value == null) return null;
-    
+
     return (HPS)Int64Value.Value;
   }
 
@@ -149,7 +147,7 @@ public static class HPSConverter
     return new DX.UInt32Value { Value = (UInt32)value };
   }
 
-#endregion
+  #endregion
 
   #region UInt64Value conversion.
 

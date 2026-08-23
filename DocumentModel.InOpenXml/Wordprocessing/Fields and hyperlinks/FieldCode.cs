@@ -34,7 +34,7 @@ public class FieldCode : TextualElement<DXW.FieldCode>
       else
       {
         updatableElement.Remove();
-        SetUpdatableObject(null);
+        SetUpdatableObject(null, null);
       }
     }
   }

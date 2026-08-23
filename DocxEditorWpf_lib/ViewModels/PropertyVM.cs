@@ -3,7 +3,7 @@
 /// <summary>
 /// ViewModel representing a document property.
 /// </summary>
-public class PropertyVM: ViewModel<PropertyModel>, IPropertyVM  
+public class PropertyVM : ViewModel<PropertyModel>, IPropertyVM
 {
   /// <summary>
   /// Initializing constructor.

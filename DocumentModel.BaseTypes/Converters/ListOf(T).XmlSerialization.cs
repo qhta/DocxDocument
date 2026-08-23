@@ -46,7 +46,7 @@ public partial class ListOf<T> : IXmlSerializable
       {
         Clear();
         TextValue = listString;
-        
+
         // Parse the string using appropriate separators
         var items = listString.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
         foreach (var item in items)

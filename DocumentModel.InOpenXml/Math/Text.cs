@@ -33,7 +33,7 @@ public class Text : DMW.TextualElement<DXM.Text>
       else
       {
         updatableElement.Remove();
-        SetUpdatableObject(null);
+        SetUpdatableObject(null, null);
       }
     }
   }

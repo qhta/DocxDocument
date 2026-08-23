@@ -1,7 +1,3 @@
-using DocumentModel;
-
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
 namespace DocumentModel;
 
 /// <summary>
@@ -11,8 +7,8 @@ namespace DocumentModel;
 [DataContract]
 [XmlRoot("ModelItemsCollection", Namespace = "DocumentModel")]
 
-public abstract partial class ModelItemsCollection<ItemType>: ElementCollection<ItemType>
-  where ItemType: notnull
+public abstract partial class ModelItemsCollection<ItemType> : ElementCollection<ItemType>
+  where ItemType : notnull
 {
   //private Dictionary<DX.OpenXmlElement, ItemType> _itemsDictionary = new();
   private readonly List<ItemType> _items = new List<ItemType>();

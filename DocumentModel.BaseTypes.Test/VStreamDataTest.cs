@@ -1,7 +1,4 @@
-﻿using System.Globalization;
-using System.Text;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for VStreamData type serialization in both XML and JSON formats.
@@ -29,7 +26,7 @@ public static class VStreamDataTest
     return true;
   }
 
-  
+
   static bool TestVStreamDataConstruction()
   {
     Console.WriteLine("--- Testing VStreamData Construction ---");      // Test constructor with version GUID and data
@@ -77,8 +74,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataProperties()
   {
     Console.WriteLine("--- Testing VStreamData Properties ---");      // Test IVersion property
@@ -162,8 +159,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataEquality()
   {
     Console.WriteLine("--- Testing VStreamData Equality ---");      // Test equal instances
@@ -250,8 +247,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataVersionGUIDs()
   {
     Console.WriteLine("--- Testing VStreamData IVersion GUIDs ---");      // Test with Excel CLSID
@@ -302,8 +299,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VStreamData XML Serialization ---");      // Create test object
@@ -375,8 +372,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VStreamData JSON Serialization ---");      // Create test object
@@ -415,8 +412,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataEdgeCases()
   {
     Console.WriteLine("--- Testing VStreamData Edge Cases ---");      // Test with all zeros data
@@ -501,8 +498,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVStreamDataPerformance()
   {
     Console.WriteLine("--- Testing VStreamData Performance ---"); const int iterations = 10000;
@@ -599,8 +596,8 @@ public static class VStreamDataTest
     return true;
   }
 
-  
-  
+
+
   private static VStreamDataTestData CreateTestData()
   {
     return new VStreamDataTestData
@@ -653,7 +650,7 @@ public static class VStreamDataTest
     return data;
   }
 
-  }
+}
 
 
 /// <summary>

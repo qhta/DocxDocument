@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the data source configuration for a chart, specifying whether data is external or embedded.
 /// </summary>
@@ -16,25 +17,35 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.ChartData))]
 [DataContract]
 [XmlRoot("ChartData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class ChartData : ModelElement<DXO16DCD.ChartData>
+public partial class ChartData: ModelElement<DXO16DCD.ChartData>
 {
   /// <summary>
   /// Specifies the external data.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartData.ExternalData))]
-  public ExternalData? ExternalData { get => _ExternalData; set => UpdateField(ref _ExternalData, value, nameof(ExternalData)); }
+  public ExternalData? ExternalData
+  {
+    get => _ExternalData ??= GetProperty<ExternalData?>(GetUpdatableElement()?.ExternalData);
+    set => UpdateField(ref _ExternalData, value, nameof(ExternalData));
+  }
 
   private ExternalData? _ExternalData;
+
   /// <summary>
   /// Specifies the data.
   /// </summary>
   public Data? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
 
   private Data? _Data;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList;
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

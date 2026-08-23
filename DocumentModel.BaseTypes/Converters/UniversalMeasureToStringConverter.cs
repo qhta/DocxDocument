@@ -6,8 +6,8 @@ namespace DocumentModel;
 /// A generic converter class that converts between a specific type of UniversalMeasure and its string representation.
 /// </summary>
 /// <typeparam name="SpecificType"></typeparam>
-public class UniversalMeasureToStringConverter<SpecificType>: TypeToStringConverter, IUniversalMeasureToStringConverter
-  where SpecificType: UniversalMeasure
+public class UniversalMeasureToStringConverter<SpecificType> : TypeToStringConverter, IUniversalMeasureToStringConverter
+  where SpecificType : UniversalMeasure
 {
 
 
@@ -30,7 +30,7 @@ public class UniversalMeasureToStringConverter<SpecificType>: TypeToStringConver
   /// </summary>
   /// <param name="val">The object of the specific type to convert.</param>
   /// <returns>The string representation of the object.</returns>
-  public override string? ConvertToString(object? val) => (val is UniversalMeasure um) ? (MeasureUnits!=null) ? um.ToString(MeasureUnits.Value) : um.ToString() : null;
+  public override string? ConvertToString(object? val) => (val is UniversalMeasure um) ? (MeasureUnits != null) ? um.ToString(MeasureUnits.Value) : um.ToString() : null;
 
   /// <summary>
   /// Converts a string representation back to an object of the specific type.

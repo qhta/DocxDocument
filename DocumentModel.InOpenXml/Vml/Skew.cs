@@ -1,51 +1,82 @@
 namespace DocumentModel.Vml;
+
 /// <summary>
 ///   Skew Transform.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Skew))]
 [DataContract]
 [XmlRoot("Skew", Namespace = "DocumentModel.Vml")]
-public partial class Skew : ModelElement<DXVO.Skew>
+public partial class Skew: ModelElement<DXVO.Skew>
 {
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.Extension))]
- public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
- private ExtensionHandlingBehavior? _Extension;
+  /// <summary>
+  ///   VML Extension Handling Behavior
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.Extension))]
+  public ExtensionHandlingBehavior? Extension
+  {
+    get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);
+    set => UpdateField(ref _Extension, value, nameof(Extension));
+  }
 
- /// <summary>
- ///   Skew ID
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  private ExtensionHandlingBehavior? _Extension;
 
- /// <summary>
- ///   Skew Toggle
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.On))]
- public bool? On { get => _On; set => UpdateField(ref _On, value, nameof(On)); }
- private bool? _On;
+  /// <summary>
+  ///   Skew ID
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.Id))]
+  public string? Id
+  {
+    get => _Id ??= GetProperty<string?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
 
- /// <summary>
- ///   Skew Offset
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.Offset))]
- public string? Offset { get => _Offset; set => UpdateField(ref _Offset, value, nameof(Offset)); }
- private string? _Offset;
+  private string? _Id;
 
- /// <summary>
- ///   Skew Origin
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.Origin))]
- public string? Origin { get => _Origin; set => UpdateField(ref _Origin, value, nameof(Origin)); }
- private string? _Origin;
+  /// <summary>
+  ///   Skew Toggle
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.On))]
+  public bool? On
+  {
+    get => _On ??= GetProperty<bool?>(GetUpdatableElement()?.On);
+    set => UpdateField(ref _On, value, nameof(On));
+  }
 
- /// <summary>
- ///   Skew Perspective Matrix
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Skew.Matrix))]
- public string? Matrix { get => _Matrix; set => UpdateField(ref _Matrix, value, nameof(Matrix)); }
- private string? _Matrix;
+  private bool? _On;
+
+  /// <summary>
+  ///   Skew Offset
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.Offset))]
+  public string? Offset
+  {
+    get => _Offset ??= GetProperty<string?>(GetUpdatableElement()?.Offset);
+    set => UpdateField(ref _Offset, value, nameof(Offset));
+  }
+
+  private string? _Offset;
+
+  /// <summary>
+  ///   Skew Origin
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.Origin))]
+  public string? Origin
+  {
+    get => _Origin ??= GetProperty<string?>(GetUpdatableElement()?.Origin);
+    set => UpdateField(ref _Origin, value, nameof(Origin));
+  }
+
+  private string? _Origin;
+
+  /// <summary>
+  ///   Skew Perspective Matrix
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Skew.Matrix))]
+  public string? Matrix
+  {
+    get => _Matrix ??= GetProperty<string?>(GetUpdatableElement()?.Matrix);
+    set => UpdateField(ref _Matrix, value, nameof(Matrix));
+  }
+
+  private string? _Matrix;
 }

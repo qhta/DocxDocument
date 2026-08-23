@@ -25,7 +25,7 @@ public class ColorTypesTest : BaseThemeTest
     TotalXmlSerialization += (t1 - t0).TotalMilliseconds;
     if (!TestJsonSerialization()) return false;
     var t2 = DateTime.Now;
-    TotalJsonSerialization += (t2 - t1).TotalMilliseconds;  
+    TotalJsonSerialization += (t2 - t1).TotalMilliseconds;
     if (!TestColorAccessors()) return false;
     if (!TestEdgeCases()) return false;
     if (!TestColorModelsConversion()) return false;
@@ -346,7 +346,7 @@ public class ColorTypesTest : BaseThemeTest
   {
     var assembly = typeof(DocumentModel.Drawings.ColorType).Assembly;
     var foundTypes = assembly.GetTypes()
-      .Where(t => !t.IsAbstract && t.GetCustomAttribute<DataContractAttribute>()!=null && t.GetInterfaces().Any(i => i.Name == "IColor"))
+      .Where(t => !t.IsAbstract && t.GetCustomAttribute<DataContractAttribute>() != null && t.GetInterfaces().Any(i => i.Name == "IColor"))
       .OrderBy(item => item.FullName).ToList();
 
     return foundTypes;

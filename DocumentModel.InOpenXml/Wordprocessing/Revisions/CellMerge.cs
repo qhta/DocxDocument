@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("CellMerge", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CellMerge : TrackChangeType<DXW.CellMerge>
 {
- /// <summary>
- /// Current vertical merge revision state for the table cell (e.g., continue, restart, none).
- /// </summary>
- public VerticalMergeRevision? VerticalMerge { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Original vertical merge revision state for the table cell before the change.
- /// </summary>
- public VerticalMergeRevision? VerticalMergeOriginal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Current vertical merge revision state for the table cell (e.g., continue, restart, none).
+  /// </summary>
+  public VerticalMergeRevision? VerticalMerge { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Original vertical merge revision state for the table cell before the change.
+  /// </summary>
+  public VerticalMergeRevision? VerticalMergeOriginal { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Specifies a set of properties which shall dictate the appearance and behavior of a set of numbered paragraphs. 
 ///   These properties are collectively called an abstract numbering definition, 
@@ -10,19 +11,20 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.AbstractNum))]
 [DataContract]
 [XmlRoot("AbstractNumbering", Namespace = "DocumentModel.Wordprocessing")]
-public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
+public partial class AbstractNumbering: ModelElement<DXW.AbstractNum>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public AbstractNumbering() : base() { }
+  public AbstractNumbering(): base() { }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="collection">The collection of abstract numberings to which this instance belongs.</param>
   /// <param name="openXmlElement">The OpenXml element to wrap and synchronize with. It can be null.</param>
-  public AbstractNumbering(AbstractNumberings collection, DXW.AbstractNum? openXmlElement = null) : base(collection, openXmlElement) { }
+  public AbstractNumbering
+    (AbstractNumberings collection, DXW.AbstractNum? openXmlElement = null): base(collection, openXmlElement) { }
 
   /// <summary>
   ///   Specifies a unique number which shall be used as the identifier for this abstract numbering definition. 
@@ -31,7 +33,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.AbstractNumberId))]
   [Required]
-  public Int32? AbstractNumId { get => _abstractNumId; set => UpdateField(ref _abstractNumId, value, nameof(AbstractNumId)); }
+  public Int32? AbstractNumId
+  {
+    get => _abstractNumId ??= GetProperty<Int32?>(GetUpdatableElement()?.AbstractNumberId);
+    set => UpdateField(ref _abstractNumId, value, nameof(AbstractNumId));
+  }
   private Int32? _abstractNumId;
 
   /// <summary>
@@ -40,7 +46,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///   - if a document is repurposed and the underlying numbering definition is changed, it shall maintain its original nsid.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.Nsid))]
-  public HexInt? NsId { get => _NsId; set => UpdateField(ref _NsId, value, nameof(NsId)); }
+  public HexInt? NsId
+  {
+    get => _NsId ??= GetProperty<HexInt?>(GetUpdatableElement()?.Nsid);
+    set => UpdateField(ref _NsId, value, nameof(NsId));
+  }
   private HexInt? _NsId;
 
   /// <summary>
@@ -49,7 +59,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///   but shall not influence the behavior of the list - two identical definitions with different name elements shall behave identically.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.AbstractNumDefinitionName))]
-  public string? Name { get => _name; set => UpdateField(ref _name, value, nameof(Name)); }
+  public string? Name
+  {
+    get => _name ??= GetProperty<string?>(GetUpdatableElement()?.AbstractNumDefinitionName);
+    set => UpdateField(ref _name, value, nameof(Name));
+  }
   private string? _name;
 
   /// <summary>
@@ -59,7 +73,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///   (i.e. a list with multiple levels marked as singleLevel shall not be prevented from using levels 2 through 9).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.MultiLevelType))]
-  public MultiLevel? MultiLevelType { get => _MultiLevelType; set => UpdateField(ref _MultiLevelType, value, nameof(MultiLevelType)); }
+  public MultiLevel? MultiLevelType
+  {
+    get => _MultiLevelType ??= GetProperty<MultiLevel?>(GetUpdatableElement()?.MultiLevelType);
+    set => UpdateField(ref _MultiLevelType, value, nameof(MultiLevelType));
+  }
   private MultiLevel? _MultiLevelType;
 
   /// <summary>
@@ -67,7 +85,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///   in which this abstract numbering definition shall be displayed.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.TemplateCode))]
-  public HexInt? TemplateCode { get => _TemplateCode; set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode)); }
+  public HexInt? TemplateCode
+  {
+    get => _TemplateCode ??= GetProperty<HexInt?>(GetUpdatableElement()?.TemplateCode);
+    set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode));
+  }
   private HexInt? _TemplateCode;
 
   /// <summary>
@@ -75,7 +97,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///    for the specified numbering style referenced in its val attribute.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.StyleLink))]
-  public string? StyleLink { get => _StyleLink; set => UpdateField(ref _StyleLink, value, nameof(StyleLink)); }
+  public string? StyleLink
+  {
+    get => _StyleLink ??= GetProperty<string?>(GetUpdatableElement()?.StyleLink);
+    set => UpdateField(ref _StyleLink, value, nameof(StyleLink));
+  }
   private string? _StyleLink;
 
   /// <summary>
@@ -84,7 +110,11 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
   ///   which shall be applied when this abstract numbering definition is referenced, 
   ///   and itself points at the actual underlying abstract numbering definition to be used.  /// </summary>
   [OpenXmlProperty(nameof(DXW.AbstractNum.NumberingStyleLink))]
-  public string? NumberingStyleLink { get => _NumberingStyleLink; set => UpdateField(ref _NumberingStyleLink, value, nameof(NumberingStyleLink)); }
+  public string? NumberingStyleLink
+  {
+    get => _NumberingStyleLink ??= GetProperty<string?>(GetUpdatableElement()?.NumberingStyleLink);
+    set => UpdateField(ref _NumberingStyleLink, value, nameof(NumberingStyleLink));
+  }
   private string? _NumberingStyleLink;
 
   /// <summary>
@@ -101,7 +131,6 @@ public partial class AbstractNumbering : ModelElement<DXW.AbstractNum>
         _Levels = new NumberingLevels(this);
       return _Levels;
     }
-
     set => UpdateField(ref _Levels, value, nameof(Levels));
   }
   private NumberingLevels? _Levels;

@@ -1,8 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="VectorVariant"/> class.
@@ -88,13 +84,13 @@ public partial class VectorVariant : IXmlSerializable
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
           {
             string itemValue = reader.Value;
-            
+
             // Convert string to appropriate type if baseType is specified
             try
             {
               var currentCulture = CultureInfo.CurrentCulture;
               CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
-              object? convertedValue = itemBaseType.HasValue 
+              object? convertedValue = itemBaseType.HasValue
                 ? ConvertFromString(itemValue, itemBaseType.Value)
                 : itemValue;
               CultureInfo.CurrentCulture = currentCulture;
@@ -163,7 +159,7 @@ public partial class VectorVariant : IXmlSerializable
     foreach (var item in this)
     {
       writer.WriteStartElement("Item");
-      
+
       if (item != null)
       {
         if (!BaseType.HasValue)
@@ -171,8 +167,8 @@ public partial class VectorVariant : IXmlSerializable
           writer.WriteAttributeString("baseType", item.GetType().Name);
         }
         var currentCulture = CultureInfo.CurrentCulture;
-        CultureInfo.CurrentCulture = CultureInfo.InvariantCulture; 
-        string? stringValue = BaseType.HasValue 
+        CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+        string? stringValue = BaseType.HasValue
           ? ConvertToString(item, BaseType.Value)
           : item.ToString();
         CultureInfo.CurrentCulture = currentCulture;
@@ -182,7 +178,7 @@ public partial class VectorVariant : IXmlSerializable
           writer.WriteString(stringValue);
         }
       }
-      
+
       writer.WriteEndElement();
     }
   }

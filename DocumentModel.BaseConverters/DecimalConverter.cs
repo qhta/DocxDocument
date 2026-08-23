@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Provides conversion methods for Decimal value to/from Open XML.

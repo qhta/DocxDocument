@@ -6,7 +6,7 @@
 /// it should be ignored and not included in the resulting XML output.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false, AllowMultiple = false)]
-public class XmlIgnoreEmptyCollectionAttribute: Attribute
+public class XmlIgnoreEmptyCollectionAttribute : Attribute
 {
-  
+
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat?view=word-pia"/>
-public partial interface IColorFormat: IModelObject
+public partial interface IColorFormat : IModelObject
 {
   /// <summary>
   /// Returns the ink value for the specified CMYK component.

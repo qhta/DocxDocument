@@ -68,7 +68,7 @@ public partial class WordColor : WordColorBase<DXW.Color>
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   [XmlIgnore]
-  [JsonIgnore] 
+  [JsonIgnore]
   public HexPercent? ThemeShade { get => _shade; set => UpdateField(ref _shade, value, nameof(Shade)); }
   private HexPercent? _shade;
 
@@ -253,7 +253,7 @@ public partial class WordColor : WordColorBase<DXW.Color>
   /// <remarks>This operator enables seamless assignment of a nullable HexColor to a nullable DMW.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided HexColor value.</remarks>
   /// <param name = "value">The HexColor value to convert. If null, the result is null.</param>
-  public static implicit operator DMW.WordColor? (HexColor? value)
+  public static implicit operator DMW.WordColor?(HexColor? value)
   {
     if (value is null)
       return null!;
@@ -270,7 +270,7 @@ public partial class WordColor : WordColorBase<DXW.Color>
   /// returned. This operator enables seamless conversion between Color and HexColor types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to a HexColor.</param>
-  public static implicit operator HexColor? (WordColor? color)
+  public static implicit operator HexColor?(WordColor? color)
   {
     if (color is null)
       return null;
@@ -283,7 +283,7 @@ public partial class WordColor : WordColorBase<DXW.Color>
   /// <remarks>This operator enables seamless assignment of a nullable UInt32 to a nullable DMW.Color without
   /// explicit casting. The Val property of the resulting Color is set to the provided UInt32 value.</remarks>
   /// <param name = "value">The UInt32 value to convert. If null, the result is null.</param>
-  public static implicit operator DMW.WordColor? (UInt32? value)
+  public static implicit operator DMW.WordColor?(UInt32? value)
   {
     if (value is null)
       return null!;
@@ -300,7 +300,7 @@ public partial class WordColor : WordColorBase<DXW.Color>
   /// returned. This operator enables seamless conversion between Color and UInt32 types when working with nullable
   /// values.</remarks>
   /// <param name = "color">The nullable Color instance to convert to an UInt32.</param>
-  public static implicit operator UInt32? (WordColor? color)
+  public static implicit operator UInt32?(WordColor? color)
   {
     if (color is null)
       return null;

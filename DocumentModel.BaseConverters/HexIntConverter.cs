@@ -396,7 +396,7 @@ public static class HexIntConverter
   {
     if (HexBinaryValue == null) return null;
     var text = HexBinaryValue.Value;
-    if (text==null)
+    if (text == null)
       throw new InvalidOperationException("HexBinaryValue has no content.");
 
     if (!HexInt.TryParse(text, out var result))

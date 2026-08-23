@@ -23,7 +23,7 @@ public static class TSBooleanTest
     return true;
   }
 
-  
+
   static bool TestTSBooleanBasicOperations()
   {
     Console.WriteLine("--- Testing TSBoolean Basic Operations ---");
@@ -59,8 +59,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  
-  
+
+
   static bool TestTSBooleanXmlSerialization()
   {
     Console.WriteLine("--- Testing TSBoolean XML Serialization ---");
@@ -99,8 +99,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  
-  
+
+
   static bool TestTSBooleanJsonSerialization()
   {
     Console.WriteLine("--- Testing TSBoolean JSON Serialization ---");
@@ -164,7 +164,7 @@ public static class TSBooleanTest
     return true;
   }
 
-  
+
   private static TSBooleanTestData CreateTestData()
   {
     return new TSBooleanTestData
@@ -176,7 +176,7 @@ public static class TSBooleanTest
     };
   }
 
-  
+
   static bool TestTSBooleanEdgeCases()
   {
     Console.WriteLine("--- Testing TSBoolean Edge Cases ---");
@@ -216,8 +216,8 @@ public static class TSBooleanTest
     return true;
   }
 
-  
-  
+
+
   static bool TestTSBooleanPerformance()
   {
     Console.WriteLine("--- Testing TSBoolean Performance ---");
@@ -273,7 +273,7 @@ public static class TSBooleanTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

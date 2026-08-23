@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Base class for Wordprocessing RgbColorHex and SchemeColor types,
 /// providing Tint and Shade common properties and methods for color transformations.
 /// </summary>
-public abstract partial class WordDrawingsColorBase<T> : WordColorBase<T> where T :DX.OpenXmlElement
+public abstract partial class WordDrawingsColorBase<T> : WordColorBase<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Tint value to lighten the color.

@@ -1,6 +1,3 @@
-using System.Xml;
-using System.Xml.Schema;
-
 namespace DocumentModel;
 
 /// <summary>

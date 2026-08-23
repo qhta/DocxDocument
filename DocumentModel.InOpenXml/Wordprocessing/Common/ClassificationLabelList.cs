@@ -213,70 +213,70 @@ namespace DocumentModel;
 [XmlRoot("ClassificationLabelList", Namespace = "DocumentModel")]
 public partial class ClassificationLabelList : ModelElementCollection<ClassificationLabel, DXO21MLMD.ClassificationLabelList, DXO21MLMD.ClassificationLabel>
 {
- /// <summary>
- /// Gets or sets the classification extension list containing technical metadata, policy references,
- /// and system-specific information that supports and enhances the classification labels.
- /// </summary>
- /// <remarks>
- /// <para>
- /// The classification extension list provides the technical infrastructure that supports the
- /// user-facing classification labels. While labels communicate classification to users, extensions
- /// enable systems and applications to enforce policies, apply protections, and maintain compliance.
- /// Extensions typically contain:
- /// <list type="bullet">
- /// <item><description><b>Policy identifiers:</b> GUIDs or URIs linking to central policy definitions</description></item>
- /// <item><description><b>Encryption metadata:</b> Key information, protection templates, rights assignments</description></item>
- /// <item><description><b>Audit data:</b> Who applied the label, when, and under what circumstances</description></item>
- /// <item><description><b>Regulatory tags:</b> References to specific regulations or compliance frameworks</description></item>
- /// <item><description><b>System flags:</b> Processing instructions for DLP, archiving, or compliance systems</description></item>
- /// </list>
- /// </para>
- /// <para>
- /// The relationship between labels and their extensions:
- /// <list type="bullet">
- /// <item><description><b>One-to-many:</b> A single label may have multiple supporting extensions</description></item>
- /// <item><description><b>Complementary:</b> Labels provide user interface, extensions provide implementation</description></item>
- /// <item><description><b>Versioned:</b> Extensions can track policy versions while label remains constant</description></item>
- /// <item><description><b>Extensible:</b> New extensions can be added without changing label definitions</description></item>
- /// </list>
- /// </para>
- /// <para>
- /// Common extension types include:
- /// <list type="bullet">
- /// <item><description><b>MIP label GUID:</b> Microsoft Information Protection label identifier for policy lookup</description></item>
- /// <item><description><b>AIP metadata:</b> Azure Information Protection classification metadata</description></item>
- /// <item><description><b>Protection template:</b> Rights Management Services (RMS) template reference</description></item>
- /// <item><description><b>Content marking:</b> Specifications for headers, footers, watermarks</description></item>
- /// <item><description><b>Regulatory references:</b> Citations to specific laws, regulations, or standards</description></item>
- /// <item><description><b>Retention policy:</b> Document lifecycle and retention requirements</description></item>
- /// <item><description><b>Handling instructions:</b> Required procedures for document handling and disposal</description></item>
- /// </list>
- /// </para>
- /// <para>
- /// The extension list enables sophisticated scenarios:
- /// <list type="bullet">
- /// <item><description><b>Multi-framework compliance:</b> Single label with extensions for multiple regulatory frameworks</description></item>
- /// <item><description><b>Conditional policies:</b> Different protections based on user role, location, or device</description></item>
- /// <item><description><b>Policy evolution:</b> Update enforcement mechanisms without changing user-visible labels</description></item>
- /// <item><description><b>Cross-system integration:</b> Share classification with non-Microsoft compliance tools</description></item>
- /// <item><description><b>Audit trails:</b> Comprehensive tracking of classification application and changes</description></item>
- /// </list>
- /// </para>
- /// <para>
- /// Applications consuming classification extension lists should:
- /// <list type="bullet">
- /// <item><description>Validate extension data against known schemas and policies</description></item>
- /// <item><description>Preserve unknown extensions for round-trip compatibility</description></item>
- /// <item><description>Synchronize extensions with central policy management systems</description></item>
- /// <item><description>Log extension processing for audit and compliance purposes</description></item>
- /// <item><description>Handle missing or invalid extensions gracefully</description></item>
- /// </list>
- /// </para>
- /// <para>
- /// The presence of a ClassificationExtensionList alongside ClassificationLabels indicates a
- /// fully-featured classification implementation with enterprise-grade policy enforcement,
- /// compliance tracking, and information protection capabilities.
- /// </para>
- /// </remarks>
- public ClassificationExtensionList? ClassificationExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Gets or sets the classification extension list containing technical metadata, policy references,
+  /// and system-specific information that supports and enhances the classification labels.
+  /// </summary>
+  /// <remarks>
+  /// <para>
+  /// The classification extension list provides the technical infrastructure that supports the
+  /// user-facing classification labels. While labels communicate classification to users, extensions
+  /// enable systems and applications to enforce policies, apply protections, and maintain compliance.
+  /// Extensions typically contain:
+  /// <list type="bullet">
+  /// <item><description><b>Policy identifiers:</b> GUIDs or URIs linking to central policy definitions</description></item>
+  /// <item><description><b>Encryption metadata:</b> Key information, protection templates, rights assignments</description></item>
+  /// <item><description><b>Audit data:</b> Who applied the label, when, and under what circumstances</description></item>
+  /// <item><description><b>Regulatory tags:</b> References to specific regulations or compliance frameworks</description></item>
+  /// <item><description><b>System flags:</b> Processing instructions for DLP, archiving, or compliance systems</description></item>
+  /// </list>
+  /// </para>
+  /// <para>
+  /// The relationship between labels and their extensions:
+  /// <list type="bullet">
+  /// <item><description><b>One-to-many:</b> A single label may have multiple supporting extensions</description></item>
+  /// <item><description><b>Complementary:</b> Labels provide user interface, extensions provide implementation</description></item>
+  /// <item><description><b>Versioned:</b> Extensions can track policy versions while label remains constant</description></item>
+  /// <item><description><b>Extensible:</b> New extensions can be added without changing label definitions</description></item>
+  /// </list>
+  /// </para>
+  /// <para>
+  /// Common extension types include:
+  /// <list type="bullet">
+  /// <item><description><b>MIP label GUID:</b> Microsoft Information Protection label identifier for policy lookup</description></item>
+  /// <item><description><b>AIP metadata:</b> Azure Information Protection classification metadata</description></item>
+  /// <item><description><b>Protection template:</b> Rights Management Services (RMS) template reference</description></item>
+  /// <item><description><b>Content marking:</b> Specifications for headers, footers, watermarks</description></item>
+  /// <item><description><b>Regulatory references:</b> Citations to specific laws, regulations, or standards</description></item>
+  /// <item><description><b>Retention policy:</b> Document lifecycle and retention requirements</description></item>
+  /// <item><description><b>Handling instructions:</b> Required procedures for document handling and disposal</description></item>
+  /// </list>
+  /// </para>
+  /// <para>
+  /// The extension list enables sophisticated scenarios:
+  /// <list type="bullet">
+  /// <item><description><b>Multi-framework compliance:</b> Single label with extensions for multiple regulatory frameworks</description></item>
+  /// <item><description><b>Conditional policies:</b> Different protections based on user role, location, or device</description></item>
+  /// <item><description><b>Policy evolution:</b> Update enforcement mechanisms without changing user-visible labels</description></item>
+  /// <item><description><b>Cross-system integration:</b> Share classification with non-Microsoft compliance tools</description></item>
+  /// <item><description><b>Audit trails:</b> Comprehensive tracking of classification application and changes</description></item>
+  /// </list>
+  /// </para>
+  /// <para>
+  /// Applications consuming classification extension lists should:
+  /// <list type="bullet">
+  /// <item><description>Validate extension data against known schemas and policies</description></item>
+  /// <item><description>Preserve unknown extensions for round-trip compatibility</description></item>
+  /// <item><description>Synchronize extensions with central policy management systems</description></item>
+  /// <item><description>Log extension processing for audit and compliance purposes</description></item>
+  /// <item><description>Handle missing or invalid extensions gracefully</description></item>
+  /// </list>
+  /// </para>
+  /// <para>
+  /// The presence of a ClassificationExtensionList alongside ClassificationLabels indicates a
+  /// fully-featured classification implementation with enterprise-grade policy enforcement,
+  /// compliance tracking, and information protection capabilities.
+  /// </para>
+  /// </remarks>
+  public ClassificationExtensionList? ClassificationExtensionList { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options?view=word-pia"/>
-public partial interface IOptions: IModelObject
+public partial interface IOptions : IModelObject
 {
   /// <summary>
   /// Returns the default path for the specified file type.

@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawing;
+
 /// <summary>
 /// Describes properties for a group shape in chart drawings, including black and white rendering, 2D and 3D transforms, fill, effects, and extension data.
 /// </summary>
@@ -21,55 +22,89 @@ namespace DocumentModel.Drawings.ChartDrawing;
 [OpenXmlType(typeof(DXDCD.GroupShapeProperties))]
 [DataContract]
 [XmlRoot("GroupShapeProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
-public partial class GroupShapeProperties : ModelElement<DXDCD.GroupShapeProperties>
+public partial class GroupShapeProperties: ModelElement<DXDCD.GroupShapeProperties>
 {
   /// <summary>
   /// Specifies the black and white rendering mode for the group shape.
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.GroupShapeProperties.BlackWhiteMode))]
-  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
+  public BlackWhiteMode? BlackWhiteMode
+  {
+    get => _BlackWhiteMode ??= GetProperty<BlackWhiteMode?>(GetUpdatableElement()?.BlackWhiteMode);
+    set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode));
+  }
 
   private BlackWhiteMode? _BlackWhiteMode;
+
   /// <summary>
   /// 2D transformation settings for positioning and scaling grouped objects.
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.GroupShapeProperties.TransformGroup))]
-  public TransformGroup? TransformGroup { get => _TransformGroup; set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup)); }
+  public TransformGroup? TransformGroup
+  {
+    get => _TransformGroup ??= GetProperty<TransformGroup?>(GetUpdatableElement()?.TransformGroup);
+    set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup));
+  }
 
   private TransformGroup? _TransformGroup;
+
   /// <summary>
   /// Fill formatting applied to the group shape.
   /// </summary>
   [OpenXmlElement(typeof(DXD.Fill))]
-  public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
+  public Fill? Fill
+  {
+    get => _Fill ??= GetElement<Fill, DXD.Fill>(GetUpdatableElement());
+    set => UpdateField(ref _Fill, value, nameof(Fill));
+  }
 
   private Fill? _Fill;
+
   /// <summary>
   /// Collection of effects applied to the group shape.
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectList))]
-  public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
+  public EffectList? EffectList
+  {
+    get => _EffectList ??= GetElement<EffectList, DXD.EffectList>(GetUpdatableElement());
+    set => UpdateField(ref _EffectList, value, nameof(EffectList));
+  }
 
   private EffectList? _EffectList;
+
   /// <summary>
   /// Directed acyclic graph representing the structure and relationships of effects.
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectDag))]
-  public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
+  public EffectDag? EffectDag
+  {
+    get => _EffectDag ??= GetElement<EffectDag, DXD.EffectDag>(GetUpdatableElement());
+    set => UpdateField(ref _EffectDag, value, nameof(EffectDag));
+  }
 
   private EffectDag? _EffectDag;
+
   /// <summary>
   /// 3D scene type specifying the environment for the group shape.
   /// </summary>
   [OpenXmlElement(typeof(DXD.Scene3DType))]
-  public Scene3DType? Scene3DType { get => _Scene3DType; set => UpdateField(ref _Scene3DType, value, nameof(Scene3DType)); }
+  public Scene3DType? Scene3DType
+  {
+    get => _Scene3DType ??= GetElement<Scene3DType, DXD.Scene3DType>(GetUpdatableElement());
+    set => UpdateField(ref _Scene3DType, value, nameof(Scene3DType));
+  }
 
   private Scene3DType? _Scene3DType;
+
   /// <summary>
   /// Extension list for additional or future group shape properties.
   /// </summary>
   [OpenXmlElement(typeof(DXD.ExtensionList))]
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetElement<IExtensionList, DXD.ExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

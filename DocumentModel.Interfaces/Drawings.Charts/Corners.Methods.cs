@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart corners.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocorners?view=office-pia"/>
-public partial interface ICorners: IModelObject
+public partial interface ICorners : IModelObject
 {
   /// <summary>
   /// Selects the chart corners.

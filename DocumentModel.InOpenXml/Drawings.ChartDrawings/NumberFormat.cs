@@ -11,14 +11,14 @@ public partial class NumberFormat : ModelElement<DXO16DCD.NumberFormat>
   /// Specifies the format code.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.NumberFormat.FormatCode))]
-  public string? FormatCode { get => _FormatCode; set => UpdateField(ref _FormatCode, value, nameof(FormatCode)); }
+  public string? FormatCode { get => _FormatCode ??= GetProperty<string?>(GetUpdatableElement()?.FormatCode); set => UpdateField(ref _FormatCode, value, nameof(FormatCode)); }
 
   private string? _FormatCode;
   /// <summary>
   /// Specifies the source linked.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.NumberFormat.SourceLinked))]
-  public bool? SourceLinked { get => _SourceLinked; set => UpdateField(ref _SourceLinked, value, nameof(SourceLinked)); }
+  public bool? SourceLinked { get => _SourceLinked ??= GetProperty<bool?>(GetUpdatableElement()?.SourceLinked); set => UpdateField(ref _SourceLinked, value, nameof(SourceLinked)); }
 
   private bool? _SourceLinked;
 }

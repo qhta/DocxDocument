@@ -74,7 +74,7 @@ public enum LightRigType
   ///   Three IPoint.
   /// </summary>
   [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Drawing.LightRigValues), "ThreePoints")]
-  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues),"ThreePoint")]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues), "ThreePoint")]
   ThreePoints,
   /// <summary>
   ///   Light Rig Enum ( Balanced ).

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="ArrayVariant"/> class.
@@ -106,7 +96,7 @@ public partial class ArrayVariant : IXmlSerializable
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
           {
             string itemValue = reader.Value;
-            
+
             // Convert string to appropriate type
             try
             {
@@ -178,7 +168,7 @@ public partial class ArrayVariant : IXmlSerializable
       foreach (var item in _items)
       {
         writer.WriteStartElement("Item");
-        
+
         if (item != null)
         {
           string? stringValue = ConvertToString(item, BaseType);
@@ -187,7 +177,7 @@ public partial class ArrayVariant : IXmlSerializable
             writer.WriteString(stringValue);
           }
         }
-        
+
         writer.WriteEndElement();
       }
     }

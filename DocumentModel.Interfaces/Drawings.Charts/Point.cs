@@ -1,5 +1,4 @@
 using DocumentModel.Drawings.Charts;
-using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;
 

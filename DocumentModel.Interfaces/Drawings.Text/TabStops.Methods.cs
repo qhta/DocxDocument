@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings.Text;
 
 /// <summary>
 /// Represents the `TabStops2` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2?view=office-pia"/>
-public partial interface ITabStops: IModelObject
+public partial interface ITabStops : IModelObject
 {
   /// <summary>
   /// Invokes `Item`.

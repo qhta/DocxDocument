@@ -1,11 +1,9 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-
-namespace DocumentModel.InOpenXml.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Comprehensive test for DocumentModel.Numbering.
   /// </summary>
-  public class AbstractNumberingsTest: _AbstractTestClass
+  public class AbstractNumberingsTest : _AbstractTestClass
   {
 
     private readonly string TestFileName = Path.Combine(TestFileDir, "AbstractNumberingsTest.docx");

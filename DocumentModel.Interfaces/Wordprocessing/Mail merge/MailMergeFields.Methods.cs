@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields?view=word-pia"/>
-public partial interface IMailMergeFields: IModelObject
+public partial interface IMailMergeFields : IModelObject
 {
   /// <summary>
   /// Inserts a merge field at the specified range.

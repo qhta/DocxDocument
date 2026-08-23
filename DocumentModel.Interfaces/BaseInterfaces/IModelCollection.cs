@@ -9,8 +9,8 @@
 /// interface is intended for use in scenarios where compatibility with external or legacy APIs is necessary.
 /// </remarks>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-public interface IModelCollection<ItemType> : IEnumerable<ItemType> 
-  where ItemType: IModelObject
+public interface IModelCollection<ItemType> : IEnumerable<ItemType>
+  where ItemType : IModelObject
 {
   /// <summary>
   /// Gets the item at the specified integer index.

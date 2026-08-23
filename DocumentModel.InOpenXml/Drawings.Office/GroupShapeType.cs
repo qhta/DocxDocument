@@ -1,23 +1,35 @@
 namespace DocumentModel.Drawings.Office;
+
 /// <summary>
 ///   Defines the GroupShapeType Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShapeType))]
 [DataContract]
 [XmlRoot("GroupShapeType", Namespace = "DocumentModel.Drawings.Office")]
-public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
+public partial class GroupShapeType: ModelElement<DXOD.GroupShapeType>
 {
- /// <summary>
- ///   GroupShapeNonVisualProperties.
- /// </summary>
- [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeNonVisualProperties))]
- public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
- private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
+  /// <summary>
+  ///   GroupShapeNonVisualProperties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeNonVisualProperties))]
+  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties
+  {
+    get => _GroupShapeNonVisualProperties ??=
+      GetProperty<GroupShapeNonVisualProperties?>(GetUpdatableElement()?.GroupShapeNonVisualProperties);
+    set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties));
+  }
 
- /// <summary>
- ///   GroupShapeProperties.
- /// </summary>
- [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeProperties))]
- public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
- private GroupShapeProperties? _GroupShapeProperties;
+  private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
+
+  /// <summary>
+  ///   GroupShapeProperties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeProperties))]
+  public GroupShapeProperties? GroupShapeProperties
+  {
+    get => _GroupShapeProperties ??= GetProperty<GroupShapeProperties?>(GetUpdatableElement()?.GroupShapeProperties);
+    set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties));
+  }
+
+  private GroupShapeProperties? _GroupShapeProperties;
 }

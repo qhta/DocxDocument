@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart title.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle?view=office-pia"/>
-public partial interface IChartTitle: IModelObject
+public partial interface IChartTitle : IModelObject
 {
   /// <summary>
   /// Deletes the chart title.

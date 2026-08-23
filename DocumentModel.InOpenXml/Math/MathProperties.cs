@@ -1,4 +1,5 @@
 namespace DocumentModel.Math;
+
 /// <summary>
 ///   This element specifies the document-level properties for all math in the document.
 /// </summary>
@@ -27,7 +28,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   to determine the most appropriate font for use throughout the document.  
   /// </summary>
   [OpenXmlElement(typeof(DXM.MathFont))]
-  public string? Typeface { get => _typeface; set => UpdateField(ref _typeface, value, nameof(Typeface)); }
+  public string? Typeface
+  {
+    get => _typeface ??= GetElement<string, DXM.MathFont>(GetUpdatableElement());
+    set => UpdateField(ref _typeface, value, nameof(Typeface));
+  }
   private string? _typeface;
 
   /// <summary>
@@ -36,7 +41,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   That is, the binary operator is the first element on the wrapped line.
   /// </summary>
   [OpenXmlElement(typeof(DXM.BreakBinary))]
-  public BreakBinaryOperator? BreakBinary { get => _BreakBinary; set => UpdateField(ref _BreakBinary, value, nameof(BreakBinary)); }
+  public BreakBinaryOperator? BreakBinary
+  {
+    get => _BreakBinary ??= GetElement<BreakBinaryOperator, DXM.BreakBinary>(GetUpdatableElement());
+    set => UpdateField(ref _BreakBinary, value, nameof(BreakBinary));
+  }
   private BreakBinaryOperator? _BreakBinary;
 
   /// <summary>
@@ -45,7 +54,12 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If this element is omitted, the subtraction operator is repeated before and after the break.
   /// </summary>
   [OpenXmlElement(typeof(DXM.BreakBinarySubtraction))]
-  public BreakBinarySubtraction? BreakBinarySubtraction { get => _BreakBinarySubtraction; set => UpdateField(ref _BreakBinarySubtraction, value, nameof(BreakBinarySubtraction)); }
+  public BreakBinarySubtraction? BreakBinarySubtraction
+  {
+    get => _BreakBinarySubtraction ??=
+      GetElement<BreakBinarySubtraction, DXM.BreakBinarySubtraction>(GetUpdatableElement());
+    set => UpdateField(ref _BreakBinarySubtraction, value, nameof(BreakBinarySubtraction));
+  }
   private BreakBinarySubtraction? _BreakBinarySubtraction;
 
   /// <summary>
@@ -56,7 +70,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [OpenXmlElement(typeof(DXM.SmallFraction))]
-  public bool? SmallFraction { get => _SmallFraction; set => UpdateField(ref _SmallFraction, value, nameof(SmallFraction)); }
+  public bool? SmallFraction
+  {
+    get => _SmallFraction ??= GetElement<bool, DXM.SmallFraction>(GetUpdatableElement());
+    set => UpdateField(ref _SmallFraction, value, nameof(SmallFraction));
+  }
   private bool? _SmallFraction;
 
   /// <summary>
@@ -66,7 +84,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [OpenXmlElement(typeof(DXM.DisplayDefaults))]
-  public bool? DisplayDefaults { get => _DisplayDefaults; set => UpdateField(ref _DisplayDefaults, value, nameof(DisplayDefaults)); }
+  public bool? DisplayDefaults
+  {
+    get => _DisplayDefaults ??= GetElement<bool, DXM.DisplayDefaults>(GetUpdatableElement());
+    set => UpdateField(ref _DisplayDefaults, value, nameof(DisplayDefaults));
+  }
   private bool? _DisplayDefaults;
 
   /// <summary>
@@ -77,7 +99,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
   /// </summary>
   [OpenXmlElement(typeof(DXM.LeftMargin))]
-  public Twips? LeftMargin { get => _LeftMargin; set => UpdateField(ref _LeftMargin, value, nameof(LeftMargin)); }
+  public Twips? LeftMargin
+  {
+    get => _LeftMargin ??= GetElement<Twips, DXM.LeftMargin>(GetUpdatableElement());
+    set => UpdateField(ref _LeftMargin, value, nameof(LeftMargin));
+  }
   private Twips? _LeftMargin;
 
   /// <summary>
@@ -89,7 +115,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If rMargin exceeds the width available, a default indent of 1440 twips should be used. 
   /// </summary>
   [OpenXmlElement(typeof(DXM.RightMargin))]
-  public Twips? RightMargin { get => _RightMargin; set => UpdateField(ref _RightMargin, value, nameof(RightMargin)); }
+  public Twips? RightMargin
+  {
+    get => _RightMargin ??= GetElement<Twips, DXM.RightMargin>(GetUpdatableElement());
+    set => UpdateField(ref _RightMargin, value, nameof(RightMargin));
+  }
   private Twips? _RightMargin;
 
   /// <summary>
@@ -103,7 +133,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If this element is omitted, the mathematical text is centered as a group. 
   /// </summary>
   [OpenXmlElement(typeof(DXM.DefaultJustification))]
-  public MathJustification? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
+  public MathJustification? DefaultJustification
+  {
+    get => _DefaultJustification ??= GetElement<MathJustification, DXM.DefaultJustification>(GetUpdatableElement());
+    set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification));
+  }
   private MathJustification? _DefaultJustification;
 
   /// <summary>
@@ -111,7 +145,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If this element is omitted, no spacing is applied before the paragraph. 
   /// </summary>
   [OpenXmlElement(typeof(DXM.PreSpacing))]
-  public Twips? PreSpacing { get => _PreSpacing; set => UpdateField(ref _PreSpacing, value, nameof(PreSpacing)); }
+  public Twips? PreSpacing
+  {
+    get => _PreSpacing ??= GetElement<Twips, DXM.PreSpacing>(GetUpdatableElement());
+    set => UpdateField(ref _PreSpacing, value, nameof(PreSpacing));
+  }
   private Twips? _PreSpacing;
 
   /// <summary>
@@ -119,14 +157,22 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If this element is omitted, no spacing is applied after the paragraph.
   /// </summary>
   [OpenXmlElement(typeof(DXM.PostSpacing))]
-  public Twips? PostSpacing { get => _PostSpacing; set => UpdateField(ref _PostSpacing, value, nameof(PostSpacing)); }
+  public Twips? PostSpacing
+  {
+    get => _PostSpacing ??= GetElement<Twips, DXM.PostSpacing>(GetUpdatableElement());
+    set => UpdateField(ref _PostSpacing, value, nameof(PostSpacing));
+  }
   private Twips? _PostSpacing;
 
   /// <summary>
   ///   Specifies spacing between equations, expressions, or other instances of mathematical text within a display math paragraph, in twips.
   /// </summary>
   [OpenXmlElement(typeof(DXM.InterSpacing))]
-  public Twips? InterSpacing { get => _InterSpacing; set => UpdateField(ref _InterSpacing, value, nameof(InterSpacing)); }
+  public Twips? InterSpacing
+  {
+    get => _InterSpacing ??= GetElement<Twips, DXM.InterSpacing>(GetUpdatableElement());
+    set => UpdateField(ref _InterSpacing, value, nameof(InterSpacing));
+  }
   private Twips? _InterSpacing;
 
   /// <summary>
@@ -134,7 +180,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   If this element is omitted, no spacing is applied between adjacent math paragraphs..
   /// </summary>
   [OpenXmlElement(typeof(DXM.IntraSpacing))]
-  public Twips? IntraSpacing { get => _IntraSpacing; set => UpdateField(ref _IntraSpacing, value, nameof(IntraSpacing)); }
+  public Twips? IntraSpacing
+  {
+    get => _IntraSpacing ??= GetElement<Twips, DXM.IntraSpacing>(GetUpdatableElement());
+    set => UpdateField(ref _IntraSpacing, value, nameof(IntraSpacing));
+  }
   private Twips? _IntraSpacing;
 
   /// <summary>
@@ -150,13 +200,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
     get => _WrapIndent;
     set
     {
-      if (WrapRight!=null)
+      if (WrapRight != null)
         WrapRight = null;
-
       UpdateField(ref _WrapIndent, value, nameof(WrapIndent));
     }
   }
-
   private Twips? _WrapIndent;
 
   /// <summary>
@@ -169,14 +217,13 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   the default of the val attribute is 1 meaning that this option is applied.
   /// </summary>
   [OpenXmlElement(typeof(DXM.WrapRight))]
-  public bool? WrapRight 
-  { 
-    get => _WrapRight; 
+  public bool? WrapRight
+  {
+    get => _WrapRight;
     set
     {
       if (WrapIndent != null)
         WrapIndent = null;
-
       UpdateField(ref _WrapRight, value, nameof(WrapRight));
     }
   }
@@ -188,7 +235,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   Limits can be either centered above and below the integral, or positioned just to the right of the operator.
   /// </summary>
   [OpenXmlElement(typeof(DXM.IntegralLimitLocation))]
-  public LimitLocation? IntegralLimitLocation { get => _IntegralLimitLocation; set => UpdateField(ref _IntegralLimitLocation, value, nameof(IntegralLimitLocation)); }
+  public LimitLocation? IntegralLimitLocation
+  {
+    get => _IntegralLimitLocation ??= GetElement<LimitLocation, DXM.IntegralLimitLocation>(GetUpdatableElement());
+    set => UpdateField(ref _IntegralLimitLocation, value, nameof(IntegralLimitLocation));
+  }
   private LimitLocation? _IntegralLimitLocation;
 
   /// <summary>
@@ -196,6 +247,10 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
   ///   Limits can be either centered above and below the n-ary operator, or positioned just to the right of the operator.
   /// </summary>
   [OpenXmlElement(typeof(DXM.NaryLimitLocation))]
-  public LimitLocation? NaryLimitLocation { get => _NaryLimitLocation; set => UpdateField(ref _NaryLimitLocation, value, nameof(NaryLimitLocation)); }
+  public LimitLocation? NaryLimitLocation
+  {
+    get => _NaryLimitLocation ??= GetElement<LimitLocation, DXM.NaryLimitLocation>(GetUpdatableElement());
+    set => UpdateField(ref _NaryLimitLocation, value, nameof(NaryLimitLocation));
+  }
   private LimitLocation? _NaryLimitLocation;
 }

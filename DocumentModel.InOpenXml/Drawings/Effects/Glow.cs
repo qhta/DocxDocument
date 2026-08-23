@@ -11,14 +11,14 @@ public partial class Glow : ModelElement<DXD.Glow>
   ///   Radius
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Glow.Radius))]
-  public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
+  public Int64? Radius { get => _Radius ??= GetProperty<Int64?>(GetUpdatableElement()?.Radius); set => UpdateField(ref _Radius, value, nameof(Radius)); }
   private Int64? _Radius;
 
   /// <summary>
   ///   RGB Color Model - Percentage Variant.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Glow.RgbColorModelPercentage))]
-  public ColorType? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+  public ColorType? Color { get => _Color ??= GetProperty<ColorType?>(GetUpdatableElement()?.RgbColorModelPercentage); set => UpdateField(ref _Color, value, nameof(Color)); }
   private ColorType? _Color;
 
 }

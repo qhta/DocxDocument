@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace DocxEditor;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// A property descriptor for a document property, which provides information about the property

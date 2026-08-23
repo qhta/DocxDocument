@@ -10,7 +10,7 @@ namespace DocumentModel.Drawings;
 [XmlRoot("RgbColorModelHex", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelHex : DrawingsColorBase<DXD.RgbColorModelHex>, ISchemeBaseColor, IDrawingColor
 {
-  
+
   /// <summary>
   /// RGB color value in hexadecimal format.
   /// </summary>

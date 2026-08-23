@@ -12,11 +12,11 @@ public enum LayoutChildren
   /// Children are laid out horizontally.
   /// </summary>
   [OpenXmlEnumValue("Horizontal")]
-	Horizontal,
-	/// <summary>
-	/// Children are laid out vertically.
-	/// </summary>
-	[OpenXmlEnumValue("Vertical")]
-	Vertical
+  Horizontal,
+  /// <summary>
+  /// Children are laid out vertically.
+  /// </summary>
+  [OpenXmlEnumValue("Vertical")]
+  Vertical
 }
 

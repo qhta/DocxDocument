@@ -39,7 +39,7 @@ public partial struct Degrees : IXmlSerializable
 
       if (!string.IsNullOrEmpty(str))
       {
-          str = str.TrimEnd('°');
+        str = str.TrimEnd('°');
         // Parse the Degrees string to double
         var decimalValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
         // Use Unsafe.AsRef to update the readonly field

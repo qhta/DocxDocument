@@ -1,12 +1,10 @@
-﻿using DocxEditor;
-
-namespace DocxEditor;
+﻿namespace DocxEditor;
 
 
 /// <summary>
 /// ViewModel for Component.Wordprocessing.Document.
 /// </summary>
-public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
+public class DocumentVM : ViewModel<DocumentModel.Wordprocessing.Document>
 {
   /// <summary>
   /// Initializing constructor.
@@ -25,7 +23,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   /// <param name="args">The arguments of the event.</param>
   private void Document_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    if (args.PropertyName==nameof(Document.IsModified))
+    if (args.PropertyName == nameof(Document.IsModified))
     {
       NotifyPropertyChanged(nameof(Caption));
     }
@@ -61,9 +59,9 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
   /// <summary>
   /// Components of the document that are exposed as view models for binding in the UI.
   /// </summary>
-  public object[] Components => 
+  public object[] Components =>
     [
-      Document.CoreProperties, 
+      Document.CoreProperties,
       Document.ContentProperties
     ];
 
@@ -75,7 +73,7 @@ public class DocumentVM: ViewModel<DocumentModel.Wordprocessing.Document>
     get => _selectedComponent ?? Document.ContentProperties;
     set
     {
-      if (value!= _selectedComponent)
+      if (value != _selectedComponent)
       {
         _selectedComponent = value;
         NotifyPropertyChanged(nameof(SelectedComponent));

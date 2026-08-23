@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.twoinitialcapsexceptions?view=word-pia"/>
-public partial interface ITwoInitialCapsExceptions: IModelObject
+public partial interface ITwoInitialCapsExceptions : IModelObject
 {
   /// <summary>
   /// Adds a new two-initial-caps exception to the collection.

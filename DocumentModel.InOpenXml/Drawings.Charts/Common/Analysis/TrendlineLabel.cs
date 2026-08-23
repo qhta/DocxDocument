@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Represents the label for a trendline in a chart.
 ///   The trendline label provides additional information, formatting, and layout options for displaying the trendline's equation, name, or other details on the chart.
@@ -6,47 +7,77 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.TrendlineLabel))]
 [DataContract]
 [XmlRoot("TrendlineLabel", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class TrendlineLabel : ModelElement<DXDC.TrendlineLabel>
+public partial class TrendlineLabel: ModelElement<DXDC.TrendlineLabel>
 {
- /// <summary>
- ///   Layout configuration for the trendline label, controlling its position and alignment within the chart area.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.Layout))]
- public Layout? Layout { get => _Layout; set => UpdateField(ref _Layout, value, nameof(Layout)); }
- private Layout? _Layout;
+  /// <summary>
+  ///   Layout configuration for the trendline label, controlling its position and alignment within the chart area.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.Layout))]
+  public Layout? Layout
+  {
+    get => _Layout ??= GetElement<Layout, DXDC.Layout>(GetUpdatableElement());
+    set => UpdateField(ref _Layout, value, nameof(Layout));
+  }
 
- /// <summary>
- ///   Text content and formatting for the trendline label.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ChartText))]
- public ChartText? ChartText { get => _ChartText; set => UpdateField(ref _ChartText, value, nameof(ChartText)); }
- private ChartText? _ChartText;
+  private Layout? _Layout;
 
- /// <summary>
- ///   Number format applied to values displayed in the trendline label.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.NumberingFormat))]
- public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
- private NumberingFormat? _NumberingFormat;
+  /// <summary>
+  ///   Text content and formatting for the trendline label.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ChartText))]
+  public ChartText? ChartText
+  {
+    get => _ChartText ??= GetElement<ChartText, DXDC.ChartText>(GetUpdatableElement());
+    set => UpdateField(ref _ChartText, value, nameof(ChartText));
+  }
 
- /// <summary>
- ///   Visual and shape properties for the trendline label.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ChartShapeProperties))]
- public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
- private ChartShapeProperties? _ChartShapeProperties;
+  private ChartText? _ChartText;
 
- /// <summary>
- ///   Text formatting and style properties for the trendline label.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.TextProperties))]
- public TextProperties? TextProperties { get => _TextProperties; set => UpdateField(ref _TextProperties, value, nameof(TextProperties)); }
- private TextProperties? _TextProperties;
+  /// <summary>
+  ///   Number format applied to values displayed in the trendline label.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.NumberingFormat))]
+  public NumberingFormat? NumberingFormat
+  {
+    get => _NumberingFormat ??= GetElement<NumberingFormat, DXDC.NumberingFormat>(GetUpdatableElement());
+    set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat));
+  }
 
- /// <summary>
- ///   Collection of extension elements for additional customization of the trendline label.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ExtensionList))]
- public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private IExtensionList? _ExtensionList;
+  private NumberingFormat? _NumberingFormat;
+
+  /// <summary>
+  ///   Visual and shape properties for the trendline label.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties
+  {
+    get => _ChartShapeProperties ??= GetElement<ChartShapeProperties, DXDC.ChartShapeProperties>(GetUpdatableElement());
+    set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
+  }
+
+  private ChartShapeProperties? _ChartShapeProperties;
+
+  /// <summary>
+  ///   Text formatting and style properties for the trendline label.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.TextProperties))]
+  public TextProperties? TextProperties
+  {
+    get => _TextProperties ??= GetElement<TextProperties, DXDC.TextProperties>(GetUpdatableElement());
+    set => UpdateField(ref _TextProperties, value, nameof(TextProperties));
+  }
+
+  private TextProperties? _TextProperties;
+
+  /// <summary>
+  ///   Collection of extension elements for additional customization of the trendline label.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ExtensionList))]
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetElement<IExtensionList, DXDC.ExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private IExtensionList? _ExtensionList;
 }

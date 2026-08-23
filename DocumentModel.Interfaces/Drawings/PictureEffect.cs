@@ -1,12 +1,10 @@
-using System.Reflection;
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a picture effect.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect?view=office-pia"/>
-public partial interface IPictureEffect: IModelObject
+public partial interface IPictureEffect : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Type` property.

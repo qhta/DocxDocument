@@ -31,7 +31,7 @@ public static class StringListTest
     return true;
   }
 
-  
+
   static bool TestStringListBasicOperations()
   {
     Console.WriteLine("--- Testing StringList Basic Operations ---");      // Test default constructor
@@ -74,8 +74,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListCollectionOperations()
   {
     Console.WriteLine("--- Testing StringList Collection Operations ---");      // Test Add and enumeration
@@ -133,8 +133,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListParsing()
   {
     Console.WriteLine("--- Testing StringList Parsing ---");      // Test simple comma-separated values
@@ -217,8 +217,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListConversions()
   {
     Console.WriteLine("--- Testing StringList IConvertible Conversions ---");      // Test GetTypeCode
@@ -348,8 +348,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListXmlSerialization()
   {
     Console.WriteLine("--- Testing StringList XML Serialization ---");      // Create test object
@@ -422,8 +422,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListJsonSerialization()
   {
     Console.WriteLine("--- Testing StringList JSON Serialization ---");      // Create test object
@@ -454,7 +454,7 @@ public static class StringListTest
     return true;
   }
 
-  
+
   private static StringListTestData CreateTestData()
   {
     return new StringListTestData
@@ -481,7 +481,7 @@ public static class StringListTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestStringListEdgeCases()
   {
     Console.WriteLine("--- Testing StringList Edge Cases ---");      // Test null handling
@@ -572,8 +572,8 @@ public static class StringListTest
     return true;
   }
 
-  
-  
+
+
   static bool TestStringListPerformance()
   {
     Console.WriteLine("--- Testing StringList Performance ---"); const int iterations = 10000;
@@ -696,7 +696,7 @@ public static class StringListTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

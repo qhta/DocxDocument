@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers?view=word-pia"/>
-public partial interface IPageNumbers: IModelObject
+public partial interface IPageNumbers : IModelObject
 {
   /// <summary>
   /// Adds a page number to the document with the specified alignment and starting page option.

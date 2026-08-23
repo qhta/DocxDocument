@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for Styles DocDefaults DefaultRunProperties.
 /// </summary>
-public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
+public class StyleDocDefaultsRunPropertiesTest : _AbstractTestClass
 {
   private readonly string TestFileName = Path.Combine(TestFileDir, "StyleDocDefaultsRunPropertiesTest.docx");
 

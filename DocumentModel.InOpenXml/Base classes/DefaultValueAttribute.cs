@@ -5,8 +5,8 @@ namespace DocumentModel;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
 public class DefaultValueAttribute(object? Value) : System.Attribute
 {
- /// <summary>
- /// Default value to set.
- /// </summary>
- public object? Value { get; } = Value;
+  /// <summary>
+  /// Default value to set.
+  /// </summary>
+  public object? Value { get; } = Value;
 }

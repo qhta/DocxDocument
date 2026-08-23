@@ -40,7 +40,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   {
     base.Attach(wordprocessingDocument);
     var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    SetUpdatableObject(documentSettings);
+    SetUpdatableObject(documentSettings, null);
   }
 
   /// <summary>

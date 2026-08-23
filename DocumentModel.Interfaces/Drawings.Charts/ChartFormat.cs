@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart element formatting.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat?view=office-pia"/>
-public partial interface IChartFormat: IModelObject
+public partial interface IChartFormat : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Fill` property.

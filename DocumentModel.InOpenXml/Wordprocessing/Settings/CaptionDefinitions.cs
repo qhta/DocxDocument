@@ -10,17 +10,17 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(CaptionDefinition))]
 public class CaptionDefinitions : ElementCollection<CaptionDefinition>
 {
- /// <summary>
- /// Default constructor.
- /// </summary>
- public CaptionDefinitions()
- {
- }
- /// <summary>
- /// Initializing constructor.
- /// </summary>
- /// <param name = "captions"></param>
- public CaptionDefinitions(IEnumerable<CaptionDefinition> captions) : base(captions)
- {
- }
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public CaptionDefinitions()
+  {
+  }
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name = "captions"></param>
+  public CaptionDefinitions(IEnumerable<CaptionDefinition> captions) : base(captions)
+  {
+  }
 }

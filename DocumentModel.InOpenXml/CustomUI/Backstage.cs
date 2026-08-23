@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the Backstage Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -20,13 +21,21 @@ public partial class Backstage : ModelElement<DXO10CUI.Backstage>
   /// Specifies the callback invoked when the Backstage view is shown.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Backstage.OnShow))]
-  public String? OnShow { get => _OnShow; set => UpdateField(ref _OnShow, value, nameof(OnShow)); }
+  public String? OnShow
+  {
+    get => _OnShow ??= GetProperty<String?>(GetUpdatableElement()?.OnShow);
+    set => UpdateField(ref _OnShow, value, nameof(OnShow));
+  }
   private String? _OnShow;
 
   /// <summary>
   /// Specifies the callback invoked when the Backstage view is hidden.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Backstage.OnHide))]
-  public String? OnHide { get => _OnHide; set => UpdateField(ref _OnHide, value, nameof(OnHide)); }
+  public String? OnHide
+  {
+    get => _OnHide ??= GetProperty<String?>(GetUpdatableElement()?.OnHide);
+    set => UpdateField(ref _OnHide, value, nameof(OnHide));
+  }
   private String? _OnHide;
 }

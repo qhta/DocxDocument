@@ -16,11 +16,13 @@ public class IntegerBaseTypeEditor : BaseTypeEditor
   {
   }
 
-  private readonly UpDown upDown = new UpDown 
-    { ApplyZeroColor = false, 
-      NumberDecimalDigits = 0, 
-      UseNullOption = true, 
-      NullValue = null};
+  private readonly UpDown upDown = new UpDown
+  {
+    ApplyZeroColor = false,
+    NumberDecimalDigits = 0,
+    UseNullOption = true,
+    NullValue = null
+  };
 
   /// <summary>
   /// Attaches the editor to the specified property, configuring binding and enabling/disabling based on writability.

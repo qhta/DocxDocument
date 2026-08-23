@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the visibility settings that control which components are displayed in data labels.
 /// </summary>
@@ -20,27 +21,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.DataLabelVisibilities))]
 [DataContract]
 [XmlRoot("DataLabelVisibilities", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class DataLabelVisibilities : ModelElement<DXO16DCD.DataLabelVisibilities>
+public partial class DataLabelVisibilities: ModelElement<DXO16DCD.DataLabelVisibilities>
 {
   /// <summary>
   /// Specifies the series name.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.SeriesName))]
-  public bool? SeriesName { get => _SeriesName; set => UpdateField(ref _SeriesName, value, nameof(SeriesName)); }
+  public bool? SeriesName
+  {
+    get => _SeriesName ??= GetProperty<bool?>(GetUpdatableElement()?.SeriesName);
+    set => UpdateField(ref _SeriesName, value, nameof(SeriesName));
+  }
 
   private bool? _SeriesName;
+
   /// <summary>
   /// Specifies the category name.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.CategoryName))]
-  public bool? CategoryName { get => _CategoryName; set => UpdateField(ref _CategoryName, value, nameof(CategoryName)); }
+  public bool? CategoryName
+  {
+    get => _CategoryName ??= GetProperty<bool?>(GetUpdatableElement()?.CategoryName);
+    set => UpdateField(ref _CategoryName, value, nameof(CategoryName));
+  }
 
   private bool? _CategoryName;
+
   /// <summary>
   /// Specifies the value.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.Value))]
-  public bool? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+  public bool? Value
+  {
+    get => _Value ??= GetProperty<bool?>(GetUpdatableElement()?.Value);
+    set => UpdateField(ref _Value, value, nameof(Value));
+  }
 
   private bool? _Value;
 }

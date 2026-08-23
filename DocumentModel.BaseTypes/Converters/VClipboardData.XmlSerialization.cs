@@ -1,8 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="VClipboardData"/> struct.
@@ -73,7 +69,7 @@ public partial struct VClipboardData : IXmlSerializable
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
       string base64Content = reader.Value;
-      
+
       try
       {
         if (!string.IsNullOrWhiteSpace(base64Content))
@@ -139,7 +135,7 @@ public partial struct VClipboardData : IXmlSerializable
     writer.WriteAttributeString("format", Format.ToString(CultureInfo.InvariantCulture));
 
     // Write size attribute
-      writer.WriteAttributeString("size", Size.ToString(CultureInfo.InvariantCulture));
+    writer.WriteAttributeString("size", Size.ToString(CultureInfo.InvariantCulture));
 
     // Write Base64-encoded data
     if (Data.Length > 0)

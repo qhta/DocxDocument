@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode?view=word-pia"/>
-public partial interface IXMLNode: IModelObject
+public partial interface IXMLNode : IModelObject
 {
   /// <summary>
   /// Gets the XML representation of the node.

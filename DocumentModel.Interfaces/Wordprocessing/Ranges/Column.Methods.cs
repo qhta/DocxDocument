@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column?view=word-pia"/>
-public partial interface IColumn: IModelObject
+public partial interface IColumn : IModelObject
 {
   /// <summary>
   /// Selects the specified object.

@@ -23,5 +23,5 @@ public abstract partial class WordColorBase<T> : AnyColor<T> where T : DX.OpenXm
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public abstract Percentage? Shade { get; set; }
 
-  
+
 }

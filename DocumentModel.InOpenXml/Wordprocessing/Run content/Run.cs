@@ -212,11 +212,10 @@ public partial class Run: ModelElement<DXW.Run>, ITextualElement, IParagraphCont
     }
   }
 
-
   /// <summary>
-/// Groups the items in the run into contiguous segments of either textual elements or non-textual elements.
-/// </summary>
-private class ElementsGroup: List<DX.OpenXmlElement>
+  /// Groups the items in the run into contiguous segments of either textual elements or non-textual elements.
+  /// </summary>
+  private class ElementsGroup: List<DX.OpenXmlElement>
   {
     public bool IsObject { get; init; }
   }

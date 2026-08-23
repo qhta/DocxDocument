@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
-public partial interface ITablesOfFigures: IModelObject
+public partial interface ITablesOfFigures : IModelObject
 {
   /// <summary>
   /// Adds a table of figures to the document using legacy options.
@@ -25,7 +25,7 @@ public partial interface ITablesOfFigures: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.addold?view=word-pia"/>
-  public ITableOfFigures AddOld(IRange Range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
-    int UpperHeadingLevel, int LowerHeadingLevel, bool UseFields, string TableID, 
+  public ITableOfFigures AddOld(IRange Range, string Caption, bool IncludeLabel, bool UseHeadingStyles,
+    int UpperHeadingLevel, int LowerHeadingLevel, bool UseFields, string TableID,
     bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 }

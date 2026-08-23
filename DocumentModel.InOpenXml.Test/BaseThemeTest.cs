@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Creates a base class for theme-related tests, providing utility methods for setting up document contexts with initialized themes and color schemes. This class serves as a foundation for testing theme and color functionality in Wordprocessing documents, ensuring that color instances can be properly attached to document contexts for accurate testing of ParentDocument-dependent behavior.
 /// </summary>
-public abstract class BaseThemeTest: _AbstractTestClass
+public abstract class BaseThemeTest : _AbstractTestClass
 {
 
   /// <summary>

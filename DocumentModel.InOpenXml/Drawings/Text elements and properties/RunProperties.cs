@@ -1,119 +1,186 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   Represents formatting properties for a text run, including outline, fill, effects, highlight, underline, font, hyperlink, text direction, and collected drawing properties.
 /// </summary>
 [OpenXmlType(typeof(DXD.RunProperties))]
 [DataContract]
 [XmlRoot("RunProperties", Namespace = "DocumentModel.Drawings")]
-public partial class RunProperties : ModelElement<DXD.RunProperties>, IExtendableElement
+public partial class RunProperties: ModelElement<DXD.RunProperties>, IExtendableElement
 {
- /// <summary>
- ///   Outline properties for the text run.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.RunProperties.Outline))]
- public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
- private LineProperties? _Outline;
+  /// <summary>
+  ///   Outline properties for the text run.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.RunProperties.Outline))]
+  public LineProperties? Outline
+  {
+    get => _Outline ??= GetProperty<LineProperties?>(GetUpdatableElement()?.Outline);
+    set => UpdateField(ref _Outline, value, nameof(Outline));
+  }
 
- /// <summary>
- ///   Fill properties for the text run.
- /// </summary>
- public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
- private Fill? _Fill;
+  private LineProperties? _Outline;
 
- /// <summary>
- ///   List of effects applied to the text run.
- /// </summary>
- public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
- private EffectList? _EffectList;
+  /// <summary>
+  ///   Fill properties for the text run.
+  /// </summary>
+  public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
 
- /// <summary>
- ///   Effect DAG (Directed Acyclic Graph) for advanced effect composition.
- /// </summary>
- public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
- private EffectDag? _EffectDag;
+  private Fill? _Fill;
 
- /// <summary>
- ///   Highlight effect for the text run.
- /// </summary>
- public Highlight? Highlight { get => _Highlight; set => UpdateField(ref _Highlight, value, nameof(Highlight)); }
- private Highlight? _Highlight;
+  /// <summary>
+  ///   List of effects applied to the text run.
+  /// </summary>
+  public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
 
- /// <summary>
- ///   Indicates whether underline follows the text color.
- /// </summary>
- public bool? UnderlineFollowsText { get => _UnderlineFollowsText; set => UpdateField(ref _UnderlineFollowsText, value, nameof(UnderlineFollowsText)); }
- private bool? _UnderlineFollowsText;
+  private EffectList? _EffectList;
 
- /// <summary>
- ///   Underline properties for the text run.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.RunProperties.Underline))]
- public LineProperties? Underline { get => _Underline; set => UpdateField(ref _Underline, value, nameof(Underline)); }
- private LineProperties? _Underline;
+  /// <summary>
+  ///   Effect DAG (Directed Acyclic Graph) for advanced effect composition.
+  /// </summary>
+  public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
 
- /// <summary>
- ///   Indicates whether underline uses the text fill.
- /// </summary>
- public bool? UnderlineFillText { get => _UnderlineFillText; set => UpdateField(ref _UnderlineFillText, value, nameof(UnderlineFillText)); }
- private bool? _UnderlineFillText;
+  private EffectDag? _EffectDag;
 
- /// <summary>
- ///   Fill properties for the underline.
- /// </summary>
- public Fill? UnderlineFill { get => _UnderlineFill; set => UpdateField(ref _UnderlineFill, value, nameof(UnderlineFill)); }
- private Fill? _UnderlineFill;
+  /// <summary>
+  ///   Highlight effect for the text run.
+  /// </summary>
+  public Highlight? Highlight { get => _Highlight; set => UpdateField(ref _Highlight, value, nameof(Highlight)); }
 
- /// <summary>
- ///   TextFormat settings for Latin text.
- /// </summary>
- public TextFontType? LatinFont { get => _LatinFont; set => UpdateField(ref _LatinFont, value, nameof(LatinFont)); }
- private TextFontType? _LatinFont;
+  private Highlight? _Highlight;
 
- /// <summary>
- ///   TextFormat settings for East Asian text.
- /// </summary>
- public TextFontType? EastAsianFont { get => _EastAsianFont; set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont)); }
- private TextFontType? _EastAsianFont;
+  /// <summary>
+  ///   Indicates whether underline follows the text color.
+  /// </summary>
+  public bool? UnderlineFollowsText
+  {
+    get => _UnderlineFollowsText;
+    set => UpdateField(ref _UnderlineFollowsText, value, nameof(UnderlineFollowsText));
+  }
 
- /// <summary>
- ///   TextFormat settings for complex script text.
- /// </summary>
- public TextFontType? ComplexScriptFont { get => _ComplexScriptFont; set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont)); }
- private TextFontType? _ComplexScriptFont;
+  private bool? _UnderlineFollowsText;
 
- /// <summary>
- ///   TextFormat settings for symbol text.
- /// </summary>
- public TextFontType? SymbolFont { get => _SymbolFont; set => UpdateField(ref _SymbolFont, value, nameof(SymbolFont)); }
- private TextFontType? _SymbolFont;
+  /// <summary>
+  ///   Underline properties for the text run.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.RunProperties.Underline))]
+  public LineProperties? Underline
+  {
+    get => _Underline ??= GetProperty<LineProperties?>(GetUpdatableElement()?.Underline);
+    set => UpdateField(ref _Underline, value, nameof(Underline));
+  }
 
- /// <summary>
- ///   Hyperlink action triggered on click.
- /// </summary>
- public HyperlinkOnClick? HyperlinkOnClick { get => _HyperlinkOnClick; set => UpdateField(ref _HyperlinkOnClick, value, nameof(HyperlinkOnClick)); }
- private HyperlinkOnClick? _HyperlinkOnClick;
+  private LineProperties? _Underline;
 
- /// <summary>
- ///   Hyperlink action triggered on mouse over.
- /// </summary>
- public HyperlinkOnMouseOver? HyperlinkOnMouseOver { get => _HyperlinkOnMouseOver; set => UpdateField(ref _HyperlinkOnMouseOver, value, nameof(HyperlinkOnMouseOver)); }
- private HyperlinkOnMouseOver? _HyperlinkOnMouseOver;
+  /// <summary>
+  ///   Indicates whether underline uses the text fill.
+  /// </summary>
+  public bool? UnderlineFillText
+  {
+    get => _UnderlineFillText;
+    set => UpdateField(ref _UnderlineFillText, value, nameof(UnderlineFillText));
+  }
 
- /// <summary>
- ///   Indicates whether the text direction is right-to-left.
- /// </summary>
- public bool? RightToLeft { get => _RightToLeft; set => UpdateField(ref _RightToLeft, value, nameof(RightToLeft)); }
- private bool? _RightToLeft;
+  private bool? _UnderlineFillText;
 
- /// <summary>
- ///   Collected drawing properties for a text run.
- /// </summary>
- public DrawingProperties? DrawingProperties { get => _DrawingProperties; set => UpdateField(ref _DrawingProperties, value, nameof(DrawingProperties)); }
- private DrawingProperties? _DrawingProperties;
+  /// <summary>
+  ///   Fill properties for the underline.
+  /// </summary>
+  public Fill? UnderlineFill
+  {
+    get => _UnderlineFill;
+    set => UpdateField(ref _UnderlineFill, value, nameof(UnderlineFill));
+  }
 
- /// <summary>
- /// List of extension properties for the run properties, used for extensibility scenarios.
- /// </summary>
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private Fill? _UnderlineFill;
+
+  /// <summary>
+  ///   TextFormat settings for Latin text.
+  /// </summary>
+  public TextFontType? LatinFont { get => _LatinFont; set => UpdateField(ref _LatinFont, value, nameof(LatinFont)); }
+
+  private TextFontType? _LatinFont;
+
+  /// <summary>
+  ///   TextFormat settings for East Asian text.
+  /// </summary>
+  public TextFontType? EastAsianFont
+  {
+    get => _EastAsianFont;
+    set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont));
+  }
+
+  private TextFontType? _EastAsianFont;
+
+  /// <summary>
+  ///   TextFormat settings for complex script text.
+  /// </summary>
+  public TextFontType? ComplexScriptFont
+  {
+    get => _ComplexScriptFont;
+    set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont));
+  }
+
+  private TextFontType? _ComplexScriptFont;
+
+  /// <summary>
+  ///   TextFormat settings for symbol text.
+  /// </summary>
+  public TextFontType? SymbolFont
+  {
+    get => _SymbolFont;
+    set => UpdateField(ref _SymbolFont, value, nameof(SymbolFont));
+  }
+
+  private TextFontType? _SymbolFont;
+
+  /// <summary>
+  ///   Hyperlink action triggered on click.
+  /// </summary>
+  public HyperlinkOnClick? HyperlinkOnClick
+  {
+    get => _HyperlinkOnClick;
+    set => UpdateField(ref _HyperlinkOnClick, value, nameof(HyperlinkOnClick));
+  }
+
+  private HyperlinkOnClick? _HyperlinkOnClick;
+
+  /// <summary>
+  ///   Hyperlink action triggered on mouse over.
+  /// </summary>
+  public HyperlinkOnMouseOver? HyperlinkOnMouseOver
+  {
+    get => _HyperlinkOnMouseOver;
+    set => UpdateField(ref _HyperlinkOnMouseOver, value, nameof(HyperlinkOnMouseOver));
+  }
+
+  private HyperlinkOnMouseOver? _HyperlinkOnMouseOver;
+
+  /// <summary>
+  ///   Indicates whether the text direction is right-to-left.
+  /// </summary>
+  public bool? RightToLeft { get => _RightToLeft; set => UpdateField(ref _RightToLeft, value, nameof(RightToLeft)); }
+
+  private bool? _RightToLeft;
+
+  /// <summary>
+  ///   Collected drawing properties for a text run.
+  /// </summary>
+  public DrawingProperties? DrawingProperties
+  {
+    get => _DrawingProperties;
+    set => UpdateField(ref _DrawingProperties, value, nameof(DrawingProperties));
+  }
+
+  private DrawingProperties? _DrawingProperties;
+
+  /// <summary>
+  /// List of extension properties for the run properties, used for extensibility scenarios.
+  /// </summary>
+  public ExtensionList? ExtensionList
+  {
+    get => _ExtensionList;
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private ExtensionList? _ExtensionList;
 }

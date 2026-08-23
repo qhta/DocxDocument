@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Reprents a versioned stream data with a GUID identifier and binary content.

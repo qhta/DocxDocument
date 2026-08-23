@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 [OpenXmlType(typeof(DXW.HeaderShapeDefaults))]
 [DataContract]
 [XmlRoot("HeaderShapeDefaults", Namespace = "DocumentModel.Wordprocessing.Vml")]
-public partial class HeaderShapeDefaults: ModelElement<DXW.HeaderShapeDefaults>
+public partial class HeaderShapeDefaults : ModelElement<DXW.HeaderShapeDefaults>
 {
   /// <summary>
   /// Default shape properties for VML shapes in the header and footer.

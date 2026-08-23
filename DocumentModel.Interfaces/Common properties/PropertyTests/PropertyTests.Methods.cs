@@ -1,12 +1,10 @@
-using System.Collections;
-
 namespace DocumentModel.Properties;
 
 /// <summary>
 /// Represents a collection of file search criteria.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests?view=office-pia"/>
-public partial interface IPropertyTests: IModelObject
+public partial interface IPropertyTests : IModelObject
 {
   /// <summary>
   /// Adds a search criterion to the collection.

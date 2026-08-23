@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextColumn2` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textcolumn2?view=office-pia"/>
-public partial interface ITextColumn: IModelObject
+public partial interface ITextColumn : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Number` property.

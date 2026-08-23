@@ -1,5 +1,3 @@
-using DocumentFormat.OpenXml.EMMA;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Collection of sections in a Word document.
@@ -170,7 +168,7 @@ public class Sections : ModelElementCollection<Section>
   /// </summary>
   /// <returns></returns>
   /// <exception cref="NotImplementedException"></exception>
-  public override bool UpdateData()
+  public override bool UpdateData(object? context = null)
   {
     throw new NotImplementedException();
   }

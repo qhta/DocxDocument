@@ -78,7 +78,7 @@ public enum VariantType
   /// </summary>
   Decimal,
 
-    /// <summary>
+  /// <summary>
   ///   String Variant ValueType
   /// </summary>
   String,

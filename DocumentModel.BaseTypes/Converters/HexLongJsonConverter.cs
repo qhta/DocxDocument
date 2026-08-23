@@ -1,8 +1,4 @@
-﻿using System.Globalization;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   JSON converter that serializes HexLong values as 8-character hexadecimal strings.

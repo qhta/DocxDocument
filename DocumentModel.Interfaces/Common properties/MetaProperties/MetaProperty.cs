@@ -1,12 +1,10 @@
-using System.Reflection;
-
 namespace DocumentModel.Properties;
 
 /// <summary>
 /// Represents a metadata property.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia"/>
-public partial interface IMetaProperty: IModelObject
+public partial interface IMetaProperty : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Value` property.

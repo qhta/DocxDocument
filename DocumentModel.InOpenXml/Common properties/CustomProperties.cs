@@ -6,7 +6,7 @@
 [DataContract]
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
-public sealed partial class CustomProperties: ModelElementCollection<CustomProperty, DXCP.Properties, DXCP.CustomDocumentProperty>
+public sealed partial class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties, DXCP.CustomDocumentProperty>
 {
   /// <summary>
   /// Default constructor.
@@ -17,7 +17,7 @@ public sealed partial class CustomProperties: ModelElementCollection<CustomPrope
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetCustomFileProperties())
+  public CustomProperties(Wordprocessing.Document document) : base(document, document.WordprocessingDocument?.GetCustomFileProperties())
   {
   }
 

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents a generic list of values that implements XSD list semantics.
@@ -387,16 +378,16 @@ public partial class ListOf<T> : ObservableCollection<T>, IEquatable<ListOf<T>>,
   {
     if (conversionType == typeof(string))
       return ToString(provider);
-    
+
     if (conversionType == typeof(bool))
       return ToBoolean(provider);
-    
+
     if (conversionType == typeof(int))
       return ToInt32(provider);
-    
+
     if (conversionType == typeof(long))
       return ToInt64(provider);
-    
+
     if (conversionType == typeof(List<T>))
       return this;
 

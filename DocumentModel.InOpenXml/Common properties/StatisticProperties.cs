@@ -42,14 +42,14 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
   /// <summary>
   /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
   /// </summary>
-  private DXEP.Properties? OpenXmlProperties => (DXEP.Properties?)base.GetUpdatableObject();
+  private DXEP.Properties? OpenXmlProperties => (DXEP.Properties?)base.GetUpdatableObject(null);
 
   /// <summary>
   /// Retrieves the Open XML element that represents the updatable statistic properties for the current instance.
   /// </summary>
   /// <returns>An object representing the updatable Open XML statistic properties, or <see langword="null"/> if no properties are
   /// available.</returns>
-  public override object? GetUpdatableObject()
+  public override object? GetUpdatableObject(object? context)
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetExtendedFileProperties(true);
@@ -67,7 +67,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
     var properties = wordprocessingDocument.GetExtendedFileProperties(true);
     if (properties != null)
     {
-      SetUpdatableObject(properties);
+      SetUpdatableObject(properties, null);
       LoadData(properties);
     }
   }
@@ -84,7 +84,7 @@ public sealed partial class StatisticProperties : BaseBuiltInProperties
       modelProperty.SetValue(this, value);
     }
 
-    var updatableElement = GetUpdatableObject();
+    var updatableElement = GetUpdatableObject(null);
     if (updatableElement != null)
       UpdateData(updatableElement);
   }

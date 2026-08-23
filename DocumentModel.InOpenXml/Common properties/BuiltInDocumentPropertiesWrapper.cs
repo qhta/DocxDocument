@@ -48,9 +48,9 @@ public partial class BuiltInPropertiesWrapper : DMPr.IDocumentProperties
   /// </summary>
   /// <param name="Index">The name of the document property.</param>
   /// <returns>The document property with the specified name.</returns>
-  public DMPr.IDocumentProperty this[object Index] 
-  { 
-    get => _builtInProperties[(string)Index]; 
+  public DMPr.IDocumentProperty this[object Index]
+  {
+    get => _builtInProperties[(string)Index];
     set => _builtInProperties[(string)Index] = (BuiltInProperty)value;
   }
 }

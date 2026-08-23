@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabels?view=word-pia"/>
-public partial interface ICaptionLabels: IModelObject
+public partial interface ICaptionLabels : IModelObject
 {
   /// <summary>
   /// Adds a custom caption label to the collection.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Represents one gradient stop.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstop?view=office-pia"/>
-public partial interface IGradientStop: IModelObject
+public partial interface IGradientStop : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Color` property.

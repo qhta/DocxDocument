@@ -12,8 +12,8 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
   {
     //BorderThickness = new Thickness(0,0,0,0),
     BorderBrush = Brushes.Transparent,
-    Padding = new Thickness(0,3,0,3),
-    ValidationMode = InputValidationMode.LostFocus, 
+    Padding = new Thickness(0, 3, 0, 3),
+    ValidationMode = InputValidationMode.LostFocus,
   };
   private Brush? defaultBorderBrush;
   private Thickness defaultBorderThickness;
@@ -82,13 +82,13 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
     EnsureValidationHandler();
     maskedEdit.MaskType = MaskType.RegEx;
     int digits = 0;
-    if (propertyType==typeof(HexChar))
+    if (propertyType == typeof(HexChar))
       digits = 4;
-    else if (propertyType==typeof(HexInt))
+    else if (propertyType == typeof(HexInt))
       digits = 8;
     else if (propertyType == typeof(HexLong))
       digits = 16;
-    maskedEdit.Mask = "[0-9A-Fa-f]" + (digits==0 ? "*" : $"{{{digits}}}");
+    maskedEdit.Mask = "[0-9A-Fa-f]" + (digits == 0 ? "*" : $"{{{digits}}}");
     return maskedEdit;
   }
 
@@ -107,7 +107,7 @@ public class HexBinaryBaseTypeEditor : BaseTypeEditor
     }
 
     defaultBorderBrush = Brushes.Transparent;
-     // maskedEdit.BorderBrush;
+    // maskedEdit.BorderBrush;
     defaultBorderThickness = maskedEdit.BorderThickness;
     Validation.AddErrorHandler(maskedEdit, OnMaskedEditValidationError);
     maskedEdit.TextChanged += OnMaskedEditTextChanged;

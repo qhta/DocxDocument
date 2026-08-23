@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a collection of recipient data elements for mail merge in a WordprocessingML document.
 ///   This class provides access to and management of <see cref="RecipientData"/> objects, enabling advanced configuration and organization of recipient records for mail merge operations.
 /// </summary>
-public class Recipients: ElementCollection<RecipientData>
+public class Recipients : ElementCollection<RecipientData>
 {
 }

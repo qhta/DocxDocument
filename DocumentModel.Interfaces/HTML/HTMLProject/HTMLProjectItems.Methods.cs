@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents a collection of HTML project items contained in an HTML project.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitems?view=office-pia"/>
-public partial interface IHTMLProjectItems: IModelObject
+public partial interface IHTMLProjectItems : IModelObject
 {
   /// <summary>
   /// Returns the HTML project item that represents a particular project in the Microsoft Script Editor.

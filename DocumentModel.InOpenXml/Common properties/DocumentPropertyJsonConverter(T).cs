@@ -99,7 +99,7 @@ public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : Docum
     var expectedType = value.ExpectedType;
     if (expectedType == DocumentPropertyType.Unknown && valueType != null)
       expectedType = valueType.ConvertToDocumentPropertyType();
-    if (valueType != null 
+    if (valueType != null
         && expectedType != DocumentPropertyType.Unknown && valueType == expectedType.ConvertToSystemType())
     {
       TypeToStringConverter.RegisterType(valueType);
@@ -122,7 +122,7 @@ public class DocumentPropertyJsonConverter<T> : JsonConverter<T> where T : Docum
       writer.WriteString("LinkTarget", value.LinkTarget);
 
 
-    if (value.Value is not null) 
+    if (value.Value is not null)
     {
       writer.WritePropertyName("Value");
       var str = ObjectToStringConverter.ConvertToJsonString(value.Value);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 /// <summary>
 /// Element of the collection must implement this interface.
 /// </summary>

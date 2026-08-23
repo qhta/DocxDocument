@@ -6,7 +6,7 @@
 public class ContentPropertiesTest : _AbstractModelTestClass<ContentProperties>
 {
 
- 
+
   /// <summary>
   /// Updates the specified document with the provided content properties.
   /// </summary>

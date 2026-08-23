@@ -1,12 +1,10 @@
-using System.Reflection;
-
 namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents an individual project item branch in the Project Explorer in the Microsoft Script Editor.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem?view=office-pia"/>
-public partial interface IHTMLProjectItem: IModelObject
+public partial interface IHTMLProjectItem : IModelObject
 {
   /// <summary>
   /// Updates the text in the Microsoft Script Editor with text from the specified file on disk.

@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings;
 [XmlRoot("GraphicData", Namespace = "DocumentModel.Drawings")]
 public partial class GraphicData : ModelElement<DXD.GraphicData>
 {
- /// <summary>
- ///   Uniform Resource Identifier for the graphic object.
- /// </summary>
- public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
- private string? _UriString;
+  /// <summary>
+  ///   Uniform Resource Identifier for the graphic object.
+  /// </summary>
+  public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
+  private string? _UriString;
 }

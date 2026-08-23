@@ -1,16 +1,22 @@
 namespace DocumentModel.Vml;
+
 /// <summary>
 ///   Complex.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Complex))]
 [DataContract]
 [XmlRoot("Complex", Namespace = "DocumentModel.Vml")]
-public partial class Complex : ModelElement<DXVO.Complex>
+public partial class Complex: ModelElement<DXVO.Complex>
 {
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Complex.Extension))]
- public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
- private ExtensionHandlingBehavior? _Extension;
+  /// <summary>
+  ///   VML Extension Handling Behavior
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Complex.Extension))]
+  public ExtensionHandlingBehavior? Extension
+  {
+    get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);
+    set => UpdateField(ref _Extension, value, nameof(Extension));
+  }
+
+  private ExtensionHandlingBehavior? _Extension;
 }

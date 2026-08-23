@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the ContextMenu Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -21,12 +22,17 @@ namespace DocumentModel.CustomUI;
 [OpenXmlType(typeof(DXO10CUI.ContextMenu))]
 [DataContract]
 [XmlRoot("ContextMenu", Namespace = "DocumentModel.CustomUI")]
-public partial class ContextMenu : ModelElement<DXO10CUI.ContextMenu>
+public partial class ContextMenu: ModelElement<DXO10CUI.ContextMenu>
 {
   /// <summary>
   /// Specifies the identifier of the built-in Office context menu.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ContextMenu.IdMso))]
-  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+  public String? IdMso
+  {
+    get => _IdMso ??= GetProperty<String?>(GetUpdatableElement()?.IdMso);
+    set => UpdateField(ref _IdMso, value, nameof(IdMso));
+  }
+
   private String? _IdMso;
 }

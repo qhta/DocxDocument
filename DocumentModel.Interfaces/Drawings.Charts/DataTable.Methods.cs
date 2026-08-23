@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart data table.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable?view=office-pia"/>
-public partial interface IDataTable: IModelObject
+public partial interface IDataTable : IModelObject
 {
   /// <summary>
   /// Selects the data table.

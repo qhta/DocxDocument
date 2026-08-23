@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categories?view=word-pia"/>
-public partial interface ICategories: IModelObject
+public partial interface ICategories : IModelObject
 {
   /// <summary>
   /// Returns a category from the collection by index or name.

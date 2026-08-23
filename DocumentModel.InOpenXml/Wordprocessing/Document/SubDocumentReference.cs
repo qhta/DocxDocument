@@ -1,5 +1,3 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a reference to a subdocument in a WordprocessingML document.

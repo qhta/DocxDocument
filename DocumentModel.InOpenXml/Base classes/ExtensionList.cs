@@ -28,7 +28,7 @@ public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList
 {
   bool IElementCollection<IExtension>.TryAdd(IExtension item)
     => base.TryAdd((Extension)item);
-  
+
   IEnumerator<IExtension> IEnumerable<IExtension>.GetEnumerator()
     => base.GetEnumerator();
 
@@ -40,7 +40,7 @@ public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList
 
   void ICollection<IExtension>.CopyTo(IExtension[] array, int arrayIndex)
     => base.CopyTo((Extension[])array, arrayIndex);
-    
+
   bool ICollection<IExtension>.Remove(IExtension item)
    => base.Remove((Extension)item);
 }

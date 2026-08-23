@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textinput?view=word-pia"/>
-public partial interface ITextInput: IModelObject
+public partial interface ITextInput : IModelObject
 {
   /// <summary>
   /// Deletes the text from the specified text form field.

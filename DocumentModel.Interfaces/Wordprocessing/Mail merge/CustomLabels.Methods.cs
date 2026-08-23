@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabels?view=word-pia"/>
-public partial interface ICustomLabels: IModelObject
+public partial interface ICustomLabels : IModelObject
 {
   /// <summary>
   /// Adds a custom label to the collection.

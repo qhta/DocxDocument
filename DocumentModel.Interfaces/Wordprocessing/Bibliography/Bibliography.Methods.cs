@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography?view=word-pia"/>
-public partial interface IBibliography: IModelObject
+public partial interface IBibliography : IModelObject
 {
   /// <summary>
   /// Generates a unique tag for a bibliography source.

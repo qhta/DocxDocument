@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
-public partial interface IResearch: IModelObject
+public partial interface IResearch : IModelObject
 {
   /// <summary>
   /// Executes a query against the specified service using the provided query string and language settings.

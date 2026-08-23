@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlocks?view=word-pia"/>
-public partial interface ICoAuthLocks: IModelObject
+public partial interface ICoAuthLocks : IModelObject
 {
   /// <summary>
   /// Adds a co-authoring lock for the specified range and lock type.

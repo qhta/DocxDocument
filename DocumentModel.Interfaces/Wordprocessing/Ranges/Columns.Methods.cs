@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns?view=word-pia"/>
-public partial interface IColumns: IModelObject
+public partial interface IColumns : IModelObject
 {
   /// <summary>
   /// Adds a column to the collection before the specified column.

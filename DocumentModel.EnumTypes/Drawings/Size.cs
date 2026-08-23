@@ -12,11 +12,11 @@ public enum Size
   /// Sizes the control as normal.
   /// </summary>
   [OpenXmlEnumValue("Normal")]
-	Normal,
+  Normal,
   /// <summary>
   /// Sizes the control as large.
   /// </summary>
   [OpenXmlEnumValue("Large")]
-	Large
+  Large
 }
 

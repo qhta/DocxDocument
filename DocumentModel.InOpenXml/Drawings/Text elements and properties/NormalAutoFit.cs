@@ -1,23 +1,34 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   Represents normal autofit settings for text, including font scaling and line space reduction.
 /// </summary>
 [OpenXmlType(typeof(DXD.NormalAutoFit))]
 [DataContract]
 [XmlRoot("NormalAutoFit", Namespace = "DocumentModel.Drawings")]
-public partial class NormalAutoFit : ModelElement<DXD.NormalAutoFit>
+public partial class NormalAutoFit: ModelElement<DXD.NormalAutoFit>
 {
- /// <summary>
- ///   Percentage scale applied to the font size for autofitting text.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.NormalAutoFit.FontScale))]
- public Int32? FontScale { get => _FontScale; set => UpdateField(ref _FontScale, value, nameof(FontScale)); }
- private Int32? _FontScale;
+  /// <summary>
+  ///   Percentage scale applied to the font size for autofitting text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.NormalAutoFit.FontScale))]
+  public Int32? FontScale
+  {
+    get => _FontScale ??= GetProperty<Int32?>(GetUpdatableElement()?.FontScale);
+    set => UpdateField(ref _FontScale, value, nameof(FontScale));
+  }
 
- /// <summary>
- ///   Percentage reduction applied to line spacing for autofitting text.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.NormalAutoFit.LineSpaceReduction))]
- public Int32? LineSpaceReduction { get => _LineSpaceReduction; set => UpdateField(ref _LineSpaceReduction, value, nameof(LineSpaceReduction)); }
- private Int32? _LineSpaceReduction;
+  private Int32? _FontScale;
+
+  /// <summary>
+  ///   Percentage reduction applied to line spacing for autofitting text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.NormalAutoFit.LineSpaceReduction))]
+  public Int32? LineSpaceReduction
+  {
+    get => _LineSpaceReduction ??= GetProperty<Int32?>(GetUpdatableElement()?.LineSpaceReduction);
+    set => UpdateField(ref _LineSpaceReduction, value, nameof(LineSpaceReduction));
+  }
+
+  private Int32? _LineSpaceReduction;
 }

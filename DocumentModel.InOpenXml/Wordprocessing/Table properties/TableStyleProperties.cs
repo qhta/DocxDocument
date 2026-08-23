@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents style conditional table formatting properties for a table in a Wordprocessing document.
 /// This class provides properties for conditional formatting type, paragraph and run properties, and conditional formatting for tables, rows, and cells, enabling advanced styling and formatting options based on table style rules.
@@ -6,43 +7,74 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.TableStyleProperties))]
 [DataContract]
 [XmlRoot("TableStyleProperties", Namespace = "DocumentModel.Wordprocessing")]
-public partial class TableStyleProperties : ModelElement<DXW.TableStyleProperties>
+public partial class TableStyleProperties: ModelElement<DXW.TableStyleProperties>
 {
- /// <summary>
- /// Table style conditional formatting type, specifying the override kind for conditional formatting.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.TableStyleProperties.Type))]
- public TableStyleOverride? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private TableStyleOverride? _Type;
+  /// <summary>
+  /// Table style conditional formatting type, specifying the override kind for conditional formatting.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.TableStyleProperties.Type))]
+  public TableStyleOverride? Type
+  {
+    get => _Type ??= GetProperty<TableStyleOverride?>(GetUpdatableElement()?.Type);
+    set => UpdateField(ref _Type, value, nameof(Type));
+  }
 
- /// <summary>
- /// Table style conditional formatting paragraph properties, specifying formatting for paragraphs within the table.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.TableStyleProperties.StyleParagraphProperties))]
- public StyleParagraphProperties? StyleParagraphProperties { get => _StyleParagraphProperties; set => UpdateField(ref _StyleParagraphProperties, value, nameof(StyleParagraphProperties)); }
- private StyleParagraphProperties? _StyleParagraphProperties;
+  private TableStyleOverride? _Type;
 
- /// <summary>
- /// Table style conditional formatting run properties, specifying formatting for text runs within the table.
- /// </summary>
- public TableStyleRunProperties? TableStyleRunProperties { get => _TableStyleRunProperties; set => UpdateField(ref _TableStyleRunProperties, value, nameof(TableStyleRunProperties)); }
- private TableStyleRunProperties? _TableStyleRunProperties;
+  /// <summary>
+  /// Table style conditional formatting paragraph properties, specifying formatting for paragraphs within the table.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.TableStyleProperties.StyleParagraphProperties))]
+  public StyleParagraphProperties? StyleParagraphProperties
+  {
+    get => _StyleParagraphProperties ??=
+      GetProperty<StyleParagraphProperties?>(GetUpdatableElement()?.StyleParagraphProperties);
+    set => UpdateField(ref _StyleParagraphProperties, value, nameof(StyleParagraphProperties));
+  }
 
- /// <summary>
- /// Table style conditional formatting table properties, specifying formatting for the table as a whole.
- /// </summary>
- public TableStyleConditionalTableProperties? TableStyleConditionalTableProperties { get => _TableStyleConditionalTableProperties; set => UpdateField(ref _TableStyleConditionalTableProperties, value, nameof(TableStyleConditionalTableProperties)); }
- private TableStyleConditionalTableProperties? _TableStyleConditionalTableProperties;
+  private StyleParagraphProperties? _StyleParagraphProperties;
 
- /// <summary>
- /// Table style conditional formatting table row properties, specifying formatting for individual rows.
- /// </summary>
- public TableStyleConditionalRowProperties? TableStyleConditionalRowProperties { get => _TableStyleConditionalRowProperties; set => UpdateField(ref _TableStyleConditionalRowProperties, value, nameof(TableStyleConditionalRowProperties)); }
- private TableStyleConditionalRowProperties? _TableStyleConditionalRowProperties;
+  /// <summary>
+  /// Table style conditional formatting run properties, specifying formatting for text runs within the table.
+  /// </summary>
+  public TableStyleRunProperties? TableStyleRunProperties
+  {
+    get => _TableStyleRunProperties;
+    set => UpdateField(ref _TableStyleRunProperties, value, nameof(TableStyleRunProperties));
+  }
 
- /// <summary>
- /// Table style conditional formatting table cell properties, specifying formatting for individual cells.
- /// </summary>
- public TableStyleConditionalCellProperties? TableStyleConditionalCellProperties { get => _TableStyleConditionalCellProperties; set => UpdateField(ref _TableStyleConditionalCellProperties, value, nameof(TableStyleConditionalCellProperties)); }
- private TableStyleConditionalCellProperties? _TableStyleConditionalCellProperties;
+  private TableStyleRunProperties? _TableStyleRunProperties;
+
+  /// <summary>
+  /// Table style conditional formatting table properties, specifying formatting for the table as a whole.
+  /// </summary>
+  public TableStyleConditionalTableProperties? TableStyleConditionalTableProperties
+  {
+    get => _TableStyleConditionalTableProperties;
+    set => UpdateField(ref _TableStyleConditionalTableProperties, value, nameof(TableStyleConditionalTableProperties));
+  }
+
+  private TableStyleConditionalTableProperties? _TableStyleConditionalTableProperties;
+
+  /// <summary>
+  /// Table style conditional formatting table row properties, specifying formatting for individual rows.
+  /// </summary>
+  public TableStyleConditionalRowProperties? TableStyleConditionalRowProperties
+  {
+    get => _TableStyleConditionalRowProperties;
+    set => UpdateField(ref _TableStyleConditionalRowProperties, value, nameof(TableStyleConditionalRowProperties));
+  }
+
+  private TableStyleConditionalRowProperties? _TableStyleConditionalRowProperties;
+
+  /// <summary>
+  /// Table style conditional formatting table cell properties, specifying formatting for individual cells.
+  /// </summary>
+  public TableStyleConditionalCellProperties? TableStyleConditionalCellProperties
+  {
+    get => _TableStyleConditionalCellProperties;
+    set => UpdateField(ref _TableStyleConditionalCellProperties, value, nameof(TableStyleConditionalCellProperties));
+  }
+
+  private TableStyleConditionalCellProperties? _TableStyleConditionalCellProperties;
 }

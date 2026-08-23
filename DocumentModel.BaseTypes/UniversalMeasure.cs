@@ -464,7 +464,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       return ToInt32(provider);
     if (conversionType == typeof(UInt16))
       return ToUInt16(provider);
-    if(conversionType == typeof(UInt32))
+    if (conversionType == typeof(UInt32))
       return ToUInt32(provider);
     if (conversionType == typeof(UInt64))
       return ToUInt64(provider);
@@ -498,8 +498,8 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
   /// </summary>
   /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
   /// <returns>A 64-bit unsigned integer equivalent to the current value.</returns>
-  public ulong ToUInt64(IFormatProvider? provider) 
-  { 
+  public ulong ToUInt64(IFormatProvider? provider)
+  {
     return Convert.ToUInt64((Decimal)value!);
   }
 

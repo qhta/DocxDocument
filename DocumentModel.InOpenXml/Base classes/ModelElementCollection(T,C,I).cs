@@ -87,7 +87,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
   protected override bool UpdateDataCollection(OpenXmlCollectionType openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlCompositeElement);
+    SetUpdatableObject(openXmlCompositeElement, null);
     var children = openXmlCompositeElement.Elements().Where(item => item is OpenXmlItemType).ToArray();
     foreach (var child in children)
     {

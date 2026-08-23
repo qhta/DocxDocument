@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Relationship to embedded font part where embedded font data is stored.
 /// This relationship is used to link font definitions in the document to their corresponding embedded font data parts, allowing for proper rendering of fonts that are not available on the user's system.
@@ -6,14 +7,19 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.FontRelationshipType))]
 [DataContract]
 [XmlRoot("EmbeddedFont", Namespace = "DocumentModel.Wordprocessing")]
-public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
+public partial class EmbedFont: ModelElement<DXW.FontRelationshipType>
 {
   /// <summary>
   /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
   /// This property is used to link the relationship to a specific part or resource within the document.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FontRelationshipType.Id))]
-  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  public string? Id
+  {
+    get => _Id ??= GetProperty<string?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
+
   private string? _Id;
 
   /// <summary>
@@ -22,7 +28,12 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
   ///  document only, using the algorithm described in §17.8.1.    
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FontRelationshipType.FontKey))]
-  public Guid? FontKey { get => _FontKey; set => UpdateField(ref _FontKey, value, nameof(FontKey)); }
+  public Guid? FontKey
+  {
+    get => _FontKey ??= GetProperty<Guid?>(GetUpdatableElement()?.FontKey);
+    set => UpdateField(ref _FontKey, value, nameof(FontKey));
+  }
+
   private Guid? _FontKey;
 
   /// <summary>
@@ -33,7 +44,12 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
   /// large embedded font.  
   /// </summary>
   [OpenXmlProperty(nameof(DXW.FontRelationshipType.Subsetted))]
-  public bool? Subsetted { get => _Subsetted; set => UpdateField(ref _Subsetted, value, nameof(Subsetted)); }
+  public bool? Subsetted
+  {
+    get => _Subsetted ??= GetProperty<bool?>(GetUpdatableElement()?.Subsetted);
+    set => UpdateField(ref _Subsetted, value, nameof(Subsetted));
+  }
+
   private bool? _Subsetted;
 
   /// <summary>
@@ -42,8 +58,13 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
   public Base64Binary? FontData
   {
     get => _FontData ?? LoadFontData();
-    set { UpdateField(ref _FontData, value, nameof(FontData)); UpdateFontData(); }
+    set
+    {
+      UpdateField(ref _FontData, value, nameof(FontData));
+      UpdateFontData();
+    }
   }
+
   private Base64Binary? _FontData;
 
   /// <summary>
@@ -55,6 +76,7 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
   {
     if (WordprocessingDocument == null)
       return null;
+
     if (Id == null)
       throw new ApplicationException("The Id property is null in LoadFontData.");
     if (FontKey == null)
@@ -64,6 +86,7 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
     var fontTablePart = mainPart?.FontTablePart;
     if (fontTablePart == null)
       return null;
+
     var fontPart = fontTablePart.GetPartById(Id);
     using (var stream = fontPart.GetStream())
     {
@@ -104,7 +127,6 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
         var newId = "rId" + (highestEmbedFontIdNumber + 1);
         Id = newId;
       }
-
       var mainPart = WordprocessingDocument.MainDocumentPart ?? WordprocessingDocument.AddMainDocumentPart();
       var fontTablePart = mainPart.FontTablePart ?? mainPart.AddNewPart<DXPP.FontTablePart>();
       fontTablePart.Fonts ??= new DXW.Fonts();
@@ -112,9 +134,7 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
       {
         fontPart = fontTablePart.AddNewPart<DXPP.FontPart>(Id);
       }
-
       FontKey ??= Guid.NewGuid();
-
       using (var stream = fontPart.GetStream())
       {
         var fontBytes = (byte[])FontData;
@@ -157,7 +177,6 @@ public partial class EmbedFont : ModelElement<DXW.FontRelationshipType>
     {
       revertedGuidBytes[i] = guidBytes[^(i + 1)];
     }
-
     for (int dataIndex = 0; dataIndex < data.Length && dataIndex < 32; dataIndex++)
     {
       int keyIndex = dataIndex % 16;

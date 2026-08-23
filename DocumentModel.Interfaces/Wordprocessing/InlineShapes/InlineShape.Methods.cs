@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape?view=word-pia"/>
-public partial interface InlineShape: IModelObject
+public partial interface InlineShape : IModelObject
 {
   /// <summary>
   /// Activates the specified object.

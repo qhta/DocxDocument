@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes?view=word-pia"/>
-public partial interface IEndnotes: IModelObject
+public partial interface IEndnotes : IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.

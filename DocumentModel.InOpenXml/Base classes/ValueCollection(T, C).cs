@@ -145,20 +145,20 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     {
       LoadData(SourceOpenXmlCompositeElement);
       return true;
-    } 
+    }
     return false;
   }
 
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  public override bool UpdateData()
+  public override bool UpdateData(object? context = null)
   {
     if (SourceOpenXmlCompositeElement != null)
     {
-      UpdateData(SourceOpenXmlCompositeElement);
+      UpdateData(SourceOpenXmlCompositeElement, context);
       return true;
-    } 
+    }
     return false;
   }
 
@@ -167,16 +167,17 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Returns the wrapped OpenXml collection element instance, or null if not set.
   /// </summary>
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  public override object? GetUpdatableObject()
+  public override object? GetUpdatableObject(object? context = null)
   {
-    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject() as OpenXmlCollectionType;
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject(context) as OpenXmlCollectionType;
   }
 
   /// <summary>
   ///   Assigns the wrapped OpenXml collection element instance.
   /// </summary>
   /// <param name = "element">The OpenXml collection element to assign.</param>
-  public void SetUpdatableObject(OpenXmlCollectionType? element)
+  /// <param name="context">An optional context object for the update operation.</param>
+  public void SetUpdatableObject(OpenXmlCollectionType? element, object? context = null)
   {
     if (element is null)
       SourceOpenXmlCompositeElement = null;
@@ -212,7 +213,8 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
-  public override bool UpdateData(object openXmlObject)
+  /// <param name = "context">An optional context object for the update operation.</param>
+  public override bool UpdateData(object openXmlObject, object? context = null)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {

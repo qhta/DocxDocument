@@ -5,7 +5,7 @@
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
 [OpenXmlEnumType(typeof(DocumentFormat.OpenXml.Drawing.PresetColorValues))]
-public enum PresetColors: uint
+public enum PresetColors : uint
 {
   /// <summary>
   /// Alice Blue Preset Color.
@@ -851,7 +851,7 @@ public enum PresetColors: uint
   /// Transparent color, not defined in Open XML standard, but used in Word to represent "no color". It is not a real color and should not be used for any other purpose.
   /// </summary>
   Transparent = 0xFFFFFFFF,
-  
+
   /// <summary>
   /// Automatic color, not defined in Open XML standard, but used in Word to represent "automatic color". It is not a real color and should not be used for any other purpose.
   /// </summary>

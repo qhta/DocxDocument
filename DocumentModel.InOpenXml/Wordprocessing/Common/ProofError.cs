@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents a proofing error anchor in a WordprocessingML document.
 /// This class extends <see cref = "ICommonContent"/> and provides a property for the proofing error type, enabling advanced tracking and management of spelling, grammar, or other proofing errors within the document content.
@@ -6,12 +7,17 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.ProofError))]
 [DataContract]
 [XmlRoot("ProofError", Namespace = "DocumentModel.Wordprocessing")]
-public partial class ProofError : ModelElement<DXW.ProofError>
+public partial class ProofError: ModelElement<DXW.ProofError>
 {
- /// <summary>
- /// Proofing error anchor type, specifying the kind of proofing error (e.g., spelling, grammar).
- /// </summary>
- [OpenXmlProperty(nameof(DXW.ProofError.Type))]
- public ProofingError? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private ProofingError? _Type;
+  /// <summary>
+  /// Proofing error anchor type, specifying the kind of proofing error (e.g., spelling, grammar).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.ProofError.Type))]
+  public ProofingError? Type
+  {
+    get => _Type ??= GetProperty<ProofingError?>(GetUpdatableElement()?.Type);
+    set => UpdateField(ref _Type, value, nameof(Type));
+  }
+
+  private ProofingError? _Type;
 }

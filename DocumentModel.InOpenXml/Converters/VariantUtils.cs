@@ -782,7 +782,7 @@ public static class VariantUtils
       }
       else
         if (TypeToVectorBase.TryGetValue(value.GetType(), out var values))
-          baseType = values;  
+          baseType = values;
     }
 
     if (baseType == DXVT.VectorBaseValues.Variant)

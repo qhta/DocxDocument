@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list?view=word-pia"/>
-public partial interface IList: IModelObject
+public partial interface IList : IModelObject
 {
   /// <summary>
   /// Converts list numbers and LISTNUM fields in the list to text.

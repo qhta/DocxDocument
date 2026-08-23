@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.BaseInterfaces implementation.
 /// </summary>
-public class ElementCollectionTest: _AbstractTestClass
+public class ElementCollectionTest : _AbstractTestClass
 {
 
   /// <summary>
@@ -37,7 +37,7 @@ public class ElementCollectionTest: _AbstractTestClass
     IModelCollection<DMP.ICustomProperty> modelCollection = props;
 
     var byInt = modelCollection[0];
-    
+
     if (!ReferenceEquals(byInt, props[0]))
     {
       Console.WriteLine($"✗ {testMethodName} FAILED - unexpected item instance");

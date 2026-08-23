@@ -8,7 +8,7 @@
 [DataContract]
 [XmlRoot("ContinuationSeparatorMark", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.ContinuationSeparatorMark))]
-public class ContinuationSeparatorMark: ModelElement<DXW.ContinuationSeparatorMark>
+public class ContinuationSeparatorMark : ModelElement<DXW.ContinuationSeparatorMark>
 {
-  
+
 }

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoeservicesdialog?view=office-pia"/>
-public partial interface IEServicesDialog: IModelObject
+public partial interface IEServicesDialog : IModelObject
 {
   /// <summary>
   /// Gets the `ApplicationName` property.

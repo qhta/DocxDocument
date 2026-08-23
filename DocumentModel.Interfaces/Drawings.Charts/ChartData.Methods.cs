@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart data.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartdata?view=office-pia"/>
-public partial interface IChartData: IModelObject
+public partial interface IChartData : IModelObject
 {
   /// <summary>
   /// Activates chart data editing.

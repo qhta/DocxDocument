@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents language codes for three script types in WordprocessingML documents: regular (normal), complex (bidirectional), and East Asian scripts.
 /// This class enables specification of language settings for spell checking, grammar checking, and text processing in multilingual documents.
@@ -6,14 +7,12 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Languages))]
 [DataContract]
 [XmlRoot("Languages", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Languages : ModelElement<DXW.Languages>
+public partial class Languages: ModelElement<DXW.Languages>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public Languages() : base()
-  {
-  }
+  public Languages(): base() { }
 
   /// <summary>
   /// Initializes a new instance of the Languages class with specified language representations, including optional
@@ -35,35 +34,37 @@ public partial class Languages : ModelElement<DXW.Languages>
   /// Language code for all regular (normal) scripts, typically used for Western languages.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.Val))]
-  public string? Val 
+  public string? Val
   {
     get => _Val ??= GetProperty<string?>(GetUpdatableElement()?.Val);
     set => UpdateField(ref _Val, value, nameof(Val));
   }
+
   private string? _Val;
 
   /// <summary>
   /// Language code for complex (bidirectional) scripts, such as Arabic, Hebrew, or Thai.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.Bidi))]
-  public string? Bidi 
+  public string? Bidi
   {
     get => _Bidi ??= GetProperty<string?>(GetUpdatableElement()?.Bidi);
     set => UpdateField(ref _Bidi, value, nameof(Bidi));
   }
+
   private string? _Bidi;
 
   /// <summary>
   /// Language code for East Asian scripts, such as Chinese, Japanese, or Korean.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Languages.EastAsia))]
-  public string? EastAsia 
+  public string? EastAsia
   {
     get => _EastAsia ??= GetProperty<string?>(GetUpdatableElement()?.EastAsia);
     set => UpdateField(ref _EastAsia, value, nameof(EastAsia));
   }
-  private string? _EastAsia;
 
+  private string? _EastAsia;
 
   /// <summary>
   /// Returns a string that represents the current object, including its value and any associated language properties.
@@ -90,16 +91,18 @@ public partial class Languages : ModelElement<DXW.Languages>
   /// <remarks>This operator enables seamless conversion between Languages enumeration values and their string
   /// representations, which can simplify integration with APIs or components that require string input.</remarks>
   /// <param name = "languages">The nullable Languages enumeration value to convert. If the value is null, the result will also be null.</param>
-  public static implicit operator string? (Languages? languages) => languages?.ToString();
+  public static implicit operator string?(Languages? languages) => languages?.ToString();
+
   /// <summary>
   /// Implicitly converts a string representation of language codes and properties into a nullable Languages enumeration value.
   /// </summary>
   /// <param name = "value">The string representation of language codes and properties to convert.
   /// If the value is null or cannot be parsed, the result will be null.</param>
-  public static implicit operator Languages? (string? value)
+  public static implicit operator Languages?(string? value)
   {
     if (TryParse(value, out var languages))
       return languages;
+
     return null;
   }
 
@@ -113,6 +116,7 @@ public partial class Languages : ModelElement<DXW.Languages>
   {
     if (TryParse(value, out var languages))
       return languages!;
+
     throw new FormatException($"Invalid format for Languages: '{value}'");
   }
 
@@ -135,9 +139,11 @@ public partial class Languages : ModelElement<DXW.Languages>
     languages = null;
     if (string.IsNullOrEmpty(input))
       return false;
+
     var parts = input.Split(',').Select(p => p.Trim()).ToArray();
     if (parts.Length == 0)
       return false;
+
     var lang = new Languages
     {
       Val = parts[0]
@@ -150,6 +156,7 @@ public partial class Languages : ModelElement<DXW.Languages>
         var ss = part.Split(':');
         if (ss.Length != 2)
           return false;
+
         lang.EastAsia = ss[1];
       }
       else if (part.StartsWith("Bidi:"))
@@ -157,12 +164,12 @@ public partial class Languages : ModelElement<DXW.Languages>
         var ss = part.Split(':');
         if (ss.Length != 2)
           return false;
+
         lang.Bidi = ss[1];
       }
       else
         return false; // Unrecognized format
     }
-
     languages = lang;
     return true;
   }

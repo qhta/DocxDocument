@@ -207,7 +207,7 @@ public static class HexBinaryConverter
   }
 
   #endregion
-  
+
   #region FontSignature conversion.
 
   /// <summary>

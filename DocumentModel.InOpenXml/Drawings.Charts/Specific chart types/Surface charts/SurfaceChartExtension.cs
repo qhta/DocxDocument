@@ -7,10 +7,10 @@ namespace DocumentModel.Drawings.Charts;
 [XmlRoot("SurfaceChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class SurfaceChartExtension : Extension<DXDC.SurfaceChartExtension>
 {
- /// <summary>
- ///   Filtered surface series for the chart extension.
- /// </summary>
- [OpenXmlElement(typeof(DXO13DC.FilteredSurfaceSeries))]
- public FilteredSurfaceSeries? FilteredSurfaceSeries { get => _FilteredSurfaceSeries; set => UpdateField(ref _FilteredSurfaceSeries, value, nameof(FilteredSurfaceSeries)); }
- private FilteredSurfaceSeries? _FilteredSurfaceSeries;
+  /// <summary>
+  ///   Filtered surface series for the chart extension.
+  /// </summary>
+  [OpenXmlElement(typeof(DXO13DC.FilteredSurfaceSeries))]
+  public FilteredSurfaceSeries? FilteredSurfaceSeries { get => _FilteredSurfaceSeries; set => UpdateField(ref _FilteredSurfaceSeries, value, nameof(FilteredSurfaceSeries)); }
+  private FilteredSurfaceSeries? _FilteredSurfaceSeries;
 }

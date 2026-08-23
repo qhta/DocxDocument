@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source?view=word-pia"/>
-public partial interface ISource: IModelObject
+public partial interface ISource : IModelObject
 {
   /// <summary>
   /// Gets the value of the specified field from the source.

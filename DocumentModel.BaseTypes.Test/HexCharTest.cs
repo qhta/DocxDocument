@@ -25,7 +25,7 @@ public static class HexCharTest
     return true;
   }
 
-  
+
   static bool TestHexCharBasicOperations()
   {
     Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string to HexChar conversion (ASCII)
@@ -68,8 +68,8 @@ public static class HexCharTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexCharXmlSerialization()
   {
     Console.WriteLine("--- Testing HexChar XML Serialization ---"); // Create test object
@@ -107,8 +107,8 @@ public static class HexCharTest
 
   }
 
-  
-  
+
+
   static bool TestHexCharJsonSerialization()
   {
     Console.WriteLine("--- Testing HexChar JSON Serialization ---"); // Create test object
@@ -163,10 +163,10 @@ public static class HexCharTest
       Console.WriteLine("✗ Deserialization returned null");
       return false;
     }
-    
+
     // Verify deserialized data
     Console.WriteLine("Deserialized data:");
-    
+
     Console.WriteLine($"  LetterA: {deserializedData.LetterA}");
     if (!testData.LetterA.Equals(deserializedData.LetterA))
       return false;
@@ -183,8 +183,8 @@ public static class HexCharTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexCharEdgeCases()
   {
     Console.WriteLine("--- Testing HexChar Edge Cases ---"); // Test zero value
@@ -245,8 +245,8 @@ public static class HexCharTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexCharPerformance()
   {
     Console.WriteLine("--- Testing HexChar Performance ---");
@@ -330,7 +330,7 @@ public static class HexCharTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface IMarkupElement : ICommonContent
 {
-  
+
 }

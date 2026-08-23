@@ -52,7 +52,7 @@ public partial class HexBinary : IXmlSerializable
       // Parse the hex string and update the readonly field using reflection
       if (!string.IsNullOrEmpty(hexString))
       {
-       // Use reflection to set the readonly field during deserialization
+        // Use reflection to set the readonly field during deserialization
         var valueField = typeof(HexBinary).GetField("value",
           System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         valueField?.SetValue(this, hexString);

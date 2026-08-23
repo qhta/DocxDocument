@@ -7,10 +7,10 @@ namespace DocumentModel.Drawings.Charts;
 [XmlRoot("Surface3DChartExtensionList", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class Surface3DChartExtensionList : ModelElementCollection<Surface3DChartExtension, DXDC.Surface3DChartExtensionList, DXDC.Surface3DChartExtension>
 {
- /// <summary>
- ///   Collection of 3D surface chart extension items.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.Surface3DChartExtension))]
- public Surface3DChartExtensions? Surface3DChartExtensions { get => _Surface3DChartExtensions; set => UpdateField(ref _Surface3DChartExtensions, value, nameof(Surface3DChartExtensions)); }
- private Surface3DChartExtensions? _Surface3DChartExtensions;
+  /// <summary>
+  ///   Collection of 3D surface chart extension items.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.Surface3DChartExtension))]
+  public Surface3DChartExtensions? Surface3DChartExtensions { get => _Surface3DChartExtensions; set => UpdateField(ref _Surface3DChartExtensions, value, nameof(Surface3DChartExtensions)); }
+  private Surface3DChartExtensions? _Surface3DChartExtensions;
 }

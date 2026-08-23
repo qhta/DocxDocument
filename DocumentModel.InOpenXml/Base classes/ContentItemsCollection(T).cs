@@ -99,7 +99,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
   protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlCompositeElement);
+    SetUpdatableObject(openXmlCompositeElement, null);
 
     foreach (var modelItem in this)
     {

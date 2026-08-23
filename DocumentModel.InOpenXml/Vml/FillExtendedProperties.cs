@@ -1,23 +1,34 @@
 namespace DocumentModel.Vml;
+
 /// <summary>
 ///   Shape Fill Extended Properties.
 /// </summary>
 [OpenXmlType(typeof(DXVO.FillExtendedProperties))]
 [DataContract]
 [XmlRoot("FillExtendedProperties", Namespace = "DocumentModel.Vml")]
-public partial class FillExtendedProperties : ModelElement<DXVO.FillExtendedProperties>
+public partial class FillExtendedProperties: ModelElement<DXVO.FillExtendedProperties>
 {
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Extension))]
- public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
- private ExtensionHandlingBehavior? _Extension;
+  /// <summary>
+  ///   VML Extension Handling Behavior
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Extension))]
+  public ExtensionHandlingBehavior? Extension
+  {
+    get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);
+    set => UpdateField(ref _Extension, value, nameof(Extension));
+  }
 
- /// <summary>
- ///   Fill Type
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Type))]
- public FillKind? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private FillKind? _Type;
+  private ExtensionHandlingBehavior? _Extension;
+
+  /// <summary>
+  ///   Fill Type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.FillExtendedProperties.Type))]
+  public FillKind? Type
+  {
+    get => _Type ??= GetProperty<FillKind?>(GetUpdatableElement()?.Type);
+    set => UpdateField(ref _Type, value, nameof(Type));
+  }
+
+  private FillKind? _Type;
 }

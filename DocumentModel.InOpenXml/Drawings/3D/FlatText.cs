@@ -11,6 +11,6 @@ public partial class FlatText : ModelElement<DXD.FlatText>
  ///   Z coordinate for positioning in 3D space.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FlatText.Z))]
- public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
+ public Int64? Z { get => _Z ??= GetProperty<Int64?>(GetUpdatableElement()?.Z); set => UpdateField(ref _Z, value, nameof(Z)); }
  private Int64? _Z;
 }

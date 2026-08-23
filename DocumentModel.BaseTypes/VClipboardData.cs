@@ -39,7 +39,7 @@
 /// </example>
 [DataContract]
 [JsonConverter(typeof(VClipboardDataJsonConverter))]
-public partial struct VClipboardData: IEquatable<VClipboardData>
+public partial struct VClipboardData : IEquatable<VClipboardData>
 {
   private readonly int format;
   private byte[] data = Array.Empty<byte>();
@@ -112,7 +112,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// of the binary content.
   /// </para>
   /// </remarks>
-  public UInt32 Size => data!=null ? (UInt32)data.Length : 0;
+  public UInt32 Size => data != null ? (UInt32)data.Length : 0;
 
   /// <summary>
   /// Gets or sets the binary data content of the clipboard.
@@ -166,7 +166,7 @@ public partial struct VClipboardData: IEquatable<VClipboardData>
   /// </remarks>
   public bool Equals(VClipboardData other)
   {
-    return Format == other.Format && Size == other.Size && Enumerable.SequenceEqual(Data,other.Data);
+    return Format == other.Format && Size == other.Size && Enumerable.SequenceEqual(Data, other.Data);
   }
 
   /// <summary>

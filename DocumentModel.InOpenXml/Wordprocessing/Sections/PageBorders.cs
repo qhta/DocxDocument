@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents the page borders settings for a section in a Wordprocessing document.
 /// This class provides properties for z-ordering, display options, border positioning, and individual borders for each page edge, enabling advanced configuration of page border appearance and behavior.
@@ -6,54 +7,89 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.PageBorders))]
 [DataContract]
 [XmlRoot("PageBorders", Namespace = "DocumentModel.Wordprocessing")]
-public partial class PageBorders : ModelElement<DXW.PageBorders>, ISectionPropertiesContent
+public partial class PageBorders: ModelElement<DXW.PageBorders>, ISectionPropertiesContent
 {
- /// <summary>
- /// Z-ordering of the page border, specifying the stacking order relative to other elements.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.ZOrder))]
- public PageBorderZOrder? ZOrder { get => _ZOrder; set => UpdateField(ref _ZOrder, value, nameof(ZOrder)); }
- private PageBorderZOrder? _ZOrder;
+  /// <summary>
+  /// Z-ordering of the page border, specifying the stacking order relative to other elements.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.ZOrder))]
+  public PageBorderZOrder? ZOrder
+  {
+    get => _ZOrder ??= GetProperty<PageBorderZOrder?>(GetUpdatableElement()?.ZOrder);
+    set => UpdateField(ref _ZOrder, value, nameof(ZOrder));
+  }
 
- /// <summary>
- /// Pages to display page borders, specifying which pages the borders are shown on.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.Display))]
- public PageBorderDisplay? Display { get => _Display; set => UpdateField(ref _Display, value, nameof(Display)); }
- private PageBorderDisplay? _Display;
+  private PageBorderZOrder? _ZOrder;
 
- /// <summary>
- /// Page border positioning, specifying the offset from the page edge.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.OffsetFrom))]
- public PageBorderOffset? OffsetFrom { get => _OffsetFrom; set => UpdateField(ref _OffsetFrom, value, nameof(OffsetFrom)); }
- private PageBorderOffset? _OffsetFrom;
+  /// <summary>
+  /// Pages to display page borders, specifying which pages the borders are shown on.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.Display))]
+  public PageBorderDisplay? Display
+  {
+    get => _Display ??= GetProperty<PageBorderDisplay?>(GetUpdatableElement()?.Display);
+    set => UpdateField(ref _Display, value, nameof(Display));
+  }
 
- /// <summary>
- /// Top border of the page, specifying the style and appearance of the top edge.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.TopBorder))]
- public Border? TopBorder { get => _TopBorder; set => UpdateField(ref _TopBorder, value, nameof(TopBorder)); }
- private Border? _TopBorder;
+  private PageBorderDisplay? _Display;
 
- /// <summary>
- /// Left border of the page, specifying the style and appearance of the left edge.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.LeftBorder))]
- public Border? LeftBorder { get => _LeftBorder; set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder)); }
- private Border? _LeftBorder;
+  /// <summary>
+  /// Page border positioning, specifying the offset from the page edge.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.OffsetFrom))]
+  public PageBorderOffset? OffsetFrom
+  {
+    get => _OffsetFrom ??= GetProperty<PageBorderOffset?>(GetUpdatableElement()?.OffsetFrom);
+    set => UpdateField(ref _OffsetFrom, value, nameof(OffsetFrom));
+  }
 
- /// <summary>
- /// Bottom border of the page, specifying the style and appearance of the bottom edge.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.BottomBorder))]
- public Border? BottomBorder { get => _BottomBorder; set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder)); }
- private Border? _BottomBorder;
+  private PageBorderOffset? _OffsetFrom;
 
- /// <summary>
- /// Right border of the page, specifying the style and appearance of the right edge.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PageBorders.RightBorder))]
- public Border? RightBorder { get => _RightBorder; set => UpdateField(ref _RightBorder, value, nameof(RightBorder)); }
- private Border? _RightBorder;
+  /// <summary>
+  /// Top border of the page, specifying the style and appearance of the top edge.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.TopBorder))]
+  public Border? TopBorder
+  {
+    get => _TopBorder ??= GetProperty<Border?>(GetUpdatableElement()?.TopBorder);
+    set => UpdateField(ref _TopBorder, value, nameof(TopBorder));
+  }
+
+  private Border? _TopBorder;
+
+  /// <summary>
+  /// Left border of the page, specifying the style and appearance of the left edge.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.LeftBorder))]
+  public Border? LeftBorder
+  {
+    get => _LeftBorder ??= GetProperty<Border?>(GetUpdatableElement()?.LeftBorder);
+    set => UpdateField(ref _LeftBorder, value, nameof(LeftBorder));
+  }
+
+  private Border? _LeftBorder;
+
+  /// <summary>
+  /// Bottom border of the page, specifying the style and appearance of the bottom edge.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.BottomBorder))]
+  public Border? BottomBorder
+  {
+    get => _BottomBorder ??= GetProperty<Border?>(GetUpdatableElement()?.BottomBorder);
+    set => UpdateField(ref _BottomBorder, value, nameof(BottomBorder));
+  }
+
+  private Border? _BottomBorder;
+
+  /// <summary>
+  /// Right border of the page, specifying the style and appearance of the right edge.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PageBorders.RightBorder))]
+  public Border? RightBorder
+  {
+    get => _RightBorder ??= GetProperty<Border?>(GetUpdatableElement()?.RightBorder);
+    set => UpdateField(ref _RightBorder, value, nameof(RightBorder));
+  }
+
+  private Border? _RightBorder;
 }

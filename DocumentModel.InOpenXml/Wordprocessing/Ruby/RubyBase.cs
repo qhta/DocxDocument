@@ -1,5 +1,3 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the base text for a phonetic guide (ruby text) in WordprocessingML documents.

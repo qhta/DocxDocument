@@ -1,86 +1,142 @@
 namespace DocumentModel.Vml;
+
 /// <summary>
 ///   VML Diagram.
 /// </summary>
 [OpenXmlType(typeof(DXVO.Diagram))]
 [DataContract]
 [XmlRoot("Diagram", Namespace = "DocumentModel.Vml")]
-public partial class Diagram : ModelElement<DXVO.Diagram>
+public partial class Diagram: ModelElement<DXVO.Diagram>
 {
- /// <summary>
- ///   VML Extension Handling Behavior
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.Extension))]
- public ExtensionHandlingBehavior? Extension { get => _Extension; set => UpdateField(ref _Extension, value, nameof(Extension)); }
- private ExtensionHandlingBehavior? _Extension;
+  /// <summary>
+  ///   VML Extension Handling Behavior
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.Extension))]
+  public ExtensionHandlingBehavior? Extension
+  {
+    get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);
+    set => UpdateField(ref _Extension, value, nameof(Extension));
+  }
 
- /// <summary>
- ///   Diagram Style Options
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.Style))]
- public Int64? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
- private Int64? _Style;
+  private ExtensionHandlingBehavior? _Extension;
 
- /// <summary>
- ///   Diagram Automatic Format
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.AutoFormat))]
- public bool? AutoFormat { get => _AutoFormat; set => UpdateField(ref _AutoFormat, value, nameof(AutoFormat)); }
- private bool? _AutoFormat;
+  /// <summary>
+  ///   Diagram Style Options
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.Style))]
+  public Int64? Style
+  {
+    get => _Style ??= GetProperty<Int64?>(GetUpdatableElement()?.Style);
+    set => UpdateField(ref _Style, value, nameof(Style));
+  }
 
- /// <summary>
- ///   Diagram Reverse Direction
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.Reverse))]
- public bool? Reverse { get => _Reverse; set => UpdateField(ref _Reverse, value, nameof(Reverse)); }
- private bool? _Reverse;
+  private Int64? _Style;
 
- /// <summary>
- ///   Diagram Automatic Layout
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.AutoLayout))]
- public bool? AutoLayout { get => _AutoLayout; set => UpdateField(ref _AutoLayout, value, nameof(AutoLayout)); }
- private bool? _AutoLayout;
+  /// <summary>
+  ///   Diagram Automatic Format
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.AutoFormat))]
+  public bool? AutoFormat
+  {
+    get => _AutoFormat ??= GetProperty<bool?>(GetUpdatableElement()?.AutoFormat);
+    set => UpdateField(ref _AutoFormat, value, nameof(AutoFormat));
+  }
 
- /// <summary>
- ///   Diagram Layout X Scale
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.ScaleX))]
- public Int64? ScaleX { get => _ScaleX; set => UpdateField(ref _ScaleX, value, nameof(ScaleX)); }
- private Int64? _ScaleX;
+  private bool? _AutoFormat;
 
- /// <summary>
- ///   Diagram Layout Y Scale
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.ScaleY))]
- public Int64? ScaleY { get => _ScaleY; set => UpdateField(ref _ScaleY, value, nameof(ScaleY)); }
- private Int64? _ScaleY;
+  /// <summary>
+  ///   Diagram Reverse Direction
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.Reverse))]
+  public bool? Reverse
+  {
+    get => _Reverse ??= GetProperty<bool?>(GetUpdatableElement()?.Reverse);
+    set => UpdateField(ref _Reverse, value, nameof(Reverse));
+  }
 
- /// <summary>
- ///   Diagram TextFormat Size
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.FontSize))]
- public Int64? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
- private Int64? _FontSize;
+  private bool? _Reverse;
 
- /// <summary>
- ///   Diagram Layout Extents
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.ConstrainBounds))]
- public string? ConstrainBounds { get => _ConstrainBounds; set => UpdateField(ref _ConstrainBounds, value, nameof(ConstrainBounds)); }
- private string? _ConstrainBounds;
+  /// <summary>
+  ///   Diagram Automatic Layout
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.AutoLayout))]
+  public bool? AutoLayout
+  {
+    get => _AutoLayout ??= GetProperty<bool?>(GetUpdatableElement()?.AutoLayout);
+    set => UpdateField(ref _AutoLayout, value, nameof(AutoLayout));
+  }
 
- /// <summary>
- ///   Diagram Base TextFormat Size
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.BaseTextScale))]
- public Int64? BaseTextScale { get => _BaseTextScale; set => UpdateField(ref _BaseTextScale, value, nameof(BaseTextScale)); }
- private Int64? _BaseTextScale;
+  private bool? _AutoLayout;
 
- /// <summary>
- ///   Diagram Relationship Table.
- /// </summary>
- [OpenXmlProperty(nameof(DXVO.Diagram.RelationTable))]
- public RelationTable? RelationTable { get => _RelationTable; set => UpdateField(ref _RelationTable, value, nameof(RelationTable)); }
- private RelationTable? _RelationTable;
+  /// <summary>
+  ///   Diagram Layout X Scale
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.ScaleX))]
+  public Int64? ScaleX
+  {
+    get => _ScaleX ??= GetProperty<Int64?>(GetUpdatableElement()?.ScaleX);
+    set => UpdateField(ref _ScaleX, value, nameof(ScaleX));
+  }
+
+  private Int64? _ScaleX;
+
+  /// <summary>
+  ///   Diagram Layout Y Scale
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.ScaleY))]
+  public Int64? ScaleY
+  {
+    get => _ScaleY ??= GetProperty<Int64?>(GetUpdatableElement()?.ScaleY);
+    set => UpdateField(ref _ScaleY, value, nameof(ScaleY));
+  }
+
+  private Int64? _ScaleY;
+
+  /// <summary>
+  ///   Diagram TextFormat Size
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.FontSize))]
+  public Int64? FontSize
+  {
+    get => _FontSize ??= GetProperty<Int64?>(GetUpdatableElement()?.FontSize);
+    set => UpdateField(ref _FontSize, value, nameof(FontSize));
+  }
+
+  private Int64? _FontSize;
+
+  /// <summary>
+  ///   Diagram Layout Extents
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.ConstrainBounds))]
+  public string? ConstrainBounds
+  {
+    get => _ConstrainBounds ??= GetProperty<string?>(GetUpdatableElement()?.ConstrainBounds);
+    set => UpdateField(ref _ConstrainBounds, value, nameof(ConstrainBounds));
+  }
+
+  private string? _ConstrainBounds;
+
+  /// <summary>
+  ///   Diagram Base TextFormat Size
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.BaseTextScale))]
+  public Int64? BaseTextScale
+  {
+    get => _BaseTextScale ??= GetProperty<Int64?>(GetUpdatableElement()?.BaseTextScale);
+    set => UpdateField(ref _BaseTextScale, value, nameof(BaseTextScale));
+  }
+
+  private Int64? _BaseTextScale;
+
+  /// <summary>
+  ///   Diagram Relationship Table.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXVO.Diagram.RelationTable))]
+  public RelationTable? RelationTable
+  {
+    get => _RelationTable ??= GetProperty<RelationTable?>(GetUpdatableElement()?.RelationTable);
+    set => UpdateField(ref _RelationTable, value, nameof(RelationTable));
+  }
+
+  private RelationTable? _RelationTable;
 }

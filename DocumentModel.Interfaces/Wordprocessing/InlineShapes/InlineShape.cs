@@ -1,5 +1,4 @@
 using DocumentModel.Drawings.Charts;
-using DocumentModel.Drawings.SmartArt;
 using DocumentModel.HTML;
 using DocumentModel.Wordprocessing;
 

@@ -1,5 +1,3 @@
-using DocumentModel.Drawings.Office.ScriptLink;
-
 namespace DocumentModel.Drawings;
 /// <summary>
 ///   Represents an extension element for non-visual drawing properties in DrawingML/Office, providing additional metadata and configuration options for shapes, images, or graphical objects.

@@ -389,13 +389,13 @@ public static class HexPercentTest
     ok = true;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75%\" → {withHexPercent}");
     try
-    { 
-    HexPercent withoutHexPercent = "75";
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75\" → {withoutHexPercent}");
-    eq = withHexPercent.Equals(withoutHexPercent);
-    ok = false;
-    Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{withHexPercent}\" {TestHelper.EqualitySymbol(eq)} \"{withoutHexPercent}\"");
-    if (!ok) return false;
+    {
+      HexPercent withoutHexPercent = "75";
+      Console.WriteLine($"{TestHelper.OkMarker(ok)}  \"75\" → {withoutHexPercent}");
+      eq = withHexPercent.Equals(withoutHexPercent);
+      ok = false;
+      Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{withHexPercent}\" {TestHelper.EqualitySymbol(eq)} \"{withoutHexPercent}\"");
+      if (!ok) return false;
     }
     catch (ApplicationException ex)
     {
@@ -419,11 +419,12 @@ public static class HexPercentTest
 
     // String format without %
     try
-    { 
+    {
       string jsonStringWithoutHexPercent = "{\"Value\":\"50\"}";
       var fromStringNoHexPercent = JsonSerializer.Deserialize<HexPercentWrapper>(jsonStringWithoutHexPercent);
       Console.WriteLine($"  From JSON string \"50\": {fromStringNoHexPercent?.Value}");
-    } catch (Exception ex) 
+    }
+    catch (Exception ex)
     {
       Console.WriteLine($"{TestHelper.OkMarker(true)} Caught expected exception: {ex.Message}");
     }

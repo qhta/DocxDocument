@@ -6,9 +6,9 @@ namespace DocumentModel;
 /// </summary>
 [DataContract]
 [XmlRoot("DocumentProperties", Namespace = "DocumentModel")]
-public abstract partial class DocumentPropertiesCollection<T>: 
+public abstract partial class DocumentPropertiesCollection<T> :
   ModelElement<DX.OpenXmlElement>, IDocumentProperties<T>
-where T: DocumentProperty
+where T : DocumentProperty
 {
   /// <summary>
   /// Attempts to add a document property to the collection.

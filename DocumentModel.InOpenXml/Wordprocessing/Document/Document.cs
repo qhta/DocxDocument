@@ -252,7 +252,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   ///   Returns the updatable Open XML element associated with this document (the underlying <see cref = "DXPP.WordprocessingDocument"/>).
   /// </summary>
   /// <returns>The updatable Open XML element for this document.</returns>
-  public override object? GetUpdatableObject() => WordprocessingDocument; 
+  public override object? GetUpdatableObject(object? context = null) => WordprocessingDocument; 
 
   /// <summary>
   ///   Core document properties such as title, author, and subject.

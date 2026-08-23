@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.SmartArt;
 /// Represents the `SmartArtLayout` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout?view=office-pia"/>
-public partial interface ISmartArtLayout: IModelObject
+public partial interface ISmartArtLayout : IModelObject
 {
   /// <summary>
   /// Gets the `Id` property.

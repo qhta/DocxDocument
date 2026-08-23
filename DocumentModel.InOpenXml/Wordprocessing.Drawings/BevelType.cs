@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
 /// Represents the bevel effect properties for a text run or shape, specifying width, height, and preset profile type for the bevel.
 /// This class enables advanced 3D formatting and appearance customization in WordprocessingML documents.
@@ -6,26 +7,41 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [OpenXmlType(typeof(DXO10W.BevelType))]
 [DataContract]
 [XmlRoot("BevelType", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class BevelType : ModelElement<DXO10W.BevelType>
+public partial class BevelType: ModelElement<DXO10W.BevelType>
 {
- /// <summary>
- /// Width of the bevel effect, specifying the horizontal size in EMUs.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10W.BevelType.Width))]
- public Int64? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
- private Int64? _Width;
+  /// <summary>
+  /// Width of the bevel effect, specifying the horizontal size in EMUs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10W.BevelType.Width))]
+  public Int64? Width
+  {
+    get => _Width ??= GetProperty<Int64?>(GetUpdatableElement()?.Width);
+    set => UpdateField(ref _Width, value, nameof(Width));
+  }
 
- /// <summary>
- /// Height of the bevel effect, specifying the vertical size in EMUs.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10W.BevelType.Height))]
- public Int64? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
- private Int64? _Height;
+  private Int64? _Width;
 
- /// <summary>
- /// Preset profile type for the bevel, specifying the predefined bevel style.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10W.BevelType.PresetProfileType))]
- public DMD.BevelPresets? PresetProfileType { get => _PresetProfileType; set => UpdateField(ref _PresetProfileType, value, nameof(PresetProfileType)); }
- private DMD.BevelPresets? _PresetProfileType;
+  /// <summary>
+  /// Height of the bevel effect, specifying the vertical size in EMUs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10W.BevelType.Height))]
+  public Int64? Height
+  {
+    get => _Height ??= GetProperty<Int64?>(GetUpdatableElement()?.Height);
+    set => UpdateField(ref _Height, value, nameof(Height));
+  }
+
+  private Int64? _Height;
+
+  /// <summary>
+  /// Preset profile type for the bevel, specifying the predefined bevel style.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10W.BevelType.PresetProfileType))]
+  public DMD.BevelPresets? PresetProfileType
+  {
+    get => _PresetProfileType ??= GetProperty<DMD.BevelPresets?>(GetUpdatableElement()?.PresetProfileType);
+    set => UpdateField(ref _PresetProfileType, value, nameof(PresetProfileType));
+  }
+
+  private DMD.BevelPresets? _PresetProfileType;
 }

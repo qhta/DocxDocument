@@ -29,21 +29,21 @@ public static class OpenXmlCompositeElementUtils
             return new Twips(str);
         }
         else
-        if (_element is DXW.NonNegativeShortType nonNegativeShort)
-        {
-          var n = nonNegativeShort.Val?.Value;
-          if (n != null)
-            return new Twips((short)n);
-        }
-        else
-        if (_element is DXM.TwipsMeasureType twipsMeasureM)
-        {
-          var val = twipsMeasureM.Val?.Value;
-          if (val != null)
-            return new Twips((uint)val);
-        }
-        else
-          throw new InvalidDataException($"Unsupported twips conversion from type {_element.GetType()}");
+          if (_element is DXW.NonNegativeShortType nonNegativeShort)
+          {
+            var n = nonNegativeShort.Val?.Value;
+            if (n != null)
+              return new Twips((short)n);
+          }
+          else
+            if (_element is DXM.TwipsMeasureType twipsMeasureM)
+            {
+              var val = twipsMeasureM.Val?.Value;
+              if (val != null)
+                return new Twips((uint)val);
+            }
+            else
+              throw new InvalidDataException($"Unsupported twips conversion from type {_element.GetType()}");
       }
     }
     return null;
@@ -75,13 +75,13 @@ public static class OpenXmlCompositeElementUtils
       if (_element is DXW.TwipsMeasureType twipsMeasure)
         twipsMeasure.Val = (string)value;
       else
-      if (_element is DXW.NonNegativeShortType nonNegativeShort)
-        nonNegativeShort.Val = (short)value;
-      else
-      if (_element is DXM.TwipsMeasureType twipsMeasureM)
-        twipsMeasureM.Val = new DX.UInt32Value((uint)value);
-      else
-        throw new InvalidDataException($"Unsupported twips conversion to type {_element.GetType()}");
+        if (_element is DXW.NonNegativeShortType nonNegativeShort)
+          nonNegativeShort.Val = (short)value;
+        else
+          if (_element is DXM.TwipsMeasureType twipsMeasureM)
+            twipsMeasureM.Val = new DX.UInt32Value((uint)value);
+          else
+            throw new InvalidDataException($"Unsupported twips conversion to type {_element.GetType()}");
     }
     else
     {

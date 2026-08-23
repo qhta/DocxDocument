@@ -10,9 +10,9 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("NoteReferenceMark", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class NoteReferenceMark<T> : ModelElement<T>, IRunContent where T : DX.OpenXmlElement
 {
- /// <summary>
- /// Specifies that the element refers to: endnote / footnote or annotation.
- /// </summary>
- public ReferenceType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private ReferenceType? _Type;
+  /// <summary>
+  /// Specifies that the element refers to: endnote / footnote or annotation.
+  /// </summary>
+  public ReferenceType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+  private ReferenceType? _Type;
 }

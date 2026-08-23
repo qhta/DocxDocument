@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
+
 using Math = System.Math;
 
 
@@ -7,7 +8,7 @@ using Math = System.Math;
 /// </summary>
 [OpenXmlType(typeof(DXD.Hue))]
 [DataContract]
-public class Hue: DegreesTransformation<DXD.Hue>
+public class Hue : DegreesTransformation<DXD.Hue>
 {
   /// <summary>
   /// Transforms the given color by applying the Hue transformation based on the specified value.
@@ -19,7 +20,7 @@ public class Hue: DegreesTransformation<DXD.Hue>
     var (h, s, l, a) = color.HSLAComponents;
     h = Value.AsDouble();
     h = Math.Clamp(h, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }
 
@@ -44,7 +45,7 @@ public class HueOffset : DegreesTransformation<DXD.HueOffset>
     var (h, s, l, a) = color.HSLAComponents;
     h += Value.AsDouble();
     h = Math.Clamp(h, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }
 /// <summary>
@@ -67,6 +68,6 @@ public class HueModulation : PercentageTransformation<DXD.HueModulation>
     var (h, s, l, a) = color.HSLAComponents;
     h *= Value.AsDouble();
     h = Math.Clamp(h, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }

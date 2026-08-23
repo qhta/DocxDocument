@@ -12,11 +12,11 @@ public enum ItemSize
   /// Item size is normal.
   /// </summary>
   [OpenXmlEnumValue("Normal")]
-	Normal,
+  Normal,
   /// <summary>
   /// Item size is large.
   /// </summary>
   [OpenXmlEnumValue("Large")]
-	Large
+  Large
 }
 

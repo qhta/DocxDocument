@@ -1,5 +1,3 @@
-using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents non-visual properties for a drawing shape in a Wordprocessing document.

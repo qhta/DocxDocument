@@ -31,8 +31,10 @@ public sealed partial class CustomProperty : DMPr.ICustomProperty, DMPr.IDocumen
   /// </summary>
   bool DMPr.IDocumentProperty.LinkToContent
   {
-    [DebuggerStepThrough] get => this.LinkTarget!=null;
-    [DebuggerStepThrough] set => this.LinkTarget = value ? string.Empty : null;
+    [DebuggerStepThrough]
+    get => this.LinkTarget != null;
+    [DebuggerStepThrough]
+    set => this.LinkTarget = value ? string.Empty : null;
   }
 
   /// <summary>
@@ -41,8 +43,10 @@ public sealed partial class CustomProperty : DMPr.ICustomProperty, DMPr.IDocumen
   /// </summary>
   string DMPr.IDocumentProperty.LinkSource
   {
-    [DebuggerStepThrough] get => this.LinkTarget ?? string.Empty;
-    [DebuggerStepThrough] set => this.LinkTarget = value;
+    [DebuggerStepThrough]
+    get => this.LinkTarget ?? string.Empty;
+    [DebuggerStepThrough]
+    set => this.LinkTarget = value;
   }
 
   /// <summary>

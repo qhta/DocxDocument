@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.RecipientDataReference))]
 [DataContract]
 [XmlRoot("RecipientDataRef", Namespace = "DocumentModel.Wordprocessing")]
-public class RecipientDataReferences: ElementCollection<RecipientDataRef>
+public class RecipientDataReferences : ElementCollection<RecipientDataRef>
 {
 
 }

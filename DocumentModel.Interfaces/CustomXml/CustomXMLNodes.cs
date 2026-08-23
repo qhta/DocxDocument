@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace DocumentModel.CustomXml;
 
 /// <summary>
@@ -12,7 +10,7 @@ namespace DocumentModel.CustomXml;
 /// Contains a collection of CustomXMLNode objects that represent XML nodes in a document.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnodes?view=office-pia"/>
-public partial interface ICustomXMLNodes: IModelCollection<ICustomXMLNode>
+public partial interface ICustomXMLNodes : IModelCollection<ICustomXMLNode>
 {
 }
 

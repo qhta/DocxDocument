@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the plot area of a chart.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia"/>
-public partial interface IPlotArea: IModelObject
+public partial interface IPlotArea : IModelObject
 {
   /// <summary>
   /// Selects the plot area.

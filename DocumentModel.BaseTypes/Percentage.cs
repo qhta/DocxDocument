@@ -85,7 +85,7 @@ public readonly partial struct Percentage : IEquatable<Percentage>, IComparable<
       str = str.TrimStart('#');
     }
     var byteValue = byte.Parse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture);
-    int intValue = byteValue*100/255; // Convert byte to percentage
+    int intValue = byteValue * 100 / 255; // Convert byte to percentage
     return new Percentage(intValue);
   }
 
@@ -367,7 +367,7 @@ public readonly partial struct Percentage : IEquatable<Percentage>, IComparable<
   {
     return ((double)this).GetHashCode();
   }
-  
+
   /// <summary>
   /// Gets the percentage value as an integer.
   /// </summary>

@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for List&lt;T&gt; type serialization in both XML and JSON formats.
@@ -27,7 +25,7 @@ public static class ListOfTest
     return true;
   }
 
-  
+
   static bool TestListOfBasicOperations()
   {
     Console.WriteLine("--- Testing List<T> Basic Operations ---");      // Test with integer type
@@ -75,8 +73,8 @@ public static class ListOfTest
     return true;
   }
 
-  
-  
+
+
   static bool TestListOfCollectionOperations()
   {
     Console.WriteLine("--- Testing List<T> Collection Operations ---");      // Test Add and enumeration with integers
@@ -135,8 +133,8 @@ public static class ListOfTest
     return true;
   }
 
-  
-  
+
+
   static bool TestListOfParsing()
   {
     Console.WriteLine("--- Testing List<T> Parsing ---");      // Test space-separated integers
@@ -235,8 +233,8 @@ public static class ListOfTest
     return true;
   }
 
-  
-  
+
+
   static bool TestListOfXmlSerialization()
   {
     Console.WriteLine("--- Testing List<T> XML Serialization ---");      // Create test object
@@ -336,8 +334,8 @@ public static class ListOfTest
     return true;
   }
 
-  
-  
+
+
   static bool TestListOfJsonSerialization()
   {
     Console.WriteLine("--- Testing List<T> JSON Serialization ---");      // Create test object
@@ -368,7 +366,7 @@ public static class ListOfTest
     return true;
   }
 
-  
+
   private static ListOfTestData CreateTestData()
   {
     return new ListOfTestData
@@ -378,7 +376,7 @@ public static class ListOfTest
       MultipleInts = new ListOf<int>([1, 2, 3, 4, 5]),
       EmptyStringList = new ListOf<string>(),
       SingleString = new ListOf<string>(["hello"]),
-      MultipleStrings = new ListOf<string>(["apple","banana","cherry"]),
+      MultipleStrings = new ListOf<string>(["apple", "banana", "cherry"]),
       DoubleList = new ListOf<double>([1.5, 2.5, 3.5]),
       BoolList = new ListOf<bool>([true, false, true, false])
     };
@@ -399,7 +397,7 @@ public static class ListOfTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestListOfEdgeCases()
   {
     Console.WriteLine("--- Testing List<T> Edge Cases ---");      // Test IConvertible methods
@@ -490,8 +488,8 @@ public static class ListOfTest
     return true;
   }
 
-  
-  
+
+
   static bool TestListOfPerformance()
   {
     Console.WriteLine("--- Testing List<T> Performance ---"); const int iterations = 10000;
@@ -615,7 +613,7 @@ public static class ListOfTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

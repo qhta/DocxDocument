@@ -23,7 +23,7 @@ public static class HexLongTest
     return true;
   }
 
-  
+
   static bool TestHexLongBasicOperations()
   {
     Console.WriteLine("--- Testing HexLong Basic Operations ---");      // Test string to HexLong conversion
@@ -71,8 +71,8 @@ public static class HexLongTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexLongXmlSerialization()
   {
     Console.WriteLine("--- Testing HexLong XML Serialization ---");      // Create test object
@@ -168,8 +168,8 @@ public static class HexLongTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexLongJsonSerialization()
   {
     Console.WriteLine("--- Testing HexLong JSON Serialization ---");      // Create test object
@@ -218,8 +218,8 @@ public static class HexLongTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexLongEdgeCases()
   {
     Console.WriteLine("--- Testing HexLong Edge Cases ---");      // Test zero value
@@ -296,8 +296,8 @@ public static class HexLongTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexLongPerformance()
   {
     Console.WriteLine("--- Testing HexLong Performance ---"); const int iterations = 100000;
@@ -394,7 +394,7 @@ public static class HexLongTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

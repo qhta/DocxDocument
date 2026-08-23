@@ -1,7 +1,4 @@
-﻿
-using DocumentFormat.OpenXml.Office2010.PowerPoint;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides helper methods for XML serialization and deserialization of objects, including handling of type overrides for generic types and management of XML namespaces.
@@ -27,7 +24,7 @@ public static class XmlSerializationHelper
     namespaces.Add("pr", "DocumentModel.Properties");
     return namespaces;
   }
-  
+
   /// <summary>
   /// Serializes an object to XML using its runtime type.
   /// </summary>
@@ -470,7 +467,7 @@ public static class XmlSerializationHelper
     if (str.Contains('<') || str.Contains('`'))
       return null;
     var k = str.IndexOf('`');
-    if (k >= 0) 
+    if (k >= 0)
       str = str.Substring(0, k);
     return str;
   }
@@ -502,7 +499,7 @@ public static class XmlSerializationHelper
       InitTypeCache();
     if (_typeCache.TryGetValue(typeName, out var foundTypes) && foundTypes.Count > 0)
     {
-      if (foundTypes.Count==1)
+      if (foundTypes.Count == 1)
         return foundTypes[0];
       else
       {

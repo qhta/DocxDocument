@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the DialogBoxLauncher Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -13,12 +14,17 @@ namespace DocumentModel.CustomUI;
 [OpenXmlType(typeof(DXO10CUI.DialogBoxLauncher))]
 [DataContract]
 [XmlRoot("DialogBoxLauncher", Namespace = "DocumentModel.CustomUI")]
-public partial class DialogBoxLauncher : ModelElement<DXO10CUI.DialogBoxLauncher>
+public partial class DialogBoxLauncher: ModelElement<DXO10CUI.DialogBoxLauncher>
 {
   /// <summary>
   /// Specifies the button displayed in the dialog box launcher area.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.DialogBoxLauncher.ButtonRegular))]
-  public ButtonRegular? ButtonRegular { get => _ButtonRegular; set => UpdateField(ref _ButtonRegular, value, nameof(ButtonRegular)); }
+  public ButtonRegular? ButtonRegular
+  {
+    get => _ButtonRegular ??= GetProperty<ButtonRegular?>(GetUpdatableElement()?.ButtonRegular);
+    set => UpdateField(ref _ButtonRegular, value, nameof(ButtonRegular));
+  }
+
   private ButtonRegular? _ButtonRegular;
 }

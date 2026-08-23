@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for Styles DocDefaults DefaultParagraphProperties.
 /// </summary>
-public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
+public class StyleDocDefaultsParagraphPropertiesTest : _AbstractTestClass
 {
   private readonly string TestFileName = Path.Combine(TestFileDir, "StyleDocDefaultsParagraphPropertiesTest.docx");
 

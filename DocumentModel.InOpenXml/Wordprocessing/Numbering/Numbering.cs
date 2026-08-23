@@ -1,24 +1,23 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Numbering Definitions.
 /// </summary>
 [OpenXmlType(typeof(DXW.Numbering))]
 [DataContract]
 [XmlRoot("Numbering", Namespace = "DocumentModel.Wordprocessing")]
-public sealed partial class Numbering : ModelElement<DXW.Numbering>
+public sealed partial class Numbering: ModelElement<DXW.Numbering>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public Numbering()
-  {
-  }
+  public Numbering() { }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">The document to attach to.</param>
-  public Numbering(Document document) : this()
+  public Numbering(Document document): this()
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
@@ -32,7 +31,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     base.AttachAndLoad(wordprocessingDocument);
     var numbering = wordprocessingDocument.GetNumbering();
-    SetUpdatableObject(numbering);
+    SetUpdatableObject(numbering, null);
     LoadData(numbering);
   }
 
@@ -44,7 +43,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var numbering = wordprocessingDocument.GetNumbering();
-    SetUpdatableObject(numbering);
+    SetUpdatableObject(numbering, null);
     UpdateData(numbering);
   }
 
@@ -55,7 +54,12 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   /// by those consumers to indicate their progress (if not complete) in reviewing existing abstract numbering definitions.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NumberingIdMacAtCleanup))]
-  public int? LastRevAbstractNumbering { get => _lastRevAbstractNumbering; set => UpdateField(ref _lastRevAbstractNumbering, value, nameof(LastRevAbstractNumbering)); }
+  public int? LastRevAbstractNumbering
+  {
+    get => _lastRevAbstractNumbering ??= GetElement<int, DXW.NumberingIdMacAtCleanup>(GetUpdatableElement());
+    set => UpdateField(ref _lastRevAbstractNumbering, value, nameof(LastRevAbstractNumbering));
+  }
+
   private int? _lastRevAbstractNumbering;
 
   /// <summary>
@@ -67,6 +71,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     get => _AbstractNumberings ??= new AbstractNumberings(this);
     set => AbstractNumberings.CopyFrom(value);
   }
+
   private AbstractNumberings? _AbstractNumberings;
 
   /// <summary>
@@ -78,6 +83,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     get => _NumberingInstances ??= new NumberingInstances(this);
     set => NumberingInstances.CopyFrom(value);
   }
+
   private NumberingInstances? _NumberingInstances;
 
   //  /// <summary>

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the `WebComponentFormat` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat?view=office-pia"/>
-public partial interface IWebComponentFormat: IModelObject
+public partial interface IWebComponentFormat : IModelObject
 {
   /// <summary>
   /// Invokes `LaunchPropertiesWindow`.

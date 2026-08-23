@@ -129,8 +129,8 @@ public partial class BuiltInProperties : ModelElement, IWordprocessingDocumentAw
         existingProperty.PropertyInfo = propertyInfo;
         var value0 = existingProperty.GetAttachedPropertyInfo();
         existingProperty.ExpectedType = propertyInfo.PropertyType.ConvertToDocumentPropertyType();
-        existingProperty.ValueType = propertyInfo.PropertyType; 
-        if (valueObject!=value0)
+        existingProperty.ValueType = propertyInfo.PropertyType;
+        if (valueObject != value0)
           existingProperty.SetAttachedPropertyValue(valueObject);
       }
       else

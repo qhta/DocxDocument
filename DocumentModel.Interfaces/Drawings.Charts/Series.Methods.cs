@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart series.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia"/>
-public partial interface ISeries: IModelObject
+public partial interface ISeries : IModelObject
 {
   /// <summary>
   /// Applies data labels to the series.

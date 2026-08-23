@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for CPS type serialization in both XML and JSON formats.
@@ -259,7 +257,7 @@ public static class CPSTest
 
   }
 
-  
+
   /// <summary>
   /// Tests the serialization and deserialization of CPS test data to and from JSON format.
   /// </summary>
@@ -396,7 +394,7 @@ public static class CPSTest
       BorderWidth = new CPS(200),      // 2 points
       ZeroValue = new CPS(0),
       SmallValue = new CPS(1),        // 0.100 points
-      LargeValue = new CPS(80*1200)      // 80 inches
+      LargeValue = new CPS(80 * 1200)      // 80 inches
     };
   }
 
@@ -675,7 +673,7 @@ public static class CPSTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

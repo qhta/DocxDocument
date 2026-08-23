@@ -31,7 +31,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     }
     var DecimalValue = Decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
     this.Value = DecimalValue;
-    
+
   }
 
   /// <summary>
@@ -268,7 +268,7 @@ public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, ICom
     if (targetType == typeof(SByte))
       return (sbyte)(Value);
     if (targetType == typeof(Decimal))
-      return (Decimal)((Decimal)Value); 
+      return (Decimal)((Decimal)Value);
     if (targetType == typeof(Single))
       return (Single)(Value);
     if (targetType == typeof(Double))

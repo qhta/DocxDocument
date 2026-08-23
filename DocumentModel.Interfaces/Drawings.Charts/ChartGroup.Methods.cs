@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart group.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup?view=office-pia"/>
-public partial interface IChartGroup: IModelObject
+public partial interface IChartGroup : IModelObject
 {
   /// <summary>
   /// Returns a series collection from the chart group.

@@ -17,18 +17,18 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
   [OpenXmlProperty("Val")]
   public PresetZoom? Preset
   {
-    get => InternalValue as PresetZoom?; 
+    get => InternalValue as PresetZoom?;
     set => UpdateField(ref InternalValue, value, nameof(Preset));
   }
-  
+
 
   /// <summary>
   /// Zoom percentage, specifying the magnification level as a percentage.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Zoom.Percent))]
-  public BytePercent? Percent 
-  { 
-    get => InternalValue as BytePercent?; 
+  public BytePercent? Percent
+  {
+    get => InternalValue as BytePercent?;
     set => UpdateField(ref InternalValue, value, nameof(Percent));
   }
 

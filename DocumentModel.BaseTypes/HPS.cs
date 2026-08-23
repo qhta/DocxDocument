@@ -12,7 +12,7 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(HPSJsonConverter))]
-public partial class HPS: PTS
+public partial class HPS : PTS
 {
   /// <summary>
   /// Override the scale factor for the HPS measurement. A scale of 2 means that the value is in half-points.

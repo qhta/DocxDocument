@@ -22,7 +22,7 @@ public enum TextBoxTightWrap
   /// <summary>
   /// Wraps text tightly only on first and last lines.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues.FirstAndLastLine))] 
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues.FirstAndLastLine))]
   FirstAndLastLine = 2,
   /// <summary>
   /// Wraps text tightly only on the first line.

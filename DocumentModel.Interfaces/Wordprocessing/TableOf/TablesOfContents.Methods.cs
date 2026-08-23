@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents?view=word-pia"/>
-public partial interface ITablesOfContents: IModelObject
+public partial interface ITablesOfContents : IModelObject
 {
   /// <summary>
   /// Adds a table of contents to the document using legacy options.
@@ -23,6 +23,6 @@ public partial interface ITablesOfContents: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents.addold?view=word-pia"/>
-  public ITableOfContents AddOld(IRange Range, bool UseHeadingStyles, int UpperHeadingLevel, int LowerHeadingLevel, 
+  public ITableOfContents AddOld(IRange Range, bool UseHeadingStyles, int UpperHeadingLevel, int LowerHeadingLevel,
     bool UseFields, string TableID, bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 }

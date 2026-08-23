@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents high-low lines in a chart.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines?view=office-pia"/>
-public partial interface IHiLoLines: IModelObject
+public partial interface IHiLoLines : IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

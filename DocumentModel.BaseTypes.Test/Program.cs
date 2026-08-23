@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Entry point for the base types serialization test program.

@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the abstract class for markup range elements in a WordprocessingML document.
@@ -17,7 +15,7 @@ public abstract partial class MarkupEndRangeElement<T1, T2> : ModelElement<T1>, 
   /// </summary>
   public int? Id
   {
-    get => _Id ??= GetProperty<int>(GetUpdatableElement(),"Id"); 
+    get => _Id ??= GetProperty<int>(GetUpdatableElement(), "Id");
     set => UpdateField(ref _Id, value, nameof(Id));
   }
   private int? _Id;

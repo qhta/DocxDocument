@@ -1,6 +1,7 @@
 using DocumentModel.Drawings.Charts;
 
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a basic geographic entity reference with identification information.
 /// </summary>
@@ -26,20 +27,29 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoEntity))]
 [DataContract]
 [XmlRoot("GeoEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoEntity : ModelElement<DXO16DCD.GeoEntity>
+public partial class GeoEntity: ModelElement<DXO16DCD.GeoEntity>
 {
   /// <summary>
   /// Specifies the entity name.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityName))]
-  public string? EntityName { get => _EntityName; set => UpdateField(ref _EntityName, value, nameof(EntityName)); }
+  public string? EntityName
+  {
+    get => _EntityName ??= GetProperty<string?>(GetUpdatableElement()?.EntityName);
+    set => UpdateField(ref _EntityName, value, nameof(EntityName));
+  }
 
   private string? _EntityName;
+
   /// <summary>
   /// Specifies the entity type.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityType))]
-  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+  public EntityTypeEnum? EntityType
+  {
+    get => _EntityType ??= GetProperty<EntityTypeEnum?>(GetUpdatableElement()?.EntityType);
+    set => UpdateField(ref _EntityType, value, nameof(EntityType));
+  }
 
   private EntityTypeEnum? _EntityType;
 }

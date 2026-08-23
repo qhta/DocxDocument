@@ -1,29 +1,40 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Defines the PlotAreaRegion Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.PlotAreaRegion))]
 [DataContract]
 [XmlRoot("PlotAreaRegion", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class PlotAreaRegion : ModelElement<DXO16DCD.PlotAreaRegion>
+public partial class PlotAreaRegion: ModelElement<DXO16DCD.PlotAreaRegion>
 {
   /// <summary>
   /// Specifies the plot surface.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.PlotAreaRegion.PlotSurface))]
-  public PlotSurface? PlotSurface { get => _PlotSurface; set => UpdateField(ref _PlotSurface, value, nameof(PlotSurface)); }
+  public PlotSurface? PlotSurface
+  {
+    get => _PlotSurface ??= GetProperty<PlotSurface?>(GetUpdatableElement()?.PlotSurface);
+    set => UpdateField(ref _PlotSurface, value, nameof(PlotSurface));
+  }
 
   private PlotSurface? _PlotSurface;
+
   /// <summary>
   /// Specifies the series.
   /// </summary>
   public Series? Series { get => _Series; set => UpdateField(ref _Series, value, nameof(Series)); }
 
   private Series? _Series;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList;
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

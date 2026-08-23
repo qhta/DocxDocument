@@ -121,7 +121,7 @@ public class ArrayVariantJsonConverter : JsonConverter<ArrayVariant>
             if (reader.TokenType == JsonTokenType.StartArray)
             {
               items = new List<object?>();
-              
+
               while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
               {
                 if (reader.TokenType == JsonTokenType.Null)

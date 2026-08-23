@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup?view=word-pia"/>
-public partial interface IPageSetup: IModelObject
+public partial interface IPageSetup : IModelObject
 {
   /// <summary>
   /// Switches between portrait and landscape page orientations for a document or section.

@@ -8,7 +8,7 @@
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
 public class OpenXmlIndirectElementAttribute(Type outerElementType, Type innerElementType) : Attribute
 {
-  
+
   /// <summary>
   /// The Open XML element type name which occurs in the parent element.
   /// </summary>

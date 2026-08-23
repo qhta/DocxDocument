@@ -4,7 +4,7 @@ namespace DocumentModel.Properties;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties?view=word-pia"/>
-public partial interface ICustomProperties: IModelObject
+public partial interface ICustomProperties : IModelObject
 {
   /// <summary>
   /// Adds a custom property to the collection.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
-public partial interface IFillFormat: IModelObject
+public partial interface IFillFormat : IModelObject
 {
   /// <summary>
   /// Sets the fill to use the background style.

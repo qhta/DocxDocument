@@ -9,7 +9,7 @@
 [DataContract]
 [XmlRoot("EndnoteReferenceMark", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.EndnoteReferenceMark))]
-public class EndnoteReferenceMark: ModelElement<DXW.EndnoteReferenceMark>
+public class EndnoteReferenceMark : ModelElement<DXW.EndnoteReferenceMark>
 {
-  
+
 }

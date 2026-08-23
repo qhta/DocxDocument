@@ -22,7 +22,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
     if (_HasDirectAccess)
     {
       var openXmlElement = Activator.CreateInstance<OpenXmlType>();
-      SetUpdatableObject(openXmlElement);
+      SetUpdatableObject(openXmlElement, null);
     }
   }
 
@@ -43,7 +43,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
     _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
-    SetUpdatableObject((OpenXmlType?)openXmlElement);
+    SetUpdatableObject((OpenXmlType?)openXmlElement, null);
   }
 
 
@@ -54,7 +54,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   protected ModelElement(DX.OpenXmlElement openXmlElement)
   {
     _HasDirectAccess = this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
-    SetUpdatableObject((OpenXmlType)openXmlElement);
+    SetUpdatableObject((OpenXmlType)openXmlElement, null);
   }
 
   ///// <summary>
@@ -73,13 +73,13 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <summary>
   ///  Gets the underlying Open XML element as a DataSource.
   /// </summary>
-  public object? DataSource => GetUpdatableObject();
+  public object? DataSource => GetUpdatableObject(null);
 
   /// <summary>
   ///  Sets the underlying Open XML element as a DataSource.
   /// </summary>
   /// <param name="dataSource">The data source to set.</param>
-  public void SetDataSource(object? dataSource) => SetUpdatableObject(dataSource);
+  public void SetDataSource(object? dataSource) => SetUpdatableObject(dataSource, null);
 
   /// <summary>
   /// Gets the target model item type corresponding to the specified OpenXml element type, based on the defined mapping between OpenXml element types and model element types.
@@ -97,18 +97,20 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// It can be an OpenXmlElement or any other object that represents the data source for this model.
   /// If null, a new OpenXmlType element is created.
   /// </summary>
-  public override OpenXmlType? GetUpdatableElement()
+  public override OpenXmlType? GetUpdatableElement(object? context = null)
   {
-    var openXmlElement = base.GetUpdatableObject() as OpenXmlType;
+    var openXmlElement = base.GetUpdatableObject(context) as OpenXmlType;
     if (openXmlElement == null)
     {
       var modelItemType = this.GetType();
       var openXmlItemTypes = OpenXmlElementMapper.GetOpenXmlElementTypes(modelItemType);
       if (openXmlItemTypes.Length > 1)
-        throw new InvalidOperationException($"Multiple OpenXml element types found for model element type {modelItemType}. Specify the correct OpenXml type explicitly.");
+        throw new InvalidOperationException($"Multiple OpenXml element types found for model element type {modelItemType}.");
       var openXmlItemType = openXmlItemTypes.First();
+      if (openXmlItemType.IsAbstract)
+        throw new InvalidOperationException($"Cannot create an instance of abstract OpenXml element type {openXmlItemType}.");
       openXmlElement = Activator.CreateInstance(openXmlItemType) as OpenXmlType;
-      base.SetUpdatableObject(openXmlElement);
+      base.SetUpdatableObject(openXmlElement, context);
     }
     return openXmlElement;
   }
@@ -179,7 +181,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     Attach(wordprocessingDocument);
-    UpdateData();
+    UpdateData(null);
   }
 
   /// <summary>
@@ -189,7 +191,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetUpdatableObject(null);
+    SetUpdatableObject(null, null);
   }
 
   /// <summary>
@@ -197,7 +199,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// </summary>
   public override bool LoadData()
   {
-    var updatableObject = GetUpdatableObject();
+    var updatableObject = GetUpdatableObject(null);
     if (updatableObject != null)
     {
       LoadData(updatableObject);
@@ -217,7 +219,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
     // throw new ApplicationException("The provided object is not of the expected OpenXmlType.");
     if (HasDirectAccess)
     {
-      SetUpdatableObject(openXmlElement);
+      SetUpdatableObject(openXmlElement, null);
       return true;
     }
     return base.LoadData(openXmlElement);
@@ -226,15 +228,15 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement,
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
   /// </summary>
-  public override bool UpdateData()
+  public override bool UpdateData(object? context)
   {
-    var updatableObject = GetUpdatableObject();
+    var updatableObject = GetUpdatableObject(context);
     if (updatableObject != null)
     {
-      UpdateData(updatableObject);
+      UpdateData(updatableObject, context);
       return true;
     }
-    return base.UpdateData();
+    return base.UpdateData(context);
   }
 
   /// <summary>

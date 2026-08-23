@@ -1,7 +1,6 @@
 // Global using directives
 
 global using System.Collections;
-global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;
 global using System.Globalization;
@@ -11,9 +10,9 @@ global using System.Windows.Controls;
 global using System.Windows.Data;
 global using System.Windows.Input;
 global using System.Windows.Media;
+
 global using DocumentModel;
-global using DocxEditor;
-global using Microsoft.DotNet.DesignTools.ViewModels;
+
 global using Qhta.MVVM;
 global using Qhta.TypeUtils;
 

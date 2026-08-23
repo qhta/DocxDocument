@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for Styles BaseSectionProperties.
   /// </summary>
-  public class BaseSectionPropertiesTest: _AbstractTestClass
+  public class BaseSectionPropertiesTest : _AbstractTestClass
   {
     /// <summary>
     /// Paragraphs all Styles BaseSectionProperties tests.

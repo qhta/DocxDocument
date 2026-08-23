@@ -13,7 +13,7 @@ public abstract partial class PercentageTransformation<T> : ColorTransformation,
   /// </summary>
   public Percentage Value
   {
-    get => _Val ??= GetProperty<Percentage>((GetUpdatableObject() as T), "Val");
+    get => _Val ??= GetProperty<Percentage>((GetUpdatableObject(null) as T), "Val");
     set => UpdateField(ref _Val, value, nameof(Value));
   }
   private Percentage? _Val;

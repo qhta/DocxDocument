@@ -1,6 +1,4 @@
 namespace DocumentModel.Drawings;
-using DocumentModel.Drawings;
-
 /// <summary>
 /// Contains properties and methods that apply to WordArt objects.
 /// </summary>

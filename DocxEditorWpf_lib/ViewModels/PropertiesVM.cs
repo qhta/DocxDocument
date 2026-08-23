@@ -1,6 +1,4 @@
-﻿using DocxEditor;
-
-namespace DocxEditor;
+﻿namespace DocxEditor;
 
 /// <summary>
 /// ViewModel for properties of document component.

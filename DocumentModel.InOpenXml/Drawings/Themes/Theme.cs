@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.Theme))]
 [DataContract]
 [XmlRoot("Theme", Namespace = "DocumentModel.Drawings")]
-public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExtendableElement
+public sealed partial class Theme : ModelElement<DXD.Theme>, IOfficeStyleSheetExtendableElement
 {
   /// <summary>
   /// Default constructor.
@@ -31,7 +31,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   {
     base.AttachAndLoad(wordprocessingDocument);
     var theme = wordprocessingDocument.GetTheme();
-    SetUpdatableObject(theme);
+    SetUpdatableObject(theme, null);
     LoadData(theme);
   }
 
@@ -43,7 +43,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var theme = wordprocessingDocument.GetTheme();
-    SetUpdatableObject(theme);
+    SetUpdatableObject(theme, null);
     UpdateData(theme);
   }
 
@@ -52,7 +52,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Theme.Name))]
   [XmlAttribute("name")]
-  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+  public string? Name { get => _Name ??= GetProperty<string?>(GetUpdatableElement()?.Name); set => UpdateField(ref _Name, value, nameof(Name)); }
   private string? _Name;
 
   /// <summary>
@@ -60,7 +60,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Theme.ThemeId))]
   [XmlAttribute("id")]
-  public string? ThemeId { get => _ThemeId; set => UpdateField(ref _ThemeId, value, nameof(ThemeId)); }
+  public string? ThemeId { get => _ThemeId ??= GetProperty<string?>(GetUpdatableElement()?.ThemeId); set => UpdateField(ref _ThemeId, value, nameof(ThemeId)); }
   private string? _ThemeId;
 
   /// <summary>

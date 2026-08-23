@@ -1,7 +1,4 @@
-﻿using System.CodeDom;
-using System.Security.AccessControl;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="DocumentProperty"/> class.

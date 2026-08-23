@@ -656,7 +656,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     if (VariantType == VariantType.DateTime)
       return Value?.ToString() ?? string.Empty;
     if (_value?.GetType().TryGetConverter(out var typeConverter) == true)
-    {  
+    {
       if (typeConverter != null && typeConverter.CanConvertTo(typeof(string)))
         return typeConverter.ConvertToInvariantString(_value) ?? string.Empty;
     }

@@ -23,7 +23,7 @@ public class FootnoteSeparators :
   /// </summary>
   /// <param name="parent">The parent FootnoteDocumentWideProperties object that provides the context and updatable element for this instance.
   /// Cannot be null.</param>
-  public FootnoteSeparators(DMW.FootnoteDocumentWideProperties parent) : base(parent, parent.GetUpdatableElement() as DXW.FootnoteDocumentWideProperties)
+  public FootnoteSeparators(DMW.FootnoteDocumentWideProperties parent) : base(parent, parent.GetUpdatableElement())
   {
 
   }

@@ -12,11 +12,11 @@ public enum BoxStyle
   /// Box is horizontal.
   /// </summary>
   [OpenXmlEnumValue("Horizontal")]
-	Horizontal,
-	/// <summary>
-	/// Box is vertical.
-	/// </summary>
-	[OpenXmlEnumValue("Vertical")]
-	Vertical
+  Horizontal,
+  /// <summary>
+  /// Box is vertical.
+  /// </summary>
+  [OpenXmlEnumValue("Vertical")]
+  Vertical
 }
 

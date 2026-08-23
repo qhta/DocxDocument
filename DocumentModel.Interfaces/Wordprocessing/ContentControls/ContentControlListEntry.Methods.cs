@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry?view=word-pia"/>
-public partial interface IContentControlListEntry: IModelObject
+public partial interface IContentControlListEntry : IModelObject
 {
   /// <summary>
   /// Deletes the specified item in a combo box or drop-down list content control.

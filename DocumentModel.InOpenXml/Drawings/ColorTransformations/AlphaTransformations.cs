@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
+
 using Math = System.Math;
 
 
@@ -7,7 +8,7 @@ using Math = System.Math;
 /// </summary>
 [OpenXmlType(typeof(DXD.Alpha))]
 [DataContract]
-public class Alpha: PercentageTransformation<DXD.Alpha>
+public class Alpha : PercentageTransformation<DXD.Alpha>
 {
   /// <summary>
   /// Transforms the given color by applying the alpha transformation based on the specified value.
@@ -19,7 +20,7 @@ public class Alpha: PercentageTransformation<DXD.Alpha>
     var (r, g, b, a) = color.RGBAComponents;
     a = Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
+    return new EffectiveColor(new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a));
   }
 }
 
@@ -45,7 +46,7 @@ public class AlphaOffset : PercentageTransformation<DXD.AlphaOffset>
     var (r, g, b, a) = color.RGBAComponents;
     a += Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
+    return new EffectiveColor(new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a));
   }
 }
 /// <summary>
@@ -69,6 +70,6 @@ public class AlphaModulation : PercentageTransformation<DXD.AlphaModulation>
     var (r, g, b, a) = color.RGBAComponents;
     a *= Value.AsDouble();
     a = Math.Clamp(a, 0.0, 1.0);
-    return new EffectiveColor( new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a) );
+    return new EffectiveColor(new Percentage(r), new Percentage(g), new Percentage(b), new Percentage(a));
   }
 }

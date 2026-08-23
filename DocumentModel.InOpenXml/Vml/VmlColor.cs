@@ -87,18 +87,18 @@ public partial class VmlColor : ModelElement
     if (HexColor.TryParse(colorString, out var hexColor))
       Value = hexColor;
     else
-    if (Enum.TryParse<PresetColors>(colorString, out var presetColor))
-    {
-      Name = presetColor.ToString();
-      Value = new HexColor((uint)presetColor ^ 0xFF000000);
-    }
-    else
-    if (HexColor.TryParse(colorString, out var hexColor2))
-    {
-      Value = hexColor2;
-    }
-    else
-      Name = colorString; // Fallback to storing the raw string if no known format matches
+      if (Enum.TryParse<PresetColors>(colorString, out var presetColor))
+      {
+        Name = presetColor.ToString();
+        Value = new HexColor((uint)presetColor ^ 0xFF000000);
+      }
+      else
+        if (HexColor.TryParse(colorString, out var hexColor2))
+        {
+          Value = hexColor2;
+        }
+        else
+          Name = colorString; // Fallback to storing the raw string if no known format matches
   }
 
   /// <summary>

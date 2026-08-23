@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the PrimaryItem Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -20,13 +21,22 @@ public partial class PrimaryItem : ModelElement<DXO10CUI.PrimaryItem>
   /// Specifies the backstage regular button.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.PrimaryItem.BackstageRegularButton))]
-  public BackstageRegularButton? BackstageRegularButton { get => _BackstageRegularButton; set => UpdateField(ref _BackstageRegularButton, value, nameof(BackstageRegularButton)); }
+  public BackstageRegularButton? BackstageRegularButton
+  {
+    get => _BackstageRegularButton ??=
+      GetProperty<BackstageRegularButton?>(GetUpdatableElement()?.BackstageRegularButton);
+    set => UpdateField(ref _BackstageRegularButton, value, nameof(BackstageRegularButton));
+  }
   private BackstageRegularButton? _BackstageRegularButton;
 
   /// <summary>
   /// Specifies the backstage primary menu.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.PrimaryItem.BackstagePrimaryMenu))]
-  public BackstagePrimaryMenu? BackstagePrimaryMenu { get => _BackstagePrimaryMenu; set => UpdateField(ref _BackstagePrimaryMenu, value, nameof(BackstagePrimaryMenu)); }
+  public BackstagePrimaryMenu? BackstagePrimaryMenu
+  {
+    get => _BackstagePrimaryMenu ??= GetProperty<BackstagePrimaryMenu?>(GetUpdatableElement()?.BackstagePrimaryMenu);
+    set => UpdateField(ref _BackstagePrimaryMenu, value, nameof(BackstagePrimaryMenu));
+  }
   private BackstagePrimaryMenu? _BackstagePrimaryMenu;
 }

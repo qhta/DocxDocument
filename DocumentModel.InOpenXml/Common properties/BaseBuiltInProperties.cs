@@ -125,7 +125,7 @@ public partial class BaseBuiltInProperties : ModelElement<DX.OpenXmlElement>
   /// <param name="propertyName">The name of the property to get.</param>
   /// <param name="builtInProperty">When this method returns, contains the property if found; otherwise, null.</param>
   /// <returns>True if the property was found; otherwise, false.</returns>
-  public bool TryGetProperty(string propertyName, out BuiltInProperty builtInProperty) 
+  public bool TryGetProperty(string propertyName, out BuiltInProperty builtInProperty)
     => _propertiesCollection.TryGetProperty(propertyName, out builtInProperty);
 
   /// <summary>
@@ -134,7 +134,7 @@ public partial class BaseBuiltInProperties : ModelElement<DX.OpenXmlElement>
   /// <param name="propertyName">The name of the property to set.</param>
   /// <param name="builtInProperty">The property value to set.</param>
   /// <returns>True if the property was set; otherwise, false.</returns>
-  public bool TrySetProperty(string propertyName, BuiltInProperty builtInProperty) 
+  public bool TrySetProperty(string propertyName, BuiltInProperty builtInProperty)
     => _propertiesCollection.TrySetProperty(propertyName, builtInProperty);
 
   /// <summary>

@@ -84,7 +84,7 @@ public static class OpenXmlSimpleTypeUtils
   /// </summary>
   /// <param name="element">The StringValue element.</param>
   /// <returns>The string content, or null if simple type is null.</returns>
-  public static string? GetString(this DX.StringValue? element) 
+  public static string? GetString(this DX.StringValue? element)
   {
     var str = element?.InnerText;
     return str;
@@ -95,20 +95,20 @@ public static class OpenXmlSimpleTypeUtils
   /// </summary>
   /// <param name="value">The string value.</param>
   /// <returns>A new StringValue element, or null if input is null.</returns>
-  public static DX.StringValue? GetStringValue(this string? value) 
+  public static DX.StringValue? GetStringValue(this string? value)
   {
-    return (value!=null) ? new DX.StringValue(value) : null;
+    return (value != null) ? new DX.StringValue(value) : null;
   }
 
-//DocumentFormat.OpenXml.Base64BinaryValue
-//DocumentFormat.OpenXml.EnumValue<T>
-//DocumentFormat.OpenXml.HexBinaryValue
-//DocumentFormat.OpenXml.ListValue<T>
-//DocumentFormat.OpenXml.OnOffValue
-//DocumentFormat.OpenXml.OpenXmlSimpleValue<T>
-//DocumentFormat.OpenXml.StringValue
-//DocumentFormat.OpenXml.TrueFalseBlankValue
-//DocumentFormat.OpenXml.TrueFalseValue 
+  //DocumentFormat.OpenXml.Base64BinaryValue
+  //DocumentFormat.OpenXml.EnumValue<T>
+  //DocumentFormat.OpenXml.HexBinaryValue
+  //DocumentFormat.OpenXml.ListValue<T>
+  //DocumentFormat.OpenXml.OnOffValue
+  //DocumentFormat.OpenXml.OpenXmlSimpleValue<T>
+  //DocumentFormat.OpenXml.StringValue
+  //DocumentFormat.OpenXml.TrueFalseBlankValue
+  //DocumentFormat.OpenXml.TrueFalseValue 
   #endregion
 }
 

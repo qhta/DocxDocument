@@ -4,7 +4,7 @@ namespace DocumentModel.Properties;
 /// Represents a custom or built-in document property.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia"/>
-public partial interface IDocumentProperty: IModelObject
+public partial interface IDocumentProperty : IModelObject
 {
   /// <summary>
   /// Deletes the document property.

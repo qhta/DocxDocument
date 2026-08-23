@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareferences?view=word-pia"/>
-public partial interface IXMLSchemaReferences: IModelObject
+public partial interface IXMLSchemaReferences : IModelObject
 {
   /// <summary>
   /// Verifies an individual XML element or the entire document against the attached XML schema or schemas.

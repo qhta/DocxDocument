@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis title.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia"/>
-public partial interface IAxisTitle: IModelObject
+public partial interface IAxisTitle : IModelObject
 {
   /// <summary>
   /// Deletes the axis title.

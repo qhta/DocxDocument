@@ -1,12 +1,10 @@
-using System.Collections;
-
 namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Represents a collection of CustomXMLPrefixMapping objects.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia"/>
-public partial interface ICustomXMLPrefixMappings: IModelObject
+public partial interface ICustomXMLPrefixMappings : IModelObject
 {
   /// <summary>
   /// Adds a namespace and prefix mapping to the collection.

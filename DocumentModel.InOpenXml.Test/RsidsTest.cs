@@ -1,11 +1,9 @@
-﻿using Qhta.OpenXmlTools;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.Rsids.
 /// </summary>
-public class RsidsTest: _AbstractModelTestClass<Rsids>
+public class RsidsTest : _AbstractModelTestClass<Rsids>
 {
 
   /// <summary>
@@ -15,7 +13,7 @@ public class RsidsTest: _AbstractModelTestClass<Rsids>
   protected override Rsids CreateSampleData()
   {
     var props = new Rsids();
-    for (int i=1; i<=10; i++)
+    for (int i = 1; i <= 10; i++)
     {
       props.Add(i);
     }
@@ -31,7 +29,7 @@ public class RsidsTest: _AbstractModelTestClass<Rsids>
   /// <exception cref="NotImplementedException">Always thrown, as this method is not implemented.</exception>
   protected override Rsids UpdateDataInDocument(Document document, Rsids data)
   {
-    data.Add(data.Count+1);
+    data.Add(data.Count + 1);
     return document.Rsids;
   }
 

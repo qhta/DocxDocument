@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office.CoverPageProps;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 internal class Program
 {

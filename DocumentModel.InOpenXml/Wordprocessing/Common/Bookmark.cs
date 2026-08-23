@@ -7,12 +7,12 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("Bookmark", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Bookmark : ModelElement
 {
- /// <summary>
- /// Start element of the bookmark, specifying the location where the bookmark begins.
- /// </summary>
- public BookmarkStart? Start { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// End element of the bookmark, specifying the location where the bookmark ends.
- /// </summary>
- public BookmarkEnd? End { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Start element of the bookmark, specifying the location where the bookmark begins.
+  /// </summary>
+  public BookmarkStart? Start { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// End element of the bookmark, specifying the location where the bookmark ends.
+  /// </summary>
+  public BookmarkEnd? End { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

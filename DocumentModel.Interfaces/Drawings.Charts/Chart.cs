@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart?view=office-pia"/>
-public partial interface IChart: IModelObject
+public partial interface IChart : IModelObject
 {
   /// <summary>
   /// Gets or sets the `HasTitle` property.

@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the result of a parent entities query, containing the query specification and retrieved parent entity data.
 /// </summary>
@@ -27,27 +28,42 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntitiesQueryResult))]
 [DataContract]
 [XmlRoot("GeoParentEntitiesQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoParentEntitiesQueryResult : ModelElement<DXO16DCD.GeoParentEntitiesQueryResult>
+public partial class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoParentEntitiesQueryResult>
 {
   /// <summary>
   /// Specifies the geo parent entities query.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQueryResult.GeoParentEntitiesQuery))]
-  public GeoParentEntitiesQuery? GeoParentEntitiesQuery { get => _GeoParentEntitiesQuery; set => UpdateField(ref _GeoParentEntitiesQuery, value, nameof(GeoParentEntitiesQuery)); }
+  public GeoParentEntitiesQuery? GeoParentEntitiesQuery
+  {
+    get => _GeoParentEntitiesQuery ??=
+      GetProperty<GeoParentEntitiesQuery?>(GetUpdatableElement()?.GeoParentEntitiesQuery);
+    set => UpdateField(ref _GeoParentEntitiesQuery, value, nameof(GeoParentEntitiesQuery));
+  }
 
   private GeoParentEntitiesQuery? _GeoParentEntitiesQuery;
+
   /// <summary>
   /// Specifies the geo entity.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQueryResult.GeoEntity))]
-  public GeoEntity? GeoEntity { get => _GeoEntity; set => UpdateField(ref _GeoEntity, value, nameof(GeoEntity)); }
+  public GeoEntity? GeoEntity
+  {
+    get => _GeoEntity ??= GetProperty<GeoEntity?>(GetUpdatableElement()?.GeoEntity);
+    set => UpdateField(ref _GeoEntity, value, nameof(GeoEntity));
+  }
 
   private GeoEntity? _GeoEntity;
+
   /// <summary>
   /// Specifies the geo parent entity.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQueryResult.GeoParentEntity))]
-  public GeoParentEntity? GeoParentEntity { get => _GeoParentEntity; set => UpdateField(ref _GeoParentEntity, value, nameof(GeoParentEntity)); }
+  public GeoParentEntity? GeoParentEntity
+  {
+    get => _GeoParentEntity ??= GetProperty<GeoParentEntity?>(GetUpdatableElement()?.GeoParentEntity);
+    set => UpdateField(ref _GeoParentEntity, value, nameof(GeoParentEntity));
+  }
 
   private GeoParentEntity? _GeoParentEntity;
 }

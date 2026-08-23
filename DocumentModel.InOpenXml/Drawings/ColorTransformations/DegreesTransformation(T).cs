@@ -13,7 +13,7 @@ public abstract partial class DegreesTransformation<T> : ColorTransformation, ID
   /// </summary>
   public Degrees Value
   {
-    get => _Val ??= GetProperty<Degrees>((GetUpdatableObject() as T), "Val");
+    get => _Val ??= GetProperty<Degrees>((GetUpdatableObject(null) as T), "Val");
     set => UpdateField(ref _Val, value, nameof(Value));
   }
   private Degrees? _Val;

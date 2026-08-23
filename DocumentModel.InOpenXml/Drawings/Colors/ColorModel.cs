@@ -29,5 +29,5 @@ public enum ColorModel
   /// <summary>
   /// System color model. This model represents colors that are defined by the operating system, allowing for dynamic adaptation to system themes and settings.
   /// </summary>  
-  System, 
+  System,
 }

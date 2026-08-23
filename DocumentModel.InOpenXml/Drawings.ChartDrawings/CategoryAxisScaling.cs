@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the scaling properties for a category axis in a chart.
 /// </summary>
@@ -16,13 +17,17 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.CategoryAxisScaling))]
 [DataContract]
 [XmlRoot("CategoryAxisScaling", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class CategoryAxisScaling : ModelElement<DXO16DCD.CategoryAxisScaling>
+public partial class CategoryAxisScaling: ModelElement<DXO16DCD.CategoryAxisScaling>
 {
   /// <summary>
   /// Specifies the gap width.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.CategoryAxisScaling.GapWidth))]
-  public string? GapWidth { get => _GapWidth; set => UpdateField(ref _GapWidth, value, nameof(GapWidth)); }
+  public string? GapWidth
+  {
+    get => _GapWidth ??= GetProperty<string?>(GetUpdatableElement()?.GapWidth);
+    set => UpdateField(ref _GapWidth, value, nameof(GapWidth));
+  }
 
   private string? _GapWidth;
 }

@@ -5,7 +5,7 @@
 /// or Microsoft.Office.Interop.Word assembly
 /// </summary>
 [AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = true)]
-public class InteropEnumTypeAttribute: Attribute
+public class InteropEnumTypeAttribute : Attribute
 {
   /// <summary>
   /// Specifies mapping of the model enum type to one of the types used in interop assembly.

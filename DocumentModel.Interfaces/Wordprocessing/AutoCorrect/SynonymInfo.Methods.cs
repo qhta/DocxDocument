@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo?view=word-pia"/>
-public partial interface ISynonymInfo: IModelObject
+public partial interface ISynonymInfo : IModelObject
 {
   /// <summary>
   /// Returns the synonym list.

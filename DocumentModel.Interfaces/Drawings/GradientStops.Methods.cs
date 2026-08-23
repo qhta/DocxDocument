@@ -1,12 +1,10 @@
-using System.Collections;
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a collection of GradientStop objects.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstops?view=office-pia"/>
-public partial interface IGradientStops: IModelObject
+public partial interface IGradientStops : IModelObject
 {
   /// <summary>
   /// Deletes a gradient stop from the collection.

@@ -1,44 +1,70 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   Represents default shape properties, including shape, body, list, and style settings.
 /// </summary>
 [OpenXmlType(typeof(DXD.ShapeDefault))]
 [DataContract]
 [XmlRoot("ShapeDefault", Namespace = "DocumentModel.Drawings")]
-public partial class ShapeDefault : ModelElement<DXD.ShapeDefault>, IExtendableElement
+public partial class ShapeDefault: ModelElement<DXD.ShapeDefault>, IExtendableElement
 {
- /// <summary>
- ///   Default shape properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  ///   Default shape properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeProperties))]
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetProperty<ShapeProperties?>(GetUpdatableElement()?.ShapeProperties);
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
 
- /// <summary>
- ///   Default body properties for the shape.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ShapeDefault.BodyProperties))]
- public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
- private BodyProperties? _BodyProperties;
+  private ShapeProperties? _ShapeProperties;
 
- /// <summary>
- ///   Default list style for the shape.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ShapeDefault.ListStyle))]
- public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
- private ListStyle? _ListStyle;
+  /// <summary>
+  ///   Default body properties for the shape.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ShapeDefault.BodyProperties))]
+  public BodyProperties? BodyProperties
+  {
+    get => _BodyProperties ??= GetProperty<BodyProperties?>(GetUpdatableElement()?.BodyProperties);
+    set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties));
+  }
 
- /// <summary>
- ///   Default shape style.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeStyle))]
- public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
- private ShapeStyle? _ShapeStyle;
+  private BodyProperties? _BodyProperties;
 
- /// <summary>
- /// List of extension elements.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.ShapeDefault.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  /// <summary>
+  ///   Default list style for the shape.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ShapeDefault.ListStyle))]
+  public ListStyle? ListStyle
+  {
+    get => _ListStyle ??= GetProperty<ListStyle?>(GetUpdatableElement()?.ListStyle);
+    set => UpdateField(ref _ListStyle, value, nameof(ListStyle));
+  }
+
+  private ListStyle? _ListStyle;
+
+  /// <summary>
+  ///   Default shape style.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ShapeDefault.ShapeStyle))]
+  public ShapeStyle? ShapeStyle
+  {
+    get => _ShapeStyle ??= GetProperty<ShapeStyle?>(GetUpdatableElement()?.ShapeStyle);
+    set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle));
+  }
+
+  private ShapeStyle? _ShapeStyle;
+
+  /// <summary>
+  /// List of extension elements.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.ShapeDefault.ExtensionList))]
+  public ExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<ExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private ExtensionList? _ExtensionList;
 }

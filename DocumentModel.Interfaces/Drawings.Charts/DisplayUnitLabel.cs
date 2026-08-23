@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface IDisplayUnitLabel: IChartTitle
+public partial interface IDisplayUnitLabel : IChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.

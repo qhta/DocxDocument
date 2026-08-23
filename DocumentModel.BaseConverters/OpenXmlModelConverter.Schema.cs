@@ -1,8 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Xml.Schema;
 
-using Qhta.OpenXmlTools;
-
 namespace DocumentModel.OpenXml;
 
 public static partial class OpenXmlModelConverter
@@ -198,7 +196,8 @@ public static partial class OpenXmlModelConverter
           }
         }
         return new SchemaInfo(schemaSet, elements, groups);
-      } catch (Exception ex)
+      }
+      catch (Exception ex)
       {
         Debug.WriteLine($"Unable to load wml.xsd schema: {ex}");
         return null;
@@ -248,7 +247,7 @@ public static partial class OpenXmlModelConverter
       if (string.IsNullOrEmpty(namespaceUri))
         return string.Empty;
       //if (NamespaceAliases.TryGetValue(namespaceUri!, out var mapped))
-        //return mapped;
+      //return mapped;
       //namespaceUri = namespaceUri!.Replace("2006/", "").Replace("schemas.openxmlformats.org/", "purl.oclc.org/ooxml/");
 
       return namespaceUri!;
@@ -586,7 +585,7 @@ public static partial class OpenXmlModelConverter
     /// <summary>
     /// Compares two Xml qualified names for equality.
     /// </summary>
-    public sealed class QualifiedNameComparer: IEqualityComparer<XmlQualifiedName>
+    public sealed class QualifiedNameComparer : IEqualityComparer<XmlQualifiedName>
     {
       /// <summary>
       /// Determines whether two qualified names are equal after namespace normalization.

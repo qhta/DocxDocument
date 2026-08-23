@@ -58,7 +58,7 @@ public partial class EMU : PTS
   {
     Init(value);
   }
-  
+
   /// <summary>
   /// Initializes a new instance of the <see cref="EMU"/> from a 64-bit floating-point value.
   /// </summary>

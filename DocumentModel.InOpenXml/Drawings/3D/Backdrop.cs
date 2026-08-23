@@ -1,37 +1,54 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Represents a backdrop plane in 3D drawing space, defined by an anchor point, normal vector, and up vector.
 /// </summary>
 [OpenXmlType(typeof(DXD.Backdrop))]
 [DataContract]
 [XmlRoot("Backdrop", Namespace = "DocumentModel.Drawings")]
-public partial class Backdrop : ModelElement<DXD.Backdrop>, IExtendableElement
+public partial class Backdrop: ModelElement<DXD.Backdrop>, IExtendableElement
 {
- /// <summary>
- /// Anchor point of the backdrop plane.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Backdrop.Anchor))]
- public Anchor? Anchor { get => _Anchor; set => UpdateField(ref _Anchor, value, nameof(Anchor)); }
- private Anchor? _Anchor;
+  /// <summary>
+  /// Anchor point of the backdrop plane.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Backdrop.Anchor))]
+  public Anchor? Anchor
+  {
+    get => _Anchor ??= GetProperty<Anchor?>(GetUpdatableElement()?.Anchor);
+    set => UpdateField(ref _Anchor, value, nameof(Anchor));
+  }
+  private Anchor? _Anchor;
 
- /// <summary>
- /// Normal vector of the backdrop plane.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Backdrop.Normal))]
- public Vector3DType? Normal { get => _Normal; set => UpdateField(ref _Normal, value, nameof(Normal)); }
- private Vector3DType? _Normal;
+  /// <summary>
+  /// Normal vector of the backdrop plane.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Backdrop.Normal))]
+  public Vector3DType? Normal
+  {
+    get => _Normal ??= GetProperty<Vector3DType?>(GetUpdatableElement()?.Normal);
+    set => UpdateField(ref _Normal, value, nameof(Normal));
+  }
+  private Vector3DType? _Normal;
 
- /// <summary>
- /// Up vector of the backdrop plane.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Backdrop.UpVector))]
- public Vector3DType? UpVector { get => _UpVector; set => UpdateField(ref _UpVector, value, nameof(UpVector)); }
- private Vector3DType? _UpVector;
+  /// <summary>
+  /// Up vector of the backdrop plane.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Backdrop.UpVector))]
+  public Vector3DType? UpVector
+  {
+    get => _UpVector ??= GetProperty<Vector3DType?>(GetUpdatableElement()?.UpVector);
+    set => UpdateField(ref _UpVector, value, nameof(UpVector));
+  }
+  private Vector3DType? _UpVector;
 
- /// <summary>
- /// L
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Backdrop.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  /// <summary>
+  /// L
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Backdrop.ExtensionList))]
+  public ExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<ExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+  private ExtensionList? _ExtensionList;
 }

@@ -1,5 +1,3 @@
-using Color = System.Windows.Media.Color;
-
 namespace DocxEditor
 {
   /// <summary>
@@ -23,13 +21,13 @@ namespace DocxEditor
         style = new Style(typeof(TreeGridCell));
       }
       else
-      if (item is DataRow gridDataRow && gridDataRow.RowData is IPropertyVM node2)
-      {
-        propertyVM = node2;
-        style = new Style(typeof(VirtualizingCellsControl));
-      }
+        if (item is DataRow gridDataRow && gridDataRow.RowData is IPropertyVM node2)
+        {
+          propertyVM = node2;
+          style = new Style(typeof(VirtualizingCellsControl));
+        }
 
-      if (style!=null)
+      if (style != null)
       {
         if (propertyVM != null && propertyVM.IsEmpty)
         {

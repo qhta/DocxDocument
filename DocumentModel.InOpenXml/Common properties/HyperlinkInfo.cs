@@ -6,42 +6,42 @@ namespace DocumentModel;
 [XmlRoot("HyperlinkInfo", Namespace = "DocumentModel")]
 public class HyperlinkInfo : ModelElement
 {
- /// <summary>
- /// Application specific data associated with the hyperlink.
- /// </summary>
- public Int32 N1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Application specific data associated with the hyperlink.
- /// </summary>
- public Int32 N2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Application specific data associated with the hyperlink.
- /// </summary>
- public Int32 N3 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- ///  The lower 16 bits specify hyperlink type with one of the possible values:
- ///  0 - Graphic shown as background of document
- ///  1 - Graphic shown in document
- ///  2 - Graphic used to fill a shape
- ///  3 - Graphic used for shape outline
- ///  4 - IHyperlink attached to a shape
- ///  5 - IHyperlink attached to a WordprocessingML  field
- ///  6 - IHyperlink attached to a SpreadsheetML  range
- /// </summary>
- public HyperlinkAttachment Attachment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- ///  The high 16 bits store hyperlink action with one of the possible values:
- ///  0 - None
- ///  1 - Change the link to new hyperlink value
- ///  2 - Remove hyperlink from object
- /// </summary>
- public HyperlinkAction Action { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Specifies the hyperlink target. It can't be empty because of Open XML specifications.
- /// </summary>
- public String Target { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
- /// <summary>
- /// Specifies the location of the hyperlink. It can't be empty because of Open XML specifications.
- /// </summary>
- public String Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
+  /// <summary>
+  /// Application specific data associated with the hyperlink.
+  /// </summary>
+  public Int32 N1 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Application specific data associated with the hyperlink.
+  /// </summary>
+  public Int32 N2 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Application specific data associated with the hyperlink.
+  /// </summary>
+  public Int32 N3 { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  ///  The lower 16 bits specify hyperlink type with one of the possible values:
+  ///  0 - Graphic shown as background of document
+  ///  1 - Graphic shown in document
+  ///  2 - Graphic used to fill a shape
+  ///  3 - Graphic used for shape outline
+  ///  4 - IHyperlink attached to a shape
+  ///  5 - IHyperlink attached to a WordprocessingML  field
+  ///  6 - IHyperlink attached to a SpreadsheetML  range
+  /// </summary>
+  public HyperlinkAttachment Attachment { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  ///  The high 16 bits store hyperlink action with one of the possible values:
+  ///  0 - None
+  ///  1 - Change the link to new hyperlink value
+  ///  2 - Remove hyperlink from object
+  /// </summary>
+  public HyperlinkAction Action { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Specifies the hyperlink target. It can't be empty because of Open XML specifications.
+  /// </summary>
+  public String Target { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
+  /// <summary>
+  /// Specifies the location of the hyperlink. It can't be empty because of Open XML specifications.
+  /// </summary>
+  public String Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; } = string.Empty;
 }

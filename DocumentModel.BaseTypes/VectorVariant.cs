@@ -69,7 +69,7 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
   /// Creates an empty vector with no specific base type. The <see cref="VariantType"/> is set
   /// to <see cref="VariantType.Vector"/>. Elements can be added using the <see cref="Add"/> method.
   /// </remarks>
-  public VectorVariant(): base (VariantType.Vector, new List<object?>())
+  public VectorVariant() : base(VariantType.Vector, new List<object?>())
   {
   }
 
@@ -433,10 +433,10 @@ public partial class VectorVariant : Variant, IList<object?>, IEquatable<VectorV
         if (!thisItem.Equals(otherItem)) return false;
       }
       else
-      if (otherItem != null)
-      {
-        if (!otherItem.Equals(thisItem)) return false;
-      }
+        if (otherItem != null)
+        {
+          if (!otherItem.Equals(thisItem)) return false;
+        }
     }
     return true;
   }

@@ -7,14 +7,14 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("RunDate", Namespace = "DocumentModel.Wordprocessing")]
 public abstract class RunDate<T> : ModelElement<T>, IRunContent where T : DX.OpenXmlElement
 {
-///// <summary>
-///// Specifies which part of the date is presented (e.g., full date, year, month, day).
-///// </summary>
-//[DefaultValue(DateItem.Full)]
-//public DateItem Part { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-///// <summary>
-///// Indicates whether the date is displayed in long format. If false, a short format is used by default.
-///// </summary>
-//[DefaultValue(false)]
-//public bool IsLong { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  ///// <summary>
+  ///// Specifies which part of the date is presented (e.g., full date, year, month, day).
+  ///// </summary>
+  //[DefaultValue(DateItem.Full)]
+  //public DateItem Part { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  ///// <summary>
+  ///// Indicates whether the date is displayed in long format. If false, a short format is used by default.
+  ///// </summary>
+  //[DefaultValue(false)]
+  //public bool IsLong { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

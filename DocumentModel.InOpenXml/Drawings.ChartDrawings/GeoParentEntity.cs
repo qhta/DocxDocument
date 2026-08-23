@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a parent geographic entity in a hierarchical containment relationship.
 /// </summary>
@@ -27,13 +28,17 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntity))]
 [DataContract]
 [XmlRoot("GeoParentEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoParentEntity : ModelElement<DXO16DCD.GeoParentEntity>
+public partial class GeoParentEntity: ModelElement<DXO16DCD.GeoParentEntity>
 {
   /// <summary>
   /// Specifies the entity id.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntity.EntityId))]
-  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
+  public string? EntityId
+  {
+    get => _EntityId ??= GetProperty<string?>(GetUpdatableElement()?.EntityId);
+    set => UpdateField(ref _EntityId, value, nameof(EntityId));
+  }
 
   private string? _EntityId;
 }

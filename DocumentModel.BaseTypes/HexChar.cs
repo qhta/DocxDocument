@@ -476,7 +476,7 @@ public readonly partial struct HexChar : IConvertible, IEquatable<HexChar>
   /// <returns>A HexChar representing the character code.</returns>
   public static implicit operator HexChar(int val)
   {
-     return new HexChar((ushort)val);
+    return new HexChar((ushort)val);
   }
 
   /// <summary>

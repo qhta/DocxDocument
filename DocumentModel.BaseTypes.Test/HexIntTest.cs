@@ -1,6 +1,4 @@
-﻿using DocumentModel;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for HexInt type serialization in both XML and JSON formats.
@@ -25,7 +23,7 @@ public static class HexIntTest
     return true;
   }
 
-  
+
   static bool TestHexIntBasicOperations()
   {
     Console.WriteLine("--- Testing HexInt Basic Operations ---"); // Test string to HexInt conversion
@@ -72,8 +70,8 @@ public static class HexIntTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexIntXmlSerialization()
   {
     Console.WriteLine("--- Testing HexInt XML Serialization ---"); // Create test object
@@ -170,8 +168,8 @@ public static class HexIntTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexIntJsonSerialization()
   {
     Console.WriteLine("--- Testing HexInt JSON Serialization ---"); // Create test object
@@ -216,8 +214,8 @@ public static class HexIntTest
 
   }
 
-  
-  
+
+
   static bool TestHexIntEdgeCases()
   {
     Console.WriteLine("--- Testing HexInt Edge Cases ---"); // Test zero value
@@ -291,8 +289,8 @@ public static class HexIntTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexIntPerformance()
   {
     Console.WriteLine("--- Testing HexInt Performance ---");
@@ -388,7 +386,7 @@ public static class HexIntTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

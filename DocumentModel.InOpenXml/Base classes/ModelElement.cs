@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 using DocumentModel.BaseConverters;
 
 using Qhta.OpenXmlTools;
@@ -36,7 +34,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   protected ModelElement(ModelElement parent) : this()
   {
     Parent = parent;
-    if (this is IWordprocessingDocumentAware wordprocessingDocumentAware 
+    if (this is IWordprocessingDocumentAware wordprocessingDocumentAware
         && parent is IWordprocessingDocumentAware parentWordprocessingDocumentAware)
     {
       if (parentWordprocessingDocumentAware.WordprocessingDocument != null)
@@ -64,16 +62,16 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
           modelProperty.SetValue(this, newElement);
         }
         else
-        if (thisValue is ModelElement thisElement)
-        {
-          thisElement.CopyFrom(otherElement);
-        }
+          if (thisValue is ModelElement thisElement)
+          {
+            thisElement.CopyFrom(otherElement);
+          }
       }
       else
-      if (otherValue!=null)
-      {
-        modelProperty.SetValue(this, otherValue);
-      }
+        if (otherValue != null)
+        {
+          modelProperty.SetValue(this, otherValue);
+        }
     }
 
     if (otherInstance is IEnumerable otherEnumerable)
@@ -90,7 +88,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       }
     }
 
-    var updatableElement = GetUpdatableObject();
+    var updatableElement = GetUpdatableObject(null);
     if (updatableElement != null)
       UpdateData(updatableElement);
   }
@@ -262,7 +260,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (modelValue is ModelElement modelElement)
       modelElement.Parent = this;
     if (modelValue is IUpdatableElement updatable)
-      updatable.SetUpdatableObject(openXmlElement);
+      updatable.SetUpdatableObject(openXmlElement, null);
     return modelValue;
   }
 
@@ -283,7 +281,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     {
       var valValue = valProperty.GetValue(openXmlElement);
       if (valValue != null)
-        return GetProperty <ModelType>(valValue);
+        return GetProperty<ModelType>(valValue);
     }
     return default;
   }
@@ -303,7 +301,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (modelValue is ModelElement modelElement)
       modelElement.Parent = this;
     if (modelValue is IUpdatableElement updatable)
-      updatable.SetUpdatableObject(openXmlValue);
+      updatable.SetUpdatableObject(openXmlValue, null);
     return modelValue;
   }
 
@@ -334,7 +332,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         oldWordprocessingDocument = oldWDAValue.WordprocessingDocument;
         oldWDAValue.Detach();
       }
-      else 
+      else
         oldWordprocessingDocument = (this as IWordprocessingDocumentAware)?.WordprocessingDocument;
 
       fieldValue = newValue;
@@ -519,7 +517,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <exception cref="NotImplementedException"></exception>
   public virtual bool LoadData()
   {
-    var updatedObject = GetUpdatableObject();
+    var updatedObject = GetUpdatableObject(null);
     if (updatedObject != null)
     {
       return LoadData(updatedObject);
@@ -559,7 +557,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (IsLoaded)
       return false;
     SetIsLoading(true);
-    SetUpdatableObject(openXmlObject);
+    SetUpdatableObject(openXmlObject, null);
     OpenXmlModelConverter.LoadData(this, openXmlObject);
     SetIsLoading(false);
     SetIsLoaded(true);
@@ -571,12 +569,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
   /// </summary>
   /// <returns>True if the data was successfully updated; otherwise, false.</returns>
-  public virtual bool UpdateData()
+  public virtual bool UpdateData(object? context)
   {
-    var updatedObject = GetUpdatableObject();
+    var updatedObject = GetUpdatableObject(context);
     if (updatedObject != null)
     {
-      UpdateData(updatedObject);
+      UpdateData(updatedObject, context);
       return true;
     }
     return false;
@@ -590,8 +588,9 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// does not perform validation on the Open XML element; callers should ensure it is compatible with the model
   /// type.</remarks>
   /// <param name = "openXmlObject">The Open XML element or other object to update with property values from this model.
-  /// Must not be null.</param>
-  public virtual bool UpdateData(object openXmlObject)
+  ///   Must not be null.</param>
+  /// <param name="context">An optional context object that can be used to pass additional information for the update operation.</param>
+  public virtual bool UpdateData(object openXmlObject, object? context)
   {
     var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlObject.GetType();
     return OpenXmlModelConverter.UpdateData(this, openXmlObject, openXmlType);
@@ -605,7 +604,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <param name = "propertyName">The name of the property to update. This value cannot be null.</param>
   public virtual void UpdatePropertyData(string propertyName)
   {
-    var updatableObject = GetUpdatableObject();
+    var updatableObject = GetUpdatableObject(null);
     if (updatableObject == null)
       return;
 
@@ -625,13 +624,14 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Gets the underlying Open XML element that can be updated by this model element. This method returns the object that represents the data source for this model, which may be an OpenXmlElement or another type of object. If no updatable element is associated with this model, the method returns null.
   /// </summary>
   /// <returns></returns>
-  public virtual object? GetUpdatableObject() => _UpdatableObject;
+  public virtual object? GetUpdatableObject(object? context) => _UpdatableObject;
 
   /// <summary>
   /// Sets the underlying Open XML element that can be updated by this model element. This method allows the model to be associated with a specific data source, which may be an OpenXmlElement or another type of object. If null is passed, the model will not have an updatable element.
   /// </summary>
   /// <param name="element">The Open XML element or other object to associate with this model element. Can be null to clear the current association.</param>
-  public void SetUpdatableObject(object? element) => _UpdatableObject = element;
+  /// <param name="context">The context in which to set the updatable element.</param>
+  public void SetUpdatableObject(object? element, object? context) => _UpdatableObject = element;
 
   /// <summary>
   /// Gets or sets the underlying Open XML element that can be updated by this model element.
@@ -639,13 +639,15 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   private object? _UpdatableObject;
 
   /// <summary>
-  /// Gets the underlying Open XML element that can be updated by this model element.
+  /// Gets the underlying Open XML element in the specified context.
   /// This method returns the object that represents the data source for this model,
   /// which may be an OpenXmlElement or another type of object.
   /// If no updatable element is associated with this model, the method returns null.
+  /// Interpretation of the context parameter is implementation-specific and may be used to determine which updatable element to return.
   /// </summary>
+  /// <param name="context">The context in which to retrieve the updatable element.</param>
   /// <returns></returns>
-  public virtual DX.OpenXmlElement? GetUpdatableElement() => null;
+  public virtual DX.OpenXmlElement? GetUpdatableElement(object? context = null) => null;
 
   /// <summary>
   /// Parent object that contains this item.

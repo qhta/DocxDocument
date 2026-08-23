@@ -7,12 +7,12 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("FootnoteEndnoteType", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FootnoteEndnoteType : Story<DXW.FootnoteEndnoteType>
 {
- /// <summary>
- /// Type of the note, specifying whether it is a footnote or endnote.
- /// </summary>
- public FootnoteEndnote? Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Unique identifier for the footnote or endnote.
- /// </summary>
- public Int64? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Type of the note, specifying whether it is a footnote or endnote.
+  /// </summary>
+  public FootnoteEndnote? Type { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Unique identifier for the footnote or endnote.
+  /// </summary>
+  public Int64? Id { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
-public partial interface IMailMerge: IModelObject
+public partial interface IMailMerge : IModelObject
 {
   /// <summary>
   /// Creates a new mail merge data source.
@@ -22,6 +22,6 @@ public partial interface IMailMerge: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.createdatasource?view=word-pia"/>
-  public void CreateDataSource(string Name, string PasswordDocument, string WritePasswordDocument, string HeaderRecord, 
+  public void CreateDataSource(string Name, string PasswordDocument, string WritePasswordDocument, string HeaderRecord,
     string MSQuery, string SQLStatement, string SQLStatement1, string Connection, bool LinkToSource);
 }

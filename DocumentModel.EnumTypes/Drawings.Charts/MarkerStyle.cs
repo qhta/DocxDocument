@@ -37,7 +37,7 @@ public enum MarkerStyle
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues.Star))]
   Star = 5,
-  
+
   /// <summary>
   /// Circular markers.
   /// </summary>

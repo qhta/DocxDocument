@@ -4,7 +4,7 @@ namespace DocumentModel.Properties;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty?view=word-pia"/>
-public partial interface ICustomProperty: IModelObject
+public partial interface ICustomProperty : IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

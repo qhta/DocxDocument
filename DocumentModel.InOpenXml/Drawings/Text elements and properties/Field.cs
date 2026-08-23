@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// This element specifies a text field which contains generated text that the application should update periodically.
 /// Each piece of text when it is generated is given a unique identification number that is used to refer to a specific field.
@@ -9,40 +10,65 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.Field))]
 [DataContract]
 [XmlRoot("Field", Namespace = "DocumentModel.Drawings")]
-public partial class Field : ModelElement<DXD.Field>
+public partial class Field: ModelElement<DXD.Field>
 {
- /// <summary>
- ///   Identifier for the field.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Field.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  /// <summary>
+  ///   Identifier for the field.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Field.Id))]
+  public string? Id
+  {
+    get => _Id ??= GetProperty<string?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
 
- /// <summary>
- ///   Type of the field.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Field.Type))]
- public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private string? _Type;
+  private string? _Id;
 
- /// <summary>
- ///   Character properties applied to the field text.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Field.RunProperties))]
- public RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
- private RunProperties? _RunProperties;
+  /// <summary>
+  ///   Type of the field.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Field.Type))]
+  public string? Type
+  {
+    get => _Type ??= GetProperty<string?>(GetUpdatableElement()?.Type);
+    set => UpdateField(ref _Type, value, nameof(Type));
+  }
 
- /// <summary>
- ///   Paragraph properties applied to the field text.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Field.ParagraphProperties))]
- public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
- private ParagraphProperties? _ParagraphProperties;
+  private string? _Type;
 
- /// <summary>
- ///   Text content of the field.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Field.Text))]
- public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
- private string? _Text;
+  /// <summary>
+  ///   Character properties applied to the field text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Field.RunProperties))]
+  public RunProperties? RunProperties
+  {
+    get => _RunProperties ??= GetProperty<RunProperties?>(GetUpdatableElement()?.RunProperties);
+    set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
+  }
+
+  private RunProperties? _RunProperties;
+
+  /// <summary>
+  ///   Paragraph properties applied to the field text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Field.ParagraphProperties))]
+  public ParagraphProperties? ParagraphProperties
+  {
+    get => _ParagraphProperties ??= GetProperty<ParagraphProperties?>(GetUpdatableElement()?.ParagraphProperties);
+    set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties));
+  }
+
+  private ParagraphProperties? _ParagraphProperties;
+
+  /// <summary>
+  ///   Text content of the field.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Field.Text))]
+  public string? Text
+  {
+    get => _Text ??= GetProperty<string?>(GetUpdatableElement()?.Text);
+    set => UpdateField(ref _Text, value, nameof(Text));
+  }
+
+  private string? _Text;
 }

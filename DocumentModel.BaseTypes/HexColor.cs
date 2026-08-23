@@ -25,7 +25,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(string str)
   {
-    if (str=="auto")
+    if (str == "auto")
     {
       value = 0xFFFFFFFF;
       return;

@@ -1,8 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="VStreamData"/> struct.
@@ -68,7 +64,7 @@ public partial struct VStreamData : IXmlSerializable
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
       string base64Content = reader.Value;
-      
+
       try
       {
         if (!string.IsNullOrWhiteSpace(base64Content))

@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides comprehensive serialization tests for <see cref="KnownProperties"/>.
 /// </summary>
-public class KnownPropertiesTest: _AbstractTestClass
+public class KnownPropertiesTest : _AbstractTestClass
 {
   /// <summary>
   /// Runs all serialization tests for the <see cref="KnownProperties"/> class and reports the results to the console.

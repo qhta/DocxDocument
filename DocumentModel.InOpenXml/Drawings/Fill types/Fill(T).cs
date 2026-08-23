@@ -1,6 +1,3 @@
-using System.Runtime.Serialization;
-using DocumentFormat.OpenXml.EMMA;
-
 namespace DocumentModel.Drawings;
 /// <summary>
 ///   Abstract base class for fill formatting in DrawingML, representing the fill style (solid, gradient, pattern, etc.) for shapes, lines, and graphical elements.

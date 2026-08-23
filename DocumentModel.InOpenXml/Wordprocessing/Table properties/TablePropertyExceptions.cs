@@ -8,8 +8,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("TablePropertyExceptions", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TablePropertyExceptions : CurrentTableProperties<DXW.TablePropertyExceptions>
 {
- /// <summary>
- /// Revision information for table-level property exceptions, enabling tracking and management of property changes and historical settings.
- /// </summary>
- public TablePropertyExceptionsChange? TablePropertyExceptionsChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Revision information for table-level property exceptions, enabling tracking and management of property changes and historical settings.
+  /// </summary>
+  public TablePropertyExceptionsChange? TablePropertyExceptionsChange { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

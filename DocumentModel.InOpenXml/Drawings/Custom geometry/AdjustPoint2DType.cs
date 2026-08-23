@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Represents a two-dimensional adjustment point with X and Y coordinates, used for shape geometry manipulation.
 /// <para>
@@ -15,19 +16,27 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.AdjustPoint2DType))]
 [DataContract]
 [XmlRoot("AdjustPoint2DType", Namespace = "DocumentModel.Drawings")]
-public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
+public partial class AdjustPoint2DType: ModelElement<DXD.AdjustPoint2DType>
 {
- /// <summary>
- /// X-coordinate of the adjustment point.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.X))]
- public EMU? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
- private EMU? _X;
+  /// <summary>
+  /// X-coordinate of the adjustment point.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.X))]
+  public EMU? X
+  {
+    get => _X ??= GetProperty<EMU?>(GetUpdatableElement()?.X);
+    set => UpdateField(ref _X, value, nameof(X));
+  }
+  private EMU? _X;
 
- /// <summary>
- /// Y-coordinate of the adjustment point.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.Y))]
- public EMU? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
- private EMU? _Y;
+  /// <summary>
+  /// Y-coordinate of the adjustment point.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.Y))]
+  public EMU? Y
+  {
+    get => _Y ??= GetProperty<EMU?>(GetUpdatableElement()?.Y);
+    set => UpdateField(ref _Y, value, nameof(Y));
+  }
+  private EMU? _Y;
 }

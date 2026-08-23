@@ -1,4 +1,5 @@
 namespace DocumentModel.CustomUI;
+
 /// <summary>
 /// <para>Defines the TaskGroup Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -13,124 +14,192 @@ namespace DocumentModel.CustomUI;
 [OpenXmlType(typeof(DXO10CUI.TaskGroup))]
 [DataContract]
 [XmlRoot("TaskGroup", Namespace = "DocumentModel.CustomUI")]
-public partial class TaskGroup : ModelElement<DXO10CUI.TaskGroup>
+public partial class TaskGroup: ModelElement<DXO10CUI.TaskGroup>
 {
   /// <summary>
   /// Specifies the unique identifier of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.Id))]
-  public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  public String? Id
+  {
+    get => _Id ??= GetProperty<String?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
   private String? _Id;
 
   /// <summary>
   /// Specifies the qualified identifier of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.QualifiedId))]
-  public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  public String? QualifiedId
+  {
+    get => _QualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.QualifiedId);
+    set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId));
+  }
   private String? _QualifiedId;
 
   /// <summary>
   /// Specifies an application-defined tag for the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.Tag))]
-  public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  public String? Tag
+  {
+    get => _Tag ??= GetProperty<String?>(GetUpdatableElement()?.Tag);
+    set => UpdateField(ref _Tag, value, nameof(Tag));
+  }
   private String? _Tag;
 
   /// <summary>
   /// Specifies the identifier of a built-in Office control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.IdMso))]
-  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+  public String? IdMso
+  {
+    get => _IdMso ??= GetProperty<String?>(GetUpdatableElement()?.IdMso);
+    set => UpdateField(ref _IdMso, value, nameof(IdMso));
+  }
   private String? _IdMso;
 
   /// <summary>
   /// Specifies a built-in control after which this control is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.InsertAfterMso))]
-  public String? InsertAfterMso { get => _InsertAfterMso; set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso)); }
+  public String? InsertAfterMso
+  {
+    get => _InsertAfterMso ??= GetProperty<String?>(GetUpdatableElement()?.InsertAfterMso);
+    set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso));
+  }
   private String? _InsertAfterMso;
 
   /// <summary>
   /// Specifies a built-in control before which this control is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.InsertBeforeMso))]
-  public String? InsertBeforeMso { get => _InsertBeforeMso; set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso)); }
+  public String? InsertBeforeMso
+  {
+    get => _InsertBeforeMso ??= GetProperty<String?>(GetUpdatableElement()?.InsertBeforeMso);
+    set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso));
+  }
   private String? _InsertBeforeMso;
 
   /// <summary>
   /// Specifies a qualified control identifier after which this control is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.InsertAfterQulifiedId))]
-  public String? InsertAfterQualifiedId { get => _InsertAfterQualifiedId; set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId)); }
+  public String? InsertAfterQualifiedId
+  {
+    get => _InsertAfterQualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.InsertAfterQulifiedId);
+    set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId));
+  }
   private String? _InsertAfterQualifiedId;
 
   /// <summary>
   /// Specifies a qualified control identifier before which this control is inserted.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.InsertBeforeQulifiedId))]
-  public String? InsertBeforeQualifiedId { get => _InsertBeforeQualifiedId; set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId)); }
+  public String? InsertBeforeQualifiedId
+  {
+    get => _InsertBeforeQualifiedId ??= GetProperty<String?>(GetUpdatableElement()?.InsertBeforeQulifiedId);
+    set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId));
+  }
   private String? _InsertBeforeQualifiedId;
 
   /// <summary>
   /// Specifies the display label of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.Label))]
-  public String? Label { get => _Label; set => UpdateField(ref _Label, value, nameof(Label)); }
+  public String? Label
+  {
+    get => _Label ??= GetProperty<String?>(GetUpdatableElement()?.Label);
+    set => UpdateField(ref _Label, value, nameof(Label));
+  }
   private String? _Label;
 
   /// <summary>
   /// Specifies the callback that returns label.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.GetLabel))]
-  public String? GetLabel { get => _GetLabel; set => UpdateField(ref _GetLabel, value, nameof(GetLabel)); }
+  public String? GetLabel
+  {
+    get => _GetLabel ??= GetProperty<String?>(GetUpdatableElement()?.GetLabel);
+    set => UpdateField(ref _GetLabel, value, nameof(GetLabel));
+  }
   private String? _GetLabel;
 
   /// <summary>
   /// Specifies whether the control is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.Visible))]
-  public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
+  public Boolean? Visible
+  {
+    get => _Visible ??= GetProperty<Boolean?>(GetUpdatableElement()?.Visible);
+    set => UpdateField(ref _Visible, value, nameof(Visible));
+  }
   private Boolean? _Visible;
 
   /// <summary>
   /// Specifies the callback that returns visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.GetVisible))]
-  public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
+  public String? GetVisible
+  {
+    get => _GetVisible ??= GetProperty<String?>(GetUpdatableElement()?.GetVisible);
+    set => UpdateField(ref _GetVisible, value, nameof(GetVisible));
+  }
   private String? _GetVisible;
 
   /// <summary>
   /// Specifies the helper text.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.HelperText))]
-  public String? HelperText { get => _HelperText; set => UpdateField(ref _HelperText, value, nameof(HelperText)); }
+  public String? HelperText
+  {
+    get => _HelperText ??= GetProperty<String?>(GetUpdatableElement()?.HelperText);
+    set => UpdateField(ref _HelperText, value, nameof(HelperText));
+  }
   private String? _HelperText;
 
   /// <summary>
   /// Specifies the callback that returns helper text.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.GetHelperText))]
-  public String? GetHelperText { get => _GetHelperText; set => UpdateField(ref _GetHelperText, value, nameof(GetHelperText)); }
+  public String? GetHelperText
+  {
+    get => _GetHelperText ??= GetProperty<String?>(GetUpdatableElement()?.GetHelperText);
+    set => UpdateField(ref _GetHelperText, value, nameof(GetHelperText));
+  }
   private String? _GetHelperText;
 
   /// <summary>
   /// Specifies whether the label is shown.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.ShowLabel))]
-  public Boolean? ShowLabel { get => _ShowLabel; set => UpdateField(ref _ShowLabel, value, nameof(ShowLabel)); }
+  public Boolean? ShowLabel
+  {
+    get => _ShowLabel ??= GetProperty<Boolean?>(GetUpdatableElement()?.ShowLabel);
+    set => UpdateField(ref _ShowLabel, value, nameof(ShowLabel));
+  }
   private Boolean? _ShowLabel;
 
   /// <summary>
   /// Specifies the callback that returns show label.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.GetShowLabel))]
-  public String? GetShowLabel { get => _GetShowLabel; set => UpdateField(ref _GetShowLabel, value, nameof(GetShowLabel)); }
+  public String? GetShowLabel
+  {
+    get => _GetShowLabel ??= GetProperty<String?>(GetUpdatableElement()?.GetShowLabel);
+    set => UpdateField(ref _GetShowLabel, value, nameof(GetShowLabel));
+  }
   private String? _GetShowLabel;
 
   /// <summary>
   /// Specifies the allowed task sizes.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TaskGroup.AllowedTaskSizes))]
-  public TaskSizesType? AllowedTaskSizes { get => _AllowedTaskSizes; set => UpdateField(ref _AllowedTaskSizes, value, nameof(AllowedTaskSizes)); }
+  public TaskSizesType? AllowedTaskSizes
+  {
+    get => _AllowedTaskSizes ??= GetProperty<TaskSizesType?>(GetUpdatableElement()?.AllowedTaskSizes);
+    set => UpdateField(ref _AllowedTaskSizes, value, nameof(AllowedTaskSizes));
+  }
   private TaskSizesType? _AllowedTaskSizes;
 }

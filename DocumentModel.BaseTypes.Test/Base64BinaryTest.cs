@@ -23,7 +23,7 @@ public static class Base64BinaryTest
     return true;
   }
 
-  
+
   static bool TestBase64BinaryBasicOperations()
   {
     Console.WriteLine("--- Testing Base64Binary Basic Operations ---");
@@ -63,8 +63,8 @@ public static class Base64BinaryTest
 
   }
 
-  
-  
+
+
   static bool TestBase64BinaryXmlSerialization()
   {
     Console.WriteLine("--- Testing Base64Binary XML Serialization ---");
@@ -146,8 +146,8 @@ public static class Base64BinaryTest
     return testData;
   }
 
-  
-  
+
+
   static bool TestBase64BinaryJsonSerialization()
   {
     Console.WriteLine("--- Testing Base64Binary JSON Serialization ---");
@@ -199,8 +199,8 @@ public static class Base64BinaryTest
     return true;
   }
 
-  
-  
+
+
   static bool TestBase64BinaryEdgeCases()
   {
     Console.WriteLine("--- Testing Base64Binary Edge Cases ---");
@@ -258,8 +258,8 @@ public static class Base64BinaryTest
 
   }
 
-  
-  
+
+
   static bool TestBase64BinaryPerformance()
   {
     Console.WriteLine("--- Testing Base64Binary Performance ---");
@@ -321,7 +321,7 @@ public static class Base64BinaryTest
     return true;
   }
 
-  
+
 }
 
 

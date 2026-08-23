@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("GlossaryDocument", Namespace = "DocumentModel.Wordprocessing")]
 public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
 {
- /// <summary>
- ///   Document background, specifying the image or fill for every page of the glossary document.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocumentBackground))]
- public DocumentBackground? DocumentBackground { get => _DocumentBackground; set => UpdateField(ref _DocumentBackground, value, nameof(DocumentBackground)); }
- private DocumentBackground? _DocumentBackground;
+  /// <summary>
+  ///   Document background, specifying the image or fill for every page of the glossary document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocumentBackground))]
+  public DocumentBackground? DocumentBackground { get => _DocumentBackground ??= GetProperty<DocumentBackground?>(GetUpdatableElement()?.DocumentBackground); set => UpdateField(ref _DocumentBackground, value, nameof(DocumentBackground)); }
+  private DocumentBackground? _DocumentBackground;
 
- /// <summary>
- ///   List of glossary document entries, providing access to and management of reusable document parts.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocParts))]
- public DocParts? DocParts { get => _DocParts; set => UpdateField(ref _DocParts, value, nameof(DocParts)); }
- private DocParts? _DocParts;
+  /// <summary>
+  ///   List of glossary document entries, providing access to and management of reusable document parts.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocParts))]
+  public DocParts? DocParts { get => _DocParts ??= GetProperty<DocParts?>(GetUpdatableElement()?.DocParts); set => UpdateField(ref _DocParts, value, nameof(DocParts)); }
+  private DocParts? _DocParts;
 }

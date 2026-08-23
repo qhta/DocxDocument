@@ -3,8 +3,6 @@ using System.Xml.Linq;
 
 using DocumentFormat.OpenXml.Packaging;
 
-using Qhta.OpenXmlTools;
-
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>

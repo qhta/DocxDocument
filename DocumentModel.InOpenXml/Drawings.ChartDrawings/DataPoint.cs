@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a single data point in a chart series with customizable visual formatting.
 /// </summary>
@@ -21,27 +22,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.DataPoint))]
 [DataContract]
 [XmlRoot("DataPoint", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class DataPoint : ModelElement<DXO16DCD.DataPoint>
+public partial class DataPoint: ModelElement<DXO16DCD.DataPoint>
 {
   /// <summary>
   /// Specifies the idx.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataPoint.Idx))]
-  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
+  public UInt32? Idx
+  {
+    get => _Idx ??= GetProperty<UInt32?>(GetUpdatableElement()?.Idx);
+    set => UpdateField(ref _Idx, value, nameof(Idx));
+  }
 
   private UInt32? _Idx;
+
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ShapeProperties))]
-  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetProperty<ShapeProperties?>(GetUpdatableElement()?.ShapeProperties);
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
 
   private ShapeProperties? _ShapeProperties;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ExtensionList))]
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

@@ -8,8 +8,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("ParagraphPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphPropertiesChange : TrackChangeType<DXW.ParagraphPropertiesChange>
 {
- /// <summary>
- /// Previous paragraph properties before the change, enabling comparison and tracking of revisions.
- /// </summary>
- public PreviousParagraphProperties? PreviousParagraphProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Previous paragraph properties before the change, enabling comparison and tracking of revisions.
+  /// </summary>
+  public PreviousParagraphProperties? PreviousParagraphProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

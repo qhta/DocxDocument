@@ -102,7 +102,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
 
     modelElement.SetParent(Parent);
     if (modelItem is IUpdatableElement updatableModelItem)
-      updatableModelItem.SetUpdatableObject(openXmlChildElement);
+      updatableModelItem.SetUpdatableObject(openXmlChildElement, null);
 
     return (ItemType)modelItem!;
   }
@@ -149,7 +149,7 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   /// <param name = "openXmlCompositeElement">The Open XML composite element to update.</param>
   protected override bool UpdateDataCollection(DX.OpenXmlCompositeElement openXmlCompositeElement)
   {
-    SetUpdatableObject(openXmlCompositeElement);
+    SetUpdatableObject(openXmlCompositeElement, null);
 
     foreach (var modelItem in this)
     {
@@ -187,14 +187,14 @@ public abstract partial class ContentItemsCollection : ModelElementCollection<Mo
   {
     if (modelItem is DMW.BookmarkStart)
       Debug.Assert(true);
-    var updatableElement = GetUpdatableObject();
+    var updatableElement = GetUpdatableObject(null);
     if (updatableElement is not DX.OpenXmlCompositeElement openXmlCompositeElement)
       throw new ApplicationException("Updatable element of content modelItem collection must be a OpenXmlCompositeElement");
 
-    var openXmlElement = (modelItem as IUpdatableElement).GetUpdatableObject() as DX.OpenXmlElement;
+    var openXmlElement = (modelItem as IUpdatableElement).GetUpdatableObject(null) as DX.OpenXmlElement;
     if (openXmlElement is null)
     {
-      openXmlElement = modelItem.GetUpdatableElement() as DX.OpenXmlElement;
+      openXmlElement = modelItem.GetUpdatableElement();
       if (openXmlElement is null)
         throw new ApplicationException("Updatable element of modelItem must be a OpenXmlElement");
       //Debug.WriteLine($"Created {openXmlElement.GetType().FullName} for modelItem of type {modelItem.GetType().FullName}");

@@ -5,8 +5,8 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor, ITr
   /// <summary>
   /// Value of the color as RGB uint.
   /// </summary>
-  [NotMapped] 
-  [XmlIgnore] 
+  [NotMapped]
+  [XmlIgnore]
   [JsonIgnore]
   public abstract UInt32 ARGB { get; set; }
 
@@ -116,7 +116,7 @@ public abstract partial class DrawingsColorBase<T> : IColor, ITintableColor, ITr
   {
     get
     {
-      var (R, G, B, A) = this.RGBAComponents;   
+      var (R, G, B, A) = this.RGBAComponents;
       var (H, S, L) = DMD.Hsl2Rgb.ToHSL(R, G, B);
       return (H, S, L, A);
     }

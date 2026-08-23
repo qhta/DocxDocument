@@ -1,6 +1,4 @@
-﻿using DocumentModel.Properties;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.CustomProperties.

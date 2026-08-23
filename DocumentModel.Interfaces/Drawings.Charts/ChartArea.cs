@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the chart area.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea?view=office-pia"/>
-public partial interface IChartArea: IModelObject
+public partial interface IChartArea : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

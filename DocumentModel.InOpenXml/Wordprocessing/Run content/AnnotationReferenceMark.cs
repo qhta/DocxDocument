@@ -9,7 +9,7 @@
 [DataContract]
 [XmlRoot("AnnotationReferenceMark", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DXW.AnnotationReferenceMark))]
-public class AnnotationReferenceMark: ModelElement<DXW.AnnotationReferenceMark>
+public class AnnotationReferenceMark : ModelElement<DXW.AnnotationReferenceMark>
 {
-  
+
 }

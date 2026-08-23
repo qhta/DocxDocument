@@ -64,7 +64,7 @@ public enum Hyphen
   /// </summary>
   [OpenXmlEnumValue("SmallHyphenMinus")]
   SmallHyphenMinus = 0xFE63,
-    /// <summary>
+  /// <summary>
   ///   Unicode full-width hyphen-minus
   ///   Code: FF0D
   /// </summary>

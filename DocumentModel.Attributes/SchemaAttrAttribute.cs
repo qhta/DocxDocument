@@ -9,7 +9,6 @@
 
 
 #nullable enable
-using System.Runtime.InteropServices.ComTypes;
 using System.Xml;
 
 namespace DocumentModel.Attributes
@@ -51,7 +50,7 @@ namespace DocumentModel.Attributes
         throw new ArgumentNullException(nameof(qname));
       var ss = qname.Split(':');
       if (ss.Length == 2)
-        this._qname = new XmlQualifiedName(ss[1],ss[0]);
+        this._qname = new XmlQualifiedName(ss[1], ss[0]);
       else
         this._qname = new XmlQualifiedName(qname);
     }
@@ -64,7 +63,7 @@ namespace DocumentModel.Attributes
     public SchemaAttrAttribute(string ns, string tag)
     {
       if (string.IsNullOrEmpty(tag))
-        throw new ArgumentNullException(nameof (tag));
+        throw new ArgumentNullException(nameof(tag));
       this._qname = new XmlQualifiedName(ns, tag);
     }
 

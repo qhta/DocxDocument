@@ -1,30 +1,47 @@
 namespace DocumentModel.Drawings.Office.OEmbed;
+
 /// <summary>
 ///   Defines the OEmbedShared Class.
 /// </summary>
 [OpenXmlType(typeof(DXODY21OE.OEmbedShared))]
 [DataContract]
 [XmlRoot("OEmbedShared", Namespace = "DocumentModel.Drawings.Office.OEmbed")]
-public partial class OEmbedShared : ModelElement<DXODY21OE.OEmbedShared>
+public partial class OEmbedShared: ModelElement<DXODY21OE.OEmbedShared>
 {
- /// <summary>
- ///   srcUrl
- /// </summary>
- [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.SrcUrl))]
- public string? SrcUrl { get => _SrcUrl; set => UpdateField(ref _SrcUrl, value, nameof(SrcUrl)); }
- private string? _SrcUrl;
+  /// <summary>
+  ///   srcUrl
+  /// </summary>
+  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.SrcUrl))]
+  public string? SrcUrl
+  {
+    get => _SrcUrl ??= GetProperty<string?>(GetUpdatableElement()?.SrcUrl);
+    set => UpdateField(ref _SrcUrl, value, nameof(SrcUrl));
+  }
 
- /// <summary>
- ///   type
- /// </summary>
- [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.Type))]
- public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
- private string? _Type;
+  private string? _SrcUrl;
 
- /// <summary>
- ///   OfficeArtExtensionList.
- /// </summary>
- [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.OfficeArtExtensionList))]
- public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
- private OfficeArtExtensionList? _OfficeArtExtensionList;
+  /// <summary>
+  ///   type
+  /// </summary>
+  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.Type))]
+  public string? Type
+  {
+    get => _Type ??= GetProperty<string?>(GetUpdatableElement()?.Type);
+    set => UpdateField(ref _Type, value, nameof(Type));
+  }
+
+  private string? _Type;
+
+  /// <summary>
+  ///   OfficeArtExtensionList.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXODY21OE.OEmbedShared.OfficeArtExtensionList))]
+  public OfficeArtExtensionList? OfficeArtExtensionList
+  {
+    get => _OfficeArtExtensionList ??=
+      GetProperty<OfficeArtExtensionList?>(GetUpdatableElement()?.OfficeArtExtensionList);
+    set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList));
+  }
+
+  private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

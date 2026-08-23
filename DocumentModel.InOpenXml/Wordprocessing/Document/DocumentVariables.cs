@@ -19,7 +19,7 @@ public sealed class DocumentVariables : ModelElementCollection<DocumentVariable,
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public DocumentVariables(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetDocumentVariables())
+  public DocumentVariables(Wordprocessing.Document document) : base(document, document.WordprocessingDocument?.GetDocumentVariables())
   {
   }
 

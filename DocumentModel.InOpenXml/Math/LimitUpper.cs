@@ -7,24 +7,24 @@ namespace DocumentModel.Math;
 [XmlRoot("LimitUpper", Namespace = "DocumentModel.Math")]
 public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathContent
 {
- /// <summary>
- ///   Upper Limit Properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.LimitUpper.LimitUpperProperties))]
- public LimitUpperProperties? LimitUpperProperties { get => _LimitUpperProperties; set => UpdateField(ref _LimitUpperProperties, value, nameof(LimitUpperProperties)); }
- private LimitUpperProperties? _LimitUpperProperties;
+  /// <summary>
+  ///   Upper Limit Properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.LimitUpper.LimitUpperProperties))]
+  public LimitUpperProperties? LimitUpperProperties { get => _LimitUpperProperties ??= GetProperty<LimitUpperProperties?>(GetUpdatableElement()?.LimitUpperProperties); set => UpdateField(ref _LimitUpperProperties, value, nameof(LimitUpperProperties)); }
+  private LimitUpperProperties? _LimitUpperProperties;
 
- /// <summary>
- ///   Specifies the argument of limit-upper function.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.LimitUpper.Base))]
- public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
- private Base? _Base;
+  /// <summary>
+  ///   Specifies the argument of limit-upper function.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.LimitUpper.Base))]
+  public Base? Base { get => _Base ??= GetProperty<Base?>(GetUpdatableElement()?.Base); set => UpdateField(ref _Base, value, nameof(Base)); }
+  private Base? _Base;
 
   /// <summary>
   ///   Limit (Upper).
   /// </summary>
   [OpenXmlProperty(nameof(DXM.LimitUpper.Limit))]
- public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
- private Limit? _Limit;
+  public Limit? Limit { get => _Limit ??= GetProperty<Limit?>(GetUpdatableElement()?.Limit); set => UpdateField(ref _Limit, value, nameof(Limit)); }
+  private Limit? _Limit;
 }

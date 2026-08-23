@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a polygon that defines a portion of a geographic entity's boundary or shape.
 /// </summary>
@@ -24,27 +25,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoPolygon))]
 [DataContract]
 [XmlRoot("GeoPolygon", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoPolygon : ModelElement<DXO16DCD.GeoPolygon>
+public partial class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
 {
   /// <summary>
   /// Specifies the polygon id.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PolygonId))]
-  public string? PolygonId { get => _PolygonId; set => UpdateField(ref _PolygonId, value, nameof(PolygonId)); }
+  public string? PolygonId
+  {
+    get => _PolygonId ??= GetProperty<string?>(GetUpdatableElement()?.PolygonId);
+    set => UpdateField(ref _PolygonId, value, nameof(PolygonId));
+  }
 
   private string? _PolygonId;
+
   /// <summary>
   /// Specifies the num points.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.NumPoints))]
-  public Int64? NumPoints { get => _NumPoints; set => UpdateField(ref _NumPoints, value, nameof(NumPoints)); }
+  public Int64? NumPoints
+  {
+    get => _NumPoints ??= GetProperty<Int64?>(GetUpdatableElement()?.NumPoints);
+    set => UpdateField(ref _NumPoints, value, nameof(NumPoints));
+  }
 
   private Int64? _NumPoints;
+
   /// <summary>
   /// Specifies the pca rings.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PcaRings))]
-  public string? PcaRings { get => _PcaRings; set => UpdateField(ref _PcaRings, value, nameof(PcaRings)); }
+  public string? PcaRings
+  {
+    get => _PcaRings ??= GetProperty<string?>(GetUpdatableElement()?.PcaRings);
+    set => UpdateField(ref _PcaRings, value, nameof(PcaRings));
+  }
 
   private string? _PcaRings;
 }

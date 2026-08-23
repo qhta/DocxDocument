@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat?view=office-pia"/>
-public partial interface IConnectorFormat: IModelObject
+public partial interface IConnectorFormat : IModelObject
 {
   /// <summary>
   /// Connects the beginning of the connector to a shape at the specified connection site.

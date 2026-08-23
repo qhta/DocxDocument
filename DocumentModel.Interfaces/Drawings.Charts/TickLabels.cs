@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents tick labels on a chart axis.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia"/>
-public partial interface ITickLabels: IModelObject
+public partial interface ITickLabels : IModelObject
 {
   /// <summary>
   /// Gets or sets the `TextFormat` property.

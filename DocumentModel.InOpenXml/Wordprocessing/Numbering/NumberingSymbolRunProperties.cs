@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("NumberingSymbolRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingSymbolRunProperties : BaseRunProperties<DXW.NumberingSymbolRunProperties>
 {
- /// <summary>
- /// Indicates whether the contents of this run are treated as complex script text regardless of their Unicode character values when determining formatting.
- /// </summary>
- public bool? ComplexScript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
- /// <summary>
- /// Indicates whether the contents of this run have right-to-left characteristics.
- /// </summary>
- public bool? RightToLeftText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Indicates whether the contents of this run are treated as complex script text regardless of their Unicode character values when determining formatting.
+  /// </summary>
+  public bool? ComplexScript { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Indicates whether the contents of this run have right-to-left characteristics.
+  /// </summary>
+  public bool? RightToLeftText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

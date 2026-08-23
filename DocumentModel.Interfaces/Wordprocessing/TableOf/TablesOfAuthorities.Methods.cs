@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities?view=word-pia"/>
-public partial interface ITablesOfAuthorities: IModelObject
+public partial interface ITablesOfAuthorities : IModelObject
 {
   /// <summary>
   /// Adds a new table of authorities to the document.
@@ -25,7 +25,7 @@ public partial interface ITablesOfAuthorities: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities.add?view=word-pia"/>
-  public ITableOfAuthorities Add(IRange Range, object Category, object Bookmark, bool Passim, bool KeepEntryFormatting, 
-    string Separator, bool IncludeSequenceName, string EntrySeparator, string PageRangeSeparator, 
+  public ITableOfAuthorities Add(IRange Range, object Category, object Bookmark, bool Passim, bool KeepEntryFormatting,
+    string Separator, bool IncludeSequenceName, string EntrySeparator, string PageRangeSeparator,
     bool IncludeCategoryHeader, string PageNumberSeparator);
 }

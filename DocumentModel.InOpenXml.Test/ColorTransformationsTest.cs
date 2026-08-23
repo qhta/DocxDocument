@@ -236,18 +236,18 @@ public class ColorTransformationsTest : BaseThemeTest
     return true;
   }
 
-  private IColor CreateCheckColor(IColorTransformation transformation, 
+  private IColor CreateCheckColor(IColorTransformation transformation,
     IColor baseColor)
   {
     if (transformation is Shade shade)
     {
       var l = baseColor.HSLAComponents.L * shade.Value.AsDouble();
-      return new EffectiveColor ( new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A );
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
     }
     if (transformation is Tint tint)
     {
       var l = baseColor.HSLAComponents.L * tint.Value.AsDouble() + (1 - tint.Value.AsDouble());
-      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A );
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), baseColor.HSLAComponents.S, l, baseColor.HSLAComponents.A);
     }
 
     if (transformation is Hue hue)
@@ -335,19 +335,19 @@ public class ColorTransformationsTest : BaseThemeTest
     if (transformation is Saturation saturation)
     {
       var s = saturation.Value.AsDouble();
-      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
     }
     if (transformation is SaturationOffset saturationOffset)
     {
       var s = baseColor.HSLAComponents.S + saturationOffset.Value.AsDouble();
-      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
     }
     if (transformation is SaturationModulation saturationModulation)
     {
       var s = baseColor.HSLAComponents.S * saturationModulation.Value.AsDouble();
-      return new EffectiveColor( new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A );
+      return new EffectiveColor(new Degrees(baseColor.HSLAComponents.H * 360), s, baseColor.HSLAComponents.L, baseColor.HSLAComponents.A);
     }
-    
+
     if (transformation is Luminance luminance)
     {
       var l = luminance.Value.AsDouble();

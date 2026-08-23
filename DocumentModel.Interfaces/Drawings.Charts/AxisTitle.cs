@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis title.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia"/>
-public partial interface IAxisTitle: IChartTitle
+public partial interface IAxisTitle : IChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.

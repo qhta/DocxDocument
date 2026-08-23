@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="methodName">The name of the method to be called to set data in model property.
 /// Cannot be null or empty.</param>
-[AttributeUsage( AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
 public class OpenXmlSetMethodAttribute(string methodName) : Attribute
 {
   /// <summary>

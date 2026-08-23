@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings;
 [XmlRoot("HyperlinkExtension", Namespace = "DocumentModel.Drawings")]
 public partial class HyperlinkExtension : ModelElement<DXD.HyperlinkExtension>
 {
- /// <summary>
- ///   Color type for the hyperlink.
- /// </summary>
- public HyperlinkColor? HyperlinkColor { get => _HyperlinkColor; set => UpdateField(ref _HyperlinkColor, value, nameof(HyperlinkColor)); }
- private HyperlinkColor? _HyperlinkColor;
+  /// <summary>
+  ///   Color type for the hyperlink.
+  /// </summary>
+  public HyperlinkColor? HyperlinkColor { get => _HyperlinkColor; set => UpdateField(ref _HyperlinkColor, value, nameof(HyperlinkColor)); }
+  private HyperlinkColor? _HyperlinkColor;
 }

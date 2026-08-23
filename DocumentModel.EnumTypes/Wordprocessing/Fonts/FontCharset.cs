@@ -14,7 +14,7 @@ public static class FontCharset
   /// Default character set.
   /// </summary>
   [NotMapped]
-  public static byte Default = 0x01;   
+  public static byte Default = 0x01;
   /// <summary>
   /// Symbol character set, 
   /// This value specifies that the characters in the Unicode private use area

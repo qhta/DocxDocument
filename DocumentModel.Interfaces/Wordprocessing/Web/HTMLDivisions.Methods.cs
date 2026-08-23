@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions?view=word-pia"/>
-public partial interface IHTMLDivisions: IModelObject
+public partial interface IHTMLDivisions : IModelObject
 {
   /// <summary>
   /// Adds a new HTMLDivision to the collection.

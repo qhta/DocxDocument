@@ -10,21 +10,21 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [XmlRoot("WholeFormatting", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 public partial class WholeFormatting : ModelElement<DXO10WDC.WholeFormatting>
 {
- /// <summary>
- /// Outline properties for the drawing element, including line style, color, and width.
- /// </summary>
- public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
- private LineProperties? _Outline;
+  /// <summary>
+  /// Outline properties for the drawing element, including line style, color, and width.
+  /// </summary>
+  public LineProperties? Outline { get => _Outline; set => UpdateField(ref _Outline, value, nameof(Outline)); }
+  private LineProperties? _Outline;
 
- /// <summary>
- /// List of visual effects applied to the drawing element, such as shadows, glows, and reflections.
- /// </summary>
- public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
- private EffectList? _EffectList;
+  /// <summary>
+  /// List of visual effects applied to the drawing element, such as shadows, glows, and reflections.
+  /// </summary>
+  public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
+  private EffectList? _EffectList;
 
- /// <summary>
- /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the drawing element.
- /// </summary>
- public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
- private EffectDag? _EffectDag;
+  /// <summary>
+  /// Effect DAG (Directed Acyclic Graph) for advanced effect sequencing and layering on the drawing element.
+  /// </summary>
+  public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
+  private EffectDag? _EffectDag;
 }

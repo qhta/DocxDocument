@@ -1,37 +1,58 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Defines the UpDownBars Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.UpDownBars))]
 [DataContract]
 [XmlRoot("UpDownBars", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class UpDownBars : ModelElement<DXDC.UpDownBars>
+public partial class UpDownBars: ModelElement<DXDC.UpDownBars>
 {
- /// <summary>
- ///   Gap Width.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.UpDownBars.GapWidth))]
- public UInt16? GapWidth { get => _GapWidth; set => UpdateField(ref _GapWidth, value, nameof(GapWidth)); }
- private UInt16? _GapWidth;
+  /// <summary>
+  ///   Gap Width.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.UpDownBars.GapWidth))]
+  public UInt16? GapWidth
+  {
+    get => _GapWidth ??= GetProperty<UInt16?>(GetUpdatableElement()?.GapWidth);
+    set => UpdateField(ref _GapWidth, value, nameof(GapWidth));
+  }
 
- /// <summary>
- ///   Up Bars.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.UpDownBars.UpBars))]
- public UpBars? UpBars { get => _UpBars; set => UpdateField(ref _UpBars, value, nameof(UpBars)); }
- private UpBars? _UpBars;
+  private UInt16? _GapWidth;
 
- /// <summary>
- ///   Down Bars.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.UpDownBars.DownBars))]
- public DownBars? DownBars { get => _DownBars; set => UpdateField(ref _DownBars, value, nameof(DownBars)); }
- private DownBars? _DownBars;
+  /// <summary>
+  ///   Up Bars.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.UpDownBars.UpBars))]
+  public UpBars? UpBars
+  {
+    get => _UpBars ??= GetProperty<UpBars?>(GetUpdatableElement()?.UpBars);
+    set => UpdateField(ref _UpBars, value, nameof(UpBars));
+  }
 
- /// <summary>
- ///   Chart Extensibility.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.UpDownBars.ExtensionList))]
- public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private IExtensionList? _ExtensionList;
+  private UpBars? _UpBars;
+
+  /// <summary>
+  ///   Down Bars.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.UpDownBars.DownBars))]
+  public DownBars? DownBars
+  {
+    get => _DownBars ??= GetProperty<DownBars?>(GetUpdatableElement()?.DownBars);
+    set => UpdateField(ref _DownBars, value, nameof(DownBars));
+  }
+
+  private DownBars? _DownBars;
+
+  /// <summary>
+  ///   Chart Extensibility.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.UpDownBars.ExtensionList))]
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
+
+  private IExtensionList? _ExtensionList;
 }

@@ -627,7 +627,7 @@ public static class BooleanConverter
     {
       var valValue = ConvertTo(value, valProp.PropertyType);
       valProp.SetValue(element, valValue);
-    } 
+    }
     return element;
   }
 

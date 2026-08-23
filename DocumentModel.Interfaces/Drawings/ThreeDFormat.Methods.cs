@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Represents the `ThreeDFormat` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat?view=office-pia"/>
-public partial interface IThreeDFormat: IModelObject
+public partial interface IThreeDFormat : IModelObject
 {
   /// <summary>
   /// Invokes `IncrementRotationX`.

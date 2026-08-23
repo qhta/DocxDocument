@@ -25,7 +25,7 @@ public static class BytePercentTest
     return true;
   }
 
-  
+
   static bool TestBytePercentBasicOperations()
   {
     Console.WriteLine("--- Testing BytePercent Basic Operations ---"); // Test string to BytePercent conversion
@@ -67,8 +67,8 @@ public static class BytePercentTest
     return true;
   }
 
-  
-  
+
+
   static bool TestBytePercentXmlSerialization()
   {
     Console.WriteLine("--- Testing BytePercent XML Serialization ---"); // Create test object
@@ -168,8 +168,8 @@ public static class BytePercentTest
     return true;
   }
 
-  
-  
+
+
   static bool TestBytePercentJsonSerialization()
   {
     Console.WriteLine("--- Testing BytePercent JSON Serialization ---"); // Create test object
@@ -201,8 +201,8 @@ public static class BytePercentTest
     return true;
   }
 
-  
-  
+
+
   static bool TestBytePercentEdgeCases()
   {
     Console.WriteLine("--- Testing BytePercent Edge Cases ---"); // Test zero value
@@ -279,8 +279,8 @@ public static class BytePercentTest
     return true;
   }
 
-  
-  
+
+
   static bool TestBytePercentPerformance()
   {
     Console.WriteLine("--- Testing BytePercent Performance ---");
@@ -368,7 +368,7 @@ public static class BytePercentTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

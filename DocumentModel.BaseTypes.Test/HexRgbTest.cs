@@ -27,7 +27,7 @@ public static class HexRgbTest
     return true;
   }
 
-  
+
   static bool TestHexRgbBasicOperations()
   {
     Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string to HexRgb conversion
@@ -82,8 +82,8 @@ public static class HexRgbTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexRgbColorOperations()
   {
     Console.WriteLine("--- Testing HexRgb Color Operations ---");      // Test primary colors
@@ -153,8 +153,8 @@ public static class HexRgbTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexRgbConversions()
   {
     Console.WriteLine("--- Testing HexRgb IConvertible Conversions ---");      // Test GetTypeCode
@@ -291,8 +291,8 @@ public static class HexRgbTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexRgbXmlSerialization()
   {
     Console.WriteLine("--- Testing HexRgb XML Serialization ---");      // Create test object
@@ -376,8 +376,8 @@ public static class HexRgbTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexRgbJsonSerialization()
   {
     Console.WriteLine("--- Testing HexRgb JSON Serialization ---");      // Create test object
@@ -407,7 +407,7 @@ public static class HexRgbTest
     return true;
   }
 
-  
+
   private static HexRgbTestData CreateTestData()
   {
     return new HexRgbTestData
@@ -440,7 +440,7 @@ public static class HexRgbTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestHexRgbEdgeCases()
   {
     Console.WriteLine("--- Testing HexRgb Edge Cases ---");
@@ -528,8 +528,8 @@ public static class HexRgbTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexRgbPerformance()
   {
     Console.WriteLine("--- Testing HexRgb Performance ---"); const int iterations = 100000;
@@ -660,7 +660,7 @@ public static class HexRgbTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

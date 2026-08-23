@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrols?view=word-pia"/>
-public partial interface IContentControls: IModelObject
+public partial interface IContentControls : IModelObject
 {
   /// <summary>
   /// Adds a content control of the specified type.

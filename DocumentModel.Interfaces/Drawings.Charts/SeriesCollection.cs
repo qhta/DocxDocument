@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <remarks>
 /// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface ISeriesCollection: IModelCollection<ISeries>
+public partial interface ISeriesCollection : IModelCollection<ISeries>
 {
 
 }

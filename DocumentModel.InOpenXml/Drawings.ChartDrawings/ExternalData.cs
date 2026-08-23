@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a reference to external data source for a chart with automatic update capabilities.
 /// </summary>
@@ -24,20 +25,29 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.ExternalData))]
 [DataContract]
 [XmlRoot("ExternalData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class ExternalData : ModelElement<DXO16DCD.ExternalData>
+public partial class ExternalData: ModelElement<DXO16DCD.ExternalData>
 {
   /// <summary>
   /// Specifies the unique identifier of the element.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ExternalData.Id))]
-  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  public string? Id
+  {
+    get => _Id ??= GetProperty<string?>(GetUpdatableElement()?.Id);
+    set => UpdateField(ref _Id, value, nameof(Id));
+  }
 
   private string? _Id;
+
   /// <summary>
   /// Specifies the auto update.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ExternalData.AutoUpdate))]
-  public bool? AutoUpdate { get => _AutoUpdate; set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate)); }
+  public bool? AutoUpdate
+  {
+    get => _AutoUpdate ??= GetProperty<bool?>(GetUpdatableElement()?.AutoUpdate);
+    set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate));
+  }
 
   private bool? _AutoUpdate;
 }

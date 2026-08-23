@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflicts?view=word-pia"/>
-public partial interface IConflicts: IModelObject
+public partial interface IConflicts : IModelObject
 {
   /// <summary>
   /// Accepts all conflict changes, removes the conflicts, and merges the changes into the server copy of the

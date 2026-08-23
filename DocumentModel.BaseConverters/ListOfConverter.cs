@@ -57,8 +57,8 @@ public static class ListOfConverter
   /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List enums, or null if the input is null.</returns>
   public static ListOf<EnumKind>? GetValue<OpenXmlEnumType, EnumKind>(DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? element)
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where EnumKind: struct, IConvertible
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumKind : struct, IConvertible
   {
     if (element != null)
     {
@@ -82,8 +82,8 @@ public static class ListOfConverter
   /// <param name="value">The list of enum values to convert.</param>
   /// <returns>A new ListValue containing the enum values.</returns>
   public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(List<EnumKind> value)
-    where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
-    where EnumKind: struct, Enum
+    where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
+    where EnumKind : struct, Enum
   {
     var resultList = new List<DX.EnumValue<OpenXmlEnumType>>();
     foreach (var item in value)

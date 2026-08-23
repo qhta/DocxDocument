@@ -61,7 +61,7 @@ public static partial class OpenXmlModelConverter
   /// <typeparam name="OpenXmlElementType"></typeparam>
   /// <param name="modelObject"></param>
   /// <returns>The created OpenXml element or value, or null if the input is null.</returns>
-  public static OpenXmlElementType? ConvertTo<ModelElementType, OpenXmlElementType>(ModelElementType? modelObject) 
+  public static OpenXmlElementType? ConvertTo<ModelElementType, OpenXmlElementType>(ModelElementType? modelObject)
   {
     if (modelObject == null)
       return default;
@@ -111,8 +111,8 @@ public static partial class OpenXmlModelConverter
     if (SimpleValueConverter.TryConvertFrom(openXmlObject, modelType, out var result))
       return result;
 
-    if (modelType.GetCustomAttribute<DirectAccessAttribute>() is {} directAccess && directAccess.IsEnabled
-        && modelType.GetConstructor([typeof(DX.OpenXmlCompositeElement)])!=null)
+    if (modelType.GetCustomAttribute<DirectAccessAttribute>() is { } directAccess && directAccess.IsEnabled
+        && modelType.GetConstructor([typeof(DX.OpenXmlCompositeElement)]) != null)
     {
       var modelObject = Activator.CreateInstance(modelType, openXmlObject)!;
       return modelObject;
@@ -296,6 +296,9 @@ public static partial class OpenXmlModelConverter
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanWrite)
     {
+      if (modelObject is IUpdatableElement updatableElement)
+        updatableElement.SetUpdatableObject(openXmlObject, null);
+      
       var modelValue = modelProperty.GetValue(modelObject);
       object? openXmlValue = null;
       if (modelValue != null && !openXmlProperty.PropertyType.IsInstanceOfType(modelValue))
@@ -305,8 +308,8 @@ public static partial class OpenXmlModelConverter
       openXmlProperty.SetValue(openXmlObject, openXmlValue);
       if (modelValue is IUpdatableElement updatable && openXmlValue is DX.OpenXmlElement)
       {
-        updatable.SetUpdatableObject(openXmlValue);
-        updatable.UpdateData(openXmlValue);
+        updatable.SetUpdatableObject(openXmlValue, null);
+        updatable.UpdateData(openXmlValue, null);
       }
       return true;
     }
@@ -482,7 +485,7 @@ public static partial class OpenXmlModelConverter
     }
     if (modelValue == null)
       return false;
-    
+
     openXmlChildElement = (DX.OpenXmlElement)ConvertTo(modelValue, openXmlChildType)!;
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " +
@@ -492,7 +495,7 @@ public static partial class OpenXmlModelConverter
     if (children.Length > 1)
       throw new InvalidOperationException($"Multiple child elements of type {openXmlChildType} " +
                                           $"found in Open XML element {openXmlType} for model property {modelProperty.Name}");
-    if (children.Length==1)
+    if (children.Length == 1)
     {
       var child = children[0];
       if (String.Compare(child.OuterXml, openXmlChildElement.OuterXml, StringComparison.Ordinal) == 0)
@@ -862,12 +865,12 @@ public static partial class OpenXmlModelConverter
         return true;
       }
       else
-      if (loadPropertyMethod.GetParameters().Length == 2)
-      {
-        var propertyValue = loadPropertyMethod.Invoke(modelObject, [modelProperty, openXmlObject]);
-        modelProperty.SetValue(modelObject, propertyValue);
-        return true;
-      }
+        if (loadPropertyMethod.GetParameters().Length == 2)
+        {
+          var propertyValue = loadPropertyMethod.Invoke(modelObject, [modelProperty, openXmlObject]);
+          modelProperty.SetValue(modelObject, propertyValue);
+          return true;
+        }
     }
     return false;
   }

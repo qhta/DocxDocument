@@ -68,7 +68,7 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   /// Theme font for ASCII characters, enabling theme-based font selection for ASCII text.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.RunFonts.AsciiTheme))]
-  public ThemeFont? AsciiTheme { get => _AsciiTheme; set => UpdateField(ref _AsciiTheme, value, nameof(AsciiTheme)); }
+  public ThemeFont? AsciiTheme { get => _AsciiTheme ??= GetProperty<ThemeFont?>(GetUpdatableElement()?.AsciiTheme); set => UpdateField(ref _AsciiTheme, value, nameof(AsciiTheme)); }
   private ThemeFont? _AsciiTheme;
 
   /// <summary>

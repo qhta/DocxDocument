@@ -103,7 +103,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     Attach(wordprocessingDocument);
-    UpdateData();
+    UpdateData(null);
   }
 
   /// <summary>
@@ -113,7 +113,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   public virtual void Detach()
   {
     WordprocessingDocument = null;
-    SetUpdatableObject(null);
+    SetUpdatableObject(null, null);
   }
 
   /// <summary>
@@ -132,11 +132,11 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  public override bool UpdateData()
+  public override bool UpdateData(object? context)
   {
     if (SourceOpenXmlCompositeElement != null)
     {
-      UpdateData(SourceOpenXmlCompositeElement);
+      UpdateData(SourceOpenXmlCompositeElement, context);
       return true;
     }
     return false;
@@ -147,9 +147,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Returns the OpenXml collection element instance for update operations, or null if not set.
   /// </summary>
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
-  public override object? GetUpdatableObject()
+  public override object? GetUpdatableObject(object? context)
   {
-    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject();
+    return SourceOpenXmlCompositeElement ?? (Parent as IUpdatableElement)?.GetUpdatableObject(context);
   }
 
   /// <summary>
@@ -157,9 +157,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   /// It can be an OpenXmlElement or any other object that represents the data source for this model.
   /// If null, no updates will be performed.
   /// </summary>
-  public override OpenXmlCollectionType? GetUpdatableElement()
+  public override OpenXmlCollectionType? GetUpdatableElement(object? context = null)
   {
-    return base.GetUpdatableObject() as OpenXmlCollectionType;
+    return base.GetUpdatableObject(context) as OpenXmlCollectionType;
   }
 
   /// <summary>
@@ -203,7 +203,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> :
   ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
-  public override bool UpdateData(object openXmlObject)
+  /// <param name = "context">An optional context object for the update operation.</param>
+  public override bool UpdateData(object openXmlObject, object? context = null)
   {
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {

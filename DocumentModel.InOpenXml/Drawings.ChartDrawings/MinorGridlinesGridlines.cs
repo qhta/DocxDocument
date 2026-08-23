@@ -1,24 +1,34 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Defines the MinorGridlinesGridlines Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.MinorGridlinesGridlines))]
 [DataContract]
 [XmlRoot("MinorGridlinesGridlines", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class MinorGridlinesGridlines : ModelElement<DXO16DCD.MinorGridlinesGridlines>
+public partial class MinorGridlinesGridlines: ModelElement<DXO16DCD.MinorGridlinesGridlines>
 {
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.MinorGridlinesGridlines.ShapeProperties))]
-  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetProperty<ShapeProperties?>(GetUpdatableElement()?.ShapeProperties);
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
 
   private ShapeProperties? _ShapeProperties;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.MinorGridlinesGridlines.ExtensionList))]
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

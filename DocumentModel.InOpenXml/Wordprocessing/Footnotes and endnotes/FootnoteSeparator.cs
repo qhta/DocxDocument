@@ -7,8 +7,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("FootnoteSeparator", Namespace = "DocumentModel.Wordprocessing")]
 public partial class FootnoteSeparator : FootnoteSpecialReference
 {
- ///// <summary>
- ///// Target footnote associated with this separator, specifying the footnote to which the separator applies.
- ///// </summary>
- //public Footnote? Footnote { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  ///// <summary>
+  ///// Target footnote associated with this separator, specifying the footnote to which the separator applies.
+  ///// </summary>
+  //public Footnote? Footnote { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

@@ -8,24 +8,24 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("DropDownListFormField", Namespace = "DocumentModel.Wordprocessing")]
 public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormField>
 {
- /// <summary>
- /// Index of the currently selected item in the drop-down list.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.DropDownListFormField.DropDownListSelection))]
- public Int32? DropDownListSelection { get => _DropDownListSelection; set => UpdateField(ref _DropDownListSelection, value, nameof(DropDownListSelection)); }
- private Int32? _DropDownListSelection;
+  /// <summary>
+  /// Index of the currently selected item in the drop-down list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.DropDownListFormField.DropDownListSelection))]
+  public Int32? DropDownListSelection { get => _DropDownListSelection ??= GetProperty<Int32?>(GetUpdatableElement()?.DropDownListSelection); set => UpdateField(ref _DropDownListSelection, value, nameof(DropDownListSelection)); }
+  private Int32? _DropDownListSelection;
 
- /// <summary>
- /// Index of the default item to be selected when the form is loaded.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.DropDownListFormField.DefaultDropDownListItemIndex))]
- public Int32? DefaultDropDownListItemIndex { get => _DefaultDropDownListItemIndex; set => UpdateField(ref _DefaultDropDownListItemIndex, value, nameof(DefaultDropDownListItemIndex)); }
- private Int32? _DefaultDropDownListItemIndex;
+  /// <summary>
+  /// Index of the default item to be selected when the form is loaded.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.DropDownListFormField.DefaultDropDownListItemIndex))]
+  public Int32? DefaultDropDownListItemIndex { get => _DefaultDropDownListItemIndex ??= GetProperty<Int32?>(GetUpdatableElement()?.DefaultDropDownListItemIndex); set => UpdateField(ref _DefaultDropDownListItemIndex, value, nameof(DefaultDropDownListItemIndex)); }
+  private Int32? _DefaultDropDownListItemIndex;
 
- /// <summary>
- /// Collection of list entry form fields representing the available options in the drop-down list.
- /// </summary>
- public ListEntryFormFields ListEntryFormFields
- { get => _ListEntryFormFields ??= new ListEntryFormFields(this, GetUpdatableElement()); }
- private ListEntryFormFields? _ListEntryFormFields;
+  /// <summary>
+  /// Collection of list entry form fields representing the available options in the drop-down list.
+  /// </summary>
+  public ListEntryFormFields ListEntryFormFields
+  { get => _ListEntryFormFields ??= new ListEntryFormFields(this, GetUpdatableElement()); }
+  private ListEntryFormFields? _ListEntryFormFields;
 }

@@ -6,7 +6,7 @@
 [DataContract]
 [XmlRoot("Anchor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
 [OpenXmlType(typeof(DXDW.Anchor))]
-public class Anchor: ModelElement<DXDW.Anchor>
+public class Anchor : ModelElement<DXDW.Anchor>
 {
-  
+
 }

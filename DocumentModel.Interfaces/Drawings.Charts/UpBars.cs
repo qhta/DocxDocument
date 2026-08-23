@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents up bars in a chart.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoupbars?view=office-pia"/>
-public partial interface IUpBars: IModelObject
+public partial interface IUpBars : IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

@@ -167,7 +167,7 @@ public static class DegreesTest
     Console.WriteLine();
     return true;
   }
-  
+
   static bool TestDegreesJsonSerialization()
   {
     Console.WriteLine("--- Testing Degrees JSON Serialization ---"); // Create test object
@@ -277,7 +277,7 @@ public static class DegreesTest
     var ok = true;
     Degrees zero = new Degrees(0);
     var dblZero = zero.ToDouble(null);
-    ok = zero==0;
+    ok = zero == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
     if (!ok) return false;
 
@@ -287,9 +287,9 @@ public static class DegreesTest
     Degrees maxDegrees = new Degrees(360);
     var minInt = minDegrees.ToInt32(null);
     var maxInt = maxDegrees.ToInt32(null);
-    ok = minInt==0;
+    ok = minInt == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0°): \"{minDegrees}\" = {minInt}");
-    ok = maxInt==360;
+    ok = maxInt == 360;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Max (360°): \"{maxDegrees}\" = {maxInt}");
     if (!ok) return false;
 
@@ -321,7 +321,7 @@ public static class DegreesTest
     Console.WriteLine("\nTesting fractional double values:");
     oneEights = new Degrees("22.5°");
     var dblOneEights = oneEights.ToDouble(null);
-    ok =  oneEights.Equals(dblOneEights);
+    ok = oneEights.Equals(dblOneEights);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One eighth: \"{oneEights}\" {TestHelper.EqualityMessage(ok)} {dblOneEights} (double)");
     if (!ok) return false;
     Console.WriteLine(" but note that due to floating-point precision, the equality check may not always be true for fractional values when using double.");

@@ -1,5 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the collection of defined styles in a Wordprocessing document.
@@ -41,9 +39,9 @@ public partial class StyleDefinitions : ModelElementCollection<Style, DXW.Styles
   /// representing each defined style.
   /// </summary>
   /// <returns></returns>
-  public override object? GetUpdatableObject()
+  public override object? GetUpdatableObject(object? context = null)
   {
-    return Styles?.GetUpdatableObject() as DXW.Styles;
+    return Styles?.GetUpdatableObject(context) as DXW.Styles;
   }
 
 

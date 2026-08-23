@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>

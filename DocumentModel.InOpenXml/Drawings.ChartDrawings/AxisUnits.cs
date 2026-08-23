@@ -1,6 +1,7 @@
 using DocumentModel.Drawings.Charts;
 
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the unit display information for a chart axis.
 /// </summary>
@@ -16,27 +17,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.AxisUnits))]
 [DataContract]
 [XmlRoot("AxisUnits", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class AxisUnits : ModelElement<DXO16DCD.AxisUnits>
+public partial class AxisUnits: ModelElement<DXO16DCD.AxisUnits>
 {
   /// <summary>
   /// Specifies the unit.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.Unit))]
-  public AxisUnit? Unit { get => _Unit; set => UpdateField(ref _Unit, value, nameof(Unit)); }
+  public AxisUnit? Unit
+  {
+    get => _Unit ??= GetProperty<AxisUnit?>(GetUpdatableElement()?.Unit);
+    set => UpdateField(ref _Unit, value, nameof(Unit));
+  }
 
   private AxisUnit? _Unit;
+
   /// <summary>
   /// Specifies the axis units label.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.AxisUnitsLabel))]
-  public AxisUnitsLabel? AxisUnitsLabel { get => _AxisUnitsLabel; set => UpdateField(ref _AxisUnitsLabel, value, nameof(AxisUnitsLabel)); }
+  public AxisUnitsLabel? AxisUnitsLabel
+  {
+    get => _AxisUnitsLabel ??= GetProperty<AxisUnitsLabel?>(GetUpdatableElement()?.AxisUnitsLabel);
+    set => UpdateField(ref _AxisUnitsLabel, value, nameof(AxisUnitsLabel));
+  }
 
   private AxisUnitsLabel? _AxisUnitsLabel;
+
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.ExtensionList))]
-  public IExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+  public IExtensionList? ExtensionList
+  {
+    get => _ExtensionList ??= GetProperty<IExtensionList?>(GetUpdatableElement()?.ExtensionList);
+    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
+  }
 
   private IExtensionList? _ExtensionList;
 }

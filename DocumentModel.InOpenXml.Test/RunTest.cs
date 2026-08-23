@@ -1,7 +1,3 @@
-using System.Text.Json;
-using System.Xml;
-using System.Xml.Serialization;
-
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
@@ -171,7 +167,7 @@ public class RunTest : _AbstractTestClass
     var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
 
     return (xmlType?.AnonymousType ?? false)
-           || (xmlRoot!=null);
+           || (xmlRoot != null);
   }
 
   /// <summary>

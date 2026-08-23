@@ -7,21 +7,21 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("NoteReference", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class NoteReference<T> : ModelElement<T>, IRunContent where T : DX.OpenXmlElement
 {
- /// <summary>
- /// Specifies which interface (footnote, endnote, or annotation) is the target of this reference.
- /// </summary>
- public ReferenceType Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
- private ReferenceType _type;
+  /// <summary>
+  /// Specifies which interface (footnote, endnote, or annotation) is the target of this reference.
+  /// </summary>
+  public ReferenceType Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
+  private ReferenceType _type;
 
- /// <summary>
- /// Indicates whether the footnote or endnote reference mark is suppressed, allowing for custom marks to follow.
- /// </summary>
- public bool? CustomMarkFollows { get => _CustomMarkFollows; set => UpdateField(ref _CustomMarkFollows, value, nameof(CustomMarkFollows)); }
- private bool? _CustomMarkFollows;
+  /// <summary>
+  /// Indicates whether the footnote or endnote reference mark is suppressed, allowing for custom marks to follow.
+  /// </summary>
+  public bool? CustomMarkFollows { get => _CustomMarkFollows; set => UpdateField(ref _CustomMarkFollows, value, nameof(CustomMarkFollows)); }
+  private bool? _CustomMarkFollows;
 
- /// <summary>
- /// Identifier of the referenced footnote, endnote, or annotation.
- /// </summary>
- public long? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private long? _Id;
+  /// <summary>
+  /// Identifier of the referenced footnote, endnote, or annotation.
+  /// </summary>
+  public long? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private long? _Id;
 }

@@ -1,4 +1,5 @@
 namespace DocumentModel.Math;
+
 /// <summary>
 ///   This element specifies the Array object (sometimes referred to as "Equation Array", 
 ///   despite its ability to hold mathematical text other than equations), 
@@ -14,12 +15,18 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.EquationArray))]
 [DataContract]
 [XmlRoot("EquationArray", Namespace = "DocumentModel.Math")]
-public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
+public partial class EquationArray: ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
 {
- /// <summary>
- ///   Specifies Equation Array properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
- public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
- private EquationArrayProperties? _EquationArrayProperties;
+  /// <summary>
+  ///   Specifies Equation Array properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
+  public EquationArrayProperties? EquationArrayProperties
+  {
+    get => _EquationArrayProperties ??=
+      GetProperty<EquationArrayProperties?>(GetUpdatableElement()?.EquationArrayProperties);
+    set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties));
+  }
+
+  private EquationArrayProperties? _EquationArrayProperties;
 }

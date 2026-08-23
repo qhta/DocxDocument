@@ -5,7 +5,7 @@ namespace DocumentModel.Themes;
 /// Represents a Microsoft Office theme.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officetheme?view=office-pia"/>
-public partial interface ITheme: IModelObject
+public partial interface ITheme : IModelObject
 {
   /// <summary>
   /// Gets the `ThemeColorScheme` property.

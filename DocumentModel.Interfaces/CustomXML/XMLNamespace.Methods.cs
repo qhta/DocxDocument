@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace?view=word-pia"/>
-public partial interface IXMLNamespace: IModelObject
+public partial interface IXMLNamespace : IModelObject
 {
   /// <summary>
   /// Gets the location of the XML namespace.

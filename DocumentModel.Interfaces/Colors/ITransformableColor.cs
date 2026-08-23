@@ -3,7 +3,7 @@
 /// <summary>
 /// Interface representing a color that can be transformed by a collection of transformations.
 /// </summary>
-public interface ITransformableColor: IColor
+public interface ITransformableColor : IColor
 {
   /// <summary>
   /// Adds a transformation to the color.
@@ -11,7 +11,7 @@ public interface ITransformableColor: IColor
   /// <param name="transformation">The transformation to add.</param>
   /// <returns>True if the transformation was added successfully; otherwise, false.</returns>
   public bool AddTransformation(IColorTransformation transformation);
-  
+
   /// <summary>
   /// Returns a collection of transformations applied to the color.
   /// </summary>

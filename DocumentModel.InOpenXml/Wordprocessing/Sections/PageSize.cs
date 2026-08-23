@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents the page size settings for a section in a Wordprocessing document.
 /// This class provides properties for page width, height, orientation, printer paper code, and paper size, enabling advanced configuration of page layout and printing options.
@@ -6,27 +7,42 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.PageSize))]
 [DataContract]
 [XmlRoot("PageSize", Namespace = "DocumentModel.Wordprocessing")]
-public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesContent
+public partial class PageSize: ModelElement<DXW.PageSize>, ISectionPropertiesContent
 {
   /// <summary>
   /// Page width, specified in twips.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageSize.Width))]
-  public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+  public Twips? Width
+  {
+    get => _Width ??= GetProperty<Twips?>(GetUpdatableElement()?.Width);
+    set => UpdateField(ref _Width, value, nameof(Width));
+  }
+
   private Twips? _Width;
 
   /// <summary>
   /// Page height, specified in twips.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageSize.Height))]
-  public Twips? Height { get => _Height; set => UpdateField(ref _Height, value, nameof(Height)); }
+  public Twips? Height
+  {
+    get => _Height ??= GetProperty<Twips?>(GetUpdatableElement()?.Height);
+    set => UpdateField(ref _Height, value, nameof(Height));
+  }
+
   private Twips? _Height;
 
   /// <summary>
   /// Page orientation, such as portrait or landscape.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageSize.Orient))]
-  public PageOrientation? Orient { get => _Orient; set => UpdateField(ref _Orient, value, nameof(Orient)); }
+  public PageOrientation? Orient
+  {
+    get => _Orient ??= GetProperty<PageOrientation?>(GetUpdatableElement()?.Orient);
+    set => UpdateField(ref _Orient, value, nameof(Orient));
+  }
+
   private PageOrientation? _Orient;
 
   /// <summary>
@@ -34,5 +50,6 @@ public partial class PageSize : ModelElement<DXW.PageSize>, ISectionPropertiesCo
   /// </summary>
   [NotMapped]
   public PaperSize? PaperSize { get => _PaperSize; set => UpdateField(ref _PaperSize, value, nameof(PaperSize)); }
+
   private PaperSize? _PaperSize;
 }

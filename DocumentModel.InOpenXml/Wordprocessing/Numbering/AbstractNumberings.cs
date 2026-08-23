@@ -17,7 +17,7 @@ public partial class AbstractNumberings : ModelElementCollection<AbstractNumberi
   /// Initializing constructor.
   /// </summary>
   /// <param name = "numbering">The parent numbering element.</param>
-  public AbstractNumberings(Numbering numbering) : base(numbering, numbering?.GetUpdatableElement() as DXW.Numbering)
+  public AbstractNumberings(Numbering numbering) : base(numbering, numbering?.GetUpdatableElement())
   {
   }
 

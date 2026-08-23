@@ -1,8 +1,6 @@
 using DocumentModel.Drawings.Charts;
-using DocumentModel.Drawings.SmartArt;
-using DocumentModel.HTML;
-using DocumentModel.Drawings.Wordprocessing;
 using DocumentModel.Drawings.Diagrams;
+using DocumentModel.HTML;
 using DocumentModel.Wordprocessing;
 
 using Range = System.Range;

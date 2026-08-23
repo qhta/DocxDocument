@@ -11,7 +11,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of CustomXMLSchema objects attached to a data stream.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschemacollection?view=office-pia"/>
-public partial interface ICustomXMLSchemaCollection: IModelCollection<ICustomXMLSchema>
+public partial interface ICustomXMLSchemaCollection : IModelCollection<ICustomXMLSchema>
 {
   /// <summary>
   /// Gets the `NamespaceURI` property.

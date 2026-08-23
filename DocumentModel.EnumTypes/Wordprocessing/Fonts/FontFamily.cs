@@ -31,7 +31,7 @@ public enum FontFamily
   /// </summary>
   [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Modern))]
   Modern = 3,
-  
+
   /// <summary>
   ///   Script Font.
   /// </summary>
@@ -41,6 +41,6 @@ public enum FontFamily
   /// <summary>
   ///   Novelty Font.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Decorative))] 
+  [OpenXmlEnumValue(nameof(DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues.Decorative))]
   Decorative = 5,
 }

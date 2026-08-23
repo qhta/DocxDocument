@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a hidden data label indicator for a specific data point in a chart.
 /// </summary>
@@ -17,13 +18,17 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.DataLabelHidden))]
 [DataContract]
 [XmlRoot("DataLabelHidden", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class DataLabelHidden : ModelElement<DXO16DCD.DataLabelHidden>
+public partial class DataLabelHidden: ModelElement<DXO16DCD.DataLabelHidden>
 {
   /// <summary>
   /// Specifies the idx.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabelHidden.Idx))]
-  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
+  public UInt32? Idx
+  {
+    get => _Idx ??= GetProperty<UInt32?>(GetUpdatableElement()?.Idx);
+    set => UpdateField(ref _Idx, value, nameof(Idx));
+  }
 
   private UInt32? _Idx;
 }

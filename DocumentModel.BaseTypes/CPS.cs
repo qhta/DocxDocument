@@ -12,7 +12,7 @@
 /// </remarks>
 [DataContract]
 [JsonConverter(typeof(CPSJsonConverter))]
-public partial class CPS: PTS
+public partial class CPS : PTS
 {
   /// <summary>
   /// Override the scale factor for the CPS measurement. A scale of 100 means that the value is in hundredths of a point.

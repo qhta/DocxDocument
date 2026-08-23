@@ -4,7 +4,7 @@
 /// Collection of simple values.
 /// </summary>
 /// <typeparam name="ItemType">Should be a value type or string</typeparam>
-public interface IModelValues<ItemType>: IEnumerable<ItemType>
+public interface IModelValues<ItemType> : IEnumerable<ItemType>
 {
   /// <summary>
   /// Gets the item at the specified integer index.

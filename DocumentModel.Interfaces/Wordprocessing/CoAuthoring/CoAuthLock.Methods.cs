@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock?view=word-pia"/>
-public partial interface ICoAuthLock: IModelObject
+public partial interface ICoAuthLock : IModelObject
 {
   /// <summary>
   /// Unlocks the specified lock.

@@ -102,7 +102,7 @@ public class BodyItemsEnumerationTest : _AbstractTestClass
     var t0 = DateTime.Now;
     using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
     var t1 = DateTime.Now;
-   // Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
+    // Console.WriteLine($"Open OpenXml file duration: {(t1 - t0).TotalMilliseconds} ms");
 
     var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
     if (openXmlBody == null)

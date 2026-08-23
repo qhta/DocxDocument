@@ -304,7 +304,7 @@ public static partial class EnumTypeConverter
       }
       if (openXmlType == typeof(DX.IntegerValue))
       {
-        return new DX.IntegerValue{ Value = Convert.ToInt32(enumVal) };
+        return new DX.IntegerValue { Value = Convert.ToInt32(enumVal) };
       }
       if (openXmlType == typeof(DX.StringValue))
       {

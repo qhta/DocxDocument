@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for PTS type serialization in both XML and JSON formats.
@@ -25,7 +23,7 @@ public static class PTSTest
 
     return true;
   }
-  
+
   /// <summary>
   /// Tests the basic operations of the PTS class, including conversions between PTS and various types, string
   /// representations, and comparisons.
@@ -220,7 +218,7 @@ public static class PTSTest
   /// <returns></returns>
   static bool TestPTSXmlSerialization()
   {
-    Console.WriteLine("--- Testing PTS XML Serialization ---");      
+    Console.WriteLine("--- Testing PTS XML Serialization ---");
     // Create test object
     var testData = CreateTestData();
 
@@ -654,7 +652,7 @@ public static class PTSTest
     return true;
   }
 
-  }
+}
 
 
 /// <summary>

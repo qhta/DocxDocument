@@ -1,7 +1,4 @@
-﻿using System.Globalization;
-using System.Text;
-
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
 /// Test suite for VClipboardData type serialization in both XML and JSON formats.
@@ -29,7 +26,7 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
+
   static bool TestVClipboardDataConstruction()
   {
     Console.WriteLine("--- Testing VClipboardData Construction ---");      // Test constructor with text data
@@ -65,8 +62,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataProperties()
   {
     Console.WriteLine("--- Testing VClipboardData Properties ---");      // Test Format property
@@ -137,8 +134,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataEquality()
   {
     Console.WriteLine("--- Testing VClipboardData Equality ---");      // Test equal instances
@@ -212,8 +209,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataClipboardFormats()
   {
     Console.WriteLine("--- Testing VClipboardData Clipboard Formats ---");      // Test CF_TEXT (1)
@@ -271,8 +268,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataXmlSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData XML Serialization ---");      // Create test object
@@ -343,8 +340,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataJsonSerialization()
   {
     Console.WriteLine("--- Testing VClipboardData JSON Serialization ---");      // Create test object
@@ -382,8 +379,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataEdgeCases()
   {
     Console.WriteLine("--- Testing VClipboardData Edge Cases ---");      // Test with all zeros
@@ -447,8 +444,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   static bool TestVClipboardDataPerformance()
   {
     Console.WriteLine("--- Testing VClipboardData Performance ---"); const int iterations = 10000;
@@ -527,8 +524,8 @@ public static class VClipboardDataTest
     return true;
   }
 
-  
-  
+
+
   private static VClipboardDataTestData CreateTestData()
   {
     return new VClipboardDataTestData
@@ -566,7 +563,7 @@ public static class VClipboardDataTest
     return data;
   }
 
-  }
+}
 
 
 /// <summary>

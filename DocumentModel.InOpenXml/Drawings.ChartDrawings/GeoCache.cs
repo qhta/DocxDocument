@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a cache of geographic data query results used for map-based chart visualizations.
 /// </summary>
@@ -23,21 +24,31 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoCache))]
 [DataContract]
 [XmlRoot("GeoCache", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoCache : ModelElement<DXO16DCD.GeoCache>
+public partial class GeoCache: ModelElement<DXO16DCD.GeoCache>
 {
   /// <summary>
   /// Specifies the provider.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoCache.Provider))]
-  public string? Provider { get => _Provider; set => UpdateField(ref _Provider, value, nameof(Provider)); }
+  public string? Provider
+  {
+    get => _Provider ??= GetProperty<string?>(GetUpdatableElement()?.Provider);
+    set => UpdateField(ref _Provider, value, nameof(Provider));
+  }
 
   private string? _Provider;
+
   /// <summary>
   /// Specifies the xsd base64binary.
   /// </summary>
-  public string? XsdBase64Binary { get => _XsdBase64Binary; set => UpdateField(ref _XsdBase64Binary, value, nameof(XsdBase64Binary)); }
+  public string? XsdBase64Binary
+  {
+    get => _XsdBase64Binary;
+    set => UpdateField(ref _XsdBase64Binary, value, nameof(XsdBase64Binary));
+  }
 
   private string? _XsdBase64Binary;
+
   /// <summary>
   /// Specifies the clear.
   /// </summary>

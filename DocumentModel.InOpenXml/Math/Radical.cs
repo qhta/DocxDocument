@@ -1,31 +1,46 @@
 namespace DocumentModel.Math;
+
 /// <summary>
 ///   This element specifies the radical object, consisting of a radical, a base e and an optional degree deg.
 /// </summary>
 [OpenXmlType(typeof(DXM.Radical))]
 [DataContract]
 [XmlRoot("Radical", Namespace = "DocumentModel.Math")]
-public partial class Radical : ModelElement<DXM.Radical>, ICommonMathContent
+public partial class Radical: ModelElement<DXM.Radical>, ICommonMathContent
 {
- /// <summary>
- ///   Radical Properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.Radical.RadicalProperties))]
- public RadicalProperties? RadicalProperties { get => _RadicalProperties; set => UpdateField(ref _RadicalProperties, value, nameof(RadicalProperties)); }
- private RadicalProperties? _RadicalProperties;
+  /// <summary>
+  ///   Radical Properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Radical.RadicalProperties))]
+  public RadicalProperties? RadicalProperties
+  {
+    get => _RadicalProperties ??= GetProperty<RadicalProperties?>(GetUpdatableElement()?.RadicalProperties);
+    set => UpdateField(ref _RadicalProperties, value, nameof(RadicalProperties));
+  }
 
- /// <summary>
- ///   Degree.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.Radical.Degree))]
- public Degree? Degree { get => _Degree; set => UpdateField(ref _Degree, value, nameof(Degree)); }
- private Degree? _Degree;
+  private RadicalProperties? _RadicalProperties;
 
+  /// <summary>
+  ///   Degree.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Radical.Degree))]
+  public Degree? Degree
+  {
+    get => _Degree ??= GetProperty<Degree?>(GetUpdatableElement()?.Degree);
+    set => UpdateField(ref _Degree, value, nameof(Degree));
+  }
 
- /// <summary>
- ///   Specifies the argument of radical function.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.Radical.Base))]
- public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
- private Base? _Base;
+  private Degree? _Degree;
+
+  /// <summary>
+  ///   Specifies the argument of radical function.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Radical.Base))]
+  public Base? Base
+  {
+    get => _Base ??= GetProperty<Base?>(GetUpdatableElement()?.Base);
+    set => UpdateField(ref _Base, value, nameof(Base));
+  }
+
+  private Base? _Base;
 }

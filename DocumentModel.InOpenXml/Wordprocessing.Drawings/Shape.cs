@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
+
 /// <summary>
 /// Represents a shape element within a Wordprocessing document.
 /// This class provides access to visual and non-visual properties, styling, text box information, and linking for shapes embedded in the document.
@@ -6,67 +7,117 @@ namespace DocumentModel.Wordprocessing.Drawings;
 [OpenXmlType(typeof(DXD.Shape))]
 [DataContract]
 [XmlRoot("Shape", Namespace = "DocumentModel.Wordprocessing.Drawings")]
-public partial class Shape : ModelElement<DXD.Shape>, DMD.IOfficeArtExtendableElement
+public partial class Shape: ModelElement<DXD.Shape>, DMD.IOfficeArtExtendableElement
 {
- /// <summary>
- /// Style information for the shape, including line, fill, and effect styles.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Shape.ShapeStyle))]
- public ShapeStyle? ShapeStyle { get => _ShapeStyle; set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle)); }
- private ShapeStyle? _ShapeStyle;
+  /// <summary>
+  /// Style information for the shape, including line, fill, and effect styles.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Shape.ShapeStyle))]
+  public ShapeStyle? ShapeStyle
+  {
+    get => _ShapeStyle ??= GetProperty<ShapeStyle?>(GetUpdatableElement()?.ShapeStyle);
+    set => UpdateField(ref _ShapeStyle, value, nameof(ShapeStyle));
+  }
 
- /// <summary>
- /// Additional text box information, such as advanced text formatting and layout options.
- /// </summary>
- public TextBoxInfo2? TextBoxInfo2 { get => _TextBoxInfo2; set => UpdateField(ref _TextBoxInfo2, value, nameof(TextBoxInfo2)); }
- private TextBoxInfo2? _TextBoxInfo2;
+  private ShapeStyle? _ShapeStyle;
 
- /// <summary>
- /// Linked text box information, enabling chaining of text across multiple shapes.
- /// </summary>
- public LinkedTextBox? LinkedTextBox { get => _LinkedTextBox; set => UpdateField(ref _LinkedTextBox, value, nameof(LinkedTextBox)); }
- private LinkedTextBox? _LinkedTextBox;
+  /// <summary>
+  /// Additional text box information, such as advanced text formatting and layout options.
+  /// </summary>
+  public TextBoxInfo2? TextBoxInfo2
+  {
+    get => _TextBoxInfo2;
+    set => UpdateField(ref _TextBoxInfo2, value, nameof(TextBoxInfo2));
+  }
 
- /// <summary>
- /// Indicates whether normal East Asian text flow is applied to the shape's content.
- /// </summary>
- public bool? NormalEastAsianFlow { get => _NormalEastAsianFlow; set => UpdateField(ref _NormalEastAsianFlow, value, nameof(NormalEastAsianFlow)); }
- private bool? _NormalEastAsianFlow;
+  private TextBoxInfo2? _TextBoxInfo2;
 
- /// <summary>
- /// Visual properties of the shape, such as geometry, fill, and effects.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Shape.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  /// Linked text box information, enabling chaining of text across multiple shapes.
+  /// </summary>
+  public LinkedTextBox? LinkedTextBox
+  {
+    get => _LinkedTextBox;
+    set => UpdateField(ref _LinkedTextBox, value, nameof(LinkedTextBox));
+  }
 
- /// <summary>
- /// Properties for the text body within the shape, including text layout and formatting.
- /// </summary>
- public TextBodyProperties? TextBodyProperties { get => _TextBodyProperties; set => UpdateField(ref _TextBodyProperties, value, nameof(TextBodyProperties)); }
- private TextBodyProperties? _TextBodyProperties;
+  private LinkedTextBox? _LinkedTextBox;
 
- /// <summary>
- /// Non-visual properties for the drawing element, including identifiers, names, and descriptive information.
- /// </summary>
- public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
- private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+  /// <summary>
+  /// Indicates whether normal East Asian text flow is applied to the shape's content.
+  /// </summary>
+  public bool? NormalEastAsianFlow
+  {
+    get => _NormalEastAsianFlow;
+    set => UpdateField(ref _NormalEastAsianFlow, value, nameof(NormalEastAsianFlow));
+  }
 
- /// <summary>
- /// Non-visual properties specific to drawing shapes, such as text box configuration and shape locks.
- /// </summary>
- public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties { get => _NonVisualDrawingShapeProperties; set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties)); }
- private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;
+  private bool? _NormalEastAsianFlow;
 
- /// <summary>
- /// Non-visual properties for connector shapes, including connection locks and connection points.
- /// </summary>
- public NonVisualConnectorProperties? NonVisualConnectorProperties { get => _NonVisualConnectorProperties; set => UpdateField(ref _NonVisualConnectorProperties, value, nameof(NonVisualConnectorProperties)); }
- private NonVisualConnectorProperties? _NonVisualConnectorProperties;
+  /// <summary>
+  /// Visual properties of the shape, such as geometry, fill, and effects.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Shape.ShapeProperties))]
+  public ShapeProperties? ShapeProperties
+  {
+    get => _ShapeProperties ??= GetProperty<ShapeProperties?>(GetUpdatableElement()?.ShapeProperties);
+    set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
+  }
 
- /// <summary>
- /// List of OfficeArt extensions associated with the shape, allowing for additional properties and behaviors to be defined.
- /// </summary>
- public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
- private OfficeArtExtensionList? _OfficeArtExtensionList;
+  private ShapeProperties? _ShapeProperties;
+
+  /// <summary>
+  /// Properties for the text body within the shape, including text layout and formatting.
+  /// </summary>
+  public TextBodyProperties? TextBodyProperties
+  {
+    get => _TextBodyProperties;
+    set => UpdateField(ref _TextBodyProperties, value, nameof(TextBodyProperties));
+  }
+
+  private TextBodyProperties? _TextBodyProperties;
+
+  /// <summary>
+  /// Non-visual properties for the drawing element, including identifiers, names, and descriptive information.
+  /// </summary>
+  public NonVisualDrawingProperties? NonVisualDrawingProperties
+  {
+    get => _NonVisualDrawingProperties;
+    set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
+  }
+
+  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
+  /// <summary>
+  /// Non-visual properties specific to drawing shapes, such as text box configuration and shape locks.
+  /// </summary>
+  public NonVisualDrawingShapeProperties? NonVisualDrawingShapeProperties
+  {
+    get => _NonVisualDrawingShapeProperties;
+    set => UpdateField(ref _NonVisualDrawingShapeProperties, value, nameof(NonVisualDrawingShapeProperties));
+  }
+
+  private NonVisualDrawingShapeProperties? _NonVisualDrawingShapeProperties;
+
+  /// <summary>
+  /// Non-visual properties for connector shapes, including connection locks and connection points.
+  /// </summary>
+  public NonVisualConnectorProperties? NonVisualConnectorProperties
+  {
+    get => _NonVisualConnectorProperties;
+    set => UpdateField(ref _NonVisualConnectorProperties, value, nameof(NonVisualConnectorProperties));
+  }
+
+  private NonVisualConnectorProperties? _NonVisualConnectorProperties;
+
+  /// <summary>
+  /// List of OfficeArt extensions associated with the shape, allowing for additional properties and behaviors to be defined.
+  /// </summary>
+  public OfficeArtExtensionList? OfficeArtExtensionList
+  {
+    get => _OfficeArtExtensionList;
+    set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList));
+  }
+
+  private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

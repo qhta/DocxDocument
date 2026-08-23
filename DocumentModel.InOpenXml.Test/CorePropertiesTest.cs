@@ -1,11 +1,9 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.CoreProperties.
 /// </summary>
-public class CorePropertiesTest: _AbstractModelTestClass<CoreProperties>
+public class CorePropertiesTest : _AbstractModelTestClass<CoreProperties>
 {
 
   /// <summary>
@@ -34,7 +32,7 @@ public class CorePropertiesTest: _AbstractModelTestClass<CoreProperties>
   {
     var corePart = document.WordprocessingDocument!.CoreFilePropertiesPart!;
     using (var stream = corePart.GetStream())
-      using (var reader = new StreamReader(stream))
-        return reader.ReadToEnd();
+    using (var reader = new StreamReader(stream))
+      return reader.ReadToEnd();
   }
 }

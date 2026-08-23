@@ -65,7 +65,7 @@ public static class HexByteConverter
 
     if (value > SByte.MaxValue)
     {
-      int val= (int)value;
+      int val = (int)value;
       val = -(256 - val); // Two's complement to get the negative value for SByte
       return new DX.SByteValue { Value = (SByte)val };
     }

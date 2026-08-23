@@ -96,7 +96,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       Console.WriteLine($"✗ {TestName} JSON Deserialization returned null");
       return false;
     }
-    if (!CompareTestData(typeof(ModelDataType),testData, deserialized, "testData", "deserialized", out var message))
+    if (!CompareTestData(typeof(ModelDataType), testData, deserialized, "testData", "deserialized", out var message))
     {
       Console.WriteLine($"✗ {TestName} {testMethodName} FAILED: {message}");
       return false;

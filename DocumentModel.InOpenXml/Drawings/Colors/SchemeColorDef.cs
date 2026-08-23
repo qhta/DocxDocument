@@ -52,7 +52,7 @@ public class SchemeColorDef : ColorHolder<DXD.Color2Type>
   public static implicit operator SchemeColorDef(DMD.SystemColor color)
   {
     var schemeColorDef = new SchemeColorDef();
-    schemeColorDef.Color= color;
+    schemeColorDef.Color = color;
     return schemeColorDef;
   }
 

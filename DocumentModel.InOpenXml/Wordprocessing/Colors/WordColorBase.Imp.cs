@@ -1,13 +1,13 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableColor
+public partial class WordColorBase<T> : IColor, ITintableColor, ITransformableColor
 {
   /// <summary>
   /// Gets or sets the RGB+ value represented by this property.
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
-  [NotMapped] 
+  [NotMapped]
   public virtual UInt32 ARGB { get; set; }
 
   /// <summary>
@@ -33,7 +33,7 @@ public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableCol
     get => this.Tint?.AsDouble();
     set
     {
-      if (value!=null)
+      if (value != null)
         this.Tint = value.Value;
     }
   }
@@ -43,7 +43,7 @@ public partial class WordColorBase<T>: IColor, ITintableColor, ITransformableCol
     get => this.Shade?.AsDouble();
     set
     {
-      if (value!=null)
+      if (value != null)
         this.Shade = value.Value;
     }
   }

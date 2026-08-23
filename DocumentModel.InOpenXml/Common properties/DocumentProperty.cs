@@ -1,5 +1,3 @@
-using Qhta.Xml.Reflection;
-
 namespace DocumentModel;
 
 /// <summary>
@@ -36,7 +34,7 @@ public abstract partial class DocumentProperty : ModelElement, INamedObject
   ///   In OpenXml property identifiers start from 2.
   /// </summary>
   [XmlIgnore]
-  [JsonIgnore] 
+  [JsonIgnore]
   public virtual int? PropertyId { get => _propertyId; set => UpdateField(ref _propertyId, value, nameof(PropertyId)); }
   /// <summary>
   /// Backing field for the PropertyId property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
@@ -50,8 +48,10 @@ public abstract partial class DocumentProperty : ModelElement, INamedObject
   [JsonIgnore]
   public virtual Object? Value
   {
-    [DebuggerStepThrough] get => _value; 
-    [DebuggerStepThrough] set => UpdateField(ref _value, value, nameof(Value));
+    [DebuggerStepThrough]
+    get => _value;
+    [DebuggerStepThrough]
+    set => UpdateField(ref _value, value, nameof(Value));
   }
   /// <summary>
   /// Backing field for the Value property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
@@ -66,8 +66,10 @@ public abstract partial class DocumentProperty : ModelElement, INamedObject
 
   public virtual DMPr.DocumentPropertyType ExpectedType
   {
-    [DebuggerStepThrough] get => _expectedType ?? Value?.GetType()?.ConvertToDocumentPropertyType() ?? DMPr.DocumentPropertyType.Unknown;
-    [DebuggerStepThrough] set => UpdateField(ref _expectedType, value, nameof(ExpectedType));
+    [DebuggerStepThrough]
+    get => _expectedType ?? Value?.GetType()?.ConvertToDocumentPropertyType() ?? DMPr.DocumentPropertyType.Unknown;
+    [DebuggerStepThrough]
+    set => UpdateField(ref _expectedType, value, nameof(ExpectedType));
   }
   /// <summary>
   /// Backing field for the ExpectedType property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
@@ -81,8 +83,10 @@ public abstract partial class DocumentProperty : ModelElement, INamedObject
   [JsonIgnore]
   public virtual Type? ValueType
   {
-    [DebuggerStepThrough] get => _valueType ?? Value?.GetType();
-    [DebuggerStepThrough] set => UpdateField(ref _valueType, value, nameof(ValueType));
+    [DebuggerStepThrough]
+    get => _valueType ?? Value?.GetType();
+    [DebuggerStepThrough]
+    set => UpdateField(ref _valueType, value, nameof(ValueType));
   }
   /// <summary>
   /// Backing field for the ValueType property. It must be protected to allow BuiltInProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.
@@ -106,7 +110,7 @@ public abstract partial class DocumentProperty : ModelElement, INamedObject
   /// </para>
   /// </remarks>
   [XmlIgnore]
-  [JsonIgnore] 
+  [JsonIgnore]
   public virtual string? LinkTarget { get => _linkTarget; set => UpdateField(ref _linkTarget, value, nameof(LinkTarget)); }
   /// <summary>
   /// Backing field for the LinkTarget property. It must be protected to allow CustomProperty to set it directly during XML deserialization without triggering the PropertyChanged event, which could lead to unintended side effects during deserialization.

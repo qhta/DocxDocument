@@ -137,7 +137,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
 
     if (color is IUpdatableElement updatableColor)
     {
-      var updatableElement = updatableColor.GetUpdatableObject() as DX.OpenXmlElement;
+      var updatableElement = updatableColor.GetUpdatableObject(null) as DX.OpenXmlElement;
       if (updatableElement == null)
       {
         if (color is RgbColorModelPercentage)
@@ -222,7 +222,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new RgbColorModelPercentage();
         color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(rgbPercentage);
+        ((IUpdatableElement)color).SetUpdatableObject(rgbPercentage, null);
         color.LoadData(rgbPercentage);
         InternalColor = color;
       }
@@ -230,7 +230,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new RgbColorModelHex();
         color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(rgbHex);
+        ((IUpdatableElement)color).SetUpdatableObject(rgbHex, null);
         color.LoadData(rgbHex);
         InternalColor = color;
       }
@@ -238,7 +238,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new HslColor();
             color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(hslColor);
+        ((IUpdatableElement)color).SetUpdatableObject(hslColor, null);
         color.LoadData(hslColor);
         InternalColor = color;
       }
@@ -246,7 +246,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new SystemColor();
           color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(systemColor);
+        ((IUpdatableElement)color).SetUpdatableObject(systemColor, null);
         color.LoadData(systemColor);
         InternalColor = color;
       }
@@ -254,7 +254,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new PresetColor();
         color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(presetColor);
+        ((IUpdatableElement)color).SetUpdatableObject(presetColor, null);
         color.LoadData(presetColor);
         InternalColor = color;
       }
@@ -262,7 +262,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
       {
         var color = new SchemeColor();
         color.SetParent(this);
-        ((IUpdatableElement)color).SetUpdatableObject(schemeColor);
+        ((IUpdatableElement)color).SetUpdatableObject(schemeColor, null);
         color.LoadData(schemeColor);
         InternalColor = color;
       }
@@ -294,7 +294,7 @@ public partial class ColorType : ModelElement<DXD.ColorType>
 
     if (InternalColor is IUpdatableElement updatableColor)
     {
-      var updatableElement = updatableColor.GetUpdatableObject() as DX.OpenXmlElement;
+      var updatableElement = updatableColor.GetUpdatableObject(null) as DX.OpenXmlElement;
       if (updatableElement == null)
       {
         if (InternalColor is RgbColorModelPercentage)
@@ -312,14 +312,14 @@ public partial class ColorType : ModelElement<DXD.ColorType>
         else
           throw new ApplicationException("Unsupported color model.");
         openXmlElement.Append(updatableElement!);
-        updatableColor.SetUpdatableObject(updatableElement);
-        updatableColor.UpdateData();
+        updatableColor.SetUpdatableObject(updatableElement, null);
+        updatableColor.UpdateData(null);
       }
       else
       {
         if (updatableElement.Parent == null)
           openXmlElement.Append(updatableElement);
-        updatableColor.UpdateData();
+        updatableColor.UpdateData(null);
       }
     }
   }

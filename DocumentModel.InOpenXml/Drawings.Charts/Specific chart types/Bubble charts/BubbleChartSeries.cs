@@ -1,114 +1,191 @@
 namespace DocumentModel.Drawings.Charts;
+
 /// <summary>
 ///   Defines the BubbleChartSeries Class.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BubbleChartSeries))]
 [DataContract]
 [XmlRoot("BubbleChartSeries", Namespace = "DocumentModel.Drawings.Charts")]
-public partial class BubbleChartSeries : ModelElement<DXDC.BubbleChartSeries>
+public partial class BubbleChartSeries: ModelElement<DXDC.BubbleChartSeries>
 {
- /// <summary>
- ///   Index.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.Index))]
- public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
- private UInt32? _Index;
+  /// <summary>
+  ///   Index.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.Index))]
+  public UInt32? Index
+  {
+    get => _Index ??= GetProperty<UInt32?>(GetUpdatableElement()?.Index);
+    set => UpdateField(ref _Index, value, nameof(Index));
+  }
 
- /// <summary>
- ///   Order.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.Order))]
- public UInt32? Order { get => _Order; set => UpdateField(ref _Order, value, nameof(Order)); }
- private UInt32? _Order;
+  private UInt32? _Index;
 
- /// <summary>
- ///   Series Text.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.SeriesText))]
- public SeriesText? SeriesText { get => _SeriesText; set => UpdateField(ref _SeriesText, value, nameof(SeriesText)); }
- private SeriesText? _SeriesText;
+  /// <summary>
+  ///   Order.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.Order))]
+  public UInt32? Order
+  {
+    get => _Order ??= GetProperty<UInt32?>(GetUpdatableElement()?.Order);
+    set => UpdateField(ref _Order, value, nameof(Order));
+  }
 
- /// <summary>
- ///   ChartShapeProperties.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.ChartShapeProperties))]
- public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
- private ChartShapeProperties? _ChartShapeProperties;
+  private UInt32? _Order;
 
- /// <summary>
- ///   PictureOptions.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.PictureOptions))]
- public PictureOptions? PictureOptions { get => _PictureOptions; set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions)); }
- private PictureOptions? _PictureOptions;
+  /// <summary>
+  ///   Series Text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.SeriesText))]
+  public SeriesText? SeriesText
+  {
+    get => _SeriesText ??= GetProperty<SeriesText?>(GetUpdatableElement()?.SeriesText);
+    set => UpdateField(ref _SeriesText, value, nameof(SeriesText));
+  }
 
- /// <summary>
- ///   InvertIfNegative.
- /// </summary>
- [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.InvertIfNegative))]
- public bool? InvertIfNegative { get => _InvertIfNegative; set => UpdateField(ref _InvertIfNegative, value, nameof(InvertIfNegative)); }
- private bool? _InvertIfNegative;
+  private SeriesText? _SeriesText;
 
- /// <summary>
- /// DataPoints.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DataPoint))]
- public DataPoints? DataPoints { get => _DataPoints; set => UpdateField(ref _DataPoints, value, nameof(DataPoints)); }
- private DataPoints? _DataPoints;
+  /// <summary>
+  ///   ChartShapeProperties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.ChartShapeProperties))]
+  public ChartShapeProperties? ChartShapeProperties
+  {
+    get => _ChartShapeProperties ??= GetProperty<ChartShapeProperties?>(GetUpdatableElement()?.ChartShapeProperties);
+    set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
+  }
 
- /// <summary>
- /// DataLabels.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.DataLabels))]
- public DataLabels? DataLabels { get => _DataLabels; set => UpdateField(ref _DataLabels, value, nameof(DataLabels)); }
- private DataLabels? _DataLabels;
+  private ChartShapeProperties? _ChartShapeProperties;
 
- /// <summary>
- /// Trendline.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.Trendline))]
- public Trendline? Trendline { get => _Trendline; set => UpdateField(ref _Trendline, value, nameof(Trendline)); }
- private Trendline? _Trendline;
+  /// <summary>
+  ///   PictureOptions.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.PictureOptions))]
+  public PictureOptions? PictureOptions
+  {
+    get => _PictureOptions ??= GetProperty<PictureOptions?>(GetUpdatableElement()?.PictureOptions);
+    set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions));
+  }
 
- /// <summary>
- /// ErrorBars.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.ErrorBars))]
- public ErrorBars? ErrorBars { get => _ErrorBars; set => UpdateField(ref _ErrorBars, value, nameof(ErrorBars)); }
- private ErrorBars? _ErrorBars;
+  private PictureOptions? _PictureOptions;
 
- /// <summary>
- /// XValues.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.XValues))]
- public XValues? XValues { get => _XValues; set => UpdateField(ref _XValues, value, nameof(XValues)); }
- private XValues? _XValues;
+  /// <summary>
+  ///   InvertIfNegative.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDC.BubbleChartSeries.InvertIfNegative))]
+  public bool? InvertIfNegative
+  {
+    get => _InvertIfNegative ??= GetProperty<bool?>(GetUpdatableElement()?.InvertIfNegative);
+    set => UpdateField(ref _InvertIfNegative, value, nameof(InvertIfNegative));
+  }
 
- /// <summary>
- /// YValues.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.YValues))]
- public YValues? YValues { get => _YValues; set => UpdateField(ref _YValues, value, nameof(YValues)); }
- private YValues? _YValues;
+  private bool? _InvertIfNegative;
 
- /// <summary>
- /// BubbleSize.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.BubbleSize))]
- public BubbleSize? BubbleSize { get => _BubbleSize; set => UpdateField(ref _BubbleSize, value, nameof(BubbleSize)); }
- private BubbleSize? _BubbleSize;
+  /// <summary>
+  /// DataPoints.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DataPoint))]
+  public DataPoints? DataPoints
+  {
+    get => _DataPoints ??= GetElement<DataPoints, DXDC.DataPoint>(GetUpdatableElement());
+    set => UpdateField(ref _DataPoints, value, nameof(DataPoints));
+  }
 
- /// <summary>
- /// Bubble3D.
- /// </summary>
- [OpenXmlElement(typeof(DXDC.Bubble3D))]
- public bool? Bubble3D { get => _Bubble3D; set => UpdateField(ref _Bubble3D, value, nameof(Bubble3D)); }
- private bool? _Bubble3D;
+  private DataPoints? _DataPoints;
 
- /// <summary>
- /// Bubble Series Extension List.
- /// </summary> 
- [OpenXmlElement(typeof(DXDC.BubbleSerExtensionList))]
- public BubbleSerExtensionList? BubbleSerExtensionList { get => _BubbleSerExtensionList; set => UpdateField(ref _BubbleSerExtensionList, value, nameof(BubbleSerExtensionList)); }
- private BubbleSerExtensionList? _BubbleSerExtensionList;
+  /// <summary>
+  /// DataLabels.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.DataLabels))]
+  public DataLabels? DataLabels
+  {
+    get => _DataLabels ??= GetElement<DataLabels, DXDC.DataLabels>(GetUpdatableElement());
+    set => UpdateField(ref _DataLabels, value, nameof(DataLabels));
+  }
+
+  private DataLabels? _DataLabels;
+
+  /// <summary>
+  /// Trendline.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.Trendline))]
+  public Trendline? Trendline
+  {
+    get => _Trendline ??= GetElement<Trendline, DXDC.Trendline>(GetUpdatableElement());
+    set => UpdateField(ref _Trendline, value, nameof(Trendline));
+  }
+
+  private Trendline? _Trendline;
+
+  /// <summary>
+  /// ErrorBars.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.ErrorBars))]
+  public ErrorBars? ErrorBars
+  {
+    get => _ErrorBars ??= GetElement<ErrorBars, DXDC.ErrorBars>(GetUpdatableElement());
+    set => UpdateField(ref _ErrorBars, value, nameof(ErrorBars));
+  }
+
+  private ErrorBars? _ErrorBars;
+
+  /// <summary>
+  /// XValues.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.XValues))]
+  public XValues? XValues
+  {
+    get => _XValues ??= GetElement<XValues, DXDC.XValues>(GetUpdatableElement());
+    set => UpdateField(ref _XValues, value, nameof(XValues));
+  }
+
+  private XValues? _XValues;
+
+  /// <summary>
+  /// YValues.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.YValues))]
+  public YValues? YValues
+  {
+    get => _YValues ??= GetElement<YValues, DXDC.YValues>(GetUpdatableElement());
+    set => UpdateField(ref _YValues, value, nameof(YValues));
+  }
+
+  private YValues? _YValues;
+
+  /// <summary>
+  /// BubbleSize.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.BubbleSize))]
+  public BubbleSize? BubbleSize
+  {
+    get => _BubbleSize ??= GetElement<BubbleSize, DXDC.BubbleSize>(GetUpdatableElement());
+    set => UpdateField(ref _BubbleSize, value, nameof(BubbleSize));
+  }
+
+  private BubbleSize? _BubbleSize;
+
+  /// <summary>
+  /// Bubble3D.
+  /// </summary>
+  [OpenXmlElement(typeof(DXDC.Bubble3D))]
+  public bool? Bubble3D
+  {
+    get => _Bubble3D ??= GetElement<bool, DXDC.Bubble3D>(GetUpdatableElement());
+    set => UpdateField(ref _Bubble3D, value, nameof(Bubble3D));
+  }
+
+  private bool? _Bubble3D;
+
+  /// <summary>
+  /// Bubble Series Extension List.
+  /// </summary> 
+  [OpenXmlElement(typeof(DXDC.BubbleSerExtensionList))]
+  public BubbleSerExtensionList? BubbleSerExtensionList
+  {
+    get => _BubbleSerExtensionList ??=
+      GetElement<BubbleSerExtensionList, DXDC.BubbleSerExtensionList>(GetUpdatableElement());
+    set => UpdateField(ref _BubbleSerExtensionList, value, nameof(BubbleSerExtensionList));
+  }
+
+  private BubbleSerExtensionList? _BubbleSerExtensionList;
 }

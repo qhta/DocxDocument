@@ -11,7 +11,7 @@ public partial class Paragraph : ModelElement<DXD.Paragraph>
  ///   Properties for the text paragraph.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Paragraph.ParagraphProperties))]
- public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
+ public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties ??= GetProperty<ParagraphProperties?>(GetUpdatableElement()?.ParagraphProperties); set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
  private ParagraphProperties? _ParagraphProperties;
 
  /// <summary>

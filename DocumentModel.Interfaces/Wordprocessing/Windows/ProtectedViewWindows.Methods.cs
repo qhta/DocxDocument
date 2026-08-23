@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows?view=word-pia"/>
-public partial interface IProtectedViewWindows: IModelObject
+public partial interface IProtectedViewWindows : IModelObject
 {
   /// <summary>
   /// Opens the specified document in a new protected view window.

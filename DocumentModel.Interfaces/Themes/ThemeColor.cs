@@ -1,12 +1,10 @@
-using System.Reflection;
-
 namespace DocumentModel.Themes;
 
 /// <summary>
 /// Represents the `ThemeColor` interface.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolor?view=office-pia"/>
-public partial interface IThemeColor: IModelObject
+public partial interface IThemeColor : IModelObject
 {
   /// <summary>
   /// Gets or sets the `RGB` property.

@@ -1,6 +1,7 @@
 using DocumentModel.Drawings.Charts;
 
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a complete geographic location with coordinates, entity identification, and address information.
 /// </summary>
@@ -28,41 +29,65 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoLocation))]
 [DataContract]
 [XmlRoot("GeoLocation", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoLocation : ModelElement<DXO16DCD.GeoLocation>
+public partial class GeoLocation: ModelElement<DXO16DCD.GeoLocation>
 {
   /// <summary>
   /// Specifies the latitude.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocation.Latitude))]
-  public Double? Latitude { get => _Latitude; set => UpdateField(ref _Latitude, value, nameof(Latitude)); }
+  public Double? Latitude
+  {
+    get => _Latitude ??= GetProperty<Double?>(GetUpdatableElement()?.Latitude);
+    set => UpdateField(ref _Latitude, value, nameof(Latitude));
+  }
 
   private Double? _Latitude;
+
   /// <summary>
   /// Specifies the longitude.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocation.Longitude))]
-  public Double? Longitude { get => _Longitude; set => UpdateField(ref _Longitude, value, nameof(Longitude)); }
+  public Double? Longitude
+  {
+    get => _Longitude ??= GetProperty<Double?>(GetUpdatableElement()?.Longitude);
+    set => UpdateField(ref _Longitude, value, nameof(Longitude));
+  }
 
   private Double? _Longitude;
+
   /// <summary>
   /// Specifies the entity name.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocation.EntityName))]
-  public string? EntityName { get => _EntityName; set => UpdateField(ref _EntityName, value, nameof(EntityName)); }
+  public string? EntityName
+  {
+    get => _EntityName ??= GetProperty<string?>(GetUpdatableElement()?.EntityName);
+    set => UpdateField(ref _EntityName, value, nameof(EntityName));
+  }
 
   private string? _EntityName;
+
   /// <summary>
   /// Specifies the entity type.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocation.EntityType))]
-  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+  public EntityTypeEnum? EntityType
+  {
+    get => _EntityType ??= GetProperty<EntityTypeEnum?>(GetUpdatableElement()?.EntityType);
+    set => UpdateField(ref _EntityType, value, nameof(EntityType));
+  }
 
   private EntityTypeEnum? _EntityType;
+
   /// <summary>
   /// Specifies the address.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocation.Address))]
-  public Address? Address { get => _Address; set => UpdateField(ref _Address, value, nameof(Address)); }
+  public Address? Address
+  {
+    get => _Address ??= GetProperty<Address?>(GetUpdatableElement()?.Address);
+    set => UpdateField(ref _Address, value, nameof(Address));
+  }
 
   private Address? _Address;
 }

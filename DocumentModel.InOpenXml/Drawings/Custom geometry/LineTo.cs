@@ -1,16 +1,22 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   Represents a command to draw a straight line to a specified point.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineTo))]
 [DataContract]
 [XmlRoot("LineTo", Namespace = "DocumentModel.Drawings")]
-public partial class LineTo : ModelElement<DXD.LineTo>
+public partial class LineTo: ModelElement<DXD.LineTo>
 {
- /// <summary>
- ///   End point of the line.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.LineTo.Point))]
- public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
- private AdjustPoint2DType? _Point;
+  /// <summary>
+  ///   End point of the line.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.LineTo.Point))]
+  public AdjustPoint2DType? Point
+  {
+    get => _Point ??= GetProperty<AdjustPoint2DType?>(GetUpdatableElement()?.Point);
+    set => UpdateField(ref _Point, value, nameof(Point));
+  }
+
+  private AdjustPoint2DType? _Point;
 }

@@ -35,7 +35,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   {
     base.AttachAndLoad(wordprocessingDocument);
     var styles = wordprocessingDocument.GetStyles();
-    SetUpdatableObject(styles);
+    SetUpdatableObject(styles, null);
     LoadData(styles);
   }
 
@@ -47,7 +47,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   {
     base.AttachAndUpdate(wordprocessingDocument);
     var styles = wordprocessingDocument.GetStyles();
-    SetUpdatableObject(styles);
+    SetUpdatableObject(styles, null);
     UpdateData(styles);
   }
 

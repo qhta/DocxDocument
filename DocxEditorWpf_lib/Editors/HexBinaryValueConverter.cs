@@ -52,7 +52,7 @@ public class HexBinaryValueConverter : IValueConverter
       if (string.IsNullOrEmpty(normalized))
         return Binding.DoNothing;
 
-      targetType =(parameter as Type)?.GetNotNullableType() ?? Nullable.GetUnderlyingType(targetType) ?? targetType;
+      targetType = (parameter as Type)?.GetNotNullableType() ?? Nullable.GetUnderlyingType(targetType) ?? targetType;
       if (targetType == typeof(HexBinary))
       {
         if (normalized.Length % 2 != 0)

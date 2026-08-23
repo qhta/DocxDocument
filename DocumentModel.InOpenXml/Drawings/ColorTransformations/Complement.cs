@@ -1,9 +1,4 @@
-﻿using DocumentModel.Drawings.Diagrams;
-
-namespace DocumentModel.Drawings;
-
-using Math = System.Math;
-
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 /// Represents a complement color transformation for drawing elements. Hue is shifted by 180 degrees to produce the complementary color.
 /// </summary>
@@ -20,7 +15,7 @@ public class Complement : ColorTransformation<DXD.Complement>
   {
     var (h, s, l, a) = color.HSLAComponents;
     h = (h + 0.5) % 1.0; // Shift hue by 180 degrees to get the complement
-    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) }; 
+    var result = new EffectiveColor { HSLAComponents = (h, s, l, a) };
     return result;
   }
 }

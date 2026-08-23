@@ -136,7 +136,7 @@ public static class BytePercentConverter
   private static BytePercent? ConvertFromInt64Value(DX.Int64Value? value)
   {
     if (value is null) return null;
-    
+
     if (value < Byte.MinValue || value > Byte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for byte");
     return new BytePercent((byte)value.Value);
@@ -150,7 +150,7 @@ public static class BytePercentConverter
   private static DX.Int64Value? ConvertToInt64Value(BytePercent? value)
   {
     if (value is null) return null;
-    
+
     return new DX.Int64Value { Value = (Byte)value };
   }
 
@@ -262,7 +262,7 @@ public static class BytePercentConverter
   private static BytePercent? ConvertFromUInt32Value(DX.UInt32Value? value)
   {
     if (value is null) return null;
-    
+
     if (value > Byte.MaxValue)
       throw new OverflowException($"Value {value} is out of range for byte");
 

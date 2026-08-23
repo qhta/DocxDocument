@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart legend.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia"/>
-public partial interface ILegend: IModelObject
+public partial interface ILegend : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

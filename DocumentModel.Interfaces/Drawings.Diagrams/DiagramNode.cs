@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode?view=office-pia"/>
-public partial interface IDiagramNode: IModelObject
+public partial interface IDiagramNode : IModelObject
 {
   /// <summary>
   /// Gets or sets the `Children` property.

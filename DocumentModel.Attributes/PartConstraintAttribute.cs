@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Attributes
 {
-  [AttributeUsage(AttributeTargets.Class |AttributeTargets.Interface, AllowMultiple = true)]
+  [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = true)]
   public sealed class PartConstraintAttribute : Attribute, IConstraintAttribute
   {
     public PartConstraintAttribute(Type constraintType, bool minOccursIsNonZero, bool maxOccursGreatThanOne)

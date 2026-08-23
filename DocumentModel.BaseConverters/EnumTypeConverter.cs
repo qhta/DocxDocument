@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
-
-using Qhta.TextUtils;
+﻿using Qhta.TextUtils;
 
 namespace DocumentModel.OpenXml;
 
@@ -195,8 +191,8 @@ public static partial class EnumTypeConverter
       {
         var attributes = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>(true);
         string? mappedName = attributes?.FirstOrDefault(a => a.EnumType == null || a.EnumType == openXmlEnumValuesType)?.EnumValueName;
-;
-        if (mappedName==null)
+        ;
+        if (mappedName == null)
           mappedName = modelEnumField.GetCustomAttribute<OpenXmlPropertyAttribute>()?.PropertyName;
         if (mappedName == null || mappedName == string.Empty)
           mappedName = modelEnumField.Name;
@@ -426,7 +422,7 @@ public static partial class EnumTypeConverter
     }
 
     if (modelEnumType.TryParseEnum(value, out var enumResult))
-        return (Enum)enumResult!;
+      return (Enum)enumResult!;
 
     return null;
   }
@@ -510,7 +506,7 @@ public static partial class EnumTypeConverter
     }
 
     if (modelEnumType.TryParseEnum(valText, out var enumResult))
-        return (Enum)enumResult!;
+      return (Enum)enumResult!;
 
     return null;
   }
@@ -616,7 +612,7 @@ public static partial class EnumTypeConverter
   public static string? ConvertFromOpenXmlEnumValueToString(DX.OpenXmlSimpleType? openXmlEnumValue)
   {
     if (openXmlEnumValue == null) return null;
-    
+
     var openXmlType = openXmlEnumValue.GetType();
     if (!openXmlType.Name.StartsWith("EnumValue`"))
       throw new InvalidOperationException($"{openXmlType.Name} is not OpenXml EnumValue<> type .");

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes?view=word-pia"/>
-public partial interface IShapeNodes: IModelObject
+public partial interface IShapeNodes : IModelObject
 {
   /// <summary>
   /// Deletes the shape node at the specified index.

@@ -12,7 +12,7 @@ public enum SchemeColors
   ///   Style Color.
   /// </summary>
   [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Drawing.SchemeColorValues), nameof(DocumentFormat.OpenXml.Drawing.SchemeColorValues.PhColor))]
-  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues),nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues.None))]
+  [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues), nameof(DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues.None))]
   [OpenXmlEnumValue(typeof(DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues), nameof(DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues.AutoColor))]
   Auto = 0,
   /// <summary>

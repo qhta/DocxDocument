@@ -27,7 +27,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// </summary>
   /// <param name="settings">The document settings.</param>
   /// <param name="compatibility">The compatibility settings.</param>
-  public CompatibilitySettings(DocumentSettings settings, DXW.Compatibility compatibility): base(settings, compatibility) 
+  public CompatibilitySettings(DocumentSettings settings, DXW.Compatibility compatibility) : base(settings, compatibility)
   {
   }
 
@@ -45,7 +45,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use simplified rules for table border conflicts.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseSingleBorderForContiguousCells))]
-  public bool? UseSingleBorderForContiguousCells 
+  public bool? UseSingleBorderForContiguousCells
   {
     get => _UseSingleBorderForContiguousCells ??= GetElement<bool?, DXW.UseSingleBorderForContiguousCells>(GetUpdatableElement());
     set => UpdateField(ref _UseSingleBorderForContiguousCells, value, nameof(UseSingleBorderForContiguousCells));
@@ -56,7 +56,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate WordPerfect 6.x paragraph justification.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WordPerfectJustification))]
-  public bool? WordPerfectJustification 
+  public bool? WordPerfectJustification
   {
     get => _WordPerfectJustification ??= GetElement<bool?, DXW.WordPerfectJustification>(GetUpdatableElement());
     set => UpdateField(ref _WordPerfectJustification, value, nameof(WordPerfectJustification));
@@ -67,7 +67,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not create custom tab stop for hanging indent.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoTabHangIndent))]
-  public bool? NoTabHangIndent 
+  public bool? NoTabHangIndent
   {
     get => _NoTabHangIndent ??= GetElement<bool?, DXW.NoTabHangIndent>(GetUpdatableElement());
     set => UpdateField(ref _NoTabHangIndent, value, nameof(NoTabHangIndent));
@@ -78,7 +78,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not add leading between lines of text.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoLeading))]
-  public bool? NoLeading 
+  public bool? NoLeading
   {
     get => _NoLeading ??= GetElement<bool?, DXW.NoLeading>(GetUpdatableElement());
     set => UpdateField(ref _NoLeading, value, nameof(NoLeading));
@@ -89,7 +89,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Add additional space below baseline for underlined East Asian text.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SpaceForUnderline))]
-  public bool? SpaceForUnderline 
+  public bool? SpaceForUnderline
   {
     get => _SpaceForUnderline ??= GetElement<bool?, DXW.SpaceForUnderline>(GetUpdatableElement());
     set => UpdateField(ref _SpaceForUnderline, value, nameof(SpaceForUnderline));
@@ -100,7 +100,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not balance text columns within a section.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoColumnBalance))]
-  public bool? NoColumnBalance 
+  public bool? NoColumnBalance
   {
     get => _NoColumnBalance ??= GetElement<bool?, DXW.NoColumnBalance>(GetUpdatableElement());
     set => UpdateField(ref _NoColumnBalance, value, nameof(NoColumnBalance));
@@ -111,7 +111,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Balance single byte and double byte characters.
   /// </summary>
   [OpenXmlElement(typeof(DXW.BalanceSingleByteDoubleByteWidth))]
-  public bool? BalanceSingleByteDoubleByteWidth 
+  public bool? BalanceSingleByteDoubleByteWidth
   {
     get => _BalanceSingleByteDoubleByteWidth ??= GetElement<bool?, DXW.BalanceSingleByteDoubleByteWidth>(GetUpdatableElement());
     set => UpdateField(ref _BalanceSingleByteDoubleByteWidth, value, nameof(BalanceSingleByteDoubleByteWidth));
@@ -122,7 +122,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not center content on lines with exact line height.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoExtraLineSpacing))]
-  public bool? NoExtraLineSpacing 
+  public bool? NoExtraLineSpacing
   {
     get => _NoExtraLineSpacing ??= GetElement<bool?, DXW.NoExtraLineSpacing>(GetUpdatableElement());
     set => UpdateField(ref _NoExtraLineSpacing, value, nameof(NoExtraLineSpacing));
@@ -133,7 +133,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Convert backslash to yen sign when entered.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotLeaveBackslashAlone))]
-  public bool? DoNotLeaveBackslashAlone 
+  public bool? DoNotLeaveBackslashAlone
   {
     get => _DoNotLeaveBackslashAlone ??= GetElement<bool?, DXW.DoNotLeaveBackslashAlone>(GetUpdatableElement());
     set => UpdateField(ref _DoNotLeaveBackslashAlone, value, nameof(DoNotLeaveBackslashAlone));
@@ -144,7 +144,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Underline all trailing spaces.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UnderlineTrailingSpaces))]
-  public bool? UnderlineTrailingSpaces 
+  public bool? UnderlineTrailingSpaces
   {
     get => _UnderlineTrailingSpaces ??= GetElement<bool?, DXW.UnderlineTrailingSpaces>(GetUpdatableElement());
     set => UpdateField(ref _UnderlineTrailingSpaces, value, nameof(UnderlineTrailingSpaces));
@@ -155,7 +155,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not justify lines ending in soft line break.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotExpandShiftReturn))]
-  public bool? DoNotExpandShiftReturn 
+  public bool? DoNotExpandShiftReturn
   {
     get => _DoNotExpandShiftReturn ??= GetElement<bool?, DXW.DoNotExpandShiftReturn>(GetUpdatableElement());
     set => UpdateField(ref _DoNotExpandShiftReturn, value, nameof(DoNotExpandShiftReturn));
@@ -166,7 +166,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Only expand/condense text by whole points.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SpacingInWholePoints))]
-  public bool? SpacingInWholePoints 
+  public bool? SpacingInWholePoints
   {
     get => _SpacingInWholePoints ??= GetElement<bool?, DXW.SpacingInWholePoints>(GetUpdatableElement());
     set => UpdateField(ref _SpacingInWholePoints, value, nameof(SpacingInWholePoints));
@@ -177,7 +177,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 6.0 line wrapping for East Asian text.
   /// </summary>
   [OpenXmlElement(typeof(DXW.LineWrapLikeWord6))]
-  public bool? LineWrapLikeWord6 
+  public bool? LineWrapLikeWord6
   {
     get => _LineWrapLikeWord6 ??= GetElement<bool?, DXW.LineWrapLikeWord6>(GetUpdatableElement());
     set => UpdateField(ref _LineWrapLikeWord6, value, nameof(LineWrapLikeWord6));
@@ -188,7 +188,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Print body text before header/footer contents.
   /// </summary>
   [OpenXmlElement(typeof(DXW.PrintBodyTextBeforeHeader))]
-  public bool? PrintBodyTextBeforeHeader 
+  public bool? PrintBodyTextBeforeHeader
   {
     get => _PrintBodyTextBeforeHeader ??= GetElement<bool?, DXW.PrintBodyTextBeforeHeader>(GetUpdatableElement());
     set => UpdateField(ref _PrintBodyTextBeforeHeader, value, nameof(PrintBodyTextBeforeHeader));
@@ -199,7 +199,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Print colors as black and white without dithering.
   /// </summary>
   [OpenXmlElement(typeof(DXW.PrintColorBlackWhite))]
-  public bool? PrintColorBlackWhite 
+  public bool? PrintColorBlackWhite
   {
     get => _PrintColorBlackWhite ??= GetElement<bool?, DXW.PrintColorBlackWhite>(GetUpdatableElement());
     set => UpdateField(ref _PrintColorBlackWhite, value, nameof(PrintColorBlackWhite));
@@ -210,7 +210,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use WordPerfect space width.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WordPerfectSpaceWidth))]
-  public bool? WordPerfectSpaceWidth 
+  public bool? WordPerfectSpaceWidth
   {
     get => _WordPerfectSpaceWidth ??= GetElement<bool?, DXW.WordPerfectSpaceWidth>(GetUpdatableElement());
     set => UpdateField(ref _WordPerfectSpaceWidth, value, nameof(WordPerfectSpaceWidth));
@@ -221,7 +221,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Display page/column breaks present in frames.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ShowBreaksInFrames))]
-  public bool? ShowBreaksInFrames 
+  public bool? ShowBreaksInFrames
   {
     get => _ShowBreaksInFrames ??= GetElement<bool?, DXW.ShowBreaksInFrames>(GetUpdatableElement());
     set => UpdateField(ref _ShowBreaksInFrames, value, nameof(ShowBreaksInFrames));
@@ -232,7 +232,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Increase priority of font size during font substitution.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SubFontBySize))]
-  public bool? SubFontBySize 
+  public bool? SubFontBySize
   {
     get => _SubFontBySize ??= GetElement<bool?, DXW.SubFontBySize>(GetUpdatableElement());
     set => UpdateField(ref _SubFontBySize, value, nameof(SubFontBySize));
@@ -243,7 +243,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore exact line height for last line on page.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SuppressBottomSpacing))]
-  public bool? SuppressBottomSpacing 
+  public bool? SuppressBottomSpacing
   {
     get => _SuppressBottomSpacing ??= GetElement<bool?, DXW.SuppressBottomSpacing>(GetUpdatableElement());
     set => UpdateField(ref _SuppressBottomSpacing, value, nameof(SuppressBottomSpacing));
@@ -254,7 +254,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore minimum and exact line height for first line on page.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SuppressTopSpacing))]
-  public bool? SuppressTopSpacing 
+  public bool? SuppressTopSpacing
   {
     get => _SuppressTopSpacing ??= GetElement<bool?, DXW.SuppressTopSpacing>(GetUpdatableElement());
     set => UpdateField(ref _SuppressTopSpacing, value, nameof(SuppressTopSpacing));
@@ -265,7 +265,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore minimum line height for first line on page.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SuppressSpacingAtTopOfPage))]
-  public bool? SuppressSpacingAtTopOfPage 
+  public bool? SuppressSpacingAtTopOfPage
   {
     get => _SuppressSpacingAtTopOfPage ??= GetElement<bool?, DXW.SuppressSpacingAtTopOfPage>(GetUpdatableElement());
     set => UpdateField(ref _SuppressSpacingAtTopOfPage, value, nameof(SuppressSpacingAtTopOfPage));
@@ -276,7 +276,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate WordPerfect 5.x line spacing.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SuppressTopSpacingWordPerfect))]
-  public bool? SuppressTopSpacingWordPerfect 
+  public bool? SuppressTopSpacingWordPerfect
   {
     get => _SuppressTopSpacingWordPerfect ??= GetElement<bool?, DXW.SuppressTopSpacingWordPerfect>(GetUpdatableElement());
     set => UpdateField(ref _SuppressTopSpacingWordPerfect, value, nameof(SuppressTopSpacingWordPerfect));
@@ -287,7 +287,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not use space before on first line after a page break.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SuppressSpacingBeforeAfterPageBreak))]
-  public bool? SuppressSpacingBeforeAfterPageBreak 
+  public bool? SuppressSpacingBeforeAfterPageBreak
   {
     get => _SuppressSpacingBeforeAfterPageBreak ??= GetElement<bool?, DXW.SuppressSpacingBeforeAfterPageBreak>(GetUpdatableElement());
     set => UpdateField(ref _SuppressSpacingBeforeAfterPageBreak, value, nameof(SuppressSpacingBeforeAfterPageBreak));
@@ -298,7 +298,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Swap paragraph borders on odd numbered pages.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SwapBordersFacingPages))]
-  public bool? SwapBordersFacingPages 
+  public bool? SwapBordersFacingPages
   {
     get => _SwapBordersFacingPages ??= GetElement<bool?, DXW.SwapBordersFacingPages>(GetUpdatableElement());
     set => UpdateField(ref _SwapBordersFacingPages, value, nameof(SwapBordersFacingPages));
@@ -309,7 +309,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Treat backslash quotation delimiter as two quotation marks.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ConvertMailMergeEscape))]
-  public bool? ConvertMailMergeEscape 
+  public bool? ConvertMailMergeEscape
   {
     get => _ConvertMailMergeEscape ??= GetElement<bool?, DXW.ConvertMailMergeEscape>(GetUpdatableElement());
     set => UpdateField(ref _ConvertMailMergeEscape, value, nameof(ConvertMailMergeEscape));
@@ -320,7 +320,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate WordPerfect 6.x font height calculation.
   /// </summary>
   [OpenXmlElement(typeof(DXW.TruncateFontHeightsLikeWordPerfect))]
-  public bool? TruncateFontHeightsLikeWordPerfect 
+  public bool? TruncateFontHeightsLikeWordPerfect
   {
     get => _TruncateFontHeightsLikeWordPerfect ??= GetElement<bool?, DXW.TruncateFontHeightsLikeWordPerfect>(GetUpdatableElement());
     set => UpdateField(ref _TruncateFontHeightsLikeWordPerfect, value, nameof(TruncateFontHeightsLikeWordPerfect));
@@ -331,7 +331,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 5.x for the Macintosh small caps formatting.
   /// </summary>
   [OpenXmlElement(typeof(DXW.MacWordSmallCaps))]
-  public bool? MacWordSmallCaps 
+  public bool? MacWordSmallCaps
   {
     get => _MacWordSmallCaps ??= GetElement<bool?, DXW.MacWordSmallCaps>(GetUpdatableElement());
     set => UpdateField(ref _MacWordSmallCaps, value, nameof(MacWordSmallCaps));
@@ -342,7 +342,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use printer metrics to display documents.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UsePrinterMetrics))]
-  public bool? UsePrinterMetrics 
+  public bool? UsePrinterMetrics
   {
     get => _UsePrinterMetrics ??= GetElement<bool?, DXW.UsePrinterMetrics>(GetUpdatableElement());
     set => UpdateField(ref _UsePrinterMetrics, value, nameof(UsePrinterMetrics));
@@ -353,7 +353,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not suppress paragraph borders next to frames.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotSuppressParagraphBorders))]
-  public bool? DoNotSuppressParagraphBorders 
+  public bool? DoNotSuppressParagraphBorders
   {
     get => _DoNotSuppressParagraphBorders ??= GetElement<bool?, DXW.DoNotSuppressParagraphBorders>(GetUpdatableElement());
     set => UpdateField(ref _DoNotSuppressParagraphBorders, value, nameof(DoNotSuppressParagraphBorders));
@@ -364,7 +364,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Line wrap trailing spaces.
   /// </summary>
   [OpenXmlElement(typeof(DXW.WrapTrailSpaces))]
-  public bool? WrapTrailSpaces 
+  public bool? WrapTrailSpaces
   {
     get => _WrapTrailSpaces ??= GetElement<bool?, DXW.WrapTrailSpaces>(GetUpdatableElement());
     set => UpdateField(ref _WrapTrailSpaces, value, nameof(WrapTrailSpaces));
@@ -375,7 +375,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 6.x/95/97 footnote placement.
   /// </summary>
   [OpenXmlElement(typeof(DXW.FootnoteLayoutLikeWord8))]
-  public bool? FootnoteLayoutLikeWord8 
+  public bool? FootnoteLayoutLikeWord8
   {
     get => _FootnoteLayoutLikeWord8 ??= GetElement<bool?, DXW.FootnoteLayoutLikeWord8>(GetUpdatableElement());
     set => UpdateField(ref _FootnoteLayoutLikeWord8, value, nameof(FootnoteLayoutLikeWord8));
@@ -386,7 +386,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 97 text wrapping around floating objects.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ShapeLayoutLikeWord8))]
-  public bool? ShapeLayoutLikeWord8 
+  public bool? ShapeLayoutLikeWord8
   {
     get => _ShapeLayoutLikeWord8 ??= GetElement<bool?, DXW.ShapeLayoutLikeWord8>(GetUpdatableElement());
     set => UpdateField(ref _ShapeLayoutLikeWord8, value, nameof(ShapeLayoutLikeWord8));
@@ -397,7 +397,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Align table rows independently.
   /// </summary>
   [OpenXmlElement(typeof(DXW.AlignTablesRowByRow))]
-  public bool? AlignTablesRowByRow 
+  public bool? AlignTablesRowByRow
   {
     get => _AlignTablesRowByRow ??= GetElement<bool?, DXW.AlignTablesRowByRow>(GetUpdatableElement());
     set => UpdateField(ref _AlignTablesRowByRow, value, nameof(AlignTablesRowByRow));
@@ -408,7 +408,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore width of last tab stop when aligning paragraph if it is not left aligned.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ForgetLastTabAlignment))]
-  public bool? ForgetLastTabAlignment 
+  public bool? ForgetLastTabAlignment
   {
     get => _ForgetLastTabAlignment ??= GetElement<bool?, DXW.ForgetLastTabAlignment>(GetUpdatableElement());
     set => UpdateField(ref _ForgetLastTabAlignment, value, nameof(ForgetLastTabAlignment));
@@ -419,7 +419,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Add document grid line pitch to lines in table cells.
   /// </summary>
   [OpenXmlElement(typeof(DXW.AdjustLineHeightInTable))]
-  public bool? AdjustLineHeightInTable 
+  public bool? AdjustLineHeightInTable
   {
     get => _AdjustLineHeightInTable ??= GetElement<bool?, DXW.AdjustLineHeightInTable>(GetUpdatableElement());
     set => UpdateField(ref _AdjustLineHeightInTable, value, nameof(AdjustLineHeightInTable));
@@ -430,7 +430,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 95 full-width character spacing.
   /// </summary>
   [OpenXmlElement(typeof(DXW.AutoSpaceLikeWord95))]
-  public bool? AutoSpaceLikeWord95 
+  public bool? AutoSpaceLikeWord95
   {
     get => _AutoSpaceLikeWord95 ??= GetElement<bool?, DXW.AutoSpaceLikeWord95>(GetUpdatableElement());
     set => UpdateField(ref _AutoSpaceLikeWord95, value, nameof(AutoSpaceLikeWord95));
@@ -441,7 +441,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not increase line height for raised/lowered text.
   /// </summary>
   [OpenXmlElement(typeof(DXW.NoSpaceRaiseLower))]
-  public bool? NoSpaceRaiseLower 
+  public bool? NoSpaceRaiseLower
   {
     get => _NoSpaceRaiseLower ??= GetElement<bool?, DXW.NoSpaceRaiseLower>(GetUpdatableElement());
     set => UpdateField(ref _NoSpaceRaiseLower, value, nameof(NoSpaceRaiseLower));
@@ -452,7 +452,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use fixed paragraph spacing for HTML auto setting.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotUseHTMLParagraphAutoSpacing))]
-  public bool? DoNotUseHTMLParagraphAutoSpacing 
+  public bool? DoNotUseHTMLParagraphAutoSpacing
   {
     get => _DoNotUseHTMLParagraphAutoSpacing ??= GetElement<bool?, DXW.DoNotUseHTMLParagraphAutoSpacing>(GetUpdatableElement());
     set => UpdateField(ref _DoNotUseHTMLParagraphAutoSpacing, value, nameof(DoNotUseHTMLParagraphAutoSpacing));
@@ -463,7 +463,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore space before table when deciding if table should wrap floating object.
   /// </summary>
   [OpenXmlElement(typeof(DXW.LayoutRawTableWidth))]
-  public bool? LayoutRawTableWidth 
+  public bool? LayoutRawTableWidth
   {
     get => _LayoutRawTableWidth ??= GetElement<bool?, DXW.LayoutRawTableWidth>(GetUpdatableElement());
     set => UpdateField(ref _LayoutRawTableWidth, value, nameof(LayoutRawTableWidth));
@@ -474,7 +474,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Allow table rows to wrap inline objects independently.
   /// </summary>
   [OpenXmlElement(typeof(DXW.LayoutTableRowsApart))]
-  public bool? LayoutTableRowsApart 
+  public bool? LayoutTableRowsApart
   {
     get => _LayoutTableRowsApart ??= GetElement<bool?, DXW.LayoutTableRowsApart>(GetUpdatableElement());
     set => UpdateField(ref _LayoutTableRowsApart, value, nameof(LayoutTableRowsApart));
@@ -485,7 +485,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 97 East Asian line breaking.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseWord97LineBreakRules))]
-  public bool? UseWord97LineBreakRules 
+  public bool? UseWord97LineBreakRules
   {
     get => _UseWord97LineBreakRules ??= GetElement<bool?, DXW.UseWord97LineBreakRules>(GetUpdatableElement());
     set => UpdateField(ref _UseWord97LineBreakRules, value, nameof(UseWord97LineBreakRules));
@@ -496,7 +496,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not allow floating tables to break across pages.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotBreakWrappedTables))]
-  public bool? DoNotBreakWrappedTables 
+  public bool? DoNotBreakWrappedTables
   {
     get => _DoNotBreakWrappedTables ??= GetElement<bool?, DXW.DoNotBreakWrappedTables>(GetUpdatableElement());
     set => UpdateField(ref _DoNotBreakWrappedTables, value, nameof(DoNotBreakWrappedTables));
@@ -507,7 +507,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not snap to document grid in table cells with objects.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotSnapToGridInCell))]
-  public bool? DoNotSnapToGridInCell 
+  public bool? DoNotSnapToGridInCell
   {
     get => _DoNotSnapToGridInCell ??= GetElement<bool?, DXW.DoNotSnapToGridInCell>(GetUpdatableElement());
     set => UpdateField(ref _DoNotSnapToGridInCell, value, nameof(DoNotSnapToGridInCell));
@@ -518,7 +518,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Select field when first or last character is selected.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SelectFieldWithFirstOrLastChar))]
-  public bool? SelectFieldWithFirstOrLastChar 
+  public bool? SelectFieldWithFirstOrLastChar
   {
     get => _SelectFieldWithFirstOrLastChar ??= GetElement<bool?, DXW.SelectFieldWithFirstOrLastChar>(GetUpdatableElement());
     set => UpdateField(ref _SelectFieldWithFirstOrLastChar, value, nameof(SelectFieldWithFirstOrLastChar));
@@ -529,7 +529,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use legacy Ethiopic and Amharic line breaking rules.
   /// </summary>
   [OpenXmlElement(typeof(DXW.ApplyBreakingRules))]
-  public bool? ApplyBreakingRules 
+  public bool? ApplyBreakingRules
   {
     get => _ApplyBreakingRules ??= GetElement<bool?, DXW.ApplyBreakingRules>(GetUpdatableElement());
     set => UpdateField(ref _ApplyBreakingRules, value, nameof(ApplyBreakingRules));
@@ -540,7 +540,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not allow hanging punctuation with character grid.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotWrapTextWithPunctuation))]
-  public bool? DoNotWrapTextWithPunctuation 
+  public bool? DoNotWrapTextWithPunctuation
   {
     get => _DoNotWrapTextWithPunctuation ??= GetElement<bool?, DXW.DoNotWrapTextWithPunctuation>(GetUpdatableElement());
     set => UpdateField(ref _DoNotWrapTextWithPunctuation, value, nameof(DoNotWrapTextWithPunctuation));
@@ -551,7 +551,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not compress compressible characters when using document grid.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotUseEastAsianBreakRules))]
-  public bool? DoNotUseEastAsianBreakRules 
+  public bool? DoNotUseEastAsianBreakRules
   {
     get => _DoNotUseEastAsianBreakRules ??= GetElement<bool?, DXW.DoNotUseEastAsianBreakRules>(GetUpdatableElement());
     set => UpdateField(ref _DoNotUseEastAsianBreakRules, value, nameof(DoNotUseEastAsianBreakRules));
@@ -562,7 +562,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Emulate Word 2002 table style rules.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseWord2002TableStyleRules))]
-  public bool? UseWord2002TableStyleRules 
+  public bool? UseWord2002TableStyleRules
   {
     get => _UseWord2002TableStyleRules ??= GetElement<bool?, DXW.UseWord2002TableStyleRules>(GetUpdatableElement());
     set => UpdateField(ref _UseWord2002TableStyleRules, value, nameof(UseWord2002TableStyleRules));
@@ -573,7 +573,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Allow tables to autofit into page margins.
   /// </summary>
   [OpenXmlElement(typeof(DXW.GrowAutofit))]
-  public bool? GrowAutofit 
+  public bool? GrowAutofit
   {
     get => _GrowAutofit ??= GetElement<bool?, DXW.GrowAutofit>(GetUpdatableElement());
     set => UpdateField(ref _GrowAutofit, value, nameof(GrowAutofit));
@@ -584,7 +584,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not bypass East Asian/complex script layout code.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseFarEastLayout))]
-  public bool? UseFarEastLayout 
+  public bool? UseFarEastLayout
   {
     get => _UseFarEastLayout ??= GetElement<bool?, DXW.UseFarEastLayout>(GetUpdatableElement());
     set => UpdateField(ref _UseFarEastLayout, value, nameof(UseFarEastLayout));
@@ -595,7 +595,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not automatically apply list paragraph style to bulleted/numbered text.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseNormalStyleForList))]
-  public bool? UseNormalStyleForList 
+  public bool? UseNormalStyleForList
   {
     get => _UseNormalStyleForList ??= GetElement<bool?, DXW.UseNormalStyleForList>(GetUpdatableElement());
     set => UpdateField(ref _UseNormalStyleForList, value, nameof(UseNormalStyleForList));
@@ -606,7 +606,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore hanging indent when creating tab stop after numbering.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotUseIndentAsNumberingTabStop))]
-  public bool? DoNotUseIndentAsNumberingTabStop 
+  public bool? DoNotUseIndentAsNumberingTabStop
   {
     get => _DoNotUseIndentAsNumberingTabStop ??= GetElement<bool?, DXW.DoNotUseIndentAsNumberingTabStop>(GetUpdatableElement());
     set => UpdateField(ref _DoNotUseIndentAsNumberingTabStop, value, nameof(DoNotUseIndentAsNumberingTabStop));
@@ -617,7 +617,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use alternate set of East Asian line breaking rules.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseAltKinsokuLineBreakRules))]
-  public bool? UseAltKinsokuLineBreakRules 
+  public bool? UseAltKinsokuLineBreakRules
   {
     get => _UseAltKinsokuLineBreakRules ??= GetElement<bool?, DXW.UseAltKinsokuLineBreakRules>(GetUpdatableElement());
     set => UpdateField(ref _UseAltKinsokuLineBreakRules, value, nameof(UseAltKinsokuLineBreakRules));
@@ -628,7 +628,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Allow contextual spacing of paragraphs in tables.
   /// </summary>
   [OpenXmlElement(typeof(DXW.AllowSpaceOfSameStyleInTable))]
-  public bool? AllowSpaceOfSameStyleInTable 
+  public bool? AllowSpaceOfSameStyleInTable
   {
     get => _AllowSpaceOfSameStyleInTable ??= GetElement<bool?, DXW.AllowSpaceOfSameStyleInTable>(GetUpdatableElement());
     set => UpdateField(ref _AllowSpaceOfSameStyleInTable, value, nameof(AllowSpaceOfSameStyleInTable));
@@ -639,7 +639,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not ignore floating objects when calculating paragraph indentation.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotSuppressIndentation))]
-  public bool? DoNotSuppressIndentation 
+  public bool? DoNotSuppressIndentation
   {
     get => _DoNotSuppressIndentation ??= GetElement<bool?, DXW.DoNotSuppressIndentation>(GetUpdatableElement());
     set => UpdateField(ref _DoNotSuppressIndentation, value, nameof(DoNotSuppressIndentation));
@@ -650,7 +650,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not autofit tables to fit next to wrapped objects.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotAutofitConstrainedTables))]
-  public bool? DoNotAutofitConstrainedTables 
+  public bool? DoNotAutofitConstrainedTables
   {
     get => _DoNotAutofitConstrainedTables ??= GetElement<bool?, DXW.DoNotAutofitConstrainedTables>(GetUpdatableElement());
     set => UpdateField(ref _DoNotAutofitConstrainedTables, value, nameof(DoNotAutofitConstrainedTables));
@@ -661,7 +661,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Allow table columns to exceed preferred widths of constituent cells.
   /// </summary>
   [OpenXmlElement(typeof(DXW.AutofitToFirstFixedWidthCell))]
-  public bool? AutofitToFirstFixedWidthCell 
+  public bool? AutofitToFirstFixedWidthCell
   {
     get => _AutofitToFirstFixedWidthCell ??= GetElement<bool?, DXW.AutofitToFirstFixedWidthCell>(GetUpdatableElement());
     set => UpdateField(ref _AutofitToFirstFixedWidthCell, value, nameof(AutofitToFirstFixedWidthCell));
@@ -672,7 +672,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Underline following character following numbering.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UnderlineTabInNumberingList))]
-  public bool? UnderlineTabInNumberingList 
+  public bool? UnderlineTabInNumberingList
   {
     get => _UnderlineTabInNumberingList ??= GetElement<bool?, DXW.UnderlineTabInNumberingList>(GetUpdatableElement());
     set => UpdateField(ref _UnderlineTabInNumberingList, value, nameof(UnderlineTabInNumberingList));
@@ -683,7 +683,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Always use fixed width for Hangul characters.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DisplayHangulFixedWidth))]
-  public bool? DisplayHangulFixedWidth 
+  public bool? DisplayHangulFixedWidth
   {
     get => _DisplayHangulFixedWidth ??= GetElement<bool?, DXW.DisplayHangulFixedWidth>(GetUpdatableElement());
     set => UpdateField(ref _DisplayHangulFixedWidth, value, nameof(DisplayHangulFixedWidth));
@@ -694,7 +694,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Always move paragraph mark to page after a page break.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SplitPageBreakAndParagraphMark))]
-  public bool? SplitPageBreakAndParagraphMark 
+  public bool? SplitPageBreakAndParagraphMark
   {
     get => _SplitPageBreakAndParagraphMark ??= GetElement<bool?, DXW.SplitPageBreakAndParagraphMark>(GetUpdatableElement());
     set => UpdateField(ref _SplitPageBreakAndParagraphMark, value, nameof(SplitPageBreakAndParagraphMark));
@@ -705,7 +705,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not vertically align cells containing floating objects.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotVerticallyAlignCellWithShape))]
-  public bool? DoNotVerticallyAlignCellWithShape 
+  public bool? DoNotVerticallyAlignCellWithShape
   {
     get => _DoNotVerticallyAlignCellWithShape ??= GetElement<bool?, DXW.DoNotVerticallyAlignCellWithShape>(GetUpdatableElement());
     set => UpdateField(ref _DoNotVerticallyAlignCellWithShape, value, nameof(DoNotVerticallyAlignCellWithShape));
@@ -716,7 +716,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Do not break table rows around floating tables.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotBreakConstrainedForcedTable))]
-  public bool? DoNotBreakConstrainedForcedTable 
+  public bool? DoNotBreakConstrainedForcedTable
   {
     get => _DoNotBreakConstrainedForcedTable ??= GetElement<bool?, DXW.DoNotBreakConstrainedForcedTable>(GetUpdatableElement());
     set => UpdateField(ref _DoNotBreakConstrainedForcedTable, value, nameof(DoNotBreakConstrainedForcedTable));
@@ -727,7 +727,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Ignore vertical alignment in textboxes.
   /// </summary>
   [OpenXmlElement(typeof(DXW.DoNotVerticallyAlignInTextBox))]
-  public bool? DoNotVerticallyAlignInTextBox 
+  public bool? DoNotVerticallyAlignInTextBox
   {
     get => _DoNotVerticallyAlignInTextBox ??= GetElement<bool?, DXW.DoNotVerticallyAlignInTextBox>(GetUpdatableElement());
     set => UpdateField(ref _DoNotVerticallyAlignInTextBox, value, nameof(DoNotVerticallyAlignInTextBox));
@@ -738,7 +738,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use ANSI kerning pairs from fonts.
   /// </summary>
   [OpenXmlElement(typeof(DXW.UseAnsiKerningPairs))]
-  public bool? UseAnsiKerningPairs 
+  public bool? UseAnsiKerningPairs
   {
     get => _UseAnsiKerningPairs ??= GetElement<bool?, DXW.UseAnsiKerningPairs>(GetUpdatableElement());
     set => UpdateField(ref _UseAnsiKerningPairs, value, nameof(UseAnsiKerningPairs));
@@ -749,7 +749,7 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// Use cached paragraph information for column balancing.
   /// </summary>
   [OpenXmlElement(typeof(DXW.CachedColumnBalance))]
-  public bool? CachedColumnBalance 
+  public bool? CachedColumnBalance
   {
     get => _CachedColumnBalance ??= GetElement<bool?, DXW.CachedColumnBalance>(GetUpdatableElement());
     set => UpdateField(ref _CachedColumnBalance, value, nameof(CachedColumnBalance));

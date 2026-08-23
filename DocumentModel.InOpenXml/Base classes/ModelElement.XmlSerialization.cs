@@ -1,8 +1,4 @@
-﻿using System.Security.AccessControl;
-
-using Qhta.Conversion;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides XML serialization support for the <see cref="DocumentProperty"/> class.
@@ -144,8 +140,8 @@ public partial class ModelElement : IXmlSerializable
         continue;
       }
       var item = (ModelElement)Activator.CreateInstance(elementType)!;
-      var thisOpenXmlElement = this.GetUpdatableObject() as DX.OpenXmlCompositeElement;
-      var itemOpenXmlElement = item.GetUpdatableObject() as DX.OpenXmlElement;
+      var thisOpenXmlElement = this.GetUpdatableObject(null) as DX.OpenXmlCompositeElement;
+      var itemOpenXmlElement = item.GetUpdatableObject(null) as DX.OpenXmlElement;
       if (thisOpenXmlElement is not null && itemOpenXmlElement is not null)
       {
         thisOpenXmlElement.Append(itemOpenXmlElement);
@@ -384,7 +380,7 @@ public partial class ModelElement : IXmlSerializable
 /// <summary>
 /// Represents a split of properties into attribute properties, element properties, and an optional content property for XML serialization.
 /// </summary>
-public record SerializablePropertiesInfo: IEnumerable<PropertyInfo>
+public record SerializablePropertiesInfo : IEnumerable<PropertyInfo>
 {
   /// <summary>
   /// Gets the properties that should be serialized as XML attributes.

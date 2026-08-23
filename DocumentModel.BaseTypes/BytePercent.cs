@@ -528,7 +528,7 @@ public readonly partial struct BytePercent : IEquatable<BytePercent>, IComparabl
   {
     return ((double)Value / 100).GetHashCode();
   }
-  
+
   /// <summary>
   /// Gets the percentage value as an integer in the range of 0 to 100.
   /// </summary>

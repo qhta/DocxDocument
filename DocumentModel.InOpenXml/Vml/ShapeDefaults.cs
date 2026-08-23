@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 [OpenXmlType(typeof(DXVO.ShapeDefaults))]
 [DataContract]
 [XmlRoot("ShapeDefaults", Namespace = "DocumentModel.Vml")]
-public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
+public partial class ShapeDefaults : ModelElement<DXVO.ShapeDefaults>
 {
   /// <summary>
   ///   Shape ID Optional Storage
@@ -110,7 +110,7 @@ public partial class ShapeDefaults: ModelElement<DXVO.ShapeDefaults>
   /// <summary>
   ///   Fill.
   /// </summary>
-  
+
   [OpenXmlProperty(nameof(DXVO.ShapeDefaults.Fill))]
   public Fill? Fill
   {

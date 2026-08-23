@@ -1,5 +1,3 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies a math paragraph, or display math zone, 
@@ -17,8 +15,8 @@ public partial class Paragraph : ModelElement<DXM.Paragraph>, ICommonMathContent
   [OpenXmlProperty(nameof(DXM.Paragraph.ParagraphProperties))]
   public ParagraphProperties? ParagraphProperties
   {
-    get => _ParagraphProperties; 
+    get => _ParagraphProperties;
     set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties));
   }
- private ParagraphProperties? _ParagraphProperties;
+  private ParagraphProperties? _ParagraphProperties;
 }

@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 ///   This element specifies the rectangular bounding box for text within a custom geometry.
 ///   The default for this rectangle is the bounding box for the shape.
@@ -11,33 +12,53 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.Rectangle))]
 [DataContract]
 [XmlRoot("Rectangle", Namespace = "DocumentModel.Drawings")]
-public partial class Rectangle : ModelElement<DXD.Rectangle>
+public partial class Rectangle: ModelElement<DXD.Rectangle>
 {
- /// <summary>
- ///   Left position of the rectangle.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Rectangle.Left))]
- public string? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
- private string? _Left;
+  /// <summary>
+  ///   Left position of the rectangle.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Rectangle.Left))]
+  public string? Left
+  {
+    get => _Left ??= GetProperty<string?>(GetUpdatableElement()?.Left);
+    set => UpdateField(ref _Left, value, nameof(Left));
+  }
 
- /// <summary>
- ///   Top position of the rectangle.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Rectangle.Top))]
- public string? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
- private string? _Top;
+  private string? _Left;
 
- /// <summary>
- ///   Right position of the rectangle.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Rectangle.Right))]
- public string? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
- private string? _Right;
+  /// <summary>
+  ///   Top position of the rectangle.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Rectangle.Top))]
+  public string? Top
+  {
+    get => _Top ??= GetProperty<string?>(GetUpdatableElement()?.Top);
+    set => UpdateField(ref _Top, value, nameof(Top));
+  }
 
- /// <summary>
- ///   Bottom position of the rectangle.
- /// </summary>
- [OpenXmlProperty(nameof(DXD.Rectangle.Bottom))]
- public string? Bottom { get => _Bottom; set => UpdateField(ref _Bottom, value, nameof(Bottom)); }
- private string? _Bottom;
+  private string? _Top;
+
+  /// <summary>
+  ///   Right position of the rectangle.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Rectangle.Right))]
+  public string? Right
+  {
+    get => _Right ??= GetProperty<string?>(GetUpdatableElement()?.Right);
+    set => UpdateField(ref _Right, value, nameof(Right));
+  }
+
+  private string? _Right;
+
+  /// <summary>
+  ///   Bottom position of the rectangle.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.Rectangle.Bottom))]
+  public string? Bottom
+  {
+    get => _Bottom ??= GetProperty<string?>(GetUpdatableElement()?.Bottom);
+    set => UpdateField(ref _Bottom, value, nameof(Bottom));
+  }
+
+  private string? _Bottom;
 }

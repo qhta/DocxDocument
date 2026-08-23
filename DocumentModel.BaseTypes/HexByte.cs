@@ -122,7 +122,7 @@ public readonly partial struct HexByte : IConvertible, IEquatable<HexByte>
   /// </remarks>
   public HexByte(int value)
   {
-    this.value = (byte)value; 
+    this.value = (byte)value;
   }
 
   /// <summary>

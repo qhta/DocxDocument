@@ -110,7 +110,7 @@ public class BodyRunItemsEnumerationTest : _AbstractTestClass
               }
             }
           }
-          
+
           if (!verbatim)
           {
             if (paragraphIndex % 100 == 0)

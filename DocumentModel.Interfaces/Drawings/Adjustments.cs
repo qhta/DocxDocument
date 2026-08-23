@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Used in IMsoChartFormat, Shape, and ShapeRange interfaces.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.adjustments?view=office-pia"/>
-public partial interface IAdjustments: IModelValues<float>
+public partial interface IAdjustments : IModelValues<float>
 {
 }
 

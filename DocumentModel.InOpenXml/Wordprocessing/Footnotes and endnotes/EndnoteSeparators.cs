@@ -23,7 +23,7 @@ public class EndnoteSeparators :
   /// </summary>
   /// <param name="parent">The parent EndnoteDocumentWideProperties object that provides the context and updatable element for this instance.
   /// Cannot be null.</param>
-  public EndnoteSeparators(DMW.EndnoteDocumentWideProperties parent): base(parent, parent.GetUpdatableElement() as DXW.EndnoteDocumentWideProperties)
+  public EndnoteSeparators(DMW.EndnoteDocumentWideProperties parent): base(parent, parent.GetUpdatableElement())
   {
 
   }

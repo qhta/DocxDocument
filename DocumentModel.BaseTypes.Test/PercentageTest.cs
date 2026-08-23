@@ -167,7 +167,7 @@ public static class PercentageTest
     Console.WriteLine();
     return true;
   }
-  
+
   static bool TestPercentageJsonSerialization()
   {
     Console.WriteLine("--- Testing Percentage JSON Serialization ---"); // Create test object
@@ -277,7 +277,7 @@ public static class PercentageTest
     var ok = true;
     Percentage zero = new Percentage(0);
     var dblZero = zero.AsDouble();
-    ok = zero==0;
+    ok = zero == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Zero: '{zero}' = {dblZero}");
     if (!ok) return false;
 
@@ -287,9 +287,9 @@ public static class PercentageTest
     Percentage maxPercentage = new Percentage(100);
     var minInt = minPercentage.AsInteger();
     var maxInt = maxPercentage.AsInteger();
-    ok = minInt==0;
+    ok = minInt == 0;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Min (0%): \"{minPercentage}\" = {minInt}");
-    ok = maxInt==100;
+    ok = maxInt == 100;
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Max (100%): \"{maxPercentage}\" = {maxInt}");
     if (!ok) return false;
 
@@ -327,7 +327,7 @@ public static class PercentageTest
     twoThirds = new Percentage("66.667%");
     var dblOneThird = oneThird.AsDouble();
     var dblTwoThirds = twoThirds.AsDouble();
-    ok =  oneThird.Equals(dblOneThird);
+    ok = oneThird.Equals(dblOneThird);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  One third: \"{oneThird}\" {TestHelper.EqualityMessage(ok)} {dblOneThird} (double)");
     ok = twoThirds.Equals(dblTwoThirds);
     Console.WriteLine($"{TestHelper.OkMarker(ok)}  Two thirds: \"{twoThirds}\" {TestHelper.EqualityMessage(ok)} {dblTwoThirds} (double)");

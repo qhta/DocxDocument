@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel.Drawings;
+
 using Math = System.Math;
 
 
@@ -7,7 +8,7 @@ using Math = System.Math;
 /// </summary>
 [OpenXmlType(typeof(DXD.Saturation))]
 [DataContract]
-public class Saturation: PercentageTransformation<DXD.Saturation>
+public class Saturation : PercentageTransformation<DXD.Saturation>
 {
   /// <summary>
   /// Transforms the given color by applying the Saturation transformation based on the specified value.
@@ -19,7 +20,7 @@ public class Saturation: PercentageTransformation<DXD.Saturation>
     var (h, s, l, a) = color.HSLAComponents;
     s = Value.AsDouble();
     s = Math.Clamp(s, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }
 
@@ -45,7 +46,7 @@ public class SaturationOffset : PercentageTransformation<DXD.SaturationOffset>
     var (h, s, l, a) = color.HSLAComponents;
     s += Value.AsDouble();
     s = Math.Clamp(s, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }
 /// <summary>
@@ -69,6 +70,6 @@ public class SaturationModulation : PercentageTransformation<DXD.SaturationModul
     var (h, s, l, a) = color.HSLAComponents;
     s *= Value.AsDouble();
     s = Math.Clamp(s, 0.0, 1.0);
-    return new EffectiveColor( new Degrees(h * 360), s, l, a );
+    return new EffectiveColor(new Degrees(h * 360), s, l, a);
   }
 }

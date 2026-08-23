@@ -1,4 +1,5 @@
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents a query for retrieving child geographic entities within a specific parent geographic entity.
 /// </summary>
@@ -23,20 +24,29 @@ namespace DocumentModel.Drawings.ChartDrawings;
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQuery))]
 [DataContract]
 [XmlRoot("GeoChildEntitiesQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public partial class GeoChildEntitiesQuery : ModelElement<DXO16DCD.GeoChildEntitiesQuery>
+public partial class GeoChildEntitiesQuery: ModelElement<DXO16DCD.GeoChildEntitiesQuery>
 {
   /// <summary>
   /// Specifies the entity id.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQuery.EntityId))]
-  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
+  public string? EntityId
+  {
+    get => _EntityId ??= GetProperty<string?>(GetUpdatableElement()?.EntityId);
+    set => UpdateField(ref _EntityId, value, nameof(EntityId));
+  }
 
   private string? _EntityId;
+
   /// <summary>
   /// Specifies the geo child types.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQuery.GeoChildTypes))]
-  public List<string>? GeoChildTypes { get => _GeoChildTypes; set => UpdateField(ref _GeoChildTypes, value, nameof(GeoChildTypes)); }
+  public List<string>? GeoChildTypes
+  {
+    get => _GeoChildTypes ??= GetProperty<List<string>?>(GetUpdatableElement()?.GeoChildTypes);
+    set => UpdateField(ref _GeoChildTypes, value, nameof(GeoChildTypes));
+  }
 
   private List<string>? _GeoChildTypes;
 }

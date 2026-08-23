@@ -108,7 +108,7 @@ public static class UInt16Converter
   public static UInt16? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
     if (Int32Value == null) return null;
-    if (Int32Value.Value< 0 || Int32Value.Value > UInt16.MaxValue)
+    if (Int32Value.Value < 0 || Int32Value.Value > UInt16.MaxValue)
       throw new OverflowException($"Value {Int32Value.Value} is out of range for UInt16");
 
     return (UInt16)Int32Value.Value;

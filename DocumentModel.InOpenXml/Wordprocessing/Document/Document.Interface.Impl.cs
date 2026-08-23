@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
-public partial class Document: IDocument
+public partial class Document : IDocument
 {
 
   DMPr.IDocumentProperties IDocument.BuiltInDocumentProperties => new BuiltInPropertiesWrapper(BuiltInProperties);
@@ -16,7 +16,7 @@ public partial class Document: IDocument
   IBibliography? IDocument.Bibliography => throw new NotImplementedException();
   IBookmarks? IDocument.Bookmarks => throw new NotImplementedException();
 
-  
+
   ICharacters? IDocument.Characters => throw new NotImplementedException();
   bool IDocument.ChartDataPointTrack { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
   object? IDocument.ClickAndTypeParagraphStyle { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

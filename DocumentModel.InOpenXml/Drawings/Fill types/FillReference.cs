@@ -8,10 +8,10 @@ namespace DocumentModel.Drawings;
 [XmlRoot("FillReference", Namespace = "DocumentModel.Drawings")]
 public partial class FillReference : ModelElement<DXD.FillReference>
 {
- /// <summary>
- ///   Fill color specified using the RGB color model with percentage values for each channel.
- /// </summary>
- public ColorType? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private ColorType? _Color;
+  /// <summary>
+  ///   Fill color specified using the RGB color model with percentage values for each channel.
+  /// </summary>
+  public ColorType? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
+  private ColorType? _Color;
 
 }

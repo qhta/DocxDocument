@@ -17,6 +17,7 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
     get => _Extension ??= GetProperty<ExtensionHandlingBehavior?>(GetUpdatableElement()?.Extension);
     set => UpdateField(ref _Extension, value, nameof(Extension));
   }
+
   private ExtensionHandlingBehavior? _Extension;
 
   /// <summary>
@@ -28,6 +29,7 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
     get => _ShapeIdMap ??= GetProperty<ShapeIdMap?>(GetUpdatableElement()?.ShapeIdMap);
     set => UpdateField(ref _ShapeIdMap, value, nameof(ShapeIdMap));
   }
+
   private ShapeIdMap? _ShapeIdMap;
 
   /// <summary>
@@ -39,6 +41,7 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
     get => _RegroupTable ??= GetProperty<RegroupTable?>(GetUpdatableElement()?.RegroupTable);
     set => UpdateField(ref _RegroupTable, value, nameof(RegroupTable));
   }
+
   private RegroupTable? _RegroupTable;
 
   /// <summary>
@@ -50,5 +53,6 @@ public partial class ShapeLayout: ModelElement<DXVO.ShapeLayout>
     get => _Rules ??= GetProperty<Rules?>(GetUpdatableElement()?.Rules);
     set => UpdateField(ref _Rules, value, nameof(Rules));
   }
+
   private Rules? _Rules;
 }

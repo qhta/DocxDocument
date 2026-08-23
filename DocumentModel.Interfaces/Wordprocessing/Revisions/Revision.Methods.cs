@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision?view=word-pia"/>
-public partial interface IRevision: IModelObject
+public partial interface IRevision : IModelObject
 {
   /// <summary>
   /// Accepts the specified tracked change. The revision marks are removed, and the change is incorporated into the

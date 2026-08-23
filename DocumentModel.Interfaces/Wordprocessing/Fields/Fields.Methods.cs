@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fields?view=word-pia"/>
-public partial interface IFields: IModelObject
+public partial interface IFields : IModelObject
 {
   /// <summary>
   /// Toggles the display of the fields between field codes and field results.

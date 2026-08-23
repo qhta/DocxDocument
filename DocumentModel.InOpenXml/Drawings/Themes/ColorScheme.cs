@@ -217,7 +217,7 @@ public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExte
   /// ExtensionList, which allows for additional properties or elements to be associated with the color scheme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.ColorScheme.ExtensionList))]
-  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(ExtensionList)); }
+  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList ??= GetProperty<OfficeArtExtensionList?>(GetUpdatableElement()?.ExtensionList); set => UpdateField(ref _OfficeArtExtensionList, value, nameof(ExtensionList)); }
   private OfficeArtExtensionList? _OfficeArtExtensionList;
 
   /// <summary>

@@ -1,7 +1,3 @@
-using DocumentFormat.OpenXml;
-
-using DocumentModel.Packaging;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents an external file relationship in a WordprocessingML document, providing logic for managing and synchronizing external file URIs and relationship IDs with the Open XML package.
@@ -34,7 +30,8 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   ///   If the associated document is not available, no update is performed.
   /// </summary>
   /// <param name = "openXmlObject">The Open XML element from which to load data. Must represent a valid Open XML element associated with a document.</param>
-  public override bool UpdateData(object openXmlObject)
+  /// <param name="context"></param>
+  public override bool UpdateData(object openXmlObject, object? context)
   {
     if (WordprocessingDocument != null)
       return UpdateData(WordprocessingDocument);

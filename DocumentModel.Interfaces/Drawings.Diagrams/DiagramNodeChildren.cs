@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren?view=office-pia"/>
-public partial interface IDiagramNodeChildren: IModelCollection<IDiagramNode>
+public partial interface IDiagramNodeChildren : IModelCollection<IDiagramNode>
 {
   /// <summary>
   /// Gets the `FirstChild` property.

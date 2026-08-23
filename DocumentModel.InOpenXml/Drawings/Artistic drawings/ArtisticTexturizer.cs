@@ -1,22 +1,33 @@
 namespace DocumentModel.Drawings;
+
 /// <summary>
 /// Represents an artistic texturizer effect, which simulates a textured appearance with adjustable transparency and scaling.
 /// </summary>
 [OpenXmlType(typeof(DXO10D.ArtisticTexturizer))]
 [DataContract]
 [XmlRoot("ArtisticTexturizer", Namespace = "DocumentModel.Drawings")]
-public partial class ArtisticTexturizer : ModelElement<DXO10D.ArtisticTexturizer>
+public partial class ArtisticTexturizer: ModelElement<DXO10D.ArtisticTexturizer>
 {
- /// <summary>
- /// Transparency level of the texturizer effect.
- /// </summary>
- public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
- private Int32? _Transparency;
+  /// <summary>
+  /// Transparency level of the texturizer effect.
+  /// </summary>
+  public Int32? Transparency
+  {
+    get => _Transparency;
+    set => UpdateField(ref _Transparency, value, nameof(Transparency));
+  }
 
- /// <summary>
- /// Scaling factor for the texturizer effect, influencing the size and intensity of the texture.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10D.ArtisticTexturizer.Scaling))]
- public Int32? Scaling { get => _Scaling; set => UpdateField(ref _Scaling, value, nameof(Scaling)); }
- private Int32? _Scaling;
+  private Int32? _Transparency;
+
+  /// <summary>
+  /// Scaling factor for the texturizer effect, influencing the size and intensity of the texture.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10D.ArtisticTexturizer.Scaling))]
+  public Int32? Scaling
+  {
+    get => _Scaling ??= GetProperty<Int32?>(GetUpdatableElement()?.Scaling);
+    set => UpdateField(ref _Scaling, value, nameof(Scaling));
+  }
+
+  private Int32? _Scaling;
 }

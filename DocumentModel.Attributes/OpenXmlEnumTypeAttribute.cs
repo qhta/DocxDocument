@@ -13,7 +13,7 @@
 /// </para>
 /// </summary>
 [AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = true)]
-public class OpenXmlEnumTypeAttribute: Attribute
+public class OpenXmlEnumTypeAttribute : Attribute
 {
   /// <summary>
   /// Specifies mapping of the model enum type to one of the types used in OpenXML.

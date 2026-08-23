@@ -25,7 +25,7 @@ public static class HexBinaryTest
     return true;
   }
 
-  
+
   static bool TestHexBinaryBasicOperations()
   {
     Console.WriteLine("--- Testing HexBinary Basic Operations ---");
@@ -65,8 +65,8 @@ public static class HexBinaryTest
 
   }
 
-  
-  
+
+
   static bool TestHexBinaryXmlSerialization()
   {
     Console.WriteLine("--- Testing HexBinary XML Serialization ---");
@@ -128,8 +128,8 @@ public static class HexBinaryTest
     return true;
   }
 
-  
-  
+
+
   static bool TestHexBinaryJsonSerialization()
   {
     Console.WriteLine("--- Testing HexBinary JSON Serialization ---");
@@ -182,7 +182,7 @@ public static class HexBinaryTest
     return true;
   }
 
-  
+
   private static HexBinaryTestDataClass CreateTestData()
   {
     return new HexBinaryTestDataClass
@@ -203,7 +203,7 @@ public static class HexBinaryTest
     Console.WriteLine();
   }
 
-  
+
   static bool TestHexBinaryEdgeCases()
   {
     Console.WriteLine("--- Testing HexBinary Edge Cases ---");
@@ -256,8 +256,8 @@ public static class HexBinaryTest
 
   }
 
-  
-  
+
+
   static bool TestHexBinaryPerformance()
   {
     Console.WriteLine("--- Testing HexBinary Performance ---");
@@ -320,7 +320,7 @@ public static class HexBinaryTest
 
   }
 
-  
+
 }
 
 

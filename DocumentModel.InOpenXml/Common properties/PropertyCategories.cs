@@ -5,8 +5,8 @@ namespace DocumentModel;
 /// </summary>
 public static class PropertyCategories
 {
- /// <summary>
- /// Base properties category containing fundamental properties such as Title, Subject, Creator, and Keywords.
- /// </summary>
- public static string Base = "Base";
+  /// <summary>
+  /// Base properties category containing fundamental properties such as Title, Subject, Creator, and Keywords.
+  /// </summary>
+  public static string Base = "Base";
 }

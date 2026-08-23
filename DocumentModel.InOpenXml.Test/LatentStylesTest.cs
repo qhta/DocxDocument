@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Styles.
 /// </summary>
-public class LatentStylesTest: _AbstractModelTestClass<Styles>
+public class LatentStylesTest : _AbstractModelTestClass<Styles>
 {
 
   /// <summary>

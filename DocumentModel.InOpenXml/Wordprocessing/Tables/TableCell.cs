@@ -7,8 +7,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("TableCell", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableCell : ModelElement<DXW.TableCell>, ITableRowContent, ISdtCellContent
 {
- /// <summary>
- /// Table cell properties, including formatting, borders, and layout options for the cell.
- /// </summary>
- public TableCellProperties? TableCellProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+  /// <summary>
+  /// Table cell properties, including formatting, borders, and layout options for the cell.
+  /// </summary>
+  public TableCellProperties? TableCellProperties { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 }

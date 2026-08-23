@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Specifies the background for every page of the document containing the background element in a WordprocessingML document.
 /// The document background is the image or fill for the entire page surface, appearing behind all other document content.
@@ -6,19 +7,29 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.DocumentBackground))]
 [DataContract]
 [XmlRoot("DocumentBackground", Namespace = "DocumentModel.Wordprocessing")]
-public partial class DocumentBackground : ModelElement<DXW.DocumentBackground>
+public partial class DocumentBackground: ModelElement<DXW.DocumentBackground>
 {
- /// <summary>
- /// Color for the background of the document, specifying the fill color applied to all pages.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.DocumentBackground.Color))]
- public WordColor? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
- private WordColor? _Color;
+  /// <summary>
+  /// Color for the background of the document, specifying the fill color applied to all pages.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.DocumentBackground.Color))]
+  public WordColor? Color
+  {
+    get => _Color ??= GetProperty<WordColor?>(GetUpdatableElement()?.Color);
+    set => UpdateField(ref _Color, value, nameof(Color));
+  }
 
- /// <summary>
- /// Background element, specifying additional background properties such as images or patterns.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.DocumentBackground.Background))]
- public DMV.Background? Background { get => _Background; set => UpdateField(ref _Background, value, nameof(Background)); }
- private DMV.Background? _Background;
+  private WordColor? _Color;
+
+  /// <summary>
+  /// Background element, specifying additional background properties such as images or patterns.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.DocumentBackground.Background))]
+  public DMV.Background? Background
+  {
+    get => _Background ??= GetProperty<DMV.Background?>(GetUpdatableElement()?.Background);
+    set => UpdateField(ref _Background, value, nameof(Background));
+  }
+
+  private DMV.Background? _Background;
 }

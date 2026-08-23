@@ -104,7 +104,7 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   /// </summary>
   /// <param name="value">The integer to convert.</param>
   /// <returns>A <see cref="StrNumPair"/> value containing the number.</returns>
-  public static implicit operator StrNumPair(int? value) => new StrNumPair("",value);
+  public static implicit operator StrNumPair(int? value) => new StrNumPair("", value);
 
   /// <summary>
   /// Implicitly converts a <see cref="StrNumPair"/> value to an integer.

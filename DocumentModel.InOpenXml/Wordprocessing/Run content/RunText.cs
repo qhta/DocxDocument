@@ -37,7 +37,7 @@ public class RunText : TextualElement<DXW.Text>
       else
       {
         updatableElement.Remove();
-        SetUpdatableObject(null);
+        SetUpdatableObject(null, null);
       }
     }
   }

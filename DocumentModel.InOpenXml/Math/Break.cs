@@ -14,13 +14,13 @@ namespace DocumentModel.Math;
 [XmlRoot("Break", Namespace = "DocumentModel.Math")]
 public partial class Break : ModelElement<DXW.Break>
 {
- /// <summary>
- ///   Specifies the index of the operator on the previous line of mathematical text which shall be used 
- ///   as the alignment point for the current line of mathematical text . 
- ///   A line can be aligned to any operator on the previous line; 
- ///   this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. 
- ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
- /// </summary>
- public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
- private Int32? _AlignAt;
+  /// <summary>
+  ///   Specifies the index of the operator on the previous line of mathematical text which shall be used 
+  ///   as the alignment point for the current line of mathematical text . 
+  ///   A line can be aligned to any operator on the previous line; 
+  ///   this attribute specifies exactly which operator shall be the target of that alignment in cases where there are multiple operators. 
+  ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
+  /// </summary>
+  public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
+  private Int32? _AlignAt;
 }

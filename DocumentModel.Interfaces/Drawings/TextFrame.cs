@@ -3,9 +3,6 @@ using DocumentModel.Wordprocessing;
 using Range = System.Range;
 
 namespace DocumentModel.Drawings;
-
-using DocumentModel.Drawings;
-
 /// <summary>
 /// Represents the text frame in a Shape object. Contains the text in the text frame as well as the properties
 /// that control the margins and orientation of the text frame.

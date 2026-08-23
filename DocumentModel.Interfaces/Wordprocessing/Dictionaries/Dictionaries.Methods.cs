@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries?view=word-pia"/>
-public partial interface IDictionaries: IModelObject
+public partial interface IDictionaries : IModelObject
 {
   /// <summary>
   /// Adds a custom dictionary to the collection.

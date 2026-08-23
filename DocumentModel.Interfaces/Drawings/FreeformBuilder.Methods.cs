@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
-public partial interface IFreeformBuilder: IModelObject
+public partial interface IFreeformBuilder : IModelObject
 {
   /// <summary>
   /// Adds a node to the freeform being built.

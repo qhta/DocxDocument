@@ -34,7 +34,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// </summary>
   /// <returns>An object representing the updatable Open XML package properties, or <see langword="null"/> if no properties are
   /// available.</returns>
-  public override object? GetUpdatableObject()
+  public override object? GetUpdatableObject(object? context)
   {
     if (WordprocessingDocument != null)
       return WordprocessingDocument.GetPackageProperties();
@@ -45,7 +45,8 @@ public partial class CoreProperties : BaseBuiltInProperties
   ///   Assigns the wrapped OpenXml element instance.
   /// </summary>
   /// <param name = "element">The OpenXml element to assign.</param>
-  public new void SetUpdatableObject(object? element)
+  /// <param name = "context">The context for the operation.</param>
+  public new void SetUpdatableObject(object? element, object? context)
   {
     if (element == null)
       _PackageProperties = null;
@@ -65,7 +66,7 @@ public partial class CoreProperties : BaseBuiltInProperties
     var packageProperties = wordprocessingDocument.GetCoreProperties(false);
     if (packageProperties != null)
     {
-      SetUpdatableObject(packageProperties);
+      SetUpdatableObject(packageProperties, null);
       LoadData(packageProperties);
     }
   }
@@ -73,12 +74,12 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
   /// </summary>
-  public override bool UpdateData()
+  public override bool UpdateData(object? context)
   {
-    var updatableObject = GetUpdatableObject();
+    var updatableObject = GetUpdatableObject(context);
     if (updatableObject != null)
     {
-      UpdateData(updatableObject);
+      UpdateData(updatableObject, context);
       return true;
     }
     return false;
@@ -118,8 +119,9 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// XML element with matching names. Only properties that exist and are writable on the Open XML element are updated.
   /// Property values are converted to the appropriate Open XML types as needed.</remarks>
   /// <param name = "openXmlObject">The Open XML element to update. Must be an instance of the expected Open XML type that supports writable
-  /// properties corresponding to this model.</param>
-  public override bool UpdateData(object openXmlObject)
+  ///   properties corresponding to this model.</param>
+  /// <param name="context">An optional context object for the update operation.</param>
+  public override bool UpdateData(object openXmlObject, object? context = null)
   {
     var modelType = GetType();
     var openXmlType = typeof(PackageProperties);
@@ -147,7 +149,7 @@ public partial class CoreProperties : BaseBuiltInProperties
   /// property defined on this instance.</param>
   public override void UpdatePropertyData(string propertyName)
   {
-    var openXmlElement = GetUpdatableElement();
+    var openXmlElement = GetUpdatableElement(propertyName);
     if (openXmlElement == null)
       return;
     var modelProperty = this.GetType().GetProperty(propertyName);
@@ -180,7 +182,7 @@ public partial class CoreProperties : BaseBuiltInProperties
       modelProperty.SetValue(this, value);
     }
 
-    var updatableElement = GetUpdatableElement();
+    var updatableElement = GetUpdatableElement("CoreProperties");
     if (updatableElement != null)
       UpdateData(updatableElement);
   }

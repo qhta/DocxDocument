@@ -1,5 +1,4 @@
-﻿using Math = System.Math;
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Provides helper methods for test scenarios.
@@ -96,7 +95,7 @@ public static class TestHelper
         if (obj2.ToString() == String.Empty)
           return true;
       }
-      message = $"{firstName} is null and {secondName} is {obj2}"; 
+      message = $"{firstName} is null and {secondName} is {obj2}";
       return false;
     }
     if (obj2 == null && obj1 != null)

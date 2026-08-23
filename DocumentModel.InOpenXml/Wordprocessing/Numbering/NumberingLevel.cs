@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Specifies the appearance and behavior of a numbering level within a given abstract numbering definition in a WordprocessingML document.
 /// A numbering level contains a set of properties for the display of numbering for a given level, including formatting, starting value, restart behavior, text, picture bullets, and associated paragraph/run properties.
@@ -9,114 +10,191 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Level))]
 [DataContract]
 [XmlRoot("NumberingLevel", Namespace = "DocumentModel.Wordprocessing")]
-public partial class NumberingLevel : ModelElement<DXW.Level>
+public partial class NumberingLevel: ModelElement<DXW.Level>
 {
- /// <summary>
- /// Zero-based index of the numbering level defined by this set of properties (e.g., 2 is the 3rd list level).
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelIndex))]
- [Required]
- public NumLevel? LevelIndex { get => _LevelIndex; set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex)); }
- private NumLevel? _LevelIndex;
+  /// <summary>
+  /// Zero-based index of the numbering level defined by this set of properties (e.g., 2 is the 3rd list level).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelIndex))]
+  [Required]
+  public NumLevel? LevelIndex
+  {
+    get => _LevelIndex ??= GetProperty<NumLevel?>(GetUpdatableElement()?.LevelIndex);
+    set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex));
+  }
 
- /// <summary>
- /// Indicates that this numbering level was saved by a producer but not used in the parent document, allowing redefinition by future consumers.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.Tentative))]
- public bool? Tentative { get => _Tentative; set => UpdateField(ref _Tentative, value, nameof(Tentative)); }
- private bool? _Tentative;
+  private NumLevel? _LevelIndex;
 
- /// <summary>
- /// Starting value for numbering at this level, used when the level starts or is restarted. Defaults to zero if omitted.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.StartNumberingValue))]
- public Int32? StartNumberingValue { get => _StartNumberingValue; set => UpdateField(ref _StartNumberingValue, value, nameof(StartNumberingValue)); }
- private Int32? _StartNumberingValue;
+  /// <summary>
+  /// Indicates that this numbering level was saved by a producer but not used in the parent document, allowing redefinition by future consumers.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.Tentative))]
+  public bool? Tentative
+  {
+    get => _Tentative ??= GetProperty<bool?>(GetUpdatableElement()?.Tentative);
+    set => UpdateField(ref _Tentative, value, nameof(Tentative));
+  }
 
- /// <summary>
- /// One-based index determining when this numbering level should restart to its start value, based on higher or earlier levels.
- /// A numbering level restarts when an instance of the specified numbering level, which shall be higher (earlier than this level)
- /// or any earlier level is used in the given document's contents.
- /// (e.g., If this value is 2, then both level two and level one reset this value.)
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelRestart))]
- public NumLevel? LevelRestart { get => _LevelRestart; set => UpdateField(ref _LevelRestart, value, nameof(LevelRestart)); }
- private NumLevel? _LevelRestart;
+  private bool? _Tentative;
 
- /// <summary>
- /// Number format used to display numbering at this level, replacing %x in the level text string with the appropriate value.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.NumberingFormat))]
- public NumberingFormat? NumberingFormat { get => _NumberingFormat; set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat)); }
- private NumberingFormat? _NumberingFormat;
+  /// <summary>
+  /// Starting value for numbering at this level, used when the level starts or is restarted. Defaults to zero if omitted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.StartNumberingValue))]
+  public Int32? StartNumberingValue
+  {
+    get => _StartNumberingValue ??= GetProperty<Int32?>(GetUpdatableElement()?.StartNumberingValue);
+    set => UpdateField(ref _StartNumberingValue, value, nameof(StartNumberingValue));
+  }
 
- /// <summary>
- /// Paragraph style ID associated with this numbering level.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.ParagraphStyleIdInLevel))]
- public string? ParagraphStyleIdInLevel { get => _ParagraphStyleIdInLevel; set => UpdateField(ref _ParagraphStyleIdInLevel, value, nameof(ParagraphStyleIdInLevel)); }
- private string? _ParagraphStyleIdInLevel;
+  private Int32? _StartNumberingValue;
 
- /// <summary>
- /// Indicates that all levels are displayed using Arabic numerals.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.IsLegalNumberingStyle))]
- public bool? IsLegalNumberingStyle { get => _IsLegalNumberingStyle; set => UpdateField(ref _IsLegalNumberingStyle, value, nameof(IsLegalNumberingStyle)); }
- private bool? _IsLegalNumberingStyle;
+  /// <summary>
+  /// One-based index determining when this numbering level should restart to its start value, based on higher or earlier levels.
+  /// A numbering level restarts when an instance of the specified numbering level, which shall be higher (earlier than this level)
+  /// or any earlier level is used in the given document's contents.
+  /// (e.g., If this value is 2, then both level two and level one reset this value.)
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelRestart))]
+  public NumLevel? LevelRestart
+  {
+    get => _LevelRestart ??= GetProperty<NumLevel?>(GetUpdatableElement()?.LevelRestart);
+    set => UpdateField(ref _LevelRestart, value, nameof(LevelRestart));
+  }
 
- /// <summary>
- /// Content added between the numbering level's text and the text of every numbered paragraph referencing this level. Defaults to tab if omitted.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelSuffix))]
- public LevelSuffix? LevelSuffix { get => _LevelSuffix; set => UpdateField(ref _LevelSuffix, value, nameof(LevelSuffix)); }
- private LevelSuffix? _LevelSuffix;
+  private NumLevel? _LevelRestart;
 
- /// <summary>
- /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelText))]
- public NumberingLevelText? LevelText { get => _LevelText; set => UpdateField(ref _LevelText, value, nameof(LevelText)); }
- private NumberingLevelText? _LevelText;
+  /// <summary>
+  /// Number format used to display numbering at this level, replacing %x in the level text string with the appropriate value.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.NumberingFormat))]
+  public NumberingFormat? NumberingFormat
+  {
+    get => _NumberingFormat ??= GetProperty<NumberingFormat?>(GetUpdatableElement()?.NumberingFormat);
+    set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat));
+  }
 
- /// <summary>
- /// Identifier for the picture bullet to use as the numbering symbol at this level.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelPictureBulletId))]
- public Int32? LevelPictureBulletId { get => _LevelPictureBulletId; set => UpdateField(ref _LevelPictureBulletId, value, nameof(LevelPictureBulletId)); }
- private Int32? _LevelPictureBulletId;
+  private NumberingFormat? _NumberingFormat;
 
- /// <summary>
- /// Unique hexadecimal value for UI location of this numbering level, interpretation is application-defined.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.TemplateCode))]
- public HexInt? TemplateCode { get => _TemplateCode; set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode)); }
- private HexInt? _TemplateCode;
+  /// <summary>
+  /// Paragraph style ID associated with this numbering level.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.ParagraphStyleIdInLevel))]
+  public string? ParagraphStyleIdInLevel
+  {
+    get => _ParagraphStyleIdInLevel ??= GetProperty<string?>(GetUpdatableElement()?.ParagraphStyleIdInLevel);
+    set => UpdateField(ref _ParagraphStyleIdInLevel, value, nameof(ParagraphStyleIdInLevel));
+  }
 
- /// <summary>
- /// Indicates that this numbering level is from an earlier word processor that did not support full WordprocessingML numbering properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LegacyNumbering))]
- public LegacyNumbering? LegacyNumbering { get => _LegacyNumbering; set => UpdateField(ref _LegacyNumbering, value, nameof(LegacyNumbering)); }
- private LegacyNumbering? _LegacyNumbering;
+  private string? _ParagraphStyleIdInLevel;
 
- /// <summary>
- /// Justification for the numbering level (e.g., left, center, right).
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.LevelJustification))]
- public LevelJustification? Justification { get => _justification; set => UpdateField(ref _justification, value, nameof(Justification)); }
- private LevelJustification? _justification;
+  /// <summary>
+  /// Indicates that all levels are displayed using Arabic numerals.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.IsLegalNumberingStyle))]
+  public bool? IsLegalNumberingStyle
+  {
+    get => _IsLegalNumberingStyle ??= GetProperty<bool?>(GetUpdatableElement()?.IsLegalNumberingStyle);
+    set => UpdateField(ref _IsLegalNumberingStyle, value, nameof(IsLegalNumberingStyle));
+  }
 
- /// <summary>
- /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.NumberingSymbolRunProperties))]
- public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get => _NumberingSymbolRunProperties; set => UpdateField(ref _NumberingSymbolRunProperties, value, nameof(NumberingSymbolRunProperties)); }
- private NumberingSymbolRunProperties? _NumberingSymbolRunProperties;
+  private bool? _IsLegalNumberingStyle;
 
- /// <summary>
- /// Paragraph properties for paragraphs at this numbering level, specifying formatting and layout for the paragraphs.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.Level.PreviousParagraphProperties))]
- public NumberingLevelParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
- private NumberingLevelParagraphProperties? _ParagraphProperties;
+  /// <summary>
+  /// Content added between the numbering level's text and the text of every numbered paragraph referencing this level. Defaults to tab if omitted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelSuffix))]
+  public LevelSuffix? LevelSuffix
+  {
+    get => _LevelSuffix ??= GetProperty<LevelSuffix?>(GetUpdatableElement()?.LevelSuffix);
+    set => UpdateField(ref _LevelSuffix, value, nameof(LevelSuffix));
+  }
+
+  private LevelSuffix? _LevelSuffix;
+
+  /// <summary>
+  /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelText))]
+  public NumberingLevelText? LevelText
+  {
+    get => _LevelText ??= GetProperty<NumberingLevelText?>(GetUpdatableElement()?.LevelText);
+    set => UpdateField(ref _LevelText, value, nameof(LevelText));
+  }
+
+  private NumberingLevelText? _LevelText;
+
+  /// <summary>
+  /// Identifier for the picture bullet to use as the numbering symbol at this level.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelPictureBulletId))]
+  public Int32? LevelPictureBulletId
+  {
+    get => _LevelPictureBulletId ??= GetProperty<Int32?>(GetUpdatableElement()?.LevelPictureBulletId);
+    set => UpdateField(ref _LevelPictureBulletId, value, nameof(LevelPictureBulletId));
+  }
+
+  private Int32? _LevelPictureBulletId;
+
+  /// <summary>
+  /// Unique hexadecimal value for UI location of this numbering level, interpretation is application-defined.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.TemplateCode))]
+  public HexInt? TemplateCode
+  {
+    get => _TemplateCode ??= GetProperty<HexInt?>(GetUpdatableElement()?.TemplateCode);
+    set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode));
+  }
+
+  private HexInt? _TemplateCode;
+
+  /// <summary>
+  /// Indicates that this numbering level is from an earlier word processor that did not support full WordprocessingML numbering properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LegacyNumbering))]
+  public LegacyNumbering? LegacyNumbering
+  {
+    get => _LegacyNumbering ??= GetProperty<LegacyNumbering?>(GetUpdatableElement()?.LegacyNumbering);
+    set => UpdateField(ref _LegacyNumbering, value, nameof(LegacyNumbering));
+  }
+
+  private LegacyNumbering? _LegacyNumbering;
+
+  /// <summary>
+  /// Justification for the numbering level (e.g., left, center, right).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.LevelJustification))]
+  public LevelJustification? Justification
+  {
+    get => _justification ??= GetProperty<LevelJustification?>(GetUpdatableElement()?.LevelJustification);
+    set => UpdateField(ref _justification, value, nameof(Justification));
+  }
+
+  private LevelJustification? _justification;
+
+  /// <summary>
+  /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.NumberingSymbolRunProperties))]
+  public NumberingSymbolRunProperties? NumberingSymbolRunProperties
+  {
+    get => _NumberingSymbolRunProperties ??=
+      GetProperty<NumberingSymbolRunProperties?>(GetUpdatableElement()?.NumberingSymbolRunProperties);
+    set => UpdateField(ref _NumberingSymbolRunProperties, value, nameof(NumberingSymbolRunProperties));
+  }
+
+  private NumberingSymbolRunProperties? _NumberingSymbolRunProperties;
+
+  /// <summary>
+  /// Paragraph properties for paragraphs at this numbering level, specifying formatting and layout for the paragraphs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Level.PreviousParagraphProperties))]
+  public NumberingLevelParagraphProperties? ParagraphProperties
+  {
+    get => _ParagraphProperties ??=
+      GetProperty<NumberingLevelParagraphProperties?>(GetUpdatableElement()?.PreviousParagraphProperties);
+    set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties));
+  }
+
+  private NumberingLevelParagraphProperties? _ParagraphProperties;
 }

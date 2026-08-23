@@ -1,5 +1,3 @@
-using System.Collections;
-
 namespace DocumentModel.CustomXml;
 
 /// <summary>
@@ -12,7 +10,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of CustomXMLValidationError objects.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerrors?view=office-pia"/>
-public partial interface ICustomXMLValidationErrors: IModelCollection<ICustomXMLValidationError>
+public partial interface ICustomXMLValidationErrors : IModelCollection<ICustomXMLValidationError>
 {
 }
 
